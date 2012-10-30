@@ -25,7 +25,7 @@ OnTouch:
         l("Force it."), -,
         l("Leave it."), l_Close;
 
-    warp "000-2-4", 20, 20;
+    warp "000-2-4", 36, 32;
 
 l_Close:
     close;
