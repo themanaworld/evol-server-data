@@ -145,8 +145,9 @@ l_Menu:
     mes l("All that we know now is that these pumpkins are now getting life, and it's kinda scarry to be honest...");
     next;
     mes l("Anyway they're not dangerous if you don't touch them, so don't worry about them.");
+    next;
 
-    close;
+    goto l_Menu;
 
 l_Where:
     mes "";
