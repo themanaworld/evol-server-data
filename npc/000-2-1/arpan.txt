@@ -128,15 +128,28 @@ l_Menu:
     mes l("What yeye could I do for you today?");
     set @equipped, getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200;
     menu
+        lg("Could you tell me what is happening here?"), -,
         lg("Could you tell me where I am?"), l_Where,
         lg("Where can I find Julia?"), l_Julia,
         l("Who are you?"), l_Who,
         rif(geta(ShipQuests, ShipQuests_ArpanMoney) == 0, l("Where are my old clothes?")), l_WhereOldClothes,
         rif(!@equipped, lg("What should I do after taking these clothes?")), l_WhatCloth,
         rif(!@equipped, l("Thank you, I'll take them."), l("Nothing, sorry.")), l_Quit;
+
+    mes "";
+    mesn;
+    mes l("Well... We bought some foods, some pimpkins to be exact, from a merchand on the last island where we stopped... But it seems that his food was poisonned....");
+    next;
+    mes l("Or somehow contamined...");
+    next;
+    mes l("All that we know now is that these pumpkins are now getting life, and it's kinda scarry to be honest...");
+    next;
+    mes l("Anyway they're not dangerous if you don't touch them, so don't worry about them.");
+
     close;
 
 l_Where:
+    mes "";
     mesn;
     mes lg("You are on our ship, we are actually yeyending our long merchant traveling adventure to the city of Artis.");
     next;
@@ -145,6 +158,7 @@ l_Where:
     goto l_Menu;
 
 l_WhereOldClothes:
+    mes "";
     mesn;
     mes lg("We tried to clean them but the sea water mostly killed them. It's why we gave you these cloths, they are not very good but it's all that we got.");
     next;
@@ -155,6 +169,7 @@ l_WhereOldClothes:
     goto l_Menu;
 
 l_Julia:
+    mes "";
     mes g(l("She is on the upper level, yeye can't miss her. She is the only girl in this crew, oh well, except for you now yeyeye!"),
           l("She is on the upper level, yeye can't miss her. She is the only girl in this crew."));
     next;
@@ -163,11 +178,13 @@ l_Julia:
     goto l_Menu;
 
 l_Who:
+    mes "";
     mes l("Sorry! I forgot to introduce myself. My name is Arpan, but other sailors call me Magic Arpan because I know one or two yaing magic spells.");
     next;
     goto l_Menu;
 
 l_WhatCloth:
+    mes "";
     mes lg("Oh yeyeye, as they are not eatable, you can try to equip them!");
     next;
     mesn "Narrator";
