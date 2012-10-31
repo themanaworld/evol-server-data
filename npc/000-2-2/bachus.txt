@@ -73,7 +73,7 @@ l_Hat:
     mesn;
     mesq l("You would like? So I think that's... Possible, let's say, yes! Yes it's possible.")
     next;
-    mesq l("You just need to bring me... One @@, that's all. I'll carve it by myself.");
+    mesq l("You just need to bring me... One @@, that's all. I'll carve it by myself.", getitemlink("Pumpkin"));
     next;
 
     menu
@@ -115,6 +115,10 @@ l_DoHat:
 
     mesn "Narrator";
     mes "The squary pumpkinman is sculpting your pumpkin while talking to you."
+    next;
+
+    if (countitem("Pumpkin") > 0) delitem "Pumpkin", 1;
+    getitem "Pumpkin Hat", 1;
 
     mesn;
     mesq l("Did I said you, that a long time ago... Oh, I've done it!");
