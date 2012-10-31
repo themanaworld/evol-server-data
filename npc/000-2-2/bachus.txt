@@ -14,11 +14,11 @@ l_Intro:
     next;
 
     menu
+        rif(countitem("Pumpkin") > 1, l("I have one!")), l_DoHat,
         l("Where did you get this hat?"), l_Hat;
         l("Excuse me, but who are you?"), -,
         l("Where can I find this Pumpkin?"), l_Where,
         l("Good bye..."), l_Bye;
-        rif(countitem("Pumpkin") > 1, l("I have one!")), l_DoHat,
 
     mes "";
     mesn;
@@ -62,7 +62,7 @@ l_Hat:
     mesn;
     mesq l("My hat! do you like it? I do love it, I made it by myself, it's so beauty, isn't it? Oh wait, I can put fire inside, it's beautiest!");
     next;
-    mesq l("Do you want one as well?")
+    mesq l("Do you want one as well?");
     next;
 
     menu
@@ -71,7 +71,7 @@ l_Hat:
 
     mes "";
     mesn;
-    mesq l("You would like? So I think that's... Possible, let's say, yes! Yes it's possible.")
+    mesq l("You would like? So I think that's... Possible, let's say, yes! Yes it's possible.");
     next;
     mesq l("You just need to bring me... One @@, that's all. I'll carve it by myself.", getitemlink("Pumpkin"));
     next;
@@ -114,7 +114,7 @@ l_DoHat:
     next;
 
     mesn "Narrator";
-    mes "The squary pumpkinman is sculpting your pumpkin while talking to you."
+    mes "The squary pumpkinman is sculpting your pumpkin while talking to you.";
     next;
 
     if (countitem("Pumpkin") > 0) delitem "Pumpkin", 1;
