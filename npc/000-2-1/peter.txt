@@ -13,7 +13,7 @@
 OnTouch:
     set @q_julia, geta2(ShipQuests, ShipQuests_Julia);
     if (@q_julia == 0) goto l_TalkToJulia;
-    if (BaseLevel < 5) goto l_TooWeak;
+    if (BaseLevel < 3) goto l_TooWeak;
     warp "000-2-2.gat", 48, 28;
 
     close;
@@ -34,7 +34,7 @@ l_TalkToJulia:
 
     set @q_julia, geta2(ShipQuests, ShipQuests_Julia);
     if (@q_julia == 0) goto L_TalkToJulia;
-    if (BaseLevel < 5) goto OnTooWeak;
+    if (BaseLevel < 3) goto OnTooWeak;
 
     mesn;
     mes l("Did you see... This thing?");
