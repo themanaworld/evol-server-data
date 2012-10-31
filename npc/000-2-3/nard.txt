@@ -26,6 +26,7 @@
 
 l_Menu:
     menu
+        lg("Could you tell me what is happening here?"), l_Event,
         lg("I feel ok."), l_Ok,
         l("Who is this Julia?"), l_Julia,
         lg("I'm sick, I'm going back to bed."), -;
@@ -33,6 +34,18 @@ l_Menu:
     mesn;
     mesq l("That's a good idea, go rest a bit and I'll see you tomorow!");
     close;
+
+l_Event:
+    mes "";
+    mesn;
+    mes l("Well... We bought some foods, some pumpkins to be exact, from a merchand on the last island where we stopped... But it seems that his food was poisonned....");
+    next;
+    mes l("Or somehow contamined...");
+    next;
+    mes l("All that we know now is that these pumpkins are now getting life, and it's kinda scarry to be honest...");
+    next;
+    mes l("Anyway they're not dangerous if you don't touch them, so don't worry about them.");
+    next;
 
 l_Julia:
     mesn;

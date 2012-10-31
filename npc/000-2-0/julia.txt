@@ -21,6 +21,7 @@
   set @s$, l("I don't want to change my language, sorry.");
   l_Menu:
   menu
+    lg("Could you tell me what is happening here?"), l_Event,
     lg("I made a mistake, I would like to change my language."), l_ChooseLang,
     l("Could you explain to me where I am?"), l_WhereIam,
     l("What happened to me?"), l_What,
@@ -29,11 +30,22 @@
     mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
     goto l_ChooseLang;
 
-  l_First:
+
+l_Event:
+    mes "";
+    mesn;
+    mesq l("Euh... I don't much know to be honest, these things grew up so rapidly, we don't much know what to do with them.
+    next;
+    mesq l("Billy Bons said me that they don't taste so good, and Peter is scared about one of them...");
+    next;
+    goto l_OtherQuestion;
+
+
+l_First:
     seta2 ShipQuests, ShipQuests_Julia, 1;
     callfunc "CheckClientVersion";
     mesn;
-    mesq l("Hi, nice to see you!#0");
+    mesq l("Hi, nice to see you!");
     next;
     mesq l("I'm called Julia, it's me who took care of you some days ago, when we found you back on the sea, I'm very happy to see that you seem okay now!");
     next;
