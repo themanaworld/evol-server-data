@@ -1,0 +1,38 @@
+// Evol scripts.
+// Authors:
+//    Reid
+
+000-2-4.gat,34,32,0,1	script	AligeTrigger	0,1,1,{
+
+OnTouchFirst:
+    setnpcdir "Alige", 2;
+    stopnpctimer;
+    initnpctimer;
+
+    close;
+
+OnUnTouchAll:
+    setnpcdir "Alige", 4;
+    stopnpctimer;
+    initnpctimer;
+
+    close;
+
+OnTimer190:
+    if (getnpcdir ("Alige") == 2) setnpcdir "Alige", 6;
+    if (getnpcdir ("Alige") == 4) setnpcdir "Alige", 8;
+    stopnpctimer;
+
+    end;
+
+}
+
+
+000-2-4.gat,34,31,0,1	script	Alige	998,{
+
+    mesn;
+    mes l("Protect me please...");
+
+    close;
+
+}
