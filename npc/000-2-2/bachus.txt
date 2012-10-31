@@ -1,0 +1,126 @@
+// Evol scripts.
+// Authors:
+//    Vasily_Makarov
+
+000-2-2.gat,32,29,0,1	script	Bachus	302,{
+
+    mesn;
+    mesq l("Hahahaha!");
+    mesq l("Happy Halloween!!");
+    next;
+
+l_Intro:
+    mesq l("Let me introduce myself, Bachus, I'm the ladies man, the sir of your dream, the pumpkin of the jack, the star of the your sky, the...");
+    next;
+
+    menu
+        l("Where did you get this hat?"), l_Hat;
+        l("Excuse me, but who are you?"), -,
+        l("Where can I find this Pumpkin?"), l_Where,
+        l("Good bye..."), l_Bye;
+        rif(countitem("Pumpkin") > 1, l("I have one!")), l_DoHat,
+
+    mes "";
+    mesn;
+    mesq l("I... I said you, I'm the ladies man, the...");
+    next;
+
+    menu
+        l("No, not this."), -,
+        l("Ok, see you."), l_Bye;
+
+    mes "";
+    mesn;
+    mesq l("The sir of your dream?");
+    next;
+    mesq l("The pumpkin of the jack?");
+    next;
+
+    menu
+        l("Could you just tell me who you are?"), -,
+        l("Pumpkin of the jack."), l_Hat,
+        l("Nothing..."), l_Bye;
+
+    mes "";
+    mesn;
+    mesq l("You're not funny...");
+    next;
+    mesq l("I'm Bachus! The...");
+    next;
+    mesq l("Ok, that's enough.");
+    next;
+    mesq l("I'm just a random stranger, passing by this ship, in this beauty day of Halloween.");
+    next;
+    mesq l("Hmm...");
+    next;
+    mesq l("Who're you?");
+    next;
+    goto l_Intro;
+
+l_Hat:
+    mes "";
+    mesn;
+    mesq l("My hat! do you like it? I do love it, I made it by myself, it's so beauty, isn't it? Oh wait, I can put fire inside, it's beautiest!");
+    next;
+    mesq l("Do you want one as well?")
+    next;
+
+    menu
+        l("I would like, yes."), -,
+        l("I think that I'll leave you..."), l_Bye;
+
+    mes "";
+    mesn;
+    mesq l("You would like? So I think that's... Possible, let's say, yes! Yes it's possible.")
+    next;
+    mesq l("You just need to bring me... One @@, that's all. I'll carve it by myself.");
+    next;
+
+    menu
+        l("Deal! I'll bring you this."), -,
+        l("Where can I find this Pumpkin?"), l_Where,
+        l("I changed my mind, I don't want it."), l_Bye;
+
+    mes "";
+    mesn;
+    mesq l("Nice!! I'll wait you here.");
+
+    close;
+
+l_Where:
+    mes "";
+    mesn;
+    mesq l("Oh... That's a hard thing to find, only the Cuco can give it to you...");
+    next;
+    mesq l("It's an evil pumpkin, and... You're half lucky, there's one here!");
+    next;
+    mesq l("Don't be scared, he's on the other room, nobody is there.");
+    next;
+    mesq l("Just go to the left, you'll see a rusty door, knock it hard, and defeat this vegetable!");
+
+    close;
+
+l_Bye:
+    mes "";
+    mesn;
+    mesq l("You miss something...");
+
+    close;
+
+l_DoHat:
+    mes "";
+    mesn;
+    mesq l("Nice nice... Wait some seconds...");
+    next;
+
+    mesn "Narrator";
+    mes "The squary pumpkinman is sculpting your pumpkin while talking to you."
+
+    mesn;
+    mesq l("Did I said you, that a long time ago... Oh, I've done it!");
+    next;
+    mesq l("That's remarquable, I've never done anything like that one before, consider yourself lucky!");
+
+    close;
+
+}
