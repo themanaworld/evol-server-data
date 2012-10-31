@@ -38,13 +38,13 @@ l_Menu:
 l_Event:
     mes "";
     mesn;
-    mes l("Well... We bought some foods, some pumpkins to be exact, from a merchand on the last island where we stopped... But it seems that his food was poisonned....");
+    mes l("Well... We bought some food, some pumpkins in fact, from a merchant on the last island where we stopped... But it seems his food was poisoned...");
     next;
-    mes l("Or somehow contamined...");
+    mes l("... or somehow contaminated...");
     next;
-    mes l("All that we know now is that these pumpkins are now getting life, and it's kinda scarry to be honest...");
+    mes l("All we know until now is that these pumpkins are now getting life, and it's kinda scary to be honest...");
     next;
-    mes l("Anyway they're not dangerous if you don't touch them, so don't worry about them.");
+    mes l("Anyway, they're not dangerous if you don't touch them, so don't worry about them.");
     next;
 
 l_Julia:
