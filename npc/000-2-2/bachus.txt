@@ -2,7 +2,7 @@
 // Authors:
 //    Vasily_Makarov
 
-000-2-2.gat,32,29,0,1	script	Bachus	302,{
+000-2-2.gat,32,29,0,1	script	Bachus	997,{
 
     mesn;
     mesq l("Hahahaha!");
@@ -15,7 +15,7 @@ l_Intro:
 
     menu
         rif(countitem("Pumpkin") > 1, l("I have one!")), l_DoHat,
-        l("Where did you get this hat?"), l_Hat;
+        l("Where did you get this hat?"), l_Hat,
         l("Excuse me, but who are you?"), -,
         l("Where can I find this Pumpkin?"), l_Where,
         l("Good bye..."), l_Bye;
@@ -118,7 +118,7 @@ l_DoHat:
     next;
 
     if (countitem("Pumpkin") > 0) delitem "Pumpkin", 1;
-    getitem "Pumpkin Hat", 1;
+    getitem "PumpkinHat", 1;
 
     mesn;
     mesq l("Did I said you, that a long time ago... Oh, I've done it!");
