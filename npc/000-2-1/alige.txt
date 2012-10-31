@@ -11,13 +11,13 @@
     set @q, getq(ShipQuests_Alige);
     if (@q < 1) goto l_Unknown;
 
-    mes l("There're no trace of Alige today.");
+    mes l("There's no trace of Alige today.");
     next;
 
 l_Unknown:
-    mes l("Some bloom and weird sounds are getting out from this hole...");
+    mes l("Some fog and weird sounds come out from this hole...");
     next;
-    mes l("Something might be wrong on the edge of the ship.");
+    mes l("Something wrong might be happening in the bottom of the ship.");
 
     close;
 

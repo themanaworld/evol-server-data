@@ -37,7 +37,7 @@ l_TalkToJulia:
     if (BaseLevel < 3) goto OnTooWeak;
 
     mesn;
-    mes l("Did you see... This thing?");
+    mes l("Did you see... This!?");
     next;
 
     menu
@@ -46,20 +46,20 @@ l_TalkToJulia:
 
     mes "";
     mesn;
-    mes l("There's something which exceed any imagination behind this door... It's not human.");
+    mes l("There's something that exceeds any imagination behind this door... It's... It's not... not human!");
     next;
 
     menu
-        l("I don't understand."), -,
+        l("I don't understand..."), -,
         l("It's just an orange ball, nothing else."), l_Sawit;
 
     mes "";
     mesn;
-    mes l("Did you see all of these pumkpins monsters around here?");
+    mes l("Did you see all of these horrible, moving pumpkins around here?");
     next;
     mes l("Well, there's something like... Their king, behind this door.");
     next;
-    mes l("Be prudent if you go in there, it could be bad that we saved you from the ocean for nothing!");
+    mes l("Be careful if you go in there. It would be a shame that we saved you from the ocean for nothing!");
 
     close;
 
@@ -72,12 +72,12 @@ l_Sawit:
 
 OnJulia:
     mesn;
-    mesq l("Hey, you should go see Julia to be registered on the ship board.");
+    mesq l("Hey, you should go see Julia to get registered on the ship board.");
     goto L_Close;
 
 OnTooWeak:
     mesn;
-    mesq lg("I won't let you enter, you're way too weak.");
+    mesq lg("I won't let you enter, you're way too weak!");
     goto L_Close;
 
 L_Close:
