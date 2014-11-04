@@ -6,10 +6,11 @@
 // Description:
 //    Doors NPCs.
 
-000-2-2.gat,48,29,0,1	script	DoorUpwards	0,0,0,{
+// Gender = 1
+000-2-2,48,29,0	script	DoorUpwards	32767,0,0,{
 
 OnTouch:
-    if (getmapmobs("000-2-2.gat") > 0) goto L_Warn;
+    if (mobcount("000-2-2.gat","all") > 0) goto L_Warn;
 
     goto L_Warp;
 
@@ -35,7 +36,8 @@ L_Warp:
     close;
 }
 
-000-2-2.gat,24,31,0,1	script	LeftDoor	0,0,0,{
+// Gender = 1
+000-2-2,24,31,0	script	LeftDoor	32767,0,0,{
 
 OnTouch:
     mesn "Narrator";
@@ -45,7 +47,7 @@ OnTouch:
     next;
 
     menu
-        rif(countitem("JohanneKey") > 0, l("Use the key.")), L_Warp,
+        rif(countitemcolor("JohanneKey") > 0, l("Use the key.")), L_Warp,
         l("Break the door."), L_Break,
         l("Go away."), -;
 

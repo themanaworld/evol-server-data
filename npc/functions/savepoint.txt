@@ -13,5 +13,5 @@ function	script	SavePoint	{
     message strcharinfo(0), "Your position has been saved.";
 
     savepoint getarg(0), getarg(1), getarg(2);
-    misceffect 4, getcharid(3);
+    misceffect2 4, getcharid(3);
 }

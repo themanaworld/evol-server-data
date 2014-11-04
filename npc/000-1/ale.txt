@@ -6,7 +6,9 @@
 //    Sailor part of the Gugli's quest.
 //    Aquada box.
 
-000-1.gat,55,23,0,1	script	Ale	105;2,{
+// Size = 2
+// Gender = 1
+000-1,55,23,0	script	Ale	105,{
     set @g, getq(ShipQuests_Gugli);
     if (@g == 0) goto L_NoTask;
 

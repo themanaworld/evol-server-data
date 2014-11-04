@@ -5,7 +5,8 @@
 // Description:
 //    Panels to give advice to the players.
 
-000-1.gat,65,93,0	script	#panel	999;2,{
+// Size = 2
+000-1,65,93,0	script	#panel	999,{
 
     mesn "Narrator";
     mes col(l("Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand."), 9);
@@ -23,7 +24,8 @@
     close;
 }
 
-000-1.gat,89,51,0	script	#panel	999;2,{
+// Size = 2
+000-1,89,51,0	script	#panel	999,{
 
     mesn "Narrator";
     mes col(l("This panel looks in rather good shape, as though some people take care of it regularly. Maybe it has important information."), 9);

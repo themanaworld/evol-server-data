@@ -6,7 +6,9 @@
 // Description:
 //    Sailor who gives some informations to the player.
 
-000-1.gat,79,108,0,1	script	Lean	106;2,{
+// Size = 2
+// Gender = 1
+000-1,79,108,0	script	Lean	106,{
     set @gugli, getq(ShipQuests_Gugli);
 
     mesn;

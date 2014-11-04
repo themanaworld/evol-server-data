@@ -5,7 +5,9 @@
 // Description:
 //    Sleeping and snoring NPC.
 
-000-2-1.gat,53,38,0,1	script	Q'Onan	302;2,{
+// Size = 2
+// Gender = 1
+000-2-1,53,38,0	script	Q'Onan	302,{
 
     callfunc "Asleep";
 }

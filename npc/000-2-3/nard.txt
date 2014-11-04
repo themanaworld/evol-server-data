@@ -23,7 +23,9 @@
 //    11   Gugli gives you the task.
 //    12   Gave all of the boxes to Gugli.
 
-000-2-3.gat,25,26,0,1	script	Nard	306;5,{
+// Size = 5
+// Gender = 1
+000-2-3,25,26,0	script	Nard	306,{
     set @nard, getq(ShipQuests_Nard);
     set @gugli, getq(ShipQuests_Gugli);
     set @gado, getq(ShipQuests_ChefGado);

@@ -12,7 +12,9 @@
 //    1   Spoke, and received the quest scam.
 //    2   Done quest scam.
 
-000-1.gat,89,36,0,1	script	Couwan	111;2,{
+// Size = 2
+// Gender = 1
+000-1,89,36,0	script	Couwan	111,{
     set @q, getq(ShipQuests_Couwan);
     if (@q == 1) goto L_QuestGiven;
     if (@q > 1) goto L_QuestDone;

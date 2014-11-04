@@ -32,8 +32,10 @@
 //    24   ChefGado Quest completed and "Introduction" chapter finalized.
 //    25   Reward taken from the box.
 
-000-2-0.gat,27,24,0,0	script	Julia	304,2,10;10,{
-    setskill 1, 1; // Add Emote skill.
+// Size = 10
+// Gender = 0
+000-2-0,27,24,0	script	Julia	304,2,10,{
+    addtoskill 1, 1; // Add Emote skill.
 
     mesn;
     mesq lg("Hello dear!");
@@ -48,8 +50,8 @@
 L_Menu:
     menu
         rif(@q3 == 3 && @q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")), L_Rumors,
-        rif(@q2 == 2 && countitem("PoisonedDish", 1), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")), L_Regret,
-        rif(@q2 == 2 && countitem("PoisonedDish", 1), l("I have brought you a tasty present for your delicate mouth.")), L_PoisonJulia,
+        rif(@q2 == 2 && countitemcolor("PoisonedDish", 1), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")), L_Regret,
+        rif(@q2 == 2 && countitemcolor("PoisonedDish", 1), l("I have brought you a tasty present for your delicate mouth.")), L_PoisonJulia,
         lg("I made a mistake, I would like to change my language."), L_ChooseLang,
         l("Could you explain to me where I am?"), L_WhereIam,
         l("What happened to me?"), L_What,
@@ -208,7 +210,7 @@ L_PoisonJulia:
     mesq l("Seems yummy! Let me taste it!");
     next;
     mesq l("Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*");
-    if (countitem("PoisonedDish") > 0) delitem "PoisonedDish", 1;
+    if (countitemcolor("PoisonedDish") > 0) delitem "PoisonedDish", 1;
     setq ShipQuests_ChefGado, 3;
 
     close;
@@ -229,7 +231,7 @@ L_Regret:
     mesq l("Take this money for your wise choice. But do not try it again. The open sea has been merciful with you once... Do not further tempt the fates!");
 
     setq ShipQuests_ChefGado, 5;
-    set zeny, zeny + 200;
+    set Zeny, Zeny + 200;
     message strcharinfo(0), l("You receive @@ E!", 200);
     getexp 15, 0;
 
@@ -264,7 +266,7 @@ L_Rumors:
     mesq l("Take this money as a reward for your nice words.");
 
     setq ShipQuests_ChefGado, 6;
-    set zeny, zeny + 100;
+    set Zeny, Zeny + 100;
     message strcharinfo(0), l("You receive @@ E!", 100);
     getexp 8, 0;
 

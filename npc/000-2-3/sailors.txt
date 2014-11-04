@@ -6,7 +6,8 @@
 // Description:
 //    End of introduction with Nard and Elmo talking about the player.
 
-000-2-3.gat,21,28,0,0	script	AreaTop	0,0,5,{
+// Gender = 0
+000-2-3,21,28,0	script	AreaTop	32767,0,5,{
 
 OnTouch:
     if (getq(ShipQuests_Door) == 1) end;

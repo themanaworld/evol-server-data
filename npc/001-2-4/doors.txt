@@ -5,7 +5,7 @@
 //    Doors warp and animations in map 001-2-4
 //
 
-001-2-4.gat,52,27,0	script	#LibraryDoor	907,1,1{
+001-2-4,52,27,0	script	#LibraryDoor	907,1,1,{
     close;
 
 OnTouchFirst:

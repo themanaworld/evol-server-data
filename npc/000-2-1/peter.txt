@@ -39,7 +39,8 @@
 // [9] = Shows how many seconds passed since the player started the quest.
 // [10] = Shows how many seconds passed since the player done the quest.
 
-000-2-1.gat,72,34,0,1	script	AreaNPC	0,0,1,{
+// Gender = 1
+000-2-1,72,34,0	script	AreaNPC	32767,0,1,{
 
 OnTouch:
     if (BaseLevel < 5) goto L_Stop;
@@ -87,7 +88,9 @@ L_NoGoodTick:
     close;
 }
 
-000-2-1.gat,70,35,0,1	script	Peter	303;3,{
+// Size = 3
+// Gender = 1
+000-2-1,70,35,0	script	Peter	303,{
     if (BaseLevel < 5) goto OnTooWeak;
     if ($@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
     if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto OnNoGoodTick;
@@ -300,7 +303,7 @@ L_Reward:
     mesn;
     mesq l("Good job!") + " " + l("Here's your reward!");
     getexp 100, 0;
-    set zeny, zeny + 1000;
+    set Zeny, Zeny + 1000;
     message strcharinfo(0), l("You receive @@ E!", 1000);
 
     goto L_CleaningClose;

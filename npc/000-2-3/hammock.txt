@@ -4,7 +4,8 @@
 // Description:
 //    Animated hammock at the top level of the ship.
 
-000-2-3.gat,28,24,0,2	script	#name	904,1,0{
+// Gender = 2
+000-2-3,28,24,0	script	#name	904,1,0,{
 
 OnTouchFirst:
     setnpcdir 4;

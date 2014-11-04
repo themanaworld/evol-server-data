@@ -22,7 +22,9 @@
 //    21   Gugli gives you the task.
 //    22   Gave all of the box to Gugli.
 
-000-1.gat,85,108,0,1	script	Gugli	313;2,{
+// Size = 2
+// Gender = 1
+000-1,85,108,0	script	Gugli	313,{
 
 OnTalk:
     mesn;
@@ -82,7 +84,7 @@ L_TaskGiven:
 L_Menu:
     menu
         rif(getq(ShipQuests_Couwan) == 1, l("Couwan gave me this box, it is for you.")), L_Couwan,
-        rif(countitem("AquadaBox") > 0 || countitem("CroconutBox") > 0 || countitem("PlushroomBox") > 0, l("I have some food for you.")), L_CollectSmthing,
+        rif(countitemcolor("AquadaBox") > 0 || countitemcolor("CroconutBox") > 0 || countitemcolor("PlushroomBox") > 0, l("I have some food for you.")), L_CollectSmthing,
         rif(getq(ShipQuests_Gugli) < 2, l("Who should I search for?")), L_SailorNames,
         rif(getq(ShipQuests_Gugli) < 2, l("Where can I find your crew?")), L_Location,
         l("Bye!"), L_Quit;
@@ -109,12 +111,12 @@ L_CollectSmthing:
     mesq l("Good job!");
     next;
 
-    if (countitem("AquadaBox") == 2) delitem "AquadaBox", 2;
-    if (countitem("CroconutBox") == 2) delitem "CroconutBox", 2;
-    if (countitem("PlushroomBox") == 2) delitem "PlushroomBox", 2;
-    if (countitem("AquadaBox") == 1) delitem "AquadaBox", 1;
-    if (countitem("CroconutBox") == 1) delitem "CroconutBox", 1;
-    if (countitem("PlushroomBox") == 1) delitem "PlushroomBox", 1;
+    if (countitemcolor("AquadaBox") == 2) delitem "AquadaBox", 2;
+    if (countitemcolor("CroconutBox") == 2) delitem "CroconutBox", 2;
+    if (countitemcolor("PlushroomBox") == 2) delitem "PlushroomBox", 2;
+    if (countitemcolor("AquadaBox") == 1) delitem "AquadaBox", 1;
+    if (countitemcolor("CroconutBox") == 1) delitem "CroconutBox", 1;
+    if (countitemcolor("PlushroomBox") == 1) delitem "PlushroomBox", 1;
 
     mesq l("You still need to give me boxes from: ");
     if (getq(ShipQuests_Astapolos) == 0) mesq l("- Astapolos");
@@ -139,9 +141,9 @@ L_Couwan:
     next;
     mesq l("May this be a lesson for you.");
 
-    if (countitem("FishBox") > 0) delitem "FishBox", 1;
+    if (countitemcolor("FishBox") > 0) delitem "FishBox", 1;
     setq ShipQuests_Couwan, 2;
-    set zeny, zeny+10;
+    set Zeny, Zeny+10;
     getexp 40, 0;
     message strcharinfo(0), l("You receive @@ E!", 10);
 
@@ -185,15 +187,15 @@ L_Lean:
     close;
 
 L_TaskDone:
-    if (countitem("AquadaBox") == 2) delitem "AquadaBox", 2;
-    if (countitem("CroconutBox") == 2) delitem "CroconutBox", 2;
-    if (countitem("PlushroomBox") == 2) delitem "PlushroomBox", 2;
-    if (countitem("AquadaBox") == 1) delitem "AquadaBox", 1;
-    if (countitem("CroconutBox") == 1) delitem "CroconutBox", 1;
-    if (countitem("PlushroomBox") == 1) delitem "PlushroomBox", 1;
+    if (countitemcolor("AquadaBox") == 2) delitem "AquadaBox", 2;
+    if (countitemcolor("CroconutBox") == 2) delitem "CroconutBox", 2;
+    if (countitemcolor("PlushroomBox") == 2) delitem "PlushroomBox", 2;
+    if (countitemcolor("AquadaBox") == 1) delitem "AquadaBox", 1;
+    if (countitemcolor("CroconutBox") == 1) delitem "CroconutBox", 1;
+    if (countitemcolor("PlushroomBox") == 1) delitem "PlushroomBox", 1;
     setq ShipQuests_Gugli, 2;
 
-    set zeny, zeny+250;
+    set Zeny, Zeny+250;
     getexp 50, 0;
 
     mes "";
@@ -229,7 +231,8 @@ L_Quit:
 
 }
 
-000-1.gat,83,107,0,1	script	GugliBarrierCheck	0,2,0,{
+// Gender = 1
+000-1,83,107,0	script	GugliBarrierCheck	32767,2,0,{
     set @gugli, getq(ShipQuests_Gugli);
     if (@gugli > 0) close;
     doevent "Gugli::OnTalk";

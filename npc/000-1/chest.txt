@@ -11,7 +11,8 @@
 //    0   Treasure Chest has not been opened yet.
 //    1   Treasure Chest has been opened.
 
-000-1.gat,83,70,0	script	#chest	316;2,{
+// Size = 2
+000-1,83,70,0	script	#chest	316,{
 
     set @q, getq(ShipQuests_TreasureChest);
     if (getnpcdir ("") == 4) goto L_Give;
@@ -28,7 +29,7 @@ L_Give:
 
     setq ShipQuests_TreasureChest, 1;
 
-    set zeny, zeny + 100;
+    set Zeny, Zeny + 100;
     getitem "OldBook", 1;
     npctalk3 l("You open the treasure chest.");
 

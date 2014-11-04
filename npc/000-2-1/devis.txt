@@ -6,7 +6,9 @@
 // Description:
 //    Sleeping and grumbling NPC.
 
-000-2-1.gat,32,38,0,1	script	Devis	310;2,{
+// Size = 2
+// Gender = 1
+000-2-1,32,38,0	script	Devis	310,{
 
     callfunc "Asleep";
 }

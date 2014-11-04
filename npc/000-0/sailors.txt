@@ -7,7 +7,8 @@
 // Description:
 //    Starting script of Evol Online.
 
-000-0.gat,23,20,0,1	script	Sailors	305,6,6,{
+// Gender = 1
+000-0,23,20,0	script	Sailors	305,6,6,{
 
 OnTouch:
     callfunc "CheckClientVersion";

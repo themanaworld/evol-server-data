@@ -5,7 +5,9 @@
 // Description:
 //    Friend of Max, he gives some information on combat system.
 
-000-1.gat,74,111,0,1	script	Sapartan	314;2,{
+// Size = 2
+// Gender = 1
+000-1,74,111,0	script	Sapartan	314,{
     mesn;
     mesq l("Hey Max, it's @@!", strcharinfo(0));
     next;

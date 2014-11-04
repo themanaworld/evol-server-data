@@ -4,7 +4,9 @@
 // Description:
 //    Drunk easteregg telling about the player's past.
 
-000-2-0.gat,20,23,0,1	script	Billy Bons	311;3,{
+// Size = 3
+// Gender = 1
+000-2-0,20,23,0	script	Billy Bons	311,{
 
     if (rand(5) == 2) goto L_Hic;
 

@@ -1,0 +1,44 @@
+// Evol functions.
+// Authors:
+//    4144
+// Description:
+//    Build in functions.
+
+function	script	menuimage	{
+    return getarg(0) + "|" + getarg(1);
+}
+
+function	script	mesn	{
+    if (getargcount() > 0)
+    {
+        .@s$ = "[" + getarg(0) + "]";
+    }
+    else
+    {
+        .@s$ = "[" + strnpcinfo(1) + "]";
+    }
+    mes .@s$;
+    return;
+}
+
+function	script	mesq	{
+    mes "\"" + getarg(0)+  "\"";
+    return;
+}
+
+function	script	g	{
+    mes Sex == 0 ? getarg(0) : getarg(1);
+    return;
+}
+
+function	script	lg	{
+    mes Sex == 0 ? l(getarg(0)) : l(getarg(1));
+    return;
+}
+
+function	script	col	{
+    .@color = getarg(1);
+    if (.@color < 0) .@color = 0;
+    if (.@color > 9) .@color = 9;
+    return "##" + .@color + getarg(0) + "##0";
+}
