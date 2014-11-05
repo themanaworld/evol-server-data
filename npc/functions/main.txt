@@ -27,8 +27,7 @@ function	script	mesq	{
 }
 
 function	script	g	{
-    mes Sex == 0 ? getarg(0) : getarg(1);
-    return;
+    return Sex == 0 ? getarg(0) : getarg(1);
 }
 
 function	script	lg	{
