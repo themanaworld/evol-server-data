@@ -32,8 +32,11 @@ function	script	g	{
 }
 
 function	script	lg	{
-    mes Sex == 0 ? l(getarg(0)) : l(getarg(1));
-    return;
+    if (getargcount() > 1)
+        .@s$ = Sex == 0 ? l(getarg(0)) : l(getarg(1));
+    else
+        .@s$ = l(getarg(0));
+    return .@s$;
 }
 
 function	script	col	{
