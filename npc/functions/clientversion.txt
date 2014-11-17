@@ -16,4 +16,5 @@ function	script	CheckClientVersion	{
     next;
     mes col("Please install the new client from http://www.evolonline.org/", 9);
     next;
+    return;
 }
