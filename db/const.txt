@@ -362,7 +362,6 @@ CharRename	124	1
 ModExp	125	1
 ModDrop	126	1
 ModDeath	127	1
-ClientVersion	10000	1
 bMaxHP	6
 bMaxSP	8
 bStr	13
@@ -3283,6 +3282,7 @@ MOUNT_DRAGON_BROWN	5
 MOUNT_DRAGON_GRAY	6
 MOUNT_DRAGON_BLUE	7
 MOUNT_DRAGON_RED	8
+ClientVersion	10000	1
 // evol constants
 debug	1
 bMatk1	43
@@ -3347,25 +3347,25 @@ SKILL_MAGIC_ASTRAL	345
 SKILL_GUILD	500
 SKILL_CRAFT	501
 SKILL_DYE	502
-ShipQuests_Julia	0
-ShipQuests_Arpan	1
-ShipQuests_Alige	2
-ShipQuests_Peter	3
-ShipQuests_Nard	4
-ShipQuests_Knife	5
-ShipQuests_ArpanMoney	6
-ShipQuests_Door	7
-ShipQuests_Couwan	8
-ShipQuests_TreasureChest	9
-ShipQuests_Ale	10
-ShipQuests_Astapolos	11
-ShipQuests_Gulukan	12
-ShipQuests_Jalad	13
-ShipQuests_QMuller	14
-ShipQuests_Tibbo	15
-ShipQuests_Gugli	16
-ShipQuests_ChefGado	17
-General_Cookies	18
+ShipQuests_Julia	1001
+ShipQuests_Arpan	1002
+ShipQuests_Alige	1003
+ShipQuests_Peter	1004
+ShipQuests_Nard	1005
+ShipQuests_Knife	1006
+ShipQuests_ArpanMoney	1007
+ShipQuests_Door	1008
+ShipQuests_Couwan	1009
+ShipQuests_TreasureChest	1010
+ShipQuests_Ale	1011
+ShipQuests_Astapolos	1012
+ShipQuests_Gulukan	1013
+ShipQuests_Jalad	1014
+ShipQuests_QMuller	1015
+ShipQuests_Tibbo	1016
+ShipQuests_Gugli	1017
+ShipQuests_ChefGado	1018
+General_Cookies	1019
 // items
 Bread	502
 Fungus	503
