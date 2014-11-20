@@ -13,7 +13,7 @@
 OnTouch:
     callfunc "CheckClientVersion";
     requestlang @lang;
-    if (@lang >= 0 && @lang <= 9) setlang @lang;
+    if (@lang >= 0 && @lang <= 9) Lang = @lang;
 
     mesn "Narrator";
     mes col(l("You are on a raft, adrift in the sea."), 9);
@@ -65,7 +65,7 @@ OnTouch:
         menuimage("flags/ca", "Et escolto (Català)"), -;
     set @lang, @menu-1;
     if (@lang < 0 || @lang > 10) close;
-    setlang @lang;
+    Lang = @lang;
 
     setcamnpc;
     mes "";

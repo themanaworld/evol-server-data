@@ -96,7 +96,7 @@ L_First:
         @s$, L_NoChanges;
     set @lang, @menu-1;
     if (@lang < 0 || @lang > 10) close;
-    setlang @lang;
+    Lang = @lang;
 
     mes "";
     mesn;
