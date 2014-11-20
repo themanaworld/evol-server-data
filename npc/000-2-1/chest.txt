@@ -11,7 +11,7 @@
 //    2   Has the clothes.
 
 // Size = 2
-000-2-1,51,37,0	script	Chest	317,{
+000-2-1,51,37,0	script	Chest	417,{
     set @q, getq(ShipQuests_Arpan);
 
     if (@q == 0) goto L_Talk;

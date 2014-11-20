@@ -90,7 +90,7 @@ L_EquipDone:
 
 // Size = 5
 // Gender = 1
-000-2-1,49,33,0	script	Magic Arpan	307,{
+000-2-1,49,33,0	script	Magic Arpan	407,{
     set @q, getq(ShipQuests_Arpan);
     set @q_julia, getq(ShipQuests_Julia);
     if (@q == 2 && getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200) goto L_EquipDone;

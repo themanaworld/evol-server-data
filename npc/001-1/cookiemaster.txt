@@ -12,7 +12,7 @@
 
 // Size = 2
 // Gender = 0
-001-1,39,38,0	script	Cookie Master	319,{
+001-1,39,38,0	script	Cookie Master	419,{
     if ((countitemcolor("DeliciousCookie") == 0) && (getq(GeneraL_Cookies) == 1))
 		goto L_LostCookie;
     if (getq(GeneraL_Cookies) == 1)

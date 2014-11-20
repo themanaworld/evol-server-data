@@ -12,7 +12,7 @@
 //    1   Treasure Chest has been opened.
 
 // Size = 2
-000-1,83,70,0	script	#chest	316,{
+000-1,83,70,0	script	#chest	416,{
 
     set @q, getq(ShipQuests_TreasureChest);
     if (getnpcdir ("") == 4) goto L_Give;

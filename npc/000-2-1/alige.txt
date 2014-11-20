@@ -50,7 +50,7 @@ OnTimer190:
 
 // Size = 2
 // Gender = 1
-000-2-1,43,31,0	script	Alige	301,{
+000-2-1,43,31,0	script	Alige	401,{
     set @q, getq(ShipQuests_Alige);
     if (@q > 1) goto L_AskForFood;
 
