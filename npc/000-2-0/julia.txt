@@ -43,15 +43,15 @@
     mesq l("What do you want today?");
     next;
 
-    set @q2, getq(ShipQuests_ChefGado);
-    set @q3, getq(ShipQuests_Nard);
-    set @s$, l("I don't want to change my language, sorry.");
+    set .@q2, getq(ShipQuests_ChefGado);
+    set .@q3, getq(ShipQuests_Nard);
+    set .@s$, l("I don't want to change my language, sorry.");
 
 L_Menu:
     menu
-        rif(@q3 == 3 && @q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")), L_Rumors,
-        rif(@q2 == 2 && countitemcolor("PoisonedDish", 1), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")), L_Regret,
-        rif(@q2 == 2 && countitemcolor("PoisonedDish", 1), l("I have brought you a tasty present for your delicate mouth.")), L_PoisonJulia,
+        rif(.@q3 == 3 && .@q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")), L_Rumors,
+        rif(.@q2 == 2 && countitemcolor("PoisonedDish", 1), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")), L_Regret,
+        rif(.@q2 == 2 && countitemcolor("PoisonedDish", 1), l("I have brought you a tasty present for your delicate mouth.")), L_PoisonJulia,
         lg("I made a mistake, I would like to change my language."), L_ChooseLang,
         l("Could you explain to me where I am?"), L_WhereIam,
         l("What happened to me?"), L_What,
@@ -77,7 +77,7 @@ L_First:
     next;
     mesq lg("Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.");
     next;
-    set @s$, "";
+    set .@s$, "";
     goto L_ChooseLang;
 
   L_ChooseLang:
@@ -93,17 +93,17 @@ L_First:
         menuimage("flags/it", l("I speak Italian.") + " (Italiano)"), -,
         menuimage("flags/nl_BE", l("I speak Dutch.") + " (Nederlands)"), -,
         menuimage("flags/ca", l("I speak Catalan.") + " (Català)"), -,
-        @s$, L_NoChanges;
-    set @lang, @menu-1;
-    if (@lang < 0 || @lang > 10) close;
-    Lang = @lang;
+        .@s$, L_NoChanges;
+    set .@lang, @menu-1;
+    if (.@lang < 0 || .@lang > 10) close;
+    Lang = .@lang;
 
     mes "";
     mesn;
     mesq l("Ok, done.");
 
-    set @q, getq(ShipQuests_Julia);
-    if (@q == 2) goto L_NoRules;
+    set .@q, getq(ShipQuests_Julia);
+    if (.@q == 2) goto L_NoRules;
 
     next;
     mesq l("I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.");
@@ -199,8 +199,8 @@ L_Rules:
     goto L_YNMenu;
 
 OnTouch:
-    set @q, getq(ShipQuests_Julia);
-    if (@q == 0 || @q == 1) goto L_First;
+    set .@q, getq(ShipQuests_Julia);
+    if (.@q == 0 || .@q == 1) goto L_First;
 
     close;
 

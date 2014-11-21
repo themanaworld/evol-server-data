@@ -14,7 +14,7 @@
 // Size = 14
 // Gender = 1
 000-1,89,95,0	script	Darlin	103,{
-    set @q, getq(ShipQuests_TreasureChest);
+    set .@q, getq(ShipQuests_TreasureChest);
 
     mesn;
     setcamnpc;
@@ -118,7 +118,7 @@ L_GoDown:
     mes "";
     mesn;
 
-    if (@q > 0) goto L_DangerAround;
+    if (.@q > 0) goto L_DangerAround;
 
     setcamnpc;
     mesq l("Oh no, but I've noticed a weird light on the other edge of this island, I wonder what it can be...");

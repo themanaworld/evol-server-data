@@ -8,8 +8,8 @@
 // Size = 5
 // Gender = 1
 000-2-3,27,27,0	script	Elmo	409,{
-    set @q, getq(ShipQuests_ArpanMoney);
-    if (@q == 1) goto L_GotMoney;
+    set .@q, getq(ShipQuests_ArpanMoney);
+    if (.@q == 1) goto L_GotMoney;
 
     mesn;
     mesq l("Hey you, sorry for leaving your room so quickly. I needed to speak with the captain about the food reserves. You know, now that we have a new mouth to feed, we need to check what we have.");

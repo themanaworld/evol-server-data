@@ -10,11 +10,11 @@
 // Size = 2
 // Gender = 1
 000-1,54,90,0	script	Gulukan	113,{
-    set @g, getq(ShipQuests_Gugli);
-    if (@g == 0) goto L_NoTask;
+    set .@g, getq(ShipQuests_Gugli);
+    if (.@g == 0) goto L_NoTask;
 
-    set @q, getq(ShipQuests_Gulukan);
-    if (@q == 1) goto L_Func;
+    set .@q, getq(ShipQuests_Gulukan);
+    if (.@q == 1) goto L_Func;
 
     mesn;
     mesq l("Yeye @@!", strcharinfo(0));
@@ -54,8 +54,8 @@ L_Continue2:
     mesq l("Anyway I am glad I can give you some of these yoyoxs.");
     next;
 
-    set @item, 715;
-    set @count, 1;
+    set .@item, 715;
+    set .@count, 1;
     callfunc "InventoryPlace", 715, 1;
 
     setq ShipQuests_Gulukan, 1;
@@ -70,10 +70,10 @@ L_Continue2:
 L_Func:
     mesn;
 
-    set @q, rand(0, 400) / 100;
-    if (@q == 0) goto L_RandomA;
-    if (@q == 1) goto L_RandomB;
-    if (@q > 1) goto L_RandomC;
+    set .@q, rand(0, 400) / 100;
+    if (.@q == 0) goto L_RandomA;
+    if (.@q == 1) goto L_RandomB;
+    if (.@q > 1) goto L_RandomC;
 
 L_RandomA:
     mesq l("Hey.");

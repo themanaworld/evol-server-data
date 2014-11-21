@@ -51,8 +51,8 @@ OnTimer190:
 // Size = 2
 // Gender = 1
 000-2-1,43,31,0	script	Alige	401,{
-    set @q, getq(ShipQuests_Alige);
-    if (@q > 1) goto L_AskForFood;
+    set .@q, getq(ShipQuests_Alige);
+    if (.@q > 1) goto L_AskForFood;
 
     goto OnFirstEncounter;
 
@@ -148,7 +148,7 @@ L_Artis:
     next;
     restorecam;
 
-    if (@q == 2) goto L_SoAskForFood;
+    if (.@q == 2) goto L_SoAskForFood;
     goto L_Accept;
 
 L_FirstAccepted:
@@ -184,17 +184,17 @@ L_GiveFood:
         rif(countitemcolor(516, 1), l(getitemname("PumpkinSeeds"))), 1,
         l("I don't have anything good for you today."), -1;
 
-    set @id, @menuret;
-    if (@id == -1) goto L_Quit; // Quit message.
-    if (@id == 0) goto L_NoReward; // In case of wrong food.
-    if (@id == 1) goto L_Poison; // In case of poisoned food.
-    if (@id == 2) goto L_NoMore; // In case of Piberries.
-    if (countitemcolor(@id) == 0) goto L_Quit;
-//  if (@id == item's ID) then food is correct.
+    set .@id, @menuret;
+    if (.@id == -1) goto L_Quit; // Quit message.
+    if (.@id == 0) goto L_NoReward; // In case of wrong food.
+    if (.@id == 1) goto L_Poison; // In case of poisoned food.
+    if (.@id == 2) goto L_NoMore; // In case of Piberries.
+    if (countitemcolor(.@id) == 0) goto L_Quit;
+//  if (.@id == item's ID) then food is correct.
 // Do not put any other number than -1, 0, 1, 2 or the item's ID, that'll avoid confusion.
 
     callfunc "InventoryPlace", 507, 3;
-    delitem @id, 1;
+    delitem .@id, 1;
 
     setcamnpc;
     mes "";

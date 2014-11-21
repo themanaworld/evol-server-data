@@ -7,18 +7,18 @@
 //      getarg(0)   item ID,
 //      getarg(1)   number of items,
 // Variables:
-//    @iteminfo = Item information type. (See doc for list of item's types)
-//    @countitem = Count item's number.
+//    .@iteminfo = Item information type. (See doc for list of item's types)
+//    .@countitem = Count item's number.
 
 function	script	InventoryPlace	{
     getinventorylist;
-    set @iteminfo, getiteminfo(getarg(0), 2);
-    set @countitem, countitemcolor(getarg(0));
+    set .@iteminfo, getiteminfo(getarg(0), 2);
+    set .@countitem, countitemcolor(getarg(0));
 
     if (checkweight(getarg(0), getarg(1)) == 0) goto L_Warn;
-    if ((@iteminfo < 4) && (@countitem == 0) && (@inventorylist_count < 100)) return;
-    if ((@iteminfo < 4) && (@countitem > 0)) return;
-    if (@inventorylist_count + getarg(1) <= 100) return;
+    if ((.@iteminfo < 4) && (.@countitem == 0) && (.@inventorylist_count < 100)) return;
+    if ((.@iteminfo < 4) && (.@countitem > 0)) return;
+    if (.@inventorylist_count + getarg(1) <= 100) return;
 
 L_Warn:
     mes "";

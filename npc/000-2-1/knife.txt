@@ -13,8 +13,8 @@
 // Size = 2
 // Gender = 2
 000-2-1,50,24,0	script	#knife	100,{
-    set @q, getq(ShipQuests_Knife);
-    if (@q) close;
+    set .@q, getq(ShipQuests_Knife);
+    if (.@q) close;
 
     mesn "Narrator";
     mes col(l("There are some knives on the table. Would you like to take one?"), 9);
@@ -29,8 +29,8 @@
 
 L_Give:
     mes "";
-    set @item, 3500;
-    set @count, 1;
+    set .@item, 3500;
+    set .@count, 1;
     callfunc "InventoryPlace", 3500, 1;
 
     setq ShipQuests_Knife, 1;

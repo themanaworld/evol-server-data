@@ -3,7 +3,7 @@
 //    Reid
 // Description:
 //    Doors NPCs.
-//    The third value of the @nard variable has been removed for the beta2, it'll then be re-added for the Aurora release.
+//    The third value of the .@nard variable has been removed for the beta2, it'll then be re-added for the Aurora release.
 // Variable:
 //    0 ShipQUests_Nard
 //    1 ShipQuests_Julia
@@ -20,10 +20,10 @@
 000-2-0,20,28,0	script	AreaNPC	32767,0,0,{
 
 OnTouch:
-    set @nard, getq(ShipQuests_Nard);
-    if (@nard > 0 && countitemcolor("JohanneKey") > 0) goto L_Key;
-//  if (@nard == 2) goto L_GotoNard;
-//  if (@nard == 3) goto L_End;
+    set .@nard, getq(ShipQuests_Nard);
+    if (.@nard > 0 && countitemcolor("JohanneKey") > 0) goto L_Key;
+//  if (.@nard == 2) goto L_GotoNard;
+//  if (.@nard == 3) goto L_End;
 
     setcamnpc "Julia";
     mesn "Julia";
@@ -59,8 +59,8 @@ L_End:
 000-2-0,33,28,0	script	AreaNPC	32767,0,0,{
 
 OnTouch:
-    set @julia, getq(ShipQuests_Julia);
-    if (@julia == 2) goto L_Warp;
+    set .@julia, getq(ShipQuests_Julia);
+    if (.@julia == 2) goto L_Warp;
     close;
 
 L_Warp:

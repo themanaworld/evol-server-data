@@ -14,7 +14,7 @@
 // Size = 2
 000-1,83,70,0	script	#chest	416,{
 
-    set @q, getq(ShipQuests_TreasureChest);
+    set .@q, getq(ShipQuests_TreasureChest);
     if (getnpcdir ("") == 4) goto L_Give;
 
     setnpcdir 2;
@@ -23,7 +23,7 @@
     close;
 
 L_Give:
-    if (@q > 0) goto L_Close;
+    if (.@q > 0) goto L_Close;
 
     callfunc "InventoryPlace", 514, 1;
 

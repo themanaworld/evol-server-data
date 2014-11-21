@@ -28,13 +28,13 @@
 
 OnTalk:
     mesn;
-    set @nard, getq(ShipQuests_Nard);
-    set @gugli, getq(ShipQuests_Gugli);
-    set @gado, getq(ShipQuests_ChefGado);
+    set .@nard, getq(ShipQuests_Nard);
+    set .@gugli, getq(ShipQuests_Gugli);
+    set .@gado, getq(ShipQuests_ChefGado);
 
-    if (@nard > 3) goto L_AllComplete;
-    if (@nard > 1 || @gugli == 2) goto L_TaskCompleted;
-    if (@gugli == 1) goto L_TaskGiven;
+    if (.@nard > 3) goto L_AllComplete;
+    if (.@nard > 1 || .@gugli == 2) goto L_TaskCompleted;
+    if (.@gugli == 1) goto L_TaskGiven;
 
     mesq lg("Hi @@, I heard the captain sent you down here, uh?", strcharinfo(0));
     next;
@@ -159,9 +159,9 @@ L_Location:
     mesq l("You can try talking with some other sailors to get some information about that.");
     next;
 
-    set @r, rand(3000)/1000;
-    if (@r == 1) goto L_Silvio;
-    if (@r == 2) goto L_Lean;
+    set .@r, rand(3000)/1000;
+    if (.@r == 1) goto L_Silvio;
+    if (.@r == 2) goto L_Lean;
 
     setcamnpc "Sapartan";
     mesq l("Max and Sapartan for example?");
@@ -233,8 +233,8 @@ L_Quit:
 
 // Gender = 1
 000-1,83,107,0	script	GugliBarrierCheck	32767,2,0,{
-    set @gugli, getq(ShipQuests_Gugli);
-    if (@gugli > 0) close;
+    set .@gugli, getq(ShipQuests_Gugli);
+    if (.@gugli > 0) close;
     doevent "Gugli::OnTalk";
     close;
 }

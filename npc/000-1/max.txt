@@ -9,8 +9,8 @@
 // Size = 2
 // Gender = 1
 000-1,72,110,0	script	Max	115,{
-    set @gugli, getq(ShipQuests_Gugli);
-    set @knife, getq(ShipQuests_Knife);
+    set .@gugli, getq(ShipQuests_Gugli);
+    set .@knife, getq(ShipQuests_Knife);
 
     mesn;
     mesq lg("We are glad captain Nard has let you join us down here!");
@@ -21,10 +21,10 @@
     next;
 
     menu
-        rif(@gugli == 0, l("Well, is there anything I can do here to help?")), L_Help,
-        rif(@gugli == 1, lg("Gugli asked me to help the sailors to gather food. Do you know where I can find them?")), L_Sailors,
-        rif(@gugli > 1, l("Seems I've helped everyone here. I don't know what to do now!")), L_Annoyed,
-        rif(@knife == 0, lg("It looks like you are an expert of the life inside 'La Johanne'. Do you know any hidden secrets nobody knows?")), L_Secrets,
+        rif(.@gugli == 0, l("Well, is there anything I can do here to help?")), L_Help,
+        rif(.@gugli == 1, lg("Gugli asked me to help the sailors to gather food. Do you know where I can find them?")), L_Sailors,
+        rif(.@gugli > 1, l("Seems I've helped everyone here. I don't know what to do now!")), L_Annoyed,
+        rif(.@knife == 0, lg("It looks like you are an expert of the life inside 'La Johanne'. Do you know any hidden secrets nobody knows?")), L_Secrets,
         l("No thanks, not at the moment."), L_Quit;
 
 L_Help:

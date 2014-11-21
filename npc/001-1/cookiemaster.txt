@@ -177,8 +177,8 @@ L_Reward:
     next;
     mesq l("Anyway, here, have a cookie!");
 
-    set @item, 517;
-    set @count, 1;
+    set .@item, 517;
+    set .@count, 1;
     callfunc "InventoryPlace", 517, 1;
 
     setq GeneraL_Cookies, 1;
@@ -242,8 +242,8 @@ L_LostCookie:
     mesq l("This is the last one. If you use it again out of clumsiness, I will take your flesh as the main ingredient for my cookie recipe.");
     next;
 
-    set @item, 517;
-    set @count, 1;
+    set .@item, 517;
+    set .@count, 1;
     callfunc "InventoryPlace", 517, 1;
 
     getitem "DeliciousCookie", 1;

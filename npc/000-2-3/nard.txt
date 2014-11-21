@@ -26,18 +26,18 @@
 // Size = 5
 // Gender = 1
 000-2-3,25,26,0	script	Nard	406,{
-    set @nard, getq(ShipQuests_Nard);
-    set @gugli, getq(ShipQuests_Gugli);
-    set @gado, getq(ShipQuests_ChefGado);
+    set .@nard, getq(ShipQuests_Nard);
+    set .@gugli, getq(ShipQuests_Gugli);
+    set .@gado, getq(ShipQuests_ChefGado);
 
 L_Checker:
-    if (@gado > 3 && @nard == 3) goto L_ChefQuestComplete;
-    if (@nard == 2) goto L_ChefQuestStart;
-    if (@nard == 3) goto L_ChefQuestGiven;
-    if (@nard == 4) goto L_Reward;
-    if (@nard > 4) goto L_Already;
-    if (@gugli == 2) goto L_Done;
-    if (@nard == 1) goto L_NotYet;
+    if (.@gado > 3 && .@nard == 3) goto L_ChefQuestComplete;
+    if (.@nard == 2) goto L_ChefQuestStart;
+    if (.@nard == 3) goto L_ChefQuestGiven;
+    if (.@nard == 4) goto L_Reward;
+    if (.@nard > 4) goto L_Already;
+    if (.@gugli == 2) goto L_Done;
+    if (.@nard == 1) goto L_NotYet;
 
     mesn;
     mesq l("Hello.");

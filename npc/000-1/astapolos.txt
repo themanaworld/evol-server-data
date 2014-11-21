@@ -10,11 +10,11 @@
 // Size = 2
 // Gender = 1
 000-1,22,50,0	script	Astapolos	107,{
-    set @g, getq(ShipQuests_Gugli);
-    if (@g == 0) goto L_NoTask;
+    set .@g, getq(ShipQuests_Gugli);
+    if (.@g == 0) goto L_NoTask;
 
-    set @q, getq(ShipQuests_Astapolos);
-    if (@q == 1) goto L_CallFunc;
+    set .@q, getq(ShipQuests_Astapolos);
+    if (.@q == 1) goto L_CallFunc;
 
     mesn;
     mesq l("So finally someone has came to visit me?");

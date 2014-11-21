@@ -39,10 +39,10 @@ L_TooWeak:
     mes "";
     mesn "Narrator";
 
-    set @q, rand(5);
-    if (@q == 0) goto L_TooWeakLost;
-    if ( (@q == 1) || (@q == 2) ) goto L_TooWeakFail;
-    if ( (@q == 3) || (@q == 4) || (@q == 5) ) goto L_Weak;
+    set .@q, rand(5);
+    if (.@q == 0) goto L_TooWeakLost;
+    if ( (.@q == 1) || (.@q == 2) ) goto L_TooWeakFail;
+    if ( (.@q == 3) || (.@q == 4) || (.@q == 5) ) goto L_Weak;
 
 L_TooWeakLost:
     mes col(l("You hit too hard with your fist, you destroyed your @@.", getitemlink("Croconut")), 9);

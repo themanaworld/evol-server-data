@@ -12,9 +12,9 @@
 
 // Size = 2
 000-2-1,51,37,0	script	Chest	417,{
-    set @q, getq(ShipQuests_Arpan);
+    set .@q, getq(ShipQuests_Arpan);
 
-    if (@q == 0) goto L_Talk;
+    if (.@q == 0) goto L_Talk;
     if (getnpcdir ("") == 4) goto L_Give;
 
     setnpcdir 2;
@@ -23,9 +23,9 @@
     close;
 
 L_Give:
-    if (@q > 1) goto L_Quit;
-    set @item, 1300;
-    set @count, 2;
+    if (.@q > 1) goto L_Quit;
+    set .@item, 1300;
+    set .@count, 2;
     callfunc "InventoryPlace", 1300, 2;
 
     setq ShipQuests_Arpan, 2;

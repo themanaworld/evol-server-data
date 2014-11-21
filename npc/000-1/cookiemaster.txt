@@ -179,8 +179,8 @@ L_Reward:
     next;
     mesq l("Anyway, here, have a cookie!");
 
-    set @item, 517;
-    set @count, 1;
+    set .@item, 517;
+    set .@count, 1;
     callfunc "InventoryPlace", 517, 1;
 
     setq GeneraL_Cookies, 1;

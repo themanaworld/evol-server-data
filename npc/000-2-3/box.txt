@@ -20,7 +20,7 @@
 
 // Size = 1
 000-2-3,25,24,0	script	Box	102,{
-    set @q, getq(ShipQuests_Nard);
+    set .@q, getq(ShipQuests_Nard);
 
     mesn "Narrator";
     mes col(l("Some Bandanas and Sailor Hats are inside this box."), 9);
@@ -32,9 +32,9 @@
         l("Take a Bandana."), -,
         l("Nothing."), L_Quit;
 
-    if (@q == 0) goto L_NoQuest;
-    if (@q == 4) goto L_Give;
-    if (@q > 4) goto L_Already;
+    if (.@q == 0) goto L_NoQuest;
+    if (.@q == 4) goto L_Give;
+    if (.@q > 4) goto L_Already;
 
     setcamnpc "Nard";
     mes "";

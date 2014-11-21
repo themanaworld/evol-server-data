@@ -9,7 +9,7 @@
 // Size = 2
 // Gender = 1
 000-1,79,108,0	script	Lean	106,{
-    set @gugli, getq(ShipQuests_Gugli);
+    set .@gugli, getq(ShipQuests_Gugli);
 
     mesn;
     mesq l("Hi! I can finally see you under the sunlight!");
@@ -22,7 +22,7 @@
     next;
 
     menu
-        rif(@gugli == 1, l("Well, I was in fact looking for them. Where are they now?")), L_Sailors,
+        rif(.@gugli == 1, l("Well, I was in fact looking for them. Where are they now?")), L_Sailors,
         l("Wait... Where are we going?"), L_Artis;
 
 L_Artis:
