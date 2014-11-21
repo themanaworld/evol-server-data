@@ -30,14 +30,6 @@ function	script	g	{
     return Sex == 0 ? getarg(0) : getarg(1);
 }
 
-function	script	lg	{
-    if (getargcount() > 1)
-        .@s$ = Sex == 0 ? l(getarg(0)) : l(getarg(1));
-    else
-        .@s$ = l(getarg(0));
-    return .@s$;
-}
-
 function	script	col	{
     .@color = getarg(1);
     if (.@color < 0) .@color = 0;
