@@ -78,7 +78,7 @@ OnTalk:
 }
 
 // Gender = 1
-000-0-0,25,23,0	script	Magic Arpan	407,{
+000-0-0,25,23,0	script	Magic Arpan#sailors	407,{
     doevent "Elmo::OnTalk";
     close;
 }
