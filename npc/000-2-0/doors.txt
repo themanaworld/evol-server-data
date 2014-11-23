@@ -17,7 +17,7 @@
 //    12   Has been registered by Julia
 
 // Gender = 1
-000-2-0,20,28,0	script	AreaNPC	32767,0,0,{
+000-2-0,20,28,0	script	AreaNPC#doors1	32767,0,0,{
 
 OnTouch:
     set .@nard, getq(ShipQuests_Nard);
@@ -56,7 +56,7 @@ L_End:
 }
 
 // Gender = 1
-000-2-0,33,28,0	script	AreaNPC	32767,0,0,{
+000-2-0,33,28,0	script	AreaNPC#doors2	32767,0,0,{
 
 OnTouch:
     set .@julia, getq(ShipQuests_Julia);
