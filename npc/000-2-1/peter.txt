@@ -23,11 +23,11 @@
 // Others:
 // .@peter = Peter variable.
 // "000-2-2.gat" - map with mobs.
-// "$.@RAT_SAILOR_HELPER$" - Name of the participant.
-// "$.@RAT_SAILOR_DEATHS - Number of deaths when the participant starts the fight.
-// "$.@RAT_SAILOR_CONTROL" - Explanation of each index of the array.
-// "$.@RAT_SAILOR_OLD_HELPER$" - Name of the participant.
-// "$.@RAT_SAILOR_COUNTDOWN" - Seconds since the epoch of when the player done the quest.
+// "$@RAT_SAILOR_HELPER$" - Name of the participant.
+// "$@RAT_SAILOR_DEATHS - Number of deaths when the participant starts the fight.
+// "$@RAT_SAILOR_CONTROL" - Explanation of each index of the array.
+// "$@RAT_SAILOR_OLD_HELPER$" - Name of the participant.
+// "$@RAT_SAILOR_COUNTDOWN" - Seconds since the epoch of when the player done the quest.
 // [1] = Shows status of ratto number 1 (1 is dead and 0 is alive).
 // [2] = Shows status of ratto number 2 (1 is dead and 0 is alive).
 // [3] = Shows status of ratto number 3 (1 is dead and 0 is alive).
@@ -44,13 +44,13 @@
 
 OnTouch:
     if (BaseLevel < 5) goto L_Stop;
-    if ($.@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
-    if ((gettimetick(2) - $.@RAT_SAILOR_COUNTDOWN) < 10) goto L_NoGoodTick;
-    if (($.@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $.@RAT_SAILOR_COUNTDOWN) < 60)) goto L_NoGoodTick;
-    set $.@RAT_SAILOR_COUNTDOWN, "";
+    if ($@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
+    if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto L_NoGoodTick;
+    if (($@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 60)) goto L_NoGoodTick;
+    set $@RAT_SAILOR_COUNTDOWN, "";
 
 L_NoCountDown:
-    if ($.@RAT_SAILOR_HELPER$ != "") goto L_Occupied;
+    if ($@RAT_SAILOR_HELPER$ != "") goto L_Occupied;
     set .@peter, getq(ShipQuests_Peter);
     if (.@peter < 1 || .@peter > 5) goto L_Task;
     if (.@peter == 1 || .@peter == 2) goto L_Rfail;
@@ -92,10 +92,10 @@ L_NoGoodTick:
 // Gender = 1
 000-2-1,70,35,0	script	Peter	403,{
     if (BaseLevel < 5) goto OnTooWeak;
-    if ($.@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
-    if ((gettimetick(2) - $.@RAT_SAILOR_COUNTDOWN) < 10) goto OnNoGoodTick;
-    if (($.@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $.@RAT_SAILOR_COUNTDOWN) < 60)) goto OnNoGoodTick;
-    set $.@RAT_SAILOR_COUNTDOWN, "";
+    if ($@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
+    if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto OnNoGoodTick;
+    if (($@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 60)) goto OnNoGoodTick;
+    set $@RAT_SAILOR_COUNTDOWN, "";
 
 L_NoCountDown:
     set .@peter, getq(ShipQuests_Peter);
@@ -185,14 +185,14 @@ L_BonusTask:
         lg("Okay, I'm ready to work!"), -,
         l("What? This reward is too small!"), L_Quit;
 
-    if ($.@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
+    if ($@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
     if (.@peter == 6) setq ShipQuests_Peter, 2;
     if (.@peter == 3) setq ShipQuests_Peter, 4;
     set .@peter, getq(ShipQuests_Peter);
     goto L_Start;
 
 L_Task:
-    if ($.@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
+    if ($@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
     if (.@peter == 6) setq ShipQuests_Peter, 1;
     set .@peter, getq(ShipQuests_Peter);
 
@@ -202,9 +202,9 @@ L_Start:
     mesq l("Okay, you can start!");
 
 OnStartOutside:
-    if ($.@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
-    set $.@RAT_SAILOR_HELPER$, strcharinfo(0);
-    set $.@RAT_SAILOR_DEATHS, PC_DIE_COUNTER;
+    if ($@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
+    set $@RAT_SAILOR_HELPER$, strcharinfo(0);
+    set $@RAT_SAILOR_DEATHS, PC_DIE_COUNTER;
     initnpctimer;
     warp "000-2-2.gat", 48, 28;
     doevent "RattosControl::OnSpawn";
@@ -212,25 +212,25 @@ OnStartOutside:
     goto L_Quit;
 
 OnTimer2000:
-    if (attachrid(getcharid(3, $.@RAT_SAILOR_HELPER$)) == 0) goto L_Logoff;
-    set $.@RAT_SAILOR_CONTROL[9], $.@RAT_SAILOR_CONTROL[9] + 2;
-    if ($.@RAT_SAILOR_CONTROL[9] > 100) goto L_Timeout;
-    if (PC_DIE_COUNTER > $.@RAT_SAILOR_DEATHS) goto L_Dead;
-    if ($.@RAT_SAILOR_CONTROL[1] && $.@RAT_SAILOR_CONTROL[2] && $.@RAT_SAILOR_CONTROL[3] && $.@RAT_SAILOR_CONTROL[4]) goto L_Done;
+    if (attachrid(getcharid(3, $@RAT_SAILOR_HELPER$)) == 0) goto L_Logoff;
+    set $@RAT_SAILOR_CONTROL[9], $@RAT_SAILOR_CONTROL[9] + 2;
+    if ($@RAT_SAILOR_CONTROL[9] > 100) goto L_Timeout;
+    if (PC_DIE_COUNTER > $@RAT_SAILOR_DEATHS) goto L_Dead;
+    if ($@RAT_SAILOR_CONTROL[1] && $@RAT_SAILOR_CONTROL[2] && $@RAT_SAILOR_CONTROL[3] && $@RAT_SAILOR_CONTROL[4]) goto L_Done;
     if (getmapusers("000-2-2.gat") == 0) goto L_CleaningEnd;
     goto L_CheckRattos;
 
     end;
 
 L_CheckRattos:
-    if ($.@RAT_SAILOR_CONTROL[1]) set $.@RAT_SAILOR_CONTROL[5], $.@RAT_SAILOR_CONTROL[5] + 2;
-    if ($.@RAT_SAILOR_CONTROL[2]) set $.@RAT_SAILOR_CONTROL[6], $.@RAT_SAILOR_CONTROL[6] + 2;
-    if ($.@RAT_SAILOR_CONTROL[3]) set $.@RAT_SAILOR_CONTROL[7], $.@RAT_SAILOR_CONTROL[7] + 2;
-    if ($.@RAT_SAILOR_CONTROL[4]) set $.@RAT_SAILOR_CONTROL[8], $.@RAT_SAILOR_CONTROL[8] + 2;
-    if ($.@RAT_SAILOR_CONTROL[5] > 40) doevent "RattosControl::OnRatto1Respawn";
-    if ($.@RAT_SAILOR_CONTROL[6] > 40) doevent "RattosControl::OnRatto2Respawn";
-    if ($.@RAT_SAILOR_CONTROL[7] > 40) doevent "RattosControl::OnRatto3Respawn";
-    if ($.@RAT_SAILOR_CONTROL[8] > 40) doevent "RattosControl::OnRatto4Respawn";
+    if ($@RAT_SAILOR_CONTROL[1]) set $@RAT_SAILOR_CONTROL[5], $@RAT_SAILOR_CONTROL[5] + 2;
+    if ($@RAT_SAILOR_CONTROL[2]) set $@RAT_SAILOR_CONTROL[6], $@RAT_SAILOR_CONTROL[6] + 2;
+    if ($@RAT_SAILOR_CONTROL[3]) set $@RAT_SAILOR_CONTROL[7], $@RAT_SAILOR_CONTROL[7] + 2;
+    if ($@RAT_SAILOR_CONTROL[4]) set $@RAT_SAILOR_CONTROL[8], $@RAT_SAILOR_CONTROL[8] + 2;
+    if ($@RAT_SAILOR_CONTROL[5] > 40) doevent "RattosControl::OnRatto1Respawn";
+    if ($@RAT_SAILOR_CONTROL[6] > 40) doevent "RattosControl::OnRatto2Respawn";
+    if ($@RAT_SAILOR_CONTROL[7] > 40) doevent "RattosControl::OnRatto3Respawn";
+    if ($@RAT_SAILOR_CONTROL[8] > 40) doevent "RattosControl::OnRatto4Respawn";
 
 L_NotYet:
     setnpctimer 0;
@@ -241,7 +241,7 @@ OnDontneedHelp:
     mesn;
     mesq l("I don't need your help right now, come back later.");
     next;
-    mesq l("@@ is helping me.", $.@RAT_SAILOR_HELPER$);
+    mesq l("@@ is helping me.", $@RAT_SAILOR_HELPER$);
 
     goto L_Quit;
 
@@ -262,8 +262,8 @@ L_Dead:
     goto L_CleaningEnd;
 
 L_Done:
-    set $.@RAT_SAILOR_CONTROL[10], $.@RAT_SAILOR_CONTROL[10] + 2;
-    if($.@RAT_SAILOR_CONTROL[10] < 5) goto L_NotYet;
+    set $@RAT_SAILOR_CONTROL[10], $@RAT_SAILOR_CONTROL[10] + 2;
+    if($@RAT_SAILOR_CONTROL[10] < 5) goto L_NotYet;
     set .@peter, getq(ShipQuests_Peter);
     if (.@peter == 2 || .@peter == 4) goto L_Reward;
     warp "000-2-1.gat", 72, 36;
@@ -272,9 +272,9 @@ L_Done:
 
 L_CleaningEnd:
     stopnpctimer;
-    set $.@RAT_SAILOR_HELPER$, "";
-    set $.@RAT_SAILOR_DEATHS, 0;
-    cleararray $.@RAT_SAILOR_CONTROL, 0, 11;
+    set $@RAT_SAILOR_HELPER$, "";
+    set $@RAT_SAILOR_DEATHS, 0;
+    cleararray $@RAT_SAILOR_CONTROL, 0, 11;
     killmonster "000-2-2.gat", "RattosControl::OnRatto1Death";
     killmonster "000-2-2.gat", "RattosControl::OnRatto2Death";
     killmonster "000-2-2.gat", "RattosControl::OnRatto3Death";
@@ -284,15 +284,15 @@ L_CleaningEnd:
 
 L_CleaningClose:
     stopnpctimer;
-    set $.@RAT_SAILOR_OLD_HELPER$, $.@RAT_SAILOR_HELPER$;
-    set $.@RAT_SAILOR_HELPER$, "";
-    set $.@RAT_SAILOR_DEATHS, 0;
-    cleararray $.@RAT_SAILOR_CONTROL, 0, 11;
+    set $@RAT_SAILOR_OLD_HELPER$, $@RAT_SAILOR_HELPER$;
+    set $@RAT_SAILOR_HELPER$, "";
+    set $@RAT_SAILOR_DEATHS, 0;
+    cleararray $@RAT_SAILOR_CONTROL, 0, 11;
     killmonster "000-2-2.gat", "RattosControl::OnRatto1Death";
     killmonster "000-2-2.gat", "RattosControl::OnRatto2Death";
     killmonster "000-2-2.gat", "RattosControl::OnRatto3Death";
     killmonster "000-2-2.gat", "RattosControl::OnRatto4Death";
-    set $.@RAT_SAILOR_COUNTDOWN, gettimetick(2);
+    set $@RAT_SAILOR_COUNTDOWN, gettimetick(2);
 
     close;
 
