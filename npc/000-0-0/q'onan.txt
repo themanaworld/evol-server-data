@@ -6,7 +6,7 @@
 //    Sleeping and snoring NPC.
 
 // Gender = 1
-000-0-0,29,28,0	script	Q'Onan	402,{
+000-0-0,29,28,0	script	Q'Onan#000-0-0	402,{
 
     callfunc "Asleep";
 }

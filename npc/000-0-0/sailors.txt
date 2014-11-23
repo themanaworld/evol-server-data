@@ -7,7 +7,7 @@
 //    Elmo will handle dialogs between both NPCs.
 
 // Gender = 1
-000-0-0,26,23,0	script	Elmo	409,{
+000-0-0,26,23,0	script	Elmo#sailors	409,{
 
 OnTalk:
     setcamnpc;
@@ -79,6 +79,6 @@ OnTalk:
 
 // Gender = 1
 000-0-0,25,23,0	script	Magic Arpan#sailors	407,{
-    doevent "Elmo::OnTalk";
+    doevent "Elmo#sailors::OnTalk";
     close;
 }
