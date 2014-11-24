@@ -9,7 +9,7 @@
 // Size = 2
 // Gender = 0
 000-1,97,50,0	script	Cookie Master	419,{
-    if (getq(GeneraL_Cookies) == 1)
+    if (getq(General_Cookies) == 1)
         goto L_GetCookie;
 
     mesn;
@@ -183,7 +183,7 @@ L_Reward:
     set .@count, 1;
     callfunc "InventoryPlace", 517, 1;
 
-    setq GeneraL_Cookies, 1;
+    setq General_Cookies, 1;
     getitem "DeliciousCookie", 1;
     npctalk3 l("You receive a @@!", getitemlink("DeliciousCookie"));
 

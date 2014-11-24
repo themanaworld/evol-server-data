@@ -13,9 +13,9 @@
 // Size = 2
 // Gender = 0
 001-1,39,38,0	script	Cookie Master	419,{
-    if ((countitemcolor("DeliciousCookie") == 0) && (getq(GeneraL_Cookies) == 1))
+    if ((countitemcolor("DeliciousCookie") == 0) && (getq(General_Cookies) == 1))
 		goto L_LostCookie;
-    if (getq(GeneraL_Cookies) == 1)
+    if (getq(General_Cookies) == 1)
         goto L_GetCookie;
 
     mesn;
@@ -181,7 +181,7 @@ L_Reward:
     set .@count, 1;
     callfunc "InventoryPlace", 517, 1;
 
-    setq GeneraL_Cookies, 1;
+    setq General_Cookies, 1;
     getitem "DeliciousCookie", 1;
     npctalk3 l("You receive a @@!", getitemlink("DeliciousCookie"));
 
