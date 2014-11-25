@@ -5,7 +5,7 @@
 //    Function checking the client version and reports if it is too old.
 
 function	script	CheckClientVersion	{
-    if (ClientVersion > 4) return;
+    if (ClientVersion > 1) return;
 
     mesn "Narrator";
     mes col("Warning.", 9);
