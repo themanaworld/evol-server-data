@@ -6,7 +6,6 @@
 //    Elmo's second dialog.
 
 // Size = 5
-// Gender = 1
 000-2-3,27,27,0	script	Elmo	409,{
     set .@q, getq(ShipQuests_ArpanMoney);
     if (.@q == 1) goto L_GotMoney;
@@ -63,4 +62,8 @@ L_GotMoney:
     mesq l("Other than that, I don't know much about what else is going on, so directly asking the Cap'tain about it could be a good idea.");
 
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

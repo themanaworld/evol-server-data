@@ -11,10 +11,9 @@
 //    1   Get a cookie.
 
 // Size = 2
-// Gender = 0
 001-1,39,38,0	script	Cookie Master	419,{
     if ((countitemcolor("DeliciousCookie") == 0) && (getq(General_Cookies) == 1))
-		goto L_LostCookie;
+        goto L_LostCookie;
     if (getq(General_Cookies) == 1)
         goto L_GetCookie;
 
@@ -255,4 +254,8 @@ L_Bye:
     npctalk3 l("See you later!");
 
     close;
+
+OnInit:
+    setnpcsex 0;
+    end;
 }

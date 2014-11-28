@@ -6,7 +6,6 @@
 // Description:
 //    Doors NPCs.
 
-// Gender = 1
 000-2-2,48,29,0	script	DoorUpwards	32767,0,0,{
 
 OnTouch:
@@ -36,7 +35,6 @@ L_Warp:
     close;
 }
 
-// Gender = 1
 000-2-2,24,31,0	script	LeftDoor	32767,0,0,{
 
 OnTouch:

@@ -13,7 +13,6 @@
 //    2   Done quest scam.
 
 // Size = 2
-// Gender = 1
 000-1,89,36,0	script	Couwan	111,{
     set .@q, getq(ShipQuests_Couwan);
     if (.@q == 1) goto L_QuestGiven;
@@ -87,4 +86,8 @@ L_QuestDone:
     mesq l("Yeye gave my box to Gugli? Nice, nice yeye!");
 
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

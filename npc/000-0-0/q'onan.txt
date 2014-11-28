@@ -5,8 +5,11 @@
 // Description:
 //    Sleeping and snoring NPC.
 
-// Gender = 1
 000-0-0,29,28,0	script	Q'Onan#000-0-0	402,{
-
     callfunc "Asleep";
+    close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

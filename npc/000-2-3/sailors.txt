@@ -6,7 +6,6 @@
 // Description:
 //    End of introduction with Nard and Elmo talking about the player.
 
-// Gender = 0
 000-2-3,21,28,0	script	AreaTop	32767,0,5,{
 
 OnTouch:
@@ -49,5 +48,4 @@ OnTouch:
     mesq l("Sure, cap'tain.");
 
     close;
-
 }

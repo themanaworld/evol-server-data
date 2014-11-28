@@ -23,7 +23,6 @@
 //    22   Gave all of the box to Gugli.
 
 // Size = 2
-// Gender = 1
 000-1,85,108,0	script	Gugli	413,{
 
 OnTalk:
@@ -229,9 +228,11 @@ L_Quit:
     closedialog;
     close;
 
+OnInit:
+    setnpcsex 1;
+    end;
 }
 
-// Gender = 1
 000-1,83,107,0	script	GugliBarrierCheck	32767,2,0,{
     set .@gugli, getq(ShipQuests_Gugli);
     if (.@gugli > 0) close;

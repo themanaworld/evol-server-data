@@ -8,7 +8,6 @@
 //    Aquada box.
 
 // Size = 2
-// Gender = 1
 000-1,34,111,0	script	Tibbo	110,{
     set .@g, getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
@@ -112,4 +111,9 @@ L_TaskDone:
 
 L_Close:
     callfunc "GoodBye";
+    close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

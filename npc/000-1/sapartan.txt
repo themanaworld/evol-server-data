@@ -6,7 +6,6 @@
 //    Friend of Max, he gives some information on combat system.
 
 // Size = 2
-// Gender = 1
 000-1,74,111,0	script	Sapartan	414,{
     mesn;
     mesq l("Hey Max, it's @@!", strcharinfo(0));
@@ -93,6 +92,10 @@
     mesn;
     mesq l("You're welcome. If you can't remember something, just come back here!");
     next;
+
+OnInit:
+    setnpcsex 1;
+    end;
 
 L_Quit:
     callfunc "GoodBye";

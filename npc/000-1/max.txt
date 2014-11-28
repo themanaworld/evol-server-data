@@ -7,7 +7,6 @@
 //    Friend of Sapartan, he gives some information on how to find Gulukan, Astapolos and Q-Muller.
 
 // Size = 2
-// Gender = 1
 000-1,72,110,0	script	Max	115,{
     set .@gugli, getq(ShipQuests_Gugli);
     set .@knife, getq(ShipQuests_Knife);
@@ -98,6 +97,10 @@ L_Secrets:
     mesq l("Go and grab one of them. A good knife will help with your hunting the creatures of this island.");
 
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 
 L_Quit:
     callfunc "GoodBye";

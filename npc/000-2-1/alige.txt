@@ -17,7 +17,6 @@
 //    2   Accept the task.
 //    3   Bring first food.
 
-// Gender = 1
 000-2-1,43,32,0	script	AligeTrigger	32767,1,1,{
 
 OnTouch:
@@ -49,7 +48,6 @@ OnTimer190:
 }
 
 // Size = 2
-// Gender = 1
 000-2-1,43,31,0	script	Alige	401,{
     set .@q, getq(ShipQuests_Alige);
     if (.@q > 1) goto L_AskForFood;
@@ -295,4 +293,8 @@ L_Quit:
     mesq l("Too bad... Come back when you have some choice food for me. Growl... grumble... grumble.");
 
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

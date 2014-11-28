@@ -7,7 +7,6 @@
 // Description:
 //    Starting script of Evol Online.
 
-// Gender = 1
 000-0,23,20,0	script	Sailors	405,6,6,{
 
 OnTouch:
@@ -89,4 +88,8 @@ OnTouch:
 
     closedialog;
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

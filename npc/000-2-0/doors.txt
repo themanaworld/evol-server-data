@@ -16,7 +16,6 @@
 //    11   Need to see Julia
 //    12   Has been registered by Julia
 
-// Gender = 1
 000-2-0,20,28,0	script	AreaNPC#doors1	32767,0,0,{
 
 OnTouch:
@@ -55,7 +54,6 @@ L_End:
     close;
 }
 
-// Gender = 1
 000-2-0,33,28,0	script	AreaNPC#doors2	32767,0,0,{
 
 OnTouch:

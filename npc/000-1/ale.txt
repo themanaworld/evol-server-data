@@ -7,7 +7,6 @@
 //    Aquada box.
 
 // Size = 2
-// Gender = 1
 000-1,55,23,0	script	Ale	105,{
     set .@g, getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
@@ -112,4 +111,8 @@ L_TaskDone:
 L_Quit:
     closedialog;
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

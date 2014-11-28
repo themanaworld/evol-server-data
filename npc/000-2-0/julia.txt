@@ -33,7 +33,6 @@
 //    25   Reward taken from the box.
 
 // Size = 10
-// Gender = 0
 000-2-0,27,24,0	script	Julia	404,2,10,{
     addtoskill 1, 1; // Add Emote skill.
 
@@ -271,6 +270,10 @@ L_Rumors:
     getexp 8, 0;
 
     close;
+
+OnInit:
+    setnpcsex 0;
+    end;
 
 L_Quit:
     callfunc "GoodBye";

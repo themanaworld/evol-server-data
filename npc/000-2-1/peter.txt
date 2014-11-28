@@ -39,7 +39,6 @@
 // [9] = Shows how many seconds passed since the player started the quest.
 // [10] = Shows how many seconds passed since the player done the quest.
 
-// Gender = 1
 000-2-1,72,34,0	script	AreaNPC	32767,0,1,{
 
 OnTouch:
@@ -89,7 +88,6 @@ L_NoGoodTick:
 }
 
 // Size = 3
-// Gender = 1
 000-2-1,70,35,0	script	Peter	403,{
     if (BaseLevel < 5) goto OnTooWeak;
     if ($@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
@@ -326,4 +324,8 @@ OnNoGoodTick:
     mesn;
     mesq l("I don't need your help right now, come back later.");
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

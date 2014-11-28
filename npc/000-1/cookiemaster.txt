@@ -7,7 +7,6 @@
 //    Cookie NPC, beware, if you don't take your cookie, she'll keep it!
 
 // Size = 2
-// Gender = 0
 000-1,97,50,0	script	Cookie Master	419,{
     if (getq(General_Cookies) == 1)
         goto L_GetCookie;
@@ -229,4 +228,8 @@ L_Bye:
     npctalk3 l("See you later!");
 
     close;
+
+OnInit:
+    setnpcsex 0;
+    end;
 }

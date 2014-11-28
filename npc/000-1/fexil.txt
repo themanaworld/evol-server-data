@@ -5,7 +5,6 @@
 //    Newbie merchant.
 
 // Size = 2
-// Gender = 1
 000-1,83,98,0	script	Fexil	108,{
     mesn;
     mesq lg("Greetings traveler.");
@@ -34,4 +33,8 @@ L_Accepted:
 
     closedialog;
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

@@ -5,9 +5,7 @@
 //    Drunk easteregg telling about the player's past.
 
 // Size = 3
-// Gender = 1
 000-2-0,20,23,0	script	Billy Bons	411,{
-
     if (rand(5) == 2) goto L_Hic;
 
     mesn;
@@ -90,4 +88,8 @@ L_Quit:
     mes col(l("The sailor turns his back to you."), 9);
 
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

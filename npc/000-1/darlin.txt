@@ -12,7 +12,6 @@
 
 
 // Size = 14
-// Gender = 1
 000-1,89,95,0	script	Darlin	103,{
     set .@q, getq(ShipQuests_TreasureChest);
 
@@ -141,4 +140,8 @@ L_DangerAround:
 L_Quit:
     closedialog;
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

@@ -8,7 +8,6 @@
 //    Plushroom box.
 
 // Size = 2
-// Gender = 1
 000-1,46,35,0	script	Jalad	112,{
     set .@g, getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
@@ -120,4 +119,9 @@ L_TaskDone:
 
 L_Close:
     callfunc "GoodBye";
+    close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

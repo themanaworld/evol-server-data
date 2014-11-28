@@ -6,7 +6,6 @@
 //    Pervert and arrogant sailor.
 
 // Size = 2
-// Gender = 1
 000-1,86,99,0	script	Silvio	412,{
     mesn;
     mesq l("Hey!");
@@ -188,4 +187,8 @@ L_Quit:
     npctalk3 l("Give me a kiss before you say goodbye!");
 
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }

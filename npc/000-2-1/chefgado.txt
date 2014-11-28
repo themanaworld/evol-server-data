@@ -17,7 +17,6 @@
 //    6   Quest complete. Julia wins.
 
 // Size = 2
-// Gender = 1
 000-2-1,27,28,0	script	Chef Gado	418,{
     set .@q, getq(ShipQuests_ChefGado);
     set .@n, getq(ShipQuests_Nard);
@@ -208,4 +207,8 @@ L_QuestAborted:
 L_Quit:
     closedialog;
     close;
+
+OnInit:
+    setnpcsex 1;
+    end;
 }
