@@ -5,7 +5,6 @@
 // Description:
 //    Helping NPC.
 
-// Size = 2
 000-1,27,55,0	script	Artaxe	109,{
     mesn;
     mesq l("Do you feel too weak even if trying to hit the surrounding wildlife?");
@@ -18,5 +17,6 @@
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 2;
     end;
 }

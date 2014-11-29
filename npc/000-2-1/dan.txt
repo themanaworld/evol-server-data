@@ -6,7 +6,6 @@
 //    There are two kinds of dialogues in this script.
 //    Dan will randomly choose between a useless sentence, and a quest in Artis.
 
-// Size = 2
 000-2-1,32,31,0	script	Dan	101,{
     mesn;
     set .@q, rand(3);
@@ -85,5 +84,6 @@ L_Quit2:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 2;
     end;
 }

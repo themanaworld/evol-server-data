@@ -12,7 +12,6 @@
 //    1   Spoke, and received the quest scam.
 //    2   Done quest scam.
 
-// Size = 2
 000-1,89,36,0	script	Couwan	111,{
     set .@q, getq(ShipQuests_Couwan);
     if (.@q == 1) goto L_QuestGiven;
@@ -89,5 +88,6 @@ L_QuestDone:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 2;
     end;
 }

@@ -4,7 +4,6 @@
 // Description:
 //    Newbie merchant.
 
-// Size = 2
 000-1,83,98,0	script	Fexil	108,{
     mesn;
     mesq lg("Greetings traveler.");
@@ -36,5 +35,6 @@ L_Accepted:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 2;
     end;
 }

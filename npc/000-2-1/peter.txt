@@ -87,7 +87,6 @@ L_NoGoodTick:
     close;
 }
 
-// Size = 3
 000-2-1,70,35,0	script	Peter	403,{
     if (BaseLevel < 5) goto OnTooWeak;
     if ($@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
@@ -327,5 +326,6 @@ OnNoGoodTick:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 3;
     end;
 }

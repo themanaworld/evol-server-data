@@ -10,7 +10,6 @@
 //    0   Default, didn't get a cookie.
 //    1   Get a cookie.
 
-// Size = 2
 001-1,39,38,0	script	Cookie Master	419,{
     if ((countitemcolor("DeliciousCookie") == 0) && (getq(General_Cookies) == 1))
         goto L_LostCookie;
@@ -257,5 +256,6 @@ L_Bye:
 
 OnInit:
     setnpcsex 0;
+    setnpcdistance 2;
     end;
 }

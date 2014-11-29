@@ -5,7 +5,6 @@
 // Description:
 //    Friend of Max, he gives some information on combat system.
 
-// Size = 2
 000-1,74,111,0	script	Sapartan	414,{
     mesn;
     mesq l("Hey Max, it's @@!", strcharinfo(0));
@@ -95,6 +94,7 @@
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 2;
     end;
 
 L_Quit:

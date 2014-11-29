@@ -6,7 +6,6 @@
 //    Sailor part of the Gugli's quest.
 //    Aquada box.
 
-// Size = 2
 000-1,55,23,0	script	Ale	105,{
     set .@g, getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
@@ -114,5 +113,6 @@ L_Quit:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 2;
     end;
 }

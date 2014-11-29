@@ -6,12 +6,12 @@
 // Description:
 //    Sleeping and grumbling NPC.
 
-// Size = 2
 000-2-1,32,38,0	script	Devis	410,{
     callfunc "Asleep";
     close;
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 2;
     end;
 }

@@ -84,7 +84,6 @@ L_EquipDone:
     close;
 }
 
-// Size = 5
 000-2-1,49,33,0	script	Magic Arpan	407,{
     set .@q, getq(ShipQuests_Arpan);
     set .@q_julia, getq(ShipQuests_Julia);
@@ -228,5 +227,6 @@ L_EquipDone:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 5;
     end;
 }

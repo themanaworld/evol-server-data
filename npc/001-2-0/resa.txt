@@ -4,13 +4,13 @@
 // Description:
 //    Light Armor shop keeper.
 
-// Size = 2
 001-2-0,37,28,0	script	Resa	117,{
     mesn;
     mesq l("Hi.");
-
     close;
+
 OnInit:
     setnpcsex 0;
+    setnpcdistance 2;
     end;
 }

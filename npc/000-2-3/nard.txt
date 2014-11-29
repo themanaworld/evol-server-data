@@ -23,7 +23,6 @@
 //    11   Gugli gives you the task.
 //    12   Gave all of the boxes to Gugli.
 
-// Size = 5
 000-2-3,25,26,0	script	Nard	406,{
     set .@nard, getq(ShipQuests_Nard);
     set .@gugli, getq(ShipQuests_Gugli);
@@ -222,5 +221,6 @@ L_Already:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 5;
     end;
 }

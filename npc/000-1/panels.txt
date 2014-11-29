@@ -5,9 +5,7 @@
 // Description:
 //    Panels to give advice to the players.
 
-// Size = 2
 000-1,65,93,0	script	#panel1	999,{
-
     mesn "Narrator";
     mes col(l("Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand."), 9);
     next;
@@ -20,13 +18,14 @@
     mesq l("Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!");
     next;
     mesq l("In fact... Oh, the things that I could tell... But ran out of space on this... Just be reasonable and go home.");
-
     close;
+
+OnInit:
+    setnpcdistance 2;
+    end;
 }
 
-// Size = 2
 000-1,89,51,0	script	#panel2	999,{
-
     mesn "Narrator";
     mes col(l("This panel looks in rather good shape, as though some people take care of it regularly. Maybe it has important information."), 9);
     next;
@@ -48,4 +47,8 @@
     next;
     mesq l("Have fun, but always remember to pick your stats with good care.");
     close;
+
+OnInit:
+    setnpcdistance 2;
+    end;
 }

@@ -6,7 +6,6 @@
 // Description:
 //    Cookie NPC, beware, if you don't take your cookie, she'll keep it!
 
-// Size = 2
 000-1,97,50,0	script	Cookie Master	419,{
     if (getq(General_Cookies) == 1)
         goto L_GetCookie;
@@ -231,5 +230,6 @@ L_Bye:
 
 OnInit:
     setnpcsex 0;
+    setnpcdistance 2;
     end;
 }

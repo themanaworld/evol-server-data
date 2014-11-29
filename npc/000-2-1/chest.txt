@@ -10,7 +10,6 @@
 //    1   Talked to Arpan and needs to get clothes.
 //    2   Has the clothes.
 
-// Size = 2
 000-2-1,51,37,0	script	Chest	417,{
     set .@q, getq(ShipQuests_Arpan);
 
@@ -50,4 +49,8 @@ L_Quit:
     initnpctimer;
     startnpctimer;
     close;
+
+OnInit:
+    setnpcdistance 2;
+    end;
 }

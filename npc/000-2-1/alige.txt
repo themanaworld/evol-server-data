@@ -47,7 +47,6 @@ OnTimer190:
     end;
 }
 
-// Size = 2
 000-2-1,43,31,0	script	Alige	401,{
     set .@q, getq(ShipQuests_Alige);
     if (.@q > 1) goto L_AskForFood;
@@ -296,5 +295,6 @@ L_Quit:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 2;
     end;
 }

@@ -4,7 +4,6 @@
 // Description:
 //    Drunk easteregg telling about the player's past.
 
-// Size = 3
 000-2-0,20,23,0	script	Billy Bons	411,{
     if (rand(5) == 2) goto L_Hic;
 
@@ -91,5 +90,6 @@ L_Quit:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 3;
     end;
 }

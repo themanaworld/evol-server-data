@@ -18,7 +18,6 @@
 //    4   ChefGado Quest completed and "Introduction" chapter finalized.
 //    5   Reward taken from the box.
 
-// Size = 1
 000-2-3,25,24,0	script	Box	102,{
     set .@q, getq(ShipQuests_Nard);
 
@@ -106,4 +105,8 @@ L_Already:
 L_Quit:
     closedialog;
     close;
+
+OnInit:
+    setnpcdistance 1;
+    end;
 }

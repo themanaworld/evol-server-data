@@ -6,7 +6,6 @@
 // Description:
 //    Sailor who gives some informations to the player.
 
-// Size = 2
 000-1,79,108,0	script	Lean	106,{
     set .@gugli, getq(ShipQuests_Gugli);
 
@@ -65,5 +64,6 @@ L_Close:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 2;
     end;
 }

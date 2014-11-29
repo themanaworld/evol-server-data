@@ -7,7 +7,6 @@
 //    Sailor part of the Gugli's quest.
 //    Croconut box.
 
-// Size = 2
 000-1,22,50,0	script	Astapolos	107,{
     set .@g, getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
@@ -157,5 +156,6 @@ L_Whyning:
 
 OnInit:
     setnpcsex 1;
+    setnpcdistance 2;
     end;
 }

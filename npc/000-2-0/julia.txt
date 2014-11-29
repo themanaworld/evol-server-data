@@ -32,7 +32,6 @@
 //    24   ChefGado Quest completed and "Introduction" chapter finalized.
 //    25   Reward taken from the box.
 
-// Size = 10
 000-2-0,27,24,0	script	Julia	404,2,10,{
     addtoskill 1, 1; // Add Emote skill.
 
@@ -273,6 +272,7 @@ L_Rumors:
 
 OnInit:
     setnpcsex 0;
+    setnpcdistance 10;
     end;
 
 L_Quit:
