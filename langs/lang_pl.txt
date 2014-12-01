@@ -1,4 +1,7 @@
-Copyright (C) 2010-2013 Evol Online
+Copyright (C) 2010-2014 Evol Online
+'That', as you call it, is a @@. There are plenty of 'em on this island!
+
+
 'That', as you call it, is a @@. There're plenty on this island!
 'To' jak to ty nazywasz, jest @@. Sporo tego na wyspie!
 
@@ -89,14 +92,11 @@ Aboard stand sailors trying to communicate with you.
 About this Esperia's Warrior Guild, I'm not sure about them, frankly.
 Jeśli chodzi o tą Gildię Wojowników z Esperii, to nie jestem pewien, co o nich sądzić, szczerze mówiąc.
 
-Acorn
-Żołądź
+Actually Gugli asked me if I would help you bring him some of your boxes.#0
 
-Actually Gugli asked me if I could help you bringing him some of your boxes.#0
-Właściwie to Gugli poprosił mnie czy mógłbym pomóc Ci w transporcie kilku z nich.#0
 
-Actually Gugli asked me if I could help you bringing him some of your boxes.#1
-Właściwie to Gugli poprosił mnie czy mógłbym pomóc Ci w transporcie kilku z nich.#1
+Actually Gugli asked me if I would help you bring him some of your boxes.#1
+
 
 Actually, I came here to work on my task.#0
 Właściwie. Przyszłam tutaj popracować nad moim zadaniem.#0
@@ -107,11 +107,20 @@ Właściwie. Przyszedłem tutaj popracować nad moim zadaniem.#1
 Actually, I have an in-depth knowledge of this type of life.
 Tak się składa, że mam sporą wiedzę o takim typie życie.
 
+Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#0
+
+
+Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#1
+
+
 Aemil is a magnificent world unknown to us all.
 Aemil jest cudownym nieznanym nam światem.
 
 After choosing your weapon, you also need to know how to use it.
 Po wyborze broni, musisz też wiedzieć jak nią władać.
+
+Agility greatly increases your attack speed and the chances of you dodging enemy hits.
+
 
 Ah... Gugli... He's too young to understand our conversation.
 A... Gugli... Jest zbyt młody by zrozumieć naszą rozmowę.
@@ -134,17 +143,20 @@ AligeTrigger
 All I can do is tell you that...
 Wszystko co mogę zrobić to powiedzieć Ci....
 
+All of a sudden, you hear voices from above.
+
+
 All your... Fresh ingredients are ready to be cooked.
 Wszystkie twoje... Świeże składniki są gotowe do przyrządzenia.
 
 Alright! Yoyone more box and it'll be good.
 W porządku! Przytachaj jeszcze jedną skrzynię i będzie ok.
 
-Alright, I'm going to his room, keep an eye on her, we still don't know if she's an ally or an enemy...
-W porządku, idę do jego pokoju, miej na nią oko, bo nadal nie wiemy czy jest naszym sprzymierzeńcem lub wrogiem...
+Alright, I'm going to his room, keep an eye on her, we still don't know if she's a friend or a foe...
 
-Alright, I'm going to his room, keep an eye on him, we still don't know if he's an ally or an enemy...
-W porząku, idę do jego pokoju, pilnuj go, ciągle nie wiemy, czy jest naszym sprzymierzeńcem, czy też wrogiem...
+
+Alright, I'm going to his room, keep an eye on him, we still don't know if he's a friend or a foe...
+
 
 Alright. I will go looking for them now.
 W porządku. Pójdę ich teraz poszukać.
@@ -158,8 +170,8 @@ Wzięliśmy też twe wysmargane ciuchy, bo były... hehe... a właściwie ich ni
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#1
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#1
 
-An unexpected help is always welcome!
-Nieoczekiwana pomoc jest zawsze mile widziana!
+And a fruit may even fall for you if you are lucky! And stay alert to pick up your drops.
+
 
 And now I want to see you run!
 A teraz chciałbym widziec jak uciekasz!
@@ -172,9 +184,6 @@ I wtedy co się stało ?
 
 And what do you give me in exchange for these informations?
 A co mi dasz w zamian za te informację ?
-
-And you might even gain a fruit if you're lucky!
-
 
 And you, how are you doing?
 A ty - jak się masz?
@@ -206,12 +215,6 @@ Jeśli jesteś zainteresowana, zerknij na mój worek.#0
 Anyway, if you ever feel interested, just check my bag!#1
 Jeśli jesteś zainteresowany, zerknij na mój worek.#1
 
-Aquada
-Akwada
-
-Aquada Box
-Pudło Aquady
-
 Are you blind? Do you really think these boxes are light and soft as a piou's feather?!
 Jesteś ślepy? Myślisz że te skrzynie są lekkie i miękkie jak piórka piou?
 
@@ -233,11 +236,14 @@ Jesteś tutaj by pozwiedzać wyspę?#1
 AreaNPC
 AreaNPC
 
-AreaTop
-AreaTop
+AreaNPC#doors1
 
-Arrr, don't give me more berries! I don't want them, stupid berries, stupid... Stupid... Stupid!
-Arrr, nie dawaj mi już jagód! Nie chcę ich, głupie jagody, głupie... Głupie... Głupie!
+
+AreaNPC#doors2
+
+
+AreaTop
+AreaTop
 
 Artaxe
 
@@ -245,14 +251,11 @@ Artaxe
 Artis of course!
 Artis oczywiście!
 
-As they sailed on Oceania, great waters of Aemil, one of the groups found a land.
-Gdy płynęli przez Oceanię, wielkie wody Aemilu, jedna z grup znalazła ląd.
+As they sailed on Oceania, great waters of Aemil, one of the alliances found a land.
 
-As you may know, we are long distance travelers and our whole crew needs to store enough food to survive. You don't know how dangerous the sea life can be.
-Pewnie wiesz, że jesteśmy długodystansowymi podróżnikami a nasza ekipa potrzebuje przechowywać jak najwięcej jedzenia. Niewiesz jak niebezpieczne może być życie na morzu.
 
-As you open your eyes, you see a large ship before you.
-Otwierasz oczy i widzisz duży okręt.
+As you may know, we are explorers on a long distance voyage, and our swashbuckling mariners need to store enough food to survive. You don't know how dangerous the sea life can be.
+
 
 Ask sailors around here they shouldn't be so far away.
 Zapytaj kręcących się w pobliżu żeglarzy, raczej nie oddalili się zbytnio.
@@ -266,11 +269,14 @@ Astapolos.
 Astapolos... That guy is shy like a piou!
 Astapolos... Ten chłopak jest wstydliwy jak piou!
 
+At that time, we were selling crab food on our old mushroom island.
+
+
 At the moment, our crew is busy collecting @@s, @@s and @@s.
 W tym momencie nasza załoga jest zajęta zbieraniem @@s. @@s i @@s
 
-At this time, we were selling crab food on our old mushroom island.
-Tego czasu sprzedawaliśmy żarcie z krabów na naszej muchomorowej wyspie.
+Authorities began to control in order to have a peaceful society. This did not work well for long.
+
 
 Awesome!
 Wspaniale!
@@ -301,9 +307,6 @@ Billy Bons
 
 Box
 Skrzynia
-
-Bread
-Chleb
 
 Break the door.
 Wyważ drzwi.
@@ -347,11 +350,11 @@ Ale nie uda ci się mnie *hik* tym razem...
 But...
 Ale...
 
-But... If he has amnesia like Julia said... We don't need to worry about him.
-Ale... Jeśli cierpi na amnezję, tak jak twierdzi Julia, nie musimy się o nic martwić.
+But... If he has amnesia like Julia said... We don't need to worry about him. At least not yet.
 
-But... If she has amnesia like Julia said... We don't need to worry about her.
-Ale... Jeżeli ma amnezję jak wspominała Julia... To nie musimy się martwić o nią.
+
+But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet.
+
 
 Bye for now.
 
@@ -361,6 +364,9 @@ Bye then!
 
 Bye!
 Do widzenia!
+
+C'mon, don't be like that and loosen up! Don't you want to know who's behind all of this?!
+
 
 CAN YOU HEAR ME?!
 SŁYSZYSZ MNIE?!
@@ -380,9 +386,6 @@ Kapitan Nard jest w pokoju po twojej prawej.
 Cheers!
 
 
-Cheese
-Ser
-
 Chef Gado
 Szef Gado
 
@@ -398,8 +401,8 @@ No dalej, Sap! Tylko straszysz naszego gościa, swoimi opowieściami.#0
 Come on, Sap! You are scaring our guest with your stories.#1
 No dalej, Sap! Tylko straszysz naszego gościa, swoimi opowieściami.#1
 
-Common, don't be like that and loosen up! Don't you want to know who's behind all of this?!
-No dalej nie bądź taki i rozluźnij się! Nie chcesz wiedzieć, kto stoi za tym wszystkim ?!
+Congrats, you are now part of the crew. Thanks again for your help.
+
 
 Congratulations!
 Gratulacje!
@@ -425,8 +428,8 @@ Mogę spytać, jakiego języka używasz? Jeden z członków załogi twierdził, 
 Could you explain to me where I am?
 Możesz mi wyjaśnić gdzie ja właściwie jestem?
 
-Could you please bring me something which isn't a vegetable? And I beg you, no berries!
-Możesz mi przynieść coś, co nie jest warzywem? I błagam cię, żadnych jagódek !
+Could you please bring me something which isn't a berry, and I'm not big on vegetables either. I need proteins!
+
 
 Could you tell me where I am?#0
 Mógłbyś mi powiedzieć, gdzie ja właściwie jestem?
@@ -443,26 +446,14 @@ Couwan dał mi to pudełko, to dla Ciebie.
 Couwan hands you a box full of fish.
 Couwan wręcza Ci skrzynkę pełną ryb.
 
-Croc Claw
-Pazur Kłapa
-
 Croconut
 Krokos
-
-Croconut Box
-Skrzynia z krokosami
 
 DO YOU FEEL BETTER?!
 CZY CZUJESZ SIĘ LEPIEJ?!
 
 Damn @@.
 Cholerny @@.
-
-Damn you! You'd better not tell anyone you saw me!#0
-A niech cię! Lepiej ani słówka o mnie, bo jak...!#0
-
-Damn you! You'd better not tell anyone you saw me!#1
-A niech cię! Lepiej ani słówka o mnie, bo jak...!#1
 
 Dan
 Dan
@@ -476,11 +467,11 @@ Dan pozostaje cichy od czasu twego ostatniego pytania.
 Darlin
 Darlin
 
-Delicious Cookie
-Pyszne ciastko
+Devis
+Devis
 
-Devis
-Devis
+Dexterity increases your bow damage and your accuracy.
+
 
 Did you say reward? I want it!
 Powiedziałeś \"nagroda\"? Wchodzę w to!
@@ -488,7 +479,7 @@ Powiedziałeś \"nagroda\"? Wchodzę w to!
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia
 Nie udostepniaj nikomu hasła do Twojego pokoju! Zachowaj je w tajemnicy i postaraj się nie używać go w żadnym innym pokoju. - Julia
 
-Do you feel too weak when try to hit the surrounding wildlife?
+Do you feel too weak even if trying to hit the surrounding wildlife?
 
 
 Do you have any other questions for me?
@@ -518,17 +509,17 @@ Chcesz ściąć ten @@?
 Do you want to try?
 Chcesz spróbować?
 
-Does somebody know a good place to hang out in Esperia? - M. Arpan
-Czy ktoś zna przyjemne, zabawowe miejsce w Esperii? - M. Arpan
+Does anyone know a good place to hang out in Esperia? - M. Arpan
+
 
 Doesn't he like the way I'm taking care of his ship? Everything is clean and tidy with me, rightful lieutenant of La Johanne.
 Nie podoba mu się, jak opiekuję się jego statkiem ? Jestem czystym i uczciwym, prawowitym porucznikiem La Johanne.
 
-Don't bother her Silvio, or I'll to tell her that you cry like a baby when you hear the thunder in the night.
-Nie przeszkadzaj jej Silvio, albo jej powiem że płaczesz jak dzieciak podczas burzy w nocy.
+Don't bother her Silvio, or I'll have to tell her that you cry like a baby when you hear the thunder in the night.
 
-Don't bother him Silvio, or I'll to tell him that you cry like a baby when you hear the thunder in the night.
-Nie przeszkadzaj mu Silvio, albo mu powiem że płaczesz jak dzieciak podczas burzy w nocy.
+
+Don't bother him Silvio, or I'll have to tell him that you cry like a baby when you hear the thunder in the night.
+
 
 Don't do theee... *hic* with me eh!
 Nie zaaa.. *hik* ze mną eh!
@@ -572,20 +563,20 @@ Elmo
 Elmo and Gugli told me that you did all of the tasks outside, congrats!
 Elmo i Gugli powiedzieli mi że wykonałeś wszystkie zadania na zewnątrz, gratulacje!
 
-Elmo reported me about some frictions between my old and new lieutenants. You probably already met Julia and Gado the Chef.
-Elmo opowiedział mi o starciach pomiędzy starymi i nowymi zastępcami. Pewnie już spotkałeś Julię i Gado, szefa kuchni.
+Elmo brought reports to me about some frictions between my old and new lieutenants. You probably already met Julia and Gado the Chef.
+
 
 Elmo told me what Nard said, congrats!
 Elmo przekazał mi co powiedział Nard, gratulacje!
 
-Elmo told me you are now considered as one of us on the island. And I do appreciate the efforts you did down there.
-Elmo powiedział mi że uznawany jesteś już jako jeden z naszych na wyspie. Ja również doceniam twe starania które wykonałeś tam na dole.
+Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.
+
+
+Elmo#sailors
+
 
 Elven Voice
 Elfi Głos
-
-Err, seriously, I just wanted to get to Artis, but I didn't have enough money to pay for the ferry!
-Eee, tak naprawdę, to tylko chciałem popłynąć do Artis, ale nie miałem pieniędzy na opłatę za prom!
 
 Even though they did not hear anything about the other groups, they decided to start a new life on this land, full of harmful animals.
 Ponieważ nie było wieści o innych grupach, postanowili zacząć nowe życie na tej wyspie, pełnej groźnych zwierząt.
@@ -629,11 +620,11 @@ Głupku! Wróć kiedy ukończysz naszą małą... 'sekretną misję'.
 For a chef? Who said I was a... Oh right, I am.
 Na szefa? Kto powiedział że ja... Ah tak, ja.
 
-From what I know, Gugli, my brother, needs the help of as many people as possible to collect all of the new things found on the island.
-Z tego co wiem, Gugli, mój brat, potrzebuje pomocy możliwie jak największej liczby ludzi, aby zebrać wszelkie nowe znaleziska na wyspie.
+From what I here, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
 
-Fungus
-Grzyb
+
+Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!
+
 
 GOOD!
 DOBRZE!
@@ -653,8 +644,8 @@ Oddawaj mi ten posiłek, ty brudna kłamczucho! #0
 Give me back this dish, you dirty liar!#1
 Oddawaj mi ten posiłek, ty brudny kłamco! #1
 
-Go and grab one of them. A good knife will help you hunting the creatures of this island.
-Idź i weź jeden. Dobry nóż pomoże ci w polowaniu na kreatury tej wyspy.
+Go and grab one of them. A good knife will help with your hunting the creatures of this island.
+
 
 Go away.
 Idź stąd.
@@ -662,8 +653,8 @@ Idź stąd.
 Good job!
 Udało się!
 
-Good luck! And don't forget to visit Peter and our little friends when you will be back onboard!
-Powodzenia! Nie zapomnij odwiedzić Piotra i naszych małych przyjaciół gdy będziesz w drodze powrotnej na pokład!
+Good luck! And remember to visit Peter and our little furry friends whenever you return back onboard!
+
 
 Good to hear!
 Dobrze to słyszeć!
@@ -695,14 +686,32 @@ Witaj wędrowniczko.
 Greetings traveler.#1
 Witaj wędrowcze.
 
+Growl, sniff, grr! You'd better not tell anyone you saw me!#0
+
+
+Growl, sniff, grr! You'd better not tell anyone you saw me!#1
+
+
+Growl, sniff, grr!! You'd better not tell anyone you saw me!#0
+
+
+Growl, sniff, grr!! You'd better not tell anyone you saw me!#1
+
+
+Grr, don't give me more berries! I don't want them, stupid berries, stupid... Stupid... Stupid!
+
+
+Grr...
+
+
 Gugli
 Gugli
 
-Gugli asked me to help sailors with their food gatherings. Do you know where could I find them?#0
-Gugli zapytał mnie czy pomogę marynarzom zbierać żywność. Czy wiesz gdzie mogę ich znaleźć?#0
+Gugli asked me to help the sailors to gather food. Do you know where I can find them?#0
 
-Gugli asked me to help sailors with their food gatherings. Do you know where could I find them?#1
-Gugli zapytał mnie czy pomogę marynarzom zbierać żywność. Czy wiesz gdzie mogę ich znaleźć?#1
+
+Gugli asked me to help the sailors to gather food. Do you know where I can find them?#1
+
 
 Gugli asked me to help you carrying one of these boxes you are filling.#0
 Gugli poprosił mnie bym pomógł ci w transporcie jednej z tych skrzyń, które napełniasz.#0
@@ -723,7 +732,7 @@ Gugli? Oh I see. Yes, Gugli yeye pretty used to shout orders to everybody down h
 Gugli? Ah... rozumiem. Tak, Gugli przyzwyczaił się do wykrzykiwania nam rozkazów .
 
 GugliBarrierCheck
-
+GugliBarrierCheck
 
 Gulukan
 Gulukan.
@@ -743,13 +752,13 @@ HEJ, JAK MASZ NA IMIĘ?!
 Hahaha! All sailors aboard this ship are always drunk... Well... Except... Wait, what?! Nard told you?!
 Hahahaha! Wszyscy marynarze na pokładzie są zawsze pijani... No.... Po za... Czekaj, co? Nard powiedział Ci ?
 
-Half Croconut
-Pół Krokosa
-
 Harpy-lady?
 Herpia-panienka?
 
 Have a good day!
+
+
+Have fun, but always remember to pick your stats with good care.
 
 
 Have you collected all the ingredients for my recipe? The special one too?
@@ -776,11 +785,14 @@ Słuchaj sso mówię *hip* no, cobyśś *hep* nie mówił... uhm... że co!? Sam
 Hehe!
 Hehe!
 
-Hehe, no. But I'm sure a boy like you would like to meet a gentleman like me.
-Hehe, nie. Ale jestem pewien, że chłopiec taki jak Ty chciałby spotkać dżentelmena takiego jak ja.
+Hehe, hehe. Well, come back if you change your mind.
 
-Hehe, no. But I'm sure a lady like you would love to meet a charmer like me!
-Hehe, nie. Ale jestem pewien, iż dama taka jak pani byłaby zachwycona spotkaniem takiego czarusia, jak ja!
+
+Hehe, no. But I'm sure a fox like you would love to meet a catch like me!
+
+
+Hehe, no. But I'm sure a noob like you would like to meet an idol like me.
+
 
 Hehe, sometimes he gets his head in the clouds, You should go ask him about that.
 Hehe, czasami buja głową w chmurach... Lepiej idź się spytać o te pieniądze.
@@ -833,8 +845,8 @@ Hej ty !
 Hey you! Can you hear us? Are you okay?
 Hej ty! Słyszysz nas? Nic Ci nie jest?
 
-Hey you, sorry for leaving your room so quickly, I needed to... Speak with the captain about... The reserve. You know, now that we have a new mouth to feed, we need to check what we have.
-Hej, przepraszam, że tak szybko wyszedłem z pokoju, ale musiałem... porozmawiać z kapitanem o... zapasach. Wiesz, teraz, kiedy mamy nową gębę do wyżywienia, musimy sprawdzić, co mamy.
+Hey you, sorry for leaving your room so quickly. I needed to speak with the captain about the food reserves. You know, now that we have a new mouth to feed, we need to check what we have.
+
 
 Hey!
 Hej!
@@ -851,6 +863,9 @@ Hej! Uważaj. Nie możesz przebywać w tej piwnicy zbyt długo, albo się pochor
 Hey! There's a reward for you in the box next to me!
 Hej! Jest dla Ciebie nagroda w tej skrzyni obok mnie !
 
+Hey, I'm not a drug dealer! You won't have another one by stalking me like that!
+
+
 Hey, could yeye please take my box of fish to Gugli?
 Hej. Czy mógłby bulb wziąć moje skrzynie z rybami do Gugli?
 
@@ -859,6 +874,9 @@ Hej, nie martw się o niego, to jeden z pierwszych dni od dawna kiedy możemy po
 
 Hey, girl!
 Hej, panienko!
+
+Hey, how was the...
+
 
 Hey, man!
 Hej, chłopaczku!
@@ -883,6 +901,9 @@ Cześć! W końcu widzę cię na świeżym powietrzu !
 
 Hi, nice to see you!
 Miło Cię widzieć.
+
+Hi.
+
 
 Hidden Person
 Ukryta Osoba
@@ -911,8 +932,8 @@ Jak leci ślicznotko?
 How are you doing, dude?
 Jak leci kolego?
 
-How are you feeying, now that you walk on steady land? Yeye better?
-Jak się teraz czujesz, mogąc chodzić po twardym gruncie? Lepiej?
+How are you feeling, now that you walk on steady land? Yeye better?
+
 
 How can I get one of these cookies?
 Czy mogę dostać jedno z tych ciastek ?
@@ -935,8 +956,8 @@ Jednakże, wraz z latem nadeszła suza a zima była mroźniejsza niż kiedykolwi
 However...
 Jednakże...
 
-Hurry, hurry! We need to check his teeth!
-Szybko, szybko! Musimy sprawdzić jego ząb!
+Hurry, hurry! We need to check it's teeth!
+
 
 I ALSO AVOID THE DANGEROUS ANIMALS!
 RÓWNIEŻ UNIKAM GROŹNYCH ZWIERZĄT!
@@ -962,6 +983,12 @@ Ja już wiem wszystko. Żegnaj.
 I am not worried about rewards. I just want to help.
 Nie obchodzą mnie nagrody. Chcę po porstu pomóc.
 
+I am pleased to see that you have woken up and are active. Elmo came here to tell me this good news!#0
+
+
+I am pleased to see that you have woken up and are active. Elmo came here to tell me this good news!#1
+
+
 I am sure that I can run with one of them on my shoulder.#0
 Jestem pewna że mogę biegać z jednym z nich na ramieniu.#0
 
@@ -971,8 +998,8 @@ Jestem pewien że mogę biegać z jednym z nich na ramieniu.#1
 I am sure you know her. Nice dress, large smile and a constant flux of orders and rules. Julia they call her!
 Jestem pewien że znasz ją. Niezła sunkienka, szeroki uśmiech i stały napływ rozkazów i zasad. Mówią na nią Julia!
 
-I am surprised someone has been sent here for help. It is quite... unusual.
-Jestem zaskoczony że ktoś został przysłany do pomocy. To jest.. nietypowe.
+I am surprised someone has been sent here to help. It is quite... unusual.
+
 
 I am, who are you?#0
 Owszem, a kim ty jesteś?
@@ -995,8 +1022,8 @@ Niczego nie pamiętam.
 I do feel better!
 Czuję się lepiej!
 
-I do not want to point my finger on someone. I just put my trust in you. I am sure you will be able to judge and solve this annoying problem.
-Nie chcę wskazywać na nikogo palcami. Powierza ci swe zaufanie. Jestem pewien że będziesz w stanie osądzić i rozwiązać ten irytujący problem.
+I do not want to go pointing my finger at someone. I want to be honorable and fair, and I sense the same quality in you, so I put my trust in you. I am sure you will be able to judge and solve this troubling situation.
+
 
 I don't have anything good for you today.
 Nie mam dla ciebie niczego.
@@ -1025,8 +1052,8 @@ Czuję się dobrze.
 I give tasks to every single sailor, all day long. That should make him happy!
 Dałem zadanie każdemu marynarzowi, na cały dzień. To powinno go rozweselić!
 
-I give you this key, it opens any doors on this ship.
-Dam ci ten klucz, otwiera on wszystkie drzwi na tym statku.
+I give you this key, it opens all the doors on this ship.
+
 
 I guess so... I will leave you alone.
 Domyślam się, że tak... Pozostawię Cię samego.
@@ -1055,8 +1082,8 @@ Mam nadzieję, że się nie gniewasz iż użyliśmy tratwy do budowy rampy.
 I informed Julia about your monstrous plan.
 Poinformowałem Julię o twoim potwornym planie.
 
-I just realized I needed delicious ingredients to prepare a... A special recipe.
-Właśnie do mnie dotarło, że potrzebuję wyśmienitych składników by urządzić... wyjątkowy przepis.
+I just realized I am lacking some common things, and one key ingredient, to prepare a... A special recipe.
+
 
 I know that you are just starting to feel better, but I'd like to give you a special task.
 Wiem, że dopiero zaczynasz czuć się lepiej, ale chciałbym Ci powierzyć zadanie specjalne.
@@ -1067,14 +1094,14 @@ I made a mistake, I would like to change my language.
 I made a mistake, I would like to change my language.#1
 I made a mistake, I would like to change my language.
 
-I need help for clean the edge of the ship, but you aren't strong enough to help.#0
-Przydałby mi się ktoś do wyczyszczenia statku, ale nie wyglądasz mi na osiłka.#0
+I need a helper to clean the edge of the ship, but you aren't strong enough to help.#0
 
-I need help for clean the edge of the ship, but you aren't strong enough to help.#1
-Przydałby mi się ktoś do wyczyszczenia statku, ale nie wyglądasz mi na osiłka.#1
 
-I need somebody who can clean the bottom of the ship of these rattos. Can you help me?
-Potrzebuję kogoś kto oczyści dół statku z tych rattów. Czy mógłbyś mi pomóc?
+I need a helper to clean the edge of the ship, but you aren't strong enough to help.#1
+
+
+I need somebody who can rid the hold of the ship of these rattos. Can you help me?
+
 
 I need to go, sorry.
 Muszę już iść, przykro mi.
@@ -1094,23 +1121,23 @@ Pamiętam tylko, że mnie uratowaliście.
 I recall seeing Gulukan, Astapolos and Q'Muller.
 Przypominam sobie, że widziałem Gulukana, Astapolosa i Q'Mullera.
 
-I remember I saw few of them leaving the ship early this morning to get to work.
-Pamiętam, widziałem kilku opuszczających wcześnie rano statek, do pracy.
+I remember I saw a few of them leaving the ship early this morning to get a head start on today's work.
+
 
 I said... WHY DON'T YOU COME DOWN TO TALK?
 Powiedziałem... CZEMU NIE ZEJDZIESZ NA DÓŁ ŻEBY POROZMAWIAĆ?
 
-I see it's not easy to get rid of these rattos. Do you want to try again?
-Widzię że nie łatwo jest pozbyć się tych rattów. Chcesz spróbowac ponownie?
+I see it's not so easy to get rid of these rattos. Do you want to try again?
+
 
 I see. Bye!
 Rozumiem. Cześć!
 
-I see. Warn the other sailors about this. But if he's part of the Warrior Guild, then he's also our ally.
-Rozumiem, lepiej ostrzeż resztę załogi. Ale jeśli on jest członkiem Gildii Wojowników, jest także naszym sojusznikiem.
+I see. Warn the other sailors about this. But if he's part of the Warrior Guild, then he's also our freind and ally.
 
-I see. Warn the other sailors about this. But if she's part of the Warrior Guild, then she's also our ally.
-Rozumiem, lepiej ostrzeż resztę załogi. Ale jeśli ona jest członkiem Gildii Wojowników, jest także naszą sojuszniczką.
+
+I see. Warn the other sailors about this. But if she's part of the Warrior Guild, then she's also our freind and ally.
+
 
 I speak Catalan.
 
@@ -1151,11 +1178,11 @@ Przyrzekam, nie jem tak dużo.
 I think I should report you to the crew members.
 Chyba lepiej by cię było zgłosić załodze...
 
+I think I'll be done soon, since I almost have a box full of @@s!
+
+
 I think I'm done with that now. Do you have any questions?
 Wydaje mi się że z mojej strony to już wszystko. Chcesz się o coś zapytać?
-
-I think that I'm soon done since I'll soon have a box full of @@s!
-Myślę że wkrótcę skończę, bo mam już pełną skrzynię @@!
 
 I think that I'm still a bit sick.
 Myślę, że ciągle jestem nieco chory.
@@ -1199,8 +1226,8 @@ Też się zastanawiam...
 I'M CALLED, @@!
 WZYWAJĄ MNIE, @@!
 
-I'd like to catch one of them, but they are flying away when I try.
-Złapałbym sobie jednego, ale odlatują, gdy tylko się zbliżę...
+I'd like to catch one of them, but they fly away when I try.
+
 
 I'd love one!
 Chciałbym jedno !
@@ -1250,11 +1277,11 @@ Przepraszam ale nie widzę nigdzie twojego imienia.
 I'm sorry but I have no time to chat with you.
 Przepraszam, ale nie mam czasu na rozmowę z tobą.
 
-I'm sorry for your situation. They should change with another sailor from times to times.#0
-Przykro mi z twojego powodu. Powinni od czasu do czasu zamieniać Cię z innym marynarzem.#0
+I'm sorry for your situation. They should alternate shifts with other sailors from time to time.#0
 
-I'm sorry for your situation. They should change with another sailor from times to times.#1
-Przykro mi z twojego powodu. Powinni od czasu do czasu zamieniać Cię z innym marynarzem.#1
+
+I'm sorry for your situation. They should alternate shifts with other sailors from time to time.#1
+
 
 I'm sorry, I don't have time right now.
 Przykro mi, ale nie mam teraz czasu.
@@ -1280,14 +1307,17 @@ Jestem pewny że będzie zdolny do walki, z każdą zwierzyną żyjącą tutaj b
 I'm sure she will soon be able to fight all of the creatures living here without any problem.
 Jestem pewny że będzie zdolna do walki, z każdą zwierzyną żyjącą tutaj bez żadnego problemu.
 
-I'm sure that you've got some questions for me, feel free to ask them, but firstly I need to tell you the rules of proper social conduct on board.
-Jestem pewien, że chciałbyś mi zadać jakieś pytania i chętnie na nie odpowiem, ale najpierw muszę Cię zapoznać z regułami zachowania na pokładzie.
+I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.
+
 
 I'm sure you'll appreciate its effect, but be careful, these cookies are rare, and you'll need to help the community again before being able to receive another one.#0
 Jestem pewien, że docenisz jego działanie, ale uważaj, te ciasteczka są rzadkie, i trzeba pomóc społeczności ponownie, zanim będziesz mogła otrzymać jeszcze jedno. #0
 
 I'm sure you'll appreciate its effect, but be careful, these cookies are rare, and you'll need to help the community again before being able to receive another one.#1
 Jestem pewien, że docenisz jego działanie, ale uważaj, te ciasteczka są rzadkie, i trzeba pomóc społeczności ponownie, zanim będziesz mógł otrzymać jeszcze jedno. #1
+
+I'm talking about the cookie in which I put all my love inside!
+
 
 I'm the cook's assistant of the ship. I help Gado, La Johanne's Chef, in his daily work.
 Jestem pomocnikiem kucharza tego statku. Pomagam Gado, kucharzowi Johanne w jego codziennej pracy.
@@ -1298,11 +1328,17 @@ Widziałem go w głębi wyspy, rozejrzyj się.
 I've seen him at the bottom of the island, have a look around.
 Widziałem go w głębi wyspy, rozejrzyj się.
 
+I've seen him at the northern part of the island.
+
+
+I've seen him at the southern part of the island, check around.
+
+
 I've seen him at the top of the island.
 Widziałem go w górnej części wyspy.
 
-I've seen him on the bottom of the island, ask Jalad for more information.
-Widziałem go w głębi wyspy, spytaj Jalada jeśli chcesz się dowiedzieć czegoś więcej.
+I've seen him down around the southern area of the island, ask Jalad for more information.
+
 
 I...
 i...
@@ -1310,11 +1346,14 @@ i...
 If I saw *hic* who you were... *hic* Would not have helped you! 
 Jeśli wiedziałbym *hik* kim byłeś... *hik* to nie pomagałbym tobie!
 
-If you feel bored or like turning in circles, you may want to talk with the other sailors around here to get some tasks.
-Jeśli czujesz się znudzony, lub masz uczucie, że kręcisz się w kółko, możesz porozmawiać z innymi żeglarzami, aby znaleźć sobie jakieś zajęcie.
+If you feel bored or like running around in circles, you may want to talk with the other sailors around here to get some tasks to do.
+
 
 If you see weird things, or things that shouldn't be here, or even things that you would like to see there...
 Jeśli widzisz te dziwne rzeczy, lub rzeczy których nie powinno tutaj być albo nawet rzeczy które chciałbyś tutaj zobaczyć...
+
+If you want another cookie, you know what to do!
+
 
 If you want another one, you know what to do!
 Jeśli chcesz kolejne, wiesz co robić !
@@ -1334,6 +1373,9 @@ If you're looking for us there, most of us will be at the tavern of the Redplush
 In fact, everything seems to work perfectly under your guidance. Nard has made the right choice.
 W zasadzie, wszystko działa doskonale pod Twoim przewodnictwem. Nard dokonał słusznego wyboru.
 
+In fact... Oh, the things that I could tell... But ran out of space on this... Just be reasonable and go home.
+
+
 Indeed! Goodbye.
 Ma się rozumieć! Do widzenia.
 
@@ -1342,6 +1384,9 @@ W rzeczy samej, nie jestem.
 
 Indeed, I am not.#1
 W rzeczy samej, nie jestem.
+
+Intelligence raises your maximum mana points (good for mages) and your mind abilities. Please note: Magic system has not yet been implemented in this world.
+
 
 Interested?#0
 Zainteresowana?#0
@@ -1355,14 +1400,11 @@ Ciekawe... Pozostawię Cię zatem z twoim zadaniem!
 Is there a reward?
 Jest jakaś nagroda?
 
-It is nice to see that you woke up fine at the same time. Elmo came here to tell me this good news!#0
-Dobrze, żeś się obudził i do tego ozdrowiał. Elmo był tu i uprzedził mnie o dobrejnowinie!#0
-
-It is nice to see that you woke up fine at the same time. Elmo came here to tell me this good news!#1
-Dobrze, żeś się obudził i do tego ozdrowiał. Elmo był tu i uprzedził mnie o dobrejnowinie!#1
-
 It is them who tell me to whom I can give cookies.
 To oni mi powiedzą, komu mogę dać ciastka.
+
+It is to them I look to, for it is them, who tell me to whom I can give cookies.
+
 
 It looks like madam is curious, am I right?
 Wygląda że jest pani zaciekawiona, mam rację ?
@@ -1379,8 +1421,8 @@ Wygląda na to, że nie możesz już nic więcej nieść.
 It seems mister is curious, are you not?
 Wygląda że jest pan zaciekawiony, mam rację ?
 
-It seems that we're close to an island, we should take a look at the upper level.
-Zdaje się, że jesteśmy blisko wyspy, powinniśmy przyjrzeć się jej z pokładu.
+It seems that we are close to an island, we should take a look at the upper level.
+
 
 It seems that you need a key to open this door.
 Wygląda na to że potrzebujesz klucza by otworzyć te drzwi.
@@ -1394,8 +1436,14 @@ To przypominało długą drzemkę.
 It would be good for you to do some exercise, the ship isn't big enough for that.
 Dobrze Ci zrobi, jak poćwiczysz, statek jest na to zbyt mały.
 
-It's a commercial port of Andorra, it's weird that you don't know about it since it is one of the most famous cities throughout the world. But hey, returning to the topic, I'm hungry!
-To największe miasto handlowe Andorry, dziwi mnie że o tym nie wiesz, przecież to jedno z najsłynniejszych miast na świecie... No, ale nie zbaczaj mi tu z tematu! JESTEM GŁODNY!
+It's a commercial port of Andorra, it's weird that you don't know about it since it is one of the most famous cities throughout the whole world. But hey, back to me. Remember my mentioning that I'm hun...grrr...eee!
+
+
+It's a dangerous place out here. Beware of the mischievous creatures living here!
+
+
+It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?
+
 
 It's a kind of mushroom. We call it like that because of it's taste, just like a marshmallow. It also has this name because of it's appearance, it looks like a plush!
 Jest to rodzaj grzyba. Nazywamy go tak ze względu na smak podobny do ptasiego mleczka. Nazywa się tak również ze względu na swój wygląd. Przypomina plusz!
@@ -1448,14 +1496,11 @@ Palnij to, a wypluje ci @@.
 Just leave me alone.
 Po prostu zostaw mnie w spokoju.
 
-Knife
-Nóż
+Last time I saw you, you were lost at sea on your raft.#0
 
-Last time I saw you, you were lost in the sea on your raft.#0
-Ostatni raz jak cię widziałem, byłaś zagubiona na morzu w swojej tratwie.#0
 
-Last time I saw you, you were lost in the sea on your raft.#1
-Ostatni raz jak cie widziałem, byłeś zagubiony na morzu w swojej tratwie.#1
+Last time I saw you, you were lost at sea on your raft.#1
+
 
 Lean
 Lean
@@ -1484,9 +1529,6 @@ Popatrzmy... Chrupiące nóżki...paskudne płyny...Zaczynajmy !
 Let's say the person who told me about that is well respected on this ship and never drunk.
 Powiedzmy że osoba która mi to powiedziała jest powszechnie szanowana na tym statku i nigdy nie jest pijana.
 
-Lettuce Leaf
-Liść Sałaty
-
 Living inside a ship is great, but we sometimes need some fresh air.
 Życie na statku jest super, ale czasem potrzeba świeżego powietrza.
 
@@ -1499,11 +1541,17 @@ Patrz, on jest tutaj!
 Look, there he is!
 Patrz, on jest tam!
 
+Luck helps you do critical hits and dodge the ones dealt by enemies.
+
+
 M... Maybe?
 M... Może?
 
 Magic Arpan
 Magiczny Arpan
+
+Magic Arpan#sailors
+
 
 Max
 Max
@@ -1514,8 +1562,8 @@ Na przykład Max i Sapartan?
 May this be a lesson for you.
 Niech to będzie lekcją dla Ciebie.
 
-Maybe he abused too much his bottle today to celebrate that!
-Może nadużył dziś swojej butelki oblewając czapkę!
+Maybe he over did it with the bottle today to celebrate that!
+
 
 Maybe he was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior Guild!
 Może jest jedną z osób, które zaginęły miesiąc temu? Blublaki z Esperii i ich tajna misja dla Gildii Wojowników!
@@ -1526,11 +1574,11 @@ Może jest jedną z osób, które zaginęły miesiąc temu? Blublaki z Esperii i
 Maybe you can come down to talk?
 Możesz zejść na dół na rozmowę?
 
-Maybe... But I prefer having well-trained people around me when it comes to fight against dangerous creatures. Do you already feel expert on how you fight enemies?#0
-Może... Ale wole mieć dobrze wyszkolonych ludzi wokół mnie, kiedy dojdzie do walki z niebezpiecznymi zwierzętami.\nCzy czujesz się już ekspertem jak walczyć z wrogiem?#0
+Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?#0
 
-Maybe... But I prefer having well-trained people around me when it comes to fight against dangerous creatures. Do you already feel expert on how you fight enemies?#1
-Może... Ale wole mieć dobrze wyszkolonych ludzi wokół mnie, kiedy dojdzie do walki z niebezpiecznymi zwierzętami.\nCzy czujesz się już ekspertem jak walczyć z wrogiem?#1
+
+Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?#1
+
 
 My beauty, I was not always a sailor, you know, I was once an important individual!
 Moja śliczna, nie zawsze byłem żeglarzem, bylem raz ważną personą!
@@ -1540,6 +1588,9 @@ Przyjacielu, nie zawsze bylem marynarzem, wiesz, byłem raz ważną osobistości
 
 My friends are... Well, you know... The creators.
 Moi przyjaciele są.. Wiesz.... Twórcy.
+
+My friends are... Well, you know... The creators... Programmers, Scripters, Mappers, Pixel Artists, Soundscapers... The Most Skilled Sages of the Tentacled Dance.
+
 
 My name is Alige, I've been hiding here for weeks. All I have to eat are these berries... berries... berries...
 Nazywam się Alige, ukrywałem się tu od tygodni. Wszystko co mam do jedzenia to jagódki... jagódki.... jagódki...
@@ -1562,8 +1613,8 @@ Nard patrzy zdziwiony i powstrzymuje Cię.
 Narrator
 Narrator
 
-New technologies helped the slaughter instead of establishing peace. At some point, two different rivals were formed.
-Nowe technologie dopomogły rzezi zamiast ustanowić pokój. Konflikt wyłonił dwa stronnictwa - dwóch wrogów.
+New technologies assisted the slaughter instead of establishing peace. At some point, two different rivals were formed.
+
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#0
 Nie i *hik*... Nie, ty i ta twoja... *bek* głupi*hik* gildia!#0
@@ -1586,26 +1637,17 @@ Nie dziękuję, wrócę później.
 No thanks, not at the moment.
 Dzięki, ale nie teraz.
 
-No there are no secrets hidden below the ship's wood. Some sailors swear they have seen people hidden somewhere near the stow. Just stories sailors love to tell...
-Nie, tutaj nie ma żadnych sekretów ukrytych pod deskami statku. Część żeglarzy przysięga że widziało ukrytych ludzi gdzieś ładowni. Tylko opowieści, żeglarze kochają opowiadać...
-
 No!
 Nie!
 
-No, I can't, I just wanted to travel across the seas for fun. In this cave, you see, I have a lot of fun.
-Nieee, ja tu sobie siedzę i przemierzam morza dla zabawy. W tej dziurze, jak widzisz, mam dużo zabawy.
+No, I can't. I won't! All is I wanted was to travel across the seas for fun, growl... sniff. And in this chink in the wall, as you can see, I have lots of fun.
+
 
 No, I don't, but I would like to know more about that.
 Nie, nie wiem, ale chcę się dowiedzieć.
 
 No, and I gotta go, see you.
 NIe, muszę iść, cześć.
-
-No, indeed. I was here to help you with those boxes. Can I bring one of them back to Gugli?#0
-Nie, faktycznie. Byłem tu by pomóc Ci z tymi skrzyniami. Czy mogę przynieść jedną z nich Gugliemu?#0
-
-No, indeed. I was here to help you with those boxes. Can I bring one of them back to Gugli?#1
-Nie, faktycznie. Byłem tu by pomóc Ci z tymi skrzyniami. Czy mogę przynieść jedną z nich Gugliemu?#1
 
 No, none.
 Nie, żaden.
@@ -1631,6 +1673,12 @@ Nikt.
 None of them?
 Żaden z nich?
 
+Nope, there are no secrets hidden within the ship's hull. Some sailors swear they have seen stowaways hidden somewhere. The bow or the stern? Just stories sailors love to tell...
+
+
+Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Noobs are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
+
+
 Not everybody has a kind mind. Scammers can be anywhere, even among us!
 Nie wszyscy są przyjaźnie nastawieni. Oszustem może być każdy, nawet jeden z nas!
 
@@ -1655,6 +1703,9 @@ Dziękuję, wiem już wszystko.
 Nothing.
 Nic.
 
+Now go outside and talk with Gugli, he'll tell you what provisions we need.
+
+
 Now go outside and talk with Gugli, he'll tell you what we need.
 Wyjdź na zewnątrz i porozmawiaj z Guglim, powie ci czego oczekujemy.
 
@@ -1663,6 +1714,9 @@ Teraz ruchy !
 
 Now, leave me alone...
 A teraz zostaw mnie w spokoju....
+
+Now, move!
+
 
 OH, LOOK THERE!
 OH, PATRZ TAM!
@@ -1678,6 +1732,9 @@ Of course! Tell me which language you speak and I will change the note on the sh
 
 Of course, they are on the left wall, go have a look at them.
 Oczywiście, są w pobliżu lewej ściany, idź i ich poszukaj.
+
+Of the two of them, who has 'good' on their side?
+
 
 Oh I see... Sailors are not able to do their job anymore, is it like that?!
 Już wiem... Marynarze nie są w stanie wykonywać swoich obowiązków, prawda?!
@@ -1715,8 +1772,8 @@ Hehe... nawet jak byś chciał to ich nie zeżresz, spróbuj może je zarzucić 
 Oh yeyeye... As they are not edible, you can maybe try to equip them?#1
 Hehe... nawet jak byś chciał to ich nie zeżresz, spróbuj może je zarzucić na siebie?#1
 
-Oh! And in one of the room of the second deck you can find Gado's knives. Our chef keeps there the sharpest ones... Probably not just to cut some carrots...
-Oh! I w jednym z pomieszczeń na drugim pokładzie możesz znaleźć noże Gado. Nasz szef trzyma tam najostrzejsze...\nPrawdopodobnie nie do siekania marchewki....
+Oh! And in one of the rooms of the second deck you can find Gado's knives. Our chef keeps there the sharpest ones... Probably not just to cut some carrots...
+
 
 Oh! I like that sort of answer!
 Och! Podoba mi się ten rodzaj odpowiedzi!
@@ -1733,11 +1790,11 @@ Kompletnie bym zapomniał! Nie mów nikomu jakie masz hasło! Jedynie ja posiada
 Oh, and Olga from the market place as well!
 Oh, Olga z placu targowego również!
 
-Oh, and give her some clothes, the poor girl, the ones she had were in even worse condition that the ones we have!
-A, i dajcie jej jakiekolwiek ciuchy, biedaczka była tak obszarpana, że nawet nasze szmaty jej się przydadzą!
+Oh, and give her some clothes, the poor girl, the ones she had were in even worse condition than the ones we have!
 
-Oh, and give him some clothes, the poor guy, the ones he had were in even worse condition that the ones we have!
-A, i dajcie mu jakieś ciuchy, biedak był tak obszarpany, że nawet nasze szmaty mu się przydadzą!
+
+Oh, and give him some clothes, the poor guy, the ones he had were in even worse condition than the ones we have!
+
 
 Oh, and there was this inscription on your raft. It represents the Warrior Guild of Esperia, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?
 Poza tym, na twojej tratwie były wyryte oznaczenia Gildii Wojowników z Esperii, największej i najpotężniejszej organizacji na znanym świecie, może to ci coś przypomina?
@@ -1760,11 +1817,11 @@ Och, to ty.
 Oh, it's you. I think it's better we do not talk for a while. They suspect something.
 A, to ty. Myslę że będzie lepiej jak przez chwilę nie bedziemy ze sobą rozmawiać. Coś podejrzewają.
 
-Oh, now that I remember, we've also found some money in your pockets, here it is!#0
-Ach, przypominam sobie, że znaleźliśmy pieniądze w twoich kieszeniach - oto one!#0
+Oh, now that I remember, we also found some money in your pockets, here it is!#0
 
-Oh, now that I remember, we've also found some money in your pockets, here it is!#1
-Ach, przypominam sobie, że znaleźliśmy pieniądze w twoich kieszeniach - oto one!#1
+
+Oh, now that I remember, we also found some money in your pockets, here it is!#1
+
 
 Oh, she's still alive!
 Och, jeszcze żyje!
@@ -1777,6 +1834,9 @@ Cóż... No, właśnie zacząłem handlować... Obawiam się, że moja technika 
 
 Oh... eating rattos. Sounds... ehm... Delicious, yes.
 O... jedzenie rattów. Brzmi... eh... wyśmienicie, naprawdę.
+
+Oh... um... actually... all is I wanted was to get to Artis. Err... but I didn't, ah, have enough money to pay for the ferry!
+
 
 Ok, I think he's waking up, go see him.
 W porządku, myślę, że on się budzi, pójdź go zobaczyć.
@@ -1793,9 +1853,6 @@ Dobrze, teraz trzeba być cierpliwym, za parę dni będziemy w Artis.
 Ok, done.
 W porządku, zrobione.
 
-Ok, ok. Come back if you change your mind.
-Dobra dobra. Jak zmienisz zdanie, będę tutaj.
-
 Ok, see you then!
 Ok, do zobaczenia!
 
@@ -1811,14 +1868,11 @@ Dobrze, możesz zaczynać!
 OldBook
 StaraKsięga
 
-On one hand, ranged weapons are generally weaker than melee ones, but it obviously depends on the level of the weapon. On the other hand, you attack from a safer position.
-Generalnie bronie dystansowe są słabsze od broni do walki w zwarciu, ale oczywiście wszystko zależy od poziomu danej broni. Jednak atakowanie z dystansu jest bezpieczniejsze.
+On one hand, ranged weapons are generally weaker than melee ones, but you attack from a safer position. On the other hand, depending on the level of the weapon, melee ones potentially can yeild quicker kills.
+
 
 Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
 Jak tylko potwór umrze, kliknij na upuszczony przez niego przedmiot lub naciśnij Z aby dodać go do inwentarza.
-
-Or else, if you really wish one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
-Jeżeli chciałbyś jedno i czujesz się na siłach, spróbuj powalczyć z tortugami lub kłapaczami. Jestem pewien, że zdobędziesz jedno lub dwa @@.
 
 Orc Voice
 Głos Orka
@@ -1828,6 +1882,9 @@ Poza tym niewiele wiem, dobrym pomysłem byłoby zapytać Kapitana.
 
 Other things are written but are not legible anymore.
 Coś jeszcze jest napisane, ale nieczytelnie.
+
+Otherwise, if you really want one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
+
 
 Ouch...
 Ałć...
@@ -1847,35 +1904,23 @@ Doskonale !
 Peter
 Piotr
 
-Piberries
-Jagódełki
+Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!
 
-Pink Blobime
-Różowy Blobim
-
-Piou Legs
-Piuskowe Udka
-
-Piou Slayer
-Zabójca Piou
-
-Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, at least not again!
-Proszę nie mów nikomu, że mnie widziałeś. Nie chcę znów być wrzucony do morza w charakterze żarcia dla rekinów, albo ścięty. Jeden raz wystarczy!
 
 Please don't touch these hats, they are for crew members only.
 Proszę nie dotykaj tych czapek, są przeznaczone dla członków załogi.
 
-Plushroom
-Plushroom
+Q'Muller
 
-Plushroom Box
-Pudło Plushroom.
-
-Pumpkin Seeds
-Pestki Dyni
 
 Q'Muller.
 Q'Muller
+
+Q'Onan#000-0-0
+
+
+Q'Onan#000-2-1
+
 
 Raijin Voice
 Głos Radzina
@@ -1886,8 +1931,11 @@ RattosControl
 Really? That's kind of you, I accept your help!
 Naprawdę? To miło z twojej strony, przyjmuję twoją pomoc!
 
-Right! Sailors are pretty quick with their job. They just take too much time bringing all the food back to the ship. Maybe you can help them.
-Racja! Marynarze szybko się uwijają ze swoją robotą. Mimo to tracą dużo czasu na transporcie prowiantu z powrotem na statek. Może mogłbyś im pomóc.
+Resa
+
+
+Right! Ours is an earthsea realm. You see, sailors are swift at their tasks when out of sight of land, but docked by this verdant jewel, they have it so good, they are just taking too much time bringing all the food back to the ship. Maybe you can help them.
+
 
 RightBarrierCheck
 RightBarrierCheck
@@ -1897,9 +1945,6 @@ RightDoorCheck
 
 Rrrr... Pchhhh...
 Rrrr... Pchhhh...
-
-Rules began to rise in order to have a peaceful society. This did not work well for long.
-Reguły powstały w celu zapewnienia pokoju, ale niezbyt się to udało i nie trwało długo.
 
 SO WHAT'S UP?! WHAT ARE YOU DOING?!
 A WIĘC CO TAM?! JAK SIĘ MIEWASZ?!
@@ -1910,14 +1955,11 @@ Marynarze
 Sapartan
 Sapatran
 
-Sea Drops
-Morskie Krople.
-
 Sea water?! I will not help you with your evil plan!
 Woda morska?! Nie pomogę tobie w twym niecnym planie!
 
-Secondly, choose wisely which weapon is suited for you. Some people like to face their enemies closely with a heavy axe, some others prefer to attack from a distance with a bow for example.
-Po drugie, wybierz która broń lepiej do ciebie pasuje. Niektórzy lubią walkę z bliska, przy użyciu ciężkiego topora, a inni wolą walkę na dystans, przy użyciu łuku.
+Secondly, choose wisely which weapon is suited for you. Some people like to face their enemies closely with a heavy axe, others prefer to attack from a distance with a bow for example.
+
 
 See you aboard.
 Do zobaczenia na pokładzie.
@@ -1973,8 +2015,8 @@ Silvio
 Silvio for example?
 Na przykład Silvio?
 
-Silvio starts to speak to his bottle, you leave the conversation.
-Silvio zaczyna rozmowę z butelką, wyłączasz się z rozmowy.
+Silvio starts to speak to his bottle, you leave, letting him have a private conversation.
+
 
 Simply contact them, help them and be kind. They might surely add you to my cookie list!
 Po prostu spotkaj się, pomóż im i bądź miły. Oni mogą na pewno dodać cie do mojej ciasteczkowej listy.
@@ -2030,11 +2072,11 @@ W pudełku jest parę Bandan i Czapek Marynarza.
 Some food.
 Żywność.
 
-Some sailors are looking for goods we could trade in our next destination.
-Kilkoro żeglarzy szuka dóbr które moglibyśmy sprzedać w następnym porcie.
+Some of the crew are looking for goods we can trade with at our next destination.
 
-Sometimes, I wish somebody is sent here to help us.
-Czasami pragnę by kogoś przysłano nam na pomoc.
+
+Sometimes, I wish someone would be sent here to help us.
+
 
 Sorry but I have no time for this.
 Przykro mi, nie mam teraz czasu.
@@ -2051,17 +2093,17 @@ Przepraszam, ale obecnie nie potrzebuję obecnie jakiejkolwiek pomocy. Wpadnij p
 Sorry, but I can't tell you anything about that.
 Przykro mi, ale nie mogę Ci nic powiedzieć na ten temat.
 
+Strength multiplies the damage of your hits, especially melee ones. You will also be able to carry heavier stuff.
+
+
 Stupid yeye...
 Głupi blub blub...
 
-Suddenly, you hear a voice up in the sky.
-Nagle słyszysz głos rozlegający się z nieba.
-
-Sure, but what can you give me in exchange?
-Pewnie, ale co możesz dać mi w zamian?
-
 Sure, but what will I get in exchange?
 Pewnie, ale co dostanę mi w zamian?
+
+Sure, but what will you give me in exchange?
+
 
 Sure, cap'tain.
 Tak jest kapitanie!
@@ -2078,11 +2120,11 @@ Jasne. Weź tę skrzynię pełną @@.
 THAT'S A NICE NAME!
 TO ŁADNE IMIĘ!
 
-Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed, you're weak my poor boy.
-Weź @@ i spróbuj otworzyć przy pomocy czegoś ostrego! Wątpię, że ci się uda, jesteś słaby, biedny chłopiec
+Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak boy in all.
 
-Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed, you're weak my poor girl.
-Weź @@ i spróbuj otworzyć przy pomocy czegoś ostrego! Wątpię, że ci się uda, jesteś słaba moja biedna dziewczynko.
+
+Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak girl in all.
+
 
 Take a Bandana.
 Weź Bandanę.
@@ -2096,8 +2138,8 @@ Weź te monety w zamian i uważaj na siebie.
 Take this money as a reward for your nice words.
 Weź te pieniądze, jako nagrodę, za twoje miłe słowa.
 
-Take this money for your wise choice. But do not try it again. Water has been merciful with you once... Do not tempt fate once more!
-Weź te pieniądze za swój mądry wybór. Nie próbuj tego ponownie. Woda była łaskawa wobec ciebie... Nie kuś już więcej losu!
+Take this money for your wise choice. But do not try it again. The open sea has been merciful with you once... Do not further tempt the fates!
+
 
 Take your reward from the box next to my desk!
 Weź sobie nagrodę z kufra obok mojego biurka!
@@ -2114,8 +2156,8 @@ Tarlan
 Task is done.
 Zadanie zakończone.
 
-Tell him that everything went fine and that we're almost done with the food.
-Powiedz mu że obeszło się bez problemów i prawie skończyliśmy z prowiantem.
+Tell him that everything went fine and that we're almost done with the requisitions.
+
 
 Thank you and be careful with that box. I have worked really hard to fill it!
 Dziękuję i bądź ostrożny z tą skrzynią. Pracowałem ciężko nad jej napełnieniem!
@@ -2141,8 +2183,8 @@ Bardzo dziękuję! Weź część moich jagódełek.
 Thank you, I'll take them and put them on.
 Dzięki, wezmę je i założę.
 
-Thanks again for helping me. But these rattos are a permanent problem and your help is always welcome. The only problem is that I can give you a reward only one time.
-Dziękuję jeszcze raz za pomoc. Ratty są jednak nieprzemijającym problemem a twoja pomoc jest zawsze mile widziana. Jedynym problemem jest to, że mogę cię nagrodzić wyłącznie raz.
+Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem; so you can always be sure that your help with the extermination, to keep their numbers under control, is very welcome indeed. But the situation is, that I can give you a reward only the one time.
+
 
 Thanks for helping me!
 Dzięki za pomoc!
@@ -2168,6 +2210,9 @@ To dość zaskakujące ... Nie wyglądasz bardzo pomocnie. # 1
 The adventure begins!
 Przygoda się rozpoczyna!
 
+The best, the wonderful, the best cookie between all others, the...
+
+
 The captain has locked the door, you should go see him.
 Kapitan zamknął drzwi, pójdź zobaczyć się z nim.
 
@@ -2177,11 +2222,11 @@ Kapitan na Ciebie czeka! Pospiesz się.
 The captain wants:
 Kapitan chce:
 
-The elven from the library has tilted on me a while ago, as well as Enora from the Warrior Guild.
-Elf z biblioteki zerkał na mnie chwilę temu, jak rownież Enora z gildii wojowników.
+The elven from the library firted with me a while ago, so has Enora from the Warrior Guild.
 
-The end of the story got erased, probably because of the sea water. Some pages are still missing thus you don't know the author's name.
-Zakończenie historii jest zamazane, prawdopodobnie z powodu morskiej wody. Niektórych stron brakuje więc nie poznasz imienia autora.
+
+The end of the story got erased, probably because of the sea water. Some pages are still missing. Thus much is left obscure, including even the author's name.
+
 
 The fear to see her sleeping on this quiet and lonely bed is becoming more and more unbearable, I think that I won't get the bravery to see her this time...
 Strach ujrzenia jej śpiącej na tym cichym i samotnym łóżku staje się coraz trudniejszy do zniesienia. Sądzę, że zabraknie mi odwagi, aby spojrzeć na nią tym razem...
@@ -2189,14 +2234,14 @@ Strach ujrzenia jej śpiącej na tym cichym i samotnym łóżku staje się coraz
 The first thing you should do is to evaluate your enemy.
 Pierwszą rzeczą jaką powinieneś zrobić, to ocenić wroga.
 
+The further you go, the more experience you will get, so here's a small description of all the stats you can upgrade with time. But note that these will probably change in the future and have more complex effects.
+
+
 The giant boogeyman!
 Wielki potwór !
 
 The great people of Aemil split up into three groups when they reached the coast.
 Wielki lud Aemilu podzielił się na trzy grupy po osiągnięciu wybrzeża.
-
-The hidden person doesn't answer.
-Ukryta osoba nie odpowiada.
 
 The old book seems to tell about the legend of Aemil. Would you like to read it?
 Ta stara księga mówi o legendzie Aemilu. Chciałbyś ją przeczytać?
@@ -2210,14 +2255,20 @@ The sailor turns his back to you.
 The sailors take you aboard their ship.
 Żeglarz zabiera Cię poza statek.
 
+The stowaway doesn't answer.
+
+
 The usurper has been punished! This is a great day! Take this reward as a prize for your loyalty to the old commander!
 Uzurpator został ukarany! To wielki dzień! Weź tą nagrodę jako uhonorowanie twej lojalności wobec starego dowódcy!
 
 Their leaders then came to the conclusion that an alliance was the only way they could survive.
 Ich dowódcy wreszcie doszli do wniosku, że alians jest jedyną opcją zapewniającą przetrwanie.
 
-Then I can give you some tips about fights.
-Wtedy mogę dać CI kilka wskazówek jak walczyć.
+Then I can give you some tips about fighting.
+
+
+Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them.
+
 
 Then it seems I have to apologize.
 Zatem wygląda na to że muszę złożyć przeprosiny.
@@ -2225,7 +2276,7 @@ Zatem wygląda na to że muszę złożyć przeprosiny.
 Then leave me alone.
 
 
-Then put your anger onto these trees around, you will gain experience by practicing your sword skill on them.
+There are 6 sailors who will need your help. They are all around the island.
 
 
 There are few groups of these @@s all around this island. Just pick some and have a try.
@@ -2240,8 +2291,8 @@ Wokół Ciebie latają żółte ptaszki. Nazywają się Piuski. Gdyby tak jedneg
 There are some groups of these @@s all around this island. Just pick some and have a try.
 Jest kilka grup @@s na całej wyspie .Wystarczy zebrać kilka, spróbuj.
 
-There are some knifes on the table. Would you like to take one?
-Na stole leży trochę noży. Weźmiesz sobie jeden?
+There are some knives on the table. Would you like to take one?
+
 
 There are still some rattos left! Do you want to abort the quest?
 Jeszcze kilka rattów zostało przy życiu! Chcesz przerwaćzadanie?
@@ -2249,11 +2300,8 @@ Jeszcze kilka rattów zostało przy życiu! Chcesz przerwaćzadanie?
 There is a paper with some rules written on it.
 Tam jest kartka z regulaminem.
 
-There is always something you can do here, like killing some tortugas or help Peter clean the ship from rattos.
-Tutaj zawsze możesz coś pomóc, na przykład  zabijać tortugi lub pomuc Peterowi oczyścić statek z rattatów.
+There is always something you can do here, like killing some tortugas or helping Peter clean the ship from rattos.
 
-There're 6 sailors who will need your help. They're all around the island.
-6 marynarzy potrzebuje twej pomocy. Znajdziesz ich na wyspie.
 
 There's nothing to say, don't worry miss.
 Nie musi pani nic mówić, proszę się nie martwić.
@@ -2261,14 +2309,17 @@ Nie musi pani nic mówić, proszę się nie martwić.
 There's nothing to say, don't worry sir.
 Cóż można powiedzieć, niech się Pan nie martwi.
 
-Therefore, starvation stroke on the people of Aemil.
-Dlatego głód dosięgnął ludność wioski Aemil.
+Therefore, starvation stalked the people of Aemil.
 
-These boxes are way too heavy to be brought alone onto the ship.
-Te skrzynie są zbyt ciężkie, by mogłyby być wciągnięte samemu na statek.
+
+These boxes are much too heavy to be lifted by one, all the way onto the ship.
+
 
 These crocotrees are full of yaying @@, but they are so hard to hit...
 Krokodrzewa mają w bród @@, ale weź traf chociaż jedno...
+
+These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.
+
 
 These heavy boxes are killing me, I don't feel my arms anymore!
 Te ciężkie skrzynie mnie dobijają, nie czuję już swych ramion!
@@ -2279,8 +2330,8 @@ Te skrzynie bulb są zbyt ciężkie, aby zanieść je w pojedynkę na statek.
 They are all around the island.
 Są wszędzie na wyspie.
 
-They are both valid and I need them. In the past, I probably did mistakes I now regret. I was wondering if you could investigate and... Sort out this situation.
-Obydwa są poprawne i ich potrzebuję. W przeszłości, prawdopodobnie uczyniłem błędy których teraz żałuję. Zastanawiałem się czy nie mógłbyś się rozejrzeć i ... rozwiązać tę sytuację.
+They are each valued individuals and I need them both. In the past, I probably made my share of mistakes. I regret good management is so difficult. I was wondering if you could investigate and... Sort out this situation.
+
 
 They are so tasty when cooked together with some @@. Don't drop any of them!
 Są tak smaczne gdy przyrządzi się je z odrobiną @@. Nie wyrzucaj żadnego z nich!
@@ -2315,11 +2366,14 @@ To jest @@, jasnoniebieski morski owoc. Są bardzo porządane w archipelagu.
 This is it, the end of the Second Beta Release of Evol Online!
 To jest właśnie to, zakończenie drugiego wydania wersji beta Evol Online!
 
-This kind of talk should be punished, but I agree that I don't specially like them too, so keep an eye on her.
-Wypowiedzi tego typu powinny spotkać się z karą ale... właściwie też nie pałam do nich sympatią, lepiej miejmy na nią oko.
+This is the last one. If you use it again out of clumsiness, I will take your flesh as the main ingredient for my cookie recipe.
 
-This kind of talk should be punished, but I agree that I don't specially like them too, so keep an eye on him.
-Wypowiedzi tego typu powinny spotkać się z karą ale... właściwie też nie pałam do nich sympatią, lepiej miejmy na niego oko.
+
+This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.
+
+
+This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on him.
+
 
 This makes sense. Do you think we should inform the capt'n about it?
 To by się zgadzało, myślisz że powinniśmy powiedzieć o tym Kapitanowi?
@@ -2327,11 +2381,14 @@ To by się zgadzało, myślisz że powinniśmy powiedzieć o tym Kapitanowi?
 This new continent, in fact an archipelago, was called Andorra.
 Nowy kontynent, a raczej archipelag, zwał się Andorra.
 
+This panel looks in rather good shape, as though some people take care of it regularly. Maybe it has important information.
+
+
 Tibbo
 Tibbo.
 
-Tibbo went to the east-south of the island, others are gone to the north, and I think that Gulukan is not so far from here.
-Tibbo poszedł na południowy-wschód wyspy, reszta przepadła na północy, i myślę że Gulukan nie jest gdzieś niedaleko.
+Tibbo went to the south-east of the island, others are gone to the north, and I think that Gulukan is not so far from here.
+
 
 Tibbo.
 Tibbo.
@@ -2342,8 +2399,8 @@ Jeżeli chcesz otworzyć ekwipunek naciśnij F3 lub kursorem kliknij w powyższy
 Too bad I'm not hungry enough right now for these... cookies. I'll maybe come back later.
 Szkoda, nie jestem wystarczająco głodny teraz na te.... ciastka. Może wróć później.
 
-Too bad... Come back when you'll have some fine food for me.
-Szkoda... Wróć do mnie jak będziesz miał jakieś dobre jedzenie.
+Too bad... Come back when you have some choice food for me. Growl... grumble... grumble.
+
 
 Tritan Voice
 Głos Trytana
@@ -2353,9 +2410,6 @@ Prawda, ale teraz wygląda całkiem dobrze! Mam rację ?
 
 True but now she seems pretty fine! Am I right?
 Prawda, ale teraz wygląda całkiem dobrze! Mam rację ?
-
-Try to ask Max. He's an early riser.
-Spróbuj zapytać Maxa. Jest rannym ptaszkiem.
 
 UAHAHAHAAH! I am the cook of that bunch of donkeys and I can be rude with everyone from this bossy captain to that harpy-lady!
 AHAHAHAHA! Jestem kucharzem tej zgrai osłów i mogę być chamski wobec każdego, od gburowatego kapitana po tę harpią panienkę!
@@ -2384,14 +2438,20 @@ Przeważnie nie pozwalam nikomu by ruszał moich skrzyń, ale...
 Very nice, indeed!
 Zaiste, naprawdę niezłe!
 
+Vitality raises your maximum health points and defense.
+
+
 WHAT DID YOU SAY?!
 CO POWIEDZIAŁEŚ?!
+
+Wait a minute, where's the cookie I gave you?
+
 
 Wait, it seems someone is blocking the door from the other side!
 Poczekaj, wygląda na to, że ktoś blokuje te drzwi z drugiej strony!
 
-Wait, why do you still have the dish on you?!
-Czekaj, czemu ciągle masz na sobie jedzenie ?!
+Wait, why do you still have the dish with you?!
+
 
 Wait... That's not the place for a chef, what are you doing here?
 Czekaj ... To nie jest miejsce dla kucharza, co ty tu robisz?
@@ -2399,8 +2459,8 @@ Czekaj ... To nie jest miejsce dla kucharza, co ty tu robisz?
 Wait... Where are we going?
 Poczekaj... Dokąd idziemy?
 
-Walk a bit, it'll be easy for you to catch one. Impale one of them for me please.
-Przejdź się odrobinę, łatwo złapiesz jednego. Proszę, złap też jednego dla mnie.
+Walkig around a bit, it'll be easy for you to catch one, I bet. Impale one of them for me please.
+
 
 Water, salt, spicy herbs and meat stuffed with my special surprise!
 Woda, sól, ostre przyprawy i mięso wypchane moją wyjątkową niespodzianką!
@@ -2411,14 +2471,14 @@ Jesteśmy szczęśliwi że kapitan Nard pozwolił Ci do nas dołączyć!#0
 We are glad captain Nard has let you join us down here!#1
 Jesteśmy szczęśliwi że kapitan Nard pozwolił Ci do nas dołączyć!#1
 
+We have made a stop at a little island, before making it on to the port of Artis.
+
+
 We hope you liked this introduction and to see you again in our future releases!#0
 Mamy nadzieję że spodobało Ci się to wprowadzenie i oczekujemy ciebie również w przyszłości!#0
 
 We hope you liked this introduction and to see you again in our future releases!#1
 Mamy nadzieję że spodobało Ci się to wprowadzenie i oczekujemy ciebie również w przyszłości!#1
-
-We made a stop at a little island, before making it to the port of Artis.
-Przed przybiciem do portu Artis zatrzymaliśmy się przy małej wyspie.
 
 We need as many hands as possible to explore the island out there, and to get some new food.
 Potrzebujemy jak najwięcej ludzi aby zbadać wyspę i zdobyć nową żywność.
@@ -2432,8 +2492,8 @@ Potrzebujemy mężczyzn na wyspie... Oh wybacz, kobiety też się przydadzą, oc
 We should be there in a few days, once we arrive, I will warn the Warrior Guild about what happened, I'm sure they can help.
 Powinniśmy tam być za kilka dni, jak tylko przybijemy, Poinformuję gildię wojowników o tym, co się wydarzyło - jestem pewien, że mogą pomóc.
 
-We thought that you could help us understand this, all we know is that we found you back in the sea, adrift on your raft.
-Myśleliśmy że będziesz w stanie nam wszystko wyjaśnić, wiemy tylko że znaleźliśmy cię na morzu.
+We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.
+
 
 We tried to clean them but the sea water mostly destroyed them. It's why we gave you these clothes. They're not very nice, but that's all that we have for you.#0
 Chcieliśmy je uprać, ale woda morska je poniszczyła. Żebyś się nie pochorował to dostaniesz nowe. Piękne nie są, ale podziękuj że w ogóle je dostaniesz.#0
@@ -2441,8 +2501,8 @@ Chcieliśmy je uprać, ale woda morska je poniszczyła. Żebyś się nie pochoro
 We tried to clean them but the sea water mostly destroyed them. It's why we gave you these clothes. They're not very nice, but that's all that we have for you.#1
 Chcieliśmy je uprać, ale woda morska je poniszczyła. Żebyś się nie pochorował to dostaniesz nowe. Piękne nie są, ale podziękuj że w ogóle je dostaniesz.#1
 
-We usually dock around these small pieces of land because they provide us some of the best food of all the archipelago.
-Przeważnie dokujemy w pobliżu tych niewielkich przestrzeni lądu gdyż zapewniają nam one najlepsze pożywienie na całym archipelagu.
+We usually dock around these small isles because they provide us some of the best food of all the archipelago.
+
 
 We usually don't stop in such splendid places, but the captain let us stay here while he writes down the location of this new island on his map!
 Zazwyczaj nie zatrzymujemy się w takich miejscach, ale kapitan zezwolił na postój do czasu zanotowania pozycji tej nowej wyspy na swojej mapie!
@@ -2453,8 +2513,8 @@ Dobublamy się tam za parę dni i tam Cię wysadzimy.
 Well I'm working too! Don't you want me to carry one of these boxes back to Gugli?
 Ja również pracuję! Nie zaniósłbyś jednej z tych skrzyń Gugliemu?
 
-Well done! Collect all the ingredients and then come back here. You will be rewarded once they understand who rules this ship!
-Świetnie! Zbierz wszystkie składniki a następnie wróć tutaj. Zostaniesz nagrodzony jak tylko zrozumieją, kto rządzi tym statkiem!
+Well done! Collect all the ingredients and then come back here. You will be rewarded, once I am satisfied that they understand who rules this ship!
+
 
 Well done! The ship is now ready to sail again!
 Wspaniale! Statek jest gotowy do dalszej żeglugi!
@@ -2519,6 +2579,9 @@ A co z moją historią ?
 What am I supposed to say?
 Co powinienem powiedzieć?
 
+What an unexpected pleasure, your help is always welcome!
+
+
 What are you doing in my kitchen?! Get out, it's not a place for kids!
 Co robisz w mojej kuchni?! Wynocha! To nie jest miejsce dla dzieci!
 
@@ -2543,8 +2606,8 @@ Czego potrzebujesz?
 What danger?! Where?!
 Jakie zagrożenie?! Gdzie?!
 
-What did Gugli said about the box? Was it ok?
-Co mówił Gugli o skrzyni? Była w porządku?
+What did Gugli say about the box? Was it ok?
+
 
 What did Gugli yayaid about the box? Was it ok?
 Co Gugli blublał o skrzynce?  Była w porządku?
@@ -2657,9 +2720,6 @@ Kim jesteś?
 Who is she?
 Kim ona jest?
 
-Who of them two has the 'good' on his side?
-Kto z tych dwóch ma \"dobro\" po swojej stronie ?
-
 Who should I search for?
 Kogo powinienem sprawdzić ?
 
@@ -2699,6 +2759,9 @@ Dlaczego?
 Why? And who should you bring it back to?
 Dlaczego? I komu powinieneś to odnieść?
 
+With hunger, thirst, and sleep as your only companions; you have the disturbing realization that you can't remember anything of your former life or identity.
+
+
 Wow, it seems everyone knows my name!
 Łał. Wygląda na to że wszyscy wiedzą jak się nazywam.
 
@@ -2708,8 +2771,8 @@ Blubla, powinnaś pójść do niej! Ucieszy się, gdy Cię zobaczy.
 Yaya, you should go see her! She'll be happy to see you.#1
 Blubla, powinieneś pójść do niej! Ucieszy się, gdy Cię zobaczy.
 
-Yayayaya, it's the first time someone is dressed worse then us!
-Blub blub blub, po raz pierwszy ktoś jest ubrany gorzej od nas!
+Yayayaya, it's the first time someone is dressed worse than us!
+
 
 Yeah you're all like *hic* that in Esperia, but you won't get me! *burp*
 Ta, wszyscy właśnie tak  *hik* robicie w Esperii, ale mnie nie nabierzecie! *beek*
@@ -2762,8 +2825,8 @@ Tak.
 Yeye @@!
 Yeye @@!
 
-Yeye ask too much but do too less. Take this box and stop talking.
- Bulb gadasz wiele, a mało co robisz. Bierz to pudło i nie marudź.#0
+Yeye ask too much but do too little. Take this box and stop talking.
+
 
 Yeye be careful with wild animal's food, some of them are yeyery dangerous, especially the crocs.
 Yeye bądź ostrożny z pożywieniem dla zwierząt, niektóre są niebezpieczne, szczególnie krokosy.
@@ -2822,9 +2885,6 @@ Mój drogi przyjacielu, nawet z winem co za dużo, to nie zdrowo.
 You are now officially part of my crew! Thanks again for your help.
 Od teraz już oficjalnie jesteś częścią mojej załogi! Jeszcze raz dzięki za twą pomoc.
 
-You are now part of the crew. Thanks again for your help.
-Jesteś teraz członkiem załogi. Jeszcze raz dziękuję za pomoc.
-
 You are now part of the crew... At least for us down here!
 Od teraz jesteś członkiem załogi... Przynajmniej dla nas tu na dole!
 
@@ -2837,8 +2897,8 @@ Możesz także atakować wroga wciskając klawisz \"A\" by zaznaczyć i \"Ctrl\"
 You can attack a monster by clicking directly on it. Once selected, you may notice a bar near your target showing you how much health it has left.
 Możesz zaatakować potwora klikając bezpośrednio na nim. Kiedy jest zaznaczony, możesz zaobserwować pasek jego życia.
 
-You can attack a monster by clicking on it or from your keyboard you can press the 'A' key to select the monster followed by 'Ctrl' to attack it.
-Możesz zaatakować potwora klikając na niego, lub naciskając \"A\" w celu wybrania potwora, a następnie 'Ctrl' aby zaatakować.
+You can attack a monster by clicking on it, or from your keyboard you can press the 'A' key to select the monster followed by 'Ctrl' to attack it.
+
 
 You can easily see if a monster is easy to kill or just impossible to defeat. Do not try against creatures that are way more powerful than you... You'd be risking your life for nothing.
 Możesz łatwo zauważyć czy potwór jest łatwy do zabicia czy nie. Nie próbuj atakować potworów które są o wiele silniejsze niż ty.... Będziesz niepotrzebnie ryzykować życie.
@@ -2849,8 +2909,11 @@ Możesz je znaleźć w oceanie, w pobliżu korali i innych morskich stworzeń. A
 You can now stay with your new friends and enjoy the warm sand of this little island.
 Możesz teraz zostać ze swoimi nowymi znajomymi, i cieszyć się ciepłym piaskiem tej małej wyspy.
 
-You can spot Q'Muller on a cliff on the west busy collecting @@s.
-Możesz zauważyć Q'Mullera na klifie na zachód, zajętego zbieraniem @@s.
+You can read some lines that are nicely carved into the soft wooden planks.
+
+
+You can spot Q'Muller on a cliff off toward the west, busy collecting @@s.
+
 
 You can try talking with some other sailors to get some information about that.
 Możesz spróbować porozmawiać z innymi marynarzami by zdobyć na temat tego więcej informacji.
@@ -2870,8 +2933,8 @@ You could start by talking to Gugli. He always has tasks for people willing to h
 You don't expect me to eat that, do you? Give me something else!
 Nie oczekujesz chyba, że to zjem ? Daj mi coś innego !
 
-You have an awful amnesia.
-Cierpisz na straszliwą amnezję.
+You have an awful case of amnesia.
+
 
 You have been so nice to me. So please, take one.#0
 Byłeś taki miły dla mnie. Weź proszę jedno. #0
@@ -2879,8 +2942,8 @@ Byłeś taki miły dla mnie. Weź proszę jedno. #0
 You have been so nice to me. So please, take one.#1
 Byłaś taka miła wobec mnie. Proszę więc, weź jedno. #1
 
-You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of the damn sailor brought here that 'nice' lady.
-Musisz wiedzieć że był czas bez sprzeciwu załogi wobec porucznika. Wtedy pewnego dnia jeden z przeklętych żeglarzy przyprowadził tutaj tą \"miłą\" panią.
+You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of those damn sailors brought that 'nice' lady here.
+
 
 You hear a loud scream. It must be the creaking of the wooden door...
 
@@ -2888,14 +2951,14 @@ You hear a loud scream. It must be the creaking of the wooden door...
 You hit too hard with your fist, you destroyed your @@.
 Uderzasz za mocno i tracisz @@.
 
-You honor me beauty, but I'm already taken by Julia!
-Schlebiasz mi ślicznotko, ale moje serce należy do Julii.
+You honor me, my beauty, but I'm already taken by Julia!
+
 
 You know, yeyes love to chat while working.
 Wiesz, marynarze lubią gadać podczas pracy.
 
-You like them, don't you? Just speak with Peter then. He is on the second deck of the ship. He will send you to downstairs where you will find our furry meal!
-Lubisz je, nieprawdaż? Pogadaj więc z Piotrem. Znajduje się na drugim pokładzie statku. Pokieruje cię do miejsca, gdzie znajdziesz nasz futrzasty posiłek!
+You like them, don't you? Just speak with Peter then. He is on the second deck of the ship. He will send you downstairs to the hold, where you will find a furry meal!
+
 
 You like these hats, right?
 Ty lubisz te czapki, prawda?
@@ -2918,9 +2981,6 @@ Rozdzieliłeś @@, ale tylko jedna część jest jadalna.
 You perfectly cut your @@ into two edible parts.
 Idealnie przeciąłeś swojego @@ na dwie jadalne części.
 
-You realize you can't remember anything.
-Uświadamiasz sobie, że niczego nie pamiętasz.
-
 You receive @@ E!
 Otrzymujesz @@ E!
 
@@ -2936,8 +2996,11 @@ Widzisz, moje ciastka są zastrzeżone dla konkretnego typu ludzi....
 You see? I'm working here!
 Widzisz? Ja tutaj pracuję!
 
-You should come back when you'll have some free space.
-Powinieneś wrócić kiedy będziesz miał trochę wolnego miejsca.
+You should ask Max. He's an early riser.
+
+
+You should come back when you have some free space.
+
 
 You should go and get some sleep.
 Najlepiej idź jeszcze pospać.
@@ -2948,11 +3011,11 @@ Powinieneś się z nim zobaczyć. Jest jednym z najbardziej doświadczonych mary
 You should go see them.
 Lepiej idź się z nimi zobaczyć.
 
-You should inform Nard about the loading progress of the food on to the boat. He will be pleased to hear that good news!
-Powinieneś poinformować Narda o trwającym postępie załadunku na statek. Ucieszy się z dobrych nowin!
+You should inform Nard of the progress made in loading food and supplies on to the boat. He will be pleased to hear that good news!
 
-You should look at them once we arrive at the port, they are worth it, hehe...
-Powinieneś im się przyjrzeć jak zawiniemy do portu, są tego warte, hehe...
+
+You should look at them when we arrive at the port, they are worth it, hehe...
+
 
 You should talk to Magic Arpan first.
 
@@ -2963,8 +3026,8 @@ Powinieneś pójść na północ żeby go znaleźć.
 You should walk to the north.
 Powinieneś iść na północ.
 
-You shouldn't believe all of the stories drunk sailors tell you.
-Nie powinieneś wierzyć we wszystkie pijackie historyjki, które opowiadają pijani marynarze.
+You shouldn't believe every tale drunken sailors tell you.
+
 
 You still got a few days before we arrive at the port, maybe you can learn something from them?
 Minie jeszcze parę dni, zanim dotrzemy do portu, może spędzisz ten czas zbierając informacje?
@@ -3011,6 +3074,9 @@ Znajdziesz drewniany znak niedaleko skrzyżowania. On jest kilka kroków w lewo.
 You will see, citizens are polite and you can still ask for help in the Warrior Guild. They can help find a job for you or maybe help you find out what happened to you out at sea!
 Zobaczysz, obywatele są mili a poza tym możesz poprosić o pomoc w gildii wojowników. Mogą pomóc Ci znaleźć pracę a być może są w stanie wyjaśnić co Ci się przydarzyło na morzu!
 
+You wipe off enough of the sand to manage to read the message written on this crude piece of wood.
+
+
 You yoiis should walk to the north.
 Powinieneś iść na północ.
 
@@ -3025,6 +3091,9 @@ Jesteś jak reszta tej brudnej załogi. Twoje imię jest teraz na liście zdrajc
 
 You're like the rest of this filthy crew. Your name is now on the traitors list!#1
 Jesteś jak reszta tej brudnej załogi. Twoje imię jest teraz na liście zdrajców!#1
+
+You're lucky that I'm a generous person, here's another one.
+
 
 You're on a ship, we're on our way to the commercial capital of Artis.
 Jesteś na statku, zmierzamy do stolicy handlu - Artis.
@@ -3056,8 +3125,20 @@ Jesz... Naprawdę jesz... ratty? Myślę że jesteś durniem.
 You? Here?
 Ty? Tutaj?
 
+Your body aches, even your hair hurts, and the daylight is painful; but still you open your eyes and see a large ship before you!
+
+
 Your hands are too weak, you did not succeed in opening this @@.
 Twoje ręce są zbyt słabe, nie otworzyłeś @@
+
+Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand.
+
+
+Yummy bakery aromas have roused monsieur's curiosity, is it not so?
+
+
+Yummy bakery aromas have stirred madam's curiosity, am I right?
+
 
 Zzzzzzzzz...
 
