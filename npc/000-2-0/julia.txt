@@ -271,7 +271,7 @@ L_Rumors:
     close;
 
 OnInit:
-    setnpcsex 0;
+    setnpcsex G_FEMALE;
     setnpcdistance 10;
     end;
 

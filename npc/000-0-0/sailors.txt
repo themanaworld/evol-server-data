@@ -76,7 +76,7 @@ OnTalk:
     close;
 
 OnInit:
-    setnpcsex 1;
+    setnpcsex G_MALE;
     end;
 }
 
@@ -85,6 +85,6 @@ OnInit:
     close;
 
 OnInit:
-    setnpcsex 1;
+    setnpcsex G_MALE;
     end;
 }

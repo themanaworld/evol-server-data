@@ -63,7 +63,7 @@ L_Close:
     close;
 
 OnInit:
-    setnpcsex 1;
+    setnpcsex G_MALE;
     setnpcdistance 2;
     end;
 }

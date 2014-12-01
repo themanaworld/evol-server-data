@@ -93,7 +93,7 @@
     next;
 
 OnInit:
-    setnpcsex 1;
+    setnpcsex G_MALE;
     setnpcdistance 2;
     end;
 
