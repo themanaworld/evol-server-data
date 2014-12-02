@@ -24,7 +24,7 @@
 L_Give:
     if (.@q > 0) goto L_Close;
 
-    InventoryPlace 514, 1;
+    inventoryplace 514, 1;
 
     setq ShipQuests_TreasureChest, 1;
 

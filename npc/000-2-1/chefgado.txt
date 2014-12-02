@@ -121,7 +121,7 @@ L_OpenCroconut:
 L_GotAll:
     mes "";
 
-    InventoryPlace 717, 1;
+    inventoryplace 717, 1;
 
     delitem "PiouLegs", 2;
     delitem "HalfCroconut", 1;
@@ -164,7 +164,7 @@ L_PoisonJulia:
     setq ShipQuests_ChefGado, 4;
     set Zeny, Zeny + 200;
     message strcharinfo(0), l("You receive @@ E!", 200);
-    InventoryPlace 502, 2;
+    inventoryplace 502, 2;
     getitem "Bread", 1;
     getexp 15, 0;
 

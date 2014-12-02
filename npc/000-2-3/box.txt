@@ -74,7 +74,7 @@ L_NoQuest:
     mesq l("Now go outside and talk with Gugli, he'll tell you what provisions we need.");
     next;
 
-    InventoryPlace 718, 1;
+    inventoryplace 718, 1;
     setq ShipQuests_Nard, 1;
     getitem "JohanneKey", 1;
 
@@ -86,7 +86,7 @@ L_Give:
     mesn "Nard";
     mesq l("Congrats, you are now part of the crew. Thanks again for your help.");
 
-    InventoryPlace 2900, 1;
+    inventoryplace 2900, 1;
 
     setq ShipQuests_Nard, 5;
     getitem "Bandana", 1;

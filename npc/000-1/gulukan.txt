@@ -54,7 +54,7 @@ L_Continue2:
 
     set .@item, 715;
     set .@count, 1;
-    InventoryPlace 715, 1;
+    inventoryplace 715, 1;
 
     setq ShipQuests_Gulukan, 1;
     getitem "CroconutBox", 1;

@@ -5,7 +5,7 @@
 // Description:
 //    Random some sailors's dialogues between two categories of NPCs.
 
-function	script	SailorFood	{
+function	script	sailorfood	{
     mesn;
 
     set .@q, rand(0, 400) / 100;

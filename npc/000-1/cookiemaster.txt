@@ -179,7 +179,7 @@ L_Reward:
 
     set .@item, 517;
     set .@count, 1;
-    InventoryPlace 517, 1;
+    inventoryplace 517, 1;
 
     setq General_Cookies, 1;
     getitem "DeliciousCookie", 1;

@@ -10,7 +10,7 @@
 //    .@iteminfo = Item information type. (See doc for list of item's types)
 //    .@countitem = Count item's number.
 
-function	script	InventoryPlace	{
+function	script	inventoryplace	{
     getinventorylist;
     set .@iteminfo, getiteminfo(getarg(0), 2);
     set .@countitem, countitemcolor(getarg(0));

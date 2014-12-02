@@ -4,7 +4,7 @@
 // Description:
 //    Function checking the client version and reports if it is too old.
 
-function	script	CheckClientVersion	{
+function	script	checkclientversion	{
     if (ClientVersion > 1) return;
 
     mesn "Narrator";

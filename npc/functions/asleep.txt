@@ -7,7 +7,7 @@
 // Variables:
 //    .@rand = Random number between the number of "sleeping" choice.
 
-function	script	Asleep	{
+function	script	asleep	{
 
     set .@rand, rand(3);
     if (.@rand == 0) npctalk3 l("Zzzzzzzzz...");

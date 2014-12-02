@@ -6,7 +6,7 @@
 // Variables:
 //    .@rand = Random number between the number of "goodbye" choice.
 
-function	script	GoodBye	{
+function	script	goodbye	{
     closedialog;
 
     set .@rand, rand(13);

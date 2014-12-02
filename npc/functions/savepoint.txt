@@ -9,7 +9,7 @@
 //      getarg(1)   x's value,
 //      getarg(2)   y's value.
 
-function	script	SavePoint	{
+function	script	savepoint	{
     message strcharinfo(0), "Your position has been saved.";
 
     savepoint getarg(0), getarg(1), getarg(2);

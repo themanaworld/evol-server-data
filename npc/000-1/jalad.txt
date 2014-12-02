@@ -40,7 +40,7 @@ L_Continue:
     mesq l("Surely. Take this box full of @@s.", getitemlink("Plushroom"));
     next;
 
-    InventoryPlace 716, 1;
+    inventoryplace 716, 1;
 
     setq ShipQuests_Jalad, 1;
     getitem "PlushroomBox", 1;
@@ -52,7 +52,7 @@ L_Continue:
     goto L_Close;
 
 L_CallFunc:
-    SailorFood;
+    sailorfood;
 
     menu
         rif(getq(ShipQuests_Gugli) > 1, l("Task is done.")), L_TaskDone,
@@ -117,8 +117,7 @@ L_TaskDone:
     mesq l("Perfect!");
 
 L_Close:
-    GoodBye;
-    close;
+    goodbye;
 
 OnInit:
     setnpcsex G_MALE;

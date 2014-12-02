@@ -190,7 +190,7 @@ L_GiveFood:
 //  if (.@id == item's ID) then food is correct.
 // Do not put any other number than -1, 0, 1, 2 or the item's ID, that'll avoid confusion.
 
-    InventoryPlace 507, 3;
+    inventoryplace 507, 3;
     delitem .@id, 1;
 
     setcamnpc;

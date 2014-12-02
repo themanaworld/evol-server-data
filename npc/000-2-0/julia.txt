@@ -63,7 +63,7 @@ L_Menu:
     goto L_ChooseLang;
 
 L_First:
-    CheckClientVersion;
+    checkclientversion;
 
     mesn;
     mesq l("Hi, nice to see you!");
@@ -275,5 +275,5 @@ OnInit:
     end;
 
 L_Quit:
-    GoodBye;
+    goodbye;
 }

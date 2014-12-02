@@ -43,7 +43,7 @@
     mesq l("Yeye ask too much but do too little. Take this box and stop talking.");
     next;
 
-    InventoryPlace 713, 1;
+    inventoryplace 713, 1;
 
     mesn "Narrator";
     mes col(l("Couwan hands you a box full of fish."), 9);

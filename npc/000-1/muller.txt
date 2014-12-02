@@ -42,7 +42,7 @@
     mesq l("Well then... Take this one!");
     next;
 
-    InventoryPlace 716, 1;
+    inventoryplace 716, 1;
 
     setq ShipQuests_QMuller, 1;
     getitem "PlushroomBox", 1;
@@ -54,7 +54,7 @@
     close;
 
 L_CallFunc:
-    SailorFood;
+    sailorfood;
 
     menu
         rif(getq(ShipQuests_Gugli) > 1, l("Task is done.")), L_TaskDone,
@@ -114,7 +114,7 @@ L_TaskDone:
     mesq l("Good to hear!");
     next;
 
-    GoodBye;
+    goodbye;
 
 L_Quit:
     closedialog;
