@@ -59,7 +59,7 @@ L_Sailors:
     close;
 
 L_Close:
-    callfunc "GoodBye";
+    GoodBye;
     close;
 
 OnInit:

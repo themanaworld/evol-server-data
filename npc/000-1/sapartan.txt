@@ -98,5 +98,5 @@ OnInit:
     end;
 
 L_Quit:
-    callfunc "GoodBye";
+    GoodBye;
 }

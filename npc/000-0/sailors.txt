@@ -10,7 +10,7 @@
 000-0,23,20,0	script	Sailors	405,6,6,{
 
 OnTouch:
-    callfunc "CheckClientVersion";
+    CheckClientVersion;
     requestlang .@lang;
     if (.@lang >= 0 && .@lang <= 9) Lang = .@lang;
 

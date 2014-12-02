@@ -7,7 +7,7 @@
 //    Sleeping and grumbling NPC.
 
 000-2-1,32,38,0	script	Devis	410,{
-    callfunc "Asleep";
+    Asleep;
     close;
 
 OnInit:

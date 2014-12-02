@@ -63,8 +63,7 @@ L_Menu:
     goto L_ChooseLang;
 
 L_First:
-
-    callfunc "CheckClientVersion";
+    CheckClientVersion;
 
     mesn;
     mesq l("Hi, nice to see you!");
@@ -276,5 +275,5 @@ OnInit:
     end;
 
 L_Quit:
-    callfunc "GoodBye";
+    GoodBye;
 }
