@@ -111,8 +111,8 @@ L_QuestAccepted:
 L_OpenCroconut:
     mes "";
     mesn;
-    mesq g(l("Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak girl in all.", getitemlink("Croconut")),
-           l("Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak boy in all.", getitemlink("Croconut")));
+    mesq lg("Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak girl in all.", getitemlink("Croconut"),
+            "Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak boy in all.", getitemlink("Croconut"));
     next;
     mesq l("Now move!");
 

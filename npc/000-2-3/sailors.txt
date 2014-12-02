@@ -14,14 +14,14 @@ OnTouch:
 
     setcamnpc "Elmo";
     mesn "Elmo";
-    mesq g(l("So that's why we wanted to warn you, maybe she comes from that guild, as that sign was on her raft."),
-           l("So that's why we wanted to warn you, maybe he comes from that guild, as that sign was on his raft."));
+    mesq lg("So that's why we wanted to warn you, maybe she comes from that guild, as that sign was on her raft.",
+            "So that's why we wanted to warn you, maybe he comes from that guild, as that sign was on his raft.");
     next;
 
     setcamnpc "Nard";
     mesn "Captain Nard";
-    mesq g(l("I see. Warn the other sailors about this. But if she's part of the Warrior Guild, then she's also our freind and ally."),
-           l("I see. Warn the other sailors about this. But if he's part of the Warrior Guild, then he's also our freind and ally."));
+    mesq lg("I see. Warn the other sailors about this. But if she's part of the Warrior Guild, then she's also our freind and ally.",
+            "I see. Warn the other sailors about this. But if he's part of the Warrior Guild, then he's also our freind and ally.");
     next;
 
     setcamnpc "Elmo";
@@ -35,12 +35,12 @@ OnTouch:
 
     setcamnpc "Nard";
     mesn "Captain Nard";
-    mesq g(l("This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her."),
-           l("This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on him."));
+    mesq lg("This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.",
+            "This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on him.");
     next;
 
-    mesq g(l("But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet."),
-           l("But... If he has amnesia like Julia said... We don't need to worry about him. At least not yet."));
+    mesq lg("But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet.",
+            "But... If he has amnesia like Julia said... We don't need to worry about him. At least not yet.");
     next;
 
     setcamnpc "Elmo";

@@ -103,8 +103,8 @@ OnGiveTask:
     setq ShipQuests_Peter, 6;
     set .@peter, getq(ShipQuests_Peter);
     mesn;
-    mesq g(l("Hey, girl!"),
-           l("Hey, man!"));
+    mesq lg("Hey, girl!",
+            "Hey, man!");
     next;
     mesq l("I need somebody who can rid the hold of the ship of these rattos. Can you help me?");
     next;

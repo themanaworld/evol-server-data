@@ -217,8 +217,8 @@ L_TaskCompleted:
 L_AllComplete:
     mesq l("Elmo told me what Nard said, congrats!");
     next;
-    mesq g(l("You're one of us now, that's great! I was sure that you were a kind lady when I first saw you!"),
-           l("You're one of us now, that's great! I was sure that you were a good man when I first saw you!"));
+    mesq lg("You're one of us now, that's great! I was sure that you were a kind lady when I first saw you!",
+           "You're one of us now, that's great! I was sure that you were a good man when I first saw you!");
     next;
 
     goto L_Menu;

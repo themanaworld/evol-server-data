@@ -170,8 +170,8 @@ L_Where:
 L_Julia:
     mes "";
     mesn;
-    mesq g(l("She's on the upper level, yeye can't miss her. She's the only girl in this crew, oh well, except for you now yeyeye!"),
-           l("She's on the upper level, yeye can't miss her. She's the only girl in this crew."));
+    mesq lg("She's on the upper level, yeye can't miss her. She's the only girl in this crew, oh well, except for you now yeyeye!",
+            "She's on the upper level, yeye can't miss her. She's the only girl in this crew.");
     next;
 
     mesn "Narrator";

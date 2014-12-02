@@ -9,8 +9,8 @@
     mesn;
     mesq l("Hey!");
     next;
-    mesq g(l("How are you doing, cutie?"),
-           l("How are you doing, dude?"));
+    mesq lg("How are you doing, cutie?",
+            "How are you doing, dude?");
     next;
 
     menu
@@ -20,23 +20,23 @@
 
     mes "";
     mesn;
-    mesq g(l("Hehe, no. But I'm sure a fox like you would love to meet a catch like me!"),
-           l("Hehe, no. But I'm sure a noob like you would like to meet an idol like me."));
+    mesq lg("Hehe, no. But I'm sure a fox like you would love to meet a catch like me!",
+            "Hehe, no. But I'm sure a noob like you would like to meet an idol like me.");
     next;
-    mesq g(l("So, which good wind brought you here? Were you on your raft to meet me? Or is it because you've heard of my feats on Artis?"),
-           l("So, which good wind brought you here? Were you on your raft to meet my Julia? Or is it because you wanted to see the beautiful waitress' at Artis?"));
+    mesq lg("So, which good wind brought you here? Were you on your raft to meet me? Or is it because you've heard of my feats on Artis?",
+            "So, which good wind brought you here? Were you on your raft to meet my Julia? Or is it because you wanted to see the beautiful waitress' at Artis?");
     next;
 
     menu
-        g(l("You're right, it's about you."),
-          l("You're right, it's about Julia.")), L_Julia,
+        lg("You're right, it's about you.",
+           "You're right, it's about Julia."), L_Julia,
         l("What is Artis?"), L_Artis,
         l("None of them?"), -;
 
     mes "";
     mesn;
-    mesq g(l("My beauty, I was not always a sailor, you know, I was once an important individual!"),
-           l("My friend, I was not always a sailor, you know, I was once an important individual!"));
+    mesq lg("My beauty, I was not always a sailor, you know, I was once an important individual!",
+            "My friend, I was not always a sailor, you know, I was once an important individual!");
     next;
     mesq l("Before...");
     next;
@@ -95,16 +95,16 @@ L_VeryImportantNoob:
     restorecam;
 
     mesn;
-    mesq g(l("Duty calls me, *hic*, see you later honey."),
-           l("Duty calls me, *hic*, see you later dude."));
+    mesq lg("Duty calls me, *hic*, see you later honey.",
+            "Duty calls me, *hic*, see you later dude.");
 
     close;
 
 L_Julia:
     mes "";
     mesn;
-    mesq g(l("You honor me, my beauty, but I'm already taken by Julia!"),
-           l("Not to kill your dream, but... Julia is mine!"));
+    mesq lg("You honor me, my beauty, but I'm already taken by Julia!",
+            "Not to kill your dream, but... Julia is mine!");
     next;
     mesq l("She said she will accept me when pious will have teeth. It's just a matter of time, you see?");
     next;
@@ -153,8 +153,8 @@ L_Sailors:
     setcamnpc "Gugli";
     mes "";
     mesn "Gugli";
-    mesq g(l("Don't bother her Silvio, or I'll have to tell her that you cry like a baby when you hear the thunder in the night."),
-           l("Don't bother him Silvio, or I'll have to tell him that you cry like a baby when you hear the thunder in the night."));
+    mesq lg("Don't bother her Silvio, or I'll have to tell her that you cry like a baby when you hear the thunder in the night.",
+            "Don't bother him Silvio, or I'll have to tell him that you cry like a baby when you hear the thunder in the night.");
     next;
     restorecam;
 
