@@ -46,11 +46,11 @@ OnTouch:
     if ($@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
     if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto L_NoGoodTick;
     if (($@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 60)) goto L_NoGoodTick;
-    set $@RAT_SAILOR_COUNTDOWN, "";
+    $@RAT_SAILOR_COUNTDOWN = "";
 
 L_NoCountDown:
     if ($@RAT_SAILOR_HELPER$ != "") goto L_Occupied;
-    set .@peter, getq(ShipQuests_Peter);
+    .@peter = getq(ShipQuests_Peter);
     if (.@peter < 1 || .@peter > 5) goto L_Task;
     if (.@peter == 1 || .@peter == 2) goto L_Rfail;
     if (.@peter == 3 || .@peter == 4) goto L_Rwin;
@@ -92,16 +92,16 @@ L_NoGoodTick:
     if ($@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
     if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto OnNoGoodTick;
     if (($@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 60)) goto OnNoGoodTick;
-    set $@RAT_SAILOR_COUNTDOWN, "";
+    $@RAT_SAILOR_COUNTDOWN = "";
 
 L_NoCountDown:
-    set .@peter, getq(ShipQuests_Peter);
+    .@peter = getq(ShipQuests_Peter);
     if (.@peter == 1 || .@peter == 2) goto OnReturnFail;
     if (.@peter == 3 || .@peter == 4 || .@peter == 5)  goto OnReturnWin;
 
 OnGiveTask:
     setq ShipQuests_Peter, 6;
-    set .@peter, getq(ShipQuests_Peter);
+    .@peter = getq(ShipQuests_Peter);
     mesn;
     mesq lg("Hey, girl!",
             "Hey, man!");
@@ -185,13 +185,13 @@ L_BonusTask:
     if ($@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
     if (.@peter == 6) setq ShipQuests_Peter, 2;
     if (.@peter == 3) setq ShipQuests_Peter, 4;
-    set .@peter, getq(ShipQuests_Peter);
+    .@peter = getq(ShipQuests_Peter);
     goto L_Start;
 
 L_Task:
     if ($@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
     if (.@peter == 6) setq ShipQuests_Peter, 1;
-    set .@peter, getq(ShipQuests_Peter);
+    .@peter = getq(ShipQuests_Peter);
 
 L_Start:
     mes "";
@@ -200,8 +200,8 @@ L_Start:
 
 OnStartOutside:
     if ($@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
-    set $@RAT_SAILOR_HELPER$, strcharinfo(0);
-    set $@RAT_SAILOR_DEATHS, PC_DIE_COUNTER;
+    $@RAT_SAILOR_HELPER$ = strcharinfo(0);
+    $@RAT_SAILOR_DEATHS = PC_DIE_COUNTER;
     initnpctimer;
     warp "000-2-2.gat", 48, 28;
     doevent "RattosControl::OnSpawn";
@@ -210,7 +210,7 @@ OnStartOutside:
 
 OnTimer2000:
     if (attachrid(getcharid(3, $@RAT_SAILOR_HELPER$)) == 0) goto L_Logoff;
-    set $@RAT_SAILOR_CONTROL[9], $@RAT_SAILOR_CONTROL[9] + 2;
+    $@RAT_SAILOR_CONTROL[9] = $@RAT_SAILOR_CONTROL[9] + 2;
     if ($@RAT_SAILOR_CONTROL[9] > 100) goto L_Timeout;
     if (PC_DIE_COUNTER > $@RAT_SAILOR_DEATHS) goto L_Dead;
     if ($@RAT_SAILOR_CONTROL[1] && $@RAT_SAILOR_CONTROL[2] && $@RAT_SAILOR_CONTROL[3] && $@RAT_SAILOR_CONTROL[4]) goto L_Done;
@@ -220,10 +220,10 @@ OnTimer2000:
     end;
 
 L_CheckRattos:
-    if ($@RAT_SAILOR_CONTROL[1]) set $@RAT_SAILOR_CONTROL[5], $@RAT_SAILOR_CONTROL[5] + 2;
-    if ($@RAT_SAILOR_CONTROL[2]) set $@RAT_SAILOR_CONTROL[6], $@RAT_SAILOR_CONTROL[6] + 2;
-    if ($@RAT_SAILOR_CONTROL[3]) set $@RAT_SAILOR_CONTROL[7], $@RAT_SAILOR_CONTROL[7] + 2;
-    if ($@RAT_SAILOR_CONTROL[4]) set $@RAT_SAILOR_CONTROL[8], $@RAT_SAILOR_CONTROL[8] + 2;
+    if ($@RAT_SAILOR_CONTROL[1]) $@RAT_SAILOR_CONTROL[5] = $@RAT_SAILOR_CONTROL[5] + 2;
+    if ($@RAT_SAILOR_CONTROL[2]) $@RAT_SAILOR_CONTROL[6] = $@RAT_SAILOR_CONTROL[6] + 2;
+    if ($@RAT_SAILOR_CONTROL[3]) $@RAT_SAILOR_CONTROL[7] = $@RAT_SAILOR_CONTROL[7] + 2;
+    if ($@RAT_SAILOR_CONTROL[4]) $@RAT_SAILOR_CONTROL[8] = $@RAT_SAILOR_CONTROL[8] + 2;
     if ($@RAT_SAILOR_CONTROL[5] > 40) doevent "RattosControl::OnRatto1Respawn";
     if ($@RAT_SAILOR_CONTROL[6] > 40) doevent "RattosControl::OnRatto2Respawn";
     if ($@RAT_SAILOR_CONTROL[7] > 40) doevent "RattosControl::OnRatto3Respawn";
@@ -259,9 +259,9 @@ L_Dead:
     goto L_CleaningEnd;
 
 L_Done:
-    set $@RAT_SAILOR_CONTROL[10], $@RAT_SAILOR_CONTROL[10] + 2;
+    $@RAT_SAILOR_CONTROL[10] = $@RAT_SAILOR_CONTROL[10] + 2;
     if($@RAT_SAILOR_CONTROL[10] < 5) goto L_NotYet;
-    set .@peter, getq(ShipQuests_Peter);
+    .@peter = getq(ShipQuests_Peter);
     if (.@peter == 2 || .@peter == 4) goto L_Reward;
     warp "000-2-1.gat", 72, 36;
 
@@ -269,8 +269,8 @@ L_Done:
 
 L_CleaningEnd:
     stopnpctimer;
-    set $@RAT_SAILOR_HELPER$, "";
-    set $@RAT_SAILOR_DEATHS, 0;
+    $@RAT_SAILOR_HELPER$ = "";
+    $@RAT_SAILOR_DEATHS = 0;
     cleararray $@RAT_SAILOR_CONTROL, 0, 11;
     killmonster "000-2-2.gat", "RattosControl::OnRatto1Death";
     killmonster "000-2-2.gat", "RattosControl::OnRatto2Death";
@@ -281,26 +281,26 @@ L_CleaningEnd:
 
 L_CleaningClose:
     stopnpctimer;
-    set $@RAT_SAILOR_OLD_HELPER$, $@RAT_SAILOR_HELPER$;
-    set $@RAT_SAILOR_HELPER$, "";
-    set $@RAT_SAILOR_DEATHS, 0;
+    $@RAT_SAILOR_OLD_HELPER$ = $@RAT_SAILOR_HELPER$;
+    $@RAT_SAILOR_HELPER$ = "";
+    $@RAT_SAILOR_DEATHS = 0;
     cleararray $@RAT_SAILOR_CONTROL, 0, 11;
     killmonster "000-2-2.gat", "RattosControl::OnRatto1Death";
     killmonster "000-2-2.gat", "RattosControl::OnRatto2Death";
     killmonster "000-2-2.gat", "RattosControl::OnRatto3Death";
     killmonster "000-2-2.gat", "RattosControl::OnRatto4Death";
-    set $@RAT_SAILOR_COUNTDOWN, gettimetick(2);
+    $@RAT_SAILOR_COUNTDOWN = gettimetick(2);
 
     close;
 
 L_Reward:
     warp "000-2-1.gat", 72, 36;
     setq ShipQuests_Peter, 5;
-    set .@peter, getq(ShipQuests_Peter);
+    .@peter = getq(ShipQuests_Peter);
     mesn;
     mesq l("Good job!") + " " + l("Here's your reward!");
     getexp 100, 0;
-    set Zeny, Zeny + 1000;
+    Zeny = Zeny + 1000;
     message strcharinfo(0), l("You receive @@ E!", 1000);
 
     goto L_CleaningClose;
@@ -308,14 +308,14 @@ L_Reward:
 L_Thanks:
     mesn;
     mesq l("Thanks for helping me!");
-    set .@peter, getq(ShipQuests_Peter);
+    .@peter = getq(ShipQuests_Peter);
     if (.@peter == 1) setq ShipQuests_Peter, 3;
-    set .@peter, getq(ShipQuests_Peter);
+    .@peter = getq(ShipQuests_Peter);
 
     goto L_CleaningClose;
 
 L_Quit:
-    set .@peter, 0;
+    .@peter = 0;
 
     close;
 

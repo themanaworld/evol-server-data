@@ -13,7 +13,7 @@
 
 000-1,83,70,0	script	#chest	416,{
 
-    set .@q, getq(ShipQuests_TreasureChest);
+    .@q = getq(ShipQuests_TreasureChest);
     if (getnpcdir ("") == 4) goto L_Give;
 
     setnpcdir 2;
@@ -28,7 +28,7 @@ L_Give:
 
     setq ShipQuests_TreasureChest, 1;
 
-    set Zeny, Zeny + 100;
+    Zeny = Zeny + 100;
     getitem "OldBook", 1;
     npctalk3 l("You open the treasure chest.");
 

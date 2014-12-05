@@ -11,7 +11,7 @@
 //    1   Knife taken.
 
 000-2-1,50,24,0	script	#knife	100,{
-    set .@q, getq(ShipQuests_Knife);
+    .@q = getq(ShipQuests_Knife);
     if (.@q) close;
 
     mesn "Narrator";
@@ -27,8 +27,8 @@
 
 L_Give:
     mes "";
-    set .@item, 3500;
-    set .@count, 1;
+    .@item = 3500;
+    .@count = 1;
     inventoryplace 3500, 1;
 
     setq ShipQuests_Knife, 1;

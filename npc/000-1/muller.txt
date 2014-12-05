@@ -7,10 +7,10 @@
 //    Plushroom box.
 
 000-1,35,69,0	script	Q'Muller	104,{
-    set .@g, getq(ShipQuests_Gugli);
+    .@g = getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
 
-    set .@q, getq(ShipQuests_QMuller);
+    .@q = getq(ShipQuests_QMuller);
     if (.@q == 1) goto L_CallFunc;
 
     mesn;

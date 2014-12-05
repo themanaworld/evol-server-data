@@ -19,7 +19,7 @@
 000-2-0,20,28,0	script	AreaNPC#doors1	32767,0,0,{
 
 OnTouch:
-    set .@nard, getq(ShipQuests_Nard);
+    .@nard = getq(ShipQuests_Nard);
     if (.@nard > 0 && countitemcolor("JohanneKey") > 0) goto L_Key;
 //  if (.@nard == 2) goto L_GotoNard;
 //  if (.@nard == 3) goto L_End;
@@ -57,7 +57,7 @@ L_End:
 000-2-0,33,28,0	script	AreaNPC#doors2	32767,0,0,{
 
 OnTouch:
-    set .@julia, getq(ShipQuests_Julia);
+    .@julia = getq(ShipQuests_Julia);
     if (.@julia == 2) goto L_Warp;
     close;
 

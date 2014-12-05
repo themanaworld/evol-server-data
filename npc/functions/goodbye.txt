@@ -9,7 +9,7 @@
 function	script	goodbye	{
     closedialog;
 
-    set .@rand, rand(13);
+    .@rand = rand(13);
     if (.@rand == 0) npctalk3 l("See you!");
     if (.@rand == 1) npctalk3 l("See you later!");
     if (.@rand == 2) npctalk3 l("See you soon!");

@@ -14,7 +14,7 @@ OnTouch:
     goto L_Warp;
 
 L_Warn:
-    set .@q, getq(ShipQuests_Peter);
+    .@q = getq(ShipQuests_Peter);
     if (.@q == 5) goto L_Warp;
 
     mesn "Narrator";

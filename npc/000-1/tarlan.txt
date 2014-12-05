@@ -8,7 +8,7 @@
     setnpcdir 2;
 
     mesn;
-    set .@a, rand(4);
+    .@a = rand(4);
     if (.@a == 0) goto L_HardToHit;
     if (.@a == 1) goto L_Aouch;
     if (.@a == 2) goto L_DoYou;

@@ -12,8 +12,8 @@
 
 function	script	inventoryplace	{
     getinventorylist;
-    set .@iteminfo, getiteminfo(getarg(0), 2);
-    set .@countitem, countitemcolor(getarg(0));
+    .@iteminfo = getiteminfo(getarg(0), 2);
+    .@countitem = countitemcolor(getarg(0));
 
     if (checkweight(getarg(0), getarg(1)) == 0) goto L_Warn;
     if ((.@iteminfo < 4) && (.@countitem == 0) && (.@inventorylist_count < 100)) return;

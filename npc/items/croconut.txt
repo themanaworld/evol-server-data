@@ -39,7 +39,7 @@ L_TooWeak:
     mes "";
     mesn "Narrator";
 
-    set .@q, rand(5);
+    .@q = rand(5);
     if (.@q == 0) goto L_TooWeakLost;
     if ( (.@q == 1) || (.@q == 2) ) goto L_TooWeakFail;
     if ( (.@q == 3) || (.@q == 4) || (.@q == 5) ) goto L_Weak;

@@ -8,7 +8,7 @@
 function	script	sailorfood	{
     mesn;
 
-    set .@q, rand(0, 400) / 100;
+    .@q = rand(0, 400) / 100;
     if (.@q == 0) goto L_RandomA;
     if (.@q == 1) goto L_RandomB;
     if (.@q > 1) goto L_RandomC;

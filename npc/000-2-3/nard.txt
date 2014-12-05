@@ -24,9 +24,9 @@
 //    12   Gave all of the boxes to Gugli.
 
 000-2-3,25,26,0	script	Nard	406,{
-    set .@nard, getq(ShipQuests_Nard);
-    set .@gugli, getq(ShipQuests_Gugli);
-    set .@gado, getq(ShipQuests_ChefGado);
+    .@nard = getq(ShipQuests_Nard);
+    .@gugli = getq(ShipQuests_Gugli);
+    .@gado = getq(ShipQuests_ChefGado);
 
 L_Checker:
     if (.@gado > 3 && .@nard == 3) goto L_ChefQuestComplete;

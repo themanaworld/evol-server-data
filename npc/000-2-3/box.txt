@@ -19,7 +19,7 @@
 //    5   Reward taken from the box.
 
 000-2-3,25,24,0	script	Box	102,{
-    set .@q, getq(ShipQuests_Nard);
+    .@q = getq(ShipQuests_Nard);
 
     mesn "Narrator";
     mes col(l("Some Bandanas and Sailor Hats are inside this box."), 9);

@@ -11,7 +11,7 @@
 //    1   Treasure Chest has been opened.
 
 000-1,89,95,0	script	Darlin	103,{
-    set .@q, getq(ShipQuests_TreasureChest);
+    .@q = getq(ShipQuests_TreasureChest);
 
     mesn;
     setcamnpc;

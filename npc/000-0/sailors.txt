@@ -62,7 +62,7 @@ OnTouch:
         menuimage("flags/it", "Vi sento... (Italiano)"), -,
         menuimage("flags/nl_BE", "Ik kan je horen... (Nederlands)"), -,
         menuimage("flags/ca", "Et escolto (Català)"), -;
-    set .@lang, @menu-1;
+    .@lang = @menu-1;
     if (.@lang < 0 || .@lang > 10) close;
     Lang = .@lang;
 

@@ -13,7 +13,7 @@
 //    2   Done quest scam.
 
 000-1,89,36,0	script	Couwan	111,{
-    set .@q, getq(ShipQuests_Couwan);
+    .@q = getq(ShipQuests_Couwan);
     if (.@q == 1) goto L_QuestGiven;
     if (.@q > 1) goto L_QuestDone;
 

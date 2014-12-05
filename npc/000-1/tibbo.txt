@@ -8,10 +8,10 @@
 //    Aquada box.
 
 000-1,34,111,0	script	Tibbo	110,{
-    set .@g, getq(ShipQuests_Gugli);
+    .@g = getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
 
-    set .@q, getq(ShipQuests_Tibbo);
+    .@q = getq(ShipQuests_Tibbo);
     if (.@q == 1) goto L_CallFunc;
 
     mesn;

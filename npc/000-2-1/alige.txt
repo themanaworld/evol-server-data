@@ -48,7 +48,7 @@ OnTimer190:
 }
 
 000-2-1,43,31,0	script	Alige	401,{
-    set .@q, getq(ShipQuests_Alige);
+    .@q = getq(ShipQuests_Alige);
     if (.@q > 1) goto L_AskForFood;
 
     goto OnFirstEncounter;
@@ -181,7 +181,7 @@ L_GiveFood:
         rif(countitemcolor(516, 1), l(getitemname("PumpkinSeeds"))), 1,
         l("I don't have anything good for you today."), -1;
 
-    set .@id, @menuret;
+    .@id = @menuret;
     if (.@id == -1) goto L_Quit; // Quit message.
     if (.@id == 0) goto L_NoReward; // In case of wrong food.
     if (.@id == 1) goto L_Poison; // In case of poisoned food.

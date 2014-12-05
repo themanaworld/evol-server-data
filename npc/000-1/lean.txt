@@ -7,7 +7,7 @@
 //    Sailor who gives some informations to the player.
 
 000-1,79,108,0	script	Lean	106,{
-    set .@gugli, getq(ShipQuests_Gugli);
+    .@gugli = getq(ShipQuests_Gugli);
 
     mesn;
     mesq l("Hi! I can finally see you under the sunlight!");

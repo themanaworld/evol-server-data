@@ -26,9 +26,9 @@
 
 OnTalk:
     mesn;
-    set .@nard, getq(ShipQuests_Nard);
-    set .@gugli, getq(ShipQuests_Gugli);
-    set .@gado, getq(ShipQuests_ChefGado);
+    .@nard = getq(ShipQuests_Nard);
+    .@gugli = getq(ShipQuests_Gugli);
+    .@gado = getq(ShipQuests_ChefGado);
 
     if (.@nard > 3) goto L_AllComplete;
     if (.@nard > 1 || .@gugli == 2) goto L_TaskCompleted;
@@ -141,7 +141,7 @@ L_Couwan:
 
     if (countitemcolor("FishBox") > 0) delitem "FishBox", 1;
     setq ShipQuests_Couwan, 2;
-    set Zeny, Zeny+10;
+    Zeny = Zeny + 10;
     getexp 40, 0;
     message strcharinfo(0), l("You receive @@ E!", 10);
 
@@ -157,7 +157,7 @@ L_Location:
     mesq l("You can try talking with some other sailors to get some information about that.");
     next;
 
-    set .@r, rand(3000)/1000;
+    .@r = rand(3000)/1000;
     if (.@r == 1) goto L_Silvio;
     if (.@r == 2) goto L_Lean;
 
@@ -193,7 +193,7 @@ L_TaskDone:
     if (countitemcolor("PlushroomBox") == 1) delitem "PlushroomBox", 1;
     setq ShipQuests_Gugli, 2;
 
-    set Zeny, Zeny+250;
+    Zeny = Zeny + 250;
     getexp 50, 0;
 
     mes "";
@@ -234,7 +234,7 @@ OnInit:
 }
 
 000-1,83,107,0	script	GugliBarrierCheck	32767,2,0,{
-    set .@gugli, getq(ShipQuests_Gugli);
+    .@gugli = getq(ShipQuests_Gugli);
     if (.@gugli > 0) close;
     doevent "Gugli::OnTalk";
     close;

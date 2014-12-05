@@ -41,9 +41,9 @@
     mesq l("What do you want today?");
     next;
 
-    set .@q2, getq(ShipQuests_ChefGado);
-    set .@q3, getq(ShipQuests_Nard);
-    set .@s$, l("I don't want to change my language, sorry.");
+    .@q2 = getq(ShipQuests_ChefGado);
+    .@q3 = getq(ShipQuests_Nard);
+    .@s$ = l("I don't want to change my language, sorry.");
 
 L_Menu:
     menu
@@ -74,7 +74,7 @@ L_First:
     next;
     mesq lg("Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.");
     next;
-    set .@s$, "";
+    .@s$ = "";
     goto L_ChooseLang;
 
   L_ChooseLang:
@@ -91,7 +91,7 @@ L_First:
         menuimage("flags/nl_BE", l("I speak Dutch.") + " (Nederlands)"), -,
         menuimage("flags/ca", l("I speak Catalan.") + " (Català)"), -,
         .@s$, L_NoChanges;
-    set .@lang, @menu-1;
+    .@lang = @menu-1;
     if (.@lang < 0 || .@lang > 10) close;
     Lang = .@lang;
 
@@ -99,7 +99,7 @@ L_First:
     mesn;
     mesq l("Ok, done.");
 
-    set .@q, getq(ShipQuests_Julia);
+    .@q = getq(ShipQuests_Julia);
     if (.@q == 2) goto L_NoRules;
 
     next;
@@ -196,7 +196,7 @@ L_Rules:
     goto L_YNMenu;
 
 OnTouch:
-    set .@q, getq(ShipQuests_Julia);
+    .@q = getq(ShipQuests_Julia);
     if (.@q == 0 || .@q == 1) goto L_First;
 
     close;
@@ -228,7 +228,7 @@ L_Regret:
     mesq l("Take this money for your wise choice. But do not try it again. The open sea has been merciful with you once... Do not further tempt the fates!");
 
     setq ShipQuests_ChefGado, 5;
-    set Zeny, Zeny + 200;
+    Zeny = Zeny + 200;
     message strcharinfo(0), l("You receive @@ E!", 200);
     getexp 15, 0;
 
@@ -263,7 +263,7 @@ L_Rumors:
     mesq l("Take this money as a reward for your nice words.");
 
     setq ShipQuests_ChefGado, 6;
-    set Zeny, Zeny + 100;
+    Zeny = Zeny + 100;
     message strcharinfo(0), l("You receive @@ E!", 100);
     getexp 8, 0;
 

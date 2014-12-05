@@ -17,21 +17,21 @@
 //    12   Has been registered by Julia
 
 000-2-1,49,36,0	script	LeftDoorCheck	32767,0,0,{
-    set .@q, getq(ShipQuests_Arpan);
+    .@q = getq(ShipQuests_Arpan);
     if (.@q == 0) doevent "Magic Arpan::OnTalk";
 
     close;
 }
 
 000-2-1,54,36,0	script	RightDoorCheck	32767,0,0,{
-    set .@q, getq(ShipQuests_Arpan);
+    .@q = getq(ShipQuests_Arpan);
     if (.@q == 0) doevent "Magic Arpan::OnTalk";
 
     close;
 }
 
 000-2-1,47,32,0	script	LeftBarrierCheck	32767,0,2,{
-    set .@q, getq(ShipQuests_Arpan);
+    .@q = getq(ShipQuests_Arpan);
     if (.@q > 2) close;
     if (.@q == 2 && getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200) goto L_EquipDone;
     if (.@q == 2) goto L_Equip;
@@ -58,7 +58,7 @@ L_EquipDone:
 }
 
 000-2-1,56,32,0	script	RightBarrierCheck	32767,0,2,{
-    set .@q, getq(ShipQuests_Arpan);
+    .@q = getq(ShipQuests_Arpan);
     if (.@q > 2) close;
     if (.@q == 2 && getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200) goto L_EquipDone;
     if (.@q == 2) goto L_Equip;
@@ -85,8 +85,8 @@ L_EquipDone:
 }
 
 000-2-1,49,33,0	script	Magic Arpan	407,{
-    set .@q, getq(ShipQuests_Arpan);
-    set .@q_julia, getq(ShipQuests_Julia);
+    .@q = getq(ShipQuests_Arpan);
+    .@q_julia = getq(ShipQuests_Julia);
     if (.@q == 2 && getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200) goto L_EquipDone;
 
 OnTalk:
@@ -141,7 +141,7 @@ L_Story:
 L_Menu:
     mesq l("What yeye could I do for you today?");
     next;
-    set .@equipped, getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200;
+    .@equipped = getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200;
 
     menu
         lg("Could you tell me where I am?"), L_Where,
@@ -197,8 +197,8 @@ L_WhereOldClothes:
     next;
 
     setq ShipQuests_ArpanMoney, 1;
-    set .@q, getq(ShipQuests_Arpan);
-    set Zeny, Zeny+10;
+    .@q = getq(ShipQuests_Arpan);
+    Zeny = Zeny + 10;
     message strcharinfo(0), l("You receive @@ E!", 10);
 
     goto L_BeforeMenu;

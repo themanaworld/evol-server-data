@@ -17,8 +17,8 @@
 //    6   Quest complete. Julia wins.
 
 000-2-1,27,28,0	script	Chef Gado	418,{
-    set .@q, getq(ShipQuests_ChefGado);
-    set .@n, getq(ShipQuests_Nard);
+    .@q = getq(ShipQuests_ChefGado);
+    .@n = getq(ShipQuests_Nard);
     if (.@q == 1) goto L_QuestAccepted;
     if (.@q == 2) goto L_PoisonAccepted;
     if (.@q == 3) goto L_PoisonJulia;
@@ -28,7 +28,7 @@
     if (.@n == 3) goto L_QuestStart;
 
     mesn;
-    set .@r, rand(3);
+    .@r = rand(3);
     if (.@r == 0) mesq l("What are you doing in my kitchen?! Get out, it's not a place for kids!");
     if (.@r == 1) mesq l("Where is the damn salt?! Give me the salt, I know you have it!");
     if (.@r == 2) mesq l("Are you going to stand here all day long? Do the dishes or go away.");
@@ -162,7 +162,7 @@ L_PoisonJulia:
     mesq l("The usurper has been punished! This is a great day! Take this reward as a prize for your loyalty to the old commander!");
 
     setq ShipQuests_ChefGado, 4;
-    set Zeny, Zeny + 200;
+    Zeny = Zeny + 200;
     message strcharinfo(0), l("You receive @@ E!", 200);
     inventoryplace 502, 2;
     getitem "Bread", 1;
