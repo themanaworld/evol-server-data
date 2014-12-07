@@ -1,0 +1,38 @@
+// Evol scripts.
+// Authors:
+//    4144
+// Description:
+//    test npc1
+
+test,10,10,0	script	npc1	907,3,3,{
+    function areatest
+    {
+        mesn;
+        mes "getareausers(\"test\", 7, 7, 13, 13): " + getareausers("test", 7, 7, 13, 13);
+        mes "getareausers(7, 7, 13, 13): " + getareausers(7, 7, 13, 13);
+        mes "getareausers(\"test\"): " + getareausers("test");
+        mes "getareausers(): " + getareausers();
+        mes "getareausers(\"test\", 1): " + getareausers("test", 1);
+        mes "getareausers(1): " + getareausers(1);
+        next;
+        return;
+    }
+    mes "talk";
+    areatest;
+    close;
+
+OnTouch:
+    mes "OnTouch";
+    areatest;
+    close;
+
+OnUnTouch123:
+    mes "OnUnTouch";
+    areatest;
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
+    end;
+}
