@@ -26,7 +26,7 @@ OnTouch:
     areatest;
     close;
 
-OnUnTouch123:
+OnUnTouch:
     mes "OnUnTouch";
     areatest;
     close;
@@ -35,4 +35,8 @@ OnInit:
     setnpcsex G_MALE;
     setnpcdistance 5;
     end;
+
+OnWhisperGlobal:
+    mes "cmd: " + @whispervar0$;
+    close;
 }
