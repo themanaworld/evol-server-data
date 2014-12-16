@@ -4,6 +4,14 @@
 // Description:
 //    test npc1
 
+test,10,10,0	script	npc1#door	32767,0,1,{
+OnTouch:
+    warp "test", 20, 20;
+    close;
+OnUnTouch:
+    doevent "npc1::OnUnTouch";
+}
+
 test,10,10,0	script	npc1	800,3,3,{
     function areatest
     {
@@ -18,18 +26,23 @@ test,10,10,0	script	npc1	800,3,3,{
         return;
     }
     mes "talk";
+    for (.@f = 0; .@f < 9; .@f ++)
+    {
+        mes "" + .@f;
+        setnpcdir .@f;
+        next;
+    }
     areatest;
     close;
 
 OnTouch:
-    mes "OnTouch";
-    areatest;
-    close;
+    doorTouch;
 
 OnUnTouch:
-    mes "OnUnTouch";
-    areatest;
-    close;
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
 
 OnInit:
     setnpcsex G_MALE;

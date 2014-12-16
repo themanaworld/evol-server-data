@@ -1,0 +1,34 @@
+// Evol functions.
+// Authors:
+//    4144
+// Description:
+//    Doors utility functions
+// Variables:
+//    none
+
+function	script	doorTouch	{
+    if (getareausers() <= 1)
+    {
+        setnpcdir 2;
+        stopnpctimer;
+        initnpctimer;
+    }
+    close;
+}
+
+function	script	doorUnTouch	{
+    if (getareausers() == 0)
+    {
+        setnpcdir 4;
+        initnpctimer;
+        startnpctimer;
+    }
+    close;
+}
+
+function	script	doorTimer	{
+    stopnpctimer;
+    if (getnpcdir() == 2) setnpcdir 6;
+    if (getnpcdir() == 4) setnpcdir 8;
+    end;
+}
