@@ -25,14 +25,26 @@ test,10,10,0	script	npc1	800,3,3,{
         next;
         return;
     }
+
     mes "talk";
-    for (.@f = 0; .@f < 9; .@f ++)
+    switch (select("show area:change sex:change npc direction"))
     {
-        mes "" + .@f;
-        setnpcdir .@f;
-        next;
+        case 1:
+            areatest;
+            break;
+        case 2:
+            changecharsex;
+            break;
+        case 3:
+            for (.@f = 0; .@f < 9; .@f ++)
+            {
+                mes "" + .@f;
+                setnpcdir .@f;
+                next;
+            }
+            break;
     }
-    areatest;
+
     close;
 
 OnTouch:
