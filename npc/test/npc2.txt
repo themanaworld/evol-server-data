@@ -1,0 +1,35 @@
+// Evol scripts.
+// Authors:
+//    4144
+// Description:
+//    test npc2
+
+test,20,10,0	trader	npc2	102,{
+OnInit:
+    tradertype(NST_MARKET);
+    sellitem 505, -1, 10;
+    sellitem 502, -1, 10;
+    sellitem 513, -1, 10;
+    sellitem 509, -1, 10;
+    sellitem 2000, -1, 10;
+    sellitem 1800, -1, 10;
+    sellitem 3501, -1, 10;
+    end;
+
+OnClock0000:
+    if (shopcount(505) < 10)
+        sellitem 505, -1, 10;
+    if (shopcount(502) < 10)
+        sellitem 502, -1, 10;
+    if (shopcount(513) < 10)
+        sellitem 513, -1, 10;
+    if (shopcount(509) < 10)
+        sellitem 509, -1, 10;
+    if (shopcount(2000) < 10)
+        sellitem 2000, -1, 10;
+    if (shopcount(1800) < 10)
+        sellitem 1800, -1, 10;
+    if (shopcount(3501) < 10)
+        sellitem 3501, -1, 10;
+    end;
+}
