@@ -1,8 +1,22 @@
 // Evol scripts.
 // Author:
 //    Reid
+//    4144
 // Description:
 //    Fexil's shop bag.
 
-// Gender = 1
-000-1,84,98,0	shop	Bag	109,505:-1,502:-1,513:-1,509:-1,2000:-1,1800:-1,3501:-1
+000-1,84,98,0	trader	Bag	109,{
+
+OnInit:
+    sellitem PiouLegs;
+    sellitem Bread;
+    sellitem Croconut;
+    sellitem Aquada;
+    sellitem Armbands;
+    sellitem LousyMoccasins;
+    sellitem PiouSlayer;
+
+    setnpcsex G_MALE;
+    setnpcdistance 2;
+    end;
+}
