@@ -50,8 +50,7 @@ L_QuestStory:
 
     mes "";
     mesn;
-    mesq lg("There's nothing to say, don't worry miss.",
-            "There's nothing to say, don't worry sir.");
+    mesq lg("There's nothing to say, don't worry miss.", "There's nothing to say, don't worry sir.");
 
     close;
 

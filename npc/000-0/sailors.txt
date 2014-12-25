@@ -43,8 +43,7 @@ OnTouch:
 
     setcamnpc;
     mesn "Raijin Voice";
-    mesq lg("You stupid, she's english, look at the shape of her head.",
-            "You stupid, he's english, look at the shape of his head.");
+    mesq lg("You stupid, she's english, look at the shape of her head.", "You stupid, he's english, look at the shape of his head.");
     next;
     mesq l("Hey you! Can you hear us? Are you okay?");
     next;
@@ -69,12 +68,10 @@ OnTouch:
     setcamnpc;
     mes "";
     mesn;
-    mesq lg("Oh, she's still alive!",
-            "Oh, he's still alive!");
+    mesq lg("Oh, she's still alive!", "Oh, he's still alive!");
     next;
     setcamnpc "Sailors", 144, -80;
-    mesq lg("This girl needs help, we need to rescue her!",
-            "This guy needs help, we need to rescue him!");
+    mesq lg("This girl needs help, we need to rescue her!", "This guy needs help, we need to rescue him!");
     next;
     restorecam;
 

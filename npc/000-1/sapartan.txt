@@ -19,8 +19,7 @@
     restorecam;
 
     mesn;
-    mesq lg("True but now she seems pretty fine! Am I right?",
-            "True but now he seems pretty fine! Am I right?");
+    mesq lg("True but now she seems pretty fine! Am I right?", "True but now he seems pretty fine! Am I right?");
     next;
 
     menu
@@ -42,8 +41,7 @@
     mesn "Max";
     mesq lg("Come on, Sap! You are scaring our guest with your stories.");
     next;
-    mesq lg("I'm sure she will soon be able to fight all of the creatures living here without any problem.",
-            "I'm sure he will soon be able to fight all of the creatures living here without any problem.");
+    mesq lg("I'm sure she will soon be able to fight all of the creatures living here without any problem.", "I'm sure he will soon be able to fight all of the creatures living here without any problem.");
     next;
 
     restorecam;

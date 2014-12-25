@@ -77,8 +77,7 @@ L_MenuQuest:
     mesn;
     mesq l("Oh! I like that sort of answer!");
     next;
-    mesq lg("We need manpower on the island... Oh forgive me, women are also welcome, of course.",
-            "We need manpower on the island.");
+    mesq lg("We need manpower on the island... Oh forgive me, women are also welcome, of course.", "We need manpower on the island.");
     next;
 
     goto L_NeedContent;
