@@ -11,7 +11,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "npc1::OnUnTouch";
+    doevent "#LibraryDoor::OnUnTouch";
 }
 
 001-2-4,52,27,0	script	#LibraryDoor	907,3,3,{

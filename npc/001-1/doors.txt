@@ -11,7 +11,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "npc1::OnUnTouch";
+    doevent "#Door1::OnUnTouch";
 }
 
 001-1,55,71,0	script	#Door1	906,3,3,{
@@ -38,7 +38,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "npc1::OnUnTouch";
+    doevent "#Door2::OnUnTouch";
 }
 
 001-1,51,65,0	script	#Door2	906,3,3,{
@@ -65,7 +65,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "npc1::OnUnTouch";
+    doevent "#Door3::OnUnTouch";
 }
 
 001-1,69,77,0	script	#Door3	906,3,3,{
@@ -92,7 +92,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "npc1::OnUnTouch";
+    doevent "#Door4::OnUnTouch";
 }
 
 001-1,51,80,0	script	#Door4	906,3,3,{
@@ -119,7 +119,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "npc1::OnUnTouch";
+    doevent "#Door5::OnUnTouch";
 }
 
 001-1,89,65,0	script	#Door5	906,3,3,{
@@ -146,7 +146,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "npc1::OnUnTouch";
+    doevent "#Door6::OnUnTouch";
 }
 
 001-1,142,30,0	script	#Door6	906,3,3,{
@@ -173,7 +173,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "npc1::OnUnTouch";
+    doevent "#Door7::OnUnTouch";
 }
 
 001-1,132,67,0	script	#Door7	906,3,3,{
