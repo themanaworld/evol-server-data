@@ -5,108 +5,137 @@
 //    Doors warp and animations in map 001-1
 //
 
-001-1,55,71,0	script	#Door1	906,1,1,{
-    close;
-
-OnTouchFirst:
-    setnpcdir 2;
-    stopnpctimer;
-    initnpctimer;
-    close;
-
-OnUnTouchAll:
-    setnpcdir 4;
-    initnpctimer;
-    startnpctimer;
-    close;
-
-OnTouchCenter:
+001-1,55,71,0	script	#Warp1	32767,0,0,{
+OnTouch:
     warp "001-2-0", 37, 45;
     close;
 
+OnUnTouch:
+    doevent "npc1::OnUnTouch";
+}
+
+001-1,55,71,0	script	#Door1	906,3,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
 OnTimer340:
-    stopnpctimer;
-    if (getnpcdir ("") == 2) setnpcdir 6;
-    if (getnpcdir ("") == 4) setnpcdir 8;
+    doorTimer;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
     end;
 }
 
-001-1,51,65,0	script	#Door2	906,1,1,{
-    close;
-
-OnTouchFirst:
-    setnpcdir 2;
-    stopnpctimer;
-    initnpctimer;
-    close;
-
-OnUnTouchAll:
-    setnpcdir 4;
-    initnpctimer;
-    startnpctimer;
-    close;
-
-OnTouchCenter:
+001-1,51,65,0	script	#Warp2	32767,0,0,{
+OnTouch:
     warp "001-2-0", 30, 34;
     close;
 
+OnUnTouch:
+    doevent "npc1::OnUnTouch";
+}
+
+001-1,51,65,0	script	#Door2	906,3,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
 OnTimer340:
-    stopnpctimer;
-    if (getnpcdir ("") == 2) setnpcdir 6;
-    if (getnpcdir ("") == 4) setnpcdir 8;
+    doorTimer;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
     end;
 }
 
-001-1,69,77,0	script	#Door3	906,1,1,{
-    close;
-
-OnTouchFirst:
-    setnpcdir 2;
-    stopnpctimer;
-    initnpctimer;
-    close;
-
-OnUnTouchAll:
-    setnpcdir 4;
-    initnpctimer;
-    startnpctimer;
-    close;
-
-OnTouchCenter:
+001-1,69,77,0	script	#Warp3	32767,0,0,{
+OnTouch:
     warp "001-2-2", 38, 38;
     close;
 
+OnUnTouch:
+    doevent "npc1::OnUnTouch";
+}
+
+001-1,69,77,0	script	#Door3	906,3,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
 OnTimer340:
-    stopnpctimer;
-    if (getnpcdir ("") == 2) setnpcdir 6;
-    if (getnpcdir ("") == 4) setnpcdir 8;
+    doorTimer;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
     end;
 }
 
-
-001-1,51,80,0	script	#Door4	906,1,1,{
-    close;
-
-OnTouchFirst:
-    setnpcdir 2;
-    stopnpctimer;
-    initnpctimer;
-    close;
-
-OnUnTouchAll:
-    setnpcdir 4;
-    initnpctimer;
-    startnpctimer;
-    close;
-
-OnTouchCenter:
+001-1,51,80,0	script	#Warp4	32767,0,0,{
+OnTouch:
     warp "001-2-4", 48, 40;
     close;
 
+OnUnTouch:
+    doevent "npc1::OnUnTouch";
+}
+
+001-1,51,80,0	script	#Door4	906,3,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
 OnTimer340:
-    stopnpctimer;
-    if (getnpcdir ("") == 2) setnpcdir 6;
-    if (getnpcdir ("") == 4) setnpcdir 8;
+    doorTimer;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
     end;
 }
 
+001-1,89,65,0	script	#Warp5	32767,0,0,{
+OnTouch:
+    warp "001-2-7", 36, 45;
+    close;
+
+OnUnTouch:
+    doevent "npc1::OnUnTouch";
+}
+
+001-1,89,65,0	script	#Door5	906,3,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
+    end;
+}
