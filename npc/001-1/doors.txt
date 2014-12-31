@@ -166,3 +166,30 @@ OnInit:
     setnpcdistance 5;
     end;
 }
+
+001-1,132,67,0	script	#Warp7	32767,0,0,{
+OnTouch:
+    warp "001-2-15", 34, 45;
+    close;
+
+OnUnTouch:
+    doevent "npc1::OnUnTouch";
+}
+
+001-1,132,67,0	script	#Door7	906,3,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
+    end;
+}
