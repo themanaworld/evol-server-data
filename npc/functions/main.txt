@@ -36,3 +36,7 @@ function	script	col	{
     if (.@color > 9) .@color = 9;
     return "##" + .@color + getarg(0) + "##0";
 }
+
+function	script	adddefaultskills	{
+    skill 1, 1, 0; // Add basic skill.
+}

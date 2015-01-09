@@ -33,7 +33,7 @@
 //    25   Reward taken from the box.
 
 000-2-0,27,24,0	script	Julia	404,2,10,{
-    addtoskill 1, 1; // Add Emote skill.
+    adddefaultskills;
 
     mesn;
     mesq lg("Hello dear!");

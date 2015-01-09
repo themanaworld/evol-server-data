@@ -65,7 +65,7 @@ OnTalk:
     restorecam;
     warp "000-2-1.gat", 50, 38;
     savepoint "000-2-1.gat", 50, 38;
-    addtoskill 1, 1; // Add Emote skill.
+    adddefaultskills;
     closedialog;
     close;
 
