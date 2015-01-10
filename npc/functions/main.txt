@@ -39,4 +39,5 @@ function	script	col	{
 
 function	script	adddefaultskills	{
     skill 1, 1, 0; // Add basic skill.
+    return;
 }
