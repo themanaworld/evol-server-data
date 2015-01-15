@@ -12,7 +12,7 @@
 
     setcamnpc "Max";
     mesn "Max";
-    mesq lg("@@? Welcome my dear!", strcharinfo(0));
+    mesq lg("@@? Welcome my dear!", "@@? Welcome my dear!", strcharinfo(0));
     next;
     mesq lg("Last time I saw you, you were lost at sea on your raft.");
     next;

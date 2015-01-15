@@ -34,7 +34,7 @@ OnTalk:
     if (.@nard > 1 || .@gugli == 2) goto L_TaskCompleted;
     if (.@gugli == 1) goto L_TaskGiven;
 
-    mesq lg("Hi @@, I heard the captain sent you down here, uh?", strcharinfo(0));
+    mesq lg("Hi @@, I heard the captain sent you down here, uh?", "Hi @@, I heard the captain sent you down here, uh?", strcharinfo(0));
     next;
     mesq l("What an unexpected pleasure, your help is always welcome!");
     next;
