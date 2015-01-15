@@ -156,9 +156,6 @@ L_YNMenu:
         l("No, none."), L_Quit;
 
 L_WhereIam:
-    mesq lg("female", "male");
-    mesq lg("You stupid, she's english, look at the shape of her head.", "You stupid, he's english, look at the shape of his head.");
-    close;
     mes "";
     mesn;
     mesq l("You're on a ship, we're on our way to the commercial capital of Artis.");
