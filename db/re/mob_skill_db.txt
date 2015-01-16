@@ -114,9 +114,9 @@
 //    hiding        condition of being in hidden state
 //    sight        condition of being in unhidden state
 
-//id,name@skill,state,skillid,skilllevel,permillage,casttime,delay,cancel,target,cond1,cond2,val0,val1,val2,val3,,,
-1005,Ratto@NPC_POISON,attack,178,20,500,0,500,yes,target,always,0,10,,,,,,
-1008,Blub@NPC_SUMMONSLAVE,any,198,1,2500,1000,0,no,self,slavelt,4,1007,,,,,,
-1010,Crocotree@NPC_SELFDESTRUCTION,any,175,1,10000,1000,500,yes,self,myhpltmaxrate,5,,,,,,,
-1012,Frostiana@NPC_POISON,attack,178,5,1000,0,500,yes,target,always,0,10,,,,,,
-1013,Pikpik@NPC_SELFDESTRUCTION,attack,175,1,10000,100,500,yes,self,always,0,,,,,,,
+//id,   name@skill,                 state,      skillid,    skilllevel,     permillage,     casttime,   delay,  cancel, target, cond1,          cond2,  val0,   val1,   val2,   val3,,,
+1005,   Ratto@NPC_POISON,           attack,     178,        20,             500,            0,          500,    yes,    target, always,         0,      10,     ,       ,       ,,,
+1008,   Blub@NPC_SUMMONSLAVE,       any,        198,        1,              2500,           1000,       0,      no,     self,   slavelt,        4,      1007,   ,       ,       ,,,
+1010,   Crocotree@NPC_SUICIDE,      any,        175,        1,              10000,          1000,       500,    yes,    self,   myhpltmaxrate,  5,      ,       ,       ,       ,,,
+1012,   Frostiana@NPC_POISON,       attack,     178,        5,              1000,           0,          500,    yes,    target, always,         0,      10,     ,       ,       ,,,
+1013,   Pikpik@NPC_SUICIDE,         attack,     175,        10,             10000,          100,        500,    yes,    self,   always,         0,      ,       ,       ,       ,,,
