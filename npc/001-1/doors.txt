@@ -14,7 +14,7 @@ OnUnTouch:
     doevent "#Door1::OnUnTouch";
 }
 
-001-1,55,71,0	script	#Door1	906,3,3,{
+001-1,55,71,0	script	#Door1	906,2,3,{
     close;
 
 OnTouch:
