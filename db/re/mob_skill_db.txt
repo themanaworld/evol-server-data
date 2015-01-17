@@ -54,9 +54,9 @@
 //	-2: added for all normal types.
 //	-4: added for all mobs.
 
-//id,   name@skill,                     state,      skillid,    skilllevel,     rate,       casttime,   delay,  cancel, target,         cond1,          cond2,  val0,   val1,   val2,   val3,   val4,   emotion,    chat
-1005,   Ratto@NPC_POISON,               attack,     176,        20,             500,        0,          500,    yes,    target,         always,         0,      10,     ,       ,       ,       ,       ,
-1008,   Blub@NPC_SUMMONSLAVE,           any,        196,        1,              2500,       1000,       0,      no,     self,           slavelt,        4,      1007,   ,       ,       ,       ,       ,
-1010,   Crocotree@NPC_SUICIDE,          dead,       173,        1,              10000,      0,          500,    no,     self,           myhpltmaxrate,  5,      ,       ,       ,       ,       ,       ,
-1012,   Frostiana@NPC_POISON,           attack,     176,        5,              1000,       0,          500,    yes,    target,         always,         0,      10,     ,       ,       ,       ,       ,
-1013,   Pikpik@NPC_SELFDESTRUCTION,     any,        173,        1,              10000,      0,          0,      no,     randomtarget,   closedattacked, ,       ,       ,       ,       ,       ,       ,
+//id,name@skill,state,skillid,skilllevel,rate,casttime,delay,cancel,target,cond1,cond2,val0,val1,val2,val3,val4,emotion,chat
+1005,Ratto@NPC_POISON,attack,176,20,500,0,500,yes,target,always,0,,,,,,,
+1008,Blub@NPC_SUMMONSLAVE,any,196,4,10000,700,60000,no,self,onspawn,0,1007,,,,,,
+1012,Frostiana@NPC_POISON,attack,176,5,1000,0,500,yes,target,always,0,,,,,,,
+1013,Pikpik@NPC_SELFDESTRUCTION,attack,173,1,10000,1000,0,no,self,always,0,,,,,,,
+1013,Pikpik@NPC_SELFDESTRUCTION,chase,173,1,2000,1000,0,no,self,always,0,,,,,,,
