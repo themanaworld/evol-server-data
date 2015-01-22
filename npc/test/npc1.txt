@@ -26,8 +26,7 @@ test,10,10,0	script	npc1	800,3,3,{
         return;
     }
 
-    mes "talk";
-    switch (select("show area:change sex:change npc direction"))
+    switch (select("show area:change sex:change npc direction:add cart|remove cart"))
     {
         case 1:
             areatest;
@@ -42,6 +41,12 @@ test,10,10,0	script	npc1	800,3,3,{
                 setnpcdir .@f;
                 next;
             }
+            break;
+        case 4:
+            setcart 1;
+            break;
+        case 5:
+            setcart 0;
             break;
     }
 
