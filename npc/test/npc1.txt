@@ -26,7 +26,7 @@ test,10,10,0	script	npc1	800,3,3,{
         return;
     }
 
-    switch (select("show area:change sex:change npc direction:add cart:remove cart"))
+    switch (select("show area:change sex:change npc direction:quest test:add cart:remove cart"))
     {
         case 1:
             areatest;
@@ -43,9 +43,21 @@ test,10,10,0	script	npc1	800,3,3,{
             }
             break;
         case 4:
+            mes "current";
+            .@val0 = getq(ShipQuests_Gugli);
+            mes "val=" + .@val0;
+            setq ShipQuests_Gugli, 10;
+            next;
+            mes "test 10";
+            next;
+            .@val = getq(ShipQuests_Gugli);
+            mes "val=" + .@val;
+            setq ShipQuests_Gugli, .@val0;
+            next;
+        case 5:
             setcart 1;
             break;
-        case 5:
+        case 6:
             setcart 0;
             break;
     }
