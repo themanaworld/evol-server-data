@@ -26,7 +26,7 @@ test,10,10,0	script	npc1	800,3,3,{
         return;
     }
 
-    switch (select("show area:change sex:change npc direction:add cart|remove cart"))
+    switch (select("show area:change sex:change npc direction:add cart:remove cart"))
     {
         case 1:
             areatest;
