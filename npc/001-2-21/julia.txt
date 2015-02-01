@@ -1,0 +1,114 @@
+// Evol scripts.
+// Authors:
+//    4144
+//    Qwerty Dragon
+//    Reid
+//    Vasily_Makarov
+// Description:
+//    Allows to change language.
+
+001-2-21,27,24,0	script	Julia	404,2,10,{
+    mesn;
+    mesq lg("Hello dear!");
+    next;
+    mesq l("What do you want today?");
+    next;
+
+    .@s$ = l("I don't want to change my language, sorry.");
+
+L_Menu:
+    menu
+        lg("I made a mistake, I would like to change my language."), L_ChooseLang,
+        l("Could you explain to me where I am?"), L_WhereIam,
+        l("What happened to me?"), L_What,
+        l("Can I read these rules again?"), L_Rules,
+        l("Nothing, sorry."), L_Quit;
+
+L_YNMenu:
+    menu
+        l("Yes, I do."), L_Menu,
+        l("No, none."), L_Quit;
+
+L_NoChanges:
+    mes "";
+    mesn;
+    mesq l("No problem, do you have any other questions for me?");
+    next;
+
+    goto L_YNMenu;
+
+L_ChooseLang:
+    menu
+        menuimage("flags/en", l("I speak English.") + " (English)"), -,
+        menuimage("flags/fr", l("I speak French.") + " (Français)"), -,
+        menuimage("flags/ru", l("I speak Russian.") + " (Русский)"), -,
+        menuimage("flags/es", l("I speak Spanish.") + " (Español)"), -,
+        menuimage("flags/pt_BR", l("I speak Portuguese.") + " (Português)"), -,
+        menuimage("flags/de", l("I speak German.") + " (Deutsch)"), -,
+        menuimage("flags/vls", l("I speak Flemish.") + " (Vlaams)"), -,
+        menuimage("flags/pl", l("I speak Polish.") + " (Polski)"), -,
+        menuimage("flags/it", l("I speak Italian.") + " (Italiano)"), -,
+        menuimage("flags/nl_BE", l("I speak Dutch.") + " (Nederlands)"), -,
+        menuimage("flags/ca", l("I speak Catalan.") + " (Català)"), -,
+        .@s$, L_NoChanges;
+    .@lang = @menu-1;
+    if (.@lang < 0 || .@lang > 10) close;
+    Lang = .@lang;
+
+    mes "";
+    mesn;
+    mesq l("Ok, done.");
+    next;
+    mesq l("Do you have any other questions for me?");
+    next;
+
+    goto L_Menu;
+
+L_WhereIam:
+    mes "";
+    mesn;
+    mesq l("You're on La Johanne, a merchant ship.");
+    next;
+    mesq l("We arrived this morning at the port of Artis, I already warned the Legion of Aemil concerning your issue.");
+    next;
+    mesq l("Somebody is waiting for you outside!");
+    next;
+    mesq l("Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.");
+    next;
+    mesq l("Do you have any other questions for me?");
+    next;
+
+    goto L_YNMenu;
+
+L_What:
+    mes "";
+    mesn;
+    mesq l("We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.");
+    next;
+    mesq lg("You were in bad shape, you should be happy we found you before the sea killed you.");
+    next;
+    mesq l("Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?");
+    next;
+
+    menu
+        l("Sorry, but I can't tell you anything about that."), L_NoChanges,
+        l("Nothing, sorry."), L_NoChanges;
+
+L_Rules:
+    mes "";
+    mesn;
+    mesq l("Of course, they are on the left wall, go have a look at them.");
+    next;
+    mesq l("Do you have any other questions for me?");
+    next;
+
+    goto L_YNMenu;
+
+L_Quit:
+    goodbye;
+
+OnInit:
+    setnpcsex G_FEMALE;
+    setnpcdistance 10;
+    end;
+}
