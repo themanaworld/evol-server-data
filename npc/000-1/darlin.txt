@@ -94,7 +94,7 @@
     mesq l("HE IS AT THE BOTTOM OF THE SHIP, DOWN THE STAIRS. YOU CAN'T MISS HIM!");
     restorecam;
 
-    close;
+    goto L_Quit;
 
 L_GoDown:
     setcamnpc;
@@ -119,21 +119,21 @@ L_GoDown:
 
     setcamnpc;
     mesq l("Oh no, but I've noticed a weird light on the other edge of this island, I wonder what it can be...");
+    restorecam;
 
-    close;
+    goto L_Quit;
 
 L_Bye:
-    setcamnpc;
     npctalk3 l("FINE, BYE!");
 
-    closedialog;
-    close;
+    goto L_Quit;
 
 L_DangerAround:
     setcamnpc;
     mesq l("NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT!");
+    restorecam;
 
-    close;
+    goto L_Quit;
 
 L_Quit:
     closedialog;
