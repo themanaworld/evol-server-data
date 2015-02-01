@@ -174,11 +174,9 @@ L_What:
     next;
     mesq lg("You were in bad shape, you should be happy we found you before the sea killed you.");
     next;
-    mesq l("Oh, and there was this inscription on your raft. It represents the Warrior Guild of Esperia, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?");
+    mesq l("Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?");
     next;
-    goto L_EsperiaMenu;
 
-L_EsperiaMenu:
     menu
         l("Sorry, but I can't tell you anything about that."), L_NoChanges,
         l("Nothing, sorry."), L_NoChanges;
