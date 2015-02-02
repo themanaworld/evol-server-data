@@ -1,0 +1,49 @@
+// Evol scripts.
+// Authors:
+//    Ablu
+//    Qwerty Dragon
+// Description:
+//    Knife on the table.
+// Variable:
+//    ShipQuests_Knife
+// Values:
+//    0   Default, not taken.
+//    1   Knife taken.
+
+000-2-1,50,24,0	script	#knife	100,{
+    .@q = getq(ShipQuests_Knife);
+    if (.@q) close;
+
+    mesn "Narrator";
+    mes col(l("There are some knives on the table. Would you like to take one?"), 9);
+    next;
+
+    menu
+        l("Yes."), L_Give,
+        l("No."), -;
+
+    closedialog;
+    close;
+
+L_Give:
+    mes "";
+    .@item = 3500;
+    .@count = 1;
+    inventoryplace 3500, 1;
+
+    setq ShipQuests_Knife, 1;
+    getitem "Knife", 1;
+
+    mesn "Narrator";
+    mes col(l("To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client."), 9);
+    next;
+    mes col(l("When your inventory is open, you can equip an item by selecting it and clicking 'Equip'. You can do the same to unequip an item by clicking on 'Unequip'."), 9);
+    next;
+    mes col(l("Items have different effects. Some will heal you, some can be used as weapons or armor, and some can be sold for gold."), 9);
+
+    close;
+
+OnInit:
+    setnpcdistance 2;
+    end;
+}

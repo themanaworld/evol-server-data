@@ -1,0 +1,30 @@
+// Evol scripts.
+// Authors:
+//    4144
+//    Reid
+// Description:
+//    A box with clothes for new players.
+
+001-2-22,51,37,0	script	Chest#Artis	417,{
+
+    setnpcdir 2;
+    initnpctimer;
+    startnpctimer;
+    close;
+
+OnTimer220:
+    stopnpctimer;
+    if (getnpcdir ("") == 2) setnpcdir 4;
+    if (getnpcdir ("") == 6) setnpcdir 0;
+    end;
+
+L_Quit:
+    setnpcdir 6;
+    initnpctimer;
+    startnpctimer;
+    close;
+
+OnInit:
+    setnpcdistance 2;
+    end;
+}

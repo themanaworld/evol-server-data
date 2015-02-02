@@ -1,0 +1,41 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Saves locations in 001-2-22 map.
+
+001-2-22,40,37,0	script	#name1	901,{
+    savepoint "001-2-22.gat", 40, 37;
+    close;
+
+OnInit:
+    setnpcdistance 2;
+    end;
+}
+
+001-2-22,46,37,0	script	#name2	901,{
+    savepoint "001-2-22.gat", 46, 37;
+    close;
+
+OnInit:
+    setnpcdistance 2;
+    end;
+}
+
+001-2-22,50,38,0	script	#name3	901,{
+    savepoint "001-2-22.gat", 50, 38;
+    close;
+
+OnInit:
+    setnpcdistance 2;
+    end;
+}
+
+001-2-22,55,40,0	script	#name4	901,{
+    savepoint "001-2-22.gat", 55, 40;
+    close;
+
+OnInit:
+    setnpcdistance 2;
+    end;
+}

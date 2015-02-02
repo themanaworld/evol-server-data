@@ -1,0 +1,304 @@
+// Evol scripts.
+// Authors:
+//    Ablu
+//    Alige
+//    Qwerty Dragon
+//    Reid
+//    Vasily_Makarov
+// Description:
+//    Hidden in a ship's hole.
+// 2 bits array:
+//    ShipQuests
+// Variable:
+//    ShipQuests_Alige
+// Values:
+//    0   Never talk.
+//    1   First talk.
+//    2   Accept the task.
+//    3   Bring first food.
+
+001-2-22,43,32,0	script	AligeTrigger#Artis	32767,1,1,{
+
+OnTouch:
+    if (getq(ShipQuests_Alige) > 0) close;
+    doevent "Alige::OnFirstEncounter";
+
+    close;
+
+OnTouchFirst:
+    setnpcdir "Alige", 2;
+    stopnpctimer;
+    initnpctimer;
+
+    goto OnTouch;
+
+OnUnTouchAll:
+    setnpcdir "Alige", 4;
+    stopnpctimer;
+    initnpctimer;
+
+    close;
+
+OnTimer190:
+    if (getnpcdir ("Alige") == 2) setnpcdir "Alige", 6;
+    if (getnpcdir ("Alige") == 4) setnpcdir "Alige", 8;
+    stopnpctimer;
+
+    end;
+}
+
+001-2-22,43,31,0	script	Alige#Artis	401,{
+    .@q = getq(ShipQuests_Alige);
+    if (.@q > 1) goto L_AskForFood;
+
+    goto OnFirstEncounter;
+
+OnFirstEncounter:
+    setq ShipQuests_Alige, 1;
+
+    setcamnpc;
+    mesn "Hidden Person";
+    mesq l("Hey, psst! You're not a sailor, right?");
+    next;
+    restorecam;
+
+    menu
+        lg("I am, who are you?"), -,
+        lg("Indeed, I am not."), L_NeedHelp;
+
+    mes "";
+    mesn "Narrator";
+    mes col(l("The stowaway doesn't answer."), 9);
+
+    close;
+
+L_NeedHelp:
+    setcamnpc;
+    mes "";
+    mesn "Hidden Person";
+    mesq l("Good, good... Hey, could you help me please? I beg you, please, pleeeease...");
+    next;
+    restorecam;
+
+    menu
+        l("Why not, but who are you, and what kind of help do you need?"), L_CanHelp;
+        l("Sorry but I have no time for this."), -;
+
+    closedialog;
+    close;
+
+L_CanHelp:
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq l("My name is Alige, I've been hiding here for weeks. All I have to eat are these berries... berries... berries...");
+    next;
+    mesq l("I'm losing my mind here, I need something else to eat!");
+    next;
+    mesq l("Could you please bring me something which isn't a berry, and I'm not big on vegetables either. I need proteins!");
+    next;
+    restorecam;
+
+    menu
+        l("Sure, but what will you give me in exchange?"), L_AboutReward,
+        l("Why don't you come out?"), -;
+
+L_ExplainHiding:
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq l("No, I can't. I won't! All is I wanted was to travel across the seas for fun, growl... sniff. And in this chink in the wall, as you can see, I have lots of fun.");
+    next;
+    mesq l("Oh... um... actually... all is I wanted was to get to Artis. Err... but I didn't, ah, have enough money to pay for the ferry!");
+    next;
+    mesq l("Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!");
+    next;
+    restorecam;
+
+    if (getq(ShipQuests_Alige) == 2) goto L_SoAskForFood;
+    goto L_Accept;
+
+L_AboutReward:
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq l("I'll share my berries with you if you help me.");
+    next;
+    restorecam;
+
+L_Accept:
+    menu
+        l("Understood, I will help you."), L_FirstAccepted,
+        l("We arrived to Artis today."), L_Artis,
+        l("I think I should report you to the crew members."), -;
+
+    setcamnpc;
+    mesq lg("Growl, sniff, grr! You'd better not tell anyone you saw me!");
+
+    close;
+
+L_Artis:
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq l("Of course, so why do I still see plain sea from the porthole?");
+    next;
+    mesq l("I wonder who is in delarium now...");
+    next;
+    mesq l("But hey, back to me. Remember my mentioning that I'm hun...grrr...eee!");
+    next;
+    restorecam;
+
+    if (.@q == 2) goto L_SoAskForFood;
+    goto L_Accept;
+
+L_FirstAccepted:
+    if (getq(ShipQuests_Alige) >= 2) goto L_Accepted;
+    setq ShipQuests_Alige, 2;
+
+    goto L_Accepted;
+
+L_Accepted:
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq lg("Great, what food do you have for me today?");
+    next;
+    restorecam;
+
+L_GiveFood:
+    mes "";
+    menu
+        rif(countitemcolor(501, 1), l(getitemname("Acorn"))), 0,
+        rif(countitemcolor(502, 1), l(getitemname("Bread"))), 502,
+        rif(countitemcolor(503, 1), l(getitemname("Fungus"))), 503,
+        rif(countitemcolor(504, 1), l(getitemname("Cheese"))), 504,
+        rif(countitemcolor(505, 1), l(getitemname("PiouLegs"))), 505,
+        rif(countitemcolor(506, 1), l(getitemname("LettuceLeaf"))), 0,
+        rif(countitemcolor(507, 1), l(getitemname("Piberries"))), 2,
+        rif(countitemcolor(508, 1), l(getitemname("SeaDrops"))), 1,
+        rif(countitemcolor(509, 1), l(getitemname("Aquada"))), 509,
+        rif(countitemcolor(510, 1), l(getitemname("PinkBlobime"))), 1,
+        rif(countitemcolor(512, 1), l(getitemname("HalfCroconut"))), 512,
+        rif(countitemcolor(513, 1), l(getitemname("Croconut"))), 0,
+        rif(countitemcolor(515, 1), l(getitemname("Plushroom"))), 515,
+        rif(countitemcolor(516, 1), l(getitemname("PumpkinSeeds"))), 1,
+        l("I don't have anything good for you today."), -1;
+
+    .@id = @menuret;
+    if (.@id == -1) goto L_Quit; // Quit message.
+    if (.@id == 0) goto L_NoReward; // In case of wrong food.
+    if (.@id == 1) goto L_Poison; // In case of poisoned food.
+    if (.@id == 2) goto L_NoMore; // In case of Piberries.
+    if (countitemcolor(.@id) == 0) goto L_Quit;
+//  if (.@id == item's ID) then food is correct.
+// Do not put any other number than -1, 0, 1, 2 or the item's ID, that'll avoid confusion.
+
+    inventoryplace 507, 3;
+    delitem .@id, 1;
+
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq l("Thank you so much! Here, have some of my berries.");
+
+    setq ShipQuests_Alige, 3;
+    getitem "Piberries", rand(1, 3);
+    next;
+
+    goto L_ReturnMenu;
+
+L_NoReward:
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq l("You don't expect me to eat that, do you? Give me something else!");
+    restorecam;
+
+    goto L_GiveFood;
+
+L_ReturnMenu:
+    setcamnpc;
+    mesq l("Do you have anything else for me?");
+    next;
+    restorecam;
+
+    goto L_GiveFood;
+
+L_NoMore:
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq l("Grr, don't give me more berries! I don't want them, stupid berries, stupid... Stupid... Stupid!");
+    next;
+
+    goto L_ReturnMenu;
+
+L_Poison:
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq l("Don't try to poison me! I know what that does!");
+    restorecam;
+    next;
+    goto L_ReturnMenu;
+
+L_SoAskForFood:
+    setcamnpc;
+    mesn;
+    mesq l("So, do you have anything for me today?");
+    next;
+    restorecam;
+    goto L_IntroMenu;
+
+L_AskForFood:
+    setcamnpc;
+    mesn;
+    mesq l("Do you have anything for me today?");
+    next;
+    restorecam;
+
+L_IntroMenu:
+    menu
+        l("Yes."), L_GiveFood,
+        l("Where can I find some food?"), L_FindFood,
+        l("Why are you hiding?") + " " + l("Why don't you come out?"), L_ExplainHiding,
+        l("We arrived to Artis today."), L_Artis,
+        l("I think I should report you to the crew members."), -;
+
+    setcamnpc;
+    mesq lg("Growl, sniff, grr!! You'd better not tell anyone you saw me!");
+
+    close;
+
+L_FindFood:
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq l("There are some flying yellow plushes around you. They're called pious. Getting a roasted leg of one of them would be perfect.");
+    next;
+    mesq l("I'd like to catch one of them, but they fly away when I try.");
+    next;
+    mesq l("Walkig around a bit, it'll be easy for you to catch one, I bet. Impale one of them for me please.");
+    next;
+    restorecam;
+    mesn "Narrator";
+    mes col(l("You can attack a monster by clicking on it, or from your keyboard you can press the 'A' key to select the monster followed by 'Ctrl' to attack it."), 9);
+    next;
+    mes col(l("Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops."), 9);
+
+    close;
+
+L_Quit:
+    setcamnpc;
+    mes "";
+    mesn;
+    mesq l("Too bad... Come back when you have some choice food for me. Growl... grumble... grumble.");
+
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 2;
+    end;
+}

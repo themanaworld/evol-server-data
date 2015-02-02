@@ -1,0 +1,192 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Animated hammock at the mid level of the ship.
+
+001-2-22,32,27,0	script	#hammockArtis1	904,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+001-2-22,32,25,0	script	#hammockArtis2	904,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+001-2-22,37,25,0	script	#hammockArtis3	905,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+001-2-22,37,27,0	script	#hammockArtis4	905,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+001-2-22,37,29,0	script	#hammockArtis5	905,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+001-2-22,37,34,0	script	#hammockArtis6	905,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+001-2-22,37,36,0	script	#hammockArtis7	905,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+001-2-22,37,38,0	script	#hammockArtis8	905,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+001-2-22,37,40,0	script	#hammockArtis9	905,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+001-2-22,32,38,0	script	#hammockArtis10	904,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+001-2-22,32,40,0	script	#hammockArtis11	904,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
