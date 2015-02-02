@@ -123,7 +123,24 @@ OnTimer5440:
     end;
 }
 
-000-2-1,37,38,0	script	#hammock8	905,1,0,{
+000-2-1,32,40,0	script	#hammock8	904,1,0,{
+
+OnTouchFirst:
+    setnpcdir 0;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 0;
+    stopnpctimer;
+    end;
+}
+
+000-2-1,37,40,0	script	#hammock8	905,1,0,{
 
 OnTouchFirst:
     setnpcdir 0;
