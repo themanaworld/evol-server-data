@@ -40,7 +40,7 @@
     next;
     mesq l("I think that we will stay in port for a great time.");
 
-    closedialogs;
+    closedialog;
     close;
 
 L_Lost :
@@ -48,7 +48,7 @@ L_Lost :
     mesn;
     mesq l("Julia make appeal the Legion of Aemil to search you, exit the ship and you should see your escort!");
 
-    closedialogs;
+    closedialog;
     close;
 
 OnInit:

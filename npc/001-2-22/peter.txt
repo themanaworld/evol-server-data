@@ -39,7 +39,7 @@
 // [9] = Shows how many seconds passed since the player started the quest.
 // [10] = Shows how many seconds passed since the player done the quest.
 
-001-2-22,72,34,0	script	AreaNPC	32767,0,1,{
+001-2-22,72,34,0	script	AreaNPC#001-2-22	32767,0,1,{
 
 OnTouch:
     if (BaseLevel < 5) goto L_Stop;
@@ -87,7 +87,7 @@ L_NoGoodTick:
     close;
 }
 
-001-2-22,70,35,0	script	Peter	403,{
+001-2-22,70,35,0	script	Peter#001-2-22	403,{
     if (BaseLevel < 5) goto OnTooWeak;
     if ($@ARTIS_RAT1_COUNTDOWN == "") goto L_NoCountDown;
     if ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 10) goto OnNoGoodTick;

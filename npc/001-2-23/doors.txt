@@ -6,7 +6,7 @@
 // Description:
 //    Doors NPCs.
 
-001-2-23,48,29,0	script	DoorUpwards	32767,0,0,{
+001-2-23,48,29,0	script	DoorUpwards#001-2-23	32767,0,0,{
 
 OnTouch:
     if (mobcount("001-2-23.gat","all") > 0) goto L_Warn;
@@ -35,7 +35,7 @@ L_Warp:
     close;
 }
 
-001-2-23,24,31,0	script	LeftDoor	32767,0,0,{
+001-2-23,24,31,0	script	LeftDoor#001-2-23	32767,0,0,{
 
 OnTouch:
     mesn "Narrator";
