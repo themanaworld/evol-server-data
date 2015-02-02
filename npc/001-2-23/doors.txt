@@ -1,0 +1,69 @@
+// Evol scripts.
+// Authors:
+//    Ablu
+//    Alastrim
+//    Reid
+// Description:
+//    Doors NPCs.
+
+001-2-23,48,29,0	script	DoorUpwards	32767,0,0,{
+
+OnTouch:
+    if (mobcount("001-2-23.gat","all") > 0) goto L_Warn;
+
+    goto L_Warp;
+
+L_Warn:
+    .@q = getq(ShipQuests_Peter);
+    if (.@q == 5) goto L_Warp;
+
+    mesn "Narrator";
+    mes col(l("There are still some rattos left! Do you want to abort the quest?"), 9);
+    next;
+
+    menu
+        l("Yes."), L_Warp,
+        l("No."), -;
+
+    warp "001-2-23", 48, 28;
+    closedialog;
+    close;
+
+L_Warp:
+    warp "001-2-23", 72, 36;
+    closedialog;
+    close;
+}
+
+001-2-23,24,31,0	script	LeftDoor	32767,0,0,{
+
+OnTouch:
+    mesn "Narrator";
+    mes col(l("It seems that you need a key to open this door."), 9);
+    next;
+    mes col(l("What do you want to do?"), 9);
+    next;
+
+    menu
+        rif(countitemcolor("JohanneKey") > 0, l("Use the key.")), L_Warp,
+        l("Break the door."), L_Break,
+        l("Go away."), -;
+
+    closedialog;
+    close;
+
+L_Break:
+
+    mes "";
+    mesn "Narrator";
+    mes col(l("You hear a loud scream. It must be the creaking of the wooden door..."), 9);
+
+    close;
+
+L_Warp:
+    mes "";
+    mesn "Narrator";
+    mes col(l("Wait, it seems someone is blocking the door from the other side!"), 9);
+
+    close;
+}
