@@ -43,7 +43,7 @@
 
 OnTouch:
     if (BaseLevel < 5) goto L_Stop;
-    if ($@ARTIS_RAT1_COUNTDOWN == "") goto L_NoCountDown;
+    if ($@ARTIS_RAT1_COUNTDOWN == 0) goto L_NoCountDown;
     if ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 10) goto L_NoGoodTick;
     if (($@ARTIS_RAT1_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 60)) goto L_NoGoodTick;
     $@ARTIS_RAT1_COUNTDOWN = "";
@@ -89,7 +89,7 @@ L_NoGoodTick:
 
 001-2-22,70,35,0	script	Peter#001-2-22	403,{
     if (BaseLevel < 5) goto OnTooWeak;
-    if ($@ARTIS_RAT1_COUNTDOWN == "") goto L_NoCountDown;
+    if ($@ARTIS_RAT1_COUNTDOWN == 0) goto L_NoCountDown;
     if ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 10) goto OnNoGoodTick;
     if (($@ARTIS_RAT1_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 60)) goto OnNoGoodTick;
     $@ARTIS_RAT1_COUNTDOWN = "";

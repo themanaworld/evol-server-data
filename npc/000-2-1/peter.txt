@@ -43,7 +43,7 @@
 
 OnTouch:
     if (BaseLevel < 5) goto L_Stop;
-    if ($@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
+    if ($@RAT_SAILOR_COUNTDOWN == 0) goto L_NoCountDown;
     if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto L_NoGoodTick;
     if (($@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 60)) goto L_NoGoodTick;
     $@RAT_SAILOR_COUNTDOWN = "";
@@ -89,7 +89,7 @@ L_NoGoodTick:
 
 000-2-1,70,35,0	script	Peter	403,{
     if (BaseLevel < 5) goto OnTooWeak;
-    if ($@RAT_SAILOR_COUNTDOWN == "") goto L_NoCountDown;
+    if ($@RAT_SAILOR_COUNTDOWN == 0) goto L_NoCountDown;
     if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto OnNoGoodTick;
     if (($@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 60)) goto OnNoGoodTick;
     $@RAT_SAILOR_COUNTDOWN = "";
