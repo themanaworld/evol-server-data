@@ -1,0 +1,330 @@
+// Evol scripts.	
+// Authors:
+//    4144
+//    Ablu
+//    Alastrim
+//    Qwerty Dragon
+//    Reid
+//    Vasily_Makarov
+// Description:
+//    Rat hunter.
+// 4+2 bits array:
+//    ShipQuests
+// Variable:
+//    ShipQuests_Peter
+// Values:
+//    0   Doesn't know the quest.
+//    1   Task given.
+//    2   Task given and reward expected.
+//    3   Task completed without reward.
+//    4   Asked for reward after completion of the task.
+//    5   Task done and reward given.
+//    6   Did not start the quest.
+// Others:
+// .@peter = Peter variable.
+// "001-2-23.gat" - map with mobs.
+// "$@ARTIS_RAT1_HELPER$" - Name of the participant.
+// "$@ARTIS_RAT1_DEATHS - Number of deaths when the participant starts the fight.
+// "$@ARTIS_RAT1_CONTROL" - Explanation of each index of the array.
+// "$@ARTIS_RAT1_OLD_HELPER$" - Name of the participant.
+// "$@ARTIS_RAT1_COUNTDOWN" - Seconds since the epoch of when the player done the quest.
+// [1] = Shows status of ratto number 1 (1 is dead and 0 is alive).
+// [2] = Shows status of ratto number 2 (1 is dead and 0 is alive).
+// [3] = Shows status of ratto number 3 (1 is dead and 0 is alive).
+// [4] = Shows status of ratto number 4 (1 is dead and 0 is alive).
+// [5] = Shows how many seconds passed since ratto number 1 died.
+// [6] = Shows how many seconds passed since ratto number 2 died.
+// [7] = Shows how many seconds passed since ratto number 3 died.
+// [8] = Shows how many seconds passed since ratto number 4 died.
+// [9] = Shows how many seconds passed since the player started the quest.
+// [10] = Shows how many seconds passed since the player done the quest.
+
+001-2-22,72,34,0	script	AreaNPC	32767,0,1,{
+
+OnTouch:
+    if (BaseLevel < 5) goto L_Stop;
+    if ($@ARTIS_RAT1_COUNTDOWN == "") goto L_NoCountDown;
+    if ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 10) goto L_NoGoodTick;
+    if (($@ARTIS_RAT1_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 60)) goto L_NoGoodTick;
+    $@ARTIS_RAT1_COUNTDOWN = "";
+
+L_NoCountDown:
+    if ($@ARTIS_RAT1_HELPER$ != "") goto L_Occupied;
+    .@peter = getq(ShipQuests_Peter);
+    if (.@peter < 1 || .@peter > 5) goto L_Task;
+    if (.@peter == 1 || .@peter == 2) goto L_Rfail;
+    if (.@peter == 3 || .@peter == 4) goto L_Rwin;
+    if (.@peter > 5) goto L_SecondTime;
+    doevent "Peter::OnReturnWin";
+    close;
+
+L_Stop:
+    doevent "Peter::OnStop";
+
+    close;
+
+L_Occupied:
+    doevent "Peter::OnDontneedHelp";
+
+    close;
+
+L_Task:
+    doevent "Peter::OnGiveTask";
+
+    close;
+
+L_Rfail:
+    doevent "Peter::OnReturnFail";
+
+    close;
+
+L_Rwin:
+    doevent "Peter::OnReturnWin";
+
+L_NoGoodTick:
+    doevent "Peter::OnNoGoodTick";
+
+    close;
+}
+
+001-2-22,70,35,0	script	Peter	403,{
+    if (BaseLevel < 5) goto OnTooWeak;
+    if ($@ARTIS_RAT1_COUNTDOWN == "") goto L_NoCountDown;
+    if ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 10) goto OnNoGoodTick;
+    if (($@ARTIS_RAT1_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 60)) goto OnNoGoodTick;
+    $@ARTIS_RAT1_COUNTDOWN = "";
+
+L_NoCountDown:
+    .@peter = getq(ShipQuests_Peter);
+    if (.@peter == 1 || .@peter == 2) goto OnReturnFail;
+    if (.@peter == 3 || .@peter == 4 || .@peter == 5)  goto OnReturnWin;
+
+OnGiveTask:
+    setq ShipQuests_Peter, 6;
+    .@peter = getq(ShipQuests_Peter);
+    mesn;
+    mesq lg("Hey, girl!", "Hey, man!");
+    next;
+    mesq l("I need somebody who can rid the hold of the ship of these rattos. Can you help me?");
+    next;
+
+    menu
+        l("Yeah, but what reward will I get?"), L_BonusTask,
+        l("Why not, I need to train anyway."), L_Task,
+        l("No, they are way too dangerous for me!"), -;
+
+    mes "";
+    mesn;
+    mesq l("Hehe, hehe. Well, come back if you change your mind.");
+
+    goto L_Quit;
+
+OnTooWeak:
+    mesn;
+    mesq lg("I need a helper to clean the edge of the ship, but you aren't strong enough to help.");
+
+    goto L_Quit;
+
+OnStop:
+    warp "001-2-22", 72, 36;
+
+    mesn;
+    mesq l("You can't go there!");
+
+    close;
+
+OnReturnFail:
+    mesn;
+    mesq l("I see it's not so easy to get rid of these rattos. Do you want to try again?");
+    next;
+
+    menu
+        l("Yeah, but I would like to make sure I get a reward."), L_BonusTask,
+        l("Why not, I need to train anyway."), L_Task,
+        l("No, they are way too dangerous for me!"), -;
+
+    mes "";
+    mesn;
+    mesq l("Hehe, hehe. Well, come back if you change your mind.");
+
+    goto L_Quit;
+
+OnReturnWin:
+    mesn;
+    mesq l("Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem; so you can always be sure that your help with the extermination, to keep their numbers under control, is very welcome indeed. But the situation is, that I can give you a reward only the one time.");
+    next;
+
+    if (.@peter == 3 || .@peter == 4)
+        menu
+            l("Did you say reward? I want it!"), L_BonusTask,
+            l("I am not worried about rewards. I just want to help."), L_Task,
+            l("Sorry, I am not in the mood for another fight with these rattos."), -;
+
+    if (.@peter == 5)
+        menu
+            l("No problem, I can help you anyway."), L_Task,
+            l("Sorry, I am not in the mood for another fight with these rattos."), -;
+
+    mes "";
+    mesn;
+    mesq l("Hehe, hehe. Well, come back if you change your mind.");
+
+    close;
+
+L_BonusTask:
+    mes "";
+    mesn;
+    mesq l("What if I give you 1000 Esperin for that job, is it ok?");
+    next;
+
+    menu
+        lg("Okay, I'm ready to work!"), -,
+        l("What? This reward is too small!"), L_Quit;
+
+    if ($@ARTIS_RAT1_HELPER$ != "") goto OnDontneedHelp;
+    if (.@peter == 6) setq ShipQuests_Peter, 2;
+    if (.@peter == 3) setq ShipQuests_Peter, 4;
+    .@peter = getq(ShipQuests_Peter);
+    goto L_Start;
+
+L_Task:
+    if ($@ARTIS_RAT1_HELPER$ != "") goto OnDontneedHelp;
+    if (.@peter == 6) setq ShipQuests_Peter, 1;
+    .@peter = getq(ShipQuests_Peter);
+
+L_Start:
+    mes "";
+    mesn;
+    mesq l("Okay, you can start!");
+
+OnStartOutside:
+    if ($@ARTIS_RAT1_HELPER$ != "") goto OnDontneedHelp;
+    $@ARTIS_RAT1_HELPER$ = strcharinfo(0);
+    $@ARTIS_RAT1_DEATHS = PC_DIE_COUNTER;
+    initnpctimer;
+    warp "001-2-23.gat", 48, 28;
+    doevent "RattosControl::OnSpawn";
+
+    goto L_Quit;
+
+OnTimer2000:
+    if (attachrid(getcharid(3, $@ARTIS_RAT1_HELPER$)) == 0) goto L_Logoff;
+    $@ARTIS_RAT1_CONTROL[9] = $@ARTIS_RAT1_CONTROL[9] + 2;
+    if ($@ARTIS_RAT1_CONTROL[9] > 100) goto L_Timeout;
+    if (PC_DIE_COUNTER > $@ARTIS_RAT1_DEATHS) goto L_Dead;
+    if ($@ARTIS_RAT1_CONTROL[1] && $@ARTIS_RAT1_CONTROL[2] && $@ARTIS_RAT1_CONTROL[3] && $@ARTIS_RAT1_CONTROL[4]) goto L_Done;
+    if (getmapusers("001-2-23.gat") == 0) goto L_CleaningEnd;
+    goto L_CheckRattos;
+
+    end;
+
+L_CheckRattos:
+    if ($@ARTIS_RAT1_CONTROL[1]) $@ARTIS_RAT1_CONTROL[5] = $@ARTIS_RAT1_CONTROL[5] + 2;
+    if ($@ARTIS_RAT1_CONTROL[2]) $@ARTIS_RAT1_CONTROL[6] = $@ARTIS_RAT1_CONTROL[6] + 2;
+    if ($@ARTIS_RAT1_CONTROL[3]) $@ARTIS_RAT1_CONTROL[7] = $@ARTIS_RAT1_CONTROL[7] + 2;
+    if ($@ARTIS_RAT1_CONTROL[4]) $@ARTIS_RAT1_CONTROL[8] = $@ARTIS_RAT1_CONTROL[8] + 2;
+    if ($@ARTIS_RAT1_CONTROL[5] > 40) doevent "RattosControl::OnRatto1Respawn";
+    if ($@ARTIS_RAT1_CONTROL[6] > 40) doevent "RattosControl::OnRatto2Respawn";
+    if ($@ARTIS_RAT1_CONTROL[7] > 40) doevent "RattosControl::OnRatto3Respawn";
+    if ($@ARTIS_RAT1_CONTROL[8] > 40) doevent "RattosControl::OnRatto4Respawn";
+
+L_NotYet:
+    setnpctimer 0;
+
+    end;
+
+OnDontneedHelp:
+    mesn;
+    mesq l("I don't need your help right now, come back later.");
+    next;
+    mesq l("@@ is helping me.", $@ARTIS_RAT1_HELPER$);
+
+    goto L_Quit;
+
+L_Timeout:
+    mesn;
+    mesq l("Hey! Be careful. You can't stay in this basement for so long, you're going to get sick. Come outside and take a break, maybe you can try again later.");
+    warp "001-2-22", 72, 36;
+
+    goto L_CleaningClose;
+
+L_Logoff:
+    goto L_CleaningEnd;
+
+L_Dead:
+// Warps the dead body outside, so it does not interfere with the getmapusers check.
+    if (getmapusers("001-2-23.gat") > 0) warp "001-2-22", 61, 36;
+
+    goto L_CleaningEnd;
+
+L_Done:
+    $@ARTIS_RAT1_CONTROL[10] = $@ARTIS_RAT1_CONTROL[10] + 2;
+    if($@ARTIS_RAT1_CONTROL[10] < 5) goto L_NotYet;
+    .@peter = getq(ShipQuests_Peter);
+    if (.@peter == 2 || .@peter == 4) goto L_Reward;
+    warp "001-2-22.gat", 72, 36;
+
+    goto L_Thanks;
+
+L_CleaningEnd:
+    stopnpctimer;
+    $@ARTIS_RAT1_HELPER$ = "";
+    $@ARTIS_RAT1_DEATHS = 0;
+    cleararray $@ARTIS_RAT1_CONTROL, 0, 11;
+    killmonster "001-2-23.gat", "RattosControl::OnRatto1Death";
+    killmonster "001-2-23.gat", "RattosControl::OnRatto2Death";
+    killmonster "001-2-23.gat", "RattosControl::OnRatto3Death";
+    killmonster "001-2-23.gat", "RattosControl::OnRatto4Death";
+
+    end;
+
+L_CleaningClose:
+    stopnpctimer;
+    $@ARTIS_RAT1_OLD_HELPER$ = $@ARTIS_RAT1_HELPER$;
+    $@ARTIS_RAT1_HELPER$ = "";
+    $@ARTIS_RAT1_DEATHS = 0;
+    cleararray $@ARTIS_RAT1_CONTROL, 0, 11;
+    killmonster "001-2-23.gat", "RattosControl::OnRatto1Death";
+    killmonster "001-2-23.gat", "RattosControl::OnRatto2Death";
+    killmonster "001-2-23.gat", "RattosControl::OnRatto3Death";
+    killmonster "001-2-23.gat", "RattosControl::OnRatto4Death";
+    $@ARTIS_RAT1_COUNTDOWN = gettimetick(2);
+
+    close;
+
+L_Reward:
+    warp "001-2-22.gat", 72, 36;
+    setq ShipQuests_Peter, 5;
+    .@peter = getq(ShipQuests_Peter);
+    mesn;
+    mesq l("Good job!") + " " + l("Here's your reward!");
+    getexp 100, 0;
+    Zeny = Zeny + 1000;
+    message strcharinfo(0), l("You receive @@ E!", 1000);
+
+    goto L_CleaningClose;
+
+L_Thanks:
+    mesn;
+    mesq l("Thanks for helping me!");
+    .@peter = getq(ShipQuests_Peter);
+    if (.@peter == 1) setq ShipQuests_Peter, 3;
+    .@peter = getq(ShipQuests_Peter);
+
+    goto L_CleaningClose;
+
+L_Quit:
+    .@peter = 0;
+
+    close;
+
+OnNoGoodTick:
+    mesn;
+    mesq l("I don't need your help right now, come back later.");
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 3;
+    end;
+}
