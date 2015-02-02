@@ -1,0 +1,58 @@
+// Evol scripts.
+// Authors:
+//    Qwerty Dragon
+//    Reid
+// Description:
+//    Captain Nard dialogs.
+//    Nard does the introduction with a small quest.
+//    This quest is meant to teach the player how to use a weapon,and to bring food to the ship.
+//    4 bits array:
+//    ShipQuests
+// Variable:
+//    0    ShipQuests_Nard
+//    1    ShipQuests_Gugli
+//    2    ShipQuests_ChefGado
+// Values:
+//    00   Introduction of the boxes and Nard. This is displayed when the player never spoke to Nard or his box.
+//    01   Nard spoke and gave access to the outdoor of the ship.
+//    02   Completed the Gugli quest.
+//    03   ChefGado Quest accepted.
+//    04   ChefGado Quest completed and "Introduction" chapter finalized.
+//    05   Reward taken from the box.
+//    10   Never talked with Gugli.
+//    11   Gugli gives you the task.
+//    12   Gave all of the boxes to Gugli.
+
+001-2-24,25,26,0	script	Nard#Artis	406,{
+
+    mesn;
+    mesq g(l("Good day miss."), l("Good day mister."));
+    next;
+    mesq l("What can I do for you?");
+
+    menu
+        l("I'm lost, where should I go?"), L_Lost,
+        l("How long will you stay here?"), -;
+
+    mes "";
+    mesn;
+    mesq l("We just returned from a long journey and Artis is a good city to rest and to conclude our exchange.");
+    next;
+    mesq l("I think that we will stay in port for a great time.");
+
+    closedialogs;
+    close;
+
+L_Lost :
+    mes "";
+    mesn;
+    mesq l("Julia make appeal the Legion of Aemil to search you, exit the ship and you should see your escort!");
+
+    closedialogs;
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
+    end;
+}

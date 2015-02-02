@@ -1,0 +1,22 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Animated hammock at the top level of the ship.
+
+001-2-24,28,24,0	script	#nardArtisHammock	904,1,0,{
+
+OnTouchFirst:
+    setnpcdir 4;
+    close;
+
+OnUnTouchAll:
+    setnpcdir 2;
+    initnpctimer;
+    close;
+
+OnTimer5440:
+    setnpcdir 4;
+    stopnpctimer;
+    end;
+}

@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Ablu
+// Description:
+//    Jumping piou.
+
+001-2-24,27,23,4	script	#piourocketArtis	408,{
+    setnpcdir 2;
+    stopnpctimer;
+    initnpctimer;
+    close;
+
+OnTimer1420:
+    setnpcdir 4;
+    stopnpctimer;
+    end;
+
+OnInit:
+    setnpcdistance 3;
+    end;
+}
