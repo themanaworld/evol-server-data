@@ -20,29 +20,32 @@
 000-2-1,43,32,0	script	AligeTrigger	32767,1,1,{
 
 OnTouch:
+    if (getareausers() <= 1)
+    {
+        setnpcdir "Alige", 2;
+        stopnpctimer;
+        initnpctimer;
+    }
+
     if (getq(ShipQuests_Alige) > 0) close;
     doevent "Alige::OnFirstEncounter";
 
     close;
 
-OnTouchFirst:
-    setnpcdir "Alige", 2;
-    stopnpctimer;
-    initnpctimer;
-
-    goto OnTouch;
-
-OnUnTouchAll:
-    setnpcdir "Alige", 4;
-    stopnpctimer;
-    initnpctimer;
-
+OnUnTouch:
+    if (getareausers() == 0)
+    {
+        setnpcdir "Alige", 4;
+        stopnpctimer;
+        initnpctimer;
+    }
     close;
 
 OnTimer190:
+    stopnpctimer;
+
     if (getnpcdir ("Alige") == 2) setnpcdir "Alige", 6;
     if (getnpcdir ("Alige") == 4) setnpcdir "Alige", 8;
-    stopnpctimer;
 
     end;
 }
