@@ -46,7 +46,7 @@ OnTouch:
     if ($@RAT_SAILOR_COUNTDOWN == 0) goto L_NoCountDown;
     if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto L_NoGoodTick;
     if (($@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 60)) goto L_NoGoodTick;
-    $@RAT_SAILOR_COUNTDOWN = "";
+    $@RAT_SAILOR_COUNTDOWN = 0;
 
 L_NoCountDown:
     if ($@RAT_SAILOR_HELPER$ != "") goto L_Occupied;
@@ -81,6 +81,8 @@ L_Rfail:
 L_Rwin:
     doevent "Peter::OnReturnWin";
 
+    close;
+
 L_NoGoodTick:
     doevent "Peter::OnNoGoodTick";
 
@@ -92,7 +94,7 @@ L_NoGoodTick:
     if ($@RAT_SAILOR_COUNTDOWN == 0) goto L_NoCountDown;
     if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto OnNoGoodTick;
     if (($@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 60)) goto OnNoGoodTick;
-    $@RAT_SAILOR_COUNTDOWN = "";
+    $@RAT_SAILOR_COUNTDOWN = 0;
 
 L_NoCountDown:
     .@peter = getq(ShipQuests_Peter);
@@ -150,6 +152,7 @@ OnReturnFail:
     goto L_Quit;
 
 OnReturnWin:
+    .@peter = getq(ShipQuests_Peter);
     mesn;
     mesq l("Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem; so you can always be sure that your help with the extermination, to keep their numbers under control, is very welcome indeed. But the situation is, that I can give you a reward only the one time.");
     next;
@@ -181,6 +184,7 @@ L_BonusTask:
         lg("Okay, I'm ready to work!"), -,
         l("What? This reward is too small!"), L_Quit;
 
+    .@peter = getq(ShipQuests_Peter);
     if ($@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
     if (.@peter == 6) setq ShipQuests_Peter, 2;
     if (.@peter == 3) setq ShipQuests_Peter, 4;
@@ -188,6 +192,7 @@ L_BonusTask:
     goto L_Start;
 
 L_Task:
+    .@peter = getq(ShipQuests_Peter);
     if ($@RAT_SAILOR_HELPER$ != "") goto OnDontneedHelp;
     if (.@peter == 6) setq ShipQuests_Peter, 1;
     .@peter = getq(ShipQuests_Peter);

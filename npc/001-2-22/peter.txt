@@ -21,7 +21,7 @@
 //    5   Task done and reward given.
 //    6   Did not start the quest.
 // Others:
-// .@peter = Peter variable.
+// .@peter = Peter#001-2-22 variable.
 // "001-2-23.gat" - map with mobs.
 // "$@ARTIS_RAT1_HELPER$" - Name of the participant.
 // "$@ARTIS_RAT1_DEATHS - Number of deaths when the participant starts the fight.
@@ -46,7 +46,7 @@ OnTouch:
     if ($@ARTIS_RAT1_COUNTDOWN == 0) goto L_NoCountDown;
     if ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 10) goto L_NoGoodTick;
     if (($@ARTIS_RAT1_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 60)) goto L_NoGoodTick;
-    $@ARTIS_RAT1_COUNTDOWN = "";
+    $@ARTIS_RAT1_COUNTDOWN = 0;
 
 L_NoCountDown:
     if ($@ARTIS_RAT1_HELPER$ != "") goto L_Occupied;
@@ -55,34 +55,36 @@ L_NoCountDown:
     if (.@peter == 1 || .@peter == 2) goto L_Rfail;
     if (.@peter == 3 || .@peter == 4) goto L_Rwin;
     if (.@peter > 5) goto L_SecondTime;
-    doevent "Peter::OnReturnWin";
+    doevent "Peter#001-2-22::OnReturnWin";
     close;
 
 L_Stop:
-    doevent "Peter::OnStop";
+    doevent "Peter#001-2-22::OnStop";
 
     close;
 
 L_Occupied:
-    doevent "Peter::OnDontneedHelp";
+    doevent "Peter#001-2-22::OnDontneedHelp";
 
     close;
 
 L_Task:
-    doevent "Peter::OnGiveTask";
+    doevent "Peter#001-2-22::OnGiveTask";
 
     close;
 
 L_Rfail:
-    doevent "Peter::OnReturnFail";
+    doevent "Peter#001-2-22::OnReturnFail";
 
     close;
 
 L_Rwin:
-    doevent "Peter::OnReturnWin";
+    doevent "Peter#001-2-22::OnReturnWin";
+
+    close;
 
 L_NoGoodTick:
-    doevent "Peter::OnNoGoodTick";
+    doevent "Peter#001-2-22::OnNoGoodTick";
 
     close;
 }
@@ -92,7 +94,7 @@ L_NoGoodTick:
     if ($@ARTIS_RAT1_COUNTDOWN == 0) goto L_NoCountDown;
     if ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 10) goto OnNoGoodTick;
     if (($@ARTIS_RAT1_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 60)) goto OnNoGoodTick;
-    $@ARTIS_RAT1_COUNTDOWN = "";
+    $@ARTIS_RAT1_COUNTDOWN = 0;
 
 L_NoCountDown:
     .@peter = getq(ShipQuests_Peter);
@@ -150,6 +152,7 @@ OnReturnFail:
     goto L_Quit;
 
 OnReturnWin:
+    .@peter = getq(ShipQuests_Peter);
     mesn;
     mesq l("Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem; so you can always be sure that your help with the extermination, to keep their numbers under control, is very welcome indeed. But the situation is, that I can give you a reward only the one time.");
     next;
@@ -181,6 +184,7 @@ L_BonusTask:
         lg("Okay, I'm ready to work!"), -,
         l("What? This reward is too small!"), L_Quit;
 
+    .@peter = getq(ShipQuests_Peter);
     if ($@ARTIS_RAT1_HELPER$ != "") goto OnDontneedHelp;
     if (.@peter == 6) setq ShipQuests_Peter, 2;
     if (.@peter == 3) setq ShipQuests_Peter, 4;
@@ -188,6 +192,7 @@ L_BonusTask:
     goto L_Start;
 
 L_Task:
+    .@peter = getq(ShipQuests_Peter);
     if ($@ARTIS_RAT1_HELPER$ != "") goto OnDontneedHelp;
     if (.@peter == 6) setq ShipQuests_Peter, 1;
     .@peter = getq(ShipQuests_Peter);
@@ -203,7 +208,7 @@ OnStartOutside:
     $@ARTIS_RAT1_DEATHS = PC_DIE_COUNTER;
     initnpctimer;
     warp "001-2-23.gat", 48, 28;
-    doevent "RattosControl::OnSpawn";
+    doevent "RattosControl#001-2-23::OnSpawn";
 
     goto L_Quit;
 
@@ -223,10 +228,10 @@ L_CheckRattos:
     if ($@ARTIS_RAT1_CONTROL[2]) $@ARTIS_RAT1_CONTROL[6] = $@ARTIS_RAT1_CONTROL[6] + 2;
     if ($@ARTIS_RAT1_CONTROL[3]) $@ARTIS_RAT1_CONTROL[7] = $@ARTIS_RAT1_CONTROL[7] + 2;
     if ($@ARTIS_RAT1_CONTROL[4]) $@ARTIS_RAT1_CONTROL[8] = $@ARTIS_RAT1_CONTROL[8] + 2;
-    if ($@ARTIS_RAT1_CONTROL[5] > 40) doevent "RattosControl::OnRatto1Respawn";
-    if ($@ARTIS_RAT1_CONTROL[6] > 40) doevent "RattosControl::OnRatto2Respawn";
-    if ($@ARTIS_RAT1_CONTROL[7] > 40) doevent "RattosControl::OnRatto3Respawn";
-    if ($@ARTIS_RAT1_CONTROL[8] > 40) doevent "RattosControl::OnRatto4Respawn";
+    if ($@ARTIS_RAT1_CONTROL[5] > 40) doevent "RattosControl#001-2-23::OnRatto1Respawn";
+    if ($@ARTIS_RAT1_CONTROL[6] > 40) doevent "RattosControl#001-2-23::OnRatto2Respawn";
+    if ($@ARTIS_RAT1_CONTROL[7] > 40) doevent "RattosControl#001-2-23::OnRatto3Respawn";
+    if ($@ARTIS_RAT1_CONTROL[8] > 40) doevent "RattosControl#001-2-23::OnRatto4Respawn";
 
 L_NotYet:
     setnpctimer 0;
@@ -271,10 +276,10 @@ L_CleaningEnd:
     $@ARTIS_RAT1_HELPER$ = "";
     $@ARTIS_RAT1_DEATHS = 0;
     cleararray $@ARTIS_RAT1_CONTROL, 0, 11;
-    killmonster "001-2-23.gat", "RattosControl::OnRatto1Death";
-    killmonster "001-2-23.gat", "RattosControl::OnRatto2Death";
-    killmonster "001-2-23.gat", "RattosControl::OnRatto3Death";
-    killmonster "001-2-23.gat", "RattosControl::OnRatto4Death";
+    killmonster "001-2-23.gat", "RattosControl#001-2-23::OnRatto1Death";
+    killmonster "001-2-23.gat", "RattosControl#001-2-23::OnRatto2Death";
+    killmonster "001-2-23.gat", "RattosControl#001-2-23::OnRatto3Death";
+    killmonster "001-2-23.gat", "RattosControl#001-2-23::OnRatto4Death";
 
     end;
 
@@ -284,10 +289,10 @@ L_CleaningClose:
     $@ARTIS_RAT1_HELPER$ = "";
     $@ARTIS_RAT1_DEATHS = 0;
     cleararray $@ARTIS_RAT1_CONTROL, 0, 11;
-    killmonster "001-2-23.gat", "RattosControl::OnRatto1Death";
-    killmonster "001-2-23.gat", "RattosControl::OnRatto2Death";
-    killmonster "001-2-23.gat", "RattosControl::OnRatto3Death";
-    killmonster "001-2-23.gat", "RattosControl::OnRatto4Death";
+    killmonster "001-2-23.gat", "RattosControl#001-2-23::OnRatto1Death";
+    killmonster "001-2-23.gat", "RattosControl#001-2-23::OnRatto2Death";
+    killmonster "001-2-23.gat", "RattosControl#001-2-23::OnRatto3Death";
+    killmonster "001-2-23.gat", "RattosControl#001-2-23::OnRatto4Death";
     $@ARTIS_RAT1_COUNTDOWN = gettimetick(2);
 
     close;
