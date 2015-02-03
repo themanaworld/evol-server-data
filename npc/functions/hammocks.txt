@@ -1,0 +1,50 @@
+// Evol functions.
+// Authors:
+//    4144
+//    Reid
+// Description:
+//    Hammocks utility functions
+// Variables:
+//    none
+
+function	script	hamTouchLeft	{
+    if (getareausers() <= 1)
+    {
+        setnpcdir 0;
+        stopnpctimer;
+        initnpctimer;
+    }
+    close;
+}
+
+function	script	hamUnTouch	{
+    if (getareausers() == 0)
+    {
+        setnpcdir 2;
+        initnpctimer;
+        startnpctimer;
+    }
+    close;
+}
+
+function	script	hamTimerLeft	{
+    stopnpctimer;
+    if (getnpcdir() == 2) setnpcdir 0;
+    end;
+}
+
+function	script	hamTouchRight	{
+    if (getareausers() <= 1)
+    {
+        setnpcdir 0;
+        stopnpctimer;
+        initnpctimer;
+    }
+    close;
+}
+
+function	script	hamTimerRight	{
+    stopnpctimer;
+    if (getnpcdir() == 2) setnpcdir 0;
+    end;
+}

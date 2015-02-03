@@ -6,17 +6,12 @@
 
 001-2-24,28,24,0	script	#nardArtisHammock	904,1,0,{
 
-OnTouchFirst:
-    setnpcdir 4;
-    close;
+OnTouch:
+    hamTouchRight;
 
-OnUnTouchAll:
-    setnpcdir 2;
-    initnpctimer;
-    close;
+OnUnTouch:
+    hamUnTouch;
 
 OnTimer5440:
-    setnpcdir 4;
-    stopnpctimer;
-    end;
+    hamTimerRight;
 }
