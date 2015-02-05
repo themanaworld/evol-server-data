@@ -1,0 +1,24 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Harbour animated tiles.
+// Animation:
+//    Length: 1680
+// Values:
+//    2   Hook moving down.
+//    4   Hook moving up.
+//    6   Hook down.
+//    8   Hook up.
+
+001-1,177,120,0	script	#Harbour1	420,{
+
+    harbourClic;
+
+OnTimer1670:
+    harbourTimer;
+
+OnInit:
+    setnpcdistance 2;
+    end;
+}
