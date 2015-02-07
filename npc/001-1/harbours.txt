@@ -11,8 +11,51 @@
 //    6   Hook down.
 //    8   Hook up.
 
-001-1,177,120,0	script	#Harbour1	421,{
+001-1,192,82,0	script	#Harbour0	420,{
+    harbourClic;
 
+OnTimer1670:
+    harbourTimer;
+
+OnInit:
+    setnpcdistance 1;
+    end;
+}
+
+001-1,183,87,0	script	#Harbour1	421,{
+    harbourClic;
+
+OnTimer1670:
+    harbourTimer;
+
+OnInit:
+    setnpcdistance 1;
+    end;
+}
+
+001-1,183,91,0	script	#Harbour2	420,{
+    harbourClic;
+
+OnTimer1670:
+    harbourTimer;
+
+OnInit:
+    setnpcdistance 1;
+    end;
+}
+
+001-1,198,115,0	script	#Harbour3	421,{
+    harbourClic;
+
+OnTimer1670:
+    harbourTimer;
+
+OnInit:
+    setnpcdistance 1;
+    end;
+}
+
+001-1,177,120,0	script	#Harbour4	421,{
     harbourClic;
 
 OnTimer1670:
