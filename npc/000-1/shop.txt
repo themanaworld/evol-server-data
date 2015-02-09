@@ -8,15 +8,26 @@
 000-1,84,98,0	trader	Bag	109,{
 
 OnInit:
-    sellitem PiouLegs;
-    sellitem Bread;
-    sellitem Croconut;
-    sellitem Aquada;
-    sellitem Armbands;
-    sellitem LousyMoccasins;
-    sellitem PiouSlayer;
+    tradertype(NST_MARKET);
+
+    sellitem PiouLegs, -1, 1000;
+    sellitem Bread, -1, 1000;
+    sellitem Croconut, -1, 1000;
+    sellitem Aquada, -1, 1000;
+    sellitem Armbands, -1, 1000;
+    sellitem LousyMoccasins, -1, 1000;
+    sellitem PiouSlayer, -1, 1000;
 
     setnpcsex G_MALE;
     setnpcdistance 2;
     end;
+
+OnClock0000:
+    restoreshopitem PiouLegs, 1000;
+    restoreshopitem Bread, 1000;
+    restoreshopitem Croconut, 1000;
+    restoreshopitem Aquada, 1000;
+    restoreshopitem Armbands, 1000;
+    restoreshopitem LousyMoccasins, 1000;
+    restoreshopitem PiouSlayer, 1000;
 }

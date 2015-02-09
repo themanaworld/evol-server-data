@@ -1,0 +1,13 @@
+// Evol functions.
+// Authors:
+//    4144
+// Description:
+//    Shops utility functions
+// Variables:
+//    none
+
+function	script	restoreshopitem	{
+    if (shopcount(args(0)) < args(1))
+        sellitem args(0), -1, args(1);
+    return;
+}
