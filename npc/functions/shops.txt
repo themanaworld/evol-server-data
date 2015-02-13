@@ -7,7 +7,7 @@
 //    none
 
 function	script	restoreshopitem	{
-    if (shopcount(args(0)) < args(1))
-        sellitem args(0), -1, args(1);
+    if (shopcount(getarg(0)) < getarg(1))
+        sellitem getarg(0), -1, getarg(1);
     return;
 }
