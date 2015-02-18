@@ -1,0 +1,20 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Panels to give advice and some random information to players.
+
+001-1,180,25,0	script	#ArtisPanel1	999,{
+    mesn "Narrator";
+    mes col(l("A weeds covered panel draws your attention, a message is visible concealed behind the leaves..."), 9);
+    next;
+    mesq l("Don't fall!");
+    next;
+    mesq l("You've reached the highest natural place of Artis, enjoy the view.");
+    close;
+
+OnInit:
+    setnpcdistance 2;
+    end;
+}
+
