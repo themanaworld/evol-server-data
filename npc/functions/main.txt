@@ -41,3 +41,7 @@ function	script	adddefaultskills	{
     skill NV_BASIC, 1, 0;
     return;
 }
+
+function	script	str	{
+    return "" + getarg(0);
+}
