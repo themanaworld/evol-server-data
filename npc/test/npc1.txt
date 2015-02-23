@@ -26,15 +26,35 @@ test,10,10,0	script	npc1	800,3,3,{
         return;
     }
 
-    switch (select("show area:change sex:change npc direction:quest test:add cart:remove cart"))
+    switch (select("show area:map:change sex:change npc direction:quest test:add cart:remove cart"))
     {
         case 1:
             areatest;
             break;
         case 2:
+            .@mask = getmapmask("test");
+            mes "current mask: " + str(.@mask);
+            switch (select("show sand:show grass:show fog:hide fog"))
+            {
+                case 1:
+                    setmapmask "test", (.@mask | (4 + 8)) ^ 8;
+                    break;
+                case 2:
+                    setmapmask "test", (.@mask | (4 + 8)) ^ 4;
+                    break;
+                case 3:
+                    setmapmask "test", .@mask | 2;
+                    break;
+                case 4:
+                    setmapmask "test", (.@mask | 2) ^ 2;
+                    break;
+            }
+            break;
+
+        case 3:
             changecharsex;
             break;
-        case 3:
+        case 4:
             for (.@f = 0; .@f < 9; .@f ++)
             {
                 mes "" + .@f;
@@ -42,7 +62,7 @@ test,10,10,0	script	npc1	800,3,3,{
                 next;
             }
             break;
-        case 4:
+        case 5:
             mes "current";
             .@val0 = getq(ShipQuests_Gugli);
             mes "val=" + .@val0;
@@ -54,10 +74,10 @@ test,10,10,0	script	npc1	800,3,3,{
             mes "val=" + .@val;
             setq ShipQuests_Gugli, .@val0;
             next;
-        case 5:
+        case 6:
             setcart 1;
             break;
-        case 6:
+        case 7:
             setcart 0;
             break;
     }
