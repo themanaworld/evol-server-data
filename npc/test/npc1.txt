@@ -101,4 +101,8 @@ OnInit:
 OnWhisperGlobal:
     mes "cmd: " + @whispervar0$;
     close;
+
+OnSkillInvoke:
+    skillInvoke[@skillId] = skillInvoke[@skillId] + 1;
+    close;
 }
