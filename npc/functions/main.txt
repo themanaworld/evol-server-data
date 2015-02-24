@@ -45,3 +45,8 @@ function	script	adddefaultskills	{
 function	script	str	{
     return "" + getarg(0);
 }
+
+function	script	addremovemapmask	{
+    setmapmask getarg(0), (getmapmask(getarg(0)) | (getarg(1) + getarg(2))) ^ getarg(2);
+    return;
+}
