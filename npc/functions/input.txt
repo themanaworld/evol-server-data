@@ -6,7 +6,7 @@
 // Variables:
 //    none
 
-function	script	menu2	{
+function	script	menuint	{
     deletearray .@vals;
     .@menustr$ = "";
     .@cnt = 0;
