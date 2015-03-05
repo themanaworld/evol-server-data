@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Alchemy animation.
+
+001-2-26,32,27,4	script	#FlaskAlchemyLab	422,{
+    setnpcdir 2;
+    stopnpctimer;
+    initnpctimer;
+    close;
+
+OnTimer12920:
+    setnpcdir 4;
+    stopnpctimer;
+    end;
+
+OnInit:
+    setnpcdistance 3;
+    end;
+}
