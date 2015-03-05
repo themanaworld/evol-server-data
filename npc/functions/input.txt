@@ -34,3 +34,32 @@ function	script	menuint	{
     @menuret = .@vals[@menu];
     return @menuret;
 }
+
+function	script	menustr	{
+    deletearray .@vals$;
+    .@menustr$ = "";
+    .@cnt = 0;
+
+    for (.@f = 0; .@f < getargcount(); .@f = .@f + 2)
+    {
+        if (getarg(.@f) != "")
+        {
+            .@menustr$ = .@menustr$ + getarg(.@f) + ":";
+            .@vals$[.@cnt] = getarg(.@f + 1);
+            .@cnt ++;
+        }
+    }
+
+    @menu = 255;
+    @menuret = -1;
+    select(.@menustr$);
+    if (@menu == 255)
+        return "";
+
+    @menu --;
+    if (@menu < 0 || @menu >= getarraysize(.@vals$))
+        return "";
+
+    @menuret$ = .@vals$[@menu];
+    return @menuret$;
+}
