@@ -200,7 +200,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door7::OnUnTouch";
+    doevent "#Door8::OnUnTouch";
 }
 
 001-1,128,30,0	script	#Door8	906,3,3,{
@@ -254,7 +254,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door9::OnUnTouch";
+    doevent "#Door10::OnUnTouch";
 }
 
 001-1,118,49,0	script	#Door10	906,2,3,{
@@ -281,7 +281,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door9::OnUnTouch";
+    doevent "#Door11::OnUnTouch";
 }
 
 001-1,135,49,0	script	#Door11	906,2,3,{
@@ -308,7 +308,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door9::OnUnTouch";
+    doevent "#Door12::OnUnTouch";
 }
 
 001-1,149,54,0	script	#Door12	906,2,3,{
@@ -335,10 +335,37 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door9::OnUnTouch";
+    doevent "#Door13::OnUnTouch";
 }
 
 001-1,158,68,0	script	#Door13	906,2,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
+    end;
+}
+
+001-1,101,107,0	script	#Warp14	32767,0,0,{
+OnTouch:
+    warp "001-2-27", 33, 34;
+    close;
+
+OnUnTouch:
+    doevent "#Door14::OnUnTouch";
+}
+
+001-1,101,107,0	script	#Door14	906,2,3,{
     close;
 
 OnTouch:
