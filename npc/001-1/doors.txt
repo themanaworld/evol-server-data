@@ -358,7 +358,7 @@ OnInit:
 
 001-1,101,107,0	script	#Warp14	32767,0,0,{
 OnTouch:
-    warp "001-2-27", 33, 34;
+    warp "001-2-27", 35, 35;
     close;
 
 OnUnTouch:
