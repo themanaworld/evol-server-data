@@ -31,6 +31,7 @@ OnTouch:
 
     mesn "Narrator";
     mes col(l("Captain Nard is in the room to your right."), 9);
+    next;
     restorecam;
 
     close;

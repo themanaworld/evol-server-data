@@ -216,6 +216,7 @@ L_NoReward:
     mes "";
     mesn;
     mesq l("You don't expect me to eat that, do you? Give me something else!");
+    next;
     restorecam;
 
     goto L_GiveFood;
@@ -242,8 +243,8 @@ L_Poison:
     mes "";
     mesn;
     mesq l("Don't try to poison me! I know what that does!");
-    restorecam;
     next;
+    restorecam;
     goto L_ReturnMenu;
 
 L_SoAskForFood:
