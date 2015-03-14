@@ -1,0 +1,16 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Librarian
+
+001-2-4,51,36,0	script	Terry	118,{
+    mesn;
+    mesq l("Hi.");
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 2;
+    end;
+}
