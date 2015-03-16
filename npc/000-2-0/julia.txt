@@ -48,6 +48,7 @@ L_Menu:
         rif(.@q3 == 3 && .@q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")), L_Rumors,
         rif(.@q2 == 2 && countitemcolor("PoisonedDish", 1), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")), L_Regret,
         rif(.@q2 == 2 && countitemcolor("PoisonedDish", 1), l("I have brought you a tasty present for your delicate mouth.")), L_PoisonJulia,
+        rif(getskilllv(1) != 3, l("Something is wrong with me, I can't smile nor sit.")), L_BasicSkill,
         lg("I made a mistake, I would like to change my language."), L_ChooseLang,
         l("Could you explain to me where I am?"), L_WhereIam,
         l("What happened to me?"), L_What,
@@ -264,6 +265,20 @@ L_Rumors:
     getexp 8, 0;
 
     close;
+
+L_BasicSkill:
+    mes "";
+    mesn;
+    mesq l("Let me check into it...");
+    next;
+    adddefaultskills;
+    mesq l("Here you go, everything is fixed.");
+    emotion 3;
+    next;
+    mesq l("Do you have any other questions for me?");
+    next;
+
+    goto L_YNMenu;
 
 OnInit:
     setnpcsex G_FEMALE;
