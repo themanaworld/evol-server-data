@@ -4,13 +4,22 @@
 // Description:
 //    Librarian
 
-001-2-4,51,36,0	script	Terry	118,{
+001-2-4,51,35,0	script	Terry	423,{
+    setnpcdir 4;
+
     mesn;
     mesq l("Hi.");
-    close;
+    next;
+    mesq l("");
+    goto L_Quit;
 
 OnInit:
     setnpcsex G_MALE;
     setnpcdistance 2;
+    setnpcdir 2;
     end;
+
+L_Quit:
+    setnpcdir 2;
+    close;
 }
