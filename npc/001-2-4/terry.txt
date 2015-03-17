@@ -4,9 +4,7 @@
 // Description:
 //    Librarian
 
-001-2-4,51,35,0	script	Terry	423,{
-    setnpcdir 4;
-
+001-2-4,51,35,4	script	Terry	423,{
     mesn;
     mesq l("Hi.");
     next;
