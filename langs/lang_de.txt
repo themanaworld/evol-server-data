@@ -1,30 +1,330 @@
 Copyright (C) 2010-2014 Evol Online
+      BLvl: %d | Job: %s (Lvl: %d)
+
+
+      Party: '%s' | Guild: '%s'
+
+
+   Users: %d/%d | Password: %s | Public: %s
+
+
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <bound_type>).
+
+
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>).
+
+
+  @send <packet hex number> {<value>}*
+
+
+  @send len <packet hex number>
+
+
+  Value: <type=B(default),W,L><number> or S<length>"<string>"
+
+
+ - Available in shops only.
+
+
+ - Common mobs with highest drop chance (only max %d are listed):
+
+
+ - Item is not dropped by any mobs.
+
+
+ - Maximal monsters drop chance: %02.02f%%
+
+
+ - Monsters don't drop this item.
+
+
+ -- Duel has been created (Use @invite/@leave) --
+
+
+ -- Duels: %d/%d, Members: %d/%d --
+
+
+ -- Duels: %d/%d, Members: %d/%d, Max players: %d --
+
+
+ -- Player %s has rejected the duel --
+
+
+ -- Player %s invites %s to duel --
+
+
+ -> (card(s): 
+
+
+ -> (crafted item, creator id: %u, star crumbs %d, element %d)
+
+
+ -> (pet egg, pet id: %u, named)
+
+
+ -> (pet egg, pet id: %u, unnamed)
+
+
+ -> (produced item, creator id: %u)
+
+
+ -> Player %s has accepted the duel --
+
+
+ <- Player %s has left the duel --
+
+
+ ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
+
+
+ ATK:%d~%d MATK:%d~%d Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
+
+
+ DEF:%d  MDEF:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d
+
+
+ Drops:
+
+
+ Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
+
+
+ MVP Bonus EXP:%u
+
+
+ MVP Items:
+
+
+ and %d second
+
+
+ and %d seconds
+
+
+ | equipped: 
+
+
+"@alootid reset" will clear your autolootitem list.
+
+
+%d - void
+
+
+%d GMs found.
+
+
+%d commands found.
+
+
+%d day
+
+
+%d days
+
+
+%d hour
+
+
+%d hours
+
+
+%d item(s) found in %d %s slots.
+
+
+%d item(s) removed by a GM.
+
+
+%d item(s) removed from the player.
+
+
+%d item(s) removed. Player had only %d on %d items.
+
+
+%d items have been refined.
+
+
+%d minute
+
+
+%d minutes
+
+
+%d monster(s) summoned!
+
+
+%d players found in map '%s'.
+
+
+%d players found.
+
+
+%d results found.
+
+
+%d: Body Armor
+
+
+%d: Garment
+
+
+%d: Left Accessory
+
+
+%d: Left Hand
+
+
+%d: Lower Headgear
+
+
+%d: Mid Headgear
+
+
+%d: Right Accessory
+
+
+%d: Right Hand
+
+
+%d: Shoes
+
+
+%d: Top Headgear
+
+
+%s :Main: %s
+
+
+%s data type is not supported :%u
+
+
+%s failed
+
+
+%s failed.
+
+
+%s failed. Player not found.
+
+
+%s has bought your item(s).
+
+
+%s in jail for %d years, %d months, %d days, %d hours and %d minutes
+
+
+%s is Unknown Command.
+
+
+%s is empty
+
+
+%s recalled!
+
+
+%s revision '%s' (src) / '%s' (scripts)
+
+
+%s spawns in:
+
+
+%s value is now :%d
+
+
+%s value is now :%s
+
+
+%s: %d
+
+
+'%s' Channel is password protected (usage: %s <#channel_name> <password>)
+
+
+'%s' and his/her partner are now divorced.
+
+
+'%s' channel color updated to '%s' 
+
+
+'%s' got %s's %s (chance: %0.02f%%)
+
+
+'%s' is not a known channel option
+
+
+'%s' is not a known costume
+
+
+'%s' is not a known permission.
+
+
+'%s' is not married.
+
+
+'%s' skill and stat points have been reset.
+
+
+'%s' skill points reset.
+
+
+'%s' stats points reset.
+
+
+'%s' stats:
+
+
+'%s' stole %s's %s (chance: %0.02f%%)
+
+
 'That', as you call it, is a @@. There are plenty of 'em on this island!
 
 
 'That', as you call it, is a @@. There're plenty on this island!
 
 
-*Hic*
+(%s) 
 
+
+(@request): %s
+
+
+(CID:%d/AID:%d) 
+
+
+* :%s %s: *
+
+
+*Hic*
+*Hicks*
 
 *Imitate a thunder's sound.*
 *Imitiert den Ton eines Donners.*
 
 *Uff*, *Argh*, why don't you give me some help?
-
+*Uff*, *Argh*, warum hilfst du mir nicht?
 
 *Uff*... And another box of @@s for our starving colleagues is ready.
 
 
+- #%s ( %d users )
+
+
+- %s
+
+
+- %s (%d)
+
+
+- 2 @@
 - 2 @@
 
-
 - Ale
 - Ale
 
 - Astapolos
 - Astapolos
+
+- Available Costumes
+
 
 - Gulukan
 - Gulukan
@@ -37,12 +337,138 @@ Copyright (C) 2010-2014 Evol Online
 
 - Tibbo
 - Tibbo
+
+- adds or removes <option name> with <option value> to <channel name> channel
+
+
+- bans <character name> from <channel name> channel
+
+
+- binds your global chat to <channel name>, making anything you type in global be sent to the channel
+
+
+- changes <channel name> color to <color name>
+
+
+- creates a new channel
+
+
+- leaves <channel name>
+
+
+- lists all banned characters from <channel name> channel
+
+
+- lists colors available to select for custom channels
+
+
+- lists public channels
+
+
+- unbans <character name> from <channel name> channel
+
+
+- unbans everyone from <channel name>
+
+
+- unbinds your global chat from its attached channel (if binded)
+
+
+-- %s
+
+
+-- %s ban <channel name> <character name>
+
+
+-- %s banlist <channel name>
+
+
+-- %s bindto <channel name>
+
+
+-- %s create <channel name> <channel password>
+
+
+-- %s leave <channel name>
+
+
+-- %s list
+
+
+-- %s list colors
+
+
+-- %s setcolor <channel name> <color name>
+
+
+-- %s setopt <channel name> <option name> <option value>
+
+
+-- %s unban <channel name> <character name>
+
+
+-- %s unbanall <channel name>
+
+
+-- %s unbind
+
+
+-- '%s' ban list
+
+
+-- Available options
+
+
+-- Displaying first %d partial matches
+
+
+-- Permission List
+
+
+-- Public Channels
+
+
+-- User '%s' Permissions
+
+
+--- Available options:
+
+
+----- Chats in Map -----
+
+
+----- NPCs in Map -----
+
+
+----- Players in Map -----
+
+
+------ %s items list of '%s' ------
+
+
+------ Map Flags ------
+
+
+------ Map Info ------
+
 
 ... And 1 @@.
 ... Und 1 @@.
 
 ... and 1 @@.
 ... und 1 @@.
+
+1 GM found.
+
+
+1 item has been refined.
+
+
+1 player found in map '%s'.
+
+
+1 player found.
+
 
 1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle.
 
@@ -74,8 +500,14 @@ Copyright (C) 2010-2014 Evol Online
 @@? Welcome my dear!#1
 
 
-A cookie!
+@request sent.
 
+
+A GM has discharged you from jail.
+
+
+A cookie!
+Ein Keks!
 
 A great city, now the capital of these islands, called Esperia, rose on the single island, Aurora, where everyone lived.
 
@@ -86,6 +518,9 @@ Ein heißer und sonniger Tag.
 A weeds covered panel draws your attention, a message is visible concealed behind the leaves...
 
 
+ATK: %d - MATK: %d~%d
+
+
 Aaaaaahhhhhh!
 Aaaaaahhhhhh!
 
@@ -93,6 +528,9 @@ Aboard stand sailors trying to communicate with you.
 
 
 About this Esperia's Warrior Guild, I'm not sure about them, frankly.
+
+
+Acolyte
 
 
 Actually Gugli asked me if I would help you bring him some of your boxes.#0
@@ -120,12 +558,18 @@ Aemil is a magnificent world unknown to us all.
 Aemil ist eine uns allen unbekannte prachtvolle Welt.
 
 After choosing your weapon, you also need to know how to use it.
+Nachdem du deine Waffe gewählt hast, solltest du auch wissen wie man sie benutzt. 
+
+Agi: %d (%d~%d)
 
 
 Agility greatly increases your attack speed and the chances of you dodging enemy hits.
 
 
 Ah... Gugli... He's too young to understand our conversation.
+Ah... Gugli... Er ist zu jung, um unserer Konversation zu verstehen.
+
+Alchemist
 
 
 Ale
@@ -152,10 +596,58 @@ AligeTrigger#Artis
 All I can do is tell you that...
 Alles was ich tun kann, ist dir zu sagen, dass...
 
+All characters recalled!
+
+
+All dropped items have been cleaned up.
+
+
+All items have been repaired.
+
+
+All items stored.
+
+
+All monsters killed!
+
+
+All monsters summoned!
+
+
 All of a sudden, you hear voices from above.
 
 
+All of your items have been removed.
+
+
+All online characters of the %s guild have been recalled to your position.
+
+
+All online characters of the %s party have been recalled to your position.
+
+
+All players have been kicked!
+
+
+All skills have been added to your skill tree.
+
+
+All stats changed!
+
+
 All your... Fresh ingredients are ready to be cooked.
+
+
+Alliances cannot be broken during Guild Wars!
+
+
+Alliances cannot be made during Guild Wars!
+
+
+AllowKS | 
+
+
+Already using this font.
 
 
 Alright! Yoyone more box and it'll be good.
@@ -177,6 +669,15 @@ Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go c
 
 
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#1
+
+
+Alternative clouds appeared.
+
+
+Alternative clouds have disappeared.
+
+
+An invalid number was specified.
 
 
 And a fruit may even fall for you if you are lucky! And stay alert to pick up your drops.
@@ -216,7 +717,7 @@ Anyway, can I help you in any way?
 Wie auch immer, kann ich Dir in irgendeiner Weise helfen?
 
 Anyway, here, have a cookie!
-
+Jedenfalls, hier, nimm einen Keks!
 
 Anyway, if you ever feel interested, just check my bag!#0
 Wie auch immer, wenn du interessiert bist, überprüfe einfach meinen Rucksack!
@@ -224,8 +725,20 @@ Wie auch immer, wenn du interessiert bist, überprüfe einfach meinen Rucksack!
 Anyway, if you ever feel interested, just check my bag!#1
 Wie auch immer, wenn du interessiert bist, überprüfe einfach meinen Rucksack!
 
+Appearance changed.
+
+
 Aquada
 Aquada
+
+Arch Bishop
+
+
+Arch Bishop T
+
+
+Archer
+
 
 Are you blind? Do you really think these boxes are light and soft as a piou's feather?!
 Bist du blind? Denkst du wirklich das diese Kisten leicht wie Piou-Federn sind?!
@@ -275,6 +788,12 @@ As you may know, we are explorers on a long distance voyage, and our swashbuckli
 Ask sailors around here they shouldn't be so far away.
 
 
+Assassin
+
+
+Assassin Cross
+
+
 Astapolos
 Astapolos
 
@@ -290,7 +809,64 @@ At that time, we were selling crab food on our old mushroom island.
 At the moment, our crew is busy collecting @@s, @@s and @@s.
 
 
+Auction is disabled
+
+
 Authorities began to control in order to have a peaceful society. This did not work well for long.
+
+
+Autoloot is now off.
+
+
+Autolooting item type: '%s'
+
+
+Autolooting item: '%s'/'%s' {%d}
+
+
+Autolooting items with drop rates of %0.02f%% and below.
+
+
+Autorejected alliance request from %s.
+
+
+Autorejected friend request from %s.
+
+
+Autorejected guild invite from %s.
+
+
+Autorejected opposition request from %s.
+
+
+Autorejected party invite from %s.
+
+
+Autorejected trade request from %s.
+
+
+Autorejecting is activated.
+
+
+Autorejecting is deactivated.
+
+
+Autotrade Disabled
+
+
+Autotrade Enabled
+
+
+Autotrade is not allowed in this map.
+
+
+Available Flags:
+
+
+Available aliases:
+
+
+Available commands:
 
 
 Awesome!
@@ -302,11 +878,143 @@ AUAuauaua! Mein Kopf...
 BUT I CAN'T, I NEED TO KEEP AN EYE ON THE SEA, TO WARN THE CREW IF THERE HAPPENS TO BE SOME PIRATES AROUND!
 
 
+Baby Acolyte
+
+
+Baby Alchemist
+
+
+Baby Arch Bishop
+
+
+Baby Archer
+
+
+Baby Assassin
+
+
+Baby Bard
+
+
+Baby Blacksmith
+
+
+Baby Crusader
+
+
+Baby Dancer
+
+
+Baby Genetic
+
+
+Baby Guillotine Cross
+
+
+Baby Hunter
+
+
+Baby Knight
+
+
+Baby Magician
+
+
+Baby Mechanic
+
+
+Baby Merchant
+
+
+Baby Minstrel
+
+
+Baby Monk
+
+
+Baby Novice
+
+
+Baby Priest
+
+
+Baby Ranger
+
+
+Baby Rogue
+
+
+Baby Royal Guard
+
+
+Baby Rune Knight
+
+
+Baby Sage
+
+
+Baby Shadow Chaser
+
+
+Baby Sorcerer
+
+
+Baby Sura
+
+
+Baby Swordsman
+
+
+Baby Thief
+
+
+Baby Wanderer
+
+
+Baby Warlock
+
+
+Baby Wizard
+
+
+Ban failed, it is not possible to ban this user.
+
+
+Banking is disabled
+
+
+Bard
+
+
 Bare Hands
 bloßen Händen
 
+Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
+
+
+Base level can't go any higher.
+
+
+Base level can't go any lower.
+
+
+Base level lowered.
+
+
+Base level raised.
+
+
+Battle configuration has been reloaded.
+
+
+Battlegrounds ON
+
+
 Be patient a little while longer, in the next few days we will arrive at the port of Artis...
 Seien Sie noch eine kleine Weile geduldig, in den nächsten Tagen werden wir im Hafen von Artis ankommen ...
+
+Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
+
 
 Before you go, let me tell you how to get @@s, because you don't look very smart.
 
@@ -316,6 +1024,15 @@ Vor dem ...
 
 Billy Bons
 Billy Bons
+
+Blacksmith
+
+
+Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --
+
+
+Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
+
 
 Box
 Kiste
@@ -363,7 +1080,7 @@ But who am I?
 Aber wer bin ich?
 
 But you won't *hic* me this time...
-
+Aber du wirst *hicks* mich doch nicht dieses Mal...
 
 But...
 Aber...
@@ -375,10 +1092,10 @@ But... If she has amnesia like Julia said... We don't need to worry about her. A
 
 
 Bye for now.
-
+Bis bald!
 
 Bye then!
-
+Dann, Tschüss!
 
 Bye!
 Bye!
@@ -392,14 +1109,83 @@ KANNST DU MICH HÖREN?
 Can I read these rules again?
 Kann ich diese Regeln noch einmal lesen?
 
+Can't create chat rooms in this area.
+
+
+Can't show boss mobs!
+
+
 Can't you see I'm working?!
 Siehst du nicht, dass ich arbeite?!
+
+Cannot clone a player of higher GM level than yourself.
+
+
+Cannot create bound pet eggs or pet armors.
+
+
+Cannot mount while in disguise.
+
+
+Cannot send mails too fast!!
+
+
+Cannot transform into monster while in disguise.
+
 
 Captain Nard
 Kapitän Nard
 
 Captain Nard is in the room to your right.
 Kapitän Nard ist in dem Raum auf der rechten Seite.
+
+Cart Added.
+
+
+Cash Shop is disabled in this map
+
+
+Champion
+
+
+Channel '%s' has no banned players
+
+
+Channel '%s' is not available
+
+
+Channel length must be between 3 and %d
+
+
+Channel name must start with a '#'
+
+
+Channel password may not contain spaces
+
+
+Char-server has been asked to %s the character '%.*s'.
+
+
+Character cannot be disguised while in monster form.
+
+
+Character cannot be disguised while mounted.
+
+
+Character does not have the specified item.
+
+
+Character killed.
+
+
+Character not found.
+
+
+Charcommand failed (usage: %c<command> <char name> <parameters>).
+
+
+Chat: %s | Player: %s | Location: %d %d
+
 
 Cheers!
 Prost!
@@ -413,14 +1199,41 @@ Koch Gado
 Chef Gado#Artis
 
 
-Chest
+Cherry tree leaves have begun to fall.
 
+
+Cherry tree leaves no longer fall.
+
+
+Chest
+Truhe
 
 Chest#Artis
 
 
+Christmas
+
+
 Click on the NPCs around you to continue the introduction.
 Klicke auf die NPCs um dich herum um die Einleitung weiter zu führen.
+
+Clone spawned.
+
+
+Clouds appeared.
+
+
+Clouds have disappeared.
+
+
+Clouds | 
+
+
+Clouds2 | 
+
+
+Clown
+
 
 Come on, Sap! You are scaring our guest with your stories.#0
 
@@ -428,8 +1241,11 @@ Come on, Sap! You are scaring our guest with your stories.#0
 Come on, Sap! You are scaring our guest with your stories.#1
 
 
-Congrats, you are now part of the crew. Thanks again for your help.
+Commands are disabled in this map.
 
+
+Congrats, you are now part of the crew. Thanks again for your help.
+Glückwunsch! Du bist nun ein Teil der Mannschaft. Danke nochmal für deine Hilfe.
 
 Congratulations!
 Glückwunsch!
@@ -438,12 +1254,15 @@ Cookie Master
 Keksmeister
 
 Cookies are a source of life.
-
+Kekse sind eine Quelle des Lebens.
 
 Cookies are awesome, so am I.
 Kekse sind großartig, genau wie ich.
 
 Cookies provide you strength, health and cuteness.
+Kekse liefern dir Stärke, Gesundheit und Niedlichkeit.
+
+Costume '%s' removed.
 
 
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#0
@@ -473,11 +1292,20 @@ Couwan gab mir diese Kiste, sie ist für Dich.
 Couwan hands you a box full of fish.
 Couwan übergibt dir eine Box voller Fische.
 
+Creator
+
+
 Croconut
 Krokosnuss
 
-DO YOU FEEL BETTER?!
+Crusader
 
+
+Current amount of zeny changed.
+
+
+DO YOU FEEL BETTER?!
+FÜHLST DU DICH BESSER?!
 
 Damn @@.
 Verdammte @@.
@@ -491,17 +1319,59 @@ Dan beendet das Gespräch und schreibt an seinem Brief weiter.
 Dan keeps silent since your last question.
 Dan behält sein Schweigen bei seit Ihrer letzten Frage.
 
+Dancer
+
+
+Dark Collector
+
+
 Darlin
 Darlin
 
+Day Mode Activated.
+
+
+Day Mode is activated
+
+
+Day mode is already enabled.
+
+
+Dear angel, can you hear my voice?
+
+
+Death Knight
+
+
+Defeated by
+
+
 Devis
 Devis
+
+Dex: %d (%d~%d)
+
 
 Dexterity increases your bow damage and your accuracy.
 
 
 Did you say reward? I want it!
 Sagtest du Belohnung? Ich will sie!
+
+Disconnecting to perform change-sex request...
+
+
+Disguise applied.
+
+
+Disguise removed.
+
+
+Displaying first %d out of %d matches
+
+
+Displays Night | 
+
 
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia
 
@@ -578,6 +1448,57 @@ DoorUpwards
 DoorUpwards#001-2-23
 
 
+Duel: Can't use %s in duel.
+
+
+Duel: Can't use this item in duel.
+
+
+Duel: Invalid value.
+
+
+Duel: Invitation has been sent.
+
+
+Duel: Player name not found.
+
+
+Duel: The Player is in the duel already.
+
+
+Duel: The duel invitation has been accepted.
+
+
+Duel: The duel invitation has been rejected.
+
+
+Duel: The limit of players has been reached.
+
+
+Duel: You can take part in duel once per %d minutes.
+
+
+Duel: You can't invite %s because he/she isn't in the same map.
+
+
+Duel: You can't use @accept without a duel invitation.
+
+
+Duel: You can't use @duel without @reject.
+
+
+Duel: You can't use @invite. You aren't a duelist.
+
+
+Duel: You can't use @leave. You aren't a duelist.
+
+
+Duel: You can't use @reject without a duel invitation.
+
+
+Duel: You've left the duel.
+
+
 Duty calls me, *hic*, see you later dude.#1
 
 
@@ -587,7 +1508,19 @@ Duty calls me, *hic*, see you later honey.#0
 Each of the groups was ordered to sail in a different direction to find a new, suitable land where to live.
 
 
+East
+
+
 Ehm... He was really upset because of some past stories.
+
+
+Eight Castles
+
+
+Eighteen Castles
+
+
+Eleven Castles
 
 
 Elmo
@@ -600,7 +1533,7 @@ Elmo brought reports to me about some frictions between my old and new lieutenan
 
 
 Elmo told me what Nard said, congrats!
-
+Elmo erzählte mir was Nard sagte. Glückwunsch!
 
 Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.
 
@@ -611,11 +1544,23 @@ Elmo#sailors
 Elven Voice
 Elfen Stimme
 
+Enabled Mapflags in this map:
+
+
+Error reading atcommand.conf, reload failed.
+
+
+Error reading groups.conf, reload failed.
+
+
 Even though they did not hear anything about the other groups, they decided to start a new life on this land, full of harmful animals.
 Auch wenn sie nichts von den anderen Gruppen gehört haben, entschieden sie sich, ein neues Leben in diesem Land zu beginnen, voll von gefährlichen Tieren.
 
-Exactly! Can I have one now?
+Evil clone spawned.
 
+
+Exactly! Can I have one now?
+Exakt! Kann ich nun eine haben?
 
 Exactly. Even our task is ridiculous. Why should we collect food down here if we have plenty of those tasty and soft rattos inside our ship, waiting just to be hunted and cooked?
 
@@ -626,14 +1571,38 @@ Entschuldigung? Weißt du wer ich bin?
 Excuse me? Do you know who I am?#1
 Entschuldigung? Weißt du wer ich bin?
 
+Expanded Super Baby
+
+
+Expanded Super Novice
+
+
+Experience rates: Base %.2fx / Job %.2fx
+
+
 FINE, BYE!
 NA GUT, TSCHÜSS!
 
+Fake name enabled.
+
+
+Fake name must be at least two characters.
+
+
 Farewell.
-
+Mach es gut.
 
 Fexil
 Fexil
+
+Fifteen Castles
+
+
+File not found.
+
+
+File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
+
 
 Fine, could you please tell me where I can find Gugli's sailors?
 Schön. Kannst du mir bitte sagen, wo ich Gugli's Matrosen finden kann?
@@ -644,13 +1613,55 @@ Fine, tell me, who are these mysterious aliens?
 Fine... I was just going to give you some help...
 
 
+Fireworks are launched.
+
+
+Fireworks have ended.
+
+
+Fireworks | 
+
+
+Five Castles
+
+
+Fog hangs over.
+
+
+Fog | 
+
+
+Follow mode OFF.
+
+
+Follow mode ON.
+
+
 Following these lines are some other writings on this paper.
+
+
+Font changed.
 
 
 Fool! Just come back here when you'll be done with our little... 'Secret mission'.
 
 
+For '%s' you need the amount of seconds (from 0 to 10)
+
+
 For a chef? Who said I was a... Oh right, I am.
+
+
+Four Castles
+
+
+Fourteen Castles
+
+
+Friend already exists.
+
+
+Friend removed.
 
 
 From what I here, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
@@ -662,17 +1673,68 @@ Pilz
 Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!
 
 
+GM command configuration has been reloaded.
+
+
 GOOD!
 GUT!
 
 Gado! That coward lives in the past, I will ask Nard to punish him, again!
 
 
+Gained %d Kafra points. Total %d points.
+
+
+Gained %d cash points. Total %d points.
+
+
+Gained exp is now shown.
+
+
+Gained exp will not be shown.
+
+
+Gained zeny is now shown.
+
+
+Gained zeny will not be shown.
+
+
+Game time: A day cycle has a normal duration of %s.
+
+
+Game time: After, the game will be in daylight for %s.
+
+
+Game time: After, the game will be in night for %s.
+
+
+Game time: The game is in daylight for %s.
+
+
+Game time: The game is in night for %s.
+
+
+Game time: The game is in permanent daylight.
+
+
+Game time: The game is in permanent night.
+
+
+Gangsi
+
+
+Genetic
+
+
+Genetic T
+
+
 Ggrmm... Grmmmm...
 
 
 Give me a kiss before you say goodbye!
-
+Gib mir eine Kuss bevor du auf Wiedersehen sagst!
 
 Give me back this dish, you dirty liar!#0
 
@@ -728,6 +1790,9 @@ Sei gegrüßt Reisende!
 Greetings traveler.#1
 Sei gegrüßt Reisender!
 
+Group changed successfully.
+
+
 Growl, sniff, grr! You'd better not tell anyone you saw me!#0
 
 
@@ -762,7 +1827,7 @@ Gugli asked me to help you carrying one of these boxes you are filling.#1
 
 
 Gugli mentioned six sailors. What about the others?
-
+Gugli erwähnte sechs Matrosen. Was ist mit den anderen?
 
 Gugli sent me down here to help you.#0
 Gugli hat mich hier herunter geschickt um dir zu helfen.
@@ -771,16 +1836,67 @@ Gugli sent me down here to help you.#1
 Gugli hat mich hier herunter geschickt um dir zu helfen.
 
 Gugli? Oh I see. Yes, Gugli yeye pretty used to shout orders to everybody down here.
-Gugli? Oh, ich verstehe. Ja, Gugli ist damit ziemlich beschäftigt Befehle zu jedem hier unten zu brüllen.
+Gugli? Oh, ich verstehe. Ja, Gugli yeye ist ziemlich beschäftigt Befehle zu jedem hier unten zu brüllen.
 
 GugliBarrierCheck
 
 
+Guild level change failed.
+
+
+Guild level changed.
+
+
+Guild modification is disabled in this map.
+
+
+Guild storage opened.
+
+
+GuildLock | 
+
+
+Guillotine Cross
+
+
+Guillotine Cross T
+
+
 Gulukan
 Gulukan
 
 Gulukan.
 Gulukan.
+
+Gunslinger
+
+
+GvG Castle | 
+
+
+GvG Dungeon | 
+
+
+GvG Flags: 
+
+
+GvG ON | 
+
+
+GvG is already Off.
+
+
+GvG is already On.
+
+
+GvG: Off.
+
+
+GvG: On.
+
+
+Gypsy
+
 
 HE IS AT THE BOTTOM OF THE SHIP, DOWN THE STAIRS. YOU CAN'T MISS HIM!
 ER IST UNTEN IM SCHIFF, DIE TREPPE RUNTER. DU KANNST IHN NICHT VERFEHLEN!
@@ -791,17 +1907,35 @@ HEY! HEY, DU!
 HEY, WHAT'S YOUR NAME?!
 HEY, WIE HEISST DU?!
 
+HP and SP have already been recovered.
+
+
+HP or/and SP modified.
+
+
+HP, SP recovered.
+
+
+HP: %d/%d - SP: %d/%d
+
+
+Hack on trade: character '%s' (account: %d) try to trade more items that he has.
+
+
 Hahaha! All sailors aboard this ship are always drunk... Well... Except... Wait, what?! Nard told you?!
 
 
 Harpy-lady?
 
 
+Has met its demise
+
+
 Have a good day!
 Hab einen schönen Tag!
 
 Have fun, but always remember to pick your stats with good care.
-
+Viel Spass! Aber erinnere dich immer daran, deine Attribute sorgfältig auszuwählen.
 
 Have you collected all the ingredients for my recipe? The special one too?
 Hast du alle Zutaten für mein Rezept gesammelt?`Auch die Spezielle?
@@ -855,7 +1989,7 @@ Hello dear!#1
 Hallo mein Lieber!
 
 Hello yeye.
-
+Hallo yeye.
 
 Hello.
 Hallo.
@@ -863,8 +1997,20 @@ Hallo.
 Hello... Do I know you?
 Hallo... Kenne ich Dich?
 
+Help for command %c%s:
+
+
+Help me out~ Please~ T_T
+
+
+Hercules %d-bit for %s
+
+
 Here they are.
 Hier sind sie.
+
+Here you go, everything is fixed.
+
 
 Here's your reward!
 Hier ist deine Belohnung
@@ -909,7 +2055,7 @@ Hey, I'm not a drug dealer! You won't have another one by stalking me like that!
 
 
 Hey, could yeye please take my box of fish to Gugli?
-
+Hey, könnte yeye bitte meine Kiste voller Fische zu Gugli bringen?
 
 Hey, don't worry about him, it's one of the first days in a long time that we can just chill out.
 Hey, mach dir keine Sorgen um ihn, es ist einer der ersten Tage seit einiger Zeit, wo wir uns entspannen können.
@@ -918,7 +2064,7 @@ Hey, girl!#0
 
 
 Hey, how was the...
-
+Hey, wie war das...
 
 Hey, man!#1
 
@@ -936,10 +2082,10 @@ Hi @@, I heard the captain sent you down here, uh?#1
 
 
 Hi @@.
-
+Hi @@.
 
 Hi! I can finally see you under the sunlight!
-
+Hi! Ich kann dich endlich im Sonnenlicht sehen!
 
 Hi, nice to see you!
 Hi, schön Dich zu sehen!
@@ -950,13 +2096,52 @@ Hi.
 Hidden Person
 Versteckte Person
 
-Hm...
+High Acolyte
 
+
+High Archer
+
+
+High Magician
+
+
+High Merchant
+
+
+High Novice
+
+
+High Priest
+
+
+High Swordsman
+
+
+High Thief
+
+
+High Wizard
+
+
+Hm...
+Hmm...
 
 Hmm... Let's see, take this one.
-
+Hmm... Mal schauen, nimm das. 
 
 Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*
+
+
+Homunculus growth stats (Lv %d %s):
+
+
+Homunculus reached its maximum level of '%d'
+
+
+Homunculus stats altered.
+
+
+Homunculus stats:
 
 
 Honestly, it's quite far-fetched according to me.
@@ -975,16 +2160,16 @@ How are you doing, dude?#1
 
 
 How are you feeling, now that you walk on steady land? Yeye better?
-
+Wie fühlst du dich, wo du nun auf stetigem Land läufst? Yeye besser?
 
 How can I get one of these cookies?
-
+Wie kann ich einen von den Keksen bekommen?
 
 How could you... We said we wouldn't talk about this again...
 
 
 How is *hic* it possible?
-
+Wie ist *hicks* das möglich?
 
 How long will you stay here?
 
@@ -1001,8 +2186,14 @@ Wie auch immer, Dürre kommt mit Sommern, während Winter immer kälter werden.
 However...
 Wie auch immer...
 
-Hurry, hurry! We need to check it's teeth!
+Hungry: %d - Intimacy: %u
 
+
+Hunter
+
+
+Hurry, hurry! We need to check it's teeth!
+Schnell, schnell! Wir müssen seine Zähne prüfen!
 
 I ALSO AVOID THE DANGEROUS ANIMALS!
 
@@ -1024,6 +2215,9 @@ SEHR GERNE!
 
 I already know everything. Bye.
 Ich weiß bereits alles. Tschüss.
+
+I am %s Super Novice~
+
 
 I am not worried about rewards. I just want to help.
 Mir sind Belohnungen egal. I will nur helfen.
@@ -1107,7 +2301,7 @@ I have brought you a tasty present for your delicate mouth.
 
 
 I have collected all the boxes you needed.
-
+Ich habe alle Boxen, die du brauchst, eingesammelt.
 
 I have some clothes and other things for you at a fine price!
 Ich verkaufe Kleidung und andere Sachen zu einem gutem Preis!
@@ -1125,7 +2319,7 @@ I hope you don't mind that we used your raft to build this ramp.
 Ich hoffe es macht dir nichts aus, dass wir dein Floß verwendet haben, um diese Rampe zu bauen.
 
 I informed Julia about your monstrous plan.
-
+Ich habe Julia über deinen monströsen Plan informiert.
 
 I just realized I am lacking some common things, and one key ingredient, to prepare a... A special recipe.
 
@@ -1152,7 +2346,7 @@ I need to go, sorry.
 Ich muss gehen, sorry.
 
 I only need 2 @@, 2 @@, 1 @@ and...
-
+Ich brauch nur 2 @@, 2@@, 1@@ und...
 
 I only need 2 @@, 2 @@s, 1 @@...
 Ich brauche 2 @@, 2 @@s, 1@@...
@@ -1185,19 +2379,19 @@ I see. Warn the other sailors about this. But if she's part of the Warrior Guild
 
 
 I speak Catalan.
-
+Ich spreche Katalanisch.
 
 I speak Dutch.
-
+Ich spreche Niederländisch.
 
 I speak English.
 Ich spreche Englisch.
 
 I speak Flemish.
-
+Ich spreche Flämisch.
 
 I speak French.
-
+Ich spreche Französisch.
 
 I speak German.
 Ich spreche Deutsch.
@@ -1206,7 +2400,7 @@ I speak Italian.
 Ich spreche italienisch.
 
 I speak Polish.
-
+Ich spreche Polnisch.
 
 I speak Portuguese.
 Ich spreche Portugisisch.
@@ -1239,7 +2433,7 @@ I think that we will stay in port for a great time.
 
 
 I think that yeye's soon be done. Yeye'll soon have a full box of @@s!
-
+Ich denke, dass yeyes bald fertig sein werden. Yeye wird bald eine Kiste voller @@s haben!
 
 I was going to ask you if you would need any help.
 Ich wollte Dich fragen, ob Du Hilfe gebrauchen kannst.
@@ -1278,10 +2472,10 @@ I'M CALLED, @@!
 MAN NENNT MICH @@!
 
 I'd like to catch one of them, but they fly away when I try.
-
+Ich würde gerne eins von ihnen fangen. Aber sie fliegen weg, wenn ich es versuche.
 
 I'd love one!
-
+Ich würde eins lieben!
 
 I'll give her everything she needs, don't worry.#0
 
@@ -1311,7 +2505,7 @@ I'm looking for Gugli, where is he?
 Ich suche nach Gugli, wo ist er?
 
 I'm losing my mind here, I need something else to eat!
-
+Ich verliere meinen Verstand hier. Ich brauche etwas anderes zu essen. 
 
 I'm lost, where should I go?
 
@@ -1350,7 +2544,7 @@ I'm still busy, I need to find the other sailors.
 Ich bin noch immer beschäftigt. Ich muss die anderen Matrosen finden.
 
 I'm still in a coma, but my ghost is haunting you!
-Ich bin immer noch im Koma, aber mein Geist verfolgt Sie!
+Ich bin immer noch im Koma, aber mein Geist verfolgt dich!
 
 I'm sure Tibbo is alone in the south-west corner of the island. He believes it's the best place to collect @@s.
 
@@ -1377,7 +2571,7 @@ I'm the cook's assistant of the ship. I help Gado, La Johanne's Chef, in his dai
 
 
 I've seen him at the bottom of the island, check around.
-
+Ich habe ihn am unteren Rand der Insel gesehen. Schau dich dort um.
 
 I've seen him at the bottom of the island, have a look around.
 
@@ -1424,10 +2618,19 @@ If you want to read this page again, there is a copy up on the left wall.
 If you're looking for us there, most of us will be at the tavern of the Redplush, at the bar counter for Silvio's case...
 
 
+Impossible to increase the number/value.
+
+
 In fact, everything seems to work perfectly under your guidance. Nard has made the right choice.
 
 
 In fact... Oh, the things that I could tell... But ran out of space on this... Just be reasonable and go home.
+
+
+Incorrect name/ID, or no one from the specified guild is online.
+
+
+Incorrect name/ID, or no one from the specified party is online.
 
 
 Indeed! Goodbye.
@@ -1438,6 +2641,15 @@ In der Tat, bin ich nicht.
 
 Indeed, I am not.#1
 In der Tat, bin ich nicht.
+
+Information sent to login-server via char-server.
+
+
+Instance variables may not be used with @set.
+
+
+Int: %d (%d~%d)
+
 
 Intelligence raises your maximum mana points (good for mages) and your mind abilities. Please note: Magic system has not yet been implemented in this world.
 
@@ -1451,8 +2663,74 @@ Interessiert?
 Interesting... I'll leave you to your task then!
 Interessant ... Ich werde Sie für Ihre Aufgabe dann verlassen!
 
+Invalid Homunculus ID.
+
+
+Invalid Monster/NPC name/ID specified.
+
+
+Invalid bound type. Valid types are - 1:Account 2:Guild 3:Party 4:Character
+
+
+Invalid color.
+
+
+Invalid coordinates, using random target cell.
+
+
+Invalid e-mail. If your email hasn't been set, use a@a.com.
+
+
+Invalid flag name or flag.
+
+
+Invalid font. Use a value from 0 to 9.
+
+
+Invalid item ID or name.
+
+
+Invalid location number, or name.
+
+
+Invalid mob ID %s!
+
+
+Invalid mob id %s!
+
+
+Invalid mob name %s!
+
+
+Invalid monster ID or name.
+
+
+Invalid name.
+
+
+Invalid new e-mail. Please enter a real e-mail address.
+
+
+Invalid packet
+
+
+Invalid time for ban command.
+
+
+Invalid time for jail command.
+
+
+Invisible: Off
+
+
+Invisible: On
+
+
 Is there a reward?
 Gibt es eine Belohnung?
+
+It has started to snow.
+
 
 It is them who tell me to whom I can give cookies.
 
@@ -1479,10 +2757,10 @@ It seems that we are close to an island, we should take a look at the upper leve
 
 
 It seems that you need a key to open this door.
-
+Scheinbar brauchst du einen Schlüssel um diese Tür zu öffnen.
 
 It seems you still have some work to do.
-
+Scheint als ob du noch immer arbeit zu erledigen hast.
 
 It was something like a long nap.
 Es war so etwas wie ein langes Nickerchen.
@@ -1526,7 +2804,34 @@ Es ist wahr!
 It's where every merchant ship end their road and we won't be an exception.
 
 
+Item cannot be opened when inventory is full
+
+
+Item created.
+
+
+Item database has been reloaded.
+
+
+Item not found.
+
+
+Item type not found.
+
+
+Item types on your autoloottype list:
+
+
+Item: '%s'/'%s'[%d] (%d) Type: %s | Extra Effect: %s
+
+
+Item: '%s'[%d]
+
+
 Items have different effects. Some will heal you, some can be used as weapons or armor, and some can be sold for gold.
+
+
+Items on your autolootitem list:
 
 
 Its inhabitants did not know any kind of horror and in peace they lived as the earth gave them everything they needed to live.
@@ -1537,6 +2842,21 @@ Jalad
 
 Jalad.
 Jalad.
+
+Job level can't go any higher.
+
+
+Job level can't go any lower.
+
+
+Job level lowered.
+
+
+Job level raised.
+
+
+Judgement has passed.
+
 
 Julia
 Julia
@@ -1550,14 +2870,29 @@ Julia make appeal the Legion of Aemil to search you, exit the ship and you shoul
 Julia#Artis
 
 
+Jump to %d %d
+
+
+Jump to %s
+
+
 Just hit the trunk, and it will yeye a @@.
 
 
 Just leave me alone.
+Lass mich einfach allein.
+
+Kagerou
+
+
+Killer state reset.
 
 
 Knife
 Messer
+
+Knight
+
 
 Last time I saw you, you were lost at sea on your raft.#0
 
@@ -1565,11 +2900,23 @@ Last time I saw you, you were lost at sea on your raft.#0
 Last time I saw you, you were lost at sea on your raft.#1
 
 
+Leadership transferred.
+
+
 Lean
 Lean
 
 Lean for example?
 Mager zum Beispiel?
+
+Leaves have stopped falling.
+
+
+Leaves started falling.
+
+
+Leaves | 
+
 
 LeftBarrierCheck
 LeftBarrierCheck
@@ -1583,8 +2930,11 @@ LeftDoor#001-2-23
 LeftDoorCheck
 LeftDoorCheck
 
-Let me check my cookie list...
+Let me check into it...
 
+
+Let me check my cookie list...
+Lass mich meine Keksliste prüfen...
 
 Let me introduce myself, I am Nard, captain of this ship.
 Lass mich mich erst einmal vorstellen. Ich bin Nard und bin der Kapitän dieses Schiffes.
@@ -1601,6 +2951,12 @@ Like the rest of the crew, you are welcome to come and rest here at anytime duri
 Living inside a ship is great, but we sometimes need some fresh air.
 Das Leben in einem Schiff ist großartig, aber manchmal brauchen wir etwas frische Luft.
 
+Login-server has been asked to %s the player '%.*s'.
+
+
+Login-server is offline. Impossible to %s the player '%.*s'.
+
+
 Look how splendid this landscape is!
 
 
@@ -1610,11 +2966,20 @@ Schau, hier ist er!
 Look, there he is!
 Schau, dort ist er!
 
+Lord Knight
+
+
 Luck helps you do critical hits and dodge the ones dealt by enemies.
+Glück hilft die kritische Treffer zu erzielen und denen einer Feinde auszuweichen.
+
+Luk: %d (%d~%d)
 
 
 M... Maybe?
 V... Vielleicht?
+
+MVP Monster: '%s'/'%s'/'%s' (%d)
+
 
 Magic Arpan
 Magic Arpan
@@ -1622,8 +2987,23 @@ Magic Arpan
 Magic Arpan#sailors
 
 
+Magician
+
+
+Map not found.
+
+
+Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d
+
+
 Max
 Max
+
+Max HP: %d (%d~%d)
+
+
+Max SP: %d (%d~%d)
+
 
 Max and Sapartan for example?
 Max und Sapartan zum Beispiel?
@@ -1643,10 +3023,49 @@ Maybe she was one of those who got lost last month? The yoiis from Esperia that 
 Maybe you can come down to talk?
 Vielleicht kannst du zum reden herunterkommen?
 
+Maybe you meant: 
+
+
 Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?#0
 
 
 Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?#1
+
+
+Mechanic
+
+
+Mechanic T
+
+
+Merchant
+
+
+Mercy has been granted.
+
+
+Mercy has been shown.
+
+
+Minstrel
+
+
+Minstrel T
+
+
+Mob Search... %s %s
+
+
+Monk
+
+
+Monster NoTeleport | 
+
+
+Monster database has been reloaded.
+
+
+Monster: '%s'/'%s'/'%s' (%d)
 
 
 My beauty, I was not always a sailor, you know, I was once an important individual!#0
@@ -1656,10 +3075,10 @@ My friend, I was not always a sailor, you know, I was once an important individu
 Meine Freundin, ich war nicht immer ein Seemann, weißt du, einst war ich mal ein bedeutende Person!
 
 My friends are... Well, you know... The creators.
-
+Meine Freunde sind... Mhh, weißt du ... Die Schöpfer.
 
 My friends are... Well, you know... The creators... Programmers, Scripters, Mappers, Pixel Artists, Soundscapers... The Most Skilled Sages of the Tentacled Dance.
-
+Meine Freunde sind... Hm, weißt du... Die Schöpfer.... Programmierer, Skripter, Kartenmacher, Pixelkünstler, Soundscaper... Die  meist geschicklichen Weisen des Tentakeltanzes. 
 
 My name is Alige, I've been hiding here for weeks. All I have to eat are these berries... berries... berries...
 
@@ -1671,6 +3090,45 @@ My name is Julia, it is me who took care of you after we found you in the sea.
 Mein Name ist Julia. Ich kümmerte mich um dich nachdem wir dich im Meer gefunden hatten.
 
 NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT!
+
+
+NOTICE: If you crash with mount your LUA is outdated.
+
+
+NPC %d: %s | Direction: %s | Sprite: %d | Location: %d %d
+
+
+NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d 
+
+
+NPC Buy:%dz, Sell:%dz | Weight: %.1f 
+
+
+NPC Disabled.
+
+
+NPC Enabled.
+
+
+NPC is not in this map.
+
+
+NPC moved.
+
+
+NPC variables may not be used with @set.
+
+
+Name not found in list.
+
+
+Name: %s 
+
+
+Name: %s (GM)
+
+
+Name: %s (GM:%d) | Location: %s %d %d
 
 
 Nard
@@ -1685,7 +3143,55 @@ Nard#Artis
 Narrator
 Erzähler
 
+New e-mail must be a real e-mail address.
+
+
+New e-mail must be different from the current e-mail address.
+
+
 New technologies assisted the slaughter instead of establishing peace. At some point, two different rivals were formed.
+
+
+New warp NPC '%s' created.
+
+
+Night Mode Activated.
+
+
+Night Mode is activated
+
+
+Night mode is already enabled.
+
+
+NightmareDrop | 
+
+
+Nine Castles
+
+
+Nineteen Castles
+
+
+Ninja
+
+
+No
+
+
+No Exp Penalty: %s | No Zeny Penalty: %s
+
+
+No GM found.
+
+
+No Save (Return to last Save Point)
+
+
+No Save, Save Point: %s,%d,%d
+
+
+No Save, Save Point: %s,Random
 
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#0
@@ -1696,6 +3202,27 @@ No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#1
 
 No cookie for you!
 Kein Keks für dich!
+
+No item found in this player's %s.
+
+
+No item has been refined.
+
+
+No item need to be repaired.
+
+
+No longer spying on the %s guild.
+
+
+No longer spying on the %s party.
+
+
+No player found in map '%s'.
+
+
+No player found.
+
 
 No problem, I can help you anyway.
 Kein Problem, ich kann dir trotzdem helfen.
@@ -1733,6 +3260,63 @@ Nein, Die sind zu gefährlich für mich!
 No.
 Nein.
 
+NoBaseEXP | 
+
+
+NoBranch | 
+
+
+NoCalcRank | 
+
+
+NoCommand | 
+
+
+NoDrop | 
+
+
+NoGuild | 
+
+
+NoIcewall | 
+
+
+NoJobEXP | 
+
+
+NoMVPLoot | 
+
+
+NoMemo | 
+
+
+NoMobLoot | 
+
+
+NoParty | 
+
+
+NoReturn | 
+
+
+NoSkill | 
+
+
+NoTeleport | 
+
+
+NoTrade | 
+
+
+NoVending | 
+
+
+NoWarp | 
+
+
+NoWarpTo | 
+
+
 Nobody will know about the existence of the Mercurians.
 Niemand will etwas über die Existenz der Merkurianer wissen.
 
@@ -1742,10 +3326,34 @@ Niemand! *burp*
 Nobody.
 Niemand.
 
+None
+
+
+None Taken
+
+
 None of them?
 Keiner von ihnen?
 
 Nope, there are no secrets hidden within the ship's hull. Some sailors swear they have seen stowaways hidden somewhere. The bow or the stern? Just stories sailors love to tell...
+
+
+Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
+
+
+North
+
+
+North East
+
+
+North West
+
+
+Not a hexadecimal digit:
+
+
+Not a string:
 
 
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Noobs are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
@@ -1778,6 +3386,9 @@ Nichts.
 Nothing.
 Nichts.
 
+Novice
+
+
 Now go outside and talk with Gugli, he'll tell you what provisions we need.
 
 
@@ -1793,8 +3404,17 @@ Nun lass mich allein...
 Now, move!
 Nun, geh!
 
+Number of skill points changed.
+
+
+Number of status points changed.
+
+
 OH, LOOK THERE!
 OH, GUCK MAL DA!
+
+Oboro
+
 
 Of course you do! Just listen carefully to these words my dear.#0
 
@@ -1814,11 +3434,14 @@ Natürlich, sie sind an der linken Wand, wirf einen Blick darauf.
 Of the two of them, who has 'good' on their side?
 
 
+Off
+
+
 Oh I see... Sailors are not able to do their job anymore, is it like that?!
 
 
 Oh alright, nevermind then.
-
+Oh, in Ordung. Dann vergiss es.
 
 Oh good! Did he give you your money back as well?
 Oh gut! Hat er dir auch dein Geld zurückgegeben?
@@ -1830,7 +3453,7 @@ Oh no, but I've noticed a weird light on the other edge of this island, I wonder
 Oh nein, aber ich habe ein seltsames Licht am anderen Rand der Insel bemerkt, und ich frage mich was es sein kann ...
 
 Oh really? How could I forget something as important as that?!
-
+Oh, wirklich? Wie konnte ich nur so etwas Wichtiges wie dies vergessen?!
 
 Oh really? I'll put more food in the next box then.
 Oh, wirklich? Ich werde in die nächste Box mehr essen packen.
@@ -1932,7 +3555,7 @@ Ok, done.
 Ok, erledigt.
 
 Ok, see you then!
-Ok, Auf Wiedersehen!
+Ok, dann auf Wiedersehen!
 
 Okay, I'm ready to work!#0
 Ok, ich bin bereit zu arbeiten!
@@ -1946,14 +3569,29 @@ Ok, Du kannst anfangen!
 OldBook
 AltesBuch
 
+On
+
+
 On one hand, ranged weapons are generally weaker than melee ones, but you attack from a safer position. On the other hand, depending on the level of the weapon, melee ones potentially can yeild quicker kills.
 
 
 Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
 
 
+One Castle
+
+
+Options changed.
+
+
 Orc Voice
 Ork-Stimme
+
+Other Drop Rates: MvP %.2fx / Card-Based %.2fx / Treasure %.2fx
+
+
+Other Flags: 
+
 
 Other than that, I don't know much about what else is going on, so directly asking the Cap'tain about it could be a good idea.
 Abgesehen davon, ich weiß nicht viel über das, was sonst noch los ist, also unmittelbar den Cap'tain darüber befragen könnte eine gute Idee sein.
@@ -1973,11 +3611,35 @@ Ouch... Diese Kisten sind so schwer!
 Our crew is like a family, and if you agree to help us, I would like to invite you to join our family!
 Unsere Crew ist wie eine Familie, und wenn du einverstanden bist, uns zu helfen, möchte ich Dich einladen, unserer Familie beizutreten!
 
+Packet 0x%x length: %d
+
+
+Paladin
+
+
+Party modification is disabled in this map.
+
+
+PartyLock | 
+
+
 People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose.
 
 
 Perfect!
 Perfekt!
+
+Pet hunger changed.
+
+
+Pet hunger is already at maximum.
+
+
+Pet intimacy changed.
+
+
+Pet intimacy is already at maximum.
+
 
 Peter
 Peter
@@ -1985,8 +3647,53 @@ Peter
 Peter#001-2-22
 
 
+Pets are not allowed in Guild Wars.
+
+
 Piberries
 Pibeeren
+
+Player '%s' (session #%d) | Location: %d,%d
+
+
+Player '%s' has now been banned from the '%s' channel
+
+
+Player '%s' has now been unbanned from the '%s' channel
+
+
+Player '%s' is already banned from this channel
+
+
+Player '%s' is not banned from this channel
+
+
+Player '%s' was not found
+
+
+Player database has been reloaded.
+
+
+Player has been nuked!
+
+
+Player is not muted.
+
+
+Player is using %s skill tree (%d basic points).
+
+
+Player requires level %d of skill %s.
+
+
+Player unjailed.
+
+
+Player unmuted.
+
+
+Player warped to jail.
+
 
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!
 
@@ -1994,7 +3701,292 @@ Please don't tell people you saw me. I don't want to be decapitated or get throw
 Please don't touch these hats, they are for crew members only.
 Bitte berühre nicht diese Hüte, sie sind nur für Besatzungsmitglieder.
 
+Please enter a Monster/NPC name/ID (usage: @disguise <name/ID>).
+
+
+Please enter a Monster/NPC name/ID (usage: @disguiseall <name/ID>).
+
+
+Please enter a NPC name (usage: @enablenpc <NPC_name>).
+
+
+Please enter a NPC name (usage: @hidenpc <NPC_name>).
+
+
+Please enter a NPC name (usage: @npcoff <NPC_name>).
+
+
+Please enter a NPC name (usage: @tonpc <NPC_name>).
+
+
+Please enter a clothes color (usage: @dye/@ccolor <clothes color: %d-%d>).
+
+
+Please enter a guild name (usage: @guild <guild_name>).
+
+
+Please enter a guild name/ID (usage: @guildrecall <guild_name/ID>).
+
+
+Please enter a guild name/ID (usage: @guildspy <guild_name/ID>).
+
+
+Please enter a hair color (usage: @haircolor/@hcolor <hair color: %d-%d>).
+
+
+Please enter a hair style (usage: @hairstyle/@hstyle <hair ID: %d-%d>).
+
+
+Please enter a homunculus ID (usage: @makehomun <homunculus id>).
+
+
+Please enter a hunger value (usage: @homhungry <hunger value [0-100]>).
+
+
+Please enter a level adjustment (usage: @homlevel <number of levels>).
+
+
+Please enter a level adjustment (usage: @joblvup/@jlevel/@joblvlup <number of levels>).
+
+
+Please enter a level adjustment (usage: @lvup/@blevel/@baselvlup <number of levels>).
+
+
+Please enter a map (usage: @warp/@rura/@mapmove <mapname> <x> <y>).
+
+
+Please enter a message (usage: @broadcast <message>).
+
+
+Please enter a message (usage: @homtalk <message>).
+
+
+Please enter a message (usage: @kami <message>).
+
+
+Please enter a message (usage: @localbroadcast <message>).
+
+
+Please enter a message (usage: @me <message>).
+
+
+Please enter a message (usage: @pettalk <message>).
+
+
+Please enter a mob name/ID and guild name/ID (usage: @disguiseguild <mob name/ID>, <guild name/ID>).
+
+
+Please enter a mob name/id (usage: @showmobs <mob name/id>)
+
+
+Please enter a monster name (usage: @mobsearch <monster name>).
+
+
+Please enter a monster name (usage: @summon <monster name> {duration}).
+
+
+Please enter a monster name/ID (usage: @mobinfo <monster_name_or_monster_ID>).
+
+
+Please enter a monster name/ID (usage: @whereis <monster_name_or_monster_ID>).
+
+
+Please enter a monster/egg name/ID (usage: @makeegg <pet>).
+
+
+Please enter a number (usage: @skpoint <number of points>).
+
+
+Please enter a number (usage: @stpoint <number of points>).
+
+
+Please enter a party name (usage: @party <party_name>).
+
+
+Please enter a party name/ID (usage: @partyrecall <party_name/ID>).
+
+
+Please enter a party name/ID (usage: @partyspy <party_name/ID>).
+
+
+Please enter a player name (usage: @block <char name>).
+
+
+Please enter a player name (usage: @jail <char_name>).
+
+
+Please enter a player name (usage: @jumpto/@warpto/@goto <char name/ID>).
+
+
+Please enter a player name (usage: @kick <char name/ID>).
+
+
+Please enter a player name (usage: @nuke <char name>).
+
+
+Please enter a player name (usage: @recall <char name/ID>).
+
+
+Please enter a player name (usage: @trade <char name>).
+
+
+Please enter a player name (usage: @unban <char name>).
+
+
+Please enter a player name (usage: @unblock <char name>).
+
+
+Please enter a player name (usage: @unjail/@discharge <char_name>).
+
+
+Please enter a player name (usage: @unmute <char name>).
+
+
+Please enter a player name (usage: @where <char name>).
+
+
+Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
+
+
+Please enter a quest skill ID.
+
+
+Please enter a script file name (usage: @loadnpc <file name>).
+
+
+Please enter a skill name to look up (usage: @skillid <skill name>).
+
+
+Please enter a sound filename (usage: @sound <filename>).
+
+
+Please enter a speed value (usage: @speed <%d-%d>).
+
+
+Please enter a status type/flag (usage: @displaystatus <status type> <flag> <tick> {<val1> {<val2> {<val3>}}}).
+
+
+Please enter a time in minutes (usage: @mutearea/@stfu <time in minutes>).
+
+
+Please enter a valid level (usage: @guildlvup/@guildlvlup <# of levels>).
+
+
+Please enter a valid number (usage: @pethungry <0-100>).
+
+
+Please enter a valid position (usage: @memo <memo_position:%d-%d>).
+
+
+Please enter a valid value (usage: @petfriendly <0-1000>).
+
+
+Please enter a valid value (usage: @str/@agi/@vit/@int/@dex/@luk <+/-adjustment>).
+
+
+Please enter all parameters (usage: @item2 <item name/ID> <quantity>).
+
+
+Please enter all parameters (usage: @itembound2 <item name/ID> <quantity>
+
+
+Please enter an amount (usage: @spiritball <number: 0-%d>).
+
+
+Please enter an amount (usage: @zeny <amount>).
+
+
+Please enter an amount.
+
+
+Please enter an effect number (usage: @effect <effect number>).
+
+
+Please enter an intimacy value (usage: @homfriendly <intimacy value [0-1000]>).
+
+
+Please enter an item name or ID (usage: @item <item name/ID> <quantity>).
+
+
+Please enter an item name or ID (usage: @itembound <item name/ID> <quantity> <bound_type>).
+
+
+Please enter an item name/ID (usage: @ii/@iteminfo <item name/ID>).
+
+
+Please enter an item name/ID, a quantity, and a player name (usage: #delitem <player> <item_name_or_ID> <quantity>).
+
+
+Please enter at least one item name/ID (usage: @produce <equip name/ID> <element> <# of very's>).
+
+
+Please enter at least one option.
+
+
+Please enter at least one valid list number (usage: @mapinfo <0-3> <map>).
+
+
+Please enter at least one value (usage: @model <hair ID: %d-%d> <hair color: %d-%d> <clothes color: %d-%d>).
+
+
+Please enter ban time and a player name (usage: @ban <time> <char name>).
+
+
+Please enter color and message (usage: @kamic <color> <message>).
+
+
+Please enter guild name/ID (usage: @sizeguild <size> <guild name/ID>).
+
+
+Please enter guild name/ID (usage: @undisguiseguild <guild name/ID>).
+
+
+Please enter item name/ID (usage: @whodrops <item name/ID>).
+
+
+Please enter part of an item name (usage: @idsearch <part_of_item_name>).
+
+
+Please enter the correct parameters (usage: @npctalk <npc name>, <message>).
+
+
+Please enter the correct parameters (usage: @npctalkc <color> <npc name>, <message>).
+
+
+Please enter two e-mail addresses (usage: @email <current@email> <new@email>).
+
+
+Please specify a display name or monster name/id.
+
+
 Plushroom
+
+
+Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe
+
+
+Priest
+
+
+Professor
+
+
+PvP Flags: 
+
+
+PvP is already Off.
+
+
+PvP is already On.
+
+
+PvP: Off.
+
+
+PvP: On.
+
+
+Pvp ON | 
 
 
 Q'Muller
@@ -2009,8 +4001,17 @@ Q'Onan#000-0-0
 Q'Onan#000-2-1
 
 
+Quest database has been reloaded.
+
+
 Raijin Voice
 Raijin-Stimme
+
+Ranger
+
+
+Ranger T
+
 
 RattosControl
 RattosController
@@ -2021,8 +4022,41 @@ RattosControl#001-2-23
 Really? That's kind of you, I accept your help!
 Wirklich? Das ist nett von Dir, ich akzeptiere Deine Hilfe!
 
+Rebellion
+
+
+Removed %d Kafra points. Total %d points.
+
+
+Removed %d cash points. Total %d points.
+
+
+Removed all bans from the '%s' channel
+
+
+Removed item type: '%s' from your autoloottype list.
+
+
+Removed item: '%s'/'%s' {%d} from your autolootitem list.
+
+
 Resa
-Ausflug
+Resa
+
+Reset 'Feeling' maps.
+
+
+Reset | 
+
+
+Returned to normal state.
+
+
+Returned to real name.
+
+
+Returning to normal font.
+
 
 Right! Ours is an earthsea realm. You see, sailors are swift at their tasks when out of sight of land, but docked by this verdant jewel, they have it so good, they are just taking too much time bringing all the food back to the ship. Maybe you can help them.
 
@@ -2033,19 +4067,52 @@ RightBarrierCheck
 RightDoorCheck
 RightDoorCheck
 
+Rogue
+
+
+Royal Guard
+
+
+Royal Guard T
+
+
 Rrrr... Pchhhh...
+Rrrr... Pchhhh...
+
+Rune Knight
+
+
+Rune Knight T
 
 
 SO WHAT'S UP?! WHAT ARE YOU DOING?!
 NA, WAS IST LOS?! WAS MACHST DU?!
 
+Sage
+
+
 Sailors
 Matrosen
 
+Sakura | 
+
+
 Sapartan
 Sapartan
 
+Script could not be loaded.
+
+
+Script loaded.
+
+
+Scripts have been reloaded.
+
+
 Sea water?! I will not help you with your evil plan!
+Seewasser?! Ich werde dir nicht bei deinem bösen Plan helfen!
+
+Search results for '%s' (name: id):
 
 
 Secondly, choose wisely which weapon is suited for you. Some people like to face their enemies closely with a heavy axe, others prefer to attack from a distance with a bow for example.
@@ -2067,9 +4134,15 @@ See you.
 Tschüß.
 
 Seems I've helped everyone here. I don't know what to do now!
-
+Es scheint ich habe jedem hier geholfen. Ich weiß nicht was ich nun tun soll!
 
 Seems yummy! Let me taste it!
+Sieht lecker aus! Lass es mich probieren!
+
+Sending request to login server...
+
+
+Sent packet 0x%x (%d)
 
 
 Seriously? It's just a cookie you know... Tell me what I should do to get one.
@@ -2077,6 +4150,30 @@ Seriously? It's just a cookie you know... Tell me what I should do to get one.
 
 Seriously?!
 Im Ernst?!
+
+Server Uptime: %ld days, %ld hours, %ld minutes, %ld seconds.
+
+
+Server is jammed due to over populated.
+
+
+Server time (normal time): %A, %B %d %Y %X.
+
+
+Set battle_config as requested.
+
+
+Seven Castles
+
+
+Seventeen Castles
+
+
+Shadow Chaser
+
+
+Shadow Chaser T
+
 
 She is a good friend of mine... We wanted to marry a few weeks before her accident but...
 Sie ist ein gute Freundin von mir ... Wir wollten ein paar Wochen vor ihrem Unfall heiraten, aber ...
@@ -2099,20 +4196,59 @@ Psst, sag das nicht so laut....
 Shht shht!
 Pssst pssst!
 
+Shop is out of stock! Come again later!
+
+
 Silvio
 Silvio
 
 Silvio for example?
-
+Silvio zum Beispiel?
 
 Silvio starts to speak to his bottle, you leave, letting him have a private conversation.
-
+Silvio beginnt sich ein Gespräch mit seiner Flasche. Du gehst, und lässt ihn seine private Unterhaltung weiterführen.
 
 Simply contact them, help them and be kind. They might surely add you to my cookie list!
 
 
-So finally someone has came to visit me?
+Six Castles
 
+
+Sixteen Castles
+
+
+Size change applied.
+
+
+Skill database has been reloaded.
+
+
+Skill delay failures are now shown.
+
+
+Skill delay failures will not be shown.
+
+
+Skills have been disabled in this map.
+
+
+Skills have been enabled in this map.
+
+
+Slave clone spawned.
+
+
+Sniper
+
+
+Snow has stopped falling.
+
+
+Snow | 
+
+
+So finally someone has came to visit me?
+So, endlich ist jemand gekommen um mich zu besuchen?
 
 So it seems I have another stomach to fill. Those bastards have no respect for who feeds them every damn day!
 
@@ -2165,10 +4301,22 @@ Etwas Essen.
 Some of the crew are looking for goods we can trade with at our next destination.
 
 
+Some of your items cannot be vended and were removed from the shop.
+
+
 Somebody is waiting for you outside!
 
 
+Something is wrong with me, I can't smile nor sit.
+
+
 Sometimes, I wish someone would be sent here to help us.
+
+
+Sorcerer
+
+
+Sorcerer T
 
 
 Sorry but I have no time for this.
@@ -2186,17 +4334,83 @@ Sorry, I don't need any help right now. Come back later.
 Sorry, but I can't tell you anything about that.
 Tut mir leid, aber ich kann dir nicht alles darüber sagen.
 
+Sorry, but you have no pet.
+
+
+Soul Linker
+
+
+South
+
+
+South East
+
+
+South West
+
+
+Specified group does not exist.
+
+
+Speed changed.
+
+
+Speed returned to normal.
+
+
+Spying on the %s guild.
+
+
+Spying on the %s party.
+
+
+Stalker
+
+
+Star Gladiator
+
+
+Stat changed.
+
+
+Stats: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d
+
+
+Status database has been reloaded.
+
+
+Storage opened.
+
+
+Str: %d (%d~%d)
+
+
 Strength multiplies the damage of your hits, especially melee ones. You will also be able to carry heavier stuff.
 
 
 Stupid yeye...
+Blöder yeye...
+
+Summer
+
+
+Super Baby
+
+
+Super Novice
+
+
+Sura
+
+
+Sura T
 
 
 Sure, but what will I get in exchange?
 Sicher, aber was bekomme ich im Austausch?
 
 Sure, but what will you give me in exchange?
-
+Sicher, aber was wirst du mir im Gegenzug dafür geben?
 
 Sure, cap'tain.
 Sicher, Kapitän.
@@ -2210,8 +4424,14 @@ Sicher, warum nicht?
 Surely. Take this box full of @@s.
 Sicher. Nimm dieses Box voller @@s.
 
+Swordsman
+
+
 THAT'S A NICE NAME!
 DAS IST EIN SCHÖNER NAME!
+
+Taekwon
+
 
 Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak boy in all.#1
 
@@ -2223,7 +4443,7 @@ Take a Bandana.
 Nimm ein Kopftuch.
 
 Take care!
-
+Pass auf dich auf!
 
 Take these coins in exchange and be careful.
 Nimm diese Münzen im Austausch und sei vorsichtig.
@@ -2238,9 +4458,15 @@ Take your reward from the box next to my desk!
 Nimm deine Belohnung aus der Kiste neben meinem Tisch!
 
 Talk to you later!
-
+Spreche dich später!
 
 Talk to you soon!
+Wir sprechen uns bald!
+
+Target character must be online and be a guild member.
+
+
+Target character must be online and in your current party.
 
 
 Tarlan
@@ -2249,7 +4475,16 @@ Tarlan
 Task is done.
 Aufgabe ist erledigt.
 
+Teleport Flags: 
+
+
 Tell him that everything went fine and that we're almost done with the requisitions.
+
+
+Ten Castles
+
+
+Terry
 
 
 Thank you and be careful with that box. I have worked really hard to fill it!
@@ -2304,7 +4539,7 @@ The adventure begins!
 Das Abendteuer beginnt!
 
 The best, the wonderful, the best cookie between all others, the...
-
+Der beste, der schönste, der beste Keks zwischen allen anderen, der...
 
 The captain has locked the door, you should go see him.
 Der Käptain hat die Tür abgeschlossen, du solltest nach ihm sehen.
@@ -2313,7 +4548,7 @@ The captain is waiting for you! Hurry up.
 Der Käpt'n wartet auf dich! Beeil dich.
 
 The captain wants:
-
+Der Käptain will:
 
 The elven from the library firted with me a while ago, so has Enora from the Warrior Guild.
 
@@ -2327,6 +4562,9 @@ Die Angst, sie schlafend auf diesem ruhigen und einsamen Bett zu sehen, wird imm
 The first thing you should do is to evaluate your enemy.
 Das Erste was du tun solltest, ist deinen Feind zu beurteilen.
 
+The fog has gone.
+
+
 The further you go, the more experience you will get, so here's a small description of all the stats you can upgrade with time. But note that these will probably change in the future and have more complex effects.
 
 
@@ -2336,7 +4574,31 @@ Der riesige Boogeyman!
 The great people of Aemil split up into three groups when they reached the coast.
 
 
+The holy messenger has given judgement.
+
+
+The item (%d: '%s') is not equipable.
+
+
+The item is not equipable.
+
+
+The mapserver has spy command support disabled.
+
+
+The monster/egg name/ID doesn't exist.
+
+
 The old book seems to tell about the legend of Aemil. Would you like to read it?
+
+
+The player '%.*s' doesn't exist.
+
+
+The player cannot use that skill.
+
+
+The player meets all the requirements for that skill.
 
 
 The sailor chugs his beer.
@@ -2349,6 +4611,9 @@ The sailors take you aboard their ship.
 Die Matrosen ziehen dich an Bord ihres Schiffes.
 
 The stowaway doesn't answer.
+
+
+The two cannot wed because one is either a baby or already married.
 
 
 The usurper has been punished! This is a great day! Take this reward as a prize for your loyalty to the old commander!
@@ -2367,12 +4632,15 @@ Then it seems I have to apologize.
 Dann scheint es so, dass ich mich entschuldigen muss.
 
 Then leave me alone.
-
+Dann lass mich allein.
 
 There are 6 sailors who will need your help. They are all around the island.
-
+Es gibt 6 Matrosen, die deine Hilfe brauchen. Sie sind alle irgendwo auf der Insel.
 
 There are few groups of these @@s all around this island. Just pick some and have a try.
+
+
+There are no items to appraise.
 
 
 There are rumors going around that they did some monstrous things and that they are hiding quite a lot from us.
@@ -2394,6 +4662,12 @@ There is a paper with some rules written on it.
 Es ist ein Papier mit einigen darauf geschriebenen Vorschriften.
 
 There is always something you can do here, like killing some tortugas or helping Peter clean the ship from rattos.
+
+
+There is no help for %c%s.
+
+
+There's been no change in the setting.
 
 
 There's nothing to say, don't worry miss.#0
@@ -2418,12 +4692,15 @@ These heavy boxes are killing me, I don't feel my arms anymore!
 
 
 These yeye boxes are way too heavy to be carried alone onto the ship.
-
+Diese yeye Kisten sind zu schwer sie alleine auf dem Schiff zu tragen. 
 
 They are all around the island.
 Sie sind überall auf der Insel.
 
 They are each valued individuals and I need them both. In the past, I probably made my share of mistakes. I regret good management is so difficult. I was wondering if you could investigate and... Sort out this situation.
+
+
+They are married... wish them well.
 
 
 They are so tasty when cooked together with some @@. Don't drop any of them!
@@ -2432,11 +4709,44 @@ They are so tasty when cooked together with some @@. Don't drop any of them!
 They shouldn't be too far from each other.
 Sie sollten nicht zu weit voneinander getrennt sein.
 
+Thief
+
+
+Thirteen Castles
+
+
+Thirty Castles
+
+
+Thirty-One Castles
+
+
+Thirty-Three Castles
+
+
+Thirty-Two Castles
+
+
 This Cookie Master rewards people who contribute and develop this world.
 
 
-This door is locked.
+This NPC doesn't exist.
 
+
+This action can't be performed at the moment. Please try again later.
+
+
+This bound item cannot be stored there.
+
+
+This bound item cannot be traded to that character.
+
+
+This character has been banned until 
+
+
+This door is locked.
+Die Tür ist verschlossen.
 
 This girl is lucky we found her before a shark did. I have no idea where she comes from. By the way, did you see the logo on her raft?#0
 
@@ -2454,12 +4764,21 @@ This is a nice place... There are some nice chicks...
 Dies ist eine schöner Ort... Dort sind einige hübsche Mädchen...
 
 This is an @@, a light blue sea fruit. They're highly desired in the archipelago.
-
+Dies ist eine @@, eine hellblaue Seefrucht. Diese sind in den Archipelen heiß begehrt.
 
 This is it, the end of the Second Beta Release of Evol Online!
 Das war's, das Ende der zweiten Beta von Evol Online!
 
 This is the last one. If you use it again out of clumsiness, I will take your flesh as the main ingredient for my cookie recipe.
+
+
+This item cannot be dropped.
+
+
+This item cannot be stored.
+
+
+This item cannot be traded.
 
 
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.#0
@@ -2471,10 +4790,46 @@ This kind of talk should be taken with a grain of salt, but I agree and admit th
 This makes sense. Do you think we should inform the capt'n about it?
 Das macht Sinn! Glaubst du, wir sollten den Käpt'n darüber informieren?
 
+This monster does not spawn normally.
+
+
+This monster has no MVP prizes.
+
+
+This monster has no drops.
+
+
 This new continent, in fact an archipelago, was called Andorra.
 
 
 This panel looks in rather good shape, as though some people take care of it regularly. Maybe it has important information.
+
+
+This player has %d of a kind of item (id: %d), and tried to trade %d of them.
+
+
+This player has been banned for %d minute(s).
+
+
+This player has been definitively blocked.
+
+
+This player hasn't been banned (Ban option is disabled).
+
+
+This player is not in jail.
+
+
+This player is now
+
+
+This skill number doesn't exist or isn't a quest skill.
+
+
+This skill number doesn't exist.
+
+
+Three Castles
 
 
 Tibbo
@@ -2486,13 +4841,34 @@ Tibbo went to the south-east of the island, others are gone to the north, and I 
 Tibbo.
 Tibbo.
 
+Time of death : ^EE0000%s^000000
+
+
+To add an item to the list, use "@alootid +<item name or ID>". To remove an item, use "@alootid -<item name or ID>".
+
+
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
 Um dein Inventar zu öffnen, drücke die F3-Taste oder nutze die Maus, um es im oberen Menü deines Clients auszuwählen.
+
+Tomb
+
 
 Too bad I'm not hungry enough right now for these... cookies. I'll maybe come back later.
 
 
 Too bad... Come back when you have some choice food for me. Growl... grumble... grumble.
+
+
+Total Domination
+
+
+Town Map
+
+
+Traaaansformation-!! %s form!!
+
+
+Transforming into monster is not allowed in Guild Wars.
 
 
 Tritan Voice
@@ -2502,6 +4878,45 @@ True but now he seems pretty fine! Am I right?#1
 
 
 True but now she seems pretty fine! Am I right?#0
+
+
+Twelve Castles
+
+
+Twenty Castles
+
+
+Twenty-Eight Castles
+
+
+Twenty-Five Castles
+
+
+Twenty-Four Castles
+
+
+Twenty-Nine Castles
+
+
+Twenty-One Castles
+
+
+Twenty-Seven Castles
+
+
+Twenty-Six Castles
+
+
+Twenty-Three Castles
+
+
+Twenty-Two Castles
+
+
+Two Castles
+
+
+Type "@mapflag available" to list the available mapflags.
 
 
 UAHAHAHAAH! I am the cook of that bunch of donkeys and I can be rude with everyone from this bossy captain to that harpy-lady!
@@ -2514,6 +4929,18 @@ Uhm, bye.
 Hm, tschüß.
 
 Uhm... Your story seems...
+Mhh... Deine Geschichte scheint...
+
+Unable to decrease the number/value.
+
+
+Unable to spawn clone.
+
+
+Unable to spawn evil clone.
+
+
+Unable to spawn slave clone.
 
 
 Understood, I will help you.
@@ -2522,17 +4949,143 @@ Verstanden, ich werde dir helfen.
 Unfortunately, we still need help from you. This time it will be a delicate task, here onboard.
 
 
+Unknown
+
+
+Unknown Cart (usage: %s <0-%d>).
+
+
+Unknown Channel '%s' (usage: %s <#channel_name>)
+
+
+Unknown Channel (usage: %s <#channel_name>)
+
+
+Unknown Job
+
+
+Unknown battle_config flag.
+
+
+Unknown color '%s'
+
+
+Unknown map '%s'.
+
+
+Unknown packet: 0x%x
+
+
+Unknown type of value in:
+
+
+Usage:
+
+
+Usage: "@mapflag monster_noteleport 1" (0=Off | 1=On)
+
+
+Usage: %s <permission_name>
+
+
+Usage: @accinfo/@accountinfo <account_id/char name>
+
+
+Usage: @addwarp <mapname> <X> <Y> <npc name>
+
+
+Usage: @adjgroup <group_id>
+
+
+Usage: @changegm <guild_member_name>
+
+
+Usage: @changeleader <party_member_name>
+
+
+Usage: @changelook {<position>} <view id>
+
+
+Usage: @displayskill <skill ID> {<skill level>}
+
+
+Usage: @jailfor <time> <character name>
+
+
+Usage: @marry <char name>
+
+
+Usage: @mute <time> <char name>
+
+
+Usage: @noks <self|party|guild>
+
+
+Usage: @npcmove <X> <Y> <npc_name>
+
+
+Usage: @partyoption <pickup share: yes/no> <item distribution: yes/no>
+
+
+Usage: @request <petition/message to online GMs>.
+
+
+Usage: @set <variable name> <value>
+
+
+Usage: @setbattleflag <flag> <value>
+
+
+Usage: @skilltree <skill ID> <target>
+
+
+Usage: @unloadnpcfile <file name>
+
+
+Usage: @useskill <skill ID> <skill level> <target>
+
+
+Usage: ex. "@set PoringCharVar 50"
+
+
+Usage: ex. "@set PoringCharVarSTR$ Super Duper String"
+
+
+Usage: ex. "@set PoringCharVarSTR$" outputs its value, Super Duper String.
+
+
+Use 0 or no parameter to return to normal font.
+
+
+Use @font <1-9> to change your message font.
+
+
 Use the key.
 Benutze den Schlüssel.
 
-Usually I don't allow anyone to touch my boxes but...
+Used %d Kafra points and %d cash points. %d Kafra and %d cash points remaining.
 
+
+User '%s' already possesses the '%s' permission.
+
+
+User '%s' doesn't possess the '%s' permission.
+
+
+User '%s' permissions updated successfully. The changes are temporary.
+
+
+Usually I don't allow anyone to touch my boxes but...
+Normalerweise gestatte ich es keinem meine Kisten anzufassen aber...
 
 Very nice, indeed!
+Sehr nett! In der Tat!
+
+Vit: %d (%d~%d)
 
 
 Vitality raises your maximum health points and defense.
-
+Vitalität steigert deine maximalen Gesundheitspunkte und Verteidigung.
 
 WHAT DID YOU SAY?!
 WAS HAST DU GESAGT?!
@@ -2553,6 +5106,48 @@ Wait... Where are we going?
 Warte... Wo gehen wir hin?
 
 Walkig around a bit, it'll be easy for you to catch one, I bet. Impale one of them for me please.
+
+
+Wanderer
+
+
+Wanderer T
+
+
+War of Emperium SE has been ended.
+
+
+War of Emperium SE has been initiated.
+
+
+War of Emperium SE is currently in progress.
+
+
+War of Emperium SE is currently not in progress.
+
+
+War of Emperium has been ended.
+
+
+War of Emperium has been initiated.
+
+
+War of Emperium is currently in progress.
+
+
+War of Emperium is currently not in progress.
+
+
+Warlock
+
+
+Warlock T
+
+
+Warped.
+
+
+Warping to save point.
 
 
 Water, salt, spicy herbs and meat stuffed with my special surprise!
@@ -2612,6 +5207,15 @@ We usually don't stop in such splendid places, but the captain let us stay here 
 We will be yaying there in a few days, so we will drop you off there.
 Wir werden dort in ein paar Tagen ankommen, Dort können sie uns verlassen.
 
+Weather Flags: 
+
+
+Weather effects will disappear after teleporting or refreshing.
+
+
+Wedding
+
+
 Well I'm working too! Don't you want me to carry one of these boxes back to Gugli?
 Also, ich arbeite auch! Willst du nicht, dass ich eine von diesen Boxen zurück zu Gugli trage?
 
@@ -2619,7 +5223,7 @@ Well done! Collect all the ingredients and then come back here. You will be rewa
 
 
 Well done! The ship is now ready to sail again!
-
+Gut gemacht! Das Schiff kann nun wieder in See stechen!
 
 Well if you are whining like that all the time, then I think there is a reason behind their choice.
 
@@ -2669,6 +5273,9 @@ So... Willkommen an Bord, Süße!
 Well... Welcome aboard, cutie!#1
 
 
+West
+
+
 What I sell comes from every corner of this archipelago.
 Was ich hier verkaufe kommt aus jeder Ecke dieser Inselgruppe.
 
@@ -2703,7 +5310,7 @@ What are you talking about? What guild?
 Was redest du da? Welche Gilde?
 
 What are your needs?
-
+Was brauchst du?
 
 What can I do for you?
 
@@ -2712,10 +5319,10 @@ What danger?! Where?!
 Welche Gefahr?! Wo?!
 
 What did Gugli say about the box? Was it ok?
-
+Was sagte Gugli über die Kiste? War sie ok?
 
 What did Gugli yayaid about the box? Was it ok?
-
+Was yaya sagte Gugli über die Kiste? Was sie ok?
 
 What do you need?
 Was brauchst du?
@@ -2739,7 +5346,7 @@ What happened to me?
 Was ist mit mir passiert?
 
 What if I give you 1000 Esperin for that job, is it ok?
-
+Was ist wenn ich dir 1000 Esperin für diesen Job gebe? Ist das ok?
 
 What is Artis?
 Was ist Artis?
@@ -2754,7 +5361,7 @@ What should I do after taking these clothes?#1
 Was soll ich machen nachdem ich die Kleidung genommen habe?
 
 What yeye could I do for you today?
-Was kann ich heute für dich tun?
+Was yeye kann ich für dich heute tun?
 
 What's that food?
 Was ist das für ein Essen?
@@ -2793,7 +5400,7 @@ Where can I find Julia?#1
 Wo finde ich Julia?
 
 Where can I find a half croconut?
-
+Wo kann ich eine halbe Kokusnuss finden?
 
 Where can I find some food?
 Wo finde ich etwas zu Essen?
@@ -2802,7 +5409,7 @@ Where can I find your crew?
 Wo kann ich deine Mannschaft finden?
 
 Where is the damn salt?! Give me the salt, I know you have it!
-
+Wo ist das verdammte Salz?! Gib mir das Salz! Ich weiß, dass du es hast!
 
 Which of your weapons do you want to use in order to cut this @@?
 Welche Deiner Waffen willst Du benutzen um dies zu fällen @@?
@@ -2810,11 +5417,14 @@ Welche Deiner Waffen willst Du benutzen um dies zu fällen @@?
 While Jalad and Ale like to work together, as they use to do on the ship, last time I've seen them, they were near the big lake, north from here.
 
 
-Who are these friends?
+Whitesmith
 
+
+Who are these friends?
+Wer sind diese Freunde?
 
 Who are yeye looking for?
-Wen yeye suchst du?
+Nach wen sucht yeye?
 
 Who are you looking for?
 Wen suchst Du?
@@ -2867,8 +5477,14 @@ Why? And who should you bring it back to?
 With hunger, thirst, and sleep as your only companions; you have the disturbing realization that you can't remember anything of your former life or identity.
 
 
-Wow, it seems everyone knows my name!
+With script
 
+
+Wizard
+
+
+Wow, it seems everyone knows my name!
+Wow, ich glaube jeder kennt meinen Namen!
 
 Yaya, you should go see her! She'll be happy to see you.#0
 Yaya, du solltest nach ihr sehen! Sie wird sich freuen dich zu sehen.
@@ -2894,6 +5510,9 @@ Ja, gut, was ist der Unterschied?
 Yeah, yeah, of course you don't...
 Ja, ja, natürlich hast du nicht...
 
+Yes
+
+
 Yes he did.
 Ja, hat er.
 
@@ -2901,7 +5520,7 @@ Yes!
 Ja!
 
 Yes! @@ is written on my cookie list.
-
+Ja! @@ steht auf meiner Keksliste.
 
 Yes, Arpan gave me these clothes.
 Ja. Arpan hat mir die Sachen gegeben.
@@ -2922,7 +5541,7 @@ Yes, why not.
 Warum nicht?
 
 Yes, yes I know... Too bad then. See you soon!
-
+Ja, ja, ich weiss.... Schade. Dann, auf bald!
 
 Yes.
 Ja.
@@ -2931,25 +5550,25 @@ Yeye @@!
 Yeye @@!
 
 Yeye ask too much but do too little. Take this box and stop talking.
-
+Yeye fragt zuviel und macht zu wenig. Nimm die Kiste und höre auf zu reden.
 
 Yeye be careful with wild animal's food, some of them are yeyery dangerous, especially the crocs.
-
+Yeye sollte vorsichtig mit wilden Tierfutter sein. Manche von ihnen somd yeyery gefährlich, insbesondere die Crocs.
 
 Yeye gave my box to Gugli? Nice, nice yeye!
-D-du hast Gugli meine Kiste gegeben? Schön, nett von d-dir!
+Yeye gab meine Kiste zu Gugli? Nett, nett yeye!
 
 Yeye got good eyes and seem to have fully recovered from your injuries...
-
+Yeye hatte gute Augen und hat sich scheinbar von allen Verletzungen erholt.
 
 Yeye seen this yoiis at the bottom of the island, check around.
-
+Yeye hat diese yoiis am unterem Rand der Insel gesehen. Schau dich um.
 
 Yeye seen this yoiis at the top of the island.
-
+Yeye hat diese yoiis an der Spitze der Insel gesehen.
 
 Yeye still have my box? Stare less and work more. Go give it to Gugli!
-
+Yeye hat immer noch meine Kiste? Weniger anstarren und mehr arbeiten. Los, gib es Gugli!
 
 Yeye sure? I'll yaye some more food in the next box then.#0
 
@@ -2958,7 +5577,7 @@ Yeye sure? I'll yaye some more food in the next box then.#1
 
 
 Yeye's brain is probably still full of sea water if yeye can't see the beauty of this place.
-
+Yeyes Gehirn ist möglicherweise voller Seewasser wenn yeye die Schönheit dieses Platzes nicht erkennen kann.
 
 Yeye, it's the logo of the Warrior Guild of Esperia! I wonder what this yoiis was doing so far away from the coast.#0
 
@@ -2979,13 +5598,67 @@ Yeye, you still did not get your clothes!#1
 Hey, Du hast immer noch nicht deine Sachen genommen!
 
 Yeye.
-Aye.
+Yeye.
+
+You already are at your destination!
+
+
+You already have a homunculus
+
+
+You already have a pet.
+
+
+You already have this quest skill.
+
 
 You already took a Bandana, please put this one back in the box.
 Du hast bereits ein Kopftuch, lege diese bitte zurück in die Kiste.
 
+You are already mounting something else
+
+
 You are full of wine, my friend...
 Du bist total betrunken, mein Freund...
+
+You are no longer killable.
+
+
+You are no longer the Guild Master.
+
+
+You are not allowed to reduce the length of a ban.
+
+
+You are not authorized to warp from your current map.
+
+
+You are not authorized to warp someone to this map.
+
+
+You are not authorized to warp someone to your current map.
+
+
+You are not authorized to warp this player from their map.
+
+
+You are not authorized to warp to this map.
+
+
+You are not authorized to warp to your save map.
+
+
+You are not in a guild.
+
+
+You are not in jail.
+
+
+You are now
+
+
+You are now immune to attacks.
+
 
 You are now officially part of my crew! Thanks again for your help.
 
@@ -2995,6 +5668,15 @@ You are now part of the crew... At least for us down here!
 
 You are on a raft, adrift in the sea.
 Du bist auf einem Floß, abgetrieben auf dem Meer.
+
+You are unable to change your job.
+
+
+You broke the target's weapon.
+
+
+You can already rename your pet.
+
 
 You can also attack an enemy from your keyboard pressing the 'A' key to select it, and the 'Ctrl' key to attack it, this of course works if you didn't change your keyboard keys yet.
 
@@ -3011,6 +5693,21 @@ You can easily see if a monster is easy to kill or just impossible to defeat. Do
 You can find them in the ocean, near corals and other sea beings. But the sea is too heavy today, you shouldn't try swimming for now.
 
 
+You can have %d items on your autolootitem list.
+
+
+You can not change to this job by command.
+
+
+You can now attack and kill players freely.
+
+
+You can now be attacked and killed by players.
+
+
+You can now rename your pet.
+
+
 You can now stay with your new friends and enjoy the warm sand of this little island.
 
 
@@ -3024,10 +5721,73 @@ You can try talking with some other sailors to get some information about that.
 
 
 You can yaye some @@s by hitting these crocotrees.
+Du kannst einige @@s  yaye, wenn du die Crocobäume schlägst.
+
+You can't add a guild bound item to a character without guild!
+
+
+You can't add a party bound item to a character without party!
+
+
+You can't clean a cart while vending!
+
+
+You can't create chat rooms in this map
+
+
+You can't drop items in this map
 
 
 You can't go there!
 Dort kannst du nicht hingehen!
+
+You can't leave battleground guilds.
+
+
+You can't open a shop in this map
+
+
+You can't open a shop on this cell.
+
+
+You can't return your pet because your inventory is full.
+
+
+You can't trade in this map
+
+
+You can't use commands while dead.
+
+
+You can't withdraw that much money
+
+
+You cannot autotrade when dead.
+
+
+You cannot change guild leaders in this map.
+
+
+You cannot change party leaders in this map.
+
+
+You cannot decrease that stat anymore.
+
+
+You cannot increase that stat anymore.
+
+
+You cannot join the '%s' channel because you've been banned from it
+
+
+You cannot use this command when dead.
+
+
+You cannot use this item while sitting
+
+
+You cannot use this item while your storage is open
+
 
 You could meet some of the other sailors this way, and... Getting this hat of course, will be a sign of you becoming part of our crew.
 Du kannst einige der anderen Matrosen auf diese Weise treffen und ....Dieser Hut wird natürlich immer ein Zeichen sein, das du ein Teil unserer Mannschaft bist.
@@ -3035,10 +5795,49 @@ Du kannst einige der anderen Matrosen auf diese Weise treffen und ....Dieser Hut
 You could start by talking to Gugli. He always has tasks for people willing to help!
 
 
+You currently cannot open your storage.
+
+
+You do not have a cart to be cleaned.
+
+
+You do not have a homunculus.
+
+
+You do not possess a cart to be removed
+
+
 You don't expect me to eat that, do you? Give me something else!
 
 
+You don't have this quest skill.
+
+
+You have %d new emails (%d unread)
+
+
+You have already opened your guild storage. Close it first.
+
+
+You have already opened your storage. Close it first.
+
+
 You have an awful case of amnesia.
+
+
+You have become the Guild Master!
+
+
+You have been jailed by a GM.
+
+
+You have been jailed for an unknown amount of time.
+
+
+You have been jailed indefinitely.
+
+
+You have been recovered!
 
 
 You have been so nice to me. So please, take one.#0
@@ -3046,6 +5845,42 @@ Du warst so nett zu mir. Also bitte. nimm einen.
 
 You have been so nice to me. So please, take one.#1
 Du warst so nett zu mir. Also bitte, nimm einen.
+
+You have forgotten the skill.
+
+
+You have learned the skill.
+
+
+You have mounted a Peco Peco.
+
+
+You have mounted your Dragon.
+
+
+You have mounted your Mado Gear.
+
+
+You have mounted your Warg.
+
+
+You have mounted.
+
+
+You have released your Dragon.
+
+
+You have released your Mado Gear.
+
+
+You have released your Peco Peco.
+
+
+You have released your Warg.
+
+
+You have released your mount.
+
 
 You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of those damn sailors brought that 'nice' lady here.
 
@@ -3060,7 +5895,7 @@ You honor me, my beauty, but I'm already taken by Julia!#0
 
 
 You know, yeyes love to chat while working.
-
+Weißt du, yeyes lieben es während der Arbeit zu reden.
 
 You like them, don't you? Just speak with Peter then. He is on the second deck of the ship. He will send you downstairs to the hold, where you will find a furry meal!
 
@@ -3068,10 +5903,31 @@ You like them, don't you? Just speak with Peter then. He is on the second deck o
 You like these hats, right?
 Du magst diese Hüte, oder?
 
+You may search partial name by making use of '%' in the search, ex. "@accinfo %Mario%" lists all characters whose name contains "Mario".
+
+
 You mentioned the quality of your wine.
 Du hast die Qualität deines Weines erwähnt.
 
+You must enter a name.
+
+
+You must enter a player name or ID.
+
+
+You need %s to mount!
+
+
+You need to be a Guild Master to use this command.
+
+
+You need to be a party leader to use this command.
+
+
 You need to cross the crocojungle heading north.
+
+
+You need to input a option
 
 
 You open the book, but it looks like the sea water and time damaged it severely. Some pages are not readable anymore. Some others are simply missing.
@@ -3084,12 +5940,15 @@ You opened the @@ in two parts, but you crushed one of them.
 
 
 You perfectly cut your @@ into two edible parts.
-
+Du hast dein(e) @@ perfekt in zwei essbare Hälften geteilt.
 
 You receive @@ E!
 Du erhälst @@ E!
 
 You receive a @@!
+Du erhälst ein @@!
+
+You request has been rejected by autoreject option.
 
 
 You see these pious around us?
@@ -3099,13 +5958,13 @@ You see, my cookies are restricted to a certain type of people...
 
 
 You see? I'm working here!
-
+Du siehst? Ich arbeite hier!
 
 You should ask Max. He's an early riser.
-
+Du solltest Max fragen. Er ist ein Frühaufsteher.
 
 You should come back when you have some free space.
-
+Du solltest zurück kommen wenn du etwas Platz frei hast.
 
 You should go and get some sleep.
 Du solltest dir ein wenig Schlaf holen.
@@ -3115,6 +5974,9 @@ You should go see him. He is one of the most experienced sailors we have.
 
 You should go see them.
 Du solltest mal bei ihnen vorbeischauen.
+
+You should have a shop open in order to use @autotrade.
+
 
 You should inform Nard of the progress made in loading food and supplies on to the boat. He will be pleased to hear that good news!
 
@@ -3138,7 +6000,7 @@ You still got a few days before we arrive at the port, maybe you can learn somet
 Du hast noch ein paar Tage bevor wir in den Hafen einlaufen. Vielleicht kannst du etwas von ihnen lernen?
 
 You still haven't completed your tasks.
-
+Du hast deine Aufgaben noch nicht erledigt.
 
 You still need to give me boxes from: 
 Du musst mir noch immer Kisten geben von:
@@ -3150,10 +6012,10 @@ You stupid, she's english, look at the shape of her head.#0
 
 
 You take the clothes from the chest.
-Du nimmst die Kleidung aus der Kiste.
+Du nimmst die Kleidung aus der Truhe.
 
 You tell me. Do I deserve a cookie?
-
+Sag du es mir, habe ich einen Keks verdient?
 
 You told me that you 'were' important.
 Du hast mir gesagt, dass du wichtig 'warst'.
@@ -3176,6 +6038,9 @@ Du hast, wie gesagt, eine geraume Zeit geschlafen, und, unsere Schiffsverwalteri
 You will find a wooden sign near a crossroad. He is a few steps on the left.
 Die wirst ein hölzernes Schild nahe einer Kreuzung finden. Er ist ein paar Schritte auf der linken Seite.
 
+You will remain
+
+
 You will see, citizens are polite and you can still ask for help in the Warrior Guild. They can help find a job for you or maybe help you find out what happened to you out at sea!
 
 
@@ -3186,6 +6051,24 @@ You yoiis should walk to the north.
 Ihr Yoiis solltet nach Norden laufen.
 
 You'll first need to help my friends.
+Du wirst zuerst meinen Freunden helfen müssen.
+
+You're already autolooting this item type.
+
+
+You're already autolooting this item.
+
+
+You're already in the '%s' channel
+
+
+You're already with a '%s' costume, type '@costume' to remove it.
+
+
+You're currently not autolooting this item type.
+
+
+You're currently not autolooting this item.
 
 
 You're like the rest of this filthy crew, I can't trust you!
@@ -3198,6 +6081,33 @@ You're like the rest of this filthy crew. Your name is now on the traitors list!
 
 
 You're lucky that I'm a generous person, here's another one.
+
+
+You're not dead.
+
+
+You're not disguised.
+
+
+You're not in a guild.
+
+
+You're not in that channel, type '@join <#channel_name>'
+
+
+You're not part of the '%s' channel
+
+
+You're not the master of your guild.
+
+
+You're not the owner of channel '%s'
+
+
+You're now in the '#%s' channel for '%s'
+
+
+You're now in the '%s' channel
 
 
 You're on La Johanne, a merchant ship.
@@ -3224,10 +6134,31 @@ You're right, it's about Julia.#1
 You're right, it's about you.#0
 
 
+You're talking too fast!
+
+
+You're too close to a NPC, you must be at least %d cells away from any NPC.
+
+
 You're welcome. If you can't remember something, just come back here!
 
 
+You've become the party leader.
+
+
+You've been revived!
+
+
+You've died.
+
+
+You've left the '%s' channel
+
+
 You've reached the highest natural place of Artis, enjoy the view.
+
+
+You've reached your slave clones limit.
 
 
 You... You eat... rattos? I think you're just a fool.
@@ -3236,13 +6167,115 @@ You... You eat... rattos? I think you're just a fool.
 You? Here?
 Du? Hier?
 
+Your GM level doesn't authorize you to %s the player '%.*s'.
+
+
+Your GM level doesn't authorize you to perform this action on the specified player.
+
+
+Your GM level doesn't authorize you to perform this action.
+
+
+Your Game's EXE file is not the latest version.
+
+
+Your account has 'Unregistered'.
+
+
+Your account has an 'Incorrect Password'...
+
+
+Your account has been banished until 
+
+
+Your account has been blocked by the GM Team.
+
+
+Your account has been prohibited to log in.
+
+
+Your account has been rejected from server.
+
+
+Your account has been totally erased.
+
+
+Your account has expired.
+
+
+Your account has not more authorized.
+
+
+Your account time limit is: %d-%m-%Y %H:%M:%S.
+
+
+Your autolootitem list has been reset.
+
+
+Your autolootitem list is empty.
+
+
+Your autolootitem list is full. Remove some items first with @autolootid -<item name or ID>.
+
+
+Your autoloottype list has been reset.
+
+
+Your autoloottype list is empty.
+
+
 Your body aches, even your hair hurts, and the daylight is painful; but still you open your eyes and see a large ship before you!
+Dein Körper schmerzt, sogar deine Haare tun dir weh, und das Tageslicht ist schmerzhaft; dennoch öffnest du deine Augen und du siehst ein großes Schiff vor dir!
+
+Your cart was cleaned.
+
+
+Your class can't mount!
+
+
+Your current memo positions are:
+
+
+Your effect has changed.
+
+
+Your global chat is no longer bound to the '#%s' channel
+
+
+Your global chat is not bound to any channel
+
+
+Your global chat is now bound to the '%s' channel
+
+
+Your group has been changed.
+
+
+Your guild storage was cleaned.
+
+
+Your guild's storage has already been opened by another member, try again later.
 
 
 Your hands are too weak, you did not succeed in opening this @@.
 
 
 Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand.
+
+
+Your homunculus doesn't evolve.
+
+
+Your job has been changed.
+
+
+Your save point has been changed.
+
+
+Your sex has been changed (disconnection required to complete the process)...
+
+
+Your storage was cleaned.
 
 
 Yummy bakery aromas have roused monsieur's curiosity, is it not so?
@@ -3254,15 +6287,132 @@ Yummy bakery aromas have stirred madam's curiosity, am I right?
 Zzzzzzzzz...
 Zzzzzzzzz...
 
-a ground!
+[ K.S Protection Active - Option: Guild ]
 
+
+[ K.S Protection Active - Option: Party ]
+
+
+[ K.S Protection Active - Option: Self ]
+
+
+[ K.S Protection Inactive ]
+
+
+[ Map K.S Protection Active ]
+
+
+[ Map K.S Protection Inactive ]
+
+
+[ ^EE0000%s^000000 ]
+
+
+[^EE0000%s^000000]
+
+
+a ground!
+ein Boden!
 
 a quiet place,
 ein ruhiger Ort,
+
+ban
+
+
+block
+
+
+body/armor, 
+
+
+both hands, 
+
+
+change the sex of
+
+
+conf/import/msg_conf.txt
+
+
+feet, 
+
+
+garment, 
+
+
+left accessory, 
+
+
+left hand, 
+
+
+lower head, 
+
+
+lower/mid head, 
+
+
+lower/mid/top head, 
+
+
+lower/top head, 
+
+
+mid head, 
+
 
 npc1
 
 
 npc1#door
+
+
+option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
+
+
+option '%s' is not enabled on channel '%s'
+
+
+option '%s' is now disabled for channel '%s'
+
+
+option '%s' is now enabled for channel '%s'
+
+
+option '%s' is now enabled for channel '%s' with %d seconds
+
+
+right accessory, 
+
+
+right hand, 
+
+
+skill %d: %s (%s)
+
+
+top head, 
+
+
+unban
+
+
+unblock
+
+
+value '%d' for option '%s' is out of range (limit is 0-10)
+
+
+| Guild: '%s'
+
+
+| Location: %s %d %d
+
+
+| Lv:%d/%d | Job: %s
+
+
+| Party: '%s' 
 
 
