@@ -302,7 +302,7 @@ OnInit:
     end;
 }
 
-001-1,149,54,0	script	#Warp12	32767,0,0,{
+001-1,148,54,0	script	#Warp12	32767,0,0,{
 OnTouch:
     warp "001-2-11", 46, 45;
     close;
@@ -311,7 +311,7 @@ OnUnTouch:
     doevent "#Door12::OnUnTouch";
 }
 
-001-1,149,54,0	script	#Door12	906,2,3,{
+001-1,148,54,0	script	#Door12	906,2,3,{
     close;
 
 OnTouch:
