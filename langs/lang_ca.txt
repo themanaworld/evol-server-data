@@ -1,0 +1,6418 @@
+Copyright (C) 2010-2015  Evol Online
+      BLvl: %d | Job: %s (Lvl: %d)
+
+
+      Party: '%s' | Guild: '%s'
+
+
+   Users: %d/%d | Password: %s | Public: %s
+
+
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <bound_type>).
+
+
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>).
+
+
+  @send <packet hex number> {<value>}*
+
+
+  @send len <packet hex number>
+
+
+  Value: <type=B(default),W,L><number> or S<length>"<string>"
+
+
+ - Available in shops only.
+
+
+ - Common mobs with highest drop chance (only max %d are listed):
+
+
+ - Item is not dropped by any mobs.
+
+
+ - Maximal monsters drop chance: %02.02f%%
+
+
+ - Monsters don't drop this item.
+
+
+ -- Duel has been created (Use @invite/@leave) --
+
+
+ -- Duels: %d/%d, Members: %d/%d --
+
+
+ -- Duels: %d/%d, Members: %d/%d, Max players: %d --
+
+
+ -- Player %s has rejected the duel --
+
+
+ -- Player %s invites %s to duel --
+
+
+ -> (card(s): 
+
+
+ -> (crafted item, creator id: %u, star crumbs %d, element %d)
+
+
+ -> (pet egg, pet id: %u, named)
+
+
+ -> (pet egg, pet id: %u, unnamed)
+
+
+ -> (produced item, creator id: %u)
+
+
+ -> Player %s has accepted the duel --
+
+
+ <- Player %s has left the duel --
+
+
+ ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
+
+
+ ATK:%d~%d MATK:%d~%d Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
+
+
+ DEF:%d  MDEF:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d
+
+
+ Drops:
+
+
+ Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
+
+
+ MVP Bonus EXP:%u
+
+
+ MVP Items:
+
+
+ and %d second
+
+
+ and %d seconds
+
+
+ | equipped: 
+
+
+"@alootid reset" will clear your autolootitem list.
+
+
+%d - void
+
+
+%d GMs found.
+
+
+%d commands found.
+
+
+%d day
+
+
+%d days
+
+
+%d hour
+
+
+%d hours
+
+
+%d item(s) found in %d %s slots.
+
+
+%d item(s) removed by a GM.
+
+
+%d item(s) removed from the player.
+
+
+%d item(s) removed. Player had only %d on %d items.
+
+
+%d items have been refined.
+
+
+%d minute
+
+
+%d minutes
+
+
+%d monster(s) summoned!
+
+
+%d players found in map '%s'.
+
+
+%d players found.
+
+
+%d results found.
+
+
+%d: Body Armor
+
+
+%d: Garment
+
+
+%d: Left Accessory
+
+
+%d: Left Hand
+
+
+%d: Lower Headgear
+
+
+%d: Mid Headgear
+
+
+%d: Right Accessory
+
+
+%d: Right Hand
+
+
+%d: Shoes
+
+
+%d: Top Headgear
+
+
+%s :Main: %s
+
+
+%s data type is not supported :%u
+
+
+%s failed
+
+
+%s failed.
+
+
+%s failed. Player not found.
+
+
+%s has bought your item(s).
+
+
+%s in jail for %d years, %d months, %d days, %d hours and %d minutes
+
+
+%s is Unknown Command.
+
+
+%s is empty
+
+
+%s recalled!
+
+
+%s revision '%s' (src) / '%s' (scripts)
+
+
+%s spawns in:
+
+
+%s value is now :%d
+
+
+%s value is now :%s
+
+
+%s: %d
+
+
+'%s' Channel is password protected (usage: %s <#channel_name> <password>)
+
+
+'%s' and his/her partner are now divorced.
+
+
+'%s' channel color updated to '%s' 
+
+
+'%s' got %s's %s (chance: %0.02f%%)
+
+
+'%s' is not a known channel option
+
+
+'%s' is not a known costume
+
+
+'%s' is not a known permission.
+
+
+'%s' is not married.
+
+
+'%s' skill and stat points have been reset.
+
+
+'%s' skill points reset.
+
+
+'%s' stats points reset.
+
+
+'%s' stats:
+
+
+'%s' stole %s's %s (chance: %0.02f%%)
+
+
+'That', as you call it, is a @@. There are plenty of 'em on this island!
+
+
+'That', as you call it, is a @@. There're plenty on this island!
+"Això", com tu li dius, es un @@. N'està ple en aquesta illa!
+
+(%s) 
+
+
+(@request): %s
+
+
+(CID:%d/AID:%d) 
+
+
+* :%s %s: *
+
+
+*Hic*
+
+
+*Imitate a thunder's sound.*
+*Imitar el soroll d'un tro.*
+
+*Uff*, *Argh*, why don't you give me some help?
+*Uff*, *Argh*, per què no m'ajudes una mica? 
+
+*Uff*... And another box of @@s for our starving colleagues is ready.
+*Uff*... El n
+
+- #%s ( %d users )
+
+
+- %s
+
+
+- %s (%d)
+
+
+- 2 @@
+- 2 @@
+
+- Ale
+- Ale
+
+- Astapolos
+- Astapolos 
+
+- Available Costumes
+
+
+- Gulukan
+- Gulukan
+
+- Jalad
+- Jalad
+
+- Q'Muller
+- Q'Muller
+
+- Tibbo
+- Tibbo
+
+- adds or removes <option name> with <option value> to <channel name> channel
+
+
+- bans <character name> from <channel name> channel
+
+
+- binds your global chat to <channel name>, making anything you type in global be sent to the channel
+
+
+- changes <channel name> color to <color name>
+
+
+- creates a new channel
+
+
+- leaves <channel name>
+
+
+- lists all banned characters from <channel name> channel
+
+
+- lists colors available to select for custom channels
+
+
+- lists public channels
+
+
+- unbans <character name> from <channel name> channel
+
+
+- unbans everyone from <channel name>
+
+
+- unbinds your global chat from its attached channel (if binded)
+
+
+-- %s
+
+
+-- %s ban <channel name> <character name>
+
+
+-- %s banlist <channel name>
+
+
+-- %s bindto <channel name>
+
+
+-- %s create <channel name> <channel password>
+
+
+-- %s leave <channel name>
+
+
+-- %s list
+
+
+-- %s list colors
+
+
+-- %s setcolor <channel name> <color name>
+
+
+-- %s setopt <channel name> <option name> <option value>
+
+
+-- %s unban <channel name> <character name>
+
+
+-- %s unbanall <channel name>
+
+
+-- %s unbind
+
+
+-- '%s' ban list
+
+
+-- Available options
+
+
+-- Displaying first %d partial matches
+
+
+-- Permission List
+
+
+-- Public Channels
+
+
+-- User '%s' Permissions
+
+
+--- Available options:
+
+
+----- Chats in Map -----
+
+
+----- NPCs in Map -----
+
+
+----- Players in Map -----
+
+
+------ %s items list of '%s' ------
+
+
+------ Map Flags ------
+
+
+------ Map Info ------
+
+
+... And 1 @@.
+... I 1 @@.
+
+... and 1 @@.
+... i 1 @@.
+
+1 GM found.
+
+
+1 item has been refined.
+
+
+1 player found in map '%s'.
+
+
+1 player found.
+
+
+1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle.
+
+
+2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s).
+
+
+3. ##BDo not spam/flood other players.##b This includes chat spam and spam by trade requests.
+
+
+4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language.
+
+
+5. ##BDo not beg others##b for money, items or favours of any kind. If you want to ask for something, do it politely and only once. Try not to annoy other players.
+
+
+6. ##BFollow the [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Evol Social Convention).
+
+
+7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.
+
+
+@@ is helping me.
+@@ m'està ajudant.
+
+@@? Welcome my dear!#0
+
+
+@@? Welcome my dear!#1
+
+
+@request sent.
+
+
+A GM has discharged you from jail.
+
+
+A cookie!
+Una galeta! 
+
+A great city, now the capital of these islands, called Esperia, rose on the single island, Aurora, where everyone lived.
+Una gran ciutat, ara la capital d'aquestes illes, anomenada Esperia, construïda en l'única illa, Aurora, on tothom viu.
+
+A sunny and hot day,
+Un dia calorós i solejat,
+
+A weeds covered panel draws your attention, a message is visible concealed behind the leaves...
+
+
+ATK: %d - MATK: %d~%d
+
+
+Aaaaaahhhhhh!
+Aaaaaaahhhhh!
+
+Aboard stand sailors trying to communicate with you.
+Els mariners a bord estan tractant de comunicar-se amb tu. 
+
+About this Esperia's Warrior Guild, I'm not sure about them, frankly.
+Sobre aquest Gremi Guerrer d'Esperia, no n'estic gaire segur d'ell, francament.
+
+Acolyte
+
+
+Actually Gugli asked me if I would help you bring him some of your boxes.#0
+
+
+Actually Gugli asked me if I would help you bring him some of your boxes.#1
+
+
+Actually, I came here to work on my task.#0
+De fet, he vingut aquí per a treballar.#0
+
+Actually, I came here to work on my task.#1
+De fet, he vingut aquí per a treballar.#1
+
+Actually, I have an in-depth knowledge of this type of life.
+Actualment, tinc un profund coneixement d'aquest tipus de vida.
+
+Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#0
+
+
+Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#1
+
+
+Aemil is a magnificent world unknown to us all.
+Aemil és un magnífic món desconegut per a tots nosaltres. 
+
+After choosing your weapon, you also need to know how to use it.
+Després de triar la teva arma, també has de saber com utilitzar-la. 
+
+Agi: %d (%d~%d)
+
+
+Agility greatly increases your attack speed and the chances of you dodging enemy hits.
+
+
+Ah... Gugli... He's too young to understand our conversation.
+Ah... En Gugli... Es massa jove per entendre la nostra conversa. 
+
+Alchemist
+
+
+Ale
+Ale
+
+Ale and Tibbo should bring 2 boxes of @@s, Astapolos and Gulukan 2 of @@s and Jalad and Q'Muller were charged of the boxes of @@s.
+L'Ale i en Tibbo hauria de portar dos caixes de @@s, l'Astapolos i en Gulukan 2 més de @@s i finalment en Jalad i en Q'Muller estan encarregats de les caixes de @@s.
+
+Ale.
+Ale.
+
+Alige
+Alige
+
+Alige#Artis
+
+
+AligeTrigger
+AligeTrigger
+
+AligeTrigger#Artis
+
+
+All I can do is tell you that...
+Tot el que puc fer es dir-te... 
+
+All characters recalled!
+
+
+All dropped items have been cleaned up.
+
+
+All items have been repaired.
+
+
+All items stored.
+
+
+All monsters killed!
+
+
+All monsters summoned!
+
+
+All of a sudden, you hear voices from above.
+
+
+All of your items have been removed.
+
+
+All online characters of the %s guild have been recalled to your position.
+
+
+All online characters of the %s party have been recalled to your position.
+
+
+All players have been kicked!
+
+
+All skills have been added to your skill tree.
+
+
+All stats changed!
+
+
+All your... Fresh ingredients are ready to be cooked.
+Tots els teus... Frescos ingredients estan preparats per ser cuinats.
+
+Alliances cannot be broken during Guild Wars!
+
+
+Alliances cannot be made during Guild Wars!
+
+
+AllowKS | 
+
+
+Already using this font.
+
+
+Alright! Yoyone more box and it'll be good.
+Ben fet! Yoyuna caixa més i ja estarà bé. 
+
+Alright, I'm going to her room, keep an eye on her, we still don't know if she's a friend or a foe...#0
+D'acord, vaig a la seva habitació, vigila-la, encara no sabem si és un amic o un enemic...#0
+
+Alright, I'm going to his room, keep an eye on him, we still don't know if he's a friend or a foe...#1
+
+
+Alright. I will go looking for them now.
+D'acord. Els aniré a buscar ara.
+
+Alright... Bye.
+Molt bé... Adéu.
+
+Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#0
+També hem agafat la teva roba, ja que estava... Yeyeye... En males condicions. Ves a mirar el cofre al costat del teu llit, n'hi ha d'altra a dintre.#0
+
+Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#1
+També hem agafat la teva roba, ja que estava... Yeyeye... En males condicions. Ves a mirar el cofre al costat del teu llit, n'hi ha d'altra a dintre.#1
+
+Alternative clouds appeared.
+
+
+Alternative clouds have disappeared.
+
+
+An invalid number was specified.
+
+
+And a fruit may even fall for you if you are lucky! And stay alert to pick up your drops.
+
+
+And now I want to see you run!
+I ara et vull veure córrer!  
+
+And now I'm a sailor, as you can see!
+I ara soc mariner, com pots veure! 
+
+And then what happened?
+I després que va passar?
+
+And what do you give me in exchange for these informations?
+I que hem dones a canvi d'aquesta informació?
+
+And you, how are you doing?
+I tu, com et va?
+
+And you? How's it going on your side?
+I tu? Com va al teu cantó? 
+
+And you? How's it yaying on your side?
+I tu? Com et yaying va al teu canto?
+
+Any clue on where Astapolos may be hidden?
+Alguna pista d'on pot estar l'Astapolos? 
+
+Any contribution to the game (translations, graphics creation/edition, concepts, coding/scripting, etc...) is rewarded!
+Qualsevol contribució al joc  (traducció, creació/edició de gràfics, conceptes, programar fer scripts, etc...) està recompensat! 
+
+Anyway I am glad I can give you some of these yoyoxs.
+De totes maneres estic satisfet de que et puga donar algunes d'aquestes yoyocapses.
+
+Anyway, can I help you in any way?
+De totes maneres, et puc ajudar d'algun mode? 
+
+Anyway, here, have a cookie!
+De totes maneres, agafa, una galeta!
+
+Anyway, if you ever feel interested, just check my bag!#0
+De totes maneres, si mai t'interessa, només et cal mirar la meva bossa!#0
+
+Anyway, if you ever feel interested, just check my bag!#1
+De totes maneres, si mai t'interessa, només et cal mirar la meva bossa!#1
+
+Appearance changed.
+
+
+Aquada
+
+
+Arch Bishop
+
+
+Arch Bishop T
+
+
+Archer
+
+
+Are you blind? Do you really think these boxes are light and soft as a piou's feather?!
+Estàs cec? Creus realment que aquestes caixes són lleugers i suaus com una ploma de piou!
+
+Are you going to stand here all day long? Do the dishes or go away.
+T'estaràs quiet com un estaquirot tot el dia? Renta els plats o ves-te'n. 
+
+Are you mad?!
+Estàs enfadat?! 
+
+Are you ok?
+Estàs be? 
+
+Are you yaying here to explore the island?#0
+Estas yayant aquí per explorar l'illa?#0
+
+Are you yaying here to explore the island?#1
+Estas yayant aquí per explorar l'illa?#1
+
+AreaNPC
+AreaNPC
+
+AreaNPC#001-2-22
+
+
+AreaNPC#doors1
+
+
+AreaNPC#doors2
+AreaNPC#doors2
+
+AreaTop
+AreaTop
+
+Artaxe
+
+
+Artis of course!
+Artis és clar!
+
+As they sailed on Oceania, great waters of Aemil, one of the alliances found a land.
+
+
+As you may know, we are explorers on a long distance voyage, and our swashbuckling mariners need to store enough food to survive. You don't know how dangerous the sea life can be.
+
+
+Ask sailors around here they shouldn't be so far away.
+Pregunta als mariners de per aquí, no deuen d'estar gaire lluny.
+
+Assassin
+
+
+Assassin Cross
+
+
+Astapolos
+Astapolos
+
+Astapolos.
+Astapolos.
+
+Astapolos... That guy is shy like a piou!
+Astapolos... Aquest noi es tímid com un piou! 
+
+At that time, we were selling crab food on our old mushroom island.
+
+
+At the moment, our crew is busy collecting @@s, @@s and @@s.
+Ara mateix, la nostra tripulació està ocupada recol·lectant @@s, @@s, i @@s
+
+Auction is disabled
+
+
+Authorities began to control in order to have a peaceful society. This did not work well for long.
+
+
+Autoloot is now off.
+
+
+Autolooting item type: '%s'
+
+
+Autolooting item: '%s'/'%s' {%d}
+
+
+Autolooting items with drop rates of %0.02f%% and below.
+
+
+Autorejected alliance request from %s.
+
+
+Autorejected friend request from %s.
+
+
+Autorejected guild invite from %s.
+
+
+Autorejected opposition request from %s.
+
+
+Autorejected party invite from %s.
+
+
+Autorejected trade request from %s.
+
+
+Autorejecting is activated.
+
+
+Autorejecting is deactivated.
+
+
+Autotrade Disabled
+
+
+Autotrade Enabled
+
+
+Autotrade is not allowed in this map.
+
+
+Available Flags:
+
+
+Available aliases:
+
+
+Available commands:
+
+
+Awesome!
+Impressionant! 
+
+Ayouyouch! My head...
+Aiaiau! El meu cap...
+
+BUT I CAN'T, I NEED TO KEEP AN EYE ON THE SEA, TO WARN THE CREW IF THERE HAPPENS TO BE SOME PIRATES AROUND!
+PERÒ NO PUC, NECESSITO SEGUIR VIGILANT EL MAR, PER AVISAR A LA TRIPULACIÓ SI HI HA PIRATES A L'AGUAIT! 
+
+Baby Acolyte
+
+
+Baby Alchemist
+
+
+Baby Arch Bishop
+
+
+Baby Archer
+
+
+Baby Assassin
+
+
+Baby Bard
+
+
+Baby Blacksmith
+
+
+Baby Crusader
+
+
+Baby Dancer
+
+
+Baby Genetic
+
+
+Baby Guillotine Cross
+
+
+Baby Hunter
+
+
+Baby Knight
+
+
+Baby Magician
+
+
+Baby Mechanic
+
+
+Baby Merchant
+
+
+Baby Minstrel
+
+
+Baby Monk
+
+
+Baby Novice
+
+
+Baby Priest
+
+
+Baby Ranger
+
+
+Baby Rogue
+
+
+Baby Royal Guard
+
+
+Baby Rune Knight
+
+
+Baby Sage
+
+
+Baby Shadow Chaser
+
+
+Baby Sorcerer
+
+
+Baby Sura
+
+
+Baby Swordsman
+
+
+Baby Thief
+
+
+Baby Wanderer
+
+
+Baby Warlock
+
+
+Baby Wizard
+
+
+Ban failed, it is not possible to ban this user.
+
+
+Banking is disabled
+
+
+Bard
+
+
+Bare Hands
+Mans nues
+
+Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
+
+
+Base level can't go any higher.
+
+
+Base level can't go any lower.
+
+
+Base level lowered.
+
+
+Base level raised.
+
+
+Battle configuration has been reloaded.
+
+
+Battlegrounds ON
+
+
+Be patient a little while longer, in the next few days we will arrive at the port of Artis...
+Sigues pacient una mica mes, en els pròxims dies arribarem al port d'Artis...
+
+Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
+
+
+Before you go, let me tell you how to get @@s, because you don't look very smart.
+Abans d'anar-te'n, deixam dir-te com aconseguir @@s, perquè no sembles gaire llest. 
+
+Before...
+Abans... 
+
+Billy Bons
+Billy Bons
+
+Blacksmith
+
+
+Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --
+
+
+Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
+
+
+Box
+Caixa
+
+Bread
+
+
+Break the door.
+Trenca la porta.
+
+Bring this box to Gugli. He will be extremely happy!
+Porta-li aquesta capsa a en Gugli. Estarà molt content! 
+
+But I can't tell you anything about it, I'm sorry.
+Però no et puc dir res sobre això, ho sento.
+
+But I need to go, see you!
+Me n'he d'anar, a rebeure! 
+
+But I swear that one day... Oh... My tasty revenge! Hhm, actually I wonder if... Maybe...
+Però et juro que un dia... Oh... La meva venjança! Hhm, hem pregunto si... Potser... 
+
+But anyway, take the road which goes to the north to find everybody.
+Però de totes maneres, agafa el camí que va cap al nord per trobar-los a tots.
+
+But for now, you can relax on the ship, or visit the island we're docked at! Its a small island, but a good place to get some exercise and stretch your legs.
+Però per ara, et pots relaxar al vaixell, o visitar l'illa on hem atracat! És una petita illa, però un bon lloc per estirar les cames una mica.
+
+But hey, back to me. Remember my mentioning that I'm hun...grrr...eee!
+
+
+But let's talk about this island. We're docking here to find some fine quality goods.
+Però parlem sobre aquesta illa. Hem atracat aquí per a trobar vens de bona qualitat. 
+
+But most important, she is the one who took care of you when you were unconscious.#0
+Però més important, ella es qui et va cuidar quan estaves inconscient.#0
+
+But most important, she is the one who took care of you when you were unconscious.#1
+Però més important, ella es qui et va cuidar quan estaves inconscient.#1
+
+But remember that not every place in this world is peaceful and safe nowadays. Even the white shores you are walking on can hide some dangerous beings.
+Però recorda qua avui en dia no estàs segur a tot arreu. Fins i tot les blanques platges per on camines poden amagar criatures perilloses.
+
+But who am I?
+Però qui soc?
+
+But you won't *hic* me this time...
+Però aquesta vegada no m'... *hic*
+
+But...
+Però...
+
+But... If he has amnesia like Julia said... We don't need to worry about him. At least not yet.#1
+
+
+But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet.#0
+
+
+Bye for now.
+
+
+Bye then!
+
+
+Bye!
+Adéu! 
+
+C'mon, don't be like that and loosen up! Don't you want to know who's behind all of this?!
+
+
+CAN YOU HEAR ME?!
+HEM POTS SENTIR?!
+
+Can I read these rules again?
+Puc llegir les normes un altra vegada?
+
+Can't create chat rooms in this area.
+
+
+Can't show boss mobs!
+
+
+Can't you see I'm working?!
+No pots veure que estic treballant?! 
+
+Cannot clone a player of higher GM level than yourself.
+
+
+Cannot create bound pet eggs or pet armors.
+
+
+Cannot mount while in disguise.
+
+
+Cannot send mails too fast!!
+
+
+Cannot transform into monster while in disguise.
+
+
+Captain Nard
+Capità Nard
+
+Captain Nard is in the room to your right.
+El Capità Nard està a l'habitació de la teva dreta.
+
+Cart Added.
+
+
+Cash Shop is disabled in this map
+
+
+Champion
+
+
+Channel '%s' has no banned players
+
+
+Channel '%s' is not available
+
+
+Channel length must be between 3 and %d
+
+
+Channel name must start with a '#'
+
+
+Channel password may not contain spaces
+
+
+Char-server has been asked to %s the character '%.*s'.
+
+
+Character cannot be disguised while in monster form.
+
+
+Character cannot be disguised while mounted.
+
+
+Character does not have the specified item.
+
+
+Character killed.
+
+
+Character not found.
+
+
+Charcommand failed (usage: %c<command> <char name> <parameters>).
+
+
+Chat: %s | Player: %s | Location: %d %d
+
+
+Cheers!
+
+
+Cheese
+
+
+Chef Gado
+Xef Gado
+
+Chef Gado#Artis
+
+
+Cherry tree leaves have begun to fall.
+
+
+Cherry tree leaves no longer fall.
+
+
+Chest
+Cofre
+
+Chest#Artis
+
+
+Christmas
+
+
+Click on the NPCs around you to continue the introduction.
+Clica en els NPC del teu voltant per continuar la introducció.
+
+Clone spawned.
+
+
+Clouds appeared.
+
+
+Clouds have disappeared.
+
+
+Clouds | 
+
+
+Clouds2 | 
+
+
+Clown
+
+
+Come on, Sap! You are scaring our guest with your stories.#0
+Sap! Estàs espantant la nostra invitada amb les teves històries.#0
+
+Come on, Sap! You are scaring our guest with your stories.#1
+Sap! Estàs espantant el nostre invitat amb les teves històries.#1 
+
+Commands are disabled in this map.
+
+
+Congrats, you are now part of the crew. Thanks again for your help.
+
+
+Congratulations!
+Enhorabona!
+
+Cookie Master
+Mestre de les Galetes
+
+Cookies are a source of life.
+Les galetes són una font de vida. 
+
+Cookies are awesome, so am I.
+Les galetes són extraordinàries, com jo.
+
+Cookies provide you strength, health and cuteness.
+Les galetes et proporcionen força, vida i bellesa. 
+
+Costume '%s' removed.
+
+
+Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#0
+Et puc preguntar quin es el teu idioma natiu? Un mariner m'ha dit que es rus, però un altre m'ha dit que es francès... Estic una mica perduda. Desprès ho registraré a la llista d'embarcament. #0
+
+Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#1
+Et puc preguntar quin es el teu idioma natiu? Un mariner m'ha dit que es rus, però un altre m'ha dit que es francès... Estic una mica perduda. Desprès ho registraré a la llista d'embarcament. #1
+
+Could you explain to me where I am?
+Hem podries explicar on soc?
+
+Could you please bring me something which isn't a berry, and I'm not big on vegetables either. I need proteins!
+
+
+Could you tell me where I am?#0
+Hem podries dir on soc?#0
+
+Could you tell me where I am?#1
+Hem podries dir on soc?#1
+
+Couwan
+Couwan
+
+Couwan gave me this box, it is for you.
+En Couwan m'ha donat aquesta capsa, és per a tu. 
+
+Couwan hands you a box full of fish.
+En Couwan et lliura una caixa plena de peix. 
+
+Creator
+
+
+Croconut
+Croconut
+
+Crusader
+
+
+Current amount of zeny changed.
+
+
+DO YOU FEEL BETTER?!
+ET SENS MILLOR?!
+
+Damn @@.
+Maleït @@.
+
+Dan
+Dan
+
+Dan ends the conversation and resumes to write his letter.
+En Dan acaba la conversació i segueix escrivint la carta.
+
+Dan keeps silent since your last question.
+El Dan fa silenci des de l'última pregunta.
+
+Dancer
+
+
+Dark Collector
+
+
+Darlin
+Darlin
+
+Day Mode Activated.
+
+
+Day Mode is activated
+
+
+Day mode is already enabled.
+
+
+Dear angel, can you hear my voice?
+
+
+Death Knight
+
+
+Defeated by
+
+
+Devis
+Devis 
+
+Dex: %d (%d~%d)
+
+
+Dexterity increases your bow damage and your accuracy.
+
+
+Did you say reward? I want it!
+Has dit recompensa? La vull!
+
+Disconnecting to perform change-sex request...
+
+
+Disguise applied.
+
+
+Disguise removed.
+
+
+Displaying first %d out of %d matches
+
+
+Displays Night | 
+
+
+Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia
+No li donis la contrasenya de la teva habitació a ningú! Guarda-la en secret i no provis d'utilitzar la mateixa contrasenya en cap altre lloc en el futur. 
+
+Do you feel too weak even if trying to hit the surrounding wildlife?
+
+
+Do you have any other questions for me?
+Tens alguna altra cosa per preguntar-me?
+
+Do you have anything else for me?
+Tens alguna altra cosa per a mi?
+
+Do you have anything for me today?
+Tens alguna cosa per a mi avui? 
+
+Do you know where can I find Gulukan?
+Saps on podria trobar en Gulukan? 
+
+Do you need any other information?
+Necessites alguna altra informació? 
+
+Do you think this is fair? They sent me down here alone, far away from everyone.
+Creus que això es just? M'han enviat aquí abaix, lluny de tothom. 
+
+Do you want me to go see her instead of you?
+Vols que vagi a veure-la en lloc teu?
+
+Do you want to cut this @@?
+Vols tallar això @@? 
+
+Do you want to try?
+Vols provar? 
+
+Does anyone know a good place to hang out in Esperia? - M. Arpan
+
+
+Doesn't he like the way I'm taking care of his ship? Everything is clean and tidy with me, rightful lieutenant of La Johanne.
+No lo agrada la manera de la que cuido aquest vaixell? Tot està net i ordenat, amb mi, tinent legítim de la Johanne.
+
+Don't bother her Silvio, or I'll have to tell her that you cry like a baby when you hear the thunder in the night.#0
+
+
+Don't bother him Silvio, or I'll have to tell him that you cry like a baby when you hear the thunder in the night.#1
+
+
+Don't do theee... *hic* with me eh!
+No et fages eeel... *hic* amb mi eh!
+
+Don't fall!
+
+
+Don't mock me, my work is admirable.
+No t'en enfotis, el meu treball es admirable.
+
+Don't say it too loud, other people could hear us.
+No ho diguis tant fort, algú altre ens podria sentir.
+
+Don't tell me more, I know what you want...
+No hem diguis res més, sé el que bols... 
+
+Don't try to poison me! I know what that does!
+No provis d'enverinar-me! Se lo que això fa!
+
+Don't worry, I'm sure you will help them soon enough!
+No et preocupis, estic segur que els ajudaràs aviat! 
+
+Done. Here, take it! Now, here is the plan. Go talk to her and offer our beautiful lady a bite of her arrogance!
+Fet. Aquí, agafa-ho! Ara, aquest es el pla. Ves a parlar amb ella i ofereix-li part de la seva arrogància!
+
+DoorUpwards
+DoorUpwards
+
+DoorUpwards#001-2-23
+
+
+Duel: Can't use %s in duel.
+
+
+Duel: Can't use this item in duel.
+
+
+Duel: Invalid value.
+
+
+Duel: Invitation has been sent.
+
+
+Duel: Player name not found.
+
+
+Duel: The Player is in the duel already.
+
+
+Duel: The duel invitation has been accepted.
+
+
+Duel: The duel invitation has been rejected.
+
+
+Duel: The limit of players has been reached.
+
+
+Duel: You can take part in duel once per %d minutes.
+
+
+Duel: You can't invite %s because he/she isn't in the same map.
+
+
+Duel: You can't use @accept without a duel invitation.
+
+
+Duel: You can't use @duel without @reject.
+
+
+Duel: You can't use @invite. You aren't a duelist.
+
+
+Duel: You can't use @leave. You aren't a duelist.
+
+
+Duel: You can't use @reject without a duel invitation.
+
+
+Duel: You've left the duel.
+
+
+Duty calls me, *hic*, see you later dude.#1
+
+
+Duty calls me, *hic*, see you later honey.#0
+
+
+Each of the groups was ordered to sail in a different direction to find a new, suitable land where to live.
+A cada un dels grups els va ser ordenat navegar cap a diferents direccions per trobar un bon lloc per viure.
+
+East
+
+
+Ehm... He was really upset because of some past stories.
+Ehm... Ell estava molt molest per algunes històries del passat. 
+
+Eight Castles
+
+
+Eighteen Castles
+
+
+Eleven Castles
+
+
+Elmo
+Elmo
+
+Elmo and Gugli told me that you did all of the tasks outside, congrats!
+L'Elmo i en Gugli m'han dit tot el que has fet allà fora, felicitats!
+
+Elmo brought reports to me about some frictions between my old and new lieutenants. You probably already met Julia and Gado the Chef.
+L'Elmo m'ha informat sobre alguns problemes entre el meu nou i l'antic tinent. Segurament ja hauràs conegut la Julia i en Gado, el chef.
+
+Elmo told me what Nard said, congrats!
+L'Elmo m'ha comunicat lo que el Nard ha dit, felicitats! 
+
+Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.
+
+
+Elmo#sailors
+
+
+Elven Voice
+Veu d'elf
+
+Enabled Mapflags in this map:
+
+
+Error reading atcommand.conf, reload failed.
+
+
+Error reading groups.conf, reload failed.
+
+
+Even though they did not hear anything about the other groups, they decided to start a new life on this land, full of harmful animals.
+Encara quan no havien escoltat rés sobre altres grups, van decidir començar una nova vida en aquesta illa, plena d'animals nocius. 
+
+Evil clone spawned.
+
+
+Exactly! Can I have one now?
+Exactament! Me'n pots donar una ara?
+
+Exactly. Even our task is ridiculous. Why should we collect food down here if we have plenty of those tasty and soft rattos inside our ship, waiting just to be hunted and cooked?
+Exacte. Fins i tot la nostra feina es ridícula. Per què hem d'estar recol·lectant menjar aquí si tenim munts d'aquells tendres i gustosos rattos al nostre vaixell, esperant per ser cuinats? 
+
+Excuse me? Do you know who I am?#0
+Disculpa'm, saps qui soc?#0
+
+Excuse me? Do you know who I am?#1
+Disculpa'm, saps qui soc?#1
+
+Expanded Super Baby
+
+
+Expanded Super Novice
+
+
+Experience rates: Base %.2fx / Job %.2fx
+
+
+FINE, BYE!
+
+
+Fake name enabled.
+
+
+Fake name must be at least two characters.
+
+
+Farewell.
+
+
+Fexil
+Fexil
+
+Fifteen Castles
+
+
+File not found.
+
+
+File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
+
+
+Fine, could you please tell me where I can find Gugli's sailors?
+Bé, podries dir-me on puc trobar els mariners d'en Gugli? 
+
+Fine, tell me, who are these mysterious aliens?
+D'acord, dis-me, qui son aquests misteriosos aliens? 
+
+Fine... I was just going to give you some help...
+Bé... Només et volia oferir una mica d'ajuda... 
+
+Fireworks are launched.
+
+
+Fireworks have ended.
+
+
+Fireworks | 
+
+
+Five Castles
+
+
+Fog hangs over.
+
+
+Fog | 
+
+
+Follow mode OFF.
+
+
+Follow mode ON.
+
+
+Following these lines are some other writings on this paper.
+Seguint aquestes línies són alguns altres escrits sobre aquest paper.
+
+Font changed.
+
+
+Fool! Just come back here when you'll be done with our little... 'Secret mission'.
+Ximple! Torna aquí només quan hagis acabat amb la nostra petita... "Missió secreta".
+
+For '%s' you need the amount of seconds (from 0 to 10)
+
+
+For a chef? Who said I was a... Oh right, I am.
+Per a un xef? Qui t'ha dit que jo fossa un... Oh veritat, ho soc.
+
+Four Castles
+
+
+Fourteen Castles
+
+
+Friend already exists.
+
+
+Friend removed.
+
+
+From what I here, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
+
+
+Fungus
+
+
+Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!
+
+
+GM command configuration has been reloaded.
+
+
+GOOD!
+BÉ
+
+Gado! That coward lives in the past, I will ask Nard to punish him, again!
+En Gado! Aquest covard viu al passat, li diré al Capità Nard que el castigui, una altra vega!
+
+Gained %d Kafra points. Total %d points.
+
+
+Gained %d cash points. Total %d points.
+
+
+Gained exp is now shown.
+
+
+Gained exp will not be shown.
+
+
+Gained zeny is now shown.
+
+
+Gained zeny will not be shown.
+
+
+Game time: A day cycle has a normal duration of %s.
+
+
+Game time: After, the game will be in daylight for %s.
+
+
+Game time: After, the game will be in night for %s.
+
+
+Game time: The game is in daylight for %s.
+
+
+Game time: The game is in night for %s.
+
+
+Game time: The game is in permanent daylight.
+
+
+Game time: The game is in permanent night.
+
+
+Gangsi
+
+
+Genetic
+
+
+Genetic T
+
+
+Ggrmm... Grmmmm...
+
+
+Give me a kiss before you say goodbye!
+
+
+Give me back this dish, you dirty liar!#0
+Torna'm el plat, podrida mentidera!#0
+
+Give me back this dish, you dirty liar!#1
+Torna'm el plat, podrit mentider!#1
+
+Go and grab one of them. A good knife will help with your hunting the creatures of this island.
+Ves i agafa'n un. Un bon ganivet t'ajudarà a caçar criatures de l'illa.
+
+Go away.
+Ves-te'n. 
+
+Good day miss.
+
+
+Good day mister.
+
+
+Good job!
+Ben fet! 
+
+Good luck! And remember to visit Peter and our little furry friends whenever you return back onboard!
+
+
+Good to hear!
+Està bé escoltar això!
+
+Good to know.
+Es bo de saber-ho.
+
+Good, good... Hey, could you help me please? I beg you, please, pleeeease...
+Bé, bé... Ei, hem podries ajudar? T'ho prego, si us plau, per favor...
+
+Goodbye.
+
+
+Great to see you! What can I do for you today?
+Agradable de veure't! Que puc fer paer a tu avui? 
+
+Great!
+Genial!
+
+Great, what food do you have for me today?#0
+Perfecte, quin menjar tens per a mi avui?#0
+
+Great, what food do you have for me today?#1
+Perfecte, quin menjar tens per a mi avui?#1
+
+Greetings traveler.#0
+Salutacions viatgera.#0
+
+Greetings traveler.#1
+Salutacions viatger.#1
+
+Group changed successfully.
+
+
+Growl, sniff, grr! You'd better not tell anyone you saw me!#0
+
+
+Growl, sniff, grr! You'd better not tell anyone you saw me!#1
+
+
+Growl, sniff, grr!! You'd better not tell anyone you saw me!#0
+
+
+Growl, sniff, grr!! You'd better not tell anyone you saw me!#1
+
+
+Grr, don't give me more berries! I don't want them, stupid berries, stupid... Stupid... Stupid!
+Grr, no hem donis més baies! No les vull, estúpides baies, estúpides... Estúpides... Estúpides!
+
+Grr...
+Grr...
+
+Gugli
+Gugli
+
+Gugli asked me to help the sailors to gather food. Do you know where I can find them?#0
+
+
+Gugli asked me to help the sailors to gather food. Do you know where I can find them?#1
+
+
+Gugli asked me to help you carrying one of these boxes you are filling.#0
+En gugli m'ha demanat que t'ajuda a carregar una d'aquestes capses que estàs omplint.#0 
+
+Gugli asked me to help you carrying one of these boxes you are filling.#1
+En gugli m'ha demanat que t'ajuda a carregar una d'aquestes capses que estàs omplint.#1
+
+Gugli mentioned six sailors. What about the others?
+En Gugli ha mencionat sis mariners. Que passa amb els altres? 
+
+Gugli sent me down here to help you.#0
+En Gugli m'ha enviat aquí baix per ajudar-te.#0
+
+Gugli sent me down here to help you.#1
+En Gugli m'ha enviat aquí baix per ajudar-te.#1
+
+Gugli? Oh I see. Yes, Gugli yeye pretty used to shout orders to everybody down here.
+En Gugli? O ja veig. Si, acostumava a donar-nos ordres aquí baix. 
+
+GugliBarrierCheck
+GugliBarrierCheck
+
+Guild level change failed.
+
+
+Guild level changed.
+
+
+Guild modification is disabled in this map.
+
+
+Guild storage opened.
+
+
+GuildLock | 
+
+
+Guillotine Cross
+
+
+Guillotine Cross T
+
+
+Gulukan
+Gulukan 
+
+Gulukan.
+Gulukan.
+
+Gunslinger
+
+
+GvG Castle | 
+
+
+GvG Dungeon | 
+
+
+GvG Flags: 
+
+
+GvG ON | 
+
+
+GvG is already Off.
+
+
+GvG is already On.
+
+
+GvG: Off.
+
+
+GvG: On.
+
+
+Gypsy
+
+
+HE IS AT THE BOTTOM OF THE SHIP, DOWN THE STAIRS. YOU CAN'T MISS HIM!
+ELL ESTÀ AL FONS DEL VAIXELL, BAIXANT LES ESCALES. NO ET POTS PERDRE!
+
+HEY! HEY YOU!
+EI! EI TU!
+
+HEY, WHAT'S YOUR NAME?!
+EI, COM ET DIUS?!
+
+HP and SP have already been recovered.
+
+
+HP or/and SP modified.
+
+
+HP, SP recovered.
+
+
+HP: %d/%d - SP: %d/%d
+
+
+Hack on trade: character '%s' (account: %d) try to trade more items that he has.
+
+
+Hahaha! All sailors aboard this ship are always drunk... Well... Except... Wait, what?! Nard told you?!
+Jajaja! Els mariners d'aquest vaixell estan sovint borratxos... Excepte... Espera, que?! En Nard t'ho ha dit?! 
+
+Harpy-lady?
+Dona-harpia?
+
+Has met its demise
+
+
+Have a good day!
+
+
+Have fun, but always remember to pick your stats with good care.
+
+
+Have you collected all the ingredients for my recipe? The special one too?
+Has aconseguit tots els ingredients per la recepta? L'especial també? 
+
+Have you seen anything dangerous?
+Has vist alguna cosa perillosa? 
+
+He likes to hide near the little lake in the north-west side of the island.
+Li agrada amagar-se a prop del petit llac al nord-oest de l'illa.
+
+He needs more food.
+Necessita més menjar. 
+
+He told me nothing about that.
+No m'ha dit res sobre això. 
+
+He's funny, it's not a problem.
+Ell es divertit, això no es un problema.
+
+Hear me *hic* well, what ever, whatididever you will *hic* said ab... uhm... out what?! You saw there, the Warrior Guild of Esperia won't let it get public.
+Escolta'm *hic* bé, loquemai tu*hic* has dit de... eeh... de que?! T'he vist allà, el Gremi Guerrer d'Esèria no deixarà que es faci públic. 
+
+Hehe!
+Jaja! 
+
+Hehe, hehe. Well, come back if you change your mind.
+
+
+Hehe, no. But I'm sure a fox like you would love to meet a catch like me!#0
+
+
+Hehe, no. But I'm sure a noob like you would like to meet an idol like me.#1
+
+
+Hehe, sometimes he gets his head in the clouds, You should go ask him about that.
+Jaja, de vegades te el cap als núvols, hauries d'anar a parlar amb ell sobre això.
+
+Hehe... Ok, I'm going to inform the capt'n up there.
+Jeje... D'acord, estic anant a informar el capità.
+
+Hehehe, he is a bit nervous, please forgive him, it is not everyday we have a new member in the crew!
+Jejeje, està una mica nerviós, perdona'l, no tenim un nou membre a la tripulació cada dia! 
+
+Hel... What?! Wait!
+Merd... Que?! Espera!
+
+Hello dear!#0
+Hola amor!#0
+
+Hello dear!#1
+Hola amor!#1 
+
+Hello yeye.
+Hola yeye.
+
+Hello.
+Hola.
+
+Hello... Do I know you?
+Hola... Et conec?
+
+Help for command %c%s:
+
+
+Help me out~ Please~ T_T
+
+
+Hercules %d-bit for %s
+
+
+Here they are.
+Aquí estan 
+
+Here you go, everything is fixed.
+
+
+Here's your reward!
+Aquí tens la teva recompensa!
+
+Hey Frenchy!#0
+He gavatx!#0
+
+Hey Frenchy!#1
+He gavatx!#1 
+
+Hey Max, it's @@!
+Ei Max, ell es @@!
+
+Hey Silvio, it's your turn to carry the package, go!
+Ei Silvio, es el teu torn per carregar el paquet, ves! 
+
+Hey you!
+Ei tu!
+
+Hey you! Can you hear us? Are you okay?
+Ei tu! Ens pots sentir? Estàs bé? 
+
+Hey you, sorry for leaving your room so quickly. I needed to speak with the captain about the food reserves. You know, now that we have a new mouth to feed, we need to check what we have.
+
+
+Hey!
+Ei!
+
+Hey! Adventurer! Are you enjoying your life on Aemil?#0
+Ei! Aventurera! Estàs gaudint la teva vida en Aemil?#0
+
+Hey! Adventurer! Are you enjoying your life on Aemil?#1
+Ei! Aventurer! Estàs gaudint la teva vida en Aemil?#1 
+
+Hey! Be careful. You can't stay in this basement for so long, you're going to get sick. Come outside and take a break, maybe you can try again later.
+Ei! Ves en compte, no pots romandre en aquest soterrani tanta estona, acabaràs malalt. Vine a fora i fes un descans, pots tornar-ho a provar més tard.
+
+Hey! There's a reward for you in the box next to me!
+Ei! Hi ha una recompensa per a tu a la capsa del meu costat! 
+
+Hey, I'm not a drug dealer! You won't have another one by stalking me like that!
+
+
+Hey, could yeye please take my box of fish to Gugli?
+Ei, si us plau podries yeye portar la meva capsa de peix cap a en Gugli? 
+
+Hey, don't worry about him, it's one of the first days in a long time that we can just chill out.
+Ei, no et preocupis d'ell, es un dels primers dies en molt temps que pot desconnectar.
+
+Hey, girl!#0
+
+
+Hey, how was the...
+
+
+Hey, man!#1
+
+
+Hey, psst! You're not a sailor, right?
+Ei, psst! Tu no ets un mariner, correcte? 
+
+Hey.
+Ei.
+
+Hi @@, I heard the captain sent you down here, uh?#0
+
+
+Hi @@, I heard the captain sent you down here, uh?#1
+
+
+Hi @@.
+Hola @@.
+
+Hi! I can finally see you under the sunlight!
+Ei! Finalment et puc veure sota la llum del sol! 
+
+Hi, nice to see you!
+Ei, encantat de veure't! 
+
+Hi.
+
+
+Hidden Person
+Persona Amagada
+
+High Acolyte
+
+
+High Archer
+
+
+High Magician
+
+
+High Merchant
+
+
+High Novice
+
+
+High Priest
+
+
+High Swordsman
+
+
+High Thief
+
+
+High Wizard
+
+
+Hm...
+
+
+Hmm... Let's see, take this one.
+Hmmm... Deixa'm mirar, agafa aquest!
+
+Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*
+Hmmm,hm... *cof*,*cof*,*burp*,*cof*. Que... Que es això?!...*cof*,*burp*... Maleït Gado... *cof*
+
+Homunculus growth stats (Lv %d %s):
+
+
+Homunculus reached its maximum level of '%d'
+
+
+Homunculus stats altered.
+
+
+Homunculus stats:
+
+
+Honestly, it's quite far-fetched according to me.
+
+
+How about I ask you to help the crew? It would mean that you're one of us and that you will be able to get one of these hats.
+I que tal si et demano que ajudis una mica d'ajuda a la tripulació? Això vol dir que series un de nosaltres i que tindries dret a agafar un d'aquests barrets.
+
+How are things going?
+Com està anant tot?
+
+How are you doing, cutie?#0
+
+
+How are you doing, dude?#1
+
+
+How are you feeling, now that you walk on steady land? Yeye better?
+
+
+How can I get one of these cookies?
+Com puc aconseguir una d'aquestes galetes?
+
+How could you... We said we wouldn't talk about this again...
+Com has pogut... Vam dir que no parlaríem més sobre això...
+
+How is *hic* it possible?
+Com es *hic* possible?
+
+How long will you stay here?
+
+
+How rude! What is the reason behind your malice?
+Que groller! Quina es la raó darrere d'aquesta malícia?
+
+How was the cookie? Tasty, wasn't it?
+Com estava la galeta? Gustosa, no?
+
+However, drought came with summers while winters became colder than ever.
+No obstant això, la sequera va arribar amb l'estiu i els hiverns es van fer més freds que mai.
+
+However...
+No obstant això...
+
+Hungry: %d - Intimacy: %u
+
+
+Hunter
+
+
+Hurry, hurry! We need to check it's teeth!
+
+
+I ALSO AVOID THE DANGEROUS ANIMALS!
+TAMBÉ EVITO ALS ANIMALS PERILLOSOS!
+
+I AM DOING FINE!
+ESTIC BÉ!
+
+I DO NOT UNDERSTAND!
+NO HO ENTENC!
+
+I SAID, SEE YOU LATER!
+HE DIT, ENS VEIEM DESPRÉS!
+
+I WAS HERE WHEN THEY RESCUED YOU!
+Estava aquí quan et van rescatar! 
+
+I WOULD LOVE TO!
+M'ENCANTARIA!
+
+I already know everything. Bye.
+Ja ho sé tot. Adéu.
+
+I am %s Super Novice~
+
+
+I am not worried about rewards. I just want to help.
+No estic preocupat per les recompenses. Només vull a ajudar.
+
+I am pleased to see that you have woken up and are active. Elmo came here to tell me this good news!#0
+
+
+I am pleased to see that you have woken up and are active. Elmo came here to tell me this good news!#1
+
+
+I am sure that I can run with one of them on my shoulder.#0
+Estic segura que puc corre amb un d'ells a les espatlles.#0
+
+I am sure that I can run with one of them on my shoulder.#1
+Estic segur que puc corre amb un d'ells a les espatlles.#1
+
+I am sure you know her. Nice dress, large smile and a constant flux of orders and rules. Julia they call her!
+Estic segur que la coneixes. Ben vestida, llarg somriure i un flux constant d'ordes i regles. L'anomenen Julia!
+
+I am surprised someone has been sent here to help. It is quite... unusual.
+Estic sorprès de que hagin enviat algú a ajudar. Es una mica... inusual.
+
+I am, who are you?#0
+Ho soc, qui ets tu?#0
+
+I am, who are you?#1
+Ho soc, qui ets tu?#1
+
+I can't help you to be on my list, nor can I give you a cookie for free.
+Jo no et puc ajudar a estar a la llista i tampoc et puc donar una galeta de gratis.
+
+I can't really help you find them since I've been checking the... Hmm... Landscape, since morning...
+Realment no et puc ajudar a trobar-les ja que he estat revisant el... Hmm... Paisatge, aquest matí... 
+
+I can't remember anything.#0
+No puc recordar res.#0
+
+I can't remember anything.#1
+No puc recordar res.#1
+
+I do feel better!
+Hem sento millor!
+
+I do not want to go pointing my finger at someone. I want to be honorable and fair, and I sense the same quality in you, so I put my trust in you. I am sure you will be able to judge and solve this troubling situation.
+
+
+I don't have anything good for you today.
+No tinc res de bo per a tu avui.
+
+I don't know what to say...
+No se que dir... 
+
+I don't need your help right now, come back later.
+Ara mateix no necessito la teva ajuda, torna més tard.
+
+I don't see anything else than... water?
+No veig res més que... aigua?
+
+I don't think that we are in a good place to talk about this...
+Crec que no estem al lloc adequat per parlar d'això....
+
+I don't want to change my language, sorry.
+No vull canviar el meu idioma, ho sento. 
+
+I feel ok.#0
+Hem sento bé.#0
+
+I feel ok.#1
+Hem sento bé.#1
+
+I give tasks to every single sailor, all day long. That should make him happy!
+Dono feina a cada mariner, tot el dia. Això l'hauria de fer content!
+
+I give you this key, it opens all the doors on this ship.
+Et dono aquesta clau, obre totes les portes del vaixell.
+
+I guess so... I will leave you alone.
+Suposo que sí... Et deixaré sol.
+
+I have brought you a tasty present for your delicate mouth.
+He comprat un regal per al teu delicat paladar.
+
+I have collected all the boxes you needed.
+He recol·lectat  totes les caixes que necessitaves. 
+
+I have some clothes and other things for you at a fine price!
+Tinc roba i d'altres coses per a tu a bon preu! 
+
+I have some food for you.
+Tinc una mica de menjar per tu.
+
+I heard rumors about some old hostilities between you and Gado. Are they true?
+He escoltat rumors de certes hostilitats entre tu i en Gado. Són veritat?
+
+I hope that answers your question.
+Crec que això respon la teva pregunta. 
+
+I hope you don't mind that we used your raft to build this ramp.
+Espero que no t'importi que utilitzéssim el teu rai per construir aquesta rampa.
+
+I informed Julia about your monstrous plan.
+He informat a la Julia del teu monstruós pla. 
+
+I just realized I am lacking some common things, and one key ingredient, to prepare a... A special recipe.
+
+
+I know that you are just starting to feel better, but I'd like to give you a special task.
+Sé que et comences ara a sentir millor, però m'agradaria donar-te una tasca especial.
+
+I made a mistake, I would like to change my language.#0
+He comés un error, m'agradaria canviar el meu idioma.#0
+
+I made a mistake, I would like to change my language.#1
+He comés un error, m'agradaria canviar el meu idioma.#1
+
+I need a helper to clean the edge of the ship, but you aren't strong enough to help.#0
+
+
+I need a helper to clean the edge of the ship, but you aren't strong enough to help.#1
+
+
+I need somebody who can rid the hold of the ship of these rattos. Can you help me?
+
+
+I need to go, sorry.
+He de marxar, ho sento.
+
+I only need 2 @@, 2 @@, 1 @@ and...
+Només necessito 2 @@, 2 @@, 1 @@ i...
+
+I only need 2 @@, 2 @@s, 1 @@...
+Només necessito 2 @@, 2@@s, 1@@...
+
+I only remember I was rescued by you.#0
+Només recordo ser rescatat per tu.#0
+
+I only remember I was rescued by you.#1
+Només recordo ser rescatat per tu.#1
+
+I recall seeing Gulukan, Astapolos and Q'Muller.
+Recordo haver vist en Gulukan, l'Astapolos i en Q'Muller.
+
+I remember I saw a few of them leaving the ship early this morning to get a head start on today's work.
+
+
+I said... WHY DON'T YOU COME DOWN TO TALK?
+He dit... PER QUÈ NO VENS A PARLAR?
+
+I see it's not so easy to get rid of these rattos. Do you want to try again?
+Veig que no es tan fàcil mantenir a ratlla aquests rattos. Vols intentar-ho de nou?
+
+I see. Bye!
+Ja veig. Adéu!
+
+I see. Warn the other sailors about this. But if he's part of the Warrior Guild, then he's also our freind and ally.#1
+
+
+I see. Warn the other sailors about this. But if she's part of the Warrior Guild, then she's also our freind and ally.#0
+
+
+I speak Catalan.
+
+
+I speak Dutch.
+Jo parlo Holandès.
+
+I speak English.
+Jo parlo Anglès. 
+
+I speak Flemish.
+Jo parlo Flamenc. 
+
+I speak French.
+Jo parlo Francès. 
+
+I speak German.
+Jo parlo Alemany.
+
+I speak Italian.
+Jo parlo Italià.
+
+I speak Polish.
+Jo parlo Polonès. 
+
+I speak Portuguese.
+Jo parlo Portuguès. 
+
+I speak Russian.
+Jo parlo Rus.   
+
+I speak Spanish.
+Jo parlo Espanyol. 
+
+I swear, I do not eat so much.
+Ho juro, no menjo gaire. 
+
+I think I should report you to the crew members.
+Crec que hauria d'informar sobre tu als membres de la tripulació. 
+
+I think I'll be done soon, since I almost have a box full of @@s!
+
+
+I think I'm done with that now. Do you have any questions?
+Crec que per ara ja he acabat. Tens alguna pregunta?
+
+I think that I'm still a bit sick.
+Crec que encara estic una mica malalt.
+
+I think that my wine has a great quality! I'm on my second bottle and I already... What were we talking about again?
+Crec que el meu vi te una molt bona qualitat! Es la meva segona ampolla i... De que estàvem parlant?  
+
+I think that we will stay in port for a great time.
+
+
+I think that yeye's soon be done. Yeye'll soon have a full box of @@s!
+Penso que aquest yeye's aviat estarà enllestit. Yeye aviat tindrà una capsa plena de @@s!
+
+I was going to ask you if you would need any help.
+Et volia preguntar si necessitaries una mica d'ajuda.
+
+I was sent here with a task. I can give you a perfect, wonderful, magnificent, superbly well shaped... Cookie!
+He sigut enviat aquí amb una missió. Et puc donar una perfecta, meravellosa, magníficament ben feta... Galeta!
+
+I will not tell you all the details, but after a month, she was ruling the ship and I was sent down here, cooking for those traitors!
+No t'explicaré tots els detalls, però després d'un mes, ella estava governant el vaixell i jo vaig ser enviat aquí baix, per a cuinar per aquests traïdors!
+
+I will surely visit him. Do you need any help with your boxes?
+El visitaré, es clar. Necessites alguna ajuda amb les teves caixes?
+
+I will take care of the other ones don't worry.
+Tindré cura dels altres no et preocupis. 
+
+I will take it! Thank you captain!
+Ho agafaré! Gràcies capità! 
+
+I will yaying do.
+Ho yaying faré.
+
+I will.
+Ho faré.
+
+I wish I helped your friends, because I'd really, really like a cookie.
+Desitjaria ajudar als teus amics, perquè realment, realment m'encantaria aconseguir una galeta.
+
+I wonder too...
+Hem pregunto si...
+
+I wonder who is in delarium now...
+
+
+I'M CALLED, @@!
+HEM DIC, @@!
+
+I'd like to catch one of them, but they fly away when I try.
+
+
+I'd love one!
+M'encantaria!
+
+I'll give her everything she needs, don't worry.#0
+
+
+I'll give him everything he needs, don't worry.#1
+Li donaré tot el que necessiti, no et preocupis.#1
+
+I'll share my berries with you if you help me.
+Compartiré les meves baies si m'ajudes.
+
+I'm a bit sick...#0
+Estic una mica malalta...#0
+
+I'm a bit sick...#1
+Estic una mica malalt...#1
+
+I'm glad to see you're okay.#0
+M'alegra veure que estàs bé.#0
+
+I'm glad to see you're okay.#1
+M'alegra veure que estàs bé.#1
+
+I'm glad you're on my side.
+M'alegra que estiguis de la meva part. 
+
+I'm looking for Gugli, where is he?
+Estic buscant en Gugli, on es?
+
+I'm losing my mind here, I need something else to eat!
+M'estic tornant boig aquí, necessito alguna cosa més per menjar!
+
+I'm lost, where should I go?
+
+
+I'm not suited for this kind of work!
+No vaig preparat per aquest tipus de feina! 
+
+I'm not sure. They probably left the ship early this morning. I was not awake yet.
+No n'estic segur. Segurament han deixat el vaixell aquest matí. Encara no estava despert.
+
+I'm not that numb eeh *hic* what did ever you disco... *hic* ...vered there, the Warrior Guild won't get me!
+No soc tant insensible eeh *hic* el que has desco... *hic*... bert  allà. el Gremi Guerrer no m'atraparà!
+
+I'm sorry but I can't see your name anywhere.
+Ho sento però no veig el teu nom enlloc. 
+
+I'm sorry but I have no time to chat with you.
+Ho sento però no tinc temps per xerrar amb tu.
+
+I'm sorry for your situation. They should alternate shifts with other sailors from time to time.#0
+
+
+I'm sorry for your situation. They should alternate shifts with other sailors from time to time.#1
+
+
+I'm sorry, I don't have time right now.
+Ho sento. Ara mateix no tinc temps. 
+
+I'm still a bit weak at the moment. We should probably talk later.#0
+Encara soc una mica dèbil per ara. Potser hauriem de parlar d'aquí una mica.#0
+
+I'm still a bit weak at the moment. We should probably talk later.#1
+Encara soc una mica dèbil per ara. Potser hauriem de parlar d'aquí una mica.#1
+
+I'm still busy, I need to find the other sailors.
+Encara estic enfeinat, necessito trobar altres mariners.
+
+I'm still in a coma, but my ghost is haunting you!
+Encara estic en coma, però el meu fantasma t'està turmentant! 
+
+I'm sure Tibbo is alone in the south-west corner of the island. He believes it's the best place to collect @@s.
+Estic segur que en Tibbo està sol a la cantonada sud-oest de l'illa. Està convençut que es el millor lloc per recol·lectar @@s.
+
+I'm sure he will soon be able to fight all of the creatures living here without any problem.#1
+
+
+I'm sure she will soon be able to fight all of the creatures living here without any problem.#0
+
+
+I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.
+Estic segur que tens algunes preguntes per mi, no dubtis a preguntar, però primer t'he de dir les regles per a una conducta social adequada a bord.
+
+I'm sure you'll appreciate its effect, but be careful, these cookies are rare, and you'll need to help the community again before being able to receive another one.#0
+N'estic segur que apreciaràs els seus efectes, però vigila, aquestes galetes són rares, i necessitaràs ajuda de la comunitat abans d'aconseguir-ne una altra.#0
+
+I'm sure you'll appreciate its effect, but be careful, these cookies are rare, and you'll need to help the community again before being able to receive another one.#1
+N'estic segur que apreciaràs els seus efectes, però vigila, aquestes galetes són rares, i necessitaràs ajuda de la comunitat abans d'aconseguir-ne una altra.#1
+
+I'm talking about the cookie in which I put all my love inside!
+
+
+I'm the cook's assistant of the ship. I help Gado, La Johanne's Chef, in his daily work.
+Soc l'assistent del cuiner. Ajudo a en Gado, el xef de La Johanne, en la seva feina diària.
+
+I've seen him at the bottom of the island, check around.
+L'he vist a la part de baix de l'illa, revisa per allà. 
+
+I've seen him at the bottom of the island, have a look around.
+L'he vist a la part inferior de l'illa, ves a revisar-ho. 
+
+I've seen him at the northern part of the island.
+
+
+I've seen him at the southern part of the island, check around.
+
+
+I've seen him at the top of the island.
+L'he vist a la part superior de l'illa.
+
+I've seen him down around the southern area of the island, ask Jalad for more information.
+
+
+I...
+Jo...
+
+If I saw *hic* who you were... *hic* Would not have helped you! 
+Si hagués *hic* vist qui eres... *hic* No t'hagués ajudat!   
+
+If you feel bored or like running around in circles, you may want to talk with the other sailors around here to get some tasks to do.
+
+
+If you see weird things, or things that shouldn't be here, or even things that you would like to see there...
+Si veus coses estranyes o coses que no haurien de ser aquí, o fins i tot que t'agradaria veure... 
+
+If you want another cookie, you know what to do!
+
+
+If you want another one, you know what to do!
+Si en vols una altra, ja saps que has de fer! 
+
+If you want to be rewarded, help us in making this world a better place.#0
+Si bols ser recompensada, ajuda'ns a fer d'aquest món un lloc millor.#0 
+
+If you want to be rewarded, help us in making this world a better place.#1
+Si bols ser recompensat, ajuda'ns a fer d'aquest món un lloc millor.#1
+
+If you want to read this page again, there is a copy up on the left wall.
+Si vols llegir aquesta pagina un altre cop, n'hi ha una còpia  a la paret de la esquerra.
+
+If you're looking for us there, most of us will be at the tavern of the Redplush, at the bar counter for Silvio's case...
+
+
+Impossible to increase the number/value.
+
+
+In fact, everything seems to work perfectly under your guidance. Nard has made the right choice.
+En efecte, tot sembla anar perfectament sota el teu mandat. En Nard ha fet una bona tria. 
+
+In fact... Oh, the things that I could tell... But ran out of space on this... Just be reasonable and go home.
+En efecte... Les coses que podria explicar... Però ens hem quedat sense espai... Siguis raonable i bes a casa. 
+
+Incorrect name/ID, or no one from the specified guild is online.
+
+
+Incorrect name/ID, or no one from the specified party is online.
+
+
+Indeed! Goodbye.
+I tant! Adéu.
+
+Indeed, I am not.#0
+En efecte, no ho soc.#0
+
+Indeed, I am not.#1
+En efecte, no ho soc.#1
+
+Information sent to login-server via char-server.
+
+
+Instance variables may not be used with @set.
+
+
+Int: %d (%d~%d)
+
+
+Intelligence raises your maximum mana points (good for mages) and your mind abilities. Please note: Magic system has not yet been implemented in this world.
+
+
+Interested?#0
+Interessat?#0
+
+Interested?#1
+Interessat?#1 
+
+Interesting... I'll leave you to your task then!
+Interessant...Deixaré que vagis fent les teves tasques llavors!
+
+Invalid Homunculus ID.
+
+
+Invalid Monster/NPC name/ID specified.
+
+
+Invalid bound type. Valid types are - 1:Account 2:Guild 3:Party 4:Character
+
+
+Invalid color.
+
+
+Invalid coordinates, using random target cell.
+
+
+Invalid e-mail. If your email hasn't been set, use a@a.com.
+
+
+Invalid flag name or flag.
+
+
+Invalid font. Use a value from 0 to 9.
+
+
+Invalid item ID or name.
+
+
+Invalid location number, or name.
+
+
+Invalid mob ID %s!
+
+
+Invalid mob id %s!
+
+
+Invalid mob name %s!
+
+
+Invalid monster ID or name.
+
+
+Invalid name.
+
+
+Invalid new e-mail. Please enter a real e-mail address.
+
+
+Invalid packet
+
+
+Invalid time for ban command.
+
+
+Invalid time for jail command.
+
+
+Invisible: Off
+
+
+Invisible: On
+
+
+Is there a reward?
+Hi ha recompensa? 
+
+It has started to snow.
+
+
+It is them who tell me to whom I can give cookies.
+Són ells qui hem diuen a qui puc donar galetes. 
+
+It is to them I look to, for it is them, who tell me to whom I can give cookies.
+
+
+It looks like madam is curious, am I right?
+Sembla que la senyoreta es curiosa, o no? 
+
+It looks like you are an expert of the life inside 'La Johanne'. Do you know any hidden secrets nobody knows?#0
+Sembla que siguis una experta en la vida dins de "La Johanne". Saps algun secret amagat que ningú més sàpiga?#0
+
+It looks like you are an expert of the life inside 'La Johanne'. Do you know any hidden secrets nobody knows?#1
+Sembla que siguis un expert en la vida dins de "La Johanne". Saps algun secret amagat que ningú més sàpiga?#1 
+
+It looks like you can't carry anything else for now.
+Sembla que no pots portar res més per ara. 
+
+It seems mister is curious, are you not?
+Sembla que el senyor es curiós, o no?
+
+It seems that we are close to an island, we should take a look at the upper level.
+
+
+It seems that you need a key to open this door.
+Sembla que necessites una clau per obrir aquesta porta. 
+
+It seems you still have some work to do.
+Sembla que encara tens feina a fer.
+
+It was something like a long nap.
+Era una cosa així com una llarga migdiada.
+
+It would be good for you to do some exercise, the ship isn't big enough for that.
+Seria bo per tu que fages una mica d'exercici, el vaixell no es prou gran per això.
+
+It's a commercial port of Andorra, it's weird that you don't know about it since it is one of the most famous cities throughout the whole world. But hey, back to me. Remember my mentioning that I'm hun...grrr...eee!
+
+
+It's a dangerous place out here. Beware of the mischievous creatures living here!
+
+
+It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?
+
+
+It's a kind of mushroom. We call it like that because of it's taste, just like a marshmallow. It also has this name because of it's appearance, it looks like a plush!
+Es un tipus de bolet. L'anomenem així pel seu gust, igual al d'un núvol de sucre. També deu el nom a la seva aparença, sembla un peluix! 
+
+It's a kind of mushroom. We call it like that because of it's taste, just like a marshmallow. It also has this name because of it's appearance. It looks like a plush!
+Es un tipus de bolet. L'anomenem així degut al seu gust, semblant als núvols de sucre.També s'anomena així degut a la seva aparença. Sembla un peluix!
+
+It's alright! Just one more box and it'll be ok.
+Està bé! Només una caixa més i acabem. 
+
+It's good, good... I have a friend who is still in a coma, but I can't be with her without working...
+Està bé, bé... Tinc una amiga que encara està en coma, però no puc estar amb ella sense treballar...
+
+It's interesting and exciting at the same time!
+Es interessant i emocionant a la vegada! 
+
+It's ok.
+Està bé.
+
+It's so hard to find the motivation...
+Es molt dur trobar la motivació...
+
+It's true!
+És veritat!
+
+It's where every merchant ship end their road and we won't be an exception.
+Es on cada un dels vaixells mercants acaben el seu viatge i nosaltres no volem ser una excepció. 
+
+Item cannot be opened when inventory is full
+
+
+Item created.
+
+
+Item database has been reloaded.
+
+
+Item not found.
+
+
+Item type not found.
+
+
+Item types on your autoloottype list:
+
+
+Item: '%s'/'%s'[%d] (%d) Type: %s | Extra Effect: %s
+
+
+Item: '%s'[%d]
+
+
+Items have different effects. Some will heal you, some can be used as weapons or armor, and some can be sold for gold.
+Els objectes tenen diferents efectes. Alguns et curaran, altres poden ser utilitzats com a arma o armadura, i d'altres poden ser venuts per aconseguir diners. 
+
+Items on your autolootitem list:
+
+
+Its inhabitants did not know any kind of horror and in peace they lived as the earth gave them everything they needed to live.
+Els seus habitants no coneixien cap tipus d'horror i en pau vivien ja que la terra els donava donar tot el que necessitaven per viure.
+
+Jalad
+Jalad
+
+Jalad.
+Jalad.
+
+Job level can't go any higher.
+
+
+Job level can't go any lower.
+
+
+Job level lowered.
+
+
+Job level raised.
+
+
+Judgement has passed.
+
+
+Julia
+Julia
+
+Julia is on the upper level of the ship, use the arrow keys to walk to the stairs or click on the stairs at the top right of your screen.
+La Julia està al nivell superior del vaixell, utilitza les tecles amb fletxes per caminar cap a les escales o clica a les escales a la part superior, a la dreta de la teva pantalla
+
+Julia make appeal the Legion of Aemil to search you, exit the ship and you should see your escort!
+
+
+Julia#Artis
+
+
+Jump to %d %d
+
+
+Jump to %s
+
+
+Just hit the trunk, and it will yeye a @@.
+Només colpeja el bagul, i et yeye un @@. 
+
+Just leave me alone.
+
+
+Kagerou
+
+
+Killer state reset.
+
+
+Knife
+
+
+Knight
+
+
+Last time I saw you, you were lost at sea on your raft.#0
+
+
+Last time I saw you, you were lost at sea on your raft.#1
+
+
+Leadership transferred.
+
+
+Lean
+Lean
+
+Lean for example?
+En Lean per exemple?
+
+Leaves have stopped falling.
+
+
+Leaves started falling.
+
+
+Leaves | 
+
+
+LeftBarrierCheck
+LeftBarrierCheck
+
+LeftDoor
+LeftDoor
+
+LeftDoor#001-2-23
+
+
+LeftDoorCheck
+LeftDoorCheck
+
+Let me check into it...
+
+
+Let me check my cookie list...
+Deixa'm comprovar la meva llista... 
+
+Let me introduce myself, I am Nard, captain of this ship.
+Deixa que hem presenta, soc en Nard, el capità d'aquest baixell.
+
+Let me see... Crispy legs, disgusting liquids... Let's start!
+Deixa'm veure... Potes cruixents, líquids putrefactes... Comencem! 
+
+Let's say the person who told me about that is well respected on this ship and never drunk.
+S'ha de dir que la persona que m'ha dit això es respectada i no s'emborratxa mai. 
+
+Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.
+
+
+Living inside a ship is great, but we sometimes need some fresh air.
+Viure en un vaixell està bé, però de vegades necessitem una mica d'aire lliure. 
+
+Login-server has been asked to %s the player '%.*s'.
+
+
+Login-server is offline. Impossible to %s the player '%.*s'.
+
+
+Look how splendid this landscape is!
+Mira quin paisatge més esplèndid!
+
+Look, here he is!
+Mira, aquí està! 
+
+Look, there he is!
+Mira, allí està! 
+
+Lord Knight
+
+
+Luck helps you do critical hits and dodge the ones dealt by enemies.
+La sort t'ajuda a fer cops crítics i evitar els propinats per l'enemic. 
+
+Luk: %d (%d~%d)
+
+
+M... Maybe?
+Pot...Potser?
+
+MVP Monster: '%s'/'%s'/'%s' (%d)
+
+
+Magic Arpan
+Magic Arpan
+
+Magic Arpan#sailors
+
+
+Magician
+
+
+Map not found.
+
+
+Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d
+
+
+Max
+Max
+
+Max HP: %d (%d~%d)
+
+
+Max SP: %d (%d~%d)
+
+
+Max and Sapartan for example?
+En Max i l'Spartan per exemple? 
+
+May this be a lesson for you.
+Pot ser una lliçó per a tu. 
+
+Maybe he over did it with the bottle today to celebrate that!
+
+
+Maybe he was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior Guild!#1
+Potser ell era un dels que es van perdre el mes passat? Els yoiis d'Esperia que tenien una missió secreta del Gremi Guerrer!#1
+
+Maybe she was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior Guild!#0
+
+
+Maybe you can come down to talk?
+Podries baixar per parlar?
+
+Maybe you meant: 
+
+
+Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?#0
+Pot ser... Però prefereixo tenir gent ven entrenada al meu costat quan es tracta de lluitar contra criatures perilloses. Ja et sents prou preparada per lluitar contra enemics?#0
+
+Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?#1
+Pot ser... Però prefereixo tenir gent ven entrenada al meu costat quan es tracta de lluitar contra criatures perilloses. Ja et sents prou preparat per lluitar contra enemics?#1
+
+Mechanic
+
+
+Mechanic T
+
+
+Merchant
+
+
+Mercy has been granted.
+
+
+Mercy has been shown.
+
+
+Minstrel
+
+
+Minstrel T
+
+
+Mob Search... %s %s
+
+
+Monk
+
+
+Monster NoTeleport | 
+
+
+Monster database has been reloaded.
+
+
+Monster: '%s'/'%s'/'%s' (%d)
+
+
+My beauty, I was not always a sailor, you know, I was once an important individual!#0
+
+
+My friend, I was not always a sailor, you know, I was once an important individual!#1
+Amic meu, no he sigut un mariner sempre, saps. Una vega vaig ser algú important!#1
+
+My friends are... Well, you know... The creators.
+Els meus amics son... Bé, ja saps... Els creadors. 
+
+My friends are... Well, you know... The creators... Programmers, Scripters, Mappers, Pixel Artists, Soundscapers... The Most Skilled Sages of the Tentacled Dance.
+
+
+My name is Alige, I've been hiding here for weeks. All I have to eat are these berries... berries... berries...
+Hem dic Alige, m'he estat amagant aquí unes setmanes, Tot el que menjo es aquestes baies... baies... baies...
+
+My name is Astapolos. Q'Muller and I joined Nard's crew a few years ago when it was just a little merchant ship.
+Hem dic Astapolos. Q'Muller i jo ens vam unir a la tripulació d'en Nard fa uns quants anys quan encara era un petit vaixell mercant.
+
+My name is Julia, it is me who took care of you after we found you in the sea.
+Hem dic Julia, soc jo mateixa qui et va cuidar després que et trobéssim al mar.
+
+NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT!
+RES MES QUE TAURONS I UNA ESTRANYA LLUM!
+
+NOTICE: If you crash with mount your LUA is outdated.
+
+
+NPC %d: %s | Direction: %s | Sprite: %d | Location: %d %d
+
+
+NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d 
+
+
+NPC Buy:%dz, Sell:%dz | Weight: %.1f 
+
+
+NPC Disabled.
+
+
+NPC Enabled.
+
+
+NPC is not in this map.
+
+
+NPC moved.
+
+
+NPC variables may not be used with @set.
+
+
+Name not found in list.
+
+
+Name: %s 
+
+
+Name: %s (GM)
+
+
+Name: %s (GM:%d) | Location: %s %d %d
+
+
+Nard
+Nard
+
+Nard looks surprised and stops you.
+En Nard sembla sorprès i t'atura.
+
+Nard#Artis
+
+
+Narrator
+Narrador
+
+New e-mail must be a real e-mail address.
+
+
+New e-mail must be different from the current e-mail address.
+
+
+New technologies assisted the slaughter instead of establishing peace. At some point, two different rivals were formed.
+
+
+New warp NPC '%s' created.
+
+
+Night Mode Activated.
+
+
+Night Mode is activated
+
+
+Night mode is already enabled.
+
+
+NightmareDrop | 
+
+
+Nine Castles
+
+
+Nineteen Castles
+
+
+Ninja
+
+
+No
+
+
+No Exp Penalty: %s | No Zeny Penalty: %s
+
+
+No GM found.
+
+
+No Save (Return to last Save Point)
+
+
+No Save, Save Point: %s,%d,%d
+
+
+No Save, Save Point: %s,Random
+
+
+No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#0
+No i *hic*... No, tu ni el teu estuid...*burp* estupid *hic* gremi!#0
+
+No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#1
+No i *hic*... No, tu ni el teu estuid...*burp* estupid *hic* gremi!#1
+
+No cookie for you!
+No hi ha galeta per tu! 
+
+No item found in this player's %s.
+
+
+No item has been refined.
+
+
+No item need to be repaired.
+
+
+No longer spying on the %s guild.
+
+
+No longer spying on the %s party.
+
+
+No player found in map '%s'.
+
+
+No player found.
+
+
+No problem, I can help you anyway.
+Cap problema, et puc ajudar de totes maneres. 
+
+No problem, do you have any other questions for me?
+Cap problema, tens alguna altra pregunta per a mi?
+
+No thank you, I'm fine. I'll come back later.
+No gràcies, estic bé. Tornaré d'aquí una estona. 
+
+No thanks, not at the moment.
+No gràcies, no en aquest moment. 
+
+No!
+No!
+
+No, I can't. I won't! All is I wanted was to travel across the seas for fun, growl... sniff. And in this chink in the wall, as you can see, I have lots of fun.
+
+
+No, I don't, but I would like to know more about that.
+No, jo no, però m'agradaria saber més sobre això.
+
+No, and I gotta go, see you.
+No, i me n'he d'anar, a rebeure.
+
+No, none.
+No, cap.
+
+No, sorry.
+No, ho sento. 
+
+No, they are way too dangerous for me!
+No, són massa perillosos per a mi!
+
+No.
+No.
+
+NoBaseEXP | 
+
+
+NoBranch | 
+
+
+NoCalcRank | 
+
+
+NoCommand | 
+
+
+NoDrop | 
+
+
+NoGuild | 
+
+
+NoIcewall | 
+
+
+NoJobEXP | 
+
+
+NoMVPLoot | 
+
+
+NoMemo | 
+
+
+NoMobLoot | 
+
+
+NoParty | 
+
+
+NoReturn | 
+
+
+NoSkill | 
+
+
+NoTeleport | 
+
+
+NoTrade | 
+
+
+NoVending | 
+
+
+NoWarp | 
+
+
+NoWarpTo | 
+
+
+Nobody will know about the existence of the Mercurians.
+Ningú coneixerà sobre l'existència dels Mercurians. 
+
+Nobody! *burp*
+Ningú! *burp*
+
+Nobody.
+Ningú. 
+
+None
+
+
+None Taken
+
+
+None of them?
+Cap d'ells?
+
+Nope, there are no secrets hidden within the ship's hull. Some sailors swear they have seen stowaways hidden somewhere. The bow or the stern? Just stories sailors love to tell...
+
+
+Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
+
+
+North
+
+
+North East
+
+
+North West
+
+
+Not a hexadecimal digit:
+
+
+Not a string:
+
+
+Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Noobs are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
+
+
+Not everybody has a kind mind. Scammers can be anywhere, even among us!
+No tothom es amable. Els estafadors poden estar per tot arreu, fins i tot entre nosaltres! 
+
+Not so good actually... I would feel better on Nard's ship.
+No tan bo en realitat ... Em sentiria millor en la nau d'en Nard.
+
+Not to kill your dream, but... Julia is mine!#1
+
+
+Not yet. I will be back soon.
+Encara no. Tornaré aviat. 
+
+Note
+Nota
+
+Note#Artis
+
+
+Nothing, just hanging around.
+Res, simplement fent un tom.
+
+Nothing, sorry.
+Res, ho sento.
+
+Nothing.
+Res.
+
+Novice
+
+
+Now go outside and talk with Gugli, he'll tell you what provisions we need.
+
+
+Now go outside and talk with Gugli, he'll tell you what we need.
+Ara ves a fora i parla amb en Gugli, ell et dirà que necessitem. 
+
+Now move!
+Ara mou-te! 
+
+Now, leave me alone...
+Ara deixam sol...
+
+Now, move!
+
+
+Number of skill points changed.
+
+
+Number of status points changed.
+
+
+OH, LOOK THERE!
+OH, MIRA AQUÍ!
+
+Oboro
+
+
+Of course you do! Just listen carefully to these words my dear.#0
+Es clar que si! Només escolta atentament les meves paraules estimada.#0 
+
+Of course you do! Just listen carefully to these words my dear.#1
+Es clar que si! Només escolta atentament les meves paraules estimada.#1
+
+Of course! Tell me which language you speak and I will change the note on the ship board list.
+Per descomptat! Digues-me quin idioma parles i canviaré les notes de la llista del vaixell.
+
+Of course, so why do I still see plain sea from the porthole?
+
+
+Of course, they are on the left wall, go have a look at them.
+Es clar, estan al mur de l'esquerra, ves a fer-hi un cop d'ull.
+
+Of the two of them, who has 'good' on their side?
+
+
+Off
+
+
+Oh I see... Sailors are not able to do their job anymore, is it like that?!
+Oh, ja veig... Els mariners no son capaços de fer la seva feina, no? 
+
+Oh alright, nevermind then.
+Oh d'acord, no importa llavors. 
+
+Oh good! Did he give you your money back as well?
+Oh que bé! T'ha tornat els diners també?
+
+Oh look, there's a piou behind you!
+Oh mira, un piou al teu darrere!
+
+Oh no, but I've noticed a weird light on the other edge of this island, I wonder what it can be...
+Oh no, però m'he adonat d'una estranya llum a l'altra punta de l'illa, hem pregunto que pot ser...
+
+Oh really? How could I forget something as important as that?!
+Què, en serio? Com he pogut oblidar una cosa tant important com això?!
+
+Oh really? I'll put more food in the next box then.
+En serio? Posaré més menjar a la pròxima capsa llavors. 
+
+Oh well, we rescued you when you were yaying adrift in the sea.#0
+Oh bé, et vam rescatar quan estaves yayin a la deriva.#0
+
+Oh well, we rescued you when you were yaying adrift in the sea.#1
+Oh bé, et vam rescatar quan estaves yayin a la deriva.#1
+
+Oh well. I'll also give you one of these hats from the box near you, but only after you complete your task!
+Oh bé. També et donaré un d'aquests barrets de la caixa prop teu, però únicament després de que finalitzis les teves tasques.
+
+Oh yeyeye... As they are not edible, you can maybe try to equip them?#0
+Oh yeyeye... Si no son comestibles. Potser podries provar d'equipar-te'ls?#0
+
+Oh yeyeye... As they are not edible, you can maybe try to equip them?#1
+Oh yeyeye... Si no son comestibles. Potser podries provar d'equipar-te'ls?#1
+
+Oh! And in one of the rooms of the second deck you can find Gado's knives. Our chef keeps there the sharpest ones... Probably not just to cut some carrots...
+
+
+Oh! I like that sort of answer!
+Oh! M'agrada aquest tipus de resposta!
+
+Oh, I see. That's right. Why should someone come here to see me, seriously?
+Oh, ja veig. Es correcte. Per què hauria de venir algú a veure'm, en serio?
+
+Oh, I was going to ask you if you wanted to help the crew search for some food and explore the island out there.
+Oh, et volia demanar si podies ajudar a al tripulació a trobar una mica de menjar i explorar l'illa. 
+
+Oh, and I almost forgot! Do not give the password of your room to anybody! I am the only one who has the other key and I won't ask for yours so keep it secret and try not to use the same password for any other room in the future.
+Oh, i casi me'n oblido! No li donis la contrasenya de la teva habitació a ningú! Soc l'únic que te l'altra clau i no et demanaré mai la teva, així que guarda-la en secret i no provis d'utilitzar la mateixa contrasenya en cap altre lloc. 
+
+Oh, and Olga from the market place as well!
+Oh, i l'Olga de la plaça del mercat també.
+
+Oh, and give her some clothes, the poor girl, the ones she had were in even worse condition than the ones we have!#0
+
+
+Oh, and give him some clothes, the poor guy, the ones he had were in even worse condition than the ones we have!#1
+
+
+Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?
+
+
+Oh, but you didn't come here to talk about that, am I right?#0
+Oh, però no has vingut fins aquí per parlar d'això, no?#0
+
+Oh, but you didn't come here to talk about that, am I right?#1
+Oh, però no has vingut fins aquí per parlar d'això, no?#1
+
+Oh, he is not far away from here. Just take the road through the crocojungle north from here.
+Oh, no esta lluny d'aquí. Només agafa el camí a traves de la croco-jungla al nord.
+
+Oh, he's still alive!#1
+
+
+Oh, it's you.
+Oh, ets tu.
+
+Oh, it's you. I think it's better we do not talk for a while. They suspect something.
+Oh, ets tu. Crec que és millor que no parlem en un temps. Comencen a sospitar.
+
+Oh, now that I remember, we also found some money in your pockets, here it is!#0
+
+
+Oh, now that I remember, we also found some money in your pockets, here it is!#1
+
+
+Oh, she's still alive!#0
+Oh, encara està viva!#0
+
+Oh... Err, yes I did, or, well, good day to you!
+Oh... Err, si ho vaig fer, o, bé, passa un bon dia! 
+
+Oh... Well, I just started to trade... Thus my technique may not be the best.
+Oh... Bé, només acabo de començar a intercanviar... Així que la meva tècnica pot no ser la millor.
+
+Oh... eating rattos. Sounds... ehm... Delicious, yes.
+Oh... menjar rattos. Sona... Eeh... Deliciós, si. 
+
+Oh... um... actually... all is I wanted was to get to Artis. Err... but I didn't, ah, have enough money to pay for the ferry!
+
+
+Ok, I think he's waking up, go see him.#1
+
+
+Ok, I think she's waking up, go see her.#0
+
+
+Ok, I will leave him alone.
+D'acord, el deixaré sol.
+
+Ok, be patient a little while longer, in the next few days we will arrive at the port of Artis...
+D'acord, siguis pacient una mica més, en els pròxims dies arribarem al port d'Artis... 
+
+Ok, done.
+D'acord, fet.
+
+Ok, see you then!
+D'acord, ens veurem!
+
+Okay, I'm ready to work!#0
+Si, estic preparat pel treball!#0
+
+Okay, I'm ready to work!#1
+D'acord, estic preparat per treballar!#1
+
+Okay, you can start!
+D'acord, pots començar! 
+
+OldBook
+LlibreVell 
+
+On
+
+
+On one hand, ranged weapons are generally weaker than melee ones, but you attack from a safer position. On the other hand, depending on the level of the weapon, melee ones potentially can yeild quicker kills.
+
+
+Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
+Una vegada que el monstre es mort, clica en els objectes deixats anar per afegir-los al teu inventari. També pots utilitzar la tecla "Z" i si estàs a prop els agafarà. 
+
+One Castle
+
+
+Options changed.
+
+
+Orc Voice
+Veu d'orc
+
+Other Drop Rates: MvP %.2fx / Card-Based %.2fx / Treasure %.2fx
+
+
+Other Flags: 
+
+
+Other than that, I don't know much about what else is going on, so directly asking the Cap'tain about it could be a good idea.
+A part d'això, no sé molt sobre el que està passant, així que preguntar directament al Capità sobre el tema, podria ser una bona idea.
+
+Other things are written but are not legible anymore.
+També hi ha altres coses escrites però son il·legibles. 
+
+Otherwise, if you really want one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
+
+
+Ouch...
+Auu..
+
+Ouch... These boxes are so heavy!
+Au... Aquestes capses pesen massa!
+
+Our crew is like a family, and if you agree to help us, I would like to invite you to join our family!
+La nostra tripulació es com una família, i si accedeixes a ajudar-nos, m'agradaria invitar-t'hi!
+
+Packet 0x%x length: %d
+
+
+Paladin
+
+
+Party modification is disabled in this map.
+
+
+PartyLock | 
+
+
+People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose.
+La gent va començar a robar als altres per sobreviure. A mesura que les ciutats van créixer les necessitats també. I van començar les guerres per les terres fèrtils.
+
+Perfect!
+Perfecte! 
+
+Pet hunger changed.
+
+
+Pet hunger is already at maximum.
+
+
+Pet intimacy changed.
+
+
+Pet intimacy is already at maximum.
+
+
+Peter
+Peter
+
+Peter#001-2-22
+
+
+Pets are not allowed in Guild Wars.
+
+
+Piberries
+Pabaies
+
+Player '%s' (session #%d) | Location: %d,%d
+
+
+Player '%s' has now been banned from the '%s' channel
+
+
+Player '%s' has now been unbanned from the '%s' channel
+
+
+Player '%s' is already banned from this channel
+
+
+Player '%s' is not banned from this channel
+
+
+Player '%s' was not found
+
+
+Player database has been reloaded.
+
+
+Player has been nuked!
+
+
+Player is not muted.
+
+
+Player is using %s skill tree (%d basic points).
+
+
+Player requires level %d of skill %s.
+
+
+Player unjailed.
+
+
+Player unmuted.
+
+
+Player warped to jail.
+
+
+Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!
+
+
+Please don't touch these hats, they are for crew members only.
+Per favor, no toquis aquests barrets, son sols i únicament per als membres de la tripulació. 
+
+Please enter a Monster/NPC name/ID (usage: @disguise <name/ID>).
+
+
+Please enter a Monster/NPC name/ID (usage: @disguiseall <name/ID>).
+
+
+Please enter a NPC name (usage: @enablenpc <NPC_name>).
+
+
+Please enter a NPC name (usage: @hidenpc <NPC_name>).
+
+
+Please enter a NPC name (usage: @npcoff <NPC_name>).
+
+
+Please enter a NPC name (usage: @tonpc <NPC_name>).
+
+
+Please enter a clothes color (usage: @dye/@ccolor <clothes color: %d-%d>).
+
+
+Please enter a guild name (usage: @guild <guild_name>).
+
+
+Please enter a guild name/ID (usage: @guildrecall <guild_name/ID>).
+
+
+Please enter a guild name/ID (usage: @guildspy <guild_name/ID>).
+
+
+Please enter a hair color (usage: @haircolor/@hcolor <hair color: %d-%d>).
+
+
+Please enter a hair style (usage: @hairstyle/@hstyle <hair ID: %d-%d>).
+
+
+Please enter a homunculus ID (usage: @makehomun <homunculus id>).
+
+
+Please enter a hunger value (usage: @homhungry <hunger value [0-100]>).
+
+
+Please enter a level adjustment (usage: @homlevel <number of levels>).
+
+
+Please enter a level adjustment (usage: @joblvup/@jlevel/@joblvlup <number of levels>).
+
+
+Please enter a level adjustment (usage: @lvup/@blevel/@baselvlup <number of levels>).
+
+
+Please enter a map (usage: @warp/@rura/@mapmove <mapname> <x> <y>).
+
+
+Please enter a message (usage: @broadcast <message>).
+
+
+Please enter a message (usage: @homtalk <message>).
+
+
+Please enter a message (usage: @kami <message>).
+
+
+Please enter a message (usage: @localbroadcast <message>).
+
+
+Please enter a message (usage: @me <message>).
+
+
+Please enter a message (usage: @pettalk <message>).
+
+
+Please enter a mob name/ID and guild name/ID (usage: @disguiseguild <mob name/ID>, <guild name/ID>).
+
+
+Please enter a mob name/id (usage: @showmobs <mob name/id>)
+
+
+Please enter a monster name (usage: @mobsearch <monster name>).
+
+
+Please enter a monster name (usage: @summon <monster name> {duration}).
+
+
+Please enter a monster name/ID (usage: @mobinfo <monster_name_or_monster_ID>).
+
+
+Please enter a monster name/ID (usage: @whereis <monster_name_or_monster_ID>).
+
+
+Please enter a monster/egg name/ID (usage: @makeegg <pet>).
+
+
+Please enter a number (usage: @skpoint <number of points>).
+
+
+Please enter a number (usage: @stpoint <number of points>).
+
+
+Please enter a party name (usage: @party <party_name>).
+
+
+Please enter a party name/ID (usage: @partyrecall <party_name/ID>).
+
+
+Please enter a party name/ID (usage: @partyspy <party_name/ID>).
+
+
+Please enter a player name (usage: @block <char name>).
+
+
+Please enter a player name (usage: @jail <char_name>).
+
+
+Please enter a player name (usage: @jumpto/@warpto/@goto <char name/ID>).
+
+
+Please enter a player name (usage: @kick <char name/ID>).
+
+
+Please enter a player name (usage: @nuke <char name>).
+
+
+Please enter a player name (usage: @recall <char name/ID>).
+
+
+Please enter a player name (usage: @trade <char name>).
+
+
+Please enter a player name (usage: @unban <char name>).
+
+
+Please enter a player name (usage: @unblock <char name>).
+
+
+Please enter a player name (usage: @unjail/@discharge <char_name>).
+
+
+Please enter a player name (usage: @unmute <char name>).
+
+
+Please enter a player name (usage: @where <char name>).
+
+
+Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
+
+
+Please enter a quest skill ID.
+
+
+Please enter a script file name (usage: @loadnpc <file name>).
+
+
+Please enter a skill name to look up (usage: @skillid <skill name>).
+
+
+Please enter a sound filename (usage: @sound <filename>).
+
+
+Please enter a speed value (usage: @speed <%d-%d>).
+
+
+Please enter a status type/flag (usage: @displaystatus <status type> <flag> <tick> {<val1> {<val2> {<val3>}}}).
+
+
+Please enter a time in minutes (usage: @mutearea/@stfu <time in minutes>).
+
+
+Please enter a valid level (usage: @guildlvup/@guildlvlup <# of levels>).
+
+
+Please enter a valid number (usage: @pethungry <0-100>).
+
+
+Please enter a valid position (usage: @memo <memo_position:%d-%d>).
+
+
+Please enter a valid value (usage: @petfriendly <0-1000>).
+
+
+Please enter a valid value (usage: @str/@agi/@vit/@int/@dex/@luk <+/-adjustment>).
+
+
+Please enter all parameters (usage: @item2 <item name/ID> <quantity>).
+
+
+Please enter all parameters (usage: @itembound2 <item name/ID> <quantity>
+
+
+Please enter an amount (usage: @spiritball <number: 0-%d>).
+
+
+Please enter an amount (usage: @zeny <amount>).
+
+
+Please enter an amount.
+
+
+Please enter an effect number (usage: @effect <effect number>).
+
+
+Please enter an intimacy value (usage: @homfriendly <intimacy value [0-1000]>).
+
+
+Please enter an item name or ID (usage: @item <item name/ID> <quantity>).
+
+
+Please enter an item name or ID (usage: @itembound <item name/ID> <quantity> <bound_type>).
+
+
+Please enter an item name/ID (usage: @ii/@iteminfo <item name/ID>).
+
+
+Please enter an item name/ID, a quantity, and a player name (usage: #delitem <player> <item_name_or_ID> <quantity>).
+
+
+Please enter at least one item name/ID (usage: @produce <equip name/ID> <element> <# of very's>).
+
+
+Please enter at least one option.
+
+
+Please enter at least one valid list number (usage: @mapinfo <0-3> <map>).
+
+
+Please enter at least one value (usage: @model <hair ID: %d-%d> <hair color: %d-%d> <clothes color: %d-%d>).
+
+
+Please enter ban time and a player name (usage: @ban <time> <char name>).
+
+
+Please enter color and message (usage: @kamic <color> <message>).
+
+
+Please enter guild name/ID (usage: @sizeguild <size> <guild name/ID>).
+
+
+Please enter guild name/ID (usage: @undisguiseguild <guild name/ID>).
+
+
+Please enter item name/ID (usage: @whodrops <item name/ID>).
+
+
+Please enter part of an item name (usage: @idsearch <part_of_item_name>).
+
+
+Please enter the correct parameters (usage: @npctalk <npc name>, <message>).
+
+
+Please enter the correct parameters (usage: @npctalkc <color> <npc name>, <message>).
+
+
+Please enter two e-mail addresses (usage: @email <current@email> <new@email>).
+
+
+Please specify a display name or monster name/id.
+
+
+Plushroom
+
+
+Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe
+
+
+Priest
+
+
+Professor
+
+
+PvP Flags: 
+
+
+PvP is already Off.
+
+
+PvP is already On.
+
+
+PvP: Off.
+
+
+PvP: On.
+
+
+Pvp ON | 
+
+
+Q'Muller
+
+
+Q'Muller.
+Q'Muller. 
+
+Q'Onan#000-0-0
+
+
+Q'Onan#000-2-1
+
+
+Quest database has been reloaded.
+
+
+Raijin Voice
+Veu de raijin
+
+Ranger
+
+
+Ranger T
+
+
+RattosControl
+RattosControl
+
+RattosControl#001-2-23
+
+
+Really? That's kind of you, I accept your help!
+De debò? Molt amable de la teva part, accepto la teva ajuda!
+
+Rebellion
+
+
+Removed %d Kafra points. Total %d points.
+
+
+Removed %d cash points. Total %d points.
+
+
+Removed all bans from the '%s' channel
+
+
+Removed item type: '%s' from your autoloottype list.
+
+
+Removed item: '%s'/'%s' {%d} from your autolootitem list.
+
+
+Resa
+Resa
+
+Reset 'Feeling' maps.
+
+
+Reset | 
+
+
+Returned to normal state.
+
+
+Returned to real name.
+
+
+Returning to normal font.
+
+
+Right! Ours is an earthsea realm. You see, sailors are swift at their tasks when out of sight of land, but docked by this verdant jewel, they have it so good, they are just taking too much time bringing all the food back to the ship. Maybe you can help them.
+
+
+RightBarrierCheck
+RightBarrierCheck
+
+RightDoorCheck
+RightDoorCheck
+
+Rogue
+
+
+Royal Guard
+
+
+Royal Guard T
+
+
+Rrrr... Pchhhh...
+
+
+Rune Knight
+
+
+Rune Knight T
+
+
+SO WHAT'S UP?! WHAT ARE YOU DOING?!
+AIXÍ QUE COM VA?! QUE ESTÀS FENT?!
+
+Sage
+
+
+Sailors
+Mariners
+
+Sakura | 
+
+
+Sapartan
+Sapartan 
+
+Script could not be loaded.
+
+
+Script loaded.
+
+
+Scripts have been reloaded.
+
+
+Sea water?! I will not help you with your evil plan!
+Aigua de mar?! No t'ajudaré amb el teu malvat pla! 
+
+Search results for '%s' (name: id):
+
+
+Secondly, choose wisely which weapon is suited for you. Some people like to face their enemies closely with a heavy axe, others prefer to attack from a distance with a bow for example.
+
+
+See you aboard.
+Ens veiem a bord. 
+
+See you later!
+Fins després! 
+
+See you soon!
+
+
+See you!
+A reveure!  
+
+See you.
+A rebeure. 
+
+Seems I've helped everyone here. I don't know what to do now!
+Sembla que ja he ajudat tothom aquí. Ara no se que fer! 
+
+Seems yummy! Let me taste it!
+Sembla deliciós! Deixam provar-ho!
+
+Sending request to login server...
+
+
+Sent packet 0x%x (%d)
+
+
+Seriously? It's just a cookie you know... Tell me what I should do to get one.
+En serio? Es només una galeta saps... Dis-me que he de fer per aconseguir-ne una. 
+
+Seriously?!
+En serio?!
+
+Server Uptime: %ld days, %ld hours, %ld minutes, %ld seconds.
+
+
+Server is jammed due to over populated.
+
+
+Server time (normal time): %A, %B %d %Y %X.
+
+
+Set battle_config as requested.
+
+
+Seven Castles
+
+
+Seventeen Castles
+
+
+Shadow Chaser
+
+
+Shadow Chaser T
+
+
+She is a good friend of mine... We wanted to marry a few weeks before her accident but...
+Ella es una bona amiga meva... Ens volíem casar unes setmanes després de que tingues l'accident, però... 
+
+She is the nurse and shipkeeper of this ship.
+Ella es l'infermera i tinent d'aquest vaixell.
+
+She said she will accept me when pious will have teeth. It's just a matter of time, you see?
+Ella ha dit que m'acceptarà quant els pious tinguin dents. Es només qüestió de temps, veus? 
+
+She's on the upper level, yeye can't miss her. She's the only girl in this crew, oh well, except for you now yeyeye!#0
+
+
+She's on the upper level, yeye can't miss her. She's the only girl in this crew.#1
+
+
+Shhht, don't say it that loud...
+Shhht, no ho diguis tant fort...
+
+Shht shht!
+Shht shht!
+
+Shop is out of stock! Come again later!
+
+
+Silvio
+Silvio
+
+Silvio for example?
+En Silvio per exemple? 
+
+Silvio starts to speak to his bottle, you leave, letting him have a private conversation.
+
+
+Simply contact them, help them and be kind. They might surely add you to my cookie list!
+Simplement contacta'ls, ajuda'ls i siguis amable. Així segurament t'afegiran a la llista! 
+
+Six Castles
+
+
+Sixteen Castles
+
+
+Size change applied.
+
+
+Skill database has been reloaded.
+
+
+Skill delay failures are now shown.
+
+
+Skill delay failures will not be shown.
+
+
+Skills have been disabled in this map.
+
+
+Skills have been enabled in this map.
+
+
+Slave clone spawned.
+
+
+Sniper
+
+
+Snow has stopped falling.
+
+
+Snow | 
+
+
+So finally someone has came to visit me?
+Així que finalment algú ha vingut a veure'm? 
+
+So it seems I have another stomach to fill. Those bastards have no respect for who feeds them every damn day!
+Així que sembla que tinc una altra boca per alimentar. Aquests desgraciats no tenen respecte per a qui els alimenta cada punyeter dia!
+
+So that's why we wanted to warn you, maybe he comes from that guild, as that sign was on his raft.#1
+
+
+So that's why we wanted to warn you, maybe she comes from that guild, as that sign was on her raft.#0
+
+
+So you're under the control of dictators, that's... reassuring.
+Així que estàs sota les ordres dels dictadors, això es... tranquil·litzant.
+
+So, do you have anything for me today?
+Així que, tens alguna cosa per mi avui? 
+
+So, do you still want a cookie now?
+Així que, encara vols una galeta?
+
+So, how do you feel? I see that Julia did a marvelous job! You look like you're in good health now.
+Així que, com et trobes? Bec que la Julia ha fet un treball meravellós! Sembla que estàs bastant bé.
+
+So, how is it going? Did you meet any other crew members yet?
+Així que, com va? Has conegut algun altre membre de la tripulació ja? 
+
+So, what can I do for you?
+Així, que, què puc fer per tu?
+
+So, what was I saying?
+Així que, què estava dient? 
+
+So, which good wind brought you here? Were you on your raft to meet me? Or is it because you've heard of my feats on Artis?#0
+
+
+So, which good wind brought you here? Were you on your raft to meet my Julia? Or is it because you wanted to see the beautiful waitress' at Artis?#1
+Així que, quin propòsit t'ha portat aquí? Estaves en aquell rai per a conèixer la meva Julia? O volies veure les boniques cambreres d'Artis?#1
+
+So, you finally woke up? We all thought you were in something like... You know, one of these long comas.#0
+Així que, finalment t'has despertat? Pensàvem que estaves en... Ja saps, un d'aquells llargs comes.#0 
+
+So, you finally woke up? We all thought you were in something like... You know, one of these long comas.#1
+Així que, finalment t'has despertat? Pensàvem que estaves en... Ja saps, un d'aquells llargs comes.#1
+
+Some Bandanas and Sailor Hats are inside this box.
+Hi ha algunes Bandanas i Barrets de Mariner dins la caixa. 
+
+Some food.
+Una mica de menjar. 
+
+Some of the crew are looking for goods we can trade with at our next destination.
+
+
+Some of your items cannot be vended and were removed from the shop.
+
+
+Somebody is waiting for you outside!
+
+
+Something is wrong with me, I can't smile nor sit.
+
+
+Sometimes, I wish someone would be sent here to help us.
+
+
+Sorcerer
+
+
+Sorcerer T
+
+
+Sorry but I have no time for this.
+Ho sento però no tinc temps per això. 
+
+Sorry! I forgot to introduce myself. My name is Arpan, but other sailors call me Magic Arpan because I know one or two yaing magic spells.
+Ho sento! M'he oblidat de presentar-me. Hem dic Arpan, però els altres mariners hem diuen Magic Arpan perquè hem sé un o dos yaing encanteris. 
+
+Sorry, I am not in the mood for another fight with these rattos.
+Ho sento, no estic d'humor per una altra batalla amb aquests rattos
+
+Sorry, I don't need any help right now. Come back later.
+Ho sento, ara mateix no requereixo ajuda. Torna d'aquí una estona.
+
+Sorry, but I can't tell you anything about that.
+Ho sento, però no et puc dir res sobre això. 
+
+Sorry, but you have no pet.
+
+
+Soul Linker
+
+
+South
+
+
+South East
+
+
+South West
+
+
+Specified group does not exist.
+
+
+Speed changed.
+
+
+Speed returned to normal.
+
+
+Spying on the %s guild.
+
+
+Spying on the %s party.
+
+
+Stalker
+
+
+Star Gladiator
+
+
+Stat changed.
+
+
+Stats: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d
+
+
+Status database has been reloaded.
+
+
+Storage opened.
+
+
+Str: %d (%d~%d)
+
+
+Strength multiplies the damage of your hits, especially melee ones. You will also be able to carry heavier stuff.
+
+
+Stupid yeye...
+Carallot yeye... 
+
+Summer
+
+
+Super Baby
+
+
+Super Novice
+
+
+Sura
+
+
+Sura T
+
+
+Sure, but what will I get in exchange?
+Es clar, però que rebré a canvi? 
+
+Sure, but what will you give me in exchange?
+
+
+Sure, cap'tain.
+Segur, capità. 
+
+Sure, there is a reward for your task.
+Es clar, hi ha recompensa per el teu treball. 
+
+Sure, why not?
+Segur, per què no?
+
+Surely. Take this box full of @@s.
+Es clar. Agafa aquesta caixa plena de @@s.
+
+Swordsman
+
+
+THAT'S A NICE NAME!
+ES UN NOM MACO! 
+
+Taekwon
+
+
+Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak boy in all.#1
+
+
+Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak girl in all.#0
+
+
+Take a Bandana.
+Agafa un mocador.
+
+Take care!
+
+
+Take these coins in exchange and be careful.
+Agafa aquestes monedes a canvi i ves en compte. 
+
+Take this money as a reward for your nice words.
+Agafa aquests diners com a recompensa de les teves boniques paraules. 
+
+Take this money for your wise choice. But do not try it again. The open sea has been merciful with you once... Do not further tempt the fates!
+
+
+Take your reward from the box next to my desk!
+Agafa la teva recompensa de la capsa a prop del meu escriptori!
+
+Talk to you later!
+
+
+Talk to you soon!
+
+
+Target character must be online and be a guild member.
+
+
+Target character must be online and in your current party.
+
+
+Tarlan
+Tarlan 
+
+Task is done.
+Tasca completa.
+
+Teleport Flags: 
+
+
+Tell him that everything went fine and that we're almost done with the requisitions.
+
+
+Ten Castles
+
+
+Terry
+
+
+Thank you and be careful with that box. I have worked really hard to fill it!
+Gràcies tingues en compte amb aquesta capsa. He treballat molt dur per aconseguir-la. 
+
+Thank you for your help.
+Gràcies per la teva ajuda. 
+
+Thank you for your tricks. I am going to try them now!
+Gràcies pels teus trucs. Els posaré en pràctica ara mateix. 
+
+Thank you my friend.#0
+Gràcies amiga meva.#0
+
+Thank you my friend.#1
+Gràcies amic meu.#1
+
+Thank you sir for you nice words. I am feeling better now.
+Gracies senyor per les teves bones paraules. Ara hem sento millor.
+
+Thank you so much! Here, have some of my berries.
+Moltes gràcies! Aquí tens algunes de les meves baies.
+
+Thank you, I'll take them and put them on.
+Gràcies, els agafaré i m'els ficaré! 
+
+Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem; so you can always be sure that your help with the extermination, to keep their numbers under control, is very welcome indeed. But the situation is, that I can give you a reward only the one time.
+
+
+Thanks for helping me!
+Gràcies per ajudar-me!
+
+Thanks for the help!
+Gràcies per l'ajuda! 
+
+That's good to hear!
+Està bé escoltar això!
+
+That's perfect, yoiis.#0
+Això es perfecte, yoiis.#0
+
+That's perfect, yoiis.#1
+Això es perfecte, yoiis.#1
+
+That's quite surprising... You don't look very helpful.#0
+Això es una mica sorprenent... No sembles de massa ajuda.#0
+
+That's quite surprising... You don't look very helpful.#1
+Això es una mica sorprenent... No sembles de massa ajuda.#1
+
+The adventure begins!
+L'aventura comença! 
+
+The best, the wonderful, the best cookie between all others, the...
+La millor, la esplèndida, la millor galeta de totes, la... 
+
+The captain has locked the door, you should go see him.
+El capità ha bloquejat la porta, hauries d'anar a veure'l.
+
+The captain is waiting for you! Hurry up.
+El capità t'està esperant! Donat manya!
+
+The captain wants:
+El capità vol: 
+
+The elven from the library firted with me a while ago, so has Enora from the Warrior Guild.
+
+
+The end of the story got erased, probably because of the sea water. Some pages are still missing. Thus much is left obscure, including even the author's name.
+
+
+The fear to see her sleeping on this quiet and lonely bed is becoming more and more unbearable, I think that I won't get the bravery to see her this time...
+La por de veure-la dormint en aquest tranquil i solitari llit s'està convertint més i més insuportable, crec que aquest cop no reuniré suficient cordura per veure-la...
+
+The first thing you should do is to evaluate your enemy.
+La primera cosa que has de fer es avaluar l'enemic. 
+
+The fog has gone.
+
+
+The further you go, the more experience you will get, so here's a small description of all the stats you can upgrade with time. But note that these will probably change in the future and have more complex effects.
+
+
+The giant boogeyman!
+El gegant boogeyman! 
+
+The great people of Aemil split up into three groups when they reached the coast.
+El gran poble de Aemil es va dividir en tres grups en arribar a la costa.
+
+The holy messenger has given judgement.
+
+
+The item (%d: '%s') is not equipable.
+
+
+The item is not equipable.
+
+
+The mapserver has spy command support disabled.
+
+
+The monster/egg name/ID doesn't exist.
+
+
+The old book seems to tell about the legend of Aemil. Would you like to read it?
+El llibre antic sembla explicar la llegenda d'Aemil. T'agradaria llegir-lo? 
+
+The player '%.*s' doesn't exist.
+
+
+The player cannot use that skill.
+
+
+The player meets all the requirements for that skill.
+
+
+The sailor chugs his beer.
+El mariner esbufega la seva cervesa.
+
+The sailor turns his back to you.
+El mariner et dona l'esquena. 
+
+The sailors take you aboard their ship.
+Els mariners et porten a bord de la seva nau. 
+
+The stowaway doesn't answer.
+
+
+The two cannot wed because one is either a baby or already married.
+
+
+The usurper has been punished! This is a great day! Take this reward as a prize for your loyalty to the old commander!
+L'usurpador ha set castigat! Es un gran dia! Agafa aquesta recompensa per la teva lleialtat al antic comandant! 
+
+Their leaders then came to the conclusion that an alliance was the only way they could survive.
+Els seus líders van arribar a la conclusió que una aliança era l'única manera de poder sobreviure.
+
+Then I can give you some tips about fighting.
+Llavors et puc donar alguns consells sobre la lluita.
+
+Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them.
+
+
+Then it seems I have to apologize.
+Després encara sembla que he de demanar disculpes.
+
+Then leave me alone.
+
+
+There are 6 sailors who will need your help. They are all around the island.
+
+
+There are few groups of these @@s all around this island. Just pick some and have a try.
+HI ha diversos grups d'aquests @@s pels voltants de l'illa. Només escull-ne alguns i intenta-ho.
+
+There are no items to appraise.
+
+
+There are rumors going around that they did some monstrous things and that they are hiding quite a lot from us.
+Hi ha rumors de que han fet algunes coses monstruoses i que s'estan amagant de nosaltres.
+
+There are some flying yellow plushes around you. They're called pious. Getting a roasted leg of one of them would be perfect.
+Hi ha alguns peluixos  grocs al teu voltant. Son anomenats pious. Aconseguir la cuixa rostida d'un d'ells seria perfecte.
+
+There are some groups of these @@s all around this island. Just pick some and have a try.
+Hi ha diversos grups d'aquests @@s pels voltants de l'illa. Només escull-ne alguns i intenta-ho.
+
+There are some knives on the table. Would you like to take one?
+
+
+There are still some rattos left! Do you want to abort the quest?
+Encara queden alguns rattos! Bols avortar la missió?  
+
+There is a paper with some rules written on it.
+Hi ha un paper amb algunes regles escrites en ell.
+
+There is always something you can do here, like killing some tortugas or helping Peter clean the ship from rattos.
+
+
+There is no help for %c%s.
+
+
+There's been no change in the setting.
+
+
+There's nothing to say, don't worry miss.#0
+
+
+There's nothing to say, don't worry sir.#1
+
+
+Therefore, starvation stalked the people of Aemil.
+
+
+These boxes are much too heavy to be lifted by one, all the way onto the ship.
+
+
+These crocotrees are full of yaying @@, but they are so hard to hit...
+Aquests crocotrees estan plens de yaying @@, però també son durs de colpejar...
+
+These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.
+
+
+These heavy boxes are killing me, I don't feel my arms anymore!
+Aquestes caixes tan pesants m'estan matant. No hem sento els braços! 
+
+These yeye boxes are way too heavy to be carried alone onto the ship.
+Aquestes yeye capses pesen massa per ser carretejades per un sol al vaixell. 
+
+They are all around the island.
+Estan pers voltants de l'illa.
+
+They are each valued individuals and I need them both. In the past, I probably made my share of mistakes. I regret good management is so difficult. I was wondering if you could investigate and... Sort out this situation.
+
+
+They are married... wish them well.
+
+
+They are so tasty when cooked together with some @@. Don't drop any of them!
+Son molt gustosos cuinats junts amb una mica de @@. No en llancis cap! 
+
+They shouldn't be too far from each other.
+No haurien de ser lluny l'un de l'altre. 
+
+Thief
+
+
+Thirteen Castles
+
+
+Thirty Castles
+
+
+Thirty-One Castles
+
+
+Thirty-Three Castles
+
+
+Thirty-Two Castles
+
+
+This Cookie Master rewards people who contribute and develop this world.
+Aquest Mestre de les Galetes recompensa la gent que contribueix i desenvolupa aquest món. 
+
+This NPC doesn't exist.
+
+
+This action can't be performed at the moment. Please try again later.
+
+
+This bound item cannot be stored there.
+
+
+This bound item cannot be traded to that character.
+
+
+This character has been banned until 
+
+
+This door is locked.
+
+
+This girl is lucky we found her before a shark did. I have no idea where she comes from. By the way, did you see the logo on her raft?#0
+
+
+This girl needs help, we need to rescue her!#0
+
+
+This guy is lucky we found him before a shark did. I have no idea where he comes from. By the way, did you see the logo on his raft?#1
+Aquest noi te sort de que l'hagem trobat abans que un tauró. No tinc ni idea d'on bé. De totes maneres, has vist el logotip del seu rai?#1
+
+This guy needs help, we need to rescue him!#1
+
+
+This is a nice place... There are some nice chicks...
+Es un bon lloc... Hi ha bones noies.   
+
+This is an @@, a light blue sea fruit. They're highly desired in the archipelago.
+Això es un @@, una lleugera fruita de mar. Estan molt buscades a l'arxipèlag. 
+
+This is it, the end of the Second Beta Release of Evol Online!
+I això es tot, el final de la Segona Beta d'Evol Online!
+
+This is the last one. If you use it again out of clumsiness, I will take your flesh as the main ingredient for my cookie recipe.
+Aquesta es l'última. Si la malgastes un altre cop, faré servir la teva carn com a ingredient principal de la meva pròxima recepta de galetes. 
+
+This item cannot be dropped.
+
+
+This item cannot be stored.
+
+
+This item cannot be traded.
+
+
+This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.#0
+
+
+This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on him.#1
+
+
+This makes sense. Do you think we should inform the capt'n about it?
+Te sentit. Creus que hauriem d'informar al capità sobre això? 
+
+This monster does not spawn normally.
+
+
+This monster has no MVP prizes.
+
+
+This monster has no drops.
+
+
+This new continent, in fact an archipelago, was called Andorra.
+Aquest nou continent, en realitat un arxipèlag, va ser anomenat Andorra.
+
+This panel looks in rather good shape, as though some people take care of it regularly. Maybe it has important information.
+
+
+This player has %d of a kind of item (id: %d), and tried to trade %d of them.
+
+
+This player has been banned for %d minute(s).
+
+
+This player has been definitively blocked.
+
+
+This player hasn't been banned (Ban option is disabled).
+
+
+This player is not in jail.
+
+
+This player is now
+
+
+This skill number doesn't exist or isn't a quest skill.
+
+
+This skill number doesn't exist.
+
+
+Three Castles
+
+
+Tibbo
+Tibbo
+
+Tibbo went to the south-east of the island, others are gone to the north, and I think that Gulukan is not so far from here.
+
+
+Tibbo.
+Tibbo. 
+
+Time of death : ^EE0000%s^000000
+
+
+To add an item to the list, use "@alootid +<item name or ID>". To remove an item, use "@alootid -<item name or ID>".
+
+
+To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
+Per obrir el teu inventari, utilitza la tecla F3 o utilitza el teu ratolí per seleccionar-lo al menú superior del client. 
+
+Tomb
+
+
+Too bad I'm not hungry enough right now for these... cookies. I'll maybe come back later.
+Llàstima no estic prou afamat per aquestes... galetes. Potser torno d'aquí una estona. 
+
+Too bad... Come back when you have some choice food for me. Growl... grumble... grumble.
+
+
+Total Domination
+
+
+Town Map
+
+
+Traaaansformation-!! %s form!!
+
+
+Transforming into monster is not allowed in Guild Wars.
+
+
+Tritan Voice
+Veu de tritó
+
+True but now he seems pretty fine! Am I right?#1
+
+
+True but now she seems pretty fine! Am I right?#0
+
+
+Twelve Castles
+
+
+Twenty Castles
+
+
+Twenty-Eight Castles
+
+
+Twenty-Five Castles
+
+
+Twenty-Four Castles
+
+
+Twenty-Nine Castles
+
+
+Twenty-One Castles
+
+
+Twenty-Seven Castles
+
+
+Twenty-Six Castles
+
+
+Twenty-Three Castles
+
+
+Twenty-Two Castles
+
+
+Two Castles
+
+
+Type "@mapflag available" to list the available mapflags.
+
+
+UAHAHAHAAH! I am the cook of that bunch of donkeys and I can be rude with everyone from this bossy captain to that harpy-lady!
+UAJAJAJAJAAJ! Soc el cuiner d'aquesta colla d'ases i puc ser tant grosser com vulgui des d'aquest manaire capità fins aquella dona-harpia! 
+
+Uh? Hi! I'm sorry, but I have no time for chatting.
+Uh? Hola! Ho sento però no tinc temps per enraonar amb tu.
+
+Uhm, bye.
+Uhm, adéu. 
+
+Uhm... Your story seems...
+Hm... La teva història sembla... 
+
+Unable to decrease the number/value.
+
+
+Unable to spawn clone.
+
+
+Unable to spawn evil clone.
+
+
+Unable to spawn slave clone.
+
+
+Understood, I will help you.
+Entès, t'ajudaré.
+
+Unfortunately, we still need help from you. This time it will be a delicate task, here onboard.
+Malauradament, encara requerim la teva ajuda. Aquesta vegada en una tasca delicada, aquí a bord.
+
+Unknown
+
+
+Unknown Cart (usage: %s <0-%d>).
+
+
+Unknown Channel '%s' (usage: %s <#channel_name>)
+
+
+Unknown Channel (usage: %s <#channel_name>)
+
+
+Unknown Job
+
+
+Unknown battle_config flag.
+
+
+Unknown color '%s'
+
+
+Unknown map '%s'.
+
+
+Unknown packet: 0x%x
+
+
+Unknown type of value in:
+
+
+Usage:
+
+
+Usage: "@mapflag monster_noteleport 1" (0=Off | 1=On)
+
+
+Usage: %s <permission_name>
+
+
+Usage: @accinfo/@accountinfo <account_id/char name>
+
+
+Usage: @addwarp <mapname> <X> <Y> <npc name>
+
+
+Usage: @adjgroup <group_id>
+
+
+Usage: @changegm <guild_member_name>
+
+
+Usage: @changeleader <party_member_name>
+
+
+Usage: @changelook {<position>} <view id>
+
+
+Usage: @displayskill <skill ID> {<skill level>}
+
+
+Usage: @jailfor <time> <character name>
+
+
+Usage: @marry <char name>
+
+
+Usage: @mute <time> <char name>
+
+
+Usage: @noks <self|party|guild>
+
+
+Usage: @npcmove <X> <Y> <npc_name>
+
+
+Usage: @partyoption <pickup share: yes/no> <item distribution: yes/no>
+
+
+Usage: @request <petition/message to online GMs>.
+
+
+Usage: @set <variable name> <value>
+
+
+Usage: @setbattleflag <flag> <value>
+
+
+Usage: @skilltree <skill ID> <target>
+
+
+Usage: @unloadnpcfile <file name>
+
+
+Usage: @useskill <skill ID> <skill level> <target>
+
+
+Usage: ex. "@set PoringCharVar 50"
+
+
+Usage: ex. "@set PoringCharVarSTR$ Super Duper String"
+
+
+Usage: ex. "@set PoringCharVarSTR$" outputs its value, Super Duper String.
+
+
+Use 0 or no parameter to return to normal font.
+
+
+Use @font <1-9> to change your message font.
+
+
+Use the key.
+Utilitza la clau. 
+
+Used %d Kafra points and %d cash points. %d Kafra and %d cash points remaining.
+
+
+User '%s' already possesses the '%s' permission.
+
+
+User '%s' doesn't possess the '%s' permission.
+
+
+User '%s' permissions updated successfully. The changes are temporary.
+
+
+Usually I don't allow anyone to touch my boxes but...
+En general, no permeto que ningú toqui les meves caixes però...
+
+Very nice, indeed!
+Molt bonic, de veritat!
+
+Vit: %d (%d~%d)
+
+
+Vitality raises your maximum health points and defense.
+
+
+WHAT DID YOU SAY?!
+QUE HAS DIT?!
+
+Wait a minute, where's the cookie I gave you?
+Espera un minut, on és la galeta que et vaig donar? 
+
+Wait, it seems someone is blocking the door from the other side!
+Espera, sembla que algú està bloquejant la paret des de l'altre cantó! 
+
+Wait, why do you still have the dish with you?!
+
+
+Wait... That's not the place for a chef, what are you doing here?
+Espera... Aquest no es lloc per a un xef, que estàs fent aquí? 
+
+Wait... Where are we going?
+Espera... On estem anant? 
+
+Walkig around a bit, it'll be easy for you to catch one, I bet. Impale one of them for me please.
+
+
+Wanderer
+
+
+Wanderer T
+
+
+War of Emperium SE has been ended.
+
+
+War of Emperium SE has been initiated.
+
+
+War of Emperium SE is currently in progress.
+
+
+War of Emperium SE is currently not in progress.
+
+
+War of Emperium has been ended.
+
+
+War of Emperium has been initiated.
+
+
+War of Emperium is currently in progress.
+
+
+War of Emperium is currently not in progress.
+
+
+Warlock
+
+
+Warlock T
+
+
+Warped.
+
+
+Warping to save point.
+
+
+Water, salt, spicy herbs and meat stuffed with my special surprise!
+Aigua, sal, herbes i carn farcida amb la meva sorpresa especial!
+
+We are glad captain Nard has let you join us down here!#0
+Estem contents que el capità Nard t'hagi deixat unir-te a nosaltres aquí baix!#0
+
+We are glad captain Nard has let you join us down here!#1
+Estem contents que el capità Nard t'hagi deixat unir-te a nosaltres aquí baix!#1
+
+We arrived this morning at the port of Artis, I already warned the Legion of Aemil concerning your issue.
+
+
+We arrived to Artis today.
+
+
+We have made a stop at a little island, before making it on to the port of Artis.
+
+
+We hope you liked this introduction and to see you again in our future releases!#0
+Esperem que t'hagi agradat aquesta mostra i que et puguem veure en futures versions!#0
+
+We hope you liked this introduction and to see you again in our future releases!#1
+Esperem que t'hagi agradat aquesta mostra i que et puguem veure en futures versions!#1
+
+We just returned from a long journey and Artis is a good city to rest and to conclude our exchange.
+
+
+We need as many hands as possible to explore the island out there, and to get some new food.
+Necessitem tothom que sigui possible per explorar l'illa, i aconseguir més menjar.
+
+We need manpower on the island.#1
+Necessitem ma d'obra a l'illa.#1 
+
+We need manpower on the island... Oh forgive me, women are also welcome, of course.#0
+
+
+We should be there in a few days, once we arrive, I will warn the Warrior Guild about what happened, I'm sure they can help.
+Hauriem d'estar allà en pocs dies, una vegada arribem, advertiré al Gremi Guerrer sobre lo que ha passat, estic segur que ens podran ajudar. 
+
+We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.
+
+
+We tried to clean them but the sea water mostly destroyed them. It's why we gave you these clothes. They're not very nice, but that's all that we have for you.#0
+Hem provat de rentar-la, però l'aigua de mar l'a destruït en gran part.Es per això que t'hem donat aquesta roba. No es gaire bonica, però es tot el que et podem oferir.#0
+
+We tried to clean them but the sea water mostly destroyed them. It's why we gave you these clothes. They're not very nice, but that's all that we have for you.#1
+Hem provat de rentar-la, però l'aigua de mar l'a destruït en gran part.Es per això que t'hem donat aquesta roba. No es gaire bonica, però es tot el que et podem oferir.#1
+
+We usually dock around these small isles because they provide us some of the best food of all the archipelago.
+Normalment atraquem a aquests petits trossos de terra, ja que ens proveeixen d'alguns del millors menjars de tot l'arxipèlag.
+
+We usually don't stop in such splendid places, but the captain let us stay here while he writes down the location of this new island on his map!
+Normalment no ens aturem en aquests meravellosos llocs, però el capità ens deixa estar aquí mentre escriu la localització d'aquesta nova illa al mapa!
+
+We will be yaying there in a few days, so we will drop you off there.
+Nosaltres estarem yaying allí en uns quants dies, així que et deixarem allí.
+
+Weather Flags: 
+
+
+Weather effects will disappear after teleporting or refreshing.
+
+
+Wedding
+
+
+Well I'm working too! Don't you want me to carry one of these boxes back to Gugli?
+Bé, estic treballant també! O vols que porta jo mateix les caixes cap a en Gugli?
+
+Well done! Collect all the ingredients and then come back here. You will be rewarded, once I am satisfied that they understand who rules this ship!
+
+
+Well done! The ship is now ready to sail again!
+Perfecte! El vaixell està ara preparat per navegar una altra vegada! 
+
+Well if you are whining like that all the time, then I think there is a reason behind their choice.
+Home si estàs ploriquejant com ara tot el dia, llavors crec que que hi ha una raó darrere de la seva elecció.
+
+Well in fact...
+Bé, de fet... 
+
+Well then... Take this one!
+Bé llavors... Agafa això!
+
+Well, I was in fact looking for them. Where are they now?
+Bé, estava en efecte buscant-los. Saps on son? 
+
+Well, even though you have been rescued by us, it doesn't make you an expert sailor, am I right?#0
+Bé, tot i que has estat rescatada per nosaltres, això no et fa una experta navegant, d'acord?#0
+
+Well, even though you have been rescued by us, it doesn't make you an expert sailor, am I right?#1
+Bé, tot i que has estat rescatat per nosaltres, això no et fa un expert mariner, d'acord?#1 
+
+Well, if you want to be one of those who can have a cookie...#0
+Bé, si bols ser una dels que poden tenir galetes...#0
+
+Well, if you want to be one of those who can have a cookie...#1
+Bé, si bols ser un dels que poden tenir galetes...#1
+
+Well, is there anything I can do here to help?
+Bé, hi ha alguna cosa que pugui fer per ajudar?
+
+Well, it's not bad to finally feel something beneath my feet.
+Bé, no està malament sentir alguna cosa sota els meus peus per fi. 
+
+Well, thanks for the box. But... He was supposed to bring it back to me himself. I never asked him to give it to you!
+Bé, gràcies per la capsa. Però... Es suposava que me l'havia de portar ell mateix. No li he dit en cap moment que te la dones a tu!
+
+Well... I don't think it is the best way to rule a ship. Think about it.
+Bé ... No crec que sigui la millor manera de portar un vaixell. Pensa-hi. 
+
+Well... I've only killed some little pious in the ship, that's all.
+Bé... Només he matat alguns petits pious del vaixell, això és tot.
+
+Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.
+Bé... No esperem, tinc una cosa per tu però no te l'hauries de menjar... Ho estic portant una altra vegada cap a la cuina.
+
+Well... Welcome aboard, cutie!#0
+Bé... Benvinguda a bord, monada!#0
+
+Well... Welcome aboard, cutie!#1
+Bé... Benvinguda a bord, monada!#1
+
+West
+
+
+What I sell comes from every corner of this archipelago.
+Venc mercaderies de totes parts d'aquest arxipèlag. 
+
+What about Q'Muller? Where is he?
+I que passa amb en Q'Muller? On és? 
+
+What about my story?
+Què passa amb la meva història?
+
+What am I supposed to say?
+Que representa que ha de dir? 
+
+What an unexpected pleasure, your help is always welcome!
+
+
+What are you doing in my kitchen?! Get out, it's not a place for kids!
+Que estàs fent a la meva cuina?! Marxa, no es un lloc per a nens!
+
+What are you guys saying ? It's a Yoiis!#0
+Que esteu dient nois? Es un Yoiis!#0
+
+What are you guys saying ? It's a Yoiis!#1
+Que esteu dient nois? Es un Yoiis!#1
+
+What are you looking at?
+Que estàs mirant? 
+
+What are you looking for?
+Que estàs buscant? 
+
+What are you talking about? What guild?
+Sobre que estàs parlant? Quin gremi?
+
+What are your needs?
+Quines són les teves necessitats?
+
+What can I do for you?
+
+
+What danger?! Where?!
+Quin perill?! On?!
+
+What did Gugli say about the box? Was it ok?
+
+
+What did Gugli yayaid about the box? Was it ok?
+Que ha yeyedit en Gugli sobre la caixa? Estava bé? 
+
+What do you need?
+Que necessites?
+
+What do you think?
+Que en penses?
+
+What do you want to do?
+Que vols fer?
+
+What do you want today?
+Que desitges avui?
+
+What do you wish to do?
+Que desitges fer? 
+
+What exactly is your real job?
+Quina és exactament la teva feina?
+
+What happened to me?
+Que m'ha passat? 
+
+What if I give you 1000 Esperin for that job, is it ok?
+Que passa si et dono 1000 Esperin per aquest treball, està bé? 
+
+What is Artis?
+Que és Artis?
+
+What kind of help?
+Quin tipus d'ajuda? 
+
+What should I do after taking these clothes?#0
+Que hauria de fer després d'agafar aquesta roba?#0
+
+What should I do after taking these clothes?#1
+Que hauria de fer després d'agafar aquesta roba?#1
+
+What yeye could I do for you today?
+Que yeye puc fer per tu avui?
+
+What's that food?
+Que és aquest menjar? 
+
+What's that?
+Que es això?
+
+What? It's not a good reward?
+Que? No es una bona recompensa? 
+
+What? This reward is too small!
+Que? Aquesta recompensa es massa petita!
+
+What? Why? They aren't sexier than me, why do you want to see them?
+Que? Per què? No són més sexis que jo, per què els vols veure? 
+
+What?! This tritan is the worse shirker I ever met!
+Que? Aquest tritó es el pitjor gandul amb qui m'he topat mai!
+
+When you see something that looks more like a bug than a feature, report it on http://bugs.evolonline.org or try to contact a game contributor.
+Quan beguis alguna cosa que sembla més un bug que del joc, reporta-ho a http://bugs.evolonline.org o intenta contactar un contribuïdor del joc. 
+
+When your inventory is open, you can equip an item by selecting it and clicking 'Equip'. You can do the same to remove an item by clicking on 'Unequip'.
+Quan el teu inventari està obert, pots equipar un objecte seleccionant-lo i pitjant "Equipar". Pots fer el mateix per treure'l pitjant "Des-equipar".
+
+When your inventory is open, you can equip an item by selecting it and clicking 'Equip'. You can do the same to unequip an item by clicking on 'Unequip'.
+Quan el teu inventari està obert, pots equipar un objecte seleccionant-lo i pitjant "Equipar". Pots fer el mateix per treure'l pitjant "Des-equipar".
+
+Where are my old clothes?
+On estan les meves robes velles? 
+
+Where can I find Julia?#0
+On puc trobar la Julia?#0
+
+Where can I find Julia?#1
+On puc trobar la Julia?#1
+
+Where can I find a half croconut?
+On puc aconseguir mig croconut? 
+
+Where can I find some food?
+On puc trobar alguna cosa per menjar? 
+
+Where can I find your crew?
+On puc trobar a la teva tripulació?
+
+Where is the damn salt?! Give me the salt, I know you have it!
+On esta la maleïda sal?! Dóna'm la sal, sé que la tens!
+
+Which of your weapons do you want to use in order to cut this @@?
+Quina de les teves armes vols utilitzar per tallar aquest @@? 
+
+While Jalad and Ale like to work together, as they use to do on the ship, last time I've seen them, they were near the big lake, north from here.
+Mentre es suportin l'un a l'altre, com acostumen a fer al vaixell. L'última vegada que els he vist, estaven a prop del gran llac, al nord.
+
+Whitesmith
+
+
+Who are these friends?
+Qui són aquests amics? 
+
+Who are yeye looking for?
+Que estàs yeye buscant? 
+
+Who are you looking for?
+Qui estàs buscant? 
+
+Who are you?
+Qui ets tu?
+
+Who is she?
+Qui és ella?
+
+Who should I search for?
+A qui he de buscar? 
+
+Who's this Julia?
+Qui es la Julia?
+
+Why Frenchy? It's a Russian!#0
+Per que gavatx? És Rus!#0
+
+Why Frenchy? It's a Russian!#1
+Per que gavatx? És Rus!#1
+
+Why are you hiding?
+Per què t'estàs amagant?
+
+Why don't you come down to talk?
+Per què no baixes a parlar?
+
+Why don't you come out?
+Per què no vens a fora?
+
+Why not, I need to train anyway.
+Perquè no, necessito entrenar de totes maneres.
+
+Why not, I've got plenty of free time.
+Per què no, tinc molt temps lliure.
+
+Why not, but who are you, and what kind of help do you need?
+Per què no, però qui ets, i quin tipus d'ajuda necessites? 
+
+Why not, this might get interesting.
+Per què no, es podria posar interessant. 
+
+Why?
+Per què?
+
+Why? And who should you bring it back to?
+Per què? I qui li has de tornar a portar?
+
+With hunger, thirst, and sleep as your only companions; you have the disturbing realization that you can't remember anything of your former life or identity.
+
+
+With script
+
+
+Wizard
+
+
+Wow, it seems everyone knows my name!
+Wow, sembla que tothom sap el meu nom! 
+
+Yaya, you should go see her! She'll be happy to see you.#0
+Yaya, hauries d'anar a veure-la! Estarà contenta de veure't.#0
+
+Yaya, you should go see her! She'll be happy to see you.#1
+Yaya, hauries d'anar a veure-la! Estarà contenta de veure't.#1
+
+Yayayaya, it's the first time someone is dressed worse than us!
+
+
+Yeah you're all like *hic* that in Esperia, but you won't get me! *burp*
+Si, tu ets com tots *hic* igual que en Esperia, però no m'atraparàs! *burp*
+
+Yeah, but I would like to make sure I get a reward.
+Si, però m'agradaria assegurar que tindré una recompensa.
+
+Yeah, but what reward will I get?
+Si, però quina recompensa aconseguiré? 
+
+Yeah, well what's the difference?
+Si, bé quina és la diferència? 
+
+Yeah, yeah, of course you don't...
+Si, si, per descomptat tu no...
+
+Yes
+
+
+Yes he did.
+Si, ho va fer.
+
+Yes!
+Si!
+
+Yes! @@ is written on my cookie list.
+Si! @@ està escrit a la meva llista. 
+
+Yes, Arpan gave me these clothes.
+Si, l'Arpan m'ha donat aquesta roba.
+
+Yes, I do.
+Si, correcte.  
+
+Yes, I feel strong enough for dangerous combats!
+SI, hem sento suficientment fort per a combats perillosos. 
+
+Yes, indeed. I prefer to explore places I have never been to, before doing anything else.
+Si, en efecte. Prefereixo explorar els llocs on no he estat mai, abans de fer res. 
+
+Yes, it is true! You are not able at all. Nard has been waiting for the food for too long already. Hurry up, you lazy sailors!
+Si, es veritat! No estàs preparat del tot. En Nard ha estat esperant el menjar massa estona. Doneu-vos resa mariners dropos! 
+
+Yes, why not.
+Si, per que no?
+
+Yes, yes I know... Too bad then. See you soon!
+Si, si ja veig... Una llàstima llavors. Ja ens veurem! 
+
+Yes.
+Si.
+
+Yeye @@!
+Yeye @@!
+
+Yeye ask too much but do too little. Take this box and stop talking.
+
+
+Yeye be careful with wild animal's food, some of them are yeyery dangerous, especially the crocs.
+Yeye vigila amb les criatures salvatges per menjar, algunes d'elles són perilloses, especialment els corcs. 
+
+Yeye gave my box to Gugli? Nice, nice yeye!
+Ja li has donat la meva caixa al Gugli? Bé, bé yeye!
+
+Yeye got good eyes and seem to have fully recovered from your injuries...
+Yeye fas bona cara i sembla que t'has recuperat correctament de les teves ferides... 
+
+Yeye seen this yoiis at the bottom of the island, check around.
+Yeye he vist a aquest yoiis a la part de baix de l'illa, revisa per allà. 
+
+Yeye seen this yoiis at the top of the island.
+Yeye he vist a aquest yoiis a la part superior de l'illa.
+
+Yeye still have my box? Stare less and work more. Go give it to Gugli!
+Yeye encara tens la meva caixa? No descansis tant i treballa més. Ves i dona-li al Gugli! 
+
+Yeye sure? I'll yaye some more food in the next box then.#0
+Yeye segur? Llavors yayeré una mica més de menjar en la pròxima caixa.#0
+
+Yeye sure? I'll yaye some more food in the next box then.#1
+Yeye segur? Llavors yayeré una mica més de menjar en la pròxima caixa.#1
+
+Yeye's brain is probably still full of sea water if yeye can't see the beauty of this place.
+El teu cervell està yeye ple d'aigua de mar encara, si no pots veure la bellesa d'aquest lloc.
+
+Yeye, it's the logo of the Warrior Guild of Esperia! I wonder what this yoiis was doing so far away from the coast.#0
+Yeye, es el logotip de Gremi Guerrer d'Esperia! Hem pregunto què estava fent aquest yoiis tant lluny de la costa.#0
+
+Yeye, it's the logo of the Warrior Guild of Esperia! I wonder what this yoiis was doing so far away from the coast.#1
+Yeye, es el logotip de Gremi Guerrer d'Esperia! Hem pregunto què estava fent aquesta yoiis tant lluny de la costa.#1
+
+Yeye, you are really lucky to be alive. You are in good enough shape for walking, do you remember what happened?#0
+Yeye, realment estàs de sort de seguir viva. Estàs prou bé per fins hi tot caminar, recordes que et va passar?#0
+
+Yeye, you are really lucky to be alive. You are in good enough shape for walking, do you remember what happened?#1
+Yeye, realment estàs de sort de seguir viu. Estàs prou bé per fins hi tot caminar, recordes que et va passar?#1
+
+Yeye, you still did not get your clothes!#0
+Yeye, encara no has agafat la teva roba!#0
+
+Yeye, you still did not get your clothes!#1
+Yeye, encara no has agafat la teva roba!#1
+
+Yeye.
+Yeye.
+
+You already are at your destination!
+
+
+You already have a homunculus
+
+
+You already have a pet.
+
+
+You already have this quest skill.
+
+
+You already took a Bandana, please put this one back in the box.
+Ja has agafat un mocador, per favor deixa aquest una altra vegada a la caixa. 
+
+You are already mounting something else
+
+
+You are full of wine, my friend...
+Estàs ple de vi, amic meu...
+
+You are no longer killable.
+
+
+You are no longer the Guild Master.
+
+
+You are not allowed to reduce the length of a ban.
+
+
+You are not authorized to warp from your current map.
+
+
+You are not authorized to warp someone to this map.
+
+
+You are not authorized to warp someone to your current map.
+
+
+You are not authorized to warp this player from their map.
+
+
+You are not authorized to warp to this map.
+
+
+You are not authorized to warp to your save map.
+
+
+You are not in a guild.
+
+
+You are not in jail.
+
+
+You are now
+
+
+You are now immune to attacks.
+
+
+You are now officially part of my crew! Thanks again for your help.
+Ja estàs oficialment a la meva tripulació! Gràcies una altra vega per la teva ajuda.
+
+You are now part of the crew... At least for us down here!
+Ara ets part de la nostra tripulació... Almenys per a nosaltres aquí baix!
+
+You are on a raft, adrift in the sea.
+Estàs en un rai, a la deriva.
+
+You are unable to change your job.
+
+
+You broke the target's weapon.
+
+
+You can already rename your pet.
+
+
+You can also attack an enemy from your keyboard pressing the 'A' key to select it, and the 'Ctrl' key to attack it, this of course works if you didn't change your keyboard keys yet.
+També pots atacar un enemic pressionant la tecla "A" per seleccionar-lo, i després la tecla "Ctrl" per atacar-lo, això per descomptat només funciona si no has canviat l'assignació de les tecles. 
+
+You can attack a monster by clicking directly on it. Once selected, you may notice a bar near your target showing you how much health it has left.
+Pots atacar un monstre clicant directament en ell. Una vegada seleccionat, hauries de veure una barra a prop d'ell mostrant-te quanta vida li queda.  
+
+You can attack a monster by clicking on it, or from your keyboard you can press the 'A' key to select the monster followed by 'Ctrl' to attack it.
+Pots atacar un monstre clicant-hi al damunt, o amb la tecla "A" per seleccionar-lo seguit de la tecla "Ctrl" per atacar.
+
+You can easily see if a monster is easy to kill or just impossible to defeat. Do not try against creatures that are way more powerful than you... You'd be risking your life for nothing.
+Podràs veure fàcilment si un monstre es fàcil de matar o simplement impossible de derrotar. No provis de lluitar contra criatures més poderoses que tu... Estaries posant en perill la teva vida per a res.
+
+You can find them in the ocean, near corals and other sea beings. But the sea is too heavy today, you shouldn't try swimming for now.
+Els pots trobar a l'oceà, a prop dels coralls i d'altres criatures del mar. Però el mar està inquiet avui, no hauries de provar a navegar per ara. 
+
+You can have %d items on your autolootitem list.
+
+
+You can not change to this job by command.
+
+
+You can now attack and kill players freely.
+
+
+You can now be attacked and killed by players.
+
+
+You can now rename your pet.
+
+
+You can now stay with your new friends and enjoy the warm sand of this little island.
+Ara et pots quedar amb els amics i gaudir de la comfortable arena d'aquesta petita platja.
+
+You can read some lines that are nicely carved into the soft wooden planks.
+
+
+You can spot Q'Muller on a cliff off toward the west, busy collecting @@s.
+
+
+You can try talking with some other sailors to get some information about that.
+Pots intentar parlar amb altres mariners per aconseguir alguna informació sobre això.
+
+You can yaye some @@s by hitting these crocotrees.
+Pots yeye aconseguir alguns @@s colpejant aquests crocotrees. 
+
+You can't add a guild bound item to a character without guild!
+
+
+You can't add a party bound item to a character without party!
+
+
+You can't clean a cart while vending!
+
+
+You can't create chat rooms in this map
+
+
+You can't drop items in this map
+
+
+You can't go there!
+No pots anar allà! 
+
+You can't leave battleground guilds.
+
+
+You can't open a shop in this map
+
+
+You can't open a shop on this cell.
+
+
+You can't return your pet because your inventory is full.
+
+
+You can't trade in this map
+
+
+You can't use commands while dead.
+
+
+You can't withdraw that much money
+
+
+You cannot autotrade when dead.
+
+
+You cannot change guild leaders in this map.
+
+
+You cannot change party leaders in this map.
+
+
+You cannot decrease that stat anymore.
+
+
+You cannot increase that stat anymore.
+
+
+You cannot join the '%s' channel because you've been banned from it
+
+
+You cannot use this command when dead.
+
+
+You cannot use this item while sitting
+
+
+You cannot use this item while your storage is open
+
+
+You could meet some of the other sailors this way, and... Getting this hat of course, will be a sign of you becoming part of our crew.
+Així podries conèixer alguns altres mariners, i... Aconseguint aquest barret, per descomptat, serà una senyal que ets de la nostra tripulació.
+
+You could start by talking to Gugli. He always has tasks for people willing to help!
+
+
+You currently cannot open your storage.
+
+
+You do not have a cart to be cleaned.
+
+
+You do not have a homunculus.
+
+
+You do not possess a cart to be removed
+
+
+You don't expect me to eat that, do you? Give me something else!
+No et pensaràs que hem puc menjar això, no? Donam una altra cosa! 
+
+You don't have this quest skill.
+
+
+You have %d new emails (%d unread)
+
+
+You have already opened your guild storage. Close it first.
+
+
+You have already opened your storage. Close it first.
+
+
+You have an awful case of amnesia.
+
+
+You have become the Guild Master!
+
+
+You have been jailed by a GM.
+
+
+You have been jailed for an unknown amount of time.
+
+
+You have been jailed indefinitely.
+
+
+You have been recovered!
+
+
+You have been so nice to me. So please, take one.#0
+Has sigut molt bona gent amb mi. Així que si us plau, agafa'n un.#0
+
+You have been so nice to me. So please, take one.#1
+Has sigut molt bona gent amb mi. Així que si us plau, agafa'n un.#1
+
+You have forgotten the skill.
+
+
+You have learned the skill.
+
+
+You have mounted a Peco Peco.
+
+
+You have mounted your Dragon.
+
+
+You have mounted your Mado Gear.
+
+
+You have mounted your Warg.
+
+
+You have mounted.
+
+
+You have released your Dragon.
+
+
+You have released your Mado Gear.
+
+
+You have released your Peco Peco.
+
+
+You have released your Warg.
+
+
+You have released your mount.
+
+
+You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of those damn sailors brought that 'nice' lady here.
+
+
+You hear a loud scream. It must be the creaking of the wooden door...
+Sens un fort soroll, deu ser el grinyol de la porta de fusta...
+
+You hit too hard with your fist, you destroyed your @@.
+L'has pegat massa fort amb el teu puny, has destruït el teu @@. 
+
+You honor me, my beauty, but I'm already taken by Julia!#0
+
+
+You know, yeyes love to chat while working.
+Ja ho saps, yeyes agrada de xerrar mentre treballa.
+
+You like them, don't you? Just speak with Peter then. He is on the second deck of the ship. He will send you downstairs to the hold, where you will find a furry meal!
+
+
+You like these hats, right?
+T'agraden aquests barrets, correcte?
+
+You may search partial name by making use of '%' in the search, ex. "@accinfo %Mario%" lists all characters whose name contains "Mario".
+
+
+You mentioned the quality of your wine.
+Has mencionat la qualitat del teu vi.
+
+You must enter a name.
+
+
+You must enter a player name or ID.
+
+
+You need %s to mount!
+
+
+You need to be a Guild Master to use this command.
+
+
+You need to be a party leader to use this command.
+
+
+You need to cross the crocojungle heading north.
+Has de creuar la croco-jungla dirigint-te al nord.
+
+You need to input a option
+
+
+You open the book, but it looks like the sea water and time damaged it severely. Some pages are not readable anymore. Some others are simply missing.
+Obres el llibre, però sembla que l'aigua i el temps l'han danyat severament. Algunes pàgines son il·legibles. Altres simplement no hi són. 
+
+You open the treasure chest.
+Obres el cofre del tresor. 
+
+You opened the @@ in two parts, but you crushed one of them.
+Has obert el @@ en dos parts, però n'has xafat una.
+
+You perfectly cut your @@ into two edible parts.
+Talles perfectament el @@ en dos parts comestibles. 
+
+You receive @@ E!
+Reps @@ E! 
+
+You receive a @@!
+Reps un @@!
+
+You request has been rejected by autoreject option.
+
+
+You see these pious around us?
+Veus aquests pious al voltant nostre?
+
+You see, my cookies are restricted to a certain type of people...
+Ja ho veus, les meves galetes estan restringides a un tipus de gent...
+
+You see? I'm working here!
+Veus? Estic treballant aquí!
+
+You should ask Max. He's an early riser.
+
+
+You should come back when you have some free space.
+
+
+You should go and get some sleep.
+Hauries d'anar i dormir una mica.
+
+You should go see him. He is one of the most experienced sailors we have.
+Hauries d'anar a veure'l. Es un dels millors mariners que tenim. 
+
+You should go see them.
+Hauries d'anar a veure'ls.
+
+You should have a shop open in order to use @autotrade.
+
+
+You should inform Nard of the progress made in loading food and supplies on to the boat. He will be pleased to hear that good news!
+Hauries d'informar en Nard sobre el progrés de càrrega de subministraments als vaixell. Estarà content de sentir bones notícies!
+
+You should look at them when we arrive at the port, they are worth it, hehe...
+
+
+You should talk to Magic Arpan first.
+
+
+You should walk to the north to find him.
+Hauries de caminar cap al nord per trobar-lo. 
+
+You should walk to the north.
+Hauries de caminar cap al nord. 
+
+You shouldn't believe every tale drunken sailors tell you.
+
+
+You still got a few days before we arrive at the port, maybe you can learn something from them?
+Encara tens uns dies abans de que arribem a port, potser pots aprendre alguna cosa d'ells. 
+
+You still haven't completed your tasks.
+Encara no has acabat les teves tasques. 
+
+You still need to give me boxes from: 
+Encara m'has de donar les caixes de:
+
+You stupid, he's english, look at the shape of his head.#1
+
+
+You stupid, she's english, look at the shape of her head.#0
+
+
+You take the clothes from the chest.
+
+
+You tell me. Do I deserve a cookie?
+Dis-me. Mereixo una galeta? 
+
+You told me that you 'were' important.
+M'has dit que "eres" important.
+
+You tried to get rid of me, eeh? But surprise! I'm still here... *hic* Or there...
+Intentes desfer-te de mi, eeh? Però sorpresa! Encara estic aquí...*hic* O allí... 
+
+You were in bad shape, you should be happy we found you before the sea killed you.#0
+Estaves en males condicions, hauries d'estar contenta de que et vam trobar abans de que el mar el matés.#0
+
+You were in bad shape, you should be happy we found you before the sea killed you.#1
+Estaves en males condicions, hauries d'estar content de que et vam trobar abans de que el mar el matés.#1
+
+You were yaying sleeping for quite some time there, our shipkeeper, Julia, was here with you, she did her best to heal your injuries.#0
+Has estat yaying dormint una mica de temps, la nostra tinent, la Julia, estava aquí amb tu, ha fet tot el que va poder per curar-te les ferides.#0
+
+You were yaying sleeping for quite some time there, our shipkeeper, Julia, was here with you, she did her best to heal your injuries.#1
+Has estat yaying dormint una mica de temps, la nostra tinent, la Julia, estava aquí amb tu, ha fet tot el que va poder per curar-te les ferides.#1
+
+You will find a wooden sign near a crossroad. He is a few steps on the left.
+Trobaràs una senyal de fusta a prop de la cruïlla. Ell està a unes poques passes després. 
+
+You will remain
+
+
+You will see, citizens are polite and you can still ask for help in the Warrior Guild. They can help find a job for you or maybe help you find out what happened to you out at sea!
+Ja veuràs, els ciutadans són educats i encara pots demanar ajuda al Gremi Guerrer. Et poden ajudar a trobar feina o ajudar-te a esbrinar el que et va passar al mar! 
+
+You wipe off enough of the sand to manage to read the message written on this crude piece of wood.
+
+
+You yoiis should walk to the north.
+Tu yoiis hauries de caminar cap al nord.
+
+You'll first need to help my friends.
+Primer hauràs d'ajudar als meus amics. 
+
+You're already autolooting this item type.
+
+
+You're already autolooting this item.
+
+
+You're already in the '%s' channel
+
+
+You're already with a '%s' costume, type '@costume' to remove it.
+
+
+You're currently not autolooting this item type.
+
+
+You're currently not autolooting this item.
+
+
+You're like the rest of this filthy crew, I can't trust you!
+Tu ets com la resta d'aquesta fastigosa tripulació, no es pot confiar en tu!  
+
+You're like the rest of this filthy crew. Your name is now on the traitors list!#0
+Ets com la resta d'aquesta fastigosa tripulació. El teu nom està a la llista de traïdors!#0
+
+You're like the rest of this filthy crew. Your name is now on the traitors list!#1
+Ets com la resta d'aquesta fastigosa tripulació. El teu nom està a la llista de traïdors!#1 
+
+You're lucky that I'm a generous person, here's another one.
+
+
+You're not dead.
+
+
+You're not disguised.
+
+
+You're not in a guild.
+
+
+You're not in that channel, type '@join <#channel_name>'
+
+
+You're not part of the '%s' channel
+
+
+You're not the master of your guild.
+
+
+You're not the owner of channel '%s'
+
+
+You're now in the '#%s' channel for '%s'
+
+
+You're now in the '%s' channel
+
+
+You're on La Johanne, a merchant ship.
+
+
+You're on a ship, we're on our way to the commercial capital of Artis.
+Estàs en un vaixell, estem de camí cap a la capital comercial d'Artis.
+
+You're on our ship, we made port to a little island and we're actually yeyending our long merchant traveling adventure at the city of Artis.#0
+Estàs en el nostre vaixell, hem fet parada en una petita illa i actualment estem yeyeacavant el nostre llarg viatge mercant amb destí a la ciutat d'Artis.#0
+
+You're on our ship, we made port to a little island and we're actually yeyending our long merchant traveling adventure at the city of Artis.#1
+Estàs en el nostre vaixell, hem fet parada en una petita illa i actualment estem yeyeacavant el nostre llarg viatge mercant amb destí a la ciutat d'Artis.#1
+
+You're one of us now, that's great! I was sure that you were a good man when I first saw you!#1
+
+
+You're one of us now, that's great! I was sure that you were a kind lady when I first saw you!#0
+
+
+You're right, it's about Julia.#1
+
+
+You're right, it's about you.#0
+
+
+You're talking too fast!
+
+
+You're too close to a NPC, you must be at least %d cells away from any NPC.
+
+
+You're welcome. If you can't remember something, just come back here!
+Ets benvingut. Si no recordes alguna cosa, torna aquí!
+
+You've become the party leader.
+
+
+You've been revived!
+
+
+You've died.
+
+
+You've left the '%s' channel
+
+
+You've reached the highest natural place of Artis, enjoy the view.
+
+
+You've reached your slave clones limit.
+
+
+You... You eat... rattos? I think you're just a fool.
+Tu... Menges... rattos? Crec que ets un ximple.
+
+You? Here?
+Tu? Aquí?
+
+Your GM level doesn't authorize you to %s the player '%.*s'.
+
+
+Your GM level doesn't authorize you to perform this action on the specified player.
+
+
+Your GM level doesn't authorize you to perform this action.
+
+
+Your Game's EXE file is not the latest version.
+
+
+Your account has 'Unregistered'.
+
+
+Your account has an 'Incorrect Password'...
+
+
+Your account has been banished until 
+
+
+Your account has been blocked by the GM Team.
+
+
+Your account has been prohibited to log in.
+
+
+Your account has been rejected from server.
+
+
+Your account has been totally erased.
+
+
+Your account has expired.
+
+
+Your account has not more authorized.
+
+
+Your account time limit is: %d-%m-%Y %H:%M:%S.
+
+
+Your autolootitem list has been reset.
+
+
+Your autolootitem list is empty.
+
+
+Your autolootitem list is full. Remove some items first with @autolootid -<item name or ID>.
+
+
+Your autoloottype list has been reset.
+
+
+Your autoloottype list is empty.
+
+
+Your body aches, even your hair hurts, and the daylight is painful; but still you open your eyes and see a large ship before you!
+
+
+Your cart was cleaned.
+
+
+Your class can't mount!
+
+
+Your current memo positions are:
+
+
+Your effect has changed.
+
+
+Your global chat is no longer bound to the '#%s' channel
+
+
+Your global chat is not bound to any channel
+
+
+Your global chat is now bound to the '%s' channel
+
+
+Your group has been changed.
+
+
+Your guild storage was cleaned.
+
+
+Your guild's storage has already been opened by another member, try again later.
+
+
+Your hands are too weak, you did not succeed in opening this @@.
+Les teves mans són massa dèbils, no te'n sortiràs d'obrir aquest @@. 
+
+Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand.
+
+
+Your homunculus doesn't evolve.
+
+
+Your job has been changed.
+
+
+Your save point has been changed.
+
+
+Your sex has been changed (disconnection required to complete the process)...
+
+
+Your storage was cleaned.
+
+
+Yummy bakery aromas have roused monsieur's curiosity, is it not so?
+
+
+Yummy bakery aromas have stirred madam's curiosity, am I right?
+
+
+Zzzzzzzzz...
+
+
+[ K.S Protection Active - Option: Guild ]
+
+
+[ K.S Protection Active - Option: Party ]
+
+
+[ K.S Protection Active - Option: Self ]
+
+
+[ K.S Protection Inactive ]
+
+
+[ Map K.S Protection Active ]
+
+
+[ Map K.S Protection Inactive ]
+
+
+[ ^EE0000%s^000000 ]
+
+
+[^EE0000%s^000000]
+
+
+a ground!
+terra!
+
+a quiet place,
+un lloc tranquil,
+
+ban
+
+
+block
+
+
+body/armor, 
+
+
+both hands, 
+
+
+change the sex of
+
+
+conf/import/msg_conf.txt
+
+
+feet, 
+
+
+garment, 
+
+
+left accessory, 
+
+
+left hand, 
+
+
+lower head, 
+
+
+lower/mid head, 
+
+
+lower/mid/top head, 
+
+
+lower/top head, 
+
+
+mid head, 
+
+
+npc1
+
+
+npc1#door
+
+
+option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
+
+
+option '%s' is not enabled on channel '%s'
+
+
+option '%s' is now disabled for channel '%s'
+
+
+option '%s' is now enabled for channel '%s'
+
+
+option '%s' is now enabled for channel '%s' with %d seconds
+
+
+right accessory, 
+
+
+right hand, 
+
+
+skill %d: %s (%s)
+
+
+top head, 
+
+
+unban
+
+
+unblock
+
+
+value '%d' for option '%s' is out of range (limit is 0-10)
+
+
+| Guild: '%s'
+
+
+| Location: %s %d %d
+
+
+| Lv:%d/%d | Job: %s
+
+
+| Party: '%s' 
+
+
