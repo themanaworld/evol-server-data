@@ -50,6 +50,8 @@ item_db: (
 	RequiredAtk: required attack   (int, default to 0)
 	RequiredMAtkMin: required minimal magic attack (int, default to 0)
 	RequiredMAtkMax: required maximum magic attack (int, default to 0)
+	RequiredDef: required defence  (int, default to 0)
+	RequiredMDef: required magic defence (int, default to 0)
 	Trade: {                      (defaults to no restrictions)
 		override: GroupID             (int, defaults to 100)
 		nodrop: true/false            (boolean, defaults to false)
