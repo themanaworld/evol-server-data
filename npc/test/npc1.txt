@@ -140,5 +140,5 @@ OnWhisperGlobal:
 
 OnSkillInvoke:
     skillInvoke[@skillId] = skillInvoke[@skillId] + 1;
-    close;
+    end;
 }
