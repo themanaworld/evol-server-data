@@ -1,279 +1,279 @@
 Copyright (C) 2010-2014 Evol Online
       BLvl: %d | Job: %s (Lvl: %d)
-
+      BLvl: %d | Trabajo: %s (Lvl: %d)
 
       Party: '%s' | Guild: '%s'
-
+      Grupo: '%s' | Gremio: '%s'
 
    Users: %d/%d | Password: %s | Public: %s
-
+   Usuarios: %d/%d | Contraseña: %s | Público: %s
 
   <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <bound_type>).
-
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <bound_type>).
 
   <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>).
-
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>).
 
   @send <packet hex number> {<value>}*
-
+  @send <packet hex number> {<value>}*
 
   @send len <packet hex number>
-
+  @send len <packet hex number>
 
   Value: <type=B(default),W,L><number> or S<length>"<string>"
 
 
  - Available in shops only.
-
+- Sólo disponible en tiendas.
 
  - Common mobs with highest drop chance (only max %d are listed):
-
+ - Criaturas comunes con la probabilidad más alta de dejar caer (sólo %d máx son enumeradas):
 
  - Item is not dropped by any mobs.
-
+ - Artículo no es soltado por ninguna criatura.
 
  - Maximal monsters drop chance: %02.02f%%
-
+ - Probabilidad máxima de que un monstruo deje caer: %02.02f%%
 
  - Monsters don't drop this item.
-
+ - Los monstruos no dejan caer este artículo.
 
  -- Duel has been created (Use @invite/@leave) --
-
+ -- El duelo ha sido creado (Usa @invite/@leave) --
 
  -- Duels: %d/%d, Members: %d/%d --
-
+ -- Duelos: %d/%d, Miembros: %d/%d --
 
  -- Duels: %d/%d, Members: %d/%d, Max players: %d --
-
+ -- Duelos: %d/%d, Miembros: %d/%d, Jugadores Máx: %d --
 
  -- Player %s has rejected the duel --
-
+ -- El jugador %s ha rechazado el duelo --
 
  -- Player %s invites %s to duel --
-
+ -- El jugador %s invita a %s a un duelo --
 
  -> (card(s): 
-
+ -> (tarjeta(s): 
 
  -> (crafted item, creator id: %u, star crumbs %d, element %d)
-
+ -> (artículo creado, id de creador: %u, star crumbs %d, elemento %d)
 
  -> (pet egg, pet id: %u, named)
-
+ -> (huevo de mascota, id de mascota: %u, con nombre)
 
  -> (pet egg, pet id: %u, unnamed)
-
+ -> (huevo de mascota, id de mascota: %u, sin nombre)
 
  -> (produced item, creator id: %u)
-
+ -> (artículo producido, id de creador: %u)
 
  -> Player %s has accepted the duel --
-
+ -> El jugador %s ha aceptado el duelo --
 
  <- Player %s has left the duel --
-
+ <- El jugador %s ha dejado el duelo --
 
  ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
-
+ Ataque:%d~%d  Alcance:%d~%d~%d  Tamaño:%s  Raza: %s Elemento: %s (Nvl:%d)
 
  ATK:%d~%d MATK:%d~%d Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
-
+ Ataque:%d~%d At. Mágico:%d~%d Alcance:%d~%d~%d  Tamaño:%s  Raza: %s  Elemento: %s (Nvl:%d)
 
  DEF:%d  MDEF:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d
-
+ Defensa:%d  Def. Mágica:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d
 
  Drops:
-
+ Suelta:
 
  Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
-
+ Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
 
  MVP Bonus EXP:%u
-
+ Bono de EXP MVP:%u
 
  MVP Items:
-
+Artículos MVP:
 
  and %d second
-
+ y %d segundo
 
  and %d seconds
-
+ y %d segundos
 
  | equipped: 
-
+ | equipado: 
 
 "@alootid reset" will clear your autolootitem list.
 
 
 %d - void
-
+%d - vacío
 
 %d GMs found.
-
+%d GMs encontrados.
 
 %d commands found.
-
+%d comandos encontrados.
 
 %d day
-
+%d día
 
 %d days
-
+%d días
 
 %d hour
-
+%d hora
 
 %d hours
-
+%d horas
 
 %d item(s) found in %d %s slots.
-
+%d artículo(s) encontrado(s) en %d ranuras de %s.
 
 %d item(s) removed by a GM.
-
+%d artículo(s) removidos por un GM.
 
 %d item(s) removed from the player.
-
+%d artículo(s) removidos del jugador.
 
 %d item(s) removed. Player had only %d on %d items.
-
+%d artículos removidos. El jugador sólo tiene %d de %d artículos.
 
 %d items have been refined.
-
+%d artículos han sido refinados.
 
 %d minute
-
+%d minuto
 
 %d minutes
-
+%d minutos
 
 %d monster(s) summoned!
-
+¡%d monstruos convocados!
 
 %d players found in map '%s'.
-
+%d jugadores encontrados en el mapa '%s'.
 
 %d players found.
-
+%d jugadores encontrados.
 
 %d results found.
-
+%d resultados encontrados.
 
 %d: Body Armor
-
+%d: Armadura Corporal
 
 %d: Garment
-
+%d: Vestido
 
 %d: Left Accessory
-
+%d: Accesorio Izquierdo
 
 %d: Left Hand
-
+%d: Mano Izquierda
 
 %d: Lower Headgear
-
+%d: Equipo para parte Inferior de la Cabeza
 
 %d: Mid Headgear
-
+%d: Equipo para parte Media de la Cabeza
 
 %d: Right Accessory
-
+%d: Accesorio Derecho
 
 %d: Right Hand
-
+%d: Mano Derecha
 
 %d: Shoes
-
+%d: Zapatos
 
 %d: Top Headgear
-
+%d: Equipo para parte Superior de la Cabeza
 
 %s :Main: %s
-
+%s :Principal: %s
 
 %s data type is not supported :%u
-
+El tipo de dato %s no está soportado :%u
 
 %s failed
-
+%s ha fallado
 
 %s failed.
-
+%s ha fallado.
 
 %s failed. Player not found.
-
+%s ha fallado. Jugador no encontrado.
 
 %s has bought your item(s).
-
+%s ha comprado tus artículo(s).
 
 %s in jail for %d years, %d months, %d days, %d hours and %d minutes
-
+%s en la cárcel por %d años, %d meses, %d días, %d horas y %d minutos
 
 %s is Unknown Command.
-
+%s es un Comando Desconocido.
 
 %s is empty
-
+%s está vacío.
 
 %s recalled!
-
+¡%s traído!
 
 %s revision '%s' (src) / '%s' (scripts)
-
+%s revision '%s' (src) / '%s' (scripts)
 
 %s spawns in:
-
+%s aparecidos en:
 
 %s value is now :%d
-
+El valor %s ahora es :%d
 
 %s value is now :%s
-
+El valor %s ahora es :%s
 
 %s: %d
-
+%s: %d
 
 '%s' Channel is password protected (usage: %s <#channel_name> <password>)
-
+El Canal '%s' está protegido con contraseña (uso: %s <#channel_name> <password>)
 
 '%s' and his/her partner are now divorced.
-
+'%s' y su pareja ahora están divorciados.
 
 '%s' channel color updated to '%s' 
-
+El color del canal '%s' actualizado a '%s' 
 
 '%s' got %s's %s (chance: %0.02f%%)
-
+'%s' obtuvo algo de %s: %s (probabilidad: %0.02f%%)
 
 '%s' is not a known channel option
-
+'%s' no es una opción de canal conocida
 
 '%s' is not a known costume
-
+'%s' no es un vestido conocido
 
 '%s' is not a known permission.
-
+'%s' no es un permiso conocido.
 
 '%s' is not married.
-
+'%s' no está casado.
 
 '%s' skill and stat points have been reset.
-
+La habilidad '%s' y los puntos de estado han sido restablecidos.
 
 '%s' skill points reset.
-
+Restablecer puntos de la habilidad '%s'.
 
 '%s' stats points reset.
 
 
 '%s' stats:
-
+Atributos de '%s':
 
 '%s' stole %s's %s (chance: %0.02f%%)
-
+'%s' robó algo a %s: %s (probabilidad: %0.02f%%)
 
 'That', as you call it, is a @@. There are plenty of 'em on this island!
 'Eso', como tú le llamas, es un @@. ¡Hay muchos de esos en esta isla!
@@ -282,16 +282,16 @@ Copyright (C) 2010-2014 Evol Online
 'Eso', como tú le llamas, es un @@. ¡Hay abundancia de esos en esta isla!
 
 (%s) 
-
+(%s) 
 
 (@request): %s
-
+(@request): %s
 
 (CID:%d/AID:%d) 
-
+(CID:%d/AID:%d) 
 
 * :%s %s: *
-
+* :%s %s: *
 
 *Hic*
 *Hic*
@@ -306,13 +306,13 @@ Copyright (C) 2010-2014 Evol Online
 *Uff*... Y otra caja de @@s para nuestro colega que muere de hambre está lista.
 
 - #%s ( %d users )
-
+- #%s ( %d usuarios)
 
 - %s
-
+- %s
 
 - %s (%d)
-
+- %s (%d)
 
 - 2 @@
 - 2 @@
@@ -324,7 +324,7 @@ Copyright (C) 2010-2014 Evol Online
 - Astapolos
 
 - Available Costumes
-
+- Vestimentas Disponibles
 
 - Gulukan
 - Gulukan
@@ -339,118 +339,118 @@ Copyright (C) 2010-2014 Evol Online
 - Tibbo
 
 - adds or removes <option name> with <option value> to <channel name> channel
-
+- agrega o quita <option name> con <option value> al canal <channel name>
 
 - bans <character name> from <channel name> channel
-
+- bloquea a <character name> en el canal <channel name>
 
 - binds your global chat to <channel name>, making anything you type in global be sent to the channel
-
+- enlaza tu chat global al canal <channel name>, haciendo que todo lo que escribas en global sea enviado al canal
 
 - changes <channel name> color to <color name>
-
+- cambia el color del canal <channel name> a <color name>
 
 - creates a new channel
-
+- crea un nuevo canal
 
 - leaves <channel name>
-
+- deja el canal <channel name>
 
 - lists all banned characters from <channel name> channel
-
+- enumera todos los personajes bloqueados del canal <channel name>
 
 - lists colors available to select for custom channels
-
+- enumera los colores disponibles para seleccionar en canales personalizados
 
 - lists public channels
-
+- enumera los canales públicos
 
 - unbans <character name> from <channel name> channel
-
+- desbloquea a <character name> del canal <channel name>
 
 - unbans everyone from <channel name>
-
+- desbloquea a todos del canal <channel name>
 
 - unbinds your global chat from its attached channel (if binded)
-
+- desenlaza tu chat global del canal al que esté fijado (si está enlazado)
 
 -- %s
-
+-- %s
 
 -- %s ban <channel name> <character name>
-
+-- %s ban <channel name> <character name>
 
 -- %s banlist <channel name>
-
+-- %s banlist <channel name>
 
 -- %s bindto <channel name>
-
+-- %s bindto <channel name>
 
 -- %s create <channel name> <channel password>
-
+-- %s create <channel name> <channel password>
 
 -- %s leave <channel name>
-
+-- %s leave <channel name>
 
 -- %s list
-
+-- %s list
 
 -- %s list colors
-
+-- %s list colors
 
 -- %s setcolor <channel name> <color name>
-
+-- %s setcolor <channel name> <color name>
 
 -- %s setopt <channel name> <option name> <option value>
-
+-- %s setopt <channel name> <option name> <option value>
 
 -- %s unban <channel name> <character name>
-
+-- %s unban <channel name> <character name>
 
 -- %s unbanall <channel name>
-
+-- %s unbanall <channel name>
 
 -- %s unbind
-
+-- %s unbind
 
 -- '%s' ban list
-
+-- '%s' ban list
 
 -- Available options
-
+-- Opciones disponibles
 
 -- Displaying first %d partial matches
-
+-- Mostrando las primeras %d correspondencias parciales
 
 -- Permission List
-
+-- Lista de Permisos
 
 -- Public Channels
-
+-- Canales Públicos
 
 -- User '%s' Permissions
-
+-- Permisos del Usuario '%s'
 
 --- Available options:
-
+--- Opciones disponibles:
 
 ----- Chats in Map -----
-
+----- Chats en el Mapa -----
 
 ----- NPCs in Map -----
-
+----- NPCs en el Mapa -----
 
 ----- Players in Map -----
-
+----- Jugadores en el Mapa-----
 
 ------ %s items list of '%s' ------
-
+------ %s lista de artículos de '%s' ------
 
 ------ Map Flags ------
-
+------ Flags del Mapa ------
 
 ------ Map Info ------
-
+------ Información del Mapa ------
 
 ... And 1 @@.
 ...Y 1 @@.
@@ -459,16 +459,16 @@ Copyright (C) 2010-2014 Evol Online
 ... y 1 @@.
 
 1 GM found.
-
+1 GM encontrado.
 
 1 item has been refined.
-
+1 artículo ha sido refinado.
 
 1 player found in map '%s'.
-
+1 jugador encontrado en el mapa '%s'.
 
 1 player found.
-
+1 jugador encontrado.
 
 1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle.
 1. ##BNo utilizar programas automáticos.##b Esto quiere decir que no se permite realizar ninguna actividad AFK (lejos del teclado), aparte de estar en reposo.
@@ -501,10 +501,10 @@ Copyright (C) 2010-2014 Evol Online
 ¿@@? ¡Bienvenido, mi estimado!
 
 @request sent.
-
+@request sent.
 
 A GM has discharged you from jail.
-
+Un GM te ha liberado de la cárcel.
 
 A cookie!
 ¡Una galleta!
@@ -519,7 +519,7 @@ A weeds covered panel draws your attention, a message is visible concealed behin
 
 
 ATK: %d - MATK: %d~%d
-
+Ataque: %d - At. Mágico: %d~%d
 
 Aaaaaahhhhhh!
 ¡Aaaaaahhhhhh!
@@ -531,31 +531,31 @@ About this Esperia's Warrior Guild, I'm not sure about them, frankly.
 Acerca de este Gremio Guerrero de Esperia... Si te soy franco, no estoy muy seguro sobre ellos.
 
 Acolyte
-
+Acólito
 
 Acorn
 Bellota
 
 Actually Gugli asked me if I would help you bring him some of your boxes.#0
-En realidad Gugli me preguntó si me gustaría ayudarte llevándole algunas de tus cajas.#1
+En realidad, Gugli me preguntó si me gustaría ayudarte a llevarle algunas de tus cajas.
 
 Actually Gugli asked me if I would help you bring him some of your boxes.#1
-En realidad Gugli me preguntó si me gustaría ayudarte llevándole algunas de tus cajas.#1
+En realidad, Gugli me preguntó si me gustaría ayudarte a llevarle algunas de tus cajas.
 
 Actually, I came here to work on my task.#0
-De hecho, yo vine aquí para trabajar en mi tarea.
+De hecho, vine aquí para trabajar en mi asignación.
 
 Actually, I came here to work on my task.#1
-De hecho, yo vine aquí para trabajar en mi tarea.
+De hecho, vine aquí para trabajar en mi asignación.
 
 Actually, I have an in-depth knowledge of this type of life.
 En realidad, tengo un conocimiento profundo de este tipo de vida.
 
 Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#0
-
+En realidad, estaba aquí para ayudarte con esas cajas. ¿Puedo llevarme una de éstas de regreso a Gugli?
 
 Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#1
-
+En realidad, estaba aquí para ayudarte con esas cajas. ¿Puedo llevarme una de éstas de regreso a Gugli?
 
 Aemil is a magnificent world unknown to us all.
 Aemil es un mundo magnífico, desconocido para todos nosotros.
@@ -564,7 +564,7 @@ After choosing your weapon, you also need to know how to use it.
 Después de elegir tu arma, también necesitas saber cómo usarla.
 
 Agi: %d (%d~%d)
-
+Agilidad: %d (%d~%d)
 
 Agility greatly increases your attack speed and the chances of you dodging enemy hits.
 La agilidad incrementa tu velocidad de ataque y y disminuye la posibilidad de recibir ataques de los enemigos.
@@ -573,7 +573,7 @@ Ah... Gugli... He's too young to understand our conversation.
 Ah... Gugli... Él es muy jóven para entender nuestra conversación.
 
 Alchemist
-
+Alquimista
 
 Ale
 Ale
@@ -588,70 +588,70 @@ Alige
 Alige
 
 Alige#Artis
-
+Alige#Artis
 
 AligeTrigger
 AligeTrigger
 
 AligeTrigger#Artis
-
+AligeTrigger#Artis
 
 All I can do is tell you that...
 Todo lo que puedo hacer es decirte que...
 
 All characters recalled!
-
+¡Todos los personajes han sido traídos!
 
 All dropped items have been cleaned up.
-
+Se han limpiados todos los artículos que se dejaron caer.
 
 All items have been repaired.
-
+Todos los artículos han sido reparados.
 
 All items stored.
-
+Todos los artículos han sido almacenados.
 
 All monsters killed!
-
+¡Todos los monstruos han sido asesinados!
 
 All monsters summoned!
-
+¡Todos los monstruos han sido convocados!
 
 All of a sudden, you hear voices from above.
-
+De pronto, oyes voces que vienen desde arriba.
 
 All of your items have been removed.
-
+¡Todos tus artículos han sido removidos!
 
 All online characters of the %s guild have been recalled to your position.
-
+Todos los personajes conectados del gremio %s han sido traídos  tu posición.
 
 All online characters of the %s party have been recalled to your position.
-
+Todos los personajes conectados del grupo %s han sido traídos a tu posición.
 
 All players have been kicked!
-
+¡Todos los jugadores han sido expulsados!
 
 All skills have been added to your skill tree.
-
+Todas las habilidades han sido agregadas a tu árbol de habilidades.
 
 All stats changed!
-
+¡Todos los atributos cambiados!
 
 All your... Fresh ingredients are ready to be cooked.
 Todos tuyos... Ingredientes frescos listos para ser cocinados.
 
 Alliances cannot be broken during Guild Wars!
-
+¡No pueden romperse alianzas durante una Guerra de Gremios!
 
 Alliances cannot be made during Guild Wars!
-
+¡No se pueden hacer alianzas durante una Guerra de Gremios!
 
 AllowKS | 
-
+AllowKS | 
 
 Already using this font.
-
+Ya se está usando esta fuente.
 
 Alright! Yoyone more box and it'll be good.
 ¡Bien! Yoyuna caja más y estará bien.
@@ -660,7 +660,7 @@ Alright, I'm going to her room, keep an eye on her, we still don't know if she's
 Muy bien, voy a su dormitorio. Mantén un ojo sobre ella; aún no sabemos si es amiga o enemiga...
 
 Alright, I'm going to his room, keep an eye on him, we still don't know if he's a friend or a foe...#1
-
+Muy bien, voy a su dormitorio. Mantén un ojo sobre él; aún no sabemos si es amigo o enemigo...
 
 Alright. I will go looking for them now.
 Bien. Iré a buscarlos ahora.
@@ -675,13 +675,13 @@ Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go c
 También, nosotros tomamos tus yayed ropas, como estaban... Yeyeye... En malas condiciones. Ve a revisar el cofre cerca de tu cama, hay otras en el interior.
 
 Alternative clouds appeared.
-
+Han aparecido las nubes alternativas.
 
 Alternative clouds have disappeared.
-
+Han desaparecido las nubes alternativas.
 
 An invalid number was specified.
-
+Se especificó un número inválido.
 
 And a fruit may even fall for you if you are lucky! And stay alert to pick up your drops.
 
@@ -723,25 +723,25 @@ Anyway, here, have a cookie!
 De todos modos, ¡aquí tienes una galleta!
 
 Anyway, if you ever feel interested, just check my bag!#0
-De cualquier forma, si en cualquier momento te sientes interesada, sólo chequea mi bolso.
+De cualquier forma, si en cualquier momento te sientes interesada, ¡sólo chequea mi bolsa!
 
 Anyway, if you ever feel interested, just check my bag!#1
-De cualquier forma, si en cualquier momento te sientes interesado, sólo chequea mi bolso.
+De cualquier forma, si en cualquier momento te sientes interesado, ¡sólo chequea mi bolsa!
 
 Appearance changed.
-
+Apariencia cambiada.
 
 Aquada
 Aquada
 
 Arch Bishop
-
+Arfil Travieso
 
 Arch Bishop T
-
+Arfil Travieso T
 
 Archer
-
+Arquero
 
 Are you blind? Do you really think these boxes are light and soft as a piou's feather?!
 ¿Estás ciego? En verdad piensas que estas cajas son ligeras y suaves como una pluma de piou?
@@ -765,13 +765,13 @@ AreaNPC
 AreaNPC
 
 AreaNPC#001-2-22
-
+AreaNPC#001-2-22
 
 AreaNPC#doors1
-
+AreaNPC#doors1
 
 AreaNPC#doors2
-
+AreaNPC#doors2
 
 AreaTop
 AreaTop
@@ -792,7 +792,7 @@ Ask sailors around here they shouldn't be so far away.
 Pregunta a los marineros por aquí, no deberían estar muy lejos.
 
 Assassin
-
+Asesino
 
 Assassin Cross
 
@@ -813,7 +813,7 @@ At the moment, our crew is busy collecting @@s, @@s and @@s.
 Por el momento, nuestra tripulación esta ocupada recolectando @@s, @@s y @@s.
 
 Auction is disabled
-
+La subasta está deshabilitada
 
 Authorities began to control in order to have a peaceful society. This did not work well for long.
 
@@ -831,46 +831,46 @@ Autolooting items with drop rates of %0.02f%% and below.
 
 
 Autorejected alliance request from %s.
-
+La petición de %s para una alianza ha sido auto-rechazada.
 
 Autorejected friend request from %s.
-
+La petición de %s para ser tu amigo ha sido auto-rechazada.
 
 Autorejected guild invite from %s.
-
+La invitación de %s para unirte al gremio ha sido auto-rechazada.
 
 Autorejected opposition request from %s.
-
+La petición de %s para oposición ha sido auto-rechazada.
 
 Autorejected party invite from %s.
-
+La invitación de %s para unirte al grupo ha sido auto-rechazada.
 
 Autorejected trade request from %s.
-
+La petición de %s para un intercambio ha sido auto-rechazada.
 
 Autorejecting is activated.
-
+La opción para rechazar automáticamente ha sido activada.
 
 Autorejecting is deactivated.
-
+La opción para rechazar automáticamente ha sido desactivada.
 
 Autotrade Disabled
-
+Intercambio automático Deshabilitado.
 
 Autotrade Enabled
-
+Intercambio automático Habilitado
 
 Autotrade is not allowed in this map.
-
+El intercambio automático no se permite en este mapa.
 
 Available Flags:
-
+Flags disponibles:
 
 Available aliases:
-
+Alias disponibles:
 
 Available commands:
-
+Comandos disponibles:
 
 Awesome!
 ¡Asombroso!
@@ -882,31 +882,31 @@ BUT I CAN'T, I NEED TO KEEP AN EYE ON THE SEA, TO WARN THE CREW IF THERE HAPPENS
 ¡PERO NO PUEDO, DEBO VIGILAR EL MAR, PARA ADVERTIR A LA TRIPULACIÓN SI APARECEN ALGUNOS PIRATAS EN LOS ALREDEDORES!
 
 Baby Acolyte
-
+Acólito Bebé
 
 Baby Alchemist
-
+Alquimista Bebé
 
 Baby Arch Bishop
-
+Arfil Travieso Bebé
 
 Baby Archer
-
+Arquero Bebé
 
 Baby Assassin
-
+Asesino Bebé
 
 Baby Bard
-
+Bardo Bebé
 
 Baby Blacksmith
-
+Herrero Bebé
 
 Baby Crusader
-
+Cruzado Bebé
 
 Baby Dancer
-
+Bailarín Bebé
 
 Baby Genetic
 
@@ -915,103 +915,103 @@ Baby Guillotine Cross
 
 
 Baby Hunter
-
+Cazador Bebé
 
 Baby Knight
-
+Caballero Bebé
 
 Baby Magician
-
+Mago Bebé
 
 Baby Mechanic
-
+Mecánico Bebé
 
 Baby Merchant
-
+Comerciante Bebé
 
 Baby Minstrel
-
+Trovador Bebé
 
 Baby Monk
-
+Monje Bebé
 
 Baby Novice
-
+Novicio Bebé
 
 Baby Priest
-
+Sacerdote Bebé
 
 Baby Ranger
-
+Guardabosques Bebé
 
 Baby Rogue
-
+Rufián Bebé
 
 Baby Royal Guard
-
+Guardia Real Bebé
 
 Baby Rune Knight
-
+Caballero de Runa Bebé
 
 Baby Sage
-
+Sabio Bebé
 
 Baby Shadow Chaser
-
+Cazador de Sombras Bebé
 
 Baby Sorcerer
-
+Hechicero Bebé
 
 Baby Sura
-
+Sura Bebé
 
 Baby Swordsman
-
+Espadachín Bebé
 
 Baby Thief
-
+Ladrón Bebé
 
 Baby Wanderer
-
+Vagabundo Bebé
 
 Baby Warlock
-
+Hechicero Bebé
 
 Baby Wizard
-
+Brujo Bebé
 
 Ban failed, it is not possible to ban this user.
-
+El bloqueo ha fallado. No es posible bloquear a este usuario.
 
 Banking is disabled
 
 
 Bard
-
+Bardo
 
 Bare Hands
 Manos desnudas.
 
 Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
-
+Nivel Base: %d (%.3f%%) | Nivel de Trabajo: %d (%.3f%%)
 
 Base level can't go any higher.
-
+El nivel base no puede ir más alto.
 
 Base level can't go any lower.
-
+El nivel base no puede ir más bajo.
 
 Base level lowered.
-
+Nivel base reducido.
 
 Base level raised.
-
+Nivel base aumentado.
 
 Battle configuration has been reloaded.
-
+La configuración de batalla se ha recargado.
 
 Battlegrounds ON
-
+Campos de Batalla ON
 
 Be patient a little while longer, in the next few days we will arrive at the port of Artis...
 Sé paciente un poco más, en los siguientes dias llegaremos al puerto de Artis...
@@ -1029,10 +1029,13 @@ Billy Bons
 Billy Bons
 
 Blacksmith
+Herrero
+
+Blub
 
 
 Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --
-
+Blue -- El jugador %s te ha invitado a un duelo PvP (Usa @accept/@reject) --
 
 Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
 
@@ -1089,10 +1092,10 @@ But...
 Pero...
 
 But... If he has amnesia like Julia said... We don't need to worry about him. At least not yet.#1
-
+Pero... Si él tiene amnesia, como dijo Julia... No es necesario preocuparnos por él. Al menos aún no.
 
 But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet.#0
-
+Pero... Si ella tiene amnesia, como dijo Julia... No es necesario preocuparnos por ella. Al menos aún no.
 
 Bye for now.
 Adiós, por ahora.
@@ -1149,22 +1152,22 @@ Cash Shop is disabled in this map
 
 
 Champion
-
+Campeón
 
 Channel '%s' has no banned players
-
+El canal '%s' no tiene jugadores bloqueados
 
 Channel '%s' is not available
-
+El canal '%s' no está disponible
 
 Channel length must be between 3 and %d
-
+El largo del canal debe estar entre 3 y %d
 
 Channel name must start with a '#'
-
+El nombre del canal debe iniciar con un '#'
 
 Channel password may not contain spaces
-
+La contraseña del canal no debe contener espacios
 
 Char-server has been asked to %s the character '%.*s'.
 
@@ -1179,10 +1182,10 @@ Character does not have the specified item.
 
 
 Character killed.
-
+Personaje asesinado.
 
 Character not found.
-
+Personaje no encontrado.
 
 Charcommand failed (usage: %c<command> <char name> <parameters>).
 
@@ -1200,7 +1203,7 @@ Chef Gado
 Chef Gado
 
 Chef Gado#Artis
-
+Chef Gado#Artis
 
 Cherry tree leaves have begun to fall.
 
@@ -1212,31 +1215,31 @@ Chest
 Cofre
 
 Chest#Artis
-
+Chest#Artis
 
 Christmas
 
 
 Click on the NPCs around you to continue the introduction.
-Haz clic en los NPCs en derredor para continuar la introducción.
+Haz clic en los NPCs a tu alrededor para continuar la introducción.
 
 Clone spawned.
 
 
 Clouds appeared.
-
+Han aparecido las nubes.
 
 Clouds have disappeared.
-
+Han desaparecido las nubes.
 
 Clouds | 
-
+Nubes | 
 
 Clouds2 | 
-
+Nubes2 | 
 
 Clown
-
+Payaso
 
 Come on, Sap! You are scaring our guest with your stories.#0
 ¡Vamos, Sap! Estás asustando a nuestra invitada con tus historias.
@@ -1269,10 +1272,10 @@ Costume '%s' removed.
 
 
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#0
-¿Puedo preguntarte cuál es tu lenguaje nativo? Un marinero me dijo que eras ruso, pero otro me dijo que eras francés... Estoy un poco perdida. Te registraré en la lista de embarque del barco justo después de eso.
+¿Puedo preguntarte cuál es tu lenguaje nativo? Un marinero me dijo que eras rusa, pero otro me dijo que eras francesa... Estoy un poco perdida. Yo te registraré en la lista de embarque sólo después de eso.
 
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#1
-¿Puedo preguntarte cuál es tu lenguaje nativo? Un marinero me dijo que eras ruso, pero otro me dijo que eras francés... Estoy un poco perdida. Te registraré en la lista de embarque del barco justo después de eso.
+¿Puedo preguntarte cuál es tu lenguaje nativo? Un marinero me dijo que eras ruso, pero otro me dijo que eras francés... Estoy un poco perdida. Yo te registraré en la lista de embarque sólo después de eso.
 
 Could you explain to me where I am?
 ¿Podrías explicarme dónde estoy?
@@ -1281,10 +1284,10 @@ Could you please bring me something which isn't a berry, and I'm not big on vege
 
 
 Could you tell me where I am?#0
-¿Podrías decirme dónde estoy?
+¿Podrías decirme en dónde estoy?
 
 Could you tell me where I am?#1
-¿Podrías decirme dónde estoy?
+¿Podrías decirme en dónde estoy?
 
 Couwan
 Couwan
@@ -1296,13 +1299,19 @@ Couwan hands you a box full of fish.
 Cougan te pasa una caja llena de pescado.
 
 Creator
+Creador
+
+Croc
 
 
 Croconut
 Croconut
+
+Crocotree
+
 
 Crusader
-
+Cruzado
 
 Current amount of zeny changed.
 
@@ -1323,7 +1332,7 @@ Dan keeps silent since your last question.
 Dan se queda en silencio desde tu última pregunta.
 
 Dancer
-
+Bailarín
 
 Dark Collector
 
@@ -1332,28 +1341,28 @@ Darlin
 Darlin
 
 Day Mode Activated.
-
+Modo de Día Activado.
 
 Day Mode is activated
-
+El Modo Día está activado
 
 Day mode is already enabled.
-
+El modo Día ya está activado.
 
 Dear angel, can you hear my voice?
-
+Querido ángel, ¿puedes oír mi voz?
 
 Death Knight
-
+Caballero de la Muerte
 
 Defeated by
-
+Derrotado por
 
 Devis
 Devis
 
 Dex: %d (%d~%d)
-
+Destreza: %d (%d~%d)
 
 Dexterity increases your bow damage and your accuracy.
 
@@ -1362,19 +1371,19 @@ Did you say reward? I want it!
 ¿Has dicho recompensa? ¡La quiero!
 
 Disconnecting to perform change-sex request...
-
+Desconectando para procesar la petición de cambio de sexo...
 
 Disguise applied.
-
+Disfraz aplicado.
 
 Disguise removed.
-
+Disfraz quitado.
 
 Displaying first %d out of %d matches
-
+Mostrando las primeras %d de %d correspondencias
 
 Displays Night | 
-
+Mostrar la Noche | 
 
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia
 ¡No le des la contraseña de tu habitación a nadie! Mantenla en secreto y, en el futuro, intenta no usar la misma en ninguna otra habitación. - Julia
@@ -1419,13 +1428,13 @@ Don't bother her Silvio, or I'll have to tell her that you cry like a baby when 
 No la molestes, Silvio, o tendré que decirle que lloras como un bebé cuando escuchas un trueno en la noche.
 
 Don't bother him Silvio, or I'll have to tell him that you cry like a baby when you hear the thunder in the night.#1
-No lo molestes, Silvio, o tendré que decirle que lloras como un bebé cuando escuchas un trueno en la noche.
+No lo molestes, Silvio. O tendré que decirle que lloras como un bebé cuando escuchas los truenos en la noche.
 
 Don't do theee... *hic* with me eh!
 ¡No te hagas eeel... *hic* conmigo eh!
 
 Don't fall!
-
+¡No te caigas!
 
 Don't mock me, my work is admirable.
 No te burles de mí, mi trabajo es admirable.
@@ -1437,7 +1446,7 @@ Don't tell me more, I know what you want...
 No me digas más, ya sé lo que quieres... 
 
 Don't try to poison me! I know what that does!
-No me envenenes! Yo se lo que hace!
+¡No intentes envenenarme! ¡Yo sé lo que hace eso!
 
 Don't worry, I'm sure you will help them soon enough!
 No te preocupes, ¡estoy seguro que les ayudaras muy pronto!
@@ -1449,10 +1458,10 @@ DoorUpwards
 DoorUpwards
 
 DoorUpwards#001-2-23
-
+DoorUpwards#001-2-23
 
 Duel: Can't use %s in duel.
-
+Duelo: No puedes usar %s en duelo.
 
 Duel: Can't use this item in duel.
 
@@ -1503,10 +1512,10 @@ Duel: You've left the duel.
 
 
 Duty calls me, *hic*, see you later dude.#1
-
+El deber me llama. *hic* Nos vemos luego, amigo.
 
 Duty calls me, *hic*, see you later honey.#0
-
+El deber me llama. *hic* Nos vemos luego, cariño.
 
 Each of the groups was ordered to sail in a different direction to find a new, suitable land where to live.
 Cada uno de los grupos fueron organizados para navegar en diferentes direcciones para encontrar una nueva y adecuada tierra donde vivir.
@@ -1518,13 +1527,13 @@ Ehm... He was really upset because of some past stories.
 Ehm... Él estaba realmente molesto por algunas historias del pasado.
 
 Eight Castles
-
+Ocho Castillos
 
 Eighteen Castles
-
+Diesiocho Castillos
 
 Eleven Castles
-
+Once Castillos
 
 Elmo
 Elmo
@@ -1542,7 +1551,7 @@ Elmo told me you are now considered family and are numbered among us in our acti
 
 
 Elmo#sailors
-
+Elmo#sailors
 
 Elven Voice
 Voz de Elven
@@ -1581,7 +1590,7 @@ Expanded Super Novice
 
 
 Experience rates: Base %.2fx / Job %.2fx
-
+Tazas de experiencia: Base %.2fx / Trabajo %.2fx
 
 FINE, BYE!
 ESTÁ BIEN ¡ADIÓS!
@@ -1599,7 +1608,7 @@ Fexil
 Fexil
 
 Fifteen Castles
-
+Quince Castillos
 
 File not found.
 
@@ -1626,7 +1635,7 @@ Fireworks |
 
 
 Five Castles
-
+Cinco Castillos
 
 Fog hangs over.
 
@@ -1656,18 +1665,21 @@ For a chef? Who said I was a... Oh right, I am.
 ¿Para un Chef? ¿Quién dijo que yo era un... Oh cierto, lo soy.
 
 Four Castles
-
+Cuatro Castillos
 
 Fourteen Castles
-
+Catorce Castillos
 
 Friend already exists.
-
+Amigo ya existe.
 
 Friend removed.
-
+Amigo quitado.
 
 From what I here, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
+
+
+Frostiana
 
 
 Fungus
@@ -1740,10 +1752,10 @@ Give me a kiss before you say goodbye!
 ¡Dame un beso antes de decir adiós!
 
 Give me back this dish, you dirty liar!#0
-¡Devuélveme este platillo, sucia mentirosa!
+¡Devuélveme ese plato, sucia mentirosa!
 
 Give me back this dish, you dirty liar!#1
-¡Devuélveme este platillo, sucio mentiroso!
+¡Devuélveme ese plato, sucio mentiroso!
 
 Go and grab one of them. A good knife will help with your hunting the creatures of this island.
 Ve y agarra uno de ellos. Un buen cuchillo te ayudará en tu cacería de las criaturas de esta isla.
@@ -1752,16 +1764,16 @@ Go away.
 Aléjate.
 
 Good day miss.
-
+Buen día, señorita.
 
 Good day mister.
-
+Buen día, señor.
 
 Good job!
 ¡Buen trabajo!
 
 Good luck! And remember to visit Peter and our little furry friends whenever you return back onboard!
-
+¡Buena suerte! ¡Y recuerda visitar a Peter y a nuestros pequeños amigos peludos cuando regreses a bordo!
 
 Good to hear!
 ¡Es bueno escuchar!
@@ -1782,16 +1794,16 @@ Great!
 ¡Estupendo!
 
 Great, what food do you have for me today?#0
-Genial, ¿pero qué comida tienes para mí hoy?
+Genial, ¿Qué comida tienes para mí hoy?
 
 Great, what food do you have for me today?#1
-Genial, ¿pero qué comida tienes para mí hoy?
+Genial, ¿Qué comida tienes para mí hoy?
 
 Greetings traveler.#0
-Saludos viajera.
+Saludos, viajera.
 
 Greetings traveler.#1
-Saludos viajero.
+Saludos, viajero.
 
 Group changed successfully.
 
@@ -1803,7 +1815,7 @@ Growl, sniff, grr! You'd better not tell anyone you saw me!#1
 ¡Gruñido, sniff, grr! ¡Será mejor que no le digas a nadie que me viste!
 
 Growl, sniff, grr!! You'd better not tell anyone you saw me!#0
-¡¡Gruñido, sniff, grr!! ¡Será mejor que no le digas a nadie que me viste!
+¡Gruñido, sniff, grr! ¡Será mejor que no le digas a nadie que me viste!
 
 Growl, sniff, grr!! You'd better not tell anyone you saw me!#1
 ¡Gruñido, sniff, grr! ¡Será mejor que no le digas a nadie que me viste!
@@ -1833,10 +1845,10 @@ Gugli mentioned six sailors. What about the others?
 Gugli mencionó a seis marineros. ¿Qué hay sobre los otros?
 
 Gugli sent me down here to help you.#0
-Gugli me envió aquí para ayudarla.
+Gugli me envió aquí abajo para que te ayudara.
 
 Gugli sent me down here to help you.#1
-Gugli me envió aquí para ayudarlo.
+Gugli me envió aquí abajo para que te ayudara.
 
 Gugli? Oh I see. Yes, Gugli yeye pretty used to shout orders to everybody down here.
 ¿Gugli? Oh, ya veo. Sí, el 'lindo' Gugli yeye solía gritar órdenes a todos aquí abajo.
@@ -1875,28 +1887,28 @@ Gunslinger
 
 
 GvG Castle | 
-
+Castillo GvG | 
 
 GvG Dungeon | 
-
+Mazmorra GvG | 
 
 GvG Flags: 
 
 
 GvG ON | 
-
+GvG ON | 
 
 GvG is already Off.
-
+GvG ya está Off.
 
 GvG is already On.
-
+GvG ya está On.
 
 GvG: Off.
-
+GvG: Apagado.
 
 GvG: On.
-
+GvG: Encendido.
 
 Gypsy
 
@@ -2004,7 +2016,7 @@ Help for command %c%s:
 
 
 Help me out~ Please~ T_T
-
+Ayúdame ~ Por favor~ T_T
 
 Hercules %d-bit for %s
 
@@ -2034,7 +2046,7 @@ Hey you!
 ¡Oye tú!
 
 Hey you! Can you hear us? Are you okay?
-¡Oye, tú! ¿Puedes escucharnos? ¿Estás bien?
+¡Oye, tú! ¿Puedes oírnos? ¿Estás bien?
 
 Hey you, sorry for leaving your room so quickly. I needed to speak with the captain about the food reserves. You know, now that we have a new mouth to feed, we need to check what we have.
 Oye, tú. Perdón por dejar tu habitación tan de prisa; necesitaba hablar con el capitán sobre las reservas de comida. Ya sabes, ahora que tenemos una nueva boca que alimentar, necesitamos chequear qué tenemos.
@@ -2064,13 +2076,13 @@ Hey, don't worry about him, it's one of the first days in a long time that we ca
 Oye, no te preocupes por él. Es el primer día en mucho tiempo en el que podemos sólo relajarnos.
 
 Hey, girl!#0
-
+¡Oye, chica!
 
 Hey, how was the...
 
 
 Hey, man!#1
-
+¡Oye, viejo!
 
 Hey, psst! You're not a sailor, right?
 ¡Oye, psst! Tú no eres un marinero, ¿cierto?
@@ -2148,7 +2160,7 @@ Homunculus stats:
 
 
 Honestly, it's quite far-fetched according to me.
-
+Honestamente, es muy exagerada en mi opinión.
 
 How about I ask you to help the crew? It would mean that you're one of us and that you will be able to get one of these hats.
 ¿Qué tal si te pido que ayudes a la tripulación? Eso significaría que eres uno de nosotros y que podrás recibir uno de estos gorros.
@@ -2160,7 +2172,7 @@ How are you doing, cutie?#0
 ¿Cómo estás, queridita?
 
 How are you doing, dude?#1
-¿Como estás, amigo?
+¿Cómo estas, amigo?
 
 How are you feeling, now that you walk on steady land? Yeye better?
 
@@ -2220,22 +2232,22 @@ I already know everything. Bye.
 Ya lo sé todo. Adiós.
 
 I am %s Super Novice~
-
+Yo soy %s Super Novato~
 
 I am not worried about rewards. I just want to help.
 No estoy preocupado por la recompensa. Sólo quiero ayudar.
 
 I am pleased to see that you have woken up and are active. Elmo came here to tell me this good news!#0
-
+Me complace ver que has despertado y estás activa. ¡Elmo vino aquí a darme esta buena noticia!
 
 I am pleased to see that you have woken up and are active. Elmo came here to tell me this good news!#1
-
+Me complace ver que has despertado y estás activo. ¡Elmo vino aquí a darme esta buena noticia!
 
 I am sure that I can run with one of them on my shoulder.#0
-Estoy segura que puedo correr con una de estas en el hombro.
+Estoy segura de que puedo correr con una de estas en el hombro.
 
 I am sure that I can run with one of them on my shoulder.#1
-Estoy seguro que puedo correr con una de estas en el hombro.
+Estoy seguro de que puedo correr con una de estas en el hombro.
 
 I am sure you know her. Nice dress, large smile and a constant flux of orders and rules. Julia they call her!
 Estoy seguro de conocerla. Lindo vestido, amplia sonrisa y un constante flujo de órdenes y reglas. ¡Ellos la llaman Julia!
@@ -2331,16 +2343,16 @@ I know that you are just starting to feel better, but I'd like to give you a spe
 Sé que ahora es que estás empezando a sentirse mejor, pero me gustaría darte una tarea especial.
 
 I made a mistake, I would like to change my language.#0
-Cometí un error, me gustaría cambiar mi idioma.
+He cometido un error. Me gustaría cambiar mi idioma.
 
 I made a mistake, I would like to change my language.#1
-Cometí un error, me gustaría cambiar mi idioma.
+He cometido un error. Me gustaría cambiar mi idioma.
 
 I need a helper to clean the edge of the ship, but you aren't strong enough to help.#0
-
+Necesito a un ayudante para limpiar el borde del barco, pero no eres lo suficientemente fuerte para ayudar.
 
 I need a helper to clean the edge of the ship, but you aren't strong enough to help.#1
-
+Necesito a un ayudante para limpiar el borde del barco, pero no eres lo suficientemente fuerte para ayudar.
 
 I need somebody who can rid the hold of the ship of these rattos. Can you help me?
 Necesito a alguien que pueda librar el fondo de la nave de esos rattos. ¿Puedes ayudarme?
@@ -2355,10 +2367,10 @@ I only need 2 @@, 2 @@s, 1 @@...
 Sólo necesito 2 @@, 2 @@s, 1 @@...
 
 I only remember I was rescued by you.#0
-Yo sólo recuerdo que fui rescatada por ti.
+Sólo recuerdo que fui rescatada por ti.
 
 I only remember I was rescued by you.#1
-Yo sólo recuerdo que fui rescatado por ti.
+Sólo recuerdo que fui rescatado por ti.
 
 I recall seeing Gulukan, Astapolos and Q'Muller.
 Recuerdo el ver a Gulukan, Astapolos y a Q'Muller.
@@ -2375,11 +2387,11 @@ Veo que no es nada sencillo deshacerse de esos rattos. ¿Quieres intentarlo otra
 I see. Bye!
 Ya veo. ¡Adiós!
 
-I see. Warn the other sailors about this. But if he's part of the Warrior Guild, then he's also our freind and ally.#1
-Ya veo. Advierte a los otros marineros acerca de esto. Pero si él es parte del Gremio Guerrero, entonces también es nuestro amigo y aliado.
+I see. Warn the other sailors about this. But if he's part of the Warrior Guild, then he's also our friend and ally.#1
 
-I see. Warn the other sailors about this. But if she's part of the Warrior Guild, then she's also our freind and ally.#0
-Ya veo. Advierte a los otros marineros acerca de esto. Pero si ella es parte del Gremio Guerrero, entonces también es nuestra amiga y aliada.
+
+I see. Warn the other sailors about this. But if she's part of the Warrior Guild, then she's also our friend and ally.#0
+
 
 I speak Catalan.
 Hablo Catalan.
@@ -2457,16 +2469,16 @@ I will take it! Thank you captain!
 ¡Lo tomaré! ¡Le agradezco, capitán!
 
 I will yaying do.
-Lo haré, yaying .
+Lo yaying haré.
 
 I will.
 Lo haré.
 
 I wish I helped your friends, because I'd really, really like a cookie.
-Deseo ayudar a tus amigos, porque realmente, realmente quiero una galleta.
+Ojalá hubiera ayudado a tus amigos, porque a mí en verdad me gustan... en verdad quiero una galleta.
 
 I wonder too...
-Me pregunto si...
+También me lo pregunto...
 
 I wonder who is in delarium now...
 
@@ -2481,10 +2493,10 @@ I'd love one!
 ¡Me encantaría una!
 
 I'll give her everything she needs, don't worry.#0
-Le daré todo lo que ella necesite, no te preocupes.#0
+Yo le daré todo lo que ella necesite, no te preocupes.
 
 I'll give him everything he needs, don't worry.#1
-Yo le daré todo lo que necesita, no te preocupes.
+Yo le daré todo lo que él necesite, no te preocupes.
 
 I'll share my berries with you if you help me.
 Compartiré mis bayas contigo si me ayudas.
@@ -2538,10 +2550,10 @@ I'm sorry, I don't have time right now.
 Lo siento, no tengo tiempo ahora.
 
 I'm still a bit weak at the moment. We should probably talk later.#0
-Aún estoy un poco débil. Probablemente deberíamos hablar después. 
+Aún estoy un poco débil en este momento. Probablemente deberíamos hablar después.
 
 I'm still a bit weak at the moment. We should probably talk later.#1
-Aún estoy un poco débil. Probablemente deberíamos hablar después. 
+Aún estoy un poco débil en este momento. Probablemente deberíamos hablar después.
 
 I'm still busy, I need to find the other sailors.
 Aún estoy ocupado, necesito encontrar a los otros marineros.
@@ -2553,10 +2565,10 @@ I'm sure Tibbo is alone in the south-west corner of the island. He believes it's
 Estoy seguro de que Tibbo está solo, en el sudoeste de la isla. Él cree que es el mejor lugar para recolectar @@s.
 
 I'm sure he will soon be able to fight all of the creatures living here without any problem.#1
-
+Estoy seguro de que él pronto será capaz de pelear con todas las criaturas que viven aquí sin ningún problema.
 
 I'm sure she will soon be able to fight all of the creatures living here without any problem.#0
-
+Estoy seguro de que ella pronto será capaz de pelear con todas las criaturas que viven aquí sin ningún problema.
 
 I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.
 Estoy segura de que tienes algunas preguntas para mí. Siéntete libre de preguntar entonces, pero primero necesito decirte las reglas de conducta social adecuada en el barco.
@@ -2610,7 +2622,7 @@ If you want another one, you know what to do!
 Si quieres otra, ¡ya sabes que hacer!
 
 If you want to be rewarded, help us in making this world a better place.#0
-Si quieres ser recompensado, ayúdanos haciendo de este mundo un lugar mejor.
+Si quieres ser recompensada, ayúdanos haciendo de este mundo un lugar mejor.
 
 If you want to be rewarded, help us in making this world a better place.#1
 Si quieres ser recompensado, ayúdanos haciendo de este mundo un lugar mejor.
@@ -2640,10 +2652,10 @@ Indeed! Goodbye.
 ¡Por supuesto! Adiós.
 
 Indeed, I am not.#0
-De hecho, no lo soy.
+Efectivamente, no lo soy.
 
 Indeed, I am not.#1
-De hecho, no lo soy.
+Efectivamente, no lo soy.
 
 Information sent to login-server via char-server.
 
@@ -2871,7 +2883,7 @@ Julia make appeal the Legion of Aemil to search you, exit the ship and you shoul
 
 
 Julia#Artis
-
+Julia#Artis
 
 Jump to %d %d
 
@@ -2928,7 +2940,7 @@ LeftDoor
 LeftDoor
 
 LeftDoor#001-2-23
-
+LeftDoor#001-2-23
 
 LeftDoorCheck
 LeftDoorCheck
@@ -2949,6 +2961,9 @@ Let's say the person who told me about that is well respected on this ship and n
 Permíteme decir que la persona que me contó sobre eso es bien respetado en este barco y nunca se emborracha.
 
 Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.
+
+
+Little Blub
 
 
 Living inside a ship is great, but we sometimes need some fresh air.
@@ -2988,7 +3003,7 @@ Magic Arpan
 Magic Arpan
 
 Magic Arpan#sailors
-
+Magic Arpan#sailors
 
 Magician
 
@@ -3018,10 +3033,10 @@ Maybe he over did it with the bottle today to celebrate that!
 ¡Tal vez él se sobrepasó con su botella hoy para celebrar eso!
 
 Maybe he was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior Guild!#1
-¿Tal vez él fue uno de los que se perdieron el mes pasado? ¡El yoiis de Esperia que tenía una misión secreta del Gremio de Guerreros!
+¿Tal vez él fue uno de los que se perdieron el mes pasado? ¡El yoiis de Esperia que tenía una misión secreta del Gremio Guerrero!
 
 Maybe she was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior Guild!#0
-
+¿Tal vez ella fue una de las que se perdieron el mes pasado? ¡La yoiis de Esperia que tenía una misión secreta del Gremio Guerrero!
 
 Maybe you can come down to talk?
 ¿Tal vez puedas bajar para hablar?
@@ -3030,10 +3045,10 @@ Maybe you meant:
 
 
 Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?#0
-Tal vez... Pero prefiero tener gente bien entrenada alrededor a la hora de luchar contra criaturas peligrosas. ¿Ya te sientes preparado para luchar contra enemigos?#0
+Tal vez... Pero prefiero tener gente bien entrenada alrededor a la hora de luchar contra criaturas peligrosas. ¿Ya te sientes preparada para luchar contra enemigos?
 
 Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?#1
-Tal vez... Pero prefiero tener gente bien entrenada alrededor a la hora de luchar contra criaturas peligrosas. ¿Ya te sientes preparado para luchar contra enemigos?#1
+Tal vez... Pero prefiero tener gente bien entrenada alrededor a la hora de luchar contra criaturas peligrosas. ¿Ya te sientes preparado para luchar contra enemigos?
 
 Mechanic
 
@@ -3069,19 +3084,19 @@ Monster database has been reloaded.
 
 
 Monster: '%s'/'%s'/'%s' (%d)
-
+Monstruo: '%s'/'%s'/'%s' (%d)
 
 My beauty, I was not always a sailor, you know, I was once an important individual!#0
-
+Mi bella, no siempre fui un marinero. ¿Sabes? ¡Yo fui una vez una persona importante!
 
 My friend, I was not always a sailor, you know, I was once an important individual!#1
-Mi amigo, no siempre fui un marinero, sabes. ¡Yo fui una persona importante!
+Amigo mío, no siempre fui un marinero. ¿Sabes? ¡Yo fui una vez una persona importante!
 
 My friends are... Well, you know... The creators.
 Mis amigos son... Bueno, ya sabes... Los creadores.
 
 My friends are... Well, you know... The creators... Programmers, Scripters, Mappers, Pixel Artists, Soundscapers... The Most Skilled Sages of the Tentacled Dance.
-Mis amigos son... Bueno, tú sabes... Los creadores... Los Programadores, los Guionistas, los Diseñadores de los Mapas, los Artistas de Pixeles, los encargados del Sonido Ambiental... Los sabios más habilidosos del  Baile del Tentáculo.
+Mis amigos son... Bueno, ya sabes... Los creadores... Los Programadores, los Guionistas, los Diseñadores de los Mapas, los Artistas de Píxeles, los encargados del Sonido Ambiental... Los sabios más habilidosos del Baile del Tentáculo.
 
 My name is Alige, I've been hiding here for weeks. All I have to eat are these berries... berries... berries...
 Mi nombre es Alige. Me he estado escondiendo aquí por semanas. Todo lo que tengo para comer son estas bayas... bayas... bayas... 
@@ -3126,13 +3141,13 @@ Name not found in list.
 
 
 Name: %s 
-
+Nombre: %s 
 
 Name: %s (GM)
-
+Nombre: %s (GM)
 
 Name: %s (GM:%d) | Location: %s %d %d
-
+Nombre: %s (GM:%d) | Localización: %s %d %d
 
 Nard
 Nard
@@ -3141,7 +3156,7 @@ Nard looks surprised and stops you.
 Nard parece estar sorprendido y te detiene.
 
 Nard#Artis
-
+Nard#Artis
 
 Narrator
 Narrador
@@ -3171,16 +3186,16 @@ NightmareDrop |
 
 
 Nine Castles
-
+Nueve Castillos
 
 Nineteen Castles
-
+Diecinueve Castillos
 
 Ninja
-
+Ninja
 
 No
-
+No
 
 No Exp Penalty: %s | No Zeny Penalty: %s
 
@@ -3198,10 +3213,10 @@ No Save, Save Point: %s,Random
 
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#0
-¡No y *hic*... No, tú y tú y su... *eructo* estúpi *hic* gremio!
+¡No y *hic*... No, tú y tú y tu... *eructo* estúpi *hic* gremio!
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#1
-¡No y *hic*... No, tú y tú y su... *eructo* estúpi *hic* gremio!
+¡No y *hic*... No, tú y tú y tu... *eructo* estúpi *hic* gremio!
 
 No cookie for you!
 ¡Ninguna galleta para ti!
@@ -3253,9 +3268,6 @@ No, y me tengo que ir, nos vemos.
 
 No, none.
 No, ninguna.
-
-No, sorry.
-No, lo siento.
 
 No, they are way too dangerous for me!
 No, ¡son demasiado peligrosos para mi!
@@ -3333,7 +3345,7 @@ None
 
 
 None Taken
-
+Ninguno Tomado
 
 None of them?
 ¿Ninguno de ellos?
@@ -3369,7 +3381,7 @@ Not so good actually... I would feel better on Nard's ship.
 No es muy bueno, de hecho... Me sentiría mejor en el barco de Nard.
 
 Not to kill your dream, but... Julia is mine!#1
-
+No quiero matar tus sueños, pero... ¡Julia es mía!
 
 Not yet. I will be back soon.
 Todavía no. Volveré pronto.
@@ -3378,7 +3390,7 @@ Note
 Nota
 
 Note#Artis
-
+Note#Artis
 
 Nothing, just hanging around.
 Nada, solo matando el tiempo.
@@ -3420,10 +3432,10 @@ Oboro
 
 
 Of course you do! Just listen carefully to these words my dear.#0
-¡Por supuesto que sí! Sólo tienes que escuchar con atención estas palabras querida.
+¡Por supuesto que sí! Sólo tienes que escuchar con atención estas palabras, querida.
 
 Of course you do! Just listen carefully to these words my dear.#1
-¡Por supuesto que sí! Sólo tienes que escuchar con atención estas palabras querido.
+¡Por supuesto que sí! Sólo tienes que escuchar con atención estas palabras, querido.
 
 Of course! Tell me which language you speak and I will change the note on the ship board list.
 ¡Por supuesto! Dime cuál idioma hablas y cambiaré la nota en la lista de embarque de esta nave.
@@ -3471,10 +3483,10 @@ Oh well. I'll also give you one of these hats from the box near you, but only af
 Oh, bueno. También te daré uno de esos sombreros de la caja cerca de ti, ¡pero sólo cuando completes tu tarea!
 
 Oh yeyeye... As they are not edible, you can maybe try to equip them?#0
-Oh yeyeye... como no son comestibles, ¿podrías intentar equiparlos?
+Oh yeyeye... Como no son comestibles, ¿podrías intentar equiparlos?
 
 Oh yeyeye... As they are not edible, you can maybe try to equip them?#1
-Oh yeyeye... como no son comestibles, ¿podrías intentar equiparlos?
+Oh yeyeye... Como no son comestibles, ¿podrías intentar equiparlos?
 
 Oh! And in one of the rooms of the second deck you can find Gado's knives. Our chef keeps there the sharpest ones... Probably not just to cut some carrots...
 
@@ -3495,10 +3507,10 @@ Oh, and Olga from the market place as well!
 Oh, y Olga la del mercado también.
 
 Oh, and give her some clothes, the poor girl, the ones she had were in even worse condition than the ones we have!#0
-
+Oh, y dale algo de ropa a la pobre chica. !La que tenía estaba en peor estado que la que tenemos nosotros!
 
 Oh, and give him some clothes, the poor guy, the ones he had were in even worse condition than the ones we have!#1
-
+Oh, y dale algo de ropa al pobre tipo. !La que tenía estaba en peor estado que la que tenemos nosotros!
 
 Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?
 
@@ -3513,7 +3525,7 @@ Oh, he is not far away from here. Just take the road through the crocojungle nor
 Oh, él no está muy lejos de aquí. Sólo toma la ruta a través de la jungla de crocos al norte de aquí.
 
 Oh, he's still alive!#1
-
+¡Oh, él aún está vivo!
 
 Oh, it's you.
 Oh, eres tú.
@@ -3528,7 +3540,7 @@ Oh, now that I remember, we also found some money in your pockets, here it is!#1
 
 
 Oh, she's still alive!#0
-¡Oh, ella aún está con vida!
+¡Oh, ella aún está viva!
 
 Oh... Err, yes I did, or, well, good day to you!
 Oh... Err, sí lo hice, o, bueno, ¡buen día para ti!
@@ -3543,10 +3555,10 @@ Oh... um... actually... all is I wanted was to get to Artis. Err... but I didn't
 
 
 Ok, I think he's waking up, go see him.#1
-
+Esta bien. Creo que él esta despertando, ve a verlo.
 
 Ok, I think she's waking up, go see her.#0
-Vale, creo que se esta despertando, ve a verla.#0
+Esta bien. Creo que ella esta despertando, ve a verla.
 
 Ok, I will leave him alone.
 Ok. Lo dejaré solo.
@@ -3582,7 +3594,7 @@ Once the monster is dead, click on the dropped items to add them to your invento
 Una vez que el mostruo esté muerto, dale clic en los artículos que suelta para agregarlos a tu inventario. También puedes usar la tecla 'Z' para reclamar lo que se le caiga.
 
 One Castle
-
+Un Castillo
 
 Options changed.
 
@@ -3648,13 +3660,22 @@ Peter
 Peter
 
 Peter#001-2-22
-
+Peter#001-2-22
 
 Pets are not allowed in Guild Wars.
 
 
 Piberries
 Pibayas
+
+Pikpik
+
+
+Piou
+
+
+Piousse
+
 
 Player '%s' (session #%d) | Location: %d,%d
 
@@ -3696,7 +3717,7 @@ Player unmuted.
 
 
 Player warped to jail.
-
+Jugador tele-transportado a la carcel.
 
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!
 
@@ -3882,7 +3903,7 @@ Please enter a valid position (usage: @memo <memo_position:%d-%d>).
 
 
 Please enter a valid value (usage: @petfriendly <0-1000>).
-
+Por favor, ingresa un valor válido (uso: @petfriendly <0-1000>).
 
 Please enter a valid value (usage: @str/@agi/@vit/@int/@dex/@luk <+/-adjustment>).
 
@@ -3906,7 +3927,7 @@ Please enter an effect number (usage: @effect <effect number>).
 
 
 Please enter an intimacy value (usage: @homfriendly <intimacy value [0-1000]>).
-
+Por favor, ingresa un valor de intimidad (uso: @homfriendly <intimacy value [0-1000]>).
 
 Please enter an item name or ID (usage: @item <item name/ID> <quantity>).
 
@@ -3965,6 +3986,9 @@ Please specify a display name or monster name/id.
 Plushroom
 Plushroom
 
+Plushroom Field
+
+
 Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe
 
 
@@ -3978,19 +4002,19 @@ PvP Flags:
 
 
 PvP is already Off.
-
+PvP ya está Apagado.
 
 PvP is already On.
-
+PvP ya está Encendido.
 
 PvP: Off.
-
+PvP: Off.
 
 PvP: On.
 
 
 Pvp ON | 
-
+Pvp ON | 
 
 Q'Muller
 Q'Muller
@@ -4011,16 +4035,19 @@ Raijin Voice
 Voz de Raijin
 
 Ranger
-
+Guardabosques
 
 Ranger T
+
+
+Ratto
 
 
 RattosControl
 RattosControl
 
 RattosControl#001-2-23
-
+RattosControl#001-2-23
 
 Really? That's kind of you, I accept your help!
 ¿De veras? Eso es muy amable de tu parte. ¡Acepto tu ayuda!
@@ -4071,28 +4098,28 @@ RightDoorCheck
 RightDoorCheck
 
 Rogue
-
+Rufián
 
 Royal Guard
-
+Guardia Real
 
 Royal Guard T
-
+Guardia Real T
 
 Rrrr... Pchhhh...
 Rrrr... Pchhhh...
 
 Rune Knight
-
+Caballero de Runa
 
 Rune Knight T
-
+Caballero de Runa T
 
 SO WHAT'S UP?! WHAT ARE YOU DOING?!
 ¡¿ENTONCES QUÉ TAL?! ¡¿QUÉ ESTÁS HACIENDO?!
 
 Sage
-
+Sabio
 
 Sailors
 Marineros
@@ -4167,10 +4194,10 @@ Set battle_config as requested.
 
 
 Seven Castles
-
+Siete Castillos
 
 Seventeen Castles
-
+Diecisiete Castillos
 
 Shadow Chaser
 
@@ -4179,7 +4206,7 @@ Shadow Chaser T
 
 
 She is a good friend of mine... We wanted to marry a few weeks before her accident but...
-Ella es una buena amiga mía... Nos queríamos casar unas semanas antes de su accidente...
+Ella es una buena amiga mía... Queríamos casarnos unas semanas antes de su accidente, pero...
 
 She is the nurse and shipkeeper of this ship.
 Ella es la enfermera y la guarda de este barco.
@@ -4215,10 +4242,10 @@ Simply contact them, help them and be kind. They might surely add you to my cook
 Simplemente contacta con ellos, ayúdales y sé amable. Seguramente te agregaran a mi lista de galletas.
 
 Six Castles
-
+Seis Castillos
 
 Sixteen Castles
-
+Dieciseis Castillos
 
 Size change applied.
 
@@ -4242,13 +4269,13 @@ Slave clone spawned.
 
 
 Sniper
-
+Francotirador
 
 Snow has stopped falling.
-
+La nieve ha dejado de caer.
 
 Snow | 
-
+Nieve | 
 
 So finally someone has came to visit me?
 ¿Así que finalmente ha venido alguien a visitarme?
@@ -4317,10 +4344,10 @@ Sometimes, I wish someone would be sent here to help us.
 
 
 Sorcerer
-
+Hechicero
 
 Sorcerer T
-
+Hechicero T
 
 Sorry but I have no time for this.
 Lo siento, pero no tengo tiempo para esto.
@@ -4344,13 +4371,13 @@ Soul Linker
 
 
 South
-
+Sur
 
 South East
-
+Sudeste
 
 South West
-
+Suroeste
 
 Specified group does not exist.
 
@@ -4374,10 +4401,10 @@ Star Gladiator
 
 
 Stat changed.
-
+Atributo cambiado.
 
 Stats: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d
-
+Atributos: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d
 
 Status database has been reloaded.
 
@@ -4428,7 +4455,7 @@ Surely. Take this box full of @@s.
 Seguro. Toma esta caja llena de @@s.
 
 Swordsman
-
+Espadachín
 
 THAT'S A NICE NAME!
 ¡ESE ES UN BONITO NOMBRE!
@@ -4485,7 +4512,7 @@ Tell him that everything went fine and that we're almost done with the requisiti
 
 
 Ten Castles
-
+Diez Castillos
 
 Terry
 
@@ -4527,7 +4554,7 @@ That's good to hear!
 ¡Es bueno escuchar eso!
 
 That's perfect, yoiis.#0
-Eso es perfecto, yoiis.
+Es perfecto, yoiis.
 
 That's perfect, yoiis.#1
 Eso es perfecto, yoiis.
@@ -4611,7 +4638,7 @@ The sailor turns his back to you.
 El marinero te da la espalda.
 
 The sailors take you aboard their ship.
-Los marineros te llevan a bordo de su nave.
+Los marineros te llevan a bordo de su barco.
 
 The stowaway doesn't answer.
 El polizón no responde.
@@ -4713,22 +4740,22 @@ They shouldn't be too far from each other.
 Ellos no deberían estar muy lejos el uno del otro.
 
 Thief
-
+Ladrón
 
 Thirteen Castles
-
+Trece Castillos
 
 Thirty Castles
-
+Treinta Castillos
 
 Thirty-One Castles
-
+Treinta y Un  Castillos
 
 Thirty-Three Castles
-
+Treinta y Tres Castillos
 
 Thirty-Two Castles
-
+Treinta y Dos Castillos
 
 This Cookie Master rewards people who contribute and develop this world.
 Esta Galleta Maestra recompensa a las personas que contribuyen y desarrollan este mundo.
@@ -4752,16 +4779,16 @@ This door is locked.
 Esta puerta está cerrada.
 
 This girl is lucky we found her before a shark did. I have no idea where she comes from. By the way, did you see the logo on her raft?#0
-
+Esta chica tiene suerte de que la encontráramos antes que un tiburón lo hiciera. No tengo idea de donde viene. Por cierto, ¿has visto el logo sobre su balsa?
 
 This girl needs help, we need to rescue her!#0
-
+¡Esta chica necesita ayuda! ¡Debemos rescatarla!
 
 This guy is lucky we found him before a shark did. I have no idea where he comes from. By the way, did you see the logo on his raft?#1
-Este chico tiene suerte que lo encontráramos antes que un tiburón lo hiciera. No tengo idea de donde viene. A propósito, ¿has visto el logo sobre su balsa?
+Este chico tiene suerte de que lo encontráramos antes que un tiburón lo hiciera. No tengo idea de donde viene. Por cierto, ¿has visto el logo sobre su balsa?
 
 This guy needs help, we need to rescue him!#1
-
+¡Este chico necesita ayuda! ¡Debemos rescatarlo!
 
 This is a nice place... There are some nice chicks...
 Es un bonito lugar... Allí hay algunas chicas agradables...
@@ -4800,7 +4827,7 @@ This monster has no MVP prizes.
 
 
 This monster has no drops.
-
+El monstruo no deja caer nada.
 
 This new continent, in fact an archipelago, was called Andorra.
 Este nuevo continente, en realidad un archipiélago, fue llamado Andorra.
@@ -4833,7 +4860,7 @@ This skill number doesn't exist.
 
 
 Three Castles
-
+Tres Castillos
 
 Tibbo
 Tibbo
@@ -4845,6 +4872,12 @@ Tibbo.
 Tibbo.
 
 Time of death : ^EE0000%s^000000
+
+
+Tipiou
+
+
+Tipiu
 
 
 To add an item to the list, use "@alootid +<item name or ID>". To remove an item, use "@alootid -<item name or ID>".
@@ -4862,8 +4895,14 @@ Lástima que no esté lo suficiente hambriento en este momento para esas... gall
 Too bad... Come back when you have some choice food for me. Growl... grumble... grumble.
 
 
-Total Domination
+Toppy Blub
 
+
+Tortuga
+
+
+Total Domination
+Dominación Total
 
 Town Map
 
@@ -4884,40 +4923,40 @@ True but now she seems pretty fine! Am I right?#0
 Tienes razón pero ahora parece que se ha mejorado, ¿ o me equivoco?#0
 
 Twelve Castles
-
+Doce Castillos
 
 Twenty Castles
-
+Veinte Castillos
 
 Twenty-Eight Castles
-
+Veintiocho Castillos
 
 Twenty-Five Castles
-
+Veinticinco Castillos
 
 Twenty-Four Castles
-
+Veinticuatro Castillos
 
 Twenty-Nine Castles
-
+Veintinueve Castillos
 
 Twenty-One Castles
-
+Veintiún Castillos
 
 Twenty-Seven Castles
-
+Veintisiete Castillos
 
 Twenty-Six Castles
-
+Veintiséis Castillos 
 
 Twenty-Three Castles
-
+Veintitrés Castillos
 
 Twenty-Two Castles
-
+Veintidós Castillos
 
 Two Castles
-
+Dos Castillos
 
 Type "@mapflag available" to list the available mapflags.
 
@@ -4983,7 +5022,7 @@ Unknown type of value in:
 
 
 Usage:
-
+Uso:
 
 Usage: "@mapflag monster_noteleport 1" (0=Off | 1=On)
 
@@ -5148,7 +5187,7 @@ Warlock T
 
 
 Warped.
-
+Teletransportado.
 
 Warping to save point.
 
@@ -5280,7 +5319,7 @@ West
 
 
 What I sell comes from every corner of this archipelago.
-Lo que vendo viene de todas partes de este archipiélago. 
+Lo que vendo viene de todos los rincones de este archipiélago.
 
 What about Q'Muller? Where is he?
 ¿Qué hay de Q'Muller? ¿Dónde está él?
@@ -5298,10 +5337,10 @@ What are you doing in my kitchen?! Get out, it's not a place for kids!
 ¡¿Qué haces en mi cocina?! ¡Sal de aquí, este no es un sitio para niños!
 
 What are you guys saying ? It's a Yoiis!#0
-¿Qué están diciendo, muchachos? ¡Es una Yoiis!
+¿Qué están diciendo, chicos? ¡Es una Yoiis!
 
 What are you guys saying ? It's a Yoiis!#1
-¿Qué están diciendo, muchachos? ¡Es un Yoiis!
+¿Qué están diciendo, chicos? ¡Es un Yoiis!
 
 What are you looking at?
 ¿Qué estás mirando?
@@ -5478,7 +5517,7 @@ Why? And who should you bring it back to?
 ¿Por qué? ¿Y a quién se lo regresarías?
 
 With hunger, thirst, and sleep as your only companions; you have the disturbing realization that you can't remember anything of your former life or identity.
-
+Con el hambre, la sed y el sueño como tus únicos compañeros, logras darte cuenta de algo inquietante: no puedes recordar nada de tu vida anterior ni tu identidad.
 
 With script
 
@@ -5496,7 +5535,7 @@ Yaya, you should go see her! She'll be happy to see you.#1
 YAYA, deberías ir a verla! Ella va a estar feliz de verte.
 
 Yayayaya, it's the first time someone is dressed worse than us!
-¡Yayayaya, es la primera vez que alguien se viste peor que nosotros!
+Yayayaya, ¡es la primera vez que alguien se viste peor que nosotros!
 
 Yeah you're all like *hic* that in Esperia, but you won't get me! *burp*
 Sí, tú eres como todos *hic* igual que en Esperia, ¡pero no me atraparás! *eructo*
@@ -5539,9 +5578,6 @@ Sí, efectivamente. Yo prefiero explorar lugares en los que nunca he estado, ant
 
 Yes, it is true! You are not able at all. Nard has been waiting for the food for too long already. Hurry up, you lazy sailors!
 ¡Sí, es verdad! Tú no estás listo del todo. Nard ha estado esperando por la comida por mucho tiempo ya. ¡Muévanse, marineros perezosos!
-
-Yes, why not.
-Sí, por qué no.
 
 Yes, yes I know... Too bad then. See you soon!
 Sí, sí, yo sé... Es una lástima, entonces. ¡Hasta luego!
@@ -5952,7 +5988,7 @@ You receive a @@!
 ¡Recibes una @@!
 
 You request has been rejected by autoreject option.
-
+Tu petición ha sido rechazada por la opción de auto-rechazo.
 
 You see these pious around us?
 ¿Ves estos pious alrededor de nosotros?
@@ -6009,10 +6045,10 @@ You still need to give me boxes from:
 Tú todavía necesitas darme cajas de:
 
 You stupid, he's english, look at the shape of his head.#1
-
+Estúpido, él es inglés, mira la forma de su cabeza.
 
 You stupid, she's english, look at the shape of her head.#0
-
+Estúpido, ella es inglesa, mira la forma de su cabeza.
 
 You take the clothes from the chest.
 Tomas la ropa del cofre.
@@ -6153,7 +6189,7 @@ You've been revived!
 
 
 You've died.
-
+Has muerto.
 
 You've left the '%s' channel
 
@@ -6165,7 +6201,7 @@ You've reached your slave clones limit.
 
 
 You... You eat... rattos? I think you're just a fool.
-¿Tu...Tu comes... rattos? Pienso que eres un tonto. 
+¿Tú...Tú comes... rattos? Pienso que eres un tonto.
 
 You? Here?
 ¿Tú? ¿Aquí?
@@ -6228,7 +6264,7 @@ Your autoloottype list is empty.
 
 
 Your body aches, even your hair hurts, and the daylight is painful; but still you open your eyes and see a large ship before you!
-
+Te duele el cuerpo, aún tu cabello; y la luz del día es dolorosa. ¡Pero aún así, abres tus ojos y ves un gran barco delante de ti!
 
 Your cart was cleaned.
 
@@ -6321,7 +6357,7 @@ a quiet place,
 un lugar tranquilo,
 
 ban
-
+proscribir
 
 block
 
@@ -6369,6 +6405,9 @@ npc1
 
 
 npc1#door
+npc1#door
+
+npc4
 
 
 option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
@@ -6399,22 +6438,22 @@ top head,
 
 
 unban
-
+quitar proscripción
 
 unblock
-
+desbloquear
 
 value '%d' for option '%s' is out of range (limit is 0-10)
 
 
 | Guild: '%s'
-
+| Gremio: '%s'
 
 | Location: %s %d %d
-
+| Localización: %s %d %d
 
 | Lv:%d/%d | Job: %s
-
+| Nivel:%d/%d | Trabajo: %s
 
 | Party: '%s' 
 
