@@ -1,0 +1,84 @@
+// Evol functions.
+// Authors:
+//    4144
+// Description:
+//    Moving npc utility functions
+// Variables:
+//    none
+
+function	script	initpath	{
+    deletearray getvariableofnpc(.movepathcmd$, strnpcinfo(3));
+    deletearray getvariableofnpc(.movepathy, strnpcinfo(3));
+    deletearray getvariableofnpc(.movepathx, strnpcinfo(3));
+    .@cnt = 0;
+
+    for (.@f = 0; .@f < getargcount(); .@f = .@f + 3)
+    {
+        set getvariableofnpc(.movepathcmd$[.@cnt], strnpcinfo(3)), getarg(.@f);
+        set getvariableofnpc(.movepathx[.@cnt], strnpcinfo(3)), getarg(.@f + 1);
+        set getvariableofnpc(.movepathy[.@cnt], strnpcinfo(3)), getarg(.@f + 2);
+        .@cnt ++;
+    }
+    //debugmes "array size: " + str(getarraysize(getvariableofnpc(.movepath, strnpcinfo(3))));
+    return;
+}
+
+function	script	domoveaction	{
+    //debugmes "domoveaction: " + str(getvariableofnpc(.movepos, strnpcinfo(3)));
+    .@pos = getvariableofnpc(.movepos, strnpcinfo(3));
+    if (.@pos >= getarraysize(getvariableofnpc(.movepathx, strnpcinfo(3))) || .@pos < 0)
+        return;
+    //debugmes "walking";
+    .@cmd$ = getvariableofnpc(.movepathcmd$[.@pos], strnpcinfo(3));
+    //debugmes "cmd: " + .@cmd$;
+
+    if (.@cmd$ == "move")
+    {
+        npcwalkto getvariableofnpc(.movepathx[.@pos], strnpcinfo(3)), getvariableofnpc(.movepathy[.@pos], strnpcinfo(3));
+    }
+    else if (.@cmd$ == "dir")
+    {
+        setnpcdir getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
+    }
+    else if (.@cmd$ == "wait")
+    {
+        set getvariableofnpc(.waitticks, strnpcinfo(3)), getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
+    }
+    return 1;
+}
+
+function	script	movetonextpos	{
+    .@pos = getvariableofnpc(.movepos, strnpcinfo(3));
+    //debugmes "movetonextpos: " + str(.@pos);
+    .@wait = getvariableofnpc(.waitticks, strnpcinfo(3));
+    if (.@wait > 0)
+    {
+        .@wait --;
+        //debugmes "wait";
+        set getvariableofnpc(.waitticks, strnpcinfo(3)), .@wait;
+        return;
+    }
+    .@res = domoveaction(.@pos);
+    if (.@res)
+    {
+        .@pos++;
+        if (.@pos >= getarraysize(getvariableofnpc(.movepathx, strnpcinfo(3))))
+            .@pos = 0;
+        set getvariableofnpc(.movepos, strnpcinfo(3)), .@pos;
+    }
+    return;
+}
+
+function	script	initialmove	{
+    set getvariableofnpc(.movepos, strnpcinfo(3)), 0;
+    set getvariableofnpc(.waitticks, strnpcinfo(3)), -1;
+    movetonextpos;
+    return;
+}
+
+function	script	getmovecmd	{
+    .@pos = getvariableofnpc(.movepos, strnpcinfo(3));
+    if (.@pos >= getarraysize(getvariableofnpc(.movepathx, strnpcinfo(3))) || .@pos < 0)
+        return "";
+    return getvariableofnpc(.movepathcmd$[.@pos], strnpcinfo(3));
+}

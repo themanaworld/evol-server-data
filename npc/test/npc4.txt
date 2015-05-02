@@ -1,0 +1,26 @@
+// Evol scripts.
+// Authors:
+//    4144
+// Description:
+//    test npc4
+
+test,25,20,0	script	npc4	801,{
+    close;
+OnTimer1000:
+    if (isunitwalking())
+    {
+        initnpctimer;
+        end;
+    }
+    movetonextpos;
+    initnpctimer;
+    end;
+OnInit:
+    initpath "move", 20, 20,
+             "dir", 6, 0,
+             "move", 25, 20,
+             "wait", 3, 0,
+             "move", 22, 10;
+    initialmove;
+    initnpctimer;
+}
