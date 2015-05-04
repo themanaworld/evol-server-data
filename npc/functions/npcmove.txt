@@ -39,17 +39,40 @@ function	script	domoveaction	{
     else if (.@cmd$ == "dir")
     {
         setnpcdir getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
+        return 2;
     }
     else if (.@cmd$ == "wait")
     {
         set getvariableofnpc(.waitticks, strnpcinfo(3)), getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
     }
+    else if (.@cmd$ == "emote")
+    {
+        unitemote getnpcid(0), getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
+        return 2;
+    }
+    else if (.@cmd$ == "class")
+    {
+        setnpcdisplay strnpcinfo(3), getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
+        return 2;
+    }
+    else if (.@cmd$ == "warp")
+    {
+        movenpc strnpcinfo(3), getvariableofnpc(.movepathx[.@pos], strnpcinfo(3)), getvariableofnpc(.movepathy[.@pos], strnpcinfo(3));
+    }
+    else if (.@cmd$ == "goto")
+    {
+        set getvariableofnpc(.movepos, strnpcinfo(3)), getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
+        return 0;
+    }
+    else if (.@cmd$ == "rmove")
+    {
+        getmapxy(.@mapName$, .@x, .@y, 1);
+        npcwalkto .@x + getvariableofnpc(.movepathx[.@pos], strnpcinfo(3)), .@y + getvariableofnpc(.movepathy[.@pos], strnpcinfo(3));
+    }
     return 1;
 }
 
 function	script	movetonextpos	{
-    .@pos = getvariableofnpc(.movepos, strnpcinfo(3));
-    //debugmes "movetonextpos: " + str(.@pos);
     .@wait = getvariableofnpc(.waitticks, strnpcinfo(3));
     if (.@wait > 0)
     {
@@ -58,13 +81,24 @@ function	script	movetonextpos	{
         set getvariableofnpc(.waitticks, strnpcinfo(3)), .@wait;
         return;
     }
-    .@res = domoveaction(.@pos);
-    if (.@res)
+    .@true = 1;
+    while (.@true)
     {
-        .@pos++;
-        if (.@pos >= getarraysize(getvariableofnpc(.movepathx, strnpcinfo(3))))
-            .@pos = 0;
-        set getvariableofnpc(.movepos, strnpcinfo(3)), .@pos;
+        .@true = 0;
+        .@pos = getvariableofnpc(.movepos, strnpcinfo(3));
+        //debugmes "movetonextpos: " + str(.@pos);
+        .@res = domoveaction(.@pos);
+        if (.@res == 1 || .@res == 2)
+        {
+            .@pos++;
+            if (.@pos >= getarraysize(getvariableofnpc(.movepathx, strnpcinfo(3))))
+                .@pos = 0;
+            set getvariableofnpc(.movepos, strnpcinfo(3)), .@pos;
+        }
+        if (.@res == 0 || .@res == 2)
+        {
+            .@true = 1;
+        }
     }
     return;
 }

@@ -19,8 +19,15 @@ OnInit:
     initpath "move", 20, 20,
              "dir", 6, 0,
              "move", 25, 20,
-             "wait", 3, 0,
-             "move", 22, 10;
+             "emote", 3, 0,
+             "class", 104, 0,
+             "wait", 2, 0,
+             "move", 22, 10,
+             "rmove", 3, 3,
+             "class", 801, 0,
+             "wait", 1, 0,
+             "warp", 22, 30,
+             "goto", 0, 0;
     initialmove;
     initnpctimer;
 }
