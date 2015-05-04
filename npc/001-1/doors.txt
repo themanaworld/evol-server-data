@@ -389,7 +389,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door14::OnUnTouch";
+    doevent "#Door15::OnUnTouch";
 }
 
 001-1,107,49,0	script	#Door15	906,2,3,{
@@ -416,7 +416,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door14::OnUnTouch";
+    doevent "#Door16::OnUnTouch";
 }
 
 001-1,104,32,0	script	#Door16	906,2,3,{
@@ -443,7 +443,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door14::OnUnTouch";
+    doevent "#Door17::OnUnTouch";
 }
 
 001-1,182,74,0	script	#Door17	906,2,3,{

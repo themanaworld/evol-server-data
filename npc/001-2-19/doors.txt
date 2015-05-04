@@ -11,7 +11,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door1::OnUnTouch";
+    doevent "#MerchantHallDoor1::OnUnTouch";
 }
 
 001-2-19,41,24,0	script	#MerchantHallDoor1	908,2,3,{
@@ -38,7 +38,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door2::OnUnTouch";
+    doevent "#MerchantHallDoor2::OnUnTouch";
 }
 
 001-2-19,41,46,0	script	#MerchantHallDoor2	908,3,3,{
