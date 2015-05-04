@@ -142,7 +142,7 @@ OnInit:
 
 001-1,142,30,0	script	#Warp6	32767,0,0,{
 OnTouch:
-    warp "001-2-12", 33, 35;
+    warp "001-2-12", 34, 35;
     close;
 
 OnUnTouch:
@@ -366,6 +366,60 @@ OnUnTouch:
 }
 
 001-1,101,107,0	script	#Door14	906,2,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
+    end;
+}
+
+001-1,107,49,0	script	#Warp15	32767,0,0,{
+OnTouch:
+    warp "001-2-20", 33, 34;
+    close;
+
+OnUnTouch:
+    doevent "#Door14::OnUnTouch";
+}
+
+001-1,107,49,0	script	#Door15	906,2,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
+    end;
+}
+
+001-1,104,32,0	script	#Warp16	32767,0,0,{
+OnTouch:
+    warp "001-2-19", 41, 30;
+    close;
+
+OnUnTouch:
+    doevent "#Door14::OnUnTouch";
+}
+
+001-1,104,32,0	script	#Door16	906,2,3,{
     close;
 
 OnTouch:
