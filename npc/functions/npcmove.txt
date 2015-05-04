@@ -69,6 +69,11 @@ function	script	domoveaction	{
         getmapxy(.@mapName$, .@x, .@y, 1);
         npcwalkto .@x + getvariableofnpc(.movepathx[.@pos], strnpcinfo(3)), .@y + getvariableofnpc(.movepathy[.@pos], strnpcinfo(3));
     }
+    else if (.@cmd$ == "speed")
+    {
+        npcspeed getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
+        return 2;
+    }
     return 1;
 }
 
