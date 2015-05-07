@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Ablu
+// Description:
+//    Jumping piou.
+
+001-1,39,54,4	script	#treeleaf0	909,{
+    setnpcdir 2;
+    stopnpctimer;
+    initnpctimer;
+    close;
+
+OnTimer2800:
+    setnpcdir 4;
+    stopnpctimer;
+    end;
+
+OnInit:
+    setnpcdistance 3;
+    end;
+}
