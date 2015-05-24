@@ -135,6 +135,7 @@ OnTimer340:
 OnInit:
     setnpcsex G_MALE;
     setnpcdistance 5;
+    waitingroom "test room", 2, "npc1::OnReadyCheck", 1;
     end;
 
 OnWhisperGlobal:
@@ -144,4 +145,10 @@ OnWhisperGlobal:
 OnSkillInvoke:
     skillInvoke[@skillId] = skillInvoke[@skillId] + 1;
     end;
+
+OnReadyCheck:
+    debugmes "OnReadyCheck";
+    $@bgid1 = waitingroom2bg("testbg", 10, 10, "bgnpc1::OnLogout","bgnpc1:OnDie");
+    debugmes "bgid=" + str($@bgid1);
+    bg_warp $@bgid1, "testbg", 10, 10;
 }
