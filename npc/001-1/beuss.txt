@@ -1,0 +1,17 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Angry member of the legion of Aemil.
+
+001-1,45,52,0	script	Beuss	424,{
+    mesn;
+    mesq l("You are too weak, what a piece of bone like you is doing around here?");
+
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 2;
+    end;
+}
