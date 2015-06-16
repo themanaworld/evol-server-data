@@ -75,7 +75,7 @@ L_Check:
     next;
 
     menu
-        l("Seriously? It's just a cookie you know... Tell me what I should do to get one."), L_TaskExpanation,
+        l("Seriously? It's just a cookie you know... Tell me what I should do to get one."), L_MTaskExpanation,
         l("Yes, yes I know... Too bad then. See you soon!"), L_Bye;
 
 L_StorySeems:
@@ -97,13 +97,14 @@ L_StorySeems:
     mesn;
     mesq g(l("It looks like madam is curious, am I right?"),
            l("It seems mister is curious, are you not?"));
-    next;
+    next; 
     mesq lg("Well, if you want to be one of those who can have a cookie...");
     next;
 
-L_TaskExpanation:
+L_BTaskExpanation:
     mes "";
     mesn;
+L_TaskExpanation:
     mesq l("You'll first need to help my friends.");
     next;
     mesq l("It is them who tell me to whom I can give cookies.");
@@ -209,7 +210,7 @@ L_Kick:
     closedialog;
 
     npctalk3 l("No cookie for you!");
-    warp "000-1.gat", 99, 52;
+    warp "001-1.gat", 39, 41;
 
     close;
 
