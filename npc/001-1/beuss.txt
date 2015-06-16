@@ -5,13 +5,25 @@
 //    Angry member of the legion of Aemil.
 
 001-1,45,52,0	script	Beuss	424,{
+    stopnpctimer;
+    initnpctimer;
+    setnpcdir 4;
     mesn;
-    mesq l("You are too weak, what a piece of bone like you is doing around here?");
+    mesq l("You are too weak, what is a piece of bone like you doing around here?");
 
+    goto L_Close;
+
+L_Close:
     close;
+
+OnTimer10000:
+    setnpcdir 2;
+    stopnpctimer;
+    end;
 
 OnInit:
     setnpcsex G_MALE;
     setnpcdistance 2;
     end;
 }
+
