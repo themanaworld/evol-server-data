@@ -1,0 +1,21 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Angry member of the legion of Aemil.
+
+001-1,68,79,0	script	Taree	118,{
+    mesn;
+    mesq l("Moo!");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 3;
+    end;
+}
+
