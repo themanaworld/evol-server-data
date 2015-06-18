@@ -1,0 +1,21 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Sailor of Nard's La Johanne ship.
+
+001-1,185,107,0	script	Elmo#001-1	425,{
+    mesn;
+    mesq l("Oh hey!");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 2;
+    end;
+}
+
