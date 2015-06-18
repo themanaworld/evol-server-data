@@ -1,0 +1,21 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Sailor of Nard's La Johanne ship.
+
+001-1,186,107,0	script	Q'Onan#001-1	426,{
+    mesn;
+    mesq l("We didn't meet, right?");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 2;
+    end;
+}
+
