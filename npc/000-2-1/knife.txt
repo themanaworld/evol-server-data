@@ -32,7 +32,7 @@ L_Give:
     inventoryplace 3500, 1;
 
     setq ShipQuests_Knife, 1;
-    getitem "Knife", 1;
+    getitem 3500, 1;
 
     mesn "Narrator";
     mes col(l("To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client."), 9);

@@ -44,7 +44,7 @@ L_RandomB:
     close;
 
 L_RandomC:
-    mesq l("I think I'll be done soon, since I almost have a box full of @@s!", getitemlink("CrocClaw"));
+    mesq l("I think I'll be done soon, since I almost have a box full of @@s!", getitemlink(706));
     next;
     mesq l("And you? How's it going on your side?");
     next;

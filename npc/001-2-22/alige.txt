@@ -172,20 +172,22 @@ L_Accepted:
 L_GiveFood:
     mes "";
     menuint
-        rif(countitemcolor(501, 1), l(getitemname("Acorn"))), 0,
-        rif(countitemcolor(502, 1), l(getitemname("Bread"))), 502,
-        rif(countitemcolor(503, 1), l(getitemname("Fungus"))), 503,
-        rif(countitemcolor(504, 1), l(getitemname("Cheese"))), 504,
-        rif(countitemcolor(505, 1), l(getitemname("PiouLegs"))), 505,
-        rif(countitemcolor(506, 1), l(getitemname("LettuceLeaf"))), 0,
-        rif(countitemcolor(507, 1), l(getitemname("Piberries"))), 2,
-        rif(countitemcolor(508, 1), l(getitemname("SeaDrops"))), 1,
-        rif(countitemcolor(509, 1), l(getitemname("Aquada"))), 509,
-        rif(countitemcolor(510, 1), l(getitemname("PinkBlobime"))), 1,
-        rif(countitemcolor(512, 1), l(getitemname("HalfCroconut"))), 512,
-        rif(countitemcolor(513, 1), l(getitemname("Croconut"))), 0,
-        rif(countitemcolor(515, 1), l(getitemname("Plushroom"))), 515,
-        rif(countitemcolor(516, 1), l(getitemname("PumpkinSeeds"))), 1,
+        rif(countitemcolor(501, 1), l(getitemname(501))), 0,
+        rif(countitemcolor(502, 1), l(getitemname(502))), 502,
+        rif(countitemcolor(503, 1), l(getitemname(503))), 503,
+        rif(countitemcolor(504, 1), l(getitemname(504))), 504,
+        rif(countitemcolor(505, 1), l(getitemname(505))), 505,
+        rif(countitemcolor(506, 1), l(getitemname(506))), 0,
+        rif(countitemcolor(507, 1), l(getitemname(507))), 2,
+        rif(countitemcolor(508, 1), l(getitemname(508))), 1,
+        rif(countitemcolor(509, 1), l(getitemname(509))), 509,
+        rif(countitemcolor(510, 1), l(getitemname(510))), 1,
+        rif(countitemcolor(512, 1), l(getitemname(512))), 512,
+        rif(countitemcolor(513, 1), l(getitemname(513))), 0,
+        rif(countitemcolor(515, 1), l(getitemname(515))), 515,
+        rif(countitemcolor(516, 1), l(getitemname(516))), 1,
+        rif(countitemcolor(516, 1), l(getitemname(518))), 1,
+        rif(countitemcolor(516, 1), l(getitemname(519))), 1,
         l("I don't have anything good for you today."), -1;
 
     .@id = @menuret;
@@ -206,7 +208,7 @@ L_GiveFood:
     mesq l("Thank you so much! Here, have some of my berries.");
 
     setq ShipQuests_Alige, 3;
-    getitem "Piberries", rand(1, 3);
+    getitem 507, rand(1, 3);
     next;
 
     goto L_ReturnMenu;

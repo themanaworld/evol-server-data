@@ -45,7 +45,7 @@
     inventoryplace 716, 1;
 
     setq ShipQuests_QMuller, 1;
-    getitem "PlushroomBox", 1;
+    getitem 716, 1;
 
     mes "";
     mesn;
@@ -93,11 +93,11 @@ L_Top:
 L_Plushroom:
     mes "";
     mesn;
-    mesq l("'That', as you call it, is a @@. There're plenty on this island!", getitemlink("Plushroom"));
+    mesq l("'That', as you call it, is a @@. There're plenty on this island!", getitemlink(515));
     next;
     mesq l("It's a kind of mushroom. We call it like that because of it's taste, just like a marshmallow. It also has this name because of it's appearance, it looks like a plush!");
     next;
-    mesq l("There are few groups of these @@s all around this island. Just pick some and have a try.", getitemlink("Plushroom"));
+    mesq l("There are few groups of these @@s all around this island. Just pick some and have a try.", getitemlink(515));
 
     close;
 

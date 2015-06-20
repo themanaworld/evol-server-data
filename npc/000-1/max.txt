@@ -74,7 +74,7 @@ L_Qmuller:
     mesn;
     mesq l("You need to cross the crocojungle heading north.");
     next;
-    mesq l("You can spot Q'Muller on a cliff off toward the west, busy collecting @@s.", getitemlink("Plushroom"));
+    mesq l("You can spot Q'Muller on a cliff off toward the west, busy collecting @@s.", getitemlink(515));
     next;
 
     goto L_MenuSailors;

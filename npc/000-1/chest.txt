@@ -29,7 +29,7 @@ L_Give:
     setq ShipQuests_TreasureChest, 1;
 
     Zeny = Zeny + 100;
-    getitem "OldBook", 1;
+    getitem 514, 1;
     npctalk3 l("You open the treasure chest.");
 
 L_Close:

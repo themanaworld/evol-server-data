@@ -1,0 +1,33 @@
+// Evol scripts.
+// Authors:
+//    Vasily_Makarov
+// Description:
+//    
+
+001-2-1.gat,22,33,0	script	Note	999,{
+    mesn;
+    mesq l("This note was left by somebody.");
+    next;
+    mesq l("What do you want to do with it?");
+
+    menu
+        l("Read it"), L_Content,
+        l("Leave it"), -;
+    close;
+
+L_Content:
+    mesn;
+    mes "\"" + l("Dear sister,");
+    mes l("On the next days we will finally arrives at Artis");
+    next;
+
+    mes l("I will send you this letter directly when I arrive");
+    mes l("Don't worry sister, I didn't forget you");
+    next;
+
+    mes l("I hope to come back at home when days will be better");
+    mes l("And when we will got enought money to don't depend of anybody");
+
+    mes l("Dearly yours, Dan") + "\"";
+    close;
+}

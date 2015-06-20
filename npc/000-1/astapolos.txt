@@ -61,7 +61,7 @@
     inventoryplace 715, 1;
 
     setq ShipQuests_Astapolos, 1;
-    getitem "CroconutBox", 1;
+    getitem 715, 1;
 
     mes "";
     mesn;

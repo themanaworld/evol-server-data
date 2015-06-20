@@ -39,7 +39,7 @@ L_Sailors:
     mesn;
     mesq l("They are all around the island.");
     next;
-    mesq l("I'm sure Tibbo is alone in the south-west corner of the island. He believes it's the best place to collect @@s.", getitemlink("Aquada"));
+    mesq l("I'm sure Tibbo is alone in the south-west corner of the island. He believes it's the best place to collect @@s.", getitemlink(509));
     next;
     mesq l("While Jalad and Ale like to work together, as they use to do on the ship, last time I've seen them, they were near the big lake, north from here.");
     next;

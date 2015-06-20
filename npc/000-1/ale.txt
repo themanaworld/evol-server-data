@@ -34,7 +34,7 @@
     inventoryplace 714, 1;
 
     setq ShipQuests_Ale, 1;
-    getitem "AquadaBox", 1;
+    getitem 714, 1;
 
     mes "";
     mesn;
@@ -85,11 +85,11 @@ L_Jalad:
 L_Plushroom:
     mes "";
     mesn;
-    mesq l("'That', as you call it, is a @@. There are plenty of 'em on this island!", getitemlink("Plushroom"));
+    mesq l("'That', as you call it, is a @@. There are plenty of 'em on this island!", getitemlink(515));
     next;
-    mesq l("It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?", getitemlink("Plushroom"));
+    mesq l("It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?", getitemlink(515));
     next;
-    mesq l("These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.", getitemlink("Plushroom"));
+    mesq l("These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.", getitemlink(515));
 
     close;
 

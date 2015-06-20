@@ -37,17 +37,17 @@
 L_Continue:
     mes "";
     mesn;
-    mesq l("Surely. Take this box full of @@s.", getitemlink("Plushroom"));
+    mesq l("Surely. Take this box full of @@s.", getitemlink(515));
     next;
 
     inventoryplace 716, 1;
 
     setq ShipQuests_Jalad, 1;
-    getitem "PlushroomBox", 1;
+    getitem 716, 1;
 
     mes "";
     mesn;
-    mesq l("They are so tasty when cooked together with some @@. Don't drop any of them!", getitemlink("PiouLegs"));
+    mesq l("They are so tasty when cooked together with some @@. Don't drop any of them!", getitemlink(505));
 
     goto L_Close;
 
@@ -96,11 +96,11 @@ L_Ale:
 L_Plushroom:
     mes "";
     mesn;
-    mesq l("'That', as you call it, is a @@. There're plenty on this island!", getitemlink("Plushroom"));
+    mesq l("'That', as you call it, is a @@. There're plenty on this island!", getitemlink(515));
     next;
     mesq l("It's a kind of mushroom. We call it like that because of it's taste, just like a marshmallow. It also has this name because of it's appearance. It looks like a plush!");
     next;
-    mesq l("There are some groups of these @@s all around this island. Just pick some and have a try.", getitemlink("Plushroom"));
+    mesq l("There are some groups of these @@s all around this island. Just pick some and have a try.", getitemlink(515));
 
     close;
 

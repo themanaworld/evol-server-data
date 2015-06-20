@@ -103,7 +103,7 @@ L_NeedContent:
     inventoryplace 718, 1;
 
     setq ShipQuests_Nard, 1;
-    getitem "JohanneKey", 1;
+    getitem 718, 1;
 
     close;
 

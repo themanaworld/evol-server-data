@@ -57,7 +57,7 @@ L_Continue2:
     inventoryplace 715, 1;
 
     setq ShipQuests_Gulukan, 1;
-    getitem "CroconutBox", 1;
+    getitem 714, 1;
 
     mes "";
     mesn;
@@ -104,7 +104,7 @@ L_RandomB:
     close;
 
 L_RandomC:
-    mesq l("I think that yeye's soon be done. Yeye'll soon have a full box of @@s!", getitemlink("CrocClaw"));
+    mesq l("I think that yeye's soon be done. Yeye'll soon have a full box of @@s!", getitemlink(706));
     next;
     mesq l("And you? How's it yaying on your side?");
     next;
@@ -145,7 +145,7 @@ L_Top:
 L_NoTask:
     mes "";
     mesn;
-    mesq l("*Uff*... And another box of @@s for our starving colleagues is ready.", getitemlink("Croconut"));
+    mesq l("*Uff*... And another box of @@s for our starving colleagues is ready.", getitemlink(513));
 
     close;
 

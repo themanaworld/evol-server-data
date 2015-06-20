@@ -28,8 +28,8 @@ L_Give:
     inventoryplace 1300, 2;
 
     setq ShipQuests_Arpan, 2;
-    getitem "CreasedShirt", 1;
-    getitem "CreasedShorts", 1;
+    getitem 1300, 1;
+    getitem 2200, 1;
     npctalk3 l("You take the clothes from the chest.");
     goto L_Quit;
 

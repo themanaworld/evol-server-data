@@ -43,7 +43,7 @@
     inventoryplace 714, 1;
 
     setq ShipQuests_Tibbo, 1;
-    getitem "AquadaBox", 1;
+    getitem 714, 1;
 
     mes "";
     mesn;
@@ -86,11 +86,11 @@ L_Top:
 L_Aquada:
     mes "";
     mesn;
-    mesq l("This is an @@, a light blue sea fruit. They're highly desired in the archipelago.", getitemlink("Aquada"));
+    mesq l("This is an @@, a light blue sea fruit. They're highly desired in the archipelago.", getitemlink(509));
     next;
     mesq l("You can find them in the ocean, near corals and other sea beings. But the sea is too heavy today, you shouldn't try swimming for now.");
     next;
-    mesq l("Otherwise, if you really want one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.", getitemlink("Aquada"));
+    mesq l("Otherwise, if you really want one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.", getitemlink(509));
 
     close;
 

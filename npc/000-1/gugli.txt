@@ -52,7 +52,7 @@ OnTalk:
     next;
     mesq l("We usually dock around these small isles because they provide us some of the best food of all the archipelago.");
     next;
-    mesq l("At the moment, our crew is busy collecting @@s, @@s and @@s.", getitemlink("Croconut"), getitemlink("Plushroom"), getitemlink("Aquada"));
+    mesq l("At the moment, our crew is busy collecting @@s, @@s and @@s.", getitemlink(513), getitemlink(515), getitemlink(509));
     next;
 
     menu
@@ -63,9 +63,9 @@ OnTalk:
     mesq l("Right! Ours is an earthsea realm. You see, sailors are swift at their tasks when out of sight of land, but docked by this verdant jewel, they have it so good, they are just taking too much time bringing all the food back to the ship. Maybe you can help them.");
     next;
     mesq l("The captain wants:");
-    mesq l("- 2 @@", getitemlink("AquadaBox"));
-    mesq l("- 2 @@", getitemlink("CroconutBox"));
-    mesq l("- 2 @@", getitemlink("PlushroomBox"));
+    mesq l("- 2 @@", getitemlink(714));
+    mesq l("- 2 @@", getitemlink(715));
+    mesq l("- 2 @@", getitemlink(716));
     next;
     mesq l("Ask sailors around here they shouldn't be so far away.");
     next;
@@ -82,7 +82,7 @@ L_TaskGiven:
 L_Menu:
     menu
         rif(getq(ShipQuests_Couwan) == 1, l("Couwan gave me this box, it is for you.")), L_Couwan,
-        rif(countitemcolor("AquadaBox") > 0 || countitemcolor("CroconutBox") > 0 || countitemcolor("PlushroomBox") > 0, l("I have some food for you.")), L_CollectSmthing,
+        rif(countitemcolor(714) > 0 || countitemcolor(715) > 0 || countitemcolor(716) > 0, l("I have some food for you.")), L_CollectSmthing,
         rif(getq(ShipQuests_Gugli) < 2, l("Who should I search for?")), L_SailorNames,
         rif(getq(ShipQuests_Gugli) < 2, l("Where can I find your crew?")), L_Location,
         l("Bye!"), L_Quit;
@@ -96,7 +96,7 @@ L_MenuDone:
 L_SailorNames:
     mes "";
     mesn;
-    mesq l("Ale and Tibbo should bring 2 boxes of @@s, Astapolos and Gulukan 2 of @@s and Jalad and Q'Muller were charged of the boxes of @@s.", getitemlink("Aquada"), getitemlink("Croconut"), getitemlink("Plushroom"));
+    mesq l("Ale and Tibbo should bring 2 boxes of @@s, Astapolos and Gulukan 2 of @@s and Jalad and Q'Muller were charged of the boxes of @@s.", getitemlink(509), getitemlink(513), getitemlink(515));
     next;
     mesq l("Do you need any other information?");
     next;
@@ -109,12 +109,12 @@ L_CollectSmthing:
     mesq l("Good job!");
     next;
 
-    if (countitemcolor("AquadaBox") == 2) delitem "AquadaBox", 2;
-    if (countitemcolor("CroconutBox") == 2) delitem "CroconutBox", 2;
-    if (countitemcolor("PlushroomBox") == 2) delitem "PlushroomBox", 2;
-    if (countitemcolor("AquadaBox") == 1) delitem "AquadaBox", 1;
-    if (countitemcolor("CroconutBox") == 1) delitem "CroconutBox", 1;
-    if (countitemcolor("PlushroomBox") == 1) delitem "PlushroomBox", 1;
+    if (countitemcolor(714) == 2) delitem 714, 2;
+    if (countitemcolor(715) == 2) delitem 715, 2;
+    if (countitemcolor(716) == 2) delitem 716, 2;
+    if (countitemcolor(714) == 1) delitem 714, 1;
+    if (countitemcolor(715) == 1) delitem 715, 1;
+    if (countitemcolor(716) == 1) delitem 716, 1;
 
     mesq l("You still need to give me boxes from: ");
     if (getq(ShipQuests_Astapolos) == 0) mesq l("- Astapolos");
@@ -139,7 +139,7 @@ L_Couwan:
     next;
     mesq l("May this be a lesson for you.");
 
-    if (countitemcolor("FishBox") > 0) delitem "FishBox", 1;
+    if (countitemcolor(713) > 0) delitem 713, 1;
     setq ShipQuests_Couwan, 2;
     Zeny = Zeny + 10;
     getexp 40, 0;
@@ -185,12 +185,12 @@ L_Lean:
     close;
 
 L_TaskDone:
-    if (countitemcolor("AquadaBox") == 2) delitem "AquadaBox", 2;
-    if (countitemcolor("CroconutBox") == 2) delitem "CroconutBox", 2;
-    if (countitemcolor("PlushroomBox") == 2) delitem "PlushroomBox", 2;
-    if (countitemcolor("AquadaBox") == 1) delitem "AquadaBox", 1;
-    if (countitemcolor("CroconutBox") == 1) delitem "CroconutBox", 1;
-    if (countitemcolor("PlushroomBox") == 1) delitem "PlushroomBox", 1;
+    if (countitemcolor(714) == 2) delitem 714, 2;
+    if (countitemcolor(715) == 2) delitem 715, 2;
+    if (countitemcolor(716) == 2) delitem 716, 2;
+    if (countitemcolor(714) == 1) delitem 714, 1;
+    if (countitemcolor(715) == 1) delitem 715, 1;
+    if (countitemcolor(716) == 1) delitem 716, 1;
     setq ShipQuests_Gugli, 2;
 
     Zeny = Zeny + 250;

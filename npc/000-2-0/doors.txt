@@ -20,7 +20,7 @@
 
 OnTouch:
     .@nard = getq(ShipQuests_Nard);
-    if (.@nard > 0 && countitemcolor("JohanneKey") > 0) goto L_Key;
+    if (.@nard > 0 && countitemcolor(718) > 0) goto L_Key;
 //  if (.@nard == 2) goto L_GotoNard;
 //  if (.@nard == 3) goto L_End;
 
