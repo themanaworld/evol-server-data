@@ -1,0 +1,21 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Newbie guide for Artis.
+
+001-1,176,113,0	script	Enora#001-1	119,{
+    mesn;
+    mesq l("Welcome!");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    setnpcsex G_FEMALE;
+    setnpcdistance 5;
+    end;
+}
+
