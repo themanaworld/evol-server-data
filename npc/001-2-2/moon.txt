@@ -23,7 +23,8 @@ OnInit:
              "dir", DOWN, 0,
              "wait", 2, 0,
              "move", 33, 32,
-             "wait", 10, 0,
+             "dir", DOWN, 0,
+             "wait", 10, 0;
     initialmove;
     initnpctimer;
 }
