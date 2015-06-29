@@ -1,0 +1,21 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Sword trainer from the Legion of Aemil guild.
+
+001-1,56,43,0	script	Lozerk	120,{
+    mesn;
+    mesq l("You can't join the sword training clothed that way.");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 2;
+    end;
+}
+
