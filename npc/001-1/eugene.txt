@@ -1,0 +1,21 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Fishman NPC
+
+001-1,113,120,0	script	Eugene	428,{
+    mesn;
+    mesq l("Ahoi.");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 2;
+    end;
+}
+
