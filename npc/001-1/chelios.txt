@@ -1,0 +1,21 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Blacksmith's assistant of Aemil
+
+001-1,95,109,0	script	Chelios	429,{
+    mesn;
+    mesq l("Can I be of any help?");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 2;
+    end;
+}
+
