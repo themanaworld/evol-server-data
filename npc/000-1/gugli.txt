@@ -109,12 +109,9 @@ L_CollectSmthing:
     mesq l("Good job!");
     next;
 
-    if (countitemcolor(714) == 2) delitem 714, 2;
-    if (countitemcolor(715) == 2) delitem 715, 2;
-    if (countitemcolor(716) == 2) delitem 716, 2;
-    if (countitemcolor(714) == 1) delitem 714, 1;
-    if (countitemcolor(715) == 1) delitem 715, 1;
-    if (countitemcolor(716) == 1) delitem 716, 1;
+    delitem 714, countitem(714);
+    delitem 715, countitem(714);
+    delitem 716, countitem(714);
 
     mesq l("You still need to give me boxes from: ");
     if (getq(ShipQuests_Astapolos) == 0) mesq l("- Astapolos");
