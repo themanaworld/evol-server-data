@@ -110,8 +110,8 @@ L_CollectSmthing:
     next;
 
     delitem 714, countitem(714);
-    delitem 715, countitem(714);
-    delitem 716, countitem(714);
+    delitem 715, countitem(715);
+    delitem 716, countitem(716);
 
     mesq l("You still need to give me boxes from: ");
     if (getq(ShipQuests_Astapolos) == 0) mesq l("- Astapolos");
