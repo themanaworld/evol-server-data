@@ -1,0 +1,26 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Barber of Aemil, should be placed on the 29th indoor but it's still a WIP
+
+001-1,133,87,0	script	Edouard#001-2-29	430,{
+    mesn;
+    mesq lg("Hello dear, what do you want today?");
+    next;
+
+    callfunc "Barber";
+
+    mesn;
+    mesq l("Bye bye!");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 2;
+    end;
+}
