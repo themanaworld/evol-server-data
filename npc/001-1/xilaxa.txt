@@ -1,0 +1,55 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Moon, main NPC for the urchin quest.
+
+001-1,52,44,0	script	Xilaxa#001-1	431,{
+    npctalk3 l("You're on my way.");
+    close;
+
+OnTimer1000:
+    if (isunitwalking())
+    {
+        initnpctimer;
+        end;
+    }
+    movetonextpos;
+    initnpctimer;
+    end;
+
+OnInit:
+    initpath "move", 52, 54,
+             "move", 57, 82,
+             "move", 56, 86,
+             "wait", 1, 0,
+             "dir", RIGHT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 2, 0,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 1, 0,
+             "dir", RIGHT, 0,
+             "move", 62, 82,
+             "dir", UP, 0,
+             "move", 62, 82,
+             "move", 55, 56,
+             "move", 56, 45,
+             "move", 54, 43,
+             "dir", DOWN, 0,
+             "wait", 2, 0,
+             "dir", RIGHT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 2, 0,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 5, 0,
+             "move", 52, 44;
+
+    initialmove;
+    initnpctimer;
+}
