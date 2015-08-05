@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Chief of the Legion of Aemil of the city of Artis.
+
+001-1,56,45,0	script	Trozz#001-1	124,{
+    mesn;
+    mesq l("Hi.");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 4;
+    end;
+}
+
