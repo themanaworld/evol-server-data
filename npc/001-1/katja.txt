@@ -1,0 +1,36 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Little girl playing around the hill on top of the port.
+
+001-1,164,44,0	script	Katja#001-1	123,{
+    mesn;
+    mesq l("Hey");
+    next;
+    mesq l("You look funny, do you want to play with me?");
+
+    switch (select("Of course!:What game do you want to play?:I don't have much time right now."))
+    {
+        case 1:
+
+            break;
+        case 2:
+
+            break;
+        case 3:
+
+            break;
+    }
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    setnpcsex G_FEMALE;
+    setnpcdistance 4;
+    end;
+}
+
