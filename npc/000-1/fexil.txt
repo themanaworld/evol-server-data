@@ -15,41 +15,27 @@
     mesq lg("Interested?");
     next;
 
-
     switch (select("Yes, why not.:I would rather sell some stuff.:No, Sorry."))
     {
         case 1:
             shop "Bying Bag";
-            goto L_Buy;
-            close2;
-            end;
+            closedialog;
+            shop "Bag#000-1";
+            close;
+
         case 2:
-            goto L_Sell;
-            end;
+            closedialog;
+            shop "Bag#000-1";
+            close;
+
         default:
-            goto L_No;
+            mes "";
+            mesn;
+            mesq l("Oh... Well, I just started to trade... Thus my technique may not be the best.");
+            next;
+            mesq lg("Anyway, if you ever feel interested, just check my bag!");
+            close;
     }
-
-L_No:
-    mes "";
-    mesn;
-    mesq l("Oh... Well, I just started to trade... Thus my technique may not be the best.");
-    next;
-    mesq lg("Anyway, if you ever feel interested, just check my bag!");
-
-    close;
-
-L_Buy:
-    closedialog;
-    shop "Bag#000-1";
-
-    close;
-
-L_Sell:
-    closedialog;
-    shop "Bag#000-1";
-
-    close;
 
 OnInit:
     setnpcsex G_MALE;
