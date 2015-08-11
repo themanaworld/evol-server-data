@@ -12,7 +12,7 @@
 //    1   Spoke, and received the quest scam.
 //    2   Done quest scam.
 
-000-1,89,36,0	script	Couwan	111,{
+000-1,89,36,0	script	Couwan	NPC_TRITAN_MAN_SAILOR,{
     .@q = getq(ShipQuests_Couwan);
     if (.@q == 1) goto L_QuestGiven;
     if (.@q > 1) goto L_QuestDone;

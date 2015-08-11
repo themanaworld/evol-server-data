@@ -4,7 +4,7 @@
 // Description:
 //    Sailor hitting a crocotree, then being struck by a falling croconut.
 
-000-1,33,37,0	script	Tarlan	415,{
+000-1,33,37,0	script	Tarlan	NPC_TARLAN,{
     setnpcdir 2;
 
     mesn;

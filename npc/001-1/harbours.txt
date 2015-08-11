@@ -11,7 +11,7 @@
 //    6   Hook down.
 //    8   Hook up.
 
-001-1,192,82,0	script	#Harbour0	420,{
+001-1,192,82,0	script	#Harbour0	NPC_HARBOUR_WHEEL,{
     harbourClic;
 
 OnTimer1670:
@@ -22,7 +22,7 @@ OnInit:
     end;
 }
 
-001-1,183,85,0	script	#Harbour1	421,{
+001-1,183,85,0	script	#Harbour1	NPC_HARBOUR_WHEEL_BOX,{
     harbourClic;
 
 OnTimer1670:
@@ -33,7 +33,7 @@ OnInit:
     end;
 }
 
-001-1,183,89,0	script	#Harbour2	420,{
+001-1,183,89,0	script	#Harbour2	NPC_HARBOUR_WHEEL,{
     harbourClic;
 
 OnTimer1670:
@@ -44,7 +44,7 @@ OnInit:
     end;
 }
 
-001-1,198,115,0	script	#Harbour3	421,{
+001-1,198,115,0	script	#Harbour3	NPC_HARBOUR_WHEEL_BOX,{
     harbourClic;
 
 OnTimer1670:
@@ -55,7 +55,7 @@ OnInit:
     end;
 }
 
-001-1,177,117,0	script	#Harbour4	421,{
+001-1,177,117,0	script	#Harbour4	NPC_HARBOUR_WHEEL_BOX,{
     harbourClic;
 
 OnTimer1670:
@@ -66,7 +66,7 @@ OnInit:
     end;
 }
 
-001-1,198,92,0	script	#Harbour5	421,{
+001-1,198,92,0	script	#Harbour5	NPC_HARBOUR_WHEEL_BOX,{
     harbourClic;
 
 OnTimer1670:

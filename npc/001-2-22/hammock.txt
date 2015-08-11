@@ -4,7 +4,7 @@
 // Description:
 //    Animated hammock at the mid level of the ship.
 
-001-2-22,32,27,0	script	#hammockArtis1	904,1,0,{
+001-2-22,32,27,0	script	#hammockArtis1	NPC_LEFT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -16,7 +16,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-22,32,25,0	script	#hammockArtis2	904,1,0,{
+001-2-22,32,25,0	script	#hammockArtis2	NPC_LEFT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -28,7 +28,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-22,37,25,0	script	#hammockArtis3	905,1,0,{
+001-2-22,37,25,0	script	#hammockArtis3	NPC_RIGHT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -40,7 +40,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-22,37,27,0	script	#hammockArtis4	905,1,0,{
+001-2-22,37,27,0	script	#hammockArtis4	NPC_RIGHT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -52,7 +52,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-22,37,29,0	script	#hammockArtis5	905,1,0,{
+001-2-22,37,29,0	script	#hammockArtis5	NPC_RIGHT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -64,7 +64,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-22,37,34,0	script	#hammockArtis6	905,1,0,{
+001-2-22,37,34,0	script	#hammockArtis6	NPC_RIGHT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -76,7 +76,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-22,37,36,0	script	#hammockArtis7	905,1,0,{
+001-2-22,37,36,0	script	#hammockArtis7	NPC_RIGHT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -88,7 +88,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-22,37,38,0	script	#hammockArtis8	905,1,0,{
+001-2-22,37,38,0	script	#hammockArtis8	NPC_RIGHT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -100,7 +100,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-22,37,40,0	script	#hammockArtis9	905,1,0,{
+001-2-22,37,40,0	script	#hammockArtis9	NPC_RIGHT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -112,7 +112,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-22,32,38,0	script	#hammockArtis10	904,1,0,{
+001-2-22,32,38,0	script	#hammockArtis10	NPC_LEFT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -124,7 +124,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-22,32,40,0	script	#hammockArtis11	904,1,0,{
+001-2-22,32,40,0	script	#hammockArtis11	NPC_LEFT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;

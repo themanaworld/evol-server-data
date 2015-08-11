@@ -6,7 +6,7 @@
 // Description:
 //    End of introduction with Nard and Elmo talking about the player.
 
-000-2-3,21,28,0	script	AreaTop	32767,0,5,{
+000-2-3,21,28,0	script	AreaTop	NPC_HIDDEN,0,5,{
 
 OnTouch:
     if (getq(ShipQuests_Door) == 1) end;

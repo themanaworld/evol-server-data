@@ -5,7 +5,7 @@
 // Description:
 //    Friend of Max, he gives some information on combat system.
 
-000-1,74,111,0	script	Sapartan	414,{
+000-1,74,111,0	script	Sapartan	NPC_SAPARTAN,{
     mesn;
     mesq l("Hey Max, it's @@!", strcharinfo(0));
     next;

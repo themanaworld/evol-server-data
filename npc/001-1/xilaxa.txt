@@ -4,7 +4,7 @@
 // Description:
 //    Moon, main NPC for the urchin quest.
 
-001-1,52,44,0	script	Xilaxa#001-1	431,{
+001-1,52,44,0	script	Xilaxa#001-1	NPC_UKAR_MALE,{
     npctalk3 l("You're on my way.");
     close;
 

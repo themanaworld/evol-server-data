@@ -4,7 +4,7 @@
 // Description:
 //    Barber of Aemil, should be placed on the 29th indoor but it's still a WIP
 
-001-1,133,87,0	script	Edouard#001-2-29	430,{
+001-1,133,87,0	script	Edouard#001-2-29	NPC_EDOUARD,{
     mesn;
     mesq lg("Hello dear, what do you want today?");
     next;

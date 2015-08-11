@@ -4,7 +4,7 @@
 // Description:
 //    test npc2
 
-test,20,10,0	trader	npc2	102,{
+test,20,10,0	trader	npc2	NPC_HAT_BOX,{
 OnInit:
     tradertype(NST_MARKET);
     sellitem 505, -1, 10;

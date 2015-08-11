@@ -4,7 +4,7 @@
 // Description:
 //    Panels to give advice and some random information to players.
 
-001-1,180,25,0	script	#ArtisPanel1	999,{
+001-1,180,25,0	script	#ArtisPanel1	NPC_NO_SPRITE,{
     mesn "Narrator";
     mes col(l("A weeds covered panel draws your attention, a message is visible concealed behind the leaves..."), 9);
     next;

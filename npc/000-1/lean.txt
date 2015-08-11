@@ -6,7 +6,7 @@
 // Description:
 //    Sailor who gives some informations to the player.
 
-000-1,79,108,0	script	Lean	106,{
+000-1,79,108,0	script	Lean	NPC_ELVEN_MAN_BLONDE,{
     .@gugli = getq(ShipQuests_Gugli);
 
     mesn;

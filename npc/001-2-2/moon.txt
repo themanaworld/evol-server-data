@@ -4,7 +4,7 @@
 // Description:
 //    Moon, main NPC for the urchin quest.
 
-001-2-2,33,32,0	script	Moon#001-2-2	427,{
+001-2-2,33,32,0	script	Moon#001-2-2	NPC_ELVEN_FEMALE,{
     npctalk3 l("Hi!");
     close;
 

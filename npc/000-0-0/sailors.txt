@@ -6,7 +6,7 @@
 //    Introduction scene where two sailors talk about how the player was found on his raft.
 //    Elmo will handle dialogs between both NPCs.
 
-000-0-0,26,23,0	script	Elmo#sailors	409,{
+000-0-0,26,23,0	script	Elmo#sailors	NPC_ELMO,{
 
 OnTalk:
     setcamnpc;
@@ -74,7 +74,7 @@ OnInit:
     end;
 }
 
-000-0-0,25,23,0	script	Magic Arpan#sailors	407,{
+000-0-0,25,23,0	script	Magic Arpan#sailors	NPC_MAGIC_ARPAN,{
     doevent "Elmo#sailors::OnTalk";
     close;
 

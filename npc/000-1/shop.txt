@@ -5,7 +5,7 @@
 // Description:
 //    Fexil's shop bag.
 
-000-1,84,98,0	trader	Bag#000-1	109,{
+000-1,84,98,0	trader	Bag#000-1	NPC_SHOP_BAG,{
 
 OnInit:
     tradertype(NST_MARKET);

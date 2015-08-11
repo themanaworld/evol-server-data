@@ -4,7 +4,7 @@
 // Description:
 //    Animated hammock at the top level of the ship.
 
-001-2-24,28,24,0	script	#nardArtisHammock	904,1,0,{
+001-2-24,28,24,0	script	#nardArtisHammock	NPC_LEFT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchRight;

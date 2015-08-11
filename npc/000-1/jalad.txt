@@ -7,7 +7,7 @@
 //    Sailor part of the Gugli quest.
 //    Plushroom box.
 
-000-1,46,35,0	script	Jalad	112,{
+000-1,46,35,0	script	Jalad	NPC_ELVEN_MAN_TRADER_SITTING,{
     .@g = getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
 

@@ -16,21 +16,21 @@
 //    11   Need to see Julia
 //    12   Has been registered by Julia
 
-000-2-1,49,36,0	script	LeftDoorCheck	32767,0,0,{
+000-2-1,49,36,0	script	LeftDoorCheck	NPC_HIDDEN,0,0,{
     .@q = getq(ShipQuests_Arpan);
     if (.@q == 0) doevent "Magic Arpan::OnTalk";
 
     close;
 }
 
-000-2-1,54,36,0	script	RightDoorCheck	32767,0,0,{
+000-2-1,54,36,0	script	RightDoorCheck	NPC_HIDDEN,0,0,{
     .@q = getq(ShipQuests_Arpan);
     if (.@q == 0) doevent "Magic Arpan::OnTalk";
 
     close;
 }
 
-000-2-1,47,32,0	script	LeftBarrierCheck	32767,0,2,{
+000-2-1,47,32,0	script	LeftBarrierCheck	NPC_HIDDEN,0,2,{
     .@q = getq(ShipQuests_Arpan);
     if (.@q > 2) close;
     if (.@q == 2 && getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200) goto L_EquipDone;
@@ -57,7 +57,7 @@ L_EquipDone:
     close;
 }
 
-000-2-1,56,32,0	script	RightBarrierCheck	32767,0,2,{
+000-2-1,56,32,0	script	RightBarrierCheck	NPC_HIDDEN,0,2,{
     .@q = getq(ShipQuests_Arpan);
     if (.@q > 2) close;
     if (.@q == 2 && getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200) goto L_EquipDone;
@@ -84,7 +84,7 @@ L_EquipDone:
     close;
 }
 
-000-2-1,49,33,0	script	Magic Arpan	407,{
+000-2-1,49,33,0	script	Magic Arpan	NPC_MAGIC_ARPAN,{
     .@q = getq(ShipQuests_Arpan);
     .@q_julia = getq(ShipQuests_Julia);
     if (.@q == 2 && getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200) goto L_EquipDone;

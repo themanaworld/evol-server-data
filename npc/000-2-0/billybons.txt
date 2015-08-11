@@ -4,7 +4,7 @@
 // Description:
 //    Drunk easteregg telling about the player's past.
 
-000-2-0,20,23,0	script	Billy Bons	411,{
+000-2-0,20,23,0	script	Billy Bons	NPC_BILLY_BONS,{
     if (rand(5) == 2) goto L_Hic;
 
     mesn;

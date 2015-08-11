@@ -4,7 +4,7 @@
 // Description:
 //    Falling tree leaf
 
-001-1,39,54,4	script	#treeleaf0	909,{
+001-1,39,54,4	script	#treeleaf0	NPC_TREE_LEAF,{
     setnpcdir 2;
     stopnpctimer;
     initnpctimer;

@@ -5,7 +5,7 @@
 //    Doors warp and animations in map 001-2-4
 //
 
-001-2-4,52,28,0	script	#LibraryWarp	32767,0,0,{
+001-2-4,52,28,0	script	#LibraryWarp	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-5", 28, 37;
     close;
@@ -14,7 +14,7 @@ OnUnTouch:
     doevent "#LibraryDoor::OnUnTouch";
 }
 
-001-2-4,52,27,0	script	#LibraryDoor	907,3,3,{
+001-2-4,52,27,0	script	#LibraryDoor	NPC_ARTIS_IN_DOOR,3,3,{
     close;
 
 OnTouch:

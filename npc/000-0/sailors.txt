@@ -7,7 +7,7 @@
 // Description:
 //    Starting script of Evol Online.
 
-000-0,23,20,0	script	Sailors	405,6,6,{
+000-0,23,20,0	script	Sailors	NPC_SAILORS,6,6,{
 
 OnTouch:
     checkclientversion;

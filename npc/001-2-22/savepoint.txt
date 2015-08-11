@@ -4,7 +4,7 @@
 // Description:
 //    Saves locations in 001-2-22 map.
 
-001-2-22,40,37,0	script	#001-2-22-1	901,{
+001-2-22,40,37,0	script	#001-2-22-1	NPC_SAVE_POINT,{
     savepoint "001-2-22.gat", 40, 37;
     close;
 
@@ -13,7 +13,7 @@ OnInit:
     end;
 }
 
-001-2-22,46,37,0	script	#001-2-22-2	901,{
+001-2-22,46,37,0	script	#001-2-22-2	NPC_SAVE_POINT,{
     savepoint "001-2-22.gat", 46, 37;
     close;
 
@@ -22,7 +22,7 @@ OnInit:
     end;
 }
 
-001-2-22,50,38,0	script	#001-2-22-3	901,{
+001-2-22,50,38,0	script	#001-2-22-3	NPC_SAVE_POINT,{
     savepoint "001-2-22.gat", 50, 38;
     close;
 
@@ -31,7 +31,7 @@ OnInit:
     end;
 }
 
-001-2-22,55,40,0	script	#001-2-22-4	901,{
+001-2-22,55,40,0	script	#001-2-22-4	NPC_SAVE_POINT,{
     savepoint "001-2-22.gat", 55, 40;
     close;
 

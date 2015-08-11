@@ -4,7 +4,7 @@
 // Description:
 //    test npc1
 
-test,10,10,0	script	npc1#door	32767,0,1,{
+test,10,10,0	script	npc1#door	NPC_HIDDEN,0,1,{
 OnTouch:
     warp "test", 20, 20;
     close;
@@ -12,7 +12,7 @@ OnUnTouch:
     doevent "npc1::OnUnTouch";
 }
 
-test,10,10,0	script	npc1	800,3,3,{
+test,10,10,0	script	npc1	NPC_TEST1,3,3,{
     function areatest
     {
         mesn;

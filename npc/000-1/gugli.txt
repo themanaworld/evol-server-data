@@ -22,7 +22,7 @@
 //    21   Gugli gives you the task.
 //    22   Gave all of the box to Gugli.
 
-000-1,85,108,0	script	Gugli	413,{
+000-1,85,108,0	script	Gugli	NPC_GUGLI,{
 
 OnTalk:
     mesn;
@@ -229,7 +229,7 @@ OnInit:
     end;
 }
 
-000-1,83,107,0	script	GugliBarrierCheck	32767,2,0,{
+000-1,83,107,0	script	GugliBarrierCheck	NPC_HIDDEN,2,0,{
     .@gugli = getq(ShipQuests_Gugli);
     if (.@gugli > 0) close;
     doevent "Gugli::OnTalk";

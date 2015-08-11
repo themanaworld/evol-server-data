@@ -17,7 +17,7 @@
 // [8] = Shows how many seconds passed since ratto number 4 died.
 // [9] = Shows how many seconds passed since the player started the quest.
 
-001-2-23,47,30,0	script	RattosControl#001-2-23	32767,{
+001-2-23,47,30,0	script	RattosControl#001-2-23	NPC_HIDDEN,{
 
 OnSpawn:
     areamonster "001-2-23.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto1Death";

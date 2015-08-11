@@ -10,7 +10,7 @@
 //    0   Default, not taken.
 //    1   Knife taken.
 
-000-2-1,50,24,0	script	#Artisknife	100,{
+000-2-1,50,24,0	script	#Artisknife	NPC_KNIVES,{
     .@q = getq(ShipQuests_Knife);
     if (.@q) close;
 

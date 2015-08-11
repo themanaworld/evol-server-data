@@ -17,7 +17,7 @@
 //    2   Accept the task.
 //    3   Bring first food.
 
-001-2-22,43,32,0	script	AligeTrigger#Artis	32767,1,1,{
+001-2-22,43,32,0	script	AligeTrigger#Artis	NPC_HIDDEN,1,1,{
 
 OnTouch:
     if (getareausers() <= 1)
@@ -50,7 +50,7 @@ OnTimer190:
     end;
 }
 
-001-2-22,43,31,0	script	Alige#Artis	401,{
+001-2-22,43,31,0	script	Alige#Artis	NPC_ALIGE,{
     .@q = getq(ShipQuests_Alige);
     if (.@q > 1) goto L_AskForFood;
 

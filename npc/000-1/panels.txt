@@ -5,7 +5,7 @@
 // Description:
 //    Panels to give advice to the players.
 
-000-1,65,93,0	script	#panel1	999,{
+000-1,65,93,0	script	#panel1	NPC_NO_SPRITE,{
     mesn "Narrator";
     mes col(l("Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand."), 9);
     next;
@@ -25,7 +25,7 @@ OnInit:
     end;
 }
 
-000-1,89,51,0	script	#panel2	999,{
+000-1,89,51,0	script	#panel2	NPC_NO_SPRITE,{
     mesn "Narrator";
     mes col(l("This panel looks in rather good shape, as though some people take care of it regularly. Maybe it has important information."), 9);
     next;

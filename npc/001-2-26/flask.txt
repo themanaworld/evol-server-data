@@ -4,7 +4,7 @@
 // Description:
 //    Alchemy animation.
 
-001-2-26,32,27,4	script	#FlaskAlchemyLab	422,{
+001-2-26,32,27,4	script	#FlaskAlchemyLab	NPC_FLASK,{
     setnpcdir 2;
     stopnpctimer;
     initnpctimer;

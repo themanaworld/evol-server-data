@@ -23,7 +23,7 @@
 //    11   Gugli gives you the task.
 //    12   Gave all of the boxes to Gugli.
 
-000-2-3,25,26,0	script	Nard	406,{
+000-2-3,25,26,0	script	Nard	NPC_NARD,{
     .@nard = getq(ShipQuests_Nard);
     .@gugli = getq(ShipQuests_Gugli);
     .@gado = getq(ShipQuests_ChefGado);

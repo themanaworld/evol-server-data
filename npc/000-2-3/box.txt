@@ -18,7 +18,7 @@
 //    4   ChefGado Quest completed and "Introduction" chapter finalized.
 //    5   Reward taken from the box.
 
-000-2-3,25,24,0	script	Box	102,{
+000-2-3,25,24,0	script	Box	NPC_HAT_BOX,{
     .@q = getq(ShipQuests_Nard);
 
     mesn "Narrator";

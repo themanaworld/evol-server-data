@@ -4,7 +4,7 @@
 // Description:
 //    Saves locations in 000-2-1 map.
 
-000-2-1,40,37,0	script	#name1	901,{
+000-2-1,40,37,0	script	#name1	NPC_SAVE_POINT,{
     savepointparticle "000-2-1.gat", 40, 37;
     close;
 
@@ -13,7 +13,7 @@ OnInit:
     end;
 }
 
-000-2-1,46,37,0	script	#name2	901,{
+000-2-1,46,37,0	script	#name2	NPC_SAVE_POINT,{
     savepointparticle "000-2-1.gat", 46, 37;
     close;
 
@@ -22,7 +22,7 @@ OnInit:
     end;
 }
 
-000-2-1,50,38,0	script	#name3	901,{
+000-2-1,50,38,0	script	#name3	NPC_SAVE_POINT,{
     savepointparticle "000-2-1.gat", 50, 38;
     close;
 
@@ -31,7 +31,7 @@ OnInit:
     end;
 }
 
-000-2-1,55,40,0	script	#name4	901,{
+000-2-1,55,40,0	script	#name4	NPC_SAVE_POINT,{
     savepointparticle "000-2-1.gat", 55, 40;
     close;
 

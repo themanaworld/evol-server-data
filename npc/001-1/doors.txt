@@ -5,7 +5,7 @@
 //    Doors warp and animations in map 001-1
 //
 
-001-1,55,71,0	script	#Warp1	32767,0,0,{
+001-1,55,71,0	script	#Warp1	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-0", 37, 45;
     close;
@@ -14,7 +14,7 @@ OnUnTouch:
     doevent "#Door1::OnUnTouch";
 }
 
-001-1,55,71,0	script	#Door1	906,2,3,{
+001-1,55,71,0	script	#Door1	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:
@@ -32,7 +32,7 @@ OnInit:
     end;
 }
 
-001-1,51,65,0	script	#Warp2	32767,0,0,{
+001-1,51,65,0	script	#Warp2	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-0", 30, 34;
     close;
@@ -41,7 +41,7 @@ OnUnTouch:
     doevent "#Door2::OnUnTouch";
 }
 
-001-1,51,65,0	script	#Door2	906,3,3,{
+001-1,51,65,0	script	#Door2	NPC_ARTIS_DOOR,3,3,{
     close;
 
 OnTouch:
@@ -59,7 +59,7 @@ OnInit:
     end;
 }
 
-001-1,70,77,0	script	#Warp3	32767,0,0,{
+001-1,70,77,0	script	#Warp3	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-2", 38, 38;
     close;
@@ -68,7 +68,7 @@ OnUnTouch:
     doevent "#Door3::OnUnTouch";
 }
 
-001-1,70,77,0	script	#Door3	906,3,3,{
+001-1,70,77,0	script	#Door3	NPC_ARTIS_DOOR,3,3,{
     close;
 
 OnTouch:
@@ -86,7 +86,7 @@ OnInit:
     end;
 }
 
-001-1,51,80,0	script	#Warp4	32767,0,0,{
+001-1,51,80,0	script	#Warp4	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-4", 48, 40;
     close;
@@ -95,7 +95,7 @@ OnUnTouch:
     doevent "#Door4::OnUnTouch";
 }
 
-001-1,51,80,0	script	#Door4	906,3,3,{
+001-1,51,80,0	script	#Door4	NPC_ARTIS_DOOR,3,3,{
     close;
 
 OnTouch:
@@ -113,7 +113,7 @@ OnInit:
     end;
 }
 
-001-1,89,65,0	script	#Warp5	32767,0,0,{
+001-1,89,65,0	script	#Warp5	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-7", 36, 45;
     close;
@@ -122,7 +122,7 @@ OnUnTouch:
     doevent "#Door5::OnUnTouch";
 }
 
-001-1,89,65,0	script	#Door5	906,3,3,{
+001-1,89,65,0	script	#Door5	NPC_ARTIS_DOOR,3,3,{
     close;
 
 OnTouch:
@@ -140,7 +140,7 @@ OnInit:
     end;
 }
 
-001-1,142,30,0	script	#Warp6	32767,0,0,{
+001-1,142,30,0	script	#Warp6	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-12", 34, 35;
     close;
@@ -149,7 +149,7 @@ OnUnTouch:
     doevent "#Door6::OnUnTouch";
 }
 
-001-1,142,30,0	script	#Door6	906,3,3,{
+001-1,142,30,0	script	#Door6	NPC_ARTIS_DOOR,3,3,{
     close;
 
 OnTouch:
@@ -167,7 +167,7 @@ OnInit:
     end;
 }
 
-001-1,132,67,0	script	#Warp7	32767,0,0,{
+001-1,132,67,0	script	#Warp7	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-15", 34, 45;
     close;
@@ -176,7 +176,7 @@ OnUnTouch:
     doevent "#Door7::OnUnTouch";
 }
 
-001-1,132,67,0	script	#Door7	906,3,3,{
+001-1,132,67,0	script	#Door7	NPC_ARTIS_DOOR,3,3,{
     close;
 
 OnTouch:
@@ -194,7 +194,7 @@ OnInit:
     end;
 }
 
-001-1,128,30,0	script	#Warp8	32767,0,0,{
+001-1,128,30,0	script	#Warp8	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-1", 37, 40;
     close;
@@ -203,7 +203,7 @@ OnUnTouch:
     doevent "#Door8::OnUnTouch";
 }
 
-001-1,128,30,0	script	#Door8	906,3,3,{
+001-1,128,30,0	script	#Door8	NPC_ARTIS_DOOR,3,3,{
     close;
 
 OnTouch:
@@ -221,7 +221,7 @@ OnInit:
     end;
 }
 
-001-1,168,98,0	script	#Warp9	32767,0,0,{
+001-1,168,98,0	script	#Warp9	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-16", 32, 35;
     close;
@@ -230,7 +230,7 @@ OnUnTouch:
     doevent "#Door9::OnUnTouch";
 }
 
-001-1,168,98,0	script	#Door9	906,2,3,{
+001-1,168,98,0	script	#Door9	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:
@@ -248,7 +248,7 @@ OnInit:
     end;
 }
 
-001-1,118,49,0	script	#Warp10	32767,0,0,{
+001-1,118,49,0	script	#Warp10	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-10", 27, 44;
     close;
@@ -257,7 +257,7 @@ OnUnTouch:
     doevent "#Door10::OnUnTouch";
 }
 
-001-1,118,49,0	script	#Door10	906,2,3,{
+001-1,118,49,0	script	#Door10	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:
@@ -275,7 +275,7 @@ OnInit:
     end;
 }
 
-001-1,135,49,0	script	#Warp11	32767,0,0,{
+001-1,135,49,0	script	#Warp11	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-10", 51, 44;
     close;
@@ -284,7 +284,7 @@ OnUnTouch:
     doevent "#Door11::OnUnTouch";
 }
 
-001-1,135,49,0	script	#Door11	906,2,3,{
+001-1,135,49,0	script	#Door11	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:
@@ -302,7 +302,7 @@ OnInit:
     end;
 }
 
-001-1,148,54,0	script	#Warp12	32767,0,0,{
+001-1,148,54,0	script	#Warp12	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-11", 46, 45;
     close;
@@ -311,7 +311,7 @@ OnUnTouch:
     doevent "#Door12::OnUnTouch";
 }
 
-001-1,148,54,0	script	#Door12	906,2,3,{
+001-1,148,54,0	script	#Door12	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:
@@ -329,7 +329,7 @@ OnInit:
     end;
 }
 
-001-1,163,70,0	script	#Warp13	32767,0,0,{
+001-1,163,70,0	script	#Warp13	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-26", 28, 42;
     close;
@@ -338,7 +338,7 @@ OnUnTouch:
     doevent "#Door13::OnUnTouch";
 }
 
-001-1,163,70,0	script	#Door13	906,2,3,{
+001-1,163,70,0	script	#Door13	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:
@@ -356,7 +356,7 @@ OnInit:
     end;
 }
 
-001-1,101,107,0	script	#Warp14	32767,0,0,{
+001-1,101,107,0	script	#Warp14	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-27", 35, 35;
     close;
@@ -365,7 +365,7 @@ OnUnTouch:
     doevent "#Door14::OnUnTouch";
 }
 
-001-1,101,107,0	script	#Door14	906,2,3,{
+001-1,101,107,0	script	#Door14	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:
@@ -383,7 +383,7 @@ OnInit:
     end;
 }
 
-001-1,107,49,0	script	#Warp15	32767,0,0,{
+001-1,107,49,0	script	#Warp15	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-20", 33, 34;
     close;
@@ -392,7 +392,7 @@ OnUnTouch:
     doevent "#Door15::OnUnTouch";
 }
 
-001-1,107,49,0	script	#Door15	906,2,3,{
+001-1,107,49,0	script	#Door15	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:
@@ -410,7 +410,7 @@ OnInit:
     end;
 }
 
-001-1,104,32,0	script	#Warp16	32767,0,0,{
+001-1,104,32,0	script	#Warp16	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-19", 41, 30;
     close;
@@ -419,7 +419,7 @@ OnUnTouch:
     doevent "#Door16::OnUnTouch";
 }
 
-001-1,104,32,0	script	#Door16	906,2,3,{
+001-1,104,32,0	script	#Door16	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:
@@ -437,7 +437,7 @@ OnInit:
     end;
 }
 
-001-1,182,74,0	script	#Warp17	32767,0,0,{
+001-1,182,74,0	script	#Warp17	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-18", 39, 35;
     close;
@@ -446,7 +446,7 @@ OnUnTouch:
     doevent "#Door17::OnUnTouch";
 }
 
-001-1,182,74,0	script	#Door17	906,2,3,{
+001-1,182,74,0	script	#Door17	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:

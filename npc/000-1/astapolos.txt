@@ -7,7 +7,7 @@
 //    Sailor part of the Gugli's quest.
 //    Croconut box.
 
-000-1,22,50,0	script	Astapolos	107,{
+000-1,22,50,0	script	Astapolos	NPC_ELVEN_MAN_RED,{
     .@g = getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
 

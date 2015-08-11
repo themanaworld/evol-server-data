@@ -23,7 +23,7 @@
 //    11   Gugli gives you the task.
 //    12   Gave all of the boxes to Gugli.
 
-001-2-24,25,26,0	script	Nard#Artis	406,{
+001-2-24,25,26,0	script	Nard#Artis	NPC_NARD,{
 
     mesn;
     mesq g(l("Good day miss."), l("Good day mister."));

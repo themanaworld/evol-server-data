@@ -4,7 +4,7 @@
 // Description:
 //    test npc4
 
-test,25,20,0	script	npc4	801,{
+test,25,20,0	script	npc4	NPC_PLAYER,{
     close;
 OnTimer1000:
     if (isunitwalking())

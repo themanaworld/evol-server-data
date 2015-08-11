@@ -11,7 +11,7 @@
 //    0   Treasure Chest has not been opened yet.
 //    1   Treasure Chest has been opened.
 
-000-1,83,70,0	script	#chest	416,{
+000-1,83,70,0	script	#chest	NPC_CHEST,{
 
     .@q = getq(ShipQuests_TreasureChest);
     if (getnpcdir ("") == 4) goto L_Give;

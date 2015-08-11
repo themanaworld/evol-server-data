@@ -9,7 +9,7 @@
 //    rif(countitemcolor(35xx, 1), l(getitemname(xx))), L_Weak,
 //    rif(countitemcolor(35yy, 1), l(getitemname(yy))), L_Good,
 
-000-2-1,0,0,0	script	Croconut	32767,{
+000-2-1,0,0,0	script	Croconut	NPC_HIDDEN,{
     close;
 
 OnUse:

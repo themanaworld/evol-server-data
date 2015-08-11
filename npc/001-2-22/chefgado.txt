@@ -5,7 +5,7 @@
 // Description:
 //    La Johanne Chef.
 
-001-2-22,27,28,0	script	Chef Gado#Artis	418,{
+001-2-22,27,28,0	script	Chef Gado#Artis	NPC_CHEF_GADO,{
 
     mesn;
     .@r = rand(3);

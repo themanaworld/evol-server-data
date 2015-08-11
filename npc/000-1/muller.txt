@@ -6,7 +6,7 @@
 //    Sailor part of the Gugli's quest.
 //    Plushroom box.
 
-000-1,35,69,0	script	Q'Muller	104,{
+000-1,35,69,0	script	Q'Muller	NPC_ORC_MAN,{
     .@g = getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
 

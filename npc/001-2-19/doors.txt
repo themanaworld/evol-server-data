@@ -5,7 +5,7 @@
 //    Doors warp and animations in map 001-1
 //
 
-001-2-19,41,25,0	script	#MerchantHallWarp1	32767,0,0,{
+001-2-19,41,25,0	script	#MerchantHallWarp1	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-25", 29, 30;
     close;
@@ -14,7 +14,7 @@ OnUnTouch:
     doevent "#MerchantHallDoor1::OnUnTouch";
 }
 
-001-2-19,41,24,0	script	#MerchantHallDoor1	908,2,3,{
+001-2-19,41,24,0	script	#MerchantHallDoor1	NPC_ARTIS_DOOR_WOOD,2,3,{
     close;
 
 OnTouch:
@@ -32,7 +32,7 @@ OnInit:
     end;
 }
 
-001-2-19,41,48,0	script	#MerchantHallWarp2	32767,0,0,{
+001-2-19,41,48,0	script	#MerchantHallWarp2	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-1", 104, 42;
     close;
@@ -41,7 +41,7 @@ OnUnTouch:
     doevent "#MerchantHallDoor2::OnUnTouch";
 }
 
-001-2-19,41,46,0	script	#MerchantHallDoor2	908,3,3,{
+001-2-19,41,46,0	script	#MerchantHallDoor2	NPC_ARTIS_DOOR_WOOD,3,3,{
     close;
 
 OnTouch:

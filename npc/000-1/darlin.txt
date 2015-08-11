@@ -10,7 +10,7 @@
 //    0   Treasure Chest has not been opened yet.
 //    1   Treasure Chest has been opened.
 
-000-1,89,95,0	script	Darlin	103,{
+000-1,89,95,0	script	Darlin	NPC_RAIJIN_MAN,{
     .@q = getq(ShipQuests_TreasureChest);
 
     mesn;

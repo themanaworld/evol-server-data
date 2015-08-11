@@ -5,7 +5,7 @@
 // Description:
 //    Elmo's second dialog.
 
-000-2-3,27,27,0	script	Elmo	409,{
+000-2-3,27,27,0	script	Elmo	NPC_ELMO,{
     .@q = getq(ShipQuests_ArpanMoney);
     if (.@q == 1) goto L_GotMoney;
 

@@ -16,7 +16,7 @@
 //    5   Quest complete. Julia wins (poison dish returned).
 //    6   Quest complete. Julia wins.
 
-000-2-1,27,28,0	script	Chef Gado	418,{
+000-2-1,27,28,0	script	Chef Gado	NPC_CHEF_GADO,{
     .@q = getq(ShipQuests_ChefGado);
     .@n = getq(ShipQuests_Nard);
     if (.@q == 1) goto L_QuestAccepted;
