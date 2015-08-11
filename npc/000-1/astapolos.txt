@@ -18,8 +18,8 @@
     mesq l("So finally someone has came to visit me?");
     next;
 
-    menu
-        lg("Actually, I came here to work on my task."), -;
+    select
+        lg("Actually, I came here to work on my task.");
 
     mes "";
     mesn;
@@ -48,8 +48,8 @@
     mesq lg("Oh, but you didn't come here to talk about that, am I right?");
     next;
 
-    menu
-        lg("Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?"), -;
+    select
+        lg("Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?");
 
     mes "";
     mesn;

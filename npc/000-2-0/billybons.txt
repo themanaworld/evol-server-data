@@ -16,8 +16,8 @@
     mes col(l("The sailor chugs his beer."), 9);
     next;
 
-    menu
-        lg("Excuse me? Do you know who I am?"), -;
+    select
+        lg("Excuse me? Do you know who I am?");
 
     mes "";
     mesn;

@@ -215,8 +215,8 @@ L_Regret:
     mesq l("Why? And who should you bring it back to?");
     next;
 
-    menu
-        l("Ehm... He was really upset because of some past stories."), -;
+    select
+        l("Ehm... He was really upset because of some past stories.");
 
     mes "";
     mesn;
@@ -237,8 +237,8 @@ L_Rumors:
     mesq l("You shouldn't believe every tale drunken sailors tell you.");
     next;
 
-    menu
-        l("Let's say the person who told me about that is well respected on this ship and never drunk."), -;
+    select
+        l("Let's say the person who told me about that is well respected on this ship and never drunk.");
 
     mes "";
     mesn;

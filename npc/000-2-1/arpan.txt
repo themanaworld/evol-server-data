@@ -123,8 +123,8 @@ L_OhWell:
     mesq lg("Oh well, we rescued you when you were yaying adrift in the sea.");
     next;
 
-    menu
-        l("And then what happened?"), -;
+    select
+        l("And then what happened?");
 
 L_Story:
     mes "";

@@ -49,18 +49,18 @@ OnTouch:
     next;
     restorecam;
 
-    menu
-        menuimage("flags/en", "I hear you... (English)"), -,
-        menuimage("flags/fr", "Je vous entends... (Français)"), -,
-        menuimage("flags/ru", "Да я вас слышу... (Русский)"), -,
-        menuimage("flags/es", "Te oigo... (Español)"), -,
-        menuimage("flags/pt_BR", "Eu te ouço... (Português)"), -,
-        menuimage("flags/de", "Ich höre euch... (Deutsch)"), -,
-        menuimage("flags/vls", "'k hoar ui wel... (Vlaams)"), -,
-        menuimage("flags/pl", "Słyszę cię... (Polski)"), -,
-        menuimage("flags/it", "Vi sento... (Italiano)"), -,
-        menuimage("flags/nl_BE", "Ik kan je horen... (Nederlands)"), -,
-        menuimage("flags/ca", "Et escolto (Català)"), -;
+    select
+        menuimage("flags/en", "I hear you... (English)"),
+        menuimage("flags/fr", "Je vous entends... (Français)"),
+        menuimage("flags/ru", "Да я вас слышу... (Русский)"),
+        menuimage("flags/es", "Te oigo... (Español)"),
+        menuimage("flags/pt_BR", "Eu te ouço... (Português)"),
+        menuimage("flags/de", "Ich höre euch... (Deutsch)"),
+        menuimage("flags/vls", "'k hoar ui wel... (Vlaams)"),
+        menuimage("flags/pl", "Słyszę cię... (Polski)"),
+        menuimage("flags/it", "Vi sento... (Italiano)"),
+        menuimage("flags/nl_BE", "Ik kan je horen... (Nederlands)"),
+        menuimage("flags/ca", "Et escolto (Català)");
     .@lang = @menu-1;
     if (.@lang < 0 || .@lang > 10) close;
     Lang = .@lang;

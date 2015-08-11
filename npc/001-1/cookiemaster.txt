@@ -20,8 +20,8 @@
     mesq lg("Hey! Adventurer! Are you enjoying your life on Aemil?");
     next;
 
-    menu
-        l("Well in fact..."), -;
+    select
+        l("Well in fact...");
 
     mes "";
     mesn;

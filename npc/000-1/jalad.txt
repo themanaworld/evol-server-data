@@ -31,8 +31,8 @@
     mesq l("You should go see him. He is one of the most experienced sailors we have.");
     next;
 
-    menu
-        l("I will surely visit him. Do you need any help with your boxes?"), -;
+    select
+        l("I will surely visit him. Do you need any help with your boxes?");
 
 L_Continue:
     mes "";

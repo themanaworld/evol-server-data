@@ -18,8 +18,8 @@
     mesq l("Uh? Hi! I'm sorry, but I have no time for chatting.");
     next;
 
-    menu
-        l("Fine... I was just going to give you some help..."), -;
+    select
+        l("Fine... I was just going to give you some help...");
 
     mes "";
     mesn;
@@ -28,8 +28,8 @@
     mesq l("What kind of help?");
     next;
 
-    menu
-        lg("Gugli asked me to help you carrying one of these boxes you are filling."), -;
+    select
+        lg("Gugli asked me to help you carrying one of these boxes you are filling.");
 
     mes "";
     mesn;

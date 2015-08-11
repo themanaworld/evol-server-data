@@ -163,8 +163,8 @@ L_ChefQuestRedir:
     mesq l("They are each valued individuals and I need them both. In the past, I probably made my share of mistakes. I regret good management is so difficult. I was wondering if you could investigate and... Sort out this situation.");
     next;
 
-    menu
-        l("Of the two of them, who has 'good' on their side?"), -;
+    select
+        l("Of the two of them, who has 'good' on their side?");
 
     mes "";
     mesq l("I do not want to go pointing my finger at someone. I want to be honorable and fair, and I sense the same quality in you, so I put my trust in you. I am sure you will be able to judge and solve this troubling situation.");
@@ -188,8 +188,8 @@ L_ChefQuestComplete:
     mesq l("Take your reward from the box next to my desk!");
     next;
 
-    menu
-        l("I will take it! Thank you captain!"), -;
+    select
+        l("I will take it! Thank you captain!");
 
     setq ShipQuests_Nard, 4;
     getexp 50, 0;

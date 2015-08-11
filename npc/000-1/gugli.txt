@@ -41,8 +41,8 @@ OnTalk:
     mesq l("As you may know, we are explorers on a long distance voyage, and our swashbuckling mariners need to store enough food to survive. You don't know how dangerous the sea life can be.");
     next;
 
-    menu
-        l("Actually, I have an in-depth knowledge of this type of life."), -;
+    select
+        l("Actually, I have an in-depth knowledge of this type of life.");
 
     mes "";
     mesn;
@@ -55,8 +55,8 @@ OnTalk:
     mesq l("At the moment, our crew is busy collecting @@s, @@s and @@s.", getitemlink(513), getitemlink(515), getitemlink(509));
     next;
 
-    menu
-        l("So, what can I do for you?"), -;
+    select
+        l("So, what can I do for you?");
 
     mes "";
     mesn;

@@ -56,8 +56,8 @@ L_Rude:
     mesq l("UAHAHAHAAH! I am the cook of that bunch of donkeys and I can be rude with everyone from this bossy captain to that harpy-lady!");
     next;
 
-    menu
-        l("Harpy-lady?"), -;
+    select
+        l("Harpy-lady?");
 
     mes "";
     mesn;
@@ -70,8 +70,8 @@ L_Rude:
     mesq l("But I swear that one day... Oh... My tasty revenge! Hhm, actually I wonder if... Maybe...");
     next;
 
-    menu
-        l("M... Maybe?"), -;
+    select
+        l("M... Maybe?");
 
     mes "";
     mesn;
@@ -180,8 +180,8 @@ L_Aborting:
     mesq l("Wait, why do you still have the dish with you?!");
     next;
 
-    menu
-        l("I informed Julia about your monstrous plan."), -;
+    select
+        l("I informed Julia about your monstrous plan.");
 
     mes "";
     mesn;

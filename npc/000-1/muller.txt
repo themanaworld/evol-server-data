@@ -17,8 +17,8 @@
     mesq l("Can't you see I'm working?!");
     next;
 
-    menu
-        l("Well I'm working too! Don't you want me to carry one of these boxes back to Gugli?"), -;
+    select
+        l("Well I'm working too! Don't you want me to carry one of these boxes back to Gugli?");
 
     mes "";
     mesn;
@@ -34,8 +34,8 @@
     mesq l("Are you blind? Do you really think these boxes are light and soft as a piou's feather?!");
     next;
 
-    menu
-        lg("I am sure that I can run with one of them on my shoulder."), -;
+    select
+        lg("I am sure that I can run with one of them on my shoulder.");
 
     mes "";
     mesn;

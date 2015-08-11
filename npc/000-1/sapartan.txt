@@ -33,8 +33,8 @@
     mesq l("But remember that not every place in this world is peaceful and safe nowadays. Even the white shores you are walking on can hide some dangerous beings.");
     next;
 
-    menu
-        l("What danger?! Where?!"), -;
+    select
+        l("What danger?! Where?!");
 
     setcamnpc "Max";
     mes "";
@@ -67,8 +67,8 @@
     mesq l("Secondly, choose wisely which weapon is suited for you. Some people like to face their enemies closely with a heavy axe, others prefer to attack from a distance with a bow for example.");
     next;
 
-    menu
-        l("Yeah, well what's the difference?"), -;
+    select
+        l("Yeah, well what's the difference?");
 
     mes "";
     mesn;

@@ -54,9 +54,9 @@
     next;
     restorecam;
 
-    menu
-         strcharinfo(0) + ".", -,
-         l("Maybe you can come down to talk?"), -;
+    select
+         strcharinfo(0) + ".",
+         l("Maybe you can come down to talk?");
 
     setcamnpc;
     mes "";
