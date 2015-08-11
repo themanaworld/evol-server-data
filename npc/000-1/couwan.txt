@@ -14,8 +14,22 @@
 
 000-1,89,36,0	script	Couwan	NPC_TRITAN_MAN_SAILOR,{
     .@q = getq(ShipQuests_Couwan);
-    if (.@q == 1) goto L_QuestGiven;
-    if (.@q > 1) goto L_QuestDone;
+    if (.@q == 1)
+    {
+        mesn;
+        mesq l("What are you looking at?");
+        next;
+        mesq l("Yeye still have my box? Stare less and work more. Go give it to Gugli!");
+        close;
+    }
+    else if (.@q > 1)
+    {
+        mesn;
+        mesq l("What are you looking at?");
+        next;
+        mesq l("Yeye gave my box to Gugli? Nice, nice yeye!");
+        close;
+    }
 
     mesn;
     mesq l("Hello yeye.");
@@ -23,9 +37,18 @@
     mesq l("Look how splendid this landscape is!");
     next;
 
-    menu
-        l("Very nice, indeed!"), -,
-        l("I don't see anything else than... water?"), L_Water;
+    switch(select(
+        l("Very nice, indeed!"),
+        l("I don't see anything else than... water?")))
+    {
+        case 2:
+            mes "";
+            mesn;
+            mesq l("Yeye's brain is probably still full of sea water if yeye can't see the beauty of this place.");
+            next;
+            mesq l("Stupid yeye...");
+            close;
+    }
 
     mes "";
     mesn;
@@ -34,56 +57,35 @@
     mesq l("Hey, could yeye please take my box of fish to Gugli?");
     next;
 
-    menu
-        l("Sure, but what will I get in exchange?"), -,
-        l("I'm sorry, I don't have time right now."), L_Decline;
+    switch(select(
+        l("Sure, but what will I get in exchange?"),
+        l("I'm sorry, I don't have time right now.")))
+    {
+        case 2:
+            mes "";
+            mesn;
+            mesq l("Stupid yeye...");
+            break;
 
-    mes "";
-    mesn;
-    mesq l("Yeye ask too much but do too little. Take this box and stop talking.");
-    next;
+        case 255:
+            break;
 
-    inventoryplace 713, 1;
+        default:
+            mes "";
+            mesn;
+            mesq l("Yeye ask too much but do too little. Take this box and stop talking.");
+            next;
 
-    mesn "Narrator";
-    mes col(l("Couwan hands you a box full of fish."), 9);
-    getitem 713, 1;
-    next;
-    mes col(l("The sailor turns his back to you."), 9);
+            inventoryplace 713, 1;
+            mesn "Narrator";
+            mes col(l("Couwan hands you a box full of fish."), 9);
+            getitem 713, 1;
+            next;
+            mes col(l("The sailor turns his back to you."), 9);
 
-    setq ShipQuests_Couwan, 1;
-    close;
-
-L_Water:
-    mes "";
-    mesn;
-    mesq l("Yeye's brain is probably still full of sea water if yeye can't see the beauty of this place.");
-    next;
-    mesq l("Stupid yeye...");
-
-    close;
-
-L_Decline:
-    mes "";
-    mesn;
-    mesq l("Stupid yeye...");
-
-    close;
-
-L_QuestGiven:
-    mesn;
-    mesq l("What are you looking at?");
-    next;
-    mesq l("Yeye still have my box? Stare less and work more. Go give it to Gugli!");
-
-    close;
-
-L_QuestDone:
-    mesn;
-    mesq l("What are you looking at?");
-    next;
-    mesq l("Yeye gave my box to Gugli? Nice, nice yeye!");
-
+            setq ShipQuests_Couwan, 1;
+            break;
+    }
     close;
 
 OnInit:
