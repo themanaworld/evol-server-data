@@ -12,27 +12,24 @@
 //    1   Treasure Chest has been opened.
 
 000-1,83,70,0	script	#chest	NPC_CHEST,{
+    if (getnpcdir ("") != 4)
+    {
+        setnpcdir 2;
+        initnpctimer;
+        startnpctimer;
+        close;
+    }
 
     .@q = getq(ShipQuests_TreasureChest);
-    if (getnpcdir ("") == 4) goto L_Give;
+    if (.@q == 0)
+    {
+        inventoryplace 514, 1;
+        setq ShipQuests_TreasureChest, 1;
+        Zeny = Zeny + 100;
+        getitem 514, 1;
+        npctalk3 l("You open the treasure chest.");
+    }
 
-    setnpcdir 2;
-    initnpctimer;
-    startnpctimer;
-    close;
-
-L_Give:
-    if (.@q > 0) goto L_Close;
-
-    inventoryplace 514, 1;
-
-    setq ShipQuests_TreasureChest, 1;
-
-    Zeny = Zeny + 100;
-    getitem 514, 1;
-    npctalk3 l("You open the treasure chest.");
-
-L_Close:
     setnpcdir 6;
     initnpctimer;
     startnpctimer;
