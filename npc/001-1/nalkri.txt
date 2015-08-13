@@ -1,0 +1,66 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Nalkri, walking NPC of the legion of Aemil on the west part of Artis.
+
+001-1,35,84,0	script	Nalkri#001-1	NPC_DEMON_MALE_LEGION_ARTIS,{
+    npctalk3 l("Stay clear.");
+    close;
+
+OnTimer1000:
+    if (isunitwalking())
+    {
+        initnpctimer;
+        end;
+    }
+    movetonextpos;
+    initnpctimer;
+    end;
+
+OnInit:
+    initpath "move", 56, 84,
+             "move", 60, 93,
+             "move", 68, 98,
+             "dir", DOWN, 0,
+             "wait", 1, 0,
+             "move", 68, 100,
+             "dir", RIGHT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 1, 0,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+             "dir", UP, 0,
+             "move", 67, 98,
+             "dir", RIGHT, 0,
+             "wait", 2, 0,
+             "move", 51, 101,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 1, 0,
+             "dir", RIGHT, 0,
+             "wait", 1, 0,
+             "dir", UP, 0,
+             "move", 48, 100,
+             "dir", RIGHT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 1, 0,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+             "dir", RIGHT, 0,
+             "move", 55, 96,
+             "move", 43, 88,
+             "move", 35, 84,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 4, 0,
+             "dir", RIGHT, 0,
+             "wait", 1, 0;
+
+    initialmove;
+    initnpctimer;
+}
