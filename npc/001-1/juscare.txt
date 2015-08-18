@@ -1,0 +1,77 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Juscare, walking NPC of the legion of Aemil on the right part of the Agora of Artis.
+
+001-1,112,65,0	script	Juscare#001-1	NPC_HUMAN_MALE_LEGION_ARTIS,{
+    npctalk3 l("It is a sunny day, don't you think?");
+    close;
+
+OnTimer1000:
+    if (isunitwalking())
+    {
+        initnpctimer;
+        end;
+    }
+    movetonextpos;
+    initnpctimer;
+    end;
+
+OnInit:
+    initpath "move", 112, 82,
+
+             "move", 118, 91,
+             "dir", RIGHT, 0,
+             "dir", RIGHT, 0,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 1, 0,
+
+             "move", 115, 95,
+
+             "move", 115, 111,
+             "dir", DOWN, 0,
+             "wait", 1, 0,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+
+             "move", 113, 113,
+
+             "move", 110, 110,
+             "dir", DOWN, 0,
+             "wait", 1, 0,
+             "dir", RIGHT, 0,
+             "wait", 1, 0,
+
+             "move", 111, 98,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+             "dir", RIGHT, 0,
+             "wait", 1, 0,
+
+             "move", 111, 84,
+             "move", 110, 82,
+
+             "move", 110, 70,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 1, 0,
+
+             "move", 109, 64,
+             "dir", LEFT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 1, 0,
+
+             "move", 112, 65,
+             "dir", RIGHT, 0,
+             "wait", 1, 0,
+             "dir", DOWN, 0,
+             "wait", 1, 0;
+
+    initialmove;
+    initnpctimer;
+}
