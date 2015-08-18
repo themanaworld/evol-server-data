@@ -39,6 +39,7 @@ item_db: (
 	KeepAfterUse: true/false      (boolean, defaults to false)
 	FloorLifeTime: Delay to remove item from ground (int, default flooritem_lifetime)
 	AllowPickup: true/false       (boolean, defaults to true)
+	Charm: true/false             (boolean, defaults to false)
 	RequiredStr: minimal strength (int, default to 0)
 	RequiredAgi: minimal agility  (int, default to 0)
 	RequiredVit: minimal vitality (int, default to 0)
@@ -84,6 +85,9 @@ item_db: (
 	Inherit: true/false           (boolean, if true, inherit the values
 	                              that weren't specified, from item_db.conf,
 	                              else override it and use default values)
+	AllowCards: {
+		idNUM: amount         (NUM is id number, amount is amount)
+	}
 },
 ...
 )
