@@ -27,7 +27,7 @@ test,10,10,0	script	npc1	NPC_TEST1,3,3,{
     }
 
 L_Start:
-    switch (select("show area:map:pc:change npc direction:quest test:cart"))
+    switch (select("show area:map:pc:change npc direction:quest test:cart:refine"))
     {
         case 1:
             areatest;
@@ -119,6 +119,27 @@ L_Start:
                 }
             }
             break;
+        case 7:
+            .@item = -1;
+            while(1)
+            {
+                switch (select("set item:refine +1:refine -1:refine fail"))
+                {
+                    case 1:
+                        requestitemindex .@item;
+                        mes "Item index selected: " + str(.@item);
+                        break;
+                    case 2:
+                        successrefindex .@item, 1;
+                        break;
+                    case 3:
+                        downrefindex .@item, 1;
+                        break;
+                    case 4:
+                        failedrefindex .@item;
+                        break;
+                }
+            }
     }
 
     close;
