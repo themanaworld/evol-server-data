@@ -1,0 +1,236 @@
+// Evol scripts.
+// Author:
+//    Travolta
+// Description:
+//    Invisible tree NPCs for "Lazy Brother" quest
+// Variables:
+//    AtrilQuests_LazyBrother = 19  -- quest var
+//    LazyBrother_TreesLeft = 15    -- how many trees left to search
+//    LazyBrother_TreeSearched[15]  -- whether given tree was searched
+//    LazyBrother_TreeWithBrother   -- the number of tree where he's hiding
+// Quest states:
+//    0  - quest not started
+//    1  - Katja asked help, searching the trees
+//    2  - Bobo is found, "bad" ending
+//    3  - player decided to tell Katja where her brother is
+//    4  - "good" ending, player helped Katja
+
+
+function	script	LazyBrotherTreeFunc	{
+    .@q = getq(ArtisQuests_LazyBrother);
+    if (.@q == 0 || .@q >= 2)
+        return;
+    .@TreeNum = getarg(0);
+    if (LazyBrother_TreeWithBrother == .@TreeNum)
+        goto L_FoundHim;
+    if (LazyBrother_TreeWithBrother > 0)
+    {
+        mes l("You search the tree but don't find anybody");
+        close2;
+        return;
+    }
+    if (LazyBrother_TreeSearched[.@TreeNum] == 1)
+    {
+        mes l("You already looked here");
+        close2;
+        return;
+    }
+    else
+    {
+        LazyBrother_TreeSearched[.@TreeNum] = 1;
+    }
+    .@found = rand(1, LazyBrother_TreesLeft--);
+    if (.@found == 1)
+    {
+        mes l("You found him!");
+        LazyBrother_TreeWithBrother = .@TreeNum;
+        next;
+    }
+    else
+    {
+        mes l("You search the tree but don't find anybody");
+        close2;
+        return;
+    }
+
+L_FoundHim:
+    mes l("You notice a young boy sitting on one of the highest branches of the tree.");
+    next;
+    mes l("He is eating an apple, apparently enjoying it.");
+    next;
+    select(l("Hey there, are you Bobo, Katja's brother?"));
+    mes "";
+    mesn "Bobo";
+    mesq l("Yes, it's me. It's such a beautiful view from here!");
+    next;
+    select(l("Your sister sent me to find you. Your mother is worried."));
+    mes "";
+    mesn "Bobo";
+    mesq l("Oh, nooooo... If I go home now, my mum will give me homework.");
+    next;
+    mesq l("But if you tell my sister, that you didn't find me, I can stay here all day, eating apples and enjoying the view");
+    next;
+    mesq l("I will give you my pocket money, if you do so.");
+    next;
+    switch (select(l("A small lie isn't a lie, and I could really use some cash..."),
+                   l("I will not lie to a little girl! And your mother needs your help")))
+    {
+        case 1:
+            mes "";
+            mesn "Bobo";
+            mesq l("Here you go.");
+            next;
+            mesn "Narrator";
+            mes l("Somehow you don't feel good about your deed");
+            // Karma -= 2;
+            setq ArtisQuests_LazyBrother, 2;
+            Zeny += 100;
+            getexp 500, 0;
+            break;
+        case 2:
+            mes "";
+            mesn "Bobo";
+            mesq l("Okay... Tell my sister I'll go home soon.");
+            setq ArtisQuests_LazyBrother, 3;
+            break;
+    }
+    LazyBrother_TreesLeft = 0;
+    LazyBrother_TreeWithBrother = 0;
+    cleararray LazyBrother_TreeSearched,0,15;
+    close;
+}
+
+001-1,179,30,0	script	#AtrilTree1	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(1);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,177,29,0	script	#AtrilTree2	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(2);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,183,28,0	script	#AtrilTree3	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(3);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,182,25,0	script	#AtrilTree4	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(4);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,187,26,0	script	#AtrilTree5	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(5);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,189,28,0	script	#AtrilTree6	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(6);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,184,30,0	script	#AtrilTree7	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(7);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,189,31,0	script	#AtrilTree8	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(8);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,191,30,0	script	#AtrilTree9	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(9);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,191,33,0	script	#AtrilTree10	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(10);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,187,34,0	script	#AtrilTree11	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(11);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,185,35,0	script	#AtrilTree12	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(12);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,182,34,0	script	#AtrilTree13	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(13);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,180,33,0	script	#AtrilTree14	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(14);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}
+
+001-1,181,32,0	script	#AtrilTree15	NPC_NO_SPRITE,{
+    LazyBrotherTreeFunc(15);
+    end;
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 1;
+    end;
+}

@@ -1,32 +1,124 @@
 // Evol scripts.
-// Author:
+// Authors:
 //    Reid
+//    Travolta
 // Description:
 //    Little girl playing around the hill on top of the port.
+//    She wants you to find her brother.
+// Variables:
+//    AtrilQuests_LazyBrother = 19  -- quest var
+//    LazyBrother_TreesLeft = 15    -- how many trees left to search
+//    LazyBrother_TreeSearched[15]  -- whether given tree was searched
+//    LazyBrother_TreeWithBrother   -- the number of tree where he's hiding
+// Quest states:
+//    0  - quest not started
+//    1  - Katja asked help, searching the trees
+//    2  - Bobo is found, "bad" ending
+//    3  - player decided to tell Katja where her brother is
+//    4  - "good" ending, player helped Katja
 
 001-1,164,44,0	script	Katja#001-1	NPC_RAIJIN_GIRL,{
+
+    function QuestReminder {
+        setcam 5920, 960;
+        mesq l("Remember, you have to find my brother on the hill to the east from here");
+        next;
+        mesq l("He is probably hiding on one of the trees. Go close to each tree and look up, otherwise you won't notice him.");
+        next;
+        restorecam;
+    }
+
+    .@q = getq(ArtisQuests_LazyBrother);
     mesn;
     mesq l("Hey");
     next;
-    mesq l("You look funny, do you want to play with me?");
+    switch(.@q)
+    {
+        case 0:
+            mesq l("You look nice, do you want to help me?");
+            break;
+        case 1:
+            mesq l("Hi, how is it going?");
+            next;
+            select l("Remind me, what should I do?");
+            mes "";
+            mesn;
+            QuestReminder;
+            close;
+        case 2:
+            mesq l("I still didn't find my brother...");
+            close;
+        case 3:
+            mesq l("Did you find my brother?");
+            next;
+            select(l("Yes, and he promised to be home soon"));
+            mes "";
+            mesn;
+            mesq l("Oh thank you so much!");
+            next;
+            mesq l("Please take this lollypop for your help. Mum sais they are bad for my teeth anyway (FIXME)");
+            setq ArtisQuests_LazyBrother, 4;
+            getitem 509, 1;
+            getexp 500, 0;
+            close;
+        case 4:
+            mesq l("Thank you again for your help!");
+            close;
+    }
+    next;
 
-    switch (select("Of course!:What game do you want to play?:I don't have much time right now."))
+    switch (select(l("Of course!"),
+                   l("What kind of  help do you need?"),
+                   l("I don't have much time right now.")))
     {
         case 1:
-
+            mes "";
+            mesn;
+            mesq l("Great!");
+            next;
+            // emote *epic*
             break;
         case 2:
-
+            mes "";
+            mesn;
             break;
         case 3:
-
-            break;
+            mes "";
+            mesn;
+            mesq l("Okay, I'll be here, if you change your mind.");
+            close;
     }
 
-    goto L_Close;
+L_Story:
+    mesq l("Mommy sent me to find my brother Bobo.");
+    next;
+    mesq l("He said he is going to climb the highest hill in Artis, which is not far from here.");
+    next;
+    mesq l("Our mommy doesn't allow us to go there, because it's dangerous. But he doesn't listen!");
+    next;
+    mesq l("Can you please go there and find him? He is probably hiding on one of those trees, like always.");
+    next;
+    mesq l("Because of the dense foliage on the trees you need to go close to them not to miss him.");
+    next;
 
-L_Close:
-    close;
+    switch (select(l("I will find him, don't worry!"),
+                   l("Highest hill in Artis, you say? Sounds dangerous, I might fall off.")))
+    {
+        case 1:
+            mes "";
+            mesn;
+            mesq l("Thank you!");
+            mes "";
+            QuestReminder;
+            setq ArtisQuests_LazyBrother, 1;
+            LazyBrother_TreesLeft = 15;
+            close;
+        case 2:
+            mes "";
+            mesn;
+            mesq l("Awwww, what will I do now?");
+            close;
+    }
 
 OnInit:
     setnpcsex G_FEMALE;
