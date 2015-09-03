@@ -1,11 +1,175 @@
 // Evol scripts.
 // Author:
 //    Reid
+//    Travolta
 // Description:
 //    Moon, main NPC for the urchin quest.
+// Variables:
+//    ArtisQuests_Urchin  - quest var
+// Quest stages:
+//    0  - not started
+//    1  - started, searching for Croc Claws
+//    2  - quest finished
 
-001-2-2,33,32,0	script	Moon#001-2-2	NPC_ELVEN_FEMALE,{
-    npctalk3 l("Hi!");
+001-2-2,33,32,0	script	Moon#001-2-2	NPC_ELVEN_FEMALE,3,3,{
+
+    function SayRandomGreeting {
+
+        setarray .messages$[0], l("Ouch!"), l("It hurts so bad!"), l("Help me!"),
+                                l("Hurry up!"), l("I can't wait all day!"),
+                                l("I need more @@s", getitemname(CrocClaw)),
+                                l("What a relief"), l("No more pain, thanks to you"),
+                                l("I can walk again!");
+        setarray .msg_first[0], 0, 3, 6;
+        setarray .msg_last[0], 2, 5, 8;
+
+        .@q = getq(ArtisQuests_Urchin);
+        .@tick = gettimetick(1);
+        if (.@tick > @ArtisQuests_Urchin_MoonMsgTick + 30)
+        {
+            .@r = rand(.msg_first[.@q],.msg_last[.@q]);
+            .@msg$ = .messages$[.@r];
+            npctalk3 .@msg$;
+            @ArtisQuests_Urchin_MoonMsgTick = .@tick;
+        }
+    }
+
+    function CheckCrowClaw {
+        if (getq(ArtisQuests_Urchin) != 1)
+            return -1;
+
+        mes "";
+        mesn;
+        if (countitem("CrocClaw") > 0)
+        {
+            delitem "CrocClaw", 1;
+            if (rand(10) == 7)  // the lucky 7
+            {
+                mesq l("Yay, it worked! I removed a spike.");
+                ArtisQuests_Urchin_ULeft--;
+                next;
+                if (!ArtisQuests_Urchin_ULeft)
+                {
+                    mesq l("It seems I got them all!");
+                    next;
+                    mesq l("Here is your reward.");
+                    setq ArtisQuests_Urchin, 2;
+                    getexp 1500, 100;
+                    close2;
+                    return 1;
+                }
+                else
+                {
+                    mesq l("But I still have some spikes left in my foot.");
+                    next;
+                    return 0;
+                }
+            }
+            else
+            {
+                mesq l("This one is useless! Give me another @@.", getitemname(CrocClaw));
+                next;
+                return 0;
+            }
+        }
+        else
+        {
+            mesq l("You don't have a @@, are you mocking me?", getitemname(CrocClaw));
+            close2;
+            return 1;
+        }
+    }
+
+    .@q = getq(ArtisQuests_Urchin);
+    if (.@q < 2)
+    {
+        mes l("You see a young elven girl, with a grimace of pain on her face");
+        next;
+    }
+    else
+    {
+        mesn;
+        mesq l("I appreciate your help, @@.", strcharinfo(0));
+        close;
+    }
+    if (.@q == 1) goto L_QuestStarted;
+
+L_Story:
+    select
+        l("Hi, can I help you somehow?");
+    mes "";
+    mesn;
+    mesq l("That would be great!");
+    next;
+    mesq l("Hi, my name is Moon. This morning I went for a walk on the beach.");
+    next;
+    mesq l("Walking barefoot, feeling the hot sand with my feet, daydreaming... I like such things, you know.");
+    next;
+    mesq l("I didn't notice that a Pikpik was in my way, and when I stepped on it, my foot was full of spikes.");
+    next;
+    mesq l("Luckily the beach is nearby, and somehow I could come home.");
+    next;
+    mesq l("Please bring me some @@ so I can pull out these spikes from my foot.", getitemname(CrocClaw));
+    next;
+
+    switch (select(l("Stay here, I'll hurry back as soon as I get some"),
+                   l("Maybe next time")))
+    {
+        case 1:
+            setq ArtisQuests_Urchin, 1;
+            mes "";
+            mesn;
+            mesq l("It really hurts, please hurry!");
+            ArtisQuests_Urchin_ULeft = 3;
+            goto L_Where;
+            break;
+        case 2:
+            mes "";
+            mes l("The girl looks desperate");
+    }
+    close;
+
+L_QuestStarted:
+    mesn;
+    mesq l("Have you some @@s for me?", getitemname(CrocClaw));
+    mes "";
+    switch (select(l("Check out this one"),
+                   l("I should put more effort into this"),
+                   l("Where can I find @@s?",getitemname(CrocClaw))))
+    {
+        case 1:
+            .@MustRepeat = CheckCrowClaw;
+            if (!.@MustRepeat)
+                goto L_CheckLoop;
+            close;
+        case 2:
+            mes "";
+            mesn;
+            mesq l("It really hurts, please hurry!");
+            close;
+        case 3:
+            goto L_Where;
+    }
+
+L_CheckLoop:
+    while (!.@MustRepeat)
+    {
+        switch (select(l("Here is another one"),
+                       l("I must leave to get more")))
+        {
+            case 1:
+                .@MustRepeat = CheckCrowClaw;
+                break;
+            case 2:
+                close;
+        }
+    }
+    close;
+
+L_Where:
+    mes "";
+    mesn;
+    mesq l("You can find Crocs on the beach, to the north from the Market");
     close;
 
 OnTimer1000:
@@ -18,7 +182,17 @@ OnTimer1000:
     initnpctimer;
     end;
 
+OnTouch:
+    SayRandomGreeting;
+    end;
+
+OnHour00:
+    @ArtisQuests_Urchin_MoonMsgTick = 0;
+    end;
+
 OnInit:
+    setnpcsex G_FEMALE;
+    setnpcdistance 3;
     initpath "move", 41, 30,
              "dir", DOWN, 0,
              "wait", 2, 0,
