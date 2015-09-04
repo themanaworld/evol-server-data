@@ -17,8 +17,8 @@
 
         setarray .messages$[0], l("Ouch!"), l("It hurts so bad!"), l("Help me!"),
                                 l("Hurry up!"), l("I can't wait all day!"),
-                                l("I need more @@s", getitemname(CrocClaw)),
-                                l("What a relief"), l("No more pain, thanks to you"),
+                                l("I need more @@s.", getitemlink("CrocClaw")),
+                                l("What a relief."), l("No more pain, thanks to you."),
                                 l("I can walk again!");
         setarray .msg_first[0], 0, 3, 6;
         setarray .msg_last[0], 2, 5, 8;
@@ -67,30 +67,33 @@
             }
             else
             {
-                mesq l("This one is useless! Give me another @@.", getitemname(CrocClaw));
+                mesq l("This one is useless! Give me another @@.", getitemlink("CrocClaw"));
                 next;
                 return 0;
             }
         }
         else
         {
-            mesq l("You don't have a @@, are you mocking me?", getitemname(CrocClaw));
+            mesq l("You don't have a @@, are you mocking me?", getitemlink("CrocClaw"));
             close2;
             return 1;
         }
     }
 
+    stopnpctimer;
+
     .@q = getq(ArtisQuests_Urchin);
     if (.@q < 2)
     {
-        mes l("You see a young elven girl, with a grimace of pain on her face");
+        mesn "Narrator";
+        mes col(l("You see a young elven girl, with a grimace of pain on her face."), 9);
         next;
     }
     else
     {
         mesn;
         mesq l("I appreciate your help, @@.", strcharinfo(0));
-        close;
+        goto L_Close;
     }
     if (.@q == 1) goto L_QuestStarted;
 
@@ -109,67 +112,80 @@ L_Story:
     next;
     mesq l("Luckily the beach is nearby, and somehow I could come home.");
     next;
-    mesq l("Please bring me some @@ so I can pull out these spikes from my foot.", getitemname(CrocClaw));
+    mesq l("Please bring me some @@ so I can pull out these spikes from my foot.", getitemlink("CrocClaw"));
     next;
 
-    switch (select(l("Stay here, I'll hurry back as soon as I get some"),
-                   l("Maybe next time")))
+    switch (select(l("Stay here, I'll hurry back as soon as I get some."),
+                   l("Maybe next time.")))
     {
         case 1:
             setq ArtisQuests_Urchin, 1;
             mes "";
             mesn;
             mesq l("It really hurts, please hurry!");
-            ArtisQuests_Urchin_ULeft = 3;
+
+            ArtisQuests_Urchin_ULeft = rand(3,5);
+
+            next;
             goto L_Where;
             break;
         case 2:
             mes "";
-            mes l("The girl looks desperate");
+            mesn "Narrator";
+            mes col(l("The girl looks desperate."),9);
     }
-    close;
+    goto L_Close;
 
 L_QuestStarted:
     mesn;
-    mesq l("Have you some @@s for me?", getitemname(CrocClaw));
-    mes "";
-    switch (select(l("Check out this one"),
-                   l("I should put more effort into this"),
-                   l("Where can I find @@s?",getitemname(CrocClaw))))
+    mesq l("Have you some @@s for me?", getitemlink("CrocClaw"));
+    next;
+
+    menuint
+        l("Check out this one."), 1,
+        l("I should put more effort into this."), 2,
+        l("Where can I find some Croc Claws?"), 3;
+
+    switch (@menuret)
     {
         case 1:
             .@MustRepeat = CheckCrowClaw;
             if (!.@MustRepeat)
                 goto L_CheckLoop;
-            close;
+            goto L_Close;
         case 2:
             mes "";
             mesn;
             mesq l("It really hurts, please hurry!");
-            close;
+            goto L_Close;
         case 3:
+            mes "";
+            mesn;
             goto L_Where;
     }
 
 L_CheckLoop:
     while (!.@MustRepeat)
     {
-        switch (select(l("Here is another one"),
-                       l("I must leave to get more")))
+        switch (select(l("Here is another one."),
+                       l("I must leave to get more.")))
         {
             case 1:
                 .@MustRepeat = CheckCrowClaw;
                 break;
             case 2:
-                close;
+                goto L_Close;
         }
     }
-    close;
+    goto L_Close;
 
 L_Where:
-    mes "";
-    mesn;
-    mesq l("You can find Crocs on the beach, to the north from the Market");
+    mesq l("You can find some Crocs on the beach, you could look up at the one after the gate, on top of this city.");
+
+    goto L_Close;
+
+L_Close:
+    initnpctimer;
     close;
 
 OnTimer1000:
