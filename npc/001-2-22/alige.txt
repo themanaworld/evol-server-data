@@ -186,8 +186,8 @@ L_GiveFood:
         rif(countitemcolor(513, 1), l(getitemname(513))), 0,
         rif(countitemcolor(515, 1), l(getitemname(515))), 515,
         rif(countitemcolor(516, 1), l(getitemname(516))), 1,
-        rif(countitemcolor(516, 1), l(getitemname(518))), 1,
-        rif(countitemcolor(516, 1), l(getitemname(519))), 1,
+        rif(countitemcolor(518, 1), l(getitemname(518))), 1,
+        rif(countitemcolor(519, 1), l(getitemname(519))), 1,
         l("I don't have anything good for you today."), -1;
 
     .@id = @menuret;
