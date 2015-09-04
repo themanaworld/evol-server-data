@@ -17,7 +17,7 @@
 
         setarray .messages$[0], l("Ouch!"), l("It hurts so bad!"), l("Help me!"),
                                 l("Hurry up!"), l("I can't wait all day!"),
-                                l("I need more @@s.", getitemlink("CrocClaw")),
+                                l("I need more Croc Claws."),
                                 l("What a relief."), l("No more pain, thanks to you."),
                                 l("I can walk again!");
         setarray .msg_first[0], 0, 3, 6;
