@@ -203,7 +203,8 @@ OnTouch:
     end;
 
 OnHour00:
-    @ArtisQuests_Urchin_MoonMsgTick = 0;
+    if (playerattached())
+       @ArtisQuests_Urchin_MoonMsgTick = 0;
     end;
 
 OnInit:
