@@ -1,6 +1,7 @@
 // Evol functions.
 // Authors:
 //    4144
+//    Travolta
 // Description:
 //    Build in functions.
 
@@ -49,4 +50,28 @@ function	script	str	{
 function	script	addremovemapmask	{
     setmapmask getarg(0), (getmapmask(getarg(0)) | (getarg(1) + getarg(2))) ^ getarg(2);
     return;
+}
+
+// remove spaces at the start and end of string and return result
+function	script	strip	{
+    .@s$ = getarg(0);
+    if (.@s$ == "")
+        return "";
+    .@start = 0;
+    .@end = getstrlen(.@s$) - 1;
+    for (.@i = .@start; .@i < .@end; .@i++)
+    {
+        if (charat(.@s$, .@i) != " ")
+            break;
+        else
+            .@start++;
+    }
+    for (.@i = .@end; .@i >= .@start; .@i--)
+    {
+        if (charat(.@s$, .@i) != " ")
+            break;
+        else
+            .@end--;
+    }
+    return substr(.@s$, .@start, .@end);
 }
