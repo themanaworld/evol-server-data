@@ -1,0 +1,38 @@
+// Evol scripts.
+// Authors:
+//    Travolta
+// Description:
+//    test npc5
+
+function	script	npc5TestFunc	{
+    npctalk getarg(0);
+    return;
+}
+
+test,45,25,0	script	npc5	NPC_PLAYER,{
+    close;
+
+OnTimer1000:
+    if (!isunitwalking())
+    {
+        movetonextpoint;
+    }
+    initnpctimer;
+    end;
+
+OnInit:
+    initmovegraph "topleft",      45, 25,
+                  "topright",     55, 25,
+                  "bottomright",  55, 34,
+                  "bottomleft",   45, 34;
+
+    setmovegraphcmd "topleft",     "topright",    30, "dir 0; wait 1",
+                    "topleft",     "bottomright", 20, "class 104",
+                    "topleft",     "bottomleft",  50, "emote 8; wait 1; warp bottomright",
+                    "topright",    "bottomleft",  1,  "emote 3; wait 5",
+                    "bottomleft",  "topleft",     25, "dir 2; wait 1; call npc5TestFunc Hello=)",
+                    "bottomleft",  "bottomright", 10, "speed 40",
+                    "bottomright", "bottomleft",  1,  "class 801; speed 100; dir 0; emote 1; wait 4";
+    firstmove "wait 1; speed 100; dir 4; emote 7";
+    initnpctimer;
+}
