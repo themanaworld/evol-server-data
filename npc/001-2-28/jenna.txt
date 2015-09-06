@@ -1,0 +1,81 @@
+// Evol scripts.
+// Authors:
+//    Travolta
+// Description:
+//    Jenna, waitress in Artis inn.
+
+001-2-28,52,32,0	script	Jenna#001-2-28	NPC_RAIJIN_FEMALE_WAITRESS,3,3,{
+
+    function SayRandomGreeting {
+
+        setarray .messages$[0], l("Welcome to our inn!"),
+                                l("Welcome to RedPlush."),
+                                l("Please, have a seat."),
+                                l("Lovely day, isn't it?");
+
+        .@tick = gettimetick(1);
+        if (.@tick > @Artis_RedPlush_WaitressTick + 600)
+        {
+            .@r = rand(0, getarraysize(.messages$));
+            .@msg$ = .messages$[.@r];
+            npctalk3 .@msg$;
+            @Artis_RedPlush_WaitressTick = .@tick;
+        }
+    }
+
+    npctalk3 l("Sorry, I'm busy right now.");
+    close;
+
+OnTimer1000:
+    if (!isunitwalking())
+    {
+        movetonextpoint;
+    }
+    initnpctimer;
+    end;
+
+OnTouch:
+    SayRandomGreeting;
+    end;
+
+OnHour00:
+    if (playerattached())
+       @Artis_RedPlush_WaitressTick = 0;
+    end;
+
+OnInit:
+    setnpcsex G_FEMALE;
+    setnpcdistance 5;
+    initmovegraph "m_table_1",    52, 32,
+                  "m_table_2",    56, 32,
+                  "big_table_l",  53, 27,
+                  "big_table_r",  56, 30,
+                  "s_table_1",    53, 36,
+                  "s_table_2",    58, 38,
+                  "lf_table_2",   45, 31;
+
+    setmovegraphcmd "m_table_1",   "s_table_2",  2,  "dir 4; wait 8",
+                    "m_table_1",   "lf_table_2", 1,  "dir 4; wait 8",
+                    "m_table_1",   "big_table_l",1,  "dir 0; wait 10",
+                    "m_table_2",   "m_table_1",  1,  "dir 0; wait 8",
+                    "m_table_2",   "lf_table_2", 1,  "dir 4; emote 2; wait 8",
+                    "m_table_2",   "big_table_l",2,  "dir 0; wait 8",
+                    "s_table_1",   "m_table_1",  5,  "dir 0; wait 10",
+                    "s_table_1",   "big_table_l",3,  "dir 0; wait 1; emote 122;"
+                                                     "say Thank you for the tip!;"
+                                                     "wait 15; moveon",
+                    "s_table_1",   "m_table_2",  1,  "dir 0; wait 8",
+                    "s_table_2",   "s_table_1",  1,  "wait 6",
+                    "s_table_2",   "m_table_2",  1,  "dir 0; wait 8",
+                    "big_table_l", "m_table_2",  1,  "dir 0; wait 6",
+                    "big_table_l", "s_table_1",  1,  "dir 2; wait 6",
+                    "big_table_r", "s_table_1",  1,  "dir 2; wait 6",
+                    "big_table_r", "m_table_2",  2,  "wait 8",
+                    "big_table_r", "s_table_2",  1,  "dir 4; wait 8",
+                    "lf_table_2",  "m_table_2",  1,  "dir 0; wait 8",
+                    "lf_table_2",  "big_table_r",1,  "dir 4; wait 1; emote 3; wait 6";
+                    
+    firstmove "wait 8";
+    initnpctimer;
+}
+
