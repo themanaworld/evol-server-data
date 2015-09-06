@@ -123,6 +123,11 @@ function	script	execmovecmd	{
     {
         npcspeed atoi(.@cmd$[1]);
     }
+    else if (.@cmd$[0] == "say")
+    {
+        deletearray .@cmd$[0], 1;
+        npctalk implode(.@cmd$, " ");
+    }
     else
     {
         debugmes "Unknown move graph cmd: " + .@cmd$[0];
