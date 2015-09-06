@@ -50,8 +50,14 @@ L_GotoNard:
     close;
 
 L_End:
-    npctalk3 l("This door is locked.");
-
+    mesn "Narrator";
+    mesq col(l("This door is locked."), 9);
+    setcamnpc "Julia";
+    mesn "Julia";
+    mesq l("We're soon leaving that island, please return to your cabine.");
+    next;
+    restorecam;
+   
     close;
 }
 
