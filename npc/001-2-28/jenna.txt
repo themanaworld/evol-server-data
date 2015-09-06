@@ -8,14 +8,14 @@
 
     function SayRandomGreeting {
 
-        setarray .messages$[0], l("Welcome to our inn!"),
-                                l("Welcome to RedPlush."),
-                                l("Please, have a seat."),
-                                l("Lovely day, isn't it?");
-
         .@tick = gettimetick(1);
         if (.@tick > @Artis_RedPlush_WaitressTick + 600)
         {
+            setarray .messages$[0], l("Welcome to our inn!"),
+                                    l("Welcome to RedPlush."),
+                                    l("Please, have a seat."),
+                                    l("Lovely day, isn't it?");
+
             .@r = rand(0, getarraysize(.messages$));
             .@msg$ = .messages$[.@r];
             npctalk3 .@msg$;
