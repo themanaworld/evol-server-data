@@ -470,7 +470,7 @@ OnTouch:
     close;
 
 OnUnTouch:
-    doevent "#Door17::OnUnTouch";
+    doevent "#Door18::OnUnTouch";
 }
 
 001-1,118,88,0	script	#Door18	NPC_ARTIS_DOOR,2,3,{
@@ -490,3 +490,31 @@ OnInit:
     setnpcdistance 5;
     end;
 }
+
+001-1,49,96,0	script	#Warp19	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-31", 32, 39;
+    close;
+
+OnUnTouch:
+    doevent "#Door19::OnUnTouch";
+}
+
+001-1,49,96,0	script	#Door19	NPC_ARTIS_DOOR,2,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
+    end;
+}
+
