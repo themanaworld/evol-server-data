@@ -14,19 +14,19 @@
 001-2-2,33,32,0	script	Moon#001-2-2	NPC_ELVEN_FEMALE,3,3,{
 
     function SayRandomGreeting {
-
-        setarray .messages$[0], l("Ouch!"), l("It hurts so bad!"), l("Help me!"),
-                                l("Hurry up!"), l("I can't wait all day!"),
-                                l("I need more Croc Claws."),
-                                l("What a relief."), l("No more pain, thanks to you."),
-                                l("I can walk again!");
-        setarray .msg_first[0], 0, 3, 6;
-        setarray .msg_last[0], 2, 5, 8;
-
         .@q = getq(ArtisQuests_Urchin);
         .@tick = gettimetick(1);
         if (.@tick > @ArtisQuests_Urchin_MoonMsgTick + 30)
         {
+            setarray .messages$[0], l("Ouch!"), l("It hurts so bad!"),
+                                    l("Help me!"), l("Hurry up!"),
+                                    l("I can't wait all day!"),
+                                    l("I need more Croc Claws."),
+                                    l("What a relief."),
+                                    l("No more pain, thanks to you."),
+                                    l("I can walk again!");
+            setarray .msg_first[0], 0, 3, 6;
+            setarray .msg_last[0], 2, 5, 8;
             .@r = rand(.msg_first[.@q],.msg_last[.@q]);
             .@msg$ = .messages$[.@r];
             npctalk3 .@msg$;
