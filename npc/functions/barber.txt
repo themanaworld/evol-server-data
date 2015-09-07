@@ -1,18 +1,12 @@
 // Evol scripts.
 // Authors:
 //    Reid
+//    Travolta
 // Description:
 //    Function for supporting barber NPC.
 
-function	script	Barber	{
-    menu
-        l("I'd like to get a different style."), L_Style,
-        l("Can you do something with my color?"), L_Color,
-        l("Hmm, I'm fine for now, thank you."), L_Done;
+function	script	BarberChangeStyle	{
 
-    goto L_Done;
-
-L_Style:
     menu
         l("Bald"), -,
         l("Bowl cut"), -,
@@ -45,13 +39,15 @@ L_Style:
         l("As you want!"), -,
         l("Hmm, I'm fine for now, thank you."), L_Done;
 
-L_Process_Style:
     set @style, @menu;
     if (@style == 29) set @style, rand(28);
     setlook 1, @style;
+L_Done:
     return;
+}
 
-L_Color:
+function	script	BarberChangeColor	{
+
     menu
         l("Off black"), -,
         l("Ash brown"), -,
@@ -76,11 +72,10 @@ L_Color:
         l("Esperia Blue"), -,
         l("Surprise me"), -,
         l("Hmm, I'm fine for now, thank you."), L_Done;
+
     set @color, @menu - 1;
     if (@color == 21) set @color, rand(20);
     setlook 6, @color;
-    return;
-
 L_Done:
     return;
 }
