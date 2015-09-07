@@ -1,0 +1,17 @@
+// Evol scripts.
+// Author:
+//    Travolta
+// Description:
+//    Pious on Market
+// Variables:
+//    none
+
+
+001-1,55,119,0	script	#MarketPiou1	NPC_MARKET_PIOU,{
+    end;
+
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 2;
+    end;
+}
