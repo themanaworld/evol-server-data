@@ -1,20 +1,69 @@
 // Evol scripts.
 // Authors:
 //    Reid
+//    Travolta
 // Description:
 //    Barber of Aemil, should be placed on the 29th indoor but it's still a WIP
 
 001-2-29,37,31,0	script	Edouard#001-2-29	NPC_EDOUARD,{
+
+    function tellStory {
+        mesq l("I am new in this town, just like you are.");
+        next;
+        mesq l("I came here, looking for a better life.");
+        next;
+        mesq l("I still didn't find a cheap building to open my own business, so for now I stay in this inn.");
+        next;
+        mesq l("I'm a barber, you see. I can change your hair style or color to your liking.");
+        next;
+        Edouard_StoryTold++;
+    }
+
     mesn;
-    mesq lg("Hello dear, what do you want today?");
+    mesq lg("Hello, young lady.", "Hello, young man.");
     next;
 
-    callfunc "Barber";
+    if (Edouard_StoryTold == 0)
+        tellStory;
 
-    mesn;
+L_Start:
+    mesq l("What would you like me to change?");
+    next;
+
+    menuint
+        l("I'd like to get a different style."), 1,
+        l("Can you do something with my color?"), 2,
+        l("What's your story again?"), 3,
+        l("Hmm, I'm fine for now, thank you."), 4;
+
+    mes "";
+    switch (@menuret)
+    {
+        case 1:
+            BarberChangeStyle;
+            mes "";
+            mesn;
+            mesq l("Enjoy your new style.");
+            next;
+            break;
+        case 2:
+            BarberChangeColor;
+            mes "";
+            mesn;
+            mesq l("I hope you like this color.");
+            next;
+            break;
+        case 3:
+            mesn;
+            tellStory;
+            goto L_Start;
+        case 4:
+            mesn;
+            mesq l("Feel free to visit me another time");
+            next;
+    }
+
     mesq l("Bye bye!");
-
-    goto L_Close;
 
 L_Close:
     close;
