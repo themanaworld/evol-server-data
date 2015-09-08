@@ -1,0 +1,63 @@
+// Evol scripts.
+// Author:
+//    Travolta
+// Description:
+//    Pious flying around town
+// Variables:
+//    none
+
+001-1,95,84,0	script	#FlyingPiou1	NPC_FLYING_PIOU,{
+    end;
+
+OnTimer1000:
+    if (!isunitwalking())
+    {
+        movetonextpoint;
+    }
+    initnpctimer;
+    end;
+
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 0;
+    initmovegraph "fountain_1",      95, 84,
+                  "fountain_2",      83, 97,
+                  "fountain_3",      80, 86,
+                  "river_bank_1",    117, 98,
+                  "river_bank_2",    117, 110,
+                  "chelios_1",       102, 112,
+                  "market_1",        81, 118,
+                  "market_2",        63, 119,
+                  "spot_1",          55, 98,
+                  "taree_1",         69, 82,
+                  "inn_1",           112, 79,
+                  "steps_1",         109, 63,
+                  "beh_twnhall_1",   89, 52,
+                  "taree_2",         67, 67,
+                  "taree_3",         56, 85
+                  ;
+
+    setmovegraphcmd "fountain_1",     "river_bank_1", 1, "moveon",
+                    "river_bank_1",   "river_bank_2", 1, "moveon",
+                    "river_bank_2",   "chelios_1",    1, "moveon",
+                    "chelios_1",      "fountain_2",   1, "moveon",
+                    "fountain_2",     "fountain_3",   1, "moveon",
+                    "chelios_1",      "market_1",     1, "moveon",
+                    "market_1",       "market_2",     1, "moveon",
+                    "market_2",       "spot_1",       1, "moveon",
+                    "spot_1",         "taree_1",      1, "moveon",
+                    "taree_1",        "fountain_3",   1, "moveon",
+                    "fountain_3",     "fountain_1",   1, "moveon",
+                    "spot_1",         "taree_3",      1, "moveon",
+                    "taree_3",        "taree_2",      1, "moveon",
+                    "taree_2",        "beh_twnhall_1",1, "moveon",
+                    "beh_twnhall_1",  "steps_1",      1, "moveon",
+                    "steps_1",        "inn_1",        1, "moveon",
+                    "steps_1",        "fountain_1",   1, "moveon",
+                    "inn_1",          "river_bank_1", 1, "moveon"
+                    ;
+                    
+    firstmove "speed 200";
+    initnpctimer;
+    end;
+}

@@ -196,6 +196,7 @@ function	script	movetonextpoint	{
     .@nextcmd$ = getvariableofnpc(.movegraphcmd$[.@pos * .@size + .@next_idx], strnpcinfo(3));
     set getvariableofnpc(.nextcmd$, strnpcinfo(3)), .@nextcmd$;
     set getvariableofnpc(.movepos, strnpcinfo(3)), .@next_idx;
+    // debugmes strnpcinfo(1) + " moving to " + getvariableofnpc(.movegraphlabels$[.@next_idx], strnpcinfo(3));
     npcwalkto .@next_x, .@next_y;
     return;
 }
