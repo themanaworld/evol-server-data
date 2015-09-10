@@ -27,7 +27,7 @@ test,10,10,0	script	npc1	NPC_TEST1,3,3,{
     }
 
 L_Start:
-    switch (select("show area:map:pc:change npc direction:quest test:cart:refine:rent"))
+    switch (select("show area:map:pc:change npc direction:quest test:cart:items"))
     {
         case 1:
             areatest;
@@ -120,57 +120,97 @@ L_Start:
             }
             break;
         case 7:
-            .@item = -1;
             while(1)
             {
-                switch (select("set item:refine +1:refine -1:refine fail:back"))
+                switch (select("refine:rent:bound:named:back"))
                 {
                     case 1:
-                        requestitemindex .@item;
-                        mes "Item index selected: " + str(.@item);
+                        .@item = -1;
+                        while(1)
+                        {
+                            switch (select("set item:refine +1:refine -1:refine fail:back"))
+                            {
+                                case 1:
+                                    requestitemindex .@item;
+                                    mes "Item index selected: " + str(.@item);
+                                    break;
+                                case 2:
+                                    successrefindex .@item, 1;
+                                    break;
+                                case 3:
+                                    downrefindex .@item, 1;
+                                    break;
+                                case 4:
+                                    failedrefindex .@item;
+                                    break;
+                                case 5:
+                                    goto L_Start;
+                                    break;
+                            }
+                        }
                         break;
                     case 2:
-                        successrefindex .@item, 1;
+                        while(1)
+                        {
+                            switch (select("rent vneck for 10 seconds",
+                                "rent vneck for 30 seconds",
+                                "rent vneck for 1 minute",
+                                "rent vneck for 5 minutes",
+                                "back"))
+                            {
+                                case 1:
+                                    rentitem 1301, 10;
+                                    break;
+                                case 2:
+                                    rentitem 1301, 30;
+                                    break;
+                                case 3:
+                                    rentitem 1301, 60;
+                                    break;
+                                case 4:
+                                    rentitem 1301, 300;
+                                    break;
+                                case 5:
+                                    goto L_Start;
+                                    break;
+                            }
+                        }
                         break;
                     case 3:
-                        downrefindex .@item, 1;
+                        while(1)
+                        {
+                            switch (select("get bound vneck",
+                                "back"))
+                            {
+                                case 1:
+                                    getitembound2 1301, 1, 1, 0, 0, 0, 0, 0, 0, 1;
+                                    break;
+                                case 2:
+                                    goto L_Start;
+                                    break;
+                            }
+                        }
                         break;
                     case 4:
-                        failedrefindex .@item;
+                        while(1)
+                        {
+                            switch (select("get named vneck",
+                                "back"))
+                            {
+                                case 1:
+                                    getnameditem 1301, "4144";
+                                    break;
+                                case 2:
+                                    goto L_Start;
+                                    break;
+                            }
+                        }
                         break;
                     case 5:
                         goto L_Start;
                         break;
                 }
             }
-            break;
-        case 8:
-            while(1)
-            {
-                switch (select("rent vneck for 10 seconds",
-                    "rent vneck for 30 seconds",
-                    "rent vneck for 1 minute",
-                    "rent vneck for 5 minutes",
-                    "back"))
-                {
-                    case 1:
-                        rentitem 1301, 10;
-                        break;
-                    case 2:
-                        rentitem 1301, 30;
-                        break;
-                    case 3:
-                        rentitem 1301, 60;
-                        break;
-                    case 4:
-                        rentitem 1301, 300;
-                        break;
-                    case 5:
-                        goto L_Start;
-                        break;
-                }
-            }
-            break;
     }
 
     close;
