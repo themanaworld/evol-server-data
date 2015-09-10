@@ -33,16 +33,16 @@ Copyright (C) 2010-2014 Evol Online
 - Предмет не выпадает ни из каких мобов.
 
  - Maximal monsters drop chance: %02.02f%%
-
+- Максимальный шанс выпадения из монстров: %02.02f%%
 
  - Monsters don't drop this item.
-
+- Этот предмет не выпадает из монстров.
 
  -- Duel has been created (Use @invite/@leave) --
-
+-- Дуэль создана (Используйте @invite/@leave) --
 
  -- Duels: %d/%d, Members: %d/%d --
-
+-- Дуэли: %d/%d, Участники: %d/%d --
 
  -- Duels: %d/%d, Members: %d/%d, Max players: %d --
 
@@ -51,7 +51,7 @@ Copyright (C) 2010-2014 Evol Online
 
 
  -- Player %s invites %s to duel --
-
+-- Игрок %s приглашает %s на дуэль --
 
  -> (card(s): 
 
@@ -69,10 +69,10 @@ Copyright (C) 2010-2014 Evol Online
 
 
  -> Player %s has accepted the duel --
-
+-> Игрок %s принял дуэль --
 
  <- Player %s has left the duel --
-
+<- Игрок %s покинул дуэль --
 
  ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
 
@@ -84,7 +84,7 @@ Copyright (C) 2010-2014 Evol Online
 
 
  Drops:
-
+Капли:
 
  Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
 
@@ -111,55 +111,55 @@ Copyright (C) 2010-2014 Evol Online
 
 
 %d GMs found.
-
+Найдено %d ГМ'ов.
 
 %d commands found.
-
+Найдено %d команд.
 
 %d day
-
+%d день
 
 %d days
-
+%d дней
 
 %d hour
-
+%d час
 
 %d hours
-
+%d часов
 
 %d item(s) found in %d %s slots.
-
+Найдено %d предмет(ов) в %d %s слотах.
 
 %d item(s) removed by a GM.
-
+%d предмет(ов) удалены ГМ'ом.
 
 %d item(s) removed from the player.
-
+У игрока удалено %d предмет(ов).
 
 %d item(s) removed. Player had only %d on %d items.
-
+%d предметов удалено. Игрок имеет тольлько %d на %d предметы.
 
 %d items have been refined.
-
+Переработано %d предметов.
 
 %d minute
-
+%d минута
 
 %d minutes
-
+%d минут
 
 %d monster(s) summoned!
-
+Призвано %d монстр(ов)!
 
 %d players found in map '%s'.
-
+На карте '%s' найдено %d игроков.
 
 %d players found.
-
+Найдено %d игроков.
 
 %d results found.
-
+%d результатов найдено.
 
 %d: Body Armor
 
@@ -171,7 +171,7 @@ Copyright (C) 2010-2014 Evol Online
 
 
 %d: Left Hand
-
+%d: Левая Рука
 
 %d: Lower Headgear
 
@@ -186,7 +186,7 @@ Copyright (C) 2010-2014 Evol Online
 
 
 %d: Shoes
-
+%d: Обувь
 
 %d: Top Headgear
 
@@ -207,7 +207,7 @@ Copyright (C) 2010-2014 Evol Online
 
 
 %s has bought your item(s).
-
+%s купил ваш предмет(ы).
 
 %s in jail for %d years, %d months, %d days, %d hours and %d minutes
 
@@ -216,16 +216,16 @@ Copyright (C) 2010-2014 Evol Online
 
 
 %s is empty
-
+%s пуст
 
 %s recalled!
-
+%s вспомнил!
 
 %s revision '%s' (src) / '%s' (scripts)
 
 
 %s spawns in:
-
+%s возродился в:
 
 %s value is now :%d
 
@@ -255,19 +255,19 @@ Copyright (C) 2010-2014 Evol Online
 
 
 '%s' is not a known permission.
-
+Разрешение '%s' не известно.
 
 '%s' is not married.
-
+'%s' не женат.
 
 '%s' skill and stat points have been reset.
 
 
 '%s' skill points reset.
-
+'%s' очков навыка сброшено.
 
 '%s' stats points reset.
-
+'%s' очков навыка сброшено.
 
 '%s' stats:
 
@@ -351,25 +351,25 @@ Copyright (C) 2010-2014 Evol Online
 
 
 - creates a new channel
-
+- создаёт новый канал
 
 - leaves <channel name>
-
+- покидает <channel name>
 
 - lists all banned characters from <channel name> channel
-
+- список всех забаненых персонажей на <channel name> канале
 
 - lists colors available to select for custom channels
 
 
 - lists public channels
-
+- список публичных каналов
 
 - unbans <character name> from <channel name> channel
 
 
 - unbans everyone from <channel name>
-
+- разбан всех из <channel name>
 
 - unbinds your global chat from its attached channel (if binded)
 
@@ -393,10 +393,10 @@ Copyright (C) 2010-2014 Evol Online
 
 
 -- %s list
-
+-- %s список
 
 -- %s list colors
-
+-- %s список цветов
 
 -- %s setcolor <channel name> <color name>
 
@@ -417,16 +417,16 @@ Copyright (C) 2010-2014 Evol Online
 
 
 -- Available options
-
+-- Доступные опции
 
 -- Displaying first %d partial matches
 
 
 -- Permission List
-
+-- Список разрешений
 
 -- Public Channels
-
+-- Публичные каналы
 
 -- User '%s' Permissions
 
@@ -441,7 +441,7 @@ Copyright (C) 2010-2014 Evol Online
 
 
 ----- Players in Map -----
-
+----- Игроки на карте -----
 
 ------ %s items list of '%s' ------
 
@@ -462,13 +462,13 @@ Copyright (C) 2010-2014 Evol Online
 Найден 1 ГМ.
 
 1 item has been refined.
-
+1 предмет был переработан.
 
 1 player found in map '%s'.
 
 
 1 player found.
-
+1 игрок найден.
 
 1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle.
 1. ##BНе используйте ботов##b, это значит, что запрещена любая активность в состоянии AFK (в дали от компьютера), можно только неподвижно стоять.
@@ -477,7 +477,7 @@ Copyright (C) 2010-2014 Evol Online
 2. ##BНе используйте оскорбительные / грубые выражения##b в чате, а так же в именах ваших персонажей.
 
 3. ##BDo not spam/flood other players.##b This includes chat spam and spam by trade requests.
-3. ##BНе спамьте других игроков, не флудите.##b Это включает спам в чате и спам запросами на торговлю.
+3. ##BНе спамьте других игроков, не флудите.##b Это касается спама в чате и спам запросов на торговлю.
 
 4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language.
 4. ##BГоворите только на английском в публичных местах.##b Вы можете говорить на любом языке в привате или когда все присутствующие говорят на этом языке.
@@ -512,6 +512,9 @@ A cookie!
 A great city, now the capital of these islands, called Esperia, rose on the single island, Aurora, where everyone lived.
 Великий город Эспэрия, ставший столицей этих островов, процветал на самом густонаселённом острове - Авроре.
 
+A small lie isn't a lie, and I could really use some cash...
+
+
 A sunny and hot day,
 Солнечный и жаркий день.
 
@@ -532,9 +535,6 @@ About this Esperia's Warrior Guild, I'm not sure about them, frankly.
 
 Acolyte
 
-
-Acorn
-Жёлудь
 
 Actually Gugli asked me if I would help you bring him some of your boxes.#0
 На самом деле, Гугли попросил меня помочь отнести к нему несколько твоих ящиков.
@@ -572,29 +572,17 @@ Agility greatly increases your attack speed and the chances of you dodging enemy
 Ah... Gugli... He's too young to understand our conversation.
 Ах... Гугли... Он слишком молод, чтобы понять нашу беседу.
 
+Ahoi.
+
+
 Alchemist
 Алхимик
-
-Ale
-Эль
 
 Ale and Tibbo should bring 2 boxes of @@s, Astapolos and Gulukan 2 of @@s and Jalad and Q'Muller were charged of the boxes of @@s.
 Эль и Тиббо должны принести два ящика @@, Астаполос и Гулукан два @@, а Ялад и КуМюллер были отправлены за ящиками с @@.
 
 Ale.
 Эль
-
-Alige
-Элайдж
-
-Alige#Artis
-
-
-AligeTrigger
-AligeTrigger
-
-AligeTrigger#Artis
-
 
 All I can do is tell you that...
 Всё, что я могу сделать, так это рассказать тебе что...
@@ -606,13 +594,13 @@ All dropped items have been cleaned up.
 
 
 All items have been repaired.
-
+Все предметы были починены.
 
 All items stored.
-
+Все вещи сохранены.
 
 All monsters killed!
-
+Все монстры убиты!
 
 All monsters summoned!
 
@@ -621,7 +609,7 @@ All of a sudden, you hear voices from above.
 Внезапно, вы услышали голоса сверху.
 
 All of your items have been removed.
-
+Все ваши вещи были удалены.
 
 All online characters of the %s guild have been recalled to your position.
 
@@ -630,7 +618,7 @@ All online characters of the %s party have been recalled to your position.
 
 
 All players have been kicked!
-
+Все игроки были выкинуты!
 
 All skills have been added to your skill tree.
 
@@ -651,7 +639,7 @@ AllowKS |
 
 
 Already using this font.
-
+Уже используется этот шрифт.
 
 Alright! Yoyone more box and it'll be good.
 Ладно! Ещё йойон ящик и всё будет в порядке.
@@ -698,6 +686,9 @@ And then what happened?
 And what do you give me in exchange for these informations?
 И что ты мне дашь взамен за эту информацию?
 
+And when we will got enought money to don't depend of anybody
+
+
 And you, how are you doing?
 А ты как поживаешь?
 
@@ -708,7 +699,7 @@ And you? How's it yaying on your side?
 А ты? Как йейтся у тебя?
 
 Any clue on where Astapolos may be hidden?
-Есть идеи где Астополос может прятаться?
+Есть идеи где Астаполос может прятаться?
 
 Any contribution to the game (translations, graphics creation/edition, concepts, coding/scripting, etc...) is rewarded!
 Любой вклад в игру (переводы, создание/редактирование графики, идеи, кодинг/скриптинг, и т.д.) вознаграждается!
@@ -731,9 +722,6 @@ Anyway, if you ever feel interested, just check my bag!#1
 Appearance changed.
 
 
-Aquada
-Аквада
-
 Arch Bishop
 
 
@@ -741,7 +729,7 @@ Arch Bishop T
 
 
 Archer
-
+Лучник
 
 Are you blind? Do you really think these boxes are light and soft as a piou's feather?!
 Ты слепой? Ты правда думаешь, что эти ящики лёгкие и мягкие как пёрышки Пию?!
@@ -761,24 +749,6 @@ Are you yaying here to explore the island?#0
 Are you yaying here to explore the island?#1
 Ты йайишь здесь, дабы исследовать остров?
 
-AreaNPC
-AreaNPC
-
-AreaNPC#001-2-22
-
-
-AreaNPC#doors1
-
-
-AreaNPC#doors2
-
-
-AreaTop
-AreaTop
-
-Artaxe
-Артэкс
-
 Artis of course!
 Артис, конечно!
 
@@ -786,7 +756,13 @@ As they sailed on Oceania, great waters of Aemil, one of the alliances found a l
 В плавании по Океании, бороздя великие воды Аэмиля, одна из групп нашла землю.
 
 As you may know, we are explorers on a long distance voyage, and our swashbuckling mariners need to store enough food to survive. You don't know how dangerous the sea life can be.
-Как ты возможно понял, мы исследователи, совершающие дальние плавания, и наши удалые моряки должны запасти достаточно продовольствия, чтобы выжить. Ты не представляешь, насколько опасна жизнь моряка.
+Как ты, возможно, понял, мы — исследователи, совершающие дальние плавания, и наши удалые моряки должны запасти достаточно продовольствия, чтобы выжить. Ты не представляешь, насколько опасна жизнь моряка.
+
+As you want!
+
+
+Ash brown
+
 
 Ask sailors around here they shouldn't be so far away.
 Спроси моряков вокруг. Они где-то поблизости.
@@ -796,9 +772,6 @@ Assassin
 
 Assassin Cross
 
-
-Astapolos
-Астаполос
 
 Astapolos.
 Астаполос.
@@ -811,6 +784,9 @@ At that time, we were selling crab food on our old mushroom island.
 
 At the moment, our crew is busy collecting @@s, @@s and @@s.
 В настоящий момент, наша команда занята сбором @@, @@ и @@.
+
+Auburn brown
+
 
 Auction is disabled
 
@@ -874,6 +850,9 @@ Available commands:
 
 Awesome!
 Круто!
+
+Awwww, what will I do now?
+
 
 Ayouyouch! My head...
 Ауч! Моя голова...
@@ -969,7 +948,7 @@ Baby Swordsman
 
 
 Baby Thief
-
+Ребёнок Вор
 
 Baby Wanderer
 
@@ -978,6 +957,9 @@ Baby Warlock
 
 
 Baby Wizard
+Ребёнок Маг
+
+Bald
 
 
 Ban failed, it is not possible to ban this user.
@@ -1016,6 +998,9 @@ Battlegrounds ON
 Be patient a little while longer, in the next few days we will arrive at the port of Artis...
 Потерпи еще немного, через несколько дней мы прибудем в порт Артиса...
 
+Because of the dense foliage on the trees you need to go close to them not to miss him.
+
+
 Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
 
 
@@ -1025,26 +1010,23 @@ Before you go, let me tell you how to get @@s, because you don't look very smart
 Before...
 Раньше...
 
-Billy Bons
-Билли Бонс
-
 Blacksmith
 Кузнец
 
 Blub
-
+Блаб
 
 Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --
+
+
+Bobo
 
 
 Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
 
 
-Box
-Ящик
+Bowl cut
 
-Bread
-Хлеб
 
 Break the door.
 Сломать дверь.
@@ -1052,11 +1034,20 @@ Break the door.
 Bring this box to Gugli. He will be extremely happy!
 Отнеси этот ящик Гугли. Он будет очень счастлив!
 
+Bun
+
+
+Bunches
+
+
 But I can't tell you anything about it, I'm sorry.
 Но я не могу тебе ничего рассказать об этом, извини.
 
 But I need to go, see you!
 Мне нужно идти, пока!
+
+But I still have some spikes left in my foot.
+
 
 But I swear that one day... Oh... My tasty revenge! Hhm, actually I wonder if... Maybe...
 Но я клянусь что однажды... Ох... Моя сладкая месть! Хм... В принципе, мне интересно, если... Может быть...
@@ -1068,6 +1059,9 @@ But for now, you can relax on the ship, or visit the island we're docked at! Its
 Сейчас ты можешь отдохнуть на корабле или посетить остров, к которому мы причалили! Этот остров маленький, однако отличное место, чтобы поупражняться и размять твои ноги.
 
 But hey, back to me. Remember my mentioning that I'm hun...grrr...eee!
+
+
+But if you tell my sister, that you didn't find me, I can stay here all day, eating apples and enjoying the view
 
 
 But let's talk about this island. We're docking here to find some fine quality goods.
@@ -1097,6 +1091,9 @@ But... If he has amnesia like Julia said... We don't need to worry about him. At
 But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet.#0
 Но... Если у неё амнезия, как сказала Джулия... Нам не следует беспокоиться о ней. По крайней мере пока.
 
+Bye bye!
+
+
 Bye for now.
 А теперь, пока.
 
@@ -1112,8 +1109,17 @@ C'mon, don't be like that and loosen up! Don't you want to know who's behind all
 CAN YOU HEAR ME?!
 ТЫ МЕНЯ СЛЫШИШЬ?!
 
+Can I be of any help?
+
+
 Can I read these rules again?
 Можно еще раз прочитать правила?
+
+Can you do something with my color?
+
+
+Can you please go there and find him? He is probably hiding on one of those trees, like always.
+
 
 Can't create chat rooms in this area.
 
@@ -1134,7 +1140,7 @@ Cannot mount while in disguise.
 
 
 Cannot send mails too fast!!
-
+Невозможно отправить письма слишком быстро !!
 
 Cannot transform into monster while in disguise.
 
@@ -1151,6 +1157,9 @@ Cart Added.
 Cash Shop is disabled in this map
 
 
+Center parting
+
+
 Champion
 Чемпион
 
@@ -1158,16 +1167,16 @@ Channel '%s' has no banned players
 
 
 Channel '%s' is not available
-
+Канал '%s' не доступен
 
 Channel length must be between 3 and %d
-
+Длина канала должна быть между 3 и %d
 
 Channel name must start with a '#'
-
+Имя канала должно начинатся с '#'
 
 Channel password may not contain spaces
-
+Пароль канала не может содержать пробелы
 
 Char-server has been asked to %s the character '%.*s'.
 
@@ -1179,13 +1188,13 @@ Character cannot be disguised while mounted.
 
 
 Character does not have the specified item.
-
+Персонаж не имеет специальных вещей.
 
 Character killed.
-
+Персонаж убит.
 
 Character not found.
-
+Персонаж не найден.
 
 Charcommand failed (usage: %c<command> <char name> <parameters>).
 
@@ -1193,16 +1202,13 @@ Charcommand failed (usage: %c<command> <char name> <parameters>).
 Chat: %s | Player: %s | Location: %d %d
 
 
+Check out this one.
+
+
 Cheers!
 Поздравления!
 
-Cheese
-Сыр
-
-Chef Gado
-Шэф Гадо
-
-Chef Gado#Artis
+Cherry blossom
 
 
 Cherry tree leaves have begun to fall.
@@ -1211,14 +1217,11 @@ Cherry tree leaves have begun to fall.
 Cherry tree leaves no longer fall.
 
 
-Chest
-Сундук
-
-Chest#Artis
+Choppy
 
 
 Christmas
-
+Рождество
 
 Click on the NPCs around you to continue the introduction.
 Нажмите на NPC вокруг, чтобы продолжить вступление.
@@ -1233,12 +1236,15 @@ Clouds have disappeared.
 
 
 Clouds | 
-
+Облака |
 
 Clouds2 | 
-
+Облака2 |
 
 Clown
+Клоун
+
+Combed back
 
 
 Come on, Sap! You are scaring our guest with your stories.#0
@@ -1256,9 +1262,6 @@ Congrats, you are now part of the crew. Thanks again for your help.
 Congratulations!
 Поздравляю!
 
-Cookie Master
-Мастер Печенек
-
 Cookies are a source of life.
 Печеньки - это смысл жизни.
 
@@ -1267,6 +1270,9 @@ Cookies are awesome, so am I.
 
 Cookies provide you strength, health and cuteness.
 Печеньки вселяют в тебя силу, здоровье и милость.
+
+Copper blonde
+
 
 Costume '%s' removed.
 
@@ -1284,13 +1290,10 @@ Could you please bring me something which isn't a berry, and I'm not big on vege
 Пожалуйста, если не трудно, принеси мне что нибудь, что не является ягодами. Я не вегетарианец, мне нужны протеины!
 
 Could you tell me where I am?#0
-Где мы сейчас находимся?
+Не могли бы вы сказать мне, где я?
 
 Could you tell me where I am?#1
-Где мы сейчас находимся?
-
-Couwan
-Кувэн
+Не могли бы вы сказать мне, где я?
 
 Couwan gave me this box, it is for you.
 Кувэн дал мне эту коробку. Она для тебя.
@@ -1298,17 +1301,20 @@ Couwan gave me this box, it is for you.
 Couwan hands you a box full of fish.
 Кувэн передаёт вам ящик, наполненный рыбой.
 
+Crafty
+
+
 Creator
 
 
 Croc
-
+Крок
 
 Croconut
-Крокорех
+Крокос
 
 Crocotree
-
+Крокодерево
 
 Crusader
 Крестоносец
@@ -1322,9 +1328,6 @@ DO YOU FEEL BETTER?!
 Damn @@.
 Проклятый @@.
 
-Dan
-Дэн
-
 Dan ends the conversation and resumes to write his letter.
 Дэн заканчивает беседу и продолжает писать своё письмо.
 
@@ -1337,8 +1340,11 @@ Dancer
 Dark Collector
 
 
-Darlin
-Дарлин
+Dark brown
+
+
+Dark copper
+
 
 Day Mode Activated.
 
@@ -1352,20 +1358,26 @@ Day mode is already enabled.
 Dear angel, can you hear my voice?
 
 
+Dear sister,
+
+
+Dearly yours, Dan
+
+
 Death Knight
 Рыцарь смерти
 
 Defeated by
 
 
-Devis
-Дэвис
-
 Dex: %d (%d~%d)
 
 
 Dexterity increases your bow damage and your accuracy.
 Ловкость (dex) увеличивает урон при стрельбе из лука и вашу точность.
+
+Did you find my brother?
+
 
 Did you say reward? I want it!
 Ты сказал награда? Я хочу её!
@@ -1448,17 +1460,14 @@ Don't tell me more, I know what you want...
 Don't try to poison me! I know what that does!
 Я знаю, для чего это - не пытайся меня отравить!
 
+Don't worry sister, I didn't forget you
+
+
 Don't worry, I'm sure you will help them soon enough!
 Не беспокойся, я уверен - ты вскоре поможешь им!
 
 Done. Here, take it! Now, here is the plan. Go talk to her and offer our beautiful lady a bite of her arrogance!
 Готово. Вот, возьми! Теперь, вот план. Поговори с ней и предложи нашей прекрасной леди усмирить своё высокомерие!
-
-DoorUpwards
-DoorUpwards
-
-DoorUpwards#001-2-23
-
 
 Duel: Can't use %s in duel.
 
@@ -1550,19 +1559,25 @@ Elmo told me what Nard said, congrats!
 Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.
 Элмо сказал мне мне, что теперь ты для нас как член семьи и трудился вместе с нами на этом острове. Я очень ценю твои усилия.
 
-Elmo#sailors
-Элмо#sailors
-
 Elven Voice
 Эльфийский голос
 
+Emo
+
+
 Enabled Mapflags in this map:
+
+
+Enjoy your new style.
 
 
 Error reading atcommand.conf, reload failed.
 
 
 Error reading groups.conf, reload failed.
+
+
+Esperia Blue
 
 
 Even though they did not hear anything about the other groups, they decided to start a new life on this land, full of harmful animals.
@@ -1604,14 +1619,14 @@ Fake name must be at least two characters.
 Farewell.
 Прощай.
 
-Fexil
-Фексил
+Feel free to visit me another time
+
 
 Fifteen Castles
-
+Пятнадцать Замков
 
 File not found.
-
+Файл не найден.
 
 File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
 
@@ -1625,6 +1640,9 @@ Fine, tell me, who are these mysterious aliens?
 Fine... I was just going to give you some help...
 Ладно... Я всего лишь хотел тебе помочь...
 
+Fire red
+
+
 Fireworks are launched.
 
 
@@ -1635,6 +1653,9 @@ Fireworks |
 
 
 Five Castles
+
+
+Flat ponytail
 
 
 Fog hangs over.
@@ -1653,7 +1674,7 @@ Following these lines are some other writings on this paper.
 За этими строками какие-то другие письмена, на этой бумаге.
 
 Font changed.
-
+Шрифт изменён.
 
 Fool! Just come back here when you'll be done with our little... 'Secret mission'.
 Дурак! Возвращайся только тогда, когда ты закончишь нашу маленькую... 'Секретную миссию'.
@@ -1663,6 +1684,9 @@ For '%s' you need the amount of seconds (from 0 to 10)
 
 For a chef? Who said I was a... Oh right, I am.
 Для шефа? Кто сказал, что я был... О, правильно, да.
+
+Forest Green
+
 
 Four Castles
 
@@ -1674,16 +1698,13 @@ Friend already exists.
 
 
 Friend removed.
-
+Друг удален.
 
 From what I here, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
 От чего я здесь, Гугли, моему брату, требуется как можно больше людей в помощь; для погрузки вещей, которые можно найти на острове.
 
 Frostiana
-
-
-Fungus
-Фунгус
+Фростиана
 
 Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!
 Более того, если только ты не планируешь отдирать их, даже не думай качаться на этих мерзких розовых сухопутных медузах. Розовый может прилепиться к тебе, представляешь какой ужас!
@@ -1763,11 +1784,14 @@ Go and grab one of them. A good knife will help with your hunting the creatures 
 Go away.
 Уйти.
 
-Good day miss.
+Golden blonde
 
+
+Good day miss.
+Хороший день, мисс.
 
 Good day mister.
-
+Отличный день, мистер.
 
 Good job!
 Хорошая работа!
@@ -1851,10 +1875,7 @@ Gugli sent me down here to help you.#1
 Гугли послал меня сюда, чтобы помочь тебе.
 
 Gugli? Oh I see. Yes, Gugli yeye pretty used to shout orders to everybody down here.
-Гугли? Ах, понятно. Да, Гугли йейет, раздавая приказы здесь всем.
-
-GugliBarrierCheck
-GugliBarrierCheck
+Гугли? Ах, да. Гугли вечно йейеёт тут на всех, раздавая приказы.
 
 Guild level change failed.
 
@@ -1877,9 +1898,6 @@ Guillotine Cross
 Guillotine Cross T
 
 
-Gulukan
-Гулукан
-
 Gulukan.
 Гулукан.
 
@@ -1898,16 +1916,16 @@ GvG Flags:
 GvG ON | 
 
 
+GvG Off.
+
+
+GvG On.
+
+
 GvG is already Off.
 
 
 GvG is already On.
-
-
-GvG: Off.
-
-
-GvG: On.
 
 
 Gypsy
@@ -1958,11 +1976,23 @@ Have you collected all the ingredients for my recipe? The special one too?
 Have you seen anything dangerous?
 Видел ли ты что-нибудь опасное?
 
+Have you some @@s for me?
+
+
+He is eating an apple, apparently enjoying it.
+
+
+He is probably hiding on one of the trees. Go close to each tree and look up, otherwise you won't notice him.
+
+
 He likes to hide near the little lake in the north-west side of the island.
 Он любит прятаться около маленького озера в северо-западной стороне острова.
 
 He needs more food.
 Ему нужно больше еды.
+
+He said he is going to climb the highest hill in Artis, which is not far from here.
+
 
 He told me nothing about that.
 Он мне ничего об этом не рассказывал.
@@ -2006,6 +2036,12 @@ Hello dear!#1
 Hello yeye.
 Привет, йейе.
 
+Hello, young lady.#0
+
+
+Hello, young man.#1
+
+
 Hello.
 Здравствуй.
 
@@ -2018,7 +2054,16 @@ Help for command %c%s:
 Help me out~ Please~ T_T
 
 
+Help me!
+
+
 Hercules %d-bit for %s
+
+
+Here is another one.
+
+
+Here is your reward.
 
 
 Here they are.
@@ -2027,8 +2072,14 @@ Here they are.
 Here you go, everything is fixed.
 
 
+Here you go.
+
+
 Here's your reward!
 Вот твоя награда!
+
+Hey
+
 
 Hey Frenchy!#0
 Эй, француженка!
@@ -2041,6 +2092,9 @@ Hey Max, it's @@!
 
 Hey Silvio, it's your turn to carry the package, go!
 Эй Сильвио, твоя очередь нести поклажу, вперед!
+
+Hey there, are you Bobo, Katja's brother?
+
 
 Hey you!
 Эй, ты!
@@ -2102,6 +2156,15 @@ Hi @@.
 Hi! I can finally see you under the sunlight!
 Привет! Наконец-то я могу увидеть тебя при свете солнца!
 
+Hi, can I help you somehow?
+
+
+Hi, how is it going?
+
+
+Hi, my name is Moon. This morning I went for a walk on the beach.
+
+
 Hi, nice to see you!
 Привет, рада тебя видеть!
 
@@ -2138,8 +2201,14 @@ High Thief
 High Wizard
 
 
+Highest hill in Artis, you say? Sounds dangerous, I might fall off.
+
+
 Hm...
 Хм...
+
+Hmm, I'm fine for now, thank you.
+
 
 Hmm... Let's see, take this one.
 Хм... Посмотрим, возьми это.
@@ -2161,6 +2230,9 @@ Homunculus stats:
 
 Honestly, it's quite far-fetched according to me.
 Честно говоря, по моему, это довольно надуманно.
+
+Honey brown
+
 
 How about I ask you to help the crew? It would mean that you're one of us and that you will be able to get one of these hats.
 Как насчет помощи команде, о которой я говорил? Это будет означать что ты один из нас и ты сможешь получить одну из этих шляп.
@@ -2192,9 +2264,6 @@ How long will you stay here?
 How rude! What is the reason behind your malice?
 Как грубо! В чём причина твоей злобы?
 
-How was the cookie? Tasty, wasn't it?
-Как печенье? Вкусно, не правда ли?
-
 However, drought came with summers while winters became colder than ever.
 Как бы то ни было, засуха пришла вместе с летом, в то время как зима была холоднее, чем обычно.
 
@@ -2205,6 +2274,9 @@ Hungry: %d - Intimacy: %u
 
 
 Hunter
+
+
+Hurry up!
 
 
 Hurry, hurry! We need to check it's teeth!
@@ -2234,6 +2306,9 @@ I already know everything. Bye.
 I am %s Super Novice~
 
 
+I am new in this town, just like you are.
+
+
 I am not worried about rewards. I just want to help.
 Меня не волнует награда. Я просто хочу помочь
 
@@ -2261,6 +2336,15 @@ I am, who are you?#0
 I am, who are you?#1
 Верно, я не матрос. А ты кто?
 
+I appreciate your help, @@.
+
+
+I came here, looking for a better life.
+
+
+I can walk again!
+
+
 I can't help you to be on my list, nor can I give you a cookie for free.
 Я не могу внести тебя в свой список, либо дать бесплатное печенье.
 
@@ -2273,6 +2357,12 @@ I can't remember anything.#0
 I can't remember anything.#1
 Я ничего не могу вспомнить.
 
+I can't wait all day!
+
+
+I didn't notice that a Pikpik was in my way, and when I stepped on it, my foot was full of spikes.
+
+
 I do feel better!
 Мне лучше!
 
@@ -2281,6 +2371,9 @@ I do not want to go pointing my finger at someone. I want to be honorable and fa
 
 I don't have anything good for you today.
 У меня сегодня нет для тебя ничего хорошего.
+
+I don't have much time right now.
+
 
 I don't know what to say...
 Я не знаю, что сказать...
@@ -2330,8 +2423,14 @@ I heard rumors about some old hostilities between you and Gado. Are they true?
 I hope that answers your question.
 Я надеюсь что ответил на твой вопрос.
 
+I hope to come back at home when days will be better
+
+
 I hope you don't mind that we used your raft to build this ramp.
 Я надеюсь ты не думаешь, что мы использовали твой плот для постройки этого трапа.
+
+I hope you like this color.
+
 
 I informed Julia about your monstrous plan.
 Я рассказал Джулии про твой ужасный план.
@@ -2348,11 +2447,17 @@ I made a mistake, I would like to change my language.#0
 I made a mistake, I would like to change my language.#1
 Я ошибся и хочу поменять свой язык.
 
+I must leave to get more.
+
+
 I need a helper to clean the edge of the ship, but you aren't strong enough to help.#0
 Мне нужен помощник для зачистки трюма корабля, но ты не выглядишь достаточно сильной для этого.
 
 I need a helper to clean the edge of the ship, but you aren't strong enough to help.#1
 Мне нужен помощник для зачистки трюма корабля, но ты не выглядишь достаточно сильным для этого.
+
+I need more Croc Claws.
+
 
 I need somebody who can rid the hold of the ship of these rattos. Can you help me?
 Мне нужен кто нибудь, что бы зачистить трюм от этих крыс. Ты можешь мне помочь?
@@ -2393,6 +2498,9 @@ I see. Warn the other sailors about this. But if he's part of the Warrior Guild,
 I see. Warn the other sailors about this. But if she's part of the Warrior Guild, then she's also our friend and ally.#0
 
 
+I should put more effort into this.
+
+
 I speak Catalan.
 Я говорю на Каталанском.
 
@@ -2426,6 +2534,12 @@ I speak Russian.
 I speak Spanish.
 Я говорю на испанском.
 
+I still didn't find a cheap building to open my own business, so for now I stay in this inn.
+
+
+I still didn't find my brother...
+
+
 I swear, I do not eat so much.
 Я клянусь, я столько не ем.
 
@@ -2456,8 +2570,20 @@ I was going to ask you if you would need any help.
 I was sent here with a task. I can give you a perfect, wonderful, magnificent, superbly well shaped... Cookie!
 Я был прислан сюда с заданием. Я могу дать тебе безупречное, прекрасное, великолепное, суперское, хорошей формы... Печенье!
 
+I will find him, don't worry!
+
+
+I will give you my pocket money, if you do so.
+
+
+I will not lie to a little girl! And your mother needs your help
+
+
 I will not tell you all the details, but after a month, she was ruling the ship and I was sent down here, cooking for those traitors!
 Не буду распространяться о подробностях, но спустя месяц, она уже управляла кораблём, а я был послан сюда, готовить еду этим предателям!
+
+I will send you this letter directly when I arrive
+
 
 I will surely visit him. Do you need any help with your boxes?
 Я уверен, что навещу его. Тебе нужна помощь с твоими ящиками?
@@ -2489,6 +2615,9 @@ I'M CALLED, @@!
 I'd like to catch one of them, but they fly away when I try.
 Я бы хотел поймать одну из них, но они всё время улетают от меня.
 
+I'd like to get a different style.
+
+
 I'd love one!
 Я бы хотел одну!
 
@@ -2501,11 +2630,17 @@ I'll give him everything he needs, don't worry.#1
 I'll share my berries with you if you help me.
 Я поделюсь с тобой ягодами, если ты мне поможешь.
 
+I'm a barber, you see. I can change your hair style or color to your liking.
+
+
 I'm a bit sick...#0
 Я немного больна...
 
 I'm a bit sick...#1
 Я немного болен...
+
+I'm busy right now, I will get back to you later.
+
 
 I'm glad to see you're okay.#0
 Рада, что ты в порядке.
@@ -2618,9 +2753,6 @@ If you see weird things, or things that shouldn't be here, or even things that y
 If you want another cookie, you know what to do!
 Если хочешь ещё печеньку, ты знаешь что делать!
 
-If you want another one, you know what to do!
-Если хочешь ещё - ты знаешь что делать!
-
 If you want to be rewarded, help us in making this world a better place.#0
 Если ты хочешь быть вознаграждена, помоги нам в развитии и становлении этого мира, как лучшего.
 
@@ -2632,6 +2764,9 @@ If you want to read this page again, there is a copy up on the left wall.
 
 If you're looking for us there, most of us will be at the tavern of the Redplush, at the bar counter for Silvio's case...
 Если будешь искать нас там, большинство из нас будет в таверне КрасныйПлюш, у стойки бара, по случаю Сильвио...
+
+Imperial
+
 
 Impossible to increase the number/value.
 
@@ -2656,6 +2791,9 @@ Indeed, I am not.#0
 
 Indeed, I am not.#1
 В самом деле, я нет.
+
+Infinitely long
+
 
 Information sent to login-server via char-server.
 
@@ -2747,11 +2885,14 @@ Is there a reward?
 It has started to snow.
 
 
+It hurts so bad!
+
+
+It is a sunny day, don't you think?
+
+
 It is them who tell me to whom I can give cookies.
 Это они сказали мне кому давать печеньки.
-
-It is to them I look to, for it is them, who tell me to whom I can give cookies.
-Это к ним я прислушиваюсь, потому что это они, те кто говорит мне, кому я могу давать печеньки.
 
 It looks like madam is curious, am I right?
 Похоже, госпоже любопытно, да?
@@ -2764,6 +2905,12 @@ It looks like you are an expert of the life inside 'La Johanne'. Do you know any
 
 It looks like you can't carry anything else for now.
 Похоже, что сейчас ты не можешь тащить что-то ещё.
+
+It really hurts, please hurry!
+
+
+It seems I got them all!
+
 
 It seems mister is curious, are you not?
 Кажется, господину любопытно, не так ли?
@@ -2852,9 +2999,6 @@ Items on your autolootitem list:
 Its inhabitants did not know any kind of horror and in peace they lived as the earth gave them everything they needed to live.
 Эти жители не знали страха и жили в мире с тех времён, как земля дала им всё что нужно для жизни.
 
-Jalad
-Ялад
-
 Jalad.
 Ялад.
 
@@ -2882,9 +3026,6 @@ Julia на корабле, уровнем выше, используй клав�
 Julia make appeal the Legion of Aemil to search you, exit the ship and you should see your escort!
 
 
-Julia#Artis
-
-
 Jump to %d %d
 
 
@@ -2903,10 +3044,10 @@ Kagerou
 Killer state reset.
 
 
-Knife
-Нож
-
 Knight
+
+
+Lagoon blue
 
 
 Last time I saw you, you were lost at sea on your raft.#0
@@ -2918,11 +3059,11 @@ Last time I saw you, you were lost at sea on your raft.#1
 Leadership transferred.
 
 
-Lean
-Лин
-
 Lean for example?
 Лин, к примеру?
+
+Leave it
+
 
 Leaves have stopped falling.
 
@@ -2932,18 +3073,6 @@ Leaves started falling.
 
 Leaves | 
 
-
-LeftBarrierCheck
-LeftBarrierCheck
-
-LeftDoor
-LeftDoor
-
-LeftDoor#001-2-23
-
-
-LeftDoorCheck
-LeftDoorCheck
 
 Let me check into it...
 
@@ -2960,11 +3089,14 @@ Let me see... Crispy legs, disgusting liquids... Let's start!
 Let's say the person who told me about that is well respected on this ship and never drunk.
 Скажем так, человек, который сказал мне про это - очень уважаем на этом корабле и никогда не пьёт.
 
+Light violet
+
+
 Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.
 
 
 Little Blub
-
+Мелкий блаб
 
 Living inside a ship is great, but we sometimes need some fresh air.
 Жизнь на корабле - это здорово, но нам иногда нужен свежий воздух.
@@ -2973,6 +3105,15 @@ Login-server has been asked to %s the player '%.*s'.
 
 
 Login-server is offline. Impossible to %s the player '%.*s'.
+
+
+Long and curly
+
+
+Long and slick
+
+
+Long ponytail
 
 
 Look how splendid this landscape is!
@@ -2987,8 +3128,14 @@ Look, there he is!
 Lord Knight
 
 
+Lovely day, isn't it?
+
+
 Luck helps you do critical hits and dodge the ones dealt by enemies.
 Удача (luk) помогает тебе наносить критические удары и уклоняться от таких ударов, наносимых врагом.
+
+Luckily the beach is nearby, and somehow I could come home.
+
 
 Luk: %d (%d~%d)
 
@@ -3002,10 +3149,13 @@ MVP Monster: '%s'/'%s'/'%s' (%d)
 Magic Arpan
 Маг Арпан
 
-Magic Arpan#sailors
-Маг Арпан#sailors
-
 Magician
+
+
+Manana tree
+
+
+Mane
 
 
 Map not found.
@@ -3034,6 +3184,9 @@ Maybe he over did it with the bottle today to celebrate that!
 
 Maybe he was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior Guild!#1
 Возможно, он был одним из пропавших в прошлом месяце? Йойис из Эспэрии, с секретным заданием Гильдии Воинов!
+
+Maybe next time.
+
 
 Maybe she was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior Guild!#0
 Возможно, она была одной из пропавших в прошлом месяце? Йойис из Эспэрии, с секретным заданием Гильдии Воинов!
@@ -3065,6 +3218,9 @@ Mercy has been granted.
 Mercy has been shown.
 
 
+Messy
+
+
 Minstrel
 
 
@@ -3072,6 +3228,12 @@ Minstrel T
 
 
 Mob Search... %s %s
+
+
+Mohawk
+
+
+Mommy sent me to find my brother Bobo.
 
 
 Monk
@@ -3086,6 +3248,9 @@ Monster database has been reloaded.
 Monster: '%s'/'%s'/'%s' (%d)
 
 
+Moo!
+
+
 My beauty, I was not always a sailor, you know, I was once an important individual!#0
 Моя прелесть, я не всегда был моряком, знаешь ли, я был важной персоной когда-то!
 
@@ -3094,9 +3259,6 @@ My friend, I was not always a sailor, you know, I was once an important individu
 
 My friends are... Well, you know... The creators.
 Мои друзья... Ну, ты знаешь... Создатели.
-
-My friends are... Well, you know... The creators... Programmers, Scripters, Mappers, Pixel Artists, Soundscapers... The Most Skilled Sages of the Tentacled Dance.
-Мои друзья... Ну, ты знаешь... Создатели... Программисты, сценаристы, разработчики карт, пиксельной графики, озвучки, переводчики... Самые Опытные Мудрецы Танца Щупалец.
 
 My name is Alige, I've been hiding here for weeks. All I have to eat are these berries... berries... berries...
 Моё имя - Элайдж, я прятался здесь неделями. Всё что я ел, эти ягоды... Ягоды... Ягоды...
@@ -3155,11 +3317,11 @@ Nard
 Nard looks surprised and stops you.
 Нард выглядит удивленным и останавливает тебя.
 
-Nard#Artis
-
-
 Narrator
 Рассказчик
+
+Navy blue
+
 
 New e-mail must be a real e-mail address.
 
@@ -3234,6 +3396,9 @@ No longer spying on the %s guild.
 
 
 No longer spying on the %s party.
+
+
+No more pain, thanks to you.
 
 
 No player found in map '%s'.
@@ -3360,10 +3525,10 @@ North
 Север
 
 North East
-
+Северо-Восток
 
 North West
-
+Северо-Запад
 
 Not a hexadecimal digit:
 
@@ -3385,12 +3550,6 @@ Not to kill your dream, but... Julia is mine!#1
 
 Not yet. I will be back soon.
 Пока что нет. Я скоро вернусь.
-
-Note
-Записка
-
-Note#Artis
-
 
 Nothing, just hanging around.
 Ничего, просто бродил вокруг.
@@ -3437,6 +3596,9 @@ Of course you do! Just listen carefully to these words my dear.#0
 Of course you do! Just listen carefully to these words my dear.#1
 Конечно! Просто внимательно прислушайся к этим словам, дорогой.
 
+Of course!
+
+
 Of course! Tell me which language you speak and I will change the note on the ship board list.
 Конечно!
 
@@ -3452,6 +3614,9 @@ Of the two of them, who has 'good' on their side?
 Off
 
 
+Off black
+
+
 Oh I see... Sailors are not able to do their job anymore, is it like that?!
 Вижу... Моряки не могут продолжать свою работу, что то вроде этого?
 
@@ -3460,6 +3625,9 @@ Oh alright, nevermind then.
 
 Oh good! Did he give you your money back as well?
 О, хорошо! Он также вернул тебе твои деньги?
+
+Oh hey!
+
 
 Oh look, there's a piou behind you!
 О, посмотри, позади тебя пию!
@@ -3472,6 +3640,9 @@ Oh really? How could I forget something as important as that?!
 
 Oh really? I'll put more food in the next box then.
 Что, правда? Тогда я положу больше припасов в следующую коробку.
+
+Oh thank you so much!
+
 
 Oh well, we rescued you when you were yaying adrift in the sea.#0
 Ну, мы спасли тебя, когда ты йейла на плоту по течению в море.
@@ -3533,6 +3704,9 @@ Oh, it's you.
 Oh, it's you. I think it's better we do not talk for a while. They suspect something.
 О... Это ты. Я думаю, будет лучше, если мы не будем разговаривать некоторое время. Они что-то подозревают.
 
+Oh, nooooo... If I go home now, my mum will give me homework.
+
+
 Oh, now that I remember, we also found some money in your pockets, here it is!#0
 О, и ещё, мы нашли немного денег в твоих карманах, вот они!
 
@@ -3572,6 +3746,9 @@ Ok, done.
 Ok, see you then!
 Хорошо, увидимся!
 
+Okay, I'll be here, if you change your mind.
+
+
 Okay, I'm ready to work!#0
 Хорошо, я готова к работе!
 
@@ -3581,14 +3758,17 @@ Okay, I'm ready to work!#1
 Okay, you can start!
 Хорошо, ты можешь начинать!
 
-OldBook
-Старая Книга
+Okay... Tell my sister I'll go home soon.
+
 
 On
 
 
 On one hand, ranged weapons are generally weaker than melee ones, but you attack from a safer position. On the other hand, depending on the level of the weapon, melee ones potentially can yeild quicker kills.
 С одной стороны оружие дальнего боя обычно слабее, чем ближнего, за то ты атакуешь с более безопасной позиции. С другой стороны, в зависимости от уровня оружия, оружие ближнего боя потенциально убивает быстрее.
+
+On the next days we will finally arrives at Artis
+
 
 Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
 Когда монстр умрёт, выпадет предмет. Чтобы добавить его в инвентарь - кликните на нём. Вы так же можете использовать клавишу "Z", чтобы подобрать выпавшие предметы.
@@ -3617,6 +3797,9 @@ Other things are written but are not legible anymore.
 Otherwise, if you really want one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
 Иначе, если ты правда желаешь получить одну из них и ты чувствуешь, что можешь - попробуй убить тортуг или кроков, если ты достаточно силён. Я уверен - из них выпадет одна или две @@.
 
+Ouch!
+
+
 Ouch...
 Ай...
 
@@ -3626,10 +3809,16 @@ Ouch... These boxes are so heavy!
 Our crew is like a family, and if you agree to help us, I would like to invite you to join our family!
 Наша команда как семья и если ты согласен помочь нам, я с радостью приму тебя в нашу семью!
 
+Our mommy doesn't allow us to go there, because it's dangerous. But he doesn't listen!
+
+
 Packet 0x%x length: %d
 
 
 Paladin
+Паладин
+
+Parted
 
 
 Party modification is disabled in this map.
@@ -3644,6 +3833,9 @@ People started to steal from each other to survive. As cities grew, needs did to
 Perfect!
 Превосходно!
 
+Perky ponytail
+
+
 Pet hunger changed.
 
 
@@ -3656,23 +3848,20 @@ Pet intimacy changed.
 Pet intimacy is already at maximum.
 
 
-Peter
-Питер
-
-Peter#001-2-22
-
-
 Pets are not allowed in Guild Wars.
 
 
-Piberries
-Пижевика
+Pigtails
+
 
 Pikpik
+Пикпик
+
+Pinky pink
 
 
 Piou
-
+Пию
 
 Piousse
 
@@ -3717,6 +3906,9 @@ Player unmuted.
 
 
 Player warped to jail.
+
+
+Please bring me some @@ so I can pull out these spikes from my foot.
 
 
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!
@@ -3983,10 +4175,16 @@ Please enter two e-mail addresses (usage: @email <current@email> <new@email>).
 Please specify a display name or monster name/id.
 
 
-Plushroom
-Плюшевый гриб
+Please take this lollypop for your help. Mum sais they are bad for my teeth anyway (FIXME)
+
+
+Please, have a seat.
+
 
 Plushroom Field
+Поляна плюшевых грибов
+
+Pompadour
 
 
 Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe
@@ -3998,7 +4196,22 @@ Priest
 Professor
 
 
+Punk
+
+
+Pure platinum
+
+
+Purple plum
+
+
 PvP Flags: 
+
+
+PvP Off.
+
+
+PvP On.
 
 
 PvP is already Off.
@@ -4007,26 +4220,11 @@ PvP is already Off.
 PvP is already On.
 
 
-PvP: Off.
-
-
-PvP: On.
-
-
 Pvp ON | 
 
 
-Q'Muller
-КуМюллер
-
 Q'Muller.
 КуМюллер.
-
-Q'Onan#000-0-0
-К'Онан#000-0-0
-
-Q'Onan#000-2-1
-К'Онан#000-2-1
 
 Quest database has been reloaded.
 
@@ -4035,24 +4233,27 @@ Raijin Voice
 Голос раджина
 
 Ranger
-
+Рейнджер
 
 Ranger T
 
 
 Ratto
+Крыса
 
-
-RattosControl
-RattosControl
-
-RattosControl#001-2-23
+Read it
 
 
 Really? That's kind of you, I accept your help!
 Правда? Как мило с твоей стороны. Я принимаю твою помощь!
 
 Rebellion
+Бунт
+
+Remember, you have to find my brother on the hill to the east from here
+
+
+Remind me, what should I do?
 
 
 Removed %d Kafra points. Total %d points.
@@ -4069,9 +4270,6 @@ Removed item type: '%s' from your autoloottype list.
 
 Removed item: '%s'/'%s' {%d} from your autolootitem list.
 
-
-Resa
-Реса
 
 Reset 'Feeling' maps.
 
@@ -4090,12 +4288,6 @@ Returning to normal font.
 
 Right! Ours is an earthsea realm. You see, sailors are swift at their tasks when out of sight of land, but docked by this verdant jewel, they have it so good, they are just taking too much time bringing all the food back to the ship. Maybe you can help them.
 Правильно! Наша область: земноморье. Ты видишь, моряки быстро справляются со своей работой, пока на горизонте нет земли, однако пришвартовавшись к этой зеленой драгоценности, они так радуются, что доставка продовольствия на корабль занимает у них слишком много времени. Может быть, ты сможешь им помочь.
-
-RightBarrierCheck
-RightBarrierCheck
-
-RightDoorCheck
-RightDoorCheck
 
 Rogue
 
@@ -4121,14 +4313,8 @@ SO WHAT'S UP?! WHAT ARE YOU DOING?!
 Sage
 Мудрец
 
-Sailors
-Моряки
-
 Sakura | 
 
-
-Sapartan
-Сапартан
 
 Script could not be loaded.
 
@@ -4140,7 +4326,7 @@ Scripts have been reloaded.
 
 
 Sea water?! I will not help you with your evil plan!
-Морская вода?! Я не буду помогать тебе с твоим коварным планом!
+Морская вода?! Я не стану участвовать в злодействе!
 
 Search results for '%s' (name: id):
 
@@ -4229,8 +4415,14 @@ Shht shht!
 Shop is out of stock! Come again later!
 
 
-Silvio
-Сильвио
+Short and curly
+
+
+Side strand
+
+
+Silver Grey
+
 
 Silvio for example?
 Сильвио, к примеру?
@@ -4335,6 +4527,9 @@ Some of your items cannot be vended and were removed from the shop.
 
 
 Somebody is waiting for you outside!
+Кое-кто ждет тебя снаружи!
+
+Somehow you don't feel good about your deed
 
 
 Something is wrong with me, I can't smile nor sit.
@@ -4360,6 +4555,9 @@ Sorry, I am not in the mood for another fight with these rattos.
 
 Sorry, I don't need any help right now. Come back later.
 Прости, я не нуждаюсь ни в какой помощи сейчас. Приходи чуть позже.
+
+Sorry, I'm busy right now.
+
 
 Sorry, but I can't tell you anything about that.
 Я ничего об этом не помню.
@@ -4409,6 +4607,15 @@ Stats: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d
 Status database has been reloaded.
 
 
+Stay clear.
+
+
+Stay here, I'll hurry back as soon as I get some.
+
+
+Stop disturbing me, I already re-read that part twice because of you!
+
+
 Storage opened.
 
 
@@ -4417,6 +4624,9 @@ Str: %d (%d~%d)
 
 Strength multiplies the damage of your hits, especially melee ones. You will also be able to carry heavier stuff.
 Сила (str) увеличивает урон ваших ударов, особенно в ближнем бою. Кроме того вы сможете нести больший груз.
+
+String Green
+
 
 Stupid yeye...
 Тупой йейе...
@@ -4453,6 +4663,9 @@ Sure, why not?
 
 Surely. Take this box full of @@s.
 Конечно. Возьми этот ящик, наполненный @@.
+
+Surprise me
+
 
 Swordsman
 
@@ -4493,14 +4706,14 @@ Talk to you later!
 Talk to you soon!
 Скоро поговорим!
 
+Tapered Nape
+
+
 Target character must be online and be a guild member.
 
 
 Target character must be online and in your current party.
 
-
-Tarlan
-Тарлан
 
 Task is done.
 Задание выполнено.
@@ -4514,7 +4727,7 @@ Tell him that everything went fine and that we're almost done with the requisiti
 Ten Castles
 
 
-Terry
+Thank you again for your help!
 
 
 Thank you and be careful with that box. I have worked really hard to fill it!
@@ -4527,16 +4740,19 @@ Thank you for your tricks. I am going to try them now!
 Спасибо тебе, за твои советы. Я пойду, опробую их.
 
 Thank you my friend.#0
-Спасибо, подруга.
+Спасибо, дружище.
 
 Thank you my friend.#1
-Спасибо, друг.
+Спасибо, дружище.
 
 Thank you sir for you nice words. I am feeling better now.
 Спасибо, сэр, за хорошие слова. Я чувствую себя лучше.
 
 Thank you so much! Here, have some of my berries.
 Огромное тебе спасибо! Вот, возьми немного ягод...
+
+Thank you!
+
 
 Thank you, I'll take them and put them on.
 Спасибо! Я возьму.
@@ -4549,6 +4765,9 @@ Thanks for helping me!
 
 Thanks for the help!
 Спасибо за помощь!
+
+That would be great!
+
 
 That's good to hear!
 Рад слышать!
@@ -4600,6 +4819,9 @@ The further you go, the more experience you will get, so here's a small descript
 
 The giant boogeyman!
 Здоровое чудовище!
+
+The girl looks desperate.
+
 
 The great people of Aemil split up into three groups when they reached the coast.
 Великий народ Аэмиля разделился на три группы, добравшись до берега.
@@ -4740,7 +4962,7 @@ They shouldn't be too far from each other.
 Они должны быть не слишком далеко друг от друга.
 
 Thief
-
+Вор
 
 Thirteen Castles
 
@@ -4782,13 +5004,13 @@ This girl is lucky we found her before a shark did. I have no idea where she com
 Фортуна благосклонна к этой девушке - мы нашли её раньше, чем акулы. Не представляю откуда она. Кстати, вы видели знак на её плоту?
 
 This girl needs help, we need to rescue her!#0
-Эта девушка нуждается в помощи, наш долг спасти её!
+Этой девушке нужна помощь, мы должны спасти её!
 
 This guy is lucky we found him before a shark did. I have no idea where he comes from. By the way, did you see the logo on his raft?#1
 Этот парень счастливчик - мы нашли его раньше, чем акулы. Не представляю откуда он. Кстати, вы видели знак на его плоту?
 
 This guy needs help, we need to rescue him!#1
-Этот парень нуждается в помощи, наш долг спасти его! 
+Этот парень нуждается в помощи, мы должны спасти его!
 
 This is a nice place... There are some nice chicks...
 Это клевое место... Здесь есть несколько интересных девчонок...
@@ -4803,13 +5025,13 @@ This is the last one. If you use it again out of clumsiness, I will take your fl
 Это последняя. Если вы снова используете её из за своей неуклюжести, то я использую вашу плоть, как основной ингредиент в своём рецепте печенек.
 
 This item cannot be dropped.
-
+Этот предмет не может быть оборонён.
 
 This item cannot be stored.
-
+Этот предмет не может быть сохранён.
 
 This item cannot be traded.
-
+Этот предмет не может быть обменян.
 
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.#0
 К такому разговору следует относиться с недоверием, однако я согласен и признаю, что я тоже настроен скептически, так что надо присмотреть за ней.
@@ -4821,7 +5043,7 @@ This makes sense. Do you think we should inform the capt'n about it?
 Это меняет дело. Как ты думаешь, стоит сообщить об этом капитану?
 
 This monster does not spawn normally.
-
+Этот монстр обычно не возрождается.
 
 This monster has no MVP prizes.
 
@@ -4831,6 +5053,12 @@ This monster has no drops.
 
 This new continent, in fact an archipelago, was called Andorra.
 Этот новый континент, на самом деле являющийся архипелагом, был назван Андоррой.
+
+This note was left by somebody.
+
+
+This one is useless! Give me another @@.
+
 
 This panel looks in rather good shape, as though some people take care of it regularly. Maybe it has important information.
 Эта табличка выглядит гораздо лучше, как будто какие то люди регулярно ухаживают за ней. Возможно она содержит важную информацию.
@@ -4861,9 +5089,6 @@ This skill number doesn't exist.
 
 Three Castles
 
-
-Tibbo
-Тиббо
 
 Tibbo went to the south-east of the island, others are gone to the north, and I think that Gulukan is not so far from here.
 Тиббо пошёл на юго-восток острова, остальные ушли на север, и я думаю, Гулукан где то недалеко отсюда.
@@ -4896,10 +5121,10 @@ Too bad... Come back when you have some choice food for me. Growl... grumble... 
 Очень плохо... Возвращайся, когда у тебя будет хоть что то из еды для меня... (невнятно ворчит)
 
 Toppy Blub
-
+Топпи Блаб
 
 Tortuga
-
+Тортуга
 
 Total Domination
 
@@ -4953,6 +5178,9 @@ Twenty-Three Castles
 
 
 Twenty-Two Castles
+
+
+Twisted teal
 
 
 Two Castles
@@ -5150,6 +5378,9 @@ Wait... Where are we going?
 Walkig around a bit, it'll be easy for you to catch one, I bet. Impale one of them for me please.
 Немного прогуляйся вокруг, держу пари, что поймать одного будет для тебя не сложно. Пожалуйста, заколи одного из них и для меня.
 
+Walking barefoot, feeling the hot sand with my feet, daydreaming... I like such things, you know.
+
+
 Wanderer
 
 
@@ -5195,6 +5426,12 @@ Warping to save point.
 Water, salt, spicy herbs and meat stuffed with my special surprise!
 Вода, соль, пряности и мясо, заправленные моим особенным сюрпризом!
 
+Wave
+
+
+Wavy
+
+
 We are glad captain Nard has let you join us down here!#0
 Мы рады, что капитан Нард разрешил тебе присоединиться к нам!
 
@@ -5205,6 +5442,9 @@ We arrived this morning at the port of Artis, I already warned the Legion of Aem
 
 
 We arrived to Artis today.
+
+
+We didn't meet, right?
 
 
 We have made a stop at a little island, before making it on to the port of Artis.
@@ -5249,6 +5489,9 @@ We usually don't stop in such splendid places, but the captain let us stay here 
 We will be yaying there in a few days, so we will drop you off there.
 Мы прибудем туда в течение нескольких дней, высадим тебя там.
 
+We're soon leaving that island, please return to your cabine.
+
+
 Weather Flags: 
 
 
@@ -5256,6 +5499,15 @@ Weather effects will disappear after teleporting or refreshing.
 
 
 Wedding
+
+
+Welcome to RedPlush.
+
+
+Welcome to our inn!
+
+
+Welcome!
 
 
 Well I'm working too! Don't you want me to carry one of these boxes back to Gugli?
@@ -5321,6 +5573,9 @@ West
 What I sell comes from every corner of this archipelago.
 Всё, что я продаю - приходит ко мне со всех уголков этого архипелага. 
 
+What a relief.
+
+
 What about Q'Muller? Where is he?
 Что насчет КуМюллера? Где он?
 
@@ -5337,7 +5592,7 @@ What are you doing in my kitchen?! Get out, it's not a place for kids!
 Что ты делаешь у меня на кухне?! Убирайся, это не место для детей!
 
 What are you guys saying ? It's a Yoiis!#0
-Что вы говорите, ребята? это Йойис!
+О чем ребята вы говорите? Это Йоэс!
 
 What are you guys saying ? It's a Yoiis!#1
 О чем ребята вы говорите? Это Йоэс!
@@ -5372,6 +5627,9 @@ What do you need?
 What do you think?
 Как ты думаешь?
 
+What do you want to do with it?
+
+
 What do you want to do?
 Что ты хочешь сделать?
 
@@ -5393,6 +5651,9 @@ What if I give you 1000 Esperin for that job, is it ok?
 What is Artis?
 Что такое Артис?
 
+What kind of  help do you need?
+
+
 What kind of help?
 Какая помощь?
 
@@ -5402,6 +5663,9 @@ What should I do after taking these clothes?#0
 What should I do after taking these clothes?#1
 Что мне следует делать после того, как я возьму эти вещи?
 
+What would you like me to change?
+
+
 What yeye could I do for you today?
 Что йейе могу сделать для тебя?
 
@@ -5410,6 +5674,9 @@ What's that food?
 
 What's that?
 Что это?
+
+What's your story again?
+
 
 What? It's not a good reward?
 Что? Этого не достаточно?
@@ -5442,7 +5709,10 @@ Where can I find Julia?#1
 Где я могу найти Джулию?
 
 Where can I find a half croconut?
-Где я могу найти половинку крокореха?
+Где я могу найти половинку крокоcа?
+
+Where can I find some Croc Claws?
+
 
 Where can I find some food?
 Где я могу найти немного еды?
@@ -5516,17 +5786,23 @@ Why?
 Why? And who should you bring it back to?
 Почему? И кто сказал тебе вернуть это?
 
+Wild
+
+
 With hunger, thirst, and sleep as your only companions; you have the disturbing realization that you can't remember anything of your former life or identity.
 Наедине с голодом, жаждой и сном, как вашими единственными компаньонами; к вам приходит тревожное осознание, что вы не можете вспомнить ничего о вашей прежней жизни или личности.
 
 With script
-
+Со сценария
 
 Wizard
 Маг
 
 Wow, it seems everyone knows my name!
 Вау, похоже на то, что все знают моё имя!
+
+Yay, it worked! I removed a spike.
+
 
 Yaya, you should go see her! She'll be happy to see you.#0
 Дада, ты должна сходить проведать ее! Она будет рада увидеть тебя.
@@ -5535,7 +5811,7 @@ Yaya, you should go see her! She'll be happy to see you.#1
 Дада, ты должен сходить проведать ее! Она будет рада увидеть тебя.
 
 Yayayaya, it's the first time someone is dressed worse than us!
-Йайайайа, впервые кто то одевается хуже нас!
+Йайайайа, впервые кто-то одет хуже нас!
 
 Yeah you're all like *hic* that in Esperia, but you won't get me! *burp*
 Ага, вы все такие *ик* в Эспэрии, но тебе меня не победить! *урп*
@@ -5553,7 +5829,7 @@ Yeah, yeah, of course you don't...
 Да, да, конечно нет...
 
 Yes
-
+Да
 
 Yes he did.
 Да, он сделал.
@@ -5573,11 +5849,17 @@ Yes, I do.
 Yes, I feel strong enough for dangerous combats!
 Да, я чувствую себя достаточно сильным для опасных сражений!
 
+Yes, and he promised to be home soon
+
+
 Yes, indeed. I prefer to explore places I have never been to, before doing anything else.
 Да, конечно. Я предпочитаю исследовать места, в которых не был, перед тем, как делать что-то ещё.
 
 Yes, it is true! You are not able at all. Nard has been waiting for the food for too long already. Hurry up, you lazy sailors!
 Да, это правда! Ты вообще не в состоянии. Нард очень долго ждал еды. Скорее, ленивый моряк!
+
+Yes, it's me. It's such a beautiful view from here!
+
 
 Yes, yes I know... Too bad then. See you soon!
 Да, да, я знаю... Очень жаль. Увидимся!
@@ -5646,9 +5928,12 @@ You already have a homunculus
 
 
 You already have a pet.
-
+Вы уже имеете питомца.
 
 You already have this quest skill.
+
+
+You already looked here
 
 
 You already took a Bandana, please put this one back in the box.
@@ -5688,7 +5973,7 @@ You are not authorized to warp to your save map.
 
 
 You are not in a guild.
-
+Вы не в гильдии.
 
 You are not in jail.
 
@@ -5707,6 +5992,9 @@ You are now part of the crew... At least for us down here!
 
 You are on a raft, adrift in the sea.
 Ты находишься на плоту, плывущем по течению в море
+
+You are too weak, what is a piece of bone like you doing around here?
+
 
 You are unable to change your job.
 
@@ -5728,6 +6016,9 @@ You can attack a monster by clicking on it, or from your keyboard you can press 
 
 You can easily see if a monster is easy to kill or just impossible to defeat. Do not try against creatures that are way more powerful than you... You'd be risking your life for nothing.
 Ты можешь с лёгкостью увидеть, является ли монстр лёгкой добычей или непобедимым противником. Даже не пытайся сражаться с созданиями, которые на много сильнее тебя... Ты можешь поплатиться жизнью ни за что.
+
+You can find some Crocs on the beach, you could look up at the one after the gate, on top of this city.
+
 
 You can find them in the ocean, near corals and other sea beings. But the sea is too heavy today, you shouldn't try swimming for now.
 Ты сможешь найти их в океане, поблизости от кораллов и других морских существ. Но море слишком тяжелое сегодня. Тебе лучше не плыть сейчас.
@@ -5779,6 +6070,9 @@ You can't drop items in this map
 
 You can't go there!
 Ты не можешь здесь находиться!
+
+You can't join the sword training clothed that way.
+
 
 You can't leave battleground guilds.
 
@@ -5849,7 +6143,13 @@ You do not possess a cart to be removed
 You don't expect me to eat that, do you? Give me something else!
 Ты же не хочешь, что бы я это съел? Дай мне что-нибудь другое!
 
+You don't have a @@, are you mocking me?
+
+
 You don't have this quest skill.
+
+
+You found him!
 
 
 You have %d new emails (%d unread)
@@ -5942,6 +6242,9 @@ You like them, don't you? Just speak with Peter then. He is on the second deck o
 You like these hats, right?
 Нравятся эти шляпы, да?
 
+You look nice, do you want to help me?
+
+
 You may search partial name by making use of '%' in the search, ex. "@accinfo %Mario%" lists all characters whose name contains "Mario".
 
 
@@ -5969,6 +6272,9 @@ You need to cross the crocojungle heading north.
 You need to input a option
 
 
+You notice a young boy sitting on one of the highest branches of the tree.
+
+
 You open the book, but it looks like the sea water and time damaged it severely. Some pages are not readable anymore. Some others are simply missing.
 Ты открываешь книгу, но, похоже, морская вода и время очень сильно повредили её. Некоторые страницы уже не читабельны, некоторые просто пропали.
 
@@ -5988,6 +6294,12 @@ You receive a @@!
 Ты получаешь @@!
 
 You request has been rejected by autoreject option.
+
+
+You search the tree but don't find anybody
+
+
+You see a young elven girl, with a grimace of pain on her face.
 
 
 You see these pious around us?
@@ -6138,7 +6450,7 @@ You're not part of the '%s' channel
 
 
 You're not the master of your guild.
-
+Вы не мастер вашей гильдии.
 
 You're not the owner of channel '%s'
 
@@ -6155,6 +6467,9 @@ You're on La Johanne, a merchant ship.
 You're on a ship, we're on our way to the commercial capital of Artis.
 Ты на корабле, мы плывём к промышленной столице Артиса.
 
+You're on my way.
+
+
 You're on our ship, we made port to a little island and we're actually yeyending our long merchant traveling adventure at the city of Artis.#0
 Ты на нашем корабле, мы сделали привал на небольшом острове, но вскоре наше длинное рискованное торговое путешествие закончится в Артисе.
 
@@ -6168,13 +6483,13 @@ You're one of us now, that's great! I was sure that you were a kind lady when I 
 Отлично, теперь ты одна из нас! Я был уверен, что ты окажешься любезной леди, когда впервые тебя увидел!
 
 You're right, it's about Julia.#1
-Ты прав, это касается Джулии.
+Вы правы, он о Джулии.
 
 You're right, it's about you.#0
-Ты права, это о тебе.
+Вы правы, он о вас.
 
 You're talking too fast!
-
+Вы разговариваете так быстро!
 
 You're too close to a NPC, you must be at least %d cells away from any NPC.
 
@@ -6189,7 +6504,7 @@ You've been revived!
 
 
 You've died.
-
+Вы умерли.
 
 You've left the '%s' channel
 
@@ -6276,7 +6591,7 @@ Your current memo positions are:
 
 
 Your effect has changed.
-
+Ваш эффект изменён.
 
 Your global chat is no longer bound to the '#%s' channel
 
@@ -6288,10 +6603,10 @@ Your global chat is now bound to the '%s' channel
 
 
 Your group has been changed.
-
+Ваша группа была изменена.
 
 Your guild storage was cleaned.
-
+Хранилище вашей гильдии было очищено.
 
 Your guild's storage has already been opened by another member, try again later.
 
@@ -6306,22 +6621,19 @@ Your homunculus doesn't evolve.
 
 
 Your job has been changed.
-
+Ваша работа была изменена.
 
 Your save point has been changed.
 
 
 Your sex has been changed (disconnection required to complete the process)...
+ВЫ сменили пол (необходимо отключиться для завершения процесса)...
+
+Your sister sent me to find you. Your mother is worried.
 
 
 Your storage was cleaned.
-
-
-Yummy bakery aromas have roused monsieur's curiosity, is it not so?
-Вкусные ароматы булочной пробудили любопытство месье, не так ли?
-
-Yummy bakery aromas have stirred madam's curiosity, am I right?
-Вкусные ароматы булочной возбудили любопытство мадам, я прав?
+Ваше хранилище очищено.
 
 Zzzzzzzzz...
 Хррр-хррр...
@@ -6357,7 +6669,7 @@ a quiet place,
 тихое место,
 
 ban
-
+бан
 
 block
 
@@ -6401,15 +6713,6 @@ lower/top head,
 mid head, 
 
 
-npc1
-
-
-npc1#door
-
-
-npc4
-
-
 option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
 
 
@@ -6417,7 +6720,7 @@ option '%s' is not enabled on channel '%s'
 
 
 option '%s' is now disabled for channel '%s'
-
+опция '%s' на данный момент отключена на канале '%s'
 
 option '%s' is now enabled for channel '%s'
 
@@ -6441,7 +6744,7 @@ unban
 
 
 unblock
-
+разблокировать
 
 value '%d' for option '%s' is out of range (limit is 0-10)
 
