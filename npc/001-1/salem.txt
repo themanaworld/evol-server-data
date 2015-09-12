@@ -1,0 +1,142 @@
+// Evol scripts.
+// Author:
+//    Travolta
+// Description:
+//    Trader on the market. One of his pious escaped and
+//    flies around the town.
+// Variables:
+//    ArtisQuests_CatchPiou   -- quest variable
+// Quest states:
+//    0  -- not started
+//    1  -- trader asked to catch piou
+//    2  -- piou caught, going back to trader
+//    4  -- quest finished
+
+001-1,57,118,0	script	Salem#001-1	NPC_SHOP_BAG,{
+
+    function BuyPiou {
+        .@price = getarg(0);
+        if (Zeny < .@price)
+        {
+            mesq l("Don't you try to trick an old merchant! "
+                   "You don't have enough money, you need @@E",
+                   .@price);
+            next;
+            return 1;
+        }
+        if (!checkweight(4000, 1))
+        {
+            mesq l("You can't carry another Piou Egg? What a shame.");
+            next;
+            return 2;
+        }
+        getinventorylist;
+        if (.@inventorylist_count >= 100)
+        {
+            mesq l("You don't have enough room in your backpack for a Piou Egg. "
+                   "Get rid of some junk and come back.");
+            next;
+            return 3;
+        }
+        Zeny = Zeny - .@price;
+        getitem 4000, 1;
+        mesq l("You take good care of your piou. Remember to feed it every day.");
+        next;
+        return 0;
+    }
+
+    .@q = getq(ArtisQuests_CatchPiou);
+    @ArtisQuests_PiouPrice = 30000;
+
+    mesn;
+    if (.@q == 1)
+    {
+        mesq l("So, where is my piou? You should keep the given promise.");
+        close;
+    }
+    else if (.@q == 2)
+    {
+        mesq l("Ah, great! Now you get a nice discount on Pious.");
+        @ArtisQuests_PiouPrice = 3000;
+        if (!BuyPiou(@ArtisQuests_PiouPrice))
+            setq ArtisQuests_CatchPiou, 4;
+        close;
+    }
+    
+    mesq l("Good day, my friend, come closer, come closer!");
+    next;
+    mesq l("Just look at my goods for sale! Fresh fruits and vegetables were shipped only this morning. And for reasonable price, of course.");
+    next;
+
+    menuint
+        rif(.@q == 0, l("What about those pious? They look so cute.")), 0,
+        rif(.@q == 4, l("I'd like to buy a piou.")), 1,
+        l("I'd like to see your other products."), 2;
+
+    mes "";
+    mesn;
+    
+    switch (@menuret)
+    {
+        case 0:
+            goto L_AboutPious;
+        case 1:
+            BuyPiou @ArtisQuests_PiouPrice;
+            close;
+        case 2:
+            goto L_BuyShop;
+    }
+
+L_AboutPious:
+    mesq l("Ah, these... Citizens like buying them as pets.");
+    next;
+    mesq l("With proper training, a piou can become a good friend and faithful companion in your adventures.");
+    next;
+    mesq l("Their price is usually high, but you know what? You have a lucky day.");
+    next;
+    mesq l("These little pious here can't fly. At least that's what I thought.");
+    next;
+    mesq l("One of these little bastards started flying early, and escaped from me.");
+    next;
+    mesq l("It's still too young to fly too far away, so it just circles nearby.");
+    next;
+    mesq l("But I can't leave to catch it, so I'm asking you.");
+    next;
+    mesq l("If you catch the escaped piou and bring it back, I will give you a 90% discount on a piou.");
+    next;
+
+    menuint l("Sounds like easy money. I'll do it."), 0,
+            l("I don't really have time to chase pious, let me just buy one for it's real price."), 1,
+            l("I don't want to buy a piou right now."), 2;
+            
+    mes "";
+    mesn;
+
+    switch (@menuret)
+    {
+        case 0:
+            goto L_QuestInfo;
+        case 1:
+            BuyPiou @ArtisQuests_PiouPrice;
+            close;
+        case 2:
+            mesq l("See you later!");
+            close;
+    }
+
+L_QuestInfo:
+    mesq l("The little piou is flying nearby, all you need is to catch it and bring back to me.");
+    next;
+    setq ArtisQuests_CatchPiou, 1;
+    mesq l("Good luck!");
+    close;
+
+L_BuyShop:
+    mes "not implemented yet!";
+    close;
+
+OnInit:
+    setnpcsex G_MALE;
+    setnpcdistance 5;
+    end;
+}
