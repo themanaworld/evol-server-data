@@ -1,0 +1,19 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Water animations, splash, fishes, etc...
+
+001-1,116,123,0	script	#water_animation0	NPC_WATER_SPLASH,{
+    mesn "Narrator";
+    mesq col(l("You see some fish reflecting the sun on the surface of the ocean."), 9);
+    next;
+    closedialog;
+    end;
+
+OnInit:
+    setnpcsex G_OTHER;
+    setnpcdistance 2;
+    end;
+}
+
