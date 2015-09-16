@@ -201,11 +201,21 @@ function	script	movetonextpoint	{
     return;
 }
 
+// initial actions for npc when using move graphs.
+// function can accept 2 arguments:
+//    1: action sequence, for example "speed 200; dir 4". Default is "moveon"
+//    2: start point label. Default is #0 from move graph labels
 function	script	firstmove	{
     .@nextcmd$ = "moveon";
+    .@initpos = 0;
     if (getargcount() > 0)
         .@nextcmd$ = getarg(0);
-    set getvariableofnpc(.movepos, strnpcinfo(3)), 0;
+    if (getargcount() > 1)
+        .@initpos = findmovegraphlabel(getarg(1));
+
+    set getvariableofnpc(.movepos, strnpcinfo(3)), .@initpos;
+    movenpc strnpcinfo(3), getvariableofnpc(.moveposx[.@initpos], strnpcinfo(3)),
+                           getvariableofnpc(.moveposy[.@initpos], strnpcinfo(3));
     set getvariableofnpc(.nextcmd$, strnpcinfo(3)), .@nextcmd$;
     set getvariableofnpc(.waitticks, strnpcinfo(3)), -1;
     movetonextpoint;
