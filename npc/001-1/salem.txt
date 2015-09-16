@@ -12,7 +12,7 @@
 //    2  -- quest finished
 // Note: this script is ugly like hell
 
-001-1,57,118,0	script	Salem#001-1	NPC_SHOP_BAG,{
+001-1,57,118,0	script	Salem#001-1	NPC_SALEM,{
 
     function BuyPiou {
         .@price = getarg(0);
@@ -70,6 +70,7 @@
             @ArtisQuests_PiouPrice = 3000;
             ArtisQuests_PiouDiscount = 1;
             donpcevent strnpcinfo(3) + "::OnPiouFlee";
+            .LastPiouHunter$ = "";
             next;
             setq ArtisQuests_CatchPiou, 2;
             ArtisQuests_CatchPiou_Difficulcy = 0;

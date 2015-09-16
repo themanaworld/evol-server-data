@@ -73,7 +73,7 @@ function	script	ArtisFlyingPiouLogic	{
         mesn "Narrator";
         mes col(l("You caught the piou, but it's trying to escape from you. You'd better hurry back to Salem."), 9);
         set getvariableofnpc(.LastPiouHunter$, .@trader$), strcharinfo(0);
-        set getvariableofnpc(.PiouEscapedMessage$, .@trader$), l("The Piou escaped :-P");
+        set getvariableofnpc(.PiouEscapedMessage$, .@trader$), l("Oh no, the piou escaped!");
         set getvariableofnpc(.LastPiouHunterID, .@trader$), .@charid;
         set getvariableofnpc(.PiouCaught, .@trader$), 1;
         donpcevent .@trader$ + "::OnPiouFlee";
