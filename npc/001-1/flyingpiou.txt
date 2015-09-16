@@ -6,7 +6,97 @@
 // Variables:
 //    none
 
-001-1,95,84,0	script	#FlyingPiou1	NPC_FLYING_PIOU,{
+function	script	ArtisFlyingPiouLogic	{
+    .@tick = gettimetick(1);
+    .@LastTimeTouched = getvariableofnpc(.LastTimeTouched, strnpcinfo(3));
+    if (.@tick > .@LastTimeTouched + 300)
+    {
+        npcspeed 200;
+        set getvariableofnpc(.LastPlayerTouched, strnpcinfo(3)), -1;
+    }
+    return;
+}
+
+001-1,53,117,0	script	#FlyingPiou1	NPC_FLYING_PIOU,{
+
+    function  TryCatchPiou {
+        .@agi = readparam(bAgi);
+        @ArtisQuests_CatchPiouTries += 1;
+        getmapxy(.@map$, .@x1, .@y1, 1);
+        getmapxy(.@map$, .@x2, .@y2, 0);
+        .@distance = distance(.@x1, .@y1, .@x2, .@y2);
+        .@chance = max(ArtisQuests_CatchPiou_Difficulcy,
+                       20 + .@distance * 5 - .@agi/10 -
+                       @ArtisQuests_CatchPiouTries);
+        return rand(.@chance);
+    }
+
+    .@charid = getcharid(0);
+    if (.LastPlayerTouched <= 0)
+    {
+        .LastPlayerTouched = .@charid;
+        @ArtisQuests_CatchPiouTries = 0;
+    }
+    else if (.LastPlayerTouched != .@charid)
+    {
+        message strcharinfo(0), l("Hm, it seems another player is trying to catch the piou, I shouldn't interfere.");
+        end;
+    }
+
+    .@q = getq(ArtisQuests_CatchPiou);
+    if (.@q != 1)
+    {
+        mesn "Narrator";
+        mes col(l("You scare the piou, but let it go."), 9);
+        close;
+    }
+
+    .@tick = gettimetick(1);
+    if (.@tick < .LastTimeTouched + min(4, ArtisQuests_CatchPiou_Difficulcy
+                                        + @ArtisQuests_CatchPiouTries / 3))
+    {
+        message strcharinfo(0), l("Dang, I scared it! More patience, @@, more patience.", strcharinfo(0));
+        .LastTimeTouched = .@tick;
+        end;
+    }
+
+    .LastTimeTouched = .@tick;
+
+    .@rnd = TryCatchPiou();
+    if (!.@rnd)
+    {
+        npcstop;
+        stopnpctimer;
+        getmapxy(.@map$, .@x, .@y, 1);
+        npcwalkto .@x, .@y;
+        .@trader$ = "Salem#001-1";
+        mesn "Narrator";
+        mes col(l("You caught the piou, but it's trying to escape from you. You'd better hurry back to Salem."), 9);
+        set getvariableofnpc(.LastPiouHunter$, .@trader$), strcharinfo(0);
+        set getvariableofnpc(.PiouEscapedMessage$, .@trader$), l("The Piou escaped :-P");
+        set getvariableofnpc(.LastPiouHunterID, .@trader$), .@charid;
+        set getvariableofnpc(.PiouCaught, .@trader$), 1;
+        donpcevent .@trader$ + "::OnPiouFlee";
+        next;
+        disablenpc strnpcinfo(3);
+        close;
+    }
+    else
+    {
+        setarray .RandomFailureMessages$[0], l("So close!"), l("It escaped!"), l("Almost got it!"), l("Oh, the little...");
+        .@r = rand(getarraysize(.RandomFailureMessages$));
+        message strcharinfo(0), .RandomFailureMessages$[.@r];
+        npcspeed max(140, 200 - 10 * (@ArtisQuests_CatchPiouTries +
+                     ArtisQuests_CatchPiou_Difficulcy));
+    }
+    end;
+
+OnPCLogoutEvent:
+    debugmes strnpcinfo(0) + "::OnPCLogoutEvent";
+    end;
+
+OnHour00:
+    .LastTimeTouched = 0;
     end;
 
 OnTimer1000:
@@ -19,8 +109,9 @@ OnTimer1000:
 
 OnInit:
     setnpcsex G_OTHER;
-    setnpcdistance 0;
-    initmovegraph "fountain_1",      95, 84,
+    setnpcdistance 5;
+    initmovegraph "market_start",    53, 117,
+                  "fountain_1",      95, 84,
                   "fountain_2",      83, 97,
                   "fountain_3",      80, 86,
                   "river_bank_1",    117, 98,
@@ -28,36 +119,47 @@ OnInit:
                   "chelios_1",       102, 112,
                   "market_1",        81, 118,
                   "market_2",        63, 119,
-                  "spot_1",          55, 98,
                   "taree_1",         69, 82,
                   "inn_1",           112, 79,
                   "steps_1",         109, 63,
                   "beh_twnhall_1",   89, 52,
                   "taree_2",         67, 67,
-                  "taree_3",         56, 85
+                  "taree_3",         56, 85,
+                  "batiment_1",      55, 98,
+                  "batiment_2",      39, 88,
+                  "batiment_3",      36, 108,
+                  "batiment_4",      45, 121,
+                  "batiment_5",      53, 106
                   ;
 
-    setmovegraphcmd "fountain_1",     "river_bank_1", 1, "moveon",
-                    "river_bank_1",   "river_bank_2", 1, "moveon",
-                    "river_bank_2",   "chelios_1",    1, "moveon",
-                    "chelios_1",      "fountain_2",   1, "moveon",
-                    "fountain_2",     "fountain_3",   1, "moveon",
-                    "chelios_1",      "market_1",     1, "moveon",
-                    "market_1",       "market_2",     1, "moveon",
-                    "market_2",       "spot_1",       1, "moveon",
-                    "spot_1",         "taree_1",      1, "moveon",
-                    "taree_1",        "fountain_3",   1, "moveon",
-                    "fountain_3",     "fountain_1",   1, "moveon",
-                    "spot_1",         "taree_3",      1, "moveon",
-                    "taree_3",        "taree_2",      1, "moveon",
-                    "taree_2",        "beh_twnhall_1",1, "moveon",
-                    "beh_twnhall_1",  "steps_1",      1, "moveon",
-                    "steps_1",        "inn_1",        1, "moveon",
-                    "steps_1",        "fountain_1",   1, "moveon",
-                    "inn_1",          "river_bank_1", 1, "moveon"
+    setmovegraphcmd "fountain_1",     "river_bank_1", 1, "call ArtisFlyingPiouLogic",
+                    "river_bank_1",   "river_bank_2", 1, "call ArtisFlyingPiouLogic",
+                    "river_bank_2",   "chelios_1",    1, "call ArtisFlyingPiouLogic",
+                    "chelios_1",      "fountain_2",   1, "call ArtisFlyingPiouLogic",
+                    "fountain_2",     "fountain_3",   1, "call ArtisFlyingPiouLogic",
+                    "chelios_1",      "market_1",     1, "call ArtisFlyingPiouLogic",
+                    "market_1",       "market_2",     1, "call ArtisFlyingPiouLogic",
+                    "market_2",       "batiment_1",   1, "call ArtisFlyingPiouLogic",
+                    "batiment_1",     "taree_1",      1, "call ArtisFlyingPiouLogic",
+                    "batiment_1",     "batiment_2",   1, "call ArtisFlyingPiouLogic",
+                    "batiment_2",     "batiment_3",   1, "call ArtisFlyingPiouLogic",
+                    "batiment_3",     "batiment_4",   1, "call ArtisFlyingPiouLogic",
+                    "batiment_4",     "market_2",     1, "call ArtisFlyingPiouLogic",
+                    "taree_1",        "fountain_3",   1, "call ArtisFlyingPiouLogic",
+                    "fountain_3",     "fountain_1",   1, "call ArtisFlyingPiouLogic",
+                    "batiment_1",     "taree_3",      1, "call ArtisFlyingPiouLogic",
+                    "taree_3",        "taree_2",      1, "call ArtisFlyingPiouLogic",
+                    "taree_2",        "beh_twnhall_1",1, "call ArtisFlyingPiouLogic",
+                    "beh_twnhall_1",  "steps_1",      1, "call ArtisFlyingPiouLogic",
+                    "steps_1",        "inn_1",        1, "call ArtisFlyingPiouLogic",
+                    "steps_1",        "fountain_1",   1, "call ArtisFlyingPiouLogic",
+                    "inn_1",          "river_bank_1", 1, "call ArtisFlyingPiouLogic",
+                    "market_start",   "batiment_1",   1, "call ArtisFlyingPiouLogic"
                     ;
                     
-    firstmove "speed 200";
+    firstmove "speed 200", "market_start";
     initnpctimer;
+
+    .LastPlayerTouched = -1;
     end;
 }
