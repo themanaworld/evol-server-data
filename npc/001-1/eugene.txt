@@ -1,16 +1,77 @@
 // Evol scripts.
 // Authors:
 //    Reid
+//    Travolta
 // Description:
 //    Fishman NPC
+// Quest variable:
+//    ArtisQuests_Fishman
+// Quest stages:
+//    0 - not started
+//    1 - Eugene asked for items
+//    2 - completed
 
 001-1,113,120,0	script	Eugene	NPC_EUGENE,{
-    mesn;
-    mesq l("Ahoi.");
 
-    goto L_Close;
+    .BaitID = SmallTentacles;
+    .BaitCount = 10;
 
-L_Close:
+    narrator
+        l("You see a raijin boy, sitting on the edge of the dock."),
+        l("He's holding a fishing rod, and his eyes are pointed towards the surface of the sea.");
+
+    .@q = getq(ArtisQuests_Fishman);
+    if (.@q == 2) goto L_QuestDone;
+    if (.@q == 1) goto L_CheckItems;
+
+    speech
+        l("Ahoi."),
+        l("Hey, check out my brand new fishing rod. I bought it only today."),
+        l("I was so excited, I wanted to try it as soon as possible."),
+        l("So in the hurry, I forgot to take enough bait for fishing."),
+        l("Be a friend, and bring me @@ @@s", .BaitCount, getitemlink(.BaitID));
+
+    switch (select(l("I'll be back in no time."),
+                   l("Sorry, doing other things at the moment.")))
+    {
+        case 1:
+            setq ArtisQuests_Fishman, 1;
+            speech
+                l("Thank you. I'll wait here.");
+            close;
+        case 2:
+            speech
+                l("But I'm almost out of @@...", getitemlink(.BaitID));
+            close;
+    }
+
+L_CheckItems:
+    if (countitem(.BaitID) < .BaitCount)
+    {
+        speech
+            l("Sorry, but you don't have what I need for bait."),
+            l("I need @@ @@.", .BaitCount, getitemlink(.BaitID));
+        close;
+    }
+
+    speech
+        l("That's exactly what I needed."),
+        l("As a thank you, accept my old fishing rod."),
+        l("It's not as good as my new one, but still useful."),
+        l("Just look at the water! There's plenty of fish there."),
+        l("With my old fishing rod you can catch something every day."),
+        l("You might even get lucky, and get a @@.", getitemlink(GrassCarp)),
+        l("Have a good fishing!");
+
+    delitem .BaitID, .BaitCount;
+    setq ArtisQuests_Fishman, 2;
+    close;
+
+L_QuestDone:
+    // Idea for future: Eugene telling fishman jokes.
+    speech
+        l("Ahoy, @@!", strcharinfo(0)),
+        l("Is the fish biting today?");
     close;
 
 OnInit:
