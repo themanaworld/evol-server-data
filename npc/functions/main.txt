@@ -75,3 +75,25 @@ function	script	strip	{
     }
     return substr(.@s$, .@start, .@end);
 }
+
+function	script	narrator	{
+    mes "";
+    mes l("[Narrator]");
+    for (.@i = 0; .@i < getargcount(); .@i++)
+    {
+        mes col(getarg(.@i), 9);
+        next;
+    }
+    return;
+}
+
+function	script	speech	{
+    mes "";
+    mesn;
+    for (.@i = 0; .@i < getargcount(); .@i++)
+    {
+        mesq getarg(.@i);
+        next;
+    }
+    return;
+}
