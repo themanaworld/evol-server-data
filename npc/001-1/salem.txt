@@ -76,6 +76,7 @@
             ArtisQuests_CatchPiou_Difficulcy = 0;
             if (!BuyPiou(@ArtisQuests_PiouPrice))
                 ArtisQuests_PiouDiscount = 0;
+            // else ...
         }
         else
             mesq l("So, where is my piou? You should keep the given promise.");

@@ -1,0 +1,130 @@
+// Evol functions.
+// Authors:
+//    Travolta
+// Description:
+//    Fishing functions.
+
+
+function	script	fishing	{
+
+    .@wait_time_min = 5000;
+    .@wait_time_max = 30000;
+    .@pull_rand_max = 800;
+    .@pull_timeout = 1500;
+    .@fish_id = CommonCarp;
+    .@max_wait_times = 3;
+    .@curr_wait_times = 0;
+    .@rare_fish_chance = 2500;
+
+    setarray .@bait_ids[0], SmallTentacles, Bread, Aquada,
+                            UrchinMeat, TortugaTongue,
+                            Tentacles;
+    // if (countitem(FishingRod) < 1)
+    // {
+    //     narrator
+    //         l("You don't have a @@", getitemlink(FishingRod));
+    //     return -1;
+    // }
+
+
+L_ChooseBait:
+    .@sel$ = "";
+    .@cnt = 0;
+
+    for (.@i = 0; .@i < getarraysize(.@bait_ids); .@i++)
+        if (countitem(.@bait_ids[.@i]) > 0)
+        {
+            setarray .@user_items[.@cnt], .@bait_ids[.@i];
+            .@sel$ = .@sel$ + getitemname(.@bait_ids[.@i]) + ":";
+            .@cnt += 1;
+        }
+    .@sel$ = .@sel$ + l("Nothing, I changed my mind.");
+
+    if (!.@cnt)
+    {
+        .@bait_names$ = getitemlink(.@bait_ids[0]);
+        for (.@i = 1; .@i < getarraysize(.@bait_ids); .@i++)
+            .@bait_names$ = .@bait_names$ + ", " + getitemlink(.@bait_ids[.@i]);
+        narrator
+            l("You don't have any food suitable for bait."),
+            l("You need one of these: ") + .@bait_names$;
+            return -2;
+    }
+
+    narrator
+        l("What will be the bait for the fish?");
+    .@idx = select(.@sel$);
+
+    if (.@idx == .@cnt + 1)
+    {
+        narrator l("You take your fishing rod and leave.");
+        return 0;
+    }
+
+    .@bait = .@user_items[.@idx - 1];
+    delitem .@bait, 1;
+
+    narrator
+        l("You use a @@ as a bait.", getitemname(.@bait)),
+        l("You patiently wait...");
+
+L_Wait:
+    sleep2 rand(.@wait_time_min, .@wait_time_max);
+    .@tick = gettimetick(0);
+
+    mes col(l("Splash!"), 9);
+    mes "";
+
+    menuint
+        l("Pull!"), 1,
+        l("Wait..."), 2,
+        l("Give up."), 3;
+
+    switch (@menuret)
+    {
+        case 1:
+            .@timediff = gettimetick(0) - .@tick;
+            .@rnd = rand(.@timediff);
+            if (!rand(.@rare_fish_chance))
+                .@fish_id = GrassCarp;
+            // debugmes "timediff = " + .@timediff;
+            if (.@rnd <= .@pull_rand_max)
+            {
+                getitem .@fish_id, 1;
+                narrator
+                    l("You caught a @@!", getitemname(.@fish_id));
+                return 1;
+            }
+            else
+            {
+                narrator
+                    l("You pulled too late and lost the bait.");
+                goto L_ChooseBait;
+            }
+
+        case 2:
+            .@curr_wait_times += 1;
+
+            if (.@curr_wait_times > .@max_wait_times)
+            {
+                narrator
+                    l("The fish ate all your bait.");
+                goto L_ChooseBait;
+            }
+            else
+            {
+                narrator
+                    l("The fish ate small part of your bait."),
+                    l("But you decide to patiently wait.");
+                goto L_Wait;
+            }
+            break;
+
+        case 3:
+            narrator
+                l("You take your fishing rod and leave.");
+            return 0;
+    }
+
+    return;
+}
