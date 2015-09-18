@@ -33,14 +33,14 @@
         }
         if (!checkweight(4000, 1))
         {
-            mesq l("You can't carry another Piou Egg? What a shame.");
+            mesq l("You can't carry another @@? What a shame.", PiouEgg);
             next;
             return 2;
         }
         getinventorylist;
         if (.@inventorylist_count >= 100)
         {
-            mesq l("You don't have enough room in your backpack for a Piou Egg. Get rid of some junk and come back.");
+            mesq l("You don't have enough room in your backpack for a @@. Get rid of some junk and come back.", PiouEgg);
             next;
             return 3;
         }
