@@ -18,13 +18,12 @@ function	script	fishing	{
     setarray .@bait_ids[0], SmallTentacles, Bread, Aquada,
                             UrchinMeat, TortugaTongue,
                             Tentacles;
-    // if (countitem(FishingRod) < 1)
-    // {
-    //     narrator
-    //         l("You don't have a @@", getitemlink(FishingRod));
-    //     return -1;
-    // }
-
+    if (countitem(FishingRod) < 1)
+    {
+        narrator
+            l("You don't have a @@.", getitemlink(FishingRod));
+        return -1;
+    }
 
 L_ChooseBait:
     .@curr_wait_times = 0;
