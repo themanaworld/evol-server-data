@@ -13,7 +13,6 @@ function	script	fishing	{
     .@pull_timeout = 1500;
     .@fish_id = CommonCarp;
     .@max_wait_times = 3;
-    .@curr_wait_times = 0;
     .@rare_fish_chance = 2500;
 
     setarray .@bait_ids[0], SmallTentacles, Bread, Aquada,
@@ -28,6 +27,7 @@ function	script	fishing	{
 
 
 L_ChooseBait:
+    .@curr_wait_times = 0;
     .@sel$ = "";
     .@cnt = 0;
 
