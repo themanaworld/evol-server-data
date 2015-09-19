@@ -36,10 +36,12 @@
     {
         case 1:
             setq ArtisQuests_Fishman, 1;
+            mes "";
             speech
                 l("Thank you. I'll wait here.");
             close;
         case 2:
+            mes "";
             speech
                 l("But I'm almost out of @@...", getitemlink(.BaitID));
             close;
@@ -80,4 +82,3 @@ OnInit:
     setnpcdistance 2;
     end;
 }
-

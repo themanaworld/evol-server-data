@@ -54,6 +54,7 @@ L_ChooseBait:
         l("What will be the bait for the fish?");
     .@idx = select(.@sel$);
 
+    mes "";
     if (.@idx == .@cnt + 1)
     {
         narrator l("You take your fishing rod and leave.");
@@ -63,16 +64,14 @@ L_ChooseBait:
     .@bait = .@user_items[.@idx - 1];
     delitem .@bait, 1;
 
-    narrator
-        l("You use a @@ as a bait.", getitemname(.@bait)),
-        l("You patiently wait...");
+    narrator l("You use a @@ as a bait.", getitemname(.@bait));
+    mes col(l("You patiently wait..."), 9);
 
 L_Wait:
     sleep2 rand(.@wait_time_min, .@wait_time_max);
     .@tick = gettimetick(0);
 
     mes col(l("Splash!"), 9);
-    mes "";
 
     menuint
         l("Pull!"), 1,
@@ -87,21 +86,28 @@ L_Wait:
             if (!rand(.@rare_fish_chance))
                 .@fish_id = GrassCarp;
             // debugmes "timediff = " + .@timediff;
+
             if (.@rnd <= .@pull_rand_max)
             {
                 getitem .@fish_id, 1;
+
+                mes "";
                 narrator
                     l("You caught a @@!", getitemname(.@fish_id));
+
                 return 1;
             }
             else
             {
+                mes "";
                 narrator
                     l("You pulled too late and lost the bait.");
+
                 goto L_ChooseBait;
             }
 
         case 2:
+            mes "";
             .@curr_wait_times += 1;
 
             if (.@curr_wait_times > .@max_wait_times)
@@ -112,14 +118,15 @@ L_Wait:
             }
             else
             {
-                narrator
-                    l("The fish ate small part of your bait."),
-                    l("But you decide to patiently wait.");
+                narrator l("The fish ate small part of your bait.");
+                mes col(l("But you decide to patiently wait."), 9);
+
                 goto L_Wait;
             }
             break;
 
         case 3:
+            mes "";
             narrator
                 l("You take your fishing rod and leave.");
             return 0;
