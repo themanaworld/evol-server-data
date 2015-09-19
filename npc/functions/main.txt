@@ -77,7 +77,6 @@ function	script	strip	{
 }
 
 function	script	narrator	{
-    mes "";
     mes l("[Narrator]");
     for (.@i = 0; .@i < getargcount(); .@i++)
     {
@@ -88,7 +87,6 @@ function	script	narrator	{
 }
 
 function	script	speech	{
-    mes "";
     mesn;
     for (.@i = 0; .@i < getargcount(); .@i++)
     {
