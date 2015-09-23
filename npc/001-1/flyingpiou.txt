@@ -94,10 +94,6 @@ function	script	ArtisFlyingPiouLogic	{
     }
     end;
 
-OnPCLogoutEvent:
-    debugmes strnpcinfo(0) + "::OnPCLogoutEvent";
-    end;
-
 OnHour00:
     .LastTimeTouched = 0;
     end;
