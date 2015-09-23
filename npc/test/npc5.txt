@@ -6,7 +6,7 @@
 
 function	script	npc5TestFunc	{
     npctalk getarg(0);
-    return;
+    return 0;
 }
 
 test,45,25,0	script	npc5	NPC_PLAYER,{
@@ -21,6 +21,7 @@ OnTimer1000:
     end;
 
 OnInit:
+    // .debug = 1;
     initmovegraph "topleft",      45, 25,
                   "topright",     55, 25,
                   "bottomright",  55, 34,
