@@ -6,27 +6,47 @@
 // Variables:
 //    none
 
+
 function	script	initmovegraph	{
     deletearray getvariableofnpc(.movegraphcmd$, strnpcinfo(3));
     deletearray getvariableofnpc(.movegraphlabels$, strnpcinfo(3));
     deletearray getvariableofnpc(.movegraphweight, strnpcinfo(3));
-    deletearray getvariableofnpc(.moveposy, strnpcinfo(3));
-    deletearray getvariableofnpc(.moveposx, strnpcinfo(3));
+    deletearray getvariableofnpc(.movepos_y1, strnpcinfo(3));
+    deletearray getvariableofnpc(.movepos_x1, strnpcinfo(3));
+    deletearray getvariableofnpc(.movepos_x2, strnpcinfo(3));
+    deletearray getvariableofnpc(.movepos_y2, strnpcinfo(3));
     .@cnt = 0;
 
     for (.@f = 0; .@f < getargcount(); .@f = .@f + 3)
     {
         set getvariableofnpc(.movegraphlabels$[.@cnt], strnpcinfo(3)), getarg(.@f);
-        set getvariableofnpc(.moveposx[.@cnt], strnpcinfo(3)), getarg(.@f + 1);
-        set getvariableofnpc(.moveposy[.@cnt], strnpcinfo(3)), getarg(.@f + 2);
+        set getvariableofnpc(.movepos_x1[.@cnt], strnpcinfo(3)), getarg(.@f + 1);
+        set getvariableofnpc(.movepos_y1[.@cnt], strnpcinfo(3)), getarg(.@f + 2);
+        if (.@f + 3 < getargcount())
+            if (!isstr(getarg(.@f + 3)))
+            {
+                set getvariableofnpc(.movepos_x2[.@cnt], strnpcinfo(3)), getarg(.@f + 3);
+                set getvariableofnpc(.movepos_y2[.@cnt], strnpcinfo(3)), getarg(.@f + 4);
+                .@f = .@f + 2;
+            }
         .@cnt ++;
     }
     return;
 }
 
+
 function	script	findmovegraphlabel	{
     if (!getargcount())
+    {
+        debugmes "findmovegraphlabel: no argument";
         return -1;
+    }
+    if (!isstr(getarg(0)))
+    {
+        debugmes "findmovegraphlabel: need string argument";
+        return -1;
+    }
+
     .@arg$ = getarg(0);
     for (.@i = 0; .@i < getarraysize(getvariableofnpc(.movegraphlabels$, strnpcinfo(3))); .@i++)
     {
@@ -34,8 +54,10 @@ function	script	findmovegraphlabel	{
             return .@i;
     }
 
+    npcdebug "findmovegraphlabel: label not found: " + getarg(0);
     return -1;
 }
+
 
 /* setmovegraphcmd(fromPositionLabel,toPositionLabel,moveChanceWeight,postCommand, ...);
  * This function manipulates NPC moving graph. Before calling it, make sure
@@ -48,7 +70,7 @@ function	script	findmovegraphlabel	{
  *                The commands don't have to end with ";moveon", it's executed in the end by default.
  */
 function	script	setmovegraphcmd	{
-    .@size = getarraysize(getvariableofnpc(.moveposx, strnpcinfo(3)));
+    .@size = getarraysize(getvariableofnpc(.movepos_x1, strnpcinfo(3)));
 
     for (.@f = 0; .@f < getargcount(); .@f = .@f + 4)
     {
@@ -62,6 +84,7 @@ function	script	setmovegraphcmd	{
     }
     return;
 }
+
 
 function	script	execmovecmd	{
 
@@ -78,6 +101,7 @@ function	script	execmovecmd	{
     else if (.@cmd$[0] == "wait")
     {
         set getvariableofnpc(.waitticks, strnpcinfo(3)), atoi(.@cmd$[1]);
+        return 1;
     }
     else if (.@cmd$[0] == "emote")
     {
@@ -92,7 +116,7 @@ function	script	execmovecmd	{
         .@pos = findmovegraphlabel(.@cmd$[1]);
         if (.@pos > 0)
         {
-            movenpc strnpcinfo(3), getvariableofnpc(.moveposx[.@pos], strnpcinfo(3)), getvariableofnpc(.moveposy[.@pos], strnpcinfo(3));
+            movenpc strnpcinfo(3), getvariableofnpc(.movepos_x1[.@pos], strnpcinfo(3)), getvariableofnpc(.movepos_y1[.@pos], strnpcinfo(3));
             set getvariableofnpc(.movepos, strnpcinfo(3)), .@pos;
         }
         else
@@ -106,17 +130,15 @@ function	script	execmovecmd	{
         {
             case 1:
                 debugmes "execmovecmd: CALL command needs some parameters";
-                return -1;
+                return 0;
             case 2:
-                callfunc .@cmd$[1];
+                return callfunc(.@cmd$[1]);
                 break;
             case 3:
-                callfunc .@cmd$[1], .@cmd$[2];
-                break;
+                return callfunc(.@cmd$[1], .@cmd$[2]);
             case 4:
             default:
-                callfunc .@cmd$[1], .@cmd$[2], .@cmd$[3];
-                break;
+                return callfunc(.@cmd$[1], .@cmd$[2], .@cmd$[3]);
         }
     }
     else if (.@cmd$[0] == "speed")
@@ -132,8 +154,9 @@ function	script	execmovecmd	{
     {
         debugmes "Unknown move graph cmd: " + .@cmd$[0];
     }
-    return 1;
+    return 0;
 }
+
 
 function	script	getnextmovecmd	{
     .@cmds$ = getvariableofnpc(.nextcmd$, strnpcinfo(3));
@@ -145,43 +168,108 @@ function	script	getnextmovecmd	{
         .@firstCmd$ = substr(.@cmds$, 0, .@index - 1);
         .@restCmd$ = substr(.@cmds$, .@index + 1, getstrlen(.@cmds$) - 1);
     }
-    // debugmes "firstCmd = " + .@firstCmd$ + " restCmd = " + .@restCmd$;
+    // npcdebug "firstCmd = " + .@firstCmd$ + " restCmd = " + .@restCmd$;
     set getvariableofnpc(.nextcmd$, strnpcinfo(3)), .@restCmd$;
     return strip(.@firstCmd$);
 }
+
+
+// getrandompoint(x1,y1,x2,y2)
+//    -- Get a random walkable point within a map rectangle
+//    x1, y1 -- top-left corner of rectangle
+//    x2, y2 -- bottom-right corner of rectangle
+//  Returns 0 on success and -1 on error;
+//  Since we cannot return multiple values, the random
+//  coordinates are stored in NPC variables .move__rand_x, .move__rand_y
+function	script	getrandompoint	{
+    if (getargcount() < 4)
+    {
+        debugmes "error: getrandompoint(x, y, w, h) takes 4 arguments";
+        return -1;
+    }
+
+    .@max_pokes = 10;
+    .@x1 = getarg(0);
+    .@y1 = getarg(1);
+    .@x2 = getarg(2);
+    .@y2 = getarg(3);
+    .@rx = -1; .@ry = -1;
+
+    getmapxy(.@map$, .@cx, .@cy, 1);  // npc location
+
+    // let's try max_pokes random cells
+    for (.@poke = 0; .@poke < .@max_pokes; .@poke++)
+    {
+        .@rx = rand(.@x1, .@x2);
+        .@ry = rand(.@y2, .@y2);
+        if (checkcell(.@map$, .@rx, .@ry, cell_chkpass))
+            goto L_Found;
+    }
+
+    // we check each cell from random middle point to the end
+    for (;.@rx <= .@x2; .@rx++)
+    {
+        for (;.@ry <= .@y2; .@ry++)
+            if (checkcell(.@map$, .@rx, .@ry, cell_chkpass))
+                goto L_Found;
+        .@ry = .@y1;
+    }
+
+    // we check the rectangle from beginning to end
+    for (.@rx = .@x1; .@rx <= .@x2; .@rx++)
+        for (.@ry = .@y1; .@ry <= .@y2; .@ry++)
+            if (checkcell(.@map$, .@rx, .@ry, cell_chkpass))
+                goto L_Found;
+
+    // finally, if we don't find anything
+    debugmes "error: getrandompoint: cannot find walkable cell in rectangle [(" + .@x1 + ","  + .@y1 + ") , (" + .@x2 + "," + .@y2 + ")]";
+    return -1;
+
+L_Found:
+    set getvariableofnpc(.move__rand_x, strnpcinfo(3)), .@rx;
+    set getvariableofnpc(.move__rand_y, strnpcinfo(3)), .@ry;
+    return 0;
+}
+
 
 function	script	movetonextpoint	{
     .@wait = getvariableofnpc(.waitticks, strnpcinfo(3));
     if (.@wait > 0)
     {
-        .@wait --;
+        .@wait--;
         set getvariableofnpc(.waitticks, strnpcinfo(3)), .@wait;
         return;
     }
-    .@nextcmd$ = getnextmovecmd;
-    if (.@nextcmd$ != "moveon")
+
+    .@nextcmd$ = "";
+    while (.@nextcmd$ != "moveon")
     {
-        execmovecmd(.@nextcmd$);
-        return;
+        .@nextcmd$ = getnextmovecmd();
+        if (execmovecmd(.@nextcmd$))
+            return;
     }
 
     // choose a random path from all possible paths
-    .@size = getarraysize(getvariableofnpc(.moveposx, strnpcinfo(3)));
-    .@cur = 0;
+    .@size = getarraysize(getvariableofnpc(.movepos_x1, strnpcinfo(3)));
     .@pos = getvariableofnpc(.movepos, strnpcinfo(3));
+    .@cur = 0;
     .@weight_sum = 0;
+    // .@dbg$ = getvariableofnpc(.movegraphlabels$[.@pos], strnpcinfo(3)) + ": ";
 
     for (.@i = 0; .@i < .@size; .@i++)
     {
         .@cmd$ = getvariableofnpc(.movegraphcmd$[.@pos * .@size + .@i], strnpcinfo(3));
         if (.@cmd$ != "")
         {
-            setarray .@nextpos[.@cur], .@i;
-            setarray .@weights[.@cur], getvariableofnpc(.movegraphweight[.@pos * .@size + .@i], strnpcinfo(3));
+            .@nextpos[.@cur] = .@i;
+            .@weights[.@cur] = getvariableofnpc(.movegraphweight[.@pos * .@size + .@i], strnpcinfo(3));
+            // .@dbg$ += getvariableofnpc(.movegraphlabels$[.@i], strnpcinfo(3)) + "=" + .@weights[.@cur] + " ";
             .@weight_sum += .@weights[.@cur];
             .@cur++;
         }
     }
+    // npcdebug .@dbg$;
+
     // pick a random number based on weight_sum
     .@rnd = rand(.@weight_sum);
     .@k = -1; .@weight_sum = 0;
@@ -190,32 +278,47 @@ function	script	movetonextpoint	{
         .@k++;
         .@weight_sum += .@weights[.@k];
     }
+
     .@next_idx = .@nextpos[.@k];
-    .@next_x = getvariableofnpc(.moveposx[.@next_idx], strnpcinfo(3));
-    .@next_y = getvariableofnpc(.moveposy[.@next_idx], strnpcinfo(3));
+    .@next_x1 = getvariableofnpc(.movepos_x1[.@next_idx], strnpcinfo(3));
+    .@next_y1 = getvariableofnpc(.movepos_y1[.@next_idx], strnpcinfo(3));
+    .@next_x2 = getvariableofnpc(.movepos_x2[.@next_idx], strnpcinfo(3));
+    .@next_y2 = getvariableofnpc(.movepos_y2[.@next_idx], strnpcinfo(3));
     .@nextcmd$ = getvariableofnpc(.movegraphcmd$[.@pos * .@size + .@next_idx], strnpcinfo(3));
     set getvariableofnpc(.nextcmd$, strnpcinfo(3)), .@nextcmd$;
     set getvariableofnpc(.movepos, strnpcinfo(3)), .@next_idx;
-    // debugmes strnpcinfo(1) + " moving to " + getvariableofnpc(.movegraphlabels$[.@next_idx], strnpcinfo(3));
-    npcwalkto .@next_x, .@next_y;
+    if (.@next_x2 > 0 && .@next_y2 > 0)
+    {
+        if (!getrandompoint(.@next_x1, .@next_y1, .@next_x2, .@next_y2))
+        {
+            .@next_x1 = getvariableofnpc(.move__rand_x, strnpcinfo(3));
+            .@next_y1 = getvariableofnpc(.move__rand_y, strnpcinfo(3));
+        }
+    }
+    if (getvariableofnpc(.debug, strnpcinfo(3)))
+    {
+        getmapxy(.@map$, .@cx, .@cy, 1);
+        .@dist = distance(.@cx, .@cy, .@next_x1, .@next_y1);
+        // npctalk getvariableofnpc(.movegraphlabels$[.@next_idx], strnpcinfo(3)) + " ("+.@next_x1 + "," + .@next_y1 + ") [" + .@dist + "]";
+        npcdebug "moving to " + getvariableofnpc(.movegraphlabels$[.@next_idx], strnpcinfo(3)) + " ("+.@next_x1 + "," + .@next_y1 + ") [distance=" + .@dist + "]";
+    }
+    npcwalkto .@next_x1, .@next_y1;
     return;
 }
+
 
 // initial actions for npc when using move graphs.
 // function can accept 2 arguments:
 //    1: action sequence, for example "speed 200; dir 4". Default is "moveon"
 //    2: start point label. Default is #0 from move graph labels
 function	script	firstmove	{
-    .@nextcmd$ = "moveon";
-    .@initpos = 0;
-    if (getargcount() > 0)
-        .@nextcmd$ = getarg(0);
-    if (getargcount() > 1)
-        .@initpos = findmovegraphlabel(getarg(1));
+    .@nextcmd$ = getarg(0, "moveon");
+    .@initpos = findmovegraphlabel(getarg(1, ""));
+    if (.@initpos < 0) .@initpos = 0;
 
     set getvariableofnpc(.movepos, strnpcinfo(3)), .@initpos;
-    movenpc strnpcinfo(3), getvariableofnpc(.moveposx[.@initpos], strnpcinfo(3)),
-                           getvariableofnpc(.moveposy[.@initpos], strnpcinfo(3));
+    movenpc strnpcinfo(3), getvariableofnpc(.movepos_x1[.@initpos], strnpcinfo(3)),
+                           getvariableofnpc(.movepos_y1[.@initpos], strnpcinfo(3));
     set getvariableofnpc(.nextcmd$, strnpcinfo(3)), .@nextcmd$;
     set getvariableofnpc(.waitticks, strnpcinfo(3)), -1;
     movetonextpoint;
