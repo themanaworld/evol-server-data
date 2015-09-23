@@ -14,7 +14,10 @@ function	script	ArtisFlyingPiouLogic	{
         npcspeed 200;
         set getvariableofnpc(.LastPlayerTouched, strnpcinfo(3)), -1;
     }
-    return;
+    .@rnd = rand(5) - 3;
+    if (.@rnd > 0)
+        return execmovecmd("wait " + .@rnd);
+    return 0;
 }
 
 001-1,53,117,0	script	#FlyingPiou1	NPC_FLYING_PIOU,{
@@ -110,53 +113,51 @@ OnTimer1000:
 OnInit:
     setnpcsex G_OTHER;
     setnpcdistance 5;
-    initmovegraph "market_start",    53, 117,
-                  "fountain_1",      95, 84,
-                  "fountain_2",      83, 97,
-                  "fountain_3",      80, 86,
-                  "river_bank_1",    117, 98,
+    // .debug = 1;
+
+    initmovegraph "market_start",    53,  117,
+                  "fountain",        79,  75,  102, 91,
+                  "river_bank_1",    107, 94,  117, 102,
                   "river_bank_2",    117, 110,
-                  "chelios_1",       102, 112,
-                  "market_1",        81, 118,
-                  "market_2",        63, 119,
-                  "taree_1",         69, 82,
-                  "inn_1",           112, 79,
-                  "steps_1",         109, 63,
-                  "beh_twnhall_1",   89, 52,
-                  "taree_2",         67, 67,
-                  "taree_3",         56, 85,
-                  "batiment_1",      55, 98,
-                  "batiment_2",      39, 88,
-                  "batiment_3",      36, 108,
-                  "batiment_4",      45, 121,
-                  "batiment_5",      53, 106
+                  "chelios_right",   100, 112, 113, 118,
+                  "chelios_left",    80,  95,  93,  111,
+                  "market_right",    73,  114, 83,  121,
+                  "market_center",   50,  113, 66,  121,
+                  "market_left",     36,  120, 42,  128,
+                  "batiment_inside", 48,  197, 65,  106,
+                  "batiment_behind", 33,  90,  41,  103,
+                  "library_front",   42,  82,  63,  90,
+                  "taree_yard",      69,  82,
+                  "taree_behind",    61,  62,  76,  71,
+                  "townhall_behind", 72,  40,  93,  55,
+                  "townhall_right",  99,  55,  106, 60,
+                  "inn_behind",      107, 63,  123, 76
                   ;
 
-    setmovegraphcmd "fountain_1",     "river_bank_1", 1, "call ArtisFlyingPiouLogic",
-                    "river_bank_1",   "river_bank_2", 1, "call ArtisFlyingPiouLogic",
-                    "river_bank_2",   "chelios_1",    1, "call ArtisFlyingPiouLogic",
-                    "chelios_1",      "fountain_2",   1, "call ArtisFlyingPiouLogic",
-                    "fountain_2",     "fountain_3",   1, "call ArtisFlyingPiouLogic",
-                    "chelios_1",      "market_1",     1, "call ArtisFlyingPiouLogic",
-                    "market_1",       "market_2",     1, "call ArtisFlyingPiouLogic",
-                    "market_2",       "batiment_1",   1, "call ArtisFlyingPiouLogic",
-                    "batiment_1",     "taree_1",      1, "call ArtisFlyingPiouLogic",
-                    "batiment_1",     "batiment_2",   1, "call ArtisFlyingPiouLogic",
-                    "batiment_2",     "batiment_3",   1, "call ArtisFlyingPiouLogic",
-                    "batiment_3",     "batiment_4",   1, "call ArtisFlyingPiouLogic",
-                    "batiment_4",     "market_2",     1, "call ArtisFlyingPiouLogic",
-                    "taree_1",        "fountain_3",   1, "call ArtisFlyingPiouLogic",
-                    "fountain_3",     "fountain_1",   1, "call ArtisFlyingPiouLogic",
-                    "batiment_1",     "taree_3",      1, "call ArtisFlyingPiouLogic",
-                    "taree_3",        "taree_2",      1, "call ArtisFlyingPiouLogic",
-                    "taree_2",        "beh_twnhall_1",1, "call ArtisFlyingPiouLogic",
-                    "beh_twnhall_1",  "steps_1",      1, "call ArtisFlyingPiouLogic",
-                    "steps_1",        "inn_1",        1, "call ArtisFlyingPiouLogic",
-                    "steps_1",        "fountain_1",   1, "call ArtisFlyingPiouLogic",
-                    "inn_1",          "river_bank_1", 1, "call ArtisFlyingPiouLogic",
-                    "market_start",   "batiment_1",   1, "call ArtisFlyingPiouLogic"
+    setmovegraphcmd "fountain",       "river_bank_1",   1, "call ArtisFlyingPiouLogic",
+                    "river_bank_1",   "river_bank_2",   1, "call ArtisFlyingPiouLogic",
+                    "river_bank_2",   "chelios_right",  2, "call ArtisFlyingPiouLogic",
+                    "chelios_right",  "chelios_left",   1, "call ArtisFlyingPiouLogic",
+                    "chelios_left",   "fountain",       1, "wait 1; call ArtisFlyingPiouLogic",
+                    "chelios_left",   "market_right",   1, "call ArtisFlyingPiouLogic",
+                    "chelios_right",  "market_right",   1, "call ArtisFlyingPiouLogic",
+                    "market_right",   "market_center",  1, "call ArtisFlyingPiouLogic",
+                    "market_center",  "batiment_inside",1, "call ArtisFlyingPiouLogic",
+                    "batiment_inside","library_front",  1, "call ArtisFlyingPiouLogic",
+                    "library_front",  "taree_yard",     1, "call ArtisFlyingPiouLogic",
+                    "library_front",  "taree_behind",   1, "call ArtisFlyingPiouLogic",
+                    "library_front",  "batiment_behind",1, "call ArtisFlyingPiouLogic",
+                    "batiment_behind","market_left",    1, "wait 3; call ArtisFlyingPiouLogic",
+                    "market_left",    "market_center",  1, "call ArtisFlyingPiouLogic",
+                    "taree_yard",     "fountain",       1, "call ArtisFlyingPiouLogic",
+                    "taree_behind",   "townhall_behind",1, "call ArtisFlyingPiouLogic",
+                    "townhall_behind","townhall_right", 1, "call ArtisFlyingPiouLogic",
+                    "townhall_right", "inn_behind",     1, "call ArtisFlyingPiouLogic",
+                    "inn_behind",     "fountain",       1, "wait 2; call ArtisFlyingPiouLogic",
+                    "inn_behind",     "river_bank_1",   1, "call ArtisFlyingPiouLogic",
+                    "market_start",   "batiment_inside",1, "call ArtisFlyingPiouLogic"
                     ;
-                    
+
     firstmove "speed 200", "market_start";
     initnpctimer;
 
