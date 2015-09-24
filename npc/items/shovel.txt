@@ -1,0 +1,34 @@
+// Evol scripts.
+// Authors:
+//    Travolta
+// Description:
+//    NPC to use shovel (dig, bury etc)
+
+
+-	script	Shovel	-1,{
+
+OnUse:
+    narrator
+        l("You hold the shovel in your hangs."),
+        l("What are you going to do?");
+
+    .@action = select(
+        l("Dig."),
+        l("Bury."),
+        l("Nothing."));
+
+    mes "";
+    switch(.@action)
+    {
+        case 1:
+            narrator l("DIG Not implemented.");
+            break;
+        case 2:
+            narrator l("BURY Not implemented.");
+            break;
+        case 3:
+            narrator l("You hide your shovel.");
+            break;
+    }
+    close;
+}
