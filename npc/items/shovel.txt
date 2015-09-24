@@ -7,8 +7,62 @@
 
 -	script	Shovel	-1,{
 
+    function Dig {
+        getmapxy(.@map$, .@x, .@y, 0);
+        for (.@i = 0; .@i < getarraysize($WorldBuriedTreasures_id); .@i++)
+        {
+            if ($WorldBuriedTreasures_x[.@i] == .@x &&
+                $WorldBuriedTreasures_y[.@i] == .@y)
+            {
+                .@id = $WorldBuriedTreasures_id[.@i];
+                .@amount = $WorldBuriedTreasures_amount[.@i];
+                deletearray $WorldBuriedTreasures_id[.@i], 1;
+                deletearray $WorldBuriedTreasures_amount[.@i], 1;
+                deletearray $WorldBuriedTreasures_x[.@i], 1;
+                deletearray $WorldBuriedTreasures_y[.@i], 1;
+                getitem .@id, .@amount;
+                narrator
+                    l("You found something!"),
+                    l("It's @@ @@.", .@amount, getitemname(.@id));
+                return 1;
+            }
+        }
+        narrator l("Sadly, you found nothing but dirt.");
+        return 0;
+    }
+
+    function Bury {
+        narrator l("What would you like to bury?");
+        .@items$ = "";
+        getinventorylist;
+        for (.@i = 0; .@i < @inventorylist_count; .@i++)
+        {
+            .@items$ = .@items$ + getitemname(@inventorylist_id[.@i]) + ":";
+            debugmes getitemname(@inventorylist_id[.@i]);
+        }
+        .@idx = select(.@items$) - 1;
+        .@id = @inventorylist_id[.@idx];
+        .@amount = 1;
+        if (@inventorylist_amount[.@idx] > 1)
+        {
+            narrator l("Amount?");
+            input .@amount, 1, @inventorylist_amount[.@idx];
+        }
+
+        getmapxy(.@map$, .@x, .@y, 0);
+        delitem .@id, .@amount;
+        .@wtc = getarraysize($WorldBuriedTreasures_id);
+        $WorldBuriedTreasures_id[.@wtc] = .@id;
+        $WorldBuriedTreasures_amount[.@wtc] = .@amount;
+        $WorldBuriedTreasures_x[.@wtc] = .@x;
+        $WorldBuriedTreasures_y[.@wtc] = .@y;
+        narrator l("You buried @@ @@.", .@amount, getitemname(.@id));
+
+        return 0;
+    }
+
 OnUse:
-    narrator
+    narrator 0,
         l("You hold the shovel in your hangs."),
         l("What are you going to do?");
 
@@ -17,18 +71,20 @@ OnUse:
         l("Bury."),
         l("Nothing."));
 
-    mes "";
     switch(.@action)
     {
         case 1:
-            narrator l("DIG Not implemented.");
+            Dig();
             break;
         case 2:
-            narrator l("BURY Not implemented.");
+            Bury();
             break;
         case 3:
             narrator l("You hide your shovel.");
             break;
     }
     close;
+
+
+
 }
