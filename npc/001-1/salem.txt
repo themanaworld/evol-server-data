@@ -16,7 +16,7 @@
 
     function BuyPiou {
         .@price = getarg(0);
-        mesq l("The piou costs @@E", .@price);
+        mesq l("The piou costs @@E.", .@price);
         next;
         menuint l("Alright, I take it."), 1,
                 l("I changed my mind."), 2;
@@ -28,27 +28,27 @@
         if (Zeny < .@price)
         {
             mesq l("Don't you try to trick an old merchant! You don't have enough money, you need @@E", .@price);
-            next;
+
             return 1;
         }
         if (!checkweight(4000, 1))
         {
             mesq l("You can't carry another @@? What a shame.", PiouEgg);
-            next;
+
             return 2;
         }
         getinventorylist;
         if (.@inventorylist_count >= 100)
         {
             mesq l("You don't have enough room in your backpack for a @@. Get rid of some junk and come back.", PiouEgg);
-            next;
+
             return 3;
         }
         Zeny = Zeny - .@price;
         getitem 4000, 1;
         ArtisQuests_PiousBought += 1;
         mesq l("You take good care of your piou. Remember to feed it every day.");
-        next;
+
         return 0;
     }
 
@@ -61,26 +61,40 @@
     .@q = getq(ArtisQuests_CatchPiou);
     @ArtisQuests_PiouPrice = 30000;
 
-    mesn;
     if (.@q == 1)
     {
         if (.PiouCaught)
         {
-            mesq l("Ah, great! Now you get a nice discount on a piou.");
+        speech 0,
+            l("Look who is back..."),
+            l("And with my piou! That's wonderful, I can't think at how hard that was to catch it."),
+            l("Great, you get your piece of cake, I give you a 90% discount on the @@ of your choice.", getitemlink (4000));
+            next;
+
             @ArtisQuests_PiouPrice = 3000;
             ArtisQuests_PiouDiscount = 1;
             donpcevent strnpcinfo(3) + "::OnPiouFlee";
-            .LastPiouHunter$ = "";
-            next;
             setq ArtisQuests_CatchPiou, 2;
+            .@q = getq(ArtisQuests_CatchPiou);
+
+            .LastPiouHunter$ = "";
             ArtisQuests_CatchPiou_Difficulcy = 0;
-            if (!BuyPiou(@ArtisQuests_PiouPrice))
+            .@BoughtPiou = BuyPiou(@ArtisQuests_PiouPrice);
+            if (.@BoughtPiou == 0)
                 ArtisQuests_PiouDiscount = 0;
-            // else ...
+            else if (.@BoughtPiou == 4)
+                speech 1, l("See you next time!");
+
+            close;
         }
         else
-            mesq l("So, where is my piou? You should keep the given promise.");
-        close;
+        {
+            speech 0,
+                l("Look who is back..."),
+                l("So, where is my piou? You should keep the given promise.");
+                next;
+            goto L_SalemMenuShop;
+        }
     }
 
     mesq l("Good day, my friend, come closer, come closer!");
@@ -88,9 +102,11 @@
     mesq l("Just look at my goods for sale! Fresh fruits and vegetables were shipped only this morning. And for reasonable price, of course.");
     next;
 
+
+L_SalemMenuShop:
     menuint
-        rif(.@q == 0, l("What about those pious? They look so cute.")), 0,
-        rif(.@q == 2, l("I'd like to buy a piou.")), 1,
+        rif(.@q < 2, l("What about those pious? They look so cute.")), 0,
+        rif(.@q != 0, l("I'd like to buy a piou.")), 1,
         l("I'd like to see your other products."), 2;
 
     mes "";
@@ -109,6 +125,7 @@
             }
             if (!BuyPiou(@ArtisQuests_PiouPrice))
                 ArtisQuests_PiouDiscount = 0;
+            next;
             mesq l("See you next time!");
             close;
         case 2:
@@ -133,9 +150,10 @@ L_AboutPious:
     mesq l("If you catch the escaped piou and bring it back, I will give you a 90% discount on a piou.");
     next;
 
-    menuint l("Sounds like easy money. I'll do it."), 0,
-            l("I don't really have time to chase pious, let me just buy one for it's real price (30000E)."), 1,
-            l("I don't want to buy a piou right now."), 2;
+    menuint rif (.@q == 0, l("Sounds like easy money. I'll do it.")), 0,
+            rif (.@q == 1, l("I'm on my way to bring it back to you!")), 1,
+            l("I don't really have time to chase pious, let me just buy one for it's real price (30000E)."), 2,
+            l("I don't want to buy a piou right now."), 3;
             
     mes "";
     mesn;
@@ -145,10 +163,13 @@ L_AboutPious:
         case 0:
             goto L_QuestInfo;
         case 1:
+            mesq l("Alright, see you later then!");
+            close;
+        case 2:
             BuyPiou @ArtisQuests_PiouPrice;
             mesq l("See you later!");
             close;
-        case 2:
+        case 3:
             mesq l("See you later!");
             close;
     }
