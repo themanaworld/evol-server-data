@@ -17,7 +17,7 @@
     if (.@q == 2) goto L_ItemFount;
     if (.@q == 3) goto L_QuestDone;
 
-    speech
+    speech 2,
         l("We didn't meet, right?"),
         l("My name is Q'Onan, I'm a member of Nard's crew."),
         l("I have a lot of work here, so I don't even have time to go to the town."),
@@ -25,7 +25,7 @@
 
     select l("Go on.");
 
-    speech
+    speech 3,
         l("Before I joined Nard, I used to be a thief."),
         l("I'm not proud of it, but I had to get money for living."),
         l("Anyway, the last time I stole something I was almost caught."),
@@ -48,13 +48,13 @@
             getrandompoint(180,27,189,32);
             npcdebug "Chest buriad at (" + .move__rand_x + "," + .move__rand_y + ")";
             shovel_addquest("001-1", .move__rand_x, .move__rand_y, "QOnanFoundItem");
-            speech
+            speech 3,
                 l("Alright, you will need this shovel."),
                 l("I hope to see you soon.");
             getitem IronShovel, 1;
             close;
         case 1:
-            speech
+            speech 3,
                 l("Come on, don't be a coward!"),
                 l("Anyway, let me know if you change your mind.");
             close;
@@ -63,7 +63,7 @@
 L_QuestGiven:
     speech l("I asked you to do me a favour, so why are you here?");
     select l("What should I do, again?");
-    speech
+    speech 1,
         l("Please find the small chest, buried somewhere on the Artis Hill."),
         l("Bring it to me, and you will get your reward.");
     close;
@@ -94,7 +94,7 @@ OnInit:
 function	script	QOnanFoundItem	{
     setq ArtisQuests_QOnan, 2;
     // getitem SmallChest, 1;
-    narrator
+    narrator 1,
        l("You found a small chest, surprisingly heavy for it's size."),
        l("It's probably full of coins, but no matter how hard you try to open it, you can't."),
        l("Better take it back to Q'Onan.");
