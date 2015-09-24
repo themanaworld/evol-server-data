@@ -5,7 +5,7 @@
 //    Water animations, splash, fishes, etc...
 
 001-1,116,123,0	script	#water_animation0	NPC_WATER_SPLASH,{
-    narrator
+    narrator 0,
         l("You see some fish reflecting the sun on the surface of the ocean.");
     fishing;
     close;
@@ -17,7 +17,7 @@ OnInit:
 }
 
 001-1,119,102,0	script	#water_animation1	NPC_WATER_SPLASH,{
-    narrator
+    narrator 0,
         l("You see some fish reflecting the sun on the surface of the ocean.");
     fishing;
     close;
@@ -29,7 +29,7 @@ OnInit:
 }
 
 001-1,167,82,0	script	#water_animation2	NPC_WATER_SPLASH,{
-    narrator
+    narrator 0,
         l("You see some fish reflecting the sun on the surface of the ocean.");
     fishing;
     close;
@@ -41,7 +41,7 @@ OnInit:
 }
 
 001-1,167,40,0	script	#water_animation3	NPC_WATER_SPLASH,{
-    narrator
+    narrator 0,
         l("You see some fish reflecting the sun on the surface of the ocean.");
     fishing;
     close;
@@ -53,7 +53,7 @@ OnInit:
 }
 
 001-1,104,127,0	script	#water_animation4	NPC_WATER_SPLASH,{
-    narrator
+    narrator 0,
         l("You see some fish reflecting the sun on the surface of the ocean.");
     fishing;
     close;
@@ -65,7 +65,7 @@ OnInit:
 }
 
 001-1,166,123,0	script	#water_animation5	NPC_WATER_SPLASH,{
-    narrator
+    narrator 0,
         l("You see some fish reflecting the sun on the surface of the ocean.");
     fishing;
     close;
@@ -77,7 +77,7 @@ OnInit:
 }
 
 001-1,181,119,0	script	#water_animation6	NPC_WATER_SPLASH,{
-    narrator
+    narrator 0,
         l("You see some fish reflecting the sun on the surface of the ocean.");
     fishing;
     close;
@@ -89,7 +89,7 @@ OnInit:
 }
 
 001-1,202,114,0	script	#water_animation7	NPC_WATER_SPLASH,{
-    narrator
+    narrator 0,
         l("You see some fish reflecting the sun on the surface of the ocean.");
     fishing;
     close;
@@ -101,7 +101,7 @@ OnInit:
 }
 
 001-1,187,86,0	script	#water_animation8	NPC_WATER_SPLASH,{
-    narrator
+    narrator 0,
         l("You see some fish reflecting the sun on the surface of the ocean.");
     fishing;
     close;

@@ -50,11 +50,10 @@ L_ChooseBait:
             return -2;
     }
 
-    narrator
+    narrator 0,
         l("What will be the bait for the fish?");
     .@idx = select(.@sel$);
 
-    mes "";
     if (.@idx == .@cnt + 1)
     {
         narrator l("You take your fishing rod and leave.");
@@ -66,12 +65,15 @@ L_ChooseBait:
 
     narrator l("You use a @@ as a bait.", getitemname(.@bait));
     mes col(l("You patiently wait..."), 9);
+    mes "";
 
 L_Wait:
     sleep2 rand(.@wait_time_min, .@wait_time_max);
     .@tick = gettimetick(0);
 
+
     mes col(l("Splash!"), 9);
+    mes "";
 
     menuint
         l("Pull!"), 1,
@@ -91,7 +93,6 @@ L_Wait:
             {
                 getitem .@fish_id, 1;
 
-                mes "";
                 narrator
                     l("You caught a @@!", getitemname(.@fish_id));
 
@@ -99,7 +100,6 @@ L_Wait:
             }
             else
             {
-                mes "";
                 narrator
                     l("You pulled too late and lost the bait.");
 
@@ -107,7 +107,6 @@ L_Wait:
             }
 
         case 2:
-            mes "";
             .@curr_wait_times += 1;
 
             if (.@curr_wait_times > .@max_wait_times)
@@ -126,7 +125,6 @@ L_Wait:
             break;
 
         case 3:
-            mes "";
             narrator
                 l("You take your fishing rod and leave.");
             return 0;
