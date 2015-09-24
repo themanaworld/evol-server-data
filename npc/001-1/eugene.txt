@@ -16,15 +16,15 @@
     .BaitID = SmallTentacles;
     .BaitCount = 10;
 
-    narrator 0,
+    narrator 4,
         l("You see a raijin boy, sitting on the edge of the dock."),
         l("He's holding a fishing rod, and his eyes are pointed towards the surface of the sea.");
 
     .@q = getq(ArtisQuests_Fishman);
-    if (.@q == 2) goto L_QuestDone;
     if (.@q == 1) goto L_CheckItems;
+    if (.@q == 2) goto L_QuestDone;
 
-    speech 0,
+    speech 2,
         l("Ahoi."),
         l("Hey, check out my brand new fishing rod. I bought it only today."),
         l("I was so excited, I wanted to try it as soon as possible."),
@@ -36,11 +36,11 @@
     {
         case 1:
             setq ArtisQuests_Fishman, 1;
-            speech
+            speech 1,
                 l("Thank you. I'll wait here.");
             close;
         case 2:
-            speech
+            speech 1,
                 l("But I'm almost out of @@...", getitemlink(.BaitID));
             close;
     }
@@ -48,13 +48,13 @@
 L_CheckItems:
     if (countitem(.BaitID) < .BaitCount)
     {
-        speech 0,
+        speech
             l("Sorry, but you don't have what I need for bait."),
             l("I need @@ @@.", .BaitCount, getitemlink(.BaitID));
         close;
     }
 
-    speech 0,
+    speech
         l("That's exactly what I needed."),
         l("As a thank you, accept my old fishing rod."),
         l("It's not as good as my new one, but still useful."),
@@ -70,7 +70,7 @@ L_CheckItems:
 
 L_QuestDone:
     // Idea for future: Eugene telling fishman jokes.
-    speech 0,
+    speech
         l("Ahoy, @@!", strcharinfo(0)),
         l("Is the fish biting today?");
     close;

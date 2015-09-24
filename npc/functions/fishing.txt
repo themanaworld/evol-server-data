@@ -50,27 +50,27 @@ L_ChooseBait:
             return -2;
     }
 
-    narrator 0,
+    narrator 2,
         l("What will be the bait for the fish?");
     .@idx = select(.@sel$);
 
     if (.@idx == .@cnt + 1)
     {
-        narrator l("You take your fishing rod and leave.");
+        narrator 1,
+            l("You take your fishing rod and leave.");
         return 0;
     }
 
     .@bait = .@user_items[.@idx - 1];
     delitem .@bait, 1;
 
-    narrator l("You use a @@ as a bait.", getitemname(.@bait));
-    mes col(l("You patiently wait..."), 9);
-    mes "";
+    narrator 3,
+        l("You use a @@ as a bait.", getitemname(.@bait)),
+        l("You patiently wait...");
 
 L_Wait:
     sleep2 rand(.@wait_time_min, .@wait_time_max);
     .@tick = gettimetick(0);
-
 
     mes col(l("Splash!"), 9);
     mes "";
@@ -93,14 +93,14 @@ L_Wait:
             {
                 getitem .@fish_id, 1;
 
-                narrator
+                narrator 1,
                     l("You caught a @@!", getitemname(.@fish_id));
 
                 return 1;
             }
             else
             {
-                narrator
+                narrator 5,
                     l("You pulled too late and lost the bait.");
 
                 goto L_ChooseBait;
@@ -111,21 +111,22 @@ L_Wait:
 
             if (.@curr_wait_times > .@max_wait_times)
             {
-                narrator
+                narrator 5,
                     l("The fish ate all your bait.");
                 goto L_ChooseBait;
             }
             else
             {
-                narrator l("The fish ate small part of your bait.");
-                mes col(l("But you decide to patiently wait."), 9);
+                narrator 3,
+                    l("The fish ate small part of your bait."),
+                    l("But you decide to patiently wait.");
 
                 goto L_Wait;
             }
             break;
 
         case 3:
-            narrator
+            narrator 1,
                 l("You take your fishing rod and leave.");
             return 0;
     }
