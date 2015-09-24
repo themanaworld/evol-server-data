@@ -7,6 +7,42 @@
 
 -	script	Shovel	-1,{
 
+    function CheckDigLocation {
+        getmapxy(.@map$, .@x, .@y, 0);
+        for (.@i = 0; .@i < getarraysize(.WorldDigRect_Map$); .@i++)
+        {
+            if (!strcmp(.WorldDigRect_Map$[.@i], .@map$) &&
+                .WorldDigRect_x1[.@i] <= .@x &&
+                .WorldDigRect_x2[.@i] >= .@x &&
+                .WorldDigRect_y1[.@i] <= .@y &&
+                .WorldDigRect_y2[.@i] >= .@y)
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    function AddDigRect {
+        if (getargcount() < 5)
+        {
+            debugmes "usage: AddDigRect(map$,x1,y1,x2,y2)";
+            return 0;
+        }
+        .@map$ = str(getarg(0));
+        .@x1 = getarg(1);
+        .@y1 = getarg(2);
+        .@x2 = getarg(3);
+        .@y2 = getarg(4);
+        .@size = getarraysize(.WorldDigRect_Map$);
+        .WorldDigRect_Map$[.@size] = .@map$;
+        .WorldDigRect_x1[.@size] = .@x1;
+        .WorldDigRect_y1[.@size] = .@y1;
+        .WorldDigRect_x2[.@size] = .@x2;
+        .WorldDigRect_y2[.@size] = .@y2;
+        return 1;
+    }
+
     function Dig {
         getmapxy(.@map$, .@x, .@y, 0);
         for (.@i = 0; .@i < getarraysize($WorldBuriedTreasures_id); .@i++)
@@ -62,6 +98,13 @@
     }
 
 OnUse:
+    if (!CheckDigLocation())
+    {
+        narrator 0,
+            l("You can't use the shovel here.");
+        close;
+    }
+
     narrator 0,
         l("You hold the shovel in your hangs."),
         l("What are you going to do?");
@@ -85,6 +128,8 @@ OnUse:
     }
     close;
 
-
+OnInit:
+    AddDigRect("001-1", 172, 26, 200, 48);
+    end;
 
 }
