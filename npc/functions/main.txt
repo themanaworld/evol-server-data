@@ -78,51 +78,76 @@ function	script	strip	{
 
 
 // Function to show narrator text. Accepts string args.
-// If first arg is a number N, it prints N blank lines at beginning.
-// Default number of blank lines is 1.
+// If first arg is a number N, then it represents bit flags.
+// Bit flags :
+//   0x1 -- blank line at beginning
+//   0x2 -- blank line at the end
+//   0x4 -- use last "next;"
 function	script	narrator	{
     .@start = 0;
-    .@blank_lines = 1;
-    if (getargcount() > 1 && !isstr(getarg(0)))
+    .@argc = getargcount();
+    .@flags = 0;
+
+    if (.@argc > 1 && !isstr(getarg(0)))
     {
         .@start = 1;
-        .@blank_lines = getarg(0);
+        .@flags = getarg(0);
     }
 
-    for (.@i = 0; .@i < .@blank_lines; .@i++)
+    if (.@flags & 0x1)
         mes "";
 
     mes l("[Narrator]");
-    for (.@i = .@start; .@i < getargcount(); .@i++)
+    for (.@i = .@start; .@i < .@argc; .@i++)
     {
         mes col(getarg(.@i), 9);
-        next;
+        if (.@i < .@argc - 1)
+            next;
     }
+
+    if (.@flags & 0x4)
+        next;
+    else if (.@flags & 0x2)
+        mes "";
+
     return;
 }
 
 
 // Function to show NPC speech. Accepts string args.
-// If first arg is a number N, it prints N blank lines at beginning.
-// Default number of blank lines is 1.
+// If first arg is a number N, then it represents bit flags.
+// Bit flags :
+//   0x1 -- blank line at beginning
+//   0x2 -- blank line at the end
+//   0x4 -- use last "next;"
 function	script	speech	{
     .@start = 0;
-    .@blank_lines = 1;
-    if (getargcount() > 1 && !isstr(getarg(0)))
+    .@argc = getargcount();
+    .@flags = 0;
+
+    if (.@argc > 1 && !isstr(getarg(0)))
     {
         .@start = 1;
-        .@blank_lines = getarg(0);
+        .@flags = getarg(0);
     }
 
-    for (.@i = 0; .@i < .@blank_lines; .@i++)
+    if (.@flags & 0x1)
         mes "";
 
     mesn;
-    for (.@i = .@start; .@i < getargcount(); .@i++)
+    for (.@i = .@start; .@i < .@argc; .@i++)
     {
         mesq getarg(.@i);
-        next;
+
+        if (.@i < .@argc - 1)
+            next;
     }
+
+    if (.@flags & 0x4)
+        next;
+    else if (.@flags & 0x2)
+        mes "";
+
     return;
 }
 
