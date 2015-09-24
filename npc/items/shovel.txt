@@ -43,6 +43,18 @@
         return 1;
     }
 
+    function PlayerIsTired {
+        .@tick = gettimetick(1);
+        if (@ShovelLastUsed + max(10, .PlayerTiredTime - readparam(bStr)) > .@tick)
+        {
+            narrator
+                l("You are exhausted, you should rest a bit.");
+            return 1;
+        }
+        @ShovelLastUsed = .@tick;
+        return 0;
+    }
+
     function Dig {
         getmapxy(.@map$, .@x, .@y, 0);
         for (.@i = 0; .@i < getarraysize($WorldBuriedTreasures_id); .@i++)
@@ -117,9 +129,13 @@ OnUse:
     switch(.@action)
     {
         case 1:
+            if (PlayerIsTired())
+                close;
             Dig();
             break;
         case 2:
+            if (PlayerIsTired())
+                close;
             Bury();
             break;
         case 3:
@@ -128,7 +144,13 @@ OnUse:
     }
     close;
 
+OnHour00:
+    if (playerattached())
+       @ShovelLastUsed = 0;
+    end;
+
 OnInit:
+    .PlayerTiredTime = 60;
     AddDigRect("001-1", 172, 26, 200, 48);
     end;
 
