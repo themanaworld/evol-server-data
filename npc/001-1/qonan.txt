@@ -4,6 +4,11 @@
 //    Travolta
 // Description:
 //    Sailor of Nard's La Johanne ship.
+// ArtisQuests_QOnan -- quest variable:
+//    0  - not started
+//    1  - Q'Onan asked to find Chest
+//    2  - Chest found, heading back to Q'Onan
+//    3  - Quest completed
 
 001-1,186,107,0	script	Q'Onan#001-1	NPC_QONAN,{
 
