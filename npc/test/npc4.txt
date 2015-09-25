@@ -17,6 +17,7 @@ OnTimer1000:
     end;
 OnInit:
     initpath "move", 20, 20,
+             "sit", 0, 0,
              "dir", 6, 0,
              "move", 25, 20,
              "emote", 3, 0,

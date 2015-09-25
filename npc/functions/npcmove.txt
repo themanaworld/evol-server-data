@@ -74,6 +74,14 @@ function	script	domoveaction	{
         npcspeed getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
         return 2;
     }
+    else if (.@cmd$ == "sit")
+    {
+        npcsit;
+    }
+    else if (.@cmd$ == "stand")
+    {
+        npcstand;
+    }
     return 1;
 }
 
