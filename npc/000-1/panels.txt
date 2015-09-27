@@ -21,7 +21,7 @@
     close;
 
 OnInit:
-    setnpcdistance 2;
+    .distance = 2;
     end;
 }
 
@@ -49,6 +49,6 @@ OnInit:
     close;
 
 OnInit:
-    setnpcdistance 2;
+    .distance = 2;
     end;
 }

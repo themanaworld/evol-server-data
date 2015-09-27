@@ -13,7 +13,7 @@
 
 OnInit:
     .sex = G_MALE;
-    setnpcdistance 2;
+    .distance = 2;
     setnpcdir 2;
     end;
 

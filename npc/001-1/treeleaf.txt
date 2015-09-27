@@ -16,6 +16,6 @@ OnTimer2800:
     end;
 
 OnInit:
-    setnpcdistance 1;
+    .distance = 1;
     end;
 }

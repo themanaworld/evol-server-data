@@ -19,8 +19,8 @@ OnTimer1000:
     end;
 
 OnInit:
-    setnpcsex G_MALE;
-    setnpcdistance 4;
+    .sex = G_MALE;
+    .distance = 4;
     // .debug = 1;
     initmovegraph
         "inn_front",    112,  90,  119, 93,

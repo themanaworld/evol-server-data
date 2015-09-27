@@ -108,7 +108,7 @@ OnTimer1000:
 
 OnInit:
     .sex = G_OTHER;
-    setnpcdistance 5;
+    .distance = 5;
     // .debug = 1;
 
     initmovegraph "market_start",    53,  117,

@@ -17,6 +17,6 @@
 
 OnInit:
     .sex = G_MALE;
-    setnpcdistance 2;
+    .distance = 2;
     end;
 }

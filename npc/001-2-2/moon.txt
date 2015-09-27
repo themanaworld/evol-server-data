@@ -209,7 +209,7 @@ OnHour00:
 
 OnInit:
     .sex = G_FEMALE;
-    setnpcdistance 3;
+    .distance = 3;
     initpath "move", 41, 30,
              "dir", DOWN, 0,
              "wait", 2, 0,

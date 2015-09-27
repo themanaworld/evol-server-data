@@ -15,7 +15,7 @@ L_Close:
 
 OnInit:
     .sex = G_MALE;
-    setnpcdistance 4;
+    .distance = 4;
     end;
 }
 

@@ -18,7 +18,7 @@ OnTimer1670:
     harbourTimer;
 
 OnInit:
-    setnpcdistance 1;
+    .distance = 1;
     end;
 }
 
@@ -29,7 +29,7 @@ OnTimer1670:
     harbourTimer;
 
 OnInit:
-    setnpcdistance 1;
+    .distance = 1;
     end;
 }
 
@@ -40,7 +40,7 @@ OnTimer1670:
     harbourTimer;
 
 OnInit:
-    setnpcdistance 1;
+    .distance = 1;
     end;
 }
 
@@ -51,7 +51,7 @@ OnTimer1670:
     harbourTimer;
 
 OnInit:
-    setnpcdistance 1;
+    .distance = 1;
     end;
 }
 
@@ -62,7 +62,7 @@ OnTimer1670:
     harbourTimer;
 
 OnInit:
-    setnpcdistance 1;
+    .distance = 1;
     end;
 }
 
@@ -73,6 +73,6 @@ OnTimer1670:
     harbourTimer;
 
 OnInit:
-    setnpcdistance 1;
+    .distance = 1;
     end;
 }

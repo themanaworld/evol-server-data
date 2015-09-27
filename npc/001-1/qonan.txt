@@ -86,7 +86,7 @@ L_QuestDone:
 
 OnInit:
     .sex = G_MALE;
-    setnpcdistance 2;
+    .distance = 2;
     .debug = 1;
     end;
 }

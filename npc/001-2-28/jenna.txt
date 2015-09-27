@@ -45,7 +45,7 @@ OnHour00:
 
 OnInit:
     .sex = G_FEMALE;
-    setnpcdistance 5;
+    .distance = 5;
     initmovegraph "m_table_1",    52, 32,
                   "m_table_2",    56, 32,
                   "big_table_l",  53, 27,
