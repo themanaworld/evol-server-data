@@ -1,77 +1,73 @@
 // Evol scripts.
 // Author:
 //    Reid
+//    Travolta
 // Description:
 //    Juscare, walking NPC of the legion of Aemil on the right part of the Agora of Artis.
 
-001-1,112,65,0	script	Juscare#001-1	NPC_HUMAN_MALE_LEGION_ARTIS,{
+
+001-1,118,92,0	script	Juscare#001-1	NPC_HUMAN_MALE_LEGION_ARTIS,{
     npctalk3 l("It is a sunny day, don't you think?");
-    close;
+    end;
 
 OnTimer1000:
-    if (isunitwalking())
+    if (!isunitwalking())
     {
-        initnpctimer;
-        end;
+        movetonextpoint;
     }
-    movetonextpos;
     initnpctimer;
     end;
 
 OnInit:
-    initpath "move", 112, 82,
+    setnpcsex G_MALE;
+    setnpcdistance 4;
+    // .debug = 1;
+    initmovegraph
+        "inn_front",    112,  90,  119, 93,
+        "inn_tree",     108,  82,
+        "fountain",     87,   85,  91,  86,
+        "chelios",      93,   109,
+        "chelios_road", 89,   107,
+        "chelios",      93,   109,
+        "to_market",    76,   119,
+        "market",       60,   115, 65,  121,
+        "fishing_spot", 109,  127,
+        "river_bank",   113,  105,
+        "eugene",       112,  115,
+        "inn_door",     118,  89,
+        "inn_doorstep", 118,  88,
+        "inter_inn_doorstep",  29, 43,
+        "inter_inn_2tables",   38, 31,
+        "inter_inn_fav_table", 51, 33;
 
-             "move", 118, 91,
-             "dir", RIGHT, 0,
-             "dir", RIGHT, 0,
-             "dir", LEFT, 0,
-             "wait", 1, 0,
-             "dir", DOWN, 0,
-             "wait", 1, 0,
+    // this is not very obvious stuff
+    setmovegraphcmd
+        "inn_front",    "inn_door",  1, 0x1,    "flags_0 2; dir 4; call open_door #Door18",
+        "inn_front",    "inn_tree",  2,         "dir 2; wait 1; sit; wait 1; emote 106; wait 20; stand; wait 1",
+        "inn_front",    "river_bank",1,         "flags_0 8; flags_1 4",
+        "river_bank",   "eugene",    1, 0x4,    "moveon",
+        "eugene",       "fishing_spot", 1, 0x4, "wait 7",
+        "fishing_spot", "chelios",   1, 0x4,    "dir 6; wait 1; emote 103; wait 10",
+        "inn_tree",     "inn_door",  1,         "flags_1 1; flags_0 2; dir 4; call open_door #Door18",
+        "inn_tree",     "fountain",  2,         "dir 4; wait 1; emote 122; wait 10; dir 0; wait 1",
+        "fountain",     "chelios_road",         "moveon",
+        "chelios_road", "chelios",              "dir 6; wait 1; emote 103; wait 7",
+        "chelios",      "eugene",               "flags_1 28; flags_0 4",
+        "chelios",      "to_market", 2, 0x20,   "flags_1 20; flags_0 10",
+        "to_market",    "market",    1, 0x20,   "flags_1 10; flags_0 20; wait 20",
+        "market",       "to_market",            "moveon",
+        "to_market",    "chelios",   1, 0x10,   "flags_0 10; dir 6; wait 3",
+        "fishing_spot", "eugene",    1, 0x8,    "moveon",
+        "eugene",       "river_bank",1, 0x8,    "moveon",
+        "river_bank",   "inn_front", 1, 0x8,    "dir 0; wait 5",
+        "inn_door",     "inn_doorstep",1, 0x1,  "warp 001-2-28 inter_inn_doorstep; call close_door #Door18",
+        "inter_inn_doorstep",  "inter_inn_2tables",   1, 0x1, "moveon",
+        "inter_inn_2tables",   "inter_inn_fav_table", 1, 0x1, "flags_1 2; flags_0 1; dir 6; wait 1; sit; wait 15; stand; wait 1",
+        "inter_inn_fav_table", "inter_inn_2tables",   1, 0x2, "moveon",
+        "inter_inn_2tables",   "inter_inn_doorstep",  1, 0x2, "call open_door #Door18; warp 001-1 inn_doorstep",
+        "inn_doorstep",        "inn_door",            1, 0x2, "call close_door #Door18",
+        "inn_door",            "inn_front",           1, 0x2, "flags_1 1; flags_0 2; wait 10";
 
-             "move", 115, 95,
-
-             "move", 115, 111,
-             "dir", DOWN, 0,
-             "wait", 1, 0,
-             "dir", LEFT, 0,
-             "wait", 1, 0,
-
-             "move", 113, 113,
-
-             "move", 110, 110,
-             "dir", DOWN, 0,
-             "wait", 1, 0,
-             "dir", RIGHT, 0,
-             "wait", 1, 0,
-
-             "move", 111, 98,
-             "dir", LEFT, 0,
-             "wait", 1, 0,
-             "dir", RIGHT, 0,
-             "wait", 1, 0,
-
-             "move", 111, 84,
-             "move", 110, 82,
-
-             "move", 110, 70,
-             "dir", LEFT, 0,
-             "wait", 1, 0,
-             "dir", DOWN, 0,
-             "wait", 1, 0,
-
-             "move", 109, 64,
-             "dir", LEFT, 0,
-             "wait", 1, 0,
-             "dir", DOWN, 0,
-             "wait", 1, 0,
-
-             "move", 112, 65,
-             "dir", RIGHT, 0,
-             "wait", 1, 0,
-             "dir", DOWN, 0,
-             "wait", 1, 0;
-
-    initialmove;
+    firstmove "wait 4", "inn_front";
     initnpctimer;
 }
