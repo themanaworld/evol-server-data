@@ -11,7 +11,7 @@ function	script	ArtisFlyingPiouLogic	{
     .@LastTimeTouched = getvariableofnpc(.LastTimeTouched, strnpcinfo(3));
     if (.@tick > .@LastTimeTouched + 300)
     {
-        npcspeed 200;
+        .speed = 200;
         set getvariableofnpc(.LastPlayerTouched, strnpcinfo(3)), -1;
     }
     .@rnd = rand(5) - 3;
@@ -89,7 +89,7 @@ function	script	ArtisFlyingPiouLogic	{
         setarray .RandomFailureMessages$[0], l("So close!"), l("It escaped!"), l("Almost got it!"), l("Oh, the little...");
         .@r = rand(getarraysize(.RandomFailureMessages$));
         message strcharinfo(0), .RandomFailureMessages$[.@r];
-        npcspeed max(140, 200 - 10 * (@ArtisQuests_CatchPiouTries +
+        .speed = max(140, 200 - 10 * (@ArtisQuests_CatchPiouTries +
                      ArtisQuests_CatchPiou_Difficulcy));
     }
     end;
