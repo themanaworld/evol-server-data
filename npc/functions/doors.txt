@@ -32,3 +32,23 @@ function	script	doorTimer	{
     if (getnpcdir() == 4) setnpcdir 8;
     end;
 }
+
+
+function	script	open_door	{
+    .@door$ = getarg(0);
+    setnpcdir .@door$, 2;
+    sleep 300;
+    setnpcdir .@door$, 6;
+    sleep 300;
+    return 0;
+}
+
+
+function	script	close_door	{
+    .@door$ = getarg(0);
+    setnpcdir .@door$, 4;
+    sleep 300;
+    setnpcdir .@door$, 8;
+    sleep 300;
+    return 0;
+}
