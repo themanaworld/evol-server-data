@@ -11,24 +11,23 @@ function	script	initmovegraph	{
     deletearray getvariableofnpc(.movegraphcmd$, strnpcinfo(3));
     deletearray getvariableofnpc(.movegraphlabels$, strnpcinfo(3));
     deletearray getvariableofnpc(.movegraphweight, strnpcinfo(3));
+    deletearray getvariableofnpc(.movegraphflags, strnpcinfo(3));
     deletearray getvariableofnpc(.movepos_y1, strnpcinfo(3));
     deletearray getvariableofnpc(.movepos_x1, strnpcinfo(3));
     deletearray getvariableofnpc(.movepos_x2, strnpcinfo(3));
     deletearray getvariableofnpc(.movepos_y2, strnpcinfo(3));
     .@cnt = 0;
 
-    for (.@f = 0; .@f < getargcount(); .@f = .@f + 3)
+    for (.@f = 0; .@f < getargcount();)
     {
-        set getvariableofnpc(.movegraphlabels$[.@cnt], strnpcinfo(3)), getarg(.@f);
-        set getvariableofnpc(.movepos_x1[.@cnt], strnpcinfo(3)), getarg(.@f + 1);
-        set getvariableofnpc(.movepos_y1[.@cnt], strnpcinfo(3)), getarg(.@f + 2);
-        if (.@f + 3 < getargcount())
-            if (!isstr(getarg(.@f + 3)))
-            {
-                set getvariableofnpc(.movepos_x2[.@cnt], strnpcinfo(3)), getarg(.@f + 3);
-                set getvariableofnpc(.movepos_y2[.@cnt], strnpcinfo(3)), getarg(.@f + 4);
-                .@f = .@f + 2;
-            }
+        set getvariableofnpc(.movegraphlabels$[.@cnt], strnpcinfo(3)), getarg(.@f++);
+        set getvariableofnpc(.movepos_x1[.@cnt], strnpcinfo(3)), getarg(.@f++);
+        set getvariableofnpc(.movepos_y1[.@cnt], strnpcinfo(3)), getarg(.@f++);
+        if (!isstr(getarg(.@f, "label")))
+        {
+            set getvariableofnpc(.movepos_x2[.@cnt], strnpcinfo(3)), getarg(.@f++);
+            set getvariableofnpc(.movepos_y2[.@cnt], strnpcinfo(3)), getarg(.@f++);
+        }
         .@cnt ++;
     }
     return;
@@ -61,9 +60,10 @@ function	script	findmovegraphlabel	{
 
 /* setmovegraphcmd(fromPositionLabel,toPositionLabel,moveChanceWeight,postCommand, ...);
  * This function manipulates NPC moving graph. Before calling it, make sure
- * `initmovegraph' was called. The function accepts multiplier of 4 parameters:
+ * `initmovegraph' was called. The function accepts 3-5 parameters (many times):
  * fromPositionLabel, toPositionLabel -- starting and ending position of NPC move
- * moveChanceWeight -- positive integer, represents the cnance of moving in given direction
+ * moveChanceWeight -- positive integer, represents the cnance of moving in given direction. (optional)
+ * moveFlags -- if .mg_flags & moveFlags != 0, move is possible. (optional)
  * postCommand -- either "moveon" (start moving to next location straight after arriving from 
  *                fromPositionLabel to toPositionLabel) or a semicolon-separated set of commands
  *                ("wait 3", "emote 5" etc, see `execmovecmd') that will be executed after arrival.
@@ -72,15 +72,21 @@ function	script	findmovegraphlabel	{
 function	script	setmovegraphcmd	{
     .@size = getarraysize(getvariableofnpc(.movepos_x1, strnpcinfo(3)));
 
-    for (.@f = 0; .@f < getargcount(); .@f = .@f + 4)
+    for (.@f = 0; .@f < getargcount();)
     {
-        .@from   = findmovegraphlabel(getarg(.@f));
-        .@to     = findmovegraphlabel(getarg(.@f + 1));
-        .@weight = getarg(.@f + 2);
-        .@cmd$   = getarg(.@f + 3);
+        .@from   = findmovegraphlabel(getarg(.@f++));
+        .@to     = findmovegraphlabel(getarg(.@f++));
+        .@weight = 1;
+        if (!isstr(getarg(.@f)))
+            .@weight = getarg(.@f++);
+        .@flags  = 0xffff;
+        if (!isstr(getarg(.@f)))
+            .@flags = getarg(.@f++);
+        .@cmd$   = getarg(.@f++);
         .@index = .@from * .@size + .@to;  // emulation of 2d array
         set getvariableofnpc(.movegraphcmd$[.@index], strnpcinfo(3)), .@cmd$;
         set getvariableofnpc(.movegraphweight[.@index], strnpcinfo(3)), .@weight;
+        set getvariableofnpc(.movegraphflags[.@index], strnpcinfo(3)), .@flags;
     }
     return;
 }
@@ -170,6 +176,22 @@ function	script	execmovecmd	{
     {
         deletearray .@cmd$[0], 1;
         npctalk implode(.@cmd$, " ");
+    }
+    else if (.@cmd$[0] == "flags")
+    {
+        set getvariableofnpc(.mg_flags, strnpcinfo(3)), axtoi(.@cmd$[1]);
+    }
+    else if (.@cmd$[0] == "flags_0")
+    {
+        .@flags = getvariableofnpc(.mg_flags, strnpcinfo(3));
+        .@flags &= ~axtoi(.@cmd$[1]);
+        set getvariableofnpc(.mg_flags, strnpcinfo(3)), .@flags;
+    }
+    else if (.@cmd$[0] == "flags_1")
+    {
+        .@flags = getvariableofnpc(.mg_flags, strnpcinfo(3));
+        .@flags |= axtoi(.@cmd$[1]);
+        set getvariableofnpc(.mg_flags, strnpcinfo(3)), .@flags;
     }
     else
     {
@@ -273,23 +295,33 @@ function	script	movetonextpoint	{
     // choose a random path from all possible paths
     .@size = getarraysize(getvariableofnpc(.movepos_x1, strnpcinfo(3)));
     .@pos = getvariableofnpc(.movepos, strnpcinfo(3));
+    .@curr_flags = getvariableofnpc(.mg_flags, strnpcinfo(3));
     .@cur = 0;
     .@weight_sum = 0;
     // .@dbg$ = getvariableofnpc(.movegraphlabels$[.@pos], strnpcinfo(3)) + ": ";
 
     for (.@i = 0; .@i < .@size; .@i++)
     {
-        .@cmd$ = getvariableofnpc(.movegraphcmd$[.@pos * .@size + .@i], strnpcinfo(3));
-        if (.@cmd$ != "")
+        .@index = .@pos * .@size + .@i;
+        .@cmd$ = getvariableofnpc(.movegraphcmd$[.@index], strnpcinfo(3));
+        .@flags = getvariableofnpc(.movegraphflags[.@index], strnpcinfo(3));
+        if (.@cmd$ != "" &&
+            .@curr_flags & .@flags)
         {
             .@nextpos[.@cur] = .@i;
-            .@weights[.@cur] = getvariableofnpc(.movegraphweight[.@pos * .@size + .@i], strnpcinfo(3));
+            .@weights[.@cur] = getvariableofnpc(.movegraphweight[.@index], strnpcinfo(3));
             // .@dbg$ += getvariableofnpc(.movegraphlabels$[.@i], strnpcinfo(3)) + "=" + .@weights[.@cur] + " ";
             .@weight_sum += .@weights[.@cur];
             .@cur++;
         }
     }
     // npcdebug .@dbg$;
+
+    if (!.@weight_sum)
+    {
+        npcdebug "error: cannot pick next walk point. flags=" + getvariableofnpc(.mg_flags, strnpcinfo(3));
+        return;
+    }
 
     // pick a random number based on weight_sum
     .@rnd = rand(.@weight_sum);
@@ -320,8 +352,7 @@ function	script	movetonextpoint	{
     {
         getmapxy(.@map$, .@cx, .@cy, 1);
         .@dist = distance(.@cx, .@cy, .@next_x1, .@next_y1);
-        // npctalk getvariableofnpc(.movegraphlabels$[.@next_idx], strnpcinfo(3)) + " ("+.@next_x1 + "," + .@next_y1 + ") [" + .@dist + "]";
-        npcdebug "moving to " + getvariableofnpc(.movegraphlabels$[.@next_idx], strnpcinfo(3)) + " ("+.@next_x1 + "," + .@next_y1 + ") [distance=" + .@dist + "]";
+        npcdebug "moving to " + getvariableofnpc(.movegraphlabels$[.@next_idx], strnpcinfo(3)) + " ("+.@next_x1 + "," + .@next_y1 + ") [distance=" + .@dist + "] flags=" + getvariableofnpc(.mg_flags, strnpcinfo(3));
     }
     npcwalkto .@next_x1, .@next_y1;
     return;
@@ -342,6 +373,7 @@ function	script	firstmove	{
                            getvariableofnpc(.movepos_y1[.@initpos], strnpcinfo(3));
     set getvariableofnpc(.nextcmd$, strnpcinfo(3)), .@nextcmd$;
     set getvariableofnpc(.waitticks, strnpcinfo(3)), -1;
+    set getvariableofnpc(.mg_flags, strnpcinfo(3)), 0xffff;
     movetonextpoint;
     return;
 }
