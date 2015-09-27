@@ -52,7 +52,7 @@ function	script	domoveaction	{
     }
     else if (.@cmd$ == "class")
     {
-        setnpcdisplay strnpcinfo(3), getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
+        .class = getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
         return 2;
     }
     else if (.@cmd$ == "warp")
