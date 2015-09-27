@@ -14,10 +14,10 @@
 OnInit:
     .sex = G_MALE;
     .distance = 2;
-    setnpcdir 2;
+    .dir = 2;
     end;
 
 L_Quit:
-    setnpcdir 2;
+    .dir = 2;
     close;
 }

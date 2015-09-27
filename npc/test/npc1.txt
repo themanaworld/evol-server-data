@@ -85,7 +85,7 @@ L_Start:
             for (.@f = 0; .@f < 9; .@f ++)
             {
                 mes "" + .@f;
-                setnpcdir .@f;
+                .dir = .@f;
                 next;
             }
             break;

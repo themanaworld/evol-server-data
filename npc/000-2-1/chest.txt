@@ -14,9 +14,9 @@
     .@q = getq(ShipQuests_Arpan);
 
     if (.@q == 0) goto L_Talk;
-    if (getnpcdir ("") == 4) goto L_Give;
+    if (.dir == 4) goto L_Give;
 
-    setnpcdir 2;
+    .dir = 2;
     initnpctimer;
     startnpctimer;
     close;
@@ -35,8 +35,8 @@ L_Give:
 
 OnTimer220:
     stopnpctimer;
-    if (getnpcdir ("") == 2) setnpcdir 4;
-    if (getnpcdir ("") == 6) setnpcdir 0;
+    if (.dir == 2) .dir = 4;
+    if (.dir == 6) .dir = 0;
     end;
 
 L_Talk:
@@ -45,7 +45,7 @@ L_Talk:
     close;
 
 L_Quit:
-    setnpcdir 6;
+    .dir = 6;
     initnpctimer;
     startnpctimer;
     close;

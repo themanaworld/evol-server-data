@@ -9,7 +9,7 @@
 function	script	doorTouch	{
     if (getareausers() <= 1)
     {
-        setnpcdir 2;
+        .dir = 2;
         stopnpctimer;
         initnpctimer;
     }
@@ -19,7 +19,7 @@ function	script	doorTouch	{
 function	script	doorUnTouch	{
     if (getareausers() == 0)
     {
-        setnpcdir 4;
+        .dir = 4;
         initnpctimer;
         startnpctimer;
     }
@@ -28,15 +28,15 @@ function	script	doorUnTouch	{
 
 function	script	doorTimer	{
     stopnpctimer;
-    if (getnpcdir() == 2) setnpcdir 6;
-    if (getnpcdir() == 4) setnpcdir 8;
+    if (.dir == 2) .dir = 6;
+    if (.dir == 4) .dir = 8;
     end;
 }
 
 
 function	script	open_door	{
     .@door$ = getarg(0);
-    setnpcdir .@door$, 2;
+    setnpcdir.@door$, 2;
     sleep 300;
     setnpcdir .@door$, 6;
     sleep 300;

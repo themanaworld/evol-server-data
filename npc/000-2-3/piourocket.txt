@@ -5,13 +5,13 @@
 //    Jumping piou.
 
 000-2-3,27,23,4	script	#piourocket	NPC_PIOU_ROCKET,{
-    setnpcdir 2;
+    .dir = 2;
     stopnpctimer;
     initnpctimer;
     close;
 
 OnTimer1420:
-    setnpcdir 4;
+    .dir = 4;
     stopnpctimer;
     end;
 

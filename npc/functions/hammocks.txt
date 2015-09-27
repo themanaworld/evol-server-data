@@ -10,7 +10,7 @@
 function	script	hamTouchLeft	{
     if (getareausers() <= 1)
     {
-        setnpcdir 0;
+        .dir = 0;
         stopnpctimer;
         initnpctimer;
     }
@@ -20,7 +20,7 @@ function	script	hamTouchLeft	{
 function	script	hamUnTouch	{
     if (getareausers() == 0)
     {
-        setnpcdir 2;
+        .dir = 2;
         initnpctimer;
         startnpctimer;
     }
@@ -29,14 +29,14 @@ function	script	hamUnTouch	{
 
 function	script	hamTimerLeft	{
     stopnpctimer;
-    if (getnpcdir() == 2) setnpcdir 0;
+    if (.dir == 2) .dir = 0;
     end;
 }
 
 function	script	hamTouchRight	{
     if (getareausers() <= 1)
     {
-        setnpcdir 0;
+        .dir = 0;
         stopnpctimer;
         initnpctimer;
     }
@@ -45,6 +45,6 @@ function	script	hamTouchRight	{
 
 function	script	hamTimerRight	{
     stopnpctimer;
-    if (getnpcdir() == 2) setnpcdir 0;
+    if (.dir == 2) .dir = 0;
     end;
 }

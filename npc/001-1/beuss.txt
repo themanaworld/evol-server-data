@@ -7,7 +7,7 @@
 001-1,45,52,0	script	Beuss	NPC_BEUSS,{
     stopnpctimer;
     initnpctimer;
-    setnpcdir 4;
+    .dir = 4;
     mesn;
     mesq l("You are too weak, what is a piece of bone like you doing around here?");
 
@@ -17,7 +17,7 @@ L_Close:
     close;
 
 OnTimer10000:
-    setnpcdir 2;
+    .dir = 2;
     stopnpctimer;
     end;
 

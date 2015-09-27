@@ -7,19 +7,19 @@
 
 001-2-22,51,37,0	script	Chest#Artis	NPC_CHEST_BIG,{
 
-    setnpcdir 2;
+    .dir = 2;
     initnpctimer;
     startnpctimer;
     close;
 
 OnTimer220:
     stopnpctimer;
-    if (getnpcdir ("") == 2) setnpcdir 4;
-    if (getnpcdir ("") == 6) setnpcdir 0;
+    if (.dir == 2) .dir = 4;
+    if (.dir == 6) .dir = 0;
     end;
 
 L_Quit:
-    setnpcdir 6;
+    .dir = 6;
     initnpctimer;
     startnpctimer;
     close;

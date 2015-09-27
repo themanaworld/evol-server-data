@@ -5,13 +5,13 @@
 //    Falling tree leaf
 
 001-1,39,54,4	script	#treeleaf0	NPC_TREE_LEAF,{
-    setnpcdir 2;
+    .dir = 2;
     stopnpctimer;
     initnpctimer;
     close;
 
 OnTimer2800:
-    setnpcdir 4;
+    .dir = 4;
     stopnpctimer;
     end;
 

@@ -5,13 +5,13 @@
 //    Alchemy animation.
 
 001-2-26,32,27,4	script	#FlaskAlchemyLab	NPC_FLASK,{
-    setnpcdir 2;
+    .dir = 2;
     stopnpctimer;
     initnpctimer;
     close;
 
 OnTimer12920:
-    setnpcdir 4;
+    .dir = 4;
     stopnpctimer;
     end;
 

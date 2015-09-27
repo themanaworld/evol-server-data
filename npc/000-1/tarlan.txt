@@ -5,7 +5,7 @@
 //    Sailor hitting a crocotree, then being struck by a falling croconut.
 
 000-1,33,37,0	script	Tarlan	NPC_TARLAN,{
-    setnpcdir 2;
+    .dir = 2;
 
     mesn;
     .@a = rand(4);
@@ -55,7 +55,7 @@ L_DoYou:
     goto L_Quit;
 
 L_Quit:
-    setnpcdir 4;
+    .dir = 4;
     close;
 
 OnInit:

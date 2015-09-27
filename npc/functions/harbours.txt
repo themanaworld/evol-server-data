@@ -12,18 +12,18 @@
 //    8   Hook up.
 
 function	script	harbourClic	{
-    if (getnpcdir () == 0)
+    if (.dir == 0)
     {
-        setnpcdir 2;
+        .dir = 2;
 
         initnpctimer;
         startnpctimer;
         close;
     }
 
-    if (getnpcdir () == 6)
+    if (.dir == 6)
     {
-        setnpcdir 4;
+        .dir = 4;
 
         initnpctimer;
         startnpctimer;
@@ -33,7 +33,7 @@ function	script	harbourClic	{
 
 function	script	harbourTimer	{
     stopnpctimer;
-    if (getnpcdir () == 2) setnpcdir 6;
-    if (getnpcdir () == 4) setnpcdir 0;
+    if (.dir == 2) .dir = 6;
+    if (.dir == 4) .dir = 0;
     end;
 }
