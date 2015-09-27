@@ -225,7 +225,7 @@ L_EquipDone:
     goto L_Menu;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 5;
     end;
 }

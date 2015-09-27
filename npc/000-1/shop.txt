@@ -18,7 +18,7 @@ OnInit:
     sellitem LousyMoccasins, -1, 1000;
     sellitem PiouSlayer, -1, 1000;
 
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 2;
     end;
 

@@ -11,7 +11,7 @@
     end;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 2;
     end;
 }

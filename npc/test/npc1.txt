@@ -225,7 +225,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 5;
     waitingroom "test room", 2, "npc1::OnReadyCheck", 1;
     end;

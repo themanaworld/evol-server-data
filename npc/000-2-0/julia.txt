@@ -281,7 +281,7 @@ L_BasicSkill:
     goto L_YNMenu;
 
 OnInit:
-    setnpcsex G_FEMALE;
+    .sex = G_FEMALE;
     setnpcdistance 10;
     end;
 

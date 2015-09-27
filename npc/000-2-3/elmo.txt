@@ -63,7 +63,7 @@ L_GotMoney:
     close;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 5;
     end;
 }

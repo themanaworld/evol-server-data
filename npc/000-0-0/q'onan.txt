@@ -10,6 +10,6 @@
     close;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     end;
 }

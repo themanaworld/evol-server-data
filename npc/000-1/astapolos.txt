@@ -155,7 +155,7 @@ L_Whyning:
     close;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 2;
     end;
 }

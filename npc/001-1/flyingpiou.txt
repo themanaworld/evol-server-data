@@ -107,7 +107,7 @@ OnTimer1000:
     end;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 5;
     // .debug = 1;
 

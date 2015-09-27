@@ -22,7 +22,7 @@ OnTimer10000:
     end;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 2;
     end;
 }

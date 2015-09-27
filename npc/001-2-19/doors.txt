@@ -27,7 +27,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 5;
     end;
 }
@@ -54,7 +54,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 5;
     end;
 }

@@ -12,7 +12,7 @@
     goto L_Quit;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 2;
     setnpcdir 2;
     end;

@@ -121,7 +121,7 @@ L_Story:
     }
 
 OnInit:
-    setnpcsex G_FEMALE;
+    .sex = G_FEMALE;
     setnpcdistance 4;
     end;
 }

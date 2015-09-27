@@ -52,7 +52,7 @@ L_Lost :
     close;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 5;
     end;
 }

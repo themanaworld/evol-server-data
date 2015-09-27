@@ -82,7 +82,7 @@ L_Quit2:
     close;
 
 OnInit:
-    setnpcsex G_MALE;
+    .sex = G_MALE;
     setnpcdistance 2;
     end;
 }

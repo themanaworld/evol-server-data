@@ -11,7 +11,7 @@
     close;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 5;
     end;
 }
@@ -23,7 +23,7 @@ OnInit:
     close;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 5;
     end;
 }
@@ -35,7 +35,7 @@ OnInit:
     close;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 5;
     end;
 }
@@ -47,7 +47,7 @@ OnInit:
     close;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 5;
     end;
 }
@@ -59,7 +59,7 @@ OnInit:
     close;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 5;
     end;
 }
@@ -71,7 +71,7 @@ OnInit:
     close;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 5;
     end;
 }
@@ -83,7 +83,7 @@ OnInit:
     close;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 5;
     end;
 }
@@ -95,7 +95,7 @@ OnInit:
     close;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 5;
     end;
 }
@@ -107,7 +107,7 @@ OnInit:
     close;
 
 OnInit:
-    setnpcsex G_OTHER;
+    .sex = G_OTHER;
     setnpcdistance 5;
     end;
 }
