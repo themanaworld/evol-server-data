@@ -354,6 +354,8 @@ function	script	movetonextpoint	{
         .@dist = distance(.@cx, .@cy, .@next_x1, .@next_y1);
         npcdebug "moving to " + getvariableofnpc(.movegraphlabels$[.@next_idx], strnpcinfo(3)) + " ("+.@next_x1 + "," + .@next_y1 + ") [distance=" + .@dist + "] flags=" + getvariableofnpc(.mg_flags, strnpcinfo(3));
     }
+    set getvariableofnpc(.move_target_x, strnpcinfo(3)), .@next_x1;
+    set getvariableofnpc(.move_target_y, strnpcinfo(3)), .@next_y1;
     npcwalkto .@next_x1, .@next_y1;
     return;
 }
@@ -376,4 +378,51 @@ function	script	firstmove	{
     set getvariableofnpc(.mg_flags, strnpcinfo(3)), 0xffff;
     movetonextpoint;
     return;
+}
+
+
+function	script	npc_pausemove	{
+    stopnpctimer;
+    .@move_after = 0;
+
+    if (isunitwalking())
+    {
+        .@move_after = 1;
+        npcwalkto .x, .y;
+        npcstop;
+    }
+    set getvariableofnpc(.move_after_pause, strnpcinfo(3)), .@move_after;
+
+    return 0;
+}
+
+
+function	script	npc_resumemove	{
+    startnpctimer;
+
+    if (getvariableofnpc(.move_after_pause, strnpcinfo(3)))
+    {
+        .@x = getvariableofnpc(.move_target_x, strnpcinfo(3));
+        .@y = getvariableofnpc(.move_target_y, strnpcinfo(3));
+        npcwalkto .@x, .@y;
+    }
+
+    return 0;
+}
+
+
+// npc_turntoxy(x,y)
+// turn npc toward an object at position (x,y)
+function	script	npc_turntoxy	{
+    .@target_x = getarg(0);
+    .@target_y = getarg(1);
+    .@dx = abs(.@target_x - .x);
+    .@dy = abs(.@target_y - .y);
+
+    if (.@dx > .@dy)
+        .dir = .@target_x >= .x ? 6 : 2;
+    else
+        .dir = .@target_y >= .y ? 0 : 4;
+
+    return 0;
 }
