@@ -27,7 +27,7 @@ test,10,10,0	script	npc1	NPC_TEST1,3,3,{
     }
 
 L_Start:
-    switch (select("show area:map:pc:change npc direction:quest test:cart:items"))
+    switch (select("show area:map:pc:change npc direction:quest test:cart:items:chat"))
     {
         case 1:
             areatest;
@@ -211,6 +211,10 @@ L_Start:
                         break;
                 }
             }
+            break;
+        case 8:
+            chatjoin .chat;
+            close;
     }
 
     close;
