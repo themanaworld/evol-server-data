@@ -7,8 +7,35 @@
 
 
 001-1,118,92,0	script	Juscare#001-1	NPC_HUMAN_MALE_LEGION_ARTIS,{
-    npctalk3 l("It is a sunny day, don't you think?");
-    end;
+
+    function shouldTurn {
+        .@tree = findmovegraphlabel("inn_tree");
+        .@table = findmovegraphlabel("inter_inn_fav_table");
+        if (.movepos == .@tree || .movepos == .@table)
+            return 0;
+        return 1;
+    }
+
+    function localClose {
+        if (@Juscar_old_dir > 0)
+            .dir = @Juscar_old_dir;
+        npc_resumemove;
+        close;
+    }
+
+    npc_pausemove;
+    @Juscar_old_dir = -1;
+    if (shouldTurn())
+    {
+        getmapxy(.@map$, .@cx, .@cy, 0);
+        @Juscar_old_dir = .dir;
+        npc_turntoxy(.@cx, .@cy);
+    }
+
+    speech 4,
+        l("It is a sunny day, don't you think?");
+
+    localClose;
 
 OnTimer1000:
     if (!isunitwalking())
