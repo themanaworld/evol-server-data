@@ -242,5 +242,6 @@ OnReadyCheck:
     debugmes "OnReadyCheck";
     $@bgid1 = waitingroom2bg("testbg", 10, 10, "bgnpc1::OnLogout","bgnpc1:OnDie");
     debugmes "bgid=" + str($@bgid1);
+    setbgteam $@bgid1, 1;
     bg_warp $@bgid1, "testbg", 10, 10;
 }
