@@ -58,7 +58,7 @@ function	script	findmovegraphlabel	{
 }
 
 
-/* setmovegraphcmd(fromPositionLabel,toPositionLabel,moveChanceWeight,postCommand, ...);
+/* setmovegraphcmd(fromPositionLabel,toPositionLabel[,moveChanceWeight[,moveFlags]],postCommand, ...);
  * This function manipulates NPC moving graph. Before calling it, make sure
  * `initmovegraph' was called. The function accepts 3-5 parameters (many times):
  * fromPositionLabel, toPositionLabel -- starting and ending position of NPC move
