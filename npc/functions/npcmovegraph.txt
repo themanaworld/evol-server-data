@@ -245,7 +245,7 @@ function	script	getrandompoint	{
     {
         .@rx = rand(.@x1, .@x2);
         .@ry = rand(.@y2, .@y2);
-        if (checkcell(.@map$, .@rx, .@ry, cell_chkpass))
+        if (checknpccell(.@map$, .@rx, .@ry, cell_chkpass))
             goto L_Found;
     }
 
@@ -253,7 +253,7 @@ function	script	getrandompoint	{
     for (;.@rx <= .@x2; .@rx++)
     {
         for (;.@ry <= .@y2; .@ry++)
-            if (checkcell(.@map$, .@rx, .@ry, cell_chkpass))
+            if (checknpccell(.@map$, .@rx, .@ry, cell_chkpass))
                 goto L_Found;
         .@ry = .@y1;
     }
@@ -261,7 +261,7 @@ function	script	getrandompoint	{
     // we check the rectangle from beginning to end
     for (.@rx = .@x1; .@rx <= .@x2; .@rx++)
         for (.@ry = .@y1; .@ry <= .@y2; .@ry++)
-            if (checkcell(.@map$, .@rx, .@ry, cell_chkpass))
+            if (checknpccell(.@map$, .@rx, .@ry, cell_chkpass))
                 goto L_Found;
 
     // finally, if we don't find anything
