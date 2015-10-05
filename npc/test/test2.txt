@@ -1,0 +1,13 @@
+// Evol scripts.
+// Authors:
+//    4144
+// Description:
+//    script tests 
+
+test,12,5,0	script	test2	NPC_HAT_BOX,{
+    close;
+
+OnInit:
+    .walkmask = 4;
+    end;
+}

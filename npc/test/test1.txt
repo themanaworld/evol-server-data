@@ -1,0 +1,38 @@
+// Evol scripts.
+// Authors:
+//    4144
+// Description:
+//    script tests 
+
+function	script	test1function	{
+    .var = .walkmask;
+    if (.var != 3)
+        mes "Error: testing test1 npc variables from function.";
+    .var = getvariableofnpc(.walkmask, "test1");
+    if (.var != 3)
+        mes "Error: testing test1 npc variables from function.";
+    .var = getvariableofnpc(.walkmask, "test2");
+    if (.var != 4)
+        mes "Error: testing test2 npc variables from function.";
+
+    return;
+}
+
+test,10,5,0	script	test1	NPC_HAT_BOX,{
+    .var = .walkmask;
+    if (.var != 3)
+        mes "Error: testing test1 npc variables.";
+    .var = getvariableofnpc(.walkmask, "test1");
+    if (.var != 3)
+        mes "Error: testing test1 npc variables from function.";
+    .var = getvariableofnpc(.walkmask, "test2");
+    if (.var != 4)
+        mes "Error: testing test2 npc variables.";
+    test1function;
+    mes "Tests complete.";
+    close;
+
+OnInit:
+    .walkmask = 3;
+    end;
+}
