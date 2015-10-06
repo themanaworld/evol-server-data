@@ -1,0 +1,53 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Aemil
+
+001-2-6,39,41,0	script	#001-2-6-Book1	NPC_NO_SPRITE,{
+
+    .@book_name$ = "\"" + l("The Piou and The Fluffy") + "\"";
+
+    narrator 4,
+        l("You see a dust covered book on the shelf..."),
+        l("The name of the book is @@.", .@book_name$),
+        l("Do you want to read it?");
+
+    switch (select ("Yes.", "No."))
+    {
+        case 1:
+            goto L_Read;
+        case 2:
+            close;
+    }
+
+L_Read:
+    narrator 1,
+    l("Master Piou sat on a tree,"),
+    l("Holding a cheese in his beak."),
+    l("Master Fluffy was attracted by the odour,"),
+    l("And tried to attract him thus."),
+    l("\"Mister Piou, good day to you."),
+    l("You are a handsome and good looking bird!"),
+    l("In truth, if your song is as beautiful as your plumage,"),
+    l("You are the Phoenix of this forest.\""),
+    l("Hearing these words the Piou felt great joy,"),
+    l("And to demonstrate his beautiful voice,"),
+    l("He opened his mouth wide and let drop his prey."),
+    l("The Fluffy seized it and said: \"My good Sir,"),
+    l("Know that every flatterer,"),
+    l("Lives at the expense of those who take him seriously:"),
+    l("This is a lesson that is worth a cheese no doubt.\""),
+    l("The Piou, embarrassed and confused,"),
+    l("Swore, though somewhat later, that he would never be "),
+    l("tricked thus again."),
+    l("-- Aesop");
+
+    close;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
+
