@@ -108,3 +108,37 @@ OnInit:
     end;
 }
 
+001-2-6,43,39,0	script	#001-2-6-Book3	NPC_NO_SPRITE,{
+
+    .@book_name$ = "\"" + l("Chorus of the Woods") + "\"";
+
+    narrator 4,
+        l("You see a dust covered book on the shelf..."),
+        l("The name of the book is @@.", .@book_name$),
+        l("Do you want to read it?");
+
+    switch (select ("Yes.", "No."))
+    {
+        case 1:
+            goto L_Read;
+        case 2:
+            close;
+    }
+
+L_Read:
+    narrator 1,
+    l("Hush now and hear the chorus of the woods"),
+    l("Bent trees whistling with the beat of the drum"),
+    l("With no choir master nor voice to be sung"),
+    l("The music of the trees floats through the breeze"),
+    l("Sleep well my angel but don't follow along"),
+    l("Because the voices of death sing a sweet song"),
+    l("-- Princess Slayer");
+
+    close;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
