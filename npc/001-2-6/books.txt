@@ -41,7 +41,7 @@ L_Read:
     l("The Piou, embarrassed and confused,"),
     l("Swore, though somewhat later, that he would never be "),
     l("tricked thus again."),
-    l("-- Aesop");
+    "-- " + l("Aesop");
 
     close;
 
@@ -98,7 +98,7 @@ L_Read:
     l("It's the good one and, ahem!"),
     l("That makes everybody"),
     l("Able to write a poem"),
-    l("-- Nard");
+    "-- " + l("Nard");
 
     close;
 
@@ -133,7 +133,7 @@ L_Read:
     l("The music of the trees floats through the breeze"),
     l("Sleep well my angel but don't follow along"),
     l("Because the voices of death sing a sweet song"),
-    l("-- Princess Slayer");
+    "-- " + l("Princess Slayer");
 
     close;
 
