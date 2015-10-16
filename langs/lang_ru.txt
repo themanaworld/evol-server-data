@@ -237,13 +237,13 @@ Copyright (C) 2010-2014 Evol Online
 
 
 '%s' Channel is password protected (usage: %s <#channel_name> <password>)
-
+'%s' Канал защищён паролем (используй: %s <#channel_name> <password>)
 
 '%s' and his/her partner are now divorced.
 
 
 '%s' channel color updated to '%s' 
-
+'%s' цвет канала обновлен на '%s'
 
 '%s' got %s's %s (chance: %0.02f%%)
 
@@ -261,7 +261,7 @@ Copyright (C) 2010-2014 Evol Online
 '%s' не женат.
 
 '%s' skill and stat points have been reset.
-
+'%s' умения и очки навыков были сброшенны.
 
 '%s' skill points reset.
 '%s' очков навыка сброшено.
@@ -414,13 +414,13 @@ Copyright (C) 2010-2014 Evol Online
 
 
 -- '%s' ban list
-
+-- '%s' банлист
 
 -- Available options
 -- Доступные опции
 
 -- Displaying first %d partial matches
-
+-- Показывать первые %d частичные совпадения
 
 -- Permission List
 -- Список разрешений
@@ -432,25 +432,25 @@ Copyright (C) 2010-2014 Evol Online
 
 
 --- Available options:
-
+--- Доступные параметры:
 
 ----- Chats in Map -----
-
+----- Чаты на карте -----
 
 ----- NPCs in Map -----
-
+----- NPC на карте -----
 
 ----- Players in Map -----
 ----- Игроки на карте -----
 
 ------ %s items list of '%s' ------
-
+------ %s сисок предметов '%s' ------
 
 ------ Map Flags ------
-
+------ Флаги карты ------
 
 ------ Map Info ------
-
+------ Информация о карте ------
 
 ... And 1 @@.
 ...И 1 @@.
@@ -465,7 +465,7 @@ Copyright (C) 2010-2014 Evol Online
 1 предмет был переработан.
 
 1 player found in map '%s'.
-
+1 игрок найден на карте '%s'.
 
 1 player found.
 1 игрок найден.
@@ -495,13 +495,13 @@ Copyright (C) 2010-2014 Evol Online
 @@ мне помогает.
 
 @@? Welcome my dear!#0
-@@? Добро пожаловать, дорогая!
+@@? Добро пожаловать, мой дорогой!
 
 @@? Welcome my dear!#1
-@@? Добро пожаловать, дорогой!
+@@? Добро пожаловать, мой дорогой!
 
 @request sent.
-
+@запрос отправлен.
 
 A GM has discharged you from jail.
 
@@ -526,6 +526,9 @@ ATK: %d - MATK: %d~%d
 
 Aaaaaahhhhhh!
 Аааааааааааа!
+
+Able to write a poem
+
 
 Aboard stand sailors trying to communicate with you.
 На борту стоят моряки, пытающиеся говорить с тобой.
@@ -560,6 +563,12 @@ Actually, I was here to help you with those boxes. Can I bring one of them back 
 Aemil is a magnificent world unknown to us all.
 Аэмиль - это великолепный мир, скрытый от всех нас. 
 
+Aesop
+
+
+After all this time, it was still there!
+
+
 After choosing your weapon, you also need to know how to use it.
 После выбора оружия, тебе также необходимо знать как его использовать.
 
@@ -568,9 +577,6 @@ Agi: %d (%d~%d)
 
 Agility greatly increases your attack speed and the chances of you dodging enemy hits.
 Выносливость (agi) увеличивает скорость вашей атаки и шанс уклониться от ударов противника.
-
-Ah, great! Now you get a nice discount on a piou.
-
 
 Ah, these... Citizens like buying them as pets.
 
@@ -627,7 +633,7 @@ All monsters killed!
 Все монстры убиты!
 
 All monsters summoned!
-
+Все монстры призваны!
 
 All of a sudden, you hear voices from above.
 Внезапно, вы услышали голоса сверху.
@@ -680,6 +686,12 @@ Alright, I'm going to her room, keep an eye on her, we still don't know if she's
 Alright, I'm going to his room, keep an eye on him, we still don't know if he's a friend or a foe...#1
 Хорошо, я иду в его комнату, присмотрю за ним, мы до сих пор не знаем друг он или враг...
 
+Alright, see you later then!
+
+
+Alright, you will need this shovel.
+
+
 Alright. I will go looking for them now.
 Хорошо. Теперь пойду их искать.
 
@@ -698,6 +710,9 @@ Alternative clouds appeared.
 Alternative clouds have disappeared.
 
 
+Amount?
+
+
 An invalid number was specified.
 
 
@@ -710,13 +725,25 @@ And now I want to see you run!
 And now I'm a sailor, as you can see!
 И теперь я моряк, как видишь!
 
+And rhyming is not too
+
+
 And then what happened?
 И что случилось потом?
+
+And to demonstrate his beautiful voice,
+
+
+And tried to attract him thus.
+
 
 And what do you give me in exchange for these informations?
 И что ты мне дашь взамен за эту информацию?
 
 And when we will got enought money to don't depend of anybody
+
+
+And with my piou! That's wonderful, I can't think at how hard that was to catch it.
 
 
 And you, how are you doing?
@@ -748,6 +775,12 @@ Anyway, if you ever feel interested, just check my bag!#0
 
 Anyway, if you ever feel interested, just check my bag!#1
 В любой момент, когда ты заинтересован, просто проверь мою сумку!
+
+Anyway, let me know if you change your mind.
+
+
+Anyway, the last time I stole something I was almost caught.
+
 
 Appearance changed.
 
@@ -801,6 +834,9 @@ Artis of course!
 Артис, конечно!
 
 As a thank you, accept my old fishing rod.
+
+
+As on anvil strikes the hammer
 
 
 As they sailed on Oceania, great waters of Aemil, one of the alliances found a land.
@@ -864,43 +900,43 @@ Autorejected alliance request from %s.
 
 
 Autorejected friend request from %s.
-
+Автоматический отказ от запросов в друзья от %s.
 
 Autorejected guild invite from %s.
-
+Автоматический отказ от приглашений в гильдии от %s.
 
 Autorejected opposition request from %s.
 
 
 Autorejected party invite from %s.
-
+Автоматический отказ от приглашений в группу от %s.
 
 Autorejected trade request from %s.
 
 
 Autorejecting is activated.
-
+Автоматический отказ активирован.
 
 Autorejecting is deactivated.
-
+Автоматический отказ выключен.
 
 Autotrade Disabled
-
+Автообмен отключен
 
 Autotrade Enabled
-
+Автообмен включен
 
 Autotrade is not allowed in this map.
-
+Автообмен не разрешен на этой карте.
 
 Available Flags:
-
+Доступные флаги:
 
 Available aliases:
-
+Доступные псевдонимы:
 
 Available commands:
-
+Доступные команды:
 
 Awesome!
 Круто!
@@ -1013,6 +1049,9 @@ Baby Warlock
 Baby Wizard
 Ребёнок Маг
 
+Bag#000-1
+
+
 Bald
 
 
@@ -1058,7 +1097,13 @@ Be patient a little while longer, in the next few days we will arrive at the por
 Because of the dense foliage on the trees you need to go close to them not to miss him.
 
 
+Because the voices of death sing a sweet song
+
+
 Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
+
+
+Before I joined Nard, I used to be a thief.
 
 
 Before you go, let me tell you how to get @@s, because you don't look very smart.
@@ -1066,6 +1111,12 @@ Before you go, let me tell you how to get @@s, because you don't look very smart
 
 Before...
 Раньше...
+
+Bent trees whistling with the beat of the drum
+
+
+Better take it back to Q'Onan.
+
 
 Beuss
 
@@ -1097,6 +1148,9 @@ Box
 Break the door.
 Сломать дверь.
 
+Bring it to me, and you will get your reward.
+
+
 Bring this box to Gugli. He will be extremely happy!
 Отнеси этот ящик Гугли. Он будет очень счастлив!
 
@@ -1104,6 +1158,9 @@ Bun
 
 
 Bunches
+
+
+Bury.
 
 
 But I can't leave to catch it, so I'm asking you.
@@ -1144,6 +1201,9 @@ But most important, she is the one who took care of you when you were unconsciou
 
 But most important, she is the one who took care of you when you were unconscious.#1
 Более того, она - единственная, кто заботился о тебе, пока ты был без сознания.
+
+But my luck left me, because as soon as I left his house, the guards started chasing me.
+
 
 But remember that not every place in this world is peaceful and safe nowadays. Even the white shores you are walking on can hide some dangerous beings.
 Но запомни, что не каждое место в мире мирное и безопасное в наши дни. Даже белые берега, по которым ты ходишь, могут скрывать в себе опасных созданий.
@@ -1313,6 +1373,9 @@ Chest#Artis
 Choppy
 
 
+Chorus of the Woods
+
+
 Christmas
 Рождество
 
@@ -1345,6 +1408,9 @@ Come on, Sap! You are scaring our guest with your stories.#0
 
 Come on, Sap! You are scaring our guest with your stories.#1
 Прекращай уже, Сап! Ты пугаешь нашего гостя своими историями.
+
+Come on, don't be a coward!
+
 
 Commands are disabled in this map.
 
@@ -1379,6 +1445,9 @@ Could I ask you what your native language is? A sailor told me you're russian, b
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#1
 Можно узнать, на каком языке ты говоришь? Один матрос сказал, что на русском, другой - на французском... Я запуталась. Я запишу тебя в корабельный список.
 
+Could you do a small favour for me?
+
+
 Could you explain to me where I am?
 Можешь мне объяснить, где я?
 
@@ -1411,6 +1480,9 @@ Croc
 
 Croconut
 Крокос
+
+CroconutMob
+
 
 Crocotree
 Крокодерево
@@ -1493,6 +1565,9 @@ Did you find my brother?
 Did you say reward? I want it!
 Ты сказал награда? Я хочу её!
 
+Dig.
+
+
 Disconnecting to perform change-sex request...
 
 
@@ -1538,6 +1613,9 @@ Do you want me to go see her instead of you?
 Do you want to cut this @@?
 Ты хочешь расколоть этот @@?
 
+Do you want to read it?
+
+
 Do you want to try?
 Хочешь попробовать?
 
@@ -1551,6 +1629,9 @@ Dolfina
 
 
 Don#001-2-27
+
+
+Don't be shy, you are nice
 
 
 Don't bother her Silvio, or I'll have to tell her that you cry like a baby when you hear the thunder in the night.#0
@@ -1775,6 +1856,9 @@ File not found.
 File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
 
 
+Find an order with them
+
+
 Fine, could you please tell me where I can find Gugli's sailors?
 Хорошо. Не мог бы ты сказать мне, где я могу найти моряков Гугли?
 
@@ -1846,6 +1930,9 @@ Friend removed.
 
 From what I here, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
 От чего я здесь, Гугли, моему брату, требуется как можно больше людей в помощь; для погрузки вещей, которые можно найти на острове.
+
+From your mind, break the ice
+
 
 Frostiana
 Фростиана
@@ -1931,6 +2018,9 @@ Go and grab one of them. A good knife will help with your hunting the creatures 
 Go away.
 Уйти.
 
+Go on.
+
+
 Golden blonde
 
 
@@ -1975,6 +2065,9 @@ Great, what food do you have for me today?#0
 
 Great, what food do you have for me today?#1
 Замечательно, что ты мне сегодня принес из еды?
+
+Great, you get your piece of cake, I give you a 90% discount on the @@ of your choice.
+
 
 Greetings traveler.#0
 Приветствую путешественница.
@@ -2153,6 +2246,9 @@ He likes to hide near the little lake in the north-west side of the island.
 He needs more food.
 Ему нужно больше еды.
 
+He opened his mouth wide and let drop his prey.
+
+
 He said he is going to climb the highest hill in Artis, which is not far from here.
 
 
@@ -2167,6 +2263,9 @@ He's holding a fishing rod, and his eyes are pointed towards the surface of the 
 
 Hear me *hic* well, what ever, whatididever you will *hic* said ab... uhm... out what?! You saw there, the Warrior Guild of Esperia won't let it get public.
 Слышь, ты *ик* ну, что тытамбудешь *ик* гово... ох ...рить о чем?! Ты видел, Гильдия Воинов Эспэрии не будет это афишировать.
+
+Hearing these words the Piou felt great joy,
+
 
 Hehe!
 Хехе!
@@ -2387,6 +2486,9 @@ Hmm... Let's see, take this one.
 Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*
 Хм, хм... *кашель*, *кашель*, *урп*, *кашель*. Что... Что это?!... *кашель*, *урп*... Чёртов Гадо... *кашель*
 
+Holding a cheese in his beak.
+
+
 Homunculus growth stats (Lv %d %s):
 
 
@@ -2435,6 +2537,9 @@ How long will you stay here?
 How rude! What is the reason behind your malice?
 Как грубо! В чём причина твоей злобы?
 
+Howdy, partner in crime?
+
+
 However, drought came with summers while winters became colder than ever.
 Как бы то ни было, засуха пришла вместе с летом, в то время как зима была холоднее, чем обычно.
 
@@ -2452,6 +2557,9 @@ Hurry up!
 
 Hurry, hurry! We need to check it's teeth!
 Скорей, скорей! Мы должны проверить его зубы.
+
+Hush now and hear the chorus of the woods
+
 
 I ALSO AVOID THE DANGEROUS ANIMALS!
 Я ТАК ЖЕ ПРЕДУПРЕЖДАЮ ОБ ОПАСНЫХ ЖИВОТНЫХ!
@@ -2510,7 +2618,16 @@ I am, who are you?#1
 I appreciate your help, @@.
 
 
+I asked you to do me a favour, so why are you here?
+
+
+I buried the chest somewhere on that hill. It was dark, so I don't remember where to dig exactly.
+
+
 I came here, looking for a better life.
+
+
+I can finally pay off my debts.
 
 
 I can walk again!
@@ -2585,6 +2702,9 @@ I give you this key, it opens all the doors on this ship.
 I guess so... I will leave you alone.
 Я думаю да... Я оставлю тебя в покое.
 
+I have a lot of work here, so I don't even have time to go to the town.
+
+
 I have brought you a tasty present for your delicate mouth.
 Я принёс вкусный подарок для твоего деликатного рта.
 
@@ -2606,6 +2726,9 @@ I hope that answers your question.
 I hope to come back at home when days will be better
 
 
+I hope to see you soon.
+
+
 I hope you don't mind that we used your raft to build this ramp.
 Я надеюсь ты не думаешь, что мы использовали твой плот для постройки этого трапа.
 
@@ -2620,6 +2743,9 @@ I just realized I am lacking some common things, and one key ingredient, to prep
 
 I know that you are just starting to feel better, but I'd like to give you a special task.
 Я знаю, что ты только-только начинаешь чувствовать себя лучше, но мне бы хотелось дать тебе специальное задание.
+
+I like money! Consider it done.
+
 
 I made a mistake, I would like to change my language.#0
 Я ошиблась и хочу поменять свой язык.
@@ -2665,6 +2791,9 @@ I recall seeing Gulukan, Astapolos and Q'Muller.
 
 I remember I saw a few of them leaving the ship early this morning to get a head start on today's work.
 Я помню, что видел нескольких, покидающих корабль рано утром, что бы преуспеть в сегодняшней работе.
+
+I robbed a nobleman, took a chest full of coins.
+
 
 I said... WHY DON'T YOU COME DOWN TO TALK?
 Я сказал... ПОЧЕМУ ТЫ НЕ СПУСТИШЬСЯ ПОГОВОРИТЬ?
@@ -2746,6 +2875,9 @@ I think that we will stay in port for a great time.
 
 I think that yeye's soon be done. Yeye'll soon have a full box of @@s!
 Я думаю, эта йейе скоро будет закончена. Йайа скоро наберу полный ящик @@!
+
+I was afraid to be busted, so I decided to get rid of the evidence.
+
 
 I was going to ask you if you would need any help.
 Я собирался спросить, нужна ли тебе помощь.
@@ -2834,6 +2966,9 @@ I'm a bit sick...#0
 I'm a bit sick...#1
 Я немного болен...
 
+I'm afraid to go there myself, but if you take the risk, you can have half of the loot.
+
+
 I'm busy right now, I will get back to you later.
 
 
@@ -2855,6 +2990,9 @@ I'm losing my mind here, I need something else to eat!
 I'm lost, where should I go?
 
 
+I'm not proud of it, but I had to get money for living.
+
+
 I'm not suited for this kind of work!
 Я не подхожу для этой работы!
 
@@ -2863,6 +3001,9 @@ I'm not sure. They probably left the ship early this morning. I was not awake ye
 
 I'm not that numb eeh *hic* what did ever you disco... *hic* ...vered there, the Warrior Guild won't get me!
 Я не такой беспомощный ээ *ик* что бы ты там ни разу... *ик* ...знал, гильдии Воинов меня не достать!
+
+I'm on my way to bring it back to you!
+
 
 I'm sorry but I can't see your name anywhere.
 Извини, но я нигде не вижу твоего имени.
@@ -2939,7 +3080,16 @@ I...
 If I saw *hic* who you were... *hic* Would not have helped you! 
 Если бы я видел *ик* кем ты был... *ик* бы тебе не помог!
 
+If not, how could CrazyKatiektch
+
+
+If words beat in rhythm
+
+
 If you catch the escaped piou and bring it back, I will give you a 90% discount on a piou.
+
+
+If you don't like to
 
 
 If you feel bored or like running around in circles, you may want to talk with the other sailors around here to get some tasks to do.
@@ -2974,6 +3124,9 @@ In fact, everything seems to work perfectly under your guidance. Nard has made t
 
 In fact... Oh, the things that I could tell... But ran out of space on this... Just be reasonable and go home.
 На самом деле... О, я мог бы такое рассказать... Но должен остановиться на этом... Просто будь благоразумным и иди домой.
+
+In truth, if your song is as beautiful as your plumage,
+
 
 Incorrect name/ID, or no one from the specified guild is online.
 
@@ -3128,11 +3281,17 @@ It seems that you need a key to open this door.
 It seems you still have some work to do.
 Похоже у тебя ещё есть работа.
 
+It was at night, so I could barely escape. I ran to the Artis Hill.
+
+
 It was something like a long nap.
 Это чем-то походило на длинный сон.
 
 It would be good for you to do some exercise, the ship isn't big enough for that.
 Тебе не помешает немного поупражняться. На судне тесновато для этого.
+
+It's @@ @@.
+
 
 It's a commercial port of Andorra, it's weird that you don't know about it since it is one of the most famous cities throughout the whole world. But hey, back to me. Remember my mentioning that I'm hun...grrr...eee!
 Это торговый порт Адорры, странно, что не знал об этом, ведь он один из известнейших городов во всём мире. Однако, эй, вернись ко мне. Не забывай, что я сказал тебе: я гоо...лоо...ден!
@@ -3164,10 +3323,16 @@ It's not as good as my new one, but still useful.
 It's ok.
 Ничего страшного.
 
+It's probably full of coins, but no matter how hard you try to open it, you can't.
+
+
 It's so hard to find the motivation...
 Как трудно определиться с мотивацией...
 
 It's still too young to fly too far away, so it just circles nearby.
+
+
+It's the good one and, ahem!
 
 
 It's true!
@@ -3266,6 +3431,9 @@ Just look at my goods for sale! Fresh fruits and vegetables were shipped only th
 Just look at the water! There's plenty of fish there.
 
 
+Just say something sparkling
+
+
 Kagerou
 
 
@@ -3276,6 +3444,9 @@ Killer state reset.
 
 
 Knight
+
+
+Know that every flatterer,
 
 
 Lagoon blue
@@ -3329,6 +3500,9 @@ Let me check my cookie list...
 Let me introduce myself, I am Nard, captain of this ship.
 Позволь мне представиться. Я Нард, капитан этого корабля.
 
+Let me open it with my key.
+
+
 Let me see... Crispy legs, disgusting liquids... Let's start!
 Посмотрим... Хрустящие ножки, отвратительные жидкости... Так начнём же!
 
@@ -3338,11 +3512,17 @@ Let's say the person who told me about that is well respected on this ship and n
 Light violet
 
 
+Like I promised, here is your share.
+
+
 Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.
 
 
 Little Blub
 Мелкий блаб
+
+Lives at the expense of those who take him seriously:
+
 
 Living inside a ship is great, but we sometimes need some fresh air.
 Жизнь на корабле - это здорово, но нам иногда нужен свежий воздух.
@@ -3364,6 +3544,9 @@ Long ponytail
 
 Look how splendid this landscape is!
 Посмотри какой замечательный ландшафт! 
+
+Look who is back...
+
 
 Look, here he is!
 Смотри! Он здесь!
@@ -3414,6 +3597,12 @@ Map not found.
 
 
 Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d
+
+
+Master Fluffy was attracted by the odour,
+
+
+Master Piou sat on a tree,
 
 
 Max
@@ -3498,7 +3687,7 @@ Monster database has been reloaded.
 
 
 Monster: '%s'/'%s'/'%s' (%d)
-
+Монстр: %s'/'%s'/'%s' (%d)
 
 Moo!
 
@@ -3524,6 +3713,9 @@ My name is Astapolos. Q'Muller and I joined Nard's crew a few years ago when it 
 My name is Julia, it is me who took care of you after we found you in the sea.
 Меня зовут Джулия. Это я заботилась о тебе, после того, как мы нашли тебя в море.
 
+My name is Q'Onan, I'm a member of Nard's crew.
+
+
 NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT!
 НИЧЕГО, КРОМЕ АКУЛ И СТРАННОГО СВЕТА!
 
@@ -3540,16 +3732,16 @@ NPC Buy:%dz, Sell:%dz | Weight: %.1f
 
 
 NPC Disabled.
-
+NPC выключен.
 
 NPC Enabled.
-
+NPC включен.
 
 NPC is not in this map.
 
 
 NPC moved.
-
+NPC перемещен.
 
 NPC variables may not be used with @set.
 
@@ -3657,6 +3849,12 @@ No longer spying on the %s guild.
 
 
 No longer spying on the %s party.
+
+
+No matter the grammar
+
+
+No matter the spelling
 
 
 No more pain, thanks to you.
@@ -4091,6 +4289,9 @@ Our crew is like a family, and if you agree to help us, I would like to invite y
 Our mommy doesn't allow us to go there, because it's dangerous. But he doesn't listen!
 
 
+Over lovers under a starry night
+
+
 Packet 0x%x length: %d
 
 
@@ -4457,6 +4658,9 @@ Please enter the correct parameters (usage: @npctalkc <color> <npc name>, <messa
 Please enter two e-mail addresses (usage: @email <current@email> <new@email>).
 
 
+Please find the small chest, buried somewhere on the Artis Hill.
+
+
 Please specify a display name or monster name/id.
 
 
@@ -4469,6 +4673,12 @@ Please, have a seat.
 Plushroom Field
 Поляна плюшевых грибов
 
+Poem about Poems
+
+
+Poem is making the words dance
+
+
 Pompadour
 
 
@@ -4476,6 +4686,9 @@ Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe
 
 
 Priest
+
+
+Princess Slayer
 
 
 Professor
@@ -4625,6 +4838,9 @@ Rune Knight T
 SO WHAT'S UP?! WHAT ARE YOU DOING?!
 НУ ТАК КАК ТЫ?! ЧТО ТЫ ДЕЛАЕШЬ?!
 
+Sadly, you found nothing but dirt.
+
+
 Sage
 Мудрец
 
@@ -4639,6 +4855,9 @@ Salem#001-1
 
 Sapartan
 Сапартан
+
+Say her love to glamourous Gliktch?
+
 
 Script could not be loaded.
 
@@ -4718,6 +4937,9 @@ Shadow Chaser
 Shadow Chaser T
 
 
+Share your mind is your mission
+
+
 She is a good friend of mine... We wanted to marry a few weeks before her accident but...
 Она мой лучший друг... Мы хотели пожениться за несколько недель до несчастного случая, но...
 
@@ -4790,6 +5012,9 @@ Skills have been enabled in this map.
 Slave clone spawned.
 
 
+Sleep well my angel but don't follow along
+
+
 Sniper
 
 
@@ -4834,6 +5059,9 @@ So, how is it going? Did you meet any other crew members yet?
 
 So, what can I do for you?
 Так что я могу сделать для тебя?
+
+So, what do you say?
+
 
 So, what was I saying?
 Так что я говорил?
@@ -5021,6 +5249,9 @@ Surprise me
 Swordsman
 
 
+Swore, though somewhat later, that he would never be 
+
+
 THAT'S A NICE NAME!
 МИЛЕНЬКОЕ ИМЯ!
 
@@ -5129,6 +5360,9 @@ Thanks for helping me!
 Thanks for the help!
 Спасибо за помощь!
 
+That makes everybody
+
+
 That would be great!
 
 
@@ -5137,6 +5371,9 @@ That's exactly what I needed.
 
 That's good to hear!
 Рад слышать!
+
+That's not the question
+
 
 That's perfect, yoiis.#0
 Это отлично, йойис.
@@ -5149,6 +5386,15 @@ That's quite surprising... You don't look very helpful.#0
 
 That's quite surprising... You don't look very helpful.#1
 Это удивительно... Ты не выглядишь сильно полезным.
+
+The Fluffy seized it and said: \
+
+
+The Piou and The Fluffy
+
+
+The Piou, embarrassed and confused,
+
 
 The adventure begins!
 Приключение начинается!
@@ -5216,10 +5462,16 @@ The mapserver has spy command support disabled.
 The monster/egg name/ID doesn't exist.
 
 
+The music of the trees floats through the breeze
+
+
+The name of the book is @@.
+
+
 The old book seems to tell about the legend of Aemil. Would you like to read it?
 В старой книге, кажется, говорится о легендах Аэмиля. Хочешь её прочитать?
 
-The piou costs @@E
+The piou costs @@E.
 
 
 The player '%.*s' doesn't exist.
@@ -5355,19 +5607,19 @@ Thirty Castles
 
 
 Thirty-One Castles
-
+Тридцать один Замок
 
 Thirty-Three Castles
-
+Тридцать три Замка
 
 Thirty-Two Castles
-
+Тридцать два Замка
 
 This Cookie Master rewards people who contribute and develop this world.
 Этот Мастер Печенек награждает людей, которые продвигают и создают этот мир.
 
 This NPC doesn't exist.
-
+Этот NPC не существует.
 
 This action can't be performed at the moment. Please try again later.
 
@@ -5376,10 +5628,10 @@ This bound item cannot be stored there.
 
 
 This bound item cannot be traded to that character.
-
+Этот связанный предмет не может быть обменян этому персонажу.
 
 This character has been banned until 
-
+Этот персонаж был забанен до тех пор, пока
 
 This door is locked.
 Эта дверь заперта.
@@ -5395,6 +5647,9 @@ This guy is lucky we found him before a shark did. I have no idea where he comes
 
 This guy needs help, we need to rescue him!#1
 Этот парень нуждается в помощи, мы должны спасти его!
+
+This is a lesson that is worth a cheese no doubt.\
+
 
 This is a nice place... There are some nice chicks...
 Это клевое место... Здесь есть несколько интересных девчонок...
@@ -5430,10 +5685,10 @@ This monster does not spawn normally.
 Этот монстр обычно не возрождается.
 
 This monster has no MVP prizes.
-
+Этот монстр не имеет MPV призы.
 
 This monster has no drops.
-
+Этот монстр не может быть поднят.
 
 This new continent, in fact an archipelago, was called Andorra.
 Этот новый континент, на самом деле являющийся архипелагом, был назван Андоррой.
@@ -5451,19 +5706,19 @@ This player has %d of a kind of item (id: %d), and tried to trade %d of them.
 
 
 This player has been banned for %d minute(s).
-
+Этот игрок был забанен на %d минут(ы).
 
 This player has been definitively blocked.
-
+Этот игрок был окончательно заблокирован.
 
 This player hasn't been banned (Ban option is disabled).
-
+Этот игрок ещё не был забанен (Опция бана отключена).
 
 This player is not in jail.
-
+Этот игрок не находится в тюрме.
 
 This player is now
-
+Этот игрок сейчас
 
 This skill number doesn't exist or isn't a quest skill.
 
@@ -5507,6 +5762,9 @@ Too bad I'm not hungry enough right now for these... cookies. I'll maybe come ba
 Too bad... Come back when you have some choice food for me. Growl... grumble... grumble.
 Очень плохо... Возвращайся, когда у тебя будет хоть что то из еды для меня... (невнятно ворчит)
 
+Too risky, I might end up in jail. Do it yourself.
+
+
 Toppy Blub
 Топпи Блаб
 
@@ -5529,6 +5787,9 @@ Tritan Voice
 Голос тритана
 
 Trozz#001-1
+
+
+True be or not true be
 
 
 True but now he seems pretty fine! Am I right?#1
@@ -5622,16 +5883,16 @@ Unknown Channel (usage: %s <#channel_name>)
 
 
 Unknown Job
-
+Неизвестная Работа
 
 Unknown battle_config flag.
 
 
 Unknown color '%s'
-
+Неизвестный цвет '%s'
 
 Unknown map '%s'.
-
+Неизвестная карта '%s'.
 
 Unknown packet: 0x%x
 
@@ -5831,6 +6092,9 @@ We are glad captain Nard has let you join us down here!#0
 We are glad captain Nard has let you join us down here!#1
 Мы рады, что капитан Нард разрешил тебе присоединиться к нам!
 
+We are very lucky, my friend.
+
+
 We arrived this morning at the port of Artis, I already warned the Legion of Aemil concerning your issue.
 
 
@@ -5987,6 +6251,9 @@ What an unexpected pleasure, your help is always welcome!
 What are you doing in my kitchen?! Get out, it's not a place for kids!
 Что ты делаешь у меня на кухне?! Убирайся, это не место для детей!
 
+What are you going to do?
+
+
 What are you guys saying ? It's a Yoiis!#0
 О чем ребята вы говорите? Это Йоэс!
 
@@ -6059,10 +6326,16 @@ What should I do after taking these clothes?#0
 What should I do after taking these clothes?#1
 Что мне следует делать после того, как я возьму эти вещи?
 
+What should I do, again?
+
+
 What will be the bait for the fish?
 
 
 What would you like me to change?
+
+
+What would you like to bury?
 
 
 What yeye could I do for you today?
@@ -6088,6 +6361,12 @@ What? Why? They aren't sexier than me, why do you want to see them?
 
 What?! This tritan is the worse shirker I ever met!
 Что?! Этот тритан - худший бездельник, которого я когда либо встречал!
+
+Whatever inside can be
+
+
+Whatever your idea
+
 
 When you see something that looks more like a bug than a feature, report it on http://bugs.evolonline.org or try to contact a game contributor.
 Если вы увидите что-нибудь, что выглядит больше как "баг", чем как "фича", сообщите об этом на http://bugs.evolonline.org или попробуйте связаться с кем-нибудь из создателей игры.
@@ -6152,6 +6431,9 @@ Who should I search for?
 Who's this Julia?
 Кто эта Джулия?
 
+Whose eyes glisten under Moonlight
+
+
 Why Frenchy? It's a Russian!#0
 Почему француженка? Она русская!
 
@@ -6194,6 +6476,9 @@ With hunger, thirst, and sleep as your only companions; you have the disturbing 
 With my old fishing rod you can catch something every day.
 
 
+With no choir master nor voice to be sung
+
+
 With proper training, a piou can become a good friend and faithful companion in your adventures.
 
 
@@ -6202,6 +6487,9 @@ With script
 
 Wizard
 Маг
+
+Words become music and glance
+
 
 Wow, it seems everyone knows my name!
 Вау, похоже на то, что все знают моё имя!
@@ -6347,7 +6635,13 @@ You already looked here
 You already took a Bandana, please put this one back in the box.
 Ты уже брал бандану, положи ее на место.
 
+You are a handsome and good looking bird!
+
+
 You are already mounting something else
+
+
+You are exhausted, you should rest a bit.
 
 
 You are full of wine, my friend...
@@ -6401,6 +6695,9 @@ You are now part of the crew... At least for us down here!
 You are on a raft, adrift in the sea.
 Ты находишься на плоту, плывущем по течению в море
 
+You are the Phoenix of this forest.\
+
+
 You are too weak, what is a piece of bone like you doing around here?
 
 
@@ -6408,6 +6705,9 @@ You are unable to change your job.
 
 
 You broke the target's weapon.
+
+
+You buried @@ @@.
 
 
 You can already rename your pet.
@@ -6503,6 +6803,9 @@ You can't trade in this map
 You can't use commands while dead.
 
 
+You can't use the shovel here.
+
+
 You can't withdraw that much money
 
 
@@ -6575,7 +6878,13 @@ You don't have enough room in your backpack for a @@. Get rid of some junk and c
 You don't have this quest skill.
 
 
+You found a small chest, surprisingly heavy for it's size.
+
+
 You found him!
+
+
+You found something!
 
 
 You have %d new emails (%d unread)
@@ -6653,8 +6962,14 @@ You have to know that there was a time during which I was the unopposed lieutena
 You hear a loud scream. It must be the creaking of the wooden door...
 Вы слышите громкий скрип. Должно быть, это скрипнула деревянная дверь.
 
+You hide your shovel.
+
+
 You hit too hard with your fist, you destroyed your @@.
 Ты слишком сильно ударил рукой, ты уничтожил свою @@.
+
+You hold the shovel in your hangs.
+
 
 You honor me, my beauty, but I'm already taken by Julia!#0
 Вы оказали мне честь, моя красавица, но я уже занят Джулией!
@@ -6740,6 +7055,9 @@ You scare the piou, but let it go.
 You search the tree but don't find anybody
 
 
+You see a dust covered book on the shelf...
+
+
 You see a raijin boy, sitting on the edge of the dock.
 
 
@@ -6747,6 +7065,9 @@ You see a young elven girl, with a grimace of pain on her face.
 
 
 You see some fish reflecting the sun on the surface of the ocean.
+
+
+You see some fish reflecting the sun on the surface of the water.
 
 
 You see these pious around us?
@@ -6957,7 +7278,7 @@ You're welcome. If you can't remember something, just come back here!
 Всегда пожалуйста. Если ты что нибудь забудешь - возвращайся сюда!
 
 You've become the party leader.
-
+Вы стали лидером группы.
 
 You've been revived!
 
@@ -6966,7 +7287,7 @@ You've died.
 Вы умерли.
 
 You've left the '%s' channel
-
+Вы покинули канал '%s'
 
 You've reached the highest natural place of Artis, enjoy the view.
 
@@ -7011,7 +7332,7 @@ Your account has been rejected from server.
 
 
 Your account has been totally erased.
-
+Ваш аккаунт был полностью стерт.
 
 Your account has expired.
 
@@ -7041,7 +7362,7 @@ Your body aches, even your hair hurts, and the daylight is painful; but still yo
 Всё ваше тело болит, даже волосы, и дневной свет приносит боль; но всё же вы открываете глаза и видите перед собой большой корабль.
 
 Your cart was cleaned.
-
+Ваша корзина была очищена.
 
 Your class can't mount!
 
@@ -7124,6 +7445,9 @@ Zzzzzzzzz...
 [^EE0000%s^000000]
 
 
+\
+
+
 a ground!
 земля!
 
@@ -7140,28 +7464,28 @@ body/armor,
 
 
 both hands, 
-
+обе руки,
 
 change the sex of
-
+изменить пол
 
 conf/import/msg_conf.txt
 
 
 feet, 
-
+ноги,
 
 garment, 
-
+одежда,
 
 left accessory, 
 
 
 left hand, 
-
+правая рука,
 
 lower head, 
-
+ниже головы,
 
 lower/mid head, 
 
@@ -7173,12 +7497,18 @@ lower/top head,
 
 
 mid head, 
-
+посередине головы,
 
 npc1
 
 
 npc1#door
+
+
+npc2
+
+
+npc3
 
 
 npc4
@@ -7191,40 +7521,49 @@ option '%s' is already enabled, if you'd like to disable it type '@channel opt %
 
 
 option '%s' is not enabled on channel '%s'
-
+опция '%s'  не включенв на канале '%s'
 
 option '%s' is now disabled for channel '%s'
 опция '%s' на данный момент отключена на канале '%s'
 
 option '%s' is now enabled for channel '%s'
-
+опция '%s' включена для канала '%s'
 
 option '%s' is now enabled for channel '%s' with %d seconds
-
+опция '%s' включена для канала '%s' на %d секунд
 
 right accessory, 
 
 
 right hand, 
-
+правая рука,
 
 skill %d: %s (%s)
+
+
+test1
+
+
+test2
 
 
 top head, 
 
 
-unban
+tricked thus again.
 
+
+unban
+Разбан
 
 unblock
 разблокировать
 
 value '%d' for option '%s' is out of range (limit is 0-10)
-
+значение '%d' для опции '%s' вне диапозона (лимит 0-10)
 
 | Guild: '%s'
-
+| Гильдия: '%s'
 
 | Location: %s %d %d
 
