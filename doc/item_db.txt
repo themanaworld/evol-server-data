@@ -83,6 +83,7 @@ item_db: (
 	OnUnequipScript: <" OnUnequip Script (can also be multi-line) ">
 	OnDropScript: <" OnDrop Script (can also be multi-line) ">
 	OnTakeScript: <" OnTake Script (can also be multi-line) ">
+	OnInsertCardScript: <" OnInsert card Script (can also be multi-line) ">
 	// =================== Optional fields (item_db2 only) ================
 	Inherit: true/false           (boolean, if true, inherit the values
 	                              that weren't specified, from item_db.conf,
