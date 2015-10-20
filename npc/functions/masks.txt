@@ -1,0 +1,68 @@
+// Evol functions.
+// Authors:
+//    Reid
+// Description:
+//    Triggers functions to add and remove masks.
+// Variables:
+//    none
+
+// Artis Aemil's Legion 
+
+function	script	artisALRemTopMask	{
+    if ((getareausers("001-2-33.gat", 23, 27, 45, 31) >= 1) ||
+        (getareausers("001-2-33.gat", 23, 32, 26, 38) >= 1) ||
+        (getareausers("001-2-33.gat", 42, 32, 45, 38) >= 1))
+    {
+        removemapmask "001-2-33", 4;
+    }
+    return 0;
+}
+
+function	script	artisALAddTopMask	{
+    if ((getareausers("001-2-33.gat", 23, 27, 45, 31) == 0) &&
+        (getareausers("001-2-33.gat", 23, 32, 26, 38) == 0) &&
+        (getareausers("001-2-33.gat", 42, 32, 45, 38) == 0))
+    {
+        addmapmask "001-2-33", 4;
+    }
+    return 0;
+}
+
+function	script	artisALRemBotMask	{
+    if (getareausers("001-2-33.gat", 23, 32, 45, 46) >= 1)
+    {
+        removemapmask "001-2-33", 8;
+    }
+    return 0;
+}
+
+function	script	artisALAddBotMask	{
+    if (getareausers("001-2-33.gat", 23, 32, 45, 46) == 0)
+    {
+        addmapmask "001-2-33", 8;
+    }
+    return 0;
+}
+
+function	script	artisALUpdateMask	{
+    if (getareausers("001-2-33.gat", 23, 32, 45, 46) >= 1)
+    {
+        removemapmask "001-2-33", 8;
+    }
+    else
+    {
+        addmapmask "001-2-33", 8;
+    }
+    if ((getareausers("001-2-33.gat", 23, 27, 45, 31) >= 1) ||
+        (getareausers("001-2-33.gat", 23, 32, 26, 38) >= 1) ||
+        (getareausers("001-2-33.gat", 42, 32, 45, 38) >= 1))
+    {
+        removemapmask "001-2-33", 4;
+    }
+    else
+    {
+        addmapmask "001-2-33", 4;
+    }
+
+    return 0;
+}
