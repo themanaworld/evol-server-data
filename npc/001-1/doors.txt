@@ -518,3 +518,30 @@ OnInit:
     end;
 }
 
+001-1,57,41,0	script	#Warp20	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-33", 34, 45;
+    close;
+
+OnUnTouch:
+    doevent "#Door20::OnUnTouch";
+}
+
+001-1,34,46,0	script	#Door20	NPC_ARTIS_DOOR,2,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 5;
+    end;
+}
+
