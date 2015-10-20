@@ -81,18 +81,6 @@ OnTouch:
     close;
 }
 
-001-2-33,24,34,0	script	#001-2-33WarpLeft	NPC_HIDDEN,1,1,{
-OnTouch:
-    artisALUpdateMask;
-    close;
-}
-
-001-2-33,44,34,0	script	#001-2-33WarpRight	NPC_HIDDEN,1,1,{
-OnTouch:
-    artisALUpdateMask;
-    close;
-}
-
 001-2-33,34,45,0	script	#001-2-33WarpArtis	NPC_HIDDEN,1,1,{
 OnTouch:
     artisALUpdateMask;
