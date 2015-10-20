@@ -1,0 +1,60 @@
+// Evol scripts.
+// Authors:
+//    4144, Reid
+// Description:
+//    Doors warp and animations in map 001-2-33
+//
+
+001-2-33,29,31,0	script	#LeftWarp-001-2-33	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-33", 39, 33;
+    close;
+
+OnUnTouch:
+    doevent "#LeftWarp-001-2-33::OnUnTouch";
+}
+
+001-2-33,29,31,0	script	#LeftDoor-001-2-33	NPC_ARTIS_IN_DOOR,1,2,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 5;
+    end;
+}
+
+001-2-33,39,31,0	script	#RightWarp-001-2-33	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-33", 29, 33;
+    close;
+
+OnUnTouch:
+    doevent "#RightWarp-001-2-33::OnUnTouch";
+}
+
+001-2-33,39,31,0	script	#RightDoor-001-2-33	NPC_ARTIS_IN_DOOR,1,2,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 5;
+    end;
+}
