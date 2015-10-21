@@ -221,7 +221,7 @@ L_Start:
         case 9:
             while(1)
             {
-                switch (select("set wall 1:set wall 2:delete wall 1:delete wall 2:back"))
+                switch (select("set wall 1:set wall 2:set wall 3:delete wall 1:delete wall 2:delete wall 3:back"))
                 {
                     case 1:
                         setcells "test", 14, 11, 17, 11, 3, "wall1";
@@ -230,12 +230,18 @@ L_Start:
                         setcells "test", 14, 7, 21, 8, 1, "wall2";
                         break;
                     case 3:
-                        delcells "wall1";
+                        setcells "test", 13, 15, 13, 21, 3, "wall3";
                         break;
                     case 4:
-                        delcells "wall2";
+                        delcells "wall1";
                         break;
                     case 5:
+                        delcells "wall2";
+                        break;
+                    case 6:
+                        delcells "wall3";
+                        break;
+                    case 7:
                         goto L_Start;
                         break;
                 }
