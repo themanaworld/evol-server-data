@@ -7,7 +7,7 @@
 
 001-2-33,29,31,0	script	#LeftWarp-001-2-33	NPC_HIDDEN,0,0,{
 OnTouch:
-    warp "001-2-33", 39, 33;
+    warp "001-2-34", 29, 32;
     close;
 
 OnUnTouch:
@@ -34,7 +34,7 @@ OnInit:
 
 001-2-33,39,31,0	script	#RightWarp-001-2-33	NPC_HIDDEN,0,0,{
 OnTouch:
-    warp "001-2-33", 29, 33;
+    warp "001-2-32", 27, 32;
     close;
 
 OnUnTouch:
