@@ -1,0 +1,23 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Doors NPCs.
+
+001-2-32,33,29,0	script	ToFightRoom#001-2-32	NPC_HIDDEN,0,0,{
+
+OnTouch:
+    if (mobcount("001-2-35.gat","all") > 0)
+    {
+        narrator
+        l("You hear some sound behind the door."),
+        l("Somebody is probably training, better wait for him to finish.");
+    }
+    else
+    {
+        warp "001-2-35", 24, 29;
+    }
+
+    closedialog;
+    close;
+}
