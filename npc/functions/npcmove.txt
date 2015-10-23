@@ -129,3 +129,14 @@ function	script	getmovecmd	{
         return "";
     return getvariableofnpc(.movepathcmd$[.@pos], strnpcinfo(3));
 }
+
+function	script	domovestep	{
+    if (isunitwalking())
+    {
+        initnpctimer;
+        end;
+    }
+    movetonextpos;
+    initnpctimer;
+    end;
+}

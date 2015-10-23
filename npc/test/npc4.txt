@@ -7,14 +7,7 @@
 test,25,20,0	script	npc4	NPC_PLAYER,{
     close;
 OnTimer1000:
-    if (isunitwalking())
-    {
-        initnpctimer;
-        end;
-    }
-    movetonextpos;
-    initnpctimer;
-    end;
+    domovestep;
 OnInit:
     .walkmask = WALK_WATER;
     initpath "move", 20, 20,

@@ -189,14 +189,7 @@ L_Close:
     close;
 
 OnTimer1000:
-    if (isunitwalking())
-    {
-        initnpctimer;
-        end;
-    }
-    movetonextpos;
-    initnpctimer;
-    end;
+    domovestep;
 
 OnTouch:
     SayRandomGreeting;

@@ -9,14 +9,7 @@
     close;
 
 OnTimer1000:
-    if (isunitwalking())
-    {
-        initnpctimer;
-        end;
-    }
-    movetonextpos;
-    initnpctimer;
-    end;
+    domovestep;
 
 OnInit:
     initpath "move", 52, 54,
