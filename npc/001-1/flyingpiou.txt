@@ -99,12 +99,7 @@ OnHour00:
     end;
 
 OnTimer1000:
-    if (!isunitwalking())
-    {
-        movetonextpoint;
-    }
-    initnpctimer;
-    end;
+    dographmovestep;
 
 OnInit:
     .sex = G_OTHER;

@@ -13,12 +13,7 @@ test,45,25,0	script	npc5	NPC_PLAYER,{
     close;
 
 OnTimer1000:
-    if (!isunitwalking())
-    {
-        movetonextpoint;
-    }
-    initnpctimer;
-    end;
+    dographmovestep;
 
 OnInit:
     // .debug = 1;

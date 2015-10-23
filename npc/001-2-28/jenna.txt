@@ -27,12 +27,7 @@
     close;
 
 OnTimer1000:
-    if (!isunitwalking())
-    {
-        movetonextpoint;
-    }
-    initnpctimer;
-    end;
+    dographmovestep;
 
 OnTouch:
     SayRandomGreeting;

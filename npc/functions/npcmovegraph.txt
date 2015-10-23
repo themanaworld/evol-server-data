@@ -426,3 +426,12 @@ function	script	npc_turntoxy	{
 
     return 0;
 }
+
+function	script	dographmovestep	{
+    if (!isunitwalking())
+    {
+        movetonextpoint;
+    }
+    initnpctimer;
+    end;
+}

@@ -38,12 +38,7 @@
     localClose;
 
 OnTimer1000:
-    if (!isunitwalking())
-    {
-        movetonextpoint;
-    }
-    initnpctimer;
-    end;
+    dographmovestep;
 
 OnInit:
     .sex = G_MALE;
