@@ -11,9 +11,9 @@
     .@q = rand(3);
     if (.@q == 0) goto L_QuestStory;
 
-    mesq l("You see these pious around us?");
+    mesq l("Damned pumpkins...");
     next;
-    mesq l("It seems that we are close to an island, we should take a look at the upper level.");
+    mesq l("The other day they scared the hell out of me. You'd better avoid the bottom of the ship.");
 
     close;
 
