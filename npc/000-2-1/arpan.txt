@@ -144,6 +144,7 @@ L_Menu:
     .@equipped = getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200;
 
     menu
+        l("Could you tell me what is happening here?"), L_Halloween,
         lg("Could you tell me where I am?"), L_Where,
         lg("Where can I find Julia?"), L_Julia,
         l("Who are you?"), L_Who,
@@ -154,6 +155,19 @@ L_Menu:
 
     closedialog;
     close;
+
+L_Halloween:
+    mes "";
+    mesn;
+    mesq l("Well... We bought some foods, some pumpkins to be exact, from a merchand on the last island where we stopped... But it seems that his food was poisonned....");
+    next;
+    mesq l("Or somehow contamined...");
+    next;
+    mes l("All that we know now is that these pumpkins are now getting life, and it's kinda scarry to be honest...");
+    next;
+    mesq l("Anyway they're not dangerous if you don't touch them, so don't worry about them.");
+    next;
+    goto L_Menu;
 
 L_Where:
     mes "";
