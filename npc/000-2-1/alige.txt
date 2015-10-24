@@ -18,8 +18,10 @@
 //    3   Bring first food.
 
 000-2-1,43,32,0	script	AligeTrigger	NPC_HIDDEN,1,1,{
+    end;
 
 OnTouch:
+    end;
     if (getareausers() <= 1)
     {
         setnpcdir "Alige", 2;
@@ -33,6 +35,7 @@ OnTouch:
     close;
 
 OnUnTouch:
+    end;
     if (getareausers() == 0)
     {
         setnpcdir "Alige", 4;
@@ -50,11 +53,23 @@ OnTimer190:
     end;
 }
 
-000-2-1,43,31,0	script	Alige	NPC_ALIGE,{
+000-2-1,43,31,0	script	Hole	NPC_ALIGE,{
     .@q = getq(ShipQuests_Alige);
-    if (.@q > 1) goto L_AskForFood;
 
-    goto OnFirstEncounter;
+    mesn "Narrator";
+
+    if (.@q < 1) goto L_Halloween;
+
+    mes l("There's no trace of Alige today.");
+    next;
+
+L_Halloween:
+    mes l("Some fog and weird sounds come out from this hole...");
+    next;
+    mes l("Something wrong might be happening in the bottom of the ship.");
+
+    close;
+
 
 OnFirstEncounter:
     setq ShipQuests_Alige, 1;
