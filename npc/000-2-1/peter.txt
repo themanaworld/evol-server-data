@@ -43,6 +43,9 @@
 
 OnTouch:
     if (BaseLevel < 5) goto L_Stop;
+    warp "000-2-2.gat", 48, 28;
+    end;
+
     if ($@RAT_SAILOR_COUNTDOWN == 0) goto L_NoCountDown;
     if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto L_NoGoodTick;
     if (($@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 60)) goto L_NoGoodTick;
@@ -91,6 +94,8 @@ L_NoGoodTick:
 
 000-2-1,70,35,0	script	Peter	NPC_RATTO_SAILOR,{
     if (BaseLevel < 5) goto OnTooWeak;
+    else goto L_Halloween;
+
     if ($@RAT_SAILOR_COUNTDOWN == 0) goto L_NoCountDown;
     if ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 10) goto OnNoGoodTick;
     if (($@RAT_SAILOR_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@RAT_SAILOR_COUNTDOWN) < 60)) goto OnNoGoodTick;
@@ -123,7 +128,7 @@ OnGiveTask:
 
 OnTooWeak:
     mesn;
-    mesq lg("I need a helper to clean the edge of the ship, but you aren't strong enough to help.");
+    mesq lg("I won't let you enter, you're way too weak!");
 
     goto L_Quit;
 
@@ -326,6 +331,41 @@ L_Quit:
 OnNoGoodTick:
     mesn;
     mesq l("I don't need your help right now, come back later.");
+    close;
+
+L_Halloween:
+    mesn;
+    mesq l("Did you see... This!?");
+    next;
+
+    menu
+        l("What are you talking about?"), -,
+        l("Yes I did."), l_Sawit;
+
+    mes "";
+    mesn;
+    mesq l("There's something that exceeds any imagination behind this door... It's... It's not... not human!");
+    next;
+
+    menu
+        l("I don't understand..."), -,
+        l("It's just an orange ball, nothing else."), l_Sawit;
+
+    mes "";
+    mesn;
+    mesq l("Did you see all of these horrible, moving pumpkins around here?");
+    next;
+    mesq l("Well, there's something like... Their king, behind this door.");
+    next;
+    mesq l("Be careful if you go in there. It would be a shame that we saved you from the ocean for nothing!");
+
+    close;
+
+l_Sawit:
+    mes "";
+    mesn;
+    mesq l("I can't close my eyes the night, it's haunting me...");
+
     close;
 
 OnInit:
