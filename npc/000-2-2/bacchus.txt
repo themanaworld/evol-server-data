@@ -3,23 +3,23 @@
 //    Vasily_Makarov
 
 
-000-2-2.gat,32,29,0,1	script	Bacchus	997,{
+000-2-2.gat,32,29,0,1	script	Bacchus	NPC_BACCHUS,{
 
     mesn;
     mesq l("Hahahaha!");
     mesq l("Happy Halloween!!");
     next;
 
-l_Intro:
+L_Intro:
     mesq l("Let me introduce myself, I'm Bacchus, the ladies man, the sir of your dream, the pumpkin of the jack, the star of the your sky, the...");
     next;
 
     menu
-        rif(countitem("Pumpkin") > 0, l("I have a pumpkin!")), l_DoHat,
-        l("Where did you get that hat?"), l_Hat,
+        rif(countitem("Pumpkin") > 0, l("I have a pumpkin!")), L_DoHat,
+        l("Where did you get that hat?"), L_Hat,
         l("Forgive me, but... who are you?"), -,
-        l("Where can I find this pumpkin?"), l_Where,
-        l("Goodbye..."), l_Bye;
+        l("Where can I find this pumpkin?"), L_Where,
+        l("Goodbye..."), L_Bye;
 
     mes "";
     mesn;
@@ -28,7 +28,7 @@ l_Intro:
 
     menu
         l("No, not this."), -,
-        l("Ok, see you."), l_Bye;
+        l("Ok, see you."), L_Bye;
 
     mes "";
     mesn;
@@ -39,8 +39,8 @@ l_Intro:
 
     menu
         l("Could you just tell me who you are?"), -,
-        l("Pumpkin of the jack."), l_Hat,
-        l("Nothing..."), l_Bye;
+        l("Pumpkin of the jack."), L_Hat,
+        l("Nothing..."), L_Bye;
 
     mes "";
     mesn;
@@ -56,9 +56,9 @@ l_Intro:
     next;
     mesq l("Who're you?");
     next;
-    goto l_Intro;
+    goto L_Intro;
 
-l_Hat:
+L_Hat:
     mes "";
     mesn;
     mesq l("My hat! do you like it? I do love it, I made it by myself, it's such a beauty, isn't it? Oh wait, I can light fire inside, it's the most beautiful!");
@@ -68,7 +68,7 @@ l_Hat:
 
     menu
         l("I would like one too, indeed."), -,
-        l("No thanks, I think that I'll leave you alone..."), l_Bye;
+        l("No thanks, I think that I'll leave you alone..."), L_Bye;
 
     mes "";
     mesn;
@@ -79,8 +79,8 @@ l_Hat:
 
     menu
         l("Deal! I'll bring you one."), -,
-        l("Where can I find this pumpkin?"), l_Where,
-        l("I changed my mind, I don't want it anymore."), l_Bye;
+        l("Where can I find this pumpkin?"), L_Where,
+        l("I changed my mind, I don't want it anymore."), L_Bye;
 
     mes "";
     mesn;
@@ -88,7 +88,7 @@ l_Hat:
 
     close;
 
-l_Where:
+L_Where:
     mes "";
     mesn;
     mesq l("Oh... That's a hard thing to find, only the Cuco can give it to you...");
@@ -101,14 +101,14 @@ l_Where:
 
     close;
 
-l_Bye:
+L_Bye:
     mes "";
     mesn;
     mesq l("You miss something...");
 
     close;
 
-l_DoHat:
+L_DoHat:
     mes "";
     mesn;
     mesq l("Nice nice... Wait few seconds...");
