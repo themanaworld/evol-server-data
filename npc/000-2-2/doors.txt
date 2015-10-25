@@ -62,9 +62,9 @@ L_Break:
     close;
 
 L_Warp:
-    mes "";
-    mesn "Narrator";
-    mes col(l("Wait, it seems someone is blocking the door from the other side!"), 9);
-
+    // mes "";
+    // mesn "Narrator";
+    // mes col(l("Wait, it seems someone is blocking the door from the other side!"), 9);
+    warp "000-2-4", 40, 30;
     close;
 }
