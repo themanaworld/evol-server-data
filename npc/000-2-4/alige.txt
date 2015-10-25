@@ -1,0 +1,39 @@
+// Evol scripts.
+// Authors:
+//    Reid
+//    Travolta
+
+000-2-4,38,22,0	script	Alige#000-2-4	NPC_ALIGE_BARREL,2,2,{
+    npctalk3 l("Protect me, please...");
+    end;
+
+OnTouch:
+    .dir = LEFT;
+    stopnpctimer;
+    initnpctimer;
+    end;
+
+OnUnTouch:
+    .dir = UP;
+    stopnpctimer;
+    initnpctimer;
+    end;
+
+OnTimer190:
+    switch (.dir)
+    {
+        case UP:
+            .dir = DOWN;
+            break;
+        case LEFT:
+            .dir = RIGHT;
+            break;
+    }
+    stopnpctimer;
+    end;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
