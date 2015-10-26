@@ -8,7 +8,10 @@
 
 
 001-1,55,119,0	script	#MarketPiou1	NPC_MARKET_PIOU,{
-    end;
+    narrator
+        l("These creatures look very cute."),
+        l("And they are tamed!");
+    close;
 
 OnInit:
     .sex = G_OTHER;
