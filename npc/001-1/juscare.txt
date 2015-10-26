@@ -6,90 +6,65 @@
 //    Juscare, walking NPC of the legion of Aemil on the right part of the Agora of Artis.
 
 
-001-1,118,92,0	script	Juscare#001-1	NPC_HUMAN_MALE_LEGION_ARTIS,{
+function	script	JuscareTurnTo	{
+    .@x = atoi(getarg(0));
+    .@y = atoi(getarg(1));
+    npc_turntoxy(.@x, .@y);
+    return 0;
+}
 
-    function shouldTurn {
-        .@tree = findmovegraphlabel("inn_tree");
-        .@table = findmovegraphlabel("inter_inn_fav_table");
-        if (.movepos == .@tree || .movepos == .@table)
-            return 0;
-        return 1;
-    }
+
+001-1,78,114,0	script	Juscare#001-1	NPC_HUMAN_MALE_LEGION_ARTIS,{
 
     function localClose {
-        if (@Juscar_old_dir > 0)
-            .dir = @Juscar_old_dir;
+        .dir = @Juscar_old_dir;
         npc_resumemove;
         close;
     }
 
     npc_pausemove;
-    @Juscar_old_dir = -1;
-    if (shouldTurn())
-    {
-        getmapxy(.@map$, .@cx, .@cy, 0);
-        @Juscar_old_dir = .dir;
-        npc_turntoxy(.@cx, .@cy);
-    }
+    getmapxy(.@map$, .@cx, .@cy, 0);
+    @Juscar_old_dir = .dir;
+    npc_turntoxy(.@cx, .@cy);
 
-    speech 4,
+    speech
         l("It is a foggy day, don't you think?");
 
     localClose;
 
-OnTimer1000:
-    dographmovestep;
+OnTimer100:
+    if (!isunitwalking())
+        movetonextpoint;
+    initnpctimer;
+    end;
 
 OnInit:
     .sex = G_MALE;
     .distance = 4;
     // .debug = 1;
     initmovegraph
-        "inn_front",    112,  90,  119, 93,
-        "inn_tree",     108,  82,
-        "fountain",     87,   85,  91,  86,
-        "chelios",      93,   109,
-        "chelios_road", 89,   107,
-        "chelios",      93,   109,
-        "to_market",    76,   119,
-        "market",       60,   115, 65,  121,
-        "fishing_spot", 109,  127,
-        "river_bank",   113,  105,
-        "eugene",       112,  115,
-        "inn_door",     118,  89,
-        "inn_doorstep", 118,  88,
-        "inter_inn_doorstep",  29, 43,
-        "inter_inn_2tables",   38, 31,
-        "inter_inn_fav_table", 51, 33;
+        "sector_1",     75,   111, 88,  117,
+        "sector_2",     90,   110, 93,  116,
+        "market_r",     68,   119, 73,  120,
+        "market_m",     61,   115, 65,  121,
+        "market_l",     49,   116, 57,  122,
+        "secret",       36,   122, 40,  129;
+
+    // flags: 0x1 -- moving from right to left, 0x2 -- moving from left to right
 
     // this is not very obvious stuff
     setmovegraphcmd
-        "inn_front",    "inn_door",  1, 0x1,    "flags_0 2; dir 4; call open_door #Door18",
-        "inn_front",    "inn_tree",  2,         "dir 2; wait 1; sit; wait 1; emote 106; wait 20; stand; wait 1",
-        "inn_front",    "river_bank",1,         "flags_0 8; flags_1 4",
-        "river_bank",   "eugene",    1, 0x4,    "moveon",
-        "eugene",       "fishing_spot", 1, 0x4, "wait 7",
-        "fishing_spot", "chelios",   1, 0x4,    "dir 6; wait 1; emote 103; wait 10",
-        "inn_tree",     "inn_door",  1,         "flags_1 1; flags_0 2; dir 4; call open_door #Door18",
-        "inn_tree",     "fountain",  2,         "dir 4; wait 1; emote 122; wait 10; dir 0; wait 1",
-        "fountain",     "chelios_road",         "moveon",
-        "chelios_road", "chelios",              "dir 6; wait 1; emote 103; wait 7",
-        "chelios",      "eugene",               "flags_1 28; flags_0 4",
-        "chelios",      "to_market", 2, 0x20,   "flags_1 20; flags_0 10",
-        "to_market",    "market",    1, 0x20,   "flags_1 10; flags_0 20; wait 20",
-        "market",       "to_market",            "moveon",
-        "to_market",    "chelios",   1, 0x10,   "flags_0 10; dir 6; wait 3",
-        "fishing_spot", "eugene",    1, 0x8,    "moveon",
-        "eugene",       "river_bank",1, 0x8,    "moveon",
-        "river_bank",   "inn_front", 1, 0x8,    "dir 0; wait 5",
-        "inn_door",     "inn_doorstep",1, 0x1,  "warp 001-2-28 inter_inn_doorstep; call close_door #Door18",
-        "inter_inn_doorstep",  "inter_inn_2tables",   1, 0x1, "moveon",
-        "inter_inn_2tables",   "inter_inn_fav_table", 1, 0x1, "flags_1 2; flags_0 1; dir 6; wait 1; sit; wait 15; stand; wait 1",
-        "inter_inn_fav_table", "inter_inn_2tables",   1, 0x2, "moveon",
-        "inter_inn_2tables",   "inter_inn_doorstep",  1, 0x2, "call open_door #Door18; warp 001-1 inn_doorstep",
-        "inn_doorstep",        "inn_door",            1, 0x2, "call close_door #Door18",
-        "inn_door",            "inn_front",           1, 0x2, "flags_1 1; flags_0 2; wait 10";
+        "sector_1",     "sector_2",  1,  0x2,   "flags_0 2; flags_1 1; wait 50",
+        "sector_2",     "sector_1",  1,  0x1,   "wait 50",
+        "sector_1",     "market_r",  2,  0x1,   "flags_0 2; flags_1 1",
+        "market_r",     "market_m",  1,  0x1,   "flags_1 3; wait 10; call JuscareTurnTo 57 117; wait 10",
+        "market_r",     "sector_1",  1,  0x2,   "flags_1 3; dir 0; wait 50",
+        "market_m",     "market_l",  1,  0x1,   "flags_0 2; wait 20; call JuscareTurnTo 57 117; wait 50",
+        "market_m",     "market_r",  1,  0x2,   "flags_0 1; flags_1 2",
+        "market_l",     "market_m",  5,  0x2,   "wait 10; call JuscareTurnTo 57 117; wait 30",
+        "market_l",     "secret",    1,  0x1,   "flags_0 1; flags_1 2; wait 70",
+        "secret",       "market_l",  1,  0x2,   "wait 10; call JuscareTurnTo 57 117; wait 40";
 
-    firstmove "wait 4", "inn_front";
+    firstmove "wait 1", "sector_1";
     initnpctimer;
 }
