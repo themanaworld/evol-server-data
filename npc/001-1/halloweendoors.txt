@@ -1,0 +1,33 @@
+// Evol scripts.
+// Authors:
+//    4144, Reid
+// Description:
+//    Doors warp and animations in map 001-1
+//
+
+001-1,92,129,0	script	#WarpHalloween	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-12", 34, 35;
+    close;
+
+OnUnTouch:
+    doevent "#DoorHalloween::OnUnTouch";
+}
+
+001-1,92,129,0	script	#DoorHalloween	NPC_ARTIS_DOOR,2,3,{
+    close;
+
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 5;
+    end;
+}
