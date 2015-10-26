@@ -8,10 +8,10 @@
 
 
 001-1,67,134,0	script	#ArtisShoreTreasure	NPC_NO_SPRITE,{
-    narrator
-        l("You see a red cross on the ground."),
+    playertalk
+        l("There is a red cross on the ground."),
         l("Does it mean there is a hidden treasure?"),
-        l("If only you had a shovel...");
+        l("If only I had a shovel...");
     close;
 
 OnInit:
