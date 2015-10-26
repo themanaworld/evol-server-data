@@ -152,6 +152,39 @@ function	script	speech	{
 }
 
 
+// Function for displaying player thoughts
+function	script	playertalk	{
+    .@start = 0;
+    .@argc = getargcount();
+    .@flags = 0;
+
+    if (.@argc > 1 && !isstr(getarg(0)))
+    {
+        .@start = 1;
+        .@flags = getarg(0);
+    }
+
+    if (.@flags & 0x1)
+        mes "";
+
+    mes "[" + strcharinfo(0) + "]";
+    for (.@i = .@start; .@i < .@argc; .@i++)
+    {
+        mes col(getarg(.@i), 3);
+
+        if (.@i < .@argc - 1)
+            next;
+    }
+
+    if (.@flags & 0x4)
+        next;
+    else if (.@flags & 0x2)
+        mes "";
+
+    return;
+}
+
+
 // Show debug message if .debug variable of NPC is set to 1
 function	script	npcdebug	{
     if (getvariableofnpc(.debug, strnpcinfo(3)))
