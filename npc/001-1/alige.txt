@@ -1,0 +1,55 @@
+// Evol scripts.
+// Author:
+//    Travolta
+// Description:
+//    Alige, who somehow appeared in the player's dream.
+
+001-1,71,132,0	script	Alige#001-1	NPC_ALIGE_OUTSIDE_BARREL,{
+    speech 2,
+        l("Hello!");
+    select
+        l("What are you doing here?");
+    speech 5,
+        l("I don't really know."),
+        l("This place looks unreal, maybe I'm dreaming?");
+    select
+        l("Yes, this is my dream.");
+
+    .@q = getq(Halloween_BarrelQuest);
+
+    switch (.@q)
+    {
+        case 0:
+            speech 1,
+                l("Then I hope I won't wake up soon. That monster scares me.");
+            break;
+
+        case 1:
+            speech 1,
+                l("Since you killed the monster on the ship, I feel obligated to give you something."),
+                l("Take this barrel. If you are scared of something, you can always hide in it.");
+
+            inventoryplace Barrel, 1;
+            setq Halloween_BarrelQuest, 2;
+            break;
+
+        case 2:
+            speech 1,
+                l("Thanks for killing that monster");
+                break;
+    }
+    close;
+
+OnCucoKilled:
+    if (playerattached())
+    {
+        .@q = getq(Halloween_BarrelQuest);
+        if (.@q < 2)
+            setq Halloween_BarrelQuest, 1;
+    }
+    end;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 3;
+}
