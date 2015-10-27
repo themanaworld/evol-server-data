@@ -30,6 +30,7 @@
                 l("Take this barrel. If you are scared of something, you can always hide in it.");
 
             inventoryplace Barrel, 1;
+            getitem Barrel, 1;
             setq Halloween_BarrelQuest, 2;
             break;
 
