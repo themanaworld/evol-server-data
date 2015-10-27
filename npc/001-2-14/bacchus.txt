@@ -1,0 +1,28 @@
+// Evol scripts.
+// Authors:
+//    Travolta
+// Description:
+//    Bacchus on mini-Artis.
+
+001-2-14,36,29,0,1	script	Bacchus#001-2-14	NPC_BACCHUS,{
+    speech
+        l("Have you seen enough? Would you like to wake up?");
+
+    switch (select(l("Send me back to real world."),
+                   l("I'd like to stay.")))
+    {
+        case 1:
+            closedialog;
+            warp "000-2-1",50,38;
+            clientcommand "turndown";
+            message strcharinfo(0), l("What a strange dream.");
+            break;
+        case 2:
+            break;
+    }
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 3;
+}
