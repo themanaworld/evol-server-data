@@ -11,6 +11,7 @@ OnCraftyDeath:
     if (playerattached())
     {
         warp "000-2-1",50,38;
+        clientcommand "turndown";
         message strcharinfo(0), l("What a strange dream.");
     }
     end;
