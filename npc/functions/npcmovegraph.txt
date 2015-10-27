@@ -227,7 +227,7 @@ function	script	getnextmovecmd	{
 function	script	getrandompoint	{
     if (getargcount() < 4)
     {
-        debugmes "error: getrandompoint(x, y, w, h) takes 4 arguments";
+        debugmes "error: getrandompoint(x1, y1, x2, y2) takes 4 arguments";
         return -1;
     }
 
@@ -244,7 +244,7 @@ function	script	getrandompoint	{
     for (.@poke = 0; .@poke < .@max_pokes; .@poke++)
     {
         .@rx = rand(.@x1, .@x2);
-        .@ry = rand(.@y2, .@y2);
+        .@ry = rand(.@y1, .@y2);
         if (checknpccell(.@map$, .@rx, .@ry, cell_chkpass))
             goto L_Found;
     }
