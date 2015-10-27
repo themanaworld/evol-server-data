@@ -27,7 +27,7 @@ function	script	JuscareTurnTo	{
     @Juscar_old_dir = .dir;
     npc_turntoxy(.@cx, .@cy);
 
-    speech
+    speech 4,
         l("It is a foggy day, don't you think?");
 
     localClose;
