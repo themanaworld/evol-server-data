@@ -1,131 +1,148 @@
 // Evol scripts.
 // Authors:
 //    Vasily_Makarov
+//    Travolta
+// Description:
+//    Bacchus is a seasonal NPC, giving a player a pumpkin helmet,
+//    and allowing to visit Artis in a "vision"
+// Quest variable (Halloween_VisitArtis):
+//    0  -- quest not started.
+//    1  -- Bacchus asked player to bring a pumpkin.
+//    2  -- Bacchus teleported player to mini-Artis, quest finished.
 
 
 000-2-2.gat,32,29,0,1	script	Bacchus	NPC_BACCHUS,{
 
-    mesn;
-    mesq l("Hahahaha!");
-    mesq l("Happy Halloween!!");
-    next;
+    .@q = getq(Halloween_VisitArtis);
+    .@TeleportIngredient = Aquada;
+    .@intro = 0;
 
-L_Intro:
-    mesq l("Let me introduce myself, I'm Bacchus, the ladies man, the sir of your dream, the pumpkin of the jack, the star of the your sky, the...");
-    next;
+    speech 4,
+        l("Hahahaha!"),
+        l("Happy Halloween!!"),
+        l("Let me introduce myself. I'm Bacchus, the ladies man, the sir of your dream, the pumpkin of the jack, the star of the your sky, the...");
 
+L_Menu:
     menu
-        rif(countitem("Pumpkin") > 0, l("I have a pumpkin!")), L_DoHat,
-        l("Where did you get that hat?"), L_Hat,
-        l("Forgive me, but... who are you?"), -,
-        l("Where can I find this pumpkin?"), L_Where,
+        rif(.@q == 1 && countitem(Pumpkin) > 0, l("I have a pumpkin!")), L_DoHat,
+        rif(.@q == 2, l("I would like to see my future.")), L_VisitArtis,
+        rif(.@intro == 0, l("Forgive me, but... who are you?")), -,
+        rif(.@q < 2, l("Where did you get that hat?")), L_Hat,
+        rif(.@q == 1, l("Where can I find this pumpkin?")), L_Where,
         l("Goodbye..."), L_Bye;
 
-    mes "";
-    mesn;
-    mesq l("I... I said you, I'm the ladies man, the...");
-    next;
+    speech 5,
+        l("I... I said you, I'm the ladies man, the...");
 
     menu
         l("No, not this."), -,
         l("Ok, see you."), L_Bye;
 
-    mes "";
-    mesn;
-    mesq l("The sir of your dream?");
-    next;
-    mesq l("The pumpkin of the jack?");
-    next;
+    speech 5,
+        l("The sir of your dream?"),
+        l("The pumpkin of the jack?");
 
     menu
         l("Could you just tell me who you are?"), -,
         l("Pumpkin of the jack."), L_Hat,
         l("Nothing..."), L_Bye;
 
-    mes "";
-    mesn;
-    mesq l("You're not funny...");
-    next;
-    mesq l("I'm Bacchus! The...");
-    next;
-    mesq l("Ok, that's enough.");
-    next;
-    mesq l("I'm just a random stranger, just passing by this ship, in this wonderful day of Halloween.");
-    next;
-    mesq l("Hmm...");
-    next;
-    mesq l("Who're you?");
-    next;
-    goto L_Intro;
+    speech 5,
+        l("You're not funny..."),
+        l("I'm Bacchus! The..."),
+        l("Ok, that's enough."),
+        l("I'm just a random stranger, just passing by this ship, on this wonderful day of Halloween.");
+
+    .@intro = 1;
+    goto L_Menu;
 
 L_Hat:
-    mes "";
-    mesn;
-    mesq l("My hat! do you like it? I do love it, I made it by myself, it's such a beauty, isn't it? Oh wait, I can light fire inside, it's the most beautiful!");
-    next;
-    mesq l("Do you want one as well?");
-    next;
+    speech 5,
+        l("My hat! do you like it? I do love it, I made it by myself, it's such a beauty, isn't it? Oh wait, I can light fire inside, it's the most beautiful!"),
+        l("Do you want one as well?");
 
     menu
         l("I would like one too, indeed."), -,
         l("No thanks, I think that I'll leave you alone..."), L_Bye;
 
-    mes "";
-    mesn;
-    mesq l("You would like... ? So I think that's... Possible, let's say... yes! Yes, it's possible.");
-    next;
-    mesq l("You just need to bring me... one @@, that's all. I'll carve it myself.", getitemlink("Pumpkin"));
-    next;
+    speech 5,
+        l("You would like... ? So I think that's... Possible, let's say... yes! Yes, it's possible."),
+        l("You just need to bring me... one @@, that's all. I'll carve it myself.", getitemlink(Pumpkin));
 
     menu
         l("Deal! I'll bring you one."), -,
         l("Where can I find this pumpkin?"), L_Where,
         l("I changed my mind, I don't want it anymore."), L_Bye;
 
-    mes "";
-    mesn;
-    mesq l("Nice! I'll wait you here.");
+    speech l("Nice! I'll wait you here.");
+    setq Halloween_VisitArtis, 1;
 
     close;
 
 L_Where:
-    mes "";
-    mesn;
-    mesq l("Oh... That's a hard thing to find, only the Cuco can give it to you...");
-    next;
-    mesq l("It's an evil pumpkin, and... You're half lucky, there's one here!");
-    next;
-    mesq l("Don't be scared, he's on the other room, nobody is there.");
-    next;
-    mesq l("Just go to the left, you'll see a rusty door, knock it hard, and defeat this vegetable!");
+    speech 5,
+        l("Oh... That's a hard thing to find, only the Cuco can give it to you..."),
+        l("It's an evil pumpkin, and... You're half lucky, there's one here!"),
+        l("Don't be scared, he's on the other room, nobody is there."),
+        l("Just go to the left, you'll see a rusty door, knock it hard, and defeat this vegetable!");
 
     close;
 
 L_Bye:
-    mes "";
-    mesn;
-    mesq l("You miss something...");
+    speech 1,
+        l("You don't know what you are missing...");
 
     close;
 
 L_DoHat:
-    mes "";
-    mesn;
-    mesq l("Nice nice... Wait few seconds...");
-    next;
+    speech 5,
+        l("Nice nice... Wait few seconds...");
+    narrator 4,
+        l("The squary pumpkinman is sculpting your pumpkin while talking to you.");
 
-    mesn "Narrator";
-    mes "The squary pumpkinman is sculpting your pumpkin while talking to you.";
-    next;
+    delitem Pumpkin, 1;
+    getitem PumpkinHat, 1;
 
-    if (countitem("Pumpkin") > 0) delitem "Pumpkin", 1;
-    getitem "PumpkinHat", 1;
+    setq Halloween_VisitArtis, 2;
 
-    mesn;
-    mesq l("Did I told you that a long time ago... Oh, I'm done.");
-    next;
-    mesq l("That's remarkable, I've never made anything like that one before, consider yourself lucky!");
+    speech 4,
+        l("Did I told you that a long time ago... Oh, I'm done."),
+        l("That's remarkable, I've never made anything like that one before, consider yourself lucky!"),
+        l("And now, I have an offer for you. Would you like to see your future?");
+
+    menu
+        l("Wow! You have such power?! I'm in!."), -,
+        l("Ignorance is bliss. I pass."), L_Bye;
+
+L_VisitArtis:
+    speech 5,
+        l("Very good. It will be only a dream, no more."),
+        l("You will see a small part of the upcoming events."),
+        l("I require a payment. Bring me 10 @@.", getitemlink(.@TeleportIngredient));
+
+    menu
+        rif(countitem(.@TeleportIngredient) >= 10, l("I have them with me.")), L_Teleport,
+        l("I will collect them."), -;
 
     close;
 
+L_Teleport:
+    speech 5,
+        l("Close your eyes."),
+        l("To wake up from your dream, you will have to kill a Crafty."),
+        l("Remember, it's only one of the possible futures that wait for you. You are the master of your own fate."),
+        l("And now... Tempus... Avade... Teleportus!");
+
+    narrator 4,
+        l("You can't resist the weakness that came upon you."),
+        l("You have no choice but to fall asleep.");
+
+    delitem .@TeleportIngredient, 10;
+    warp "001-2-14",0,0,0;
+
+    narrator
+        l("When you open your eyes, you are in a strange place."),
+        l("You know it's just a dream, but it feels so real!");
+
+    close;
 }
