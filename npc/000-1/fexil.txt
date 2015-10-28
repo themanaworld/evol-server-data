@@ -18,9 +18,9 @@
     switch (select("Yes, why not.:I would rather sell some stuff.:No, Sorry."))
     {
         case 1:
-            shop "Bying Bag";
-            closedialog;
-            shop "Bag#000-1";
+            mes "";
+            mesn;
+            mesq l("Good, take a look at the bag next to me then!");
             close;
 
         case 2:
