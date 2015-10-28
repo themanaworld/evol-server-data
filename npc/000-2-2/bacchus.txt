@@ -14,7 +14,7 @@
 000-2-2.gat,32,29,0,1	script	Bacchus	NPC_BACCHUS,{
 
     .@q = getq(Halloween_VisitArtis);
-    .@TeleportIngredient = Aquada;
+    .@TeleportIngredient = PumpkishJuice;
     .@intro = 0;
 
     speech 4,
