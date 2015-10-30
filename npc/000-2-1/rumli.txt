@@ -1,0 +1,114 @@
+000-2-1,30,30,0	script	Rumli	NPC_RUMLI,{
+    mesn;
+    mesq lg("Hello! Do you have any mushrooms?");
+    .@visited = getq(General_StatsReset);
+
+L_Menu:
+    menu
+        rif(.@visited == 0, l("Who are you?")), L_FirstTime,
+        rif(.@visited >  0, lg("Can you reset my stats please?")), L_ResetStats,
+        lg("I should go, sorry."), -;
+
+    if (.@visited != 2) goto L_Quit;
+        
+    mesn;
+    mesq lg("See you! And come back with mushrooms!");
+    goto L_Quit;
+
+L_ResetStats:
+    if (.@visited == 1) goto L_ChangedMind;
+    
+    mesn;
+    mesq lg("Are you sure about this?");
+    menu
+        lg("Yes, I am sure I want to reset my stats."), -,
+        rif(countitem(Plushroom) >= 1, lg("Yes, and I have even brought the mushrooms you like!")), -,
+        lg("No, I need to think about it a little bit more."), L_Later,
+        lg("I've just decided I will never reset my stats, sorry."), L_Never;
+
+L_GiveShrooms:
+    mesn;
+    mesq lg("Give me one @@ and we should start.", getitemlink(Plushroom));
+
+    menu
+        rif(countitem(Plushroom) >= 1, l("Of course! *give him one @@*", l(getitemname(Plushroom)))), -,
+        rif(countitem(Plushroom) == 0, lg("Sorry, I have no mushrooms with me")), L_Later,
+        lg("No way. I really should go."), L_Later;
+
+    delitem Plushroom, 1;
+    mesn;
+    mesq lg("Thank you very much!");
+    next;
+    mesq lg("Now stand still. It would not take much time...");
+    next;
+    .@wasSP = StatusPoint;
+    resetstatus;
+    if (StatusPoint == .@wasSP) goto L_NothingToReset;
+    mesq lg("Let's see. Your @@ status points have just been reset.", StatusPoint - .@wasSP);
+    next;
+    mesn;
+    mesq lg("Spend it wisely this time.");
+    next;
+    mesq lg("But you are welcome to reset your stats again if you will bring me more mushrooms!");
+    goto L_Quit;
+
+L_NothingToReset:
+    mesn;
+    mesq l("It seems that you have no status points to be reset!");
+    next;
+    mesq lg("But mushrooms you have brought are really awesome you know.");
+    next;
+    mesq lg("Come back when you will have status points to be reset. And bring more mushrooms!");
+    goto L_Quit;
+
+L_ChangedMind:
+    mesn;
+    mesq lg("Changed your mind, uh?");
+    menu
+        lg("Yes, I really need my stats to be reset."), -,
+        lg("Sorry, I've just realized that I still do not need my stats reset."), L_Never,
+        rif(countitem(Plushroom) >= 1, lg("I have brought some mushrooms to you!")), L_GiveShrooms;
+
+    mesn;
+    mesq lg("Very good!");
+    setq General_StatsReset, 2;
+    .@visited = 2;
+    next;
+    goto L_ResetStats;
+
+L_FirstTime:
+    mesn;
+    mesq lg("I am Rumli, the one who likes mushrooms so much!");
+    next;
+    mesq lg("Also I can make your stats clean! Just like fresh mushrooms...");
+    menu
+        lg("Sounds well! I think I could get you that mushrooms"), -,
+        rif(countitem(Plushroom) >= 1, lg("I already have some mushrooms you like so much.")), -,
+        lg("I have no time for collecting mushrooms right now. We should talk later."), L_Later,
+        lg("I will never need to reset my stats because I am sure I am doing right!"), L_Never;
+
+    mesn;
+    mesq lg("Great! Can't wait for tasty mushrooms!");
+    next;
+    goto L_Menu;
+
+L_Later:
+    setq ShipQuests_Rumli, 2;
+    mesn;
+    mesq lg("Come back soon! And bring the mushrooms with you!");
+    goto L_Quit;
+
+L_Never:
+    setq ShipQuests_Rumli, 1;
+    mesn;
+    mesq lg("I am sure you will change your mind.");
+    goto L_Quit;
+
+L_Quit:
+    next;
+    goodbye;
+
+OnInit:
+    .sex = G_MALE;
+    end;
+}
