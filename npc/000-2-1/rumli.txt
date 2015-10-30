@@ -1,4 +1,4 @@
-000-2-1,30,30,0	script	Rumli	NPC_RUMLI,{
+000-2-1,67,25,0	script	Rumli	NPC_RUMLI,{
     mesn;
     mesq lg("Hello! Do you have any mushrooms?");
     .@visited = getq(General_StatsReset);
