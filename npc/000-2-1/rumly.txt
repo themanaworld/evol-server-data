@@ -1,4 +1,4 @@
-000-2-1,67,25,0	script	Rumli	NPC_RUMLI,{
+000-2-1,67,25,0	script	Rumly	NPC_RUMLY,{
     mesn;
     mesq lg("Hello! Do you have any mushrooms?");
     .@visited = getq(General_StatsReset);
@@ -78,7 +78,7 @@ L_ChangedMind:
 
 L_FirstTime:
     mesn;
-    mesq lg("I am Rumli, the one who likes mushrooms so much!");
+    mesq lg("I am Rumly, the one who likes mushrooms so much!");
     next;
     mesq lg("Also I can make your stats clean! Just like fresh mushrooms...");
     menu
@@ -93,13 +93,13 @@ L_FirstTime:
     goto L_Menu;
 
 L_Later:
-    setq ShipQuests_Rumli, 2;
+    setq ShipQuests_Rumly, 2;
     mesn;
     mesq lg("Come back soon! And bring the mushrooms with you!");
     goto L_Quit;
 
 L_Never:
-    setq ShipQuests_Rumli, 1;
+    setq ShipQuests_Rumly, 1;
     mesn;
     mesq lg("I am sure you will change your mind.");
     goto L_Quit;
