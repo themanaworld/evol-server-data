@@ -1,18 +1,18 @@
 000-2-1,67,25,0	script	Rumly	NPC_RUMLY,{
     mesn;
-    mesq lg("Hello! Do you have any mushrooms?");
-    .@visited = getq(General_StatsReset);
+    mesq l("Hello! Do you have any mushrooms?");
 
 L_Menu:
+    .@visited = getq(General_Rumly);
     menu
         rif(.@visited == 0, l("Who are you?")), L_FirstTime,
-        rif(.@visited >  0, lg("Can you reset my stats please?")), L_ResetStats,
+        rif(.@visited >  0, l("Can you reset my stats please?")), L_ResetStats,
         lg("I should go, sorry."), -;
 
     if (.@visited != 2) goto L_Quit;
         
     mesn;
-    mesq lg("See you! And come back with mushrooms!");
+    mesq l("See you! And come back with the mushrooms!");
     goto L_Quit;
 
 L_ResetStats:
@@ -21,44 +21,44 @@ L_ResetStats:
     mesn;
     mesq lg("Are you sure about this?");
     menu
-        lg("Yes, I am sure I want to reset my stats."), -,
+        rif(countitem(Plushroom) == 0, lg("Yes, I am sure that I want to reset my stats.")), -,
         rif(countitem(Plushroom) >= 1, lg("Yes, and I have even brought the mushrooms you like!")), -,
         lg("No, I need to think about it a little bit more."), L_Later,
         lg("I've just decided I will never reset my stats, sorry."), L_Never;
 
 L_GiveShrooms:
     mesn;
-    mesq lg("Give me one @@ and we should start.", getitemlink(Plushroom));
+    mesq l("Then give me one @@ and we should start!", getitemlink(Plushroom));
 
     menu
         rif(countitem(Plushroom) >= 1, l("Of course! *give him one @@*", l(getitemname(Plushroom)))), -,
-        rif(countitem(Plushroom) == 0, lg("Sorry, I have no mushrooms with me")), L_Later,
+        rif(countitem(Plushroom) == 0, lg("Sorry, I have no any mushrooms with me.")), L_Later,
         lg("No way. I really should go."), L_Later;
 
     delitem Plushroom, 1;
     mesn;
-    mesq lg("Thank you very much!");
+    mesq lg("Thank you.");
     next;
     mesq lg("Now stand still. It would not take much time...");
     next;
     .@wasSP = StatusPoint;
     resetstatus;
     if (StatusPoint == .@wasSP) goto L_NothingToReset;
-    mesq lg("Let's see. Your @@ status points have just been reset.", StatusPoint - .@wasSP);
+    mesq l("Let's see. @@ of your status points have just been reset.", StatusPoint - .@wasSP);
     next;
     mesn;
-    mesq lg("Spend it wisely this time.");
+    mesq l("Spend it wisely this time.");
     next;
     mesq lg("But you are welcome to reset your stats again if you will bring me more mushrooms!");
     goto L_Quit;
 
 L_NothingToReset:
     mesn;
-    mesq l("It seems that you have no status points to be reset!");
+    mesq l("It seems that you have no status points to reset!");
     next;
     mesq lg("But mushrooms you have brought are really awesome you know.");
     next;
-    mesq lg("Come back when you will have status points to be reset. And bring more mushrooms!");
+    mesq lg("Come back when you will really need me. And bring more mushrooms with you!");
     goto L_Quit;
 
 L_ChangedMind:
@@ -70,8 +70,8 @@ L_ChangedMind:
         rif(countitem(Plushroom) >= 1, lg("I have brought some mushrooms to you!")), L_GiveShrooms;
 
     mesn;
-    mesq lg("Very good!");
-    setq General_StatsReset, 2;
+    mesq l("Very good!");
+    setq General_Rumly, 2;
     .@visited = 2;
     next;
     goto L_ResetStats;
@@ -87,19 +87,20 @@ L_FirstTime:
         lg("I have no time for collecting mushrooms right now. We should talk later."), L_Later,
         lg("I will never need to reset my stats because I am sure I am doing right!"), L_Never;
 
+    setq General_Rumly, 2;
     mesn;
-    mesq lg("Great! Can't wait for tasty mushrooms!");
+    mesq l("Great! Can't wait for tasty mushrooms!");
     next;
     goto L_Menu;
 
 L_Later:
-    setq ShipQuests_Rumly, 2;
+    setq General_Rumly, 2;
     mesn;
-    mesq lg("Come back soon! And bring the mushrooms with you!");
+    mesq l("Come back soon! And bring the mushrooms with you!");
     goto L_Quit;
 
 L_Never:
-    setq ShipQuests_Rumly, 1;
+    setq General_Rumly, 1;
     mesn;
     mesq lg("I am sure you will change your mind.");
     goto L_Quit;
