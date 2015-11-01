@@ -14,6 +14,11 @@
 // .@wasSP - free status points before reset
 
 000-2-1,67,25,0	script	Rumly	NPC_RUMLY,{
+
+    setnpcdir "Rumly", 2;
+    stopnpctimer;
+    initnpctimer;
+
     speech 4,
         l("Hello! Do you have any mushrooms?");
 
@@ -132,7 +137,20 @@ L_Never:
     goto L_Quit;
 
 L_Quit:
+    setnpcdir "Rumly", 4;
+    stopnpctimer;
+    initnpctimer;
+
     goodbye;
+
+
+OnTimer1800:
+    stopnpctimer;
+
+    if (getnpcdir ("Rumly") == 2) setnpcdir "Rumly", 6;
+    if (getnpcdir ("Rumly") == 4) setnpcdir "Rumly", 8;
+
+    end;
 
 OnInit:
     .sex = G_MALE;
