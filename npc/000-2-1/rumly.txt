@@ -1,3 +1,18 @@
+// Evol scripts.
+// Authors:
+//    Vasily_Makarov
+// Description:
+//    Stat resetter.
+// Variables:
+//    General_Rumly
+// Values:
+//    0  Player hasn't met Rumly
+//    1  Last time player has told that he will never come back
+//    2  Last time player has told that he will come back later
+// Others:
+// .@visited - Rumly actual variable
+// .@wasSP - free status points before reset
+
 000-2-1,67,25,0	script	Rumly	NPC_RUMLY,{
     speech 4,
         l("Hello! Do you have any mushrooms?");
