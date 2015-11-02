@@ -20,111 +20,151 @@
     initnpctimer;
 
     speech 4,
-        l("Hello! Do you have any mushrooms?");
+        l("Hey do you have any plushrooms on you?");
 
 L_Menu:
     .@visited = getq(General_Rumly);
 
-    menu
-        rif(.@visited == 0, l("Who are you?")), L_FirstTime,
-        rif(.@visited >  0, l("Can you reset my stats please?")), L_ResetStats,
-        lg("I should go, sorry."), -;
+    menuint
+        l("Plushrooms you say?"), 0,
+        l("Who are you?"), 1,
+        rif(.@visited >  0, l("Can you reset my stats please?")), 2,
+        lg("You are weird, I have to go sorry."), 3;
 
-    if (.@visited != 2) goto L_Quit;
-        
-    speech 5,
-        l("See you! And come back with the mushrooms!");
+    switch (@menuret)
+    {
+        case 0:
+            speech 5,
+                l("Wind and grass is nice and cool, so juicy sweet..."),
+                l("Our only wish to eat a plush, so juicy sweet...");
+            goto L_Menu;
+        case 1:
+            speech 5,
+                l("Why are you asking? And who are you too? I've never seen you around before..."),
+                l("Wait, are you one of those from the Legion of Aemil? I didn't do anything wrong I promise!"),
+                l("I... I just like to eat the purple and delightful... And natural, and...");
 
-    goto L_Quit;
+            switch (select(l("Chill out I won't say anything."),
+                           l("Yes, you are going to face justice!")))
+            {
+                case 1: break;
+                case 2:
+                    speech 5,
+                        l("No! No, no my precious plushrooms! Don’t take me to them, they wants my precious.");
+                    goto L_Quit;
+            }
+
+            speech 5,
+                l("I won't forget it, I swear on my precious plushrooms."),
+                l("There is an unknown side effect to these plushrooms, they can free you from your past bad choice."),
+                l("You can use it to clear your stats, to start freshly if you see what I mean..."),
+                l("Bring me some of these plushrooms and I will show you how it works!");
+
+            menuint
+                lg("Sounds well!"), 0,
+                rif(countitem(Plushroom) == 1, lg("I already have some plushroom on me.")), 1,
+                rif(countitem(Plushroom) > 1, lg("I already have some plushrooms on me.")), 1,
+                lg("We will talk about it later."), 2,
+                lg("My stats are too good, I won't need it."), 3;
+
+            switch (@menuret)
+            {
+                case 0:
+                    setq General_Rumly, 2;
+
+                    speech 5,
+                        l("Great! Can't wait for tasty mushrooms!");
+
+                    goto L_Menu;
+                case 1:
+                    goto L_ResetStats;
+                case 2:
+                    goto L_Later;
+                case 3:
+                    goto L_Never;
+            }
+
+        case 2:
+            goto L_ResetStats;
+        case 3:
+            if (.@visited != 2) goto L_Quit;
+                
+            speech 5,
+                l("See you! And come back with the plushrooms!");
+
+            goto L_Quit;
+    }
 
 L_ResetStats:
-    if (.@visited == 1) goto L_ChangedMind;
-    
-    speech 5,
-        lg("Are you sure about this?");
+    if (.@visited == 1)
+    {
+        speech 5,
+            lg("Changed your mind, uh?"),
+            l("Very good."),
+            l("Status point reset can't be undone. Do you really want this?"),
+            lg("Are you sure about this?");
+    }
+    else
+    {
+        speech 5,
+            lg("Are you sure about this?");
+    }
 
 L_ConfirmReset:
-    menu
-        rif(countitem(Plushroom) == 0, lg("Yes, I am sure that I want to reset my stats.")), -,
-        rif(countitem(Plushroom) >= 1, lg("Yes, and I have even brought the mushrooms you like!")), -,
-        lg("No, I need to think about it a little bit more."), L_Later,
-        lg("I've just decided I will never reset my stats, sorry."), L_Never;
+    switch (select(lg("Yes, I am sure."),
+                   lg("I need to think about it a bit more..."),
+                   lg("I won't need it thank you.")))
+    {
+        case 1:
+            speech 5,
+                l("Then give me one @@ and we will start!", getitemlink(Plushroom));
 
-L_GiveShrooms:
-    speech 5,
-        l("Then give me one @@ and we should start!", getitemlink(Plushroom));
+            menuint
+                rif(countitem(Plushroom) >= 1, l("Here you go, take this one.")), 0,
+                rif(countitem(Plushroom) == 0, lg("I don't have any plushrooms on me.")), 1,
+                lg("I have to go sorry."), 1;
 
-    menu
-        rif(countitem(Plushroom) >= 1, l("Of course! *give him one @@*", l(getitemname(Plushroom)))), -,
-        rif(countitem(Plushroom) == 0, lg("Sorry, I have no any mushrooms with me.")), L_Later,
-        lg("No way. I really should go."), L_Later;
+            switch (@menuret)
+            {
+                case 0:
+                    delitem Plushroom, 1;
 
-    delitem Plushroom, 1;
+                    speech 5,
+                        l("Thank you."),
+                        l("Now stand still... It should not take much time...");
 
-    speech 5,
-        l("Thank you"),
-        l("Now stand still. It would not take much time...");
+                    .@wasSP = StatusPoint;
+                    resetstatus;
 
-    .@wasSP = StatusPoint;
-    resetstatus;
-    if (StatusPoint == .@wasSP) goto L_NothingToReset;
-
-    speech 5,
-        l("Let's see. @@ of your status points have just been reset.", StatusPoint - .@wasSP),
-        l("Spend it wisely this time."),
-        lg("But you are welcome to reset your stats again if you will bring me more mushrooms!");
-
-    goto L_Quit;
-
-L_NothingToReset:
-    speech 5,
-        l("It seems that you have no status points to reset!"),
-        lg("But mushrooms you have brought are really awesome you know."),
-        lg("Come back when you will really need me. And bring more mushrooms with you!");
-
-    goto L_Quit;
-
-L_ChangedMind:
-    speech 5,
-        lg("Changed your mind, uh?");
-
-    menu
-        lg("Yes, I really need my stats to be reset."), -,
-        lg("Sorry, I've just realized that I still do not need my stats reset."), L_Never,
-        rif(countitem(Plushroom) >= 1, lg("I have brought some mushrooms to you!")), L_GiveShrooms;
-
-    setq General_Rumly, 2;
-    .@visited = 2;
-
-    speech 5,
-        l("Very good."),
-        l("Status point reset can't be undone. Do you really want this?");
-
-    goto L_ConfirmReset;
-
-L_FirstTime:
-    speech 5,
-        l("I am Rumly, the one who likes mushrooms so much!"),
-        lg("Also I can make your stats clean! Just like fresh mushrooms...");
-
-    menu
-        lg("Sounds well! I think I could get you that mushrooms"), -,
-        rif(countitem(Plushroom) >= 1, lg("I already have some mushrooms you like so much.")), -,
-        lg("I have no time for collecting mushrooms right now. We should talk later."), L_Later,
-        lg("I will never need to reset my stats because I am sure I am doing right!"), L_Never;
-
-    setq General_Rumly, 2;
-
-    speech 5,
-        l("Great! Can't wait for tasty mushrooms!");
-
-    goto L_Menu;
+                    if (StatusPoint == .@wasSP)
+                    {
+                        speech 4,
+                            l("It seems that you have no status points to reset!"),
+                            lg("But the plushroom you brought was really awesome you know."),
+                            lg("Come back when you will really need me. And bring more plushrooms with you!");
+                    }
+                    else
+                    {
+                        speech 4,
+                            l("Let's see... @@ of your status points have just been reset!", StatusPoint - .@wasSP),
+                            l("Spend it wisely this time."),
+                            lg("But you are welcome to reset your stats again if you bring me more plushrooms!");
+                    }
+                    goto L_Quit;
+                case 1:
+                    goto L_Later;
+            }
+        case 2:
+            goto L_Later;
+        case 3:
+            goto L_Never;
+    }
 
 L_Later:
     setq General_Rumly, 2;
 
     speech 5,
-        l("Come back soon! And bring the mushrooms with you!");
+        l("Come back soon! And bring a plushroom with you!");
 
     goto L_Quit;
 
