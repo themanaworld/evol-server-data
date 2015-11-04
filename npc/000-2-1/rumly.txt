@@ -101,8 +101,7 @@ L_ResetStats:
         speech 5,
             lg("Changed your mind, uh?"),
             l("Very good."),
-            l("Status point reset can't be undone. Do you really want this?"),
-            lg("Are you sure about this?");
+            l("Status point reset can't be undone. Do you really want this?");
     }
     else
     {
