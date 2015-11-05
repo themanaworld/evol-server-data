@@ -263,6 +263,7 @@ OnTimer340:
 OnInit:
     .sex = G_MALE;
     .distance = 5;
+    .alwaysVisible = true;
     waitingroom "test room", 2, "npc1::OnReadyCheck", 1;
     end;
 
