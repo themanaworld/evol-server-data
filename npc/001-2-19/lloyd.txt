@@ -1,0 +1,18 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Lloyd the banker NPC
+
+001-2-19,31,25,0	script	Lloyd the banker	NPC_LLOYD,{
+
+    speech
+        l("The bank is not open yet.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
