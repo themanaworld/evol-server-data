@@ -38,7 +38,7 @@
 
     mes "";
     mesn;
-    mesq lg("Of course you do! Just listen carefully to these words my dear.");
+    mesq lg("Of course you do! Just listen carefully to these words my sweet.");
     next;
     mesq l("Cookies are a source of life.");
     next;
@@ -48,7 +48,7 @@
 
     menu
         l("Uhm... Your story seems..."), L_StorySeems,
-        l("Wait... That's not the place for a chef, what are you doing here?"), L_Presentation,
+        l("Wait... That's not a proper place for a chef, what are you doing there?"), L_Presentation,
         l("Exactly! Can I have one now?"), -;
 
 L_Check:
@@ -71,7 +71,7 @@ L_Check:
 
     mesq l("I'm sorry but I can't see your name anywhere.");
     next;
-    mesq l("You see, my cookies are restricted to a certain type of people...");
+    mesq l("You see, folks around here that get my cookies have the distinction of being...");
     next;
 
     menu
@@ -90,15 +90,15 @@ L_StorySeems:
 
     mes "";
     menu
-        l("Too bad I'm not hungry enough right now for these... cookies. I'll maybe come back later."), L_Bye,
+        l("Too bad. I'm not hungry enough for these cookies of yours. Maybe I'll come back later."), L_Bye,
         l("How can I get one of these cookies?"), -;
 
     mes "";
     mesn;
-    mesq g(l("It looks like madam is curious, am I right?"),
-           l("It seems mister is curious, are you not?"));
+    mesq g(l("It looks like the sweet lady is curious, am I right?"),
+           l("It seems the gentleman is curious, am I right sweetie?"));
     next; 
-    mesq lg("Well, if you want to be one of those who can have a cookie...");
+    mesq lg("Well, if you ever do want to join: 'Ye Merry Club Of Thee Bequeathed With Cookies'...");
     next;
 
 L_BTaskExpanation:
@@ -107,11 +107,11 @@ L_BTaskExpanation:
 L_TaskExpanation:
     mesq l("You'll first need to help my friends.");
     next;
-    mesq l("It is them who tell me to whom I can give cookies.");
+    mesq l("It is them, after all, who have the ultimate decision as to those I can give my cookies to.");
     next;
 
     menu
-        l("So you're under the control of dictators, that's... reassuring."), L_Control,
+        l("So you're under the control of a dictatorship? That's... reassuring!"), L_Control,
         l("Who are these friends?"), L_Friends;
 
 L_Friends:
@@ -119,17 +119,17 @@ L_Friends:
     mesn;
     mesq l("Shht shht!");
     next;
-    mesq l("Don't say it too loud, other people could hear us.");
+    mesq l("Don't say it so loudly, other people could hear us.");
     next;
     mesq l("My friends are... Well, you know... The creators.");
     next;
-    mesq l("I can't help you to be on my list, nor can I give you a cookie for free.");
+    mesq l("I can't give you a cookie for free. But I can give you this hint for how you may be added to my list.");
     next;
-    mesq l("All I can do is tell you that...");
+    mesq l("Now listen to and ponder my words...");
     next;
-    mesq l("If you see weird things, or things that shouldn't be here, or even things that you would like to see there...");
+    mesq l("If you see weird things here and there, or things that just shouldn't be, or even in your minds eye, things that you would like to see...");
     next;
-    mesq l("Simply contact them, help them and be kind. They might surely add you to my cookie list!");
+    mesq l("Simply contact them, by forum or wispers or irc. When you are helpful and kind, they respond in kind. And in time they may surely add you to my cookie list!");
     next;
 
     mesn "Narrator";
@@ -143,7 +143,7 @@ L_Friends:
 
     mes "";
     mesn;
-    mesq l("So, do you still want a cookie now?");
+    mesq l("So, do you still want a cookie?");
     next;
 
     menu
@@ -198,12 +198,12 @@ L_Control:
 
     menu
         l("Why not, this might get interesting."), L_Friends,
-        l("Fine, tell me, who are these mysterious aliens?"), -,
+        l("Fine, tell me, who are these all important friends of yours?"), -,
         l("No, and I gotta go, see you."), L_Kick;
 
     mes "";
     mesn;
-    mesq l("Don't mock me, my work is admirable.");
+    mesq l("Don't belittle me, my work is deserving of the highest esteem.");
     next;
 
 L_Kick:
@@ -215,7 +215,7 @@ L_Kick:
     close;
 
 L_GetCookie:
-    mesq l("Hey, I'm not a drug dealer! You won't have another one by stalking me like that!");
+    mesq l("Hey, I'm not a Keebler Elvis! You won't have another one by stalking me like that!");
     next;
     mesq l("If you want another cookie, you know what to do!");
     next;
@@ -231,14 +231,14 @@ L_LostCookie:
     next;
     mesq l("I'm talking about the cookie in which I put all my love inside!");
     next;
-    mesq l("The best, the wonderful, the best cookie between all others, the...");
+    mesq l("The best, the wonderful, the most choice cookie among all others, the...");
     next;
     // Angry emote
     mesq l("Grr...");
     next;
     mesq l("You're lucky that I'm a generous person, here's another one.");
     next;
-    mesq l("This is the last one. If you use it again out of clumsiness, I will take your flesh as the main ingredient for my cookie recipe.");
+    mesq l("This is the last one. If you use it again out of clumsiness, I will use your soft moist parts in the concoction of my next cookie batch.");
     next;
 
     .@item = 517;

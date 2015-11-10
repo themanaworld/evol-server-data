@@ -25,13 +25,13 @@ function	script	LazyBrotherTreeFunc	{
         goto L_FoundHim;
     if (LazyBrother_TreeWithBrother > 0)
     {
-        mes l("You search the tree but don't find anybody");
+        mes l("You search the tree but don't find anybody.");
         close2;
         return;
     }
     if (LazyBrother_TreeSearched[.@TreeNum] == 1)
     {
-        mes l("You already looked here");
+        mes l("You already looked here.");
         close2;
         return;
     }
@@ -48,7 +48,7 @@ function	script	LazyBrotherTreeFunc	{
     }
     else
     {
-        mes l("You search the tree but don't find anybody");
+        mes l("You search the tree but don't find anybody.");
         close2;
         return;
     }
@@ -56,24 +56,24 @@ function	script	LazyBrotherTreeFunc	{
 L_FoundHim:
     mes l("You notice a young boy sitting on one of the highest branches of the tree.");
     next;
-    mes l("He is eating an apple, apparently enjoying it.");
+    mes l("He is eating an apple, thoroughly enjoying it.");
     next;
     select(l("Hey there, are you Bobo, Katja's brother?"));
     mes "";
     mesn "Bobo";
-    mesq l("Yes, it's me. It's such a beautiful view from here!");
+    mesq l("Yes, it's me. It's such a fine view from here!");
     next;
     select(l("Your sister sent me to find you. Your mother is worried."));
     mes "";
     mesn "Bobo";
-    mesq l("Oh, nooooo... If I go home now, my mum will give me homework.");
+    mesq l("Oh, nooooo... If I go home now, my mum will give me chores.");
     next;
-    mesq l("But if you tell my sister, that you didn't find me, I can stay here all day, eating apples and enjoying the view");
+    mesq l("But if you tell my sister, that you didn't find me, I can stay here all day, eating apples and enjoying the view.");
     next;
-    mesq l("I will give you my pocket money, if you do so.");
+    mesq l("I will give you my pocket money if you do.");
     next;
-    switch (select(l("A small lie isn't a lie, and I could really use some cash..."),
-                   l("I will not lie to a little girl! And your mother needs your help")))
+    switch (select(l("A small lie is really just a fib, and I could really use some cash..."),
+                   l("I will not lie to a little girl! And your mother needs your help.")))
     {
         case 1:
             mes "";

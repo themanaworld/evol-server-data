@@ -6,7 +6,7 @@
 
 001-1,180,25,0	script	#ArtisPanel1	NPC_NO_SPRITE,{
     mesn "Narrator";
-    mes col(l("A weeds covered panel draws your attention, a message is visible concealed behind the leaves..."), 9);
+    mes col(l("You step on something, a panel half overgrown by moss, it has writing on it..."), 9);
     next;
     mesq l("Don't fall!");
     next;

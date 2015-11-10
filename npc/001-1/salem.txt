@@ -18,7 +18,7 @@
         .@price = getarg(0);
         mesq l("The piou costs @@E.", .@price);
         next;
-        menuint l("Alright, I take it."), 1,
+        menuint l("Alright, I'll take one."), 1,
                 l("I changed my mind."), 2;
 
         mes "";
@@ -27,7 +27,7 @@
             return 4;
         if (Zeny < .@price)
         {
-            mesq l("Don't you try to trick an old merchant! You don't have enough money, you need @@E", .@price);
+            mesq l("Don't you try to cheat an old merchant! You don't have enough money, you need @@E", .@price);
 
             return 1;
         }
@@ -40,7 +40,7 @@
         getinventorylist;
         if (.@inventorylist_count >= 100)
         {
-            mesq l("You don't have enough room in your backpack for a @@. Get rid of some junk and come back.", PiouEgg);
+            mesq l("You don't have enough room in your backpack for a @@. Go stow some of your junk and come back.", PiouEgg);
 
             return 3;
         }
@@ -67,8 +67,8 @@
         {
         speech 0,
             l("Look who is back..."),
-            l("And with my piou! That's wonderful, I can't think at how hard that was to catch it."),
-            l("Great, you get your piece of cake, I give you a 90% discount on the @@ of your choice.", getitemlink (4000));
+            l("And with my piou. That's wonderful. I can only imagine how hard that little bugger was to catch!"),
+            l("Great, and as I promised, I give you a 90% discount on the @@ of your choice.", getitemlink (4000));
             next;
 
             @ArtisQuests_PiouPrice = 3000;
@@ -91,7 +91,7 @@
         {
             speech 0,
                 l("Look who is back..."),
-                l("So, where is my piou? You should keep the given promise.");
+                l("So, where is my piou? You should not keep an old man waiting. Go and catch it like you said you would.");
                 next;
             goto L_SalemMenuShop;
         }
@@ -119,7 +119,7 @@ L_SalemMenuShop:
         case 1:
             if (.@q == 2 && ArtisQuests_PiouDiscount)
             {
-                mesq l("You still have a 90% discount on one piou");
+                mesq l("You still have a 90% discount on one piou.");
                 @ArtisQuests_PiouPrice = 3000;
                 next;
             }
@@ -133,15 +133,15 @@ L_SalemMenuShop:
     }
 
 L_AboutPious:
-    mesq l("Ah, these... Citizens like buying them as pets.");
+    mesq l("Ah, the locals like keeping them as pets.");
     next;
     mesq l("With proper training, a piou can become a good friend and faithful companion in your adventures.");
     next;
-    mesq l("Their price is usually high, but you know what? You have a lucky day.");
+    mesq l("Their price is usually high, but you know what? I have a bargain offer for you.");
     next;
     mesq l("These little pious here can't fly. At least that's what I thought.");
     next;
-    mesq l("One of these little bastards started flying early, and escaped from me.");
+    mesq l("One of these little boogers started flying early, and escaped from me.");
     next;
     mesq l("It's still too young to fly too far away, so it just circles nearby.");
     next;
@@ -150,9 +150,9 @@ L_AboutPious:
     mesq l("If you catch the escaped piou and bring it back, I will give you a 90% discount on a piou.");
     next;
 
-    menuint rif (.@q == 0, l("Sounds like easy money. I'll do it.")), 0,
-            rif (.@q == 1, l("I'm on my way to bring it back to you!")), 1,
-            l("I don't really have time to chase pious, let me just buy one for it's real price (30000E)."), 2,
+    menuint rif (.@q == 0, l("Sounds like a good deal to me. I'll do it.")), 0,
+            rif (.@q == 1, l("I'm on my way! I will bring it back to you.")), 1,
+            l("I don't really have time to go chasing pious, let me just buy one at the regular price (30000E)."), 2,
             l("I don't want to buy a piou right now."), 3;
             
     mes "";

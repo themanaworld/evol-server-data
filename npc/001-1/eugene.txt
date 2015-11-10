@@ -18,7 +18,7 @@
 
     narrator 4,
         l("You see a raijin boy, sitting on the edge of the dock."),
-        l("He's holding a fishing rod, and his eyes are pointed towards the surface of the sea.");
+        l("He's holding a fishing rod, while gazing out at the sea.");
 
     .@q = getq(ArtisQuests_Fishman);
     if (.@q == 1) goto L_CheckItems;
@@ -58,7 +58,7 @@ L_CheckItems:
         l("That's exactly what I needed."),
         l("As a thank you, accept my old fishing rod."),
         l("It's not as good as my new one, but still useful."),
-        l("Just look at the water! There's plenty of fish there."),
+        l("Just look out at that water! There's plenty more fish there."),
         l("With my old fishing rod you can catch something every day."),
         l("You might even get lucky, and get a @@.", getitemlink(GrassCarp)),
         l("Have a good fishing!");

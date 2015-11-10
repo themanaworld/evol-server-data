@@ -7,11 +7,11 @@
 
 001-1,92,43,0	script	Artaxe	NPC_SHOP_BAG,{
     mesn;
-    mesq l("Do you feel too weak even if trying to hit the surrounding wildlife?");
+    mesq l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?");
     next;
     mesq l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them.");
     next;
-    mesq l("And a fruit may even fall for you if you are lucky! And stay alert to pick up your drops.");
+    mesq l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
 
     close;
 

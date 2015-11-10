@@ -61,7 +61,7 @@
     }
 
 L_QuestGiven:
-    speech l("I asked you to do me a favour, so why are you here?");
+    speech l("I asked you to do me a favour, did you forget?");
     select l("What should I do, again?");
     speech 1,
         l("Please find the small chest, buried somewhere on the Artis Hill."),

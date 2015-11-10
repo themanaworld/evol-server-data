@@ -23,7 +23,7 @@
         setcam 5920, 960;
         mesq l("Remember, you have to find my brother on the hill to the east from here");
         next;
-        mesq l("He is probably hiding on one of the trees. Go close to each tree and look up, otherwise you won't notice him.");
+        mesq l("He is probably hiding up one of the trees. Go close to each tree and look up, otherwise you won't notice him.");
         next;
         restorecam;
     }
@@ -56,7 +56,7 @@
             mesn;
             mesq l("Oh thank you so much!");
             next;
-            mesq l("Please take this lollypop for your help. Mum sais they are bad for my teeth anyway (FIXME)");
+            mesq l("Please take this lollypop for your help. Mum says they are bad for my teeth anyway (FIXME)");
             setq ArtisQuests_LazyBrother, 4;
             getitem 509, 1;
             getexp 500, 0;
@@ -98,7 +98,7 @@ L_Story:
     next;
     mesq l("Can you please go there and find him? He is probably hiding on one of those trees, like always.");
     next;
-    mesq l("Because of the dense foliage on the trees you need to go close to them not to miss him.");
+    mesq l("Because of the dense foliage, you need to go up close to the trees so as not to miss him.");
     next;
 
     switch (select(l("I will find him, don't worry!"),
@@ -116,7 +116,7 @@ L_Story:
         case 2:
             mes "";
             mesn;
-            mesq l("Awwww, what will I do now?");
+            mesq l("Aw, what will I do now?");
             close;
     }
 
