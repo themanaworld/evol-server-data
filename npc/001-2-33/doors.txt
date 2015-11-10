@@ -27,9 +27,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_OTHER;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-2-33,39,31,0	script	#RightWarp-001-2-33	NPC_HIDDEN,0,0,{
@@ -54,7 +52,5 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_OTHER;
-    .distance = 5;
-    end;
+    doorInit;
 }

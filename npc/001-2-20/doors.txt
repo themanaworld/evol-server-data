@@ -27,7 +27,5 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }

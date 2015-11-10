@@ -27,9 +27,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,51,65,0	script	#Warp2	NPC_HIDDEN,0,0,{
@@ -54,9 +52,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,70,77,0	script	#Warp3	NPC_HIDDEN,0,0,{
@@ -81,9 +77,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,51,80,0	script	#Warp4	NPC_HIDDEN,0,0,{
@@ -108,9 +102,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,89,65,0	script	#Warp5	NPC_HIDDEN,0,0,{
@@ -135,9 +127,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,142,30,0	script	#Warp6	NPC_HIDDEN,0,0,{
@@ -162,9 +152,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,132,67,0	script	#Warp7	NPC_HIDDEN,0,0,{
@@ -189,9 +177,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,128,30,0	script	#Warp8	NPC_HIDDEN,0,0,{
@@ -216,9 +202,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,168,98,0	script	#Warp9	NPC_HIDDEN,0,0,{
@@ -243,9 +227,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,118,49,0	script	#Warp10	NPC_HIDDEN,0,0,{
@@ -270,9 +252,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,135,49,0	script	#Warp11	NPC_HIDDEN,0,0,{
@@ -324,9 +304,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,163,70,0	script	#Warp13	NPC_HIDDEN,0,0,{
@@ -351,9 +329,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,101,107,0	script	#Warp14	NPC_HIDDEN,0,0,{
@@ -378,9 +354,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,107,49,0	script	#Warp15	NPC_HIDDEN,0,0,{
@@ -405,9 +379,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,104,32,0	script	#Warp16	NPC_HIDDEN,0,0,{
@@ -432,9 +404,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,182,74,0	script	#Warp17	NPC_HIDDEN,0,0,{
@@ -459,9 +429,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,118,88,0	script	#Warp18	NPC_HIDDEN,0,0,{
@@ -486,9 +454,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,49,96,0	script	#Warp19	NPC_HIDDEN,0,0,{
@@ -513,9 +479,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-1,57,41,0	script	#Warp20	NPC_HIDDEN,0,0,{
@@ -540,8 +504,6 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 

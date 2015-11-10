@@ -27,9 +27,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }
 
 001-2-19,41,48,0	script	#MerchantHallWarp2	NPC_HIDDEN,0,0,{
@@ -54,7 +52,5 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .sex = G_MALE;
-    .distance = 5;
-    end;
+    doorInit;
 }

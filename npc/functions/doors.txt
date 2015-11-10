@@ -33,6 +33,12 @@ function	script	doorTimer	{
     end;
 }
 
+function	script	doorInit	{
+    .distance = 5;
+    .alwaysVisible = true;
+    end;
+}
+
 
 function	script	open_door	{
     .@door$ = getarg(0);
