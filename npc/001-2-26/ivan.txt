@@ -1,0 +1,18 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Alchemist NPC
+
+001-2-26,28,30,0	script	Ivan	NPC_IVAN,{
+
+    speech
+        l("Croc.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

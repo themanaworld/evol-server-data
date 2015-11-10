@@ -1,0 +1,18 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Fishmonger NPC
+
+001-1,72,128,0	script	Merlin	NPC_MERLIN,{
+
+    speech
+        l("Fish is good for the brain!");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
