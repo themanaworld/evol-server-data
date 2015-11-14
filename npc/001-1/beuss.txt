@@ -4,7 +4,7 @@
 // Description:
 //    Angry member of the legion of Aemil.
 
-001-1,45,52,0	script	Beuss	NPC_BEUSS,{
+001-1,45,48,0	script	Beuss	NPC_BEUSS,{
     stopnpctimer;
     initnpctimer;
     .dir = 4;
@@ -26,4 +26,3 @@ OnInit:
     .distance = 2;
     end;
 }
-

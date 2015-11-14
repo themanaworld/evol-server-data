@@ -12,8 +12,7 @@ OnTimer1000:
     domovestep;
 
 OnInit:
-    initpath "move", 52, 54,
-             "move", 57, 82,
+    initpath "move", 57, 82,
              "move", 56, 86,
              "wait", 1, 0,
              "dir", RIGHT, 0,
