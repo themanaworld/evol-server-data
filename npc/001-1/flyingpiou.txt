@@ -104,6 +104,7 @@ OnTimer1000:
 OnInit:
     .sex = G_OTHER;
     .distance = 5;
+    .walkmask = WALK_WATER;
     // .debug = 1;
 
     initmovegraph "market_start",    53,  117,
@@ -115,7 +116,7 @@ OnInit:
                   "market_right",    73,  114, 83,  121,
                   "market_center",   50,  113, 66,  121,
                   "market_left",     36,  120, 42,  128,
-                  "batiment_inside", 48,  197, 65,  106,
+                  "batiment_inside", 48,  142, 65,  106,
                   "batiment_behind", 33,  90,  41,  103,
                   "library_front",   42,  82,  63,  90,
                   "taree_yard",      69,  82,
