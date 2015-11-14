@@ -491,7 +491,7 @@ OnUnTouch:
     doevent "#Door20::OnUnTouch";
 }
 
-001-1,34,46,0	script	#Door20	NPC_ARTIS_DOOR,2,3,{
+001-1,57,41,0	script	#Door20	NPC_ARTIS_DOOR,2,3,{
     close;
 
 OnTouch:
