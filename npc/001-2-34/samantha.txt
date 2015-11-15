@@ -1,0 +1,21 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Artis's Legion of Aemil officier of the training room.
+
+001-2-34,29,27,0	script	Samantha	NPC_SAMANTHA,{
+    mesn;
+    mesq l("Look who we have here, did you come for a training session?");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 3;
+    end;
+}
+
