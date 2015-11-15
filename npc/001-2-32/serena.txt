@@ -1,0 +1,21 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Artis's Legion of Aemil officier of the fighting room.
+
+001-2-32,27,27,0	script	Serena	NPC_SERENA,{
+    mesn;
+    mesq l("Oh darling, what bring you here?");
+
+    goto L_Close;
+
+L_Close:
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 3;
+    end;
+}
+
