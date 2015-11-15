@@ -54,12 +54,12 @@ chsys: (
 	ally_channel_autojoin: true /* Will members autojoin to their respective #ally chats when they log-in? */
 
 	/* "irc_channel" is a special channel connected to a specific chat room in any irc network. */
-	irc_channel_enabled: true
+	irc_channel_enabled: false
 	irc_channel_name: "irc" /* available as #irc */
 	irc_channel_color: "Light_Green"
 	irc_channel_network: "irc.freenode.net:6667" /* network to connect to (:and port) */
 	irc_channel_channel: "#evolonline" /* channel in the network above to join */
-	irc_channel_nick: "evolbot" /* nick the bot will use */
+	irc_channel_nick: "testbot" /* nick the bot will use */
 	irc_channel_nick_pw: "" /* password to this nick (if any) to identify to nick server on the irc network */
 	irc_channel_use_ghost: false /* whether to send a GHOST command to the nick server (requires irc_channel_nick_pw to be defined) */
 	irc_channel_autojoin: true
