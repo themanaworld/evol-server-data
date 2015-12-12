@@ -84,11 +84,6 @@ L_Quit:
     mesq l("*burp*");
     next;
 
-    menu
-        l("What do you mean?") -,
-        l("See you later.") close;
-
-
     mesn "Narrator";
     mes col(l("The sailor turns his back to you."), 9);
 
