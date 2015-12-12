@@ -19,14 +19,14 @@ OnTouch:
 
     setcamnpc "Nard";
     mesn "Captain Nard";
-    mesq lg("I see. Warn the other sailors about this. But if she's part of the Warrior Guild, then she's also our friend and ally.", "I see. Warn the other sailors about this. But if he's part of the Warrior Guild, then he's also our friend and ally.");
+    mesq lg("I see. Warn the other sailors about this. But if she's part of the Legion of Aemil, then she's also our friend and ally.", "I see. Warn the other sailors about this. But if he's part of the Legion of Aemil, then he's also our friend and ally.");
     next;
 
     setcamnpc "Elmo";
     mesn "Elmo";
     mesq l("I will.");
     next;
-    mesq l("About this Esperia's Warrior Guild, I'm not sure about them, frankly.");
+    mesq l("About the Legion of Aemil in Esperia, I'm not sure about them, frankly.");
     next;
     mesq l("There are rumors going around that they did some monstrous things and that they are hiding quite a lot from us.");
     next;
