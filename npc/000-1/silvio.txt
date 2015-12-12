@@ -146,14 +146,14 @@ L_Sailors:
     setcamnpc "Gugli";
     mes "";
     mesn "Gugli";
-    mesq lg("Stop heckling her, Silvio, or I'll tell her how you cry like a little baby during thunderstorms.", "Stop heckling him, Silvio, or I'll tell him how you always cry like a little baby during thunderstorms.");
+    mesq lg("Stop heckling her, Silvio, or I'll tell her how you always cry like a little baby during thunderstorms.", "Stop heckling him, Silvio, or I'll tell him how you always cry like a little baby during thunderstorms.");
     next;
     restorecam;
 
     mesn;
     mesq l("I...");
     next;
-    mesq l("How could you! We said we wouldn't talk about that again...");
+    mesq l("How could you... We said we wouldn't talk about that again!");
     next;
     mesq l("Tibbo went to the south-east of the island, others are gone to the north, and I think that Gulukan is not so far from here.");
     next;
