@@ -61,7 +61,7 @@
 L_Secret:
     mes "";
     mesn;
-    mesq l("Hear me *hic* well, what ever, whatididever you will *hic* said ab... uhm... out what?! You saw there, the Warrior Guild of Esperia won't let it get public.");
+    mesq l("Hear me *hic* well, what ever, whatididever you will *hic* said ab... uhm... out what?! You saw there, the Legion of Aemil won't let it get public.");
     next;
     mesq l("Nobody will know about the existence of the Mercurians.");
     next;
@@ -80,8 +80,14 @@ L_Quit:
     mesn;
     mesq l("Yeah you're all like *hic* that in Esperia, but you won't get me! *burp*");
     next;
-    mesq l("I'm not that numb eeh *hic* what did ever you disco... *hic* ...vered there, the Warrior Guild won't get me!");
+    mesq l("I'm not that numb eeh *hic* what did ever yous dizglovered there...");
+    mesq l("*burp*");
     next;
+
+    menu
+        l("What do you mean?") -,
+        l("See you later.") close;
+
 
     mesn "Narrator";
     mes col(l("The sailor turns his back to you."), 9);

@@ -3,7 +3,7 @@
 //    Qwerty Dragon
 //    Reid
 // Description:
-//    Pervert and arrogant sailor.
+//    Perverted and arrogant sailor.
 
 000-1,86,99,0	script	Silvio	NPC_SILVIO,{
     mesn;
@@ -21,7 +21,7 @@
     mesn;
     mesq lg("Hehe, no. But I'm sure a fox like you would love to meet a catch like me!", "Hehe, no. But I'm sure a noob like you would like to meet an idol like me.");
     next;
-    mesq lg("So, which good wind brought you here? Were you on your raft to meet me? Or is it because you've heard of my feats on Artis?", "So, which good wind brought you here? Were you on your raft to meet my Julia? Or is it because you wanted to see the beautiful waitress' at Artis?");
+    mesq lg("So, which good wind brought you here? Were you on your raft to meet me? Or is it because you've heard of my feats at Artis?", "So, which good wind brought you here? Were you on your raft to meet my Julia? Or is it because you wanted to see the beautiful waitress' at Artis?");
     next;
 
     menu
@@ -90,7 +90,7 @@ L_VeryImportantNoob:
     restorecam;
 
     mesn;
-    mesq lg("Duty calls me, *hic*, see you later honey.", "Duty calls me, *hic*, see you later dude.");
+    mesq lg("Duty calls me, *hic*, see you later, honey.", "Duty calls me, *hic*, see you later, dude.");
 
     close;
 
@@ -118,13 +118,13 @@ L_Piou:
 L_Artis:
     mes "";
     mesn;
-    mesq l("This is a nice place... There are some nice chicks...");
+    mesq l("Artis is a very nice place; there are some hot chicks...");
     next;
-    mesq l("The elven from the library firted with me a while ago, so has Enora from the Warrior Guild.");
+    mesq l("The elven from the library flirted with me a while ago, so has Enora from the Legion.");
     next;
     mesq l("Oh, and Olga from the market place as well!");
     next;
-    mesq l("You should look at them when we arrive at the port, they are worth it, hehe...");
+    mesq l("You should look for them when we arrive at the port. You won't regret it! Ehehe...");
 
     goodbye;
 
@@ -140,20 +140,20 @@ L_Sailors:
     mesn;
     mesq l("What? Why? They aren't sexier than me, why do you want to see them?");
     next;
-    mesq l("And what do you give me in exchange for these informations?");
+    mesq l("And what would you give me in exchange for that information?");
     next;
 
     setcamnpc "Gugli";
     mes "";
     mesn "Gugli";
-    mesq lg("Don't bother her Silvio, or I'll have to tell her that you cry like a baby when you hear the thunder in the night.", "Don't bother him Silvio, or I'll have to tell him that you cry like a baby when you hear the thunder in the night.");
+    mesq lg("Stop heckling her, Silvio, or I'll tell her how you cry like a little baby during thunderstorms.", "Stop heckling him, Silvio, or I'll tell him how you always cry like a little baby during thunderstorms.");
     next;
     restorecam;
 
     mesn;
     mesq l("I...");
     next;
-    mesq l("How could you... We said we wouldn't talk about this again...");
+    mesq l("How could you! We said we wouldn't talk about that again...");
     next;
     mesq l("Tibbo went to the south-east of the island, others are gone to the north, and I think that Gulukan is not so far from here.");
     next;

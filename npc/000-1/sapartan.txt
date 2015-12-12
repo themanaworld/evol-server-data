@@ -23,7 +23,7 @@
     next;
 
     menu
-        l("Thank you sir for you nice words. I am feeling better now."), -,
+        l("Thank you, sir, for your kind words. I am feeling better now."), -,
         lg("I'm still a bit weak at the moment. We should probably talk later."), L_Quit;
 
     mes "";
@@ -39,7 +39,7 @@
     setcamnpc "Max";
     mes "";
     mesn "Max";
-    mesq lg("Come on, Sap! You are scaring our guest with your stories.");
+    mesq lg("Come on, Sap! You are scaring her with your stories.", "Come on, Sap! You are scaring him with your stories.");
     next;
     mesq lg("I'm sure she will soon be able to fight all of the creatures living here without any problem.", "I'm sure he will soon be able to fight all of the creatures living here without any problem.");
     next;
