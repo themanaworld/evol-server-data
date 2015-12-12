@@ -53,7 +53,7 @@ L_QuestStart:
 L_Rude:
     mes "";
     mesn;
-    mesq l("UAHAHAHAAH! I am the cook of that bunch of donkeys and I can be rude with everyone from this bossy captain to that harpy-lady!");
+    mesq l("UAHAHAHAAH! I am the cook of that bunch of donkeys, and I can be rude with everyone from this bossy captain to that harpy-lady!");
     next;
 
     select
@@ -75,7 +75,7 @@ L_Rude:
 
     mes "";
     mesn;
-    mesq lg("Well... Welcome aboard, cutie!");
+    mesq lg("Well, eh-heh, Welcome aboard, cutie!", "Well, eh-heh, Welcome aboard, son!", "Well, eh-heh, Welcome aboard!");
     next;
     mesq l("I just realized I am lacking some common things, and one key ingredient, to prepare a... A special recipe.");
     next;
@@ -111,7 +111,7 @@ L_QuestAccepted:
 L_OpenCroconut:
     mes "";
     mesn;
-    mesq lg("Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak girl in all.", "Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak boy in all.", getitemlink(513), "Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being such a weak boy in all.", getitemlink(513));
+    mesq l("Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being so weak in all.", getitemlink(513));
     next;
     mesq l("Now move!");
 
