@@ -140,7 +140,7 @@ OnUse:
     }
 
     narrator 2,
-        l("You hold the shovel in your hangs."),
+        l("You hold the shovel in your hands."),
         l("What are you going to do?");
 
     .@action = select(
