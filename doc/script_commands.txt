@@ -978,12 +978,10 @@ Within executable script code, some lines can be labels:
 Labels are points of reference in your script, which can be used to route 
 execution with 'goto' and 'menu' commands, invoked with 'doevent', 'donpcevent'
 and 'callsub' commands and are otherwise essential. A label's name may not be
-longer than 22 characters. (23rd is the ':'.) There is some confusion in the
-source about whether it's 22, 23 or 24 all over the place, so keeping labels
-under 22 characters could be wise. It may only contain alphanumeric characters
-and underscore. In addition to labels you name yourself, there are also some
-special labels which the script engine will start execution from if a special
-event happens:
+longer than 23 characters. (24th is the ':'.) It may only contain alphanumeric
+characters and underscore. In addition to labels you name yourself, there are
+also some special labels which the script engine will start execution from if
+a special event happens:
 
 OnClock<hour><minute>:
 OnMinute<minute>:
@@ -1029,6 +1027,12 @@ until you attach a RID with 'attachrid' (see below).
 The above also applies to, the last three labels, the only difference is 
 that these labels are used exclusively for WoE SE, and are called 
 independently.
+
+OnInstanceInit:
+
+This label will be executed when an instance is created and initialized through
+the 'instance_init' command. It will run again if @reloadscript is used while
+an instance is in progress.
 
 OnTouch:
 
@@ -1197,11 +1201,14 @@ contain three hexadecimal numbers representing colors as if they were HTML
 colors - ^FF0000 is bright red, ^00FF00 is bright green, ^0000FF is bright 
 blue, ^000000 is black. ^FF00FF is a pure magenta, but it's also a color 
 that is considered transparent whenever the client is drawing windows on 
-screen, so printing text in that color will have kind of a weird effect. 
-Once you've set a text's color to something, you have to set it back to 
-black unless you want all the rest of the text be in that color:
+screen, so printing text in that color will have kind of a weird effect.
+You may also use C_ constants accompany with "F_MesColor" function for the
+color effect, see the full list of the available ones in 'db/const.txt'
+under 'C_'. Once you've set a text's color to something, you have to set
+it back to black unless you want all the rest of the text be in that color:
 
     mes "This is ^FF0000 red ^000000 and this is ^00FF00 green, ^000000 so.";
+    mes callfunc("F_MesColor", C_BLUE) +"This message is now in BLUE";
     
 Notice that the text coloring is handled purely by the client. If you use 
 non-English characters, the color codes might get screwed if they stick to 
@@ -2771,6 +2778,7 @@ See 'getequipid' for a full list of valid equipment slots.
 Given the database ID number of an item, this function will return the 
 text stored in the 'japanese name' field (which, in Hercules, stores an 
 English name the players would normally see on screen).
+Return "null" if no such item exist.
 
 ---------------------------------------
 
@@ -3090,7 +3098,7 @@ cards or if it's signed.
 //=====================================
 ---------------------------------------
 
-*getmapxy("<variable for map name>",<variable for x>,<variable for y>,<type>{,"<search string>"})
+*getmapxy("<variable for map name>",<variable for x>,<variable for y>,<type>{,"<search parameter>"})
 
 This function will locate a character object, NPC object or pet's 
 coordinates and place their coordinates into the variables specified when 
@@ -3099,24 +3107,27 @@ parameters given were not variables or the search was not successful.
 
 Type is the type of object to search for:
 
-	0 - Character object
-	1 - NPC object
-	2 - Pet object
-	3 - Monster object
-	4 - Homunculus object
-	5 - Mercenary object
-	6 - Elemental object
+	UNITTYPE_PC   - Character object
+	UNITTYPE_NPC  - NPC object
+	UNITTYPE_PET  - Pet object
+	UNITTYPE_MOB  - Monster object
+	UNITTYPE_HOM  - Homunculus object
+	UNITTYPE_MER  - Mercenary object
+	UNITTYPE_ELEM - Elemental object
 
-While 3 is meant to look for a monster object, no searching will be done 
-if you specify type 3, and the function will always return -1.
+To look for a monster object, monster GID is required. The function will
+always return -1 when search using string.
 
-The search string is optional. If it is not specified, the location of the 
-invoking character will always be returned for types 0 and 2, the location 
-of the NPC running this function for type 1.
-If a search string is specified, for types 0 and 1, the character or NPC 
-with the specified name will be located. If type is 3, the search will 
-locate the current pet of the character who's name is given in the search 
-string, it will NOT locate a pet by name.
+The search parameter is optional. If it is not specified, the location of the 
+invoking character will always be returned for UNITTYPE_PC, the location of the
+NPC running this function for UNITTYPE_NPC. If a search parameter is specified,
+for UNITTYPE_PC and UNITTYPE_NPC, the character or NPC with the specified name
+or GID will be located.
+
+If type is UNITTYPE_PET, UNITTYPE_HOM, UNITTYPE_MER or UNITTYPE_ELEM the search
+will locate the owner's pet/homun/mercenary/elementals if the search parameter
+is not provided. It will NOT locate these object by name, but can be done if GID
+is provided.
 
 What a mess. Example, a working and tested one now:
 
@@ -3128,7 +3139,7 @@ What a mess. Example, a working and tested one now:
 	prontera,164,299,3%TAB%script%TAB%Nyah%TAB%730,{
 		mes "My name is Nyah.";
 		mes "I will now search for Meh all across the world!";
-		if (getmapxy(.@mapname$,.@mapx,.@mapy,1,"Meh")!=0) {
+		if (getmapxy(.@mapname$, .@mapx, .@mapy, UNITTYPE_NPC, "Meh") != 0) {
 			mes "I can't seem to find Meh anywhere!";
 			close;
 		}
@@ -3162,20 +3173,12 @@ invoking player belongs.
 
 ---------------------------------------
 
-*gettimetick(<tick type>)
+*gettimetick(<type>)
 
-This function will return the system time in UNIX epoch time (if tick type 
-is 2) or the time since the start of the current day in seconds if tick 
-type is 1.
-Passing 0 will make it return the server's tick, which is a measurement in
-milliseconds used by the server's timer system. The server's tick is an
-unsigned int which loops every ~50 days.
-
-Just in case you don't know, UNIX epoch time is the number of seconds 
-elapsed since 1st of January 1970, and is useful to see, for example, 
-for how long the character has been online with OnPCLoginEvent and 
-OnPCLogoutEvent, which could allow you to make an 'online time counted for 
-conviction only' jail script.
+Valid types are :
+	0 - server's tick (milleseconds), unsigned int, loops every ~50 days
+	1 - time since the start of the current day in seconds
+	2 - UNIX epoch time (number of seconds elapsed since 1st of January 1970)
 
 ---------------------------------------
 
@@ -3183,18 +3186,27 @@ conviction only' jail script.
 
 This function returns specified information about the current system time.
 
-1 - Seconds (of a minute)
-2 - Minutes (of an hour)
-3 - Hour (of a day)
-4 - Week day (0 for Sunday, 6 is Saturday)
-5 - Day of the month.
-6 - Number of the month.
-7 - Year.
-8 - Day of the year.
+Valid types:
+	1 - GETTIME_SECOND     - Seconds (of a minute)
+	2 - GETTIME_MINUTE     - Minutes (of an hour)
+	3 - GETTIME_HOUR       - Hour (of a day)
+	4 - GETTIME_WEEKDAY    - Week day (0 for Sunday, 6 is Saturday)
+	                       - Additional: SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+	5 - GETTIME_DAYOFMONTH - Day of the month.
+	6 - GETTIME_MONTH      - Number of the month.
+	                       - Additional: JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER
+	7 - GETTIME_YEAR       - Year
+	8 - GETTIME_DAYOFYEAR  - Day of the year.
 
-It will only return numbers.
-
-	if (gettime(4)==6) mes "It's a Saturday. I don't work on Saturdays.";
+It will only return numbers based on types.
+Example :
+	if (gettime(GETTIME_WEEKDAY) == SATURDAY) {
+		mes "It's a Saturday. I don't work on Saturdays.";
+	} else if (gettime(GETTIME_MONTH) == JANUARY) {
+		mes "It's January. I don't work on January.";
+	} else if (gettime(GETTIME_MONTH) == OCTOBER && gettime(GETTIME_DAYOFMONTH) == 31) {
+		mes "It's Halloween.";
+	}
 
 ---------------------------------------
 
@@ -3239,6 +3251,8 @@ specified map.
 Currently being used in the PVP scripts to check if a PVP room is full of 
 not, if the number returned it equal to the maximum allowed it will not 
 let you enter.
+
+Return -1 if the map name is invalid.
 
 ---------------------------------------
 
@@ -3511,6 +3525,9 @@ character currently has active. Valid types are:
  4 - Pet hungry level. 100 is completely full.
  5 - Pet rename flag. 0 means this pet has not been named yet.
 
+If the invoking player doesn't own a pet, this command will return
+"null" for type 2, and return 0 for other types.
+
 ---------------------------------------
 
 *petstat(<flag>)
@@ -3538,29 +3555,29 @@ It will return -1 if there is no such monster (or the type value is
 invalid), or "null" if you requested the monster's name.
 
 Valid types are listed in const.txt:
-	MOB_NAME	0
-	MOB_LV	1
-	MOB_MAXHP	2
-	MOB_BASEEXP	3
-	MOB_JOBEXP	4
-	MOB_ATK1	5
-	MOB_ATK2	6
-	MOB_DEF	7
-	MOB_MDEF	8
-	MOB_STR	9
-	MOB_AGI	10
-	MOB_VIT	11
-	MOB_INT	12
-	MOB_DEX	13
-	MOB_LUK	14
-	MOB_RANGE	15
-	MOB_RANGE2	16
-	MOB_RANGE3	17
-	MOB_SIZE	18
-	MOB_RACE	19
-	MOB_ELEMENT	20
-	MOB_MODE	21
-	MOB_MVPEXP	22
+	MOB_NAME		0
+	MOB_LV			1
+	MOB_MAXHP		2
+	MOB_BASEEXP		3
+	MOB_JOBEXP		4
+	MOB_ATK1		5
+	MOB_ATK2		6
+	MOB_DEF			7
+	MOB_MDEF		8
+	MOB_STR			9
+	MOB_AGI			10
+	MOB_VIT			11
+	MOB_INT			12
+	MOB_DEX			13
+	MOB_LUK			14
+	MOB_RANGE		15
+	MOB_RANGE2		16
+	MOB_RANGE3		17
+	MOB_SIZE		18
+	MOB_RACE		19
+	MOB_ELEMENT		20
+	MOB_MODE		21
+	MOB_MVPEXP		22
 
 Check sample in doc/sample/getmonsterinfo.txt
 
@@ -4457,6 +4474,14 @@ they will also have their skills reset upon 'changesex'.
 
 ---------------------------------------
 
+*changecharsex;
+
+This command is exactly same as changesex, with an exception that,
+character sex will be changed instead of account sex.
+Requires client 2014-10-22 or greater.
+
+---------------------------------------
+
 *getexp <base xp>,<job xp>;
 
 This command will give the invoking character a specified number of base 
@@ -4985,8 +5010,8 @@ Returns the item_id of a random item picked from the item container specified. T
 are different item containers and they are specified in 'db/(pre-)re/item_group.conf'.
 
 Example:
-   getitem groupranditem 603,1;
-   getitem groupranditem Old_Blue_Box,1;
+   getitem groupranditem(603),1;
+   getitem groupranditem(Old_Blue_Box),1;
 
 ---------------------------------------
 
@@ -5289,6 +5314,15 @@ Example:
 
 	// Item Universal_Catalog_Gold (10 uses, effect: open shop)
 	searchstores 10,1;
+
+---------------------------------------
+
+*mergeitem;
+
+mergeitem opens the item merge window,
+The Item merge window shows all stackable item(same ItemID) with different
+serial, that can be merged into one stack.
+Check sample: npc/other/item_merge.txt
 
 ---------------------------------------
 
@@ -5669,7 +5703,7 @@ as expected, refer only to an invoking character.
 What these commands do is 'attach' a script to the player which will get
 executed on attack (or when attacked in the case of autobonus2).
 
-Rate is the trigger rate of the script (10000 = 100%). 
+Rate is the trigger rate of the script (1000 = 100%).
 
 Duration is the time that the bonus will last for since the script has 
 triggered.
@@ -6090,8 +6124,8 @@ default, and it is not possible to create a spawn that lasts forever.
 If an event label is given, upon the monster being killed, the event label 
 will run as if by 'donpcevent'.
 
-// Will summon a dead branch-style monster to fight for the character.
-summon "--ja--",-1;
+// Will summon a poring to fight for the character.
+	summon "--ja--", PORING;
 
 ---------------------------------------
 
@@ -6116,6 +6150,9 @@ This function works as a direct counterpart of 'getpetinfo':
  4 - Hungry level. 100 is completely full.
  5 - Rename flag. 0 means this homunculus has not been named yet.
  6 - Homunculus level
+
+If the attached player doesn't own a homunculus, this command will return
+"null" for type 2, and return 0 for other types.
 
 ---------------------------------------
 
@@ -6159,6 +6196,21 @@ and will return the following values:
   0: The player's Homunculus is active.
   1: The player's Homunculus is vaporized.
   2: The player's Homunculus is in morph state.
+
+---------------------------------------
+
+*getunittype <GID>;
+
+Returns the type of object from the given Game ID. Returns -1 if the given GID
+does not exist. The return values are :-
+
+	UNITTYPE_PC     0
+	UNITTYPE_NPC    1
+	UNITTYPE_PET    2
+	UNITTYPE_MOB    3
+	UNITTYPE_HOM    4
+	UNITTYPE_MER    5
+	UNITTYPE_ELEM   6
 
 ---------------------------------------
 
@@ -6499,8 +6551,8 @@ Example 4:
  
 ---------------------------------------
  
-*sleep {<milliseconds>};
-*sleep2 {<milliseconds>};
+*sleep <milliseconds>;
+*sleep2 <milliseconds>;
 *awake "<NPC name>";
 
 These commands are used to control the pause of a NPC.
@@ -6542,7 +6594,7 @@ client and appears always green.
 This command will broadcast a message to all or most players, similar to 
 @kami/@kamib GM commands.
 
-	announce "This will be shown to everyone at all in yellow.",0;
+	announce "This will be shown to everyone at all in yellow.", bc_all;
 
 The region the broadcast is heard in (target), source of the broadcast and 
 the color the message will come up as is determined by the flags.
@@ -6579,12 +6631,16 @@ special flag is ignored. Optional parameters may not work well (or at all)
 depending on a game client used.
 
 The color parameter is a single number which can be in hexadecimal 
-notation.
+notation. C_ constant can also be used for color effects, see the full list
+of the available ones in 'db/const.txt' under 'C_'.
 
 For example:
-	announce "This will be shown to everyone at all in green.",bc_all,0x00FF00;
+	announce "This announcement will be shown to everyone in green.",bc_all,0x00FF00;
 Will display a global announce in green. The color format is in RGB 
 (0xRRGGBB).
+
+Another example:
+	announce "This announcement will shown to everyone in purple.",bc_all,C_PURPLE;
 
 In official scripts only two font-weights (types) are used:
  - normal (FW_NORMAL = 400, default),
@@ -6798,7 +6854,8 @@ if any.
 
 The valid information types are:
 
- 0  - Number of users currently chatting.
+ 0  - Number of users currently in the waiting room
+	  $@chatmembers[] - list of user account_id
  1  - Maximum number of users allowed.
  2  - Will return 1 if the waiting room has a trigger set.
       0 otherwise.
@@ -6811,6 +6868,10 @@ The valid information types are:
  32 - Whether or not the waiting room is full.
  33 - Whether the amount of users in the waiting room is higher than the 
       trigger number.
+ 34 - Minimum Base Level to enter waiting room. 
+ 35 - Maximum Base Level to enter waiting room.
+ 36 - Minimum Zeny to enter waiting room. 
+ 
 
 ---------------------------------------
 
@@ -7547,7 +7608,7 @@ OnClock0600:
 	end;
 OnInit:
 	// setting correct mode upon server start-up
-	if(gettime(3)>=6 && gettime(3)<18) end;
+	if (gettime(GETTIME_HOUR) >= 6 && gettime(GETTIME_HOUR) < 18) end;
 OnClock1800:
 	night;
 	end;
@@ -7946,17 +8007,19 @@ Breaks a string up into substrings based on the specified delimiter.
 Substrings will be stored within the specified string array. Only the 1st 
 char of the delimiter parameter will be used. If an empty string is passed 
 as a delimiter, the string will be placed in the array in its original 
-form, without any changes.
+form, without any changes. Return the number of elements written to
+<dest_array>.
 
 Example:
 
-	explode(.@my_array$, "Explode:Test:1965:red:PIE", ":");
+	.@num_elements = explode(.@my_array$, "Explode:Test:1965:red:PIE", ":");
 	//.@my_array$ contents will be...
 	//.@my_array$[0]: "Explode"
 	//.@my_array$[1]: "Test"
 	//.@my_array$[2]: "1965"
 	//.@my_array$[3]: "red"
 	//.@my_array$[4]: "PIE"
+	//.@num_elements: 5
 
 ---------------------------------------
 
@@ -8713,7 +8776,6 @@ Example:
 ----------------------------------------
 
 *bg_monster <Battle Group>,"<map name>",<x>,<y>,"<name to show>",<mob id>,"<event label>";
-*bg_monster(<Battle Group>,"<map name>",<x>,<y>,"<name to show>",<mob id>,"<event label>");
 
 Similar to monster script command.
 Spawn a monster with allegiance to the given battle group.
@@ -8743,14 +8805,14 @@ Example:
 	end;
 
 OnEnable:
-	mapannounce "A guardian has been summoned for Battle Group 2!",bc_map,0xFFCE00;
+	mapannounce "bat_b01", "A guardian has been summoned for Battle Group 2!", bc_map, 0xFFCE00;
 	set $@Guardian, bg_monster($@BG_2,"bat_a01",268,204,"Guardian",B_S_GUARDIAN,"NPCNAME::OnMyMobDead");
 	initnpctimer;
 	end;
 
 OnTimer1000:
 	stopnpctimer;
-	mapannounce "Erm, sorry about that! This monster was meant for Battle Group 1.",bc_map,0xFFCE00;
+	mapannounce "bat_b01", "Erm, sorry about that! This monster was meant for Battle Group 1.", bc_map, 0xFFCE00;
 	bg_monster_set_team $@Guardian, $@BG_1;
 	end;
 
@@ -8788,18 +8850,48 @@ following:
 
 ----------------------------------------
 
-*bg_getareausers(<battle group>,<map name>,<x0>,<y0>,<x1>,<y1>);
+*bg_getareausers(<battle group>,"<map_name>",<x0>,<y0>,<x1>,<y1>);
 
 Retrieves amount of players belonging to given battle group on given map 
 within an specified rectangular area.
 
 ----------------------------------------
 
-*bg_updatescore "<mapname>",<Guillaume Score>,<Croix Score>;
+*bg_updatescore "<map_name>",<Guillaume Score>,<Croix Score>;
 
 This command will force the update of the displayed scoreboard.
 It is only usable when the map is defined as a Type 2 Battleground:
-mapflag%TAB%<mapname>%TAB%battleground%TAB%2
+mapflag%TAB%<map_name>%TAB%battleground%TAB%2
+
+----------------------------------------
+
+*bg_create_team "<map_name>",<Respawn X>,<Respawn Y>;
+
+This command will create a new BG Team.
+When player dies, they will be respawned map_name,X,Y as mentioned.
+
+Command will return -1 if BG Creation is failed,
+else it will return the BG ID(Also known as TeamID).
+
+----------------------------------------
+
+*bg_join_team <Team_ID>{,<account_id>};
+
+This command will make the attached player join to Team with ID as mentioned.
+If account_id is provided, command will look for that player, instead of the attached player.
+
+Command will return -1 if Player is not found, 0 if join is failed, 1 upon successful.
+
+----------------------------------------
+
+*bg_match_over "<Arena Name>"{,<Cancelled>};
+
+This command will end the battleground Arena
+(Arena Name as referred to, in conf/battlegrounds.conf)
+If Cancelled is not provided, it will set the join delay, as mentioned in conf/battlegrounds.conf
+else, it will just destroy the Teams and queue's.
+
+Command will return 0 when successful, else it will return 1.
 
 ---------------------------------------
 //=====================================
@@ -8903,17 +8995,21 @@ Returns the amount of entries in the queue instance of <queue_id>.
 
 ---------------------------------------
 
-*queueadd(<queue_id>,<var_id>);
+*queueadd(<queue_id>, <var_id>);
 
-Adds <var_id> to queue of <queue_id>, returning 1 if <var_id> is already
-present in the queue, otherwise returning 0.
+Adds <var_id> to queue of <queue_id>.
+
+Returns false if <var_id> couldn't be added (was already present in the queue),
+true otherwise.
 
 ---------------------------------------
 
-*queueremove(<queue_id>,<var_id>);
+*queueremove(<queue_id>, <var_id>);
 
-Removes <var_id> from queue of <queue_id>, returning 1 if <var_id> is not
-present in the queue, otherwise returning 0.
+Removes <var_id> from queue of <queue_id>.
+
+Returns false if <var_id> couldn't be removed (wasn't present in the queue),
+true otherwise.
 
 ---------------------------------------
 
@@ -8923,20 +9019,26 @@ Modifies <queue_id>'s <optionType>. When <option val> is not present
 <optionType> is removed from <queue_id>. When present it modifies
 <queue_id>'s <optionType> with the new <option val> value.
 
-Currently 3 options are available:
-HQO_OnDeath (1), HQO_OnLogout (2), HQO_OnMapChange (3)
+Returns true on success, false on failure.
 
-Note: The constant names are not final.
+Currently 3 options are available:
+- QUEUEOPT_DEATH (1)
+- QUEUEOPT_LOGOUT (2)
+- QUEUEOPT_MAPCHANGE (3)
+
+When the QUEUEOPT_MAPCHANGE event is triggered, it sets a temp char var
+@Queue_Destination_Map$ with the destination map name.
 
 Example:
-	queueopt(.@queue_id,0,"MyNPC::MyOnQueueMemberDeathEventName");
+	queueopt(.@queue_id, QUEUEOPT_DEATH, "MyNPC::OnQueueMemberDeathEvent");
 	
 ---------------------------------------
 
 *queuedel(<queue_id>);
 
-Deletes <queue_id> and returns 1 when <queue_id> is not found, otherwise
-0 is returned.
+Deletes the queue <queue_id>.
+
+Returns false if the queue wasn't found, true otherwise.
 
 ---------------------------------------
 
@@ -8950,8 +9052,10 @@ even if you remove them from the queue.
 ---------------------------------------
 
 *qicheck(<queue_iterator_id>);
-checks whether there is a next member in the iterator's queue, 1 when
-it does, 0 otherwise.
+
+Checks whether the current member in the iterator's queue exists.
+
+Returns 1 when it does, 0 otherwise.
 
 ---------------------------------------
 
@@ -8969,8 +9073,9 @@ Example:
 
 *qiclear(<queue_iterator_id>);
 
-Deletes a queue iterator from memory and returns 1 when it fails,
-otherwise 0 is returned.
+Deletes a queue iterator from memory.
+
+Returns false when it fails, otherwise 1 is returned.
 
 ---------------------------------------
 //=====================================
