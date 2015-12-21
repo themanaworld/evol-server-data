@@ -1,0 +1,106 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Animated hammock at the top right level of the Legion of Aemil
+//    building of Artis.
+
+001-2-38,31,26,0	script	#001-2-38hammock0	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch: hamTouchLeft;
+
+OnUnTouch: hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
+
+001-2-38,31,28,0	script	#001-2-38hammock1	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch: hamTouchLeft;
+
+OnUnTouch: hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
+
+001-2-38,31,30,0	script	#001-2-38hammock2	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch: hamTouchLeft;
+
+OnUnTouch: hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
+
+001-2-38,31,32,0	script	#001-2-38hammoc3	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch: hamTouchLeft;
+
+OnUnTouch: hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
+
+001-2-38,34,26,0	script	#001-2-38hammock4	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch: hamTouchLeft;
+
+OnUnTouch: hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
+
+001-2-38,35,28,0	script	#001-2-38hammock5	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch: hamTouchLeft;
+
+OnUnTouch: hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
+
+001-2-38,35,30,0	script	#001-2-38hammock6	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch: hamTouchLeft;
+
+OnUnTouch: hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
+
+001-2-38,35,32,0	script	#001-2-38hammock7	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch: hamTouchLeft;
+
+OnUnTouch: hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
+
+001-2-38,35,34,0	script	#001-2-38hammock8	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch: hamTouchLeft;
+
+OnUnTouch: hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
+
+001-2-38,34,36,0	script	#001-2-38hammock9	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch: hamTouchLeft;
+
+OnUnTouch: hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
