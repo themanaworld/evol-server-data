@@ -57,13 +57,13 @@ OnTouch:
 
 // Warped location triggers
 
-001-2-33,24,29,0	script	#001-2-33WarpTopLeft	NPC_HIDDEN,1,1,{
+001-2-33,24,30,0	script	#001-2-33WarpTopLeft	NPC_HIDDEN,1,1,{
 OnTouch:
     artisALUpdateMask;
     close;
 }
 
-001-2-33,44,29,0	script	#001-2-33WarpTopRight	NPC_HIDDEN,1,1,{
+001-2-33,44,30,0	script	#001-2-33WarpTopRight	NPC_HIDDEN,1,1,{
 OnTouch:
     artisALUpdateMask;
     close;
@@ -82,6 +82,19 @@ OnTouch:
 }
 
 001-2-33,34,45,0	script	#001-2-33WarpArtis	NPC_HIDDEN,1,1,{
+OnTouch:
+    artisALUpdateMask;
+    close;
+}
+
+// Bottom Warp location triggers
+001-2-33,43,38,0	script	#001-2-33WarpBotLeft	NPC_HIDDEN,1,0,{
+OnTouch:
+    artisALUpdateMask;
+    close;
+}
+
+001-2-33,25,38,0	script	#001-2-33WarpBotRight	NPC_HIDDEN,1,0,{
 OnTouch:
     artisALUpdateMask;
     close;
