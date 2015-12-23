@@ -484,7 +484,7 @@ OnInit:
 
 001-1,57,41,0	script	#Warp20	NPC_HIDDEN,0,0,{
 OnTouch:
-    warp "001-2-33", 34, 45;
+    warp "001-2-33", 34, 46;
     close;
 
 OnUnTouch:
