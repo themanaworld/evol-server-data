@@ -45,62 +45,62 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-001-2-38,34,26,0	script	#001-2-38hammock4	NPC_LEFT_HAMMOCK,1,0,{
+001-2-38,34,26,0	script	#001-2-38hammock4	NPC_RIGHT_HAMMOCK,1,0,{
 
-OnTouch: hamTouchLeft;
+OnTouch: hamTouchRight;
 
 OnUnTouch: hamUnTouch;
 
 OnTimer5440:
-    hamTimerLeft;
+    hamTimerRight;
 }
 
-001-2-38,35,28,0	script	#001-2-38hammock5	NPC_LEFT_HAMMOCK,1,0,{
+001-2-38,35,28,0	script	#001-2-38hammock5	NPC_RIGHT_HAMMOCK,1,0,{
 
-OnTouch: hamTouchLeft;
+OnTouch: hamTouchRight;
 
 OnUnTouch: hamUnTouch;
 
 OnTimer5440:
-    hamTimerLeft;
+    hamTimerRight;
 }
 
-001-2-38,35,30,0	script	#001-2-38hammock6	NPC_LEFT_HAMMOCK,1,0,{
+001-2-38,35,30,0	script	#001-2-38hammock6	NPC_RIGHT_HAMMOCK,1,0,{
 
-OnTouch: hamTouchLeft;
+OnTouch: hamTouchRight;
 
 OnUnTouch: hamUnTouch;
 
 OnTimer5440:
-    hamTimerLeft;
+    hamTimerRight;
 }
 
-001-2-38,35,32,0	script	#001-2-38hammock7	NPC_LEFT_HAMMOCK,1,0,{
+001-2-38,35,32,0	script	#001-2-38hammock7	NPC_RIGHT_HAMMOCK,1,0,{
 
-OnTouch: hamTouchLeft;
+OnTouch: hamTouchRight;
 
 OnUnTouch: hamUnTouch;
 
 OnTimer5440:
-    hamTimerLeft;
+    hamTimerRight;
 }
 
-001-2-38,35,34,0	script	#001-2-38hammock8	NPC_LEFT_HAMMOCK,1,0,{
+001-2-38,35,34,0	script	#001-2-38hammock8	NPC_RIGHT_HAMMOCK,1,0,{
 
-OnTouch: hamTouchLeft;
+OnTouch: hamTouchRight;
 
 OnUnTouch: hamUnTouch;
 
 OnTimer5440:
-    hamTimerLeft;
+    hamTimerRight;
 }
 
-001-2-38,34,36,0	script	#001-2-38hammock9	NPC_LEFT_HAMMOCK,1,0,{
+001-2-38,34,36,0	script	#001-2-38hammock9	NPC_RIGHT_HAMMOCK,1,0,{
 
-OnTouch: hamTouchLeft;
+OnTouch: hamTouchRight;
 
 OnUnTouch: hamUnTouch;
 
 OnTimer5440:
-    hamTimerLeft;
+    hamTimerRight;
 }
