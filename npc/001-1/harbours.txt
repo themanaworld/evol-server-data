@@ -55,7 +55,7 @@ OnInit:
     end;
 }
 
-001-1,177,117,0	script	#Harbour4	NPC_HARBOUR_WHEEL_BOX,{
+001-1,175,117,0	script	#Harbour4	NPC_HARBOUR_WHEEL_BOX,{
     harbourClic;
 
 OnTimer1670:
@@ -67,6 +67,17 @@ OnInit:
 }
 
 001-1,198,92,0	script	#Harbour5	NPC_HARBOUR_WHEEL_BOX,{
+    harbourClic;
+
+OnTimer1670:
+    harbourTimer;
+
+OnInit:
+    .distance = 1;
+    end;
+}
+
+001-1,151,117,0	script	#Harbour6	NPC_HARBOUR_WHEEL,{
     harbourClic;
 
 OnTimer1670:
