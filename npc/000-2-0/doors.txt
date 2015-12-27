@@ -8,10 +8,13 @@
 //    0 ShipQUests_Nard
 //    1 ShipQuests_Julia
 // Values:
-//    00   Introduction of the box and Nard. This is displayed when the player never spoke to Nard or his box.
+//    Nard:
+//    00   Introduction of the boxes and Nard. This is displayed when the player never spoke to Nard or his box.
 //    01   Nard spoke and gave access to the outdoor of the ship.
-//    02   Completed the quest.
-//    03   Opened the chest and finished the introduction.
+//    02   Completed the Gugli quest.
+//    03   ChefGado Quest accepted.
+//    04   ChefGado Quest completed and "Introduction" chapter finalized.
+//    05   Reward taken from the box.
 //    10   Has not talked to Julia
 //    11   Need to see Julia
 //    12   Has been registered by Julia
@@ -20,9 +23,9 @@
 
 OnTouch:
     .@nard = getq(ShipQuests_Nard);
+    if (.@nard == 4) goto L_GotoNard;
+    if (.@nard == 5) goto L_End;
     if (.@nard > 0 && countitemcolor(718) > 0) goto L_Key;
-//  if (.@nard == 2) goto L_GotoNard;
-//  if (.@nard == 3) goto L_End;
 
     setcamnpc "Julia";
     mesn "Julia";
@@ -53,6 +56,7 @@ L_End:
     mesn "Narrator";
     mesq col(l("This door is locked."), 9);
     setcamnpc "Julia";
+    next;
     mesn "Julia";
     mesq l("We're soon leaving that island, please return to your cabine.");
     next;
