@@ -22,8 +22,23 @@ OnInit:
     end;
 }
 
-000-2-1,50,38,0	script	#name3	NPC_SAVE_POINT,{
-    savepointparticle "000-2-1.gat", 50, 38;
+000-2-1,50,38,0	script	#name3	NPC_FINAL_POINT,{
+    .@q_nard = getq(ShipQuests_Nard);
+
+    if(.@q_nard == 5)
+    {        
+OnClick:
+        narrator 4,
+            l("You lie in the bed."),
+            l("Your head is suddently heavy, your eyes are closing..."),
+            l("You fell asleep.");
+
+        warp "000-0-1", 26, 28;
+    }
+    else
+    {
+        savepointparticle "000-2-1.gat", 50, 38;
+    }
     close;
 
 OnInit:
