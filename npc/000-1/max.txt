@@ -7,6 +7,11 @@
 //    Friend of Sapartan, he gives some information on how to find Gulukan, Astapolos and Q-Muller.
 
 000-1,72,110,0	script	Max	NPC_DEMON_MAN_SITTING_UNDER_TREE,{
+    if (getq(getq(General_Narrator)))
+    {
+        sailortalk;
+    }
+
     .@gugli = getq(ShipQuests_Gugli);
     .@knife = getq(ShipQuests_Knife);
 
