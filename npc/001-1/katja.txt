@@ -75,8 +75,8 @@
             mes "";
             mesn;
             mesq l("Great!");
+            emotion 17;
             next;
-            // emote *epic*
             break;
         case 2:
             mes "";
@@ -86,6 +86,7 @@
             mes "";
             mesn;
             mesq l("Okay, I'll be here, if you change your mind.");
+            emotion 4;
             close;
     }
 
