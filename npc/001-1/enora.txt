@@ -3,14 +3,77 @@
 //    Reid
 // Description:
 //    Newbie guide for Artis.
+// Variables:
+//    ArtisQuests_Enora
+// Values:
+//    0   Default.
+//    1   BlackSmith quest delivered.
+//    2   Light Armor Shop quest delivered.
+//    3   Market quest delivered.
+//    4   Hill quest delivered.
 
 001-1,176,113,0	script	Enora#001-1	NPC_HUMAN_FEMALE_NOOB,{
-    mesn;
-    mesq l("Welcome!");
 
-    goto L_Close;
+    speech
+        l("Hey! You must be @@.", strcharinfo(0)),
+        l("Julia has told me how they found you at sea, on a raft with a logo of--");
+        l("I mean LOG! Made of log!"),
+        l("I also hear you have lost all your memories? That's a shame."),
+        l("I'm sure you would have some interesting stories to tell!");
 
-L_Close:
+    switch (select(l("Remembering who I am would also be very nice..."),
+                   l("I'd like to be somebody with exciting stories!")))
+    {
+        case 1:
+            speech 1,
+                l("Yeah, that too... It's so exciting to meet somebody with amnesia!"),
+                l("Do you, like, remember nothing at all? Or do you have SOME memories of your past?"),
+                l("What happens when you try to think about it?"),
+                l("Does your mind go all fuzzy?"),
+                l("Try doing that now!");
+
+            select (l("Don't get too excited about it..."));
+
+            speech 1,
+                l("Uh, sorry. I got carried away."),
+                l("Do you ever get really curious about something and--"),
+                l("Hm, I guess you wouln't know if you do. You know, with your... Condition and all...");
+
+            switch (select(l("Forget about the amnesia!"),
+                           l("Back to the point..."))) 
+            {
+                case 1:
+                    speech 1,
+                        l("Hehe, I see what you did there. You certainly didn't lose your sense of humour.");
+
+                    select (l("Ugh, you're lucky I didn't."));
+
+                    speech 1,
+                        l("Anyway, you probably don't have much business in this city as you..."),
+                        l("Uhm... Don't know who you are."),
+                        l("I was going to ask if maybe you would be interested in giving me a hand with a few errands.");
+
+                        switch (select(l("I guess so. What's in it for me?"),
+                                       l("Of course! What do you need?")))
+                        {
+                            case 1:
+                                speech 1,
+                                    l("Oh, don't worry about it, there will be a compensation for your hard labor!");
+                                break;
+                            case 2:
+                                break;
+                        }
+                    break;
+                case 2:
+                    break;
+            }
+
+            break;
+        case 2:
+            break;
+    }
+
+    closedialog;
     close;
 
 OnInit:
