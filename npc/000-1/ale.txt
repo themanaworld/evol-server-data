@@ -7,7 +7,7 @@
 //    Aquada box.
 
 000-1,55,23,0	script	Ale#000-1	NPC_DEMON_MAN_SITTING,{
-    if (getq(getq(General_Narrator)))
+    if (getq(General_Narrator) > 0)
     {
         sailortalk;
     }

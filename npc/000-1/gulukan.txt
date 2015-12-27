@@ -8,7 +8,7 @@
 //    Croconut box.
 
 000-1,54,90,0	script	Gulukan	NPC_TRITAN_MAN_SAILOR2,{
-    if (getq(getq(General_Narrator)))
+    if (getq(General_Narrator) > 0)
     {
         sailortalk;
     }

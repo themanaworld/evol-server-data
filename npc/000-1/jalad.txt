@@ -8,7 +8,7 @@
 //    Plushroom box.
 
 000-1,46,35,0	script	Jalad	NPC_ELVEN_MAN_TRADER_SITTING,{
-    if (getq(getq(General_Narrator)))
+    if (getq(General_Narrator) > 0)
     {
         sailortalk;
     }

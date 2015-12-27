@@ -8,7 +8,7 @@
 //    Croconut box.
 
 000-1,22,50,0	script	Astapolos	NPC_ELVEN_MAN_RED,{
-    if (getq(getq(General_Narrator)))
+    if (getq(General_Narrator) > 0)
     {
         sailortalk;
     }

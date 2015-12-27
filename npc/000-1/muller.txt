@@ -7,7 +7,7 @@
 //    Plushroom box.
 
 000-1,35,69,0	script	Q'Muller	NPC_ORC_MAN,{
-    if (getq(getq(General_Narrator)))
+    if (getq(General_Narrator) > 0)
     {
         sailortalk;
     }

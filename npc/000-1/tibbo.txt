@@ -8,7 +8,7 @@
 //    Aquada box.
 
 000-1,34,111,0	script	Tibbo	NPC_ELVEN_MAN_STANDING,{
-    if (getq(getq(General_Narrator)))
+    if (getq(General_Narrator) > 0)
     {
         sailortalk;
     }
