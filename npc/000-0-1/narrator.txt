@@ -1,0 +1,33 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Narrator explain to the player that he is dreaming.
+// Variable:
+//    0    General_Narrator
+// Values:
+//    0    PC is in the game introduction.
+//    1    PC arrived Artis.
+
+000-0-1,25,28,0	script	Narrator#000-0-1	NPC_NARRATOR,{
+
+    narrator 4,
+        l("Look, we finally meet."),
+        l("I think that you already understood, you are asleep."),
+        l("The ship left the island, finally, Nard's crew is heading to Artis, and you are onboard don't worry."),
+        l("I'm sure that you wonder a lot of things, you will discover them soon, don't you worry..."),
+        l("Ah, seagulls, we are arriving..."),
+        l("..."),
+        l("Wake up!");
+
+    if (countitemcolor(718) == 1) delitem 718, 1;
+    setq General_Narrator, 1;
+    savepoint "001-2-22.gat", 50, 38;
+    warp "001-2-22.gat", 50, 38;
+    closedialog;
+    close;
+
+OnInit:
+    .sex = G_OTHER;
+    end;
+}
