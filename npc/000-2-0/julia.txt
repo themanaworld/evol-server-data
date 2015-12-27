@@ -45,6 +45,7 @@
 
 L_Menu:
     menu
+        rif(.@q3 == 5, l("What can I do now?")), L_GotoSleep,
         rif(.@q3 == 3 && .@q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")), L_Rumors,
         rif(.@q2 == 2 && countitemcolor(717, 1), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")), L_Regret,
         rif(.@q2 == 2 && countitemcolor(717, 1), l("I have brought you a tasty present for your delicate mouth.")), L_PoisonJulia,
@@ -277,6 +278,14 @@ L_BasicSkill:
     next;
     mesq l("Do you have any other questions for me?");
     next;
+
+    goto L_YNMenu;
+
+L_GotoSleep:
+    speech 5,
+        l("You already did enough for us, follow Nard's advice and get some rest."),
+        l("We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!"),
+        l("Do you have any other questions for me?");
 
     goto L_YNMenu;
 
