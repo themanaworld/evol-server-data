@@ -8,6 +8,11 @@
 //    Croconut box.
 
 000-1,54,90,0	script	Gulukan	NPC_TRITAN_MAN_SAILOR2,{
+    if (getq(getq(General_Narrator)))
+    {
+        sailortalk;
+    }
+
     .@g = getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
 
