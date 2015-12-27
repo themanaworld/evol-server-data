@@ -7,6 +7,11 @@
 //    Aquada box.
 
 000-1,55,23,0	script	Ale	NPC_DEMON_MAN_SITTING,{
+    if (getq(getq(General_Narrator)))
+    {
+        sailortalk;
+    }
+
     .@g = getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
 
@@ -48,7 +53,7 @@ L_CallFunc:
     menu
         rif(getq(ShipQuests_Gugli) > 1, l("Task is done.")), L_TaskDone,
         rif(getq(ShipQuests_Ale) == 1 && (getq(ShipQuests_Astapolos) == 0 || getq(ShipQuests_Gulukan) == 0 || getq(ShipQuests_Jalad) == 0 || getq(ShipQuests_QMuller) == 0 || getq(ShipQuests_Tibbo) == 0), l("I'm still busy, I need to find the other sailors.")), -,
-        l("What's that?"), L_Plushroom;
+        l("What's that purple thing?"), L_Plushroom;
 
     mes "";
     mesn;
