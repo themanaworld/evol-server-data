@@ -23,6 +23,10 @@
 //    22   Gave all of the box to Gugli.
 
 000-1,85,108,0	script	Gugli	NPC_GUGLI,{
+    if (getq(getq(General_Narrator)))
+    {
+        sailortalk;
+    }
 
 OnTalk:
     mesn;
