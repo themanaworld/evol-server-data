@@ -484,7 +484,19 @@ OnInit:
 
 001-1,57,41,0	script	#Warp20	NPC_HIDDEN,0,0,{
 OnTouch:
-    warp "001-2-33", 34, 46;
+    .@enora = getq(ArtisQuests_Enora);
+
+    if (.@enora < 4)
+    {
+        narrator 4,
+            l("Doors are closed.");
+    }
+    else
+    {
+        warp "001-2-33", 34, 46;
+    }
+
+    closedialog;
     close;
 
 OnUnTouch:
