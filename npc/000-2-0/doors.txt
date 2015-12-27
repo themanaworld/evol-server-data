@@ -23,6 +23,13 @@
 
 OnTouch:
     .@nard = getq(ShipQuests_Nard);
+
+    if (getq(General_Narrator) > 0)
+    {
+        warp "000-1", 93, 100;
+        close;
+    }
+
     if (.@nard == 4) goto L_GotoNard;
     if (.@nard == 5) goto L_End;
     if (.@nard > 0 && countitemcolor(718) > 0) goto L_Key;
