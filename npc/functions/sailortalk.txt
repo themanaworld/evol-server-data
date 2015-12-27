@@ -1,0 +1,36 @@
+// Evol functions.
+// Author:
+//    Reid
+// Description:
+//    Tell a random sentence.
+// Variables:
+//    .@rand = Random number between the number of sentence choice.
+
+function	script	sailortalk	{
+
+    .@rand = rand(8);
+    if (.@rand == 0) goodbye;
+    if (.@rand == 1)
+    {
+        speech 4,
+            l("These purple mushrooms, are called @@. There are plenty of 'em on this island!", getitemlink(515)),
+            l("It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?", getitemlink(515)),
+            l("These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.", getitemlink(515));
+    }
+    if (.@rand == 2) npctalk3 l("Good to hear from you!");
+    if (.@rand == 3) npctalk3 l("So finally someone has came to visit me?");
+    if (.@rand == 4)
+    {
+        speech 4,
+            l("A sunny and hot day,"),
+            l("a quiet place,"),
+            l("a ground!"),
+            l("What else do you need?");
+    }
+    if (.@rand == 5) npctalk3 l("A-hoy matey!");
+    if (.@rand == 6) npctalk3 l("We are glad captain Nard has let you join the crew!");
+    if (.@rand == 7) npctalk3 l("Howdy?");
+
+    closedialog;
+    close;
+}
