@@ -86,6 +86,7 @@ L_EquipDone:
 
 000-2-1,49,33,0	script	Magic Arpan	NPC_MAGIC_ARPAN,{
     .@q = getq(ShipQuests_Arpan);
+    .@q_nard = getq(ShipQuests_Nard);
     .@q_julia = getq(ShipQuests_Julia);
     if (.@q == 2 && getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200) goto L_EquipDone;
 
@@ -144,6 +145,7 @@ L_Menu:
     .@equipped = getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200;
 
     menu
+        rif(.@q_nard == 5, l("What can I do now?")), L_GotoSleep,
         lg("Could you tell me where I am?"), L_Where,
         lg("Where can I find Julia?"), L_Julia,
         l("Who are you?"), L_Who,
@@ -222,6 +224,31 @@ L_BeforeMenu:
 
 L_EquipDone:
     setq ShipQuests_Arpan, 3;
+    goto L_Menu;
+
+L_GotoSleep:
+    speech 5,
+        l("You already did enough for us, do you want to follow Nard's advice and get some rest?");
+
+    switch (select (l("Yes."), l("No.")))
+    {
+        case 1:
+            speech 5,
+                l("Fine."),
+                l("We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!");
+
+                closedialog;
+                doevent "#name3::OnClick";
+                close;
+
+            break;
+        case 2:
+            speech 5,
+                l("Alright, take your time we are not in a hurry.");
+
+            break;
+    }
+
     goto L_Menu;
 
 OnInit:
