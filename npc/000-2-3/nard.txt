@@ -195,26 +195,17 @@ L_ChefQuestComplete:
     getexp 50, 0;
 
 //  Need to add a skill for the crew at this line.
-
     mes "";
-    mesn "Narrator";
-    mes col(l("This is it, the end of the Second Beta Release of Evol Online!"), 9);
-    next;
-    mes col(lg("We hope you liked this introduction and to see you again in our future releases!"), 9);
-    next;
-    mes col(l("The adventure begins!"), 9);
+
+L_Already:
+    speech
+        l("I recommend you to take a nap on the inferior level, we will soon leave this place.");
 
     close;
 
 L_Reward:
     mesn;
     mesq l("Hey! There's a reward for you in the box next to me!");
-
-    close;
-
-L_Already:
-    mesn;
-    mesq l("Sorry, I don't need any help right now. Come back later.");
 
     close;
 
