@@ -8,6 +8,11 @@
 //    Aquada box.
 
 000-1,34,111,0	script	Tibbo	NPC_ELVEN_MAN_STANDING,{
+    if (getq(getq(General_Narrator)))
+    {
+        sailortalk;
+    }
+
     .@g = getq(ShipQuests_Gugli);
     if (.@g == 0) goto L_NoTask;
 
