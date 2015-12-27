@@ -7,6 +7,11 @@
 //    Sailor who gives some informations to the player.
 
 000-1,79,108,0	script	Lean	NPC_ELVEN_MAN_BLONDE,{
+    if (getq(getq(General_Narrator)))
+    {
+        sailortalk;
+    }
+
     .@gugli = getq(ShipQuests_Gugli);
 
     mesn;
