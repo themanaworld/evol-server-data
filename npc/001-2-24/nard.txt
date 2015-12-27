@@ -34,11 +34,35 @@
         l("I'm lost, where should I go?"), L_Lost,
         l("How long will you stay here?"), -;
 
-    mes "";
-    mesn;
-    mesq l("We just returned from a long journey and Artis is a good city to rest and to conclude our exchange.");
-    next;
-    mesq l("I think that we will stay in port for a great time.");
+    speech 5,
+        l("We just returned from a long journey and Artis is a good city to rest and to conclude our exchange."),
+        l("I think that we will stay in port for a great time, though, if you want to visit some near place we could take you there."),
+        l("Do you want to go somewhere?");
+
+    switch (select(l("Lost Island."),
+                   l("Nowhere, I'm fine here.")))
+   {
+        case 1:
+            speech 5,
+                l("Let's set sail then!");
+
+            if (!getmapxy(.@map$, .@x, .@y, 0))
+            {
+                warp "000-2-3.gat", .@x, .@y;
+            }
+            else
+            {
+                warp "000-2-3.gat", 22, 27;
+            }
+
+            closedialog;
+            close;
+        case 2:
+            speech 5,
+                l("Ok we stay docked here if you need our help.");
+
+            break;
+   }
 
     closedialog;
     close;
@@ -47,6 +71,7 @@ L_Lost :
     mes "";
     mesn;
     mesq l("Julia make appeal the Legion of Aemil to search you, exit the ship and you should see your escort!");
+    next;
 
     closedialog;
     close;
