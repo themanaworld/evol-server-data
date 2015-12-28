@@ -41,7 +41,7 @@
 
     switch (select(l("Lost Island."),
                    l("Nowhere, I'm fine here.")))
-   {
+    {
         case 1:
             speech 5,
                 l("Let's set sail then!");
@@ -61,11 +61,9 @@
             speech 5,
                 l("Ok we stay docked here if you need our help.");
 
-            break;
-   }
-
-    closedialog;
-    close;
+            closedialog;
+            close;
+    }
 
 L_Lost :
     mes "";
