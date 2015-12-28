@@ -486,7 +486,7 @@ OnInit:
 OnTouch:
     .@enora = getq(ArtisQuests_Enora);
 
-    if (.@enora < 4)
+    if (.@enora < 8)
     {
         narrator 4,
             l("Doors are closed.");
