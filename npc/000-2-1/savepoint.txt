@@ -24,8 +24,9 @@ OnInit:
 
 000-2-1,50,38,0	script	#name3	NPC_FINAL_POINT,{
     .@q_nard = getq(ShipQuests_Nard);
+    .@q_narr = getq(General_Narrator);
 
-    if(.@q_nard == 5)
+    if(.@q_nard == 5 && .@q_narr < 1)
     {        
 OnClick:
         narrator 4,

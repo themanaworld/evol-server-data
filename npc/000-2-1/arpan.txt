@@ -145,7 +145,7 @@ L_Menu:
     .@equipped = getequipid(equip_torso) == 1300 && getequipid(equip_legs) == 2200;
 
     menu
-        rif(.@q_nard == 5, l("What can I do now?")), L_GotoSleep,
+        rif(.@q_nard == 5 && getq(General_Narrator) < 1, l("What can I do now?")), L_GotoSleep,
         lg("Could you tell me where I am?"), L_Where,
         lg("Where can I find Julia?"), L_Julia,
         l("Who are you?"), L_Who,
