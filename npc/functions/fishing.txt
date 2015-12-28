@@ -69,8 +69,18 @@ L_ChooseBait:
         l("You patiently wait...");
 
 L_Wait:
+    getmapxy (.@map$, .@x, .@y, 0);
+
     sleep2 rand(.@wait_time_min, .@wait_time_max);
     .@tick = gettimetick(0);
+
+    getmapxy (.@mapbis$, .@xbis, .@ybis, 0);
+    if (.@xbis != .@x || .@ybis != .@y || !compare (.@map$, .@mapbis$))
+    {
+        narrator
+            l("You left your fishing spot!");
+        close;
+    }
 
     mes col(l("Splash!"), 9);
     mes "";
