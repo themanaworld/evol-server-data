@@ -88,7 +88,7 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-000-2-1,32,40,0	script	#hammock8	NPC_LEFT_HAMMOCK,1,0,{
+000-2-1,37,38,0	script	#hammock8	NPC_RIGHT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
@@ -100,7 +100,19 @@ OnTimer5440:
     hamTimerLeft;
 }
 
-000-2-1,37,40,0	script	#hammock9	NPC_RIGHT_HAMMOCK,1,0,{
+000-2-1,32,40,0	script	#hammock9	NPC_LEFT_HAMMOCK,1,0,{
+
+OnTouch:
+    hamTouchLeft;
+
+OnUnTouch:
+    hamUnTouch;
+
+OnTimer5440:
+    hamTimerLeft;
+}
+
+000-2-1,37,40,0	script	#hammock10	NPC_RIGHT_HAMMOCK,1,0,{
 
 OnTouch:
     hamTouchLeft;
