@@ -34,6 +34,7 @@ L_Checker:
     if (.@nard == 2) goto L_ChefQuestStart;
     if (.@nard == 3) goto L_ChefQuestGiven;
     if (.@nard == 4) goto L_Reward;
+    if (.@nard > 5) goto L_GoBackArtis;
     if (.@nard > 4) goto L_Already;
     if (.@gugli == 2) goto L_Done;
     if (.@nard == 1) goto L_NotYet;
@@ -203,6 +204,37 @@ L_Already:
         l("I recommend you to take a nap on the inferior level, we will soon leave this place.");
 
     close;
+
+L_GoBackArtis:
+    speech 4,
+        l("Enough of this island?"),
+        l("Where would you like to go now?");
+    switch (select(l("Let's go to Artis."),
+                   l("I would like to stay here a bit more.")))
+    {
+        case 1:
+            speech 5,
+                l("Let's set sail then!");
+
+            if (!getmapxy(.@map$, .@x, .@y, 0))
+            {
+                warp "001-2-24.gat", .@x, .@y;
+            }
+            else
+            {
+                warp "001-2-24.gat", 22, 27;
+            }
+
+            closedialog;
+            close;
+        case 2:
+            speech 5,
+                l("Ok I stay here with my paperwork if you need my help.");
+
+            closedialog;
+            close;
+    }
+
 
 L_Reward:
     mesn;
