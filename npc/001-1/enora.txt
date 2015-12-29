@@ -49,6 +49,7 @@
             case 2:
                 break;
         }
+        return;
     }
 
     function enora_first_quest {
@@ -68,18 +69,25 @@
                 break;
         }
 
-        // First quest here
+        speech
+            l("I asked Don our blacksmith to prepare a sword for this morning, he should be done by now."),
+            l("Come check him, and return me the package, it's an easy job."),
+            l("You will be able to find Don's house on the west of this city, it's the first house just after left bridge, you can't miss it!"),
+            l("A young apprentice called Chef might be waiting outside, speak to him, and return the present to me.");
+            emotion 3;
+
+        close;
     }
 
     function enora_legion {
         speech 5,
             l("Test"),
             l("Test");
+
+        return;
     }
 
-    .@q = getq(ArtisQuests_Enora);
-
-    if (.@q == 0)
+    if (getq(ArtisQuests_Enora) == 0)
     {
         speech 4,
             l("Hey! You must be @@.", strcharinfo(0)),
@@ -98,12 +106,12 @@
     do
     {
         menuint
-            rif(.@q == 0, l("She told me that had some tasks for me.")), 0,
+            rif(.@q == 0, l("She told me that you had some tasks for me.")), 0,
             rif(.@q == 2 || .@q == 4 || .@q == 6, l("I have your package.")), 1,
             rif(.@q > 1, l("What is this legion?")), 2,
             l("I wish I could remember something..."), 3,
             rif (.@q != 0, l("Nothing.")), 4;
-        
+
         switch (@menuret)
         {
             case 0:
