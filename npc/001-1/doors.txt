@@ -489,7 +489,7 @@ OnTouch:
     if (.@enora < 8)
     {
         narrator 4,
-            l("Doors are closed.");
+            l("The door is closed.");
     }
     else
     {
