@@ -32,8 +32,7 @@
         npc_turntoxy(.@cx, .@cy);
     }
 
-    speech 4,
-        l("It is a sunny day, don't you think?");
+    villagertalk;
 
     localClose;
 
