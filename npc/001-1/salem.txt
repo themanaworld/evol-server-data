@@ -52,11 +52,11 @@
         return 0;
     }
 
-    if (2 == select("[debug]continue quest:[debug] start over"))
-    {
-        debugmes "Starting quest CatchPiou over";
-        setq ArtisQuests_CatchPiou, 0;
-    }
+//    if (2 == select("[debug]continue quest:[debug] start over"))
+//    {
+//        debugmes "Starting quest CatchPiou over";
+//        setq ArtisQuests_CatchPiou, 0;
+//    }
 
     .@q = getq(ArtisQuests_CatchPiou);
     @ArtisQuests_PiouPrice = 30000;
