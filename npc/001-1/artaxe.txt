@@ -1,12 +1,13 @@
 // Evol scripts.
-// Authors:
-//    Qwerty Dragon
+// Author:
 //    Reid
 // Description:
-//    Helping NPC.
+//    Legion NPC blocking the North road of Artis.
 
 001-1,90,31,0	script	Artaxe	NPC_ARTAXE,{
-    villagertalk;
+    speech 4,
+        l("Sorry buddy, you can't pass by this way, we're actually moving some fourniture."),
+        l("Come back later!");
 
     closedialog;
     close;
