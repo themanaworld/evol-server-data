@@ -46,6 +46,7 @@
             speech 5,
                 l("Let's set sail then!");
 
+            savepoint "000-2-1.gat", 50, 38;
             if (!getmapxy(.@map$, .@x, .@y, 0))
             {
                 warp "000-2-3.gat", .@x, .@y;
