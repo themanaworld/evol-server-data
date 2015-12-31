@@ -5,12 +5,49 @@
 //    Panels to give advice and some random information to players.
 
 001-1,180,25,0	script	#ArtisPanel1	NPC_NO_SPRITE,{
-    mesn "Narrator";
-    mes col(l("You step on something, a panel half overgrown by moss, it has writing on it..."), 9);
-    next;
+    narrator 4,
+        l("You step on something, a panel half overgrown by moss, it has writing on it...");
+
     mesq l("Don't fall!");
     next;
     mesq l("You've reached the highest natural place of Artis, enjoy the view.");
+    next;
+
+    closedialog;
+    close;
+
+OnInit:
+    .distance = 2;
+    end;
+}
+
+001-1,95,51,0	script	#ArtisPanel2	NPC_NO_SPRITE,{
+    narrator 4,
+        l("You step on something, a hard knocked panel with barelly visible inscriptions on it...");
+
+    mesq l("Beware of falling stones from the cliff!");
+    next;
+    mesq l("The other part of this sign has been crushed by a rock.");
+    next;
+
+    closedialog;
+    close;
+
+OnInit:
+    .distance = 2;
+    end;
+}
+
+001-1,103,66,0	script	#ArtisPanel3	NPC_NO_SPRITE,{
+    narrator 4,
+        l("You step on something, a panel with a bitten corner and clear inscriptions on it...");
+
+    mesq l("Warning! Dangerous fish, do not fall into the lake!");
+    next;
+    narrator 4,
+        l("Somebody tried to stroke the word \"fish\" and tried to replace it with \"sharkes\".");
+
+    closedialog;
     close;
 
 OnInit:
