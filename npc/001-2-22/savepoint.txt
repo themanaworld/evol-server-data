@@ -39,3 +39,12 @@ OnInit:
     .distance = 2;
     end;
 }
+
+001-2-22,53,38,0	script	#001-2-22-5	NPC_SAVE_POINT,{
+    savepointparticle "001-2-22.gat", 53, 38;
+    close;
+
+OnInit:
+    .distance = 2;
+    end;
+}
