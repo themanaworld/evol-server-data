@@ -1,0 +1,21 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Dye seller.
+
+
+001-1,47,134,0	script	Calypsan#001-1	NPC_CALYPSAN,{
+
+    speech 4,
+        l("My shop is not yeye ready...");
+
+    closedialog;
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 3;
+    end;
+}
+
