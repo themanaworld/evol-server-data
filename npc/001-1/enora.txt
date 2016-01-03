@@ -47,8 +47,13 @@
 
                 break;
             case 2:
+                mes "";
                 break;
         }
+
+        speech 4,
+            l("Ok, sorry. Back to our fluffies.");
+
         return;
     }
 
@@ -57,8 +62,8 @@
             l("You probably don't have much business in this city as you don't remember who you are."),
             l("So I was going to ask if maybe you would be interested in giving me a hand with a few errands.");
 
-        switch (select(l("I guess so. What's in it for me?"),
-                       l("Of course! What do you need?")))
+        switch (select (l("I guess so. What's in it for me?"),
+                        l("Of course! What do you need?")))
         {
             case 1:
                 speech 5,
@@ -69,9 +74,9 @@
                 break;
         }
 
-        speech
+        speech 4,
             l("I asked Don our blacksmith to prepare a sword for this morning, he should be done by now."),
-            l("Come check him, and return me the package, it's an easy job."),
+            l("Go to meet him, and return me the package, it's an easy task."),
             l("You will be able to find Don's house on the west of this city, it's the first house just after left bridge, you can't miss it!"),
             l("A young apprentice called Chef might be waiting outside, speak to him, and return the present to me.");
             emotion 3;
@@ -79,10 +84,146 @@
         close;
     }
 
+    function enora_second_quest {
+        speech 5,
+            l("Thank you for this commission, Don is really an ace when it comes to forging metal."),
+            l("But I hope that he didn't give you any hard time, as once he get up on the wrong side of the bed he transforms himself into an embittered and grumpy old man..."),
+            l("Poor Chelios, I don't envy him.");
+
+        switch (select (l("His craft is of an excellent quality."),
+                        l("The old man seemed to be senile.")))
+        {
+            case 1:
+                speech 5,
+                    l("Of course it is!");
+                break;
+            case 2:
+                speech 5,
+                    l("He may not have all of his wits but keep in mind one thing:");
+                break;
+        }
+        speech 4,
+            l("Don is renowned throughout the archipelagos for his forgery here on Artis."),
+            l("It's a great honnor for us at the Legion to hold the security of his commerce.");
+
+        return;
+    }
+
+    function enora_third_quest {
+        return;
+    }
+
+    function enora_fourth_quest {
+        speech 5,
+            l("Awesome!"),
+            l("I have one more task for you, Trozz, another member of the Legion, sent me a letter earlier today."),
+            l("Some citizen are worried about the growing number of Fluffies on the hill of Artis."),
+            l("Some childs are playing there, it's not safe to let these wild ball of fur wandering next to them."),
+            l("It would have been a pleasure for me to sort this out but I'm too busy on the dock with the arrival of Nard's vessel. So I count on your help!"),
+            l("I might stay stuck here for a little while and it's dangerous to go there alone, take these!");
+
+        setq ArtisQuests_Enora, 7;
+        set ArtisFluffyKilled, 0;
+
+        getitem TrainingGladius, 1;
+        getitem LegionTrainingShirt, 1;
+        getitem PibberiesInfusion, 5;
+
+        speech 4,
+            l("Do you know where is the hill?");
+
+        switch (select (l("Yes I do."),
+                        l("Please guide me.")))
+        {
+            case 1:
+                speech 5,
+                    l("Perfect! I will wait you here.");
+                break;
+            case 2:
+                speech 5,
+                    l("Go to the up of the river, and cross the river twice with the two bridges on the north."),
+                    l("The hill is located on the north-east of Artis.");
+                break;
+        }
+
+        return;
+    }
+
+    function enora_hill_cleaned {
+        if ($FLUFFY_KILLED < 7)
+        {
+            speech 5,
+                l("Oh no, you still have @@ Fluffies to kill.", 8 - $FLUFFY_KILLED);
+
+            return;
+        }
+        else if ($FLUFFY_KILLED < 8)
+        {
+            speech 5,
+                l("Only one more Fluffy to kill and it's done!");
+
+            return;
+        }
+
+        speech 5,
+            l("I cannot find the word to express my gratitude for your hard work."),
+            l("Keep the sword and the jacket, you deserved them!"),
+            l("You also earned the right to enter the Legion building."),
+            l("We offer different kind of training sessions and we have a board with open tasks for the city and its surrounding."),
+            l("It's a very good place if you want to make some money.");
+            emotion 6;
+
+        return;
+    }
+
+    function enora_quest_complete {
+        switch (getq(ArtisQuest_Enora))
+        {
+            case 2:
+                enora_second_quest;
+                break;
+            case 4:
+                enora_third_quest;
+                break;
+            case 6:
+                enora_fourth_quest;
+                break;
+            default:
+                break;
+        }
+
+        return;
+    }
+
+    function enora_don {
+        speech 5,
+            l("Don is renowned throughout the archipelagos for his forgery here on Artis."),
+            l("It's a great honnor for us at the Legion to hold the security of his commerce."),
+            l("If you search for him you should look to the west of this city, it's the first house just after left bridge, you can't miss it!"),
+            l("Chelios his apprentice practice most of the time outside.");
+
+        return;
+    }
+
     function enora_legion {
         speech 5,
-            l("Test"),
-            l("Test");
+            l("The Legion of Aemil is a group of mercenary who vowed to protect and serve their neighbours."),
+            l("We offer different kind of training sessions and we also have a board with open tasks for the city and its surrounding."),
+            l("It's a very good place if you want to make some money, but it will also help you to travel througout the archipelagos!"),
+            l("Each big city host a Legion chapter, Artis's chapter building is located on the north-west.");
+
+        return;
+    }
+
+    function enora_light_armor {
+
+        return;
+    }
+
+    function enora_hill {
+        speech 5,
+            l("Go to the up of the river, and cross the river twice with the two bridges on the north."),
+            l("The hill is located on the north-east of Artis.");
 
         return;
     }
@@ -105,12 +246,19 @@
 
     do
     {
+        .@q = getq(ArtisQuests_Enora);
         menuint
             rif(.@q == 0, l("She told me that you had some tasks for me.")), 0,
             rif(.@q == 2 || .@q == 4 || .@q == 6, l("I have your package.")), 1,
-            rif(.@q > 1, l("What is this legion?")), 2,
-            l("I wish I could remember something..."), 3,
-            rif (.@q != 0, l("Nothing.")), 4;
+            rif(.@q == 7, l("I cleaned up the hill.")), 2,
+            rif(.@q > 1, l("Who is Don?")), 3,
+            rif(.@q > 3, l("Where is the light armor shop?")), 4,
+            rif(.@q > 5, l("Where is the market?")), 5,
+            rif(.@q > 6, l("Where is the hill?")), 6,
+            rif(.@q > 0, l("What is this legion?")), 7,
+            rif(.@q > 8, l("How many Fluffy did I kill on the hill?")), 8,
+            l("I wish I could remember something..."), 9,
+            rif(.@q != 0, l("Nothing.")), 10;
 
         switch (@menuret)
         {
@@ -118,18 +266,34 @@
                 enora_first_quest;
                 break;
             case 1:
+                enora_quest_complete;
             case 2:
-                enora_legion;
+                enora_hill_cleaned;
                 break;
             case 3:
+                enora_don;
+            case 4:
+                enora_light_armor;
+                break;
+            case 5:
+                break;
+            case 6:
+                enora_hill;
+                break;
+            case 7:
+                enora_legion;
+                break;
+            case 8:
+                break;
+            case 9:
                 enora_memories;
                 break;
-            case 4:
+            case 10:
                 speech 5,
                     l("Please come back anytime!");
                 break;
         }
-    } while (@menuret != 4);
+    } while (@menuret != 10);
 
     closedialog;
     close;
