@@ -1,0 +1,19 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Legion member.
+
+001-1,59,44,0	script	Lucas#001-1	NPC_LUCAS,{
+
+    villagertalk;
+
+    closedialog;
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 3;
+    end;
+}
+
