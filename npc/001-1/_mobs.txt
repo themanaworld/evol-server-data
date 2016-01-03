@@ -4,3 +4,11 @@
 001-1,174,34,23,30	monster	Fluffy	1022,5,18000,100000
 001-1,199,48,5,10	monster	Fluffy	1022,3,18000,100000
 001-1,174,34,23,30	monster	Piou	1002,1,12000,60000
+
+001-1,0,0,0	script	Mobs#001-1	NPC_HIDDEN,{
+    end;
+
+OnFluffyDeath:
+    set ArtisFluffyKilled, ArtisFluffyKilled + 1;
+    end;
+}
