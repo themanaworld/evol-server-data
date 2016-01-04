@@ -284,6 +284,13 @@
                 enora_legion;
                 break;
             case 8:
+                speech 5,
+                    l("You killed @@ Fluffies.", #ArtisFluffyKilled);
+                if (#ArtisFluffyKilled > 8)
+                {
+                    mesq l("If you continue there will be none left!");
+                    next;
+                }
                 break;
             case 9:
                 enora_memories;
