@@ -57,14 +57,16 @@
 
         explain_guild;
         next;
+
+        .@price = 500;
         speech 4,
-            l("The fee is of 500E. So, do you want to register?");
+            l("The fee is of @@E. So, do you want to register?", .@price);
 
         switch (select (l("Yes."),
                         l("I don't have the time now.")))
         {
             case 1:
-                if (Zeny < 500)
+                if (Zeny < .@price)
                 {
                     speech 4,
                         l("You don't seem to have enough money on yourself, come back later!");
