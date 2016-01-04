@@ -5,12 +5,32 @@
 //    Dye seller.
 
 
-001-1,47,134,0	script	Calypsan#001-1	NPC_CALYPSAN,{
+001-1,47,126,0	script	Calypsan#001-1	NPC_CALYPSAN,{
 
     speech 4,
         l("My shop is not yeye ready...");
 
+    .@fexil = getq(ArtisQuests_Fexil);
+    menuint
+        rif(.@fexil == 1, l("Have you seen Fexil?")), 0,
+        l("Bye."), 1;
+
+    switch (@menuret)
+    {
+        case 0:
+            setcamnpc "Fexil#001-1";
+            speech 5,
+                l("Oh yeye did, his store is just aside me!"),
+                l("Yoiis should look there.");
+            restorecam;
+
+            break;
+        case 1:
+            break;
+    }
+
     closedialog;
+    goodbye;
     close;
 
 OnInit:
