@@ -107,11 +107,14 @@
 
 
 L_SalemMenuShop:
+    .@fexil = getq(ArtisQuests_Fexil);
+
     menuint
         l("What about those pious? They look so cute."), 0,
         rif(.@q != 0, l("I'd like to buy a piou.")), 1,
         l("I'd like to see your other products."), 2,
-        l("Bye."), 3;
+        rif(.@fexil == 1, l("I'm looking for somebody named Fexil.")), 3,
+        l("Bye."), 4;
 
     mes "";
     mesn;
@@ -120,6 +123,7 @@ L_SalemMenuShop:
     {
         case 0:
             goto L_AboutPious;
+            break;
         case 1:
             if (.@q == 2 && ArtisQuests_PiouDiscount)
             {
@@ -129,15 +133,20 @@ L_SalemMenuShop:
             }
             if (!BuyPiou(@ArtisQuests_PiouPrice))
                 ArtisQuests_PiouDiscount = 0;
-            mesq l("See you next time!");
-            close;
+            break;
         case 2:
             goto L_BuyShop;
+            break;
         case 3:
-            closedialog;
-            npctalk3 l("See you!");
-            close;
+            mesq l("I think that I've seen this weakling wandering around the beach on the south from here this morning.");
+            next;
+            break;
+        case 4:
+            break;
     }
+    closedialog;
+    goodbye;
+    close;
 
 L_AboutPious:
     mesq l("Ah, the locals like keeping them as pets.");
@@ -176,16 +185,17 @@ L_AboutPious:
         case 0:
             goto L_QuestInfo;
         case 1:
-            mesq l("Alright, see you later then!");
-            close;
+            break;
         case 2:
             BuyPiou @ArtisQuests_PiouPrice;
-            mesq l("See you later!");
-            close;
+            break;
         case 3:
-            mesq l("See you later!");
-            close;
+            break;
     }
+    closedialog;
+    goodbye;
+    close;
+
 
 L_QuestInfo:
     mesq l("The little piou is flying nearby, all you need is to catch it and bring back to me.");
