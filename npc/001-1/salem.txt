@@ -28,12 +28,14 @@
         if (Zeny < .@price)
         {
             mesq l("Don't you try to cheat an old merchant! You don't have enough money, you need @@E", .@price);
+            next;
 
             return 1;
         }
         if (!checkweight(4000, 1))
         {
             mesq l("You can't carry another @@? What a shame.", PiouEgg);
+            next;
 
             return 2;
         }
@@ -41,6 +43,7 @@
         if (.@inventorylist_count >= 100)
         {
             mesq l("You don't have enough room in your backpack for a @@. Go stow some of your junk and come back.", PiouEgg);
+            next;
 
             return 3;
         }
@@ -105,9 +108,10 @@
 
 L_SalemMenuShop:
     menuint
-        rif(.@q < 2, l("What about those pious? They look so cute.")), 0,
+        l("What about those pious? They look so cute."), 0,
         rif(.@q != 0, l("I'd like to buy a piou.")), 1,
-        l("I'd like to see your other products."), 2;
+        l("I'd like to see your other products."), 2,
+        l("Bye."), 3;
 
     mes "";
     mesn;
@@ -125,11 +129,14 @@ L_SalemMenuShop:
             }
             if (!BuyPiou(@ArtisQuests_PiouPrice))
                 ArtisQuests_PiouDiscount = 0;
-            next;
             mesq l("See you next time!");
             close;
         case 2:
             goto L_BuyShop;
+        case 3:
+            closedialog;
+            npctalk3 l("See you!");
+            close;
     }
 
 L_AboutPious:
@@ -137,6 +144,12 @@ L_AboutPious:
     next;
     mesq l("With proper training, a piou can become a good friend and faithful companion in your adventures.");
     next;
+
+    if (getq(ArtisQuests_CatchPiou) >= 2)
+    {
+        goto L_SalemMenuShop;
+    }
+
     mesq l("Their price is usually high, but you know what? I have a bargain offer for you.");
     next;
     mesq l("These little pious here can't fly. At least that's what I thought.");
