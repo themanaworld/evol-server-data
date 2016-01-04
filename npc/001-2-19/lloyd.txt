@@ -2,12 +2,248 @@
 // Author:
 //    Reid
 // Description:
-//    Lloyd the banker NPC
+//    Lloyd the banker NPC.
+// Variables:
+//    0  ArtisQuests_Lloyd
+//    1  ArtisQuests_Fexil
+// Quest states:
+//    00  -- Never talked
+//    01  -- Registred on the Guild
+//    10  -- not started
+//    11  -- Lloyd warned about the quest
 
 001-2-19,31,25,0	script	Lloyd the banker	NPC_LLOYD,{
 
+    function explain_guild {
+        speech
+            l("The guild is in charge of the commerce regularization throughout Artis and its surrounding."),
+            l("With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their buisness."),
+            l("We also feature some services like a storage and a bank for members."),
+            l("Registration is open for everybody, but newcomers need to pay a fee for all of the paperwork.");
+
+        return;
+    }
+
+    function first_visit {
+        speech 4,
+            l("Welcome!"),
+            l("My name is Lloyd, I'm a representant of the Merchant Guild of Artis.");
+
+        select (l("My name is @@...", strcharinfo(0)));
+
+        speech 5,
+            l("\"@@\", I like this name!", strcharinfo(0)),
+            l("Oh, wait a second...");
+        narrator 4,
+            l("Lloyd is searching something on his book.");
+        speech 4,
+            l("I see."),
+            l("You are new around here, don't you?");
+
+        if (select (l("How do you know?"), l("Yes I am.")) == 1)
+        {
+            speech 5,
+                l("Oh, it's simple. I have on this book the name of every citizen of Artis and its surrounding."),
+                l("And I have no sign of a so called \"@@\" on it!", strcharinfo(0));
+        }
+        else
+        {
+            speech 5,
+                l("I knew it!");
+        }
+
+        speech 4,
+            l("Let me explain to you what the Merchant Guild is for.");
+
+        explain_guild;
+        next;
+        speech 4,
+            l("The fee is of 500E. So, do you want to register?");
+
+        switch (select (l("Yes."),
+                        l("I don't have the time now.")))
+        {
+            case 1:
+                if (Zeny < 500)
+                {
+                    speech 4,
+                        l("You don't seem to have enough money on yourself, come back later!");
+                }
+                else
+                {
+                    Zeny = Zeny - .@price;
+                    setq ArtisQuests_Lloyd, 1;
+                    speech 4,
+                        l("Perfect!"),
+                        l("I wrote your name on the book, you are now free to use the storage and bank services.");
+                }
+                break;
+            case 2:
+                break;
+        }
+
+        return;
+    }
+
+    function paper_to_deliver {
+        speech 5,
+            l("Now that you bring up that topic, that remind me of something..."),
+            l("Not later than today there was this young seller named Fexil that passed by here."),
+            l("He asked to lend some money and a place to open his store, I think that he asked for a place on the merchant square on the south-west of the city..."),
+            l("Anyway, he forgot his permit when he left the building."),
+            l("Could you bring it to him?");
+
+        do
+        {
+            .@q = select (l("Ok, I will bring it to him."),
+                          l("I need more informations first."),
+                          l("I don't have the time."));
+            switch (.@q)
+            {
+                case 1:
+                    speech 5,
+                        l("Thank you for this!");
+                    setq ArtisQuests_Fexil, 1;
+                    break;
+                case 2:
+                    speech 5,
+                        l("You should look a seller named Fexil around the merchant square."),
+                        l("Ask other merchants, they might know where he is.");
+                    break;
+                case 3:
+                    speech 5,
+                        l("No problem, come back later if you changed your mind!");
+                    break;
+            }
+        } while (.@q == 2);
+    }
+
+    function bank_account {
+        speech 5,
+            l("Fine, what do you want to do with your money?");
+
+        do
+        {
+            .@q = select (l("Deposit."),
+                         l("Withdraw."),
+                         l("Check my balance."),
+                         l("I'm done."));
+            switch (.@q)
+            {
+                case 1:
+                    speech 1,
+                        l("Enter the amount that you want to deposit.");
+                    mes "";
+
+                    input .@amount;
+                    if (.@amount < 1)
+                    {
+                        speech 5,
+                            l("Please enter a valid amount.");
+                        continue;
+                    }
+                    if (.@amount > Zeny)
+                    {
+                        speech 5,
+                            l("You don't have enough Esperin on yourself.");
+                        continue;
+                    }
+                    set Zeny, Zeny - .@amount;
+                    set #MerchantBank, #MerchantBank + .@amount;
+
+                    speech 5,
+                        l("You made a cash deposit of @@E.", .@amount);
+
+                    break;
+                case 2:
+                    speech 1,
+                        l("Enter the amount that you want to withdraw.");
+                    mes "";
+
+                    input .@amount;
+                    if (.@amount < 1)
+                    {
+                        speech 5,
+                            l("Please enter a valid amount.");
+                        continue;
+                    }
+                    if (.@amount > #MerchantBank)
+                    {
+                        speech 5,
+                            l("You don't have enough Esperin on your bank account.");
+                        continue;
+                    }
+                    set #MerchantBank, #MerchantBank - .@amount;
+                    set Zeny, Zeny + .@amount;
+
+                    speech 5,
+                        l("You withdrawn a total of @@E.", .@amount);
+
+                    break;
+                case 3:
+                    speech 5,
+                        l("You currently have @@ on your bank account.", #MerchantBank);
+                    break;
+                case 4:
+                    mes "";
+                    break;
+            }
+        } while (.@q != 4);
+    }
+
+    if (getq (ArtisQuests_Lloyd) == 0)
+    {
+        first_visit;
+
+        closedialog;
+        goodbye;
+        close;
+    }
+
     speech
-        l("The bank is not open yet.");
+        l("Welcome to the Merchant Guild of Artis!"),
+        l("What do you want today?");
+    mes "";
+    while (1)
+    {
+        switch (select (l("I would like to deposit some item."),
+                        l("I would like to manage my money."),
+                        l("What is this guild for?"),
+                        l("The guild has any work for me?"),
+                        l("Bye.")))
+        {
+            case 1:
+                openstorage;
+                closedialog;
+                close;
+                break;
+            case 2:
+                bank_account;
+                break;
+            case 3:
+                mes "";
+                explain_guild;
+                break;
+            case 4:
+                if (getq(ArtisQuests_Fexil) >= 1)
+                {
+                    speech 5,
+                        l("There are no open task for you right now.");
+                    continue;
+                }
+
+                paper_to_deliver;
+
+                continue;
+            case 5:
+                closedialog;
+                goodbye;
+                close;
+                break;
+        }
+        speech 5,
+            l("Something else?");
+    }
 
     close;
 
