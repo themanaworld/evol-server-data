@@ -249,7 +249,7 @@ OnTouch events with a 2,2 range and with an 'end' after the header to avoid
 bugs (for more info on why see npc_click@map/npc.c). It is possible to use a job
 sprite as well, but you must first define it as a monster sprite in 'mob_avail.txt',
 a full description on how to do this is not in the scope of this manual.
-A '-1' sprite will make the NPC invisible (and unclickable). 
+A 'FAKE_NPC' sprite will make the NPC invisible (and unclickable).
 A 'HIDDEN_NPC' sprite will make an NPC which does not have a sprite, but is 
 still clickable, which is useful if you want to make a clickable object of 
 the 3D terrain.
@@ -271,7 +271,7 @@ optional parameter.
 
 ** Define a 'floating' NPC object.
 
--%TAB%script%TAB%<NPC Name>%TAB%-1,{<code>}
+-%TAB%script%TAB%<NPC Name>%TAB%FAKE_NPC,{<code>}
 
 This will define an NPC object not triggerable by normal means. This would 
 normally mean it's pointless since it can't do anything, but there are 
@@ -303,7 +303,7 @@ items here. The layout used to define sale items still count, and
 
 ** Define a trader NPC
 <map name>,<x>,<y>,<facing>%TAB%trader%TAB%<NPC Name>%TAB%<sprite>,{<code>}
--%TAB%trader%TAB%<NPC Name>%TAB%-1,{<code>}
+-%TAB%trader%TAB%<NPC Name>%TAB%FAKE_NPC,{<code>}
 
 All the standards that are valid to script objects are also valid for trader objects
 (see ** Define an NPC object for more information).
@@ -525,7 +525,8 @@ If a variable was never set, it is considered to equal zero for integer
 variables or an empty string ("", nothing between the quotes) for string 
 variables. Once you set it to that, the variable is as good as forgotten 
 forever, and no trace remains of it even if it was stored with character 
-or account data.
+or account data. The maximum length of variable name including prefix and
+suffix is 32.
 
 Some variables are special, that is, they are already defined for you by 
 the scripting engine. You can see the full list somewhere in 
@@ -1921,7 +1922,7 @@ Example:
 		dothat;
 	}
 
-	-	script	test	-1,{
+	-	script	test	FAKE_NPC,{
 		.@try = is_function("try"); // 1
 		.@not = is_function("not"); // 0
 	}
@@ -3166,6 +3167,14 @@ behave specially when talked to by GMs.
 
 ---------------------------------------
 
+*setgroupid(<new group id>{,"<character name>"|<account id>})
+
+This function will temporary adjust the id of player group the account to which the 
+player specified if the new group id is available. 
+Return 1 if success, otherwise it will return 0.
+
+---------------------------------------
+ 
 *getgroupid()
 
 This function will return the id of player group the account to which the 
@@ -4091,18 +4100,20 @@ Note: rid2name may not produce correct character names since rid means
 
 ---------------------------------------
 
+*message <account ID>,"<message>";
 *message "<character name>","<message>";
 
 That command will send a message to the chat window of the character 
-specified by name. The text will also appear above the head of that 
-character. It will not be seen by anyone else.
+specified by account ID or name. The text will also appear above the head
+of that character. It will not be seen by anyone else.
 
 ---------------------------------------
 
-*dispbottom "<message>";
+*dispbottom "<message>"{,<color>};
 
-This command will send the given message into the invoking character's 
-chat window.
+This command will send the given message into the invoking character's
+chat window. The color format is in RGB (0xRRGGBB), and default to green
+if <color> field is left out.
 
 ---------------------------------------
 
@@ -6683,7 +6694,7 @@ and source flags are ignored.
 *callshop "<name>",<option>;
 
 These are a series of commands used to create dynamic shops. 
-The callshop function calls an invisible shop (view -1) as if the player 
+The callshop function calls an invisible shop (FAKE_NPC) as if the player 
 clicked on it.
 
 For the options on callShop:
@@ -7453,7 +7464,7 @@ Usage example:
 
 When a user types the command "@test", an angel effect will be shown.
 
--	script	atcmd_example	-1,{
+-	script	atcmd_example	FAKE_NPC,{
 OnInit:
 	bindatcmd "test",strnpcinfo(3)+"::OnAtcommand";
 	end;
@@ -7491,7 +7502,7 @@ Parameter splitting example:
 The called event label needs to take care of joining arguments together, in
 case it expects spaces. For example:
 
--	script	atcmd_example	-1,{
+-	script	atcmd_example	FAKE_NPC,{
 OnInit:
 	bindatcmd "test",strnpcinfo(3)+"::OnAtcommand";
 	end;
@@ -7602,7 +7613,7 @@ configuration, it will eventually return to that cycle.
 
 Example:
 
--	script	DayNight	-1,{
+-	script	DayNight	FAKE_NPC,{
 OnClock0600:
 	day;
 	end;
