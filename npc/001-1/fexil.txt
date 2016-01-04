@@ -1,0 +1,150 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Newbie merchant.
+// Variables:
+//    ArtisQuests_Fexil
+// Quest states:
+//    0  -- not started
+//    1  -- Lloyd warned about the quest
+//    2  -- Fexil explain what he needs
+//    3  -- Fexil buy every fur that the pc bring to him
+
+001-1,47,134,0	script	Fexil#001-1	NPC_ELVEN_MAN_TRADER,{
+
+    function fexil_quest {
+        speech 4,
+            l("You know, the life of merchant is hard. I really hope that Artis and the Merchant Guild will help me to succeed."),
+            l("Maybe you too you could help me?"),
+            l("I want to be the first merchant of this square to sell @@'s clothes!", getitemlink(729)),
+            l("I will buy all of the fur that you will bring me at a good price, let's say, 25E piece."),
+            l("Do we have a deal?");
+
+        switch (select (l("Ok."), l("I don't want to be part of this joke.")))
+        {
+            case 1:
+                setq ArtisQuests_Fexil, 3;
+                speech 5,
+                    l("Awesome! I will wait for you here.");
+                break;
+            case 2:
+                speech 5,
+                    l("Oh... Ok, I will stay around here if you change you rmind.");
+                break;
+        }
+        return;
+    }
+
+    mesn;
+    mesq lg("Greetings traveler.");
+    next;
+    mesq l("I have some clothes and other things for you at a fine price!");
+    next;
+    mesq l("What I sell comes from every corner of this archipelago.");
+    next;
+    mesq lg("Interested?");
+    next;
+
+    if (getq (ArtisQuests_Fexil) == 1)
+    {
+        select (l("I have your pass from the Merchant Guild."));
+        speech 5,
+            l("Oh!!! You save me, I was too afraid to unpack my stuff with this pass."),
+            l("Hey, I remember you, we were on the same boat, you are the castaway.");
+
+        switch (select (l("Yes I am."),
+                        l("You confusing me with another.")))
+        {
+            case 1:
+                speech 5,
+                    l("Oh sure I remember you."),
+                    l("The travel was fine for you? For me it was a hell, I think that I am seesick.");
+                break;
+            case 2:
+                speech 5,
+                    l("Ah, I didn't have much sleep, it's possible.");
+                break;
+        }
+        setq ArtisQuests_Fexil, 2;
+        fexil_quest;
+
+        closedialog;
+        goodbye;
+        close;
+    }
+
+    .@fexil = getq(ArtisQuests_Fexil);
+
+    menuint
+        l("Yes, why not."), 1,
+        l("I would rather sell some stuff."), 2,
+        rif(.@fexil == 2, l("Do you still need help?")), 3,
+        rif(.@fexil > 2 && countitemcolor(729) > 0, l("I have some fur for you.")), 4,
+        l("No, Sorry."), 5;
+
+    switch (@menuret)
+    {
+        case 1:
+            speech 5,
+                l("Good, take a look at the bag next to me then!");
+            break;
+
+        case 2:
+            closedialog;
+            shop "Bag#000-1";
+            close;
+
+        case 3:
+            mes "";
+            fexil_quest;
+            break;
+
+        case 4:
+            speech 5,
+                l("Awesome, how many of those do you want to give me?");
+
+            do
+            {
+                input .@amount;
+                if (.@amount < 1)
+                {
+                    speech 5,
+                        l("Please enter a valid amount.");
+                    continue;
+                }
+                if (.@amount > countitemcolor(729))
+                {
+                    speech 5,
+                        l("You don't have enough @@ on yourself.", getitemlink(729));
+                    continue;
+                }
+
+                break;
+            } while (1);
+
+            .@price = 25 * .@amount;
+            speech 5,
+                l("Deal, I offer you @@E!", .@price);
+
+            delitem 729, .@amount;
+            Zeny = Zeny + .@price;
+
+            break;
+
+        case 5:
+            speech 5,
+                l("Oh... Well, I just started to trade... Thus my technique may not be the best."),
+                lg("Anyway, if you ever feel interested, just check my bag!");
+            break;
+    }
+
+    closedialog;
+    goodbye;
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
