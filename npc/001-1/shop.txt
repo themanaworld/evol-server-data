@@ -1,0 +1,33 @@
+// Evol scripts.
+// Author:
+//    Reid
+//    4144
+// Description:
+//    Fexil's shop bag.
+
+001-1,46,135,0	trader	Bag#001-1	NPC_SHOP_BAG,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem PiouLegs, -1, 15;
+    sellitem Bread, -1, 15;
+    sellitem Croconut, -1, 50;
+    sellitem Aquada, -1, 50;
+    sellitem Armbands, -1, 20;
+    sellitem LousyMoccasins, -1, 20;
+    sellitem PiouSlayer, -1, 15;
+
+    .sex = G_OTHER;
+    .distance = 2;
+    end;
+
+OnClock0000:
+    restoreshopitem PiouLegs, 15;
+    restoreshopitem Bread, 15;
+    restoreshopitem Croconut, 50;
+    restoreshopitem Aquada, 50;
+    restoreshopitem Armbands, 20;
+    restoreshopitem LousyMoccasins, 20;
+    restoreshopitem PiouSlayer, 15;
+}
