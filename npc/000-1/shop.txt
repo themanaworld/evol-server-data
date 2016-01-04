@@ -10,24 +10,24 @@
 OnInit:
     tradertype(NST_MARKET);
 
-    sellitem PiouLegs, -1, 1000;
-    sellitem Bread, -1, 1000;
-    sellitem Croconut, -1, 1000;
-    sellitem Aquada, -1, 1000;
-    sellitem Armbands, -1, 1000;
-    sellitem LousyMoccasins, -1, 1000;
-    sellitem PiouSlayer, -1, 1000;
+    sellitem PiouLegs, -1, 15;
+    sellitem Bread, -1, 15;
+    sellitem Croconut, -1, 50;
+    sellitem Aquada, -1, 50;
+    sellitem Armbands, -1, 20;
+    sellitem LousyMoccasins, -1, 20;
+    sellitem PiouSlayer, -1, 15;
 
-    .sex = G_MALE;
+    .sex = G_OTHER;
     .distance = 2;
     end;
 
 OnClock0000:
-    restoreshopitem PiouLegs, 1000;
-    restoreshopitem Bread, 1000;
-    restoreshopitem Croconut, 1000;
-    restoreshopitem Aquada, 1000;
-    restoreshopitem Armbands, 1000;
-    restoreshopitem LousyMoccasins, 1000;
-    restoreshopitem PiouSlayer, 1000;
+    restoreshopitem PiouLegs, 15;
+    restoreshopitem Bread, 15;
+    restoreshopitem Croconut, 50;
+    restoreshopitem Aquada, 50;
+    restoreshopitem Armbands, 20;
+    restoreshopitem LousyMoccasins, 20;
+    restoreshopitem PiouSlayer, 15;
 }
