@@ -3,7 +3,13 @@
 //    Reid
 // Description:
 //    Dye seller.
-
+// Variables:
+//    ArtisQuests_Fexil
+// Quest states:
+//    0  -- not started
+//    1  -- Lloyd warned about the quest
+//    2  -- Fexil explain what he needs
+//    3  -- Fexil buy every fur that the pc bring to him
 
 001-1,47,126,0	script	Calypsan#001-1	NPC_CALYPSAN,{
 
