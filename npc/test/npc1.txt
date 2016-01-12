@@ -27,7 +27,7 @@ test,10,10,0	script	npc1	NPC_TEST1,3,3,{
     }
 
 L_Start:
-    switch (select("show area:map:pc:change npc direction:quest test:cart:items:chat:wall"))
+    switch (select("show area:map:pc:change npc direction:quest test:cart:items:chat:wall:craft"))
     {
         case 1:
             areatest;
@@ -246,6 +246,27 @@ L_Start:
                         break;
                 }
             }
+            break;
+        case 10:
+            setskin "test2";
+            requestcraft .@var$, 9;
+            mes .@var$;
+            .@craft = initcraft(.@var$);
+            mes "craft id: " + str(.@craft);
+            mes "is craft valid: " + validatecraft(.@craft);
+            .@id = getcraftslotid(.@craft, 0);
+            .@amount = getcraftslotamount(.@craft, 0);
+            mes "first item id: " + .@id;
+            mes "first item name: " + getitemlink(.@id);
+            mes "first item amount: " + .@amount;
+
+            .@id = getcraftslotid(.@craft, 1);
+            .@amount = getcraftslotamount(.@craft, 1);
+            mes "second item id: " + .@id;
+            mes "second item name: " + getitemlink(.@id);
+            mes "second item amount: " + .@amount;
+//            dumpcraft .@craft;
+            deletecraft .@craft;
             break;
     }
 
