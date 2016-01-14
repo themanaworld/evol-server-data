@@ -14,12 +14,16 @@
 001-1,47,126,0	script	Calypsan#001-1	NPC_CALYPSAN,{
 
     speech 4,
-        l("My shop is not yeye ready...");
+        l("Yoiis is jealous of rainbow sky? It is possible to yeye your cloth with my dyes."),
+        l("What does yoiis want today?");
 
     .@fexil = getq(ArtisQuests_Fexil);
     menuint
         rif(.@fexil == 1, l("Have you seen Fexil?")), 0,
-        l("Bye."), 1;
+        l("Let's trade."), 1,
+        l("I want to make my own dyes."), 2,
+        l("How does these dyes works?"), 3,
+        l("Bye."), 4;
 
     switch (@menuret)
     {
@@ -32,6 +36,14 @@
 
             break;
         case 1:
+            break;
+        case 2:
+            speech 5,
+                l("Yoiis is not yet ready to make his own dye.");
+            break;
+        case 3:
+            break;
+        case 4:
             break;
     }
 
