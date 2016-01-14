@@ -55,6 +55,7 @@ OnTimer1000:
 
 OnInit:
     .sex = G_MALE;
+    .debug = 1;
     .distance = 5;
     initmovegraph   "start_pos",    193, 109,
                     "dock_ent",     194, 109,
@@ -65,27 +66,27 @@ OnInit:
                     "ship_ent",     19, 28,
                     "ship_sit",     28, 26;
 
-    setmovegraphcmd "start_pos",    "dock_bot",     1,  "dir 0, wait 4",
+    setmovegraphcmd "start_pos",    "dock_bot",     1,  "dir 0; wait 4",
+                    "dock_ent",     "dock_bot",     1,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
+                    "dock_ent",     "dock_top",     3,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
+                    "dock_ent",     "dock_right",   2,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
                     "dock_top",     "dock_bot",     2,  "dir 0; wait 10",
-                    "dock_bot",     "dock_top",     1,  "dir 4; wait 7",
-                    "dock_top",     "dock_left",    1,  "dir 2; wait 8",
-                    "dock_left",    "dock_top",     3,  "dir 0; wait 6",
-                    "dock_right",   "dock_left",    2,  "dir 0; wait 7",
-                    "dock_left",    "dock_right",   2,  "dir 0; wait 7",
-                    "dock_right",   "dock_bot",     3,  "dir 0; wait 4;",
-                    "dock_bot",     "dock_right",   2,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
-                    "dock_bot",     "dock_ent",     1,  "warp 001-2-21 ship_ent",
-                    "dock_ent",     "dock_bot",     2,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
+                    "dock_top",     "dock_left",    3,  "dir 2; wait 8",
                     "dock_top",     "dock_ent",     1,  "warp 001-2-21 ship_ent",
-                    "dock_ent",     "dock_top",     2,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
-                    "dock_right",   "dock_ent",     1,  "warp 001-2-21 ship_ent",
-                    "dock_ent",     "dock_right",   3,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
-                    "dock_bot",     "dock_left",    4,  "dir 6; wait 8",
-                    "dock_left",    "dock_bot",     1,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
+                    "dock_bot",     "dock_top",     1,  "dir 4; wait 7",
+                    "dock_bot",     "dock_right",   2,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
+                    "dock_bot",     "dock_ent",     4,  "warp 001-2-21 ship_ent",
+                    "dock_bot",     "dock_left",    3,  "dir 6; wait 8",
+                    "dock_left",    "dock_top",     1,  "dir 0; wait 6",
+                    "dock_left",    "dock_right",   2,  "dir 0; wait 7",
+                    "dock_left",    "dock_bot",     3,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
+                    "dock_right",   "dock_left",    1,  "dir 0; wait 7",
+                    "dock_right",   "dock_bot",     2,  "dir 0; wait 4",
+                    "dock_right",   "dock_ent",     3,  "warp 001-2-21 ship_ent",
                     "ship_ent",     "ship_sit",     1,  "dir 4; sit; wait 14; stand; wait 1",
                     "ship_sit",     "ship_ent",     1,  "warp 001-1 dock_ent";
                     
-    firstmove "wait 8";
+    firstmove "wait 8", "start_pos";
     initnpctimer;
 }
 
