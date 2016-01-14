@@ -62,7 +62,7 @@ function	script	findmovegraphlabel	{
  * This function manipulates NPC moving graph. Before calling it, make sure
  * `initmovegraph' was called. The function accepts 3-5 parameters (many times):
  * fromPositionLabel, toPositionLabel -- starting and ending position of NPC move
- * moveChanceWeight -- positive integer, represents the cnance of moving in given direction. (optional)
+ * moveChanceWeight -- positive integer, represents the chance of moving in given direction. (optional)
  * moveFlags -- if .mg_flags & moveFlags != 0, move is possible. (optional)
  * postCommand -- either "moveon" (start moving to next location straight after arriving from 
  *                fromPositionLabel to toPositionLabel) or a semicolon-separated set of commands
