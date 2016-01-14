@@ -3,7 +3,7 @@
 //    Reid
 //    4144
 // Description:
-//    Fexil's shop bag.
+//    Market shops.
 
 001-1,46,135,0	trader	Bag#001-1	NPC_SHOP_BAG,{
 
@@ -30,4 +30,61 @@ OnClock0000:
     restoreshopitem Armbands, 20;
     restoreshopitem LousyMoccasins, 20;
     restoreshopitem PiouSlayer, 15;
+}
+
+001-1,46,125,0	trader	Store#Calypsan001-1	NPC_NO_SPRITE,1,1,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem CrimsonCashmereDye, -1, 7;
+    sellitem ChocolateCashmereDye, -1, 7;
+    sellitem MintCashmereDye, -1, 7;
+    sellitem BlackCottonDye, -1, 10;
+    sellitem SilverCottonDye, -1, 10;
+    sellitem CamelCottonDye, -1, 10;
+    sellitem BrownCottonDye, -1, 10;
+    sellitem OrangeCottonDye, -1, 10;
+    sellitem DarkRedCottonDye, -1, 10;
+    sellitem RedCottonDye, -1, 10;
+    sellitem FuschiaCottonDye, -1, 10;
+    sellitem PinkCottonDye, -1, 10;
+    sellitem MauveCottonDye, -1, 10;
+    sellitem PurpleCottonDye, -1, 10;
+    sellitem NavyBlueCottonDye, -1, 10;
+    sellitem BlueGrayCottonDye, -1, 10;
+    sellitem BlueCottonDye, -1, 10;
+    sellitem TealCottonDye, -1, 10;
+    sellitem GreenCottonDye, -1, 10;
+    sellitem LimeCottonDye, -1, 10;
+    sellitem KhakiCottonDye, -1, 10;
+    sellitem YellowCottonDye, -1, 10;
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+
+OnClock0000:
+    restoreshopitem CrimsonCashmereDye, 7;
+    restoreshopitem ChocolateCashmereDye, 7;
+    restoreshopitem MintCashmereDye, 7;
+    restoreshopitem BlackCottonDye, 10;
+    restoreshopitem SilverCottonDye, 10;
+    restoreshopitem CamelCottonDye, 10;
+    restoreshopitem BrownCottonDye, 10;
+    restoreshopitem OrangeCottonDye, 10;
+    restoreshopitem DarkRedCottonDye, 10;
+    restoreshopitem RedCottonDye, 10;
+    restoreshopitem FuschiaCottonDye, 10;
+    restoreshopitem PinkCottonDye, 10;
+    restoreshopitem MauveCottonDye, 10;
+    restoreshopitem PurpleCottonDye, 10;
+    restoreshopitem NavyBlueCottonDye, 10;
+    restoreshopitem BlueGrayCottonDye, 10;
+    restoreshopitem BlueCottonDye, 10;
+    restoreshopitem TealCottonDye, 10;
+    restoreshopitem GreenCottonDye, 10;
+    restoreshopitem LimeCottonDye, 10;
+    restoreshopitem KhakiCottonDye, 10;
+    restoreshopitem YellowCottonDye, 10;
 }
