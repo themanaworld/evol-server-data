@@ -39,9 +39,13 @@
             break;
         case 2:
             speech 5,
-                l("Yoiis is not yet ready to make his own dye.");
+                l("Yoiis is not yet ready to make his own dye."),
+                l("But in the future I might help you to create your own ones.");
             break;
         case 3:
+            speech 5,
+                l("Yeye is not complicated, there are different kind of dyes that yeye sells."),
+                l("");
             break;
         case 4:
             break;
