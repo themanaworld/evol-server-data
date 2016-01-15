@@ -88,3 +88,22 @@ OnClock0000:
     restoreshopitem KhakiCottonDye, 10;
     restoreshopitem YellowCottonDye, 10;
 }
+
+001-1,64,114,0	trader	Store#Aquada001-1	NPC_NO_SPRITE,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem Aquada, -1, 50;
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+
+OnClock0000:
+    restoreshopitem Aquada, 20;
+OnClock0800:
+    restoreshopitem Aquada, 20;
+OnClock1600:
+    restoreshopitem Aquada, 20;
+}
