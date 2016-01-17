@@ -18,14 +18,14 @@ function	script	villagertalk	{
     {
         if (rand(2) == 1)
         {
-            wait 1;
-            emote 6; // "Angel".
+//            wait 1;
+//            emote 6; // "Angel".
             goodbye;
         }
         else
         {
-            wait 1;
-            emote 13; // "Blah".
+//            wait 1;
+//            emote 13; // "Blah".
             goodbye;
         }
         if (.@darn == 23) npctalk3 l("Stop it!");
@@ -48,8 +48,8 @@ function	script	villagertalk	{
     if (.@rand == 4)
     {
         npctalk3 l("It's difficult to distinguish good villagers from bad ones; keep your guard up, and stay away from me.");
-        wait 1;
-        emote 6;
+//        wait 1;
+//        emote 6;
     }
 
     if ((.@rand == 4) && (.@darn == 2))
@@ -58,8 +58,8 @@ function	script	villagertalk	{
     }
     else if (((.@rand + .@darn) - 2) == 9)
     {
-        zeny rand(10);
-        emote rand(13);
+//        zeny rand(10);
+//        emote rand(13);
         goodbye;
     }
 
