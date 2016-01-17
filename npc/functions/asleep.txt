@@ -15,7 +15,7 @@ function	script	asleep	{
     else if (.@rand == 1) npctalk3 l("Rrrr... Pchhhh...");
     else if (.@rand == 2) npctalk3 l("Ggrmm... Grmmmm...");
     else if (.@rand == 3) npctalk3 l("Hm...");
-    else emotion 105; // Sleepy
+    else emotion 106; // Sleepy
 
     close;
 }
