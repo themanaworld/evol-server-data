@@ -198,3 +198,34 @@ OnClock0800:
 OnClock1600:
     restoreshopitem Manana, 6;
 }
+
+001-1,67,116,0	trader	Store#Potion001-1	NPC_NO_SPRITE,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem PibberiesInfusion, -1, 200;
+    sellitem FatesPotion, -1, 100;
+    sellitem ClothoLiquor, -1, 50;
+    sellitem LachesisBrew, -1, 30;
+    sellitem AtroposMixture, -1, 10;
+    sellitem ElixirOfLife, -1, 2;
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+
+OnClock0000:
+    restoreshopitem PibberiesInfusion, 150;
+    restoreshopitem FatesPotion, 80;
+    restoreshopitem ClothoLiquor, 40;
+    restoreshopitem LachesisBrew, 20;
+    restoreshopitem AtroposMixture, 7;
+    restoreshopitem ElixirOfLife, 1;
+OnClock1200:
+    restoreshopitem PibberiesInfusion, 80;
+    restoreshopitem FatesPotion, 40;
+    restoreshopitem ClothoLiquor, 20;
+    restoreshopitem LachesisBrew, 10;
+    restoreshopitem AtroposMixture, 4;
+}
