@@ -229,3 +229,47 @@ OnClock1200:
     restoreshopitem LachesisBrew, 10;
     restoreshopitem AtroposMixture, 4;
 }
+
+001-1,58,119,0	trader	Store#General001-1	NPC_NO_SPRITE,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem Manana, -1, 100;
+    sellitem Carrot, -1, 80;
+    sellitem Aquada, -1, 50;
+    sellitem Plushroom, -1, 100;
+    sellitem Curshroom, -1, 80;
+    sellitem Piberries, -1, 150;
+    sellitem PiouEgg, -1, 25;
+// Add soft drinks.
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+
+OnClock0000:
+    restoreshopitem Manana, 50;
+    restoreshopitem Carrot, 40;
+    restoreshopitem Aquada, 30;
+    restoreshopitem Plushroom, 40;
+    restoreshopitem Curshroom, 30;
+    restoreshopitem Piberries, 40;
+    restoreshopitem PiouEgg, 10;
+OnClock0800:
+    restoreshopitem Manana, 30;
+    restoreshopitem Carrot, 30;
+    restoreshopitem Aquada, 30;
+    restoreshopitem Plushroom, 40;
+    restoreshopitem Curshroom, 30;
+    restoreshopitem Piberries, 70;
+    restoreshopitem PiouEgg, 10;
+OnClock1600:
+    restoreshopitem Manana, 40;
+    restoreshopitem Carrot, 40;
+    restoreshopitem Aquada, 20;
+    restoreshopitem Plushroom, 20;
+    restoreshopitem Curshroom, 20;
+    restoreshopitem Piberries, 30;
+    restoreshopitem PiouEgg, 5;
+}
