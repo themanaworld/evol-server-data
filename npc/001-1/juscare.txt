@@ -47,7 +47,6 @@
 
 OnTimer1000:
     dographmovestep;
-        debugmes "Juscare lock value : " + Repeat_NPC_lock;
 
 OnInit:
     .sex = G_MALE;
