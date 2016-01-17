@@ -159,3 +159,42 @@ OnClock1600:
     restoreshopitem CommonCarp, 3;
     restoreshopitem GrassCarp, 4;
 }
+
+001-1,48,116,0	trader	Store#Manana001-1	NPC_NO_SPRITE,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem Manana, -1, 60;
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+
+OnClock0000:
+    restoreshopitem Manana, 20;
+OnClock0800:
+    restoreshopitem Manana, 15;
+OnClock1600:
+    restoreshopitem Manana, 20;
+}
+
+001-1,53,123,0	trader	Store#Various001-1	NPC_NO_SPRITE,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem Manana, -1, 30;
+// Add soft drinks.
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+
+OnClock0000:
+    restoreshopitem Manana, 10;
+OnClock0800:
+    restoreshopitem Manana, 15;
+OnClock1600:
+    restoreshopitem Manana, 6;
+}
