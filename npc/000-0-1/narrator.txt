@@ -14,11 +14,14 @@
     narrator 4,
         l("Look, we finally meet."),
         l("I think that you already understood, you are asleep."),
-        l("The ship left the island, finally, Nard's crew is heading to Artis, and you are onboard don't worry."),
-        l("I'm sure that you wonder a lot of things, you will discover them soon, don't you worry..."),
-        l("Ah, seagulls, we are arriving..."),
+        l("The ship, La Johanne, has left the island, finally."),
+        l("Nard and crew are taking us to the city of Artis."),
+        l("There are a lot of things you must be wondering about."),
+        l("So, search for answers."),
         l("..."),
-        l("Wake up!");
+        l("Ah, seagulls. We are arriving."),
+        l("..."),
+        l("Wake-up!");
 
     if (countitemcolor(718) == 1) delitem 718, 1;
     setq General_Narrator, 1;
