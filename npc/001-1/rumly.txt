@@ -88,9 +88,24 @@ L_Menu:
             goto L_ResetStats;
         case 3:
             if (.@visited != 2) goto L_Quit;
-                
-            speech 5,
-                l("See you! And come back with the plushrooms!");
+
+            .@rand = rand (2);
+
+            if (.@rand)
+            {
+                speech 5,
+                    l("See you! And come back with the plushrooms!");
+            }
+            else
+            {
+                speech 5,
+                    l("Oh noes!"),
+                    l("A rabbit!"),
+                    l("He has a guns!"),
+                    l("*Bang bang*");
+                narrator 4,
+                    l("Rumly is hidding behind the tree.");
+            }
 
             goto L_Quit;
     }
