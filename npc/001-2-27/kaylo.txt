@@ -11,7 +11,8 @@
     switch (select (
         l("Let's make a trade."),
         l("What's wrong with your clothes?"),
-        l("What is this place?")))
+        l("What is this place?"),
+        l("See you.")))
     {
         case 1:
             closedialog;
@@ -27,6 +28,8 @@
             speech 5,
                 l("You are on the Blacksmith's house, by Jove!"),
                 l("Don is a renowned blacksmith throughout Andorra it's crazy that you don't know about him.");
+            break;
+        case 4:
             break;
     }
 
