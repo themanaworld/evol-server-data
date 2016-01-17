@@ -107,3 +107,32 @@ OnClock0800:
 OnClock1600:
     restoreshopitem Aquada, 20;
 }
+
+001-1,72,126,0	trader	Store#SeaStore001-1	NPC_NO_SPRITE,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem Aquada, -1, 10;
+    sellitem UrchinMeat, -1, 20;
+    sellitem SmallTentacles, -1, 30;
+    sellitem Tentacles, -1, 15;
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+
+OnClock0000:
+    restoreshopitem Aquada, 3;
+    restoreshopitem UrchinMeat, 12;
+    restoreshopitem SmallTentacles, 4;
+OnClock0800:
+    restoreshopitem Aquada, 6;
+    restoreshopitem UrchinMeat, 8;
+    restoreshopitem Tentacles, 8;
+    restoreshopitem SmallTentacles, 2;
+OnClock1600:
+    restoreshopitem Aquada, 5;
+    restoreshopitem UrchinMeat, 10;
+    restoreshopitem SmallTentacles, 7;
+}
