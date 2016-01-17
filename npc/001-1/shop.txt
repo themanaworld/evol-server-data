@@ -136,3 +136,26 @@ OnClock1600:
     restoreshopitem UrchinMeat, 10;
     restoreshopitem SmallTentacles, 7;
 }
+
+001-1,71,129,0	trader	Store#FishStore001-1	NPC_NO_SPRITE,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem CommonCarp, -1, 8;
+    sellitem GrassCarp, -1, 7;
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+
+OnClock0000:
+    restoreshopitem CommonCarp, 3;
+    restoreshopitem GrassCarp, 2;
+OnClock0800:
+    restoreshopitem CommonCarp, 2;
+    restoreshopitem GrassCarp, 3;
+OnClock1600:
+    restoreshopitem CommonCarp, 3;
+    restoreshopitem GrassCarp, 4;
+}
