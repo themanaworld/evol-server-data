@@ -27,7 +27,7 @@
             return 4;
         if (Zeny < .@price)
         {
-            mesq l("Don't you try to cheat an old merchant! You don't have enough money, you need @@E", .@price);
+            mesq l("Don't you try to cheat an old merchant! You don't have enough money, you need @@E.", .@price);
             next;
 
             return 1;
