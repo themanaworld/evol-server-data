@@ -77,30 +77,24 @@
     .@fexil = getq(ArtisQuests_Fexil);
 
     menuint
-        l("Yes, why not."), 1,
-        l("I would rather sell some stuff."), 2,
-        rif(.@fexil == 2, l("Do you still need help?")), 3,
-        rif(.@fexil > 2 && countitemcolor(729) > 0, l("I have some fur for you.")), 4,
-        l("No, Sorry."), 5;
+        l("OK, let's trade."), 1,
+        rif(.@fexil == 2, l("Do you still need help?")), 2,
+        rif(.@fexil > 2 && countitemcolor(729) > 0, l("I have some fur for you.")), 3,
+        l("No, Sorry."), 4;
 
     switch (@menuret)
     {
         case 1:
-            speech 5,
-                l("Good, take a look at the bag next to me then!");
-            break;
-
-        case 2:
             closedialog;
-            shop "Bag#000-1";
+            shop "Bag#001-1";
             close;
 
-        case 3:
+        case 2:
             mes "";
             fexil_quest;
             break;
 
-        case 4:
+        case 3:
             speech 5,
                 l("Awesome, how many of those do you want to give me?");
 
@@ -132,7 +126,7 @@
 
             break;
 
-        case 5:
+        case 4:
             speech 5,
                 l("Oh... Well, I just started to trade... Thus my technique may not be the best."),
                 lg("Anyway, if you ever feel interested, just check my bag!");

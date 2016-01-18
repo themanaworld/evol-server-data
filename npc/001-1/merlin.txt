@@ -4,11 +4,45 @@
 // Description:
 //    Fishmonger NPC
 
-001-1,72,128,0	script	Merlin	NPC_MERLIN,{
+001-1,72,128,0	script	Merlin	NPC_MERLIN,2,2,{
 
-    speech
-        l("Fish is good for the brain!");
+    function randomDialogue {
+        closedialog;
 
+        .@r = rand (6);
+        if (.@r == 0)
+        {
+            npctalk3 l("Fish, come and see my fish!");
+        }
+        else if (.@r == 1)
+        {
+            npctalk3 l("They are fresh, they are good!");
+        }
+        else if (.@r == 2)
+        {
+            npctalk3 l("Fresh from the sea and cheap!");
+        }
+        else if (.@r == 3)
+        {
+            npctalk3 l("Come, come and see!");
+        }
+        else if (.@r == 4)
+        {
+            npctalk3 l("They are fresh!");
+        }
+        else
+        {
+            npctalk3 l("Fish is good for the brain!");
+        }
+        close;
+    }
+
+OnTouch:
+    if (Repeat_NPC_lock <= gettimetick(2))
+    {
+        Repeat_NPC_lock = gettimetick(2) + 1;
+        randomDialogue;
+    }
     close;
 
 OnInit:

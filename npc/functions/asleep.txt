@@ -8,12 +8,14 @@
 //    .@rand = Random number between the number of "sleeping" choice.
 
 function	script	asleep	{
+    closedialog;
 
-    .@rand = rand(3);
+    .@rand = rand(5);
     if (.@rand == 0) npctalk3 l("Zzzzzzzzz...");
-    if (.@rand == 1) npctalk3 l("Rrrr... Pchhhh...");
-    if (.@rand == 2) npctalk3 l("Ggrmm... Grmmmm...");
-    if (.@rand == 3) npctalk3 l("Hm...");
+    else if (.@rand == 1) npctalk3 l("Rrrr... Pchhhh...");
+    else if (.@rand == 2) npctalk3 l("Ggrmm... Grmmmm...");
+    else if (.@rand == 3) npctalk3 l("Hm...");
+    else emotion 106; // Sleepy
 
     close;
 }

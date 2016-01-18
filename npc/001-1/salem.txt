@@ -111,10 +111,11 @@ L_SalemMenuShop:
 
     menuint
         l("What about those pious? They look so cute."), 0,
-        rif(.@q != 0, l("I'd like to buy a piou.")), 1,
-        l("I'd like to see your other products."), 2,
-        rif(.@fexil == 1, l("I'm looking for somebody named Fexil.")), 3,
-        l("Bye."), 4;
+        l("Let's trade."), 1,
+        rif(.@q != 0, l("I'd like to buy a piou.")), 2,
+        l("I'd like to see your other products."), 3,
+        rif(.@fexil == 1, l("I'm looking for somebody named Fexil.")), 4,
+        l("Bye."), 5;
 
     mes "";
     mesn;
@@ -125,6 +126,10 @@ L_SalemMenuShop:
             goto L_AboutPious;
             break;
         case 1:
+            closedialog;
+            shop "Store#General001-1";
+            close;
+        case 2:
             if (.@q == 2 && ArtisQuests_PiouDiscount)
             {
                 mesq l("You still have a 90% discount on one piou.");
@@ -134,14 +139,14 @@ L_SalemMenuShop:
             if (!BuyPiou(@ArtisQuests_PiouPrice))
                 ArtisQuests_PiouDiscount = 0;
             break;
-        case 2:
+        case 3:
             goto L_BuyShop;
             break;
-        case 3:
+        case 4:
             mesq l("I think that I've seen this weakling wandering around the beach on the south from here this morning.");
             next;
             break;
-        case 4:
+        case 5:
             break;
     }
     closedialog;

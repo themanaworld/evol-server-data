@@ -16,51 +16,44 @@ function	script	villagertalk	{
     .@darn = rand(42);
     if (.@rand == 0)
     {
-        if (rand(2) == 1)
+        if (.@darn < 26)
         {
-            wait 1;
-            emote 6; // "Angel".
+            emotion 103; // ^.^
+            goodbye;
+        }
+        else if (.@darn > 26)
+        {
+            emotion 111; // Look away
             goodbye;
         }
         else
         {
-            wait 1;
-            emote 13; // "Blah".
-            goodbye;
+            npctalk3 l("Stop it!");
         }
-        if (.@darn == 23) npctalk3 l("Stop it!");
     }
-
-    if (.@rand == 1)
+    else if (.@rand == 1)
     {
         speech 4,
             l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?"),
             l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."),
             l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
     }
-
-    if (.@rand == 2)
-        npctalk3 l("It is a sunny day, don't you think?");
-
-    if (.@rand == 3)
-        npctalk3 l("Go fly a kite.");
-
-    if (.@rand == 4)
+    else if (.@rand == 2)
     {
-        npctalk3 l("It's difficult to distinguish good villagers from bad ones; keep your guard up, and stay away from me.");
-        wait 1;
-        emote 6;
+        npctalk3 l("It is a sunny day, don't you think?");
     }
-
-    if ((.@rand == 4) && (.@darn == 2))
+    else if (.@rand == 3)
+    {
+        npctalk3 l("Go fly a kite.");
+    }
+    else if ((.@rand == 4) && (.@darn == 2))
     {
         npctalk3 l("I just want to live my life in peace.");
     }
-    else if (((.@rand + .@darn) - 2) == 9)
+    else if (.@rand == 4)
     {
-        zeny rand(10);
-        emote rand(13);
-        goodbye;
+        npctalk3 l("It's difficult to distinguish good villagers from bad ones; keep your guard up, and stay away from me.");
+        emotion 6;
     }
 
     return;

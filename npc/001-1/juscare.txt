@@ -5,7 +5,6 @@
 // Description:
 //    Juscare, walking NPC of the legion of Aemil on the right part of the Agora of Artis.
 
-
 001-1,118,92,0	script	Juscare#001-1	NPC_HUMAN_MALE_LEGION_ARTIS,{
 
     function shouldTurn {
@@ -23,6 +22,16 @@
         close;
     }
 
+    function randomTalk {
+        debugmes "Juscare lock value : " + Repeat_NPC_lock + " current time " + gettimetick(2);
+
+        if (Repeat_NPC_lock <= gettimetick(2))
+        {
+            Repeat_NPC_lock = gettimetick(2) + 2;
+            villagertalk;
+        }
+    }
+
     npc_pausemove;
     @Juscar_old_dir = -1;
     if (shouldTurn())
@@ -32,7 +41,7 @@
         npc_turntoxy(.@cx, .@cy);
     }
 
-    villagertalk;
+    randomTalk;
 
     localClose;
 

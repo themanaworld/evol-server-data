@@ -1,0 +1,37 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Lydon is the Weapon seller in Don's Blacksmith house on Artis.
+
+001-2-27,43,28,0	script	Lydon#001-2-27	NPC_LYDON,{
+    speech 4,
+        l("Hi customer! What do you want today?");
+
+    switch (select (
+        l("Let's make a trade."),
+        l("Who is the blacksmith outside?"),
+        l("Bye.")))
+    {
+        case 1:
+            closedialog;
+            shop "Store#Weapon001-2-27";
+            close;
+        case 2:
+            speech 5,
+                l("Chef? He is Don's apprentice, he works on his hammering skill day and night."),
+                l("He is very lucky that Don took him under his wing, but being the student of such a teacher is not easy every day!");
+            break;
+        case 3:
+            break;
+    }
+
+    goodbye;
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 4;
+    end;
+}
+

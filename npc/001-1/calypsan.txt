@@ -36,7 +36,9 @@
 
             break;
         case 1:
-            break;
+            closedialog;
+            shop "Store#Calypsan001-1";
+            close;
         case 2:
             speech 5,
                 l("Yoiis is not yet ready to make his own dye."),
