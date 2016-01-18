@@ -1,0 +1,16 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Red, the INN Keeper.
+
+001-2-28,28,28,0	script	Red#001-2-28	NPC_RED,{
+
+    speech l("Welcome!");
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 5;
+}
+
