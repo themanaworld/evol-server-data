@@ -3,10 +3,111 @@
 //    Reid
 // Description:
 //    Red, the INN Keeper.
+// Variable:
+//    INN_Register
 
 001-2-28,28,28,0	script	Red#001-2-28	NPC_RED,{
 
-    speech l("Welcome!");
+    function narrator_explication {
+        narrator 4,
+            l("You will respawn to this place once you get knocked out during a combat."),
+            l("Renting a room in an INN will make you respawn with your full life."),
+            l("If you don't rent a room in an INN, you will respawn to your last saved position with only few health point.");
+
+        return;
+    }
+
+    function register_room {
+        // A somehow of BaseLevel * logn (BaseLevel * 100).
+        .@price = 0;
+        .@pc_level = BaseLevel * 100;
+        while (.@pc_level >>= 1)
+        {
+            ++.@price;
+        }
+        .@price *= BaseLevel;
+
+        if (.@price <= 10)
+        {
+            .@price = 10;
+        }
+
+        speech 5,
+            l("That will be @@E for one night, once you use your room you will have to pay again.", .@price);
+
+        switch (select (l("Yes."),
+                        l("No.")))
+        {
+            case 1:
+                if (Zeny < .@price)
+                {
+                    speech 5, l("You don't have enough money, you need @@E.", .@price);
+                }
+                else
+                {
+                    emotion 3;
+                    Zeny = Zeny - .@price;
+                    INN_Register = REDPLUSH_INN;
+
+                    if (Sex == G_FEMALE)
+                    {
+                        savepoint "001-2-29.gat", 29, 49;
+                    }
+                    else
+                    {
+                        savepoint "001-2-29.gat", 29, 35;
+                    }
+
+                    speech 5,
+                        l("Fine! You can go upstare and choose your room."),
+                        l("You can use it whenever you want!");
+
+                    narrator_explication;
+                }
+                break;
+            case 2:
+                speech 5,
+                    l("Come back later if you changed your mind!");
+                break;
+        }
+
+        return;
+    }
+
+    speech 4,
+        l("Welcome to RedPlush's INN!"),
+        l("What do you want?");
+
+    do
+    {
+        menuint rif(INN_Register == 0, ("I want a room.")), 1,
+                l("What service do you offer?"), 2,
+                l("What is your tipiou trying to do?"), 3,
+                l("Nothing."), 4;
+
+        switch (@menuret)
+        {
+            case 1:
+                register_room;
+                break;
+            case 2:
+                emotion 6;
+                speech 5,
+                    l("We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranted to be right as rain after a night here!"),
+                    l("If you wake up at the INN after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.");
+                narrator_explication;
+                break;
+            case 3:
+                speech 5,
+                    l("That poor one is doing his best to fly... But his last meal and the gravity is not helping him so far!");
+                break;
+            case 4:
+                break;
+        }
+    } while (@menuret != 1 && @menuret != 4);
+
+    closedialog;
+    goodbye;
     close;
 
 OnInit:
