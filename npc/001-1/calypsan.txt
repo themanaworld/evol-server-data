@@ -2,7 +2,7 @@
 // Authors:
 //    Reid
 // Description:
-//    Dye seller.
+//    Dye seller, she sells and explain how works dye cards.
 // Variables:
 //    ArtisQuests_Fexil
 // Quest states:
@@ -13,45 +13,61 @@
 
 001-1,47,126,0	script	Calypsan#001-1	NPC_CALYPSAN,{
 
+    function explain_dyes {
+        speech 5,
+            l("There are two different kinds of card, the first changes the style of your clothes, the second changes their stats."),
+            l("");
+
+        // Need tritan's dialogue (so the first line need to be changed too)
+        // Need to explain style cards, and to redirect to Don the blacksmith for stat cards.
+        // Style cards change the color or the visual aspect of an item. There are multiple cards that can work on multiple equipment.
+        // Each piece of equipment hold a certain amount of possible cards that can be inserted.
+        // Ex: Tank Top + Red dye = Red Tank Top
+        // Another example, Resa from the light armor shop offer a Brimmed Hat, you can upgrade it with a feather and obtain a feather brimmed hat.
+    }
+
+
     speech 4,
         l("Yoiis is jealous of rainbow sky? It is possible to yeye your cloth with my dyes."),
         l("What does yoiis want today?");
 
     .@fexil = getq(ArtisQuests_Fexil);
-    menuint
-        rif(.@fexil == 1, l("Have you seen Fexil?")), 0,
-        l("Let's trade."), 1,
-        l("I want to make my own dyes."), 2,
-        l("How does these dyes works?"), 3,
-        l("Bye."), 4;
 
-    switch (@menuret)
+    do
     {
-        case 0:
-            setcamnpc "Fexil#001-1";
-            speech 5,
-                l("Oh yeye did, his store is just aside me!"),
-                l("Yoiis should look there.");
-            restorecam;
+        menuint
+            rif(.@fexil == 1, l("Have you seen Fexil?")), 0,
+            l("Let's trade."), 1,
+            l("How does these dyes works?"), 2,
+            l("I want to make my own dyes."), 3,
+            l("Bye."), 4;
 
-            break;
-        case 1:
-            closedialog;
-            shop "Store#Calypsan001-1";
-            close;
-        case 2:
-            speech 5,
-                l("Yoiis is not yet ready to make his own dye."),
-                l("But in the future I might help you to create your own ones.");
-            break;
-        case 3:
-            speech 5,
-                l("Yeye is not complicated, there are different kind of dyes that yeye sells."),
-                l("");
-            break;
-        case 4:
-            break;
-    }
+        switch (@menuret)
+        {
+            case 0:
+                setcamnpc "Fexil#001-1";
+                speech 5,
+                    l("Oh yeye did, his store is just aside me!"),
+                    l("Yoiis should look there.");
+                restorecam;
+
+                break;
+            case 1:
+                closedialog;
+                shop "Store#Calypsan001-1";
+                close;
+            case 2:
+                explain_dyes;
+                break;
+            case 3:
+                speech 5,
+                    l("Yoiis is not yet ready to make his own dyes."),
+                    l("But in the future I might help you to create your own ones.");
+                break;
+            case 4:
+                break;
+        }
+    } while (@menuret != 4);
 
     closedialog;
     goodbye;
