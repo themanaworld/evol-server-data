@@ -5,31 +5,21 @@
 // Contributors:
 //    Akko Teru
 // Description:
-//    Tell a random sentence. || There ought to be a law!
+//    Tell a random sentence.
 // Variables:
 //    .@rand = Random number between the number of sentence choice.
-//    .@darn = Separatly chosen value for silly antics.
 
 function	script	villagertalk	{
 
     .@rand = rand(5);
-    .@darn = rand(42);
     if (.@rand == 0)
     {
-        if (rand(2) == 1)
-        {
-            wait 1;
-            emote 6; // "Angel".
-            goodbye;
-        }
-        else
-        {
-            wait 1;
-            emote 13; // "Blah".
-            goodbye;
-        }
-        if (.@darn == 23) npctalk3 l("Stop it!");
+        emotion 6; // "Angel".
+        goodbye;
     }
+
+    if (rand(42) == 23)
+        npctalk3 l("Stop it!"); // This could happen just before another talk function.
 
     if (.@rand == 1)
     {
@@ -48,18 +38,19 @@ function	script	villagertalk	{
     if (.@rand == 4)
     {
         npctalk3 l("It's difficult to distinguish good villagers from bad ones; keep your guard up, and stay away from me.");
-        wait 1;
-        emote 6;
+        //wait 1;
+        emotion 6;
     }
 
-    if ((.@rand == 4) && (.@darn == 2))
+    if ((.@rand == 4) && (rand(42) == 0))
     {
         npctalk3 l("I just want to live my life in peace.");
     }
-    else if (((.@rand + .@darn) - 2) == 9)
+
+    if (rand(42) == 0)
     {
-        zeny rand(10);
-        emote rand(13);
+        Zeny = Zeny + rand(10);
+        emotion rand(13);
         goodbye;
     }
 
