@@ -10,9 +10,11 @@
 
     function narrator_explication {
         narrator 4,
-            l("You will respawn to this place once you get knocked out during a combat."),
-            l("Renting a room in an INN will make you respawn with your full life."),
-            l("If you don't rent a room in an INN, you will respawn to your last saved position with only few health point.");
+            l("You will respawn at this place if defeated in combat.");
+            //l("Unlike other respawn points, an INN can fully restore your HP.");
+            //   ^^^ 1/2 is restored @die, Red does not offer to heal.
+            // The respawn point remains until set somewhere else.
+            // The INN seems to charge only once.
 
         return;
     }
@@ -33,15 +35,17 @@
         }
 
         speech 5,
-            l("That will be @@E for one night, once you use your room you will have to pay again.", .@price);
+            l("That will be @@E to set your respawn point", .@price),
+            l("This will remain your respawn point until set elsewhere."),
+            l("Is that okay?");
 
-        switch (select (l("Yes."),
-                        l("No.")))
+        switch (select (l("[Yes]"),
+                        l("[No]")))
         {
             case 1:
                 if (Zeny < .@price)
                 {
-                    speech 5, l("You don't have enough money, you need @@E.", .@price);
+                    speech 5, l("You don't have enough money, bring @@E.", .@price);
                 }
                 else
                 {
@@ -59,8 +63,7 @@
                     }
 
                     speech 5,
-                        l("Fine! You can go upstare and choose your room."),
-                        l("You can use it whenever you want!");
+                        l("Okay. You can go upstairs and choose a room.");
 
                     narrator_explication;
                 }
@@ -75,12 +78,12 @@
     }
 
     speech 4,
-        l("Welcome to RedPlush's INN!"),
-        l("What do you want?");
+        l("Welcome to the RedPlush INN!"),
+        l("What do you need?");
 
     do
     {
-        menuint rif(INN_Register == 0, ("I want a room.")), 1,
+        menuint rif(INN_Register == 0, ("Could I lodge here for a while?")), 1,
                 l("What service do you offer?"), 2,
                 l("What is your tipiou trying to do?"), 3,
                 l("Nothing."), 4;
@@ -95,6 +98,7 @@
                 speech 5,
                     l("We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranted to be right as rain after a night here!"),
                     l("If you wake up at the INN after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.");
+
                 narrator_explication;
                 break;
             case 3:
