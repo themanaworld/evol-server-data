@@ -3,6 +3,8 @@
 //    Reid
 // Description:
 //    Dye seller, she sells and explain how works dye cards.
+// Version:
+//    2016.019 "Under Construction".
 // Variables:
 //    ArtisQuests_Fexil
 // Quest states:
@@ -15,8 +17,20 @@
 
     function explain_dyes {
         speech 5,
-            l("There are two different kinds of card, the first changes the style of your clothes, the second changes their stats."),
-            l("");
+            l("Look at your equipment."),
+            l("Guess what material it is made from."),
+            l("Seek a colorant for that material."),
+            l("Cotton, cashmere, leather, ..."),
+            l("Zinc-Titanium Oxide, Phthalocyanides, Cadmiums, Lazulite..."),
+            l("Colorant is not the yeying color. Some wear out from light,"),
+            l("others look great but inflict itai-itai,"),
+            l("and others become spotty or wash-away."),
+            l("What yoiis should know:"),
+            l("1: The type of item yoiis want to dye."),
+            l("2: What material it is made from."),
+            l("3: Which colorants can dye it."),
+            l("4: How to care for it."),
+            l("If you aren't careful the item could become ruined.");
 
         // Need tritan's dialogue (so the first line need to be changed too)
         // Need to explain style cards, and to redirect to Don the blacksmith for stat cards.
@@ -28,7 +42,8 @@
 
 
     speech 4,
-        l("Yoiis is jealous of rainbow sky? It is possible to yeye your cloth with my dyes."),
+        l("Yoiis is jealous of rainbow sky?"),
+        l("It is possible to yeye your cloth with my beautiful dyes."),
         l("What does yoiis want today?");
 
     .@fexil = getq(ArtisQuests_Fexil);
@@ -37,10 +52,10 @@
     {
         menuint
             rif(.@fexil == 1, l("Have you seen Fexil?")), 0,
-            l("Let's trade."), 1,
-            l("How does these dyes works?"), 2,
-            l("I want to make my own dyes."), 3,
-            l("Bye."), 4;
+            l("[Trade]"), 1,
+            l("[Ask how dyes are used]"), 2,
+            l("[Ask how dyes are made]"), 3,
+            l("[Quit]"), 4;
 
         switch (@menuret)
         {
