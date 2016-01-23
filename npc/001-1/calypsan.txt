@@ -17,27 +17,20 @@
 
     function explain_dyes {
         speech 5,
-            l("Look at your equipment."),
-            l("Guess what material it is made from."),
-            l("Seek a colorant for that material."),
+            l("Look at your equipment, can you guess what material it is made from?"),
+            l("Seek a colorant for that material:"),
             l("Cotton, cashmere, leather, ..."),
             l("Zinc-Titanium Oxide, Phthalocyanides, Cadmiums, Lazulite..."),
-            l("Colorant is not the yeying color. Some wear out from light,"),
-            l("others look great but inflict itai-itai,"),
-            l("and others become spotty or wash-away."),
+            l("Colorant is not the yeying color. Some wear out from light, others look great but inflict itai-itai, and others become spotty or wash-away."),
             l("What yoiis should know:"),
             l("1: The type of item yoiis want to dye."),
             l("2: What material it is made from."),
             l("3: Which colorants can dye it."),
-            l("4: How to care for it."),
-            l("If you aren't careful the item could become ruined.");
-
-        // Need tritan's dialogue (so the first line need to be changed too)
-        // Need to explain style cards, and to redirect to Don the blacksmith for stat cards.
-        // Style cards change the color or the visual aspect of an item. There are multiple cards that can work on multiple equipment.
-        // Each piece of equipment hold a certain amount of possible cards that can be inserted.
-        // Ex: Tank Top + Red dye = Red Tank Top
-        // Another example, Resa from the light armor shop offer a Brimmed Hat, you can upgrade it with a feather and obtain a feather brimmed hat.
+            l("4: How many cards your item can contain."),
+            l("Exemple for yoiis:"),
+            l("Take a @@ and a @@, yeye obtains a @@.",
+                getitemlink (ArtisTankTop), getitemlink (RedCottonDye), getitemlink (ArtisTankTop)),
+            l("If yoiis wants to see a different use of cards he can yeye for Resa on the light armor shop for a description of styling cards.");
     }
 
 
@@ -53,8 +46,8 @@
         menuint
             rif(.@fexil == 1, l("Have you seen Fexil?")), 0,
             l("[Trade]"), 1,
-            l("[Ask how dyes are used]"), 2,
-            l("[Ask how dyes are made]"), 3,
+            l("How does these dyes works?"), 2,
+            l("I want to make my own dyes."), 3,
             l("[Quit]"), 4;
 
         switch (@menuret)
