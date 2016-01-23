@@ -248,25 +248,39 @@ L_Start:
             }
             break;
         case 10:
-            setskin "test2";
-            .@var$ = requestcraft(9);
-            mes .@var$;
-            .@craft = initcraft(.@var$);
-            mes "craft id: " + str(.@craft);
-            mes "is craft valid: " + validatecraft(.@craft);
-            .@id = getcraftslotid(.@craft, 0);
-            .@amount = getcraftslotamount(.@craft, 0);
-            mes "first item id: " + .@id;
-            mes "first item name: " + getitemlink(.@id);
-            mes "first item amount: " + .@amount;
+            while(1)
+            {
+                switch (select("technical:back"))
+                {
+                    case 1:
+                        setskin "test2";
+                        .@var$ = requestcraft(9);
+                        mes .@var$;
+                        .@craft = initcraft(.@var$);
+                        mes "craft id: " + str(.@craft);
+                        mes "is craft valid: " + validatecraft(.@craft);
+                        .@id = getcraftslotid(.@craft, 0);
+                        .@amount = getcraftslotamount(.@craft, 0);
+                        mes "first item id: " + .@id;
+                        mes "first item name: " + getitemlink(.@id);
+                        mes "first item amount: " + .@amount;
 
-            .@id = getcraftslotid(.@craft, 1);
-            .@amount = getcraftslotamount(.@craft, 1);
-            mes "second item id: " + .@id;
-            mes "second item name: " + getitemlink(.@id);
-            mes "second item amount: " + .@amount;
-//            dumpcraft .@craft;
-            deletecraft .@craft;
+                        .@id = getcraftslotid(.@craft, 1);
+                        .@amount = getcraftslotamount(.@craft, 1);
+                        mes "second item id: " + .@id;
+                        mes "second item name: " + getitemlink(.@id);
+                        mes "second item amount: " + .@amount;
+//                        dumpcraft .@craft;
+                        .@entry = findcraftentry(.@craft, 0);
+                        mes "found craft entry: " + .@entry;
+                        deletecraft .@craft;
+                        setskin "";
+                        break;
+                    case 2:
+                        goto L_Start;
+                        break;
+                }
+            }
             break;
     }
 
