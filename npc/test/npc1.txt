@@ -249,7 +249,7 @@ L_Start:
             break;
         case 10:
             setskin "test2";
-            requestcraft .@var$, 9;
+            .@var$ = requestcraft(9);
             mes .@var$;
             .@craft = initcraft(.@var$);
             mes "craft id: " + str(.@craft);
