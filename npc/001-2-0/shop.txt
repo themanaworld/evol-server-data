@@ -1,0 +1,32 @@
+// Evol scripts.
+// Author:
+//    Reid
+//    4144
+// Description:
+//    Light armor shop.
+
+001-2-0,37,29,0	trader	Store#001-2-0	NPC_NO_SPRITE,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem ArtisTankTop, -1, 50;
+    sellitem VneckJumper, -1, 30;
+    sellitem BrownTrousers, -1, 30;
+    sellitem BrimmedHat, -1, 35;
+
+    .sex = G_OTHER;
+    .distance = 2;
+    end;
+
+OnClock0000:
+    restoreshopitem ArtisTankTop, 30;
+    restoreshopitem VneckJumper, 12;
+    restoreshopitem BrownTrousers, 15;
+    restoreshopitem BrimmedHat, 10;
+OnClock1200:
+    restoreshopitem ArtisTankTop, 25;
+    restoreshopitem VneckJumper, 10;
+    restoreshopitem BrownTrousers, 10;
+    restoreshopitem BrimmedHat, 20;
+}
