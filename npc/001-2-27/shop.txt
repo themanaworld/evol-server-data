@@ -11,6 +11,8 @@ OnInit:
     tradertype(NST_MARKET);
 
     sellitem LeatherShield, -1, 30;
+    sellitem CopperArmbands, -1, 28;
+    sellitem IronArmbands, -1, 20;
 
     .sex = G_OTHER;
     .distance = 2;
@@ -18,10 +20,16 @@ OnInit:
 
 OnClock0000:
     sellitem LeatherShield, -1, 10;
+    sellitem CopperArmbands, -1, 9;
+    sellitem IronArmbands, -1, 7;
 OnClock0800:
     sellitem LeatherShield, -1, 10;
+    sellitem CopperArmbands, -1, 6;
+    sellitem IronArmbands, -1, 3;
 OnClock01600:
     sellitem LeatherShield, -1, 10;
+    sellitem CopperArmbands, -1, 8;
+    sellitem IronArmbands, -1, 6;
 }
 
 001-2-27,43,29,0	trader	Store#Weapon001-2-27	NPC_NO_SPRITE,{
@@ -29,20 +37,24 @@ OnClock01600:
 OnInit:
     tradertype(NST_MARKET);
 
-    sellitem WoodenSword, -1, 50;
+    sellitem PiouSlayer, -1, 50;
     sellitem TrainingGladius, -1, 25;
+    sellitem WoodenSword, -1, 50;
 
     .sex = G_OTHER;
     .distance = 2;
     end;
 
 OnClock0000:
+    sellitem PiouSlayer, -1, 25;
     sellitem TrainingGladius, -1, 8;
     sellitem WoodenSword, -1, 25;
 OnClock0800:
+    sellitem PiouSlayer, -1, 25;
     sellitem TrainingGladius, -1, 8;
     sellitem WoodenSword, -1, 25;
 OnClock01600:
+    sellitem PiouSlayer, -1, 25;
     sellitem TrainingGladius, -1, 8;
     sellitem WoodenSword, -1, 25;
 }
