@@ -1,0 +1,30 @@
+// Evol functions.
+// Authors:
+//    4144
+//    Reid
+// Description:
+//    Beds utility functions
+
+function	script	bedTouch	{
+    if (PC_Is_Dead)
+    {
+        PC_Is_Dead = 0;
+        if (INN_Register == REDPLUSH_INN)
+        {
+            INN_Register = NO_INN;
+            percentheal 100,100;
+        }
+    }
+    close;
+}
+
+function	script	bedClic	{
+    narrator 4, l("Do you want to use this place as save point?");
+
+    if (select (l("[Yes]"), l("[No]")) == 1)
+    {
+        savepointparticle (getarg (0), getarg (1), getarg (2), getarg (3));
+    }
+    closedialog;
+    close;
+}

@@ -29,20 +29,13 @@
             emotion 3;
             Zeny = Zeny - .@price;
             INN_Register = REDPLUSH_INN;
+            PC_Is_Dead = false;
 
-            speech 5, l("Do you want to choose your room yourself?");
-
-            switch (select (l("[Yes]"),
-                            l("[No]")))
-            {
-                case 1:
-                    speech 5, l("Okay. You can go upstairs and choose a room.");
-                    break;
-                case 2:
-                    speech 5, l("Okay. I registered you on the @@ room of the upper level.", (Sex == G_FEMALE) ? "4th" : "2nd");
-                    savepoint "001-2-29.gat", 29, (Sex == G_FEMALE) ? 49 : 35;
-                    break;
-            }
+            speech 5,
+                l("I registered you on the @@ room of the upper level.",
+                    (Sex == G_FEMALE) ? "4th" : "2nd"),
+                l("You can go upstairs and choose a different room if you want.");
+            savepoint "001-2-29.gat", 29, (Sex == G_FEMALE) ? 49 : 35;
         }
     }
 
