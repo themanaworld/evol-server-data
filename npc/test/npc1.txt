@@ -250,7 +250,7 @@ L_Start:
         case 10:
             while(1)
             {
-                switch (select("technical:back"))
+                switch (select("technical:normal:back"))
                 {
                     case 1:
                         setskin "test2";
@@ -273,10 +273,49 @@ L_Start:
 //                        dumpcraft .@craft;
                         .@entry = findcraftentry(.@craft, 0);
                         mes "found craft entry: " + .@entry;
+                        if (.@entry < 0)
+                        {
+                            mes "no craft recipe found";
+                        }
+                        else
+                        {
+                            mes "use craft";
+                            usecraft .@craft;
+                        }
                         deletecraft .@craft;
                         setskin "";
                         break;
                     case 2:
+                        mes "put items what you want to craft";
+                        setskin "test2";
+                        .@var$ = requestcraft(9);
+                        setskin "";
+                        .@craft = initcraft(.@var$);
+                        if (.@craft < 0)
+                        {
+                            mes "Craft error.";
+                            goto L_Start;
+                        }
+                        mes "lets see what you can get...";
+                        next;
+                        if (!validatecraft(.@craft))
+                        {
+                            mes "inventory was changed.";
+                            goto L_Start;
+                        }
+                        .@entry = findcraftentry(.@craft, 0);
+                        if (.@entry < 0)
+                        {
+                            mes "no craft recipe found";
+                        }
+                        else
+                        {
+                            mes "found recipe";
+                            usecraft .@craft;
+                        }
+                        deletecraft .@craft;
+                        break;
+                    case 3:
                         goto L_Start;
                         break;
                 }
