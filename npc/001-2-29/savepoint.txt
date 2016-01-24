@@ -1,0 +1,113 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Saves locations in 001-2-29 map.
+
+001-2-29,29,28,0	script	#001-2-29-1	NPC_SAVE_POINT,0,0,0,0,{
+    narrator 4,
+        l("Do you want to use this place as save point?");
+
+    if (select (l("[Yes]"), l("[No]")) == 1)
+    {
+        savepointparticle "001-2-29.gat", 29, 28;
+    }
+    closedialog;
+    close;
+
+OnInit:
+    .distance = 2;
+    end;
+
+OnTouch:
+    if (PC_Is_Dead && INN_Register == REDPLUSH_INN)
+    {
+        INN_Register = NO_INN;
+        percentheal 100,100;
+
+        PC_Is_Dead = 0;
+    }
+    close;
+
+OnPCDieEvent:
+    PC_Is_Dead = 1;
+    close;
+}
+
+001-2-29,29,35,0	script	#001-2-29-2	NPC_SAVE_POINT,0,0,{
+    narrator 4,
+        l("Do you want to use this place as save point?");
+
+    if (select (l("[Yes]"), l("[No]")) == 1)
+    {
+        savepointparticle "001-2-29.gat", 29, 35;
+    }
+    closedialog;
+    close;
+
+OnInit:
+    .distance = 2;
+    end;
+
+OnTouch:
+    if (PC_Is_Dead && INN_Register == REDPLUSH_INN)
+    {
+        INN_Register = NO_INN;
+        percentheal 100,100;
+
+        PC_Is_Dead = 0;
+    }
+    close;
+}
+
+001-2-29,29,42,0	script	#001-2-29-3	NPC_SAVE_POINT,0,0,{
+    narrator 4,
+        l("Do you want to use this place as save point?");
+
+    if (select (l("[Yes]"), l("[No]")) == 1)
+    {
+        savepointparticle "001-2-29.gat", 29, 42;
+    }
+    closedialog;
+    close;
+
+OnInit:
+    .distance = 2;
+    end;
+
+OnTouch:
+    if (PC_Is_Dead && INN_Register == REDPLUSH_INN)
+    {
+        INN_Register = NO_INN;
+        percentheal 100,100;
+
+        PC_Is_Dead = 0;
+    }
+    close;
+}
+
+001-2-29,29,49,0	script	#001-2-29-4	NPC_SAVE_POINT,0,0,{
+    narrator 4,
+        l("Do you want to use this place as save point?");
+
+    if (select (l("[Yes]"), l("[No]")) == 1)
+    {
+        savepointparticle "001-2-29.gat", 29, 49;
+    }
+    closedialog;
+    close;
+
+OnInit:
+    .distance = 2;
+    end;
+
+OnTouch:
+    if (PC_Is_Dead && INN_Register == REDPLUSH_INN)
+    {
+        INN_Register = NO_INN;
+        percentheal 100,100;
+
+        PC_Is_Dead = 0;
+    }
+    close;
+}
