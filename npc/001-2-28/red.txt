@@ -10,17 +10,44 @@
 
     function narrator_explication {
         narrator 4,
-            l("You will respawn at this place if defeated in combat.");
-            //l("Unlike other respawn points, an INN can fully restore your HP.");
-            //   ^^^ 1/2 is restored @die, Red does not offer to heal.
-            // The respawn point remains until set somewhere else.
-            // The INN seems to charge only once.
-
+            l("You will respawn at this place if defeated in combat."),
+            l("All you have to do is to select a bed in the upper level anytime after your reservation."),
+            l("Unlike other respawn points, an INN can fully restore your HP."),
+            l("Of course, you can select a bed somewhere else after your reservation, but you won't get your HP recovery until you choose to get some rest on the INN."),
+            l("You can also use your room to get some rest after a long battle. That will consume your reservation but your HP will be fully restored.");
         return;
     }
 
-    function register_room {
-        // A somehow of BaseLevel * logn (BaseLevel * 100).
+    function accepted_room {
+        .@price = getarg (0);
+        if (Zeny < .@price)
+        {
+            speech 5, l("You don't have enough money, bring @@E.", .@price);
+        }
+        else
+        {
+            emotion 3;
+            Zeny = Zeny - .@price;
+            INN_Register = REDPLUSH_INN;
+
+            speech 5, l("Do you want to choose your room yourself?");
+
+            switch (select (l("[Yes]"),
+                            l("[No]")))
+            {
+                case 1:
+                    speech 5, l("Okay. You can go upstairs and choose a room.");
+                    break;
+                case 2:
+                    speech 5, l("Okay. I registered you on the @@ room of the upper level.", (Sex == G_FEMALE) ? "4th" : "2nd");
+                    savepoint "001-2-29.gat", 29, (Sex == G_FEMALE) ? 49 : 35;
+                    break;
+            }
+        }
+    }
+
+    // A somehow of BaseLevel * logn (BaseLevel * 100).
+    function calculate_inn_tax {
         .@price = 0;
         .@pc_level = BaseLevel * 100;
         while (.@pc_level >>= 1)
@@ -34,6 +61,12 @@
             .@price = 10;
         }
 
+        return .@price;
+    }
+
+    function register_room {
+        .@price = calculate_inn_tax;
+
         speech 5,
             l("That will be @@E to set your respawn point", .@price),
             l("This will remain your respawn point until set elsewhere."),
@@ -43,30 +76,7 @@
                         l("[No]")))
         {
             case 1:
-                if (Zeny < .@price)
-                {
-                    speech 5, l("You don't have enough money, bring @@E.", .@price);
-                }
-                else
-                {
-                    emotion 3;
-                    Zeny = Zeny - .@price;
-                    INN_Register = REDPLUSH_INN;
-
-                    if (Sex == G_FEMALE)
-                    {
-                        savepoint "001-2-29.gat", 29, 49;
-                    }
-                    else
-                    {
-                        savepoint "001-2-29.gat", 29, 35;
-                    }
-
-                    speech 5,
-                        l("Okay. You can go upstairs and choose a room.");
-
-                    narrator_explication;
-                }
+                accepted_room (.@price);
                 break;
             case 2:
                 speech 5,
@@ -77,21 +87,52 @@
         return;
     }
 
+    function lodge_check {
+        if (INN_Register == NO_INN)
+        {
+            register_room;
+        }
+        else if (INN_Register == REDPLUSH_INN)
+        {
+            speech 5,
+                l("You are already registered here."),
+                l("Go on the upper level if you want to change your room or to use it.");
+        }
+        else
+        {
+            speech 5,
+                l("If you are registered somewhere else you will loose that reservation."),
+                l("Do you still want to lodge here?");
+
+            switch (select (l("[Yes]"), l("[No]")))
+            {
+                case 1: 
+                    register_room; 
+                    break;
+                case 2:
+                    break;
+            }
+        }
+        return;
+    }
+
+
     speech 4,
         l("Welcome to the RedPlush INN!"),
         l("What do you need?");
 
     do
     {
-        menuint rif(INN_Register == 0, ("Could I lodge here for a while?")), 1,
-                l("What service do you offer?"), 2,
-                l("What is your tipiou trying to do?"), 3,
-                l("Nothing."), 4;
+        .@q = select (
+            l("Could I lodge here for a while?"),
+            l("What service do you offer?"),
+            l("What is your tipiou trying to do?"),
+            l("Nothing."));
 
-        switch (@menuret)
+        switch (.@q)
         {
             case 1:
-                register_room;
+                lodge_check;
                 break;
             case 2:
                 emotion 6;
@@ -108,7 +149,7 @@
             case 4:
                 break;
         }
-    } while (@menuret != 1 && @menuret != 4);
+    } while (.@q != 1 && .@q != 4);
 
     closedialog;
     goodbye;
