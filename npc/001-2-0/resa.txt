@@ -9,6 +9,9 @@
     mesq l("Hi.");
     close;
 
+        // Card or Craft, need to be decided.
+        // The shop offer a Brimmed Hat, you can upgrade it with a feather and obtain a feather brimmed hat.
+        // Need to redirect to Don for more card exemple.
 OnInit:
     .sex = G_FEMALE;
     .distance = 2;
