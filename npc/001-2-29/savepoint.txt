@@ -15,7 +15,7 @@ OnTouch:
     bedTouch;
 
 OnPCDieEvent:
-    PC_Is_Dead = 1;
+    PC_IS_DEAD = 1;
     close;
 }
 

@@ -15,7 +15,7 @@ function	script	savepointparticle	{
 
     if (getarg(3, NO_INN) == NO_INN)
     {
-        INN_Register = NO_INN;
+        INN_REGISTER = NO_INN;
     }
     savepoint getarg(0), getarg(1), getarg(2);
     misceffect 4, getcharid(3);

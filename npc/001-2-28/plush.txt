@@ -4,7 +4,7 @@
 // Description:
 //    Red, the INN Keeper.
 // Variable:
-//    INN_Register
+//    INN_REGISTER
 
 001-2-28,28,28,0	script	Plush#001-2-28	NPC_RED,{
 
@@ -28,8 +28,8 @@
         {
             emotion 3;
             Zeny = Zeny - .@price;
-            INN_Register = REDPLUSH_INN;
-            PC_Is_Dead = false;
+            INN_REGISTER = REDPLUSH_INN;
+            PC_IS_DEAD = false;
 
             speech 5,
                 l("I registered you on the @@ room of the upper level.",
@@ -81,11 +81,11 @@
     }
 
     function lodge_check {
-        if (INN_Register == NO_INN)
+        if (INN_REGISTER == NO_INN)
         {
             register_room;
         }
-        else if (INN_Register == REDPLUSH_INN)
+        else if (INN_REGISTER == REDPLUSH_INN)
         {
             speech 5,
                 l("You are already registered here."),

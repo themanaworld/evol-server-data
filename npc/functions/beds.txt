@@ -6,12 +6,12 @@
 //    Beds utility functions
 
 function	script	bedTouch	{
-    if (PC_Is_Dead)
+    if (PC_IS_DEAD)
     {
-        PC_Is_Dead = 0;
-        if (INN_Register == REDPLUSH_INN)
+        PC_IS_DEAD = 0;
+        if (INN_REGISTER == REDPLUSH_INN)
         {
-            INN_Register = NO_INN;
+            INN_REGISTER = NO_INN;
             percentheal 100,100;
         }
     }
