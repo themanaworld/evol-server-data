@@ -7,11 +7,16 @@
 //    Save location with arguments:
 //      getarg(0)   map name,
 //      getarg(1)   x's value,
-//      getarg(2)   y's value.
+//      getarg(2)   y's value,
+//      getarg(3)   INN flag.
 
 function	script	savepointparticle	{
     message strcharinfo(0), "Your position has been saved.";
 
+    if (getarg(3, NO_INN) == NO_INN)
+    {
+        INN_Register = NO_INN;
+    }
     savepoint getarg(0), getarg(1), getarg(2);
     misceffect 4, getcharid(3);
     return;
