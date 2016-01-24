@@ -281,6 +281,7 @@ L_Start:
                         {
                             mes "use craft";
                             usecraft .@craft;
+                            mes "return code: " + getcraftcode(.@entry);
                         }
                         deletecraft .@craft;
                         setskin "";
@@ -312,6 +313,7 @@ L_Start:
                         {
                             mes "found recipe";
                             usecraft .@craft;
+                            mes "return code: " + getcraftcode(.@entry);
                         }
                         deletecraft .@craft;
                         break;
