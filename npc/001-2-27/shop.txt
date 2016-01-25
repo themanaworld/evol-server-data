@@ -19,17 +19,17 @@ OnInit:
     end;
 
 OnClock0000:
-    sellitem LeatherShield, -1, 10;
-    sellitem CopperArmbands, -1, 9;
-    sellitem IronArmbands, -1, 7;
+    restoreshopitem LeatherShield, 10;
+    restoreshopitem CopperArmbands, 9;
+    restoreshopitem IronArmbands, 7;
 OnClock0800:
-    sellitem LeatherShield, -1, 10;
-    sellitem CopperArmbands, -1, 6;
-    sellitem IronArmbands, -1, 3;
+    restoreshopitem LeatherShield, 10;
+    restoreshopitem CopperArmbands, 6;
+    restoreshopitem IronArmbands, 3;
 OnClock01600:
-    sellitem LeatherShield, -1, 10;
-    sellitem CopperArmbands, -1, 8;
-    sellitem IronArmbands, -1, 6;
+    restoreshopitem LeatherShield, 10;
+    restoreshopitem CopperArmbands, 8;
+    restoreshopitem IronArmbands, 6;
 }
 
 001-2-27,43,29,0	trader	Store#Weapon001-2-27	NPC_NO_SPRITE,{
@@ -46,15 +46,15 @@ OnInit:
     end;
 
 OnClock0000:
-    sellitem PiouSlayer, -1, 25;
-    sellitem TrainingGladius, -1, 8;
-    sellitem WoodenSword, -1, 25;
+    restoreshopitem PiouSlayer, 25;
+    restoreshopitem TrainingGladius, 8;
+    restoreshopitem WoodenSword, 25;
 OnClock0800:
-    sellitem PiouSlayer, -1, 25;
-    sellitem TrainingGladius, -1, 8;
-    sellitem WoodenSword, -1, 25;
+    restoreshopitem PiouSlayer, 25;
+    restoreshopitem TrainingGladius, 8;
+    restoreshopitem WoodenSword, 25;
 OnClock01600:
-    sellitem PiouSlayer, -1, 25;
-    sellitem TrainingGladius, -1, 8;
-    sellitem WoodenSword, -1, 25;
+    restoreshopitem PiouSlayer, 25;
+    restoreshopitem TrainingGladius, 8;
+    restoreshopitem WoodenSword, 25;
 }
