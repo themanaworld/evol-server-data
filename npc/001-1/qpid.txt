@@ -1,0 +1,58 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Potion seller, she is part of the Enora's noob quests.
+
+001-1,65,116,0	script	Q'Pid#001-1	NPC_QPID,{
+
+    speech 4,
+        l("");
+
+    // Add book reference to the library
+    // Add Enora's quest
+    // Add alchemist reference
+    .@enora = getq(ArtisQuests_Enora);
+
+    do
+    {
+        menuint
+            rif (.@enora == 5, l("Enora wants her potions.")), 0,
+            l("[Trade]"), 1,
+            l("How do you do your potions?"), 2,
+            l("What are you reading?"), 3,
+            l("[Quit]"), 4;
+
+        switch (@menuret)
+        {
+            case 0:
+                speech 5,
+                    l("");
+                break;
+            case 1:
+                closedialog;
+                shop "Store#Potion001-1";
+                close;
+            case 2:
+                speech 5,
+                    l("");
+                break;
+            case 3:
+                speech 5,
+                    l("");
+                break;
+            case 4:
+                break;
+        }
+    } while (@menuret != 4);
+
+    closedialog;
+    goodbye;
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 3;
+    end;
+}
+
