@@ -489,7 +489,8 @@ OnTouch:
     if (.@enora < 8)
     {
         narrator 4,
-            l("The door is closed.");
+            l("The door of the legion building is closed."),
+            l("You should look for Enora on the dock to access it.");
     }
     else
     {
