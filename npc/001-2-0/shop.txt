@@ -6,7 +6,10 @@
 //    Light armor shop.
 
 001-2-0,37,29,0	trader	Store#001-2-0	NPC_NO_SPRITE,{
-
+// The ArtisTankTop should be store at x: 39 or 40, y: 31.
+// 38,35 is server's location of where client displays a black torso gear on display. (using @where for server).
+// 35,27 is some shelves and a cabinet at 4 tiles from where player select it.
+// 39,27 is where to put store that sells only fabric. (the cloth shelf).
 OnInit:
     tradertype(NST_MARKET);
 
