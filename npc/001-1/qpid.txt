@@ -6,12 +6,38 @@
 
 001-1,65,116,0	script	Q'Pid#001-1	NPC_QPID,{
 
+    function alchemist_information {
+        speech 5,
+            l("Do? I don't do them."),
+            l("I'm sure that you already knew the answer, didn't you?"),
+            l("You tried to embarrass me, am I right?!"),
+            l("It's Ivan... I'm sure that he sent you to annoy me..."),
+            l("I'm just a merchant, I trade and make deals, yes \"excuse\" me if I'm not as skilled as this stupid alchemist."),
+            l("But rare are those that receive grants from the Legion itself. For anybody else only a hard work can pay your bills!");
+        emotion 11;
+
+        switch (select (l("Sorry I didn't mean to bother you."),
+                        l("You are just sitting on the shadow of your store.")))
+
+        {
+            case 1:
+                mes "";
+                mesn;
+                break;
+            case 2:
+                speech 5, l("You are honnest, I like it.");
+                break;
+        }
+        mesq l("Is that all you had to say?");
+        next;
+
+        return;
+    }
+
     speech 4,
         l("");
 
-    // Add book reference to the library
-    // Add Enora's quest
-    // Add alchemist reference
+    // Add Enora's quest with a riddle.
     .@enora = getq(ArtisQuests_Enora);
 
     do
@@ -34,12 +60,13 @@
                 shop "Store#Potion001-1";
                 close;
             case 2:
-                speech 5,
-                    l("");
+                alchemist_information;
                 break;
             case 3:
                 speech 5,
-                    l("");
+                    l("It's a poem, about poems... Why are you asking that?"),
+                    l("Because I am an orc I can't read such things? That's rubbish."),
+                    l("I borrowed it from the library, you should try to cultivate yourself more instead of insunuate such things to people you don't know!");
                 break;
             case 4:
                 break;
