@@ -11,7 +11,7 @@
 
 OnTouch:
     checkclientversion;
-    requestlang .@lang;
+    .@lang = requestlang();
     if (.@lang >= 0 && .@lang <= 9) Lang = .@lang;
 
     mesn "Narrator";
