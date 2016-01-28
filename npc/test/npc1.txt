@@ -134,7 +134,7 @@ L_Start:
                             switch (select("set item:refine +1:refine -1:refine fail:back"))
                             {
                                 case 1:
-                                    requestitemindex .@item;
+                                    .@item = requestitemindex();
                                     mes "Item index selected: " + str(.@item);
                                     break;
                                 case 2:
