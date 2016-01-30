@@ -168,22 +168,22 @@ L_Accepted:
 L_GiveFood:
     mes "";
     menuint
-        rif(countitemcolor(501, 1), l(getitemname(501))), 0,
-        rif(countitemcolor(502, 1), l(getitemname(502))), 502,
-        rif(countitemcolor(503, 1), l(getitemname(503))), 503,
-        rif(countitemcolor(504, 1), l(getitemname(504))), 504,
-        rif(countitemcolor(505, 1), l(getitemname(505))), 505,
-        rif(countitemcolor(506, 1), l(getitemname(506))), 0,
-        rif(countitemcolor(507, 1), l(getitemname(507))), 2,
-        rif(countitemcolor(508, 1), l(getitemname(508))), 1,
-        rif(countitemcolor(509, 1), l(getitemname(509))), 509,
-        rif(countitemcolor(510, 1), l(getitemname(510))), 1,
-        rif(countitemcolor(512, 1), l(getitemname(512))), 512,
-        rif(countitemcolor(513, 1), l(getitemname(513))), 0,
-        rif(countitemcolor(515, 1), l(getitemname(515))), 515,
-        rif(countitemcolor(516, 1), l(getitemname(516))), 1,
-        rif(countitemcolor(518, 1), l(getitemname(518))), 1,
-        rif(countitemcolor(519, 1), l(getitemname(519))), 1,
+        rif(countitem(501), l(getitemname(501))), 0,
+        rif(countitem(502), l(getitemname(502))), 502,
+        rif(countitem(503), l(getitemname(503))), 503,
+        rif(countitem(504), l(getitemname(504))), 504,
+        rif(countitem(505), l(getitemname(505))), 505,
+        rif(countitem(506), l(getitemname(506))), 0,
+        rif(countitem(507), l(getitemname(507))), 2,
+        rif(countitem(508), l(getitemname(508))), 1,
+        rif(countitem(509), l(getitemname(509))), 509,
+        rif(countitem(510), l(getitemname(510))), 1,
+        rif(countitem(512), l(getitemname(512))), 512,
+        rif(countitem(513), l(getitemname(513))), 0,
+        rif(countitem(515), l(getitemname(515))), 515,
+        rif(countitem(516), l(getitemname(516))), 1,
+        rif(countitem(518), l(getitemname(518))), 1,
+        rif(countitem(519), l(getitemname(519))), 1,
         l("I don't have anything good for you today."), -1;
 
     .@id = @menuret;
@@ -191,7 +191,7 @@ L_GiveFood:
     if (.@id == 0) goto L_NoReward; // In case of wrong food.
     if (.@id == 1) goto L_Poison; // In case of poisoned food.
     if (.@id == 2) goto L_NoMore; // In case of Piberries.
-    if (countitemcolor(.@id) == 0) goto L_Quit;
+    if (countitem(.@id) == 0) goto L_Quit;
 //  if (.@id == item's ID) then food is correct.
 // Do not put any other number than -1, 0, 1, 2 or the item's ID, that'll avoid confusion.
 

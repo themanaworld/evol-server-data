@@ -11,7 +11,7 @@
 //    1   Get a cookie.
 
 001-1,39,38,0	script	Cookie Master	NPC_COOKIE_MASTER,{
-    if ((countitemcolor(517) == 0) && (getq(General_Cookies) == 1))
+    if ((countitem(517) == 0) && (getq(General_Cookies) == 1))
         goto L_LostCookie;
     if (getq(General_Cookies) == 1)
         goto L_GetCookie;

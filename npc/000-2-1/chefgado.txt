@@ -23,7 +23,7 @@
     if (.@q == 2) goto L_PoisonAccepted;
     if (.@q == 3) goto L_PoisonJulia;
     if (.@q == 4) goto L_QuestComplete;
-    if (.@q == 5 && countitemcolor(717) > 0) goto L_Aborting;
+    if (.@q == 5 && countitem(717) > 0) goto L_Aborting;
     if (.@q > 4) goto L_QuestAborted;
     if (.@n == 3) goto L_QuestStart;
 
@@ -103,7 +103,7 @@ L_QuestAccepted:
     next;
 
     menu
-        rif(countitemcolor(505) > 1 && countitemcolor(512) > 0 && countitemcolor(509) > 0 && countitemcolor(508) > 0, l("All your... Fresh ingredients are ready to be cooked.")), L_GotAll,
+        rif(countitem(505) > 1 && countitem(512) > 0 && countitem(509) > 0 && countitem(508) > 0, l("All your... Fresh ingredients are ready to be cooked.")), L_GotAll,
         l("What are your needs?"), L_Need,
         l("Where can I find a half croconut?"), L_OpenCroconut,
         l("Not yet. I will be back soon."), L_Quit;
@@ -189,7 +189,7 @@ L_Aborting:
     next;
     mesq lg("Give me back this dish, you dirty liar!");
 
-    if (countitemcolor(717) > 0) delitem 717, 1;
+    if (countitem(717) > 0) delitem 717, 1;
 
     next;
     mesq l("You're like the rest of this filthy crew, I can't trust you!");

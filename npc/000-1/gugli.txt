@@ -86,7 +86,7 @@ L_TaskGiven:
 L_Menu:
     menu
         rif(getq(ShipQuests_Couwan) == 1, l("Couwan gave me this box, it is for you.")), L_Couwan,
-        rif(countitemcolor(714) > 0 || countitemcolor(715) > 0 || countitemcolor(716) > 0, l("I have some food for you.")), L_CollectSmthing,
+        rif(countitem(714) > 0 || countitem(715) > 0 || countitem(716) > 0, l("I have some food for you.")), L_CollectSmthing,
         rif(getq(ShipQuests_Gugli) < 2, l("Who should I search for?")), L_SailorNames,
         rif(getq(ShipQuests_Gugli) < 2, l("Where can I find your crew?")), L_Location,
         l("Bye!"), L_Quit;
@@ -140,7 +140,7 @@ L_Couwan:
     next;
     mesq l("May this be a lesson for you.");
 
-    if (countitemcolor(713) > 0) delitem 713, 1;
+    if (countitem(713) > 0) delitem 713, 1;
     setq ShipQuests_Couwan, 2;
     Zeny = Zeny + 10;
     getexp 40, 0;
@@ -186,12 +186,12 @@ L_Lean:
     close;
 
 L_TaskDone:
-    if (countitemcolor(714) == 2) delitem 714, 2;
-    if (countitemcolor(715) == 2) delitem 715, 2;
-    if (countitemcolor(716) == 2) delitem 716, 2;
-    if (countitemcolor(714) == 1) delitem 714, 1;
-    if (countitemcolor(715) == 1) delitem 715, 1;
-    if (countitemcolor(716) == 1) delitem 716, 1;
+    if (countitem(714) == 2) delitem 714, 2;
+    if (countitem(715) == 2) delitem 715, 2;
+    if (countitem(716) == 2) delitem 716, 2;
+    if (countitem(714) == 1) delitem 714, 1;
+    if (countitem(715) == 1) delitem 715, 1;
+    if (countitem(716) == 1) delitem 716, 1;
     setq ShipQuests_Gugli, 2;
 
     Zeny = Zeny + 250;

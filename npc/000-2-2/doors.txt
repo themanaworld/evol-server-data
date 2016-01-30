@@ -45,7 +45,7 @@ OnTouch:
     next;
 
     menu
-        rif(countitemcolor(718) > 0, l("Use the key.")), L_Warp,
+        rif(countitem(718) > 0, l("Use the key.")), L_Warp,
         l("Break the door."), L_Break,
         l("Go away."), -;
 

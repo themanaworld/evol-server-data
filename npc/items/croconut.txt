@@ -6,8 +6,8 @@
 //    Allows to cut a Croconut in multiple parts.
 //
 // Possible choices for L_Weapon:
-//    rif(countitemcolor(35xx, 1), l(getitemname(xx))), L_Weak,
-//    rif(countitemcolor(35yy, 1), l(getitemname(yy))), L_Good,
+//    rif(countitem(35xx), l(getitemname(xx))), L_Weak,
+//    rif(countitem(35yy), l(getitemname(yy))), L_Good,
 
 000-2-1,0,0,0	script	Croconut	NPC_HIDDEN,{
     close;
@@ -31,8 +31,8 @@ L_Weapon:
     next;
 
     menu
-        rif(countitemcolor(3500) > 0, l(getitemname(3500))), L_Weak,
-        rif(countitemcolor(3501) > 0, l(getitemname(3501))), L_Weak,
+        rif(countitem(3500) > 0, l(getitemname(3500))), L_Weak,
+        rif(countitem(3501) > 0, l(getitemname(3501))), L_Weak,
         l("Bare Hands"), -;
 
 L_TooWeak:

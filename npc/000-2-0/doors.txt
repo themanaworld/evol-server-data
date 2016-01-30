@@ -32,7 +32,7 @@ OnTouch:
 
     if (.@nard == 4) goto L_GotoNard;
     if (.@nard == 5) goto L_End;
-    if (.@nard > 0 && countitemcolor(718) > 0) goto L_Key;
+    if (.@nard > 0 && countitem(718) > 0) goto L_Key;
 
     setcamnpc "Julia";
     mesn "Julia";

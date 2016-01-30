@@ -79,7 +79,7 @@
     menuint
         l("OK, let's trade."), 1,
         rif(.@fexil == 2, l("Do you still need help?")), 2,
-        rif(.@fexil > 2 && countitemcolor(729) > 0, l("I have some fur for you.")), 3,
+        rif(.@fexil > 2 && countitem(729) > 0, l("I have some fur for you.")), 3,
         l("No, Sorry."), 4;
 
     switch (@menuret)
@@ -107,7 +107,7 @@
                         l("Please enter a valid amount.");
                     continue;
                 }
-                if (.@amount > countitemcolor(729))
+                if (.@amount > countitem(729))
                 {
                     speech 5,
                         l("You don't have enough @@ on yourself.", getitemlink(729));

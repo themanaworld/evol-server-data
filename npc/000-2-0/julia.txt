@@ -48,8 +48,8 @@ L_Menu:
     menu
         rif(.@q3 == 5 && .@q4 < 1, l("What can I do now?")), L_GotoSleep,
         rif(.@q3 == 3 && .@q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")), L_Rumors,
-        rif(.@q2 == 2 && countitemcolor(717, 1), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")), L_Regret,
-        rif(.@q2 == 2 && countitemcolor(717, 1), l("I have brought you a tasty present for your delicate mouth.")), L_PoisonJulia,
+        rif(.@q2 == 2 && countitem(717), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")), L_Regret,
+        rif(.@q2 == 2 && countitem(717), l("I have brought you a tasty present for your delicate mouth.")), L_PoisonJulia,
         rif(getskilllv(1) != 9, l("Something is wrong with me, I can't smile nor sit.")), L_BasicSkill,
         lg("I made a mistake, I would like to change my language."), L_ChooseLang,
         l("Could you explain to me where I am?"), L_WhereIam,
@@ -206,7 +206,7 @@ L_PoisonJulia:
     mesq l("Seems yummy! Let me taste it!");
     next;
     mesq l("Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*");
-    if (countitemcolor(717) > 0) delitem 717, 1;
+    if (countitem(717) > 0) delitem 717, 1;
     setq ShipQuests_ChefGado, 3;
 
     close;

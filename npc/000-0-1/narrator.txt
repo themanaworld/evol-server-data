@@ -23,7 +23,7 @@
         l("..."),
         l("Wake-up!");
 
-    if (countitemcolor(718) == 1) delitem 718, 1;
+    if (countitem(718) == 1) delitem 718, 1;
     setq General_Narrator, 1;
     setq ShipQuests_Nard, 6;
     savepoint "001-2-22.gat", 50, 38;
