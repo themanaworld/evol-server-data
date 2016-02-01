@@ -29,7 +29,6 @@
             l("Does your mind go all fuzzy or is that your head will explode??"),
             l("Try doing that now!");
 
-
         switch (select (l("Okay, but there won't be any explosions."),
                         l("Don't get too excited about it...")))
         {
@@ -83,6 +82,10 @@
             l("A young apprentice called Chef might be waiting outside, speak to him, and return the present to me.");
             emotion 3;
 
+        setq ArtisQuests_Enora, 1;
+
+        closedialog;
+        goodbye;
         close;
     }
 
@@ -222,6 +225,10 @@
         return;
     }
 
+    function enora_market {
+        return;
+    }
+
     function enora_hill {
         speech 5,
             l("Go to the up of the river, and cross the river twice with the two bridges on the north."),
@@ -269,6 +276,7 @@
                 break;
             case 1:
                 enora_quest_complete;
+                break;
             case 2:
                 enora_hill_cleaned;
                 break;
@@ -278,6 +286,7 @@
                 enora_light_armor;
                 break;
             case 5:
+                enora_market;
                 break;
             case 6:
                 enora_hill;
