@@ -5,13 +5,43 @@
 //    Light Armor shop keeper.
 
 001-2-0,37,28,0	script	Resa	NPC_ELVEN_FEMALE_ARMOR_SHOP,{
-    mesn;
-    mesq l("Hi.");
+
+    function explain_craft {
+        speech 5,
+            l("Did you see Don the blacksmith? He might knows more about it if you want to improve your metal equipment."),
+            l("Nevertheless, you can craft some cards that you can then attach to your equipment."),
+            l("We sell a brimmed hat, you can craft a feather card and attach it to this hat to obtain an enhanced version of it!");
+
+        return;
+    }
+
+    speech 4,
+        l("Welcome to my office."),
+        l("What would you like today?");
+    
+    do
+    {
+        .@q = select (l("[Trade]"),
+                      l("How can I improve my equipment?"),
+                      l("[Quit]"));
+        switch (.@q)
+        {
+            case 1:
+                closedialog;
+                shop "Store#001-2-0";
+                close;
+            case 2:
+                explain_craft;
+                break;
+            case 3:
+                break;
+        }
+    } while (.@q != 3);
+
+    closedialog;
+    goodbye;
     close;
 
-        // Card or Craft, need to be decided.
-        // The shop offer a Brimmed Hat, you can upgrade it with a feather and obtain a feather brimmed hat.
-        // Need to redirect to Don for more card exemple.
 OnInit:
     .sex = G_FEMALE;
     .distance = 2;
