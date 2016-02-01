@@ -29,6 +29,18 @@ test,10,5,0	script	test1	NPC_HAT_BOX,{
     if (.var != 4)
         mes "Error: testing test2 npc variables.";
     test1function;
+    if (l("test @@", "") != "test ")
+        mes "Error: format string 'l(\"test @@\", \"\")': " + l("test @@", "");
+    if (l("test @@", "1") != "test 1")
+        mes "Error: format string 'l(\"test @@\", \"1\")': " + l("test @@", "1");
+    if (l("@@", "") != "")
+        mes "Error: format string 'l(\"@@\", \"\")': " + l("@@", "");
+    if (l("@@") != "@@")
+        mes "Error: format string 'l(\"@@\")': " + l("@@");
+    if (l("@@ @@ @@", "this", "is", "test") != "this is test")
+        mes "Error: format string 'l(\"@@ @@ @@\", \"this\", \"is\", \"test\") != \"this is test\"': " + l("@@ @@ @@", "this", "is", "test");
+    if (l("data @@ @@ @@ data", "this", "is", "test") != "data this is test data")
+        mes "Error: format string 'l(\"data @@ @@ @@ data\", \"this\", \"is\", \"test\")': " + l("data @@ @@ @@ data", "this", "is", "test");
     mes "Tests complete.";
     close;
 
