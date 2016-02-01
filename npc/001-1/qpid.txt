@@ -170,7 +170,7 @@
         .@enora = getq(ArtisQuests_Enora);
 
         menuint
-            //rif (.@enora == 7, l("Enora wants her potions.")), 0,
+            rif (.@enora == 7, l("Enora wants her potions.")), 0,
             l("[Trade]"), 1,
             rif (.@enora > 7, l("What was your riddle?")), 2,
             l("How do you do your potions?"), 3,
