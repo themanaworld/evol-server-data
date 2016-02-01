@@ -6,16 +6,18 @@
 // Variables:
 //    ArtisQuests_Enora
 // Values:
-//    0   Default.
-//    1   BlackSmith quest delivered.
-//    2   BlackSmith gave the sword.
-//    3   Light Armor Shop quest delivered.
-//    4   Light Armor Shop gave the cloths.
-//    5   Market quest delivered.
-//    6   Market gave the potion.
-//    7   Hill quest delivered.
-//    8   Fluffy killed.
-
+//    0    Default.
+//    1    BlackSmith quest delivered.
+//    2    Don Quest given
+//    3    Don quest done
+//    4    BlackSmith gave the sword.
+//    5    Light Armor Shop quest delivered.
+//    6    Light Armor Shop gave the cloths.
+//    7    Market quest delivered.
+//    8    Q'Pid merchant
+//    9    Market gave the potion.
+//    10   Hill quest delivered.
+//    11   Fluffy killed.
 
 001-1,176,113,0	script	Enora#001-1	NPC_HUMAN_FEMALE_NOOB,{
 
@@ -249,14 +251,15 @@
         .@q = getq(ArtisQuests_Enora);
         menuint
             rif(.@q == 0, l("She told me that you had some tasks for me.")), 0,
-            rif(.@q == 2 || .@q == 4 || .@q == 6, l("I have your package.")), 1,
-            rif(.@q == 7, l("I cleaned up the hill.")), 2,
-            rif(.@q > 1, l("Who is Don?")), 3,
-            rif(.@q > 3, l("Where is the light armor shop?")), 4,
-            rif(.@q > 5, l("Where is the market?")), 5,
-            rif(.@q > 6, l("Where is the hill?")), 6,
-            rif(.@q > 0, l("What is this legion?")), 7,
-            rif(.@q > 8, l("How many Fluffy did I kill on the hill?")), 8,
+
+            rif(.@q == 4 || .@q == 6 || .@q == 9, l("I have your package.")), 1,
+            rif(.@q == 10 && #ArtisFluffyKilled >= 10, l("I cleaned up the hill.")), 2,
+            rif(.@q >= 1, l("Who is Don?")), 3,
+            rif(.@q >= 5, l("Where is the light armor shop?")), 4,
+            rif(.@q >= 7, l("Where is the market?")), 5,
+            rif(.@q >= 10, l("Where is the hill?")), 6,
+            rif(.@q >= 1, l("What is this legion?")), 7,
+            rif(.@q >= 10, l("How many Fluffy did I kill on the hill?")), 8,
             l("I wish I could remember something..."), 9,
             rif(.@q != 0, l("Nothing.")), 10;
 
@@ -303,6 +306,7 @@
     } while (@menuret != 10);
 
     closedialog;
+    goodbye;
     close;
 
 OnInit:
