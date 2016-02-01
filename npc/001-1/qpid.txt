@@ -45,10 +45,61 @@
         .@size_good_translated *= 7;
         if (.@k >= .@size_good  || .@k_translated >= .@size_good_translated)
         {
-            debugmes .@k + " " + .@k_translated;
             return 1;
         }
         return 0;
+    }
+
+    function riddle_enigma {
+        speech 5,
+            l("Ok fine, you have up to 3 tries, here is the riddle:"),
+            l("What is growing and shrinking in same time?");
+        narrator 4,
+            l("You need to type the answer of this riddle in the NPC window."),
+            l("The answer is a single word, without conjugaison."),
+            l("You can also answer in your native language or in English.");
+
+        do
+        {
+            input .@answer$;
+            .@i++;
+
+            if (verify_riddle_answer (.@answer$, "life"))
+            {
+                if (getq (ArtisQuests_Enora) == 7)
+                {
+                    setq (ArtisQuests_Enora, 9);
+                }
+                speech 5,
+                    l("Oh..."),
+                    l("You seem more cultivated than what you look like."),
+                    l("Fine, take these potion, I will replenish in the next hours anyway.");
+
+                getitem "PibberiesInfusion", 5;
+                break;
+            }
+            else if (.@i < 3)
+            {
+                speech 5,
+                    l("Too bad, try again.");
+            }
+            else
+            {
+                if (getq (ArtisQuests_Enora) == 7)
+                {
+                    setq (ArtisQuests_Enora, 8);
+                }
+                speech 5,
+                    l("You failed!"),
+                    l("Ivan is the one that you should look at now."),
+                    l("He is on a small house in between the dock's warehouse and the dojo."),
+                    l("Follow the river to the east-north and you will find it."),
+                    l("And get out of here, I'm not a map!");
+                break;
+            }
+        } while (1);
+
+        return;
     }
 
     function enora_quest {
@@ -76,54 +127,11 @@
                         l("[No]")))
         {
             case 1:
+                riddle_enigma;
                 break;
             case 2:
-                return;
+                break;
         }
-
-        speech 5,
-            l("Ok fine, you have up to 3 tries, here is the riddle:"),
-            l("What is growing and shrinking in same time?");
-        narrator 4,
-            l("You need to type the answer of this riddle in the NPC window."),
-            l("The answer is a single word, without conjugaison."),
-            l("You can also answer in your native language or in English.");
-
-        do
-        {
-            input .@answer$;
-            .@i++;
-
-            if (verify_riddle_answer (.@answer$, "life"))
-            {
-                // setq (ArtisQuests_Enora, 9);
-                speech 5,
-                    l("Oh..."),
-                    l("You seem more cultivated than what you look like."),
-                    l("Fine, take these potion, I will replenish in the next hours anyway.");
-
-                getitem "PibberiesInfusion", 5;
-                break;
-            }
-            else if (.@i < 3)
-            {
-                speech 5,
-                    l("Too bad, try again.");
-            }
-            else
-            {
-                // setq (ArtisQuests_Enora, 8);
-                speech 5,
-                    l("You failed!"),
-                    l("Ivan is the one that you should look at now."),
-                    l("He is on a small house in between the dock's warehouse and the dojo."),
-                    l("Follow the river to the east-north and you will find it."),
-                    l("And get out of here, I'm not a map!");
-                break;
-            }
-        } while (1);
-
-
         return;
     }
 
@@ -163,11 +171,11 @@
 
         menuint
             //rif (.@enora == 7, l("Enora wants her potions.")), 0,
-            l("Enora wants her potions."), 0,
             l("[Trade]"), 1,
-            l("How do you do your potions?"), 2,
-            l("What are you reading?"), 3,
-            l("[Quit]"), 4;
+            rif (.@enora > 7, l("What was your riddle?")), 2,
+            l("How do you do your potions?"), 3,
+            l("What are you reading?"), 4,
+            l("[Quit]"), 5;
 
         switch (@menuret)
         {
@@ -179,18 +187,21 @@
                 shop "Store#Potion001-1";
                 close;
             case 2:
-                alchemist_information;
+                riddle_enigma;
                 break;
             case 3:
+                alchemist_information;
+                break;
+            case 4:
                 speech 5,
                     l("It's a poem, about poems... Why are you asking that?"),
                     l("Because I am an orc I can't read such things? That's rubbish."),
                     l("I borrowed it from the library, you should try to cultivate yourself more instead of insunuate such things to people you don't know!");
                 break;
-            case 4:
+            case 5:
                 break;
         }
-    } while (@menuret != 4);
+    } while (@menuret != 5);
 
     closedialog;
     goodbye;
