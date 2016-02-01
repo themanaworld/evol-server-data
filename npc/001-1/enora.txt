@@ -251,7 +251,6 @@
         .@q = getq(ArtisQuests_Enora);
         menuint
             rif(.@q == 0, l("She told me that you had some tasks for me.")), 0,
-
             rif(.@q == 4 || .@q == 6 || .@q == 9, l("I have your package.")), 1,
             rif(.@q == 10 && #ArtisFluffyKilled >= 10, l("I cleaned up the hill.")), 2,
             rif(.@q >= 1, l("Who is Don?")), 3,
