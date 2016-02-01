@@ -3,19 +3,75 @@
 //    Reid
 // Description:
 //    Blacksmith's assistant of Artis
+// Variables:
+//    ArtisQuests_Enora
+// Values:
+//    0    Default.
+//    1    BlackSmith quest delivered.
+//    2    Chelios Quest given.
+//    3    Chelios Quest done.
+//    4    BlackSmith gave the sword.
 
 001-1,95,109,0	script	Chelios	NPC_CHELIOS,{
-    mesn;
-    mesq l("Can I be of any help?");
 
-    goto L_Close;
+    function give_small_quest {
+        speech 5,
+            l("Her sword... I... I had a little problem with it."),
+            l("I ran out of ");
+        // setq ArtisQuests_Enora, 2;
+        return;
+    }
 
-L_Close:
+    function more_info {
+        return;
+    }
+
+    function quest_completed {
+        // setq ArtisQuests_Enora, 4;
+        return;
+    }
+
+    function blacksmith_house{
+        return;
+    }
+
+    speech 4, l("Can I be of any help?");
+
+    do
+    {
+        .@enora = getq (ArtisQuests_Enora);
+        menuint rif (.@enora == 1, l("Enora wants her sword.")), 1,
+                rif (.@enora == 2, l("")), 2,
+                rif (.@enora == 3, l("")), 3,
+                l("What is this building?"), 4,
+                l("[Quit]"), 5;
+
+        switch (@menuret)
+        {
+            case 1:
+                give_small_quest;
+                break;
+            case 2:
+                more_info;
+                break;
+            case 3:
+                quest_completed;
+                break;
+            case 4:
+                blacksmith_house;
+                break;
+            case 5:
+                break;
+        }
+    } while (@menuret != 5);
+
+    closedialog;
+    goodbye;
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 3;
     end;
 }
 
