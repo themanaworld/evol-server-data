@@ -6,6 +6,127 @@
 
 001-1,65,116,0	script	Q'Pid#001-1	NPC_QPID,{
 
+    function verify_riddle_answer {
+        .@answer$ = getarg (0);
+        .@good$ = getarg (1);
+        .@good_translated$ = l(getarg(1));
+
+        .@size_answer = getstrlen (.@answer$);
+        .@size_good = getstrlen (.@good$);
+        .@size_good_translated = getstrlen (.@good_translated$);
+
+        if (.@size_answer > .@size_good)
+        {
+            .@max = (.@size_answer > .@size_good_translated)
+                ? .@size_answer
+                : .@size_good_translated;
+        }
+        else
+        {
+            .@max = (.@size_good > .@size_good_translated)
+                ? .@size_good
+                : .@size_good_translated;
+        }
+
+        for (.@j = 0; .@j < .@max; .@j++)
+        {
+            if (strtolower (charat (.@answer$, .@j)) == charat (.@good$, .@j))
+            {
+                .@k++;
+            }
+            if (strtolower (charat (.@answer$, .@j)) == charat (.@good_translated$, .@j))
+            {
+                .@k_translated++;
+            }
+        }
+        .@k *= 10;
+        .@k_translated *= 10;
+        .@size_good *= 7;
+        .@size_good_translated *= 7;
+        if (.@k >= .@size_good  || .@k_translated >= .@size_good_translated)
+        {
+            debugmes .@k + " " + .@k_translated;
+            return 1;
+        }
+        return 0;
+    }
+
+    function enora_quest {
+        speech 5,
+            l("She wants? What if I don't want?"),
+            l("I'm not a pawn of the Legion, I don't have to obey you!"),
+            l("Oh and guess what, I'm soon out of potions anyway.");
+
+        switch (select (l("And where can I find these potions?"),
+                        l("You bored me, see you later.")))
+        {
+            case 1:
+                break;
+            case 2:
+                return;
+        }
+
+        speech 5,
+            l("You don't seem to be from the Legion, let's do a game."),
+            l("If you find the correct answer, I will give you these potions..."),
+            l("But if you fail, you will have to get them from the alchemist."),
+            l("Deal?");
+
+        switch (select (l("[Yes]"),
+                        l("[No]")))
+        {
+            case 1:
+                break;
+            case 2:
+                return;
+        }
+
+        speech 5,
+            l("Ok fine, you have up to 3 tries, here is the riddle:"),
+            l("What is growing and shrinking in same time?");
+        narrator 4,
+            l("You need to type the answer of this riddle in the NPC window."),
+            l("The answer is a single word, without conjugaison."),
+            l("You can also answer in your native language or in English.");
+
+        do
+        {
+            input .@answer$;
+            .@i++;
+
+            if (verify_riddle_answer (.@answer$, "life"))
+            {
+                // setq (ArtisQuests_Enora, 9);
+                speech 5,
+                    l("Oh..."),
+                    l("You seem more cultivated than what you look like."),
+                    l("Fine, take these potion, I will replenish in the next hours anyway.");
+
+                getitem "PibberiesInfusion", 5;
+                break;
+            }
+            else if (.@i < 3)
+            {
+                speech 5,
+                    l("Too bad, try again.");
+            }
+            else
+            {
+                // setq (ArtisQuests_Enora, 8);
+                speech 5,
+                    l("You failed!"),
+                    l("Ivan is the one that you should look at now."),
+                    l("He is on a small house in between the dock's warehouse and the dojo."),
+                    l("Follow the river to the east-north and you will find it."),
+                    l("And get out of here, I'm not a map!");
+                break;
+            }
+        } while (1);
+
+
+        return;
+    }
+
     function alchemist_information {
         speech 5,
             l("Do? I don't do them."),
@@ -18,7 +139,6 @@
 
         switch (select (l("Sorry I didn't mean to bother you."),
                         l("You are just sitting on the shadow of your store.")))
-
         {
             case 1:
                 mes "";
@@ -35,15 +155,15 @@
     }
 
     speech 4,
-        l("");
-
-    // Add Enora's quest with a riddle.
-    .@enora = getq(ArtisQuests_Enora);
+        l("What?");
 
     do
     {
+        .@enora = getq(ArtisQuests_Enora);
+
         menuint
-            rif (.@enora == 5, l("Enora wants her potions.")), 0,
+            //rif (.@enora == 7, l("Enora wants her potions.")), 0,
+            l("Enora wants her potions."), 0,
             l("[Trade]"), 1,
             l("How do you do your potions?"), 2,
             l("What are you reading?"), 3,
@@ -52,8 +172,7 @@
         switch (@menuret)
         {
             case 0:
-                speech 5,
-                    l("");
+                enora_quest;
                 break;
             case 1:
                 closedialog;
