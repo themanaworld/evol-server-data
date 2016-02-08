@@ -16,14 +16,14 @@
 
     function give_small_quest {
         speech 5,
-            l("Her sword... I have some trouble to finish it."),
+            l("Her sword... I'm having some trouble finishing it."),
             l("You see, Enora asked me to do a black iron sword, unfortunately I ran out of such material, and..."),
-            l("Only Don and the merchant guild has this kind of iron in stock."),
-            l("I prefer to deal with the entier merchant guild than the old man, Don has this ability to smash down your enthusiasm in a forging sparkle!"),
-            l("Please help me if you want me to finish this sword, ");
+            l("Only Don and the merchant guild have that kind of iron in stock."),
+            l("It's better to deal with the merchant guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!"),
+            l("If Enora wants her sword now, I need to ask for your help.");
 
 
-        switch (select (l("I have no other choice."),
+        switch (select (l("Let's not keep her waiting."),
                         l("Not now.")))
         {
             case 1:
@@ -37,7 +37,7 @@
 
         speech 5,
             l("Thank you very much!"),
-            l("Talk with Lloyd the banker in the merchant guild, it's the big building on north of Artis, on top of the little hill.");
+            l("Talk with Lloyd the banker in the merchant guild, it's a big building at the Northern part of Artis, atop the little hill.");
 
         setq ArtisQuests_Enora, 2;
 
@@ -46,10 +46,10 @@
 
     function more_info {
         speech 5,
-            l("It's the big building on north of Artis, on top of the little hill."),
+            l("It's the big building at Northern Artis, at the top of a small hill."),
             l("Take the east road that goes to the north and follow it until you are on top of the cliff."),
-            l("That part of the town is called the rich hill, it's also the headquarter of the merchant guild."),
-            l("Lloyd owe me one, but beware of these people, they are obsessed with money...");
+            l("That part of the town is called the gilded hill, and where the merchant guild has."), //rich hill
+            l("Lloyd still owes me, but beware of those money-grubbers, or they will sell your own teeth to you!");
 
         return;
     }
@@ -57,9 +57,9 @@
     function quest_completed {
         speech 5,
             l("Oh... Awesome!"),
-            l("You were so long so... I thought that you let me down, so I went to see Don and asked him some of his black iron."),
-            l("But thank you anyway, I will be able to refund him now!"),
-            l("Say hi to Enora from me!");
+            l("You were gone; I thought you let me down. Some black iron was given to me by Don... after I asked nearly ten times."),
+            l("But thank you anyway, I can refund him now!"),
+            l("Say hi to Enora for me!");
 
         return;
     }
@@ -67,8 +67,8 @@
     function blacksmith_house{
         speech 5,
             l("Behind me? It's the Blacksmith house, the most renowned throughout Andorra."),
-            l("There are two shop inside, they are independant from the merchant guild of Artis, now that I think about it, they are the only shops that are independant in Artis..."),
-            l("This might be because of Don, he is the master blacksmith of this place and a model for me!");
+            l("There are two shops inside, they are independent from the merchant guild of Artis; now that I think about it, they are the only shops that are independant in Artis..."),
+            l("This might be because of Don, he is the master blacksmith of this place and a model to me!");
 
         return;
     }
