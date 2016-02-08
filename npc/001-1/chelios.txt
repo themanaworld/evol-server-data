@@ -16,22 +16,60 @@
 
     function give_small_quest {
         speech 5,
-            l("Her sword... I... I had a little problem with it."),
-            l("I ran out of ");
-        // setq ArtisQuests_Enora, 2;
+            l("Her sword... I have some trouble to finish it."),
+            l("You see, Enora asked me to do a black iron sword, unfortunately I ran out of such material, and..."),
+            l("Only Don and the merchant guild has this kind of iron in stock."),
+            l("I prefer to deal with the entier merchant guild than the old man, Don has this ability to smash down your enthusiasm in a forging sparkle!"),
+            l("Please help me if you want me to finish this sword, ");
+
+
+        switch (select (l("I have no other choice."),
+                        l("Not now.")))
+        {
+            case 1:
+                break;
+            case 2:
+                speech 5,
+                    l("I will stay here, come back when you will be free.");
+
+                return;
+        }
+
+        speech 5,
+            l("Thank you very much!"),
+            l("Talk with Lloyd the banker in the merchant guild, it's the big building on north of Artis, on top of the little hill.");
+
+        setq ArtisQuests_Enora, 2;
+
         return;
     }
 
     function more_info {
+        speech 5,
+            l("It's the big building on north of Artis, on top of the little hill."),
+            l("Take the east road that goes to the north and follow it until you are on top of the cliff."),
+            l("That part of the town is called the rich hill, it's also the headquarter of the merchant guild."),
+            l("Lloyd owe me one, but beware of these people, they are obsessed with money...");
+
         return;
     }
 
     function quest_completed {
-        // setq ArtisQuests_Enora, 4;
+        speech 5,
+            l("Oh... Awesome!"),
+            l("You were so long so... I thought that you let me down, so I went to see Don and asked him some of his black iron."),
+            l("But thank you anyway, I will be able to refund him now!"),
+            l("Say hi to Enora from me!");
+
         return;
     }
 
     function blacksmith_house{
+        speech 5,
+            l("Behind me? It's the Blacksmith house, the most renowned throughout Andorra."),
+            l("There are two shop inside, they are independant from the merchant guild of Artis, now that I think about it, they are the only shops that are independant in Artis..."),
+            l("This might be because of Don, he is the master blacksmith of this place and a model for me!");
+
         return;
     }
 
@@ -41,8 +79,8 @@
     {
         .@enora = getq (ArtisQuests_Enora);
         menuint rif (.@enora == 1, l("Enora wants her sword.")), 1,
-                rif (.@enora == 2, l("")), 2,
-                rif (.@enora == 3, l("")), 3,
+                rif (.@enora >= 2, l("Where is the Merchant Guild?")), 2,
+                rif (.@enora == 3, l("I have your black iron.")), 3,
                 l("What is this building?"), 4,
                 l("[Quit]"), 5;
 
