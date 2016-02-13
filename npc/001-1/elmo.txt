@@ -5,12 +5,10 @@
 //    Sailor of Nard's La Johanne ship.
 
 001-1,185,107,0	script	Elmo#001-1	NPC_ELMO_ARTIS,{
-    mesn;
-    mesq l("Oh hey!");
+    speech
+        l("Oh hey!"),
+        l("If you feel bored or like running around in circles, you may want to talk with the other people around here to get some tasks to do.");
 
-    goto L_Close;
-
-L_Close:
     close;
 
 OnInit:
