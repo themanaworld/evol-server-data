@@ -30,7 +30,7 @@
                 break;
             case 2:
                 speech 5,
-                    l("Oh... Ok, I will stay around here if you change you rmind.");
+                    l("Oh... Ok, I will stay around here if you change your mind.");
                 break;
         }
         return;
@@ -50,20 +50,20 @@
     {
         select (l("I have your pass from the Merchant Guild."));
         speech 5,
-            l("Oh!!! You save me, I was too afraid to unpack my stuff with this pass."),
+            l("Oh! You saved me, I was too afraid to unpack my stuff without this pass."),
             l("Hey, I remember you, we were on the same boat, you are the castaway.");
 
         switch (select (l("Yes I am."),
-                        l("You confusing me with another.")))
+                        l("You're confusing me with another.")))
         {
             case 1:
                 speech 5,
                     l("Oh sure I remember you."),
-                    l("The travel was fine for you? For me it was a hell, I think that I am seesick.");
+                    l("The travel was fine for you? It was terrible for me; I was sea-sick.");
                 break;
             case 2:
                 speech 5,
-                    l("Ah, I didn't have much sleep, it's possible.");
+                    l("Ah, I didn't have much sleep; it's possible.");
                 break;
         }
         setq ArtisQuests_Fexil, 2;
@@ -80,7 +80,7 @@
         l("OK, let's trade."), 1,
         rif(.@fexil == 2, l("Do you still need help?")), 2,
         rif(.@fexil > 2 && countitem(729) > 0, l("I have some fur for you.")), 3,
-        l("No, Sorry."), 4;
+        l("No. Sorry."), 4;
 
     switch (@menuret)
     {
@@ -96,7 +96,7 @@
 
         case 3:
             speech 5,
-                l("Awesome, how many of those do you want to give me?");
+                l("Awesome. How many of those do you want to give me?");
 
             do
             {

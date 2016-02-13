@@ -30,7 +30,7 @@
                 break;
             case 2:
                 speech 5,
-                    l("I will stay here, come back when you will be free.");
+                    l("I'll be here, come back when you're ready.");
 
                 return;
         }
@@ -58,7 +58,7 @@
         speech 5,
             l("Oh... Awesome!"),
             l("You were gone; I thought you let me down. Some black iron was given to me by Don... after I asked nearly ten times."),
-            l("But thank you anyway, I can refund him now!"),
+            l("But thank you anyway! I can refund him now!"),
             l("Say hi to Enora for me!");
 
         return;
