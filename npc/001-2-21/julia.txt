@@ -17,8 +17,11 @@
     .@s$ = l("I don't want to change my language, sorry.");
 
 L_Menu:
+    .@enora = getq(ArtisQuests_Enora);
+
     menu
         rif(getskilllv(1) != 9, l("Something is wrong with me, I can't smile nor sit.")), L_BasicSkill,
+        rif (.@enora == 0, l("Where should I go?")), L_Enora,
         lg("I made a mistake, I would like to change my language."), L_ChooseLang,
         l("Could you explain to me where I am?"), L_WhereIam,
         l("What happened to me?"), L_What,
@@ -118,6 +121,13 @@ L_BasicSkill:
     next;
     mesq l("Do you have any other questions for me?");
     next;
+
+    goto L_YNMenu;
+
+L_Enora:
+    speech 5,
+        l("Enora from the Legion of Aemil has been warned that you were aboard."),
+        l("She is waiting for you on the dock.");
 
     goto L_YNMenu;
 

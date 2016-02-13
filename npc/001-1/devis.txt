@@ -8,6 +8,16 @@
 001-1,193,109,0	script	Devis#001-1	NPC_DEVIS_ARTIS,{
 
     function say_random_greeting {
+        .@enora = getq(ArtisQuests_Enora);
+        if (.@enora == 0)
+        {
+            speech
+                l("Enora from the Legion of Aemil has been warned that you were aboard."),
+                l("She is waiting for you on the dock.");
+
+            return;
+        }
+
         .@rand = rand (5);
         if (.@rand == 0) goodbye;
         else if (.@rand == 1)
