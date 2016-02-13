@@ -22,7 +22,6 @@
             l("It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!"),
             l("If Enora wants her sword now, I need to ask for your help.");
 
-
         switch (select (l("Let's not keep her waiting."),
                         l("Not now.")))
         {

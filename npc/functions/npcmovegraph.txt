@@ -6,7 +6,6 @@
 // Variables:
 //    none
 
-
 function	script	initmovegraph	{
     deletearray getvariableofnpc(.movegraphcmd$, strnpcinfo(3));
     deletearray getvariableofnpc(.movegraphlabels$, strnpcinfo(3));
@@ -33,7 +32,6 @@ function	script	initmovegraph	{
     return;
 }
 
-
 function	script	findmovegraphlabel	{
     if (!getargcount())
     {
@@ -56,7 +54,6 @@ function	script	findmovegraphlabel	{
     npcdebug "findmovegraphlabel: label not found: " + getarg(0);
     return -1;
 }
-
 
 /* setmovegraphcmd(fromPositionLabel,toPositionLabel[,moveChanceWeight[,moveFlags]],postCommand, ...);
  * This function manipulates NPC moving graph. Before calling it, make sure
@@ -90,7 +87,6 @@ function	script	setmovegraphcmd	{
     }
     return;
 }
-
 
 function	script	execmovecmd	{
 
@@ -200,7 +196,6 @@ function	script	execmovecmd	{
     return 0;
 }
 
-
 function	script	getnextmovecmd	{
     .@cmds$ = getvariableofnpc(.nextcmd$, strnpcinfo(3));
     .@firstCmd$ = .@cmds$;
@@ -215,7 +210,6 @@ function	script	getnextmovecmd	{
     set getvariableofnpc(.nextcmd$, strnpcinfo(3)), .@restCmd$;
     return strip(.@firstCmd$);
 }
-
 
 // getrandompoint(x1,y1,x2,y2)
 //    -- Get a random walkable point within a map rectangle
@@ -273,7 +267,6 @@ L_Found:
     set getvariableofnpc(.move__rand_y, strnpcinfo(3)), .@ry;
     return 0;
 }
-
 
 function	script	movetonextpoint	{
     .@wait = getvariableofnpc(.waitticks, strnpcinfo(3));
@@ -360,7 +353,6 @@ function	script	movetonextpoint	{
     return;
 }
 
-
 // initial actions for npc when using move graphs.
 // function can accept 2 arguments:
 //    1: action sequence, for example "speed 200; dir 4". Default is "moveon"
@@ -380,7 +372,6 @@ function	script	firstmove	{
     return;
 }
 
-
 function	script	npc_pausemove	{
     stopnpctimer;
     .@move_after = 0;
@@ -396,7 +387,6 @@ function	script	npc_pausemove	{
     return 0;
 }
 
-
 function	script	npc_resumemove	{
     startnpctimer;
 
@@ -409,7 +399,6 @@ function	script	npc_resumemove	{
 
     return 0;
 }
-
 
 // npc_turntoxy(x,y)
 // turn npc toward an object at position (x,y)

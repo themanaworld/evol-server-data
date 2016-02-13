@@ -4,7 +4,6 @@
 // Description:
 //    NPC to use shovel (dig, bury etc)
 
-
 -	script	Shovel	-1,{
 
     function CheckDigLocation {
@@ -179,7 +178,6 @@ OnInit:
 
 }
 
-
 function	script	shovel_addquest	{
     if (getargcount() < 4)
     {
@@ -197,7 +195,6 @@ function	script	shovel_addquest	{
     ShovelQuests_y[.@size] = .@y;
     return 1;
 }
-
 
 function	script	shovel_adddigrect	{
     if (getargcount() < 5)

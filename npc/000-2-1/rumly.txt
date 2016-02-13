@@ -88,7 +88,7 @@ L_Menu:
             goto L_ResetStats;
         case 3:
             if (.@visited != 2) goto L_Quit;
-                
+
             speech 5,
                 l("See you! And come back with the plushrooms!");
 
@@ -182,7 +182,6 @@ L_Quit:
     initnpctimer;
 
     goodbye;
-
 
 OnTimer1800:
     stopnpctimer;

@@ -105,7 +105,6 @@
     mesq l("Just look at my goods for sale! Fresh fruits and vegetables were shipped only this morning. And for reasonable price, of course.");
     next;
 
-
 L_SalemMenuShop:
     .@fexil = getq(ArtisQuests_Fexil);
 
@@ -119,7 +118,7 @@ L_SalemMenuShop:
 
     mes "";
     mesn;
-    
+
     switch (@menuret)
     {
         case 0:
@@ -149,6 +148,7 @@ L_SalemMenuShop:
         case 5:
             break;
     }
+
     closedialog;
     goodbye;
     close;
@@ -181,7 +181,7 @@ L_AboutPious:
             rif (.@q == 1, l("I'm on my way! I will bring it back to you.")), 1,
             l("I don't really have time to go chasing pious, let me just buy one at the regular price (30000E)."), 2,
             l("I don't want to buy a piou right now."), 3;
-            
+
     mes "";
     mesn;
 
@@ -200,7 +200,6 @@ L_AboutPious:
     closedialog;
     goodbye;
     close;
-
 
 L_QuestInfo:
     mesq l("The little piou is flying nearby, all you need is to catch it and bring back to me.");

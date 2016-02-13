@@ -69,7 +69,7 @@ OnInit:
                     "big_table_r", "s_table_2",  1,  "dir 4; wait 8",
                     "lf_table_2",  "m_table_2",  1,  "dir 0; wait 8",
                     "lf_table_2",  "big_table_r",1,  "dir 4; wait 1; emote 3; wait 6";
-                    
+
     firstmove "wait 8";
     initnpctimer;
 }

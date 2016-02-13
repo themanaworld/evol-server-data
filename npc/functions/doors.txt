@@ -39,7 +39,6 @@ function	script	doorInit	{
     end;
 }
 
-
 function	script	open_door	{
     .@door$ = getarg(0);
     setnpcdir.@door$, 2;
@@ -48,7 +47,6 @@ function	script	open_door	{
     sleep 300;
     return 0;
 }
-
 
 function	script	close_door	{
     .@door$ = getarg(0);

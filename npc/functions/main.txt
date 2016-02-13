@@ -76,7 +76,6 @@ function	script	strip	{
     return substr(.@s$, .@start, .@end);
 }
 
-
 // Function to show narrator text. Accepts string args.
 // If first arg is a number N, then it represents bit flags.
 // Bit flags :
@@ -112,7 +111,6 @@ function	script	narrator	{
 
     return;
 }
-
 
 // Function to show NPC speech. Accepts string args.
 // If first arg is a number N, then it represents bit flags.
@@ -151,14 +149,12 @@ function	script	speech	{
     return;
 }
 
-
 // Show debug message if .debug variable of NPC is set to 1
 function	script	npcdebug	{
     if (getvariableofnpc(.debug, strnpcinfo(3)))
         debugmes strnpcinfo(3) + ": " + getarg(0);
     return;
 }
-
 
 function	script	abs	{
     .@n = getarg(0);

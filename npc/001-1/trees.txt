@@ -15,7 +15,6 @@
 //    3  - player decided to tell Katja where her brother is
 //    4  - "good" ending, player helped Katja
 
-
 function	script	LazyBrotherTreeFunc	{
     .@q = getq(ArtisQuests_LazyBrother);
     if (.@q == 0 || .@q >= 2)

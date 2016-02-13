@@ -18,7 +18,7 @@
     speech 4,
         l("Welcome to my office."),
         l("What would you like today?");
-    
+
     do
     {
         .@q = select (l("[Trade]"),
