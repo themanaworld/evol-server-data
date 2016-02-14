@@ -6,13 +6,49 @@
 // Variables:
 //    0  ArtisQuests_Lloyd
 //    1  ArtisQuests_Fexil
+//    2  ArtisQuests_Enora
 // Quest states:
 //    00  -- Never talked
 //    01  -- Registred on the Guild
 //    10  -- not started
 //    11  -- Lloyd warned about the quest
+//    20  -- Default.
+//    21  -- BlackSmith quest delivered.
+//    22  -- Chelios Quest given.
+//    23  -- Chelios Quest done.
 
 001-2-19,31,25,0	script	Lloyd the banker	NPC_LLOYD,{
+
+    function enora_quest {
+        speech 5,
+            l("Black iron... That is a very specific request that you got me!"),
+            l("Let me check on my inventory book..."),
+            l("..."),
+            l("Yes, I have some! \"5x Black Iron Ingots\""),
+            l("Is this for you or somebody else? Because you need to be registered to obtain these materials.");
+
+        switch (select (l("This is for my own use."),
+                        l("Chelios asked me to get it.")))
+        {
+            case 1:
+                speech 1,
+                    l("This is your first time asking for something, you won't pay this time, take it as a sign of good faith!"),
+                    l("If you need something in the future, do not hesitate to pass by here, our stock is full of box collecting dust.");
+                emotion 6;
+                break;
+            case 2:
+                speech 1,
+                    l("Chelios... He is part of the blacksmith house, is not he?"),
+                    l("Since Don settled in Artis he and his band refused to register to the Merchant Guild."),
+                    l("I will close my eyes for once, but only because it is your first time asking for something!"),
+                    l("Sometimes a good merchant need to reach out first. It's on the house, give Chelios my regards!");
+                emotion 7;
+                break;
+        }
+        setq ArtisQuests_Enora, 3;
+
+        return;
+    }
 
     function explain_guild {
         speech
@@ -27,7 +63,7 @@
     function first_visit {
         speech 4,
             l("Welcome!"),
-            l("My name is Lloyd, I'm a representant of the Merchant Guild of Artis.");
+            l("My name is Lloyd, I am a representant of the Merchant Guild of Artis.");
 
         select (l("My name is @@...", strcharinfo(0)));
 
@@ -38,12 +74,12 @@
             l("Lloyd is searching something on his book.");
         speech 4,
             l("I see."),
-            l("You are new around here, don't you?");
+            l("You are new around here, right?");
 
         if (select (l("How do you know?"), l("Yes I am.")) == 1)
         {
             speech 5,
-                l("Oh, it's simple. I have on this book the name of every citizen of Artis and its surrounding."),
+                l("Oh, it is simple. I have on this book the name of every citizen of Artis and its surrounding."),
                 l("And I have no sign of a so called \"@@\" on it!", strcharinfo(0));
         }
         else
@@ -69,7 +105,7 @@
                 if (Zeny < .@price)
                 {
                     speech 4,
-                        l("You don't seem to have enough money on yourself, come back later!");
+                        l("You do not seem to have enough money on yourself, come back later!");
                 }
                 else
                 {
@@ -147,7 +183,7 @@
                     if (.@amount > Zeny)
                     {
                         speech 5,
-                            l("You don't have enough Esperin on yourself.");
+                            l("You do not have enough Esperin on yourself.");
                         continue;
                     }
                     set Zeny, Zeny - .@amount;
@@ -172,7 +208,7 @@
                     if (.@amount > #MerchantBank)
                     {
                         speech 5,
-                            l("You don't have enough Esperin on your bank account.");
+                            l("You do not have enough Esperin on your bank account.");
                         continue;
                     }
                     set #MerchantBank, #MerchantBank - .@amount;
@@ -202,18 +238,26 @@
         close;
     }
 
-    speech
+    speech 4,
         l("Welcome to the Merchant Guild of Artis!"),
         l("What do you want today?");
-    mes "";
-    while (1)
+
+    do
     {
-        switch (select (l("I would like to deposit some item."),
-                        l("I would like to manage my money."),
-                        l("What is this guild for?"),
-                        l("The guild has any work for me?"),
-                        l("Bye.")))
+        .@enora = getq (ArtisQuests_Enora);
+
+        menuint rif (.@enora == 2, l("I'm searching some black iron ingots.")), 0,
+                l("I would like to deposit some item."), 1,
+                l("I would like to manage my money."), 2,
+                l("What is this guild for?"), 3,
+                l("The guild has any work for me?"), 4,
+                l("Bye."), 5;
+
+        switch (@menuret)
         {
+            case 0:
+                enora_quest;
+                break;
             case 1:
                 openstorage;
                 closedialog;
@@ -238,15 +282,17 @@
 
                 continue;
             case 5:
-                closedialog;
-                goodbye;
-                close;
                 break;
         }
-        speech 5,
-            l("Something else?");
-    }
+        if (@menuret != 5)
+        {
+            speech 5,
+                l("Something else?");
+        }
+    } while (@menuret != 5);
 
+    closedialog;
+    goodbye;
     close;
 
 OnInit:
