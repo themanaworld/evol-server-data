@@ -253,6 +253,10 @@
     }
 
     function enora_light_armor {
+        speech 5,
+            l("The light armor shop is ran by Resa, she is part of the Merchant Guild of Artis."),
+            l("She is very skilled when it comes to change a no ordinary piece of clothe into a wonderful piece of art!"),
+            l("Her shop is on the west part of the city, between the legion building and the library.");
 
         return;
     }
