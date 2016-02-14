@@ -90,7 +90,18 @@
     }
 
     function enora_second_quest {
-        return;
+        speech 4,
+            l("After this small overview of Artis, what do you think of our city?"),
+            l("The Legion of Aemil is in charge of the security of the intramural part of most city throughout the archipelagos."),
+            l("But we are quite lucky here, outside of some tipsy travelers there are no big problem around here, it's not like capital, Esperia."),
+            l("Now that I think about it, I have another task for you. I asked Resa from the light armor shop some new clothes, she is a bit far from here, I can't go there as I need to watch the dock."),
+            l("Her shop is on the west part of the city, between the legion building and the library.");
+
+        setq ArtisQuests_Enora, 5;
+
+        closedialog;
+        npctalk3 l("Thank you very much!");
+        close;
     }
 
     function enora_first_quest_ret {
@@ -109,7 +120,7 @@
                 narrator 4, l("Enora is carefully inspecting the sword.");
                 speech 4,
                     l("Excellent!"),
-                    l("That was a good choice to ask him to forge it!");
+                    l("That was a good choice to ask him to forge this sword!");
 
                 break;
             case 2:
@@ -120,7 +131,6 @@
 
                 break;
         }
-        setq ArtisQuests_Enora, 5;
         enora_second_quest;
 
         return;
@@ -204,7 +214,7 @@
     }
 
     function enora_quest_complete {
-        switch (getq(ArtisQuest_Enora))
+        switch (getq(ArtisQuests_Enora))
         {
             case 4:
                 enora_first_quest_ret;
