@@ -58,7 +58,9 @@
             l("Oh... Awesome!"),
             l("You were gone; I thought you let me down. Some black iron was given to me by Don... after I asked nearly ten times."),
             l("But thank you anyway! I can refund him now!"),
-            l("Say hi to Enora for me!");
+            l("Take the sword, and say hi to Enora for me!");
+
+        setq ArtisQuests_Enora, 4;
 
         return;
     }
@@ -78,8 +80,8 @@
     {
         .@enora = getq (ArtisQuests_Enora);
         menuint rif (.@enora == 1, l("I came to retrieve a package for Enora.")), 1,
-                rif (.@enora >= 2, l("Where is the Merchant Guild?")), 2,
-                rif (.@enora == 3, l("I have your black iron.")), 3,
+                rif (.@enora == 3, l("I have your black iron.")), 2,
+                rif (.@enora >= 2, l("Where is the Merchant Guild?")), 3,
                 l("What is this building?"), 4,
                 l("[Quit]"), 5;
 
@@ -89,10 +91,10 @@
                 give_small_quest;
                 break;
             case 2:
-                more_info;
+                quest_completed;
                 break;
             case 3:
-                quest_completed;
+                more_info;
                 break;
             case 4:
                 blacksmith_house;
