@@ -3,6 +3,16 @@
 //    Reid
 // Description:
 //    Light Armor shop keeper.
+// Variables:
+//    ArtisQuests_Enora
+// Values:
+//    0    Default.
+//    1    BlackSmith quest delivered.
+//    2    Chelios Quest given.
+//    3    Chelios Quest done.
+//    4    BlackSmith gave the sword.
+//    5    Light Armor Shop quest delivered.
+//    6    Light Armor Shop gave the cloths.
 
 001-2-0,37,28,0	script	Resa	NPC_ELVEN_FEMALE_ARMOR_SHOP,{
 
@@ -15,17 +25,38 @@
         return;
     }
 
+    function enora_quest {
+        speech 5,
+            l("I thought that she would never come to pick it up!"),
+            l("Here it is, a fashionable @@.", getitemlink (ArtisTankTop, CamelCottonDye)),
+            l("I asked Calypsan to dye this tank top, now it has an unique look!");
+
+        narrator 4, l("You pick up the package.");
+
+        setq ArtisQuests_Enora, 6;
+
+        return;
+    }
+
     speech 4,
         l("Welcome to my office."),
         l("What would you like today?");
 
     do
     {
-        .@q = select (l("[Trade]"),
-                      l("How can I improve my equipment?"),
-                      l("[Quit]"));
-        switch (.@q)
+        .@enora = getq (ArtisQuests_Enora);
+        menuint rif (.@enora == 5, l("I came to retrieve a package for Enora.")), 0,
+                l("[Trade]"), 1,
+                l("How can I improve my equipment?"), 2,
+                l("[Quit]"), 3;
+
+        switch (@menuret)
         {
+            case 0:
+                enora_quest;
+                closedialog;
+                goodbye;
+                close;
             case 1:
                 closedialog;
                 shop "Store#001-2-0";
@@ -34,13 +65,12 @@
                 explain_craft;
                 break;
             case 3:
-                break;
+                closedialog;
+                goodbye;
+                close;
         }
-    } while (.@q != 3);
+    } while (1);
 
-    closedialog;
-    goodbye;
-    close;
 
 OnInit:
     .sex = G_FEMALE;
