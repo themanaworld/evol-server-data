@@ -90,31 +90,48 @@
     }
 
     function enora_second_quest {
-        speech 5,
-            l("Thank you for this commission, Don is really an ace when it comes to forging metal."),
-            l("But I hope that he didn't give you any hard time, as once he get up on the wrong side of the bed he transforms himself into an embittered and grumpy old man..."),
-            l("Poor Chelios, I don't envy him.");
+        return;
+    }
 
-        switch (select (l("His craft is of an excellent quality."),
+    function enora_first_quest_ret {
+        speech 5,
+            l("Thank you for this commission, Chelios is as good as Don when it comes to forging metal."),
+            l("By the way, did you ever talk with Don?"),
+            l("If so, I hope that he didn't give you any hard time, as once he get up on the wrong side of the bed he transforms himself into an embittered and grumpy old man..."),
+            l("Poor Chelios, I don't envy him..."),
+            l("So, everything went fine?");
+
+        switch (select (l("Chelios managed to do an excellent work."),
                         l("The old man seemed to be senile.")))
         {
             case 1:
-                speech 5,
-                    l("Of course it is!");
+                speech 5, l("Fine, let's see his work...");
+                narrator 4, l("Enora is carefully inspecting the sword.");
+                speech 4,
+                    l("Excellent!"),
+                    l("That was a good choice to ask him to forge it!");
+
                 break;
             case 2:
                 speech 5,
                     l("He may not have all of his wits but keep in mind one thing:");
+                    l("Don is renowned throughout the archipelagos for his forgery here on Artis."),
+                    l("It's a great honnor for us at the Legion to hold the security of this commerce!");
+
                 break;
         }
-        speech 4,
-            l("Don is renowned throughout the archipelagos for his forgery here on Artis."),
-            l("It's a great honnor for us at the Legion to hold the security of his commerce.");
+        setq ArtisQuests_Enora, 5;
+        enora_second_quest;
 
         return;
     }
 
     function enora_third_quest {
+        return;
+    }
+
+    function enora_second_quest_ret {
+        enora_third_quest;
         return;
     }
 
@@ -154,6 +171,11 @@
         return;
     }
 
+    function enora_third_quest_ret {
+        enora_fourth_quest;
+        return;
+    }
+
     function enora_hill_cleaned {
         if ($FLUFFY_KILLED < 7)
         {
@@ -184,14 +206,14 @@
     function enora_quest_complete {
         switch (getq(ArtisQuest_Enora))
         {
-            case 2:
-                enora_second_quest;
-                break;
             case 4:
-                enora_third_quest;
+                enora_first_quest_ret;
                 break;
             case 6:
-                enora_fourth_quest;
+                enora_second_quest_ret;
+                break;
+            case 9:
+                enora_third_quest_ret;
                 break;
             default:
                 break;
