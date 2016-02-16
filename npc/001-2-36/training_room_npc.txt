@@ -59,6 +59,14 @@ start:
 	if (FIGHT_TRAINING >= 1)
 		goto JobIsDone;
 
+    getmapxy(.@map$, .@x, .@y, 0);
+	if (.@x < 24 || .@x > 32 || .@y < 33 || .@y > 43)
+    {
+        speech 1, l("Please enter the combat zone on the left.");
+        close;
+    }
+
+    setcells "001-2-36", 33, 35, 33, 38, 1, "fence";
 	initnpctimer;
 	setnpctimer 0;
 	startnpctimer;
@@ -120,10 +128,12 @@ FinishedTraining:
 	stopnpctimer;
 	setnpctimer 0;
 	set $@CURRENT_WAVE_LEVEL, 0;
+	delcells "fence";
 	if (FIGHT_TRAINING >= 1)
 		end;
 	set FIGHT_TRAINING, 1;
 	end;
+
 JobIsDone:
 	mes "Well done, you should talk to \"" + $@NPCNEXTNAME$ + "\"...";
 	close;
