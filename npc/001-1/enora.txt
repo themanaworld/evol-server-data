@@ -235,12 +235,13 @@
             l("Some citizens are worried about the growing number of Fluffies on the hill of Artis."),
             l("Childeren play there; and can be badly hurt if they play near a Fluffy's nest."),
             l("It would have been easy for me to handle it, but you can earn respect by killing Fluffies in place of their natural-predator!"),
-            l("Besides, I need to be here to watch for thieves while La Johanne is docked. You're looking confident so take these!");
+            l("Besides, I need to be here to watch for thieves while La Johanne is docked."),
+            l("You're looking confident, I give you my old gear as reward and acknowledgment of your time, plus take these potions as well!");
 
         set #ArtisFluffyKilled, 0;
 
         getitem TrainingGladius, 1;
-        getitem LegionTrainingShirt, 1;
+        getitem ArtisTankTop, 1;
         getitem PibberiesInfusion, 5;
 
         speech 4,
@@ -260,7 +261,7 @@
                 break;
         }
 
-//      setq ArtisQuests_Enora, 10;
+        setq ArtisQuests_Enora, 10;
 
         closedialog;
         npctalk3 l("Thank you very much!");
