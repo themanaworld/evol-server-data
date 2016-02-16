@@ -6,9 +6,77 @@
 
 001-2-26,28,30,0	script	Ivan	NPC_IVAN,{
 
-    speech
-        l("Croc.");
+    function ivan_description {
+        speech 5,
+            l("I am an alchemist, I bear the name of Ivan."),
+            l("I work under the protection and the supervision of the Legion of Aemil."),
+            l("Alchemical studies are prohibited in every cities of the Archipelagos, do not dare to practice in a public zone!");
 
+        return;
+    }
+
+    function enora_quest {
+        speech 5, l("How many? What kind? I can produce two dozen of box per day.");
+
+        select (l("5 Pibberies Infusion."));
+
+        speech 5,
+            l("5 boxes... Alright, @@ are my speciality!", getitemlink (PibberiesInfusion)),
+            l("I can prepare them in an hour or so!");
+
+        select (l("You missunderstood, it's 5 potions."));
+
+        speech 5,
+            l("Why the Legion would request my help for only 5 potions?"),
+            l("Is this some kind of joke?!");
+
+        switch (select (l("Enora needs them."),
+                        l("Excuse me that was a mistake.")))
+        {
+            case 1:
+                break;
+            case 2:
+                narrator 1, l("Ivan grumbles and resumes his work.");
+                emotion 11;
+                close;
+        }
+
+        speech 5,
+            l("Oh... You should have started with this!"),
+            l("I have some spare one, take them, and tell Enora that any fees are paid!");
+
+        setq ArtisQuests_Enora, 9;
+        emotion 3;
+        return;
+    }
+
+    .@enora = getq (ArtisQuests_Enora);
+
+    if (.@enora < 8)
+    {
+        npctalk3 l("I'm busy, leave me alone.");
+    }
+
+    speech 4, l("Yes what do you need?");
+
+    menuint rif(.@enora == 8, l("The Legion need some potions.")), 1,
+            rif(.@enora >= 8, l("Who are you?")), 2,
+            l("[Quit]"), 3;
+
+    switch (@menuret)
+    {
+        case 1:
+            enora_quest;
+            break;
+        case 2:
+            ivan_description;
+            break;
+        case 3:
+            break;
+    }
+
+    closedialog;
+    goodbye;
     close;
 
 OnInit:
