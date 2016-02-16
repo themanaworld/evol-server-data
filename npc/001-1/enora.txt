@@ -75,8 +75,8 @@
 
     function enora_hill {
         speech 5,
-            l("Follow the river upstream, and cross it twice with the two bridges in the North."),
-            l("The hill is located in the North-East of Artis.");
+            l("Go north of here to the dock warehouse, cross the bridge to the west side of the river, continue North until you come to a second bridge, cross that one to the East side of the river."),
+            l("You should arrive at a park with a hill.");
 
         return;
     }
