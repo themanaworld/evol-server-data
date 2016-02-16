@@ -240,6 +240,7 @@
 
         set #ArtisFluffyKilled, 0;
 
+        inventoryplace TrainingGladius, 3;
         getitem TrainingGladius, 1;
         getitem ArtisTankTop, 1;
         getitem PibberiesInfusion, 5;
@@ -355,12 +356,12 @@
             rif(.@q == 4 || .@q == 6 || .@q == 9, l("I have your package.")), 1,
             rif(.@q == 8 && countitem(PibberiesInfusion) >= 5, l("I have your package.")), 2,
             rif(.@q == 10 && #ArtisFluffyKilled >= 10, l("I cleaned up the hill.")), 3,
-            rif(.@q >= 1, l("Who is Don?")), 4,
-            rif(.@q >= 5, l("Where is the light armor shop?")), 5,
-            rif(.@q >= 7, l("Where is the market?")), 6,
-            rif(.@q >= 10, l("Where is the hill?")), 7,
-            rif(.@q >= 1, l("What is this \"legion\"?")), 8,
-            rif(.@q >= 10, l("How many Fluffies did I kill on the hill?")), 9,
+            rif(.@q >= 10, l("How many Fluffies did I kill on the hill?")), 4,
+            rif(.@q >= 1, l("Who is Don?")), 5,
+            rif(.@q >= 5, l("Where is the light armor shop?")), 6,
+            rif(.@q >= 7, l("Where is the market?")), 7,
+            rif(.@q >= 10, l("Where is the hill?")), 8,
+            rif(.@q >= 1, l("What is this \"legion\"?")), 9,
             l("I wish I could remember something..."), 10,
             rif(.@q != 0, l("Nothing.")), 11;
 
@@ -379,20 +380,6 @@
                 enora_hill_cleaned;
                 break;
             case 4:
-                enora_don;
-            case 5:
-                enora_light_armor;
-                break;
-            case 6:
-                enora_market;
-                break;
-            case 7:
-                enora_hill;
-                break;
-            case 8:
-                enora_legion;
-                break;
-            case 9:
                 speech 5,
                     l("You killed @@ Fluffies.", #ArtisFluffyKilled);
                 if (#ArtisFluffyKilled > 8)
@@ -400,6 +387,20 @@
                     mesq l("If you continue there will be none left!");
                     next;
                 }
+                break;
+            case 5:
+                enora_don;
+            case 6:
+                enora_light_armor;
+                break;
+            case 7:
+                enora_market;
+                break;
+            case 8:
+                enora_hill;
+                break;
+            case 9:
+                enora_legion;
                 break;
             case 10:
                 enora_memories;
