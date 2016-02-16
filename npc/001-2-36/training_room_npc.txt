@@ -1,0 +1,152 @@
+// TrainingRoom
+//
+// Author's
+// 	jak1
+//
+// Story
+// 	Reid
+//	Teru
+//
+// Spellchecking & Dialogs
+// 	Reid
+
+// ~~ VARS ~~
+// $@FightingIsActive
+//	0 = can Warp in Room (non active fight)
+//	1 = can't Warp in Room (active fight)
+
+//TODO adding rand messages like "try hit it harder..." for wave's
+
+
+001-2-36,32,36,0	script	FightNPCName	NPC_LUCAS,{
+
+	set $@NPCNAME$			, "FightNPCName";
+	set $@NPCNEXTNAME$		, "Samantha";
+	set $@MOB_ID 			, 1021;
+	set $@MOB_NAME$ 		, "Dummy";
+	set $@CURRENT_WAVE_LEVEL, 1;
+	set $@MAX_WAVES			, 10;
+
+	//Room and Mobspawn Coordinates 
+	//			 							TL		BR
+	setarray $@MOB_SPAWN_COORDINATES	, 	24,	34,	31,	41;
+	setarray $@MAP_NAME$ 	, 	"001-2-36.gat";
+
+	set @roomPlayers, getmapusers($@MAP_NAME$);
+	
+	if(@roomPlayers > 1)
+		goto NotAlone;
+
+	if ($@FightingIsActive == 1){
+		npctalk3 "You are not done now!";
+		end;
+	}
+
+	//call in Warp door if (1 = block)
+	set $@FightingIsActive, 1;
+	
+	if (getgmlevel() <= 61)
+		goto start;
+	
+	//can be removed later!
+	menu
+		"get debug vars", debug_it,
+		"reset char var", resetVar,
+		"start training", -;
+
+
+start:
+	if (FIGHT_TRAINING >= 1)
+		goto JobIsDone;
+
+	initnpctimer;
+	setnpctimer 0;
+	startnpctimer;
+
+	npctalk3 l("Let\'s begin");
+	end;
+
+
+//cancel all actions, the Player needs to be alone in this Room
+NotAlone:
+	npctalk3 "You dont feel so great with audience!";
+	set $@FightingIsActive, 0;
+	end;
+
+
+//If a Spawned Mob gets Killed
+OnTrainingMobDead:
+	if ($@CURRENT_WAVE_LEVEL == $@MAX_WAVES )
+		goto FinishedTraining;
+
+	set $@CURRENT_WAVE_LEVEL, $@CURRENT_WAVE_LEVEL + 1;
+	setnpctimer 0;
+	startnpctimer;
+	end;
+	
+
+SpawnMonster:
+	if ( $@FightingIsActive == 1 ){
+		if ($@CURRENT_WAVE_LEVEL == $@MAX_WAVES){
+			npctalk "Last Wave!", $@NPCNAME$;
+		}
+		else
+		{
+			npctalk "Wave " + $@CURRENT_WAVE_LEVEL + "!", $@NPCNAME$;
+		}
+
+		areamonster "001-2-36", $@MOB_SPAWN_COORDINATES[0], $@MOB_SPAWN_COORDINATES[1], $@MOB_SPAWN_COORDINATES[2], $@MOB_SPAWN_COORDINATES[3], $@MOB_NAME$, $@MOB_ID, 1, $@NPCNAME$ + "::OnTrainingMobDead";
+		stopnpctimer;
+		setnpctimer 0;
+	}
+	else
+	{
+		set $@CURRENT_WAVE_LEVEL, 0;
+	}
+	stopnpctimer;
+	setnpctimer 0;
+	end;
+
+
+//15 Secounds Waiting (Regeneration for fightRoom)
+OnTimer5000:
+	goto SpawnMonster;
+
+
+FinishedTraining:
+	//... TODO
+
+	npctalk "Con. u finished it...", $@NPCNAME$;
+	stopnpctimer;
+	setnpctimer 0;
+	set $@CURRENT_WAVE_LEVEL, 0;
+	if (FIGHT_TRAINING >= 1)
+		end;
+	set FIGHT_TRAINING, 1;
+	end;
+JobIsDone:
+	mes "Well done, you should talk to \"" + $@NPCNEXTNAME$ + "\"...";
+	close;
+
+
+// ----- DEBUG START ! -----
+
+debug_it:
+	mes "[DEBUG INFO]";
+	mes "- CharVariable:FIGHT_TRAINING "+ FIGHT_TRAINING;
+	mes "- maxWaves "+ $@MAX_WAVES;
+	mes "- currentWave "+ $@CURRENT_WAVE_LEVEL;
+	mes "- npcName "+ $@NPCNAME$;
+	mes "- mobName "+ $@MOB_NAME$;
+	mes "- mobID "+ $@MOB_ID;
+	close;
+
+resetVar:
+	set FIGHT_TRAINING , 0;
+// ----- DEBUG END ! -----
+
+
+OnInit:
+	end;
+
+}
