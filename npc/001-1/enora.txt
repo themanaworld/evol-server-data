@@ -238,7 +238,7 @@
             l("Besides, I need to be here to watch for thieves while La Johanne is docked."),
             l("You're looking confident, I give you my old gear as reward and acknowledgment of your time, plus take these potions as well!");
 
-        set #ArtisFluffyKilled, 0;
+        set ArtisFluffyKilled, 0;
 
         inventoryplace TrainingGladius, 3;
         getitem TrainingGladius, 1;
@@ -270,14 +270,14 @@
     }
 
     function enora_hill_cleaned {
-        if ($FLUFFY_KILLED < 7)
+        if (ArtisFluffyKilled < 9)
         {
             speech 5,
-                l("Oh no, you still have @@ Fluffies to kill.", 8 - $FLUFFY_KILLED);
+                l("Oh no, you still have @@ Fluffies to kill.", 10 - ArtisFluffyKilled);
 
             return;
         }
-        else if ($FLUFFY_KILLED < 8)
+        else if (ArtisFluffyKilled < 10)
         {
             speech 5,
                 l("Only one more Fluffy to kill and it's done!");
@@ -292,6 +292,8 @@
             l("We offer different kind of training sessions and we have a board with open tasks for the city and its surrounding."),
             l("It's a very good place if you want to make some money.");
             emotion 6;
+
+        setq ArtisQuests_Enora, 11;
 
         return;
     }
@@ -355,7 +357,7 @@
             rif(.@q == 0, l("She told me that you had some tasks for me.")), 0,
             rif(.@q == 4 || .@q == 6 || .@q == 9, l("I have your package.")), 1,
             rif(.@q == 8 && countitem(PibberiesInfusion) >= 5, l("I have your package.")), 2,
-            rif(.@q == 10 && #ArtisFluffyKilled >= 10, l("I cleaned up the hill.")), 3,
+            rif(.@q >= 10, l("I cleaned up the hill.")), 3,
             rif(.@q >= 10, l("How many Fluffies did I kill on the hill?")), 4,
             rif(.@q >= 1, l("Who is Don?")), 5,
             rif(.@q >= 5, l("Where is the light armor shop?")), 6,
@@ -381,8 +383,8 @@
                 break;
             case 4:
                 speech 5,
-                    l("You killed @@ Fluffies.", #ArtisFluffyKilled);
-                if (#ArtisFluffyKilled > 8)
+                    l("You killed @@ Fluffies.", ArtisFluffyKilled);
+                if (ArtisFluffyKilled > 8)
                 {
                     mesq l("If you continue there will be none left!");
                     next;
@@ -410,7 +412,7 @@
                     l("Please come back anytime!");
                 break;
         }
-    } while (@menuret != 10);
+    } while (@menuret != 11);
 
     closedialog;
     goodbye;

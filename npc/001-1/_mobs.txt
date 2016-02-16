@@ -9,6 +9,6 @@
     end;
 
 OnFluffyDeath:
-    set #ArtisFluffyKilled, #ArtisFluffyKilled + 1;
+    set ArtisFluffyKilled, ArtisFluffyKilled + 1;
     end;
 }
