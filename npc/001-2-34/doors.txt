@@ -7,7 +7,14 @@
 001-2-34,23,29,0	script	ToTrainingRoom#001-2-34	NPC_HIDDEN,0,0,{
 
 OnTouch:
-    if (mobcount("001-2-36.gat","all") > 0)
+	if ((getmapusers($@MAP_NAME$) == 0) && ($@FightingIsActive > 0))
+	{
+		set $@FightingIsActive, 0;
+		killmonsterall "001-2-36.gat";
+		
+	}
+
+    if (mobcount("001-2-36.gat","all") > 0 && $@FightingIsActive > 0)
     {
         narrator
         l("You hear some sound behind the door."),
