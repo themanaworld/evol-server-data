@@ -51,12 +51,31 @@
     }
 
     function enora_market {
+        speech 5,
+            l("The market is located at the southeast of Artis, that part is known to be the Merchant Guild's exhibit."),
+            l("You need to be a member of the Merchant Guild to have a stand there."),
+            l("And I bet you don't know who is in charge of monitoring the security of this place?");
+
+        switch (select (l("The Legion?"), l("I don't know.")))
+        {
+            case 1:
+                speech 5,
+                    l("You hit the nail, it's the Legion of Aemil!"),
+                    l("Our main task on this city is to protect the Merchant Guild.");
+                break;
+            case 2:
+                speech 5,
+                    l("Cat got your tongue?"),
+                    l("..."),
+                    l("Your brain liquefied to equal the level of a piou! It's the Legion of Aemil.");
+                break;
+        }
         return;
     }
 
     function enora_hill {
         speech 5,
-            l("Go to the up of the river, and cross the river twice with the two bridges in the North."),
+            l("Follow the river upstream, and cross it twice with the two bridges in the North."),
             l("The hill is located in the North-East of Artis.");
 
         return;
@@ -294,6 +313,23 @@
         return;
     }
 
+    function enora_paid_potions {
+        speech 5,
+            l("Are you sure that they are my potions?");
+
+        switch (select (l("[Yes]"), l("[No]")))
+        {
+            case 1:
+                delitem PibberiesInfusion, 5;
+                enora_fourth_quest;
+                break;
+            case 2:
+                break;
+        }
+
+        return;
+    }
+
     if (getq(ArtisQuests_Enora) == 0)
     {
         speech 4,
@@ -316,15 +352,16 @@
         menuint
             rif(.@q == 0, l("She told me that you had some tasks for me.")), 0,
             rif(.@q == 4 || .@q == 6 || .@q == 9, l("I have your package.")), 1,
-            rif(.@q == 10 && #ArtisFluffyKilled >= 10, l("I cleaned up the hill.")), 2,
-            rif(.@q >= 1, l("Who is Don?")), 3,
-            rif(.@q >= 5, l("Where is the light armor shop?")), 4,
-            rif(.@q >= 7, l("Where is the market?")), 5,
-            rif(.@q >= 10, l("Where is the hill?")), 6,
-            rif(.@q >= 1, l("What is this \"legion\"?")), 7,
-            rif(.@q >= 10, l("How many Fluffies did I kill on the hill?")), 8,
-            l("I wish I could remember something..."), 9,
-            rif(.@q != 0, l("Nothing.")), 10;
+            rif(.@q == 8 && countitem(PibberiesInfusion) >= 5, l("I have your package.")), 2,
+            rif(.@q == 10 && #ArtisFluffyKilled >= 10, l("I cleaned up the hill.")), 3,
+            rif(.@q >= 1, l("Who is Don?")), 4,
+            rif(.@q >= 5, l("Where is the light armor shop?")), 5,
+            rif(.@q >= 7, l("Where is the market?")), 6,
+            rif(.@q >= 10, l("Where is the hill?")), 7,
+            rif(.@q >= 1, l("What is this \"legion\"?")), 8,
+            rif(.@q >= 10, l("How many Fluffies did I kill on the hill?")), 9,
+            l("I wish I could remember something..."), 10,
+            rif(.@q != 0, l("Nothing.")), 11;
 
         switch (@menuret)
         {
@@ -335,23 +372,26 @@
                 enora_quest_complete;
                 break;
             case 2:
-                enora_hill_cleaned;
+                enora_paid_potions;
                 break;
             case 3:
-                enora_don;
+                enora_hill_cleaned;
+                break;
             case 4:
+                enora_don;
+            case 5:
                 enora_light_armor;
                 break;
-            case 5:
+            case 6:
                 enora_market;
                 break;
-            case 6:
+            case 7:
                 enora_hill;
                 break;
-            case 7:
+            case 8:
                 enora_legion;
                 break;
-            case 8:
+            case 9:
                 speech 5,
                     l("You killed @@ Fluffies.", #ArtisFluffyKilled);
                 if (#ArtisFluffyKilled > 8)
@@ -360,10 +400,10 @@
                     next;
                 }
                 break;
-            case 9:
+            case 10:
                 enora_memories;
                 break;
-            case 10:
+            case 11:
                 speech 5,
                     l("Please come back anytime!");
                 break;
