@@ -100,10 +100,9 @@
         }
     }
 
-    mesq l("Good day, my friend, come closer, come closer!");
-    next;
-    mesq l("Just look at my goods for sale! Fresh fruits and vegetables were shipped only this morning. And for reasonable price, of course.");
-    next;
+    speech 4,
+        l("Good day, my friend, come closer, come closer!");
+        l("Just look at my goods for sale! Fresh fruits and vegetables were shipped only this morning. And for reasonable price, of course.");
 
 L_SalemMenuShop:
     .@fexil = getq(ArtisQuests_Fexil);
@@ -112,12 +111,8 @@ L_SalemMenuShop:
         l("What about those pious? They look so cute."), 0,
         l("Let's trade."), 1,
         rif(.@q != 0, l("I'd like to buy a piou.")), 2,
-        l("I'd like to see your other products."), 3,
-        rif(.@fexil == 1, l("I'm looking for somebody named Fexil.")), 4,
-        l("Bye."), 5;
-
-    mes "";
-    mesn;
+        rif(.@fexil == 1, l("I'm looking for somebody named Fexil.")), 3,
+        l("[Quit]"), 4;
 
     switch (@menuret)
     {
@@ -131,19 +126,16 @@ L_SalemMenuShop:
         case 2:
             if (.@q == 2 && ArtisQuests_PiouDiscount)
             {
-                mesq l("You still have a 90% discount on one piou.");
+                speech 5,
+                    l("You still have a 90% discount on one piou.");
                 @ArtisQuests_PiouPrice = 3000;
-                next;
             }
             if (!BuyPiou(@ArtisQuests_PiouPrice))
                 ArtisQuests_PiouDiscount = 0;
             break;
         case 3:
-            goto L_BuyShop;
-            break;
-        case 4:
-            mesq l("I think that I've seen this weakling wandering around the beach on the south from here this morning.");
-            next;
+            speech 5,
+                l("I think that I've seen this weakling wandering around the beach on the south from here this morning.");
             break;
         case 5:
             break;
@@ -154,10 +146,9 @@ L_SalemMenuShop:
     close;
 
 L_AboutPious:
-    mesq l("Ah, the locals like keeping them as pets.");
-    next;
-    mesq l("With proper training, a piou can become a good friend and faithful companion in your adventures.");
-    next;
+    speech 5,
+        l("Ah, the locals like keeping them as pets.");
+        l("With proper training, a piou can become a good friend and faithful companion in your adventures.");
 
     if (getq(ArtisQuests_CatchPiou) >= 2)
     {
@@ -207,10 +198,6 @@ L_QuestInfo:
     setq ArtisQuests_CatchPiou, 1;
     ArtisQuests_CatchPiou_Difficulcy = 2;
     mesq l("Good luck!");
-    close;
-
-L_BuyShop:
-    mes "not implemented yet!";
     close;
 
 OnPiouFlee:
