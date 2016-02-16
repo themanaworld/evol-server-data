@@ -75,7 +75,6 @@
                     l("You seem more cultivated than what you look like."),
                     l("Fine, take these potion, I will replenish in the next hours anyway.");
 
-                getitem "PibberiesInfusion", 5;
                 break;
             }
             else if (.@i < 3)
@@ -88,13 +87,19 @@
                 if (getq (ArtisQuests_Enora) == 7)
                 {
                     setq (ArtisQuests_Enora, 8);
+                    speech 5,
+                        l("You failed!"),
+                        l("Ivan is the one that you should look at now."),
+                        l("He is on a small house in between the dock's warehouse and the dojo."),
+                        l("Follow the river to the east-north and you will find it."),
+                        l("And get out of here, I'm not a map!");
                 }
-                speech 5,
-                    l("You failed!"),
-                    l("Ivan is the one that you should look at now."),
-                    l("He is on a small house in between the dock's warehouse and the dojo."),
-                    l("Follow the river to the east-north and you will find it."),
-                    l("And get out of here, I'm not a map!");
+                else
+                {
+                    speech 5,
+                        l("You failed!");
+                }
+
                 break;
             }
         } while (1);
