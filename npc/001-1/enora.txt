@@ -118,6 +118,19 @@
         return;
     }
 
+    function enora_reward {
+        .@exp_reward = getarg (0);
+        .@zeny_reward = getarg (1);
+
+        getexp .@exp_reward, 0;
+        Zeny = Zeny + .@zeny_reward;
+
+        narrator 4,
+            l("You received @@ exp and @@E.", .@exp_reward, .@zeny_reward);
+
+        return;
+    }
+
     function enora_first_quest {
         speech 5,
             l("You probably don't have much business in this city as you don't remember who you are."),
@@ -185,6 +198,7 @@
             l("Her shop is on the west part of the city, between the legion building and the library.");
 
         setq ArtisQuests_Enora, 5;
+        enora_reward (60, 100);
 
         closedialog;
         npctalk3 l("Thank you very much!");
@@ -199,7 +213,6 @@
             l("I mean, you forget... Well."),
             l("If you ever find the time, pass by Esperia, it's the capital city of the archipelagos!"),
             l("You can find a chapter of the Legion of Aemil there, like in any other city, but Esperia is important for us as our headquarter is there.");
-
 
         do
         {
@@ -222,6 +235,7 @@
             l("You will be able to find her on the market on the south-east of Artis.");
 
         setq ArtisQuests_Enora, 7;
+        enora_reward (40, 125);
 
         closedialog;
         npctalk3 l("Thank you very much!");
@@ -230,7 +244,9 @@
 
     function enora_fourth_quest {
         speech 5,
-            l("Awesome!"),
+            l("Awesome!");
+
+        speech 4,
             l("I have one more task for you, Trozz, another member of the Legion, sent me a letter earlier today."),
             l("Some citizens are worried about the growing number of Fluffies on the hill of Artis."),
             l("Childeren play there; and can be badly hurt if they play near a Fluffy's nest."),
@@ -263,6 +279,7 @@
         }
 
         setq ArtisQuests_Enora, 10;
+        enora_reward (80, 175);
 
         closedialog;
         npctalk3 l("Thank you very much!");
@@ -290,10 +307,11 @@
             l("Keep the sword and the jacket, you deserved them!"),
             l("You also earned the right to enter the Legion building."),
             l("We offer different kind of training sessions and we have a board with open tasks for the city and its surrounding."),
-            l("It's a very good place if you want to make some money.");
+            l("It's a very good place if you want to make some more money.");
             emotion 6;
 
         setq ArtisQuests_Enora, 11;
+        enora_reward (140, 500);
 
         return;
     }
