@@ -137,7 +137,7 @@ OnClock1600:
     restoreshopitem SmallTentacles, 7;
 }
 
-001-1,71,129,0	trader	Store#FishStore001-1	NPC_NO_SPRITE,{
+001-1,72,129,0	trader	Store#FishStore001-1	NPC_NO_SPRITE,{
 
 OnInit:
     tradertype(NST_MARKET);
