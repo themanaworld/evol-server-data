@@ -486,11 +486,11 @@ OnInit:
 OnTouch:
     .@enora = getq(ArtisQuests_Enora);
 
-    if (.@enora == 0)
+//    if (.@enora == 0)
+    if (.@enora <= 11)
     {
         narrator 4,
-            l("The door of the legion building is closed."),
-            l("You should look for Enora on the dock to access it.");
+            l("The door of the legion building is temporarily closed.");
     }
     else
     {
