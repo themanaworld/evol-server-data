@@ -184,6 +184,11 @@ L_GiveFood:
         rif(countitem(516), l(getitemname(516))), 1,
         rif(countitem(518), l(getitemname(518))), 1,
         rif(countitem(519), l(getitemname(519))), 1,
+        rif(countitem(527), l(getitemname(527))), 527,
+        rif(countitem(528), l(getitemname(528))), 528,
+        rif(countitem(529), l(getitemname(529))), 529,
+        rif(countitem(530), l(getitemname(530))), 530,
+        rif(countitem(531), l(getitemname(531))), 3,
         l("I don't have anything good for you today."), -1;
 
     .@id = @menuret;
@@ -191,6 +196,7 @@ L_GiveFood:
     if (.@id == 0) goto L_NoReward; // In case of wrong food.
     if (.@id == 1) goto L_Poison; // In case of poisoned food.
     if (.@id == 2) goto L_NoMore; // In case of Piberries.
+    if (.@id == 3) goto L_Drunk; // In case of Alcohol.
     if (countitem(.@id) == 0) goto L_Quit;
 //  if (.@id == item's ID) then food is correct.
 // Do not put any other number than -1, 0, 1, 2 or the item's ID, that'll avoid confusion.
@@ -215,6 +221,14 @@ L_NoReward:
     mesn;
     mesq l("You don't expect me to eat that, do you? Give me something else!");
     next;
+    restorecam;
+
+    goto L_GiveFood;
+
+L_Drunk:
+    setcamnpc;
+    speech 5,
+        l("I asked for food but... *hips* Ah, that'll do so!");
     restorecam;
 
     goto L_GiveFood;
