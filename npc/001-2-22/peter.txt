@@ -228,10 +228,10 @@ L_CheckRattos:
     if ($@ARTIS_RAT1_CONTROL[2]) $@ARTIS_RAT1_CONTROL[6] = $@ARTIS_RAT1_CONTROL[6] + 2;
     if ($@ARTIS_RAT1_CONTROL[3]) $@ARTIS_RAT1_CONTROL[7] = $@ARTIS_RAT1_CONTROL[7] + 2;
     if ($@ARTIS_RAT1_CONTROL[4]) $@ARTIS_RAT1_CONTROL[8] = $@ARTIS_RAT1_CONTROL[8] + 2;
-    if ($@ARTIS_RAT1_CONTROL[5] > 40) doevent "RattosControl#001-2-23::OnRatto1Respawn";
-    if ($@ARTIS_RAT1_CONTROL[6] > 40) doevent "RattosControl#001-2-23::OnRatto2Respawn";
-    if ($@ARTIS_RAT1_CONTROL[7] > 40) doevent "RattosControl#001-2-23::OnRatto3Respawn";
-    if ($@ARTIS_RAT1_CONTROL[8] > 40) doevent "RattosControl#001-2-23::OnRatto4Respawn";
+    if ($@ARTIS_RAT1_CONTROL[5] > 45) doevent "RattosControl#001-2-23::OnRatto1Respawn";
+    if ($@ARTIS_RAT1_CONTROL[6] > 45) doevent "RattosControl#001-2-23::OnRatto2Respawn";
+    if ($@ARTIS_RAT1_CONTROL[7] > 45) doevent "RattosControl#001-2-23::OnRatto3Respawn";
+    if ($@ARTIS_RAT1_CONTROL[8] > 45) doevent "RattosControl#001-2-23::OnRatto4Respawn";
 
 L_NotYet:
     setnpctimer 0;

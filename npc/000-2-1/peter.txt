@@ -228,10 +228,10 @@ L_CheckRattos:
     if ($@RAT_SAILOR_CONTROL[2]) $@RAT_SAILOR_CONTROL[6] = $@RAT_SAILOR_CONTROL[6] + 2;
     if ($@RAT_SAILOR_CONTROL[3]) $@RAT_SAILOR_CONTROL[7] = $@RAT_SAILOR_CONTROL[7] + 2;
     if ($@RAT_SAILOR_CONTROL[4]) $@RAT_SAILOR_CONTROL[8] = $@RAT_SAILOR_CONTROL[8] + 2;
-    if ($@RAT_SAILOR_CONTROL[5] > 40) doevent "RattosControl::OnRatto1Respawn";
-    if ($@RAT_SAILOR_CONTROL[6] > 40) doevent "RattosControl::OnRatto2Respawn";
-    if ($@RAT_SAILOR_CONTROL[7] > 40) doevent "RattosControl::OnRatto3Respawn";
-    if ($@RAT_SAILOR_CONTROL[8] > 40) doevent "RattosControl::OnRatto4Respawn";
+    if ($@RAT_SAILOR_CONTROL[5] > 45) doevent "RattosControl::OnRatto1Respawn";
+    if ($@RAT_SAILOR_CONTROL[6] > 45) doevent "RattosControl::OnRatto2Respawn";
+    if ($@RAT_SAILOR_CONTROL[7] > 45) doevent "RattosControl::OnRatto3Respawn";
+    if ($@RAT_SAILOR_CONTROL[8] > 45) doevent "RattosControl::OnRatto4Respawn";
 
 L_NotYet:
     setnpctimer 0;
