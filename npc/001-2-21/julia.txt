@@ -108,6 +108,8 @@ L_Rules:
     next;
     mesq l("Do you have any other questions for me?");
     next;
+    mesq l("Do you have any other questions for me?");
+    next;
 
     goto L_YNMenu;
 
@@ -122,13 +124,16 @@ L_BasicSkill:
     next;
     mesq l("Do you have any other questions for me?");
     next;
+    mesq l("Do you have any other questions for me?");
+    next;
 
     goto L_YNMenu;
 
 L_Enora:
     speech 5,
         l("Enora from the Legion of Aemil has been warned that you were aboard."),
-        l("She is waiting for you on the dock.");
+        l("She is waiting for you on the dock."),
+        l("Do you have any other questions for me?");
 
     goto L_YNMenu;
 
@@ -138,6 +143,7 @@ L_Quit:
 L_Island:
     speech 5,
         l("Of course, as a fully-fledged crew member you can decide of the destination of La Johanne directly with Nard.");
+        l("Do you have any other questions for me?");
     emotion 3;
 
     goto L_YNMenu;
