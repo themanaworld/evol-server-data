@@ -29,7 +29,7 @@
             l("4: How many cards your item can contain."),
             l("Exemple for yoiis:"),
             l("Take a @@ and a @@, yeye obtains a @@.",
-                getitemlink (ArtisTankTop), getitemlink (RedCottonDye), getitemlink (ArtisTankTop, RedCottonDye)),
+                getitemlink(ArtisTankTop, WhiteCottonDye), getitemlink(RedCottonDye), getitemlink(ArtisTankTop, RedCottonDye)),
             l("If yoiis wants to see a different use of cards he can yeye for Resa on the light armor shop for a description of styling cards.");
     }
 
