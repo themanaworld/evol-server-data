@@ -258,7 +258,7 @@ L_Logoff:
 
 L_Dead:
 // Warps the dead body outside, so it does not interfere with the getmapusers check.
-    if (getmapusers("001-2-23.gat") > 0) warp "001-2-22", 61, 36;
+    if (getmapusers("001-2-23.gat") > 0) warp "001-2-22", 72, 36;
 
     goto L_CleaningEnd;
 
