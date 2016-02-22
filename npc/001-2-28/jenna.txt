@@ -4,19 +4,19 @@
 // Description:
 //    Jenna, waitress in Artis inn.
 
-001-2-28,52,32,0	script	Jenna#001-2-28	NPC_RAIJIN_FEMALE_WAITRESS,3,3,{
+001-2-28,52,32,0	script	Jenna#001-2-28	NPC_RAIJIN_FEMALE_WAITRESS,1,1,{
 
     function SayRandomGreeting {
 
         .@tick = gettimetick(1);
-        if (.@tick > @Artis_RedPlush_WaitressTick + 600)
+        if (.@tick > @Artis_RedPlush_WaitressTick + 10)
         {
             setarray .messages$[0], l("Welcome to our inn!"),
                                     l("Welcome to RedPlush."),
                                     l("Please, have a seat."),
                                     l("Lovely day, isn't it?");
 
-            .@r = rand(0, getarraysize(.messages$));
+            .@r = rand(getarraysize(.messages$));
             .@msg$ = .messages$[.@r];
             npctalk3 .@msg$;
             @Artis_RedPlush_WaitressTick = .@tick;
