@@ -118,6 +118,7 @@ function	script	narrator	{
 //   0x1 -- blank line at beginning
 //   0x2 -- blank line at the end
 //   0x4 -- use last "next;"
+//   0x8 -- don't use first "mesn;"
 function	script	speech	{
     .@start = 0;
     .@argc = getargcount();
@@ -132,7 +133,9 @@ function	script	speech	{
     if (.@flags & 0x1)
         mes "";
 
-    mesn;
+    if (!(.@flags & 0x8))
+        mesn;
+
     for (.@i = .@start; .@i < .@argc; .@i++)
     {
         mesq getarg(.@i);
