@@ -7,75 +7,99 @@
 
 function	script	BarberChangeStyle	{
 
-    menu
-        l("Bald"), -,
-        l("Bowl cut"), -,
-        l("Combed back"), -,
-        l("Emo"), -,
-        l("Mohawk"), -,
-        l("Pompadour"), -,
-        l("Center parting"), -,
-        l("Long and slick"), -,
-        l("Short and curly"), -,
-        l("Pigtails"), -,
-        l("Long and curly"), -,
-        l("Parted"), -,
-        l("Perky ponytail"), -,
-        l("Wave"), -,
-        l("Mane"), -,
-        l("Bun"), -,
-        l("Wavy"), -,
-        l("Bunches"), -,
-        l("Long ponytail"), -,
-        l("Infinitely long"), -,
-        l("Choppy"), -,
-        l("Wild"), -,
-        l("Punk"), -,
-        l("Imperial"), -,
-        l("Side strand"), -,
-        l("Messy"), -,
-        l("Flat ponytail"), -,
-        l("Tapered Nape"), -,
-        l("As you want!"), -,
-        l("Hmm, I'm fine for now, thank you."), L_Done;
+    menuint
+        rif(getlook (LOOK_HAIR) !=  1,  l("Bald")), 1,
+        rif(getlook (LOOK_HAIR) !=  2,  l("Bowl cut")), 2,
+        rif(getlook (LOOK_HAIR) !=  3,  l("Combed back")), 3,
+        rif(getlook (LOOK_HAIR) !=  4,  l("Emo")), 4,
+        rif(getlook (LOOK_HAIR) !=  5,  l("Mohawk")), 5,
+        rif(getlook (LOOK_HAIR) !=  6,  l("Pompadour")), 6,
+        rif(getlook (LOOK_HAIR) !=  7,  l("Center parting")), 7,
+        rif(getlook (LOOK_HAIR) !=  8,  l("Long and slick")), 8,
+        rif(getlook (LOOK_HAIR) !=  9,  l("Short and curly")), 9,
+        rif(getlook (LOOK_HAIR) !=  10, l("Pigtails")), 10,
+        rif(getlook (LOOK_HAIR) !=  11, l("Long and curly")), 11,
+        rif(getlook (LOOK_HAIR) !=  12, l("Parted")), 12,
+        rif(getlook (LOOK_HAIR) !=  13, l("Perky ponytail")), 13,
+        rif(getlook (LOOK_HAIR) !=  14, l("Wave")), 14,
+        rif(getlook (LOOK_HAIR) !=  15, l("Mane")), 15,
+        rif(getlook (LOOK_HAIR) !=  16, l("Bun")), 16,
+        rif(getlook (LOOK_HAIR) !=  17, l("Wavy")), 17,
+        rif(getlook (LOOK_HAIR) !=  18, l("Bunches")), 18,
+        rif(getlook (LOOK_HAIR) !=  19, l("Long ponytail")), 19,
+        rif(getlook (LOOK_HAIR) !=  20, l("Infinitely long")), 20,
+        rif(getlook (LOOK_HAIR) !=  21, l("Choppy")), 21,
+        rif(getlook (LOOK_HAIR) !=  22, l("Wild")), 22,
+        rif(getlook (LOOK_HAIR) !=  23, l("Punk")), 23,
+        rif(getlook (LOOK_HAIR) !=  24, l("Imperial")), 24,
+        rif(getlook (LOOK_HAIR) !=  25, l("Side strand")), 25,
+        rif(getlook (LOOK_HAIR) !=  26, l("Messy")), 26,
+        rif(getlook (LOOK_HAIR) !=  27, l("Flat ponytail")), 27,
+        rif(getlook (LOOK_HAIR) !=  28, l("Tapered Nape")), 28,
+        l("As you want!"), 29,
+        l("Hmm, I'm fine for now, thank you."), 30;
 
-    set @style, @menu;
-    if (@style == 29) set @style, rand(28);
-    setlook LOOK_HAIR, @style;
-L_Done:
+    switch (@menuret)
+    {
+        case 29:
+            do
+            {
+                .@rand_hair = rand(1,29);
+            } while (.@rand_hair == getlook (LOOK_HAIR));
+            setlook LOOK_HAIR, .@rand_hair;
+
+            break;
+        case 30:
+            break;
+        default:
+            setlook LOOK_HAIR, @menuret;
+            break;
+    }
     return;
 }
 
 function	script	BarberChangeColor	{
 
-    menu
-        l("Off black"), -,
-        l("Ash brown"), -,
-        l("Dark brown"), -,
-        l("Dark copper"), -,
-        l("Auburn brown"), -,
-        l("Honey brown"), -,
-        l("Copper blonde"), -,
-        l("Golden blonde"), -,
-        l("Pure platinum"), -,
-        l("Cherry blossom"), -,
-        l("Pinky pink"), -,
-        l("Fire red"), -,
-        l("Light violet"), -,
-        l("Purple plum"), -,
-        l("Navy blue"), -,
-        l("Lagoon blue"), -,
-        l("Twisted teal"), -,
-        l("String Green"), -,
-        l("Forest Green"), -,
-        l("Silver Grey"), -,
-        l("Esperia Blue"), -,
-        l("Surprise me"), -,
-        l("Hmm, I'm fine for now, thank you."), L_Done;
+    menuint
+        rif(getlook (LOOK_HAIR_COLOR) !=  1, l("Off black")), 1,
+        rif(getlook (LOOK_HAIR_COLOR) !=  2, l("Ash brown")), 2,
+        rif(getlook (LOOK_HAIR_COLOR) !=  3, l("Dark brown")), 3,
+        rif(getlook (LOOK_HAIR_COLOR) !=  4, l("Dark copper")), 4,
+        rif(getlook (LOOK_HAIR_COLOR) !=  5, l("Auburn brown")), 5,
+        rif(getlook (LOOK_HAIR_COLOR) !=  6, l("Honey brown")), 6,
+        rif(getlook (LOOK_HAIR_COLOR) !=  7, l("Copper blonde")), 7,
+        rif(getlook (LOOK_HAIR_COLOR) !=  8, l("Golden blonde")), 8,
+        rif(getlook (LOOK_HAIR_COLOR) !=  9, l("Pure platinum")), 9,
+        rif(getlook (LOOK_HAIR_COLOR) !=  10, l("Cherry blossom")), 10,
+        rif(getlook (LOOK_HAIR_COLOR) !=  11, l("Pinky pink")), 11,
+        rif(getlook (LOOK_HAIR_COLOR) !=  12, l("Fire red")), 12,
+        rif(getlook (LOOK_HAIR_COLOR) !=  13, l("Light violet")), 13,
+        rif(getlook (LOOK_HAIR_COLOR) !=  14, l("Purple plum")), 14,
+        rif(getlook (LOOK_HAIR_COLOR) !=  15, l("Navy blue")), 15,
+        rif(getlook (LOOK_HAIR_COLOR) !=  16, l("Lagoon blue")), 16,
+        rif(getlook (LOOK_HAIR_COLOR) !=  17, l("Twisted teal")), 17,
+        rif(getlook (LOOK_HAIR_COLOR) !=  18, l("String Green")), 18,
+        rif(getlook (LOOK_HAIR_COLOR) !=  19, l("Forest Green")), 19,
+        rif(getlook (LOOK_HAIR_COLOR) !=  20, l("Silver Grey")), 20,
+        rif(getlook (LOOK_HAIR_COLOR) !=  21, l("Esperia Blue")), 21,
+        l("Surprise me")), 22,
+        l("Hmm, I'm fine for now, thank you."), 23;
 
-    set @color, @menu - 1;
-    if (@color == 21) set @color, rand(20);
-    setlook LOOK_HAIR_COLOR, @color;
-L_Done:
+    switch (@menuret)
+    {
+        case 22:
+            do
+            {
+                .@rand_color = rand(1, 22);
+            } while (.@rand_color == getlook (LOOK_HAIR_COLOR));
+            setlook LOOK_HAIR_COLOR, .@rand_color;
+
+            break;
+        case 23:
+            break;
+        default:
+            setlook LOOK_HAIR_COLOR, @menuret;
+            break;
+    }
     return;
 }
