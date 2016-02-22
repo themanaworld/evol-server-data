@@ -310,8 +310,11 @@
             l("It's a very good place if you want to make some more money.");
             emotion 6;
 
-        setq ArtisQuests_Enora, 11;
-        enora_reward (140, 500);
+        if (getq (ArtisQuests_Enora) == 10)
+        {
+            setq ArtisQuests_Enora, 11;
+            enora_reward (140, 500);
+        }
 
         return;
     }
