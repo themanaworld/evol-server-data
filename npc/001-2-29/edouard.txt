@@ -16,7 +16,7 @@
         next;
         mesq l("I'm a barber, you see. I can change your hair style or color to your liking.");
         next;
-        Edouard_StoryTold++;
+        Edouard_StoryTold = 1;
     }
 
     mesn;
