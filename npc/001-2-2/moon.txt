@@ -43,7 +43,7 @@
         if (countitem("CrocClaw") > 0)
         {
             delitem "CrocClaw", 1;
-            if (rand(10) == 7)  // the lucky 7
+            if (rand(8) == 7)  // the lucky 7
             {
                 mesq l("Yay, it worked! I removed a spike.");
                 ArtisQuests_Urchin_ULeft--;
