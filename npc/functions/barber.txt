@@ -41,7 +41,7 @@ function	script	BarberChangeStyle	{
 
     set @style, @menu;
     if (@style == 29) set @style, rand(28);
-    setlook 1, @style;
+    setlook LOOK_HAIR, @style;
 L_Done:
     return;
 }
@@ -75,7 +75,7 @@ function	script	BarberChangeColor	{
 
     set @color, @menu - 1;
     if (@color == 21) set @color, rand(20);
-    setlook 6, @color;
+    setlook LOOK_HAIR_COLOR, @color;
 L_Done:
     return;
 }
