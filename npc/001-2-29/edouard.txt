@@ -8,65 +8,63 @@
 001-2-29,37,31,0	script	Edouard#001-2-29	NPC_EDOUARD,{
 
     function tellStory {
-        mesq l("I am new in this town, just like you are.");
-        next;
-        mesq l("I came here, looking for a better life.");
-        next;
-        mesq l("I still didn't find a cheap building to open my own business, so for now I stay in this inn.");
-        next;
-        mesq l("I'm a barber, you see. I can change your hair style or color to your liking.");
-        next;
+        if (Edouard_StoryTold != 0)
+        {
+            mes "";
+            mesn;
+        }
+        speech 12,
+            l("I am new in this town, just like you are."),
+            l("I came here, looking for a better life."),
+            l("I still didn't find a cheap building to open my own business, so for now I stay in this inn."),
+            l("I'm a barber, you see. I can change your hair style or color to your liking.");
+
         Edouard_StoryTold = 1;
+
+        return;
     }
 
-    mesn;
-    mesq lg("Hello, young lady.", "Hello, young man.");
-    next;
+    speech 4,
+        lg("Hello, young lady.", "Hello, young man.");
 
     if (Edouard_StoryTold == 0)
         tellStory;
 
-L_Start:
-    mesq l("What would you like me to change?");
-    next;
+    speech 12,
+        l("What would you like me to change?");
 
-    menuint
-        l("I'd like to get a different style."), 1,
-        l("Can you do something with my color?"), 2,
-        l("What's your story again?"), 3,
-        l("Hmm, I'm fine for now, thank you."), 4;
-
-    mes "";
-    switch (@menuret)
+    do
     {
-        case 1:
-            BarberChangeStyle;
-            mes "";
-            mesn;
-            mesq l("Enjoy your new style.");
-            next;
-            break;
-        case 2:
-            BarberChangeColor;
-            mes "";
-            mesn;
-            mesq l("I hope you like this color.");
-            next;
-            break;
-        case 3:
-            mesn;
-            tellStory;
-            goto L_Start;
-        case 4:
-            mesn;
-            mesq l("Feel free to visit me another time");
-            next;
-    }
+        menuint
+            l("I'd like to get a different style."), 1,
+            l("Can you do something with my color?"), 2,
+            l("What's your story again?"), 3,
+            l("Hmm, I'm fine for now, thank you."), 4;
 
-    mesq l("Bye bye!");
+        switch (@menuret)
+        {
+            case 1:
+                BarberChangeStyle;
+                speech 5,
+                    l("Enjoy your new style.");
+                break;
+            case 2:
+                BarberChangeColor;
+                speech 5,
+                    l("I hope you like this color.");
+                break;
+            case 3:
+                tellStory;
+                break;
+            case 4:
+                speech 5,
+                    l("Feel free to visit me another time");
 
-L_Close:
-    close;
+                closedialog;
+                npctalk3 l("Bye bye!");
+                close;
+        }
+    } while (1);
 
 OnInit:
     .sex = G_MALE;
