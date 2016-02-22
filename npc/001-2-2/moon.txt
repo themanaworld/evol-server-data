@@ -16,7 +16,7 @@
     function SayRandomGreeting {
         .@q = getq(ArtisQuests_Urchin);
         .@tick = gettimetick(1);
-        if (.@tick > @ArtisQuests_Urchin_MoonMsgTick + 30)
+        if (.@tick > @ArtisQuests_Urchin_MoonMsgTick + 12)
         {
             setarray .messages$[0], l("Ouch!"), l("It hurts so bad!"),
                                     l("Help me!"), l("Hurry up!"),
