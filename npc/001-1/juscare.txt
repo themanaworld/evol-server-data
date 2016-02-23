@@ -23,8 +23,6 @@
     }
 
     function randomTalk {
-        debugmes "Juscare lock value : " + Repeat_NPC_lock + " current time " + gettimetick(2);
-
         if (Repeat_NPC_lock <= gettimetick(2))
         {
             Repeat_NPC_lock = gettimetick(2) + 2;
