@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Mouboo on Taree's fence.
+
+001-1,67,79,4	script	Mouboo#Artis0	NPC_MOUBOO,{
+
+    if (Repeat_NPC_lock <= gettimetick (2))
+    {
+        Repeat_NPC_lock = gettimetick (2) + 1;
+        moubootalk;
+    }
+
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
