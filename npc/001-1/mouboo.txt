@@ -6,16 +6,56 @@
 
 001-1,67,79,4	script	Mouboo#Artis0	NPC_MOUBOO,{
 
-    if (Repeat_NPC_lock <= gettimetick (2))
-    {
-        Repeat_NPC_lock = gettimetick (2) + 1;
-        moubootalk;
-    }
-
+    mouboochecklock;
     close;
+
+OnTimer2000:
+    moubootimer;
 
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
-    end;
+    mouboograph;
+}
+
+001-1,67,80,4	script	Mouboo#Artis1	NPC_MOUBOO,{
+
+    mouboochecklock;
+    close;
+
+OnTimer2000:
+    moubootimer;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    mouboograph;
+}
+
+001-1,67,81,4	script	Mouboo#Artis2	NPC_MOUBOO,{
+
+    mouboochecklock;
+    close;
+
+OnTimer2000:
+    moubootimer;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    mouboograph;
+}
+
+001-1,67,82,4	script	Mouboo#Artis3	NPC_MOUBOO,{
+
+    mouboochecklock;
+    close;
+
+OnTimer2000:
+    moubootimer;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    mouboograph;
 }

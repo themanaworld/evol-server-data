@@ -1,0 +1,97 @@
+// Evol functions.
+// Author:
+//    Reid
+// Description:
+//    Various scripts used in walking mouboo NPCs.
+
+function	script	moubootalk	{
+    switch (rand (4))
+    {
+        case 0:
+            npctalk3 l("Moooooo!");
+            break;
+        case 1:
+            npctalk3 l("Moo!");
+            break;
+        case 2:
+            npctalk3 l("Moooooooooooo!");
+            break;
+        case 3:
+            npctalk3 l("Moooo!");
+            break;
+    }
+    return;
+}
+
+function	script	mouboocheckxy	{
+    setarray .nearnpc$[0], "Mouboo#Artis0",
+                           "Mouboo#Artis1",
+                           "Mouboo#Artis2",
+                           "Mouboo#Artis3",
+                           "Taree";
+    for (.@size = 0; .@size < getarraysize(.nearnpc$); .@size++)
+    {
+        if (strcmp (.name$, .nearnpc$[.@size]) == 0)
+        {
+            continue;
+        }
+
+        .@npc_x = getvariableofnpc (.x, .nearnpc$[.@size]);
+        .@npc_y = getvariableofnpc (.y, .nearnpc$[.@size]);
+
+        if (.@npc_x == .x && .@npc_y == .y)
+        {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+function	script	moubootimer	{
+    if (mouboocheckxy () && !isunitwalking ())
+    {
+        movetonextpoint;
+    }
+    else if (rand (0,6) == 5)
+    {
+        if (!isunitwalking ())
+        {
+            movetonextpoint;
+        }
+    }
+    initnpctimer;
+    end;
+}
+
+function	script	mouboograph	{
+    initmovegraph   "down_pos",    66, 79,     75,  86,
+                    "left_pos",    66, 79,     75,  86,
+                    "up_pos",      66, 79,     75,  86,
+                    "right_pos",   66, 79,     75,  86;
+
+    setmovegraphcmd "down_pos",    "left_pos",      1,  "dir 2",
+                    "down_pos",    "up_pos",        1,  "dir 4",
+                    "down_pos",    "right_pos",     1,  "dir 6",
+                    "left_pos",    "down_pos",      1,  "dir 0",
+                    "left_pos",    "up_pos",        1,  "dir 4",
+                    "left_pos",    "right_pos",     1,  "dir 6",
+                    "up_pos",      "down_pos",      1,  "dir 0",
+                    "up_pos",      "left_pos",      1,  "dir 2",
+                    "up_pos",      "right_pos",     1,  "dir 6",
+                    "right_pos",   "down_pos",      1,  "dir 0",
+                    "right_pos",   "left_pos",      1,  "dir 2",
+                    "right_pos",   "up_pos",        1,  "dir 4";
+
+    firstmove "wait 2", "down_pos";
+    initnpctimer;
+    end;
+}
+
+function	script	mouboochecklock	{
+    if (Repeat_NPC_lock <= gettimetick (2))
+    {
+        Repeat_NPC_lock = gettimetick (2) + 1;
+        moubootalk;
+    }
+}
