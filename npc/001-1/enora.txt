@@ -342,7 +342,7 @@
         speech 5,
             l("Are you sure that they are my potions?");
 
-        switch (select (l("[Yes]"), l("[No]")))
+        switch (select (menuaction(l("Yes")), menuaction(l("No"))))
         {
             case 1:
                 delitem PibberiesInfusion, 5;

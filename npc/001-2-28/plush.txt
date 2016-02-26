@@ -65,8 +65,8 @@
             l("This will remain your respawn point until set elsewhere."),
             l("Is that okay?");
 
-        switch (select (l("[Yes]"),
-                        l("[No]")))
+        switch (select (menuaction(l("Yes")),
+                        menuaction(l("No"))))
         {
             case 1:
                 accepted_room (.@price);
@@ -97,7 +97,7 @@
                 l("If you are registered somewhere else you will loose that reservation."),
                 l("Do you still want to lodge here?");
 
-            switch (select (l("[Yes]"), l("[No]")))
+            switch (select (menuaction(l("Yes")), menuaction(l("No"))))
             {
                 case 1: 
                     register_room; 

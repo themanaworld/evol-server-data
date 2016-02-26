@@ -9,6 +9,10 @@ function	script	menuimage	{
     return getarg(0) + "|" + getarg(1);
 }
 
+function	script	menuaction	{
+    return "[" + getarg(0) + "]";
+}
+
 function	script	mesn	{
     if (getargcount() > 0)
     {
@@ -96,7 +100,7 @@ function	script	narrator	{
     if (.@flags & 0x1)
         mes "";
 
-    mes l("[Narrator]");
+    mesn l("Narrator");
     for (.@i = .@start; .@i < .@argc; .@i++)
     {
         mes col(getarg(.@i), 9);

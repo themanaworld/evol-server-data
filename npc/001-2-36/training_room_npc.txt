@@ -142,7 +142,7 @@ JobIsDone:
 // ----- DEBUG START ! -----
 
 debug_it:
-	mes "[DEBUG INFO]";
+	mesn "DEBUG INFO";
 	mes "- CharVariable:FIGHT_TRAINING "+ FIGHT_TRAINING;
 	mes "- maxWaves "+ $@MAX_WAVES;
 	mes "- currentWave "+ $@CURRENT_WAVE_LEVEL;

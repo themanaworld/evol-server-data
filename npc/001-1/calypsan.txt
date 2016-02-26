@@ -44,10 +44,10 @@
     {
         menuint
             rif(.@fexil == 1, l("Have you seen Fexil?")), 0,
-            l("[Trade]"), 1,
+            menuaction(l("Trade")), 1,
             l("How do these dyes work?"), 2,
             l("I want to make my own dyes."), 3,
-            l("[Quit]"), 4;
+            menuaction(l("Quit")), 4;
 
         switch (@menuret)
         {

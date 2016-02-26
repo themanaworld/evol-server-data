@@ -112,7 +112,7 @@ L_SalemMenuShop:
         l("Let's trade."), 1,
         rif(.@q != 0, l("I'd like to buy a piou.")), 2,
         rif(.@fexil == 1, l("I'm looking for somebody named Fexil.")), 3,
-        l("[Quit]"), 4;
+        menuaction(l("Quit")), 4;
 
     switch (@menuret)
     {

@@ -128,8 +128,8 @@
             l("But if you fail, you will have to get them from the alchemist."),
             l("Deal?");
 
-        switch (select (l("[Yes]"),
-                        l("[No]")))
+        switch (select (menuaction(l("Yes")),
+                        menuaction(l("No"))))
         {
             case 1:
                 riddle_enigma;
@@ -176,11 +176,11 @@
 
         menuint
             rif (.@enora == 7, l("Enora wants her potions.")), 0,
-            l("[Trade]"), 1,
+            menuaction(l("Trade")), 1,
             rif (.@enora > 7, l("What was your riddle?")), 2,
             l("How do you do your potions?"), 3,
             l("What are you reading?"), 4,
-            l("[Quit]"), 5;
+            menuaction(l("Quit")), 5;
 
         switch (@menuret)
         {

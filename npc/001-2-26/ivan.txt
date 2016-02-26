@@ -61,7 +61,7 @@
 
     menuint rif(.@enora == 8, l("The Legion need some potions.")), 1,
             rif(.@enora >= 8, l("Who are you?")), 2,
-            l("[Quit]"), 3;
+            menuaction(l("Quit")), 3;
 
     switch (@menuret)
     {

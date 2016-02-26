@@ -46,9 +46,9 @@
     {
         .@enora = getq (ArtisQuests_Enora);
         menuint rif (.@enora == 5, l("I came to retrieve a package for Enora.")), 0,
-                l("[Trade]"), 1,
+                menuaction(l("Trade")), 1,
                 l("How can I improve my equipment?"), 2,
-                l("[Quit]"), 3;
+                menuaction(l("Quit")), 3;
 
         switch (@menuret)
         {

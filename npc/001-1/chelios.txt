@@ -83,7 +83,7 @@
                 rif (.@enora == 3, l("I have your black iron.")), 2,
                 rif (.@enora >= 2, l("Where is the Merchant Guild?")), 3,
                 l("What is this building?"), 4,
-                l("[Quit]"), 5;
+                menuaction(l("Quit")), 5;
 
         switch (@menuret)
         {
