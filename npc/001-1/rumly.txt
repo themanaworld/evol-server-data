@@ -9,13 +9,14 @@
 //    0  Player hasn't met Rumly
 //    1  Last time player has told that he will never come back
 //    2  Last time player has told that he will come back later
+//    3  Player has already reset his stat
 // Others:
 // .@visited - Rumly actual variable
 // .@wasSP - free status points before reset
 
 001-1,35,125,0	script	Rumly#001-1	NPC_RUMLY,{
 
-    setnpcdir "Rumly", 2;
+    setnpcdir "Rumly#001-1", 2;
     stopnpctimer;
     initnpctimer;
 
@@ -70,7 +71,10 @@ L_Menu:
             switch (@menuret)
             {
                 case 0:
-                    setq General_Rumly, 2;
+                    if (.@visited < 2)
+                    {
+                        setq General_Rumly, 2;
+                    }
 
                     speech 5,
                         l("Great! Can't wait for tasty mushrooms!");
@@ -87,7 +91,7 @@ L_Menu:
         case 2:
             goto L_ResetStats;
         case 3:
-            if (.@visited != 2) goto L_Quit;
+            if (.@visited < 2) goto L_Quit;
 
             .@rand = rand (2);
 
@@ -150,7 +154,10 @@ L_ConfirmReset:
 
                     .@wasSP = StatusPoint;
                     resetstatus;
-
+                    if (.@visited < 3)
+                    {
+                        setq General_Rumly, 3;
+                    }
                     if (StatusPoint == .@wasSP)
                     {
                         speech 4,
@@ -176,15 +183,20 @@ L_ConfirmReset:
     }
 
 L_Later:
-    setq General_Rumly, 2;
-
+    if (.@visited < 2)
+    {
+        setq General_Rumly, 2;
+    }
     speech 5,
         l("Come back soon! And bring a plushroom with you!");
 
     goto L_Quit;
 
 L_Never:
-    setq General_Rumly, 1;
+    if (.@visited < 2)
+    {
+        setq General_Rumly, 1;
+    }
 
     speech 5,
         lg("I am sure that you will change your mind.");
@@ -192,7 +204,7 @@ L_Never:
     goto L_Quit;
 
 L_Quit:
-    setnpcdir "Rumly", 4;
+    setnpcdir "Rumly#001-1", 4;
     stopnpctimer;
     initnpctimer;
 
@@ -201,8 +213,8 @@ L_Quit:
 OnTimer1800:
     stopnpctimer;
 
-    if (getnpcdir ("Rumly") == 2) setnpcdir "Rumly", 6;
-    if (getnpcdir ("Rumly") == 4) setnpcdir "Rumly", 8;
+    if (getnpcdir ("Rumly#001-1") == 2) setnpcdir "Rumly#001-1", 6;
+    if (getnpcdir ("Rumly#001-1") == 4) setnpcdir "Rumly#001-1", 8;
 
     end;
 
