@@ -1,0 +1,20 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Party NPC
+
+001-2-9,30,28,0	script	Janus	NPC_JANUS,{
+    speech 4,
+    l("Croc!");
+
+    closedialog;
+    goodbye;
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 3;
+    end;
+}
+
