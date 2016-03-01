@@ -508,9 +508,19 @@ OnUnTouch:
     close;
 
 OnTouch:
+    .@enora = getq(ArtisQuests_Enora);
+    if (.@enora <= 11)
+    {
+        end;
+    }
     doorTouch;
 
 OnUnTouch:
+    .@enora = getq(ArtisQuests_Enora);
+    if (.@enora <= 11)
+    {
+        end;
+    }
     doorUnTouch;
 
 OnTimer340:
