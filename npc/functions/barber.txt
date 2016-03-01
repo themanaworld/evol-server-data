@@ -47,7 +47,8 @@ function	script	BarberChangeStyle	{
             case 0:
                 do
                 {
-                    .@rand_hair = rand(1,29);
+                    .@rand_hair = rand(1,28);
+                    debugmes .@rand_hair;
                 } while (.@rand_hair == getlook (LOOK_HAIR));
                 setlook LOOK_HAIR, .@rand_hair;
                 setlook LOOK_HAIR_COLOR, getlook (LOOK_HAIR_COLOR);
@@ -98,7 +99,7 @@ function	script	BarberChangeColor	{
             case 0:
                 do
                 {
-                    .@rand_color = rand(1, 22);
+                    .@rand_color = rand(1, 21);
                 } while (.@rand_color == getlook (LOOK_HAIR_COLOR));
                 setlook LOOK_HAIR_COLOR, .@rand_color;
 
