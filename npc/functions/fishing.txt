@@ -6,13 +6,13 @@
 
 function	script	fishing	{
 
-    .@wait_time_min = 5000;
-    .@wait_time_max = 30000;
+    .@wait_time_min = 8000;
+    .@wait_time_max = 35000;
     .@pull_rand_max = 800;
     .@pull_timeout = 1500;
     .@fish_id = CommonCarp;
     .@max_wait_times = 3;
-    .@rare_fish_chance = 2500;
+    .@rare_fish_chance = 25;
 
     setarray .@bait_ids[0], SmallTentacles, Bread, Aquada,
                             UrchinMeat, TortugaTongue,
@@ -94,7 +94,7 @@ L_Wait:
         case 1:
             .@timediff = gettimetick(0) - .@tick;
             .@rnd = rand(.@timediff);
-            if (!rand(.@rare_fish_chance))
+            if (rand(.@rare_fish_chance) == 0)
                 .@fish_id = GrassCarp;
             // debugmes "timediff = " + .@timediff;
 
