@@ -47,8 +47,7 @@ function	script	BarberChangeStyle	{
             case 0:
                 do
                 {
-                    .@rand_hair = rand(1,28);
-                    debugmes .@rand_hair;
+                    .@rand_hair = rand(1,29);
                 } while (.@rand_hair == getlook (LOOK_HAIR));
                 setlook LOOK_HAIR, .@rand_hair;
                 setlook LOOK_HAIR_COLOR, getlook (LOOK_HAIR_COLOR);
@@ -70,36 +69,36 @@ function	script	BarberChangeColor	{
         .@get_look = getlook (LOOK_HAIR_COLOR);
 
         menuint
-            l("Surprise me"), 0,
-            rif(.@get_look !=  1, l("Off black")), 1,
-            rif(.@get_look !=  2, l("Ash brown")), 2,
-            rif(.@get_look !=  3, l("Dark brown")), 3,
-            rif(.@get_look !=  4, l("Dark copper")), 4,
-            rif(.@get_look !=  5, l("Auburn brown")), 5,
-            rif(.@get_look !=  6, l("Honey brown")), 6,
-            rif(.@get_look !=  7, l("Copper blonde")), 7,
-            rif(.@get_look !=  8, l("Golden blonde")), 8,
-            rif(.@get_look !=  9, l("Pure platinum")), 9,
-            rif(.@get_look !=  10, l("Cherry blossom")), 10,
-            rif(.@get_look !=  11, l("Pinky pink")), 11,
-            rif(.@get_look !=  12, l("Fire red")), 12,
-            rif(.@get_look !=  13, l("Light violet")), 13,
-            rif(.@get_look !=  14, l("Purple plum")), 14,
-            rif(.@get_look !=  15, l("Navy blue")), 15,
-            rif(.@get_look !=  16, l("Lagoon blue")), 16,
-            rif(.@get_look !=  17, l("Twisted teal")), 17,
-            rif(.@get_look !=  18, l("String Green")), 18,
-            rif(.@get_look !=  19, l("Forest Green")), 19,
-            rif(.@get_look !=  20, l("Silver Grey")), 20,
-            rif(.@get_look !=  21, l("Esperia Blue")), 21,
+            l("Surprise me"), 21,
+            rif(.@get_look !=  0, l("Off black")), 0,
+            rif(.@get_look !=  1, l("Ash brown")), 1,
+            rif(.@get_look !=  2, l("Dark brown")), 2,
+            rif(.@get_look !=  3, l("Dark copper")), 3,
+            rif(.@get_look !=  4, l("Auburn brown")), 4,
+            rif(.@get_look !=  5, l("Honey brown")), 5,
+            rif(.@get_look !=  6, l("Copper blonde")), 6,
+            rif(.@get_look !=  7, l("Golden blonde")), 7,
+            rif(.@get_look !=  8, l("Pure platinum")), 8,
+            rif(.@get_look !=  9, l("Cherry blossom")), 9,
+            rif(.@get_look !=  10, l("Pinky pink")), 10,
+            rif(.@get_look !=  11, l("Fire red")), 11,
+            rif(.@get_look !=  12, l("Light violet")), 12,
+            rif(.@get_look !=  13, l("Purple plum")), 13,
+            rif(.@get_look !=  14, l("Navy blue")), 14,
+            rif(.@get_look !=  15, l("Lagoon blue")), 15,
+            rif(.@get_look !=  16, l("Twisted teal")), 16,
+            rif(.@get_look !=  17, l("String Green")), 17,
+            rif(.@get_look !=  18, l("Forest Green")), 18,
+            rif(.@get_look !=  19, l("Silver Grey")), 19,
+            rif(.@get_look !=  20, l("Esperia Blue")), 20,
             l("Hmm, I'm fine for now, thank you."), 22;
 
         switch (@menuret)
         {
-            case 0:
+            case 21:
                 do
                 {
-                    .@rand_color = rand(1, 21);
+                    .@rand_color = rand(0, 21);
                 } while (.@rand_color == getlook (LOOK_HAIR_COLOR));
                 setlook LOOK_HAIR_COLOR, .@rand_color;
 
