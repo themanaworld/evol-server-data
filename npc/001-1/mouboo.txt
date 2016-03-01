@@ -15,6 +15,7 @@ OnTimer2000:
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
+    .speed = 600;
     mouboograph;
 }
 
@@ -29,6 +30,7 @@ OnTimer2000:
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
+    .speed = 600;
     mouboograph;
 }
 
@@ -43,6 +45,7 @@ OnTimer2000:
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
+    .speed = 600;
     mouboograph;
 }
 
@@ -57,5 +60,6 @@ OnTimer2000:
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
+    .speed = 600;
     mouboograph;
 }
