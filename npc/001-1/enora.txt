@@ -260,6 +260,8 @@
         getitem TrainingGladius, 1;
         getitem ArtisTankTop, 1;
         getitem PibberiesInfusion, 5;
+        setq ArtisQuests_Enora, 10;
+        enora_reward (80, 175);
 
         speech 4,
             l("Do you know where the hill is?");
@@ -277,9 +279,6 @@
                     l("The hill is located on the north-east of Artis.");
                 break;
         }
-
-        setq ArtisQuests_Enora, 10;
-        enora_reward (80, 175);
 
         closedialog;
         npctalk3 l("Thank you very much!");
