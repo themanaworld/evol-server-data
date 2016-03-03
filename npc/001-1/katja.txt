@@ -21,7 +21,7 @@
 
     function QuestReminder {
         setcam 5920, 960;
-        mesq l("Remember, you have to find my brother on the hill to the east from here");
+        mesq l("Remember, you have to find my brother on the hill east of here");
         next;
         mesq l("He is probably hiding up one of the trees. Go close to each tree and look up, otherwise you won't notice him.");
         next;
@@ -68,7 +68,7 @@
     next;
 
     switch (select(l("Of course!"),
-                   l("What kind of  help do you need?"),
+                   l("What kind of help do you need?"),
                    l("I don't have much time right now.")))
     {
         case 1:
@@ -97,13 +97,13 @@ L_Story:
     next;
     mesq l("Our mommy doesn't allow us to go there, because it's dangerous. But he doesn't listen!");
     next;
-    mesq l("Can you please go there and find him? He is probably hiding on one of those trees, like always.");
+    mesq l("Can you please go there and find him? He is probably hiding in one of those trees, like always.");
     next;
-    mesq l("Because of the dense foliage, you need to go up close to the trees so as not to miss him.");
+    mesq l("Because of the dense foliage, you need to go up close to the trees so you don't miss him.");
     next;
 
     switch (select(l("I will find him, don't worry!"),
-                   l("Highest hill in Artis, you say? Sounds dangerous, I might fall off.")))
+                   l("Highest hill in Artis you say? Sounds dangerous, I might fall off.")))
     {
         case 1:
             mes "";

@@ -490,7 +490,7 @@ OnTouch:
     if (.@enora <= 11)
     {
         narrator 4,
-            l("The door of the legion building is temporarily closed.");
+            l("The door to the legion building is temporarily closed.");
     }
     else
     {

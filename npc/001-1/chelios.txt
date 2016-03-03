@@ -1,3 +1,4 @@
+
 // Evol scripts.
 // Authors:
 //    Reid
@@ -17,8 +18,8 @@
     function give_small_quest {
         speech 5,
             l("Her sword... I'm having some trouble finishing it."),
-            l("You see, Enora asked me to do a black iron sword, unfortunately I ran out of such material, and..."),
-            l("Only Don and the Merchant Guild have that kind of iron in stock."),
+            l("You see, Enora asked me to do a black iron sword, unfortunately I ran out of the material needed, and..."),
+            l("Only Don and the Merchant Guild have that kind of material in stock. It's called black iron."),
             l("It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!"),
             l("If Enora wants her sword now, I need to ask for your help.");
 

@@ -26,9 +26,9 @@
 
     speech 2,
         l("Ahoi."),
-        l("Hey, check out my brand new fishing rod. I bought it only today."),
+        l("Hey, check out my brand new fishing rod. I bought it just today."),
         l("I was so excited, I wanted to try it as soon as possible."),
-        l("So in the hurry, I forgot to take enough bait for fishing."),
+        l("So in a hurry, I forgot to take enough bait for fishing."),
         l("Be a friend, and bring me @@ @@s", .BaitCount, getitemlink(.BaitID));
 
     switch (select(l("I'll be back in no time."),
@@ -61,7 +61,7 @@ L_CheckItems:
         l("Just look out at that water! There's plenty more fish there."),
         l("With my old fishing rod you can catch something every day."),
         l("You might even get lucky, and get a @@.", getitemlink(GrassCarp)),
-        l("Have a good fishing!");
+        l("Have a good time fishing!");
 
     delitem .BaitID, .BaitCount;
     getitem FishingRod, 1;
@@ -72,7 +72,7 @@ L_QuestDone:
     // Idea for future: Eugene telling fishman jokes.
     speech
         l("Ahoy, @@!", strcharinfo(0)),
-        l("Is the fish biting today?");
+        l("Are the fish biting today?");
     close;
 
 OnInit:

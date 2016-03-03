@@ -53,10 +53,10 @@
     function riddle_enigma {
         speech 5,
             l("Ok fine, you have up to 3 tries, here is the riddle:"),
-            l("What is growing and shrinking in same time?");
+            l("What is growing and shrinking at the same time?");
         narrator 4,
             l("You need to type the answer of this riddle in the NPC window."),
-            l("The answer is a single word, without conjugaison."),
+            l("The answer is a single word, without conjugation."),
             l("You can also answer in your native language or in English.");
 
         do
@@ -72,8 +72,8 @@
                 }
                 speech 5,
                     l("Oh..."),
-                    l("You seem more cultivated than what you look like."),
-                    l("Fine, take these potion, I will replenish in the next hours anyway.");
+                    l("You seem more cultivated than you look."),
+                    l("Fine, take these potions, I will replenish them in the next couple hours anyway.");
 
                 break;
             }
@@ -90,8 +90,8 @@
                     speech 5,
                         l("You failed!"),
                         l("Ivan is the one that you should look at now."),
-                        l("He is on a small house in between the dock's warehouse and the dojo."),
-                        l("Follow the river to the east-north and you will find it."),
+                        l("He is on a small house between the dock's warehouse and the dojo."),
+                        l("Follow the river to the north-east and you will find it."),
                         l("And get out of here, I'm not a map!");
                 }
                 else
@@ -111,7 +111,7 @@
         speech 5,
             l("She wants? What if I don't want?"),
             l("I'm not a pawn of the Legion, I don't have to obey you!"),
-            l("Oh and guess what, I'm soon out of potions anyway.");
+            l("Oh and guess what! I'm almost out of potions anyway.");
 
         switch (select (l("And where can I find these potions?"),
                         l("You bored me, see you later.")))
@@ -158,7 +158,7 @@
                 mesn;
                 break;
             case 2:
-                speech 5, l("You are honnest, I like it.");
+                speech 5, l("You are honest, I like it.");
                 break;
         }
         mesq l("Is that all you had to say?");
@@ -201,7 +201,7 @@
                 speech 5,
                     l("It's a poem, about poems... Why are you asking that?"),
                     l("Because I am an orc I can't read such things? That's rubbish."),
-                    l("I borrowed it from the library, you should try to cultivate yourself more instead of insunuate such things to people you don't know!");
+                    l("I borrowed it from the library, you should try to cultivate yourself more instead of insinuate things about people you don't know!");
                 break;
             case 5:
                 break;

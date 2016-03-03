@@ -18,10 +18,10 @@
     if (.@q == 3) goto L_QuestDone;
 
     speech 2,
-        l("We didn't meet, right?"),
+        l("We haven't met, right?"),
         l("My name is Q'Onan, I'm a member of Nard's crew."),
         l("I have a lot of work here, so I don't even have time to go to the town."),
-        l("Could you do a small favour for me?");
+        l("Could you do a small favor for me?");
 
     switch (select (l("Go on."), l("I don't have the time sorry.")))
     {
@@ -38,8 +38,8 @@
         l("Anyway, the last time I stole something I was almost caught."),
         l("I robbed a nobleman, took a chest full of coins."),
         l("But my luck left me, because as soon as I left his house, the guards started chasing me."),
-        l("It was at night, so I could barely escape. I ran to the Artis Hill."),
-        l("I was afraid to be busted, so I decided to get rid of the evidence."),
+        l("It was at night, so I could barely escape. I ran to Artis Hill."),
+        l("I was afraid to get busted, so I decided to get rid of the evidence."),
         l("I buried the chest somewhere on that hill. It was dark, so I don't remember where to dig exactly."),
         l("I'm afraid to go there myself, but if you take the risk, you can have half of the loot."),
         l("So, what do you say?");
@@ -69,11 +69,11 @@
     }
 
 L_QuestGiven:
-    speech 4, l("I asked you to do me a favour, did you forget?");
+    speech 4, l("I asked you to do me a favor, did you forget?");
     select l("What should I do, again?");
     speech 1,
-        l("Please find the small chest, buried somewhere on the Artis Hill."),
-        l("You should check on the highest part of the cliff, I was hidding there."),
+        l("Please find the small chest, buried somewhere on Artis Hill."),
+        l("You should check on the highest part of the cliff, I was hiding there."),
         l("Bring it to me, and you will get your reward.");
     close;
 

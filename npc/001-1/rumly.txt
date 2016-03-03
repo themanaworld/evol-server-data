@@ -57,12 +57,12 @@ L_Menu:
 
             speech 5,
                 l("I won't forget it, I swear on my precious plushrooms."),
-                l("There is an unknown side effect to these plushrooms, they can free you from your past bad choice."),
+                l("There is an unknown side effect to these plushrooms, they can free you from your past mistakes."),
                 l("You can use it to clear your stats, to start freshly if you see what I mean..."),
                 l("Bring me some of these plushrooms and I will show you how it works!");
 
             menuint
-                lg("Sounds well!"), 0,
+                lg("Sounds good!"), 0,
                 rif(countitem(Plushroom) == 1, lg("I already have some plushroom on me.")), 1,
                 rif(countitem(Plushroom) > 1, lg("I already have some plushrooms on me.")), 1,
                 lg("We will talk about it later."), 2,
@@ -77,7 +77,7 @@ L_Menu:
                     }
 
                     speech 5,
-                        l("Great! Can't wait for tasty mushrooms!");
+                        l("Great! Can't wait for some tasty mushrooms!");
 
                     goto L_Menu;
                 case 1:

@@ -30,7 +30,7 @@
                 break;
             case 2:
                 speech 5,
-                    l("Oh... Ok, I will stay around here if you change your mind.");
+                    l("Oh... Ok, I will be around here if you change your mind.");
                 break;
         }
         return;
@@ -54,7 +54,7 @@
             l("Hey, I remember you, we were on the same boat, you are the castaway.");
 
         switch (select (l("Yes I am."),
-                        l("You're confusing me with another.")))
+                        l("You're confusing me with someone else.")))
         {
             case 1:
                 speech 5,
@@ -110,7 +110,7 @@
                 if (.@amount > countitem(729))
                 {
                     speech 5,
-                        l("You don't have enough @@ on yourself.", getitemlink(729));
+                        l("You don't have enough @@ on you.", getitemlink(729));
                     continue;
                 }
 

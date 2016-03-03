@@ -30,7 +30,7 @@
             l("Exemple for yoiis:"),
             l("Take a @@ and a @@, yeye obtains a @@.",
                 getitemlink(ArtisTankTop, WhiteCottonDye), getitemlink(RedCottonDye), getitemlink(ArtisTankTop, RedCottonDye)),
-            l("If yoiis wants to see a different use of cards he can yeye for Resa on the light armor shop for a description of styling cards.");
+            l("If yoiis wants to see a different use for the cards he can yeye for Resa at the light armor shop for a description of the styling cards.");
     }
 
     speech 4,
@@ -54,7 +54,7 @@
             case 0:
                 setcamnpc "Fexil#001-1";
                 speech 5,
-                    l("Oh yeye did, his store is just aside me!"),
+                    l("Oh yeye did, his store is just beside me!"),
                     l("Yoiis should look there.");
                 restorecam;
 
@@ -69,7 +69,7 @@
             case 3:
                 speech 5,
                     l("Yoiis is not yet ready to make his own dyes."),
-                    l("But in the future I might help you to create your own ones.");
+                    l("But in the future I might be able to help you to create some of your own.");
                 break;
             case 4:
                 break;
