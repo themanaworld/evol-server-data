@@ -26,7 +26,7 @@ L_Menu:
         l("Is it possible to go back to the island?"), L_Island,
         l("Could you explain to me where I am?"), L_WhereIam,
         l("What happened to me?"), L_What,
-        l("Can I read these rules again?"), L_Rules,
+        l("Can I read the rules again?"), L_Rules,
         l("Nothing, sorry."), L_Quit;
 
 L_YNMenu:
@@ -104,7 +104,7 @@ L_What:
 L_Rules:
     mes "";
     mesn;
-    mesq l("Of course, they are on the left wall, go have a look at them.");
+    mesq l("Of course, they are on the left wall. Go have a look at them.");
     next;
     mesq l("Do you have any other questions for me?");
     next;

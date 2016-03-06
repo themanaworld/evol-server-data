@@ -86,7 +86,7 @@
     if (.@q < 2)
     {
         mesn "Narrator";
-        mes col(l("You see a young elven girl, with a grimace of pain on her face."), 9);
+        mes col(l("You see a young elven girl, with a strong sense of pain in her face."), 9);
         next;
     }
     else
@@ -110,7 +110,7 @@ L_Story:
     next;
     mesq l("I didn't notice that a Pikpik was in my way, and when I stepped on it, my foot was full of spikes.");
     next;
-    mesq l("Luckily the beach is nearby, and somehow I could come home.");
+    mesq l("Luckily the beach is nearby, and somehow I made my way home.");
     next;
     mesq l("Please bring me some @@ so I can pull out these spikes from my foot.", getitemlink("CrocClaw"));
     next;

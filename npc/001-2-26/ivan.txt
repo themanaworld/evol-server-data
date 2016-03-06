@@ -1,3 +1,4 @@
+
 // Evol scripts.
 // Author:
 //    Reid
@@ -10,13 +11,13 @@
         speech 5,
             l("I am an alchemist, I bear the name of Ivan."),
             l("I work under the protection and the supervision of the Legion of Aemil."),
-            l("Alchemical studies are prohibited in every cities of the Archipelagos, do not dare to practice in a public zone!");
+            l("Alchemical studies are prohibited in every city of the Archipelagos, do not dare to practice it in a public zone!");
 
         return;
     }
 
     function enora_quest {
-        speech 5, l("How many? What kind? I can produce two dozen of box per day.");
+        speech 5, l("How many? What kind? I can produce two dozen boxes per day.");
 
         select (l("5 Pibberies Infusion."));
 
@@ -27,7 +28,7 @@
         select (l("You missunderstood, it's 5 potions."));
 
         speech 5,
-            l("Why the Legion would request my help for only 5 potions?"),
+            l("Why would the Legion request my help for only 5 potions?"),
             l("Is this some kind of joke?!");
 
         switch (select (l("Enora needs them."),
