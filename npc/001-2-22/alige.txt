@@ -110,9 +110,9 @@ L_ExplainHiding:
     setcamnpc;
     mes "";
     mesn;
-    mesq l("No, I can't. I won't! All I wanted was to travel across the seas for fun, growl... sniff. And in this chink in the wall, as you can see, I have lots of fun.");
+    mesq l("No, I can't. I won't! All is I wanted was to travel across the seas for fun, growl... sniff. And in this chink in the wall, as you can see, I have lots of fun.");
     next;
-    mesq l("Oh... um... actually... all I wanted was to get to Artis. Err... but I didn't, ah, have enough money to pay for the ferry!");
+    mesq l("Oh... um... actually... all is I wanted was to get to Artis. Err... but I didn't, ah, have enough money to pay for the ferry!");
     next;
     mesq l("Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!");
     next;
@@ -132,7 +132,7 @@ L_AboutReward:
 L_Accept:
     menu
         l("Understood, I will help you."), L_FirstAccepted,
-        l("We arrived in Artis today."), L_Artis,
+        l("We arrived to Artis today."), L_Artis,
         l("I think I should report you to the crew members."), -;
 
     setcamnpc;
@@ -144,7 +144,7 @@ L_Artis:
     setcamnpc;
     mes "";
     mesn;
-    mesq l("Of course, so why do I still see open sea from the porthole?");
+    mesq l("Of course, so why do I still see plain sea from the porthole?");
     next;
     mesq l("I wonder who is in delarium now...");
     next;
@@ -232,7 +232,7 @@ L_NoReward:
 L_Drunk:
     setcamnpc;
     speech 5,
-        l("I asked for food but... *hips* Ah, that'll do nicely!");
+        l("I asked for food but... *hips* Ah, that'll do so!");
     restorecam;
 
     goto L_GiveFood;
@@ -283,7 +283,7 @@ L_IntroMenu:
         l("Yes."), L_GiveFood,
         l("Where can I find some food?"), L_FindFood,
         l("Why are you hiding?") + " " + l("Why don't you come out?"), L_ExplainHiding,
-        l("We arrived in Artis today."), L_Artis,
+        l("We arrived to Artis today."), L_Artis,
         l("I think I should report you to the crew members."), -;
 
     setcamnpc;
@@ -299,7 +299,7 @@ L_FindFood:
     next;
     mesq l("I'd like to catch one of them, but they fly away when I try.");
     next;
-    mesq l("Walking around a bit, it'll be easy for you to catch one, I bet. Impale one of them for me please.");
+    mesq l("Walkig around a bit, it'll be easy for you to catch one, I bet. Impale one of them for me please.");
     next;
     restorecam;
     mesn "Narrator";

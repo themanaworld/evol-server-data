@@ -25,9 +25,9 @@ L_Content:
     mes l("Don't worry sister, I didn't forget you");
     next;
 
-    mes l("I hope to come back home when the days are better");
-    mes l("And when we have enough money to support ourselves and not depend on anybody");
+    mes l("I hope to come back at home when days will be better");
+    mes l("And when we will got enought money to don't depend of anybody");
 
-    mes l("Sincerely yours, Dan") + "\"";
+    mes l("Dearly yours, Dan") + "\"";
     close;
 }

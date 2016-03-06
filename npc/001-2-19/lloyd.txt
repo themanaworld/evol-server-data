@@ -21,8 +21,8 @@
 
     function enora_quest {
         speech 5,
-            l("Black iron... That is a very specific request that you have for me!"),
-            l("Let me check in my inventory book..."),
+            l("Black iron... That is a very specific request that you got me!"),
+            l("Let me check on my inventory book..."),
             l("..."),
             l("Yes, I have some! \"5x Black Iron Ingots\""),
             l("Is this for you or somebody else? Because you need to be registered to obtain these materials.");
@@ -38,10 +38,10 @@
                 break;
             case 2:
                 speech 1,
-                    l("Chelios... He is part of the blacksmith house, is he not?"),
+                    l("Chelios... He is part of the blacksmith house, is not he?"),
                     l("Since Don settled in Artis he and his band refused to register to the Merchant Guild."),
-                    l("I will close my eyes for once, but only because it's your first time asking for something!"),
-                    l("Sometimes a good merchant needs to reach out first. It's on the house, give Chelios my regards!");
+                    l("I will close my eyes for once, but only because it is your first time asking for something!"),
+                    l("Sometimes a good merchant need to reach out first. It's on the house, give Chelios my regards!");
                 emotion 7;
                 break;
         }
@@ -63,7 +63,7 @@
     function first_visit {
         speech 4,
             l("Welcome!"),
-            l("My name is Lloyd, I am a representative of the Merchant Guild of Artis.");
+            l("My name is Lloyd, I am a representant of the Merchant Guild of Artis.");
 
         select (l("My name is @@...", strcharinfo(0)));
 
@@ -71,7 +71,7 @@
             l("\"@@\", I like this name!", strcharinfo(0)),
             l("Oh, wait a second...");
         narrator 4,
-            l("Lloyd is searching something in his book.");
+            l("Lloyd is searching something on his book.");
         speech 4,
             l("I see."),
             l("You are new around here, right?");
@@ -105,7 +105,7 @@
                 if (Zeny < .@price)
                 {
                     speech 4,
-                        l("You do not seem to have enough money, come back later!");
+                        l("You do not seem to have enough money on yourself, come back later!");
                 }
                 else
                 {
@@ -125,16 +125,16 @@
 
     function paper_to_deliver {
         speech 5,
-            l("Now that you bring up that topic, that reminds me of something..."),
-            l("Earlier today there was this young seller named Fexil that passed by here."),
-            l("He asked to lend some money and a place to open his store, I think that he asked for a place on the merchant squares on the south-west of the city..."),
+            l("Now that you bring up that topic, that remind me of something..."),
+            l("Not later than today there was this young seller named Fexil that passed by here."),
+            l("He asked to lend some money and a place to open his store, I think that he asked for a place on the merchant square on the south-west of the city..."),
             l("Anyway, he forgot his permit when he left the building."),
             l("Could you bring it to him?");
 
         do
         {
             .@q = select (l("Ok, I will bring it to him."),
-                          l("I need more information first."),
+                          l("I need more informations first."),
                           l("I don't have the time."));
             switch (.@q)
             {
@@ -145,7 +145,7 @@
                     break;
                 case 2:
                     speech 5,
-                        l("You should look for a seller named Fexil around the merchant square."),
+                        l("You should look a seller named Fexil around the merchant square."),
                         l("Ask other merchants, they might know where he is.");
                     break;
                 case 3:
@@ -247,10 +247,10 @@
         .@enora = getq (ArtisQuests_Enora);
 
         menuint rif (.@enora == 2, l("I'm searching some black iron ingots.")), 0,
-                l("I would like to store some items."), 1,
-                l("I would like to deposit some money."), 2,
+                l("I would like to deposit some item."), 1,
+                l("I would like to manage my money."), 2,
                 l("What is this guild for?"), 3,
-                l("Does the guild has any work for me right now?"), 4,
+                l("The guild has any work for me?"), 4,
                 l("Bye."), 5;
 
         switch (@menuret)

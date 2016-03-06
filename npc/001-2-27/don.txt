@@ -17,12 +17,12 @@
     function card_explanation {
         speech 5,
             l("There are two different kinds of card, the first changes the style of your clothes, the second changes their stats."),
-            l("I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment"),
+            l("I am not an expert of the first kind, but I know what I am talking about for the second."),
             l("A stat card works on different pieces of equipment."),
-            l("Each piece of equipment has a predefined slot number."),
-            l("Each card improves your gear by a ratio or a fixed number on a predefined stat."),
-            l("Like, a defensive mythril card can be used on any mythril equipment, and it will improve the defense by 5% of the latter."),
-            l("You just have to select the card, then you choose which piece of equipment you want to use it on, and you are done.");
+            l("Each equipment has a predefined slot number."),
+            l("Each cards improve your gear by a ratio or a fixed number on a predefined stat."),
+            l("Like, a defensive mythril card can be used on any mythril equipment, and it will improve of 5% the defense of the latter."),
+            l("You just have to select it, you choose on which piece of equipment you want to use it, and you are done.");
         return;
     }
 
@@ -34,16 +34,16 @@
         select (l("What about Chelios?"));
 
         speech 5,
-            l("Chelios was stubborn in his youth, he never stopped annoying me with his questions while I was working at the forge."),
+            l("Chelios was stubborn in his youth, he could not stop to annoy me with his questions while I was working at the forge."),
             l("He did not change while growing up, I repeatedly asked him to leave the forge but in the end he installed himself in front of it..."),
-            l("He is mature and he rarely ask questions so I am fine. I can not stand the sight of a whiner anyway.");
+            l("He is mature and he rarely ask questions so I am fine. I can not stand the sight of a whinger anyway.");
         return;
     }
 
     function good_blacksmith {
         speech 5,
-            l("I do not like to brag about it but you won't find a better blacksmith on the whole island."),
-            l("If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.");
+            l("I do not like to brag about it but you will not find any better blacksmith on the whole island."),
+            l("If you need somebody to craft a weapon or a plate from a diagrams I am the one that you need.");
 
         switch (select (l("Can I craft them myself?"),
                         l("Ok.")))

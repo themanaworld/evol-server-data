@@ -36,7 +36,7 @@
 
     speech 5,
         l("We just returned from a long journey and Artis is a good city to rest and to conclude our exchange."),
-        l("I think that we will stay in port for a great time, though, if you want to visit some nearby we could take you there."),
+        l("I think that we will stay in port for a great time, though, if you want to visit some near place we could take you there."),
         l("Do you want to go somewhere?");
 
     switch (select(l("Lost Island."),
@@ -69,7 +69,7 @@
 L_Lost :
     mes "";
     mesn;
-    mesq l("Julia made an appeal to the Legion of Aemil to get in touch with you, exit the ship and you should see your escort!");
+    mesq l("Julia make appeal the Legion of Aemil to search you, exit the ship and you should see your escort!");
     next;
 
     closedialog;

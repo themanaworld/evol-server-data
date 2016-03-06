@@ -39,7 +39,7 @@
 
     switch(select(
         l("Very nice, indeed!"),
-        l("I don't see anything else other than... water?")))
+        l("I don't see anything else than... water?")))
     {
         case 2:
             mes "";
