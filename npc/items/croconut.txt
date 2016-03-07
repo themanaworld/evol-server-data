@@ -33,9 +33,9 @@ L_Weapon:
     menu
         rif(countitem(3500) > 0, l(getitemname(3500))), L_Weak,
         rif(countitem(3501) > 0, l(getitemname(3501))), L_Weak,
-        rif(countitem(3502) > 0, l(getitemname(3501))), L_Good,
-        rif(countitem(3503) > 0, l(getitemname(3501))), L_Weak,
-        rif(countitem(3504) > 0, l(getitemname(3501))), L_Good,
+        rif(countitem(3502) > 0, l(getitemname(3502))), L_Good,
+        rif(countitem(3503) > 0, l(getitemname(3503))), L_Weak,
+        rif(countitem(3504) > 0, l(getitemname(3504))), L_Good,
         l("Bare Hands"), -;
 
 L_TooWeak:
