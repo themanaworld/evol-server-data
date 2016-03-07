@@ -25,15 +25,19 @@ OnUse:
     switch (@type)
     {
         case 1:
+            sc_end SC_S_LIFEPOTION;
             sc_start2 SC_S_LIFEPOTION, @delay * 1000, .@rand, 1;
             break;
         case 2:
+            sc_end SC_L_LIFEPOTION;
             sc_start2 SC_L_LIFEPOTION, @delay * 1000, .@rand, 1;
             break;
         case 3:
+            sc_end SC_G_LIFEPOTION;
             sc_start2 SC_G_LIFEPOTION, @delay * 1000, .@rand, 1;
             break;
         case 4:
+            sc_end SC_M_LIFEPOTION;
             sc_start2 SC_M_LIFEPOTION, @delay * 1000, .@rand, 1;
             break;
         default :
