@@ -14,31 +14,57 @@
 //              4 Special 2
 
 -	script	rand_sc_heal	-1,{
-    close;
+
+    // Add remaning bonus if the last one hasn't finished
+    function remaining_bonus {
+        if (getstatus (getarg (0)))
+        {
+            @old_val1 = getstatus (SC_S_LIFEPOTION, 1);
+            @old_delay = getstatus (SC_S_LIFEPOTION, 4) * 1000;
+
+            // change the delay to prevent fast healing
+            if (@old_delay > @delay)
+            {
+                @delay = @old_delay;
+                @val1 += @old_val1;
+            }
+            else
+            {
+                @val1 += (@old_val1 * @old_delay) / @delay;
+            }
+        }
+        return;
+    }
 
 OnUse:
     if (@delay <= 0) close;
 
-    .@rand = rand (@min, @max) / @delay;
-    if (.@rand <= 0) close;
+    @val1 = rand (@min, @max) / @delay;
+    if (@val1 <= 0) close;
+
+    @delay *= 1000; // Put the delay in ms
 
     switch (@type)
     {
         case 1:
+            remaining_bonus (SC_S_LIFEPOTION);
             sc_end SC_S_LIFEPOTION;
-            sc_start2 SC_S_LIFEPOTION, @delay * 1000, .@rand, 1;
+            sc_start2 SC_S_LIFEPOTION, @delay, @val1, 1;
             break;
         case 2:
+            remaining_bonus (SC_L_LIFEPOTION);
             sc_end SC_L_LIFEPOTION;
-            sc_start2 SC_L_LIFEPOTION, @delay * 1000, .@rand, 1;
+            sc_start2 SC_L_LIFEPOTION, @delay, @val1, 1;
             break;
         case 3:
+            remaining_bonus (SC_G_LIFEPOTION);
             sc_end SC_G_LIFEPOTION;
-            sc_start2 SC_G_LIFEPOTION, @delay * 1000, .@rand, 1;
+            sc_start2 SC_G_LIFEPOTION, @delay, @val1, 1;
             break;
         case 4:
+            remaining_bonus (SC_M_LIFEPOTION);
             sc_end SC_M_LIFEPOTION;
-            sc_start2 SC_M_LIFEPOTION, @delay * 1000, .@rand, 1;
+            sc_start2 SC_M_LIFEPOTION, @delay, @val1, 1;
             break;
         default :
             break;
