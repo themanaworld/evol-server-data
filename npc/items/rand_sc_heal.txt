@@ -16,21 +16,22 @@
 -	script	rand_sc_heal	-1,{
 
     // Add remaning bonus if the last one hasn't finished
-    function remaining_bonus {
+    function remaining_bonus
+    {
         if (getstatus (getarg (0)))
         {
-            @old_val1 = getstatus (SC_S_LIFEPOTION, 1);
-            @old_delay = getstatus (SC_S_LIFEPOTION, 4) * 1000;
+            .@old_val1 = getstatus (getarg (0), 1);
+            .@old_delay = getstatus (getarg (0), 4) * 1000;
 
             // change the delay to prevent fast healing
-            if (@old_delay > @delay)
+            if (.@old_delay > @delay)
             {
-                @delay = @old_delay;
-                @val1 += @old_val1;
+                @delay = .@old_delay;
+                @val1 += .@old_val1;
             }
             else
             {
-                @val1 += (@old_val1 * @old_delay) / @delay;
+                @val1 += (.@old_val1 * .@old_delay) / @delay;
             }
         }
         return;
@@ -47,27 +48,26 @@ OnUse:
     switch (@type)
     {
         case 1:
-            remaining_bonus (SC_S_LIFEPOTION);
-            sc_end SC_S_LIFEPOTION;
-            sc_start2 SC_S_LIFEPOTION, @delay, @val1, 1;
+            .@skill = SC_S_LIFEPOTION;
             break;
         case 2:
-            remaining_bonus (SC_L_LIFEPOTION);
-            sc_end SC_L_LIFEPOTION;
-            sc_start2 SC_L_LIFEPOTION, @delay, @val1, 1;
+            .@skill = SC_L_LIFEPOTION;
             break;
         case 3:
-            remaining_bonus (SC_G_LIFEPOTION);
-            sc_end SC_G_LIFEPOTION;
-            sc_start2 SC_G_LIFEPOTION, @delay, @val1, 1;
+            .@skill = SC_G_LIFEPOTION;
             break;
         case 4:
-            remaining_bonus (SC_M_LIFEPOTION);
-            sc_end SC_M_LIFEPOTION;
-            sc_start2 SC_M_LIFEPOTION, @delay, @val1, 1;
+            .@skill = SC_M_LIFEPOTION;
             break;
         default :
+            .@skill = 0;
             break;
+    }
+    if (.@skill != 0)
+    {
+        remaining_bonus (.@skill);
+        sc_end .@skill;
+        sc_start2 .@skill, @delay, @val1, 1;
     }
 
     close;
