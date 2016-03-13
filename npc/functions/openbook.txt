@@ -1,0 +1,16 @@
+// Evol functions.
+// Author:
+//    Reid
+// Description:
+//    Narrator dialogue to show the selected book.
+// Variables:
+//    @book_name$ = The name of the book to read.
+
+function	script	openbook	{
+    narrator 4,
+        l("You see a dust covered book on the shelf..."),
+        l("The name of the book is @@.", @book_name$),
+        l("Do you want to read it?");
+
+    return (select ("Yes.", "No.") == 1); 
+}

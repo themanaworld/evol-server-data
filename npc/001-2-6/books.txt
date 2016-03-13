@@ -6,42 +6,37 @@
 
 001-2-6,39,41,0	script	#001-2-6-Book1	NPC_NO_SPRITE,{
 
-    .@book_name$ = "\"" + l("The Piou and The Fluffy") + "\"";
+    @book_name$ = "\"" + l("The Piou and The Fluffy") + "\"";
 
-    narrator 4,
-        l("You see a dust covered book on the shelf..."),
-        l("The name of the book is @@.", .@book_name$),
-        l("Do you want to read it?");
-
-    switch (select ("Yes.", "No."))
+    if (openbook ())
     {
-        case 1:
-            goto L_Read;
-        case 2:
-            close;
+        mes "";
+        mes col("Master Piou sat on a tree,", 9);
+        mes col("Holding a cheese in his beak.", 9);
+        mes col("Master Fluffy was attracted by the odour,", 9);
+        mes col("And tried to attract him thus.", 9);
+        next;
+        mes col("\"Mister Piou, good day to you.", 9);
+        mes col("You are a handsome and good looking bird!", 9);
+        mes col("In truth, if your song is as beautiful as your plumage,", 9);
+        mes col("You are the Phoenix of this forest.\"", 9);
+        next;
+        mes col("Hearing these words the Piou felt great joy,", 9);
+        mes col("And to demonstrate his beautiful voice,", 9);
+        mes col("He opened his mouth wide and let drop his prey.", 9);
+        mes col("The Fluffy seized it and said:", 9);
+        next;
+        mes col("\"My good Sir,", 9);
+        mes col("Know that every flatterer,", 9);
+        mes col("Lives at the expense of those who take him seriously:", 9);
+        mes col("This is a lesson that is worth a cheese no doubt.\"", 9);
+        next;
+        mes col("The Piou, embarrassed and confused,", 9);
+        mes col("Swore, though somewhat later, that he would never be ", 9);
+        mes col("tricked thus again.", 9);
+        next;
+        mes col("-- " + l("Aesop"), 9);
     }
-
-L_Read:
-    narrator 1,
-    l("Master Piou sat on a tree,"),
-    l("Holding a cheese in his beak."),
-    l("Master Fluffy was attracted by the odour,"),
-    l("And tried to attract him thus."),
-    l("\"Mister Piou, good day to you."),
-    l("You are a handsome and good looking bird!"),
-    l("In truth, if your song is as beautiful as your plumage,"),
-    l("You are the Phoenix of this forest.\""),
-    l("Hearing these words the Piou felt great joy,"),
-    l("And to demonstrate his beautiful voice,"),
-    l("He opened his mouth wide and let drop his prey."),
-    l("The Fluffy seized it and said: \"My good Sir,"),
-    l("Know that every flatterer,"),
-    l("Lives at the expense of those who take him seriously:"),
-    l("This is a lesson that is worth a cheese no doubt.\""),
-    l("The Piou, embarrassed and confused,"),
-    l("Swore, though somewhat later, that he would never be "),
-    l("tricked thus again."),
-    "-- " + l("Aesop");
 
     close;
 
@@ -53,52 +48,42 @@ OnInit:
 
 001-2-6,48,41,0	script	#001-2-6-Book2	NPC_NO_SPRITE,{
 
-    .@book_name$ = "\"" + l("Poem about Poems") + "\"";
+    @book_name$ = "\"" + l("Poem about Poems") + "\"";
 
-    narrator 4,
-        l("You see a dust covered book on the shelf..."),
-        l("The name of the book is @@.", .@book_name$),
-        l("Do you want to read it?");
-
-    switch (select ("Yes.", "No."))
+    if (openbook ())
     {
-        case 1:
-            goto L_Read;
-        case 2:
-            close;
+        mes "";
+        mes col("Poem is making the words dance", 9);
+        mes col("Words become music and glance", 9);
+        mes col("Over lovers under a starry night", 9);
+        mes col("Whose eyes listen under Moonlight", 9);
+        next;
+        mes col("No matter the grammar", 9);
+        mes col("If words beat in rhythm", 9);
+        mes col("Find an order with them", 9);
+        mes col("As on anvil strikes the hammer", 9);
+        next;
+        mes col("No matter the spelling", 9);
+        mes col("Just say something sparkling", 9);
+        mes col("If not, how could CrazyKatiektch", 9);
+        mes col("Say her love to glamourous Gliktch?", 9);
+        next;
+        mes col("True be or not true be", 9);
+        mes col("That's not the question", 9);
+        mes col("And rhyming is not too", 9);
+        mes col("If you don't like to", 9);
+        mes col("Share your mind is your mission", 9);
+        mes col("Whatever inside can be", 9);
+        next;
+        mes col("Don't be shy, you are nice", 9);
+        mes col("From your mind, break the ice", 9);
+        mes col("Whatever your idea", 9);
+        mes col("It's the good one and, ahem!", 9);
+        mes col("That makes everybody", 9);
+        mes col("Able to write a poem", 9);
+        next;
+        mes col("-- " + l("Nard"), 9);
     }
-
-L_Read:
-    narrator 1,
-    l("Poem is making the words dance"),
-    l("Words become music and glance"),
-    l("Over lovers under a starry night"),
-    l("Whose eyes glisten under Moonlight"),
-    "",
-    l("No matter the grammar"),
-    l("If words beat in rhythm"),
-    l("Find an order with them"),
-    l("As on anvil strikes the hammer"),
-    "",
-    l("No matter the spelling"),
-    l("Just say something sparkling"),
-    l("If not, how could CrazyKatiektch"),
-    l("Say her love to glamourous Gliktch?"),
-    "",
-    l("True be or not true be"),
-    l("That's not the question"),
-    l("And rhyming is not too"),
-    l("If you don't like to"),
-    l("Share your mind is your mission"),
-    l("Whatever inside can be"),
-    "",
-    l("Don't be shy, you are nice"),
-    l("From your mind, break the ice"),
-    l("Whatever your idea"),
-    l("It's the good one and, ahem!"),
-    l("That makes everybody"),
-    l("Able to write a poem"),
-    "-- " + l("Nard");
 
     close;
 
@@ -110,30 +95,20 @@ OnInit:
 
 001-2-6,43,39,0	script	#001-2-6-Book3	NPC_NO_SPRITE,{
 
-    .@book_name$ = "\"" + l("Chorus of the Woods") + "\"";
+    @book_name$ = "\"" + l("Chorus of the Woods") + "\"";
 
-    narrator 4,
-        l("You see a dust covered book on the shelf..."),
-        l("The name of the book is @@.", .@book_name$),
-        l("Do you want to read it?");
-
-    switch (select ("Yes.", "No."))
+    if (openbook ())
     {
-        case 1:
-            goto L_Read;
-        case 2:
-            close;
+        mes "";
+        mes col("Hush now and hear the chorus of the woods", 9);
+        mes col("Bent trees whistling with the beat of the drum", 9);
+        mes col("With no choir master nor voice to be sung", 9);
+        mes col("The music of the trees floats through the breeze", 9);
+        mes col("Sleep well my angel but don't follow along", 9);
+        mes col("Because the voices of death sing a sweet song", 9);
+        next;
+        mes col("-- " + l("Princess Slayer"), 9);
     }
-
-L_Read:
-    narrator 1,
-    l("Hush now and hear the chorus of the woods"),
-    l("Bent trees whistling with the beat of the drum"),
-    l("With no choir master nor voice to be sung"),
-    l("The music of the trees floats through the breeze"),
-    l("Sleep well my angel but don't follow along"),
-    l("Because the voices of death sing a sweet song"),
-    "-- " + l("Princess Slayer");
 
     close;
 
