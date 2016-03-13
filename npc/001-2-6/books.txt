@@ -6,10 +6,7 @@
 
 001-2-6,39,41,0	script	#001-2-6-Book1	NPC_NO_SPRITE,{
 
-    @book_name$ = "\"" + l("The Piou and The Fluffy") + "\"";
-
-    if (openbook ())
-    {
+    function read_book {
         mes "";
         mes col("Master Piou sat on a tree,", 9);
         mes col("Holding a cheese in his beak.", 9);
@@ -38,9 +35,20 @@
         mes col("-- " + l("Aesop"), 9);
     }
 
+OnShelfUse:
+    @book_name$ = .bookname$;
+    if (openbookshelf ())
+        read_book;
+    close;
+
+OnUse:
+    @book_name$ = .bookname$;
+    if (openbook ())
+        read_book;
     close;
 
 OnInit:
+    .bookname$ = "The Piou and The Fluffy";
     .sex = G_OTHER;
     .distance = 1;
     end;
@@ -48,10 +56,7 @@ OnInit:
 
 001-2-6,48,41,0	script	#001-2-6-Book2	NPC_NO_SPRITE,{
 
-    @book_name$ = "\"" + l("Poem about Poems") + "\"";
-
-    if (openbook ())
-    {
+    function read_book {
         mes "";
         mes col("Poem is making the words dance", 9);
         mes col("Words become music and glance", 9);
@@ -85,9 +90,20 @@ OnInit:
         mes col("-- " + l("Nard"), 9);
     }
 
+OnShelfUse:
+    @book_name$ = .bookname$;
+    if (openbookshelf ())
+        read_book;
+    close;
+
+OnUse:
+    @book_name$ = .bookname$;
+    if (openbook ())
+        read_book;
     close;
 
 OnInit:
+    .bookname$ = "Poem about Poems";
     .sex = G_OTHER;
     .distance = 1;
     end;
@@ -95,10 +111,7 @@ OnInit:
 
 001-2-6,43,39,0	script	#001-2-6-Book3	NPC_NO_SPRITE,{
 
-    @book_name$ = "\"" + l("Chorus of the Woods") + "\"";
-
-    if (openbook ())
-    {
+    function read_book {
         mes "";
         mes col("Hush now and hear the chorus of the woods", 9);
         mes col("Bent trees whistling with the beat of the drum", 9);
@@ -110,6 +123,50 @@ OnInit:
         mes col("-- " + l("Princess Slayer"), 9);
     }
 
+OnShelfUse:
+    @book_name$ = .bookname$;
+    if (openbookshelf ())
+        read_book;
+    close;
+
+OnUse:
+    @book_name$ = .bookname$;
+    if (openbook ())
+        read_book;
+    close;
+
+OnInit:
+    .bookname$ = "Chorus of the Woods";
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
+
+001-2-6,54,28,0	script	#001-2-6-Book4	NPC_NO_SPRITE,{
+
+    function read_book {
+        narrator 1,
+            l("Aemil is a magnificent world unknown to us all."),
+            l("Its inhabitants did not know any kind of horror and in peace they lived as the earth gave them everything they needed to live."),
+            l("However, drought came with summers while winters became colder than ever."),
+            l("Therefore, starvation stalked the people of Aemil."),
+            l("Authorities began to control in order to have a peaceful society. This did not work well for long."),
+            l("People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose."),
+            l("New technologies assisted the slaughter instead of establishing peace. At some point, two different rivals were formed."),
+            l("Their leaders then came to the conclusion that an alliance was the only way they could survive."),
+            l("The great people of Aemil split up into three groups when they reached the coast."),
+            l("Each of the groups was ordered to sail in a different direction to find a new, suitable land where to live."),
+            l("As they sailed on Oceania, great waters of Aemil, one of the alliances found a land."),
+            ("Even though they did not hear anything about the other groups, they decided to start a new life on this land, full of harmful animals."),
+            l("This new continent, in fact an archipelago, was called Andorra."),
+            l("A great city, now the capital of these islands, called Esperia, rose on the single island, Aurora, where everyone lived."),
+            l("However..."),
+            l("The end of the story got erased, probably because of the sea water. Some pages are still missing. Thus much is left obscure, including even the author's name.");
+    }
+
+OnUse:
+    if (openoldbook ())
+        read_book;
     close;
 
 OnInit:
