@@ -206,6 +206,7 @@ L_Already:
     close;
 
 L_GoBackArtis:
+    checkclientversion;
     speech 4,
         l("Enough of this island?"),
         l("Where would you like to go now?");

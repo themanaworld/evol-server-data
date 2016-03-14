@@ -25,6 +25,7 @@
 
 001-2-24,25,26,0	script	Nard#Artis	NPC_NARD,{
 
+    checkclientversion;
     mesn;
     mesq g(l("Good day miss."), l("Good day mister."));
     next;
