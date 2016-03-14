@@ -3,9 +3,26 @@
 //    4144
 // Description:
 //    Function checking the client version and reports if it is too old.
+// Known versions:
+//   2  Nov 10 2014
+//   3  Nov 28 2014
+//   4  Jan 5  2015
+//   5  Jan 20 2015
+//   6  Feb 17 2015
+//   7  Mar 2  2015
+//   8  May 1  2015
+//   9  Aug 12 2015
+//  10  Aug 16 2015
+//  11  Aug 21 2015
+//  12  Sep 28 2015
+//  14  Oct 15 2015
+//  15  Oct 26 2015
+//  16  Jan 5  2016
+// First supported version:
+//  2
 
 function	script	checkclientversion	{
-    if (ClientVersion > 5) return;
+    if (ClientVersion > 7) return;
 
     mesn "Narrator";
     mes col("Warning.", 9);
