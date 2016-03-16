@@ -1,0 +1,17 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Librarian
+
+001-2-4,27,33,0	script	Robin	NPC_ROBIN,{
+    speech 4,
+        l("Hi.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
