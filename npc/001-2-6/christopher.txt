@@ -1,0 +1,17 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Librarian
+
+001-2-6,57,46,0	script	Christopher	NPC_CHRISTOPHER,{
+    speech 4,
+        l("Hi.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
