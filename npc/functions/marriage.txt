@@ -31,7 +31,7 @@ function	script	marriagecheckname	{
     }
     if (distance(.@x, .@y, .x, .y) > .distance)
     {
-        // registrand too far
+        // registrant too far
         return false;
     }
     return true;
@@ -183,14 +183,8 @@ function	script	domarriage	{
     return;
 }
 
-// main function for marriage
-function	script	marriagemain	{
-    if (Sex > 1)
-    {
-        speech l("Sorry i can't help you. Go away!");
-        close;
-    }
-
+// marry main code
+function	script	marriagemarry	{
     .@registrant$ = getmarriageregistrant();
     if (marriagecheckname(.@registrant$) == true)
     {
@@ -227,8 +221,57 @@ function	script	marriagemain	{
     {
         case 1:
             marriageregister;
+            break;
         case 2:
             break;
     }
+    return;
+}
+
+// divorce main code
+function	script	marriagedivorce	{
+    speech l("What a can do for you?");
+    switch (select(l("I want divorce"),
+            l("Nothing")))
+    {
+        case 1:
+            speech l("Are you sure?");
+            if (select(l("Yes"), l("No")) == 1)
+            {
+                if (divorce())
+                {
+                    speech l("Now you divorced!"),
+                        l("Good look.");
+                    npctalk l("@@ divorced!", strcharinfo(0));
+                }
+                else
+                {
+                    speech l("Divorce error!");
+                }
+            }
+            break;
+        case 2:
+            break;
+    }
+    return;
+}
+
+// main function for marriage
+function	script	marriagemain	{
+    if (Sex > 1)
+    {
+        speech l("Sorry i can't help you. Go away!");
+        close;
+    }
+
+    if (getpartnerid() != 0)
+    {   // have partner
+        marriagedivorce();
+    }
+    else
+    {   // no partner
+        marriagemarry();
+    }
+
     return;
 }
