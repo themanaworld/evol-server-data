@@ -65,16 +65,14 @@
             l("This will remain your respawn point until set elsewhere."),
             l("Is that okay?");
 
-        switch (select (menuaction(l("Yes")),
-                        menuaction(l("No"))))
+        if (askyesno() == ASK_YES)
         {
-            case 1:
-                accepted_room (.@price);
-                break;
-            case 2:
-                speech 5,
-                    l("Come back later if you changed your mind!");
-                break;
+            accepted_room (.@price);
+        }
+        else
+        {
+            speech 5,
+                l("Come back later if you changed your mind!");
         }
 
         return;
@@ -97,13 +95,9 @@
                 l("If you are registered somewhere else you will loose that reservation."),
                 l("Do you still want to lodge here?");
 
-            switch (select (menuaction(l("Yes")), menuaction(l("No"))))
+            if (askyesno() == ASK_YES)
             {
-                case 1: 
-                    register_room; 
-                    break;
-                case 2:
-                    break;
+                register_room; 
             }
         }
         return;

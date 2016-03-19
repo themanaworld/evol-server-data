@@ -21,7 +21,7 @@ function	script	bedTouch	{
 function	script	bedClic	{
     narrator 4, l("Do you want to use this place as save point?");
 
-    if (select (menuaction(l("Yes")), menuaction(l("No"))) == 1)
+    if (askyesno() == ASK_YES)
     {
         savepointparticle (getarg (0), getarg (1), getarg (2), getarg (3));
     }

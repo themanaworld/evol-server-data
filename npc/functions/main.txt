@@ -167,3 +167,8 @@ function	script	abs	{
     .@n = getarg(0);
     return .@n >= 0 ? .@n : -.@n;
 }
+
+function	script	askyesno	{
+    return select (menuaction(l("Yes")),
+        menuaction(l("No")));
+}

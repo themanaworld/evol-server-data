@@ -128,14 +128,9 @@
             l("But if you fail, you will have to get them from the alchemist."),
             l("Deal?");
 
-        switch (select (menuaction(l("Yes")),
-                        menuaction(l("No"))))
+        if (askyesno() == ASK_YES)
         {
-            case 1:
-                riddle_enigma;
-                break;
-            case 2:
-                break;
+            riddle_enigma;
         }
         return;
     }

@@ -122,7 +122,7 @@ function	script	marriageacceptpartner	{
 
 function	script	askmarry	{
     speech l("Do you want to marry @@?", getarg(0));
-    if (select(menuaction(l("Yes")), menuaction(l("No"))) == 1)
+    if (askyesno() == ASK_YES)
         return true;
     return false;
 }
@@ -236,7 +236,7 @@ function	script	marriagedivorce	{
     {
         case 1:
             speech l("Are you sure?");
-            if (select(menuaction(l("Yes")), menuaction(l("No"))) == 1)
+            if (askyesno() == ASK_YES)
             {
                 if (divorce())
                 {
