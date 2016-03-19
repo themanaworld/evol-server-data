@@ -5,10 +5,6 @@
 //    npc marriage
 
 test,25,14,0	script	marriage1	NPC_PLAYER,{
-    // debug
-    mes .maleName$;
-    mes .femaleName$;
-
     marriagemain();
     close;
 
