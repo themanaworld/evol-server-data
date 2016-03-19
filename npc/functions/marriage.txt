@@ -275,3 +275,19 @@ function	script	marriagemain	{
 
     return;
 }
+
+// check registration list by timer
+function	script	marriagecheck	{
+    .@name$ = getvariableofnpc(.maleName$, strnpcinfo(3));
+    if (.@name$ != "" && marriagecheckname(.@name) == false)
+    {
+        set getvariableofnpc(.maleName$, strnpcinfo(3)), "";
+        set getvariableofnpc(.maleName_partner$, strnpcinfo(3)), "";
+    }
+    .@name$ = getvariableofnpc(.femaleName$, strnpcinfo(3));
+    if (.@name$ != "" && marriagecheckname(.@name) == false)
+    {
+        set getvariableofnpc(.femaleName$, strnpcinfo(3)), "";
+        set getvariableofnpc(.femaleName_partner$, strnpcinfo(3)), "";
+    }
+}

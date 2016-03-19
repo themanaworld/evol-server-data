@@ -11,7 +11,13 @@ test,25,14,0	script	marriage1	NPC_PLAYER,{
 
     marriagemain();
     close;
+
+OnTimer30000:
+    marriagecheck();
+    end;
+
 OnInit:
     .sex = G_MALE;
     .distance = 3;
+    initnpctimer;
 }
