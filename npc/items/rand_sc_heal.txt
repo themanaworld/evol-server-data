@@ -34,13 +34,24 @@
                 @val1 += (.@old_val1 * .@old_delay) / @delay;
             }
         }
+        else
+        {
+            @val1 = @val3;
+        }
         return;
     }
 
 OnUse:
     if (@delay <= 0) close;
 
-    @val1 = rand (@min, @max) / @delay;
+    // minimum between @min and bVit / 2 * BaseLevel / 10
+    .@vitality_bonus = min (@min, readparam (bVit) * BaseLevel / 20);
+    .@rand_heal_val = rand (@min, @max);
+
+    // val1 is the heal value without the vitality bonus
+    @val1 = .@rand_heal_val / @delay;
+    @val3 = (.@rand_heal_val + .@vitality_bonus) / @delay;
+
     if (@val1 <= 0) close;
 
     @delay *= 1000; // Put the delay in ms
