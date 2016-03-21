@@ -32,14 +32,11 @@ OnClock0000:
     restoreshopitem PiouSlayer, 15;
 }
 
-001-1,46,125,0	trader	Store#Calypsan001-1	NPC_NO_SPRITE,{
+001-1,46,125,0	trader	Cotton#Dye001-1	NPC_NO_SPRITE,{
 
 OnInit:
     tradertype(NST_MARKET);
 
-    sellitem CrimsonCashmereDye, -1, 7;
-    sellitem ChocolateCashmereDye, -1, 7;
-    sellitem MintCashmereDye, -1, 7;
     sellitem BlackCottonDye, -1, 10;
     sellitem SilverCottonDye, -1, 10;
     sellitem CamelCottonDye, -1, 10;
@@ -65,9 +62,6 @@ OnInit:
     end;
 
 OnClock0000:
-    restoreshopitem CrimsonCashmereDye, 7;
-    restoreshopitem ChocolateCashmereDye, 7;
-    restoreshopitem MintCashmereDye, 7;
     restoreshopitem BlackCottonDye, 10;
     restoreshopitem SilverCottonDye, 10;
     restoreshopitem CamelCottonDye, 10;
@@ -87,6 +81,25 @@ OnClock0000:
     restoreshopitem LimeCottonDye, 10;
     restoreshopitem KhakiCottonDye, 10;
     restoreshopitem YellowCottonDye, 10;
+}
+
+001-1,48,125,0	trader	Cashmere#Dye001-1	NPC_NO_SPRITE,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem CrimsonCashmereDye, -1, 7;
+    sellitem ChocolateCashmereDye, -1, 7;
+    sellitem MintCashmereDye, -1, 7;
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+
+OnClock0000:
+    restoreshopitem CrimsonCashmereDye, 7;
+    restoreshopitem ChocolateCashmereDye, 7;
+    restoreshopitem MintCashmereDye, 7;
 }
 
 001-1,64,114,0	trader	Store#Aquada001-1	NPC_NO_SPRITE,{

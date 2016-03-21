@@ -33,6 +33,26 @@
             l("If yoiis wants to see a different use for the cards he can yeye for Resa at the light armor shop for a description of the styling cards.");
     }
 
+    function sell_dye {
+        speech 5, l("For what kind of tissue?");
+        .@tissue_type = select (l("Cotton"), l("Cashmere"));
+
+        closedialog;
+        switch (.@shop == 1)
+        {
+            case 1:
+                shop "Cotton#Dye001-1";
+                break;
+            case 2:
+                shop "Cashmere#Dye001-1";
+                break;
+            default:
+                debugmes "Calypsan script error, tissue_type is incorrect";
+                break;
+        }
+        close;
+    }
+
     speech 4,
         l("Yoiis envies a rainbow in the sky?"),
         l("It is possible to yeye your cloth with my beautiful dyes."),
@@ -60,9 +80,9 @@
 
                 break;
             case 1:
-                closedialog;
-                shop "Store#Calypsan001-1";
+                sell_dye;
                 close;
+
             case 2:
                 explain_dyes;
                 break;
