@@ -1,0 +1,18 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    A rich girl holding a candle.
+
+001-2-11,39,30,0	script	Mona	NPC_MONA,{
+
+    speech
+        l("!");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}
