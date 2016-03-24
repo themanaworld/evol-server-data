@@ -5,8 +5,42 @@
 //    Party NPC
 
 001-2-9,30,28,0	script	Janus	NPC_JANUS,{
+    function explain_service {
+        speech 5, l("?");
+
+        return;
+    }
+
     speech 4,
-    l("Croc!");
+        l("!");
+
+    menuint rif (General_Janus == 1, l("Field 1")), 1,
+            rif (General_Janus == 2, l("Field 2")), 2,
+            l("What service do you offer?"), 3,
+            l("Your name is Ianus or Janus?"), 4;
+
+    switch (@menuret)
+    {
+        case 1:
+            speech 5,
+                l("");
+            break;
+        case 2:
+            speech 5,
+                l("");
+            break;
+        case 3:
+            explain_service;
+            break;
+        case 4:
+            speech 5,
+                l("Janus!");
+            emotion 11;
+
+            speech 12,
+                l("Ianus is from the legion of Aemil, don't compare me to this brigand.");
+            break;
+    }
 
     closedialog;
     goodbye;
@@ -17,4 +51,3 @@ OnInit:
     .distance = 3;
     end;
 }
-
