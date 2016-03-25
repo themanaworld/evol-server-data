@@ -1,0 +1,17 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Librarian
+
+001-2-6,52,28,0	script	Leonard	NPC_LEONARD,{
+    speech 4,
+        l("Hi.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
