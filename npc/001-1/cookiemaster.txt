@@ -181,7 +181,7 @@ L_Reward:
     inventoryplace 517, 1;
 
     setq General_Cookies, 1;
-    getitem 517, 1;
+    getnameditem 517, strcharinfo(0);
     npctalk3 l("You receive a @@!", getitemlink(517));
 
     next;
@@ -244,8 +244,8 @@ L_LostCookie:
     .@item = 517;
     .@count = 1;
     inventoryplace 517, 1;
+    getnameditem 517, strcharinfo(0);
 
-    getitem 517, 1;
     npctalk3 l("You receive a @@!", getitemlink(517));
 
 L_Bye:
