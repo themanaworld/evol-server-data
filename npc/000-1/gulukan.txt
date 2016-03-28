@@ -57,8 +57,6 @@ L_Continue2:
     mesq l("Anyway I am glad I can give you some of these yoyoxs.");
     next;
 
-    .@item = 715;
-    .@count = 1;
     inventoryplace 715, 1;
 
     setq ShipQuests_Gulukan, 1;

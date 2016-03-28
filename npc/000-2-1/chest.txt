@@ -23,8 +23,6 @@
 
 L_Give:
     if (.@q > 1) goto L_Quit;
-    .@item = 1300;
-    .@count = 2;
     inventoryplace 1300, 2;
 
     setq ShipQuests_Arpan, 2;

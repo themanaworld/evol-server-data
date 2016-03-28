@@ -176,8 +176,6 @@ L_Reward:
     next;
     mesq l("Anyway, here, have a cookie!");
 
-    .@item = 517;
-    .@count = 1;
     inventoryplace 517, 1;
 
     setq General_Cookies, 1;
@@ -241,8 +239,6 @@ L_LostCookie:
     mesq l("This is the last one. If you use it again out of clumsiness, I will use your soft moist parts in the concoction of my next cookie batch.");
     next;
 
-    .@item = 517;
-    .@count = 1;
     inventoryplace 517, 1;
     getnameditem 517, strcharinfo(0);
 

@@ -27,8 +27,6 @@
 
 L_Give:
     mes "";
-    .@item = 3500;
-    .@count = 1;
     inventoryplace 3500, 1;
 
     setq ShipQuests_Knife, 1;
