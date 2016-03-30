@@ -27,7 +27,7 @@ test,10,10,0	script	npc1	NPC_TEST1,3,3,{
     }
 
 L_Start:
-    switch (select("show area:map:pc:change npc direction:quest test:cart:items:chat:wall:craft"))
+    switch (select("show area", "map", "pc", "change npc direction", "quest test", "cart", "items", "chat", "wall", "craft"))
     {
         case 1:
             areatest;
@@ -125,13 +125,13 @@ L_Start:
         case 7:
             while(1)
             {
-                switch (select("refine:rent:bound:named:back"))
+                switch (select("refine", "rent", "bound", "named", "cards", "back"))
                 {
                     case 1:
                         .@item = -1;
                         while(1)
                         {
-                            switch (select("set item:refine +1:refine -1:refine fail:back"))
+                            switch (select("set item", "refine +1", "refine -1", "refine fail", "back"))
                             {
                                 case 1:
                                     .@item = requestitemindex();
@@ -210,6 +210,43 @@ L_Start:
                         }
                         break;
                     case 5:
+                        .@item = -1;
+                        while(1)
+                        {
+                            switch (select("set item",
+                                "remove cards success",
+                                "fail, remove both",
+                                "fail, remove card",
+                                "fail, remove item",
+                                "fail, safe",
+                                "back"))
+                            {
+                                case 1:
+                                    .@item = requestitemindex();
+                                    mes "Item index selected: " + str(.@item);
+                                    break;
+                                case 2:
+                                    successremovecardsindex .@item;
+                                    break;
+                                case 3:
+                                    failedremovecardsindex .@item, 0;
+                                    break;
+                                case 4:
+                                    failedremovecardsindex .@item, 1;
+                                    break;
+                                case 5:
+                                    failedremovecardsindex .@item, 2;
+                                    break;
+                                case 6:
+                                    failedremovecardsindex .@item, 3;
+                                    break;
+                                case 7:
+                                    goto L_Start;
+                                    break;
+                            }
+                        }
+                        break;
+                    case 6:
                         goto L_Start;
                         break;
                 }
