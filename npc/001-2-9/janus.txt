@@ -6,7 +6,21 @@
 
 001-2-9,30,28,0	script	Janus	NPC_JANUS,{
     function explain_service {
-        speech 5, l("?");
+        speech 5,
+            l("You are on the human ressource wing of the Town Hall."),
+            l("We offer some certifications and we can also teach you how to use some basic communication skills."),
+            l("Do you know how to speak with other people around you?");
+
+        if (askyesno () == 2)
+        {
+            speech 5,
+                l("You lack some very basic skills..."),
+                l("There are two kind of dialogue, the one with citizen, and the one with other adventurer."),
+                l("When you go near a villager, you can see a speech bubble ahead of him, you can then talk to him by pressing the [T] key."),
+                l("When there are many people around you, you can select a specific person with the [N] key, and then, press the [T] key."),
+                l("You can also simply talk to anybody around you by clicking on them!"),
+                l("Though, if you want to talk with another adventurer, you can simply press the [Enter] key, and type what you want.");
+        }
 
         return;
     }
@@ -33,9 +47,10 @@
             explain_service;
             break;
         case 4:
-            speech 5,
+            speech 1,
                 l("Janus!");
             emotion 11;
+            next;
 
             speech 12,
                 l("Ianus is from the legion of Aemil, don't compare me to this brigand.");
