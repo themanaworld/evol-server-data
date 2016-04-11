@@ -8,18 +8,26 @@
     function explain_service {
         speech 5,
             l("You are on the human ressource wing of the Town Hall."),
-            l("We offer some certifications and we can also teach you how to use some basic communication skills."),
-            l("Do you know how to speak with other people around you?");
+            l("We offer certifications and we can also teach you how to use some basic communication skills."),
+            l("Do you know how to speak with people around you?");
 
         if (askyesno () == 2)
         {
             speech 5,
-                l("You lack some very basic skills..."),
-                l("There are two kind of dialogue, the one with citizen, and the one with other adventurer."),
-                l("When you go near a villager, you can see a speech bubble ahead of him, you can then talk to him by pressing the [T] key."),
-                l("When there are many people around you, you can select a specific person with the [N] key, and then, press the [T] key."),
-                l("You can also simply talk to anybody around you by clicking on them!"),
-                l("Though, if you want to talk with another adventurer, you can simply press the [Enter] key, and type what you want.");
+                l("You lack some very basic skills...");
+
+            if (compareandsetq (General_Janus, 0, 1))
+            {
+                speech 12,
+                    l("This book explains everything you should know about it, take it!");
+
+                inventoryplace 535, 1;
+            }
+            else
+            {
+                speech 12,
+                    l("You can read the book that I gave you earlier at the library if you lost it.");
+            }
         }
 
         return;
@@ -28,8 +36,8 @@
     speech 4,
         l("!");
 
-    menuint rif (General_Janus == 1, l("Field 1")), 1,
-            rif (General_Janus == 2, l("Field 2")), 2,
+    menuint rif (getq (General_Janus) == 1, l("Field 1")), 1,
+            rif (getq (General_Janus) == 2, l("Field 2")), 2,
             l("What service do you offer?"), 3,
             l("Your name is Ianus or Janus?"), 4;
 
