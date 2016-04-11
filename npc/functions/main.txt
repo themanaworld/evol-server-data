@@ -172,3 +172,16 @@ function	script	askyesno	{
     return select (menuaction(l("Yes")),
         menuaction(l("No")));
 }
+
+// Argument:
+//  0 Quest variable
+//  1 Current value
+//  2 Next value
+function	script	compareandsetq	{
+    if (getq (getarg(0)) == getarg(1))
+    {
+        setq getarg(0), getarg(2);
+        return true;
+    }
+    return false;
+}
