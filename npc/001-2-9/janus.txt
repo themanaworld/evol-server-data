@@ -33,11 +33,23 @@
         return;
     }
 
-    speech 4,
-        l("!");
+    function janus_is_not_ianus {
+        speech 1,
+            l("Janus!");
+        emotion 11;
+        next;
 
-    menuint rif (getq (General_Janus) == 1, l("Field 1")), 1,
-            rif (getq (General_Janus) == 2, l("Field 2")), 2,
+        speech 12,
+            l("Ianus is from the legion of Aemil, don't compare me to this brigand.");
+
+        return;
+    }
+
+    speech 4,
+        lg("Welcome miss.", "Good day sir.");
+
+    menuint rif (getq (General_Janus) == 1, l("I would like to create a party.")), 1,
+            rif (getq (General_Janus) == 2, l("I would like to create a guild.")), 2,
             l("What service do you offer?"), 3,
             l("Your name is Ianus or Janus?"), 4;
 
@@ -55,13 +67,7 @@
             explain_service;
             break;
         case 4:
-            speech 1,
-                l("Janus!");
-            emotion 11;
-            next;
-
-            speech 12,
-                l("Ianus is from the legion of Aemil, don't compare me to this brigand.");
+            janus_is_not_ianus;
             break;
     }
 
