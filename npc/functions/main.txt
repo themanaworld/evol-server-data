@@ -43,7 +43,10 @@ function	script	col	{
 }
 
 function	script	adddefaultskills	{
-    skill NV_BASIC, 9, 0;
+    if (getskilllv(NV_BASIC) < 6)
+    {
+        skill NV_BASIC, 6, 0;
+    }
     return;
 }
 
