@@ -33,14 +33,37 @@
     }
 
     function create_guild {
+        .@guild_price = 35000;
+
         speech 5,
-            l("");
+            l("Oh oh... I see, your party became so big that you want to create an even larger structure?"),
+            l("Or, do you want to keep your friendship and your adventure in different groups?"),
+            l("Anyway, the guild creation is perfect for both case! You can keep your current party as is while having a guild to talk and share different items with all of your friends!"),
+            l("The @@ is a one time item, you can use it as many time as you want, but you can only have one!", getitemlink (730)),
+            l("The cost to create a guild is of @@E, are you interested?", .@guild_price);
+
+        if (askyesno () == 1)
+        {
+            if (Zeny < .@guild_price)
+            {
+                speech 5, l("You don't have enough money, bring @@E.", .@guild_price);
+            }
+            else
+            {
+                inventoryplace 730, 1;
+                Zeny = Zeny - .@guild_price;
+                setq General_Janus, 3;
+                getitem 730, 1;
+
+                speech 5, l("Enjoy the fraternity and excitement of your future guild!");
+            }
+        }
     }
 
     function explain_service {
         speech 5,
             l("You are on the human ressource wing of the Town Hall."),
-            l("We offer certifications and we can also teach you how to use some basic communication skills."),
+            l("We offer party and guild certifications and we can also teach you how to use some basic communication skills."),
             l("Do you know how to speak with people around you?");
 
         if (askyesno () == 2)
@@ -51,15 +74,29 @@
             if (compareandsetq (General_Janus, 0, 1))
             {
                 speech 12,
-                    l("This book explains everything you should know about it, take it!");
+                    l("This book resumes everything you should know about it, take it!");
 
                 inventoryplace 535, 1;
+                getitem 535, 1;
             }
             else
             {
                 speech 12,
                     l("You can read the book that I gave you earlier at the library if you lost it.");
             }
+        }
+        else
+        {
+            if (compareandsetq (General_Janus, 0, 1))
+            {
+                speech 12,
+                    l("Anyway."),
+                    l("This book resumes everything you should know about it, take it!");
+
+                inventoryplace 535, 1;
+                getitem 535, 1;
+            }
+
         }
 
         return;
@@ -80,14 +117,14 @@
     speech 4,
         lg("Welcome miss.", "Good day sir.");
 
-    // Beta users by-pass check.
-    if (getskilllv(NV_BASIC) < 7 && getq (General_Janus) == 1)
-    {
-        setq General_Janus, 2;
-    }
-
     do
     {
+        // Beta users by-pass check.
+        if (getskilllv(NV_BASIC) > 6 && getq (General_Janus) == 1)
+        {
+            setq General_Janus, 2;
+        }
+
         menuint rif (getq (General_Janus) == 1, l("I would like to create a party.")), 1,
                 rif (getq (General_Janus) == 2, l("I would like to create a guild.")), 2,
                 l("What service do you offer?"), 3,
