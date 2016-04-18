@@ -3,6 +3,13 @@
 //    Reid
 // Description:
 //    Party NPC
+// Variable:
+//    General_Janus
+// Values:
+//    0    Default.
+//    1    Basic information given.
+//    2    Party creation enabled.
+//    3    Guild certificate given.
 
 001-2-9,30,28,0	script	Janus	NPC_JANUS,{
 
