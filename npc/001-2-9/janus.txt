@@ -5,6 +5,38 @@
 //    Party NPC
 
 001-2-9,30,28,0	script	Janus	NPC_JANUS,{
+
+    function create_party {
+        .@party_price = 1000;
+
+        speech 5,
+            l("Creating a party has some advantages, it's a pretty good choice!"),
+            l("I remember when I created my first party, we were amazed to share some experience with a small group of adventurer..."),
+            l("Oh! And our party chat was really entertaining, I do highly recommend you to share this fun as well."),
+            l("The cost to create a party is of @@E, are you interested?", .@party_price);
+
+        if (askyesno () == 1)
+        {
+            if (Zeny < .@party_price)
+            {
+                speech 5, l("You don't have enough money, bring @@E.", .@party_price);
+            }
+            else
+            {
+                Zeny = Zeny - .@party_price;
+                setq General_Janus, 2;
+                skill NV_BASIC, 7, 0;
+
+                speech 5, l("Awesome, come back if you ever want to create a larger group!");
+            }
+        }
+    }
+
+    function create_guild {
+        speech 5,
+            l("");
+    }
+
     function explain_service {
         speech 5,
             l("You are on the human ressource wing of the Town Hall."),
@@ -48,28 +80,38 @@
     speech 4,
         lg("Welcome miss.", "Good day sir.");
 
-    menuint rif (getq (General_Janus) == 1, l("I would like to create a party.")), 1,
-            rif (getq (General_Janus) == 2, l("I would like to create a guild.")), 2,
-            l("What service do you offer?"), 3,
-            l("Your name is Ianus or Janus?"), 4;
-
-    switch (@menuret)
+    // Beta users by-pass check.
+    if (getskilllv(NV_BASIC) < 7 && getq (General_Janus) == 1)
     {
-        case 1:
-            speech 5,
-                l("");
-            break;
-        case 2:
-            speech 5,
-                l("");
-            break;
-        case 3:
-            explain_service;
-            break;
-        case 4:
-            janus_is_not_ianus;
-            break;
+        setq General_Janus, 2;
     }
+
+    do
+    {
+        menuint rif (getq (General_Janus) == 1, l("I would like to create a party.")), 1,
+                rif (getq (General_Janus) == 2, l("I would like to create a guild.")), 2,
+                l("What service do you offer?"), 3,
+                l("Your name is Ianus or Janus?"), 4,
+                menuaction(l("Quit")), 5;
+
+        switch (@menuret)
+        {
+            case 1:
+                create_party;
+                break;
+            case 2:
+                create_guild;
+                break;
+            case 3:
+                explain_service;
+                break;
+            case 4:
+                janus_is_not_ianus;
+                break;
+            case 5:
+                break;
+        }
+    } while (@menuret != 5);
 
     closedialog;
     goodbye;
