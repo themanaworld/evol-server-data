@@ -188,3 +188,35 @@ function	script	compareandsetq	{
     }
     return false;
 }
+
+// Use a delay to prevent spams from NPC that display text without the
+// use of (a) close/next function(s).
+// Argument:
+//  0 Text to display
+//  1 Lock delay (default = 1)
+//  2 Message function:  (default = 0)
+//      0 = npctalk3
+//      1 = npctalk
+//      2 = message
+function	script	npctalkonce	{
+    if ((.@current_time = gettimetick(2)) < Repeat_NPC_lock)
+    {
+        return false;
+    }
+    Repeat_NPC_lock = .@current_time + getarg(1,1);
+
+    if (getarg(2,0) == 0)
+    {
+        npctalk3 getarg(0);
+    }
+    else if (getarg(2,0) == 1)
+    {
+        npctalk getarg(0);
+    }
+    else if (getarg(2,0) == 2)
+    {
+        message strcharinfo(0), getarg(0);
+    }
+
+    return true;
+}
