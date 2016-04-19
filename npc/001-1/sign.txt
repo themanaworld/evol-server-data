@@ -1,0 +1,260 @@
+// Evol scripts.
+// Author:
+//    Ablu, Reid
+// Description:
+//    Sign pillars aside Artis houses.
+
+001-1,73,119,0	script	#001-1-s-market	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Market Place.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,48,122,0	script	#001-1-s-marketright	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Market Place.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,57,88,0	script	#001-1-s-marketdir	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("↓ Market Place.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,55,86,0	script	#001-1-s-exit-l-dir	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("← Exit.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,59,85,0	script	#001-1-s-legiondir	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("↑ Legion.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,57,80,0	script	#001-1-s-library	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Library.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,57,71,0	script	#001-1-s-lightarmor	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Light Armor Shop.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,53,56,0	script	#001-1-s-legion	NPC_OFFSET_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Legion of Aemil.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,60,56,0	script	#001-1-s-legionright	NPC_OFFSET_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Legion of Aemil.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,91,66,0	script	#001-1-s-cityhall	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("City Hall.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,95,111,0	script	#001-1-s-blacksmith	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Blacksmith.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,115,88,0	script	#001-1-s-inn	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("INN.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,134,85,0	script	#001-1-s-innright	NPC_OFFSET_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("INN.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,118,36,0	script	#001-1-s-merchantg	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Merchant Guild.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,171,48,0	script	#001-1-s-hill	NPC_OFFSET_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Hill & Cliff.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,161,72,0	script	#001-1-s-alchemist	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Alchemist's Laboratory.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+
+001-1,175,76,0	script	#001-1-s-warehouse	NPC_NO_SPRITE,{
+    if ((.@current_time = gettimetick(2)) >= Repeat_NPC_lock)
+    {
+        Repeat_NPC_lock = .@current_time + 1;
+        npctalk3 l("Docks's Warehouse.");
+    }
+
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
