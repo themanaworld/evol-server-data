@@ -26,7 +26,7 @@
 
     npc_pausemove;
     face_to_PC;
-    npctalkonce goodbye;
+    npctalkonce goodbye_msg();
     local_close;
 
 OnTimer1000:
