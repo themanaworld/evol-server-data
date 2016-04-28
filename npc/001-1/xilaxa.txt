@@ -5,43 +5,63 @@
 //    Moon, main NPC for the urchin quest.
 
 001-1,52,44,0	script	Xilaxa#001-1	NPC_UKAR_MALE_LEGION_ARTIS,{
-    npctalk3 l("You're in my way.");
-    close;
+
+    function face_to_PC {
+        getmapxy(.@map$, .@cx, .@cy, 0);
+        @Devis_old_dir = .dir;
+        npc_turntoxy(.@cx, .@cy);
+
+        return;
+    }
+
+    function local_close {
+        if (@Devis_old_dir != .dir)
+        {
+            .dir = @Devis_old_dir;
+        }
+        npc_resumemove;
+
+        close;
+    }
+
+    npc_pausemove;
+    face_to_PC;
+    npctalkonce goodbye;
+    local_close;
 
 OnTimer1000:
-    domovestep;
+    dographmovestep;
 
 OnInit:
-    initpath "move", 57, 82,
-             "move", 56, 86,
-             "wait", 1, 0,
-             "dir", RIGHT, 0,
-             "wait", 1, 0,
-             "dir", DOWN, 0,
-             "wait", 2, 0,
-             "dir", LEFT, 0,
-             "wait", 1, 0,
-             "dir", DOWN, 0,
-             "wait", 1, 0,
-             "dir", RIGHT, 0,
-             "move", 62, 82,
-             "dir", UP, 0,
-             "move", 62, 82,
-             "move", 55, 56,
-             "move", 56, 45,
-             "move", 54, 43,
-             "dir", DOWN, 0,
-             "wait", 2, 0,
-             "dir", RIGHT, 0,
-             "wait", 1, 0,
-             "dir", DOWN, 0,
-             "wait", 2, 0,
-             "dir", LEFT, 0,
-             "wait", 1, 0,
-             "dir", DOWN, 0,
-             "wait", 5, 0,
-             "move", 52, 44;
+    .sex = G_MALE;
+    .distance = 5;
+    initmovegraph   "mid",          54,  43,  60,  46,
+                    "left",         47,  50,  52,  55,
+                    "right",        62,  50,  67,  55;
 
-    initialmove;
+    setmovegraphcmd "mid",          "left",         1,  "dir 0; wait 4",
+                    "mid",          "left",         4,  "dir 2; wait 3; dir 0; wait 2; dir 6; wait 1; dir 0",
+                    "mid",          "left",         2,  "dir 4; wait 5; dir 0; wait 2",
+                    "mid",          "left",         3,  "dir 6; wait 1; dir 0; wait 3; dir 2; wait 3; dir 0",
+                    "mid",          "left",         1,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
+                    "mid",          "right",        3,  "dir 0; wait 4",
+                    "mid",          "right",        4,  "dir 2; wait 3; dir 0; wait 2; dir 6; wait 1; dir 0",
+                    "mid",          "right",        2,  "dir 4; wait 5; dir 0; wait 2",
+                    "mid",          "right",        1,  "dir 6; wait 1; dir 0; wait 3; dir 2; wait 3; dir 0",
+                    "mid",          "right",        2,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
+
+                    "left",         "mid",          2,  "dir 0; wait 4",
+                    "left",         "mid",          1,  "dir 2; wait 3; dir 0; wait 2; dir 6; wait 1; dir 0",
+                    "left",         "mid",          3,  "dir 4; wait 5; dir 0; wait 2",
+                    "left",         "mid",          2,  "dir 6; wait 1; dir 0; wait 3; dir 2; wait 3; dir 0",
+                    "left",         "mid",          3,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5",
+
+                    "right",        "mid",          3,  "dir 0; wait 4",
+                    "right",        "mid",          2,  "dir 2; wait 3; dir 0; wait 2; dir 6; wait 1; dir 0",
+                    "right",        "mid",          1,  "dir 4; wait 5; dir 0; wait 2",
+                    "right",        "mid",          1,  "dir 6; wait 1; dir 0; wait 3; dir 2; wait 3; dir 0",
+                    "right",        "mid",          2,  "dir 0; wait 1; dir 2; wait 1; dir 0; wait 1; dir 6; wait 5";
+
+    firstmove "wait 5", "mid";
     initnpctimer;
 }
