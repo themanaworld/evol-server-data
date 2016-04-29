@@ -1,0 +1,17 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    Dye seller, she sells and explain how works dye cards.
+
+001-2-12,38,30,0	script	Oscar#001-2-12	NPC_OSCAR,{
+    closedialog;
+    goodbye;
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 3;
+    end;
+}
+
