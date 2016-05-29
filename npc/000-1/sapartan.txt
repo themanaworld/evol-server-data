@@ -90,6 +90,8 @@
     mesq l("You're welcome. If you can't remember something, just come back here!");
     next;
 
+    goodbye;
+
 OnInit:
     .sex = G_MALE;
     .distance = 2;
