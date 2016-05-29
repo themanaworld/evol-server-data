@@ -27,7 +27,7 @@
         setq ShipQuests_TreasureChest, 1;
         Zeny = Zeny + 100;
         getitem 514, 1;
-        npctalk3 l("You open the treasure chest.");
+        npctalk3 l("Chest opened.");
     }
 
     .dir = 6;
