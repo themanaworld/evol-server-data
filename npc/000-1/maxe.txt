@@ -6,7 +6,7 @@
 // Description:
 //    Friend of Sapartan, he gives some information on how to find Gulukan, Astapolos and Q-Muller.
 
-000-1,72,110,0	script	Max	NPC_DEMON_MAN_SITTING_UNDER_TREE,{
+000-1,72,110,0	script	Maxe	NPC_DEMON_MAN_SITTING_UNDER_TREE,{
     if (getq(General_Narrator) > 0)
     {
         sailortalk;

@@ -163,7 +163,7 @@ L_Location:
     if (.@r == 2) goto L_Lean;
 
     setcamnpc "Sapartan";
-    mesq l("Max and Sapartan for example?");
+    mesq l("Maxe and Sapartan for example?");
     next;
 
     restorecam;

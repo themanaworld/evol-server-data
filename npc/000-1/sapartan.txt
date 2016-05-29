@@ -3,15 +3,15 @@
 //    Hal9000
 //    Qwerty Dragon
 // Description:
-//    Friend of Max, he gives some information on combat system.
+//    Friend of Maxe, he gives some information on combat system.
 
 000-1,74,111,0	script	Sapartan	NPC_SAPARTAN,{
     mesn;
-    mesq l("Hey Max, it's @@!", strcharinfo(0));
+    mesq l("Hey Maxe, it's @@!", strcharinfo(0));
     next;
 
-    setcamnpc "Max";
-    mesn "Max";
+    setcamnpc "Maxe";
+    mesn "Maxe";
     mesq lg("@@? Welcome my dear!", "@@? Welcome my dear!", strcharinfo(0));
     next;
     mesq lg("Last time I saw you, you were lost at sea on your raft.");
@@ -36,9 +36,9 @@
     select
         l("What danger?! Where?!");
 
-    setcamnpc "Max";
+    setcamnpc "Maxe";
     mes "";
-    mesn "Max";
+    mesn "Maxe";
     mesq lg("Come on, Sap! You are scaring her with your stories.", "Come on, Sap! You are scaring him with your stories.");
     next;
     mesq lg("I'm sure she will soon be able to fight all of the creatures living here without any problem.", "I'm sure he will soon be able to fight all of the creatures living here without any problem.");
