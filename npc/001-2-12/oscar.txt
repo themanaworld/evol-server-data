@@ -2,9 +2,31 @@
 // Authors:
 //    Reid
 // Description:
-//    Dye seller, she sells and explain how works dye cards.
+//    Old man living in the rich hill, can bleach clothes.
 
 001-2-12,38,30,0	script	Oscar#001-2-12	NPC_OSCAR,{
+
+    .@hour = gettime(GETTIME_HOUR);
+    speech 4, (.@hour > 6 && .@hour < 18) ? l("Good day to you.") : lg("Good night milady.", "Good evening sir.");
+
+    do
+    {
+        menuint
+            l("Could you bleach my clothes?"), 1,
+            l(menuaction(l("Quit"))), 2;
+
+        switch (@menuret)
+        {
+            case 1:
+                speech 5, l("Oh my...");
+                break;
+            case 2:
+                speech 5, l("I wish you a good time in town.");
+                break;
+        }
+
+    } while (@menuret != 2);
+
     closedialog;
     goodbye;
     close;
