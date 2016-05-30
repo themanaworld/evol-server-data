@@ -36,6 +36,7 @@ function	script	doorTimer	{
 function	script	doorInit	{
     .distance = 5;
     .alwaysVisible = true;
+    .sex = G_OTHER;
     end;
 }
 
