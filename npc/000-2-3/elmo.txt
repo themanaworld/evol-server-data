@@ -6,61 +6,58 @@
 //    Elmo's second dialog.
 
 000-2-3,27,27,0	script	Elmo	NPC_ELMO,{
-    .@q = getq(ShipQuests_ArpanMoney);
-    if (.@q == 1) goto L_GotMoney;
+    function got_money {
+        speech 4,
+            l("Be patient a little while longer, in the next few days we will arrive at the port of Artis..."),
+            l("If you feel bored or like running around in circles, you may want to talk with the other sailors around here to get some tasks to do."),
+            l("From what I hear, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island."),
+            l("Other than that, I don't know much about what else is going on, so directly asking the Cap'tain about it could be a good idea.");
 
-    mesn;
-    mesq l("Hey you, sorry for leaving your room so quickly. I needed to speak with the captain about the food reserves. You know, now that we have a new mouth to feed, we need to check what we have.");
-    next;
-    mesq l("So, how is it going? Did you meet any other crew members yet?");
-    next;
+        goodbye;
+    }
 
-    menu
-        l("Yes, Arpan gave me these clothes."), L_OhGood,
-        l("No."), -;
+    if (getq(General_Narrator) > 0)
+    {
+        sailortalk;
+    }
 
-    mes "";
-    mesn;
-    mesq l("You should go see them.");
-    next;
-    mesq l("You still got a few days before we arrive at the port, maybe you can learn something from them?");
+    if (getq(ShipQuests_ArpanMoney) == 1)
+    {
+        got_money;
+    }
 
-    close;
+    speech 4,
+        l("Hey you, sorry for leaving your room so quickly. I needed to speak with the captain about the food reserves. You know, now that we have a new mouth to feed, we need to check what we have."),
+        l("So, how is it going? Did you meet any other crew members yet?");
 
-L_OhGood:
-    mes "";
-    mesn;
-    mesq l("Oh good! Did he give you your money back as well?");
-    next;
+    switch (select (l("Yes, Arpan gave me these clothes."), l("Not yet.")))
+    {
+        case 1:
+            speech 5,
+                l("Oh good! Did he give you your money back as well?");
 
-    menu
-        l("Yes he did."), L_OhHeDid,
-        l("He told me nothing about that."), -;
+            switch (select (l("Yes he did."), l("He told me nothing about that.")))
+            {
+                case 1:
+                    speech 5,
+                        l("Ok, be patient a little while longer, in the next few days we will arrive at the port of Artis...");
+                    break;
+                case 2:
+                    speech 5,
+                        l("Hehe, sometimes he gets his head in the clouds, You should go ask him about that.");
+                    break;
+            }
 
-    mes "";
-    mesn;
-    mesq l("Hehe, sometimes he gets his head in the clouds, You should go ask him about that.");
+            break;
+        case 2:
+            speech 5,
+                l("You should go see them."),
+                l("You still got a few days before we arrive at the port, maybe you can learn something from them?");
 
-    close;
+            break;
+    }
 
-L_OhHeDid:
-    mes "";
-    mesn;
-    mesq l("Ok, be patient a little while longer, in the next few days we will arrive at the port of Artis...");
-
-    close;
-
-L_GotMoney:
-    mesn;
-    mesq l("Be patient a little while longer, in the next few days we will arrive at the port of Artis...");
-    next;
-    mesq l("If you feel bored or like running around in circles, you may want to talk with the other sailors around here to get some tasks to do.");
-    next;
-    mesq l("From what I hear, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.");
-    next;
-    mesq l("Other than that, I don't know much about what else is going on, so directly asking the Cap'tain about it could be a good idea.");
-
-    close;
+    goodbye;
 
 OnInit:
     .sex = G_MALE;
