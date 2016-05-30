@@ -66,14 +66,16 @@
 
             if (verify_riddle_answer (.@answer$, "life"))
             {
+                speech 5,
+                    l("Oh..."),
+                    l("You seem more cultivated than you look.");
+
                 if (getq (ArtisQuests_Enora) == 7)
                 {
                     setq (ArtisQuests_Enora, 9);
+                    speech 12,
+                        l("Fine, take these potions, I will replenish them in the next couple hours anyway.");
                 }
-                speech 5,
-                    l("Oh..."),
-                    l("You seem more cultivated than you look."),
-                    l("Fine, take these potions, I will replenish them in the next couple hours anyway.");
 
                 break;
             }
