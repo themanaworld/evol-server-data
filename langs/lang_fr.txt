@@ -1586,6 +1586,9 @@ Cherry tree leaves no longer fall.
 Chest
 Coffre
 
+Chest opened.
+
+
 Chest#Artis
 
 
@@ -1707,6 +1710,9 @@ Could I ask you what your native language is? A sailor told me you're russian, b
 Puis-je te demander qu'elle est ta langue natale ? Un marin m'a dit que tu étais russe, mais un autre m'a dit que tu étais français... Je suis un peu perdue. Je t'inscris sur le registre du bord juste après ça.
 
 Could I lodge here for a while?
+
+
+Could you bleach my clothes?
 
 
 Could you bring it to him?
@@ -2468,7 +2474,13 @@ Good day mister.
 Good day sir.#1
 
 
+Good day to you.
+
+
 Good day, my friend, come closer, come closer!
+
+
+Good evening sir.#1
 
 
 Good job!
@@ -2481,6 +2493,9 @@ Good luck!
 
 
 Good luck! And remember to visit Peter and our little furry friends whenever you return back onboard!
+
+
+Good night milady.#0
 
 
 Good to hear from you!
@@ -2834,8 +2849,8 @@ Eh le Français!
 Hey Frenchy!#1
 Eh le Français!
 
-Hey Max, it's @@!
-Eh Max, c'est @@ !
+Hey Maxe, it's @@!
+
 
 Hey Silvio, it's your turn to carry the package, go!
 Eh Silvio, c'est à toi de porter le paquet, allez !
@@ -3611,6 +3626,9 @@ I wish I could remember something...
 I wish I helped your friends, because I'd really, really like a cookie.
 J'aurais bien aidé tes amis, parce que je voudrais vraiment, vraiment un cookie.
 
+I wish you a good time in town.
+
+
 I won't forget it, I swear on my precious plushrooms.
 
 
@@ -3854,7 +3872,7 @@ If you continue there will be none left!
 If you ever find the time, pass by Esperia, it's the capital city of the archipelagos!
 
 
-If you feel bored or anxious, you can always ask some of the people around the island if they need any help.. It's better than running around in circles
+If you feel bored or anxious, you can always ask some of the people around Artis if they need any help.. It's better than running around in circles
 
 
 If you feel bored or like running around in circles, you may want to talk with the other sailors around here to get some tasks to do.
@@ -4532,17 +4550,17 @@ Market Place
 Marriage failed.
 
 
-Max
-Max
-
 Max HP: %d (%d~%d)
 
 
 Max SP: %d (%d~%d)
 
 
-Max and Sapartan for example?
-Max et Sapartan par exemple ?
+Maxe
+
+
+Maxe and Sapartan for example?
+
 
 May this be a lesson for you.
 Que tu prennes ça comme une leçon.
@@ -5012,6 +5030,9 @@ Pas très bien en réalité... Je me sentirais mieux sur le bateau de Nard.
 Not to kill your dream, but... Julia is mine!#1
 
 
+Not yet.
+
+
 Not yet. I will be back soon.
 Pas encore. Je serais bientôt de retour.
 
@@ -5152,6 +5173,9 @@ Oh hey!
 
 Oh look, there's a piou behind you!
 Oh regarde, il y a un piou derrière toi !
+
+Oh my...
+
 
 Oh no, but I've noticed a weird light on the other edge of this island, I wonder what it can be...
 Oh non, mais j'ai remarqué une étrange lumière sur l'autre côté de l'île. Je me demande ce que ça peut bien être...
@@ -5392,6 +5416,9 @@ Or, do you want to keep your friendship and your adventure in different groups?
 
 Orc Voice
 Voix d'Orque
+
+Oscar#001-2-12
+
 
 Other Drop Rates: MvP %.2fx / Card-Based %.2fx / Treasure %.2fx
 
@@ -6174,6 +6201,57 @@ Short and curly
 
 
 Side strand
+
+
+Sign#001-1-s-alchemist
+
+
+Sign#001-1-s-blacksmith
+
+
+Sign#001-1-s-cityhall
+
+
+Sign#001-1-s-exit-l-dir
+
+
+Sign#001-1-s-hill
+
+
+Sign#001-1-s-inn
+
+
+Sign#001-1-s-innright
+
+
+Sign#001-1-s-legion
+
+
+Sign#001-1-s-legiondir
+
+
+Sign#001-1-s-legionright
+
+
+Sign#001-1-s-library
+
+
+Sign#001-1-s-lightarmor
+
+
+Sign#001-1-s-market
+
+
+Sign#001-1-s-marketdir
+
+
+Sign#001-1-s-marketright
+
+
+Sign#001-1-s-merchantg
+
+
+Sign#001-1-s-warehouse
 
 
 Silver Grey
@@ -8741,9 +8819,6 @@ You open a book named @@.
 You open the book, but it looks like the sea water and time damaged it severely. Some pages are not readable anymore. Some others are simply missing.
 Tu ouvres le livre, mais il semblerait que l'eau de mer l'ai endommagé sévèrement. Plusieurs pages ne sont plus lisibles. D'autres sont simplement manquantes.
 
-You open the treasure chest.
-Tu ouvres le coffre au trésor.
-
 You opened the @@ in two parts, but you crushed one of them.
 Tu as ouvert cette @@ en deux parties, mais tu as détruit l'une d'entre elles.
 
@@ -8816,7 +8891,7 @@ You seem pathetically weak. What is such boneless jelly like you doing around he
 You should arrive at a park with a hill nearby.
 
 
-You should ask Max. He's an early riser.
+You should ask Maxe. He's an early riser.
 
 
 You should check on the highest part of the cliff, I was hidding there.
@@ -8982,9 +9057,6 @@ You're currently not autolooting this item type.
 
 
 You're currently not autolooting this item.
-
-
-You're in my way.
 
 
 You're like the rest of this filthy crew, I can't trust you!
