@@ -6,6 +6,65 @@
 
 001-2-12,38,30,0	script	Oscar#001-2-12	NPC_OSCAR,{
 
+    function live_here_alone
+    {
+        speech 5,
+            l("Meh!"),
+            l("This is a harsh word to use, you are never alone in the beautiful place of Artis."),
+            l("Mob is doing its daily noise, nature is singing its sumptuous melody, none is alone.");
+
+        return;
+    }
+
+    function item_is_bleachable
+    {
+        return (@item == 1301 || @item == 1302);
+    }
+
+    function remove_cards_from_item
+    {
+        .@item = -1;
+
+        speech 5,
+            l("What item would you like to bleach?");
+
+        narrator 5,
+            l("You can drag and drop an item to the NPC window or select an item through your inventory.");
+
+        @item = requestitemindex();
+        if (!item_is_bleachable())
+        {
+            speech 4,
+                l("You should know this, an item like this can't be bleached.");
+
+            return;
+        }
+
+        speech 4,
+            l("Your mind is set? You will loose the color dye during this process.");
+
+        switch (askyesno())
+        {
+            case 1:
+                speech 5,
+                    l("Ok, let me see..."),
+                    l("...");
+
+                failedremovecardsindex @item, 1;
+
+                speech 12,
+                    l("..."),
+                    l("Here it is, clean like a whistle!");
+                break;
+            case 2:
+                speech 5,
+                    l("Is it truly a hard choice to make?");
+                break;
+        }
+
+        return;
+    }
+
     .@hour = gettime(GETTIME_HOUR);
     speech 4, (.@hour > 6 && .@hour < 18) ? l("Good day to you.") : lg("Good night milady.", "Good evening sir.");
 
@@ -13,19 +72,23 @@
     {
         menuint
             l("Could you bleach my clothes?"), 1,
-            l(menuaction(l("Quit"))), 2;
+            l("Do you live here alone?"), 2,
+            l(menuaction(l("Quit"))), 3;
 
         switch (@menuret)
         {
             case 1:
-                speech 5, l("Oh my...");
+                remove_cards_from_item();
                 break;
             case 2:
+                live_here_alone();
+                break;
+            case 3:
                 speech 5, l("I wish you a good time in town.");
                 break;
         }
 
-    } while (@menuret != 2);
+    } while (@menuret != 3);
 
     closedialog;
     goodbye;
