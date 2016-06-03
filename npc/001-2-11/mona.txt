@@ -3,12 +3,61 @@
 //    Reid
 // Description:
 //    A rich girl holding a candle.
+// Variable:
+//    ArtisQuests_MonaDad
+// Quest states:
+//    0  - Quest not started
+//    1  - Mona explained that her dad was missing
 
 001-2-11,39,30,0	script	Mona	NPC_MONA,{
 
-    speech
-        l("!");
+    function find_daddy_quest
+    {
+        speech 4,
+            l("Hey you!");
 
+        switch (select(l("Yes?"), l("Sorry, I have to go.")))
+        {
+            case 1:
+                mes "";
+                break;
+            case 2:
+                speech 5,
+                    l("No you don't have to go. I need your help, so you have to stay.");
+                break;
+        }
+
+        speech 12,
+            l("Daddy did not come back home... He said that he would be back for lunch but it has already been a week!"),
+            l("You have to find him, or else I will tell him that you did not help me.");
+
+        switch (select(l("You do not give me much options."), l("The elder ran away from you.")))
+        {
+            case 1:
+                speech 5,
+                    l("He said that he would check why the manhole next to the house was doing weird sounds."),
+                    l("But he never returned."),
+                    l("Please find daddy...");
+
+                setq ArtisQuests_MonaDad, 1;
+                break;
+            case 2:
+                speech 1,
+                    l("I will tell my dad!");
+                break;
+        }
+        emotion 4;
+        close;
+    }
+
+    if (getq(ArtisQuests_MonaDad) == 0)
+    {
+        find_daddy_quest();
+    }
+
+    npctalkonce l("Please find daddy...");
+
+    emotion 4;
     close;
 
 OnInit:
