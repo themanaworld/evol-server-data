@@ -18,20 +18,59 @@
 
     function item_is_bleachable
     {
-        return (@item == 1301 || @item == 1302);
+        getinventorylist;
+
+        if (@inventorylist_card1[@item_index] != 0)
+        {
+            if ((@inventorylist_card1[@item_index] > 5021) ||
+                (@inventorylist_card1[@item_index] < 5000))
+            {
+                return 0;
+            }
+            .@is_bleachable = 1;
+        }
+        if (@inventorylist_card2[@item_index] != 0)
+        {
+            if ((@inventorylist_card2[@item_index] > 5021) ||
+                (@inventorylist_card2[@item_index] < 5000))
+            {
+                return 0;
+            }
+            .@is_bleachable = 1;
+        }
+        if (@inventorylist_card3[@item_index] != 0)
+        {
+            if ((@inventorylist_card3[@item_index] > 5021) ||
+                (@inventorylist_card3[@item_index] < 5000))
+            {
+                return 0;
+            }
+            .@is_bleachable = 1;
+        }
+        if (@inventorylist_card4[@item_index] != 0)
+        {
+            if ((@inventorylist_card4[@item_index] > 5021) ||
+                (@inventorylist_card4[@item_index] < 5000))
+            {
+                return 0;
+            }
+            .@is_bleachable = 1;
+        }
+
+        return .@is_bleachable;
     }
 
     function remove_cards_from_item
     {
-        .@item = -1;
+        .@item_index = -1;
 
-        speech 5,
+        speech 4,
             l("What item would you like to bleach?");
 
         narrator 5,
             l("You can drag and drop an item to the NPC window or select an item through your inventory.");
 
-        @item = requestitemindex();
+        @item_index = requestitemindex();
         if (!item_is_bleachable())
         {
             speech 4,
@@ -50,7 +89,7 @@
                     l("Ok, let me see..."),
                     l("...");
 
-                failedremovecardsindex @item, 1;
+                failedremovecardsindex @item_index, 1;
 
                 speech 12,
                     l("..."),
