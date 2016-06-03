@@ -4,7 +4,7 @@
 // Description:
 //    Free save point.
 
-001-2-22,40,37,0	script	#savepoint0-001-2-22	NPC_SAVE_POINT,{
+001-2-38,25,41,0	script	#savepoint0-001-2-38	NPC_SAVE_POINT,{
     savepointparticle .map$, .x, .y, CURRENT_INN;
     close;
 
@@ -14,7 +14,7 @@ OnInit:
     end;
 }
 
-001-2-22,46,37,0	script	#savepoint1-001-2-22	NPC_SAVE_POINT,{
+001-2-38,35,41,0	script	#savepoint1-001-2-38	NPC_SAVE_POINT,{
     savepointparticle .map$, .x, .y, CURRENT_INN;
     close;
 
@@ -24,7 +24,7 @@ OnInit:
     end;
 }
 
-001-2-22,50,38,0	script	#savepoint2-001-2-22	NPC_SAVE_POINT,{
+001-2-38,25,46,0	script	#savepoint2-001-2-38	NPC_SAVE_POINT,{
     savepointparticle .map$, .x, .y, CURRENT_INN;
     close;
 
@@ -34,17 +34,7 @@ OnInit:
     end;
 }
 
-001-2-22,55,40,0	script	#savepoint3-001-2-22	NPC_SAVE_POINT,{
-    savepointparticle .map$, .x, .y, CURRENT_INN;
-    close;
-
-OnInit:
-    .distance = 2;
-    .sex = G_OTHER;
-    end;
-}
-
-001-2-22,53,38,0	script	#savepoint4-001-2-22	NPC_SAVE_POINT,{
+001-2-38,35,46,0	script	#savepoint3-001-2-38	NPC_SAVE_POINT,{
     savepointparticle .map$, .x, .y, CURRENT_INN;
     close;
 

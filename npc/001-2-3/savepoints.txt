@@ -1,0 +1,15 @@
+// Evol scripts.
+// Author:
+//    Reid
+// Description:
+//    Free save point.
+
+001-2-3,42,32,0	script	#savepoint0-001-2-3	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
