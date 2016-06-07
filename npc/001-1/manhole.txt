@@ -1,0 +1,40 @@
+// Evol scripts.
+// Authors:
+//    Reid
+// Description:
+//    A manhole near Mona's house.
+// Variable:
+//    ArtisQuests_MonaDad
+// Quest states:
+//    0  - Quest not started
+//    1  - Mona explained that her dad was missing
+
+001-1,152,52,0	script	#manhole1-001-1	NPC_NO_SPRITE,{
+
+    if (getq(ArtisQuests_MonaDad) == 1)
+    {
+        narrator l("You hear some creeping and crawling sounds from downstairs.");
+    }
+
+    close;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
+
+001-1,196,35,0	script	#manhole2-001-1	NPC_NO_SPRITE,{
+
+    if (getq(ArtisQuests_MonaDad) == 1)
+    {
+        narrator l("You hear some creeping and crawling sounds from downstairs.");
+    }
+
+    close;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
