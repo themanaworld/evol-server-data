@@ -5,8 +5,58 @@
 //    Librarian
 
 001-2-6,57,46,0	script	Christopher	NPC_CHRISTOPHER,{
-    speech 4,
-        l("Hi.");
+    function ghost_in_the_library
+    {
+        narrator 4,
+            l("Christopher is surrounded by the sunlight from the window.");
+
+        speech
+            l("To be a legend, you've either got to be dead or excessively old!"),
+            l("I think that I am now both..."),
+            l("I mean, I am very tired to move all of these books!");
+
+        return;
+    }
+
+    function need_help
+    {
+        speech 4,
+            l("Do you need help with something?");
+
+        switch (select(l("What kinds of books are there here?"),
+                       l("You seem a bit tired sir."),
+                       l("Nothing.")))
+        {
+            case 1:
+                speech 1, l("You can find novels and poems on this floor.");
+                break;
+            case 2:
+                mes "";
+                ghost_in_the_library();
+                break;
+            case 3:
+                speech 1, l("I love peace and quiet, that's a good choice.");
+        }
+        return;
+    }
+
+    function not_so_loud
+    {
+        speech l("This floor is reserved for quiet reading, don't speak too loud.");
+    }
+
+    switch (rand(3))
+    {
+        case 0:
+            ghost_in_the_library();
+            break;
+        case 1:
+            need_help();
+            break;
+        case 2:
+            not_so_loud();
+            break;
+    }
 
     close;
 
