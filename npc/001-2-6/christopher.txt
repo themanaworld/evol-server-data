@@ -28,21 +28,23 @@
                        l("Nothing.")))
         {
             case 1:
-                speech 1, l("You can find novels and poems on this floor.");
+                npctalk3 l("You can find novels and poems on this floor.");
                 break;
             case 2:
                 mes "";
                 ghost_in_the_library();
                 break;
             case 3:
-                speech 1, l("I love peace and quiet, that's a good choice.");
+                npctalk3 l("I love peace and quiet, that's a good choice.");
         }
         return;
     }
 
     function not_so_loud
     {
-        speech l("This floor is reserved for quiet reading, don't speak too loud.");
+        npctalkonce l("This floor is reserved for quiet reading, don't speak too loud.");
+
+        return;
     }
 
     switch (rand(3))
