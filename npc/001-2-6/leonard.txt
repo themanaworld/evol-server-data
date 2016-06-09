@@ -5,8 +5,80 @@
 //    Librarian
 
 001-2-6,52,28,0	script	Leonard	NPC_LEONARD,{
-    speech 4,
-        l("Hi.");
+
+    function esperia_city
+    {
+        speech 1,
+            l("You have put your finger on it, I am not."),
+            l("I grown up and lived a good while in the capital city, Esperia."),
+            l("This place is surrounded by two very important elements: academia and the arts. I was surrounded by theater, music, dance, museums..."),
+            l("I had a great childhood in Esperia!"),
+            l("It was wonderful.");
+
+        emotion 3;
+
+        return;
+    }
+
+    function need_help
+    {
+        speech 4,
+            l("Do you need help with something?");
+
+        switch (select(l("What kinds of books are there here?"),
+                       l("Are you a native from Artis?"),
+                       l("Nothing.")))
+        {
+            case 1:
+                closedialog;
+                npctalk3 l("You can find novels and poems on this floor.");
+                break;
+            case 2:
+                esperia_city();
+                break;
+            case 3:
+                closedialog;
+                npctalk3 l("Good day to you!");
+        }
+        return;
+    }
+
+    function not_so_loud
+    {
+        npctalkonce l("This floor is reserved for quiet reading, don't speak too loud.");
+
+        return;
+    }
+
+    function miracle
+    {
+        npctalkonce l("The miracle is this: the more we share the more we have.");
+
+        return;
+    }
+
+    function logic_wisdom
+    {
+        npctalkonce l("Logic is the beginning of wisdom, not the end.");
+
+        return;
+    }
+
+    switch (rand(4))
+    {
+        case 0:
+            logic_wisdom();
+            break;
+        case 1:
+            miracle();
+            break;
+        case 2:
+            not_so_loud();
+            break;
+        case 3:
+            need_help();
+            break;
+    }
 
     close;
 
