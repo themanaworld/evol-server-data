@@ -27,7 +27,7 @@ test,10,10,0	script	npc1	NPC_TEST1,3,3,{
     }
 
 L_Start:
-    switch (select("show area", "map", "pc", "change npc direction", "quest test", "cart", "items", "chat", "wall", "craft"))
+    switch (select("show area", "map", "pc", "change npc direction", "quest test", "cart", "items", "chat", "wall", "craft", "hashtable"))
     {
         case 1:
             areatest;
@@ -359,6 +359,94 @@ L_Start:
                         break;
                 }
             }
+            break;
+        case 11:
+            switch(select("Create new hashtable",
+                          "Use existing ID"))
+            {
+                case 1:
+                   .@ht = htnew();
+                   mes "ID = " + .@ht;
+                   break;
+                case 2:
+                   mes "Input ID";
+                   input .@ht;
+                   break;
+            }
+            .@defval = 0;
+            .@defval_str$ = "";
+            .@newval = 0;
+            .@newval_str$ = "";
+            .@key$ = "";
+
+            while(1)
+            {
+            switch (select("Set default string value",
+                           "Set default number value",
+                           "Get string",
+                           "Get number",
+                           "Put string",
+                           "Put number",
+                           "Show hashtable",
+                           "Clear hashtable",
+                           "Delete hashtable",
+                           "Exit"))
+            {
+                case 1:
+                    input .@defval_str$;
+                    break;
+                case 2:
+                    input .@defval;
+                    break;
+                case 3:
+                    mes "Input key:";
+                    input .@key$;
+                    mes "htget(" + .@ht + ", \"" + .@key$ + "\") = " + htget(.@ht, .@key$);
+                    mes "htget(" + .@ht + ", \"" + .@key$ + "\", \"" + .@defval_str$ + "\") = " + htget(.@ht, .@key$, .@defval_str$);
+                    break;
+                case 4:
+                    mes "Input key:";
+                    input .@key$;
+                    mes "htget(" + .@ht + ", \"" + .@key$ + "\") = " + htget(.@ht, .@key$);
+                    mes "htget(" + .@ht + ", \"" + .@key$ + "\", " + .@defval + ") = " + htget(.@ht, .@key$, .@defval);
+                    break;
+                case 5:
+                    mes "Input key:";
+                    input .@key$;
+                    mes "Input value:";
+                    input .@newval_str$;
+                    htput(.@ht, .@key$, .@newval_str$);
+                    mes "htput(" + .@ht + ", \"" + .@key$ + "\", \"" + .@newval_str$ + "\")";
+                    mes "htget(" + .@ht + ", \"" + .@key$ + "\") = " + htget(.@ht, .@key$);
+                    break;
+                case 6:
+                    mes "Input key:";
+                    input .@key$;
+                    mes "Input value:";
+                    input .@newval;
+                    htput(.@ht, .@key$, .@newval);
+                    mes "htput(" + .@ht + ", \"" + .@key$ + "\", " + .@newval + ")";
+                    mes "htget(" + .@ht + ", \"" + .@key$ + "\") = " + htget(.@ht, .@key$);
+                    break;
+                case 7:
+                    mes "size = " + htsize(.@ht);
+                    .@hti = htiterator(.@ht);
+                    for(.@key$ = htinextkey(.@hti); hticheck(.@hti); .@key$ = htinextkey(.@hti))
+                        mes "key = " + .@key$ + " value = " + htget(.@ht, .@key$);
+                    htidelete(.@hti);
+                    break;
+                case 8:
+                    htclear(.@ht);
+                    mes "htclear(" + .@ht + ")";
+                    break;
+                case 9:
+                    htdelete(.@ht);
+                    mes "htdelete(" + .@ht + ")";
+                    break;
+                case 10:
+                    goto L_Start;
+            } // switch
+            } // while
             break;
     }
 
