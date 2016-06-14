@@ -38,7 +38,7 @@
         .@tissue_type = select (l("Cotton"), l("Cashmere"));
 
         closedialog;
-        switch (.@shop == 1)
+        switch (.@tissue_type)
         {
             case 1:
                 shop "Cotton#Dye001-1";
