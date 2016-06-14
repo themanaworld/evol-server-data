@@ -135,7 +135,7 @@ function	script	marriageregister	{
         speech l("Ok I add your name... @@...", strcharinfo(0));
         marriageregisterself();
         next;
-        speech l("Now wait your partner, and talk with me again");
+        speech lg("Now wait for your partner, then talk to me again.");
         npctalk l("@@ registered for marriage. Waiting for partner...", strcharinfo(0));
         close;
     }

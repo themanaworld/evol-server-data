@@ -1,12 +1,13 @@
 // Evol scripts.
 // Authors:
+//    Alige
 //    Reid
 // Description:
 //    Artis's Legion of Aemil leader.
 
 001-2-39,34,41,0	script	Q'Anon	NPC_Q_ANON,{
     mesn;
-    mesq l("It's been a while boy.");
+    mesq lg("It's been a while, girl!", "It's been a while, boy!");
 
     goto L_Close;
 
