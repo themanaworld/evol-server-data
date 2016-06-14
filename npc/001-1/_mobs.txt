@@ -1,6 +1,5 @@
 // Map 001-1: Artis City
-// mapID,x,y,sizex,sizey	monster Name	ID,number,eAdeath,eAspawn,script
-
+// mapID,x,y,sizex,sizey	monster Name	mobID,number,eAdeath,eAspawn,script
 001-1,0,0,0,0	monster	Piou	1002,2,15000,60000
 001-1,0,0,0,0	monster	Piousse	1003,1,15000,150000
 001-1,174,34,23,30	monster	Fluffy	1022,6,18000,100000,Mobs#001-1::OnFluffyDeath
