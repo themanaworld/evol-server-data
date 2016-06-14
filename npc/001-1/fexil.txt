@@ -18,7 +18,7 @@
             l("You know, the life of merchant is hard. I really hope that Artis and the Merchant Guild will help me to succeed."),
             l("Maybe you too you could help me?"),
             l("I want to be the first merchant of this square to sell @@'s clothes!", getitemlink(729)),
-            l("I will buy all of the fur that you will bring me at a good price, let's say, 25E piece."),
+            l("I will buy all of the fur that you will bring me at a good price, let's say, 15E piece."),
             l("Do we have a deal?");
 
         switch (select (l("Ok."), l("I don't want to be part of this joke.")))
@@ -117,7 +117,7 @@
                 break;
             } while (1);
 
-            .@price = 25 * .@amount;
+            .@price = 15 * .@amount;
             speech 5,
                 l("Deal, I offer you @@E!", .@price);
 
