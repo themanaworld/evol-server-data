@@ -268,6 +268,42 @@ L_Found:
     return 0;
 }
 
+// wrapper function for npcwalkto. It can accept 4 parameters.
+// If #3 and #4 params are set, the walkto location is chosen
+//   from rectangle (x1,y1,x2,y2).
+// It sets the npc variables .move_target_x, .move_target_y
+//   that are used to resume NPC walking
+// Returns 1 if walking is possible, 0 otherwise;
+function	script	mg_npcwalkto	{
+    if (getargcount() < 2)
+    {
+        debugmes "usage: mg_npcwalkto(x1,y1[,x2,y2])";
+        return -1;
+    }
+
+    .@x = getarg(0);
+    .@y = getarg(1);
+    .@x2 = getarg(2);
+    .@y2 = getarg(3);
+
+    if (getargcount() >= 4 && .@x2 > 0 && .@y2 > 0)
+        if (!getrandompoint(.@x, .@y, .@x2, .@y2))
+        {
+            .@x = getvariableofnpc(.move__rand_x, strnpcinfo(3));
+            .@y = getvariableofnpc(.move__rand_y, strnpcinfo(3));
+        }
+        else
+            return 0;
+
+    if (npcwalkto(.@x, .@y))
+    {
+        set getvariableofnpc(.move_target_x, strnpcinfo(3)), .@x;
+        set getvariableofnpc(.move_target_y, strnpcinfo(3)), .@y;
+        return 1;
+    }
+    return 0;
+}
+
 function	script	movetonextpoint	{
     .@wait = getvariableofnpc(.waitticks, strnpcinfo(3));
     if (.@wait > 0)
@@ -281,6 +317,7 @@ function	script	movetonextpoint	{
     while (.@nextcmd$ != "moveon")
     {
         .@nextcmd$ = getnextmovecmd();
+        npcdebug "    " + .@nextcmd$;
         if (execmovecmd(.@nextcmd$))
             return;
     }
@@ -312,10 +349,13 @@ function	script	movetonextpoint	{
 
     if (!.@weight_sum)
     {
-        npcdebug "error: cannot pick next walk point. flags=" + getvariableofnpc(.mg_flags, strnpcinfo(3));
+        npcdebug("error: cannot pick next walk point. flags=" +
+	         getvariableofnpc(.mg_flags, strnpcinfo(3)));
         return;
     }
 
+    .@pick_tries = 0;
+L_TryPick:
     // pick a random number based on weight_sum
     .@rnd = rand(.@weight_sum);
     .@k = -1; .@weight_sum = 0;
@@ -330,26 +370,40 @@ function	script	movetonextpoint	{
     .@next_y1 = getvariableofnpc(.movepos_y1[.@next_idx], strnpcinfo(3));
     .@next_x2 = getvariableofnpc(.movepos_x2[.@next_idx], strnpcinfo(3));
     .@next_y2 = getvariableofnpc(.movepos_y2[.@next_idx], strnpcinfo(3));
-    .@nextcmd$ = getvariableofnpc(.movegraphcmd$[.@pos * .@size + .@next_idx], strnpcinfo(3));
-    set getvariableofnpc(.nextcmd$, strnpcinfo(3)), .@nextcmd$;
-    set getvariableofnpc(.movepos, strnpcinfo(3)), .@next_idx;
-    if (.@next_x2 > 0 && .@next_y2 > 0)
+
+    if (!mg_npcwalkto(.@next_x1, .@next_y1, .@next_x2, .@next_y2))
     {
-        if (!getrandompoint(.@next_x1, .@next_y1, .@next_x2, .@next_y2))
+        if (.@pick_tries < 10)
         {
-            .@next_x1 = getvariableofnpc(.move__rand_x, strnpcinfo(3));
-            .@next_y1 = getvariableofnpc(.move__rand_y, strnpcinfo(3));
+            .@pick_tries++;
+            goto L_TryPick;
         }
+
+        // move to a nearby position
+        .@x1 = getvariableofnpc(.movepos_x1[.@pos], strnpcinfo(3));
+        .@y1 = getvariableofnpc(.movepos_y1[.@pos], strnpcinfo(3));
+        .@x2 = getvariableofnpc(.movepos_x2[.@pos], strnpcinfo(3));
+        .@y2 = getvariableofnpc(.movepos_y2[.@pos], strnpcinfo(3));
+        mg_npcwalkto(.@x1, .@y1, .@x2, .@y2);
+        set getvariableofnpc(.nextcmd$, strnpcinfo(3)), "wait 1";
+
+        return;
     }
+
     if (getvariableofnpc(.debug, strnpcinfo(3)))
     {
         getmapxy(.@map$, .@cx, .@cy, 1);
         .@dist = distance(.@cx, .@cy, .@next_x1, .@next_y1);
-        npcdebug "moving to " + getvariableofnpc(.movegraphlabels$[.@next_idx], strnpcinfo(3)) + " ("+.@next_x1 + "," + .@next_y1 + ") [distance=" + .@dist + "] flags=" + getvariableofnpc(.mg_flags, strnpcinfo(3));
+        npcdebug("moving to " + getvariableofnpc(.movegraphlabels$[.@next_idx], strnpcinfo(3)) +
+                 " ("+ getvariableofnpc(.move_target_x, strnpcinfo(3)) +
+                 "," + getvariableofnpc(.move_target_y, strnpcinfo(3)) +
+                 ") [distance=" + .@dist +
+                 "] flags=" + getvariableofnpc(.mg_flags, strnpcinfo(3)));
     }
-    set getvariableofnpc(.move_target_x, strnpcinfo(3)), .@next_x1;
-    set getvariableofnpc(.move_target_y, strnpcinfo(3)), .@next_y1;
-    npcwalkto .@next_x1, .@next_y1;
+
+    .@nextcmd$ = getvariableofnpc(.movegraphcmd$[.@pos * .@size + .@next_idx], strnpcinfo(3));
+    set getvariableofnpc(.nextcmd$, strnpcinfo(3)), .@nextcmd$;
+    set getvariableofnpc(.movepos, strnpcinfo(3)), .@next_idx;
     return;
 }
 
