@@ -40,7 +40,7 @@
         l("I think that we will stay in port for a great time, though, if you want to visit some nearby we could take you there."),
         l("Do you want to go somewhere?");
 
-    switch (select(l("Lost Island."),
+    switch (select(l("Drasil Island."),
                    l("Nowhere, I'm fine here.")))
     {
         case 1:

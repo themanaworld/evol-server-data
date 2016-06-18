@@ -129,7 +129,7 @@ L_OhWell:
 
 L_Story:
     mes "";
-    mesq lg("You were yaying sleeping for quite some time there, our shipkeeper, Julia, was here with you, she did her best to heal your injuries.");
+    mesq lg("You were yaying sleeping for quite some time there. Our shipkeeper, Julia, was here with you, and she did her best to heal your injuries.");
     next;
     if (.@q_julia == 0) setq ShipQuests_Julia, 1;
     mesq lg("Yaya, you should go see her! She'll be happy to see you.");

@@ -73,6 +73,7 @@ L_Menu:
 L_MenuQuest:
     menu
         l("What do you need?"), -,
+        l("Wait, you never came here before?"), L_DrasilIsland,
         l("Is there a reward?"), L_NeedHead;
 
     mes "";
@@ -87,10 +88,12 @@ L_MenuQuest:
 L_NeedHead:
     mes "";
     mesn;
+    mesq l("Of course there is a reward for your task.");
+    next;
+    mesq l("Hard work always pays off!");
+    next;
 
 L_NeedContent:
-    mesq l("Sure, there is a reward for your task.");
-    next;
     mesq l("Our crew is like a family, and if you agree to help us, I would like to invite you to join our family!");
     next;
     mesq l("What? It's not a good reward?");
@@ -136,6 +139,22 @@ L_SpecialTask:
     next;
 
     goto L_MenuQuest;
+
+LDrasilIsland:
+    mes "";
+    mesn;
+    mesq l("To be honest, no, never.");
+    next;
+    mesq l("But discovering new territories is probably the best thing that can happen to sailors, don't you think?");
+    next;
+    mesq l("I'm really excited, this place reminds me of an ancient mythical tree, you might know what I'm talking about...");
+    next;
+    mesq l("As captain of this ship, I officially name this newly discovered land the ##BDrasil Island##b!");
+    next;
+    mesq l("Now, lets get back to business.");
+    next;
+
+    goto L_NeedContent;
 
 L_NotYet:
     mesn;

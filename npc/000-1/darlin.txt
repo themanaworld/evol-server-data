@@ -119,7 +119,7 @@ L_GoDown:
     if (.@q > 0) goto L_DangerAround;
 
     setcamnpc;
-    mesq l("Oh no, but I've noticed a weird light on the other edge of this island, I wonder what it can be...");
+    mesq l("Oh no, but I've noticed a weird light on the other part of this island, I wonder what it could be...");
     next;
     restorecam;
 

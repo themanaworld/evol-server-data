@@ -23,11 +23,11 @@ OnTalk:
     next;
 
     mesn "Magic Arpan";
-    mesq lg("Maybe she was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Legion of Aemil!", "Maybe he was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Legion of Aemil!");
+    mesq lg("Maybe she was one of those who got lost last month. She could be the yoiis from Esperia who got a secret quest from the Legion of Aemil!", "Maybe he was one of those who got lost last month? He could be the yoiis from Esperia who got a secret quest from the Legion of Aemil!");
     next;
 
     mesn "Elmo";
-    mesq l("This makes sense. Do you think we should inform the capt'n about it?");
+    mesq l("Makes sense. Do you think we should inform the capt'n about it?");
     next;
 
     mesn "Magic Arpan";
@@ -35,7 +35,7 @@ OnTalk:
     next;
 
     mesn "Elmo";
-    mesq lg("Alright, I'm going to her room, keep an eye on her, we still don't know if she's a friend or a foe...", "Alright, I'm going to his room, keep an eye on him, we still don't know if he's a friend or a foe...");
+    mesq lg("Alright, I'm going to his room, keep an eye on her, we still don't know if she's friend or foe...", "Alright, I'm going to his room, keep an eye on him, we still don't know if he's friend or foe...");
     next;
 
     mesn "Magic Arpan";
@@ -43,7 +43,7 @@ OnTalk:
     next;
 
     mesn "Elmo";
-    mesq lg("Oh, and give her some clothes, the poor girl, the ones she had were in even worse condition than the ones we have!", "Oh, and give him some clothes, the poor guy, the ones he had were in even worse condition than the ones we have!");
+    mesq lg("Oh, and give her some clothes, the poor girl, the ones she had were in an even worse condition than the ones we have.", "Oh, and give him some clothes, the poor guy, the ones he had were in an even worse condition than the ones we have.");
     next;
 
     mesn "Magic Arpan";

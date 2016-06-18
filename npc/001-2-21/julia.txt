@@ -23,7 +23,7 @@ L_Menu:
         rif(getskilllv(1) != 9, l("Something is wrong with me, I can't smile nor sit.")), L_BasicSkill,
         rif (.@enora == 0, l("Where should I go?")), L_Enora,
         lg("I made a mistake, I would like to change my language."), L_ChooseLang,
-        l("Is it possible to go back to the island?"), L_Island,
+        l("Is it possible to go back to Drasil Island?"), L_Island,
         l("Could you explain to me where I am?"), L_WhereIam,
         l("What happened to me?"), L_What,
         l("Can I read the rules again?"), L_Rules,

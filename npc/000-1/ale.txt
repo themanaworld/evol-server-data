@@ -90,7 +90,7 @@ L_Jalad:
 L_Plushroom:
     mes "";
     mesn;
-    mesq l("'That', as you call it, is a @@. There are plenty of 'em on this island!", getitemlink(515));
+    mesq l("'That', as you call it, is a @@. There are plenty of 'em here!", getitemlink(515));
     next;
     mesq l("It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?", getitemlink(515));
     next;
