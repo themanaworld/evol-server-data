@@ -9,10 +9,18 @@
 
 001-1,86,66,0	script	Carmie#001-1	NPC_RAIJIN_FEMALE_LEGION_ARTIS,{
 
-    .@rand = rand(3);
+    .@rand = rand(11);
     if (.@rand == 0) npctalk3 l("I'm a little busy right now.");
     else if (.@rand == 1) npctalk3 l("Not in the mood to chat.");
-    else npctalk3 l("Please move out of my way.");
+    else if (.@rand == 2) npctalk3 l("Move kid.");
+    else if (.@rand == 3) npctalk3 l("Don't distract me, I have to stay alert.");
+    else if (.@rand == 4) npctalk3 l("Give me some space.");
+    else if (.@rand == 5) npctalk3 l("Can you please go away?");
+    else if (.@rand == 6) npctalk3 l("Can't talk right now, i'm on patrol duty.");
+    else if (.@rand == 7) npctalk3 l("What you looking at?!");
+    else if (.@rand == 8) npctalk3 l("I can't stay here and talk all day. I have a job to do.");
+    else if (.@rand == 9) npctalk3 lg("Keep moving girl.", "Keep moving boy.");
+    else npctalk3 l("Out of my way.");
 
     close;
 
