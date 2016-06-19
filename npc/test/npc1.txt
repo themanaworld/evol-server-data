@@ -27,7 +27,7 @@ test,10,10,0	script	npc1	NPC_TEST1,3,3,{
     }
 
 L_Start:
-    switch (select("show area", "map", "pc", "change npc direction", "quest test", "cart", "items", "chat", "wall", "craft", "hashtable"))
+    switch (select("show area", "map", "pc", "change npc direction", "quest test", "cart", "items", "chat", "wall", "craft", "hashtable", "instance"))
     {
         case 1:
             areatest;
@@ -448,6 +448,72 @@ L_Start:
             } // switch
             } // while
             break;
+        case 12:
+            while(1)
+            {
+                switch (select("create", "warp", "info", "warp back", "delete", "back"))
+                {
+                    case 1:
+                        if (.instid >= 0)
+                        {
+                            mes "Error: test instance already created";
+                            break;
+                        }
+//                        .instid = instance_create("test@instance", 0, 0);
+                        .instid = instance_create("test@instance", getcharid(3), IOT_CHAR);
+                        if (.instid < 0)
+                        {
+                            mes "Error: creating instance";
+                            break;
+                        }
+                        mes "new instance id: " + str(.instid);
+//                        .@instanceMapName$ = instance_attachmap("test", .instid, 1, "test@map1");
+//                        .@instanceMapName$ = instance_attachmap("test", .instid, 1);
+                        .@instanceMapName$ = instance_attachmap("test", .instid, 0, "test@map1");
+                        if (.@instanceMapName$ == "")
+                        {
+                            mes "Error: instance attach map error";
+                            break;
+                        }
+                        mes "Attached instance map name: " + .@instanceMapName$;
+                        instance_set_timeout(1000000, 1000000, .instid);
+                        instance_init(.instid);
+                        break;
+                    case 2:
+                        warp "test@map1", 12, 12;
+                        break;
+                    case 3:
+                        mes "npc name: " + .name$;
+                        mes "npc ext name: " + .extname$;
+                        mes "npc id: " + .id;
+                        mes "npc parent id: " + .parent;
+                        mes "npc src id: " + .srcId;
+                        if (instance_id() >= 0)
+                        {
+                            mes "npc1 in instance named: " + instance_npcname("npc1");
+                        }
+                        else
+                        {
+                            mes "npc1 not in instance";
+                        }
+                        break;
+                    case 4:
+                        warp "test", 12, 12;
+                        break;
+                    case 5:
+                        if (.instid < 0)
+                        {
+                            mes "Error: test instance was not created";
+                            break;
+                        }
+                        instance_destroy(.instid);
+                        break;
+                    case 6:
+                        goto L_Start;
+                        break;
+                }
+            }
+            break;
     }
 
     close;
@@ -466,6 +532,12 @@ OnInit:
     .distance = 5;
     .alwaysVisible = true;
     waitingroom "test room", 2, "npc1::OnReadyCheck", 1;
+    // test instance id
+    .instid = -10;
+    if (.parent != 0)
+    {
+        setnpcdir 0;
+    }
     end;
 
 OnWhisperGlobal:
