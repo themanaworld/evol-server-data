@@ -1,11 +1,19 @@
 // Evol scripts.
-// Author:
+// Authors:
+//    Alige
 //    Reid
 // Description:
 //    Carmie, walking NPC of the legion of Aemil on the center part of Artis.
+// Variables:
+//    .@rand = Random number of sentences.
 
 001-1,86,66,0	script	Carmie#001-1	NPC_RAIJIN_FEMALE_LEGION_ARTIS,{
-    npctalk3 l("I'm a little busy right now; not in the mood to chat.");
+
+    .@rand = rand(3);
+    if (.@rand == 0) npctalk3 l("I'm a little busy right now.");
+    else if (.@rand == 1) npctalk3 l("Not in the mood to chat.");
+    else npctalk3 l("Please move out of my way.");
+
     close;
 
 OnTimer1000:
