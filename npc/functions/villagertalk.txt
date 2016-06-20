@@ -30,7 +30,7 @@ function	script	villagertalk	{
         return;
     }
 
-    switch (rand(3))
+    switch (rand(4))
     {
         case 0:
             darn_or_smile();

@@ -6,7 +6,7 @@
 
 function	script	hello	{
 
-    switch (rand(2))
+    switch (rand(3))
     {
         case 0:
             npctalk3 l("Heya!");
