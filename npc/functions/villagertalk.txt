@@ -2,24 +2,20 @@
 // Authors:
 //    Reid
 //    Qwerty Dragon
-// Contributors:
 //    Akko Teru
 // Description:
 //    Tell a random sentence. || There ought to be a law!
-// Variables:
-//    .@rand = Random number between the number of sentence choice.
-//    .@darn = Separatly chosen value for silly antics.
 
 function	script	villagertalk	{
 
-    .@rand = rand(5);
-    .@darn = rand(42);
-    if (.@rand == 0)
+    function darn_or_smile
     {
+        .@darn = rand(42);
+
         if (.@darn < 26)
         {
             emotion 103; // ^.^
-            goodbye;
+            hello;
         }
         else if (.@darn > 26)
         {
@@ -30,30 +26,39 @@ function	script	villagertalk	{
         {
             npctalk3 l("Stop it!");
         }
+
+        return;
     }
-    else if (.@rand == 1)
+
+    switch (rand(4))
     {
-        speech 4,
-            l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?"),
-            l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."),
-            l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
-    }
-    else if (.@rand == 2)
-    {
-        npctalk3 l("It is a sunny day, don't you think?");
-    }
-    else if (.@rand == 3)
-    {
-        npctalk3 l("Go fly a kite.");
-    }
-    else if ((.@rand == 4) && (.@darn == 2))
-    {
-        npctalk3 l("I just want to live my life in peace.");
-    }
-    else if (.@rand == 4)
-    {
-        npctalk3 l("It's difficult to distinguish good villagers from bad ones; keep your guard up, and stay away from me.");
-        emotion 6;
+        case 0:
+            debugmes "0";
+            darn_or_smile();
+            break;
+        case 1:
+            debugmes "1";
+            speech 4,
+                l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?"),
+                l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."),
+                l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
+            break;
+        case 2:
+            debugmes "2";
+            npctalk3 l("It is a sunny day, don't you think?");
+            break;
+        case 3:
+            debugmes "3";
+            npctalk3 l("Go fly a kite.");
+            break;
+        case 4:
+            debugmes "4";
+            npctalk3 l("I just want to live my life in peace.");
+            break;
+        default:
+            debugmes "def";
+            emotion 3;
+            break;
     }
 
     return;
