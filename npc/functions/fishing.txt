@@ -6,6 +6,18 @@
 
 function	script	fishing	{
 
+    if (countitem(FishingRod) < 1)
+    {
+        narrator
+            l("You don't have a @@.", getitemlink(FishingRod));
+        return -1;
+    }
+    if (Fishing_Tick > gettimetick(2) - 20)
+    {
+        closedialog;
+        return -3;
+    }
+
     .@wait_time_min = 8000;
     .@wait_time_max = 35000;
     .@pull_rand_max = 800;
@@ -17,12 +29,6 @@ function	script	fishing	{
     setarray .@bait_ids[0], SmallTentacles, Bread, Aquada,
                             UrchinMeat, TortugaTongue,
                             Tentacles;
-    if (countitem(FishingRod) < 1)
-    {
-        narrator
-            l("You don't have a @@.", getitemlink(FishingRod));
-        return -1;
-    }
 
 L_ChooseBait:
     .@curr_wait_times = 0;
@@ -60,6 +66,7 @@ L_ChooseBait:
         return 0;
     }
 
+    Fishing_Tick = gettimetick(2);
     .@bait = .@user_items[.@idx - 1];
     delitem .@bait, 1;
 
@@ -72,6 +79,7 @@ L_Wait:
 
     sleep2 rand(.@wait_time_min, .@wait_time_max);
     .@tick = gettimetick(0);
+    Fishing_Tick = 0;
 
     getmapxy (.@mapbis$, .@xbis, .@ybis, 0);
     if (.@xbis != .@x || .@ybis != .@y || !compare (.@map$, .@mapbis$))
