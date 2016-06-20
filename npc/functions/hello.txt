@@ -1,0 +1,23 @@
+// Evol functions.
+// Authors:
+//    Reid
+// Description:
+//    Tell a random greeting sentence.
+
+function	script	hello	{
+
+    switch (rand(2))
+    {
+        case 0:
+            npctalk3 l("Heya!");
+            break;
+        case 1:
+            npctalk3 l("Hi.");
+            break;
+        case 2:
+            npctalk3 l("Nice day to you.");
+            break;
+    }
+
+    return;
+}
