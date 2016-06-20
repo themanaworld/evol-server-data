@@ -1,0 +1,58 @@
+// Evol functions.
+// Authors:
+//    Reid
+//    Qwerty Dragon
+//    Akko Teru
+// Description:
+//    Tell a random sentence. || There ought to be a law!
+
+function	script	legiontalk	{
+
+    switch (rand(13))
+    {
+        case 0:
+            speech 4,
+                l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?"),
+                l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."),
+                l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
+            break;
+        case 1:
+            npctalk3 l("I'm a little busy right now.");
+            break;
+        case 2:
+            npctalk3 l("Not in the mood to chat.");
+            break;
+        case 3:
+            npctalk3 l("Move kid.");
+            break;
+        case 4:
+            npctalk3 l("Don't distract me, I have to stay alert.");
+            break;
+        case 5:
+            npctalk3 l("Give me some space.");
+            break;
+        case 6:
+            npctalk3 l("Can you please go away?");
+            break;
+        case 7:
+            npctalk3 l("Can't talk right now, i'm on patrol duty.");
+            break;
+        case 8:
+            npctalk3 l("What you looking at?!");
+            break;
+        case 9:
+            npctalk3 l("I can't stay here and talk all day. I have a job to do.");
+            break;
+        case 10:
+            npctalk3 lg("Keep moving girl.", "Keep moving boy.");
+            break;
+        case 11:
+            npctalk3 l("Out of my way.");
+            break;
+        case 12:
+            emotion 111;
+            break;
+    }
+
+    return;
+}
