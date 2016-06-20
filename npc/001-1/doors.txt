@@ -511,8 +511,10 @@ OnTouch:
     .@enora = getq(ArtisQuests_Enora);
     if (.@enora <= 11)
     {
+        setfakecells 57, 41, 1;
         end;
     }
+    setfakecells 57, 41, 0;
     doorTouch;
 
 OnUnTouch:
