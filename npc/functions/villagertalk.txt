@@ -30,33 +30,21 @@ function	script	villagertalk	{
         return;
     }
 
-    switch (rand(4))
+    switch (rand(3))
     {
         case 0:
-            debugmes "0";
             darn_or_smile();
             break;
         case 1:
-            debugmes "1";
-            speech 4,
-                l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?"),
-                l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."),
-                l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
-            break;
-        case 2:
-            debugmes "2";
             npctalk3 l("It is a sunny day, don't you think?");
             break;
-        case 3:
-            debugmes "3";
+        case 2:
             npctalk3 l("Go fly a kite.");
             break;
-        case 4:
-            debugmes "4";
+        case 3:
             npctalk3 l("I just want to live my life in peace.");
             break;
         default:
-            debugmes "def";
             emotion 3;
             break;
     }
