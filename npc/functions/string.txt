@@ -1,0 +1,66 @@
+// safe string manipulation functions
+// ** does not require PCRE
+
+
+// startswith( "string", "search" )
+//
+// returns true if "string" begins with "search"
+function	script	startswith	{
+    return substr(getarg(0), 0, getstrlen(getarg(1)) - 1) == getarg(1);
+}
+
+// endswith( "string", "search" )
+//
+// returns true if "string" ends with "search"
+function	script	endswith	{
+    .@t = getstrlen(getarg(0)); // total length
+    .@n = getstrlen(getarg(1)); // substring length
+    return substr(getarg(0), .@t - .@n, .@t - 1) == getarg(1);
+}
+
+// capitalize( "string" )
+//
+// returns "string" with its first letter capitalized
+function	script	capitalize	{
+    .@original$ = charat(getarg(0), 0);
+    return setchar(getarg(0), strtoupper(.@original$), 0);
+}
+
+// titlecase( "string" [, "delimiter" [, camel]] )
+//
+// returns "string" with the first letter of each word capitalized
+// if camel is true, the string is joined in a camelCase fashion
+function	script	titlecase	{
+    .@delimiter$ = getarg(1, " ");
+    .@c = getarg(2, 0);
+    explode(.@words$, getarg(0), .@delimiter$);
+
+    for (.@i = (.@c ? 1 : 0); .@i < 255; ++.@i)
+    {
+        if (.@words$[.@i] == "")
+        {
+            break;
+        }
+
+        .@original$ = charat(.@words$[.@i], 0);
+        .@words$[.@i] = setchar(.@words$[.@i], strtoupper(.@original$), 0);
+    }
+
+    return implode(.@words$, (.@c ? "" : .@delimiter$));
+}
+
+// zfill( "string" [, width [, "padding"]] )
+//
+// returns "string" padded to the left with "padding" up to width
+function	script	zfill	{
+    .@str$ = getarg(0);
+    .@width = getarg(1, 8);
+    .@padding$ = getarg(2, "0");
+
+    for (.@s = getstrlen(.@str$); .@s < .@width; ++.@s)
+    {
+        .@str$ = .@padding$ + .@str$;
+    }
+
+    return .@str$;
+}

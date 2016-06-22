@@ -1,0 +1,90 @@
+// @esp atcommand
+// changes the number of Esperin
+//
+// group lv: 3
+// group char lv: 99
+// log: True
+//
+// usage:
+//    @esp <delta>
+//    #esp "char" <delta>
+//
+// example:
+//    @esp +5
+//    @esp -5
+//    @esp +++
+
+-	script	@esp	32767,{
+    end;
+
+OnCall:
+    .@delta$ = .@atcmd_parameters$[0];
+
+    if (startswith(.@delta$, "--"))
+    {
+        Zeny = 0;
+        if (.@delta$ == "---")
+        {
+            #MerchantBank = 0;
+        }
+    }
+    else if (startswith(.@delta$, "++"))
+    {
+        Zeny = 0x7FFFFFFE;
+        if (.@delta$ == "+++")
+        {
+            #MerchantBank = 0x7FFFFFFF;
+        }
+    }
+    else
+    {
+        .@d = atoi(.@delta$);
+        if (.@d < 0)
+        {
+            .@a = Zeny + .@d; // The amount of zeny remaining after
+            if (.@a < 0) // If we can't remove that much zeny, try removing from bank too
+            {
+                Zeny = 0;
+                .@b = #MerchantBank + .@a; // amount remaining in bank after
+                if (.@b < 0)
+                {
+                    #MerchantBank = 0;
+                }
+                else
+                {
+                    #MerchantBank += .@a;
+                }
+            }
+            else // We can remove that much zeny
+            {
+                Zeny += .@d;
+            }
+        }
+        else
+        {
+            .@a = Zeny + .@d; // The amount of zeny after
+            if (.@a < 0 || .@a >= 0x7FFFFFFE) // If we can't add that much zeny, try adding to bank
+            {
+                .@c = .@d - (.@a - Zeny); // the amount to put in bank
+                Zeny = 0x7FFFFFFE;
+                .@b = #MerchantBank + .@c; // amout in bank after
+                if (.@b < 0 || .@b == 0x7FFFFFFF)
+                {
+                    #MerchantBank = 0x7FFFFFFF;
+                }
+                else
+                {
+                    #MerchantBank += .@c;
+                }
+            }
+            else // We can add that much zeny
+            {
+                Zeny += .@d;
+            }
+        }
+    }
+    end;
+
+OnInit:
+    bindatcmd "esp", "@esp::OnCall", 3, 99, 1;
+}

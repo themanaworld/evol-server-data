@@ -1,0 +1,46 @@
+// @music atcommand
+// changes the music for all players on the map
+//
+// group lv: 2
+// group char lv: 99
+// log: True
+//
+// usage:
+//    @music <short name>
+//
+// example:
+//    @music fun
+
+-	script	@music	32767,{
+    end;
+
+OnCall:
+    // TODO: tmw-like argv splitter
+    getmapxy .@map$, .@void, .@void, UNITTYPE_PC; // get map
+
+    .@key$ = .@atcmd_parameters$[0];
+    .@m$ = htget(.hash, .@key$, "Not found");
+
+    if (.@m$ == "Not found")
+    {
+        .@m$ = implode(.@atcmd_parameters$[0], " ");
+    }
+
+    changemusic .@map$, .@m$ + ".ogg";
+    end;
+
+OnInit:
+    if (.hash)
+    {
+        htdelete(.hash); // delete it on Live-Reload (@reloadscripts)
+    }
+
+    bindatcmd "music", "@music::OnCall", 2, 99, 1;
+
+    .hash = htnew; // create hashtable
+    htput(.hash, "forest",     "bartk - in the forest of the birches");
+    htput(.hash, "adventure",  "bartk - the adventure begins");
+    htput(.hash, "fun",        "eric matyas - ghoulish fun");
+    htput(.hash, "surreal",    "eric matyas - surreal place");
+    htput(.hash, "ocean",      "ezili - ocean sounds");
+}

@@ -1,0 +1,231 @@
+// @w atcommand
+// warps using anchors or map name
+//
+// group lv: 1
+// group char lv: 2
+// log: True
+//
+// usage:
+//    @w <map or anchor> [, x [, y]]
+//    #w "char" <map or anchor> [, x [, y]]
+//
+// example:
+//    @w artis
+//    #w "char" artis
+
+-	script	@w	32767,{
+    end;
+
+OnCall:
+    .@m$ = strtoupper(.@atcmd_parameters$[0]); // sanitize
+
+    // ------------------------------------
+    // ARTIS
+    if (startswith(.@m$, "ART"))
+    {
+        .@map$ = "001-1";
+        .@x = 89;
+        .@y = 86;
+    }
+
+    else if (startswith(.@m$, "LIGHT"))
+    {
+        .@map$ = "001-2-0";
+        .@x = 37;
+        .@y = 32;
+    }
+
+    else if (.@m$ == "NOBLE")
+    {
+        .@map$ = "001-2-1";
+        .@x = 37;
+        .@y = 37;
+    }
+
+    else if (startswith(.@m$, "MOON"))
+    {
+        .@map$ = "001-2-2";
+        .@x = 39;
+        .@y = 34;
+    }
+
+    else if (startswith(.@m$, "LIB"))
+    {
+        .@map$ = "001-2-4";
+        .@x = 49;
+        .@y = 37;
+    }
+
+    else if (startswith(.@m$, "CITY"))
+    {
+        .@map$ = "001-2-7";
+        .@x = 36;
+        .@y = 38;
+    }
+
+    else if (.@m$ == "NOBLE2")
+    {
+        .@map$ = "001-2-10";
+        .@x = 40;
+        .@y = 38;
+    }
+
+    else if (.@m$ == "NOBLE3")
+    {
+        .@map$ = "001-2-11";
+        .@x = 45;
+        .@y = 33;
+    }
+
+    else if (.@m$ == "NOBLE4")
+    {
+        .@map$ = "001-2-12";
+        .@x = 34;
+        .@y = 32;
+    }
+
+    else if (.@m$ == "NOBLE5")
+    {
+        .@map$ = "001-2-15";
+        .@x = 34;
+        .@y = 38;
+    }
+
+    else if (startswith(.@m$, "HARB"))
+    {
+        .@map$ = "001-2-16";
+        .@x = 32;
+        .@y = 33;
+    }
+
+    else if (startswith(.@m$, "WARE"))
+    {
+        .@map$ = "001-2-18";
+        .@x = 39;
+        .@y = 31;
+    }
+
+    else if (startswith(.@m$, "MERCH") || startswith(.@m$, "BANK"))
+    {
+        .@map$ = "001-2-19";
+        .@x = 29;
+        .@y = 31;
+    }
+
+    else if (.@m$ == "SHIP2")
+    {
+        .@map$ = "001-2-21";
+        .@x = 30;
+        .@y = 28;
+    }
+
+    else if (startswith(.@m$, "ALCH"))
+    {
+        .@map$ = "001-2-26";
+        .@x = 30;
+        .@y = 32;
+    }
+
+    else if (startswith(.@m$, "BLACK"))
+    {
+        .@map$ = "001-2-27";
+        .@x = 35;
+        .@y = 32;
+    }
+
+    else if (startswith(.@m$, "PLUSH"))
+    {
+        .@map$ = "001-2-28";
+        .@x = 32;
+        .@y = 32;
+    }
+
+    else if (startswith(.@m$, "LEG"))
+    {
+        .@map$ = "001-2-33";
+        .@x = 34;
+        .@y = 36;
+    }
+
+
+    // ------------------------------------
+    // BOAT
+    else if (.@m$ == "START")
+    {
+        .@map$ = "000-0";
+        .@x = 22;
+        .@y = 24;
+    }
+
+    else if (.@m$ == "START2")
+    {
+        .@map$ = "000-0-0";
+        .@x = 26;
+        .@y = 28;
+    }
+
+    else if (.@m$ == "START3")
+    {
+        .@map$ = "000-0-1";
+        .@x = 26;
+        .@y = 28;
+    }
+
+    else if (startswith(.@m$, "DRA"))
+    {
+        .@map$ = "000-1";
+        .@x = 77;
+        .@y = 110;
+    }
+
+    else if (startswith(.@m$, "FIRST"))
+    {
+        .@map$ = "000-2-0";
+        .@x = 27;
+        .@y = 27;
+    }
+
+    else if (startswith(.@m$, "SECOND"))
+    {
+        .@map$ = "000-2-1";
+        .@x = 53;
+        .@y = 33;
+    }
+
+    else if (.@m$ == "HOLD")
+    {
+        .@map$ = "000-2-2";
+        .@x = 43;
+        .@y = 30;
+    }
+
+    else if (startswith(.@m$, "NARD"))
+    {
+        .@map$ = "000-2-3";
+        .@x = 21;
+        .@y = 27;
+    }
+
+    else if (startswith(.@m$, "ALIG"))
+    {
+        .@map$ = "000-2-4";
+        .@x = 36;
+        .@y = 29;
+    }
+
+
+    if (.@map$ == "")
+    {
+        .@map$ = .@atcmd_parameters$[0];
+    }
+    if (.@atcmd_parameters$[2] != "")
+    {
+        .@x = atoi(.@atcmd_parameters$[1]);
+        .@y = atoi(.@atcmd_parameters$[2]);
+    }
+    warp .@map$, .@x, .@y;
+    end;
+
+OnInit:
+    bindatcmd "w", "@w::OnCall", 1, 2, 1;
+}
