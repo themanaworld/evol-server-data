@@ -11,18 +11,6 @@
 //    6   Hook down.
 //    8   Hook up.
 
-001-1,192,82,0	script	#Harbour0	NPC_HARBOUR_WHEEL,{
-    harbourClic;
-
-OnTimer1670:
-    harbourTimer;
-
-OnInit:
-    .distance = 1;
-    .alwaysVisible = true;
-    end;
-}
-
 001-1,183,85,0	script	#Harbour1	NPC_HARBOUR_WHEEL_BOX,{
     harbourClic;
 
@@ -59,7 +47,7 @@ OnInit:
     end;
 }
 
-001-1,175,117,0	script	#Harbour4	NPC_HARBOUR_WHEEL_BOX,{
+001-1,175,119,0	script	#Harbour4	NPC_HARBOUR_WHEEL_BOX,{
     harbourClic;
 
 OnTimer1670:
