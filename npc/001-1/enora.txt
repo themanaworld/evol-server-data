@@ -258,7 +258,7 @@
 
         inventoryplace TrainingGladius, 3;
         getitem TrainingGladius, 1;
-        getitem ArtisTankTop, 1;
+        getitem2 ArtisTankTop, 1, 1, 0, 0, 5005, 0, 0, 0;
         getitem PibberiesInfusion, 5;
         setq ArtisQuests_Enora, 10;
         enora_reward (80, 175);
