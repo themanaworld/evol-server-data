@@ -148,6 +148,7 @@ LDrasilIsland:
     mesq l("But discovering new territories is probably the best thing that can happen to sailors, don't you think?");
     next;
     mesq l("I'm really excited, this place reminds me of an ancient mythical tree, you might know what I'm talking about...");
+    emotion E_WINK;
     next;
     mesq l("As captain of this ship, I officially name this newly discovered land the ##BDrasil Island##b!");
     next;
