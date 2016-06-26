@@ -14,12 +14,12 @@ function	script	villagertalk	{
 
         if (.@darn < 26)
         {
-            emotion E_JOY; // ^.^
+            emotion E_JOY;
             hello;
         }
         else if (.@darn > 26)
         {
-            emotion E_LOOKAWAY; // Look away
+            emotion E_LOOKAWAY;
             goodbye;
         }
         else
