@@ -275,7 +275,7 @@ L_BasicSkill:
     next;
     adddefaultskills;
     mesq l("Here you go, everything is fixed.");
-    emotion 3;
+    emotion E_HAPPY;
     next;
     mesq l("Do you have any other questions for me?");
     next;

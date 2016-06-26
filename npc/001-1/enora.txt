@@ -153,7 +153,7 @@
             l("Go to meet him, and return me the package, it's an easy task."),
             l("You will be able to find Don's house in the west of this city, it's the first house just after left bridge, you can't miss it!"),
             l("A young apprentice called Chelios might be waiting outside, speak to him, and return the present to me.");
-            emotion 3;
+            emotion E_HAPPY;
 
         setq ArtisQuests_Enora, 1;
 
@@ -307,7 +307,7 @@
             l("You now also have access to the Legion building. Good job, you earned it."),
             l("We hold various training sessions, and also have a task board with a heap of things to do for the city and its surroundings."),
             l("It's a very good place if you want to make some more money.");
-            emotion 6;
+            emotion E_WINK;
 
         if (getq (ArtisQuests_Enora) == 10)
         {

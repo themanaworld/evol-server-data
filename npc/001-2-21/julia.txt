@@ -120,7 +120,7 @@ L_BasicSkill:
     next;
     adddefaultskills;
     mesq l("Here you go, everything is fixed.");
-    emotion 3;
+    emotion E_HAPPY;
     next;
     mesq l("Do you have any other questions for me?");
     next;
@@ -144,7 +144,7 @@ L_Island:
     speech 5,
         l("Of course, as a fully-fledged crew member you can decide of the destination of La Johanne directly with Nard.");
         l("Do you have any other questions for me?");
-    emotion 3;
+    emotion E_HAPPY;
 
     goto L_YNMenu;
 

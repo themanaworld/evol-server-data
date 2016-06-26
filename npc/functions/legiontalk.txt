@@ -50,7 +50,7 @@ function	script	legiontalk	{
             npctalk3 l("Out of my way.");
             break;
         case 12:
-            emotion 111;
+            emotion E_LOOKAWAY;
             break;
     }
 

@@ -34,7 +34,7 @@
                 speech 1,
                     l("This is your first time asking for something, you won't pay this time, take it as a sign of good faith!"),
                     l("If you need something in the future, do not hesitate to pass by here, our stock is full of box collecting dust.");
-                emotion 6;
+                emotion E_WINK;
                 break;
             case 2:
                 speech 1,
@@ -42,7 +42,7 @@
                     l("Since Don settled in Artis he and his band refused to register to the Merchant Guild."),
                     l("I will close my eyes for once, but only because it's your first time asking for something!"),
                     l("Sometimes a good merchant needs to reach out first. It's on the house, give Chelios my regards!");
-                emotion 7;
+                emotion E_WINK;
                 break;
         }
         setq ArtisQuests_Enora, 3;

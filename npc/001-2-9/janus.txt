@@ -112,7 +112,7 @@
     function janus_is_not_ianus {
         speech 1,
             l("Janus!");
-        emotion 11;
+        emotion E_UPSET;
         next;
 
         speech 12,

@@ -14,12 +14,12 @@ function	script	villagertalk	{
 
         if (.@darn < 26)
         {
-            emotion 103; // ^.^
+            emotion E_JOY; // ^.^
             hello;
         }
         else if (.@darn > 26)
         {
-            emotion 111; // Look away
+            emotion E_LOOKAWAY; // Look away
             goodbye;
         }
         else
@@ -45,7 +45,7 @@ function	script	villagertalk	{
             npctalk3 l("I just want to live my life in peace.");
             break;
         default:
-            emotion 3;
+            emotion E_HAPPY;
             break;
     }
 

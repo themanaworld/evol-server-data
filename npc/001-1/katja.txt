@@ -75,7 +75,7 @@
             mes "";
             mesn;
             mesq l("Great!");
-            emotion 103;
+            emotion E_JOY;
             next;
             break;
         case 2:
@@ -86,7 +86,7 @@
             mes "";
             mesn;
             mesq l("Okay, I'll be here, if you change your mind.");
-            emotion 4;
+            emotion E_SAD;
             close;
     }
 

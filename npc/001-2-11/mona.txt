@@ -46,7 +46,7 @@
                     l("I will tell my dad!");
                 break;
         }
-        emotion 4;
+        emotion E_SAD;
         close;
     }
 
@@ -57,7 +57,7 @@
 
     npctalkonce l("Please find daddy...");
 
-    emotion 4;
+    emotion E_SAD;
     close;
 
 OnInit:

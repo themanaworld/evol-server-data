@@ -38,7 +38,7 @@
                 break;
             case 2:
                 narrator 1, l("Ivan grumbles and resumes his work.");
-                emotion 11;
+                emotion E_UPSET;
                 close;
         }
 
@@ -47,7 +47,7 @@
             l("I have some spare one, take them, and tell Enora that any fees are paid!");
 
         setq ArtisQuests_Enora, 9;
-        emotion 3;
+        emotion E_HAPPY;
         return;
     }
 

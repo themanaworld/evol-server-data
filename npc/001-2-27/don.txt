@@ -29,7 +29,7 @@
     function take_apprentice {
         speech 5,
             l("I do not.");
-        emotion 11;
+        emotion E_UPSET;
 
         select (l("What about Chelios?"));
 

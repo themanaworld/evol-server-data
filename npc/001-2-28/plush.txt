@@ -26,7 +26,7 @@
         }
         else
         {
-            emotion 3;
+            emotion E_HAPPY;
             Zeny = Zeny - .@price;
             INN_REGISTER = REDPLUSH_INN;
             PC_IS_DEAD = false;
@@ -121,7 +121,7 @@
                 lodge_check;
                 break;
             case 2:
-                emotion 6;
+                emotion E_WINK;
                 speech 5,
                     l("We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranted to be right as rain after a night here!"),
                     l("If you wake up at the INN after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.");
