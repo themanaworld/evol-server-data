@@ -12,7 +12,7 @@
         if (.@tick > @Artis_RedPlush_WaitressTick + 10)
         {
             setarray .messages$[0], l("Welcome to our inn!"),
-                                    l("Welcome to RedPlush."),
+                                    l("Welcome to Red Plush."),
                                     l("Please, have a seat."),
                                     l("Lovely day, isn't it?");
 
