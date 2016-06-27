@@ -115,7 +115,7 @@ OnInit:
 }
 
 001-1,115,88,0	script	Sign#001-1-s-inn	NPC_NO_SPRITE,{
-    npctalkonce l("INN");
+    npctalkonce l("Inn");
     close;
 
 OnInit:
@@ -125,7 +125,7 @@ OnInit:
 }
 
 001-1,134,85,0	script	Sign#001-1-s-innright	NPC_OFFSET_NO_SPRITE,{
-    npctalkonce l("INN");
+    npctalkonce l("Inn");
     close;
 
 OnInit:

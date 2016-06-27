@@ -2,7 +2,7 @@
 // Authors:
 //    Reid
 // Description:
-//    Red, the INN Keeper.
+//    Red, the Innkeeper.
 // Variable:
 //    INN_REGISTER
 
@@ -12,8 +12,8 @@
         narrator 4,
             l("You will respawn at this place if defeated in combat."),
             l("All you have to do is to select a bed in the upper level anytime after your reservation."),
-            l("Unlike other respawn points, an INN can fully restore your HP."),
-            l("Of course, you can select a bed somewhere else after your reservation, but you won't get your HP recovery until you choose to get some rest on the INN."),
+            l("Unlike other respawn points, an inn can fully restore your HP."),
+            l("Of course, you can select a bed somewhere else after your reservation, but you won't get your HP recovery until you choose to get some rest in the inn."),
             l("You can also use your room to get some rest after a long battle. That will consume your reservation but your HP will be fully restored.");
         return;
     }
@@ -124,7 +124,7 @@
                 emotion E_WINK;
                 speech 5,
                     l("We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranted to be right as rain after a night here!"),
-                    l("If you wake up at the INN after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.");
+                    l("If you wake up at the inn after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.");
 
                 narrator_explication;
                 break;
