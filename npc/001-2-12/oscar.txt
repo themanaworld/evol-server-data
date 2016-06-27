@@ -22,8 +22,8 @@
 
         if (@inventorylist_card1[@item_index] != 0)
         {
-            if ((@inventorylist_card1[@item_index] > 5021) ||
-                (@inventorylist_card1[@item_index] < 5000))
+            if ((@inventorylist_card1[@item_index] > YellowCottonDye) ||
+                (@inventorylist_card1[@item_index] < CrimsonCashmereDye))
             {
                 return false;
             }
@@ -31,8 +31,8 @@
         }
         if (@inventorylist_card2[@item_index] != 0)
         {
-            if ((@inventorylist_card2[@item_index] > 5021) ||
-                (@inventorylist_card2[@item_index] < 5000))
+            if ((@inventorylist_card2[@item_index] > YellowCottonDye) ||
+                (@inventorylist_card2[@item_index] < CrimsonCashmereDye))
             {
                 return false;
             }
@@ -40,8 +40,8 @@
         }
         if (@inventorylist_card3[@item_index] != 0)
         {
-            if ((@inventorylist_card3[@item_index] > 5021) ||
-                (@inventorylist_card3[@item_index] < 5000))
+            if ((@inventorylist_card3[@item_index] > YellowCottonDye) ||
+                (@inventorylist_card3[@item_index] < CrimsonCashmereDye))
             {
                 return false;
             }
@@ -49,8 +49,8 @@
         }
         if (@inventorylist_card4[@item_index] != 0)
         {
-            if ((@inventorylist_card4[@item_index] > 5021) ||
-                (@inventorylist_card4[@item_index] < 5000))
+            if ((@inventorylist_card4[@item_index] > YellowCottonDye) ||
+                (@inventorylist_card4[@item_index] < CrimsonCashmereDye))
             {
                 return false;
             }

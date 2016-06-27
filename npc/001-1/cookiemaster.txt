@@ -176,10 +176,10 @@ L_Reward:
     next;
     mesq l("Anyway, here, have a cookie!");
 
-    inventoryplace 517, 1;
+    inventoryplace DeliciousCookie, 1;
 
     setq General_Cookies, 1;
-    getnameditem 517, strcharinfo(0);
+    getnameditem DeliciousCookie, strcharinfo(0);
     npctalk3 l("You receive a @@!", getitemlink(517));
 
     next;
@@ -239,8 +239,8 @@ L_LostCookie:
     mesq l("This is the last one. If you use it again out of clumsiness, I will use your soft moist parts in the concoction of my next cookie batch.");
     next;
 
-    inventoryplace 517, 1;
-    getnameditem 517, strcharinfo(0);
+    inventoryplace DeliciousCookie, 1;
+    getnameditem DeliciousCookie, strcharinfo(0);
 
     npctalk3 l("You receive a @@!", getitemlink(517));
 

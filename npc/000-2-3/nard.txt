@@ -105,10 +105,10 @@ L_NeedContent:
     mesq l("Now go outside and talk with Gugli, he'll tell you what we need.");
     next;
 
-    inventoryplace 718, 1;
+    inventoryplace JohanneKey, 1;
 
     setq ShipQuests_Nard, 1;
-    getitem 718, 1;
+    getitem JohanneKey, 1;
 
     close;
 

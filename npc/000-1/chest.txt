@@ -23,10 +23,10 @@
     .@q = getq(ShipQuests_TreasureChest);
     if (.@q == 0)
     {
-        inventoryplace 514, 1;
+        inventoryplace OldBook, 1;
         setq ShipQuests_TreasureChest, 1;
         Zeny = Zeny + 100;
-        getitem 514, 1;
+        getitem OldBook, 1;
         npctalk3 l("Chest opened.");
     }
 

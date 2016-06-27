@@ -47,10 +47,10 @@
     mesq l("Well then... Take this one!");
     next;
 
-    inventoryplace 716, 1;
+    inventoryplace PlushroomBox, 1;
 
     setq ShipQuests_QMuller, 1;
-    getitem 716, 1;
+    getitem PlushroomBox, 1;
 
     mes "";
     mesn;

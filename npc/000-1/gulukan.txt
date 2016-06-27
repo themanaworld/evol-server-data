@@ -57,10 +57,10 @@ L_Continue2:
     mesq l("Anyway I am glad I can give you some of these yoyoxs.");
     next;
 
-    inventoryplace 715, 1;
+    inventoryplace CroconutBox, 1;
 
     setq ShipQuests_Gulukan, 1;
-    getitem 715, 1;
+    getitem CroconutBox, 1;
 
     mes "";
     mesn;

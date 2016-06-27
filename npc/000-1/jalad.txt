@@ -45,10 +45,10 @@ L_Continue:
     mesq l("Surely. Take this box full of @@s.", getitemlink(515));
     next;
 
-    inventoryplace 716, 1;
+    inventoryplace PlushroomBox, 1;
 
     setq ShipQuests_Jalad, 1;
-    getitem 716, 1;
+    getitem PlushroomBox, 1;
 
     mes "";
     mesn;

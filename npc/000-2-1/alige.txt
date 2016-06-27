@@ -168,27 +168,27 @@ L_Accepted:
 L_GiveFood:
     mes "";
     menuint
-        rif(countitem(501), l(getitemname(501))), 0,
-        rif(countitem(502), l(getitemname(502))), 502,
-        rif(countitem(503), l(getitemname(503))), 503,
-        rif(countitem(504), l(getitemname(504))), 504,
-        rif(countitem(505), l(getitemname(505))), 505,
-        rif(countitem(506), l(getitemname(506))), 0,
-        rif(countitem(507), l(getitemname(507))), 2,
-        rif(countitem(508), l(getitemname(508))), 1,
-        rif(countitem(509), l(getitemname(509))), 509,
-        rif(countitem(510), l(getitemname(510))), 1,
-        rif(countitem(512), l(getitemname(512))), 512,
-        rif(countitem(513), l(getitemname(513))), 0,
-        rif(countitem(515), l(getitemname(515))), 515,
-        rif(countitem(516), l(getitemname(516))), 1,
-        rif(countitem(518), l(getitemname(518))), 1,
-        rif(countitem(519), l(getitemname(519))), 1,
-        rif(countitem(527), l(getitemname(527))), 527,
-        rif(countitem(528), l(getitemname(528))), 528,
-        rif(countitem(529), l(getitemname(529))), 529,
-        rif(countitem(530), l(getitemname(530))), 530,
-        rif(countitem(531), l(getitemname(531))), 3,
+        rif(countitem(Acorn), l(getitemname(Acorn))), 0,
+        rif(countitem(Bread), l(getitemname(Bread))), 502,
+        rif(countitem(Fungus), l(getitemname(Fungus))), 503,
+        rif(countitem(Cheese), l(getitemname(Cheese))), 504,
+        rif(countitem(PiouLegs), l(getitemname(PiouLegs))), 505,
+        rif(countitem(LettuceLeaf), l(getitemname(LettuceLeaf))), 0,
+        rif(countitem(Piberries), l(getitemname(Piberries))), 2,
+        rif(countitem(SeaDrops), l(getitemname(SeaDrops))), 1,
+        rif(countitem(Aquada), l(getitemname(Aquada))), 509,
+        rif(countitem(PinkBlobime), l(getitemname(PinkBlobime))), 1,
+        rif(countitem(HalfCroconut), l(getitemname(HalfCroconut))), 512,
+        rif(countitem(Croconut), l(getitemname(Croconut))), 0,
+        rif(countitem(Plushroom), l(getitemname(Plushroom))), 515,
+        rif(countitem(PumpkinSeeds), l(getitemname(PumpkinSeeds))), 1,
+        rif(countitem(UrchinMeat), l(getitemname(UrchinMeat))), 1,
+        rif(countitem(EasterEgg), l(getitemname(EasterEgg))), 1,
+        rif(countitem(PumpkishJuice), l(getitemname(PumpkishJuice))), 527,
+        rif(countitem(Manana), l(getitemname(Manana))), 528,
+        rif(countitem(Curshroom), l(getitemname(Curshroom))), 529,
+        rif(countitem(Carrot), l(getitemname(Carrot))), 530,
+        rif(countitem(RedPlushWine), l(getitemname(RedPlushWine))), 3,
         l("I don't have anything good for you today."), -1;
 
     .@id = @menuret;
@@ -201,7 +201,7 @@ L_GiveFood:
 //  if (.@id == item's ID) then food is correct.
 // Do not put any other number than -1, 0, 1, 2 or the item's ID, that'll avoid confusion.
 
-    inventoryplace 507, 3;
+    inventoryplace Piberries, 3;
     delitem .@id, 1;
 
     setcamnpc;
@@ -210,7 +210,7 @@ L_GiveFood:
     mesq l("Thank you so much! Here, have some of my berries.");
 
     setq ShipQuests_Alige, 3;
-    getitem 507, rand(1, 3);
+    getitem Piberries, rand(1, 3);
     next;
 
     goto L_ReturnMenu;

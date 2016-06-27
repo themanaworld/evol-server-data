@@ -120,12 +120,12 @@ L_OpenCroconut:
 L_GotAll:
     mes "";
 
-    inventoryplace 717, 1;
+    inventoryplace PoisonedDish, 1;
 
-    delitem 505, 2;
-    delitem 512, 1;
-    delitem 509, 1;
-    delitem 508, 1;
+    delitem PiouLegs, 2;
+    delitem HalfCroconut, 1;
+    delitem Aquada, 1;
+    delitem SeaDrops, 1;
 
     mesn;
     mesq l("Let me see... Crispy legs, disgusting liquids... Let's start!");
@@ -162,8 +162,8 @@ L_PoisonJulia:
     setq ShipQuests_ChefGado, 4;
     Zeny = Zeny + 200;
     message strcharinfo(0), l("You receive @@ E!", 200);
-    inventoryplace 502, 2;
-    getitem 502, 1;
+    inventoryplace Bread, 2;
+    getitem Bread, 1;
     getexp 15, 0;
 
     close;

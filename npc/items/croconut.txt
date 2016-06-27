@@ -14,28 +14,28 @@
 
 OnUse:
     mesn "Narrator";
-    mes col(l("Do you want to cut this @@?", getitemlink(513)), 9);
+    mes col(l("Do you want to cut this @@?", getitemlink(Croconut)), 9);
     next;
 
     menu
         l("Yes."), L_Weapon,
         l("No."), -;
 
-    getitem 513, 1;
+    getitem Croconut, 1;
     close;
 
 L_Weapon:
     mes "";
     mesn "Narrator";
-    mes col(l("Which of your weapons do you want to use in order to cut this @@?", getitemlink(513)), 9);
+    mes col(l("Which of your weapons do you want to use in order to cut this @@?", getitemlink(Croconut)), 9);
     next;
 
     menu
-        rif(countitem(3500) > 0, l(getitemname(3500))), L_Weak,
-        rif(countitem(3501) > 0, l(getitemname(3501))), L_Weak,
-        rif(countitem(3502) > 0, l(getitemname(3502))), L_Good,
-        rif(countitem(3503) > 0, l(getitemname(3503))), L_Weak,
-        rif(countitem(3504) > 0, l(getitemname(3504))), L_Good,
+        rif(countitem(Knife) > 0, l(getitemname(Knife))), L_Weak,
+        rif(countitem(PiouSlayer) > 0, l(getitemname(PiouSlayer))), L_Weak,
+        rif(countitem(TrainingGladius) > 0, l(getitemname(TrainingGladius))), L_Good,
+        rif(countitem(WoodenSword) > 0, l(getitemname(WoodenSword))), L_Weak,
+        rif(countitem(ArtisBacksword) > 0, l(getitemname(ArtisBacksword))), L_Good,
         l("Bare Hands"), -;
 
 L_TooWeak:
@@ -48,25 +48,25 @@ L_TooWeak:
     if ( (.@q == 3) || (.@q == 4) || (.@q == 5) ) goto L_Weak;
 
 L_TooWeakLost:
-    mes col(l("You hit too hard with your fist, you destroyed your @@.", getitemlink(513)), 9);
+    mes col(l("You hit too hard with your fist, you destroyed your @@.", getitemlink(Croconut)), 9);
 
     close;
 
 L_TooWeakFail:
-    mes col(l("Your hands are too weak, you did not succeed in opening this @@.", getitemlink(513)), 9);
+    mes col(l("Your hands are too weak, you did not succeed in opening this @@.", getitemlink(Croconut)), 9);
 
-    getitem 513, 1;
+    getitem Croconut, 1;
     close;
 
 L_Weak:
-    mes col(l("You opened the @@ in two parts, but you crushed one of them.", getitemlink(513)), 9);
+    mes col(l("You opened the @@ in two parts, but you crushed one of them.", getitemlink(Croconut)), 9);
 
-    getitem 512, 1;
+    getitem HalfCroconut, 1;
     close;
 
 L_Good:
-     mes col(l("You perfectly cut your @@ into two edible parts.", getitemlink(513)), 9);
+     mes col(l("You perfectly cut your @@ into two edible parts.", getitemlink(Croconut)), 9);
 
-    getitem 512, 2;
+    getitem HalfCroconut, 2;
     close;
 }

@@ -205,7 +205,7 @@ L_GiveFood:
 //  if (.@id == item's ID) then food is correct.
 // Do not put any other number than -1, 0, 1, 2 or the item's ID, that'll avoid confusion.
 
-    inventoryplace 507, 3;
+    inventoryplace Piberries, 3;
     delitem .@id, 1;
 
     setcamnpc;
@@ -214,7 +214,7 @@ L_GiveFood:
     mesq l("Thank you so much! Here, have some of my berries.");
 
     setq ShipQuests_Alige, 3;
-    getitem 507, rand(1, 3);
+    getitem Piberries, rand(1, 3);
     next;
 
     goto L_ReturnMenu;

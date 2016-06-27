@@ -46,7 +46,7 @@
             l("Oh oh... I see, your party became so big that you want to create an even larger structure?"),
             l("Or, do you want to keep your friendship and your adventure in different groups?"),
             l("Anyway, the guild creation is perfect for both case! You can keep your current party as is while having a guild to talk and share different items with all of your friends!"),
-            l("The @@ is a one time item, you can use it as many time as you want, but you can only have one!", getitemlink (730)),
+            l("The @@ is a one time item, you can use it as many time as you want, but you can only have one!", getitemlink (GuildCertification)),
             l("The cost to create a guild is of @@E, are you interested?", .@guild_price);
 
         if (askyesno () == 1)
@@ -57,10 +57,10 @@
             }
             else
             {
-                inventoryplace 730, 1;
+                inventoryplace GuildCertification, 1;
                 Zeny = Zeny - .@guild_price;
                 setq General_Janus, 3;
-                getitem 730, 1;
+                getitem GuildCertification, 1;
 
                 speech 5, l("Enjoy the fraternity and excitement of your future guild!");
             }
@@ -83,8 +83,8 @@
                 speech 12,
                     l("This book resumes everything you should know about it, take it!");
 
-                inventoryplace 535, 1;
-                getitem 535, 1;
+                inventoryplace CommunicationTheory, 1;
+                getitem CommunicationTheory, 1;
             }
             else
             {
@@ -100,8 +100,8 @@
                     l("Anyway."),
                     l("This book resumes everything you should know about it, take it!");
 
-                inventoryplace 535, 1;
-                getitem 535, 1;
+                inventoryplace CommunicationTheory, 1;
+                getitem CommunicationTheory, 1;
             }
 
         }

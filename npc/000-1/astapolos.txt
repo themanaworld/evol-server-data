@@ -63,10 +63,10 @@
     mesq lg("You have been so nice to me. So please, take one.");
     next;
 
-    inventoryplace 715, 1;
+    inventoryplace CroconutBox, 1;
 
     setq ShipQuests_Astapolos, 1;
-    getitem 715, 1;
+    getitem CroconutBox, 1;
 
     mes "";
     mesn;
