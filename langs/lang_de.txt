@@ -15,10 +15,10 @@ Copyright (C) 2010-2014 Evol Online
   <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>).
 
   @send <packet hex number> {<value>}*
-
+@send <packet hex number> {<value>}*
 
   @send len <packet hex number>
-
+@send len <packet hex number>
 
   Value: <type=B(default),W,L><number> or S<length>"<string>"
 
@@ -27,13 +27,13 @@ Copyright (C) 2010-2014 Evol Online
 - Nur in Geschäften erhältlich. 
 
  - Common mobs with highest drop chance (only max %d are listed):
-
+Standard-Mobs mit höchster Drop Rate (nur max. %d sind angegeben):
 
  - Item is not dropped by any mobs.
 - Gegenstand wird von keinem Mob fallen gelassen.
 
  - Maximal monsters drop chance: %02.02f%%
-- Höchste Item fall chance: %02.02f%%
+- Höchste Item Drop Chance: %02.02f%%
 
  - Monsters don't drop this item.
 - Monster lassen diesen Gegenstand nicht fallen.
@@ -57,16 +57,16 @@ Copyright (C) 2010-2014 Evol Online
  -> (Karte(n): 
 
  -> (crafted item, creator id: %u, star crumbs %d, element %d)
-
+-> (hergestellter Gegenstand, Hersteller id: %u, star crumbs %d, Element %d)
 
  -> (pet egg, pet id: %u, named)
-
+-> (Haustier Ei, Haustier id: %u, benannt)
 
  -> (pet egg, pet id: %u, unnamed)
-
+-> (Haustier Ei, Haustier id: %u, unbenannt)
 
  -> (produced item, creator id: %u)
-
+ -> (Produzierter Gegenstand, Hersteller id: %u)
 
  -> Player %s has accepted the duel --
  -> Spieler %s hat das Duell akzeptiert --
@@ -75,25 +75,25 @@ Copyright (C) 2010-2014 Evol Online
  <- Spieler %s hat das Duell verlassen --
 
  ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
-
+ANG:%d~%d Radius:%d~%d~%d Größe:%s Rasse: %s Element: %s (Lv:%d)
 
  ATK:%d~%d MATK:%d~%d Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
-
+ANG:%d~%d MANG:%d~%d Radius:%d~%d~%d Größe:%s Rasse: %s Element: %s (Lv:%d)
 
  DEF:%d  MDEF:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d
-
+DEF:%d MDEF:%d STR:%d AGI:%d VIT:%d INT:%d DEX:%d LUK:%d
 
  Drops:
 Beute:
 
  Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
-
+Lv:%d HP:%d Basis EXP:%u Job EXP:%u HIT:%d FLEE:%d
 
  MVP Bonus EXP:%u
-
+ MVP Bonus EXP:%u
 
  MVP Items:
-
+MVP Gegenstände:
 
  and %d second
 und %d Sekunde
@@ -104,9 +104,6 @@ und %d Sekunden
  | equipped: 
  | angelegt: 
 
-!
-
-
 "@@", I like this name!
 
 
@@ -114,7 +111,7 @@ und %d Sekunden
 
 
 %d - void
-
+%d - leer
 
 %d GMs found.
 %d GMs gefunden.
@@ -135,19 +132,19 @@ und %d Sekunden
 %d Stunden
 
 %d item(s) found in %d %s slots.
-
+%d Gegenstände in %d %s Slots gefunden.
 
 %d item(s) removed by a GM.
-
+%d Gegenstände durch einen GM entfernt.
 
 %d item(s) removed from the player.
-
+%d Gegenstände von Spieler entfernt.
 
 %d item(s) removed. Player had only %d on %d items.
-
+%d Gegenstände entfernt. Spieler hatte nur %d an %d Gegenstände.
 
 %d items have been refined.
-
+%d Gegenstände wurden verbessert.
 
 %d minute
 %d Minute
@@ -186,7 +183,7 @@ und %d Sekunden
 %d: Mittlere Kopfbedeckung
 
 %d: Right Accessory
-%d: Rechts Accessoire
+%d: Rechtes Accessoire
 
 %d: Right Hand
 %d: Rechte Hand
@@ -195,13 +192,13 @@ und %d Sekunden
 %d: Schuhe
 
 %d: Top Headgear
-
+%d: Kopfbedeckung
 
 %s :Main: %s
-
+%s :Main: %s
 
 %s data type is not supported :%u
-
+%s Datentyp wird nicht unterstützt :%u
 
 %s failed
 %s fehlgeschlagen
@@ -216,7 +213,7 @@ und %d Sekunden
 %s hat deine(n) Gegenstände (Gegenstand) gekauft.
 
 %s in jail for %d years, %d months, %d days, %d hours and %d minutes
-
+%s im Gefängnis für %d Jahre, %d Monate, %d Tage, %d Stunden und %d Minuten
 
 %s is Unknown Command.
 %s ist ein Unbekannter Befehl.
@@ -225,82 +222,82 @@ und %d Sekunden
 %s ist leer
 
 %s recalled!
-
+%s wiederbelebt!
 
 %s revision '%s' (src) / '%s' (scripts)
-
+%s Revision '%s' (src) / '%s' (scripts)
 
 %s spawns in:
-
+%s erscheint in:
 
 %s value is now :%d
-
+%s Wert ist jetzt :%d
 
 %s value is now :%s
-
+%s Wert ist jetzt :%s
 
 %s: %d
-
+%s: %d
 
 '%s' Channel is password protected (usage: %s <#channel_name> <password>)
-
+'%s' Kanal ist passwortgeschützt. (Benutzung: %s <#channel_name> <password>)
 
 '%s' and his/her partner are now divorced.
-
+'%s' und sein(e) Partner(in) wurden geschieden.
 
 '%s' channel color updated to '%s' 
-
+'%s' Channelfarbe aktualisiert zu '%s' 
 
 '%s' got %s's %s (chance: %0.02f%%)
-
+'%s' hat %s's %s (Chance: %0.02f%%)
 
 '%s' is not a known channel option
-
+'%s' ist eine unbekannte Channel Option
 
 '%s' is not a known costume
-
+'%s' ist ein unbekanntes Costume
 
 '%s' is not a known permission.
-
+'%s' ist eine unbekannte Berechtigung.
 
 '%s' is not married.
 '%s' ist nicht verheiratet.
 
 '%s' skill and stat points have been reset.
-
+'%s' Fähigkeiten und Statuspunkte wurden zurückgesetzt.
 
 '%s' skill points reset.
-
+'%s' Fähigkeitspunkte zurückgesetzt.
 
 '%s' stats points reset.
-
+'%s' Statuspunkte zurückgesetzt.
 
 '%s' stats:
-
+'%s' Status:
 
 '%s' stole %s's %s (chance: %0.02f%%)
+'%s' stahl %s's %s (Chance: %0.02f%%)
 
-
-'That', as you call it, is a @@. There are plenty of 'em on this island!
+'That', as you call it, is a @@. There are plenty of 'em here!
 
 
 'That', as you call it, is a @@. There're plenty on this island!
-
+'Das Ding', wie du es nennst, ist ein @@. Es gibt davon Unmengen auf der Insel!
 
 (%s) 
-
+(%s) 
 
 (@request): %s
-
+(@request): %s
 
 (CID:%d/AID:%d) 
-
+(CID:%d/AID:%d) 
 
 * :%s %s: *
-
+* :%s %s: *
 
 *Bang bang*
-
+*Peng peng*
 
 *Hic*
 *Hicks*
@@ -312,19 +309,19 @@ und %d Sekunden
 *Uff*, *Argh*, warum hilfst du mir nicht?
 
 *Uff*... And another box of @@s for our starving colleagues is ready.
-
+*Puuh*... eine weitere Kiste voller @@s ist für unsere hungrigen Kollegen vorbereitet.
 
 *burp*
-
+*rülps*
 
 - #%s ( %d users )
-
+- #%s ( %d Nutzer )
 
 - %s
-
+- %s
 
 - %s (%d)
-
+- %s (%d)
 
 - 2 @@
 - 2 @@
@@ -336,7 +333,7 @@ und %d Sekunden
 - Astapolos
 
 - Available Costumes
-- Available Costumes
+- Verfügbare Costumes
 
 - Gulukan
 - Gulukan
@@ -351,13 +348,13 @@ und %d Sekunden
 - Tibbo
 
 - adds or removes <option name> with <option value> to <channel name> channel
-
+- fügt hinzu, oder entfernt <option name> mit <option value> zu <channel name> Channel
 
 - bans <character name> from <channel name> channel
-
+- sperrt <character name> vom <channel name> Channel
 
 - binds your global chat to <channel name>, making anything you type in global be sent to the channel
-
+- Verknüpft den globalen Chat mit <channel name>. Alles, was du in global schreibst, wird an den Channel gesendet.
 
 - changes <channel name> color to <color name>
 - ändert <channel name> Farbe zu <color name>
@@ -372,76 +369,76 @@ und %d Sekunden
 - listet alle gebannten Charaktere von <channel name> Kanal
 
 - lists colors available to select for custom channels
-
+- Auflistung der verschiedenen Farben für personalisierte Channels
 
 - lists public channels
 - listet alle öffentlichen Kanäle auf
 
 - unbans <character name> from <channel name> channel
-
+- entsperrt <character name> vom <channel name> Channel
 
 - unbans everyone from <channel name>
-
+- entsperrt alle für <channel name>
 
 - unbinds your global chat from its attached channel (if binded)
-
+- entkoppelt deinen global Chat von seinen verknüpften Channels (falls vorhanden)
 
 -- %s
-
+-- %s
 
 -- %s ban <channel name> <character name>
-
+-- %s sperrt <channel name> <character name>
 
 -- %s banlist <channel name>
-
+-- %s Sperrliste <channel name>
 
 -- %s bindto <channel name>
-
+-- %s verknüpfen mit <channel name>
 
 -- %s create <channel name> <channel password>
-
+-- %s erstellen <channel name> <channel password>
 
 -- %s leave <channel name>
-
+-- %s verlassen <channel name>
 
 -- %s list
-
+-- %s Liste
 
 -- %s list colors
-
+-- %s Farben auflisten
 
 -- %s setcolor <channel name> <color name>
-
+-- %s Farbe anwenden <channel name> <color name>
 
 -- %s setopt <channel name> <option name> <option value>
-
+-- %s Option anwenden <channel name> <option name> <option value>
 
 -- %s unban <channel name> <character name>
-
+-- %s entsperren <channel name> <character name>
 
 -- %s unbanall <channel name>
-
+-- %s alle entsperren <channel name>
 
 -- %s unbind
-
+-- %s entkoppeln
 
 -- '%s' ban list
-
+-- '%s' Sperrliste
 
 -- Available options
 -- Verfügbare Optionen
 
 -- Displaying first %d partial matches
-
+-- Angezeigt wird die erste %d von %d Partien.
 
 -- Permission List
-
+-- Berechtigungen
 
 -- Public Channels
 -- Öffentliche Kanäle
 
 -- User '%s' Permissions
-
+-- Nutzer '%s' Berechtigungen
 
 --- Available options:
 --- Verfügbare  Optionen:
@@ -456,7 +453,7 @@ und %d Sekunden
 ----- Spieler auf der Karte -----
 
 ------ %s items list of '%s' ------
-
+------ %s Liste der Gegenstände von '%s' ------
 
 ------ Map Flags ------
 ------ Karten Flaggen ------
@@ -474,13 +471,13 @@ und %d Sekunden
 ... und 1 @@.
 
 ...this might be because of Don, he is the master blacksmith of this place and a model to me!
-
+... der Grund dafür könnte Don sein, er ist der Meisterschmied dieser Stadt und dient mir als Model!
 
 1 GM found.
 1 GM gefunden.
 
 1 item has been refined.
-
+1 Gegenstand wurde verbessert.
 
 1 player found in map '%s'.
 1 Spieler auf der Karte '%s' gefunden.
@@ -492,193 +489,193 @@ und %d Sekunden
 1. ##BBenutze keinen Bot##b, das heißt, dir ist es nicht erlaubt, Aktivitäten auszuführen, wenn du AFK (away from keyboard) bist, ausser still stehen.
 
 1: The type of item yoiis want to dye.
-
+1: Der Typ des Gegenstandes, den dürü färben willst.
 
 2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s).
-
+2. ##BBenutze keine angreifenden/groben Sätze##b in den Chats oder in deinen Charakternamen.
 
 2: What material it is made from.
-
+2: Das Material, aus dem es hergestellt ist.
 
 3. ##BDo not spam/flood other players.##b This includes chat spam and spam by trade requests.
-
+3. ##BSpammen/Fluten anderer Spieler ist verboten.##b Dies beinhaltet Chat Spam und Spam durch Handelsanfragen.
 
 3: Which colorants can dye it.
-
+3: Welche Färbemittel das färben können.
 
 4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language.
-
+4. ##BBenutze die englische Sprache in der Öffentlichkeit.##b Du kannst die Sprache im Flüsterchat frei wählen, oder wenn alle anwesenden Spieler die Sprache beherrschen.
 
 4: How many cards your item can contain.
-
+4: Die maximale Anzahl an Karten im Gegenstand.
 
 5 Pibberies Infusion.
-
+5 Pibbeeren Tee.
 
 5 boxes... Alright, @@ are my speciality!
-
+5 Kisten... Alles klare, @@ sind meine Spezialität!
 
 5. ##BDo not beg others##b for money, items or favours of any kind. If you want to ask for something, do it politely and only once. Try not to annoy other players.
-
+5. ##BGeh nicht bei anderen Spielern hausieren##b , weder für Geld, noch für Gegenstände oder Gefallen jeglicher Art. Wenn Du um etwas bittest, tu es freundlich und nur einmal. Versuche, andere nicht zu langweilen.
 
 6. ##BFollow the [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Evol Social Convention).
-
+6. ##BBefolge die [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Evol Benimm-Regeln).
 
 7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.
-
+7. ##BMehrfach-Logins are untersagt.##b Es ist nicht erlaubt, an Kämpfen teilzunehmen, wenn mehr als ein Charkater gesteuert wird.
 
 @@
-
+@@
 
 @@ @@ @@
-
+@@ @@ @@
 
 @@ and @@ just married!
-
+@@ und @@ sind frisch verheiratet!
 
 @@ divorced!
-
+@@ geschieden!
 
 @@ is helping me.
 @@ hilft mir.
 
 @@ registered for marriage and accepted partner @@!
-
+@@ hat sich zur Hochzeit registriert, und akzeptiert den Partner @@!
 
 @@ registered for marriage. Waiting for partner...
-
+@@ Registriert zur Hochzeit. Warte auf den Partner...
 
 @@? Welcome my dear!#0
-
+@@? Willkommen mein Schatz!
 
 @@? Welcome my dear!#1
-
+@@? Willkommen mein Schatz!
 
 @request sent.
-
+@Anfrage gesendet.
 
 A GM has discharged you from jail.
-
+Ein GM hat Dich aus dem Gefängnis entlassen.
 
 A cookie!
 Ein Keks!
 
 A great city, now the capital of these islands, called Esperia, rose on the single island, Aurora, where everyone lived.
-
+Die großartige Stadt Esperia ist heutzutage die Hauptstadt dieser Inseln. Sie entstand auf der Insel Aurora, die schon damals vielbevölkert war.
 
 A headache hits you and you lose your concentration.
-
+Du hast einen Migräneanfall und verlierst die Konzentration.
 
 A rabbit!
-
+Ein Häschen!
 
 A small lie is really just a fib, and I could really use some cash...
-
+Eine kleine Flunkerei sollte erlaubt sein, und ich könnte wirklich etwas Bargeld gebrauchen...
 
 A stat card works on different pieces of equipment.
-
+Eine Statuskarte funktioniert auf verschienen Ausrüstungsteilen.
 
 A sunny and hot day,
 Ein heißer und sonniger Tag.
 
 A young apprentice called Chelios might be waiting outside, speak to him, and return the present to me.
-
+Ein junger Lehrling namens Chelios wartet draußen. Sprich ihn an, und bring mir das Geschenk zurück.
 
 A-hoy matey!
-
+Ahoy Matrose!
 
 ATK: %d - MATK: %d~%d
-
+ATK: %d - MATK: %d~%d
 
 Aaaaaahhhhhh!
 Aaaaaahhhhhh!
 
 Aboard stand sailors trying to communicate with you.
-
+An Bord stehen Matrosen. Sie versuchen, mit dir zu kommunizieren.
 
 About the Legion of Aemil in Esperia, I'm not sure about them, frankly.
-
+Ehrlich gesagt weiß ich nicht viel über die Legion von Aemil in Esperia.
 
 Acolyte
-
+Gefolgsmann
 
 Actually Gugli asked me if I would help you bring him some of your boxes.#0
-
+Genau genommen bat Gugli mich, Ihm einige deiner Kisten zu bringen.
 
 Actually Gugli asked me if I would help you bring him some of your boxes.#1
-
+Genau genommen bat Gugli mich, Ihm einige deiner Kisten zu bringen.
 
 Actually, I came here to work on my task.#0
-
+Ich bin im Rahmen meiner Aufgabe hier.
 
 Actually, I came here to work on my task.#1
-
+Ich bin im Rahmen meiner Aufgabe hier.
 
 Actually, I have an in-depth knowledge of this type of life.
-
+Ehrlich gesagt habe ich ein tiefes Wissen über diese Lebensformen.
 
 Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#0
-
+Ich bin eigentlich gekommen, um mit diesen Kisten zu helfen. Kann ich eine davon zurück zu Gugli bringen?
 
 Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#1
-
+Ich bin eigentlich gekommen, um mit diesen Kisten zu helfen. Kann ich eine davon zurück zu Gugli bringen?
 
 Aemil is a magnificent world unknown to us all.
 Aemil ist eine uns allen unbekannte prachtvolle Welt.
 
 Aesop
-
+Aesop
 
 After all this time, it was still there!
-
+Ich war immer noch dort, nach der ganzen Zeit!
 
 After choosing your weapon, you also need to know how to use it.
 Nachdem du deine Waffe gewählt hast, solltest du auch wissen wie man sie benutzt. 
 
 After this small overview of Artis, what do you think of our city?
-
+Nach dieser kurzen Führung durch Artis, was hältst du von unserer Stadt?
 
 Agi: %d (%d~%d)
-
+Agi: %d (%d~%d)
 
 Agility greatly increases your attack speed and the chances of you dodging enemy hits.
-
+Beweglichkeit erhöht die Angriffsgeschwindigkeit und die Wahrscheinlichkeit, einem Angriff auszuweichen.
 
 Ah, I didn't have much sleep; it's possible.
-
+Ach, ich hatte nicht viel geschlafen; es ist möglich.
 
 Ah, seagulls. We are arriving.
-
+Ah ja, Seemöwen. Wir kommen bald an.
 
 Ah, the locals like keeping them as pets.
-
+Die Einwohner halten sie gerne als Haustiere.
 
 Ah... Gugli... He's too young to understand our conversation.
 Ah... Gugli... Er ist zu jung, um unserer Konversation zu verstehen.
 
 Ah... Sorry, I forgot, again.
-
+Ops, Entschuldigung, ich vergaß. Nochmal.
 
 Ahoi.
-
+Ahoi.
 
 Ahoy, @@!
-
+Ahoi, @@!
 
 Alchemical studies are prohibited in every city of the Archipelagos, do not dare to practice it in a public zone!
-
+Das Studium der Alchemie ist in jeder Stadt des Archipels verboten. Wage es nicht, das in der Öffentlichkeit zu praktizieren!
 
 Alchemist
-
+Alchemist
 
 Alchemist's Laboratory
-
+Alchemielabor
 
 Ale and Tibbo should bring 2 boxes of @@s, Astapolos and Gulukan 2 of @@s and Jalad and Q'Muller were charged of the boxes of @@s.
-
+Ale und Tibbo sollten jeweils 2 Kisten @@s bringen, Astapolos und Gulukan jeweils 2 voller @@s und Jalad und Q'Muller sollten sich um die Kisten mit @@s kümmern.
 
 Ale#000-1
-
+Ale#000-1
 
 Ale.
 Ale.
@@ -687,28 +684,28 @@ Alige
 Alige
 
 Alige#000-2-4
-
+Alige#000-2-4
 
 Alige#Artis
-
+Alige#Artis
 
 AligeTrigger
 AligeTrigger
 
 AligeTrigger#Artis
-
+AligeTrigger#Artis
 
 All characters recalled!
-
+Alle Charaktere wiederbelebt!
 
 All dropped items have been cleaned up.
-
+Die gesamte Beute wurde verräumt.
 
 All items have been repaired.
-
+Alle Gegenstände wurden repariert.
 
 All items stored.
-
+Alle Gegenstände gelagert.
 
 All monsters killed!
 Alle Monster getötet!
@@ -717,64 +714,64 @@ All monsters summoned!
 Alle Monster beschworen!
 
 All of a sudden, you hear voices from above.
-
+Plötzlich hörst du Stimmen. Sie scheinen von oben zu kommen.
 
 All of your items have been removed.
-
+Alle deine Gegenstände wurden entfernt.
 
 All online characters of the %s guild have been recalled to your position.
-
+Alle aktiven Gildenmitglider der %s Gilde wurden zu deiner Position gerufen.
 
 All online characters of the %s party have been recalled to your position.
-
+Alle aktiven Spieler der %s Gruppe wurden zu deiner Position gerufen.
 
 All players have been kicked!
-
+Alle Spieler wurden herausgeworfen!
 
 All skills have been added to your skill tree.
-
+Alle Fähigkeiten wurden zu deinem Fähigkeitenbaum hinzugefügt.
 
 All stats changed!
-
+Alle Statusmerkmale verändert!
 
 All you have to do is to select a bed in the upper level anytime after your reservation.
-
+Alles was du tun mußt, ist zu reservieren und dir anschließend ein Bett im Obergeschoß auszusuchen.
 
 All your... Fresh ingredients are ready to be cooked.
-
+Alle deine ... Frischen Zutaten sind bereit, gekocht zu werden.
 
 Alliances cannot be broken during Guild Wars!
-
+Allianzen können nicht während Gildenkämpfen aufgelöst werden!
 
 Alliances cannot be made during Guild Wars!
-
+Allianzen können nicht während Gildenkämpfen geknüpft werden!
 
 AllowKS | 
-
+AllowKS | 
 
 Almost got it!
-
+Ich habs gleich!
 
 Already using this font.
 Schrift wird bereits benutzt.
 
 Alright! Yoyone more box and it'll be good.
-
+Alles klar! Eüüne Kiste noch, dann müsste es passen.
 
 Alright, I'll take one.
+Gut, ich nehm eine.
+
+Alright, I'm going to his room, keep an eye on her, we still don't know if she's friend or foe...#0
 
 
-Alright, I'm going to her room, keep an eye on her, we still don't know if she's a friend or a foe...#0
-Also gut, ich gehen in ihren Raum, wirf eine Auge auf sie. Wir wissen immernoch nicht, ob sie ein Freund oder ein Feind ist...
-
-Alright, I'm going to his room, keep an eye on him, we still don't know if he's a friend or a foe...#1
+Alright, I'm going to his room, keep an eye on him, we still don't know if he's friend or foe...#1
 
 
 Alright, take your time we are not in a hurry.
-
+Alles klar, lass dir Zeit. Wir habens nicht eilig.
 
 Alright, you will need this shovel.
-
+Du wirst diese Schaufel brauchen.
 
 Alright. I will go looking for them now.
 Ok. Ich werde nach ihnen schauen gehen.
@@ -783,31 +780,34 @@ Alright... Bye.
 Ok... Tschüß.
 
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#0
-
+Wir haben auch deine Kleüüüdung geholt. Sie war in einem ...dürürü... in einem schlechten Zustand. Schau in die Kiste neben deinem Bett, dort sind andere Sachen.
 
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#1
-
+Wir haben auch deine Kleüüüdung geholt. Sie war in einem ...dürürü... in einem schlechten Zustand. Schau in die Kiste neben deinem Bett, dort sind andere Sachen.
 
 Alternative clouds appeared.
-
+Andere Wolken sind erschienen.
 
 Alternative clouds have disappeared.
+Andere Wolken sind verschwunden.
+
+Although the more powerful you are, the more plushrooms you will need.
 
 
 Amount?
-
+Menge?
 
 An invalid number was specified.
-
+Eine ungültige Zahl wurde angegeben.
 
 And I bet you don't know who is in charge of monitoring the security of this place?
-
+Und ich wette, du hast keinen Schimmer, wer für die Sicherheit dieses Ortes verantwortlich ist.
 
 And I have no sign of a so called "@@" on it!
 
 
 And get out of here, I'm not a map!
-
+Raus hier! Ich bin keine Karte!
 
 And now I want to see you run!
 Und nun will ich dich rennen sehen!
@@ -819,16 +819,16 @@ And then what happened?
 Und dann passierte was?
 
 And what would you give me in exchange for that information?
-
+Was könntest du mir im Tausch für diese Information anbieten?
 
 And when we have enough money to support ourselves and not depend on anybody
-
+Sobald wir genug Geld haben, um unabhängig zu sein
 
 And where can I find these potions?
-
+Wo kann ich diese Tränke finden?
 
 And with my piou. That's wonderful. I can only imagine how hard that little bugger was to catch!
-
+Mit meinem Piou. Das ist wundervoll. Ich kann mir vorstellen, wie schwer dieser kleine Wirbelwind zu fangen war!
 
 And you, how are you doing?
 Und du, was machst du?
@@ -837,67 +837,70 @@ And you? How's it going on your side?
 Und du? Wie geht es dir?
 
 And you? How's it yaying on your side?
-
+Und du? Wie gürülüt es auf deiner Seite?
 
 Any clue on where Astapolos may be hidden?
-
+Irgendeine Ahnung, so Astapolos versteckt sein könnte?
 
 Any contribution to the game (translations, graphics creation/edition, concepts, coding/scripting, etc...) is rewarded!
-
+Jegliche Zuarbeit zum Spiel (Übersetzungen, Erstellen und Editieren von Grafiken und Konzepten, Coding/Scripting etc.) wird belohnt!
 
 Anyway I am glad I can give you some of these yoyoxs.
-
+Trotzdem bin ich froh, dir ein paar dieser türüoxs geben zu können.
 
 Anyway, can I help you in any way?
 Wie auch immer, kann ich Dir in irgendeiner Weise helfen?
 
 Anyway, he forgot his permit when he left the building.
-
+Seis drum, er hat seine Genehmigung vergessen, als er das Gebäude verließ.
 
 Anyway, here, have a cookie!
 Jedenfalls, hier, nimm einen Keks!
 
 Anyway, if you ever feel interested, just check my bag!#0
-Wie auch immer, wenn du interessiert bist, überprüfe einfach meinen Rucksack!
+Trotzdem, solltest du jemals Interesse haben, schau einfach in meine Tasche!
 
 Anyway, if you ever feel interested, just check my bag!#1
-Wie auch immer, wenn du interessiert bist, überprüfe einfach meinen Rucksack!
+Trotzdem, solltest du jemals Interesse haben, schau einfach in meine Tasche!
 
 Anyway, let me know if you change your mind.
-
+Lass mich wissen, wenn du dich anders entscheidest.
 
 Anyway, the guild creation is perfect for both case! You can keep your current party as is while having a guild to talk and share different items with all of your friends!
-
+Die Bildung einer Gilde ist in beiden Fällen perfekt! Du kannst deine aktuelle Gruppe behalten, wie sie ist. Gleichzeitig hast du eine Gilde, über die du mit Freunden sprechen und verschiedene Gegenstände teilen kannst!
 
 Anyway, the last time I stole something I was almost caught.
-
+Leider wurde ich bei meinem letzten Diebstahl beinahe geschnappt.
 
 Anyway.
-
+Seis drum.
 
 Appearance changed.
 Aussehen geändert.
 
 Arch Bishop
-
+Erzbischof
 
 Arch Bishop T
-
+Erzbischof T
 
 Archer
-
+Bogenschütze
 
 Are the fish biting today?
-
+Beißen die Fische heute?
 
 Are you a good blacksmith?
+Bist du ein guter Schmied?
+
+Are you a native from Artis?
 
 
 Are you blind? Do you really think these boxes are light and soft as a piou's feather?!
 Bist du blind? Denkst du wirklich das diese Kisten leicht wie Piou-Federn sind?!
 
 Are you going to stand here all day long? Do the dishes or go away.
-
+Willst du den ganzen Tag hier herumstehen? Mach den Abwasch oder verzieh dich.
 
 Are you mad?!
 Bist Du sauer?!
@@ -906,73 +909,76 @@ Are you ok?
 Alles ok?
 
 Are you sure about this?#0
-
+Bist du dir da sicher?
 
 Are you sure about this?#1
-
+Bist du dir da sicher?
 
 Are you sure that they are my potions?
-
+Bist du sicher, daß das meine Tränke sind?
 
 Are you sure?
-
+Bist du sicher?
 
 Are you yaying here to explore the island?#0
-
+Dürülüüst du hier, um die Insel zu erforschen?
 
 Are you yaying here to explore the island?#1
-
+Dürülüüst du hier, um die Insel zu erforschen?
 
 AreaNPC
 AreaNPC
 
 AreaNPC#001-2-22
-
+AreaNPC#001-2-22
 
 AreaNPC#doors1
-
+AreaNPC#doors1
 
 AreaNPC#doors2
-
+AreaNPC#doors2
 
 AreaTop
 AreaTop
 
 Artaxe
-
+Artaxe
 
 Artis is a very nice place; there are some hot chicks...
-
+Artis ist ein netter Ort; es sind auch ein paar heiße Schnitten hier...
 
 Artis of course!
 Artis natürlich!
 
 As a thank you, accept my old fishing rod.
+Als Belohnung möchte ich dir meine alte Angel geben.
+
+As captain of this ship, I officially name this newly discovered land the ##BDrasil Island##b!
 
 
 As they sailed on Oceania, great waters of Aemil, one of the alliances found a land.
-
+Während sie über Oceania, die großen Wasser von Aemil segelten, stieß eine der Allianzen auf Land.
 
 As you may know, we are explorers on a long distance voyage, and our swashbuckling mariners need to store enough food to survive. You don't know how dangerous the sea life can be.
-
+Wie du vielleicht weißt, sind wir weitreisende Entdecker. Unsere deckschrubbenden Seemänner müssen genung Nahrung lagern, um zu überleben. Du hast keine Ahnung, wie gefährlich das Leben auf See sein kann.
 
 As you want!
-
+Wie du willst!
 
 Ash brown
-
+Aschbraun
 
 Ask other merchants, they might know where he is.
-
+Frag andere Händler. Sie wissen vielleicht, wo er ist.
 
 Ask sailors around here they shouldn't be so far away.
-
+Frag Seemänner hier im Umkreis. Sie sollten nicht so weit entfernt sein.
 
 Assassin
-
+Assassine
 
 Assassin Cross
-
+Assassinenkreuz
 
 Astapolos
 Astapolos
@@ -984,298 +990,298 @@ Astapolos... That guy is shy like a piou!
 Astapolos... Dieser Typ ist schüchtern wie ein Piou!
 
 At that time, we were selling crab food on our old mushroom island.
-
+Zu diesem Zeitpunkt verkauften wir Krabbenfutter auf unserer alten Pilz Insel.
 
 At the moment, our crew is busy collecting @@s, @@s and @@s.
-
+Momentan ist die Crew damit beschäftigt, @@s, @@s und @@s zu sammeln.
 
 Auburn brown
-
+Kastanienbraun
 
 Auction is disabled
-
+Auktion ist abgeschaltet.
 
 Authorities began to control in order to have a peaceful society. This did not work well for long.
-
+Die Machthaber begannen mit der Überwachung, um eine friedliche Gesellschaft zu schaffen. Das ging nicht lange gut.
 
 Autoloot is now off.
-
+Autoloot abgeschaltet.
 
 Autolooting item type: '%s'
-
+Autoloot Gegenstand: '%s'
 
 Autolooting item: '%s'/'%s' {%d}
-
+Autoloot Gegenstand: '%s'/'%s' {%d}
 
 Autolooting items with drop rates of %0.02f%% and below.
-
+Autoloot von Gegenständen mit Beutewahrscheinlichkeit %0.02f%% und kleiner.
 
 Autorejected alliance request from %s.
-
+Allianzanfrage von %s automatisch abgelehnt.
 
 Autorejected friend request from %s.
-
+Freundschaftsanfrage von %s automatisch abgelehnt.
 
 Autorejected guild invite from %s.
-
+Gildeneinladung von %s automatisch abgelehnt.
 
 Autorejected opposition request from %s.
-
+Gegneranfrage von %s automatisch abgelehnt.
 
 Autorejected party invite from %s.
-
+Gruppeneinladung von %s automatisch abgelehnt.
 
 Autorejected trade request from %s.
-
+Handelsanfrage von %s automatisch abgelehnt.
 
 Autorejecting is activated.
-
+Automatische Ablehnungen aktiviert.
 
 Autorejecting is deactivated.
-
+Automatische Ablehungen deaktiviert.
 
 Autotrade Disabled
-
+Automatisches Handeln deaktiviert.
 
 Autotrade Enabled
-
+Automatisches Handeln aktiviert.
 
 Autotrade is not allowed in this map.
-
+Automatischer Handel ist auf dieser Karte nicht erlaubt.
 
 Available Flags:
 Verfügbare Flaggen:
 
 Available aliases:
-
+Verfügbare Alias:
 
 Available commands:
-
+Verfügbare Befehle:
 
 Aw, what will I do now?
-
+Aw, was soll ich jetzt tun?
 
 Awesome!
 Großartig!
 
 Awesome! I will wait for you here.
-
+Unglaublich! Ich werde hier auf dich warten.
 
 Awesome, come back if you ever want to create a larger group!
-
+Klasse. Komm zurück, wenn du jemals eine größere Gruppe aufbauen willst.
 
 Awesome. How many of those do you want to give me?
-
+Super! Wieviele kannst du mir davon geben?
 
 Ayouyouch! My head...
 AUAuauaua! Mein Kopf...
 
 BUT I CAN'T, I NEED TO KEEP AN EYE ON THE SEA, TO WARN THE CREW IF THERE HAPPENS TO BE SOME PIRATES AROUND!
-
+ABER ICH KANN NICHT! ICH MUSS NACH PIRATEN AUSSCHAU HALTEN, DAMIT ICH DIE CREW WARNEN KANN!
 
 Baby Acolyte
-
+Baby Gefolgsmann
 
 Baby Alchemist
-
+Baby Alchemist
 
 Baby Arch Bishop
-
+Baby Erzbischof
 
 Baby Archer
-
+Baby Bogenschütze
 
 Baby Assassin
-
+Baby Assassine
 
 Baby Bard
-
+Baby Barde
 
 Baby Blacksmith
-
+Baby Schmied
 
 Baby Crusader
-
+Baby Kreuzritter
 
 Baby Dancer
-
+Baby Tänzer
 
 Baby Genetic
-
+Baby Gene
 
 Baby Guillotine Cross
-
+Baby Guillotinenkreuz
 
 Baby Hunter
-
+Baby Jäger
 
 Baby Knight
-
+Baby Ritter
 
 Baby Magician
-
+Baby Magier
 
 Baby Mechanic
-
+Baby Mechaniker
 
 Baby Merchant
-
+Baby Händler
 
 Baby Minstrel
-
+Baby Hofmusiker
 
 Baby Monk
-
+Baby Mönch
 
 Baby Novice
-
+Baby Novize
 
 Baby Priest
-
+Baby Priester
 
 Baby Ranger
-
+Baby Förster
 
 Baby Rogue
-
+Baby Rouge
 
 Baby Royal Guard
-
+Baby Königsgardist
 
 Baby Rune Knight
-
+Baby Runenritter
 
 Baby Sage
-
+Baby Weiser
 
 Baby Shadow Chaser
-
+Baby Schattenjäger
 
 Baby Sorcerer
-
+Baby Zauberer
 
 Baby Sura
-
+Baby Sura
 
 Baby Swordsman
-
+Baby Schwertkämpfer
 
 Baby Thief
-
+Baby Dieb
 
 Baby Wanderer
-
+Baby Wanderer
 
 Baby Warlock
-
+Baby Hexenmeister
 
 Baby Wizard
-
+Baby Zauberer
 
 Bag#000-1
-
+Bag#000-1
 
 Bag#001-1
-
+Bag#001-1
 
 Bald
-
+Glatze
 
 Ban failed, it is not possible to ban this user.
-
+Sperrung fehlgeschlagen, es ist nicht möglich, diesen Nutzer zu sperren.
 
 Banking is disabled
-
+Bankgeschäfte deaktiviert.
 
 Bard
-
+Barde
 
 Bare Hands
 bloßen Händen
 
 Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
-
+Basis Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
 
 Base level can't go any higher.
-
+Basislevel ist am Maximum und kann nicht weiter steigen.
 
 Base level can't go any lower.
-
+Basislevel ist am Minimum und kann nicht weiter sinken.
 
 Base level lowered.
-
+Basislevel reduziert.
 
 Base level raised.
-
+Basislevel erhöht.
 
 Battle configuration has been reloaded.
-
+Kampfeinstellungen wurden neu geladen.
 
 Battlegrounds ON
-
+Schlachtfeld AN
 
 Be a friend, and bring me @@ @@s
-
+Sei nett zu mir, und bring mir @@ @@s
 
 Be patient a little while longer, in the next few days we will arrive at the port of Artis...
 Seien Sie noch eine kleine Weile geduldig, in den nächsten Tagen werden wir im Hafen von Artis ankommen ...
 
 Because I am an orc I can't read such things? That's rubbish.
-
+Weil ich ein Ork bin und solche Sachen nicht lesen kann? Quatsch.
 
 Because of the dense foliage, you need to go up close to the trees so you don't miss him.
-
+Wegen des dichten Laubwerkes musst du nahe der Bäume nach oben gehen, damit du ihn nicht verpasst.
 
 Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
-
+Weil du von einigen Maps nicht warpen darfst, wurden %d Spieler nicht hergerufen.
 
 Before I joined Nard, I used to be a thief.
-
+Bevor ich Nard's Crew beitrat, war ich ein Dieb.
 
 Before you go, let me tell you how to get @@s, because you don't look very smart.
-
+Erzähl mir wie man @@s bekommt, bevor du gehst. Du schaust nämlich nicht sehr klug aus.
 
 Before...
 Vor dem ...
 
 Behind me? It's the Blacksmith house, the most renowned throughout Andorra.
-
+Hinter mir? Das ist die berühmteste Schmiede von ganz Andorra.
 
 Besides, I need to be here to watch for thieves while La Johanne is docked.
-
+Übrigens halte ich hier nach Dieben Ausschau, während die La Johanne im Hafen liegt.
 
 Better take it back to Q'Onan.
-
+Bring es besser zurück zu Q'Onan.
 
 Beuss
-
+Beuss
 
 Beware of falling stones from the cliff!
-
+Vorsicht vor Steinschlag!
 
 Billy Bons
 Billy Bons
 
 Black iron... That is a very specific request that you have for me!
-
+Schwarzes Eisen... das ist eine sehr spezielle Anfrage, die du da für mich hast!
 
 Blacksmith
-
+Schmied
 
 Blub
-
+Blub
 
 Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --
-
+Blau -- Spieler %s lädt dich zu einem PVP Duell ein (Nutze @accept/@reject) --
 
 Bobo
-
+Bobo
 
 Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
-
+Boss Beutequoten: Gewöhnlich %.2fx / Heilung %.2fx / Nutzbar %.2fx / Ausrüstung %.2fx / Karte %.2fx
 
 Bowl cut
-
+Topfschnitt
 
 Box
 Kiste
@@ -1284,25 +1290,25 @@ Break the door.
 Schlag die Tür ein.
 
 Bring it to me, and you will get your reward.
-
+Bring es mir, dann bekommst du deine Belohnung.
 
 Bring me some of these plushrooms and I will show you how it works!
-
+Bring mir ein paar dieser Plushrooms, dann zeige ich dir, wie es funktioniert!
 
 Bring this box to Gugli. He will be extremely happy!
 Bringe diese Box zu Gugli. Er wird extrem glücklich sein!
 
 Bun
-
+Dutt
 
 Bunches
-
+Gebinde
 
 Bury.
-
+Begraben.
 
 But I can't leave to catch it, so I'm asking you.
-
+Ich kann hier aber nicht weg, um es zu fangen. Darum frage ich dich.
 
 But I can't tell you anything about it, I'm sorry.
 Tut mir Leid, aber darüber kann ich dir nichts sagen.
@@ -1311,34 +1317,40 @@ But I need to go, see you!
 Aber ich muss gehen. Tschüß!
 
 But I still have some spikes left in my foot.
-
+Ich habe aber immer noch Stacheln in meinem Fuß.
 
 But I swear that one day... Oh... My tasty revenge! Hhm, actually I wonder if... Maybe...
-
+Dennoch schwöre ich, daß eines Tages... Ohh.. Süße Rache! Hmm, grade jetzt frage ich mich... vielleicht...
 
 But I'm almost out of @@...
-
+Aber ich habe kaum noch @@...
 
 But anyway, take the road which goes to the north to find everybody.
+Nimm dennoch die Straße nach Norden, um alle zu finden.
+
+But discovering new territories is probably the best thing that can happen to sailors, don't you think?
 
 
 But for now, you can relax on the ship, or visit the island we're docked at! Its a small island, but a good place to get some exercise and stretch your legs.
 Aber jetzt können Sie sich auf dem Schiff entspannen, oder besuchen Sie die Insel, an wir bei angedockt sind! Es ist eine kleine Insel, aber ein guter Ort, um etwas Bewegung zu bekommen und um die Beine zu vertreten.
 
-But hey, back to me. Remember my mentioning that I'm hun...grrr...eee!
+But he never returned.
 
+
+But hey, back to me. Remember my mentioning that I'm hun...grrr...eee!
+Zurück zu mir. Erinnert mich daran, meinen Hunn... gerrrr... erwähnt zu haben.
 
 But if you fail, you will have to get them from the alchemist.
-
+Falls es dir nicht gelingt, musst du sie beim Alchemisten besorgen.
 
 But if you tell my sister, that you didn't find me, I can stay here all day, eating apples and enjoying the view.
+Wenn du aber meiner Schwester nicht sagst, daß du mich gefunden hast, kann ich den ganzen Tag hier sein, Äpfel essen und die Aussicht genießen.
 
-
-But in the future I might be able to help you to create some of your own.
+But in the future I might be able to help you create some of your own.
 
 
 But let's talk about this island. We're docking here to find some fine quality goods.
-
+Lass uns jetzt über diese Insel reden. Wir liegen hier vor Anker, um qualitativ hochwertige Waren zu finden.
 
 But most important, she is the one who took care of you when you were unconscious.#0
 Aber am wichtigsten ist, sie hatte sich um Dich gekümmert als Du bewusstlos warst.
@@ -1347,37 +1359,40 @@ But most important, she is the one who took care of you when you were unconsciou
 Aber am wichtigsten ist, sie hatte sich um Dich gekümmert als Du bewusstlos warst.
 
 But my luck left me, because as soon as I left his house, the guards started chasing me.
-
+Mein Glück hatte mich jedoch verlassen. Sobald ich sein Haus verließ, nahmen die Aufpasser die Verfolgung auf.
 
 But rare are those that receive grants from the Legion itself. For anybody else only a hard work can pay your bills!
-
+Es gibt nur sehr wenige, die von der Legion selbst Zahlungen erhalten. Alle anderen können ihre Rechnungen nur durch harte Arbeit bezahlen.
 
 But remember that not every place in this world is peaceful and safe nowadays. Even the white shores you are walking on can hide some dangerous beings.
+Bedenke, daß heutzutage nicht jeder Ort auf der Welt friedlich und sicher ist. Sogar die weißen Strände, auf denen du läufst, können Gefahren bergen.
+
+But still, you open your eyes and see a large ship before you!
 
 
 But thank you anyway! I can refund him now!
-
+Danke Dir trotzdem! Nun kann ich es ihm zurückzahlen!
 
 But the plushroom you brought was really awesome you know.#0
-
+Der Plushroom, den du gebracht hast, was wirklich unglaublich, weißt du.
 
 But the plushroom you brought was really awesome you know.#1
-
+Der Plushroom, den du gebracht hast, was wirklich unglaublich, weißt du.
 
 But we are quite lucky here, outside of some tipsy travelers there are no big problems around here, it's not like the capital, Esperia.
-
+Wir haben schon Glück hier in Artis. Es gibt keine größeren Unruhen, außer hin und wieder verplante Reisende. In der Hauptstadt Esperia ist das schon etwas anderes.
 
 But who am I?
 Aber wer bin ich?
 
 But you are welcome to reset your stats again if you bring me more plushrooms!#0
-
+Du kannst gerne jederzeit zurückkommen, um deine Statuspunkte zurückzusetzen. Bring mir nur Plushrooms!
 
 But you are welcome to reset your stats again if you bring me more plushrooms!#1
-
+Du kannst gerne jederzeit zurückkommen, um deine Statuspunkte zurückzusetzen. Bring mir nur Plushrooms!
 
 But you decide to patiently wait.
-
+Du entscheidest dich, geduldig zu warten.
 
 But you won't *hic* me this time...
 Aber du wirst *hicks* mich doch nicht dieses Mal...
@@ -1386,16 +1401,16 @@ But...
 Aber...
 
 But... If he has amnesia like Julia said... We don't need to worry about him. At least not yet.#1
-
+Aber... wenn er Gedächnisverlust erlitten hat, wie Julia sagt... müssen wir uns um ihn keine Sorgen machen. Zumindest noch nicht.
 
 But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet.#0
-
+Aber... wenn sie Gedächnisverlust erlitten hat, wie Julia sagt... müssen wir uns um sie keine Sorgen machen. Zumindest noch nicht.
 
 By the way, did you ever talk with Don?
-
+Hast du übrigens schon mal mit Don gesprochen?
 
 Bye bye!
-
+Tchüss.
 
 Bye for now.
 Bis bald!
@@ -1407,61 +1422,67 @@ Bye!
 Bye!
 
 Bye.
-Bye.
+Ade.
 
 C'mon, don't be like that and loosen up! Don't you want to know who's behind all of this?!
-
+Komm schon, mach dich locker! Willst du nicht wissen, wer hinter alldem steckt?
 
 CAN YOU HEAR ME?!
 KANNST DU MICH HÖREN?
 
 Calypsan#001-1
-
+Calypsan#001-1
 
 Can I be of any help?
-
+Kann ich irgendwie helfen?
 
 Can I craft them myself?
-
+Kann ich die selbst herstellen?
 
 Can I read the rules again?
-
+Kann ich die Regeln noch einmal lesen?
 
 Can I read these rules again?
 Kann ich diese Regeln noch einmal lesen?
 
 Can you do something with my color?
+Kannst du etwas mit meiner Farbe machen?
+
+Can you please go away?
 
 
 Can you please go there and find him? He is probably hiding in one of those trees, like always.
-
+Kannst du bitte dort nach ihm suchen? Wahrscheinlich versteckt er sich hinter einem dieser Bäume, wie immer.
 
 Can you reset my stats please?
-
+Kannst du meine Statuspunkte bitte zurücksetzen?
 
 Can't create chat rooms in this area.
-
+Hier können keine Chat Räume angelegt werden.
 
 Can't show boss mobs!
+Die Bossgegner können nicht angezeigt werden!
+
+Can't talk right now, i'm on patrol duty.
 
 
 Can't you see I'm working?!
 Siehst du nicht, dass ich arbeite?!
 
 Cannot clone a player of higher GM level than yourself.
-
+Du kannst keinen Spieler mit einem höheren GM Level als deinem eigenen klonen.
 
 Cannot create bound pet eggs or pet armors.
-
+Verknüpfte Haustiereier oder -Rüstungen können nicht erstellt werden.
 
 Cannot mount while in disguise.
-
+Kann in Verkleidung nicht reiten.
 
 Cannot send mails too fast!!
-
+Die Mails können nicht zu schnell gesendet werden!!
 
 Cannot transform into monster while in disguise.
-
+Kann in Verkleidung nicht in ein Monster verwandeln.
 
 Captain Nard
 Kapitän Nard
@@ -1470,79 +1491,79 @@ Captain Nard is in the room to your right.
 Kapitän Nard ist in dem Raum auf der rechten Seite.
 
 Carmie#001-1
-
+Carmie#001-1
 
 Cart Added.
-
+Cart hinzugefügt.
 
 Cash Shop is disabled in this map
-
+Auf dieser Karte ist die Kasse deaktiviert.
 
 Cashmere
-
+Kashmir
 
 Cashmere#Dye001-1
-
+Cashmere#Dye001-1
 
 Cat got your tongue?
-
+Die Katze hat deine Zunge?
 
 Center parting
-
+Mittelscheitel
 
 Champion
-
+Champion
 
 Changed your mind, uh?#0
-
+Hast dich anders entschieden, was?
 
 Changed your mind, uh?#1
-
+Hast dich anders entschieden, was?
 
 Channel '%s' has no banned players
-
+Channel '%s' hat keine gesperrten Spieler.
 
 Channel '%s' is not available
-
+Channel '%s' ist nicht verfügbar.
 
 Channel length must be between 3 and %d
-
+Die Channelbezeichnung muss zwischen 3 und %d Zeichen lang sein.
 
 Channel name must start with a '#'
-
+Der Channel Name muss mit '#' beginnen
 
 Channel password may not contain spaces
-
+Das Channel Passwort darf keine Leerzeichen enthalten
 
 Char-server has been asked to %s the character '%.*s'.
-
+Anfrage an Charakter-Server: %s zum Charakter '%.*s'.
 
 Character cannot be disguised while in monster form.
-
+Charakter in Monsterform kann nicht verkleidet werden.
 
 Character cannot be disguised while mounted.
-
+Während des Reitens kann nicht verkleidet werden.
 
 Character does not have the specified item.
-
+Der Charakter besitzt diesen Gegenstand nicht.
 
 Character killed.
-
+Charakter getötet.
 
 Character not found.
-
+Charakter nicht gefunden.
 
 Charcommand failed (usage: %c<command> <char name> <parameters>).
-
+Charakterbefehl fehlgeschlagen (Benutzung: %c<command> <char name> <parameters>).
 
 Chat: %s | Player: %s | Location: %d %d
-
+Chat: %s | Spieler: %s | Ort: %d %d
 
 Check my balance.
-
+Kontostand prüfen.
 
 Check out this one.
-
+Teste mal diesen hier.
 
 Cheers!
 Prost!
@@ -1551,124 +1572,127 @@ Chef Gado
 Koch Gado
 
 Chef Gado#Artis
-
+Koch Gado#Artis
 
 Chef? He is Don's apprentice, he works on his hammering skill day and night.
-
+Chef? Er ist Don's Lehrling. Er arbeitet Tag und Nacht an seinen Hämmerfähigkeiten.
 
 Chelios
-
+Chelios
 
 Chelios asked me to get it.
-
+Chelios hat mich gebeten, es abzuholen.
 
 Chelios managed to do excellent work.
-
+Chelios hat exzellente Arbeit abgeliefert.
 
 Chelios was stubborn in his youth, he never stopped annoying me with his questions while I was working at the forge.
-
+In seiner Jugend war Chelios sehr dickköpfig. Er nervte mich ständig mit seinen Fragen, während ich an der Esse arbeitete.
 
 Chelios, his apprentice, practices outside, mostly.
-
+Chelios, sein Lehrling, arbeitet meistens draußen.
 
 Chelios... He is part of the blacksmith house, is he not?
-
+Chelios... Er ist ein Teil der Schmide, nicht wahr?
 
 Cherry blossom
-
+Kirschblüte
 
 Cherry tree leaves have begun to fall.
-
+Die Kirschbaumblätter beginnen zu fallen.
 
 Cherry tree leaves no longer fall.
-
+Die Kirschbaumblätter fallen nicht mehr.
 
 Chest
 Truhe
 
 Chest opened.
-
+Truhe geöffnet.
 
 Chest#Artis
-
+Chest#Artis
 
 Children play there; and can be badly hurt if they play near a Fluffy's nest.
-
+Dort spielen Kinder; und es kann böse enden, wenn sie in der Nähe eines Fluffynestes spielen.
 
 Chill out I won't say anything.
-
+Komm runter, ich werd nichts sagen.
 
 Choppy
-
+Choppy
 
 Christmas
-
+Weihnachten
 
 Christopher
+Christopher
+
+Christopher is surrounded by the sunlight from the window.
 
 
 City Hall
+Rathaus
 
+Click on the NPCs (Non-Player Characters) around you to continue the introduction.
 
-Click on the NPCs around you to continue the introduction.
-Klicke auf die NPCs um dich herum um die Einleitung weiter zu führen.
 
 Clone spawned.
-
+Klon erschaffen.
 
 Clouds appeared.
-
+Wolken erscheinen.
 
 Clouds have disappeared.
-
+Wolken sind verschwunden.
 
 Clouds | 
-
+Clouds | 
 
 Clouds2 | 
-
+Clouds2 | 
 
 Clown
 Clown
 
 Colorant is not the yeying color. Some wear out from light, others look great but inflict itai-itai, and others become spotty or wash-away.
-
+Farbstoffe sind nicht die bürübesten Farben. Einige tragen sich im Licht schnell ab, andere sehen klasse aus, beeinflussen aber das itai-itai, und wieder andere werden fleckig oder waschen sich heraus.
 
 Combed back
-
+zurückgekämmt
 
 Come after some time.
-
+Komm später wieder.
 
 Come back later if you changed your mind!
-
+Komm später zurück, wenn du deine Meinung ändern solltest.
 
 Come back later!
-
+Komm später wieder!
 
 Come back soon! And bring a plushroom with you!
-
+Komm bald wieder! Und bring einen Plushroom mit!
 
 Come back when you will really need me. And bring more plushrooms with you!#0
-
+Komm zurück wenn du mich wirklich brauchst. Und bring mehr Plushrooms mit!
 
 Come back when you will really need me. And bring more plushrooms with you!#1
-
+Komm zurück wenn du mich wirklich brauchst. Und bring mehr Plushrooms mit!
 
 Come on, Sap! You are scaring her with your stories.#0
-
+Komm schon, Sap! Du verschreckst sie mit deinen Geschichten.
 
 Come on, Sap! You are scaring him with your stories.#1
-
+Komm schon, Sap! Du verschreckst ihn mit deinen Geschichten.
 
 Come on, don't be a coward!
-
+Auf gehts, sei kein Feigling!
 
 Come, come and see!
-
+Komm komm und kuck!
 
 Commands are disabled in this map.
-
+Befehle sind auf dieser Karte deaktiviert.
 
 Congrats, you are now part of the crew. Thanks again for your help.
 Glückwunsch! Du bist nun ein Teil der Mannschaft. Danke nochmal für deine Hilfe.
@@ -1689,19 +1713,19 @@ Cookies provide you strength, health and cuteness.
 Kekse liefern dir Stärke, Gesundheit und Niedlichkeit.
 
 Copper blonde
-
+Kupferblond
 
 Costume '%s' removed.
-
+Costume '%s' entfernt.
 
 Cotton
-
+Baumwolle
 
 Cotton#Dye001-1
-
+Cotton#Dye001-1
 
 Cotton, cashmere, leather, ...
-
+Baumwolle, Kashmir, Leder...
 
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#0
 Darf ich dich fragen was deine Muttersprache ist? Ein Matrose meinte Russisch, ein anderer Französisch... Ich bin ein wenig verwirrt. Ich werde dich danach sofort auf die Bordliste setzen.
@@ -1710,22 +1734,22 @@ Could I ask you what your native language is? A sailor told me you're russian, b
 Darf ich dich fragen was deine Muttersprache ist? Ein Matrose meinte Russisch, ein anderer Französisch... Ich bin ein wenig verwirrt. Ich werde dich danach sofort auf die Bordliste setzen.
 
 Could I lodge here for a while?
-
+Kann ich hier eine Weile abhängen?
 
 Could you bleach my clothes?
-
+Kannst du meine Kleidung bleichen?
 
 Could you bring it to him?
-
+Könntest du ihn zu ihm bringen?
 
 Could you do a small favor for me?
-
+Kannst du mir einen kleinen Gefallen tun?
 
 Could you explain to me where I am?
 Kannst du mir sagen wo ich bin?
 
 Could you please bring me something which isn't a berry, and I'm not big on vegetables either. I need proteins!
-
+Bring mir bitte irgendwas, was keine Beere ist. Ich stehe auch nicht sonderlich auf Gemüse. Ich brauch Protein!
 
 Could you tell me where I am?#0
 Kannst du mir sagen wo ich bin?
@@ -1743,37 +1767,40 @@ Couwan hands you a box full of fish.
 Couwan übergibt dir eine Box voller Fische.
 
 Crafty
-
+Crafty
 
 Creating a party has some advantages, it's a pretty good choice!
-
+Eine Gruppe zu bilden hat einige Vorteile, es ist eine gute Wahl!
 
 Creator
 Schöpfer
 
 Croc
-
+Croc
 
 Croconut
 Krokosnuss
 
 CroconutMob
-
+CroconutMob
 
 Crocotree
-
+Croctree
 
 Crusader
-
+Crusader
 
 Cuco
-
+Cuco
 
 Current amount of zeny changed.
-
+Aktuelle Zenymenge geändert.
 
 DO YOU FEEL BETTER?!
 FÜHLST DU DICH BESSER?!
+
+Daddy did not come back home... He said that he would be back for lunch but it has already been a week!
+
 
 Damn @@.
 Verdammte @@.
@@ -1785,112 +1812,112 @@ Dan keeps silent since your last question.
 Dan behält sein Schweigen bei seit Ihrer letzten Frage.
 
 Dan#000-2-1
-
+Dan#000-2-1
 
 Dancer
 Tänzer
 
 Dang, I scared it! More patience, @@, more patience.
-
+Boing, ich habs verschreckt. Geduld, @@, Geduld!
 
 Dark Collector
-
+Dunkler Sammler
 
 Dark brown
-
+Dunkelbraun
 
 Dark copper
-
+Dunkelkupfer
 
 Darlin
 Darlin
 
 Day Mode Activated.
-
+Tag Modus aktiviert.
 
 Day Mode is activated
-
+Tag Modus deaktiviert.
 
 Day mode is already enabled.
-
+Tag Modus bereits aktiv.
 
 Deal, I offer you @@E!
-
+Das ist ein Deal. Ich biete dir @@E!
 
 Deal?
-
+Deal?
 
 Dear angel, can you hear my voice?
-
+Liebster Engel, kannst Du meine Stimme hören?
 
 Dear sister,
-
+Liebste Schwester,
 
 Death Knight
-
+Todesritter
 
 Defeated by
-
+Besiegt von
 
 Deposit.
-
+Einzahlen.
 
 Devis
 Devis
 
 Devis#001-1
-
+Devis#001-1
 
 Dex: %d (%d~%d)
-
+Dex: %d (%d~%d)
 
 Dexterity increases your bow damage and your accuracy.
-
+Treffsicherheit (dexterity, dex) erhöht den Schaden mit Bögen und die Genauigkeit.
 
 Did you find my brother?
-
+Hast du meinen Bruder gefunden?
 
 Did you say reward? I want it!
 Sagtest du Belohnung? Ich will sie!
 
 Did you see Don the blacksmith? He might knows more about it if you want to improve your metal equipment.
-
+Hast du schon mit Don dem Schmied gesprochen? Er könnte mehr darüber wissen, wie du deine Metallausrüstung verbessern kannst.
 
 Different ways, each part of your equipment can be generally upgraded.
-
+Generell kann jedes Ausrüstungsteil auf verschiedene Arten verbessert werden.
 
 Dig.
-
+Graben.
 
 Disconnecting to perform change-sex request...
-
+Verbindung getrennt, um Geschlechtsänderung vorzunehmen...
 
 Disguise applied.
-
+Tarnung angewandt.
 
 Disguise removed.
-
+Tarnung entfernt.
 
 Displaying first %d out of %d matches
-
+Angezeigt wird die erste %d von %d Partien.
 
 Displays Night | 
-
+Schaltet auf Nacht | 
 
 Divorce error!
-
+Problem bei der Scheidung!
 
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Jenna
-
+Gib das Kennwort für dein Zimmer keinesfalls weiter! Halte es geheim und versuche nicht, dasselbe Kennwort in Zukunft in einem anderen Raum zu nutzen. - Jenna
 
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia
-
+Gib das Kennwort für dein Zimmer keinesfalls weiter! Halte es geheim und versuche nicht, dasselbe Kennwort in Zukunft in einem anderen Raum zu nutzen. - Julia
 
 Do we have a deal?
-
+Haben wir einen Deal?
 
 Do you feel too weak even to do damage to this areas wishy-washy wildlife?
-
+Fühlst du dich sogar zu schwach, um diese Wischi-Waschi-Monster hier zu besiegen?
 
 Do you have any other questions for me?
 Hast du noch weitere Fragen an mich?
@@ -1902,31 +1929,37 @@ Do you have anything for me today?
 Hast du für mich heute irgendwas?
 
 Do you know how to speak with people around you?
-
+Weißt du, wie du dich mit den Leuten in deiner Umgebung unterhältst?
 
 Do you know where can I find Gulukan?
 Weißt du wo ich Gulukan finden kann?
 
 Do you know where the hill is?
+Weißt du, wo der Hügel ist?
+
+Do you live here alone?
 
 
 Do you need any other information?
 Benötigst Du weitere Informationen?
 
-Do you still need help?
+Do you need help with something?
 
+
+Do you still need help?
+Brauchst du immer noch Hilfe?
 
 Do you still want to lodge here?
-
+Willst du hier immer noch übernachten?
 
 Do you take apprentices?
-
+Nimmst du Lehrlinge auf?
 
 Do you think this is fair? They sent me down here alone, far away from everyone.
-
+Findest du das fair? Die haben mich hier an den Arsch der Welt abgeschoben.
 
 Do you want a drink?
-
+Möchtest du etwas trinken?
 
 Do you want me to go see her instead of you?
 Willst du, das ich gehe um sie zu sehen, statt deiner?
@@ -1935,187 +1968,193 @@ Do you want to cut this @@?
 Willst Du dies zerschneiden @@?
 
 Do you want to go somewhere?
-
+Möchtest du irgendwo hingehen?
 
 Do you want to marry @@?
-
+Möchtest du @@ heiraten?
 
 Do you want to read it?
-
+Möchtest du es lesen?
 
 Do you want to try?
 Willst du es ausprobieren?
 
 Do you want to use this place as save point?
-
+Möchtest du diesen Ort als Speicherpunkt benutzen?
 
 Do you, like, remember nothing at all? Or do you have SOME memories of your past?
-
+Erinnerst du dich an überhaupt gar nichts mehr? Oder hast du noch irgendwelche Erinnerungsfetzen?
 
 Do? I don't do them.
-
+Machen? Ich mache sie nicht.
 
 Docks's Warehouse
-
+Warenhaus an den Docks
 
 Does anyone know a good place to hang out in Esperia? - M. Arpan
-
+Kennt jemand eine gute Unterkunft in Esperia? - M. Arpan
 
 Does the guild has any work for me right now?
-
+Hat diese Gilde momentan irgendeinen Wert für mich?
 
 Does your mind go all fuzzy or does it feel like your head is going to explode??
-
+Fühlst du dich völlig verwirrt, oder fühlt es sich an, als würde dein Kopf explodieren?
 
 Doesn't he like the way I'm taking care of his ship? Everything is clean and tidy with me, rightful lieutenant of La Johanne.
-
+Mag er die Art und Weise nicht, wie ich mich um das Schiff kümmere? Alles ist sauber und aufgeräumt unter der Aufsicht des rechtmäßigen Lieutenant der La Johanne. Das bin ich.
 
 Dolfina
-
+Dolfina
 
 Don is a renowned blacksmith throughout Andorra it's crazy that you don't know about him.
-
+Don ist der berühmteste Schmied in Andorra. Es ist verrückt, dass du noch nicht von ihm gehört hast.
 
 Don is renowned throughout the archipelagos for his forgery here on Artis.
-
+Don ist überall im Archipel berühmt für seine Schmiede hier in Artis.
 
 Don is renowned throughout the archipelagos for his forgery skills here on Artis.
-
+Don ist auf dem ganzen Archipel für seine Schmiedekünste berühmt.
 
 Don#001-2-27
-
+Don#001-2-27
 
 Don't belittle me, my work is deserving of the highest esteem.
+Mach mich nicht runter. Meine Arbeit verdient die höchste Anerkennung.
+
+Don't distract me, I have to stay alert.
 
 
 Don't do theee... *hic* with me eh!
-
+Mach das nicht *hicks* mit mir!
 
 Don't fall!
-
+Fall nicht!
 
 Don't get too excited about it...
-
+Mach dir nicht zu große Hoffnungen deswegen...
 
 Don't say it so loudly, other people could hear us.
-
+Psst, red nicht so laut. Jemand könnte uns hören.
 
 Don't tell me more, I know what you want...
-
+Du musst nicht weitersprechen. Ich weiß was du willst...
 
 Don't try to poison me! I know what that does!
 Versuchen Sie nicht, mich zu vergiften! Ich weiß, was das macht!
 
 Don't worry sister, I didn't forget you
-
+Mach dir keine Sorgen, Schwester. Ich hab dich nicht vergessen
 
 Don't worry, I'm sure you will help them soon enough!
-
+Mach dir keinen Kopf! Ich bin sicher, du wirst ihnen noch früh genug helfen.
 
 Don't you try to cheat an old merchant! You don't have enough money, you need @@E.
-
+Versuch nicht, einen alten Haudegen von Händler übers Ohr zu hauen. Du hast nicht genung Geld. Du brauchst @@E.
 
 Done. Here, take it! Now, here is the plan. Go talk to her and offer our beautiful lady a bite of her arrogance!
-
+Fertig. Hier, nimm es! Der Plan ist folgender: Geh, sprich mit ihr und serviere unserer wunderhübschen Lady einen Bissen ihrer Arroganz!
 
 DoorUpwards
 DoorUpwards
 
 DoorUpwards#001-2-23
+DoorUpwards#001-2-23
+
+Drasil Island.
 
 
 Duel| Can't use %s in duel.
-
+Duell: Kann %s nicht im Duell benutzen.
 
 Duel| Can't use this item in duel.
-
+Duell: Kann diesen Gegenstand im Duell nicht benutzen.
 
 Duel| Invalid value.
-
+Duell: Ungültiger Wert.
 
 Duel| Invitation has been sent.
-
+Duell: Einladung wurde verschickt.
 
 Duel| Player name not found.
-
+Duell: Spielername nicht gefunden.
 
 Duel| The Player is in the duel already.
-
+Duell: Der Spieler ist bereits im Duell.
 
 Duel| The duel invitation has been accepted.
-
+Duell: Die Einladung wurde angenommen.
 
 Duel| The duel invitation has been rejected.
-
+Duell: Die Einladung wurde abgewiesen.
 
 Duel| The limit of players has been reached.
-
+Duell: Die Obergrenze an Spielern wurde erreicht.
 
 Duel| You can take part in duel once per %d minutes.
-
+Duell: Du kannst an diesem Duell einmal alle %d Minuten teilnehmen.
 
 Duel| You can't invite %s because he/she isn't in the same map.
-
+Duell: Du kannst %s nicht einladen, weil der Spieler sich nicht auf derselben Karte befindet.
 
 Duel| You can't use @accept without a duel invitation.
-
+Duell: Du kannst @accept nicht ohne eine Einladung zum Duell nutzen.
 
 Duel| You can't use @duel without @reject.
-
+Duell: Du kannst @duel nicht ohne @reject benutzen.
 
 Duel| You can't use @invite. You aren't a duelist.
-
+Duell: Du kannst @invite nicht nutzen. Du bist kein Duellant.
 
 Duel| You can't use @leave. You aren't a duelist.
-
+Duell: Du kanst @leave nicht nutzen. Du bist kein Duellant.
 
 Duel| You can't use @reject without a duel invitation.
-
+Duell: Du kannst @reject nicht ohne Duelleinladung nutzen.
 
 Duel| You've left the duel.
-
+Duell: Du hast das Duell verlassen.
 
 Dummy
-
+Dummy
 
 Duty calls me, *hic*, see you later, dude.#1
-
+Die Pflicht ruft, *hicks*, bis später, Alter!
 
 Duty calls me, *hic*, see you later, honey.#0
-
+Die Pflicht ruft, *hicks*, bis später, Süße.
 
 Each big city hosts a Legion chapter, Artis' chapter building is located in the North-West.
-
+Jede große Stadt beherbergt ein Legionskapitel. Das Kapitol in Artis befindet sich im Nordwesten der Stadt.
 
 Each card improves your gear by a ratio or a fixed number on a predefined stat.
-
+Jede Karte verbessert deine Ausrüstung prozentual, oder durch die Anpassung eines vorgegebenen Statusmerkmales.
 
 Each of the groups was ordered to sail in a different direction to find a new, suitable land where to live.
-
+Die Mannschaften sollten in jeweils verschiedene Richtungen segeln, um ein neues Heimatland zu finden.
 
 Each piece of equipment has a predefined slot number.
-
+Jedes Ausrüstungsteil hat eine vorgegebene Anzahl Slots.
 
 Earlier today there was this young seller named Fexil that passed by here.
-
+Vorher kam dieser junge Verkäufer mit Namen Fexil hier vorbei.
 
 East
-
+Osten
 
 Edouard#001-2-29
-
+Edouard#001-2-29
 
 Ehm... He was really upset because of some past stories.
-
+Ähem... Er war stinksauer, wegen ein paar alten Geschichten.
 
 Eight Castles
-
+Acht Schlösser
 
 Eighteen Castles
-
+Achtzehn Schlösser
 
 Eleven Castles
-
+Elf Schlösser
 
 Elmo
 Elmo
@@ -2124,190 +2163,190 @@ Elmo and Gugli told me that you did all of the tasks outside, congrats!
 Elmo und Gugli haben mir erzählt, dass zu alle Aufgaben draußen erledigt hast. Glückwunsch!
 
 Elmo brought reports to me about some frictions between my old and new lieutenants. You probably already met Julia and Gado the Chef.
-
+Elmo hat mir über Spannungen zwischen meinem alten und neuen Lieutenant berichtet. Vielleicht hast du ja schon Julia und Gado den Koch getroffen.
 
 Elmo told me what Nard said, congrats!
 Elmo erzählte mir was Nard sagte. Glückwunsch!
 
 Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.
-
+Elmo erzählte mir, daß du nun zur Familie gehörst und auch in unsere Geschäfte auf der Insel mit eingebunden wurdest. Ich möchte dir für deine Mühen dort unten meine Anerkennung aussprechen.
 
 Elmo#001-1
-
+Elmo#001-1
 
 Elmo#sailors
-
+Elmo#sailors
 
 Elven Voice
 Elfen Stimme
 
 Emo
-
+Emo
 
 Enabled Mapflags in this map:
-
+Aktivierte Mapflags auf dieser Karte:
 
 Enjoy the fraternity and excitement of your future guild!
-
+Genieße die Brüderlichkeit und erlebe aufregende Abenteuer mit deiner zukünftigen Gilde!
 
 Enjoy your new style.
-
+Viel Spaß mit deinem neuen Style.
 
 Enora from the Legion of Aemil has been warned that you were aboard.
-
+Enora von der Legion von Aemil wurde ob deiner Anwesenheit an Bord unterrichtet.
 
 Enora is carefully inspecting the sword.
-
+Gewissenhaft begutatchtet Enora das Schwert.
 
 Enora needs them.
-
+Enora braucht sie.
 
 Enora wants her potions.
-
+Enora braucht ihre Tränke.
 
 Enora#001-1
-
+Enora#001-1
 
 Enough of this island?
-
+Hast du genug von dieser Insel?
 
 Enter the amount that you want to deposit.
-
+Gib ein, wieviel du einzahlen möchtest.
 
 Enter the amount that you want to withdraw.
-
+Gib ein wieviel du abheben möchtest.
 
 Error reading atcommand.conf, reload failed.
-
+Fehler beim Lesen von atcommand.conf, Neustart fehlgeschlagen.
 
 Error reading groups.conf, reload failed.
-
+Fehler beim Lesen von groups.conf, Neustart fehlgeschlagen.
 
 Esperia Blue
-
+Esperiablau
 
 Eugene
-
+Eugene
 
 Everything feels numb and looks foggy to you, but you can recall the feeling of the cold hard wood of your raft on a stormy night
-
+Alles fühlt sich dumpf und verschwommen an, dennoch kannst du dich dunkel an das Gefühl erinnern, in einer sturmigen Nacht auf dem nasskalten, harten Holz deines Floßes zu liegen
 
 Evil clone spawned.
-
+Bösen Klon erschaffen.
 
 Exactly! Can I have one now?
 Exakt! Kann ich nun eine haben?
 
 Exactly. Even our task is ridiculous. Why should we collect food down here if we have plenty of those tasty and soft rattos inside our ship, waiting just to be hunted and cooked?
-
+Ganz genau! Unsere Aufgabe hier ist sowieso lächerlich. Warum sollten wir hier unten Essen sammeln, obwohl wir doch genug dieser leckeren, saftigen Rattos da drin haben, die nur darauf warten, gejagt und gekocht zu werden?
 
 Excellent!
-
+Exzellent!
 
 Excuse me that was a mistake.
-
+Entschuldige, das war mein Fehler.
 
 Excuse me? Do you know who I am?#0
-Entschuldigung? Weißt du wer ich bin?
+Entschuldigen? Weißt du mit wem du hier redest?
 
 Excuse me? Do you know who I am?#1
-Entschuldigung? Weißt du wer ich bin?
+Entschuldigen? Weißt du mit wem du hier redest?
 
 Exemple for yoiis:
-
+Beispül für düüch:
 
 Expanded Super Baby
-
+Erweitertes Super Baby
 
 Expanded Super Novice
-
+Erweiterter Super Novize
 
 Experience rates: Base %.2fx / Job %.2fx
-
+Erfahrungsraten: Base %.2fx / Job %.2fx
 
 FINE, BYE!
 NA GUT, TSCHÜSS!
 
 Fake name enabled.
-
+Falscher Name aktiviert.
 
 Fake name must be at least two characters.
-
+Falscher Name muss aus mindestens zwei Zeichen bestehen.
 
 Farewell.
 Mach es gut.
 
 Feel free to visit me another time
-
+Du kannst mich jederzeit besuchen.
 
 Fexil
 Fexil
 
 Fexil#001-1
-
+Fexil#001-1
 
 Fifteen Castles
-
+Fünfzehn Schlösser
 
 FightNPCName
-
+FightNPCName
 
 File not found.
 Datei nicht gefunden.
 
 File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
-
+Datei gelöscht. Achtung: Mapflags und Monster, die direkt erschaffen wurden, wurden nicht entfernt.
 
 Fine, could you please tell me where I can find Gugli's sailors?
 Schön. Kannst du mir bitte sagen, wo ich Gugli's Matrosen finden kann?
 
 Fine, let's see his work...
-
+Gut, lass seine Arbeit mal ansehen...
 
 Fine, take these potions, I will replenish them in the next couple hours anyway.
-
+Gut, nimm diese Tränke. Ich werde meinen Vorrat in den nächsten Stunden sowieso wieder auffüllen.
 
 Fine, tell me, who are these all important friends of yours?
-
+Schön, dann erzähl mir mal, wer die ganzen wichtigen Freunde sind.
 
 Fine, what do you want to do with your money?
-
+Schön, was möchsest du mit deinem Geld machen?
 
 Fine.
-
+Fein.
 
 Fine... I was just going to give you some help...
-
+Fein... Ich wollte dir nur etwas helfen...
 
 Fire red
-
+Feuerrot
 
 Fireworks are launched.
-
+Feuerwerk abgefeuert.
 
 Fireworks have ended.
-
+Feuerwerk beendet.
 
 Fireworks | 
 Feuerwerk | 
 
 Fish is good for the brain!
-
+Fisch ist gut fürs Köpfchen!
 
 Fish, come and see my fish!
-
+Fisch, frischer, guter Fisch!
 
 Five Castles
-
+Fünf Schlösser
 
 Flat ponytail
-
+Flacher Pferdeschwanz
 
 Fluffy
 Fluffy
 
 Fog hangs over.
-
+Nebel hängt darüber.
 
 Fog | 
 Nebel | 
@@ -2319,55 +2358,55 @@ Follow mode ON.
 Folgenmodus AN.
 
 Follow the river to the north-east and you will find it.
-
+Folge dem Fluß in Richtung nordost, und du wirst es finden.
 
 Follow up-stream, and cross the river twice with the two bridges on the north.
-
+Folge dem Fluss stromaufwärts, und überquere ihn zweimal bei den Brücken im Norden.
 
 Following these lines are some other writings on this paper.
-
+Nach diesen Zeilen findet dich noch etwas anderes Geschreibsel auf dem Zettel.
 
 Font changed.
 Schrift geändert.
 
 Fool! Just come back here when you'll be done with our little... 'Secret mission'.
-
+Narr! Komm erst wieder hierher zurück, wenn du unseren kleinen... 'Spezialauftrag' erledigt hast.
 
 For '%s' you need the amount of seconds (from 0 to 10)
-
+Für '%s' benötigst du die Sekundenzahl (von 0 bis 10)
 
 For a chef? Who said I was a... Oh right, I am.
-
+Für einen Koch? Wer sagt, dass ich ein... Oh stimmt, bin ich ja.
 
 For what kind of tissue?
-
+Für welche Art von Stoff?
 
 Forest Green
-
+Waldgrün
 
 Four Castles
-
+Vier Schlösser
 
 Fourteen Castles
-
+Vierzehn Schlösser
 
 Fresh from the sea and cheap!
-
+Frisch aus dem Meer, und günstig!
 
 Friend already exists.
-
+Freund bereits vorhanden.
 
 Friend removed.
-
+Freund entfernt.
 
 From what I hear, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
-
+Nach alldem, was ich weiß, braucht mein Bruder Gugli die Hilfe von so vielen Menschen wie möglich. Er muß große Mengen der netten Dinge sammeln, die auf der Insel zu finden sind.
 
 Frostiana
-
+Frostiana
 
 Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!
-
+Außerdem: Wenn du nicht wirklich vorhast, es durchzuziehen, solltest du nicht mal daran denken, mit diesen ekligen pinken Landschleimviechern Kampferfahrung zu sammeln. Das pinke Ding könnte an dir festkleben, stell dir vor wie schrecklich!
 
 GM command configuration has been reloaded.
 GM Befehlskonfiguration wurde neu geladen.
@@ -2376,13 +2415,13 @@ GOOD!
 GUT!
 
 Gado! That coward lives in the past, I will ask Nard to punish him, again!
-
+Gado! Dieser Feigling lebt in der Vergangenheit. Ich werde Nard bitten, ihn zu bestrafen. Wieder mal.
 
 Gained %d Kafra points. Total %d points.
-
+%d Kafra Punkte gesammelt. Gesamt %d Punkte.
 
 Gained %d cash points. Total %d points.
-
+%d Cash Punkte gesammelt. Gesamt %d Punkte.
 
 Gained exp is now shown.
 Erhaltene EP werden nun angezeigt.
@@ -2397,73 +2436,76 @@ Gained zeny will not be shown.
 Erhaltene Zeny werden nicht mehr angezeigt.
 
 Game time: A day cycle has a normal duration of %s.
-
+Spielzyklen: Ein Tagzyklus dauert normalerweise %s.
 
 Game time: After, the game will be in daylight for %s.
-
+Spielzyklen: Danach wird das Spiel noch für %s in Tageslicht getaucht sein.
 
 Game time: After, the game will be in night for %s.
-
+Spielzyklen: Danach wird das Spiel für %s im Nachtmodus laufen.
 
 Game time: The game is in daylight for %s.
-
+Spielzyklen: Das Spiel ist seit %s im Tageslicht.
 
 Game time: The game is in night for %s.
-
+Spielzyklen: Im Spiel herrscht seit %s Nacht.
 
 Game time: The game is in permanent daylight.
-
+Spielzyklen: Es herrscht permanent Tageslicht.
 
 Game time: The game is in permanent night.
-
+Spielzyklen: Es ist permanent Nacht.
 
 Gangsi
-
+Gangsi
 
 Genetic
-
+Gene
 
 Genetic T
-
+Gene T
 
 Ggrmm... Grmmmm...
-
+Ggrmm... Grmmmm...
 
 Give me a kiss before you say goodbye!
 Gib mir eine Kuss bevor du auf Wiedersehen sagst!
 
 Give me back this dish, you dirty liar!#0
-
+Gib mir den Teller zurück, du dreckige Lügnerin!
 
 Give me back this dish, you dirty liar!#1
+Gib mir den Teller zurück, du dreckiger Lügner!
+
+Give me some space.
 
 
 Give up.
-
+Aufgeben.
 
 Go and grab one of them. A good knife will help with your hunting the creatures of this island.
-
+Geh hin und nimm dir eins. Ein gutes Messer wird dir beim Jagen der Monster auf dieser Insel helfen.
 
 Go away.
 Geh weg.
 
 Go fly a kite.
-
+Geh Kitesurfen.
 
 Go north of here to the dock warehouse, cross the bridge to the west side of the river, continue North until you come to a second bridge, cross the one to the East side of the river.
-
+Geh nach Norden, zum Dock am Lagerhaus. Überquere die Brücke Richtung Westen, dann weiter nach Norden bis zur zweiten Brücke. Überquere sie, um zurück auf das Ostufer des Flusses zu kommen.
 
 Go on the upper level if you want to change your room or to use it.
-
+Geh in den ersten Stock, wenn du dein Zimmer suchst oder es wechseln möchtest.
 
 Go on.
-
+Weiter.
 
 Go to meet him, and return me the package, it's an easy task.
-
+Geh zu ihm und bring mir das Paket zurück. Das ist eine einfache Aufgabe.
 
 Golden blonde
-
+Goldenblond
 
 Good day miss.
 Guten Tag, Fräulein.
@@ -2472,34 +2514,37 @@ Good day mister.
 Guten Tag, Herr. 
 
 Good day sir.#1
+Guten Tag, der Herr.
+
+Good day to you!
 
 
 Good day to you.
-
+Einen guten Tag dir.
 
 Good day, my friend, come closer, come closer!
-
+Guten Tag mein Freund, komm näher, komm näher!
 
 Good evening sir.#1
-
+Guten Abend, der Herr.
 
 Good job!
 Gut gemacht!
 
 Good look.
-
+Gutes Auge.
 
 Good luck!
-
+Viel Glück!
 
 Good luck! And remember to visit Peter and our little furry friends whenever you return back onboard!
-
+Viel Glück! Und denk daran, Peter und unseren kleinen pelzigen Freunde zu besuchen, wann auch immer du zurück an Bord kommst!
 
 Good night milady.#0
-
+Gute Nacht, mein Fräulein.
 
 Good to hear from you!
-
+Schön, von dir zu hören.
 
 Good to hear!
 Gut zu hören!
@@ -2511,7 +2556,7 @@ Good, good... Hey, could you help me please? I beg you, please, pleeeease...
 Gut, gut... Hey, kannst du mir bitte helfen? Ich bitte dich, bitte, bitttteee....
 
 Good, take a look at the bag next to me then!
-
+Gut, dann wirf mal einen Blick in die Tasche neben mir.
 
 Goodbye.
 Auf Wiedersehen.
@@ -2523,10 +2568,10 @@ Great!
 Großartig!
 
 Great! Can't wait for some tasty mushrooms!
-
+Großartig! Ich kann die leckeren Pilze gar nicht erwarten!
 
 Great, and as I promised, I give you a 90% discount on the @@ of your choice.
-
+Spektakulär. Gute Arbeit! Wie versprochen gewähre ich dir 90% Rabatt auf das @@ deiner Wahl.
 
 Great, what food do you have for me today?#0
 Großartig, welche Lebensmittel hast du heute für mich?
@@ -2544,16 +2589,16 @@ Group changed successfully.
 Gruppe erfolgreich geändert.
 
 Growl, sniff, grr! You'd better not tell anyone you saw me!#0
-
+Knurr, fauch, grrr! Erzähl besser niemand, dass du mich gesehen hast!
 
 Growl, sniff, grr! You'd better not tell anyone you saw me!#1
-
+Knurr, fauch, grrr! Erzähl besser niemand, dass du mich gesehen hast!
 
 Growl, sniff, grr!! You'd better not tell anyone you saw me!#0
-
+Knurr, fauch, grrr! Erzähl besser niemand, dass du mich gesehen hast!
 
 Growl, sniff, grr!! You'd better not tell anyone you saw me!#1
-
+Knurr, fauch, grrr! Erzähl besser niemand, dass du mich gesehen hast!
 
 Grr, don't give me more berries! I don't want them, stupid berries, stupid... Stupid... Stupid!
 Grr, gib mir keine Beeren mehr! Ich will sie nicht, blöde Beeren, blöde.... Blöde... Blöde!
@@ -2565,16 +2610,16 @@ Gugli
 Gugli
 
 Gugli asked me to help the sailors to gather food. Do you know where I can find them?#0
-
+Gugli bat mich, den Matrosen beim Sammeln der Nahrung zu helfen. Weißt du, wo ich sie finden kann?
 
 Gugli asked me to help the sailors to gather food. Do you know where I can find them?#1
-
+Gugli bat mich, den Matrosen beim Sammeln der Nahrung zu helfen. Weißt du, wo ich sie finden kann?
 
 Gugli asked me to help you carrying one of these boxes you are filling.#0
-
+Gugli wollte, daß ich dir beim Transport dieser Kisten helfe, die du hier befüllst.
 
 Gugli asked me to help you carrying one of these boxes you are filling.#1
-
+Gugli wollte, daß ich dir beim Transport dieser Kisten helfe, die du hier befüllst.
 
 Gugli mentioned six sailors. What about the others?
 Gugli erwähnte sechs Matrosen. Was ist mit den anderen?
@@ -2589,28 +2634,28 @@ Gugli? Oh I see. Yes, Gugli yeye pretty used to shout orders to everybody down h
 Gugli? Oh, ich verstehe. Ja, Gugli yeye ist ziemlich beschäftigt Befehle zu jedem hier unten zu brüllen.
 
 GugliBarrierCheck
-
+GugliBarrierCheck
 
 Guild level change failed.
-
+Änderung des Gildenlevels fehlgeschlagen.
 
 Guild level changed.
-
+Gildenlevel geändert.
 
 Guild modification is disabled in this map.
-
+Gildenmodifikationen sind auf dieser Karte deaktiviert.
 
 Guild storage opened.
-
+Gildenlager geöffnet.
 
 GuildLock | 
-
+GuildLock | 
 
 Guillotine Cross
-
+Guillotinenkreuz T
 
 Guillotine Cross T
-
+Guillotinenkreuz T
 
 Gulukan
 Gulukan
@@ -2619,7 +2664,7 @@ Gulukan.
 Gulukan.
 
 Gunslinger
-
+Revolverheld
 
 GvG Castle | 
 GvG Schloss |
@@ -2634,19 +2679,19 @@ GvG ON |
 GvG AN | 
 
 GvG Off.
-
+GvG aus.
 
 GvG On.
-
+GvG an.
 
 GvG is already Off.
-
+GvG ist bereits aus.
 
 GvG is already On.
-
+GvG is bereits an.
 
 Gypsy
-
+Zigeuner
 
 HE IS AT THE BOTTOM OF THE SHIP, DOWN THE STAIRS. YOU CAN'T MISS HIM!
 ER IST UNTEN IM SCHIFF, DIE TREPPE RUNTER. DU KANNST IHN NICHT VERFEHLEN!
@@ -2658,34 +2703,37 @@ HEY, WHAT'S YOUR NAME?!
 HEY, WIE HEISST DU?!
 
 HP and SP have already been recovered.
-
+HP und SP wurden bereits wiederhergestellt.
 
 HP or/and SP modified.
-
+HP oder/und SP angepasst.
 
 HP, SP recovered.
-
+HP, SP wiederhergestellt.
 
 HP: %d/%d - SP: %d/%d
-
+HP: %d/%d - SP: %d/%d
 
 Hack on trade: character '%s' (account: %d) try to trade more items that he has.
-
+Schmok im Handel: Charakter '%s' (Account: %d) versucht, mehr Gegenstände zu handeln, als er besitzt.
 
 Hahaha! All sailors aboard this ship are always drunk... Well... Except... Wait, what?! Nard told you?!
+Hahaha! Alle Matrosen an Bord dieses Schiffes sind ständig betrunken... Na gut, außer... Warte, Was?! Was hat Nard dir erzählt?!
+
+Hard work always pays off!
 
 
 Harpy-lady?
-
+Harpunenlady?
 
 Has met its demise
-
+Hat seinen Schöpfer getroffen
 
 Have a good day!
 Hab einen schönen Tag!
 
 Have a good time fishing!
-
+Viel Spaß beim Angeln!
 
 Have fun, but always remember to pick your stats with good care.
 Viel Spass! Aber erinnere dich immer daran, deine Attribute sorgfältig auszuwählen.
@@ -2694,48 +2742,51 @@ Have you collected all the ingredients for my recipe? The special one too?
 Hast du alle Zutaten für mein Rezept gesammelt?`Auch die Spezielle?
 
 Have you seen Fexil?
-
+Hast du Fexil gesehen?
 
 Have you seen anything dangerous?
 Hast du etwas gefährliches gesehen?
 
 Have you some @@s for me?
-
+Hast du ein paar @@s für mich?
 
 He asked to lend some money and a place to open his store, I think that he asked for a place on the merchant squares on the south-west of the city...
-
+Er fragte nach einem Kredit, und einem Ort, um sein Geschäft zu eröffnen... Ich glaube, er dachte an einen Platz auf dem Marktplatz im Südwesten der Stadt.
 
 He did not change while growing up, I repeatedly asked him to leave the forge but in the end he installed himself in front of it...
-
+Er hat sich im Laufe er Zeit nicht verändert. Ich sagte ihm hundertmal, er soll von der Esse wegbleiben, und am Ende hat er sich genau davor gestellt...
 
 He has a guns!
-
+Er hat ne Knarre!
 
 He is eating an apple, thoroughly enjoying it.
-
+Voller Genuß verspeist er einen Apfel.
 
 He is mature and he rarely ask questions so I am fine. I can not stand the sight of a whiner anyway.
-
+Er ist erwachsen, und er fragt nicht viel nach, das geht schon in Ordnung. Ich kann nur den Anblick von Jammerlappen nicht ertragen.
 
 He is on a small house between the dock's warehouse and the dojo.
-
+Er ist in einem kleinen Haus zwischen dem Lagerhaus an den Docks und dem Dojo.
 
 He is probably hiding up one of the trees. Go close to each tree and look up, otherwise you won't notice him.
-
+Er versteckt sich möglicherweise auf einem der Bäume. Geh nah an den Stamm und schau nach oben, sonst wirst du ihn nicht entdecken können.
 
 He is very lucky that Don took him under his wing, but being the student of such a teacher is not easy every day!
-
+Er hatte sehr viel Glück, daß Don ihn unter seine Fittiche genommen hat. Student eines solchen Mentors zu sein stelle ich mir allerdings auch nicht besonders einfach vor!
 
 He likes to hide near the little lake in the north-west side of the island.
-
+Er versteckt sich gerne in der Nähe des kleinen Sees im Nordwesten der Insel.
 
 He may not have all of his wits but keep in mind one thing:
-
+Er hat vielleicht nicht alle Tassen im Schrank, aber vergiß eines nicht:
 
 He needs more food.
 Er braucht mehr Nahrung.
 
 He said he is going to climb the highest hill in Artis, which is not far from here.
+Er wollte den höchsten Hügel in Artis erklimmen. Das ist gar nicht weit von hier.
+
+He said that he would check why the manhole next to the house was doing weird sounds.
 
 
 He told me nothing about that.
@@ -2745,28 +2796,28 @@ He's funny, it's not a problem.
 Er ist lustig, das ist kein Problem.
 
 He's holding a fishing rod, while gazing out at the sea.
-
+Während er auf das Meer starrt, hält er eine Angel fest in seiner Hand.
 
 Hear me *hic* well, what ever, whatididever you will *hic* said ab... uhm... out what?! You saw there, the Legion of Aemil won't let it get public.
-
+Hör mir *hicks* äh, wie auch immer. Wasauchimmer du *hicks* hier her... her... aus... eh... heraus was?! Was du hier *hicks* gesehen hast wird die Legion von *hicks* Aemil niemals in die Öff-öffentlichkeit lassen.
 
 Hehe!
 Hehe!
 
 Hehe, hehe. Well, come back if you change your mind.
-
+Hahaha. Komm einfach zurück, wenn du deine Meinung änderst.
 
 Hehe, no. But I'm sure a fox like you would love to meet a catch like me!#0
-
+Hehe, nein. Aber ich bin sicher, dass ein Fuchs wie du gerne einen Hasen wie mich treffen würde.
 
 Hehe, no. But I'm sure a noob like you would like to meet an idol like me.#1
-
+Hehe, nein. Aber ich bin sicher,  dass ein Anfänger wie du gerne einen Helden wie mich treffen würde.
 
 Hehe, sometimes he gets his head in the clouds, You should go ask him about that.
 Hehe. Manchmal ist er geistesabwesend. Du solltest ihn danach fragen.
 
 Hehe... Ok, I'm going to inform the capt'n up there.
-
+He he.. Ok, Ich gehe rauf und informiere den Kapitän.
 
 Hehehe, he is a bit nervous, please forgive him, it is not everyday we have a new member in the crew!
 Hehehe, er ist ein bisschen nervös. Bitte entschuldige ihn. Es passiert nicht jeden Tag, dass wir ein neues Mitglied in unserer Crew haben!
@@ -2775,19 +2826,19 @@ Hel... What?! Wait!
 Hal... Was?! Warte!
 
 Hello dear!#0
-Hallo meine Liebe!
+Hallo Schatz!
 
 Hello dear!#1
-Hallo mein Lieber!
+Hallo Schatz!
 
 Hello yeye.
 Hallo yeye.
 
 Hello, young lady.#0
-
+Hallo, junge Frau.
 
 Hello, young man.#1
-
+Hallo, junger Mann.
 
 Hello.
 Hallo.
@@ -2796,70 +2847,76 @@ Hello... Do I know you?
 Hallo... Kenne ich Dich?
 
 Help for command %c%s:
-
+Hilfe für Befehl %c%s:
 
 Help me out~ Please~ T_T
-
+Kannst du mir bitte~ aushelfen~ T_T
 
 Help me!
-
+Hilf mir!
 
 Her shop is on the west part of the city, between the legion building and the library.
-
+Ihr Geschäft ist im Westen der Stadt, zwischen dem Gebäude der Legion und der Bibliothek.
 
 Her sword... I'm having some trouble finishing it.
-
+Ihr Schwert... Ich habe Schwierigkeiten, es fertig zu stellen.
 
 Hercules %d-bit for %s
 
 
 Here is another one.
-
+Hier ist noch eine.
 
 Here is your reward.
-
+Hier ist deine Belohnung.
 
 Here it is, a fashionable @@.
+Hier ist es, ein modisches @@.
+
+Here it is, clean like a whistle!
 
 
 Here they are.
 Hier sind sie.
 
 Here you go, everything is fixed.
-
-
-Here you go, take this one.
-
+Bitteschön. Alles ist repariert.
 
 Here you go.
-
+Bitteschön.
 
 Here's your reward!
 Hier ist deine Belohnung
+
+Here, take as many as you need, I have plenty!#0
+
+
+Here, take as many as you need, I have plenty!#1
+
 
 Hey
 Hey
 
 Hey @@!
-
+Hey @@!
 
 Hey Frenchy!#0
-Hey Französin!
-
-Hey Frenchy!#1
 Hey Franzose!
 
-Hey Maxe, it's @@!
+Hey Frenchy!#1
+Hey Französin!
 
+Hey Maxe, it's @@!
+Hey Maxe, hier ist @@!
 
 Hey Silvio, it's your turn to carry the package, go!
 Hey Silvio, du bist dran, um das Paket zu tragen, los!
 
-Hey do you have any plushrooms on you?
+Hey do you have any @@?
 
 
 Hey there, are you Bobo, Katja's brother?
-
+Hallo! Bist zu zufällig Bobo, Katja's Bruder?
 
 Hey you!
 Hey Du!
@@ -2868,16 +2925,16 @@ Hey you! Can you hear us? Are you okay?
 Hey du! Kannst du uns hören? Alles in Ordnung?
 
 Hey you, sorry for leaving your room so quickly. I needed to speak with the captain about the food reserves. You know, now that we have a new mouth to feed, we need to check what we have.
-
+Hallo du, tut mir leid, dass ich deinen Raum so schnell verlassen musste. Ich musste mit dem Kapitän über die Essensreserven reden. Weißt du, wir haben nun ein weiteres Maul zu stopfen, daher müssen wir überprüfen, was noch da ist.
 
 Hey!
 Hey!
 
 Hey! Adventurer! Are you enjoying your life on Aemil?#0
-
+Hey! Abenteurer! Gefällt dir dein Leben in Aemil?
 
 Hey! Adventurer! Are you enjoying your life on Aemil?#1
-
+Hey! Abenteurerin! Gefällt dir dein Leben in Aemil?
 
 Hey! Be careful. You can't stay in this basement for so long, you're going to get sick. Come outside and take a break, maybe you can try again later.
 Hey! Sei vorsichtig. Du kannst nicht lange in diesem Keller bleiben, denn du wirst krank werden. Geh nach draußen und mach eine Pause und probier es später nochmal.
@@ -2886,16 +2943,16 @@ Hey! There's a reward for you in the box next to me!
 Hey! Da ist eine Belohnung für dich in der Kiste neben mir!
 
 Hey! You must be @@.
-
+Hey! Du musst @@ sein.
 
 Hey, I remember you, we were on the same boat, you are the castaway.
-
+Hey, ich erinnere mich an dich. Du warst auf demselben Schiff, du warst der Schiffbrüchige.
 
 Hey, I'm not a Keebler Elvis! You won't have another one by stalking me like that!
-
+Hey, ich bin kein Keebler Elvis! Wenn du mich so belästigst, kriegst du sicher keinen mehr!
 
 Hey, check out my brand new fishing rod. I bought it just today.
-
+Hey, check mal meine brandneue Angel! Ich hab sie erst heute gekauft.
 
 Hey, could yeye please take my box of fish to Gugli?
 Hey, könnte yeye bitte meine Kiste voller Fische zu Gugli bringen?
@@ -2904,13 +2961,13 @@ Hey, don't worry about him, it's one of the first days in a long time that we ca
 Hey, mach dir keine Sorgen um ihn, es ist einer der ersten Tage seit einiger Zeit, wo wir uns entspannen können.
 
 Hey, girl!#0
-
+Hey Mädchen!
 
 Hey, how was the...
 Hey, wie war das...
 
 Hey, man!#1
-
+Hey Man!
 
 Hey, psst! You're not a sailor, right?
 Hey! psst! Du bist kein Matrose, oder?
@@ -2918,35 +2975,38 @@ Hey! psst! Du bist kein Matrose, oder?
 Hey.
 Hey.
 
-Hi @@, I heard the captain sent you down here, uh?#0
+Heya!
 
+
+Hi @@, I heard the captain sent you down here, uh?#0
+Hi @@, hat dich wohl der Kapitän hier runtergeschickt, wat?
 
 Hi @@, I heard the captain sent you down here, uh?#1
-
+Hi @@, hat dich wohl der Kapitän hier runtergeschickt, wat?
 
 Hi @@.
 Hi @@.
 
 Hi customer! What do you want today?
-
+Hallo Kunde! Was darf es heute sein?
 
 Hi! I can finally see you under the sunlight!
 Hi! Ich kann dich endlich im Sonnenlicht sehen!
 
 Hi, can I help you somehow?
-
+Hi, kann ich dir irgendwie helfen?
 
 Hi, how is it going?
-
+Hey, wie gehts denn so?
 
 Hi, my name is Moon. This morning I went for a walk on the beach.
-
+Hi, ich heiße Moon. Heute morgen habe ich einen Spaziergang am Strand gemacht.
 
 Hi, nice to see you!
 Hi, schön Dich zu sehen!
 
 Hi, what do you want kiddo?
-
+Was willst du, du Zwerg?
 
 Hi.
 Hi.
@@ -2955,70 +3015,70 @@ Hidden Person
 Versteckte Person
 
 High Acolyte
-
+Hoher Gefolgsmann
 
 High Archer
-
+Hoher Bogenschütze
 
 High Magician
-
+Hochmagier
 
 High Merchant
-
+Hoher Händler
 
 High Novice
-
+Hoher Novize
 
 High Priest
-
+Hohepriester
 
 High Swordsman
-
+Hoher Schwertkämpfer
 
 High Thief
-
+Hoher Dieb
 
 High Wizard
-
+Hoher Zauberer
 
 Highest hill in Artis you say? Sounds dangerous, I might fall off.
-
+Der höchste Hügel in Artis, sagst du? Das hört sich gefährlich an, ich könnte herunterfallen.
 
 Hill & Cliff
-
+Hügel & Klippe
 
 Hm, it seems another player is trying to catch the piou, I shouldn't interfere.
+Hmm, es sieht so aus, als würde jemand anders bereits versuchen, das Piou zu fangen. Ich sollte mich nicht einmischen.
 
+Hm... Shhhh...
 
-Hm...
-Hmm...
 
 Hmm, I'm fine for now, thank you.
-
+Hmm, soweit ist alles klar, danke.
 
 Hmm... Let's see, take this one.
 Hmm... Mal schauen, nimm das. 
 
 Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*
-
+Hmmm, hm... *hust*, *hust*, *rülps*, *hust*. Was... Was ist das?!... *hust*, *hust*...Verdammter Gado... *hust*
 
 Homunculus growth stats (Lv %d %s):
-
+Humunkulus Status erhöht (Lv %d %s):
 
 Homunculus reached its maximum level of '%d'
-
+Humunkulus hat das maximale Level '%d' erreicht
 
 Homunculus stats altered.
-
+Humunkulus Status geändert.
 
 Homunculus stats:
-
+Humunkulus Status:
 
 Honestly, it's quite far-fetched according to me.
-
+Also ehrlich, das ist ziemlich an den Haaren herbeigezogen, wenn du mich fragst.
 
 Honey brown
-
+Honigbraun
 
 How about I ask you to help the crew? It would mean that you're one of us and that you will be able to get one of these hats.
 Wie wäre es, frage ich Dich, der Mannschaft zu helfen? Es würde bedeuten, dass du einer von uns bist, und daß du einen dieser Hüte bekommen kannst.
@@ -3027,10 +3087,10 @@ How are things going?
 Wie geht es?
 
 How are you doing, cutie?#0
-
+Wie geht es dir, Süße?
 
 How are you doing, dude?#1
-
+Wie geht es dir, Bursche?
 
 How are you feeling, now that you walk on steady land? Yeye better?
 Wie fühlst du dich, wo du nun auf stetigem Land läufst? Yeye besser?
@@ -3039,40 +3099,40 @@ How can I get one of these cookies?
 Wie kann ich einen von den Keksen bekommen?
 
 How can I improve my equipment?
-
+Wie kann ich meine Ausrüstung verbessern?
 
 How could you... We said we wouldn't talk about that again!
-
+Wie kannst du nur... Wir waren uns einig, nicht mehr darüber zu sprechen!
 
 How do these dyes work?
-
+Wie funktionieren diese Farben?
 
 How do you do your potions?
-
+Wie machst du deine Tränke?
 
 How do you know?
-
+Woher weißt du das?
 
 How is *hic* it possible?
 Wie ist *hicks* das möglich?
 
 How long will you stay here?
-
+Wie lange wirst du hier bleiben?
 
 How many Fluffies did I kill on the hill?
-
+Wie viele Fluffies hab ich auf dem Hügel getötet?
 
 How many? What kind? I can produce two dozen boxes per day.
-
+Wie viele? Welche genau? Ich schaffe ungefähr zwei Duzend Kisten pro Tag.
 
 How rude! What is the reason behind your malice?
-
+Wie böswillig! Was willst du denn damit erreichen?
 
 Howdy, partner in crime?
-
+Howdy, Kollege Langfinger?
 
 Howdy?
-
+Howdy?
 
 However, drought came with summers while winters became colder than ever.
 Wie auch immer, Dürre kommt mit Sommern, während Winter immer kälter werden.
@@ -3081,19 +3141,19 @@ However...
 Wie auch immer...
 
 Hungry: %d - Intimacy: %u
-
+Hunger: %d - Intimität: %u
 
 Hunter
-
+Jäger
 
 Hurry up!
-
+Beeil dich!
 
 Hurry, hurry! We need to check it's teeth!
 Schnell, schnell! Wir müssen seine Zähne prüfen!
 
 I ALSO AVOID THE DANGEROUS ANIMALS!
-
+ICH MUSS DIE GEFÄHRLICHEN TIERE AUCH MEIDEN!
 
 I AM DOING FINE!
 MIR GEHT ES GUT!
@@ -3110,113 +3170,101 @@ ICH WAR DA, ALS SIE DICH GERETTET HABEN!
 I WOULD LOVE TO!
 SEHR GERNE!
 
-I already have some plushroom on me.#0
-
-
-I already have some plushroom on me.#1
-
-
-I already have some plushrooms on me.#0
-
-
-I already have some plushrooms on me.#1
-
-
 I already know everything. Bye.
 Ich weiß bereits alles. Tschüss.
 
 I also heard you lost all your memories? That's a shame.
-
+Ich hab auch gehört, daß du dein Gedächnis verloren hast? Das ist schrecklich.
 
 I am %s Super Novice~
-
+Ich bin %s Super Novize~
 
 I am an alchemist, I bear the name of Ivan.
-
+Ich bin Alchemist. Ich höre auf den Namen Ivan.
 
 I am new in this town, just like you are.
-
+Ich bin neu in dieser Stadt, genau wie du.
 
 I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment
-
+Für Ersteres bin ich kein Experte, aber wenn es um die Verbesserung von Ausrüstung geht, bin ich dein Mann.
 
 I am not worried about rewards. I just want to help.
 Mir sind Belohnungen egal. I will nur helfen.
 
 I am pleased to see that you have woken up and are active. Elmo came here to tell me this good news!#0
-
+Ich bin froh, daß du aufgewacht und wohlauf bist. Elmo hat mir die gute Nachricht erzählt!
 
 I am pleased to see that you have woken up and are active. Elmo came here to tell me this good news!#1
-
+Ich bin froh, daß du aufgewacht und wohlauf bist. Elmo hat mir die gute Nachricht erzählt!
 
 I am sure that I can run with one of them on my shoulder.#0
-
+Klar kann ich rennen, wenn einer davon auf meiner Schulter sitzt.
 
 I am sure that I can run with one of them on my shoulder.#1
-
+Klar kann ich rennen, wenn einer davon auf meiner Schulter sitzt.
 
 I am sure that you will change your mind.#0
-
+Ich bin sicher, daß du deine Meinung ändern wirst.
 
 I am sure that you will change your mind.#1
-
+Ich bin sicher, daß du deine Meinung ändern wirst.
 
 I am sure you know her. Nice dress, large smile and a constant flux of orders and rules. Julia they call her!
-
+Logisch kennst du sie. Schönes Kleid, breites Lächeln und ein nicht enden wollender Fluß von Vorschriften und Regeln. Sie nennen sie Julia.
 
 I am surprised someone has been sent here to help. It is quite... unusual.
 Ich bin sehr überrascht das jemand hierher Hilfe geschickt hat. Das ist sehr... ungewöhnlich.
 
 I am, who are you?#0
-Ich bin, wer bist du?
+Bin ich. Wer bist du?
 
 I am, who are you?#1
-Ich bin, wer bist du?
+Bin ich. Wer bist du?
 
 I appreciate your help, @@.
-
+Ich schätze deine Hilfe sehr, @@.
 
 I asked Calypsan to dye this tank top, now it has an unique look!
-
+Ich bat Calypsan, dieses Tank Top zu färben. Jetzt ist es einmalig!
 
 I asked Don our blacksmith to prepare a black iron sword for morning, he should be done by now.
-
+Ich fragte Don den Schmied, ob er bis heute morgen ein Schwert aus schwarzem Eisen herstellen kann. Er sollte nun damit fertig sein.
 
 I asked for food but... *hips* Ah, that'll do nicely!
-
+Ich hab nach Essen gefragt, aber... *hicks* das wirds auch tun!
 
 I asked for food but... *hips* Ah, that'll do so!
-
+Ich hab nach Essen gefragt, aber... *hicks* das wirds auch tun!
 
 I asked you to do me a favor, did you forget?
-
+Ich hab dich um einen Gefallen gebeten, hast du das etwa vergessen?
 
 I borrowed it from the library, you should try to cultivate yourself more instead of insinuate things about people you don't know!
-
+Ich habs aus der Bücherei ausgeliehen. Du solltest versuchen, dir etwas Bildung anzueignen, anstatt Leuten, die du nicht kennst, irgendwelche Dinge zu unterstellen.
 
 I buried the chest somewhere on that hill. It was dark, so I don't remember where to dig exactly.
-
+Ich habe die Truhe irgendwo auf diesem Hügel vergraben. Es war dunkel, darum weiß ich nicht mehr, wo genau du graben musst.
 
 I came here, looking for a better life.
-
+I bin auf der Suche nach einem besseren Leben hier gelandet.
 
 I came to retrieve a package for Enora.
-
+Ich bin hier, um ein Päckchen für Enora abzuholen.
 
 I can finally pay off my debts.
-
+Endlich kann ich meine Schulden bezahlen.
 
 I can prepare them in an hour or so!
-
+Ich kann sie in ner Stunde fertig kriegen!
 
 I can walk again!
-
+Ich kann wieder laufen!
 
 I can't give you a cookie for free. But I can give you this hint for how you may be added to my list.
-
+Ich kann dir keinen kostenlosten Keks geben. Aber ich kann dir einen Hinweis geben, wie du zu meiner Liste hinzugefügt werden kannst.
 
 I can't really help you find them since I've been checking the... Hmm... Landscape, since morning...
-
+Ich kann leider nicht wirklich beim Suchen helfen, ich bin seit heute morgen damit beschäftigt, die... hmm... die Landschaft zu überprüfen.
 
 I can't remember anything.#0
 Ich kann mich an nichts erinnern.
@@ -3224,110 +3272,119 @@ Ich kann mich an nichts erinnern.
 I can't remember anything.#1
 Ich kann mich an nichts erinnern.
 
-I can't wait all day!
+I can't stay here and talk all day. I have a job to do.
 
+
+I can't wait all day!
+Ich kann hier nicht den ganzen Tag warten!
 
 I cannot find the words to express my gratitude for your hard work.
-
+Mir fehlen die Worte, dir meine Dankbarkeit für deine harte Arbeit auszudrücken.
 
 I changed my mind.
-
+Ich hab meine Meinung geändert.
 
 I cleaned up the hill.
-
+Ich habe auf dem Hügel aufgeräumt.
 
 I didn't notice that a Pikpik was in my way, and when I stepped on it, my foot was full of spikes.
-
+Ich habe übersehen, daß mir ein Pikpik im Weg war. Als ich draufgetreten war, war mein Fuß mit Stacheln übersät.
 
 I do feel better!
 Ich fühle mich besser!
 
 I do not like to brag about it but you won't find a better blacksmith on the whole island.
-
+Ich will nicht angeben, aber einen besseren Schmied findest du auf der ganzen Insel nicht.
 
 I do not want to go pointing my finger at someone. I want to be honorable and fair, and I sense the same quality in you, so I put my trust in you. I am sure you will be able to judge and solve this troubling situation.
-
+Ich möchte niemanden anschwärzen. Ich will mich ehrenhaft und fair verhalten, und ich habe das Gefühl, dir geht es genauso. Darum vertraue ich dir. Ich bin sicher, du wirst das richtig bewerten und diese unangenehme Situation aus der Welt schaffen.
 
 I do not.
+Tu ich nicht.
+
+I don't have any plushroom on me.#0
 
 
-I don't have any plushrooms on me.#0
-
-
-I don't have any plushrooms on me.#1
+I don't have any plushroom on me.#1
 
 
 I don't have anything good for you today.
 Ich habe heute nichts interessantes für dich.
 
 I don't have much time right now.
-
+Ich habe gerade nicht viel Zeit.
 
 I don't have the time now.
-
+Ich habe jetzt nicht die Zeit.
 
 I don't have the time sorry.
-
+Ich habe gerade keine Zeit, Entschuldigung.
 
 I don't have the time.
-
+Ich hab keine Zeit.
 
 I don't know what to say...
 Ich weiß nicht, was ich sagen soll ...
 
 I don't know.
-
+Keine Ahnung.
 
 I don't need your help right now, come back later.
 Ich brauche deine Hilfe zur Zeit nicht. Komme später wieder.
 
 I don't really have time to go chasing pious, let me just buy one at the regular price (30000E).
-
+Ich hab wirklich keine Zeit, Pious zu fangen. Verkauf mir einfach eins zum regulären Preis (30000E).
 
 I don't see anything else other than... water?
-
+Ich sehe nichts anderes als... Wasser?
 
 I don't think that we are in a good place to talk about this...
 Ich glaube nicht, dass wir an einem guten Ort sind, darüber zu reden ...
 
 I don't want to be part of this joke.
-
+Ich möchte kein Teil von diesem Witz sein.
 
 I don't want to buy a piou right now.
-
+Ich möchte gerade kein Piou kaufen.
 
 I don't want to change my language, sorry.
 Ich möchte meine Sprache nicht ändern.
 
 I feel ok.#0
-Ich fühle mich ok.
+Mir gehts gut.
 
 I feel ok.#1
-Ich fühle mich ok.
+Mir gehts gut.
 
 I give tasks to every single sailor, all day long. That should make him happy!
-
+Ich gebe jedem einzelnen Matrosen den ganzen Tag lang Aufgaben. Das sollte ihn fröhlich machen!
 
 I give you this key, it opens all the doors on this ship.
 Ich gebe dir diesen Schlüssel. Er öffnet alle Türen auf diesem Schiff.
 
-I guess so. What's in it for me?
+I grown up and lived a good while in the capital city, Esperia.
 
+
+I guess so. What's in it for me?
+Ich schätze schon. Was ist für mich drin?
 
 I guess so... I will leave you alone.
 Ich denke so... Ich werde dich in Ruhe lassen.
 
-I have a lot of work here, so I don't even have time to go to the town.
+I had a great childhood in Esperia!
 
+
+I have a lot of work here, so I don't even have time to go to the town.
+Ich hab zuviel Arbeit hier. Ich habe nicht einmal Zeit, in die Stadt zu gehen.
 
 I have brought you a tasty present for your delicate mouth.
-
+Ich habe ein schmackhaftes Geschenk für deinen verwöhnten Gaumen mitgebracht.
 
 I have collected all the boxes you needed.
 Ich habe alle Boxen, die du brauchst, eingesammelt.
 
 I have one more task for you, Trozz, another member of the Legion, sent me a letter earlier today.
-
+Ich habe noch eine Aufgabe für dich. Trozz, ein anderes Mitglied der Legion, hat mir heute morgen einen Brief zukommen lassen.
 
 I have some clothes and other things for you at a fine price!
 Ich verkaufe Kleidung und andere Sachen zu einem gutem Preis!
@@ -3336,60 +3393,63 @@ I have some food for you.
 Ich habe etwas essen für dich.
 
 I have some fur for you.
-
+Ich habe ein paar Felle für dich.
 
 I have some spare one, take them, and tell Enora that any fees are paid!
-
+Ich habe Ersatz, das kannst du haben. Und sag Enora, das bereits alles bezahlt ist!
 
 I have to go sorry.#0
-
+Ich muss gehen, sorry.
 
 I have to go sorry.#1
-
+Ich muss gehen, sorry.
 
 I have your black iron.
-
+Ich habe das schwarze Eisen.
 
 I have your package.
-
+Ich hab dein Paket.
 
 I have your pass from the Merchant Guild.
-
+Ich habe deinen Pass von der Händlergilde.
 
 I heard rumors about some old hostilities between you and Gado. Are they true?
-
+Ich hörte Gerüchte über eine alte Fehde zwischen Gado und dir. Ist da was dran?
 
 I hope that answers your question.
 Ich hoffe, das beantwortet deine Frage.
 
 I hope to come back home when the days are better
-
+Ich hoffe, ich kann zurückkehren, wenn die Zeiten besser werden.
 
 I hope to see you soon.
-
+Ich hoffe, dich bald wieder zu sehen.
 
 I hope you don't mind that we used your raft to build this ramp.
 Ich hoffe es macht dir nichts aus, dass wir dein Floß verwendet haben, um diese Rampe zu bauen.
 
 I hope you like this color.
-
+Hoffentlich gefällt dir diese Farbe.
 
 I informed Julia about your monstrous plan.
 Ich habe Julia über deinen monströsen Plan informiert.
 
 I just realized I am lacking some common things, and one key ingredient, to prepare a... A special recipe.
-
+Gerade habe ich festgestellt, dass mir ein paar gewöhnliche Zutaten - und eine Spezialzutat - fehlen, um ein... spezielles Gericht zuzubereiten.
 
 I just want to live my life in peace.
-
+Ich möchte nur in Frieden leben.
 
 I knew it!
-
+Ich wusste es!
 
 I know that you are just starting to feel better, but I'd like to give you a special task.
-
+Ich weiß, daß du dich eigentlich erholen solltest, aber ich würde dir trotzdem gerne eine spezielle Aufgabe übertragen.
 
 I like money! Consider it done.
+Ich mag Geld! Sieh es als erledigt an.
+
+I love peace and quiet, that's a good choice.
 
 
 I made a mistake, I would like to change my language.#0
@@ -3399,40 +3459,43 @@ I made a mistake, I would like to change my language.#1
 Ich habe einen Fehler gemacht. Ich würde gerne meine Sprache ändern.
 
 I mean LOG! Made of log!
+Ich spreche von einem STAMM! Aus Holz!
+
+I mean, I am very tired to move all of these books!
 
 
 I mean, you forgot... Well.
-
+Ich meine, du hast es vergessen... na gut.
 
 I must leave to get more.
-
+Ich muß gehen, um mehr zu besorgen.
 
 I need @@ @@.
-
+Ich brauche @@ @@.
 
 I need a helper to clean the edge of the ship, but you aren't strong enough to help.#0
-
+Ich brauche Hilfe, um den Kiel des Schiffes zu reinigen. Du bist aber nicht stark genug, um mir zu helfen.
 
 I need a helper to clean the edge of the ship, but you aren't strong enough to help.#1
-
+Ich brauche Hilfe, um den Kiel des Schiffes zu reinigen. Du bist aber nicht stark genug, um mir zu helfen.
 
 I need more Croc Claws.
-
+Ich brauch mehr Croc Klauen.
 
 I need more information first.
-
+Zuerst brauche ich mehr Informationen.
 
 I need somebody who can rid the hold of the ship of these rattos. Can you help me?
-
+Ich brauche jemanden, der den Schiffsrumpf von diesen Ratten befreit. Kannst du mir helfen?
 
 I need to go, sorry.
 Ich muss gehen, sorry.
 
 I need to think about it a bit more...#0
-
+Ich muss noch ein bisschen drüber nachdenken...
 
 I need to think about it a bit more...#1
-
+Ich muss noch ein bisschen drüber nachdenken...
 
 I only need 2 @@, 2 @@, 1 @@ and...
 Ich brauch nur 2 @@, 2@@, 1@@ und...
@@ -3447,43 +3510,43 @@ I only remember I was rescued by you.#1
 Ich kann mich nur daran erinnern, dass du mich gerettet hast.
 
 I recall seeing Gulukan, Astapolos and Q'Muller.
-
+Ich erinnere mich, Gulukan, Astapolos und Q'Muller gesehen zu haben.
 
 I recommend you to take a nap on the inferior level, we will soon leave this place.
-
+Ich empfehle dir ein Nickerchen auf dem Zwischendeck. Wir werden diesen Ort bald verlassen.
 
 I registered you on the @@ room of the upper level.
-
+I habe dich im @@ Zimmer im oberen Stock registriert.
 
 I remember I saw a few of them leaving the ship early this morning to get a head start on today's work.
-
+Ich habe ein paar von ihnen gesehen, wie sie das Schiff verließen. Sie wollten sich einen Vorsprung für das heutige Tagwerk verschaffen.
 
 I remember when I created my first party, we were amazed to share some experience with a small group of adventurer...
-
+Als ich meine erste Gruppe gegründet habe, teilten wir mit Begeisterung einige Erfahrung mit einem kleinen Team von Abenteurern...
 
 I robbed a nobleman, took a chest full of coins.
-
+Ich hab einem Adeligen eine Truhe voller Münzen geklaut.
 
 I said... WHY DON'T YOU COME DOWN TO TALK?
 Ich habe gefragt, WARUM KOMMST DU NICHT ZUM SPRECHEN RUNTER?
 
 I see it's not so easy to get rid of these rattos. Do you want to try again?
-
+Es ist anscheinend nicht so einfach, diese Rattos zu beseitigen. Willst du es nochmal versuchen?
 
 I see.
-
+Ach so.
 
 I see. Bye!
 Ach so. Tschüss!
 
 I see. Warn the other sailors about this. But if he's part of the Legion of Aemil, then he's also our friend and ally.#1
-
+Hm. Informiere die anderen Matrosen darüber. Aber wenn er Teil der Kriegergilde ist, ist er unser Verbündeter.
 
 I see. Warn the other sailors about this. But if she's part of the Legion of Aemil, then she's also our friend and ally.#0
-
+Hm. Informiere die anderen Matrosen darüber. Aber wenn er Teil der Kriegergilde ist, ist er unser Verbündeter.
 
 I should put more effort into this.
-
+Ich sollte mich mehr anstrengen.
 
 I speak Catalan.
 Ich spreche Katalanisch.
@@ -3519,100 +3582,112 @@ I speak Spanish.
 Ich spreche Spanisch.
 
 I still didn't find a cheap building to open my own business, so for now I will stay in this inn.
-
+Ich finde immer noch kein günstiges Gebäude für mein Geschäft, also bleib ich erstmal hier im Hotel.
 
 I still didn't find my brother...
-
+Ich hab meinen Bruder immer noch nicht gefunden...
 
 I swear, I do not eat so much.
 I schwöre, ich esse nicht so viel.
+
+I think I have enough plushrooms on me.#0
+
+
+I think I have enough plushrooms on me.#1
+
 
 I think I should report you to the crew members.
 Ich glaube, ich sollte dich der Crew melden.
 
 I think I'll be done soon, since I almost have a box full of @@s!
-
+Ich denke, daß ich bald fertig bin. Ich habe schon fast eine Kiste voller @@s!
 
 I think I'm done with that now. Do you have any questions?
 Ich denke, dass ich fertig damit bin. Hast du sonst noch weitere Fragen?
+
+I think that I am now both...
+
 
 I think that I'm still a bit sick.
 Ich denke, dass ich noch immer ein bisschen krank bin.
 
 I think that I've seen this weakling wandering around the beach south from here this morning.
-
+Ich glaube, ich habe diesen Schwächling heute morgen beim Strand südlich von hier herumwandern sehen.
 
 I think that my wine has a great quality! I'm on my second bottle and I already... What were we talking about again?
-
+Ich glaube, dass mein Wein von sehr guter Qualität ist! Ich bin schon bei der zweiten Flasche und ich bin bereits ... Worüber haben wir nochmal gesprochen?
 
 I think that we will stay in port for a great time, though, if you want to visit some nearby we could take you there.
-
+Ich denke, wir werden eine Weile hier im Hafen bleiben. Falls du jedoch etwas anderes sehen willst, können wir dich dort hinbringen.
 
 I think that yeye's soon be done. Yeye'll soon have a full box of @@s!
 Ich denke, dass yeyes bald fertig sein werden. Yeye wird bald eine Kiste voller @@s haben!
 
 I think that you already understood, you are asleep.
-
+Ich glaube, du hast bereits verstanden, daß du gerade schläfst.
 
 I thought that she would never come to pick it up!
-
+Ich dachte schon, sie würde mich nie holen kommen!
 
 I used a card to improve my clothes.
-
+Ich benutze eine Karte, um meine Kleidung zu verbessern.
 
 I want divorce
-
+Ich will die Scheidung
 
 I want register for marriage
-
+Ich möchte mich zur Heirat registrieren.
 
 I want to be the first merchant of this square to sell @@'s clothes!
-
+Ich will der erste Händler auf diesem Platz sein, der @@'s Kleidung verkauft!
 
 I want to make my own dyes.
-
+Ich möchte meine eigenen Farben herstellen.
 
 I was afraid to get busted, so I decided to get rid of the evidence.
-
+Ich hatte Angst, verhaftet zu werden. Darum vernichtete ich die Beweise.
 
 I was going to ask you if you would need any help.
 Ich wollte Dich fragen, ob Du Hilfe gebrauchen kannst.
 
 I was sent here with a task. I can give you a perfect, wonderful, magnificent, superbly well shaped... Cookie!
-
+Ich wurde mit einer Aufgabe hierher geschickt. Ich kann dir einen perfekten, wundervollen, unglaublichen, faszinierend gut geformten... Keks anbieten!
 
 I was so excited, I wanted to try it as soon as possible.
+Ich war so Feuer und Flamme, ich wollte das sofort auch probieren.
 
-
-I will buy all of the fur that you will bring me at a good price, let's say, 25E piece.
+I will buy all of the fur that you will bring me at a good price, let's say, 15E piece.
 
 
 I will close my eyes for once, but only because it's your first time asking for something!
-
+Ich werde meine Augen ein einziges mal schließen, aber nur weil du mich das erste Mal um etwas bittest.
 
 I will find him, don't worry!
-
+Ich werde ihn finden, keine Sorge.
 
 I will give you my pocket money if you do.
-
+Wenn du das machst, gebe ich dir dafür mein Taschengeld.
 
 I will not lie to a little girl! And your mother needs your help.
-
+Ich werde kein kleines Mädchen anlügen! Außerdem braucht deine Mutter deine Hilfe.
 
 I will not tell you all the details, but after a month, she was ruling the ship and I was sent down here, cooking for those traitors!
-
+Ich werde nicht ins Detail gehen, aber bereits nach einem Monat regierte sie das Schiff und ich wurde hier herunter verbannt, um für diese Verräter zu kochen!
 
 I will send you this letter directly when I arrive
-
+Ich schicke dir diesen Brief, sobald wir ankommen
 
 I will surely visit him. Do you need any help with your boxes?
-
+Ich besuche ihn auf jeden Fall. Brauchst du Hilfe mit deinen Kisten?
 
 I will take care of the other ones don't worry.
-
+Ich werde auf die anderen aufpassen, keine Sorge.
 
 I will take it! Thank you captain!
 Ich werde es nehmen! Danke Käpt'n!
+
+I will tell my dad!
+
 
 I will yaying do.
 Das werde ich.
@@ -3621,22 +3696,22 @@ I will.
 Das werde ich.
 
 I wish I could remember something...
-
+Ich wünschte, ich könnte mich an irgend etwas erinnern...
 
 I wish I helped your friends, because I'd really, really like a cookie.
-
+Ich wünschte, ich hätte deinen Freunden geholfen. Ich hätte soooooo gerne einen Keks.
 
 I wish you a good time in town.
+Ich wünsche dir eine gute Zeit in der Stadt.
 
-
-I won't forget it, I swear on my precious plushrooms.
+I won't forget it, I swear on my precious plushrooms!
 
 
 I won't need it thank you.#0
-
+Ich werde es nicht brauchen, danke.
 
 I won't need it thank you.#1
-
+Ich werde es nicht brauchen, danke.
 
 I wonder too...
 Das wundert mich auch...
@@ -3645,58 +3720,58 @@ I wonder who is in delarium now...
 
 
 I work under the protection and the supervision of the Legion of Aemil.
-
+Ich arbeite unter dem Schutz und der Aufsicht der Legion von Aemil.
 
 I would like to create a guild.
-
+Ich will eine Gilde erstellen.
 
 I would like to create a party.
-
+Ich will eine Gruppe erstellen.
 
 I would like to deposit some money.
-
+Ich will etwas Geld einzahlen.
 
 I would like to stay here a bit more.
-
+Ich würde gerne noch etwas länger bleiben.
 
 I would like to store some items.
-
+Ich würde gerne einige Gegenstände einlagern.
 
 I wrote your name on the book, you are now free to use the storage and bank services.
-
+Ich habe deinen Namen eingetragen, jetzt kannst du jederzeit unsere Lagerungs- und Bankservices nutzen.
 
 I'M CALLED, @@!
 MAN NENNT MICH @@!
 
 I'd like to buy a piou.
-
+Ich würde gerne ein Piou kaufen.
 
 I'd like to catch one of them, but they fly away when I try.
 Ich würde gerne eins von ihnen fangen. Aber sie fliegen weg, wenn ich es versuche.
 
 I'd like to get a different style.
-
+Ich hätte gerne einen anderen Stil.
 
 I'd love one!
 Ich würde eins lieben!
 
 I'll be back in no time.
-
+Ich bin sofort zurück.
 
 I'll be here, come back when you're ready.
-
+Ich bin hier, komm einfach wenn du bereit bist.
 
 I'll give her everything she needs, don't worry.#0
-
+Ich werde ihr alles geben, was sie braucht, keine Sorge.
 
 I'll give him everything he needs, don't worry.#1
-Ich werde ihm alles geben, was er braucht, keine Sorge.
+Ich werde ihm alles geben, was er braucht. Keine Sorge.
 
 I'll share my berries with you if you help me.
 Ich werde meine Beeren mit dir teilen, wenn du mir hilfst.
 
 I'm a barber, you see. I can change your hair style or color to your liking.
-
+Ich bin ein Barbier, wie du siehst. Ich kann deinen Haarschnitt und die Haarfarbe nach deinen Wünschen ändern.
 
 I'm a bit sick...#0
 Ich bin ein bisschen krank...
@@ -3704,17 +3779,17 @@ Ich bin ein bisschen krank...
 I'm a bit sick...#1
 Ich bin ein bisschen krank...
 
-I'm a little busy right now; not in the mood to chat.
+I'm a little busy right now.
 
 
 I'm afraid to go there myself, but if you take the risk, you can have half of the loot.
-
+Ich hab Angst, selbst dorthin zu gehen. Wenn du das Risiko eingehen möchtest, kannst du die Hälfte der Beute haben.
 
 I'm busy, leave me alone.
-
+Ich bin beschäftigt. Hau ab.
 
 I'm done.
-
+Ich bin fertig.
 
 I'm glad to see you're okay.#0
 Ich bin froh zu sehen, dass es dir gut geht.
@@ -3732,19 +3807,19 @@ I'm looking for Gugli, where is he?
 Ich suche nach Gugli, wo ist er?
 
 I'm looking for somebody named Fexil.
-
+Ich suche jemanden namens Fexil.
 
 I'm losing my mind here, I need something else to eat!
 Ich verliere meinen Verstand hier. Ich brauche etwas anderes zu essen. 
 
 I'm lost, where should I go?
-
+Ich hab mich verlaufen, wo soll ich hingehen?
 
 I'm not a pawn of the Legion, I don't have to obey you!
-
+Ich bin kein Püppchen der Legion, du hast mir nichts zu befehlen!
 
 I'm not proud of it, but I had to get money for living.
-
+Ich bin nicht stolz darauf, aber ich mußte irgendwie meinen Lebensunterhalt bestreiten.
 
 I'm not suited for this kind of work!
 Ich bin für diese Art von Arbeit nicht gemacht!
@@ -3753,34 +3828,37 @@ I'm not sure. They probably left the ship early this morning. I was not awake ye
 Ich bin nicht sicher.  Sie haben das Schiff möglicherweise heute morgen verlassen. Ich war noch nicht wach.
 
 I'm not that numb eeh *hic* what did ever yous disco... ...vered there, The Legion of Aemil won't get me!
-
+Ich bin nicht so dämlich eeh *hicks* Was immer du dort entde *hicks* ckt hast, die Kriegergilde bekommt mich nicht!
 
 I'm on my way! I will bring it back to you.
+Bin schon unterwegs! Ich werde es dir zurückbringen.
+
+I'm really excited, this place reminds me of an ancient mythical tree, you might know what I'm talking about...
 
 
 I'm searching some black iron ingots.
-
+Ich suche schwarze Eisenbarren.
 
 I'm sorry but I can't see your name anywhere.
-
+Es tut mir leid, aber ich kann keinen Namen nirgends entdecken.
 
 I'm sorry but I have no time to chat with you.
 Entschuldige aber ich habe keine Zeit mich mit Dir zu unterhalten.
 
 I'm sorry for your situation. They should alternate shifts with other sailors from time to time.#0
-
+Das ist kein guter Zustand. Sie sollten hin und wieder Schichtwechsel mit anderen Matrosen organisieren.
 
 I'm sorry for your situation. They should alternate shifts with other sailors from time to time.#1
-
+Das ist kein guter Zustand. Sie sollten hin und wieder Schichtwechsel mit anderen Matrosen organisieren.
 
 I'm sorry, I don't have time right now.
 Entschuldige, aber ich habe gerade keine Zeit.
 
 I'm still a bit weak at the moment. We should probably talk later.#0
-
+Ich fühle mich immer noch ziemlich schwach. Wir sollten uns ein andermal unterhalten.
 
 I'm still a bit weak at the moment. We should probably talk later.#1
-
+Ich fühle mich immer noch ziemlich schwach. Wir sollten uns ein andermal unterhalten.
 
 I'm still busy, I need to find the other sailors.
 Ich bin noch immer beschäftigt. Ich muss die anderen Matrosen finden.
@@ -3789,148 +3867,148 @@ I'm still in a coma, but my ghost is haunting you!
 Ich bin immer noch im Koma, aber mein Geist verfolgt dich!
 
 I'm sure Tibbo is alone in the south-west corner of the island. He believes it's the best place to collect @@s.
-
+Ich bin sicher, Tibbo ist allein im Südwesten der Insel. Er ist der Meinung, dort lassen sich @@s am Besten sammeln.
 
 I'm sure he will soon be able to fight all of the creatures living here without any problem.#1
-
+Er wird bald all Kreaturen, die hier leben, ohne Probleme bekämpfen können. Dessen bin ich mir sicher.
 
 I'm sure she will soon be able to fight all of the creatures living here without any problem.#0
-
+Sie wird bald all Kreaturen, die hier leben, ohne Probleme bekämpfen können. Dessen bin ich mir sicher.
 
 I'm sure that you already knew the answer, didn't you?
-
+Du hast die Antwort doch schon vorher gewußt, nicht wahr?
 
 I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.
-
+Ich bin mir sicher, daß du einige Fragen an mich hast. Zögere nicht zu fragen. Zuerst muss ich dir jedoch die Vorschriften für angemessenes soziales Verhalten an Bord erklären.
 
 I'm sure you would have some interesting stories to tell!
-
+Sicherlich hast du einige interessante Geschichten zu erzählen.
 
 I'm sure you'll appreciate its effect, but be careful, these cookies are rare, and you'll need to help the community again before being able to receive another one.#0
-
+Selbstverständlich wirst du ihren Effekt schätzen. Sei aber vorsichtig, diese Kekse sind selten, und du wirst der Gemeinschaft wieder helfen müssen, bevor du noch einen bekommst.
 
 I'm sure you'll appreciate its effect, but be careful, these cookies are rare, and you'll need to help the community again before being able to receive another one.#1
-
+Selbstverständlich wirst du ihren Effekt schätzen. Sei aber vorsichtig, diese Kekse sind selten, und du wirst der Gemeinschaft wieder helfen müssen, bevor du noch einen bekommst.
 
 I'm talking about the cookie in which I put all my love inside!
-
+Ich rede über den Kek, den ich mit all meiner Liebe gebacken habe!
 
 I'm the cook's assistant of the ship. I help Gado, La Johanne's Chef, in his daily work.
-
+Ich bin die Küchenhilfe auf dem Schiff. Ich helfe Gado, dem Koch der La Johanne, bei seinen täglichen Aufgaben.
 
 I've seen him at the bottom of the island, check around.
 Ich habe ihn am unteren Rand der Insel gesehen. Schau dich dort um.
 
 I've seen him at the bottom of the island, have a look around.
-
+Ich habe ihn am unteren Rand der Insel gesehen. Schau dich dort um.
 
 I've seen him at the northern part of the island.
-
+Ich habe ihn auf der Nordseite der Insel gesehen.
 
 I've seen him at the southern part of the island, check around.
-
+Ich habe ihn im Süden der Insel gesehen. Dort solltest du dich umsehen.
 
 I've seen him at the top of the island.
 Ich habe ihn auf der Spitze der Insel gesehen.
 
 I've seen him down around the southern area of the island, ask Jalad for more information.
-
+Ich habe ihn unten auf dem südlichen Teil der Insel gesehen. Jalad weiß vielleicht mehr darüber.
 
 I...
 Ich...
 
 I... I just like to eat the purple and delightful... And natural, and...
-
-
-INN
-
+Ich... Ich mag es einfach, diese wunderbaren, lilafarbenen... und biologischen, und...
 
 Ianus is from the legion of Aemil, don't compare me to this brigand.
-
+Ianus ist Mitglied der Legion von Aemil, vergleich mich nicht mit diesem Banditen!
 
 If Enora wants her sword now, I need to ask for your help.
-
+Wenn Enora ihr Schwert sofort will, muß ich dich um Hilfe bitten.
 
 If I saw *hic* who you were... *hic* Would not have helped you! 
-
+Wenn ich *hicks* gesehen hätte wer du bist *hips* hätte ich dir nicht geholfen!
 
 If so, I hope that he didn't give you any hard time, sometimes he get up on the wrong side of the bed he transforms himself into an embittered and grumpy old man...
-
+Falls das der Fall ist, hoffe ich, er hat es dir nicht allzu schwer gemacht. Manchmal steht er mit dem linken Fuß zuerst auf, und dann verwandelt er sich in einen verbitterten, grantigen alten Mann...
 
 If yoiis wants to see a different use for the cards he can yeye for Resa at the light armor shop for a description of the styling cards.
-
+Wenn yoiis eine andere Verwendung für die Karten sehen will, kann yeye zu Resa im Geschäft für leiche Rüstung gehen und nach einer Funktionsbeschreibung der Style-Karten fragen.
 
 If you are registered somewhere else you will loose that reservation.
-
+Wenn du dich irgendwo anders registrierst, verlierst du diese Reservierung.
 
 If you catch the escaped piou and bring it back, I will give you a 90% discount on a piou.
-
+Wenn du das geflüchtete Piou zurück bringst, gebe ich dir 90% Rabatt auf ein Piou.
 
 If you continue there will be none left!
-
+Wenn du weitermachst, werden keine übrigbleiben!
 
 If you ever find the time, pass by Esperia, it's the capital city of the archipelagos!
-
+Wenn du jemals dazu kommst, schau dir Esperia an. Es ist die Hauptstadt des Archipels!
 
 If you feel bored or anxious, you can always ask some of the people around Artis if they need any help.. It's better than running around in circles
-
+Wenn du gelangweilt oder unruhig bist, kannst du den Leuten in Artis jederzeit deine Hilfe anbieten... das ist immerhin besser, als im Kreis zu laufen.
 
 If you feel bored or like running around in circles, you may want to talk with the other sailors around here to get some tasks to do.
-
+Wenn dir langweilig ist oder du dich im Kreis drehst, möchtest du vielleicht mit den anderen Matrosen hier in der Gegend sprechen, um einige Aufgaben zu bekommen.
 
 If you find the correct answer, I will give you these potions...
-
+Wenn du die richtige Antwort findest, gebe ich dir diese Tränke...
 
 If you have to say something to a specific player, you can type "\\query Playername" or "\\whisper Playername message", this will create a new tab on your chat window.
 
 
 If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.
-
+Wenn du jemand brauchst, der aufgrund von Zeichnungen eine Waffe oder ein Schild herstellen soll, dann bin ich dein Mann.
 
 If you need something in the future, do not hesitate to pass by here, our stock is full of box collecting dust.
-
+Wenn du in Zukunft etwas brauchst, dann komm ohne Zögern vorbei. Unser Lager ist voll von verstaubten Kisten.
 
 If you search for him you should look to the west of this city, it's the first house just after the left bridge, you can't miss it!
-
+Wenn du ihn suchst, solltest du im Westen der Stadt schauen. Es ist das erste Haus nach der Brücke links, du kannst es nicht verpassen!
 
 If you see weird things here and there, or things that just shouldn't be, or even in your minds eye, things that you would like to see...
+Wenn du hier und da komische Sachen siehst, oder Dinge, die nicht hier sein sollten, oder Dinge vor deinem inneren Auge, die du gern hier sehen würdest...
 
-
-If you wake up at the INN after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.
+If you wake up at the inn after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.
 
 
 If you want another cookie, you know what to do!
-
+Wenn du noch einen Keks möchstest, weißt du was zu tun ist!
 
 If you want to be rewarded, help us in making this world a better place.#0
-
+Wenn du belohnt werden möchstest, dann hilf uns, diese Welt zu einem besseren Ort zu machen.
 
 If you want to be rewarded, help us in making this world a better place.#1
-
+Wenn du belohnt werden möchstest, dann hilf uns, diese Welt zu einem besseren Ort zu machen.
 
 If you want to read this page again, there is a copy up on the left wall.
+Wenn Sie diese Seite später nochmals lesen möchten, gibt es eine Kopie an der Wand links.
 
-
-If you're looking for us there, most of us will be at the tavern of the Redplush, at the bar counter for Silvio's case...
+If you're looking for us there, most of us will be at the tavern of the Red Plush, at the bar counter, for Silvio's case...
 
 
 Imperial
-
+Kaiserlich
 
 Impossible to increase the number/value.
+Der Wert kann nicht erhöht werden.
+
+In Artis they really do mythologise people when they die.
 
 
 In fact, everything seems to work perfectly under your guidance. Nard has made the right choice.
-
+Unter deiner Führung läuft offensichtlich alles perfekt. Nard hat die richtige Entscheidung getroffen.
 
 In fact... Oh, the things that I could tell... But ran out of space on this... Just be reasonable and go home.
-
+In Wahrheit... ach, was ich dir alles erzählen könnte... Aber hier ist nicht der Ort dafür... sei vernünftig und geh nach Hause.
 
 Incorrect name/ID, or no one from the specified guild is online.
-
+Name/ID nicht korrekt, oder kein Mitglied der Gilde online.
 
 Incorrect name/ID, or no one from the specified party is online.
-
+Name/ID nicht korrekt, oder kein Mitglied der Gruppe online.
 
 Indeed! Goodbye.
 Tatsächlich! Auf Wiedersehen.
@@ -3942,19 +4020,22 @@ Indeed, I am not.#1
 In der Tat, bin ich nicht.
 
 Infinitely long
-
+Unendlich lange
 
 Information sent to login-server via char-server.
+Informationen über den char-Server zum login-Server gesendet.
+
+Inn
 
 
 Instance variables may not be used with @set.
-
+Fallvariablen können nicht mit @set benutzt werden.
 
 Int: %d (%d~%d)
-
+Int: %d (%d~%d)
 
 Intelligence raises your maximum mana points (good for mages) and your mind abilities. Please note: Magic system has not yet been implemented in this world.
-
+Intelligenz erhöht die maximalen Manapunkte (gut für Magier) und die geistigen Fähigkeiten. Anmerkung: Magie ist in Evol Online noch nicht umgesetzt.
 
 Interested?#0
 Interessiert?
@@ -3966,280 +4047,286 @@ Interesting... I'll leave you to your task then!
 Interessant ... Ich werde Sie für Ihre Aufgabe dann verlassen!
 
 Invalid Homunculus ID.
-
+Ungültige Homunculus ID.
 
 Invalid Monster/NPC name/ID specified.
-
+Ungültige Monster/NPC Name/ID angegeben.
 
 Invalid bound type. Valid types are - 1:Account 2:Guild 3:Party 4:Character
 
 
 Invalid color.
-
+Ungültige Farbe.
 
 Invalid coordinates, using random target cell.
-
+Ungültige Koordinaten, nutze zufälliges Zielfeld.
 
 Invalid e-mail. If your email hasn't been set, use a@a.com.
-
+Ungültige E-Mail. Wenn deine E-Mail nicht gesendet wurde, nutze a@a.com.
 
 Invalid flag name or flag.
-
+Ungültiger Flaggenname oder Flagge.
 
 Invalid font. Use a value from 0 to 9.
-
+Ungültige Schrift. Nutze einen Wert von 0 bis 9.
 
 Invalid item ID or name.
-
+Ungültiger Gegenstand Name/ID.
 
 Invalid location number, or name.
-
+Ungültiger Ortsname oder -kennung.
 
 Invalid mob ID %s!
-
+Ungültige Monster ID %s!
 
 Invalid mob id %s!
-
+Ungültige Monser id %s!
 
 Invalid mob name %s!
-
+Ungültiger Monster Name %s!
 
 Invalid monster ID or name.
-
+Ungültiger Monster Name/ID.
 
 Invalid name.
-
+Ungültiger Name.
 
 Invalid new e-mail. Please enter a real e-mail address.
-
+Ungültige neue E-Mail Adresse. Bitte gib eine echte E-Mail Adresse ein.
 
 Invalid packet
-
+Ungültiges Paket
 
 Invalid time for ban command.
-
+Ungültige Zeit für ban Befehl.
 
 Invalid time for jail command.
-
+Ungültige Zeit für Gefängnis Befehl.
 
 Invisible: Off
-
+Unsichtbarkeit: aus.
 
 Invisible: On
+Unsichtbarkeit: an.
+
+Is it possible to go back to Drasil Island?
 
 
-Is it possible to go back to the island?
+Is it truly a hard choice to make?
 
 
 Is that all you had to say?
-
+Ist das alles, was zu sagen hattest?
 
 Is that okay?
-
+Ist das okay?
 
 Is there a reward?
 Gibt es eine Belohnung?
 
 Is this for you or somebody else? Because you need to be registered to obtain these materials.
-
+Ist das für dich, oder für jemand anderen? Du mußt nämlich registriert sein, um diese Materialien zu bekommen.
 
 Is this some kind of joke?!
-
+Soll das ein Witz sein?!
 
 It escaped!
-
+Es ist geflüchtet!
 
 It has been some days now since I asked her for a box of @@, but she hasn't delivered anything yet.
-
+Ich habe sie schon vor einigen Tagen nach einer Kiste @@ gefragt. Sie hat aber immer noch nichts geliefert.
 
 It has started to snow.
-
+Es hat zu schneien begonnen.
 
 It hurts so bad!
-
+Es tut so weh!
 
 It is a sunny day, don't you think?
-
+Ein schöner sonniger Tag, findest du nicht?
 
 It is possible to yeye your cloth with my beautiful dyes.
-
+Es ist möglich, deine Kleidung mit meinen wunderschönen Farben zu yeyeen.
 
 It is them, after all, who have the ultimate decision as to those I can give my cookies to.
-
+Letztendlich sind sie es, die entscheiden, wem ich meine Kekse geben darf und wem nicht.
 
 It looks like the sweet lady is curious, am I right?
-
+Sieht so aus, als sei Madame neugierig, habe ich recht?
 
 It looks like you are an expert of the life inside 'La Johanne'. Do you know any hidden secrets nobody knows?#0
-
+Es scheint, du bist ein Experte, was das Leben auf der 'La Johanne' betrifft. Kennst du irgendwelche Geheimnisse, die sonst keiner kennt?
 
 It looks like you are an expert of the life inside 'La Johanne'. Do you know any hidden secrets nobody knows?#1
-
+Es scheint, du bist ein Experte, was das Leben auf der 'La Johanne' betrifft. Kennst du irgendwelche Geheimnisse, die sonst keiner kennt?
 
 It looks like you can't carry anything else for now.
 Sieht so aus, als könntest du gerade nichts mehr tragen.
 
 It really hurts, please hurry!
-
+Es tut wirklich weh, beeil dich bitte!
 
 It seems I got them all!
-
+Es scheint, ich habe sie alle gefunden!
 
 It seems that we are close to an island, we should take a look at the upper level.
-
+Es scheint, dass wir in der Nähe einer Insel sind, wir sollten einen Blick auf das Oberdeck werfen.
 
 It seems that you have no status points to reset!
-
+Scheinbar hast du keine Status Punkte zum zurücksetzen!
 
 It seems that you need a key to open this door.
 Scheinbar brauchst du einen Schlüssel um diese Tür zu öffnen.
 
 It seems the gentleman is curious, am I right sweetie?
-
+Sieht so aus, als wäre der Herr neugierig, habe ich recht, Süßer?
 
 It seems you still have some work to do.
 Scheint als ob du noch immer arbeit zu erledigen hast.
 
 It was at night, so I could barely escape. I ran to Artis Hill.
-
+Es war mitten in der Nacht, daher konnte ich gerade noch flüchten. Ich bin auf den Hügel von Artis gerannt.
 
 It was something like a long nap.
 Es war so etwas wie ein langes Nickerchen.
 
-It would be good for you to do some exercise, the ship isn't big enough for that.
+It was wonderful.
 
+
+It would be good for you to do some exercise, the ship isn't big enough for that.
+Es wäre ein guter Ort für ein wenig Bewegung, da das Schiff nicht wirklich groß genug dafür ist.
 
 It would have been easy for me to handle it, but if you do it you can earn some respect by killing Fluffies in place of their natural-predator!
-
+Für mich wäre das ein Klacks. Falls du es aber versuchen willst, kannst du dir durch das Töten von Fluffies (anstelle ihres natürlichen Feindes) einigen Respekt verschaffen.
 
 It's @@ @@.
-
+Es ist @@ @@.
 
 It's Ivan... I'm sure that he sent you to annoy me...
-
+Es ist Ivan... Er hat dich sicher geschickt, um mich zu ärgern...
 
 It's a commercial port of Andorra, it's weird that you don't know about it since it is one of the most famous cities throughout the whole world. But hey, back to me. Remember my mentioning that I'm hun...grrr...eee!
-
+Es ist der Handelshafen von Andorra. Es ist komisch, dass du noch nicht davon gehört hast. Es ist eine der berühmtesten Städte der ganzen Welt. Aber hey. Lass uns zum Thema zurückkommen! Ich bin hungrig!
 
 It's a dangerous place out here. Beware of the mischievous creatures living here!
-
+Es ist gefährlich da draußen. Nimm dich vor den boshafen Kreaturen in Acht, die hier leben!
 
 It's a good place to earn money, it can also help you to travel throughout the archipelagos!
-
+Es ist ein guter Ort zum Geld verdienen, was dir helfen kann, das Archipel zu erkunden!
 
 It's a great honor for us at the Legion to hold the security of his commerce.
-
+Es ist eine Ehre für uns in der Legion, daß wir für den umfassenden Schutz seiner Handelsgeschäfte sorgen dürfen.
 
 It's a great honor for us at the Legion to hold the security of this commerce!
-
+Es ist eine Ehre für uns in der Legion, daß wir für den umfassenden Schutz dieser Handelsgeschäfte sorgen dürfen!
 
 It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?
-
+Es ist eine Pilzart, die wie ein Marshmallow schmeckt und wie ein Plüschpilz aussieht! @@, gecheckt?
 
 It's a kind of mushroom. We call it like that because of it's taste, just like a marshmallow. It also has this name because of it's appearance, it looks like a plush!
-
+Es ist eine Pilzart. Seinen Namen hat er wegen seines Geschmacks nach Marshmallows, und weil er aussieht, als wäre er aus Plüsch. 
 
 It's a kind of mushroom. We call it like that because of it's taste, just like a marshmallow. It also has this name because of it's appearance. It looks like a plush!
-
+Es ist eine Pilzart. Seinen Namen hat er wegen seines Geschmacks nach Marshmallows, und weil er aussieht, als wäre er aus Plüsch. 
 
 It's a poem, about poems... Why are you asking that?
-
+Es ist ein Gedicht, über Gedichte... Warum fragst du?
 
 It's a very good place if you want to make some more money.
-
+Es ist eine gute Gelegenheit, etwas mehr Geld zu verdienen.
 
 It's alright! Just one more box and it'll be ok.
 Alles ok! Nur eine weitere Box und es wird ok sein.
 
-It's been a while boy.
+It's been a while, boy!#1
+
+
+It's been a while, girl!#0
 
 
 It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!
-
-
-It's difficult to distinguish good villagers from bad ones; keep your guard up, and stay away from me.
-
+Mach besser Geschäfte mit der Händlergile als mit dem alten Mann. Don kann deine Begeisterung mit cholerischen Wutausbrüchen niederhämmern!
 
 It's good, good... I have a friend who is still in a coma, but I can't be with her without working...
 Es ist gut, gut ... Ich habe einen Freund, der immer noch im Koma liegt , aber ich kann nicht bei ihm zu sein, ohne zu arbeiten ...
 
 It's interesting and exciting at the same time!
-
+Es ist gleichzeitig interessant und aufregend!
 
 It's like your memories are locked away in your head! Cool!
-
+Es ist, als wären deine Erinnerungen in deinem Kopf weggesperrt! Cool!
 
 It's nearly as good as one from Esperia, have you ever been there?
-
+Es ist fast so gut wie eins aus Esperia. Bist du dort jemals gewesen?
 
 It's not as good as my new one, but still useful.
-
+Es ist nicht so gut wie mein neues, aber trotzdem sehr nützlich.
 
 It's ok.
 Es ist ok.
 
 It's probably full of coins, but no matter how hard you try to open it, you can't.
-
+Sie ist möglicherweise voller Münzen, aber du schaffst es trotz aller Anstrengung nicht, sie zu öffnen.
 
 It's so exciting to meet somebody with amnesia!
-
+Es ist so aufregend, jemanden mit Gedächtnisverlust zu treffen!
 
 It's so hard to find the motivation...
 Es ist schwer, die Motivation zu finden ...
 
 It's still too young to fly too far away, so it just circles nearby.
-
+Es ist noch zu jung, um weite Strecken zu fliegen, also zieht es in der nahen Umgebung seine Kreise.
 
 It's the big building at Northern Artis, at the top of a small hill.
-
+Es ist das große Gebäude im Norden von Artis, oben auf dem kleinen Hügel.
 
 It's true!
 Es ist wahr!
 
 It's where every merchant ship end their road and we won't be an exception.
-
+Jedes Handelsschiff beendet dort seine Reise, und wir werden da keine Ausnahme sein.
 
 Item cannot be opened when inventory is full
-
+Gegenstand kann nicht geöffnet werden; das Inventar ist voll
 
 Item created.
-
+Gegenstand hergestellt.
 
 Item database has been reloaded.
-
+Gegenstände Datenbank wurde neu geladen.
 
 Item not found.
-
+Gegenstand nicht gefunden.
 
 Item type not found.
-
+Gegenstandstyp nicht gefunden.
 
 Item types on your autoloottype list:
-
+Gegenstandstypen auf deiner autoloottype Liste:
 
 Item: '%s'/'%s'[%d] (%d) Type: %s | Extra Effect: %s
-
+Gegenstand: '%s'/'%s'[%d] (%d) Typ: %s | Extra Effekt: %s
 
 Item: '%s'[%d]
-
+Gegenstand: '%s'[%d]
 
 Items have different effects. Some will heal you, some can be used as weapons or armor, and some can be sold for gold.
-
+Gegenstände haben unterschiedliche Effekte. Einige werden dich heilen, einige können als Waffe oder Rüstung benutzt werden, und andere können für Gold verkauft werden.
 
 Items on your autolootitem list:
-
+Gegenstände auf deiner autolootitem Liste:
 
 Its inhabitants did not know any kind of horror and in peace they lived as the earth gave them everything they needed to live.
-
+Seine Einwohner kannten keine Schrecken und Grausamkeiten. Sie lebten in Frieden, und die Erde gab ihnen alles, was sie zum Leben brauchten.
 
 Ivan
-
+Ivan
 
 Ivan grumbles and resumes his work.
-
+Ivan brummt und nimmt seine Arbeit wieder auf.
 
 Ivan is the one that you should look at now.
-
+Ivan ist der, den du nun sehen solltest.
 
 Jalad
 Jalad
@@ -4248,94 +4335,100 @@ Jalad.
 Jalad.
 
 Janus
-
+Janus
 
 Janus!
-
+Janus!
 
 Jenna#001-2-28
-
+Jenna#001-2-28
 
 Job level can't go any higher.
-
+Joblevel kann nicht weiter steigen.
 
 Job level can't go any lower.
-
+Joblevel kann nicht weiter sinken.
 
 Job level lowered.
-
+Joblevel reduziert.
 
 Job level raised.
-
+Joblevel erhöht.
 
 Judgement has passed.
-
+Das Urteil wurde gefällt.
 
 Julia
 Julia
 
 Julia has told me how they found you at sea, on a raft with a logo of--
-
+Julia erzählte mir, wie sie dich auf See gefunden haben, auf einem Floß mit dem Wappen der--
 
 Julia is on the upper level of the ship, use the arrow keys to walk to the stairs or click on the stairs at the top right of your screen.
 Julia ist auf der oberen Ebene des Schiffes, verwenden Sie die Pfeiltasten, um zur Treppe zu gehen, oder klicken Sie auf die Treppe am oberen rechten Ecke des Bildschirms.
 
 Julia made an appeal to the Legion of Aemil to get in touch with you, exit the ship and you should see your escort!
-
+Julia hat die Legion von Aemil gebeten, sich mit dir in Verbindung zu setzen. Verlasse das Schiff, dann solltest du deine Begleitung bereits sehen!
 
 Julia#Artis
-
+Julia#Artis
 
 Jump to %d %d
-
+Springe zu %d %d
 
 Jump to %s
-
+Springe zu %s
 
 Juscare#001-1
-
+Juscare#001-1
 
 Just hit the trunk, and it will yeye a @@.
-
+Schlag auf den Stamm ein, es wird eine @@ yeyeen.
 
 Just leave me alone.
 Lass mich einfach allein.
 
 Just look at my goods for sale! Fresh fruits and vegetables were shipped only this morning. And for reasonable price, of course.
-
+Sieh dir einfach meine Waren an! Frisches Obst und Gemüse wurde erst heute morgen angeliefert. Selbstverständlich zu vernünftigen Preisen.
 
 Just look out at that water! There's plenty more fish there.
-
+Schau einfach raus aufs Meer! Es gibt noch unendlich viel Fisch da draußen.
 
 Kagerou
-
+Kagerou
 
 Katja#001-1
-
+Katja#001-1
 
 Kaylo#001-2-27
+Kaylo#001-2-27
+
+Keep moving boy.#1
+
+
+Keep moving girl.#0
 
 
 Keep the sword and the jacket, you deserved them!
-
+Behalte das Schwert und die Scheide, du hast es dir verdient!
 
 Killer state reset.
-
+Killer Status zurückgesetzt.
 
 Knight
-
+Ritter
 
 Lagoon blue
-
+Lagunenblau
 
 Last time I saw you, you were lost at sea on your raft.#0
-
+Als ich dich das letzte Mal getroffen hatte, warst du auf deinem Floß in Seenot.
 
 Last time I saw you, you were lost at sea on your raft.#1
-
+Als ich dich das letzte Mal getroffen hatte, warst du auf deinem Floß in Seenot.
 
 Leadership transferred.
-
+Führerschaft übertragen.
 
 Lean
 Lean
@@ -4344,142 +4437,145 @@ Lean for example?
 Mager zum Beispiel?
 
 Leave it
-
+Geh bitte
 
 Leaves have stopped falling.
-
+Die Blätter haben aufgehört zu fallen.
 
 Leaves started falling.
-
+Die Blätter fallen.
 
 Leaves | 
-
+Blätter
 
 LeftBarrierCheck
 LeftBarrierCheck
 
 LeftDoor
-
+LeftDoor
 
 LeftDoor#001-2-23
-
+LeftDoor#001-2-23
 
 LeftDoorCheck
 LeftDoorCheck
 
 Legion of Aemil
-
+Legion von Aemil
 
 Leonard
-
+Leonard
 
 Let me check in my inventory book...
-
+Lass mich die Inventarliste prüfen...
 
 Let me check into it...
-
+Lass mich mal drüberschauen...
 
 Let me check my cookie list...
 Lass mich meine Keksliste prüfen...
 
 Let me explain to you what the Merchant Guild is for.
-
+Lass mich dir erklären, wozu die Händlergilde gut ist.
 
 Let me introduce myself, I am Nard, captain of this ship.
 Lass mich mich erst einmal vorstellen. Ich bin Nard und bin der Kapitän dieses Schiffes.
 
 Let me open it with my key.
-
+Lass sie mich mit meinem Schlüssel öffnen.
 
 Let me see... Crispy legs, disgusting liquids... Let's start!
-
+Lass mal sehen... Knusprige Schenkel, wiederliche Flüssigkeiten... Lass uns anfangen!
 
 Let's begin
-
+Los gehts
 
 Let's go to Artis.
-
+Lass uns nach Artis gehen.
 
 Let's make a trade.
-
+Lass uns handeln.
 
 Let's not keep her waiting.
-
+Wir sollten sie nicht warten lassen.
 
 Let's say the person who told me about that is well respected on this ship and never drunk.
-
+Lass es mich so sagen: Die Person, die mir davon erzählte, wird auf dem Schiff respektiert und ist nie betrunken.
 
 Let's see... @@ of your status points have just been reset!
-
+Lass mal sehen... @@ deiner Statuspunkte wurden gerade erst zurückgesetzt!
 
 Let's set sail then!
-
+Setzt die Segel!
 
 Let's trade.
-
+Lass uns handeln.
 
 Library
-
+Bibliothek
 
 Light Armor Shop
-
+Geschäft für Leichte Rüstungen
 
 Light violet
-
+Hell Lila
 
 Like I promised, here is your share.
-
+Wie versprochen ist hier dein Anteil.
 
 Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.
-
+Genau wie alle anderen der Crew bist du hier herzlich willkommen. du kannst auch jederzeit hier übernachten, während du in Artis unterwegs bist.
 
 Like, a defensive mythril card can be used on any mythril equipment, and it will improve the defense by 5% of the latter.
-
+Zum Beispiel kann eine defensive Mythrilkarte in jede Mythrilausrüstung eingesetzt werden, und sie wird die Verteidigung um 5% des Grundwertes erhöhen.
 
 Little Blub
-
+Kleines Blub
 
 Living inside a ship is great, but we sometimes need some fresh air.
 Das Leben in einem Schiff ist großartig, aber manchmal brauchen wir etwas frische Luft.
 
 Lloyd is searching something in his book.
-
+Lloys sucht etwas in seinem Buch.
 
 Lloyd still owes me, but beware of those money-grubbers, or they will sell your own teeth to you!
-
+Llyod schuldet mir noch was, aber hüte dich vor diesen Geldschefflern. Die verkaufen dir noch ihre eigenen Großmütter!
 
 Lloyd the banker
+Lloyd der Banker
+
+Logic is the beginning of wisdom, not the end.
 
 
 Login-server has been asked to %s the player '%.*s'.
-
+Anfrage an Login-Server: %s den Spieler '%.*s'.
 
 Login-server is offline. Impossible to %s the player '%.*s'.
-
+Login-Server ist offline. %s den Spieler '%.*s' nicht möglich.
 
 Long and curly
-
+Lang und lockig
 
 Long and slick
-
+lang und glatt
 
 Long ponytail
-
+Langer Pferdeschwanz
 
 Look at your equipment, can you guess what material it is made from?
-
+Schau dir deine Ausrüstung genau an. Errätst du, aus welchem Material sie gemacht ist?
 
 Look how splendid this @@ is!
-
+Schau mal wie famos dieses @@ ist!
 
 Look how splendid this landscape is!
-
+Schau dir mal diese herrliche Landschaft an!
 
 Look who is back...
-
+Na sieh an, wer zurück ist...
 
 Look who we have here, did you come for a training session?
-
+Da schau her, wen haben wir denn da. Kommst du von einer Trainingseinheit zurück?
 
 Look, here he is!
 Schau, hier ist er!
@@ -4488,340 +4584,355 @@ Look, there he is!
 Schau, dort ist er!
 
 Look, we finally meet.
-
+Endlich treffen wir uns.
 
 Lord Knight
-
-
-Lost Island.
-
+Lord Ritter
 
 Lovely day, isn't it?
-
+Schöner Tag, nicht wahr?
 
 Lozerk
-
+Lozerk
 
 Lucas#001-1
-
+Lucas#001-1
 
 Luck helps you do critical hits and dodge the ones dealt by enemies.
 Glück hilft die kritische Treffer zu erzielen und denen einer Feinde auszuweichen.
 
 Luckily the beach is nearby, and somehow I made my way home.
-
+Zum Glück ist der Strand in der Nähe, und irgendwie hab ich es nach Hause geschafft.
 
 Luk: %d (%d~%d)
-
+Luk: %d (%d~%d)
 
 Lydon#001-2-27
-
+Lydon#001-2-27
 
 M... Maybe?
 V... Vielleicht?
 
 MVP Monster: '%s'/'%s'/'%s' (%d)
-
+MVP Monster: '%s'/'%s'/'%s' (%d)
 
 Magic Arpan
 Magic Arpan
 
 Magic Arpan#sailors
-
+Magic Arpan#sailors
 
 Magician
+Magier
+
+Makes sense. Do you think we should inform the capt'n about it?
 
 
-Manana tree
+Manana Tree
 
 
 Mane
-
+Mähne
 
 Map not found.
-
+Karte nicht gefunden.
 
 Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d
-
+Karte: %s (Zone:%s) | Spieler: %d | NPCs: %d | Chats: %d | Verkäufe: %d
 
 Market Place
-
+Marktplatz
 
 Marriage failed.
-
+Hochzeit fehlgeschlagen.
 
 Max HP: %d (%d~%d)
-
+Max HP: %d (%d~%d)
 
 Max SP: %d (%d~%d)
-
+Max SP: %d (%d~%d)
 
 Maxe
-
+Maxe
 
 Maxe and Sapartan for example?
-
+Maxe und Sapartan zum Beispiel?
 
 May this be a lesson for you.
 Dies soll eine Lektion für Dich gewesen sein.
 
 Maybe he over did it with the bottle today to celebrate that!
+Vielleicht hat er es mit der Flasche übertrieben, um das heute zu feiern!
 
-
-Maybe he was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Legion of Aemil!#1
+Maybe he was one of those who got lost last month? He could be the yoiis from Esperia who got a secret quest from the Legion of Aemil!#1
 
 
 Maybe next time.
+Vielleicht nächstes Mal.
 
-
-Maybe she was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Legion of Aemil!#0
+Maybe she was one of those who got lost last month. She could be the yoiis from Esperia who got a secret quest from the Legion of Aemil!#0
 
 
 Maybe you can come down to talk?
 Vielleicht kannst du zum reden herunterkommen?
 
 Maybe you meant: 
-
+Hast du vielleicht das gemeint:
 
 Maybe you too you could help me?
-
+Könntest du mir ebenfalls helfen?
 
 Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?#0
-
+Vielleicht... Aber ich habe lieber gut trainierte Kämpfer um mich, wenn es zu Gefechten mit gefählichen Kreaturen geht. Fühlst du dich schon dazu in der Lage zu kämpfen?
 
 Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?#1
-
+Vielleicht... Aber ich habe lieber gut trainierte Kämpfer um mich, wenn es zu Gefechten mit gefählichen Kreaturen geht. Fühlst du dich schon dazu in der Lage zu kämpfen?
 
 Mechanic
-
+Mechaniker
 
 Mechanic T
+Mechaniker T
+
+Meh!
 
 
 Merchant
-
+Händler
 
 Merchant Guild
-
+Händlergilde
 
 Mercy has been granted.
-
+Gnade wurde gewährt.
 
 Mercy has been shown.
-
+Gnade wurde walten gelassen.
 
 Merlin
-
+Merlin
 
 Messy
-
+Messy
 
 Minstrel
-
+Hofmusiker
 
 Minstrel T
-
+Hofmusiker T
 
 Mob Search... %s %s
+Monstersuche... %s %s
+
+Mob is doing its daily noise, nature is singing its sumptuous melody, none is alone.
 
 
 Mobs#001-1
-
+Mobs#001-1
 
 Mohawk
-
+Irokesenschnitt
 
 Mommy sent me to find my brother Bobo.
-
+Meine Mutter hat mich hierher geschickt, um meinen Bruder Bobo zu suchen.
 
 Mona
-
+Mona
 
 Monk
-
+Mönch
 
 Monster NoTeleport | 
-
+Monster NoTeleport | 
 
 Monster database has been reloaded.
-
+Monster Datenbank wurde neu geladen.
 
 Monster: '%s'/'%s'/'%s' (%d)
-
+Monster: '%s'/'%s'/'%s' (%d)
 
 Moo!
-
+Muuh!
 
 Moon#001-2-2
-
+Moon#001-2-2
 
 Moooo!
-
+Muuuuh!
 
 Moooooo!
-
+Muuuuuuuuuuh!
 
 Moooooooooooo!
+Muuuuuuuuuuuuuuuuuuuh!
+
+Mostly manuals and tutorials but you won't find out until you open one!
 
 
 Mouboo#Artis0
-
+Mouboo#Artis0
 
 Mouboo#Artis1
-
+Mouboo#Artis1
 
 Mouboo#Artis2
-
+Mouboo#Artis2
 
 Mouboo#Artis3
+Mouboo#Artis3
+
+Move kid.
 
 
 My beauty, I was not always a sailor, you know, I was once an important individual!#0
-
+Meine Schönheit, ich war nicht immer ein Seemann, wissen Sie, ich war einst eine bedeutende Persönlichkeit!
 
 My friend, I was not always a sailor, you know, I was once an important individual!#1
-Meine Freundin, ich war nicht immer ein Seemann, weißt du, einst war ich mal ein bedeutende Person!
+Mein Freund, ich war nicht immer ein Seemann, wissen Sie, einst war ich eine bedeutende Persönlichkeit!
 
 My friends are... Well, you know... The creators.
 Meine Freunde sind... Mhh, weißt du ... Die Schöpfer.
 
 My name is @@...
-
+Mein Name ist @@...
 
 My name is Alige, I've been hiding here for weeks. All I have to eat are these berries... berries... berries...
-
+Mein Name ist Alige, und ich verstecke mich hier schon seit Wochen. Alles, was ich hier zum Essen bekomme, sind diese Beeren, Beeren, Beeren...
 
 My name is Astapolos. Q'Muller and I joined Nard's crew a few years ago when it was just a little merchant ship.
-
+Mein Name ist Astapolos. Q'Muller und ich traten der Nard-Crew vor ein paar Jahren bei, als es nur ein kleines Handelsschiff war.
 
 My name is Julia, it is me who took care of you after we found you in the sea.
 Mein Name ist Julia. Ich kümmerte mich um dich nachdem wir dich im Meer gefunden hatten.
 
 My name is Lloyd, I am a representative of the Merchant Guild of Artis.
-
+Mein Name ist Lloyd. Ich bin Repräsentant der Händlergilde von Artis.
 
 My name is Q'Onan, I'm a member of Nard's crew.
-
+Mein Name ist Q'Onan, ich bin Mitglied von Nard's Mannschaft.
 
 My stats are too good, I won't need it.#0
-
+Meine Stats sind perfekt, ich brauche keine Änderung.
 
 My stats are too good, I won't need it.#1
-
+Meine Stats sind perfekt, ich brauche keine Änderung.
 
 NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT!
-
+NICHTS AUSSER HAIEN UND EINEM KOMISCHEN LEUCHTEN.
 
 NOTICE: If you crash with mount your LUA is outdated.
-
+Notiz: Wenn du mit deinem Reittier einen Unfall baust, ist dein LUA überholt.
 
 NPC %d: %s | Direction: %s | Sprite: %d | Location: %d %d
-
+NPC %d: %s | Richtung: %s | Sprite: %d | Ort: %d %d
 
 NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d 
-
+NPC %d: %s::%s | Richtung: %s | Sprite: %d | Ort: %d %d 
 
 NPC Buy:%dz, Sell:%dz | Weight: %.1f 
-
+NPC Kaufe:%dz, Verkaufe:%dz | Gewicht: %.1f 
 
 NPC Disabled.
-
+NPC deaktiviert.
 
 NPC Enabled.
-
+NPC aktiviert.
 
 NPC is not in this map.
-
+NPC befindet sich nicht auf dieser Karte.
 
 NPC moved.
-
+NPC verschoben.
 
 NPC variables may not be used with @set.
-
+NPC Variablen können nicht mit @set benutzt werden.
 
 Nalkri#001-1
-
+Nalkri#001-1
 
 Name not found in list.
-
+Name nicht in Liste gefunden.
 
 Name: %s 
-
+Name: %s
 
 Name: %s (GM)
-
+Name: %s (GM)
 
 Name: %s (GM:%d) | Location: %s %d %d
-
+Name: %s (GM:%d) | Standort: %s %d %d
 
 Nard
 Nard
 
 Nard and crew are taking us to the city of Artis.
-
+Nard und seine Mannschaft bringen uns nach Artis.
 
 Nard looks surprised and stops you.
 Nard sieht überrascht aus und stoppt dich.
 
 Nard#Artis
-
+Nard#Artis
 
 Narrator
 Erzähler
 
 Narrator#000-0-1
-
+Narrator#000-0-1
 
 Navy blue
-
+Marineblau
 
 Nevertheless, you can craft some cards that you can then attach to your equipment.
-
+Trotzdem kannst du Karten herstellen, um sie mit deiner Ausrüstung zu verbinden.
 
 Nevertheless, you can talk with another adventurer by pressing the [Enter] key and then type what you want say!
-
+Trotzdem kannst du mit einem anderen Abenteurer sprechen, indem du [Enter] drückst und eintippst, was du sagen möchtest.
 
 New e-mail must be a real e-mail address.
-
+Neue E-Mail Adresse muss eine echte E-Mail Adresse sein.
 
 New e-mail must be different from the current e-mail address.
-
+Neue E-Mail Adresse muss sich von der alten unterscheiden.
 
 New technologies assisted the slaughter instead of establishing peace. At some point, two different rivals were formed.
-
+Die neuen Technologien wurden für Zerstörung und Tod eingesetzt, anstatt Frieden zu bringen. Irgendwann standen sich hauptsächlich zwei Kontrahenten gegenüber.
 
 New warp NPC '%s' created.
+Neuen Warp NPC '%s' erstellt.
+
+Nice day to you.
 
 
 Night Mode Activated.
-
+Nacht Modus aktiviert.
 
 Night Mode is activated
-
+Nacht Modus aktiviert
 
 Night mode is already enabled.
-
+Nacht Modus bereits aktiv.
 
 NightmareDrop | 
 
 
 Nine Castles
-
+Neun Schlösser
 
 Nineteen Castles
-
+Neunzehn Schlösser
 
 Ninja
-
+Ninja
 
 No
-
+Nein
 
 No Exp Penalty: %s | No Zeny Penalty: %s
 
 
 No GM found.
-
+Kein GM gefunden.
 
 No Save (Return to last Save Point)
 
@@ -4833,10 +4944,10 @@ No Save, Save Point: %s,Random
 
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#0
-
+NEIN und *hicks* NEIN, du und deine... *burp* dähmliche *hicks* Gilde!
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#1
-
+NEIN und *hicks* NEIN, du und deine... *burp* dähmliche *hicks* Gilde!
 
 No cookie for you!
 Kein Keks für dich!
@@ -4845,10 +4956,10 @@ No item found in this player's %s.
 
 
 No item has been refined.
-
+Kein Gegenstand verbessert.
 
 No item need to be repaired.
-
+Kein Gegenstand muss repariert werden.
 
 No longer spying on the %s guild.
 
@@ -4856,26 +4967,29 @@ No longer spying on the %s guild.
 No longer spying on the %s party.
 
 
-No more pain, thanks to you.
+No matter what people tell you, words and ideas can change the world.
 
+
+No more pain, thanks to you.
+Dank dir fühle ich nun keine Schmerzen mehr.
 
 No player found in map '%s'.
 
 
 No player found.
-
+Kein Spieler gefunden.
 
 No problem, I can help you anyway.
 Kein Problem, ich kann dir trotzdem helfen.
 
 No problem, come back later if you changed your mind!
-
+Kein Problem. Wenn du deine Meinung änderst, kannst du später jederzeit zurückkommen.
 
 No problem, do you have any other questions for me?
 Kein Problem, hast Du irgendwelche anderen Fragen an mich?
 
 No problem, see you next time.
-
+Kein Problem, bis nächstes Mal.
 
 No thank you, I'm fine. I'll come back later.
 Nein, danke. Mir geht es gut. Ich werde später zurückkommen.
@@ -4883,17 +4997,20 @@ Nein, danke. Mir geht es gut. Ich werde später zurückkommen.
 No thanks, not at the moment.
 Nein danke, nicht im Moment.
 
+No you don't have to go. I need your help, so you have to stay.
+
+
 No!
 Nein!
 
-No! No, no my precious plushrooms! Don’t take me to them, they wants my precious.
+No! No, no, my precious plushrooms! Don’t take me to them, they wants my precious.
 
 
 No, I can't. I won't! All I wanted was to travel across the seas for fun, growl... sniff. And in this chink in the wall, as you can see, I have lots of fun.
-
+Nein, ich kann nicht. I will nicht! Ich wollte nur zum Spaß zur See fahren, *grummel*... *schnief*. Und wie du sehen kannst habe ich in dieser Spalte jede Menge Spaß.
 
 No, I can't. I won't! All is I wanted was to travel across the seas for fun, growl... sniff. And in this chink in the wall, as you can see, I have lots of fun.
-
+Nein, ich kann nicht. I will nicht! Ich wollte nur zum Spaß zur See fahren, *grummel*... *schnief*. Und wie du sehen kannst habe ich in dieser Spalte jede Menge Spaß.
 
 No, I don't, but I would like to know more about that.
 Nein, tue ich nicht, aber ich würde gern mehr darüber erfahren.
@@ -4902,7 +5019,7 @@ No, and I gotta go, see you.
 Nein und ich muss gehen. Auf bald.
 
 No, none.
-Nein, keiner.
+Nein, keine.
 
 No, they are way too dangerous for me!
 Nein, Die sind zu gefährlich für mich!
@@ -4911,7 +5028,7 @@ No.
 Nein.
 
 No. Sorry.
-
+Nein. Sorry.
 
 NoBaseEXP | 
 
@@ -4983,55 +5100,58 @@ Nobody.
 Niemand.
 
 None
-
+Keine
 
 None Taken
-
+Keine genommen
 
 None of them?
 Keiner von ihnen?
 
 Nope, there are no secrets hidden within the ship's hull. Some sailors swear they have seen stowaways hidden somewhere. The bow or the stern? Just stories sailors love to tell...
-
+Nein, es gibt keine Geheimnisse, versteckt im Schiffsrumpf. Einige Matrosen schwören, irgendwo blinde Passagiere entdeckt zu haben. Bug oder Heck? Das sind nur Geschichten, die die Matrosen gerne erzählen...
 
 Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
 
 
 North
-
+Norden
 
 North East
-
+Nordost
 
 North West
-
+Nordwest
 
 Not a hexadecimal digit:
 
 
 Not a string:
-
+Kein String:
 
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Newbies are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
 
 
 Not everybody has a kind mind. Scammers can be anywhere, even among us!
+Nicht jeder ist uns freundlich gesonnen. Betrüger sind überall, möglicherweise sogar unter uns!
+
+Not in the mood to chat.
 
 
 Not now.
-
+Nicht jetzt.
 
 Not really. All I got was a headache...
-
+Nicht wirklich. Alles, was ich bekam, waren Kopfschmerzen...
 
 Not so good actually... I would feel better on Nard's ship.
-
+Leider nicht so gut... Auf Nard's Schiff würde es mir besser gehen.
 
 Not to kill your dream, but... Julia is mine!#1
-
+Ich möchte deinen Traum nicht zerstören, aber... Julia gehört mir!
 
 Not yet.
-
+Noch nicht.
 
 Not yet. I will be back soon.
 Jetzt nicht. Ich werde bald zurück sein.
@@ -5040,16 +5160,16 @@ Note
 Hinweis
 
 Note#001-2-28
-
+Note#001-2-28
 
 Note#Artis
-
+Note#Artis
 
 Nothing
 Nichts
 
 Nothing, I changed my mind.
-
+Nichts, ich habe mich anders entschieden.
 
 Nothing, just hanging around.
 Nichts, ich hänge nur ab.
@@ -5061,57 +5181,66 @@ Nothing.
 Nichts.
 
 Novice
-
+Novize
 
 Now go outside and talk with Gugli, he'll tell you what provisions we need.
-
+Jetzt gehe nach draußen und rede mit Gugli, er wird dir sagen, was wir brauchen.
 
 Now go outside and talk with Gugli, he'll tell you what we need.
 Jetzt gehe nach draußen und rede mit Gugli, er wird dir sagen, was wir brauchen.
 
 Now listen to and ponder my words...
-
+Jetzt hör mir gut zu, und denk an meine Worte...
 
 Now move!
 Jetzt beweg Dich!
 
 Now stand still... It should not take much time...
-
+Jetzt bitte still stehen... Es sollte nicht allzulange dauern...
 
 Now that I think about it, I have another task for you. I asked Resa from the light armor shop to craft me some new clothes, she is a bit far from here, I can't go there because I need to watch the dock.
-
+Wenn ich so drüber nachdenke, habe ich noch eine Aufgabe für dich. Ich hatte Resa vom Geschäft für Leichte Rüstung gebeten, mir neue Kleidung anzufertigen. Es ist ein bisschen weit von hier, und ich kann nicht dorthin weil ich das Dock im Auge behalten muss.
 
 Now that you bring up that topic, that reminds me of something...
+Jetzt, da du diesen Punkt ansprichst, erinnert mich das an etwas...
+
+Now wait for your partner, then talk to me again.#0
 
 
-Now wait your partner, and talk with me again
+Now wait for your partner, then talk to me again.#1
 
 
 Now you divorced!
-
+Jetzt bist du geschieden!
 
 Now, leave me alone...
 Nun lass mich allein...
+
+Now, lets get back to business.
+
 
 Now, move!
 Nun, geh!
 
 Nowhere, I'm fine here.
-
+Nirgends, hier gehts mir gut.
 
 Number of skill points changed.
-
+Anzahl an Fähigkeitspunkten geändert.
 
 Number of status points changed.
-
+Anzahl an Status Punkten geändert.
 
 OH, LOOK THERE!
 OH, GUCK MAL DA!
 
 OK, let's trade.
-
+Ok, lass uns handeln.
 
 Oboro
+Oboro
+
+Of course there is a reward for your task.
 
 
 Of course you do! Just listen carefully to these words my sweet.#0
@@ -5121,27 +5250,27 @@ Of course you do! Just listen carefully to these words my sweet.#1
 
 
 Of course!
-
+Selbstverständlich!
 
 Of course! Tell me which language you speak and I will change the note on the ship board list.
 Natürlich! Sag mir welche Sprache du sprichst und ich werde die Notiz in der Bordliste ändern.
 
 Of course! What do you need?
-
+Natürlich! Was kann ich für dich tun?
 
 Of course, as a fully-fledged crew member you can decide of the destination of La Johanne directly with Nard.
-
+Klar, als vollwertiges Mitglied der Crew kannst du unsere Reiseziele direkt mit Nard besprechen.
 
 Of course, so why do I still see open sea from the porthole?
-
+Aha, und warum sehe ich immer noch die offene See aus meinem Bullauge?
 
 Of course, they are on the left wall, go have a look at them.
 Natürlich, sie sind an der linken Wand, wirf einen Blick darauf.
 
 Of course, they are on the left wall. Go have a look at them.
+Natürlich, sie sind an der linken Wand, wirf einen Blick darauf.
 
-
-Of course, you can select a bed somewhere else after your reservation, but you won't get your HP recovery until you choose to get some rest on the INN.
+Of course, you can select a bed somewhere else after your reservation, but you won't get your HP recovery until you choose to get some rest in the inn.
 
 
 Of the two of them, who has 'good' on their side?
@@ -5169,28 +5298,25 @@ Oh good! Did he give you your money back as well?
 Oh gut! Hat er dir auch dein Geld zurückgegeben?
 
 Oh hey!
-
+Oh, hey!
 
 Oh look, there's a piou behind you!
 Oh schau, da ist ein Piou hinter dir!
 
-Oh my...
+Oh no, but I've noticed a weird light on the other part of this island, I wonder what it could be...
 
-
-Oh no, but I've noticed a weird light on the other edge of this island, I wonder what it can be...
-Oh nein, aber ich habe ein seltsames Licht am anderen Rand der Insel bemerkt, und ich frage mich was es sein kann ...
 
 Oh no, the piou escaped!
-
+Oh nein, das Piou ist ausgerissen!
 
 Oh no, you still have @@ Fluffies to kill.
-
+Du musst immer noch @@ Fluffies töten.
 
 Oh noes!
 
 
 Oh oh... I see, your party became so big that you want to create an even larger structure?
-
+Oh oh... wie ich sehe, ist deine Gruppe so groß geworden, daß du eine noch größere Gemeinschaft gründen willst?
 
 Oh really? How could I forget something as important as that?!
 Oh, wirklich? Wie konnte ich nur so etwas Wichtiges wie dies vergessen?!
@@ -5199,16 +5325,16 @@ Oh really? I'll put more food in the next box then.
 Oh, wirklich? Ich werde in die nächste Box mehr essen packen.
 
 Oh sure I remember you.
-
+Klar erinnere ich mich an dich.
 
 Oh thank you so much!
-
+Ich danke dir tausendmal!
 
 Oh well, we rescued you when you were yaying adrift in the sea.#0
-Naja, wir haben dich gerettet, als du an uns vorbei getrieben bist.
+Also, wir haben dich gerettet, als du an uns yayai getrieben bist.
 
 Oh well, we rescued you when you were yaying adrift in the sea.#1
-Hm. Wir haben dich gerettet, als du an uns vorbei getrieben bist.
+Also, wir haben dich gerettet, als du an uns yayai getrieben bist.
 
 Oh well. I'll also give you one of these hats from the box near you, but only after you complete your task!
 
@@ -5217,13 +5343,13 @@ Oh yes, I have one last errand for you, Q'Pid in the market sells potions.
 
 
 Oh yeye did, his store is just beside me!
-
+Oh yeye hats getan, sein Laden ist genau nebenan!
 
 Oh yeyeye... As they are not edible, you can maybe try to equip them?#0
-
+Oh yeyeye... wenn sie nicht essbar sind, kannst du vielleicht versuchen, sie auszurüsten?
 
 Oh yeyeye... As they are not edible, you can maybe try to equip them?#1
-
+Oh yeyeye... wenn sie nicht essbar sind, kannst du vielleicht versuchen, sie auszurüsten?
 
 Oh! And in one of the rooms of the second deck you can find Gado's knives. Our chef keeps there the sharpest ones... Probably not just to cut some carrots...
 
@@ -5238,7 +5364,7 @@ Oh! You saved me, I was too afraid to unpack my stuff without this pass.
 
 
 Oh, I see. That's right. Why should someone come here to see me, seriously?
-
+Oh, stimmt. Das ist richtig. Warum sollte auch jemand hierher kommen, um mich zu sehen,  jetzt mal ernsthaft.
 
 Oh, I was going to ask you if you wanted to help the crew search for some food and explore the island out there.
 
@@ -5252,10 +5378,10 @@ Ach ja, und Olga vom guten Marktplatz!
 Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.
 
 
-Oh, and give her some clothes, the poor girl, the ones she had were in even worse condition than the ones we have!#0
+Oh, and give her some clothes, the poor girl, the ones she had were in an even worse condition than the ones we have.#0
 
 
-Oh, and give him some clothes, the poor guy, the ones he had were in even worse condition than the ones we have!#1
+Oh, and give him some clothes, the poor guy, the ones he had were in an even worse condition than the ones we have.#1
 
 
 Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?
@@ -5271,7 +5397,7 @@ Oh, he is not far away from here. Just take the road through the crocojungle nor
 
 
 Oh, he's still alive!#1
-
+Er lebt noch!#1
 
 Oh, it is simple. I have on this book the name of every citizen of Artis and its surrounding.
 
@@ -5292,7 +5418,7 @@ Oh, now that I remember, we also found some money in your pockets, here it is!#1
 
 
 Oh, she's still alive!#0
-Oh, sie lebt noch!
+Sie lebt noch!#0
 
 Oh, the little...
 
@@ -5334,13 +5460,13 @@ Ok I stay here with my paperwork if you need my help.
 
 
 Ok fine, you have up to 3 tries, here is the riddle:
-
+Na gut, du hast 3 Versuche. Hier ist das Rätsel:
 
 Ok we stay docked here if you need our help.
 
 
 Ok, I think he's waking up, go see him.#1
-
+Ok, ich denke, er wacht langsam auf, schau nach ihm.#1
 
 Ok, I think she's waking up, go see her.#0
 
@@ -5356,6 +5482,9 @@ Ok, gedulde dich noch ein bisschen, in den nächsten paar Tagen werden wir im Ha
 
 Ok, done.
 Ok, erledigt.
+
+Ok, let me see...
+
 
 Ok, see you then!
 Ok, dann auf Wiedersehen!
@@ -5391,7 +5520,7 @@ On one hand, ranged weapons are generally weaker than melee ones, but you attack
 
 
 On the next days we will finally arrives at Artis
-
+In den nächsten Tagen werden wir endlich Artis erreichen.
 
 Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
 
@@ -5406,7 +5535,7 @@ Only Don and the Merchant Guild have that kind of material in stock. It's called
 
 
 Only one more Fluffy to kill and it's done!
-
+Nurnoch ein Fluffy und du bist fertig!
 
 Options changed.
 
@@ -5436,7 +5565,7 @@ Otherwise, if you really want one, and if you feel capable, you can try killing 
 
 
 Ouch!
-
+Autsch!
 
 Ouch...
 Autsch...
@@ -5451,9 +5580,12 @@ Our main responsibility in the city is to protect the Merchant Guild.
 
 
 Our mommy doesn't allow us to go there, because it's dangerous. But he doesn't listen!
-
+Unsere Mama hat uns verboten, dahin zu gehen, weil es gefährlich ist, aber er hört nicht zu!
 
 Our only wish to eat a plush, so juicy sweet...
+
+
+Out of my way.
 
 
 Packet 0x%x length: %d
@@ -5466,7 +5598,7 @@ Parted
 
 
 Partner not ready.
-
+Partner nicht bereit.
 
 Party modification is disabled in this map.
 
@@ -5481,7 +5613,7 @@ Perfect!
 Perfekt!
 
 Perfect! I will wait for you here.
-
+Perfekt! Ich werde hier auf dich warten.
 
 Perky ponytail
 
@@ -5837,6 +5969,12 @@ Please enter the correct parameters (usage: @npctalkc <color> <npc name>, <messa
 Please enter two e-mail addresses (usage: @email <current@email> <new@email>).
 
 
+Please find daddy...
+
+
+Please find my daddy...
+
+
 Please find the small chest, buried somewhere on Artis Hill.
 
 
@@ -5943,7 +6081,7 @@ Quest database has been reloaded.
 
 
 Quit
-
+Beenden
 
 Raijin Voice
 Raijin-Stimme
@@ -5955,7 +6093,7 @@ Ranger T
 
 
 Ratto
-
+Ratto
 
 RattosControl
 RattosController
@@ -5964,22 +6102,22 @@ RattosControl#001-2-23
 
 
 Read it
-
+Lies es
 
 Really? That's kind of you, I accept your help!
 Wirklich? Das ist nett von Dir, ich akzeptiere Deine Hilfe!
 
 Rebellion
-
+Rebellion
 
 Registration is open for everybody, but newcomers need to pay a fee for all of the paperwork.
-
+Jeder kann sich natürlich registrieren, aber Neueinsteiger müssen eine Aufwandsentschädigung für den ganzen Papierkram leisten.
 
 Remember, you have to find my brother on the hill east of here
 
 
 Remind me, what should I do?
-
+Ein Tip, was ich nochmal zu tun hatte?
 
 Removed %d Kafra points. Total %d points.
 
@@ -6024,28 +6162,28 @@ RightDoorCheck
 RightDoorCheck
 
 Robin
-
+Robin
 
 Rogue
-
+Rouge
 
 Royal Guard
-
+Königsgardist
 
 Royal Guard T
-
+Königsgardist T
 
 Rrrr... Pchhhh...
 Rrrr... Pchhhh...
 
-Rumly is hidding behind the tree.
+Rumly is hiding behind the tree.
 
 
 Rumly#001-1
-
+Rumly#001-1
 
 Rune Knight
-
+Runenritter
 
 Rune Knight T
 
@@ -6449,6 +6587,9 @@ Ah. Tut mir Leid. Ich habe vergessen mich vorzustellen. Ich heiße Arpan. Aber d
 Sorry, I am not in the mood for another fight with these rattos.
 
 
+Sorry, I have to go.
+
+
 Sorry, but I can't tell you anything about that.
 Tut mir leid, aber ich kann dir nicht alles darüber sagen.
 
@@ -6474,19 +6615,19 @@ Sounds like a good deal to me. I'll do it.
 
 
 South
-
+Süden
 
 South East
-
+Südost
 
 South West
-
+Südwest
 
 Specified group does not exist.
 
 
 Speed changed.
-
+Geschwindigkeit geändert.
 
 Speed returned to normal.
 
@@ -6495,7 +6636,7 @@ Spend it wisely this time.
 
 
 Splash!
-
+Platsch!
 
 Spying on the %s guild.
 
@@ -6510,7 +6651,7 @@ Star Gladiator
 
 
 Stat changed.
-
+Statusmerkmal geändert.
 
 Stats: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d
 
@@ -6522,10 +6663,10 @@ Status point reset can't be undone. Do you really want this?
 
 
 Stay clear.
-
+Bleib sauber.
 
 Stay here, I'll hurry back as soon as I get some.
-
+Warte hier, ich fliege zurück sobald ich welche habe.
 
 Stop disturbing me, I already re-read that part twice because of you!
 
@@ -6537,46 +6678,46 @@ Stop heckling him, Silvio, or I'll tell him how you always cry like a little bab
 
 
 Stop it!
-
+Hör damit auf!
 
 Storage opened.
-
+Lager geöffnet.
 
 Store#001-2-0
-
+Store#001-2-0
 
 Store#Aquada001-1
-
+Store#Aquada001-1
 
 Store#FishStore001-1
-
+Store#FishStore001-1
 
 Store#General001-1
-
+Store#General001-1
 
 Store#Manana001-1
-
+Store#Manana001-1
 
 Store#Potion001-1
-
+Store#Potion001-1
 
 Store#SeaStore001-1
-
+Store#SeaStore001-1
 
 Store#Shield001-2-27
-
+Store#Shield001-2-27
 
 Store#Various001-1
-
+Store#Various001-1
 
 Store#Weapon001-2-27
-
+Store#Weapon001-2-27
 
 Str: %d (%d~%d)
-
+Str: %d (%d~%d)
 
 Strength multiplies the damage of your hits, especially melee ones. You will also be able to carry heavier stuff.
-
+Stärke (Str) erhöht den Schaden, den du anrichtest, speziell mit Nahkampfwaffen. Du kannst auch mehr Gepäck tragen.
 
 String Green
 
@@ -6585,13 +6726,13 @@ Stupid yeye...
 Blöder yeye...
 
 Summer
-
+Sommer
 
 Super Baby
-
+Super Baby
 
 Super Novice
-
+Novize
 
 Sura
 
@@ -6608,9 +6749,6 @@ Sicher, aber was wirst du mir im Gegenzug dafür geben?
 Sure, cap'tain.
 Sicher, Kapitän.
 
-Sure, there is a reward for your task.
-Natürlich gibt es eine Belohnung für Deine Aufgabe.
-
 Sure, why not?
 Sicher, warum nicht?
 
@@ -6618,16 +6756,16 @@ Surely. Take this box full of @@s.
 Sicher. Nimm dieses Box voller @@s.
 
 Surprise me
-
+Überrasch mich
 
 Swordsman
-
+Schwertkämpfer
 
 THAT'S A NICE NAME!
 DAS IST EIN SCHÖNER NAME!
 
 Taekwon
-
+Taekwon
 
 Take a @@ and a @@, yeye obtains a @@.
 
@@ -6827,6 +6965,9 @@ The detail and craftsmanship that went into this sword can only be accomplished 
 The door to the legion building is temporarily closed.
 
 
+The elder ran away from you.
+
+
 The elven from the library flirted with me a while ago, so has Enora from the Legion.
 
 
@@ -6888,6 +7029,9 @@ The mapserver has spy command support disabled.
 
 
 The market is located at the southeast of Artis, it is known as Merchant Guild's exhibit.
+
+
+The miracle is this: the more we share the more we have.
 
 
 The monster/egg name/ID doesn't exist.
@@ -7112,6 +7256,9 @@ This character has been banned until
 This door is locked.
 Die Tür ist verschlossen.
 
+This floor is reserved for quiet reading, don't speak too loud.
+
+
 This girl is lucky we found her before a shark did. I have no idea where she comes from. By the way, did you see the logo on her raft?#0
 
 
@@ -7122,6 +7269,9 @@ This guy is lucky we found him before a shark did. I have no idea where he comes
 Der Kerl hatte Glück, dass wir ihn gefunden haben bevor es ein Hai tat. Ich habe keine Ahnung, wo er herkommt. Übrigens, hast du das Logo auf seinem Floß gesehen?
 
 This guy needs help, we need to rescue him!#1
+
+
+This is a harsh word to use, you are never alone in the beautiful place of Artis.
 
 
 This is an @@, a light blue sea fruit. They're highly desired in the archipelago.
@@ -7151,9 +7301,6 @@ This kind of talk should be taken with a grain of salt, but I agree and admit th
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on him.#1
 
 
-This makes sense. Do you think we should inform the capt'n about it?
-Das macht Sinn! Glaubst du, wir sollten den Käpt'n darüber informieren?
-
 This monster does not spawn normally.
 
 
@@ -7173,6 +7320,9 @@ This one is useless! Give me another @@.
 
 
 This panel looks in rather good shape, as though some people take care of it regularly. Maybe it has important information.
+
+
+This place is surrounded by two very important elements: academia and the arts. I was surrounded by theater, music, dance, museums...
 
 
 This player has %d of a kind of item (id: %d), and tried to trade %d of them.
@@ -7224,6 +7374,12 @@ Tipiu
 
 
 To add an item to the list, use "@alootid +<item name or ID>". To remove an item, use "@alootid -<item name or ID>".
+
+
+To be a legend, you've either got to be dead or excessively old!
+
+
+To be honest, no, never.
 
 
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
@@ -7359,7 +7515,7 @@ Unknown
 Unbekannt
 
 Unknown Cart (usage: %s <0-%d>).
-
+Unbekannte Cart (Verwendung: %s <0-%d>).
 
 Unknown Channel '%s' (usage: %s <#channel_name>)
 
@@ -7385,74 +7541,74 @@ Unknown packet: 0x%x
 Unknown type of value in:
 
 
-Unlike other respawn points, an INN can fully restore your HP.
+Unlike other respawn points, an inn can fully restore your HP.
 
 
 Usage:
-
+Benutzung:
 
 Usage: "@mapflag monster_noteleport 1" (0=Off | 1=On)
 
 
 Usage: %s <permission_name>
-
+Benutzung: %s <permission_name>
 
 Usage: @accinfo/@accountinfo <account_id/char name>
-
+Benutzung: @accinfo/@accountinfo <account_id/char name>
 
 Usage: @addwarp <mapname> <X> <Y> <npc name>
-
+Benutzung: @addwarp <mapname> <X> <Y> <npc name>
 
 Usage: @adjgroup <group_id>
-
+Benutzung: @adjgroup <group_id>
 
 Usage: @changegm <guild_member_name>
-
+Benutzung: @changegm <guild_member_name>
 
 Usage: @changeleader <party_member_name>
-
+Benutzung: @changeleader <party_member_name>
 
 Usage: @changelook {<position>} <view id>
-
+Benutzung: @changelook {<position>} <view id>
 
 Usage: @displayskill <skill ID> {<skill level>}
-
+Benutzung: @displayskill <skill ID> {<skill level>}
 
 Usage: @jailfor <time> <character name>
-
+Benutzung: @jailfor <time> <character name>
 
 Usage: @marry <char name>
-
+Benutzung: @marry <char name>
 
 Usage: @mute <time> <char name>
-
+Benutzung: @mute <time> <char name>
 
 Usage: @noks <self|party|guild>
-
+Benutzung: @noks <self|party|guild>
 
 Usage: @npcmove <X> <Y> <npc_name>
-
+Benutzung: @npcmove <X> <Y> <npc_name>
 
 Usage: @partyoption <pickup share: yes/no> <item distribution: yes/no>
-
+Benutzung: @partyoption <pickup share: yes/no> <item distribution: yes/no>
 
 Usage: @request <petition/message to online GMs>.
-
+Benutzung: @request <petition/message to online GMs>.
 
 Usage: @set <variable name> <value>
-
+Benutzung: @set <variable name> <value>
 
 Usage: @setbattleflag <flag> <value>
-
+Benutzung: @setbattleflag <flag> <value>
 
 Usage: @skilltree <skill ID> <target>
-
+Benutzung: @skilltree <skill ID> <target>
 
 Usage: @unloadnpcfile <file name>
-
+Benutzung: @unloadnpcfile <file name>
 
 Usage: @useskill <skill ID> <skill level> <target>
-
+Benutzung: @useskill <skill ID> <skill level> <target>
 
 Usage: ex. "@set PoringCharVar 50"
 
@@ -7512,6 +7668,9 @@ Wait, it seems someone is blocking the door from the other side!
 Warte, es scheint als würde jemand die Tür auf der anderen Seite blockieren!
 
 Wait, why do you still have the dish with you?!
+
+
+Wait, you never came here before?
 
 
 Wait...
@@ -7688,7 +7847,7 @@ Hochzeit
 Welcome miss.#0
 
 
-Welcome to RedPlush.
+Welcome to Red Plush.
 
 
 Welcome to my office.
@@ -7727,10 +7886,10 @@ Na dann... Nimm das!
 Well, I was in fact looking for them. Where are they now?
 Ich war tatsächlich auf der Suche nach ihnen. Wo sind sie gerade?
 
-Well, eh-heh, Welcome aboard, cutie!#0
+Well, eh-heh... Welcome aboard, cutie!#0
 
 
-Well, eh-heh, Welcome aboard, son!#1
+Well, eh-heh... Welcome aboard, son!#1
 
 
 Well, even though you have been rescued by us, it doesn't make you an expert sailor, am I right?#0
@@ -7829,6 +7988,9 @@ What can I do for you?
 What can I do now?
 
 
+What counts in a book is like so many things, not what is on the outside, but what is on the inside.
+
+
 What danger?! Where?!
 Welche Gefahr?! Wo?!
 
@@ -7898,11 +8060,17 @@ What is this place?
 What is your tipiou trying to do?
 
 
+What item would you like to bleach?
+
+
 What kind of help do you need?
 
 
 What kind of help?
 Welche Art von Hilfe?
+
+What kinds of books are there here?
+
 
 What service do you offer?
 
@@ -7935,6 +8103,9 @@ What yeye could I do for you today?
 Was yeye kann ich für dich heute tun?
 
 What yoiis should know:
+
+
+What you looking at?!
 
 
 What's that food?
@@ -8102,7 +8273,7 @@ Wild
 Wind and grass is nice and cool, so juicy sweet...
 
 
-With hunger, thirst, and sleep as your only companions; you have the disturbing realization that you can't remember anything of your former life or identity.
+With hunger, thirst, and sleep as your only companions, you have the disturbing realization that you can't remember anything of your former life or identity.
 
 
 With my old fishing rod you can catch something every day.
@@ -8159,6 +8330,9 @@ Ja, ja, natürlich hast du nicht...
 Yes
 Ja
 
+Yes I am and you are going to face justice!
+
+
 Yes I am.
 
 
@@ -8187,7 +8361,7 @@ Yes, I am sure.#1
 
 
 Yes, I do.
-Ja, mach ich.
+Ja, habe ich.
 
 Yes, I feel strong enough for dangerous combats!
 Ja, ich fühle mich stark genug für gefährliche Kämpfe!
@@ -8210,11 +8384,11 @@ Yes, it's me. It's such a fine view from here!
 Yes, yes I know... Too bad then. See you soon!
 Ja, ja, ich weiss.... Schade. Dann, auf bald!
 
-Yes, you are going to face justice!
-
-
 Yes.
 Ja.
+
+Yes?
+
 
 Yeye @@!
 Yeye @@!
@@ -8423,10 +8597,16 @@ You can attack a monster by clicking directly on it. Once selected, you may noti
 You can attack a monster by clicking on it, or from your keyboard you can press the 'A' key to select the monster followed by 'Ctrl' to attack it.
 Du kannst Monster angreifen, indem du draufklickst oder auf der Tastatur die Taste 'A' drückst, um das Monster auszuwählen und dann 'Strg', um anzugreifen.
 
+You can drag and drop an item to the NPC window or select an item through your inventory.
+
+
 You can easily see if a monster is easy to kill or just impossible to defeat. Do not try against creatures that are way more powerful than you... You'd be risking your life for nothing.
 
 
 You can find a chapter of the Legion of Aemil there, like in any other city, but Esperia is important for us as our headquarters are there.
+
+
+You can find novels and poems on this floor.
 
 
 You can find some Crocs on the beach, you could look up at the one after the gate, on top of this city.
@@ -8490,7 +8670,7 @@ You can't carry another @@? What a shame.
 
 
 You can't clean a cart while vending!
-
+Du kannst den Einkaufswagen während des Kaufs nicht leeren!
 
 You can't create chat rooms in this map
 
@@ -8576,8 +8756,11 @@ You currently cannot open your storage.
 You currently have @@ on your bank account.
 
 
-You do not have a cart to be cleaned.
+You do not give me much options.
 
+
+You do not have a cart to be cleaned.
+Du hast keinen Einkaufswagen, der geleert werden könnte.
 
 You do not have a homunculus.
 
@@ -8589,7 +8772,7 @@ You do not have enough Esperin on yourself.
 
 
 You do not possess a cart to be removed
-
+Du besitzt keinen Einkaufswagen zum Entfernen.
 
 You do not seem to have enough money, come back later!
 
@@ -8693,6 +8876,9 @@ You have mounted your Warg.
 You have mounted.
 
 
+You have put your finger on it, I am not.
+
+
 You have released your Dragon.
 Du hast deinen Drachen freigelassen.
 
@@ -8708,10 +8894,16 @@ You have released your Warg.
 You have released your mount.
 
 
+You have to find him, or else I will tell him that you did not help me.
+
+
 You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of those damn sailors brought that 'nice' lady here.
 
 
 You hear a loud scream. It must be the creaking of the wooden door...
+
+
+You hear some creeping and crawling sounds from downstairs.
 
 
 You hear some sound behind the door.
@@ -8882,6 +9074,9 @@ You see, folks around here that get my cookies have the distinction of being...
 You see? I'm working here!
 Du siehst? Ich arbeite hier!
 
+You seem a bit tired sir.
+
+
 You seem more cultivated than you look.
 
 
@@ -8919,6 +9114,9 @@ You should have a shop open in order to use @autotrade.
 
 
 You should inform Nard of the progress made in loading food and supplies on to the boat. He will be pleased to hear that good news!
+
+
+You should know this, an item like this can't be bleached.
 
 
 You should look for a seller named Fexil around the merchant square.
@@ -9002,11 +9200,11 @@ Du warst in einem schlechten Zustand und solltest froh sein, dass wir dich gefun
 You were in bad shape, you should be happy we found you before the sea killed you.#1
 Du warst in einem schlechten Zustand und solltest froh sein, dass wir dich gefunden haben, bevor das Meer dich tötete.
 
-You were yaying sleeping for quite some time there, our shipkeeper, Julia, was here with you, she did her best to heal your injuries.#0
-Du hast, wie gesagt, eine geraume Zeit geschlafen, und, unsere Schiffsverwalterin, Julia, war hier bei dir, sie tat ihr Bestes, um deine Verletzungen zu heilen.
+You were yaying sleeping for quite some time there. Our shipkeeper, Julia, was here with you, and she did her best to heal your injuries.#0
 
-You were yaying sleeping for quite some time there, our shipkeeper, Julia, was here with you, she did her best to heal your injuries.#1
-Du hast, wie gesagt, eine geraume Zeit geschlafen, und, unsere Schiffsverwalterin, Julia, war hier bei dir, sie tat ihr Bestes, um deine Verletzungen zu heilen.
+
+You were yaying sleeping for quite some time there. Our shipkeeper, Julia, was here with you, and she did her best to heal your injuries.#1
+
 
 You will be able to find Don's house in the west of this city, it's the first house just after left bridge, you can't miss it!
 
@@ -9156,7 +9354,7 @@ You've reached your slave clones limit.
 
 
 You... You eat... rattos? I think you're just a fool.
-
+Du... du ißt Rattos? Ich glaube du bist einfach ein Trottel.
 
 You? Here?
 Du? Hier?
@@ -9218,14 +9416,14 @@ Your autoloottype list has been reset.
 Your autoloottype list is empty.
 
 
-Your body aches, even your hair hurts, and the daylight is painful; but still you open your eyes and see a large ship before you!
-Dein Körper schmerzt, sogar deine Haare tun dir weh, und das Tageslicht ist schmerzhaft; dennoch öffnest du deine Augen und du siehst ein großes Schiff vor dir!
+Your body aches, even your hair hurts, and the bright daylight is painful.
+
 
 Your brain liquefied to match the level of a piou! It's the Legion of Aemil.
 
 
 Your cart was cleaned.
-
+Der Einkaufswagen wurde geleert.
 
 Your class can't mount!
 Deine Klasse kann nicht reiten!
@@ -9255,34 +9453,37 @@ Your guild's storage has already been opened by another member, try again later.
 
 
 Your hands are too weak, you did not succeed in opening this @@.
-
+Du bist zu schwach und konntest dieses @@ nicht öffnen.
 
 Your head is suddently heavy, your eyes are closing...
-
+Deine Augenlieder werden plötzlich schwerer und schwerer... 
 
 Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand.
-
+Als sich dein Blick auf ein kleines Holzbrett richtet, das zum Teil unter dem Sand verborgen ist, beginnt dein Herz schneller zu schlagen.
 
 Your homunculus doesn't evolve.
-
+Dein Humunculus entwickelt sich nicht.
 
 Your job has been changed.
 Dein Job wurde geändert.
 
-Your name is Ianus or Janus?
+Your mind is set? You will loose the color dye during this process.
 
+
+Your name is Ianus or Janus?
+Ist dein Name Ianus oder Janus?
 
 Your save point has been changed.
 Dein Speicherpunkt wurde geändert.
 
 Your sex has been changed (disconnection required to complete the process)...
-
+Dein Geschlecht wurde geändert (zum Abschließen der Änderung ist ein Neustart von Evol notwendig)...
 
 Your sister sent me to find you. Your mother is worried.
-
+Deine Schwester schickt mich, um dich zu finden. Deine Mutter macht sich Sorgen.
 
 Your storage was cleaned.
-
+Dein Lager wurde gereinigt.
 
 Zinc-Titanium Oxide, Phthalocyanides, Cadmiums, Lazulite...
 
@@ -9309,10 +9510,10 @@ Zzzzzzzzz...
 
 
 [ ^EE0000%s^000000 ]
-
+[ ^EE0000%s^000000 ]
 
 [^EE0000%s^000000]
-
+[^EE0000%s^000000]
 
 a ground!
 ein Boden!
@@ -9321,73 +9522,73 @@ a quiet place,
 ein ruhiger Ort,
 
 ban
-
+sperren
 
 block
-
+blocken
 
 body/armor, 
-
+Körper/Rüstung, 
 
 both hands, 
-
+beide Hände, 
 
 change the sex of
-
+ändere das Geschlecht von
 
 conf/import/msg_conf.txt
 
 
 data @@ @@ @@ data
-
+data @@ @@ @@ data
 
 feet, 
-
+Füße,
 
 garment, 
-
+Gewand, 
 
 left accessory, 
-
+linkes Accessoire, 
 
 left hand, 
 linke Hand,
 
 lower head, 
-
+Gesicht, 
 
 lower/mid head, 
-
+Gesicht/Stirn, 
 
 lower/mid/top head, 
-
+Gesicht/Stirn/Kopf, 
 
 lower/top head, 
-
+Gesicht/Kopf, 
 
 marriage1
-
+Hochzeit1
 
 mid head, 
-
+Stirn, 
 
 npc1
-
+npc1
 
 npc1#door
 
 
 npc2
-
+npc2
 
 npc3
-
+npc3
 
 npc4
-
+npc4
 
 npc5
-
+npc5
 
 option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
 Option '%s' ist bereits aktiviert, wenn du es deaktivieren möchteste, schreibe '@channel opt %s 0'
@@ -9405,19 +9606,19 @@ option '%s' is now enabled for channel '%s' with %d seconds
 
 
 right accessory, 
-
+rechtes Accessoire,
 
 right hand, 
-
+rechte Hand,
 
 skill %d: %s (%s)
 
 
 test @@
-
+test @@
 
 test1
-
+test1
 
 test2
 
@@ -9426,13 +9627,13 @@ top head,
 
 
 unban
-
+entsperren
 
 unblock
 
 
 value '%d' for option '%s' is out of range (limit is 0-10)
-
+Wert '%d' für Option '%s' ist außerhalb der Grenzen (Limit ist 0-10)
 
 | Guild: '%s'
 | Gilde: '%s'
@@ -9444,13 +9645,13 @@ value '%d' for option '%s' is out of range (limit is 0-10)
 | Lv:%d/%d | Job: %s
 
 | Party: '%s' 
-
+| Gruppe: '%s' 
 
 ← Exit
-
+← Ausgang
 
 ↑ Legion
-
+↑ Legion
 
 ↓ Market Place
 
