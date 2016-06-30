@@ -75,7 +75,7 @@ L_Check:
     next;
 
     menu
-        l("Seriously? It's just a cookie you know... Tell me what I should do to get one."), L_MTaskExpanation,
+        l("Seriously? It's just a cookie you know... Tell me what I should do to get one."), L_BTaskExpanation,
         l("Yes, yes I know... Too bad then. See you soon!"), L_Bye;
 
 L_StorySeems:
