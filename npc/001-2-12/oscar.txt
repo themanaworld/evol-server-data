@@ -112,7 +112,7 @@
         menuint
             l("Could you bleach my clothes?"), 1,
             l("Do you live here alone?"), 2,
-            l(menuaction(l("Quit"))), 3;
+            menuaction(l("Quit")), 3;
 
         switch (@menuret)
         {
