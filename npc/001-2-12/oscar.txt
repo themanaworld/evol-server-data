@@ -18,39 +18,43 @@
 
     function item_is_bleachable
     {
+        .@item_index = getarg(0);
+        if (.@item_index < 0)
+            return false;
+
         getinventorylist;
 
-        if (@inventorylist_card1[@item_index] != 0)
+        if (@inventorylist_card1[.@item_index] != 0)
         {
-            if ((@inventorylist_card1[@item_index] > YellowCottonDye) ||
-                (@inventorylist_card1[@item_index] < CrimsonCashmereDye))
+            if ((@inventorylist_card1[.@item_index] > YellowCottonDye) ||
+                (@inventorylist_card1[.@item_index] < CrimsonCashmereDye))
             {
                 return false;
             }
             .@is_bleachable = true;
         }
-        if (@inventorylist_card2[@item_index] != 0)
+        if (@inventorylist_card2[.@item_index] != 0)
         {
-            if ((@inventorylist_card2[@item_index] > YellowCottonDye) ||
-                (@inventorylist_card2[@item_index] < CrimsonCashmereDye))
+            if ((@inventorylist_card2[.@item_index] > YellowCottonDye) ||
+                (@inventorylist_card2[.@item_index] < CrimsonCashmereDye))
             {
                 return false;
             }
             .@is_bleachable = true;
         }
-        if (@inventorylist_card3[@item_index] != 0)
+        if (@inventorylist_card3[.@item_index] != 0)
         {
-            if ((@inventorylist_card3[@item_index] > YellowCottonDye) ||
-                (@inventorylist_card3[@item_index] < CrimsonCashmereDye))
+            if ((@inventorylist_card3[.@item_index] > YellowCottonDye) ||
+                (@inventorylist_card3[.@item_index] < CrimsonCashmereDye))
             {
                 return false;
             }
             .@is_bleachable = true;
         }
-        if (@inventorylist_card4[@item_index] != 0)
+        if (@inventorylist_card4[.@item_index] != 0)
         {
-            if ((@inventorylist_card4[@item_index] > YellowCottonDye) ||
-                (@inventorylist_card4[@item_index] < CrimsonCashmereDye))
+            if ((@inventorylist_card4[.@item_index] > YellowCottonDye) ||
+                (@inventorylist_card4[.@item_index] < CrimsonCashmereDye))
             {
                 return false;
             }
@@ -70,8 +74,8 @@
         narrator 5,
             l("You can drag and drop an item to the NPC window or select an item through your inventory.");
 
-        @item_index = requestitemindex();
-        if (!item_is_bleachable())
+        .@item_index = requestitemindex();
+        if (!item_is_bleachable(.@item_index))
         {
             speech 4,
                 l("You should know this, an item like this can't be bleached.");
@@ -89,7 +93,7 @@
                     l("Ok, let me see..."),
                     l("...");
 
-                failedremovecardsindex @item_index, 1;
+                failedremovecardsindex .@item_index, 1;
 
                 speech 12,
                     l("..."),
