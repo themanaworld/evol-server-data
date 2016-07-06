@@ -131,17 +131,18 @@ L_ResetStats:
 
 L_ConfirmReset:
     switch (select(lg("Yes, I am sure."),
-                   lg("I need to think about it a bit more..."),
-                   lg("I won't need it thank you.")))
+                   lg("I need to think about it..."),
+                   lg("I won't need it, thank you.")))
     {
         case 1:
             speech 5,
-                l("Then give me one @@ and we will start!", getitemlink(Plushroom));
+                l("Then give me some @@ so we can get started!", getitemlink(Plushroom));
 
             menuint
                 rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")), 0,
-                rif(countitem(Plushroom) < .@plush_count, lg("I don't have any plushroom on me.")), 1,
-                lg("I have to go sorry."), 2;
+                rif(countitem(Plushroom) >= 0 && countitem(Plushroom) < .@plush_count, lg("I think I have enough plushrooms, take a look and tell me.")), 1,
+                rif(countitem(Plushroom) == 0, lg("Oh no, I don't have any plushroom on me right now.")), 2,
+                lg("I have to go, sorry."), 3;
 
             switch (@menuret)
             {
@@ -170,12 +171,15 @@ L_ConfirmReset:
                         speech 4,
                             l("Let's see... @@ of your status points have just been reset!", StatusPoint - .@wasSP),
                             l("Spend it wisely this time."),
-                            lg("But you are welcome to reset your stats again if you bring me more plushrooms!");
+                            lg("But you are welcome to reset your stats again if you bring me some more plushrooms!");
                     }
                     goto L_Quit;
                     break;
                 case 1:
+                    goto L_NeedMore;
+                    break;
                 case 2:
+                case 3:
                     goto L_Later;
                     break;
             }
@@ -193,7 +197,18 @@ L_Later:
         setq General_Rumly, 2;
     }
     speech 5,
-        l("Come back soon! And bring a plushroom with you!");
+        l("Come back soon, and bring @@!", getitemlink(Plushroom));
+
+    goto L_Quit;
+
+L_NeedMore:
+    if (.@visited < 2)
+    {
+        setq General_Rumly, 2;
+    }
+
+    speech 5,
+        lg("You do have some but I'm afraid I need more to show you their true power!");
 
     goto L_Quit;
 
