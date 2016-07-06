@@ -13,9 +13,9 @@ function	script	sailortalk	{
     if (.@rand == 1)
     {
         speech 4,
-            l("These purple mushrooms, are called @@. There are plenty of 'em on this island!", getitemlink(515)),
-            l("It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?", getitemlink(515)),
-            l("These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.", getitemlink(515));
+            l("These purple mushrooms are called @@s. There are plenty of 'em on this island!", getitemlink(Plushroom)),
+            l("It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?", getitemlink(Plushroom)),
+            l("These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.", getitemlink(Plushroom));
     }
     if (.@rand == 2) npctalk3 l("Good to hear from you!");
     if (.@rand == 3) npctalk3 l("So finally someone has came to visit me?");

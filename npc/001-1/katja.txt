@@ -58,7 +58,7 @@
             next;
             mesq l("Please take this lollypop for your help. Mum says they are bad for my teeth anyway (FIXME)");
             setq ArtisQuests_LazyBrother, 4;
-            getitem 509, 1;
+            getitem Aquada, 1;
             getexp 500, 0;
             close;
         case 4:

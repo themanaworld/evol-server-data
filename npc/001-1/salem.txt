@@ -16,7 +16,7 @@
 
     function BuyPiou {
         .@price = getarg(0);
-        mesq l("The piou costs @@E.", .@price);
+        mesq l("The piou costs @@ E.", .@price);
         next;
         menuint l("Alright, I'll take one."), 1,
                 l("I changed my mind."), 2;
@@ -27,12 +27,12 @@
             return 4;
         if (Zeny < .@price)
         {
-            mesq l("Don't you try to cheat an old merchant! You don't have enough money, you need @@E.", .@price);
+            mesq l("Don't you try to cheat an old merchant! You don't have enough money, you need @@ E.", .@price);
             next;
 
             return 1;
         }
-        if (!checkweight(4000, 1))
+        if (!checkweight(PiouEgg, 1))
         {
             mesq l("You can't carry another @@? What a shame.", PiouEgg);
             next;
@@ -48,7 +48,7 @@
             return 3;
         }
         Zeny = Zeny - .@price;
-        getitem 4000, 1;
+        getitem PiouEgg, 1;
         ArtisQuests_PiousBought += 1;
         mesq l("You take good care of your piou. Remember to feed it every day.");
 
@@ -71,7 +71,7 @@
         speech 0,
             l("Look who is back..."),
             l("And with my piou. That's wonderful. I can only imagine how hard that little bugger was to catch!"),
-            l("Great, and as I promised, I give you a 90% discount on the @@ of your choice.", getitemlink (4000));
+            l("Great, and as I promised, I give you a 90% discount on the @@ of your choice.", getitemlink (PiouEgg));
             next;
 
             @ArtisQuests_PiouPrice = 3000;

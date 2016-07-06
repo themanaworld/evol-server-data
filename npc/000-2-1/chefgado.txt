@@ -23,7 +23,7 @@
     if (.@q == 2) goto L_PoisonAccepted;
     if (.@q == 3) goto L_PoisonJulia;
     if (.@q == 4) goto L_QuestComplete;
-    if (.@q == 5 && countitem(717) > 0) goto L_Aborting;
+    if (.@q == 5 && countitem(PoisonedDish) > 0) goto L_Aborting;
     if (.@q > 4) goto L_QuestAborted;
     if (.@n == 3) goto L_QuestStart;
 
@@ -79,9 +79,9 @@ L_Rude:
     next;
     mesq l("I just realized I am lacking some common things, and one key ingredient, to prepare a... A special recipe.");
     next;
-    mesq l("I only need 2 @@, 2 @@s, 1 @@...", getitemlink(505), getitemlink(512), getitemlink(509));
+    mesq l("I only need 2 @@, 2 @@s, 1 @@...", getitemlink(PiouLegs), getitemlink(HalfCroconut), getitemlink(Aquada));
     next;
-    mesq l("... and 1 @@.", getitemlink(508));
+    mesq l("... and 1 @@.", getitemlink(SeaDrops));
     next;
 
     menu
@@ -93,7 +93,7 @@ L_Rude:
     mesn;
     mesq l("Well done! Collect all the ingredients and then come back here. You will be rewarded, once I am satisfied that they understand who rules this ship!");
     next;
-    mesq l("Before you go, let me tell you how to get @@s, because you don't look very smart.", getitemlink(512));
+    mesq l("Before you go, let me tell you how to get @@s, because you don't look very smart.", getitemlink(HalfCroconut));
 
     goto L_OpenCroconut;
 
@@ -103,7 +103,7 @@ L_QuestAccepted:
     next;
 
     menu
-        rif(countitem(505) > 1 && countitem(512) > 0 && countitem(509) > 0 && countitem(508) > 0, l("All your... Fresh ingredients are ready to be cooked.")), L_GotAll,
+        rif(countitem(PiouLegs) > 1 && countitem(HalfCroconut) > 1 && countitem(Aquada) > 0 && countitem(SeaDrops) > 0, l("All your... Fresh ingredients are ready to be cooked.")), L_GotAll,
         l("What are your needs?"), L_Need,
         l("Where can I find a half croconut?"), L_OpenCroconut,
         l("Not yet. I will be back soon."), L_Quit;
@@ -111,7 +111,7 @@ L_QuestAccepted:
 L_OpenCroconut:
     mes "";
     mesn;
-    mesq l("Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being so weak in all.", getitemlink(513));
+    mesq l("Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being so weak in all.", getitemlink(Croconut));
     next;
     mesq l("Now move!");
 
@@ -135,7 +135,7 @@ L_GotAll:
     mesq l("Done. Here, take it! Now, here is the plan. Go talk to her and offer our beautiful lady a bite of her arrogance!");
 
     setq ShipQuests_ChefGado, 2;
-    getitem 717, 1;
+    getitem PoisonedDish, 1;
     close;
 
 L_Need:
@@ -143,9 +143,9 @@ L_Need:
     mesn;
     mesq l("Shhht, don't say it that loud...");
     next;
-    mesq l("I only need 2 @@, 2 @@, 1 @@ and...", getitemlink(505), getitemlink(512), getitemlink(509));
+    mesq l("I only need 2 @@, 2 @@s, 1 @@...", getitemlink(PiouLegs), getitemlink(HalfCroconut), getitemlink(Aquada));
     next;
-    mesq l("... And 1 @@.", getitemlink(508));
+    mesq l("... and 1 @@.", getitemlink(SeaDrops));
 
     close;
 
@@ -162,7 +162,7 @@ L_PoisonJulia:
     setq ShipQuests_ChefGado, 4;
     Zeny = Zeny + 200;
     message strcharinfo(0), l("You receive @@ E!", 200);
-    inventoryplace Bread, 2;
+    inventoryplace Bread, 1;
     getitem Bread, 1;
     getexp 15, 0;
 
@@ -188,7 +188,7 @@ L_Aborting:
     next;
     mesq lg("Give me back this dish, you dirty liar!");
 
-    if (countitem(717) > 0) delitem 717, 1;
+    if (countitem(PoisonedDish) > 0) delitem PoisonedDish, 1;
 
     next;
     mesq l("You're like the rest of this filthy crew, I can't trust you!");

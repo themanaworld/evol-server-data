@@ -71,7 +71,7 @@ L_ChooseBait:
     delitem .@bait, 1;
 
     narrator 3,
-        l("You use a @@ as a bait.", getitemname(.@bait)),
+        l("You use a @@ as bait.", getitemname(.@bait)),
         l("You patiently wait...");
 
 L_Wait:

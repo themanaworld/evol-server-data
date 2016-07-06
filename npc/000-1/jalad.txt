@@ -42,7 +42,7 @@
 L_Continue:
     mes "";
     mesn;
-    mesq l("Surely. Take this box full of @@s.", getitemlink(515));
+    mesq l("Surely. Take this box full of @@s.", getitemlink(Plushroom));
     next;
 
     inventoryplace PlushroomBox, 1;
@@ -52,7 +52,7 @@ L_Continue:
 
     mes "";
     mesn;
-    mesq l("They are so tasty when cooked together with some @@. Don't drop any of them!", getitemlink(505));
+    mesq l("They are so tasty when cooked with some @@. Don't drop any of them!", getitemlink(PiouLegs));
 
     goto L_Close;
 
@@ -101,11 +101,11 @@ L_Ale:
 L_Plushroom:
     mes "";
     mesn;
-    mesq l("'That', as you call it, is a @@. There're plenty on this island!", getitemlink(515));
+    mesq l("'That', as you call it, is a @@. There're plenty on this island!", getitemlink(Plushroom));
     next;
     mesq l("It's a kind of mushroom. We call it like that because of it's taste, just like a marshmallow. It also has this name because of it's appearance. It looks like a plush!");
     next;
-    mesq l("There are some groups of these @@s all around this island. Just pick some and have a try.", getitemlink(515));
+    mesq l("There are some groups of these @@s all around this island. Just pick some and have a try.", getitemlink(Plushroom));
 
     close;
 
