@@ -39,26 +39,8 @@
         }
     }
 
-    // A somehow of BaseLevel * logn (BaseLevel * 100).
-    function calculate_inn_tax {
-        .@price = 0;
-        .@pc_level = BaseLevel * 100;
-        while (.@pc_level >>= 1)
-        {
-            ++.@price;
-        }
-        .@price *= BaseLevel;
-
-        if (.@price <= 10)
-        {
-            .@price = 10;
-        }
-
-        return .@price;
-    }
-
     function register_room {
-        .@price = calculate_inn_tax;
+        .@price = lognbaselvl(100, 10);
 
         speech 5,
             l("That will be @@ E to set your respawn point", .@price),

@@ -220,3 +220,26 @@ function	script	npctalkonce	{
 
     return true;
 }
+
+// A somehow of BaseLevel * logn (BaseLevel * alpha).
+// alpha = multiplicator factor.
+// min = minimum result value.
+function	script	lognbaselvl	{
+    .@alpha = getarg(0, 1);
+    .@min = getarg(1, 1);
+    .@ret = 0;
+    .@pc_level = BaseLevel * .@alpha;
+
+    while (.@pc_level >>= 1)
+    {
+        ++.@ret;
+    }
+    .@ret *= BaseLevel;
+
+    if (.@ret <= .@min)
+    {
+        .@ret = .@min;
+    }
+
+    return .@ret;
+}
