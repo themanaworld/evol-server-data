@@ -139,9 +139,9 @@ L_ConfirmReset:
                 l("Then give me one @@ and we will start!", getitemlink(Plushroom));
 
             menuint
-                rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")), 1,
-                rif(countitem(Plushroom) == 0, lg("I don't have any plushroom on me.")), 1,
-                lg("I have to go sorry."), 1;
+                rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")), 0,
+                rif(countitem(Plushroom) < .@plush_count, lg("I don't have any plushroom on me.")), 1,
+                lg("I have to go sorry."), 2;
 
             switch (@menuret)
             {
@@ -173,13 +173,18 @@ L_ConfirmReset:
                             lg("But you are welcome to reset your stats again if you bring me more plushrooms!");
                     }
                     goto L_Quit;
+                    break;
                 case 1:
+                case 2:
                     goto L_Later;
+                    break;
             }
         case 2:
             goto L_Later;
+            break;
         case 3:
             goto L_Never;
+            break;
     }
 
 L_Later:
