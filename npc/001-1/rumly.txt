@@ -21,7 +21,7 @@
     initnpctimer;
 
     speech 4,
-        l("Hey do you have any @@?", getitemlink(Plushroom));
+        l("Hey do you have any @@s?", getitemlink(Plushroom));
 
 L_Menu:
     .@visited = getq(General_Rumly);
@@ -136,11 +136,11 @@ L_ConfirmReset:
     {
         case 1:
             speech 5,
-                l("Then give me some @@ so we can get started!", getitemlink(Plushroom));
+                l("Let me just have a quick look at you. Hm... I will need @@ @@s to reset your stats.", .@plush_count, getitemlink(Plushroom));
 
             menuint
                 rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")), 0,
-                rif(countitem(Plushroom) >= 0 && countitem(Plushroom) < .@plush_count, lg("I think I have enough plushrooms, take a look and tell me.")), 1,
+                rif(countitem(Plushroom) > 0 && countitem(Plushroom) < .@plush_count, lg("I don't have enough plushrooms...")), 1,
                 rif(countitem(Plushroom) == 0, lg("Oh no, I don't have any plushroom on me right now.")), 2,
                 lg("I have to go, sorry."), 3;
 
@@ -176,8 +176,6 @@ L_ConfirmReset:
                     goto L_Quit;
                     break;
                 case 1:
-                    goto L_NeedMore;
-                    break;
                 case 2:
                 case 3:
                     goto L_Later;
@@ -197,18 +195,7 @@ L_Later:
         setq General_Rumly, 2;
     }
     speech 5,
-        l("Come back soon, and bring @@!", getitemlink(Plushroom));
-
-    goto L_Quit;
-
-L_NeedMore:
-    if (.@visited < 2)
-    {
-        setq General_Rumly, 2;
-    }
-
-    speech 5,
-        lg("You do have some but I'm afraid I need more to show you their true power!");
+        l("Come back soon, and bring @@s!", getitemlink(Plushroom));
 
     goto L_Quit;
 
