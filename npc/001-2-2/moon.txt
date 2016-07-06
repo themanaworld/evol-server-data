@@ -74,7 +74,7 @@
         }
         else
         {
-            mesq l("You don't have a @@, are you mocking me?", getitemlink("CrocClaw"));
+            mesq l("You don't have any @@, are you mocking me?", getitemlink("CrocClaw"));
             close2;
             return 1;
         }
@@ -112,7 +112,7 @@ L_Story:
     next;
     mesq l("Luckily the beach is nearby, and somehow I made my way home.");
     next;
-    mesq l("Please bring me some @@ so I can pull out these spikes from my foot.", getitemlink("CrocClaw"));
+    mesq l("Please bring me @@s so I can pull out these spikes from my foot.", getitemlink("CrocClaw"));
     next;
 
     switch (select(l("Stay here, I'll hurry back as soon as I get some."),

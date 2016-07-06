@@ -180,7 +180,7 @@ L_Reward:
 
     setq General_Cookies, 1;
     getnameditem DeliciousCookie, strcharinfo(0);
-    npctalk3 l("You receive a @@!", getitemlink(517));
+    npctalk3 l("You receive a @@!", getitemlink(DeliciousCookie));
 
     next;
     mesq lg("I'm sure you'll appreciate its effect, but be careful, these cookies are rare, and you'll need to help the community again before being able to receive another one.");
@@ -242,7 +242,7 @@ L_LostCookie:
     inventoryplace DeliciousCookie, 1;
     getnameditem DeliciousCookie, strcharinfo(0);
 
-    npctalk3 l("You receive a @@!", getitemlink(517));
+    npctalk3 l("You receive a @@!", getitemlink(DeliciousCookie));
 
 L_Bye:
     closedialog;

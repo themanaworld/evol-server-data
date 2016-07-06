@@ -64,7 +64,7 @@ OnTalk:
     next;
     mesq l("We usually dock around these small isles because they provide us some of the best food of all the archipelago.");
     next;
-    mesq l("At the moment, our crew is busy collecting @@s, @@s and @@s.", getitemlink(513), getitemlink(515), getitemlink(509));
+    mesq l("At the moment, our crew is busy collecting @@s, @@s and @@s.", getitemlink(Croconut), getitemlink(Plushroom), getitemlink(Aquada));
     next;
 
     select
@@ -75,9 +75,9 @@ OnTalk:
     mesq l("Right! Ours is an earthsea realm. You see, sailors are swift at their tasks when out of sight of land, but docked by this verdant jewel, they have it so good, they are just taking too much time bringing all the food back to the ship. Maybe you can help them.");
     next;
     mesq l("The captain wants:");
-    mesq l("- 2 @@", getitemlink(714));
-    mesq l("- 2 @@", getitemlink(715));
-    mesq l("- 2 @@", getitemlink(716));
+    mesq l("- 2 @@es", getitemlink(AquadaBox));
+    mesq l("- 2 @@es", getitemlink(CroconutBox));
+    mesq l("- 2 @@es", getitemlink(PlushroomBox));
     next;
     mesq l("Ask sailors around here they shouldn't be so far away.");
     next;
@@ -94,7 +94,7 @@ L_TaskGiven:
 L_Menu:
     menu
         rif(getq(ShipQuests_Couwan) == 1, l("Couwan gave me this box, it is for you.")), L_Couwan,
-        rif(countitem(714) > 0 || countitem(715) > 0 || countitem(716) > 0, l("I have some food for you.")), L_CollectSmthing,
+        rif(countitem(AquadaBox) > 0 || countitem(CroconutBox) > 0 || countitem(PlushroomBox) > 0, l("I have some food for you.")), L_CollectSmthing,
         rif(getq(ShipQuests_Gugli) < 2, l("Who should I search for?")), L_SailorNames,
         rif(getq(ShipQuests_Gugli) < 2, l("Where can I find your crew?")), L_Location,
         l("Bye!"), L_Quit;
@@ -108,7 +108,7 @@ L_MenuDone:
 L_SailorNames:
     mes "";
     mesn;
-    mesq l("Ale and Tibbo should bring 2 boxes of @@s, Astapolos and Gulukan 2 of @@s and Jalad and Q'Muller were charged of the boxes of @@s.", getitemlink(509), getitemlink(513), getitemlink(515));
+    mesq l("Ale and Tibbo should bring 2 boxes of @@s, Astapolos and Gulukan 2 of @@s and Jalad and Q'Muller were charged of the boxes of @@s.", getitemlink(Aquada), getitemlink(Croconut), getitemlink(Plushroom));
     next;
     mesq l("Do you need any other information?");
     next;
@@ -121,9 +121,9 @@ L_CollectSmthing:
     mesq l("Good job!");
     next;
 
-    delitem 714, countitem(714);
-    delitem 715, countitem(715);
-    delitem 716, countitem(716);
+    delitem AquadaBox, countitem(AquadaBox);
+    delitem CroconutBox, countitem(CroconutBox);
+    delitem PlushroomBox, countitem(PlushroomBox);
 
     mesq l("You still need to give me boxes from: ");
     if (getq(ShipQuests_Astapolos) == 0) mesq l("- Astapolos");
@@ -148,7 +148,7 @@ L_Couwan:
     next;
     mesq l("May this be a lesson for you.");
 
-    if (countitem(713) > 0) delitem 713, 1;
+    if (countitem(FishBox) > 0) delitem FishBox, 1;
     setq ShipQuests_Couwan, 2;
     Zeny = Zeny + 10;
     getexp 40, 0;
@@ -194,12 +194,12 @@ L_Lean:
     close;
 
 L_TaskDone:
-    if (countitem(714) == 2) delitem 714, 2;
-    if (countitem(715) == 2) delitem 715, 2;
-    if (countitem(716) == 2) delitem 716, 2;
-    if (countitem(714) == 1) delitem 714, 1;
-    if (countitem(715) == 1) delitem 715, 1;
-    if (countitem(716) == 1) delitem 716, 1;
+    if (countitem(AquadaBox) == 2) delitem AquadaBox, 2;
+    if (countitem(CroconutBox) == 2) delitem CroconutBox, 2;
+    if (countitem(PlushroomBox) == 2) delitem PlushroomBox, 2;
+    if (countitem(AquadaBox) == 1) delitem AquadaBox, 1;
+    if (countitem(CroconutBox) == 1) delitem CroconutBox, 1;
+    if (countitem(PlushroomBox) == 1) delitem PlushroomBox, 1;
     setq ShipQuests_Gugli, 2;
 
     Zeny = Zeny + 250;

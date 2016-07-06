@@ -22,7 +22,7 @@
         .@price = getarg (0);
         if (Zeny < .@price)
         {
-            speech 5, l("You don't have enough money, bring @@E.", .@price);
+            speech 5, l("You don't have enough money, bring @@ E.", .@price);
         }
         else
         {
@@ -61,7 +61,7 @@
         .@price = calculate_inn_tax;
 
         speech 5,
-            l("That will be @@E to set your respawn point", .@price),
+            l("That will be @@ E to set your respawn point", .@price),
             l("This will remain your respawn point until set elsewhere."),
             l("Is that okay?");
 

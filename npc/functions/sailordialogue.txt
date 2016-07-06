@@ -3,7 +3,7 @@
 //    Qwerty Dragon
 //    Reid
 // Description:
-//    Random some sailors's dialogues between two categories of NPCs.
+//    Random sailor dialogues between two categories of NPCs.
 
 function	script	sailorfood	{
     mesn;
@@ -39,12 +39,12 @@ L_Fine:
 L_RandomB:
     mesq l("Thanks for the help!");
     next;
-    mesq l("These boxes are much too heavy to be lifted by one, all the way onto the ship.");
+    mesq l("These boxes are way too heavy to be lifted by only one person, all the way onto the ship.");
 
     close;
 
 L_RandomC:
-    mesq l("I think I'll be done soon, since I almost have a box full of @@s!", getitemlink(706));
+    mesq l("I think I'll be done soon, since I almost have a box full of @@s!", getitemlink(CrocClaw));
     next;
     mesq l("And you? How's it going on your side?");
     next;

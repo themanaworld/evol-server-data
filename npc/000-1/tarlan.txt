@@ -29,28 +29,28 @@
 L_Food:
     mes " ";
     mesn;
-    mesq l("You can yaye some @@s by hitting these crocotrees.", getitemlink(513));
+    mesq l("You can yaye some @@s by hitting these crocotrees.", getitemlink(Croconut));
     next;
     mesq l("Yeye be careful with wild animal's food, some of them are yeyery dangerous, especially the crocs.");
 
     goto L_Quit;
 
 L_HardToHit:
-    mesq l("These crocotrees are full of yaying @@, but they are so hard to hit...", getitemlink(513));
+    mesq l("These crocotrees are full of yaying @@s, but they are so hard to hit...", getitemlink(Croconut));
 
     goto L_Quit;
 
 L_Aouch:
     mesq l("Ayouyouch! My head...");
     next;
-    mesq l("Damn @@.", getitemlink(513));
+    mesq l("Damn @@.", getitemlink(Croconut));
 
     goto L_Quit;
 
 L_DoYou:
     mesq l("Do you want to try?");
     next;
-    mesq l("Just hit the trunk, and it will yeye a @@.", getitemlink(513));
+    mesq l("Just hit the trunk, and it will yeye a @@.", getitemlink(Croconut));
 
     goto L_Quit;
 

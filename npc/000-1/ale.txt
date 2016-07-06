@@ -26,7 +26,6 @@
 
     menu
         lg("Gugli sent me down here to help you."), -,
-        l("What's that?"), L_Plushroom,
         l("See you aboard."), L_Quit;
 
     mes "";
@@ -52,8 +51,7 @@ L_CallFunc:
 
     menu
         rif(getq(ShipQuests_Gugli) > 1, l("Task is done.")), L_TaskDone,
-        rif(getq(ShipQuests_Ale) == 1 && (getq(ShipQuests_Astapolos) == 0 || getq(ShipQuests_Gulukan) == 0 || getq(ShipQuests_Jalad) == 0 || getq(ShipQuests_QMuller) == 0 || getq(ShipQuests_Tibbo) == 0), l("I'm still busy, I need to find the other sailors.")), -,
-        l("What's that purple thing?"), L_Plushroom;
+        rif(getq(ShipQuests_Ale) == 1 && (getq(ShipQuests_Astapolos) == 0 || getq(ShipQuests_Gulukan) == 0 || getq(ShipQuests_Jalad) == 0 || getq(ShipQuests_QMuller) == 0 || getq(ShipQuests_Tibbo) == 0), l("I'm still busy, I need to find the other sailors.")), -;
 
     mes "";
     mesn;
@@ -84,17 +82,6 @@ L_Jalad:
     next;
 
     restorecam;
-
-    close;
-
-L_Plushroom:
-    mes "";
-    mesn;
-    mesq l("'That', as you call it, is a @@. There are plenty of 'em here!", getitemlink(515));
-    next;
-    mesq l("It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?", getitemlink(515));
-    next;
-    mesq l("These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.", getitemlink(515));
 
     close;
 

@@ -126,7 +126,7 @@
         Zeny = Zeny + .@zeny_reward;
 
         narrator 4,
-            l("You received @@ exp and @@E.", .@exp_reward, .@zeny_reward);
+            l("You received @@ EXP and @@ E.", .@exp_reward, .@zeny_reward);
 
         return;
     }
@@ -230,7 +230,7 @@
 
         speech 5,
             l("Oh yes, I have one last errand for you, Q'Pid in the market sells potions."),
-            l("It has been some days now since I asked her for a box of @@, but she hasn't delivered anything yet.", getitemlink (PibberiesInfusion)),
+            l("It has been some days now since I asked her for a box of @@s, but she hasn't delivered anything yet.", getitemlink (PibberiesInfusion)),
             l("Please try to figure out what went wrong with this order and bring me these potions."),
             l("You will be able to find her in the market on the south-east of Artis.");
 

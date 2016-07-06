@@ -96,7 +96,7 @@
 
         .@price = 500;
         speech 4,
-            l("The fee is of @@E. So, do you want to register?", .@price);
+            l("The fee is of @@ E. So, do you want to register?", .@price);
 
         switch (select (l("Yes."),
                         l("I don't have the time now.")))
@@ -190,7 +190,7 @@
                     set #MerchantBank, #MerchantBank + .@amount;
 
                     speech 5,
-                        l("You made a cash deposit of @@E.", .@amount);
+                        l("You made a cash deposit of @@ E.", .@amount);
 
                     break;
                 case 2:
@@ -215,7 +215,7 @@
                     set Zeny, Zeny + .@amount;
 
                     speech 5,
-                        l("You withdrawn a total of @@E.", .@amount);
+                        l("You withdrawn a total of @@ E.", .@amount);
 
                     break;
                 case 3:
