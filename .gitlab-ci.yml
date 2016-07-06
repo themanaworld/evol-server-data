@@ -1,0 +1,92 @@
+stages:
+- build
+- test
+- fail
+- ok
+
+before_script:
+  - uname -a
+image: debian:stable
+
+variables:
+  MYSQL_ROOT_PASSWORD: root
+
+build_test:
+  stage: build
+  script:
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-6
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/build.sh "--enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  image: debian:unstable
+  services:
+  - mysql:latest
+
+mysql_init_latest:
+  stage: build
+  script:
+  - ./.tools/jobs/install.sh "mysql-client"
+  - ./.tools/jobs/clonedata.sh
+  - ./.tools/jobs/initdb.sh mysql
+  image: debian:unstable
+  services:
+  - mysql:latest
+
+mariadb_init_latest:
+  stage: build
+  script:
+  - ./.tools/jobs/install.sh "mysql-client"
+  - ./.tools/jobs/clonedata.sh
+  - ./.tools/jobs/initdb.sh mariadb
+  image: debian:unstable
+  services:
+  - mariadb:latest
+
+mysql_run_latest:
+  stage: test
+  script:
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-6
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/initdb.sh mysql
+  - ./.tools/jobs/build.sh "--enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  - ./.tools/jobs/runserver.sh mysql
+  image: debian:unstable
+  services:
+  - mysql:latest
+
+mariadb_run_latest:
+  stage: test
+  script:
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-6
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/initdb.sh mariadb
+  - ./.tools/jobs/build.sh "--enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  - ./.tools/jobs/runserver.sh mariadb
+  image: debian:unstable
+  services:
+  - mariadb:latest
+
+ok_job:
+  stage: ok
+  script:
+  - pwd
+  - echo $CI_BUILD_REF_NAME
+  when: on_success
+
+fail_job:
+  stage: fail
+  script:
+  - pwd
+  - echo $CI_BUILD_REF_NAME
+  when: on_failure
