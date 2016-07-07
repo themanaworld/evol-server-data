@@ -35,6 +35,26 @@ mysql_init_latest:
   services:
   - mysql:latest
 
+mysql_init_5.5:
+  stage: build
+  script:
+  - ./.tools/jobs/install.sh "mysql-client"
+  - ./.tools/jobs/clonedata.sh
+  - ./.tools/jobs/initdb.sh mysql
+  image: debian:unstable
+  services:
+  - mysql:5.5
+
+mysql_init_5.6:
+  stage: build
+  script:
+  - ./.tools/jobs/install.sh "mysql-client"
+  - ./.tools/jobs/clonedata.sh
+  - ./.tools/jobs/initdb.sh mysql
+  image: debian:unstable
+  services:
+  - mysql:5.6
+
 mariadb_init_latest:
   stage: build
   script:
@@ -44,6 +64,26 @@ mariadb_init_latest:
   image: debian:unstable
   services:
   - mariadb:latest
+
+mariadb_init_10.0:
+  stage: build
+  script:
+  - ./.tools/jobs/install.sh "mysql-client"
+  - ./.tools/jobs/clonedata.sh
+  - ./.tools/jobs/initdb.sh mariadb
+  image: debian:unstable
+  services:
+  - mariadb:10.0
+
+mariadb_init_5.5:
+  stage: build
+  script:
+  - ./.tools/jobs/install.sh "mysql-client"
+  - ./.tools/jobs/clonedata.sh
+  - ./.tools/jobs/initdb.sh mariadb
+  image: debian:unstable
+  services:
+  - mariadb:5.5
 
 mysql_run_latest:
   stage: test
