@@ -236,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `char_reg_str_db` (
 --
 
 CREATE TABLE IF NOT EXISTS `charlog` (
-  `time` DATETIME NOT NULL,
+  `time` DATETIME NULL,
   `char_msg` VARCHAR(255) NOT NULL DEFAULT 'char select',
   `account_id` INT(11) NOT NULL DEFAULT '0',
   `char_id` INT(11) UNSIGNED NOT NULL DEFAULT '0',
@@ -567,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `login` (
   `unban_time` INT(11) UNSIGNED NOT NULL DEFAULT '0',
   `expiration_time` INT(11) UNSIGNED NOT NULL DEFAULT '0',
   `logincount` MEDIUMINT(9) UNSIGNED NOT NULL DEFAULT '0',
-  `lastlogin` DATETIME NULL,
+  `lastlogin` DATETIME NULL, 
   `last_ip` VARCHAR(100) NOT NULL DEFAULT '',
   `birthdate` DATE NULL,
   `character_slots` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
@@ -825,6 +825,8 @@ INSERT IGNORE INTO `sql_updates` (`timestamp`) VALUES (1440688342); -- 2015-08-2
 INSERT IGNORE INTO `sql_updates` (`timestamp`) VALUES (1450241859); -- 2015-12-16--12-57.sql
 INSERT IGNORE INTO `sql_updates` (`timestamp`) VALUES (1450367880); -- 2015-12-17--15-58.sql
 INSERT IGNORE INTO `sql_updates` (`timestamp`) VALUES (1457638175); -- 2016-03-10--22-18.sql
+INSERT IGNORE INTO `sql_updates` (`timestamp`) VALUES (1467934919); -- 2016-07-08--02-42.sql
+INSERT IGNORE INTO `sql_updates` (`timestamp`) VALUES (1467935469); -- 2016-07-08--02-51.sql
 
 --
 -- Table structure for table `storage`
