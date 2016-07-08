@@ -278,9 +278,6 @@ Atributos de '%s':
 '%s' stole %s's %s (chance: %0.02f%%)
 '%s' robó algo a %s: %s (probabilidad: %0.02f%%)
 
-'That', as you call it, is a @@. There are plenty of 'em here!
-
-
 'That', as you call it, is a @@. There're plenty on this island!
 'Eso', como tú le llamas, es un @@. ¡Hay abundancia de esos en esta isla!
 
@@ -323,8 +320,8 @@ Atributos de '%s':
 - %s (%d)
 - %s (%d)
 
-- 2 @@
-- 2 @@
+- 2 @@es
+
 
 - Ale
 - Ale
@@ -464,9 +461,6 @@ Atributos de '%s':
 ...
 ...
 
-... And 1 @@.
-...Y 1 @@.
-
 ... and 1 @@.
 ... y 1 @@.
 
@@ -509,8 +503,8 @@ Atributos de '%s':
 4: How many cards your item can contain.
 4: Cuántas tarjetas tu artículo puede contener.
 
-5 Pibberies Infusion.
-5 Infusiones de Pibayas
+5 @@s.
+
 
 5 boxes... Alright, @@ are my speciality!
 5 cajas... ¡Muy bien, @@ son mi especialidad!
@@ -866,7 +860,7 @@ De cualquier forma, si en cualquier momento te sientes interesado, ¡sólo chequ
 Anyway, let me know if you change your mind.
 
 
-Anyway, the guild creation is perfect for both case! You can keep your current party as is while having a guild to talk and share different items with all of your friends!
+Anyway, the guild creation is perfect for both!
 
 
 Anyway, the last time I stole something I was almost caught.
@@ -1247,7 +1241,7 @@ Antes...
 Behind me? It's the Blacksmith house, the most renowned throughout Andorra.
 
 
-Besides, I need to be here to watch for thieves while La Johanne is docked.
+Besides, I need to be here to watch out for thieves while La Johanne is docked.
 
 
 Better take it back to Q'Onan.
@@ -1385,11 +1379,11 @@ But we are quite lucky here, outside of some tipsy travelers there are no big pr
 But who am I?
 Pero, ¿quién soy yo?
 
-But you are welcome to reset your stats again if you bring me more plushrooms!#0
-¡Pero eres bienvenida a restablecer tus estadísticas de nuevo si me traes más plushrooms!
+But you are welcome to reset your stats again if you bring me some more plushrooms!#0
 
-But you are welcome to reset your stats again if you bring me more plushrooms!#1
-¡Pero eres bienvenido a restablecer tus estadísticas de nuevo si me traes más plushrooms!
+
+But you are welcome to reset your stats again if you bring me some more plushrooms!#1
+
 
 But you decide to patiently wait.
 
@@ -1613,7 +1607,7 @@ Chest opened.
 Chest#Artis
 Chest#Artis
 
-Children play there; and can be badly hurt if they play near a Fluffy's nest.
+Children play there and can be badly hurt if they get too close to a Fluffy's nest.
 
 
 Chill out I won't say anything.
@@ -1670,8 +1664,8 @@ Come back later if you changed your mind!
 Come back later!
 
 
-Come back soon! And bring a plushroom with you!
-¡Vuelve pronto! ¡Y trae un plushroom!
+Come back soon, and bring @@s!
+
 
 Come back when you will really need me. And bring more plushrooms with you!#0
 Vuelve cuando realmente me necesites. ¡Y trae más plushrooms!
@@ -1841,7 +1835,7 @@ El Modo Día está activado
 Day mode is already enabled.
 El modo Día ya está activado.
 
-Deal, I offer you @@E!
+Deal, I offer you @@ E!
 
 
 Deal?
@@ -2048,7 +2042,7 @@ Don't worry sister, I didn't forget you
 Don't worry, I'm sure you will help them soon enough!
 No te preocupes, ¡estoy seguro que les ayudaras muy pronto!
 
-Don't you try to cheat an old merchant! You don't have enough money, you need @@E.
+Don't you try to cheat an old merchant! You don't have enough money, you need @@ E.
 
 
 Done. Here, take it! Now, here is the plan. Go talk to her and offer our beautiful lady a bite of her arrogance!
@@ -2912,7 +2906,7 @@ Hey Maxe, it's @@!
 Hey Silvio, it's your turn to carry the package, go!
 Oye, Silvio, es tu turno de cargar el paquete, ¡ve!
 
-Hey do you have any @@?
+Hey do you have any @@s?
 
 
 Hey there, are you Bobo, Katja's brother?
@@ -3302,14 +3296,14 @@ No quiero apuntar mi dedo sobre nadie. Quiero ser honorable y justo, y siento la
 I do not.
 
 
-I don't have any plushroom on me.#0
-
-
-I don't have any plushroom on me.#1
-
-
 I don't have anything good for you today.
 Hoy no tengo nada bueno para ti.
+
+I don't have enough plushrooms...#0
+
+
+I don't have enough plushrooms...#1
+
 
 I don't have much time right now.
 
@@ -3383,8 +3377,8 @@ Yo te he traido un apetitoso regalo para tu delicada boca.
 I have collected all the boxes you needed.
 Yo he recolectado todas las cajas que necesitabas.
 
-I have one more task for you, Trozz, another member of the Legion, sent me a letter earlier today.
-Tengo una tarea más para ti, Trozz, otro miembro de la Legión, me envió una carta temprano.
+I have one more task for you. Trozz, another member of the Legion, sent me a letter earlier today.
+
 
 I have some clothes and other things for you at a fine price!
 ¡Tengo algo de ropa y otras cosas para ti a un buen precio!
@@ -3398,10 +3392,10 @@ I have some fur for you.
 I have some spare one, take them, and tell Enora that any fees are paid!
 
 
-I have to go sorry.#0
+I have to go, sorry.#0
 
 
-I have to go sorry.#1
+I have to go, sorry.#1
 
 
 I have your black iron.
@@ -3491,14 +3485,11 @@ Necesito a alguien que pueda librar el fondo de la nave de esos rattos. ¿Puedes
 I need to go, sorry.
 Tengo que ir, lo siento.
 
-I need to think about it a bit more...#0
+I need to think about it...#0
 
 
-I need to think about it a bit more...#1
+I need to think about it...#1
 
-
-I only need 2 @@, 2 @@, 1 @@ and...
-Sólo necesito 2 @@, 2 @@, 1 @@ y...
 
 I only need 2 @@, 2 @@s, 1 @@...
 Sólo necesito 2 @@, 2 @@s, 1 @@...
@@ -3638,7 +3629,7 @@ I want divorce
 I want register for marriage
 
 
-I want to be the first merchant of this square to sell @@'s clothes!
+I want to be the first merchant of this square to sell clothes made from @@s!
 
 
 I want to make my own dyes.
@@ -3656,7 +3647,7 @@ Fui enviado aquí con una tarea. Puedo darte una perfecta, maravillosa, magnífi
 I was so excited, I wanted to try it as soon as possible.
 
 
-I will buy all of the fur that you will bring me at a good price, let's say, 15E piece.
+I will buy all of the fur that you will bring me at a good price, let's say, 15 E piece.
 
 
 I will close my eyes for once, but only because it's your first time asking for something!
@@ -3707,10 +3698,10 @@ I wish you a good time in town.
 I won't forget it, I swear on my precious plushrooms!
 
 
-I won't need it thank you.#0
+I won't need it, thank you.#0
 
 
-I won't need it thank you.#1
+I won't need it, thank you.#1
 
 
 I wonder too...
@@ -4133,7 +4124,7 @@ Is this some kind of joke?!
 It escaped!
 
 
-It has been some days now since I asked her for a box of @@, but she hasn't delivered anything yet.
+It has been some days now since I asked her for a box of @@s, but she hasn't delivered anything yet.
 
 
 It has started to snow.
@@ -4196,7 +4187,7 @@ It was wonderful.
 It would be good for you to do some exercise, the ship isn't big enough for that.
 Sería bueno para ti que hagas algo de ejercicio; el barco no es lo suficientemente grande para eso.
 
-It would have been easy for me to handle it, but if you do it you can earn some respect by killing Fluffies in place of their natural-predator!
+It would have been easy for me to handle it but if you do it, you can earn some respect by killing Fluffies instead of their natural predators!
 
 
 It's @@ @@.
@@ -4480,6 +4471,9 @@ Déjame explicarte para que es el Gremio Mercante.
 
 Let me introduce myself, I am Nard, captain of this ship.
 Permíteme presentarme. Soy Nard, capitán de este barco.
+
+Let me just have a quick look at you. Hm... I will need @@ @@s to reset your stats.
+
 
 Let me open it with my key.
 
@@ -5303,6 +5297,12 @@ Oh hey!
 Oh look, there's a piou behind you!
 ¡Oh mira, hay un piou detrás de ti!
 
+Oh no, I don't have any plushroom on me right now.#0
+
+
+Oh no, I don't have any plushroom on me right now.#1
+
+
 Oh no, but I've noticed a weird light on the other part of this island, I wonder what it could be...
 
 
@@ -5540,7 +5540,7 @@ Only one more Fluffy to kill and it's done!
 Options changed.
 
 
-Or, do you want to keep your friendship and your adventure in different groups?
+Or do you want to keep your friendships and adventures in different groups?
 
 
 Orc Voice
@@ -5696,7 +5696,7 @@ Player unmuted.
 Player warped to jail.
 Jugador tele-transportado a la carcel.
 
-Please bring me some @@ so I can pull out these spikes from my foot.
+Please bring me @@s so I can pull out these spikes from my foot.
 
 
 Please come back anytime!
@@ -6767,14 +6767,14 @@ THAT'S A NICE NAME!
 Taekwon
 
 
-Take a @@ and a @@, yeye obtains a @@.
-
-
 Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being so weak in all.
 
 
 Take a Bandana.
 Toma una bandana.
+
+Take an @@ and a @@, yeye obtains a @@.
+
 
 Take care!
 ¡Cuídate!
@@ -6899,7 +6899,7 @@ Esa parte de la ciudad es llamada la colina dorada, es donde el Gremio Mercantil
 That poor one is doing his best to fly... But his last meal and the gravity is not helping him so far!
 
 
-That will be @@E to set your respawn point
+That will be @@ E to set your respawn point
 
 
 That would be great!
@@ -6923,7 +6923,7 @@ Eso es bastante sorprendente... No pareces muy útil.
 That's quite surprising... You don't look very helpful.#1
 Eso es bastante sorprendente... No pareces muy útil.
 
-The @@ is a one time item, you can use it as many time as you want, but you can only have one!
+The @@ is a one time item, you can use it as many times as you want, but you can only have one!
 
 
 The Legion need some potions.
@@ -6953,10 +6953,10 @@ The captain is waiting for you! Hurry up.
 The captain wants:
 El capitán quiere:
 
-The cost to create a guild is of @@E, are you interested?
+The cost to create a guild is of @@ E, are you interested?
 
 
-The cost to create a party is of @@E, are you interested?
+The cost to create a party is of @@ E, are you interested?
 
 
 The detail and craftsmanship that went into this sword can only be accomplished by the most practiced of blacksmiths.
@@ -6977,7 +6977,7 @@ El final de la historia fue borrado, probablemente por el agua de mar. Algunas p
 The fear to see her sleeping on this quiet and lonely bed is becoming more and more unbearable, I think that I won't get the bravery to see her this time...
 El miedo a verla dormir en esta cama silenciosa y tranquila se está volviendo más y más insoportable, no creo ser lo suficientemente valiente para verla esta vez...
 
-The fee is of @@E. So, do you want to register?
+The fee is of @@ E. So, do you want to register?
 
 
 The first thing you should do is to evaluate your enemy.
@@ -7049,8 +7049,8 @@ The old man seemed to be senile.
 The other part of this sign has been crushed by a rock.
 
 
-The piou costs @@E.
-El piou cuesta @@E.
+The piou costs @@ E.
+
 
 The player '%.*s' doesn't exist.
 
@@ -7095,9 +7095,6 @@ Then I can give you some tips about fighting.
 Entonces te puedo dar algunos consejos sobre luchar.
 
 Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them.
-
-
-Then give me one @@ and we will start!
 
 
 Then it seems I have to apologize.
@@ -7172,11 +7169,11 @@ No hay nada que decir. No se preocupe, señor.
 Therefore, starvation stalked the people of Aemil.
 Por lo tanto, el hambre acechó a la gente de Aemil.
 
-These boxes are much too heavy to be lifted by one, all the way onto the ship.
+These boxes are way too heavy to be lifted by only one person, all the way onto the ship.
 
 
-These crocotrees are full of yaying @@, but they are so hard to hit...
-Estos árboles de croco están llenos de yaying @@, pero es muy difícil pegarles...
+These crocotrees are full of yaying @@s, but they are so hard to hit...
+
 
 These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.
 Estos divertidos hongos se propagan vertiginosamente por toda la isla. Simplemente recolecta unos cuantos @@s y pruébalos
@@ -7187,8 +7184,8 @@ These heavy boxes are killing me, I can't feel my arms anymore!
 These little pious here can't fly. At least that's what I thought.
 Estos pequeños pious de aquí no puede volar. Al menos eso era lo que pensaba.
 
-These purple mushrooms, are called @@. There are plenty of 'em on this island!
-Esos hongos morados, son llamados @@. ¡Hay un montón de ellos en esta isla!
+These purple mushrooms are called @@s. There are plenty of 'em on this island!
+
 
 These yeye boxes are way too heavy to be carried alone onto the ship.
 Estas yeye cajas son demasiado pesadas para ser acarreadas al barco por uno solo.
@@ -7208,8 +7205,8 @@ They are fresh, they are good!
 They are married... wish them well.
 
 
-They are so tasty when cooked together with some @@. Don't drop any of them!
-Ellos son tan sabrosos cuando se cocinan junto a algo de @@. ¡No sueltes ninguno!
+They are so tasty when cooked with some @@. Don't drop any of them!
+
 
 They shouldn't be too far from each other.
 Ellos no deberían estar muy lejos el uno del otro.
@@ -8111,9 +8108,6 @@ What you looking at?!
 What's that food?
 ¿Qué comida es esa?
 
-What's that purple thing?
-
-
 What's that?
 ¿Qué es eso?
 
@@ -8477,8 +8471,8 @@ You already looked here.
 You already registered. Wait for your partner.
 
 
-You already took a Bandana, please put this one back in the box.
-Ya tomaste una Bandana, vuelve a poner esa en la caja, por favor.
+You already took a @@, please put this one back in the box.
+
 
 You are already mounting something else
 Ya estás montando algo más
@@ -8619,6 +8613,9 @@ You can go upstairs and choose a different room if you want.
 
 
 You can have %d items on your autolootitem list.
+
+
+You can keep your current party as it, while leading or being part of a guild in order to talk and share different items with all of its members!
 
 
 You can not change to this job by command.
@@ -8780,19 +8777,19 @@ You do not seem to have enough money, come back later!
 You don't expect me to eat that, do you? Give me something else!
 No esperas que me coma eso, ¿o sí? ¡Dame otra cosa!
 
-You don't have a @@, are you mocking me?
-
-
 You don't have a @@.
+
+
+You don't have any @@, are you mocking me?
 
 
 You don't have any food suitable for bait.
 
 
-You don't have enough @@ on you.
+You don't have enough @@s on you.
 
 
-You don't have enough money, bring @@E.
+You don't have enough money, bring @@ E.
 
 
 You don't have enough room in your backpack for a @@. Go stow some of your junk and come back.
@@ -8951,10 +8948,13 @@ You like them, don't you? Just speak with Peter then. He is on the second deck o
 You like these hats, right?
 ¿Te gustan estos gorros verdad?
 
+You look confident. I will give you my old gear as reward and acknowledgment for your time... and take these potions as well!
+
+
 You look nice, do you want to help me?
 
 
-You made a cash deposit of @@E.
+You made a cash deposit of @@ E.
 
 
 You may search partial name by making use of '%' in the search, ex. "@accinfo %Mario%" lists all characters whose name contains "Mario".
@@ -9035,7 +9035,7 @@ You receive @@ E!
 You receive a @@!
 ¡Recibes una @@!
 
-You received @@ exp and @@E.
+You received @@ EXP and @@ E.
 
 
 You request has been rejected by autoreject option.
@@ -9185,7 +9185,7 @@ You tried to embarrass me, am I right?!
 You tried to get rid of me, eeh? But surprise! I'm still here... *hic* Or there...
 Intentaste deshacerte de mí, ¿eeh? ¡Pero sorpresa! Todavía estoy aquí... *hic* O allí.
 
-You use a @@ as a bait.
+You use a @@ as bait.
 
 
 You was married to @@!
@@ -9227,7 +9227,7 @@ Verás, los ciudadanos son amables y puedes pedir ayuda a la Legión de Aemil. �
 You wipe off enough of the sand to manage to read the message written on this crude piece of wood.
 
 
-You withdrawn a total of @@E.
+You withdrawn a total of @@ E.
 
 
 You yoiis should walk to the north.
@@ -9265,9 +9265,6 @@ Eres como el resto de esta asquerosa tripulación. Tu nombre ahora está en la l
 
 You're like the rest of this filthy crew. Your name is now on the traitors list!#1
 Eres como el resto de esta asquerosa tripulación. Tu nombre ahora está en la lista de traidores.
-
-You're looking confident, I'll give you my old gear as reward and acknowledgment for your time, and take these potions as well!
-
 
 You're lucky that I'm a generous person, here's another one.
 Tienes suerte de que yo sea una persona generosa. Aquí tienes otra.
