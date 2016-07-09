@@ -108,8 +108,6 @@ L_Rules:
     next;
     mesq l("Do you have any other questions for me?");
     next;
-    mesq l("Do you have any other questions for me?");
-    next;
 
     goto L_YNMenu;
 
@@ -121,8 +119,6 @@ L_BasicSkill:
     adddefaultskills;
     mesq l("Here you go, everything is fixed.");
     emotion E_HAPPY;
-    next;
-    mesq l("Do you have any other questions for me?");
     next;
     mesq l("Do you have any other questions for me?");
     next;
