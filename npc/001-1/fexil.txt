@@ -59,11 +59,11 @@
             case 1:
                 speech 5,
                     l("Oh sure I remember you."),
-                    l("The travel was fine for you? It was terrible for me; I was sea-sick.");
+                    l("The travel was fine for you? It was terrible for me, I was sea-sick.");
                 break;
             case 2:
                 speech 5,
-                    l("Ah, I didn't have much sleep; it's possible.");
+                    l("Ah, I didn't have much sleep, it's possible.");
                 break;
         }
         setq ArtisQuests_Fexil, 2;
