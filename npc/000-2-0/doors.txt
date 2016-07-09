@@ -19,7 +19,7 @@
 //    11   Need to see Julia
 //    12   Has been registered by Julia
 
-000-2-0,20,28,0	script	AreaNPC#doors1	NPC_HIDDEN,0,0,{
+000-2-0,19,28,0	script	AreaNPC#doors1	NPC_HIDDEN,0,0,{
 
 OnTouch:
     .@nard = getq(ShipQuests_Nard);
