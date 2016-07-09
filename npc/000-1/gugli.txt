@@ -24,7 +24,7 @@
 
 000-1,85,108,0	script	Gugli	NPC_GUGLI,{
 
-    if (getq(ShipQuests_Couwan == 1))
+    if (getq(ShipQuests_Couwan) == 1)
     {
         speech 4,
             l("Great to see you! What can I do for you today?");
