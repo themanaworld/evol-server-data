@@ -25,6 +25,7 @@
 
 L_Menu:
     .@visited = getq(General_Rumly);
+    .@plush_count = lognbaselvl(1, 10);
 
     menuint
         l("Plushrooms you say?"), 0,
