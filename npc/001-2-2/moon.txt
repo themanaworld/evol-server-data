@@ -115,7 +115,7 @@ L_Story:
     mesq l("Please bring me @@s so I can pull out these spikes from my foot.", getitemlink("CrocClaw"));
     next;
 
-    switch (select(l("Stay here, I'll hurry back as soon as I get some."),
+    switch (select(l("Stay here, I will be back as soon as I have some."),
                    l("Maybe next time.")))
     {
         case 1:

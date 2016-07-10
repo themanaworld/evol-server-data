@@ -10,7 +10,7 @@
     {
         speech 1,
             l("You have put your finger on it, I am not."),
-            l("I grown up and lived a good while in the capital city, Esperia."),
+            l("I grew up and lived a good while in Esperia, the capital city."),
             l("This place is surrounded by two very important elements: academia and the arts. I was surrounded by theater, music, dance, museums..."),
             l("I had a great childhood in Esperia!"),
             l("It was wonderful.");
@@ -52,7 +52,7 @@
 
     function miracle
     {
-        npctalkonce l("The miracle is this: the more we share the more we have.");
+        npctalkonce l("The miracle is this: the more we share, the more we have.");
 
         return;
     }

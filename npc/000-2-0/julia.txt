@@ -73,7 +73,6 @@ L_First:
     goto L_ChooseLang;
 
   L_ChooseLang:
-
     mes "";
     mesn;
     mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
