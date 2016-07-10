@@ -43,6 +43,11 @@ L_NoChanges:
     goto L_YNMenu;
 
 L_ChooseLang:
+    mes "";
+    mesn;
+    mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
+    next;
+
     menu
         menuimage("flags/en", l("I speak English.") + " (English)"), -,
         menuimage("flags/fr", l("I speak French.") + " (Français)"), -,

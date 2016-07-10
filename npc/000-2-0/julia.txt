@@ -57,12 +57,6 @@ L_Menu:
         l("Can I read these rules again?"), L_Rules,
         l("Nothing, sorry."), L_Quit;
 
-    mes "";
-    mesn;
-    mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
-
-    goto L_ChooseLang;
-
 L_First:
     checkclientversion;
 
@@ -79,6 +73,12 @@ L_First:
     goto L_ChooseLang;
 
   L_ChooseLang:
+
+    mes "";
+    mesn;
+    mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
+    next;
+
     menu
         menuimage("flags/en", l("I speak English.") + " (English)"), -,
         menuimage("flags/fr", l("I speak French.") + " (Français)"), -,
