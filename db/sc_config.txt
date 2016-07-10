@@ -11,6 +11,7 @@
 //         32 - SC considered as debuff and be removed by Gospel and etc.
 //         64 - SC cannot be reset when MADO Gear is taken off.
 //        128 - SC cannot be reset by 'sc_end SC_ALL' and status change clear.
+//        256 - SC can be visible for all players
 // Example:
 // SC_ENDURE, 21 //SC_ENDURE: cannot be removed by death and dispell and cosidered as buff. (16 + 4 + 1 = 21)
 
@@ -491,3 +492,6 @@ SC_BLOSSOM_FLUTTERING, 207
 
 // Cant Clear
 SC_ALL_RIDING, 141
+
+// evol effects
+SC_PHYSICAL_SHIELD, 2
