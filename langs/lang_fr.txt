@@ -1,12 +1,12 @@
 Copyright (C) 2010-2014 Evol Online
       BLvl: %d | Job: %s (Lvl: %d)
-
+BNiv : %d | Métier : %s (Niv : %d)
 
       Party: '%s' | Guild: '%s'
-Partie: '%s' | Guilde: '%s'
+Groupe : '%s' | Guilde : '%s'
 
    Users: %d/%d | Password: %s | Public: %s
-Utilisateur: %d/%d | Mot de passe: %s | Public: %s
+Utilisateurs : %d/%d | Mot de passe : %s | Public : %s
 
   <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <bound_type>).
 <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <bound_type>).
@@ -24,19 +24,19 @@ Utilisateur: %d/%d | Mot de passe: %s | Public: %s
 
 
  - Available in shops only.
-- Disponible seulement en boutique.
+- Disponible uniquement en boutique.
 
  - Common mobs with highest drop chance (only max %d are listed):
-- Créatures communes avec la chance de drop la plus haute (seulement %d maximum sont listés):
+- Monstres communs avec la plus haute chance de dépôt (seulement %d maximum sont listés) :
 
  - Item is not dropped by any mobs.
-- L'objet n'est lâché par aucun mobs.
+- L'objet n'est déposé par aucun monstre.
 
  - Maximal monsters drop chance: %02.02f%%
-- Chance maximale de drop des monstres! %02.021f%%
+- Chance maximale de dépose des monstres ! %02.021f%%
 
  - Monsters don't drop this item.
-- Les monstres ne lâche pas cet objet.
+- Les monstres ne déposent pas cet objet.
 
  -- Duel has been created (Use @invite/@leave) --
 -- Un duel a été crée (Use @invite/@leave) --
@@ -57,16 +57,16 @@ Utilisateur: %d/%d | Mot de passe: %s | Public: %s
 -> (carte(s): 
 
  -> (crafted item, creator id: %u, star crumbs %d, element %d)
-
+ -> (objet artisanal, id du créateur : %u, miettes d'étoiles %d, élément %d)
 
  -> (pet egg, pet id: %u, named)
-
+ -> (œuf du familier, ID du familier: %u, nommé)
 
  -> (pet egg, pet id: %u, unnamed)
-
+ -> (œuf du familier, ID du familier: %u, sans nom)
 
  -> (produced item, creator id: %u)
-
+ -> (objet produit, ID du créateur : %u)
 
  -> Player %s has accepted the duel --
 -> Le joueur %s a accepté le duel --
@@ -75,25 +75,25 @@ Utilisateur: %d/%d | Mot de passe: %s | Public: %s
 <- Le joueur %s a quitté le duel --
 
  ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
-
+ ATT : %d~%d  Portée : %d~%d~%d  Taille : %s  Race : %s  Élément : %s (Lv:%d)
 
  ATK:%d~%d MATK:%d~%d Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
-
+ ATT : %d~%d MATT : %d~%d Portée : %d~%d~%d  Taille : %s  Race : %s  Élément : %s (Lv:%d)
 
  DEF:%d  MDEF:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d
-
+ DEF : %d  MDEF : %d  FOR : %d  AGI : %d  VIT : %d  INT : %d  DEX : %d  CHA : %d
 
  Drops:
-Drops:
+Dépôts :
 
  Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
-
+Niv : %d  PV : %d  EXP Base : %u  EXP Métier : %u  COUP : %d  FUIR : %d
 
  MVP Bonus EXP:%u
-Bonus MVP EXP:%u
+Bonus MVP EXP : %u
 
  MVP Items:
-Objets MVP:
+Objets MVP :
 
  and %d second
 et %d seconde
@@ -171,40 +171,40 @@ et %d secondes
 %d: Vêtement
 
 %d: Left Accessory
-%d: Accessoire gauche
+%d : Accessoire gauche
 
 %d: Left Hand
-%d: Main Gauche
+%d : Main Gauche
 
 %d: Lower Headgear
-%d: Équipement de tête basse
+%d : Équipement de tête basse
 
 %d: Mid Headgear
-%d: Équipement de tête 
+%d : Équipement de tête 
 
 %d: Right Accessory
-%d: Accessoire droit
+%d : Accessoire droit
 
 %d: Right Hand
-%d: Main Droite
+%d : Main Droite
 
 %d: Shoes
-%d: Chaussures
+%d : Chaussures
 
 %d: Top Headgear
-%d: Équipement de tête haute
+%d : Équipement de tête haute
 
 %s :Main: %s
-%s :Général: %s
+%s :Général : %s
 
 %s data type is not supported :%u
-%s le type de donnée n'est pas supportée :%u
+%s le type de donnée n'est pas pris en charge :%u
 
 %s failed
 %s Échoué.
 
 %s failed.
-%s Échoué.
+%s échoué.
 
 %s failed. Player not found.
 %s échoué. Joueur non trouvé.
@@ -213,7 +213,7 @@ et %d secondes
 %s a acheté le(s) objet(s).
 
 %s in jail for %d years, %d months, %d days, %d hours and %d minutes
-%s en prison pour %d année(s), %d mois, %d jour(s), %d heure(s) et %d minute(s)
+%s est en prison pour %d année(s), %d mois, %d jour(s), %d heure(s) et %d minute(s)
 
 %s is Unknown Command.
 %s est une Commande Inconnue.
@@ -222,25 +222,25 @@ et %d secondes
 %s est vide
 
 %s recalled!
-%s rappelé!
+%s rappelé !
 
 %s revision '%s' (src) / '%s' (scripts)
 %s révision '%s' (src) / '%s' (scripts)
 
 %s spawns in:
-%s apparaître dans:
+%s apparaît dans :
 
 %s value is now :%d
-%s la valeur est maintenant :%d
+%s la valeur est maintenant : %d
 
 %s value is now :%s
-%s la valeur est maintenant :%s
+%s la valeur est maintenant : %s
 
 %s: %d
-%s: %d
+%s : %d
 
 '%s' Channel is password protected (usage: %s <#channel_name> <password>)
-'%s' Le canal est protégé par mot de passe (utiliser: %s <#nom_du_canal> <mot_de_passe>)
+'%s' Le canal est protégé par mot de passe (utiliser : %s <#nom_du_canal> <mot_de_passe>)
 
 '%s' and his/her partner are now divorced.
 '%s' et son/sa partenaire sont maintenant divorcés.
@@ -249,7 +249,7 @@ et %d secondes
 '%s' couleur de canal mise à jour en '%s'
 
 '%s' got %s's %s (chance: %0.02f%%)
-'%s' a %s's %s (chance: %0.02f%%)
+'%s' a %s's %s (chance : %0.02f%%)
 
 '%s' is not a known channel option
 '%s' n'est pas une option de canal connue
@@ -267,16 +267,16 @@ et %d secondes
 '%s" compétences et statistiques on étés réinitialisées.
 
 '%s' skill points reset.
-'%s' les points de compétences ont étés réinitialisées.
+'%s' les points de compétences ont étés réinitialisés.
 
 '%s' stats points reset.
-'%s' les points de statistiques ont étés réinitialisées.
+'%s' les points de statistiques ont étés réinitialisés.
 
 '%s' stats:
-'%s' statistiques:
+'%s' statistiques :
 
 '%s' stole %s's %s (chance: %0.02f%%)
-'%s' a volé %s's %s (chance: %0.02f%%)
+'%s' a volé %s's %s (chance : %0.02f%%)
 
 'That', as you call it, is a @@. There're plenty on this island!
 'Ça', comme tu l'appelles, est un @@. Il y en a plein sur l'île !
@@ -285,10 +285,10 @@ et %d secondes
 (%s)
 
 (@request): %s
-
+(@request) : %s
 
 (CID:%d/AID:%d) 
-
+(CID:%d/AID:%d) 
 
 * :%s %s: *
 * :%s %s: *
@@ -321,7 +321,7 @@ et %d secondes
 - %s (%d)
 
 - 2 @@es
-
+- 2 @@
 
 - Ale
 - Ale
@@ -351,7 +351,7 @@ et %d secondes
 - bannir <character name> du <channel name> canal
 
 - binds your global chat to <channel name>, making anything you type in global be sent to the channel
-- lier votre chat global au <channel name>, fait que tout ce que vous écrivez sur le chat global sera envoyé sur le canal
+- lier votre conversation générale au <channel name>, fait en sorte que tout ce que tu écris sur la conversation générale sera envoyé sur le canal
 
 - changes <channel name> color to <color name>
 - changer l'apparence du canal <channel name> vers la couleur <color name>
@@ -360,43 +360,43 @@ et %d secondes
 - créer un nouveau canal
 
 - leaves <channel name>
-- quitter le canal <channel name>
+- quitter le canal <nom du canal>
 
 - lists all banned characters from <channel name> channel
-- Lister tous les personnages bannis du canal <channel name>
+- liste tous les personnages bannis du canal <nom du canal>
 
 - lists colors available to select for custom channels
-- lister les couleurs disponibles des canaux customisés
+- liste les couleurs disponibles des canaux customisés
 
 - lists public channels
 - lister les canaux publics
 
 - unbans <character name> from <channel name> channel
-- lever le bannissement de <character name> sur le canal <channel name>
+- enlève le bannissement de <nom personnage> du canal <nom du canal>
 
 - unbans everyone from <channel name>
-- lever tous les bannissements du canal <channel name>
+- enlève tous les bannissements du canal <nom du canal>
 
 - unbinds your global chat from its attached channel (if binded)
-- délier le chat global des canaux (si liés)
+- délie ta conversation globale des canaux (si liés)
 
 -- %s
 -- %s
 
 -- %s ban <channel name> <character name>
--- %s bannir <channel name> <character name>
+-- %s banni <nom du canal> <nom du personnage>
 
 -- %s banlist <channel name>
--- %s bannis <channel name>
+-- %s banni <nom de canal>
 
 -- %s bindto <channel name>
--- %s lier <channel name>
+-- %s lie à <nom du canal>
 
 -- %s create <channel name> <channel password>
--- %s créer <channel name> <channel password>
+-- %s créer <nom du canal> <mot de passe du canal>
 
 -- %s leave <channel name>
--- %s quitter <channel name>
+-- %s quitter <nom du canal>
 
 -- %s list
 -- %s liste
@@ -405,16 +405,16 @@ et %d secondes
 -- %s couleurs
 
 -- %s setcolor <channel name> <color name>
--- %s #couleur <channel name> <color name>
+-- %s #couleur <cnom du canal> <nom de la couleur>
 
 -- %s setopt <channel name> <option name> <option value>
--- %s option <channel name> <option name> <option value>
+-- %s option <nom du canal> <nom de l'option> <valeur de l'option>
 
 -- %s unban <channel name> <character name>
--- %s deban <channel name> <character name>
+-- %s enlève le bannissement <nom du canal> <nom du personnage>
 
 -- %s unbanall <channel name>
--- %s debantous <channel name>
+-- %s débannis tout le monde de <nom du canal>
 
 -- %s unbind
 -- %s délier
@@ -426,7 +426,7 @@ et %d secondes
 -- Options disponibles
 
 -- Displaying first %d partial matches
-
+-- Affiche les premiers %d matchs partiels
 
 -- Permission List
 -- Liste des permissions
@@ -438,7 +438,7 @@ et %d secondes
 -- Permissions de l'utilisateur '%s'
 
 --- Available options:
---- Options disponibles:
+--- Options disponibles :
 
 ----- Chats in Map -----
 ----- Chats sur la carte -----
@@ -450,7 +450,7 @@ et %d secondes
 ----- Joueurs sur la carte -----
 
 ------ %s items list of '%s' ------
-
+------ %s liste d'objets de '%s' ------
 
 ------ Map Flags ------
 ------ Drapeaux de la carte ------
@@ -465,7 +465,7 @@ et %d secondes
 ... et 1 @@.
 
 ...this might be because of Don, he is the master blacksmith of this place and a model to me!
-...c'est peut-être à cause de Don, il est le maître forgeron de cet endroit et un model pour moi!
+...c'est peut-être à cause de Don, il est le maître forgeron de cet endroit et un mentor pour moi !
 
 1 GM found.
 1 MJ trouvé.
@@ -483,40 +483,40 @@ et %d secondes
 1. ##BN'utilise pas de robot de triche##b, ce qui signifie que tu n'es pas autorisé à automatiser des actions alors que tu n'es pas physiquement devant l'ordinateur.
 
 1: The type of item yoiis want to dye.
-
+1 : Le type d'objet que tu veux teindre.
 
 2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s).
-
+2. ##BN'utilise pas de langage offensant ou malpoli##b dans les conversations ou dans le noms de tes personnages.
 
 2: What material it is made from.
-2: De quel matériel il est fait.
+2 : De quel matériau il est fait.
 
 3. ##BDo not spam/flood other players.##b This includes chat spam and spam by trade requests.
-
+3. ##BNe spam pas et n'inonde pas les autres joueurs de messages.##b Ceci concerne les messages de conversation mais aussi le spam de demandes d'échange.
 
 3: Which colorants can dye it.
-3: Quels colorants peuvent le teindre.
+3 : Quels colorants peuvent le teindre.
 
 4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language.
-
+4. ##BDans les lieux publics, parle seulement anglais.##b Tu peux parler dans la langue que tu veux dans les messages privés ou lorsque tout le monde autour parle cette même langue.
 
 4: How many cards your item can contain.
-4: Combien de cartes ton objet peut contenir.
+4 : Le nombre de cartes que ton objet peut contenir.
 
 5 @@s.
-
+5 @@.
 
 5 boxes... Alright, @@ are my speciality!
-5 boîtes... D'accord, les @@ sont ma spécialité!
+5 boîtes... D'accord, les @@ sont ma spécialité !
 
 5. ##BDo not beg others##b for money, items or favours of any kind. If you want to ask for something, do it politely and only once. Try not to annoy other players.
-
+5. ##BNe mendie pas aux autres##b pour de l'argent, des objets ou des faveurs de toutes sortes. Si tu veux demander quelque chose, fais-le poliment et une fois seulement. Essaye de ne pas importuner les autres joueurs.
 
 6. ##BFollow the [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Evol Social Convention).
-
+6. ##BSuis la [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Convention Sociale d'Evol).
 
 7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.
-
+7. ##BNe multibox pas.##b Tu n'as pas le droit d'engager le combat lorsque tu contrôles plus d'un personnage en même temps.
 
 @@
 @@
@@ -525,31 +525,31 @@ et %d secondes
 @@ @@ @@
 
 @@ and @@ just married!
-@@ et @@ sont maintenant mariés!
+@@ et @@ sont maintenant mariés !
 
 @@ divorced!
-@@ s'est divorcé!
+@@ a divorcé !
 
 @@ is helping me.
-@@ m'aide.
+@@ m'aide en ce moment.
 
 @@ registered for marriage and accepted partner @@!
-
+@@ s'est enregistré pour le marriage et a accepté le partenaire @@ !
 
 @@ registered for marriage. Waiting for partner...
-
+@@ s'est enregistrer pour le marriage. En attente du partenaire...
 
 @@? Welcome my dear!#0
-@@ ? Bienvenue, ma mignonne !
+@@ ? Bienvenue ma chère !
 
 @@? Welcome my dear!#1
-@@ ? Bienvenue, mon mignon !
+@@ ? Bienvenue mon cher !
 
 @request sent.
-
+@demande envoyée.
 
 A GM has discharged you from jail.
-
+Un MJ t'a libéré de prison.
 
 A cookie!
 Un cookie !
@@ -558,28 +558,28 @@ A great city, now the capital of these islands, called Esperia, rose on the sing
 Une superbe cité, maintenant capitale de ces îles, appelée Esperia, s'éleva sur une seule île, Aurora, où tout le monde vivait.
 
 A headache hits you and you lose your concentration.
-
+Un mal de tête te frappe et tu perds ta concentration.
 
 A rabbit!
-Un lapin!
+Un lapin !
 
 A small lie is really just a fib, and I could really use some cash...
-
+Un petit mensonge n'est rien d'autre qu'un bobard, et j'ai vraiment besoin d'un peu d'argent...
 
 A stat card works on different pieces of equipment.
-
+Une carte de statistique fonctionne sur différentes pièces d'équipement.
 
 A sunny and hot day,
 Un jour chaud et ensoleillé,
 
 A young apprentice called Chelios might be waiting outside, speak to him, and return the present to me.
-
+Un jeune apprenti nommé Chelios devrait normalement attendre dehors, parle-lui et rapporte-moi le paquet.
 
 A-hoy matey!
-
+Eh-oh matelot !
 
 ATK: %d - MATK: %d~%d
-
+ATT : %d - MATT : %d~%d
 
 Aaaaaahhhhhh!
 Aaaaaahhhhhh !
@@ -588,16 +588,16 @@ Aboard stand sailors trying to communicate with you.
 À bord se trouvent des marins essayant de communiquer avec toi.
 
 About the Legion of Aemil in Esperia, I'm not sure about them, frankly.
-
+Concernant la Légion d'Aemil à Esperia, je ne suis pas certain d'eux, honnêtement.
 
 Acolyte
-Acolyte 
+Acolyte
 
 Actually Gugli asked me if I would help you bring him some of your boxes.#0
-
+À vrai dire, Gugli m'a demandée si je pouvais t'aider à lui apporter quelques-unes de tes boîtes.
 
 Actually Gugli asked me if I would help you bring him some of your boxes.#1
-
+À vrai dire, Gugli m'a demandé si je pouvais t'aider à lui apporter quelques-unes de tes boîtes.
 
 Actually, I came here to work on my task.#0
 En fait, je suis venue ici pour travailler sur ma tâche.
@@ -609,67 +609,67 @@ Actually, I have an in-depth knowledge of this type of life.
 En fait, j'ai une connaissance approfondie de ce type de vie.
 
 Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#0
-
+En fait, je suis venue t'apporter un coup de main avec ces boîtes. Puis-je en apporter une à Gugli ?
 
 Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#1
-
+En fait, je suis venu t'apporter un coup de main avec ces boîtes. Puis-je en apporter une à Gugli ?
 
 Aemil is a magnificent world unknown to us all.
 Aémil est un monde magnifique inconnu de tous.
 
 Aesop
-
+Aesop
 
 After all this time, it was still there!
-
+Après tout ce temps, il était encore là !
 
 After choosing your weapon, you also need to know how to use it.
 Après avoir choisi ton arme, tu dois aussi savoir comment l'utiliser.
 
 After this small overview of Artis, what do you think of our city?
-Après ce bref aperçu d'Artis, que penses-tu de notre ville?
+Après ce bref aperçu d'Artis, que penses-tu de notre ville ?
 
 Agi: %d (%d~%d)
-
+Agi : %d (%d~%d)
 
 Agility greatly increases your attack speed and the chances of you dodging enemy hits.
-L'Agilité augmente grandement ta vitesse d'attaque et tes chances d'esquiver les coups de tes adversaires.
+L'agilité augmente grandement ta vitesse d'attaque et tes chances d'esquiver les coups de tes adversaires.
 
-Ah, I didn't have much sleep; it's possible.
+Ah, I didn't have much sleep, it's possible.
 
 
 Ah, seagulls. We are arriving.
-
+Ah, les mouettes. Nous arrivons.
 
 Ah, the locals like keeping them as pets.
-
+Ah, les locaux les gardent comme des animaux de compagnie.
 
 Ah... Gugli... He's too young to understand our conversation.
 Ah... Gugli... Il est trop jeune pour comprendre notre conversation.
 
 Ah... Sorry, I forgot, again.
-Ah... Désolé, j'ai oublié, encore.
+Ah... Désolé, j'ai oublié, encore une fois.
 
 Ahoi.
-
+Ahoi.
 
 Ahoy, @@!
-
+Ahoy, @@ !
 
 Alchemical studies are prohibited in every city of the Archipelagos, do not dare to practice it in a public zone!
-
+Les études alchimiques sont interdites dans toutes les villes de l'Archipel, n'essaye même pas d'en faire dans une zone publique !
 
 Alchemist
 Alchimiste
 
 Alchemist's Laboratory
-
+Laboratoire de l'Alchimiste
 
 Ale and Tibbo should bring 2 boxes of @@s, Astapolos and Gulukan 2 of @@s and Jalad and Q'Muller were charged of the boxes of @@s.
 Ale et Tibbo doivent apporter 2 boîtes de @@s, Astapolos et Gulukan 2 de @@s et Jalad et Q'Muller ont été chargés des boîtes de @@s.
 
 Ale#000-1
-
+Ale#000-1
 
 Ale.
 Ale.
@@ -678,22 +678,22 @@ Alige
 Alige
 
 Alige#000-2-4
-
+Alige#000-2-4
 
 Alige#Artis
-
+Alige#Artis
 
 AligeTrigger
-AligeGachette
+AligeTrigger
 
 AligeTrigger#Artis
-
+AligeTrigger#Artis
 
 All characters recalled!
-
+Tous les personnages rappelés !
 
 All dropped items have been cleaned up.
-
+Tous les objets déposés ont été nettoyés.
 
 All items have been repaired.
 Tous les objets ont été réparés.
@@ -702,34 +702,34 @@ All items stored.
 Tous les objets ont été entreposés. 
 
 All monsters killed!
-Tous les monstres ont été tués! 
+Tous les monstres ont été tués !
 
 All monsters summoned!
 Tous les monstres ont été invoqués! 
 
 All of a sudden, you hear voices from above.
-
+Soudain, tu entends des voix venant d'au dessus.
 
 All of your items have been removed.
 Tous tes objets ont été supprimés.
 
 All online characters of the %s guild have been recalled to your position.
-
+Tous les personnages en ligne de la guilde %s ont été rappelés à ta position.
 
 All online characters of the %s party have been recalled to your position.
-
+Tous les personnages en ligne du groupe %s ont été rappelés à ta position.
 
 All players have been kicked!
 Tous les joueurs ont été éjectés. 
 
 All skills have been added to your skill tree.
-
+Toutes les compétences ont été ajoutées à ton arbre de compétences.
 
 All stats changed!
-
+Toutes les statistiques ont été changées !
 
 All you have to do is to select a bed in the upper level anytime after your reservation.
-
+Tout ce que tu dois faire c'est sélectionner un lit dans le niveau supérieur quand tu veux après ta réservation.
 
 All your... Fresh ingredients are ready to be cooked.
 Tous tes... Ingrédients frais sont prêts à être cuisinés.
@@ -741,7 +741,7 @@ Alliances cannot be made during Guild Wars!
 
 
 AllowKS | 
-
+AutoriseKS |
 
 Almost got it!
 
@@ -1194,7 +1194,7 @@ Bare Hands
 Mains Nues
 
 Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
-
+Niveau de Base : %d (%.3f%%) | Niveau de Métier : %d (%.3f%%)
 
 Base level can't go any higher.
 
@@ -1263,7 +1263,7 @@ Blacksmith
 Forgeron
 
 Blub
-
+Blub
 
 Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --
 
@@ -1455,7 +1455,7 @@ Can't create chat rooms in this area.
 
 
 Can't show boss mobs!
-
+Ne peut pas afficher les monstres boss !
 
 Can't talk right now, i'm on patrol duty.
 
@@ -1776,7 +1776,7 @@ Croconut
 Noix de Croco
 
 CroconutMob
-
+MonstreCroconut
 
 Crocotree
 
@@ -2256,7 +2256,7 @@ Expanded Super Novice
 
 
 Experience rates: Base %.2fx / Job %.2fx
-
+Taux d'expérience : Base %.2fx / Métier %.2fx
 
 FINE, BYE!
 D'ACCORD, SALUT !
@@ -2358,7 +2358,7 @@ Follow up-stream, and cross the river twice with the two bridges on the north.
 
 
 Following these lines are some other writings on this paper.
-Suivant ces lignes sont d'autres écritures sur ce papier.
+À la suite de ces lignes se trouvent d'autres écritures sur ce papier.
 
 Font changed.
 Police changée
@@ -2862,7 +2862,7 @@ Here is another one.
 
 
 Here is your reward.
-
+Voici ta récompense.
 
 Here it is, a fashionable @@.
 
@@ -3267,7 +3267,7 @@ I can't remember anything.#1
 Je ne me souviens de rien.
 
 I can't stay here and talk all day. I have a job to do.
-
+Je ne peux pas rester ici à te parler toute la journée. J'ai un travail à faire.
 
 I can't wait all day!
 
@@ -3356,7 +3356,7 @@ Je donne des choses à faire à chaque marin, durant toute la journée. Ça devr
 I give you this key, it opens all the doors on this ship.
 
 
-I grown up and lived a good while in the capital city, Esperia.
+I grew up and lived a good while in Esperia, the capital city.
 
 
 I guess so. What's in it for me?
@@ -4335,16 +4335,16 @@ Jenna#001-2-28
 
 
 Job level can't go any higher.
-
+Ton niveau de métier ne peut pas aller plus haut.
 
 Job level can't go any lower.
-
+Ton niveau de métier ne peut pas aller plus pas.
 
 Job level lowered.
-Niveau de Métier réduit.
+Niveau de métier réduit.
 
 Job level raised.
-Niveau de Métier augmenté.
+Niveau de métier augmenté.
 
 Judgement has passed.
 
@@ -4524,7 +4524,7 @@ Like, a defensive mythril card can be used on any mythril equipment, and it will
 
 
 Little Blub
-
+Petit Blub
 
 Living inside a ship is great, but we sometimes need some fresh air.
 Vivre à l'intérieur d'un navire, c'est génial, mais nous avons parfois besoin d'air frais.
@@ -5046,7 +5046,7 @@ NoIcewall |
 
 
 NoJobEXP | 
-
+PasEXPMétier |
 
 NoMVPLoot | 
 
@@ -5523,7 +5523,7 @@ On the next days we will finally arrives at Artis
 
 
 Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
-Une fois le monstre tué, cliques sur les objets déposés pour les ajouter dans ton inventaire. Tu peux aussi utiliser la touche 'Z' pour les ramasser.
+Une fois le monstre tué, clique sur les objets déposés pour les ajouter dans ton inventaire. Tu peux aussi utiliser la touche 'Z' pour les ramasser.
 
 One Castle
 Un Château
@@ -5754,7 +5754,7 @@ Please enter a level adjustment (usage: @homlevel <number of levels>).
 
 
 Please enter a level adjustment (usage: @joblvup/@jlevel/@joblvlup <number of levels>).
-
+Entre s'il-te-plaît un ajustement de niveau (utilité : @joblvup/@jlevel/@joblvlup <nombre de niveaux>).
 
 Please enter a level adjustment (usage: @lvup/@blevel/@baselvlup <number of levels>).
 
@@ -6665,7 +6665,7 @@ Status point reset can't be undone. Do you really want this?
 Stay clear.
 
 
-Stay here, I'll hurry back as soon as I get some.
+Stay here, I will be back as soon as I have some.
 
 
 Stop disturbing me, I already re-read that part twice because of you!
@@ -7031,7 +7031,7 @@ The mapserver has spy command support disabled.
 The market is located at the southeast of Artis, it is known as Merchant Guild's exhibit.
 
 
-The miracle is this: the more we share the more we have.
+The miracle is this: the more we share, the more we have.
 
 
 The monster/egg name/ID doesn't exist.
@@ -7076,7 +7076,7 @@ The ship, La Johanne, has left the island, finally.
 The stowaway doesn't answer.
 
 
-The travel was fine for you? It was terrible for me; I was sea-sick.
+The travel was fine for you? It was terrible for me, I was sea-sick.
 
 
 The two cannot wed because one is either a baby or already married.
@@ -7284,7 +7284,7 @@ This is your first time asking for something, you won't pay this time, take it a
 
 
 This item cannot be dropped.
-
+Cet objet ne peut pas être déposé.
 
 This item cannot be stored.
 
@@ -7404,7 +7404,7 @@ Too risky, I might end up in jail. Do it yourself.
 
 
 Toppy Blub
-
+Toppy Blub
 
 Tortuga
 
@@ -7521,7 +7521,7 @@ Unknown Channel (usage: %s <#channel_name>)
 
 
 Unknown Job
-
+Métier Inconnu
 
 Unknown battle_config flag.
 
@@ -7821,7 +7821,7 @@ We usually don't stop in such splendid places, but the captain let us stay here 
 Nous nous arrêtons normalement pas dans de tels endroits si splendides, mais le capitaine nous laisse y rester pendant qu'il note la position de cette île sur sa carte !
 
 We will be yaying there in a few days, so we will drop you off there.
-On arrivera là-bas dans quelques jours donc on t'y déposera.
+On arrivera là-bas dans quelques jours donc on t'y lâchera.
 
 We will talk about it later.#0
 
@@ -8592,7 +8592,7 @@ You can attack a monster by clicking on it, or from your keyboard you can press 
 
 
 You can drag and drop an item to the NPC window or select an item through your inventory.
-
+Tu peux traîner et déposer un objet dans la fenêtre du NPJ ou sélectionner un objet directement dans ton inventaire.
 
 You can easily see if a monster is easy to kill or just impossible to defeat. Do not try against creatures that are way more powerful than you... You'd be risking your life for nothing.
 Tu peux facilement voir si un monstre est facile ou impossible à tuer. N'essaye pas de tuer les créatures plus puissants que toi... Tu risquerais ta vie pour un rien.
@@ -8619,7 +8619,7 @@ You can keep your current party as it, while leading or being part of a guild in
 
 
 You can not change to this job by command.
-
+Tu ne peux pas changer pour ce métier avec cette commande.
 
 You can now attack and kill players freely.
 
@@ -9003,7 +9003,7 @@ You notice a young boy sitting on one of the highest branches of the tree.
 
 
 You now also have access to the Legion building. Good job, you earned it.
-
+Tu as maintenant aussi accès au bâtiment de la Légion. Beau travail, tu l'as mérité.
 
 You open a book named @@.
 
@@ -9222,7 +9222,7 @@ You will respawn at this place if defeated in combat.
 
 
 You will see, citizens are polite and you can still ask for help in the Legion of Aemil. They can help find a job for you or maybe help you find out what happened to you out at sea!
-
+Tu verras, ici, les citoyens sont polis et tu peux toujours aller demander de l'aide dans la Légion d'Aemil. Ils peuvent t'aider à trouver un métier ou peut-être même t'aider à trouver ce qu'il t'est arrivé dans la mer !
 
 You wipe off enough of the sand to manage to read the message written on this crude piece of wood.
 
@@ -9462,7 +9462,7 @@ Your homunculus doesn't evolve.
 
 
 Your job has been changed.
-
+Ton métier a été changé.
 
 Your mind is set? You will loose the color dye during this process.
 
@@ -9639,7 +9639,7 @@ value '%d' for option '%s' is out of range (limit is 0-10)
 
 
 | Lv:%d/%d | Job: %s
-
+| Niv :%d/%d | Métier : %s
 
 | Party: '%s' 
 
