@@ -18,10 +18,10 @@
     function enora_quest {
         speech 5, l("How many? What kind? I can produce two dozen boxes per day.");
 
-        select (l("5 @@s.", getitemlink(PibberiesInfusion)));
+        select (l("5 @@s.", getitemlink(PiberriesInfusion)));
 
         speech 5,
-            l("5 boxes... Alright, @@ are my speciality!", getitemlink (PibberiesInfusion)),
+            l("5 boxes... Alright, @@ are my speciality!", getitemlink (PiberriesInfusion)),
             l("I can prepare them in an hour or so!");
 
         select (l("You missunderstood, it's 5 potions."));
