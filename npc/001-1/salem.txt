@@ -170,7 +170,7 @@ L_AboutPious:
 
     menuint rif (.@q == 0, l("Sounds like a good deal to me. I'll do it.")), 0,
             rif (.@q == 1, l("I'm on my way! I will bring it back to you.")), 1,
-            l("I don't really have time to go chasing pious, let me just buy one at the regular price (30000E)."), 2,
+            l("I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E)."), 2,
             l("I don't want to buy a piou right now."), 3;
 
     mes "";
