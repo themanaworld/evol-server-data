@@ -230,7 +230,7 @@
 
         speech 5,
             l("Oh yes, I have one last errand for you, Q'Pid in the market sells potions."),
-            l("It has been some days now since I asked her for a box of @@s, but she hasn't delivered anything yet.", getitemlink (PibberiesInfusion)),
+            l("It has been some days now since I asked her for a box of @@s, but she hasn't delivered anything yet.", getitemlink (PiberriesInfusion)),
             l("Please try to figure out what went wrong with this order and bring me these potions."),
             l("You will be able to find her in the market on the south-east of Artis.");
 
@@ -259,7 +259,7 @@
         inventoryplace TrainingGladius, 3;
         getitem TrainingGladius, 1;
         getitem2 ArtisTankTop, 1, 1, 0, 0, 5005, 0, 0, 0;
-        getitem PibberiesInfusion, 5;
+        getitem PiberriesInfusion, 5;
         setq ArtisQuests_Enora, 10;
         enora_reward (80, 175);
 
@@ -343,7 +343,7 @@
 
         if (askyesno() == ASK_YES)
         {
-            delitem PibberiesInfusion, 5;
+            delitem PiberriesInfusion, 5;
             enora_fourth_quest;
         }
 
@@ -372,7 +372,7 @@
         menuint
             rif(.@q == 0, l("She told me that you had some tasks for me.")), 0,
             rif(.@q == 4 || .@q == 6 || .@q == 9, l("I have your package.")), 1,
-            rif(.@q == 8 && countitem(PibberiesInfusion) >= 5, l("I have your package.")), 2,
+            rif(.@q == 8 && countitem(PiberriesInfusion) >= 5, l("I have your package.")), 2,
             rif(.@q >= 10, l("I cleaned up the hill.")), 3,
             rif(.@q >= 10, l("How many Fluffies did I kill on the hill?")), 4,
             rif(.@q >= 1, l("Who is Don?")), 5,
