@@ -339,7 +339,7 @@
 
     function enora_paid_potions {
         speech 5,
-            l("Are you sure that they are my potions?");
+            lg("Are you sure that these are my potions?");
 
         if (askyesno() == ASK_YES)
         {
