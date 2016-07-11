@@ -29,7 +29,7 @@
         l("Hey, check out my brand new fishing rod. I bought it just today."),
         l("I was so excited, I wanted to try it as soon as possible."),
         l("So in a hurry, I forgot to take enough bait for fishing."),
-        lg("Be a friend and bring me @@ @@.", .BaitCount, getitemlink(.BaitID));
+        lg("Be a friend and bring me @@ @@.", "Be a friend and bring me @@ @@.", .BaitCount, getitemlink(.BaitID));
 
     switch (select(l("I'll be back in no time."),
                    l("Sorry, doing other things at the moment.")))
