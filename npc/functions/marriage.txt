@@ -235,7 +235,7 @@ function	script	marriagedivorce	{
             l("Nothing")))
     {
         case 1:
-            speech l("Are you sure?");
+            speech lg("Are you sure?");
             if (askyesno() == ASK_YES)
             {
                 if (divorce())
