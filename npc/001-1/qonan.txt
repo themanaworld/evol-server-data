@@ -57,7 +57,7 @@
             shovel_addquest("001-1", .move__rand_x, .move__rand_y, "QOnanFoundItem");
             speech 3,
                 l("Alright, you will need this shovel."),
-                l("You should check on the highest part of the cliff, I was hidding there."),
+                l("You should check on the highest part of the cliff, I was hiding there."),
                 l("I hope to see you soon.");
             getitem IronShovel, 1;
             close;
