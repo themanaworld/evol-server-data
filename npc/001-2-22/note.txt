@@ -1,5 +1,5 @@
 // Evol scripts.
-// Authors:
+// Author:
 //    Vasily_Makarov
 // Description:
 //    
@@ -11,23 +11,23 @@
     mesq l("What do you want to do with it?");
 
     menu
-        l("Read it"), L_Content,
-        l("Leave it"), -;
+        l("Read it."), L_Content,
+        l("Leave it."), -;
     close;
 
 L_Content:
     mesn;
     mes "\"" + l("Dear sister,");
-    mes l("On the next days we will finally arrives at Artis");
+    mes l("During the next few days, we will finally reach Artis.");
     next;
 
-    mes l("I will send you this letter directly when I arrive");
-    mes l("Don't worry sister, I didn't forget you");
+    mes l("I will send you this letter as soon as I arrive.");
+    mes l("Don't worry sister, I didn't forget you.");
     next;
 
-    mes l("I hope to come back home when the days are better");
-    mes l("And when we have enough money to support ourselves and not depend on anybody");
+    mes l("I would like to come back home when the days are better.");
+    mes l("And when we have enough money for ourselves without needing anybody else.");
 
-    mes l("Sincerely yours, Dan") + "\"";
+    mes l("Sincerely yours, Dan.") + "\"";
     close;
 }
