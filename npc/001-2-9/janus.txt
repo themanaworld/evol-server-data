@@ -46,7 +46,7 @@
             l("Oh oh... I see, your party became so big that you want to create an even larger structure?"),
             l("Or do you want to keep your friendships and adventures in different groups?"),
             l("Anyway, the guild creation is perfect for both!"),
-            l("You can keep your current party as it, while leading or being part of a guild in order to talk and share different items with all of its members!"),
+            l("You can keep your current party as it is, while leading or being part of a guild in order to talk and share different items with all of its members!"),
             l("The @@ is a one time item, you can use it as many times as you want, but you can only have one!", getitemlink (GuildCertification)),
             l("The cost to create a guild is of @@ E, are you interested?", .@guild_price);
 
