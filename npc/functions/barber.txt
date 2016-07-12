@@ -87,7 +87,7 @@ function	script	BarberChangeColor	{
             rif(.@get_look !=  14, l("Navy blue")), 14,
             rif(.@get_look !=  15, l("Lagoon blue")), 15,
             rif(.@get_look !=  16, l("Twisted teal")), 16,
-            rif(.@get_look !=  17, l("String Green")), 17,
+            rif(.@get_look !=  17, l("Spring Green")), 17,
             rif(.@get_look !=  18, l("Forest Green")), 18,
             rif(.@get_look !=  19, l("Silver Grey")), 19,
             rif(.@get_look !=  20, l("Esperia Blue")), 20,
