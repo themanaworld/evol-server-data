@@ -165,7 +165,7 @@ OnInit:
 }
 
 001-1,175,76,0	script	Sign#001-1-s-warehouse	NPC_NO_SPRITE,{
-    npctalkonce l("Docks's Warehouse");
+    npctalkonce l("Docks Warehouse");
     close;
 
 OnInit:
