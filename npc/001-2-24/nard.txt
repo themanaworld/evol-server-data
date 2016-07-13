@@ -30,10 +30,16 @@
     mesq g(l("Good day miss."), l("Good day mister."));
     next;
     mesq l("What can I do for you?");
+    .@q = getq(ArtisQuests_Enora);
 
+    // Before the player sees Enora, the menu shows L_Lost on top
+    // If the player saw Enora, the menu shows L_Lost at the bottom
+    // Because he shouldn't be lost after having talked to her, so the priority in menu changes
     menu
-        l("I'm lost, where should I go?"), L_Lost,
-        l("How long will you stay here?"), -;
+        rif(.@q == 0, l("I'm lost, where should I go?")), L_Lost,
+        rif(.@q > 0, l("Tell me, where are we right now?")), L_Info,
+        l("How long will you stay here?"), -,
+        rif(.@q > 0, l("I'm lost, where should I go?")), L_Lost;
 
     speech 5,
         l("We just returned from a long journey and Artis is a good city to rest and to conclude our exchange."),
@@ -66,8 +72,12 @@
             closedialog;
             close;
     }
+L_Info:
+    closedialog;
+    npctalk3 l("Don't you recognize the great city of Artis?");
+    close;
 
-L_Lost :
+L_Lost:
     mes "";
     mesn;
     mesq l("Julia made an appeal to the Legion of Aemil to get in touch with you, exit the ship and you should see your escort!");
