@@ -23,8 +23,8 @@
 
     function enora_don {
         speech 5,
-            l("Don is renowned throughout the archipelagos for his forgery skills here on Artis."),
-            l("It's a great honor for us, at the Legion, to hold the security of this commerce!"),
+            l("Don is renowned throughout the entire archipelagos for his blacksmith skills, and he is here, in Artis."),
+            l("It's a great honor for us, at the Legion, to hold the security of his business!"),
             l("If you search for him you should look to the west of this city, it's the first house just after the left bridge, you can't miss it!"),
             l("Chelios, his apprentice, practices outside, mostly.");
 
@@ -90,7 +90,7 @@
             l("Try doing that now!");
 
         switch (select (l("Okay, but there won't be any explosions."),
-                        l("Don't get too excited about it...")))
+                        lg("Don't get too excited about it...")))
         {
             case 1:
                 narrator 5,
@@ -184,8 +184,8 @@
             case 2:
                 speech 5,
                     l("He may not have all of his wits but keep in mind one thing:"),
-                    l("Don is renowned throughout the archipelagos for his forgery here on Artis."),
-                    l("It's a great honor for us, at the Legion, to hold the security of this commerce!");
+                    l("Don is renowned throughout the entire archipelagos for his blacksmith skills, and he is here, in Artis."),
+                    l("It's a great honor for us, at the Legion, to hold the security of his business!");
 
                 break;
         }
