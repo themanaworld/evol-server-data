@@ -231,6 +231,7 @@ L_GoBackArtis:
         l("Enough of this island?"),
         l("Where would you like to go now?");
     switch (select(l("Let's go to Artis."),
+                   l("Tell me, where are we right now?"),
                    l("I would like to stay here a bit more.")))
     {
         case 1:
@@ -249,7 +250,13 @@ L_GoBackArtis:
 
             closedialog;
             close;
+
         case 2:
+            closedialog;
+            npctalk3 l("This is Drasil Island, I named it after an ancient mythical tree.");
+            close;
+
+        case 3:
             speech 5,
                 l("Ok I stay here with my paperwork if you need my help.");
 
