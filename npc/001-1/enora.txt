@@ -23,8 +23,8 @@
 
     function enora_don {
         speech 5,
-            l("Don is renowned throughout the archipelagos for his forgery skills here on Artis."),
-            l("It's a great honor for us, at the Legion, to hold the security of this commerce!"),
+            l("Don is renowned throughout the entire archipelagos for his blacksmith skills, and he is here, in Artis."),
+            l("It's a great honor for us, at the Legion, to hold the security of his business!"),
             l("If you search for him you should look to the west of this city, it's the first house just after the left bridge, you can't miss it!"),
             l("Chelios, his apprentice, practices outside, mostly.");
 
@@ -84,18 +84,18 @@
     function enora_memories {
         speech 5,
             l("It's so exciting to meet somebody with amnesia!"),
-            l("Do you, like, remember nothing at all? Or do you have SOME memories of your past?"),
+            l("Can't you remember anything at all? Or do you have some memories of your past?"),
             l("What happens when you try to think about it?"),
             l("Does your mind go all fuzzy or does it feel like your head is going to explode??"),
             l("Try doing that now!");
 
         switch (select (l("Okay, but there won't be any explosions."),
-                        l("Don't get too excited about it...")))
+                        lg("Don't get too excited about it...")))
         {
             case 1:
                 narrator 5,
                     l("You concentrate and try to summon old memories from within your mind."),
-                    l("Everything feels numb and looks foggy to you, but you can recall the feeling of the cold hard wood of your raft on a stormy night"),
+                    l("You feel numb and everything around you looks foggy, but you can recall the feeling of the cold hard wood of your raft on a stormy night."),
                     l("A headache hits you and you lose your concentration.");
 
                 speech 4,
@@ -184,8 +184,8 @@
             case 2:
                 speech 5,
                     l("He may not have all of his wits but keep in mind one thing:"),
-                    l("Don is renowned throughout the archipelagos for his forgery here on Artis."),
-                    l("It's a great honor for us, at the Legion, to hold the security of this commerce!");
+                    l("Don is renowned throughout the entire archipelagos for his blacksmith skills, and he is here, in Artis."),
+                    l("It's a great honor for us, at the Legion, to hold the security of his business!");
 
                 break;
         }

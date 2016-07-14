@@ -174,13 +174,13 @@ L_Done:
 
 L_ChefQuestStart:
     mesn;
-    mesq l("Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.");
+    mesq lg("Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.");
     next;
 
 L_ChefQuestRedir:
     mesq l("Unfortunately, we still need help from you. This time it will be a delicate task, here onboard.");
     next;
-    mesq l("Elmo brought reports to me about some frictions between my old and new lieutenants. You probably already met Julia and Gado the Chef.");
+    mesq l("Elmo brought reports to me about some frictions between my old and new lieutenants. You probably already met Julia and Chef Gado.");
     next;
     mesq l("They are each valued individuals and I need them both. In the past, I probably made my share of mistakes. I regret good management is so difficult. I was wondering if you could investigate and... Sort out this situation.");
     next;

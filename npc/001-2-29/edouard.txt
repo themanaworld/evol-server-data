@@ -58,11 +58,9 @@
                 break;
             case 4:
                 speech 5,
-                    l("Feel free to visit me another time");
+                    l("Feel free to come visit me another time.");
 
-                closedialog;
-                npctalk3 l("Bye bye!");
-                close;
+                goodbye;
         }
     } while (1);
 
