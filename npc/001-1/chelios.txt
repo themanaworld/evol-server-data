@@ -56,7 +56,8 @@
     function quest_completed {
         speech 5,
             l("Oh... Awesome!"),
-            l("You were gone; I thought you let me down. Some black iron was given to me by Don... after I asked nearly ten times."),
+            l("You were gone so I thought you let me down."),
+            l("Don gave me some black iron... after I asked him nearly ten times."),
             l("But thank you anyway! I can refund him now!"),
             l("Take the sword, and say hi to Enora for me!");
 
