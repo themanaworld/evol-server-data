@@ -36,7 +36,7 @@
             l("The Legion of Aemil are a group of mercenaries who vowed to protect and serve their neighbors."),
             l("We hold various training sessions, and also have a task board with a heap of things to do for the city and its surroundings."),
             l("It's a good place to earn money, it can also help you to travel throughout the archipelagos!"),
-            l("Each big city hosts a Legion chapter, Artis' chapter building is located in the North-West.");
+            l("Each big city hosts a Legion chapter, Artis' chapter building is located in the north-west.");
 
         return;
     }
@@ -75,7 +75,7 @@
 
     function enora_hill {
         speech 5,
-            l("Go north of here to the dock warehouse, cross the bridge to the west side of the river, continue North until you come to a second bridge, cross the one to the East side of the river."),
+            l("Go north from here to the dock warehouse, cross the bridge to the west side of the river, continue north until you get to a second bridge, cross it to the east side of the river."),
             l("You should arrive at a park with a hill nearby.");
 
         return;

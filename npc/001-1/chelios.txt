@@ -36,7 +36,7 @@
 
         speech 5,
             l("Thank you very much!"),
-            l("Talk with Lloyd the banker in the Merchant Guild, it's a big building at the Northern part of Artis, atop the little hill.");
+            l("Talk with Lloyd the banker in the Merchant Guild, it's a big building at the northern part of Artis, atop the little hill.");
 
         setq ArtisQuests_Enora, 2;
 
@@ -45,7 +45,7 @@
 
     function more_info {
         speech 5,
-            l("It's the big building at Northern Artis, at the top of a small hill."),
+            l("It's the big building at northern Artis, at the top of a small hill."),
             l("Take the east road that goes to the north and follow it until you are on top of the cliff."),
             l("That part of the town is called the gilded hill, and where the Merchant Guild has its headquarters."), //rich hill
             l("Lloyd still owes me, but beware of those money-grubbers, or they will sell your own teeth to you!");
