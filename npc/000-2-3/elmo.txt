@@ -21,7 +21,7 @@
         sailortalk;
     }
 
-    if (getq(ShipQuests_ArpanMoney) == 1)
+    if (getq(ShipQuests_ArpanMoney) == 2)
     {
         got_money;
     }
@@ -45,6 +45,7 @@
                 case 2:
                     speech 5,
                         l("Hehe, sometimes he gets his head in the clouds, You should go ask him about that.");
+                    setq ShipQuests_ArpanMoney, 1; 
                     break;
             }
 

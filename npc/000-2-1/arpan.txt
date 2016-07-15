@@ -149,7 +149,8 @@ L_Menu:
         lg("Could you tell me where I am?"), L_Where,
         lg("Where can I find Julia?"), L_Julia,
         l("Who are you?"), L_Who,
-        rif(getq(ShipQuests_ArpanMoney) == 0, l("Where are my old clothes?")), L_WhereOldClothes,
+        rif(getq(ShipQuests_ArpanMoney) == 1, lg("Do you know what happened to the gold I had when you guys saved me?")), L_WhereMoney,
+        rif(getq(ShipQuests_ArpanMoney) < 2, l("Where are my old clothes?")), L_WhereOldClothes,
         rif(!.@equipped, lg("What should I do after taking these clothes?")), L_WhatCloth,
         rif(!.@equipped, l("Thank you, I'll take them and put them on.")), -,
         l("Nothing, sorry."), -;
@@ -197,7 +198,20 @@ L_WhereOldClothes:
     mes lg("Oh, now that I remember, we also found some money in your pockets, here it is!");
     next;
 
-    setq ShipQuests_ArpanMoney, 1;
+    setq ShipQuests_ArpanMoney, 2;
+    .@q = getq(ShipQuests_Arpan);
+    Zeny = Zeny + 10;
+    message strcharinfo(0), l("You receive @@ E!", 10);
+
+    goto L_BeforeMenu;
+
+L_WhereMoney:
+    mes "";
+    mesn;
+    mesq lg("Oh right, I totally forgot about that, here you go.");
+    next;
+
+    setq ShipQuests_ArpanMoney, 2;
     .@q = getq(ShipQuests_Arpan);
     Zeny = Zeny + 10;
     message strcharinfo(0), l("You receive @@ E!", 10);
