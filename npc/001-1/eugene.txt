@@ -32,7 +32,7 @@
         lg("Be a friend and bring me @@ @@.", "Be a friend and bring me @@ @@.", .BaitCount, getitemlink(.BaitID));
 
     switch (select(l("I'll be back in no time."),
-                   l("Sorry, doing other things at the moment.")))
+                   l("Sorry, I'm doing other things at the moment.")))
     {
         case 1:
             setq ArtisQuests_Fishman, 1;
@@ -49,7 +49,7 @@ L_CheckItems:
     if (countitem(.BaitID) < .BaitCount)
     {
         speech
-            l("Sorry, but you don't have what I need for bait."),
+            l("Sorry, but you don't have what I need."),
             l("I need @@ @@.", .BaitCount, getitemlink(.BaitID));
         close;
     }
@@ -60,7 +60,7 @@ L_CheckItems:
         l("It's not as good as my new one, but still useful."),
         l("Just look out at that water! There's plenty more fish there."),
         l("With my old fishing rod you can catch something every day."),
-        l("You might even get lucky, and get a @@.", getitemlink(GrassCarp)),
+        lg("You might even get lucky, and get a @@.", getitemlink(GrassCarp)),
         l("Have a good time fishing!");
 
     delitem .BaitID, .BaitCount;

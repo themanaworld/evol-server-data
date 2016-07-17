@@ -172,8 +172,8 @@ function	script	domarriage	{
     .@partner$ = getarg(0);
     if (marriage(.@partner$))
     {
-        speech l("You was married to @@!", .@partner$);
-        npctalk l("@@ and @@ just married!", .@name$, .@partner$);
+        speech l("You got married to @@!", .@partner$);
+        npctalk l("@@ and @@ just got married!", .@name$, .@partner$);
     }
     else
     {
@@ -204,19 +204,19 @@ function	script	marriagemarry	{
             }
             else
             {
-                speech l("You already registered. Wait for your partner.");
+                speech l("You already registered. Waiting for your partner...");
             }
         }
         else
         {
-            speech l("Sorry I busy with other registrations"),
-                l("Come after some time.");
+            speech l("Sorry, I'm busy with other registrations."),
+                l("Come after a little while.");
         }
         close;
     }
 
-    speech l("What a can do for you?");
-    switch (select(l("I want register for marriage"),
+    speech l("What can I do for you?");
+    switch (select(l("I want to register for marriage."),
             l("Nothing")))
     {
         case 1:
@@ -230,8 +230,8 @@ function	script	marriagemarry	{
 
 // divorce main code
 function	script	marriagedivorce	{
-    speech l("What a can do for you?");
-    switch (select(l("I want divorce"),
+    speech l("What can I do for you?");
+    switch (select(l("I want to divorce."),
             l("Nothing")))
     {
         case 1:
@@ -240,7 +240,7 @@ function	script	marriagedivorce	{
             {
                 if (divorce())
                 {
-                    speech l("Now you divorced!"),
+                    speech l("You are now divorced!"),
                         l("Good look.");
                     npctalk l("@@ divorced!", strcharinfo(0));
                 }

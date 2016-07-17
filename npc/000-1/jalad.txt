@@ -101,7 +101,7 @@ L_Ale:
 L_Plushroom:
     mes "";
     mesn;
-    mesq l("'That', as you call it, is a @@. There're plenty on this island!", getitemlink(Plushroom));
+    mesq l("'That', as you call it, is a @@. There are plenty on this island!", getitemlink(Plushroom));
     next;
     mesq l("It's a kind of mushroom. We call it like that because of it's taste, just like a marshmallow. It also has this name because of it's appearance. It looks like a plush!");
     next;

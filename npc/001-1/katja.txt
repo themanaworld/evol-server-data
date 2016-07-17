@@ -21,7 +21,7 @@
 
     function QuestReminder {
         setcam 5920, 960;
-        mesq l("Remember, you have to find my brother on the hill east of here");
+        mesq l("Remember, you have to find my brother on the hill east of here.");
         next;
         mesq l("He is probably hiding up one of the trees. Go close to each tree and look up, otherwise you won't notice him.");
         next;
@@ -51,7 +51,7 @@
         case 3:
             mesq l("Did you find my brother?");
             next;
-            select(l("Yes, and he promised to be home soon"));
+            select(l("Yes, and he promised to be home soon."));
             mes "";
             mesn;
             mesq l("Oh thank you so much!");

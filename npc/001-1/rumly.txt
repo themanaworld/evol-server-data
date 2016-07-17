@@ -42,8 +42,8 @@ L_Menu:
             goto L_Menu;
         case 1:
             speech 5,
-                l("Why are you asking? And who are you too? I've never seen you around before..."),
-                l("Wait, are you one of those from the Legion of Aemil? I didn't do anything wrong I promise!"),
+                lg("Why are you asking? And who are you too? I've never seen you around before..."),
+                lg("Wait, are you one of those from the Legion of Aemil? I didn't do anything wrong, I promise!"),
                 l("I... I just like to eat the purple and delightful... And natural, and...");
 
             switch (select(l("Chill out I won't say anything."),
@@ -64,10 +64,10 @@ L_Menu:
                 l("Although the more powerful you are, the more plushrooms you will need.");
 
             menuint
-                lg("Sounds good!"), 0,
+                l("Sounds good!"), 0,
                 rif(countitem(Plushroom) >= .@plush_count, lg("I think I have enough plushrooms on me.")), 1,
-                lg("We will talk about it later."), 2,
-                lg("My stats are too good, I won't need it."), 3;
+                l("We will talk about it later."), 2,
+                l("My stats are too good, I won't need it."), 3;
 
             switch (@menuret)
             {

@@ -93,7 +93,7 @@ L_WhereIam:
 L_What:
     mes "";
     mesn;
-    mesq l("We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.");
+    mesq lg("We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.");
     next;
     mesq lg("You were in bad shape, you should be happy we found you before the sea killed you.");
     next;

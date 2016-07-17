@@ -36,7 +36,7 @@
 
         speech 5,
             l("Thank you very much!"),
-            l("Talk with Lloyd the banker in the Merchant Guild, it's a big building at the northern part of Artis, atop the little hill.");
+            l("Talk with Lloyd the Banker in the Merchant Guild, it's a big building at the northern part of Artis, at the top of the small hill.");
 
         setq ArtisQuests_Enora, 2;
 
@@ -47,7 +47,7 @@
         speech 5,
             l("It's the big building at northern Artis, at the top of a small hill."),
             l("Take the east road that goes to the north and follow it until you are on top of the cliff."),
-            l("That part of the town is called the gilded hill, and where the Merchant Guild has its headquarters."), //rich hill
+            l("That part of the town is called the gilded hill, it's also where the Merchant Guild has its headquarters."), //rich hill
             l("Lloyd still owes me, but beware of those money-grubbers, or they will sell your own teeth to you!");
 
         return;
@@ -69,7 +69,8 @@
     function blacksmith_house{
         speech 5,
             l("Behind me? It's the Blacksmith house, the most renowned throughout Andorra."),
-            l("There are two shops inside, they are independent from the Merchant Guild of Artis; now that I think about it, they are the only shops that are independent in Artis..."),
+            l("There are two shops inside, they are independent from the Merchant Guild of Artis."),
+            l("Now that I think about it, they are the only shops that are independent in Artis..."),
             l("...this might be because of Don, he is the master blacksmith of this place and a model to me!");
 
         return;

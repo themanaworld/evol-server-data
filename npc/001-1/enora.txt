@@ -52,7 +52,7 @@
 
     function enora_market {
         speech 5,
-            l("The market is located at the southeast of Artis, it is known as Merchant Guild's exhibit."),
+            l("The market is located at the south-east of Artis, it is known as Merchant Guild's exhibit."),
             l("You need to be a member of the Merchant Guild to have a chance there."),
             l("And I bet you don't know who is in charge of monitoring the security of this place?");
 
@@ -134,7 +134,7 @@
     function enora_first_quest {
         speech 5,
             l("You probably don't have much business in this city as you don't remember who you are."),
-            l("So I was going to ask if maybe you would be interested in giving me a hand with a few errands.");
+            lg("So I was going to ask if maybe you would be interested in giving me a hand with a few errands.");
 
         switch (select (l("I guess so. What's in it for me?"),
                         l("Of course! What do you need?")))
