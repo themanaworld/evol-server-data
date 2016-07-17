@@ -1,65 +1,72 @@
 // Evol scripts.
 // Authors:
+//    omatt
 //    Reid
 //    Travolta
 // Description:
 //    Function for supporting barber NPC.
 
+function	script	BarberSayStyle	{
+
+    .@get_color = getlook (LOOK_HAIR_COLOR);
+    .@get_look = getlook (LOOK_HAIR);
+    .@style_name$ = $@hairstyle$[.@get_look];
+    .@color_name$ = $@haircolor$[.@get_color];
+
+    switch (getarg(0))
+    {
+        case 1:
+            message strcharinfo(0), l("@@", .@style_name$);
+            break;
+        case 2:
+            message strcharinfo(0), l("@@", .@color_name$);
+            break;
+        case 3:
+            speech 4,
+                l("Your hairstyle is @@ and its color is @@.", .@style_name$, .@color_name$);
+            break;
+    }
+    return;
+}
 function	script	BarberChangeStyle	{
     do
     {
+        .@hairsizearray = getarraysize($@hairstyle$);
         .@get_look = getlook (LOOK_HAIR);
 
-        menuint
-            l("As you want!"), 0,
-            rif(.@get_look !=  1,  l("Bald")), 1,
-            rif(.@get_look !=  2,  l("Bowl cut")), 2,
-            rif(.@get_look !=  3,  l("Combed back")), 3,
-            rif(.@get_look !=  4,  l("Emo")), 4,
-            rif(.@get_look !=  5,  l("Mohawk")), 5,
-            rif(.@get_look !=  6,  l("Pompadour")), 6,
-            rif(.@get_look !=  7,  l("Center parting")), 7,
-            rif(.@get_look !=  8,  l("Long and slick")), 8,
-            rif(.@get_look !=  9,  l("Short and curly")), 9,
-            rif(.@get_look !=  10, l("Pigtails")), 10,
-            rif(.@get_look !=  11, l("Long and curly")), 11,
-            rif(.@get_look !=  12, l("Parted")), 12,
-            rif(.@get_look !=  13, l("Perky ponytail")), 13,
-            rif(.@get_look !=  14, l("Wave")), 14,
-            rif(.@get_look !=  15, l("Mane")), 15,
-            rif(.@get_look !=  16, l("Bun")), 16,
-            rif(.@get_look !=  17, l("Wavy")), 17,
-            rif(.@get_look !=  18, l("Bunches")), 18,
-            rif(.@get_look !=  19, l("Long ponytail")), 19,
-            rif(.@get_look !=  20, l("Infinitely long")), 20,
-            rif(.@get_look !=  21, l("Choppy")), 21,
-            rif(.@get_look !=  22, l("Wild")), 22,
-            rif(.@get_look !=  23, l("Punk")), 23,
-            rif(.@get_look !=  24, l("Imperial")), 24,
-            rif(.@get_look !=  25, l("Side strand")), 25,
-            rif(.@get_look !=  26, l("Messy")), 26,
-            rif(.@get_look !=  27, l("Flat ponytail")), 27,
-            rif(.@get_look !=  28, l("Tapered nape")), 28,
-            l("Hmm, I'm fine for now, thank you."), 29;
-
-        switch (@menuret)
+        // Here .@i starts from 1 because hairstyle 0 doesn't exist.
+        for (.@i = 1; .@i < .@hairsizearray; .@i++)
         {
-            case 0:
+            .@menustr$ = .@menustr$
+                        + rif(.@get_look !=  .@i, l("" + $@hairstyle$[.@i] + ""))
+                        + ":";
+        }
+
+        .@menustr$ = .@menustr$ + l("I'm fine for now, thank you.");
+    
+        .@idx = select(l("As you want!"),.@menustr$);
+                    
+        if (.@idx == .@i + 1) return; // last choice for quit dialog
+
+        switch (@menu)
+        {
+            case 1:
                 do
                 {
-                    .@rand_hair = rand(1,28);
+                    // here "- 1" because i don't use the 0 of array
+                    .@rand_hair = rand(1,(.@hairsizearray - 1));
                 } while (.@rand_hair == getlook (LOOK_HAIR));
                 setlook LOOK_HAIR, .@rand_hair;
                 setlook LOOK_HAIR_COLOR, getlook (LOOK_HAIR_COLOR);
-
+                BarberSayStyle 1;
                 break;
-            case 29:
-                return;
             default:
-                setlook LOOK_HAIR, @menuret;
+                // and here "- 1" because the first choice is take by the random.
+                setlook LOOK_HAIR, (@menu - 1);
                 setlook LOOK_HAIR_COLOR, getlook (LOOK_HAIR_COLOR);
                 break;
         }
+        .@menustr$ = "";
     } while (1);
 }
 
@@ -67,48 +74,36 @@ function	script	BarberChangeColor	{
     do
     {
         .@get_look = getlook (LOOK_HAIR_COLOR);
+        .@hairsizearray = getarraysize($@haircolor$);
 
-        menuint
-            l("Surprise me!"), 21,
-            rif(.@get_look !=  0, l("Off black")), 0,
-            rif(.@get_look !=  1, l("Ash brown")), 1,
-            rif(.@get_look !=  2, l("Dark brown")), 2,
-            rif(.@get_look !=  3, l("Dark copper")), 3,
-            rif(.@get_look !=  4, l("Auburn brown")), 4,
-            rif(.@get_look !=  5, l("Honey brown")), 5,
-            rif(.@get_look !=  6, l("Copper blonde")), 6,
-            rif(.@get_look !=  7, l("Golden blonde")), 7,
-            rif(.@get_look !=  8, l("Pure platinum")), 8,
-            rif(.@get_look !=  9, l("Cherry blossom")), 9,
-            rif(.@get_look !=  10, l("Pinky pink")), 10,
-            rif(.@get_look !=  11, l("Fire red")), 11,
-            rif(.@get_look !=  12, l("Light violet")), 12,
-            rif(.@get_look !=  13, l("Purple plum")), 13,
-            rif(.@get_look !=  14, l("Navy blue")), 14,
-            rif(.@get_look !=  15, l("Lagoon blue")), 15,
-            rif(.@get_look !=  16, l("Twisted teal")), 16,
-            rif(.@get_look !=  17, l("Spring green")), 17,
-            rif(.@get_look !=  18, l("Forest green")), 18,
-            rif(.@get_look !=  19, l("Silver grey")), 19,
-            rif(.@get_look !=  20, l("Esperia blue")), 20,
-            l("Hmm, I'm fine for now, thank you."), 22;
-
-        switch (@menuret)
+        for (.@i = 0; .@i < .@hairsizearray; .@i++)
         {
-            case 21:
+            .@menustr$ = .@menustr$
+                        + rif(.@get_look !=  .@i, l("" + $@haircolor$[.@i] + ""))
+                        + ":";
+        }
+
+        .@menustr$ = l("Surprise me!") + ":" + .@menustr$ + l("I'm fine for now, thank you.");
+    
+        .@idx = select(.@menustr$);
+                    
+        if (.@idx == .@i + 2) return;
+
+        switch (@menu)
+        {
+            case 1:
                 do
                 {
-                    .@rand_color = rand(0, 21);
+                    .@rand_color = rand(0, .@hairsizearray);
                 } while (.@rand_color == getlook (LOOK_HAIR_COLOR));
                 setlook LOOK_HAIR_COLOR, .@rand_color;
-
+                BarberSayStyle 2;
                 break;
-            case 22:
-                return;
             default:
-                setlook LOOK_HAIR_COLOR, @menuret;
+                setlook LOOK_HAIR_COLOR, (@menu - 2);
                 break;
         }
+        .@menustr$ = "";
     } while (1);
 
     return;
