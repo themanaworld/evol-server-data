@@ -13,7 +13,7 @@
 
     if (getq(ArtisQuests_MonaDad) == 1)
     {
-        narrator l("You hear some creeping and crawling sounds from downstairs.");
+        narrator l("You hear some creeping and crawling sounds from the murkiness below.");
     }
 
     close;
@@ -28,7 +28,7 @@ OnInit:
 
     if (getq(ArtisQuests_MonaDad) == 1)
     {
-        narrator l("You hear some creeping and crawling sounds from downstairs.");
+        narrator l("You hear some creeping and crawling sounds from the murkiness below.");
     }
 
     close;

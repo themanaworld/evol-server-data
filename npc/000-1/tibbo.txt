@@ -95,7 +95,7 @@ L_Aquada:
     next;
     mesq l("You can find them in the ocean, near corals and other sea beings. But the sea is too heavy today, you shouldn't try swimming for now.");
     next;
-    mesq l("Otherwise, if you really want one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.", getitemlink(Aquada));
+    mesq lg("Otherwise, if you really want one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.", getitemlink(Aquada));
 
     close;
 

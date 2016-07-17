@@ -39,7 +39,7 @@ function	script	BarberChangeStyle	{
             rif(.@get_look !=  25, l("Side strand")), 25,
             rif(.@get_look !=  26, l("Messy")), 26,
             rif(.@get_look !=  27, l("Flat ponytail")), 27,
-            rif(.@get_look !=  28, l("Tapered Nape")), 28,
+            rif(.@get_look !=  28, l("Tapered nape")), 28,
             l("Hmm, I'm fine for now, thank you."), 29;
 
         switch (@menuret)
@@ -69,7 +69,7 @@ function	script	BarberChangeColor	{
         .@get_look = getlook (LOOK_HAIR_COLOR);
 
         menuint
-            l("Surprise me"), 21,
+            l("Surprise me!"), 21,
             rif(.@get_look !=  0, l("Off black")), 0,
             rif(.@get_look !=  1, l("Ash brown")), 1,
             rif(.@get_look !=  2, l("Dark brown")), 2,
@@ -87,10 +87,10 @@ function	script	BarberChangeColor	{
             rif(.@get_look !=  14, l("Navy blue")), 14,
             rif(.@get_look !=  15, l("Lagoon blue")), 15,
             rif(.@get_look !=  16, l("Twisted teal")), 16,
-            rif(.@get_look !=  17, l("Spring Green")), 17,
-            rif(.@get_look !=  18, l("Forest Green")), 18,
-            rif(.@get_look !=  19, l("Silver Grey")), 19,
-            rif(.@get_look !=  20, l("Esperia Blue")), 20,
+            rif(.@get_look !=  17, l("Spring green")), 17,
+            rif(.@get_look !=  18, l("Forest green")), 18,
+            rif(.@get_look !=  19, l("Silver grey")), 19,
+            rif(.@get_look !=  20, l("Esperia blue")), 20,
             l("Hmm, I'm fine for now, thank you."), 22;
 
         switch (@menuret)

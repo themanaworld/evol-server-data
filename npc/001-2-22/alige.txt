@@ -110,9 +110,9 @@ L_ExplainHiding:
     setcamnpc;
     mes "";
     mesn;
-    mesq l("No, I can't. I won't! All I wanted was to travel across the seas for fun, growl... sniff. And in this chink in the wall, as you can see, I have lots of fun.");
+    mesq l("No, I can't. I won't! All I wanted was to travel across the seas for fun, growl... sniff. And in this hole in the floor, as you can see, I have lots of fun.");
     next;
-    mesq l("Oh... um... actually... all I wanted was to get to Artis. Err... but I didn't, ah, have enough money to pay for the ferry!");
+    mesq l("Oh... um... actually... all I wanted was to get to Artis. Err... but I didn't, uhm... have enough money to pay for the ferry!");
     next;
     mesq l("Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!");
     next;
@@ -287,7 +287,7 @@ L_IntroMenu:
         l("I think I should report you to the crew members."), -;
 
     setcamnpc;
-    mesq lg("Growl, sniff, grr!! You'd better not tell anyone you saw me!");
+    mesq lg("Growl, sniff, grr! You'd better not tell anyone you saw me!");
 
     close;
 
@@ -313,7 +313,7 @@ L_Quit:
     setcamnpc;
     mes "";
     mesn;
-    mesq l("Too bad... Come back when you have some choice food for me. Growl... grumble... grumble.");
+    mesq l("Too bad... Come back when you'll have some nice food for me. Growl... grumble... grumble.");
 
     close;
 

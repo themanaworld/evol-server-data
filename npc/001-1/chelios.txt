@@ -29,7 +29,7 @@
                 break;
             case 2:
                 speech 5,
-                    l("I'll be here, come back when you're ready.");
+                    lg("I'll be here, come back when you'll be ready.");
 
                 return;
         }
@@ -80,7 +80,7 @@
     do
     {
         .@enora = getq (ArtisQuests_Enora);
-        menuint rif (.@enora == 1, l("I came to retrieve a package for Enora.")), 1,
+        menuint rif (.@enora == 1, lg("I came to retrieve a package for Enora.")), 1,
                 rif (.@enora == 3, l("I have your black iron.")), 2,
                 rif (.@enora >= 2, l("Where is the Merchant Guild?")), 3,
                 l("What is this building?"), 4,

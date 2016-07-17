@@ -17,7 +17,7 @@
 //    22  -- Chelios Quest given.
 //    23  -- Chelios Quest done.
 
-001-2-19,31,25,0	script	Lloyd the banker	NPC_LLOYD,{
+001-2-19,31,25,0	script	Lloyd the Banker	NPC_LLOYD,{
 
     function enora_quest {
         speech 5,
@@ -25,7 +25,7 @@
             l("Let me check in my inventory book..."),
             l("..."),
             l("Yes, I have some! \"5x Black Iron Ingots\""),
-            l("Is this for you or somebody else? Because you need to be registered to obtain these materials.");
+            lg("Is this for you or somebody else? Because you need to be registered to obtain these materials.");
 
         switch (select (l("This is for my own use."),
                         l("Chelios asked me to get it.")))

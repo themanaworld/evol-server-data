@@ -21,7 +21,7 @@
     initnpctimer;
 
     speech 4,
-        l("Hey do you have any @@s?", getitemlink(Plushroom));
+        l("Hey you, do you have any @@s?", getitemlink(Plushroom));
 
 L_Menu:
     .@visited = getq(General_Rumly);

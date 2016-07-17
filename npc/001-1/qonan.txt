@@ -34,7 +34,7 @@
 
     speech 3,
         l("Before I joined Nard, I used to be a thief."),
-        l("I'm not proud of it, but I had to get money for living."),
+        l("I'm not proud of it, but I had to steal money from others to keep on living."),
         l("Anyway, the last time I stole something I was almost caught."),
         l("I robbed a nobleman, took a chest full of coins."),
         l("But my luck left me, because as soon as I left his house, the guards started chasing me."),
@@ -69,7 +69,7 @@
     }
 
 L_QuestGiven:
-    speech 4, l("I asked you to do me a favor, did you forget?");
+    speech 4, lg("I asked you to do me a favor, did you forget?");
     select l("What should I do, again?");
     speech 1,
         l("Please find the small chest, buried somewhere on Artis Hill."),

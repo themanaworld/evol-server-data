@@ -6,7 +6,7 @@
 
 001-2-27,27,28,0	script	Kaylo#001-2-27	NPC_KAYLO,{
     speech 4,
-        l("Hi customer! What do you want today?");
+        lg("Hi customer! What do you want today?");
 
     switch (select (
         l("Let's make a trade."),

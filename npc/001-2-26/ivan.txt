@@ -59,7 +59,7 @@
 
     speech 4, l("Yes what do you need?");
 
-    menuint rif(.@enora == 8, l("The Legion need some potions.")), 1,
+    menuint rif(.@enora == 8, l("The Legion needs some potions.")), 1,
             rif(.@enora >= 8, l("Who are you?")), 2,
             menuaction(l("Quit")), 3;
 

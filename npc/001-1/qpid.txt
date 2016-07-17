@@ -91,9 +91,9 @@
                     setq (ArtisQuests_Enora, 8);
                     speech 5,
                         l("You failed!"),
-                        l("Ivan is the one that you should look at now."),
+                        l("Ivan is the one you should look for now."),
                         l("He is on a small house between the dock's warehouse and the dojo."),
-                        l("Follow the river to the north-east and you will find it."),
+                        l("Follow the canal to the north-east and you will find it."),
                         l("And get out of here, I'm not a map!");
                 }
                 else
@@ -142,7 +142,7 @@
             l("Do? I don't do them."),
             l("I'm sure that you already knew the answer, didn't you?"),
             l("You tried to embarrass me, am I right?!"),
-            l("It's Ivan... I'm sure that he sent you to annoy me..."),
+            lg("It's Ivan... I'm sure that he sent you to annoy me..."),
             l("I'm just a merchant, I trade and make deals, yes \"excuse\" me if I'm not as skilled as this stupid alchemist."),
             l("But rare are those that receive grants from the Legion itself. For anybody else only a hard work can pay your bills!");
         emotion E_UPSET;

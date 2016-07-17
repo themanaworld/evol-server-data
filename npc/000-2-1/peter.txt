@@ -123,7 +123,7 @@ OnGiveTask:
 
 OnTooWeak:
     mesn;
-    mesq lg("I need a helper to clean the edge of the ship, but you aren't strong enough to help.");
+    mesq lg("I need someone to help me clean the edge of the ship, but you aren't strong enough for now.");
 
     goto L_Quit;
 

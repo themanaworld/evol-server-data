@@ -36,14 +36,15 @@
     // If the player saw Enora, the menu shows L_Lost at the bottom
     // Because he shouldn't be lost after having talked to her, so the priority in menu changes
     menu
-        rif(.@q == 0, l("I'm lost, where should I go?")), L_Lost,
+        rif(.@q == 0, lg("I'm lost, where should I go?")), L_Lost,
         rif(.@q > 0, l("Tell me, where are we right now?")), L_Info,
         l("How long will you stay here?"), -,
-        rif(.@q > 0, l("I'm lost, where should I go?")), L_Lost;
+        rif(.@q > 0, lg("I'm lost, where should I go?")), L_Lost;
 
     speech 5,
         l("We just returned from a long journey and Artis is a good city to rest and to conclude our exchange."),
-        l("I think that we will stay in port for a great time, though, if you want to visit some nearby we could take you there."),
+        l("I think that we will stay in port for a great time."),
+        l("Although, if you want to visit a place nearby, we could take you there."),
         l("Do you want to go somewhere?");
 
     switch (select(l("Drasil Island."),

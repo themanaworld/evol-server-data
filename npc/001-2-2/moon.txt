@@ -138,7 +138,7 @@ L_Story:
 
 L_QuestStarted:
     mesn;
-    mesq l("Have you some @@s for me?", getitemlink("CrocClaw"));
+    mesq l("Do you have @@s for me?", getitemlink("CrocClaw"));
     next;
 
     menuint

@@ -62,7 +62,7 @@ L_FoundHim:
     mesn "Bobo";
     mesq l("Yes, it's me. It's such a fine view from here!");
     next;
-    select(l("Your sister sent me to find you. Your mother is worried."));
+    select(lg("Your sister sent me to find you. Your mother is worried."));
     mes "";
     mesn "Bobo";
     mesq l("Oh, nooooo... If I go home now, my mum will give me chores.");

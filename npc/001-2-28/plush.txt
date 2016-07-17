@@ -32,7 +32,7 @@
             PC_IS_DEAD = false;
 
             speech 5,
-                l("I registered you on the @@ room of the upper level.",
+                lg("I registered you on the @@ room of the upper level.",
                     (Sex == G_FEMALE) ? "4th" : "2nd"),
                 l("You can go upstairs and choose a different room if you want.");
             savepoint "001-2-29.gat", 29, (Sex == G_FEMALE) ? 49 : 35;
@@ -68,13 +68,13 @@
         else if (INN_REGISTER == REDPLUSH_INN)
         {
             speech 5,
-                l("You are already registered here."),
+                lg("You are already registered here."),
                 l("Go on the upper level if you want to change your room or to use it.");
         }
         else
         {
             speech 5,
-                l("If you are registered somewhere else you will loose that reservation."),
+                lg("If you are registered somewhere else you will loose that reservation."),
                 l("Do you still want to lodge here?");
 
             if (askyesno() == ASK_YES)
@@ -86,7 +86,7 @@
     }
 
     speech 4,
-        l("Welcome to the RedPlush INN!"),
+        l("Welcome to the Red Plush inn!"),
         l("What do you need?");
 
     do

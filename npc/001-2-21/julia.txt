@@ -83,7 +83,7 @@ L_WhereIam:
     next;
     mesq l("Somebody is waiting for you outside!");
     next;
-    mesq l("Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.");
+    mesq lg("Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.");
     next;
     mesq l("Do you have any other questions for me?");
     next;
@@ -132,7 +132,7 @@ L_BasicSkill:
 
 L_Enora:
     speech 5,
-        l("Enora from the Legion of Aemil has been warned that you were aboard."),
+        l("Enora, from the Legion of Aemil, has been warned that you were aboard."),
         l("She is waiting for you on the dock."),
         l("Do you have any other questions for me?");
 

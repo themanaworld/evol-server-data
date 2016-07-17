@@ -75,7 +75,7 @@
 
     function enora_hill {
         speech 5,
-            l("Go north from here to the dock warehouse, cross the bridge to the west side of the river, continue north until you get to a second bridge, cross it to the east side of the river."),
+            l("Go north from here until you to the dock warehouse, cross the bridge to the west side of the canal, continue north until you reach another bridge then cross it to the east side of the canal."),
             l("You should arrive at a park with a hill nearby.");
 
         return;
@@ -150,7 +150,7 @@
 
         speech 4,
             l("I asked Don our blacksmith to prepare a black iron sword for morning, he should be done by now."),
-            l("Go to meet him, and return me the package, it's an easy task."),
+            l("Go meet him, and return me the package, it's an easy task."),
             l("You will be able to find Don's house in the west of this city, it's the first house just after left bridge, you can't miss it!"),
             l("A young apprentice called Chelios might be waiting outside, speak to him, and return the present to me.");
             emotion E_HAPPY;
@@ -232,7 +232,7 @@
             l("Oh yes, I have one last errand for you, Q'Pid in the market sells potions."),
             l("It has been some days now since I asked her for a box of @@s, but she hasn't delivered anything yet.", getitemlink (PiberriesInfusion)),
             l("Please try to figure out what went wrong with this order and bring me these potions."),
-            l("You will be able to find her in the market on the south-east of Artis.");
+            l("You will be able to find her in the market on the south-west of Artis.");
 
         setq ArtisQuests_Enora, 7;
         enora_reward (40, 125);
@@ -275,7 +275,7 @@
                 break;
             case 2:
                 speech 5,
-                    l("Follow up-stream, and cross the river twice with the two bridges on the north."),
+                    l("Follow the up-stream and cross the canal twice using the two bridges north from here."),
                     l("The hill is located on the north-east of Artis.");
                 break;
         }
@@ -354,8 +354,8 @@
     {
         speech 4,
             l("Hey! You must be @@.", strcharinfo(0)),
-            l("Julia has told me how they found you at sea, on a raft with a logo of--"),
-            l("I mean LOG! Made of log!"),
+            lg("Julia told me how they found you in the sea, on a raft with a logo of..."),
+            l("...I mean log! Made of log!"),
             l("I also heard you lost all your memories? That's a shame."),
             l("I'm sure you would have some interesting stories to tell!");
     }

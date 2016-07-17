@@ -12,7 +12,7 @@
         if (.@enora == 0)
         {
             speech
-                l("Enora from the Legion of Aemil has been warned that you were aboard."),
+                l("Enora, from the Legion of Aemil, has been warned that you were aboard."),
                 l("She is waiting for you on the dock.");
 
             return;

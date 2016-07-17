@@ -6,8 +6,8 @@
 
 001-2-32,27,27,0	script	Serena	NPC_SERENA,{
     mesn;
-    mesq l("Oh darling, what brought you here?");
-    //         ^^^^^^^
+    mesq lg("Oh darling, what brought you here?");
+    //          ^^^^^^^
     // Expresses familiarity or elderliness in relation to PC.
 
     // <scratch>

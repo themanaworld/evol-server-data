@@ -17,7 +17,7 @@
     function card_explanation {
         speech 5,
             l("There are two different kinds of card, the first changes the style of your clothes, the second changes their stats."),
-            l("I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment"),
+            l("I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment."),
             l("A stat card works on different pieces of equipment."),
             l("Each piece of equipment has a predefined slot number."),
             l("Each card improves your gear by a ratio or a fixed number on a predefined stat."),
@@ -60,7 +60,7 @@
     }
 
     speech 4,
-        l("Hi, what do you want kiddo?");
+        lg("Hi, what do you want kiddo?");
 
     do
     {
