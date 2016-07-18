@@ -114,7 +114,7 @@ function make_server {
     echo "autoreconf -i"
     autoreconf -i
     check_error $?
-    echo "./configure $1"
+    echo "./configure $*"
     ./configure $1
     export err="$?"
     if [ "$err" != 0 ]; then
