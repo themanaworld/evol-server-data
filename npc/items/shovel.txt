@@ -48,7 +48,7 @@
         if (@ShovelLastUsed + max(4, .@playertick) > .@tick)
         {
             narrator 1,
-                l("You are exhausted, you should rest a bit.");
+                lg("You are exhausted, you should rest a bit.");
             return 1;
         }
         @ShovelLastUsed = .@tick;

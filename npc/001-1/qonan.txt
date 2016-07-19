@@ -14,7 +14,7 @@
 
     .@q = getq(ArtisQuests_QOnan);
     if (.@q == 1) goto L_QuestGiven;
-    if (.@q == 2) goto L_ItemFount;
+    if (.@q == 2) goto L_ItemFound;
     if (.@q == 3) goto L_QuestDone;
 
     speech 2,
@@ -38,7 +38,7 @@
         l("Anyway, the last time I stole something I was almost caught."),
         l("I robbed a nobleman, took a chest full of coins."),
         l("But my luck left me, because as soon as I left his house, the guards started chasing me."),
-        l("It was at night, so I could barely escape. I ran to Artis Hill."),
+        l("It was at night, so I could barely escape. I ran to Artis hill."),
         l("I was afraid to get busted, so I decided to get rid of the evidence."),
         l("I buried the chest somewhere on that hill. It was dark, so I don't remember where to dig exactly."),
         l("I'm afraid to go there myself, but if you take the risk, you can have half of the loot."),
@@ -72,15 +72,15 @@ L_QuestGiven:
     speech 4, lg("I asked you to do me a favor, did you forget?");
     select l("What should I do, again?");
     speech 1,
-        l("Please find the small chest, buried somewhere on Artis Hill."),
+        l("Please find the small chest, buried somewhere on Artis hill."),
         l("You should check on the highest part of the cliff, I was hiding there."),
         l("Bring it to me, and you will get your reward.");
     close;
 
-L_ItemFount:
+L_ItemFound:
     speech
         l("After all this time, it was still there!"),
-        l("We are very lucky, my friend."),
+        lg("We are very lucky, my friend."),
         l("Let me open it with my key."),
         l("Like I promised, here is your share."),
         l("I can finally pay off my debts.");

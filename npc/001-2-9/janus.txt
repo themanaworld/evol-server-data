@@ -20,7 +20,7 @@
             l("Creating a party has some advantages, it's a pretty good choice!"),
             l("I remember when I created my first party, we were amazed to share some experience with a small group of adventurer..."),
             l("Oh! And our party chat was really entertaining, I do highly recommend you to share this fun as well."),
-            l("The cost to create a party is of @@ E, are you interested?", .@party_price);
+            lg("The cost to create a party is of @@ E, are you interested?", .@party_price);
 
         if (askyesno () == 1)
         {

@@ -53,7 +53,7 @@
     function explain_guild {
         speech
             l("The guild is in charge of the commerce regularization throughout Artis and its surrounding."),
-            l("With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their buisness."),
+            l("With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their business."),
             l("We also feature some services like a storage and a bank for members."),
             l("Registration is open for everybody, but newcomers need to pay a fee for all of the paperwork.");
 
@@ -74,7 +74,7 @@
             l("Lloyd is searching something in his book.");
         speech 4,
             l("I see."),
-            l("You are new around here, right?");
+            lg("You are new around here, right?");
 
         if (select (l("How do you know?"), l("Yes I am.")) == 1)
         {

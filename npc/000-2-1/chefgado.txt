@@ -91,7 +91,7 @@ L_Rude:
     setq ShipQuests_ChefGado, 1;
     mes "";
     mesn;
-    mesq l("Well done! Collect all the ingredients and then come back here. You will be rewarded, once I am satisfied that they understand who rules this ship!");
+    mesq lg("Well done! Collect all the ingredients and then come back here. You will be rewarded once I am satisfied that they understand who rules this ship!");
     next;
     mesq l("Before you go, let me tell you how to get @@s, because you don't look very smart.", getitemlink(HalfCroconut));
 
@@ -111,7 +111,7 @@ L_QuestAccepted:
 L_OpenCroconut:
     mes "";
     mesn;
-    mesq l("Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed though, you're being so weak in all.", getitemlink(Croconut));
+    mesq lg("Take a @@ and try opening it using something like a sharp knife. I doubt you'll succeed, you're being so weak in everything.", getitemlink(Croconut));
     next;
     mesq l("Now move!");
 

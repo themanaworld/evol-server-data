@@ -154,7 +154,7 @@ OnReturnFail:
 OnReturnWin:
     .@peter = getq(ShipQuests_Peter);
     mesn;
-    mesq l("Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem; so you can always be sure that your help with the extermination, to keep their numbers under control, is very welcome indeed. But the situation is, that I can give you a reward only the one time.");
+    mesq l("Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.");
     next;
 
     if (.@peter == 3 || .@peter == 4)

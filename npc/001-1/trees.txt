@@ -80,7 +80,7 @@ L_FoundHim:
             mesq l("Here you go.");
             next;
             mesn "Narrator";
-            mes l("Somehow you don't feel good about your deed");
+            mes l("Somehow you don't feel good about your deed.");
             // Karma -= 2;
             setq ArtisQuests_LazyBrother, 2;
             Zeny += 100;

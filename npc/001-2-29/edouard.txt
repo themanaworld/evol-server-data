@@ -31,7 +31,7 @@
         tellStory;
 
     speech 12,
-        l("What would you like me to change?");
+        l("What would you like me to do?");
 
     do
     {
@@ -39,7 +39,7 @@
             l("I'd like to get a different style."), 1,
             l("Can you do something with my color?"), 2,
             l("What's your story again?"), 3,
-            l("Hmm, I'm fine for now, thank you."), 4;
+            l("I'm fine for now, thank you."), 4;
 
         switch (@menuret)
         {
@@ -47,11 +47,13 @@
                 BarberChangeStyle;
                 speech 5,
                     l("Enjoy your new style.");
+                    l("Anything else?");
                 break;
             case 2:
                 BarberChangeColor;
                 speech 5,
                     l("I hope you like this color.");
+                    l("Anything else?");
                 break;
             case 3:
                 tellStory;
