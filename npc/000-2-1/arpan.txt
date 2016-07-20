@@ -208,7 +208,7 @@ L_WhereOldClothes:
 L_WhereMoney:
     mes "";
     mesn;
-    mesq lg("Oh right, I totally forgot about that, here you go.");
+    mesq l("Oh right, I totally forgot about that, here you go.");
     next;
 
     setq ShipQuests_ArpanMoney, 2;
