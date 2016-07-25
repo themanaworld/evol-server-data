@@ -8,7 +8,7 @@
 
 function	script	legiontalk	{
 
-    switch (rand(13))
+    switch (rand(15))
     {
         case 0:
             npctalk3 l("Do I look like a tree? I feel like one.");
@@ -24,7 +24,7 @@ function	script	legiontalk	{
             npctalk3 l("Not in the mood to chat.");
             break;
         case 3:
-            npctalk3 l("Move kid.");
+            npctalk3 l("My breath smells bad.");
             break;
         case 4:
             npctalk3 l("Don't distract me, I have to stay alert.");
@@ -48,10 +48,16 @@ function	script	legiontalk	{
             npctalk3 lg("Keep moving girl.", "Keep moving boy.");
             break;
         case 11:
-            npctalk3 l("Out of my way.");
+            npctalk3 l("So you think you're tough? A warrior must also be loyal and patient.");
             break;
         case 12:
             emotion E_LOOKAWAY;
+            break;
+        case 13:
+            npctalk3 l("Practice! There are no secrets to becoming a warrior.");
+            break;
+        case 14:
+            npctalk3 l("There is no honor in fighting a weak opponent.");
             break;
     }
 
