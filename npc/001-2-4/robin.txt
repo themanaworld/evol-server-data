@@ -46,7 +46,14 @@
         return;
     }
 
-    switch (rand(4))
+    function kaizei_manuscripts
+    {
+        npctalkonce l("An explorer left behind some incomplete manuscripts about the people and dangers in the land of Kaizei.");
+
+        return;
+    }
+
+    switch (rand(5))
     {
         case 0:
             no_matter_what();
@@ -58,6 +65,9 @@
             outside_inside();
             break;
         case 3:
+            kaizei_manuscripts();
+            break;
+        case 4:
             need_help();
             break;
     }
