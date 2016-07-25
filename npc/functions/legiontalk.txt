@@ -4,17 +4,18 @@
 //    Qwerty Dragon
 //    Akko Teru
 // Description:
-//    Tell a random sentence. || There ought to be a law!
+//    Tell a random sentence suited to Aemil's Legion in Artis.
 
 function	script	legiontalk	{
 
     switch (rand(13))
     {
         case 0:
-            speech 4,
-                l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?"),
-                l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."),
-                l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
+            npctalk3 l("Do I look like a tree? I feel like one.");
+            //speech 4,
+            //    l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?"),
+            //    l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."),
+            //    l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
             break;
         case 1:
             npctalk3 l("I'm a little busy right now.");
@@ -35,10 +36,10 @@ function	script	legiontalk	{
             npctalk3 l("Can you please go away?");
             break;
         case 7:
-            npctalk3 l("Can't talk right now, i'm on patrol duty.");
+            npctalk3 l("Can't talk right now, I'm on patrol duty.");
             break;
         case 8:
-            npctalk3 l("What you looking at?!");
+            npctalk3 l("What're you looking at?!");
             break;
         case 9:
             npctalk3 l("I can't stay here and talk all day. I have a job to do.");
