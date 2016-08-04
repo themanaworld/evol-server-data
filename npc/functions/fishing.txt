@@ -4,33 +4,103 @@
 // Description:
 //    Fishing functions.
 
+
+// player log on @pull is 0, start by choose bait menu
+// player choose bait, script addtimer in npc @pull is 1
+// if player pull before signal npc, bait is lose, set @pull 3 goto choose bait
+// if player pull after pull delay max, bait is lose, set @pull 3 goto choose bait
+// npc signal @pull 2
+// player pull between npc signal and pull delay max, got the fish, set @pull 3 goto choose bait
+
 function	script	fishing	{
 
+    .@wait_time_min = 8000;
+    .@wait_time_max = 35000;
+    .@pull_rand_max = 800;
+    .@fish_id = CommonCarp;
+    .@rare_fish_chance = 25;
+
+    
     if (countitem(FishingRod) < 1)
     {
         narrator
             l("You don't have a @@.", getitemlink(FishingRod));
         return -1;
     }
-    if (Fishing_Tick > gettimetick(2) - 20)
+
+// @pull :
+// 0 = never try (goto choose bait)
+// 1 = bait done
+// 2 = fish bite bait
+// 3 = pull too late or soon, Leave the spot, or already pulled a carp ( goto choose bait)
+
+    switch (@pull)
     {
-        closedialog;
-        return -3;
+        case 1:
+            {
+                narrator 5,
+                    l("You pulled too soon and lost the bait.");
+                // @pull is 1 and the player talk to npc too late
+                // delete the timer for pull, and set 3 cancel the bait 
+                @pull = 3;
+                // delete the timer, the bait is lost, no need to tease the player with a useless signal :3
+                deltimer "" + getarg(0) + "::OnPull";
+                close;
+            }
+        case 2:
+            // with this new system of pull i think this check become useless
+            // but that can prevent the player to start a fishing in one spot and complete in another
+            getmapxy (.@mapbis$, .@xbis, .@ybis, 0);
+            if (.@xbis != @x || .@ybis != @y || !compare (@map$, .@mapbis$))
+            {
+                narrator
+                    l("You left your fishing spot!");
+                // Leave spot, lost the bait, set @pull 3
+                @pull = 3;
+                close;
+            }
+            .@timediff = gettimetick(0) - @tick;
+            .@rnd = rand(.@timediff);
+            if (rand(.@rare_fish_chance) == 0)
+                .@fish_id = GrassCarp;
+            // debugmes "timediff = " + .@timediff;
+
+            if (.@rnd <= .@pull_rand_max)
+            {
+                getitem .@fish_id, 1;
+
+                narrator 1,
+                    l("You caught a @@!", getitemname(.@fish_id));
+                // player got the fish, done, set @pull 3
+                @pull = 3;
+                close;
+            }
+            else
+            {
+                narrator 5,
+                    l("You pulled too late and lost the bait.");
+                // the player pull to late, set @pull 3
+                @pull = 3;
+                close;
+            }
+        case 3:
+            {
+                break;
+            }
     }
 
-    .@wait_time_min = 8000;
-    .@wait_time_max = 35000;
-    .@pull_rand_max = 800;
-    .@pull_timeout = 1500;
-    .@fish_id = CommonCarp;
-    .@max_wait_times = 3;
-    .@rare_fish_chance = 25;
+L_ChooseBait:
+    if (Fishing_Tick > gettimetick(2) - 20)
+    {
+        mes "Busy, please, wait few seconds.";
+        close;
+    }
 
     setarray .@bait_ids[0], SmallTentacles, Bread, Aquada,
                             UrchinMeat, TortugaTongue,
                             Tentacles;
 
-L_ChooseBait:
+
     .@curr_wait_times = 0;
     .@sel$ = "";
     .@cnt = 0;
@@ -72,81 +142,17 @@ L_ChooseBait:
 
     narrator 3,
         l("You use a @@ as bait.", getitemname(.@bait)),
-        l("You patiently wait...");
+        l("You patiently wait..."); // maybe adding here informatiopn about effect
+                                    // because the player don't know he need to wait the signal effect
+    getmapxy (@map$, @x, @y, 0);
 
-L_Wait:
-    getmapxy (.@map$, .@x, .@y, 0);
+    .@delay = rand(.@wait_time_min, .@wait_time_max);
 
-    sleep2 rand(.@wait_time_min, .@wait_time_max);
-    .@tick = gettimetick(0);
-    Fishing_Tick = 0;
+    // set 1 the @pull, the bait is ready, player need to wait the signal
+    @pull = 1;
+    // @spot$ is set by the spot npc
+    addtimer .@delay, "" + getarg(0) + "::OnPull";
 
-    getmapxy (.@mapbis$, .@xbis, .@ybis, 0);
-    if (.@xbis != .@x || .@ybis != .@y || !compare (.@map$, .@mapbis$))
-    {
-        narrator
-            l("You left your fishing spot!");
-        close;
-    }
+    close;
 
-    mes col(l("Splash!"), 9);
-    mes "";
-
-    menuint
-        l("Pull!"), 1,
-        l("Wait..."), 2,
-        l("Give up."), 3;
-
-    switch (@menuret)
-    {
-        case 1:
-            .@timediff = gettimetick(0) - .@tick;
-            .@rnd = rand(.@timediff);
-            if (rand(.@rare_fish_chance) == 0)
-                .@fish_id = GrassCarp;
-            // debugmes "timediff = " + .@timediff;
-
-            if (.@rnd <= .@pull_rand_max)
-            {
-                getitem .@fish_id, 1;
-
-                narrator 1,
-                    l("You caught a @@!", getitemname(.@fish_id));
-
-                return 1;
-            }
-            else
-            {
-                narrator 5,
-                    l("You pulled too late and lost the bait.");
-
-                goto L_ChooseBait;
-            }
-
-        case 2:
-            .@curr_wait_times += 1;
-
-            if (.@curr_wait_times > .@max_wait_times)
-            {
-                narrator 5,
-                    l("The fish ate all your bait.");
-                goto L_ChooseBait;
-            }
-            else
-            {
-                narrator 3,
-                    l("The fish ate small part of your bait."),
-                    l("But you decide to patiently wait.");
-
-                goto L_Wait;
-            }
-            break;
-
-        case 3:
-            narrator 1,
-                l("You take your fishing rod and leave.");
-            return 0;
-    }
-
-    return;
 }

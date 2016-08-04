@@ -5,9 +5,22 @@
 //    Water animations, splash, fishes, etc...
 
 001-1,116,123,0	script	#water_animation0	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    // skip the narator when we are in fishing
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3); // give the name of npc for set the addtimer.
     close;
+
+OnPull:
+    emotion 106; // here the effect, emote is just for try :3
+    if (@pull == 3) // is too late or too soon, don't set the @pull 2
+                    // useless for now, because if you fail that delete the timer
+                    // just a security
+        end;
+    else
+        @pull = 2; // set 2, the fish bite the bait
+        @tick = gettimetick(0); // the tick required for the pull_max 
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -16,9 +29,19 @@ OnInit:
 }
 
 001-1,119,102,0	script	#water_animation1	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -27,9 +50,19 @@ OnInit:
 }
 
 001-1,167,82,0	script	#water_animation2	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -38,9 +71,19 @@ OnInit:
 }
 
 001-1,167,40,0	script	#water_animation3	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -49,9 +92,19 @@ OnInit:
 }
 
 001-1,104,127,0	script	#water_animation4	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -60,9 +113,19 @@ OnInit:
 }
 
 001-1,166,123,0	script	#water_animation5	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -71,9 +134,19 @@ OnInit:
 }
 
 001-1,181,119,0	script	#water_animation6	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -82,9 +155,19 @@ OnInit:
 }
 
 001-1,202,114,0	script	#water_animation7	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -93,9 +176,19 @@ OnInit:
 }
 
 001-1,187,86,0	script	#water_animation8	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -104,9 +197,19 @@ OnInit:
 }
 
 001-1,32,57,0	script	#water_animation9	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -115,9 +218,19 @@ OnInit:
 }
 
 001-1,40,144,0	script	#water_animation10	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -126,9 +239,19 @@ OnInit:
 }
 
 001-1,58,131,0	script	#water_animation11	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -137,9 +260,19 @@ OnInit:
 }
 
 001-1,76,137,0	script	#water_animation12	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -148,9 +281,19 @@ OnInit:
 }
 
 001-1,109,132,0	script	#water_animation13	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -159,9 +302,19 @@ OnInit:
 }
 
 001-1,141,93,0	script	#water_animation14	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
@@ -170,9 +323,21 @@ OnInit:
 }
 
 001-1,168,57,0	script	#water_animation15	NPC_WATER_SPLASH,{
-    narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-    fishing;
+    if (@pull != 1 && @pull != 2)
+    {
+        narrator 4, l("You see some fish reflecting the sun on the surface of the water. " + @pull + "");
+    }
+    fishing strnpcinfo(3);
     close;
+
+OnPull:
+    emotion 106;
+    if (@pull == 3)
+        end;
+    else
+        @pull = 2;
+        @tick = gettimetick(0);
+    end;
 
 OnInit:
     .sex = G_OTHER;
