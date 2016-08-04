@@ -36,29 +36,33 @@
     do
     {
         menuint
-            l("I'd like to get a different style."), 1,
-            l("Can you do something with my color?"), 2,
-            l("What's your story again?"), 3,
-            l("I'm fine for now, thank you."), 4;
+            l("What is my current hairstyle and hair color?"), 1,
+            l("I'd like to get a different style."), 2,
+            l("Can you do something with my color?"), 3,
+            l("What's your story again?"), 4,
+            l("I'm fine for now, thank you."), 5;
 
         switch (@menuret)
         {
             case 1:
+                BarberSayStyle 3;
+                break;
+            case 2:
                 BarberChangeStyle;
                 speech 5,
                     l("Enjoy your new style.");
                     l("Anything else?");
                 break;
-            case 2:
+            case 3:
                 BarberChangeColor;
                 speech 5,
                     l("I hope you like this color.");
                     l("Anything else?");
                 break;
-            case 3:
+            case 4:
                 tellStory;
                 break;
-            case 4:
+            case 5:
                 speech 5,
                     l("Feel free to come visit me another time.");
 

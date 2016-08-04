@@ -1,0 +1,24 @@
+// Hairstyle config
+// set array of style and colors
+
+001-2-29,37,31,0	script	hairstyle_config	NPC_HIDDEN,0,0,{
+
+    end;
+
+OnInit:
+    setarray $@hairstyle$[0], "(none)", "Bald", "Bowl cut", "Combed back",
+       "Emo", "Mohawk", "Pompadour", "Center parting", "Long and slick",
+       "Short and curly", "Pigtails", "Long and curly", "Parted",
+       "Perky ponytail", "Wave", "Mane", "Bun", "Wavy", "Bunches",
+       "Long ponytail", "Infinitely long", "Choppy", "Wild", "Punk",
+       "Imperial", "Side strand", "Messy", "Flat ponytail",
+       "Tapered Nape";
+
+    setarray $@haircolor$[0], "Off black", "Ash brown", "Dark brown",
+       "Dark copper", "Auburn brown", "Honey brown", "Copper blonde",
+       "Golden blonde", "Pure platinum", "Cherry blossom", "Pinky pink",
+       "Fire red", "Light violet", "Purple plum", "Navy blue",
+       "Lagoon blue", "Twisted teal", "Spring Green", "Forest Green",
+       "Silver Grey", "Esperia Blue";
+    end;
+}
