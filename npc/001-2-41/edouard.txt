@@ -3,9 +3,89 @@
 //    Reid
 //    Travolta
 // Description:
-//    Barber of Aemil, should be placed on the 29th indoor but it's still a WIP
+//    Barber of Aemil
 
-001-2-29,37,31,0	script	Edouard#001-2-29	NPC_EDOUARD,{
+function	script	EdouardCheckChair	{
+
+    getmapxy(.@map$, .@x, .@y, UNITTYPE_PC);
+
+    if ((.@map$ != getarg(0)) || (.@x != getarg(1)) || (.@y != getarg(2)))
+    {
+        doevent "Edouard#001-2-41::OnWrongPlace";
+    }
+    else if (!issit())
+    {
+        doevent "Edouard#001-2-41::OnNotSit";
+    }
+    else
+    {
+        doevent "Edouard#001-2-41::OnChair";
+    }
+
+    close;
+}
+
+001-2-41,29,23,0	script	Chair#Chair1-001-2-41	NPC_NO_SPRITE,{
+
+    EdouardCheckChair .map$, .x, .y;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
+
+001-2-41,31,23,0	script	Chair#Chair2-001-2-41	NPC_NO_SPRITE,{
+
+    EdouardCheckChair .map$, .x, .y;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
+
+001-2-41,35,27,0	script	Chair#Chair3-001-2-41	NPC_NO_SPRITE,{
+
+    EdouardCheckChair .map$, .x, .y;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
+
+001-2-41,35,29,0	script	Chair#Chair4-001-2-41	NPC_NO_SPRITE,{
+
+    EdouardCheckChair .map$, .x, .y;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
+
+001-2-41,35,35,0	script	Chair#Chair5-001-2-41	NPC_NO_SPRITE,{
+
+    EdouardCheckChair .map$, .x, .y;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
+
+001-2-41,35,37,0	script	Chair#Chair6-001-2-41	NPC_NO_SPRITE,{
+
+    EdouardCheckChair .map$, .x, .y;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
+
+001-2-41,30,29,0	script	Edouard#001-2-41	NPC_EDOUARD,{
 
     function tellStory {
         if (Edouard_StoryTold != 0)
@@ -16,7 +96,8 @@
         speech 12,
             l("I am new in this town, just like you are."),
             l("I came here, looking for a better life."),
-            l("I still didn't find a cheap building to open my own business, so for now I will stay in this inn."),
+            l("And so far, the Merchant Guild helped me to find this appartment so I don't complain!"),
+            l("Anyway."),
             l("I'm a barber, you see. I can change your hair style or color to your liking.");
 
         Edouard_StoryTold = 1;
@@ -24,11 +105,22 @@
         return;
     }
 
+OnWrongPlace:
+    npctalkonce ("Sit on the chair I will come in a second!");
+    close;
+
+OnNotSit:
+    npctalkonce ("Please sit.");
+    close;
+
+OnChair:
     speech 4,
         lg("Hello, young lady.", "Hello, young man.");
 
     if (Edouard_StoryTold == 0)
+    {
         tellStory;
+    }
 
     speech 12,
         l("What would you like me to do?");
