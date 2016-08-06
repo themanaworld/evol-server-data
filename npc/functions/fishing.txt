@@ -38,7 +38,7 @@ function	script	fishing	{
 
     .@wait_time_min = 4000;
     .@wait_time_max = 18000;
-    .@pull_rand_max = 500;
+    .@pull_rand_max = 800;
     .@fish_id = CommonCarp;
     .@rare_fish_chance = 25;
 
@@ -57,11 +57,14 @@ function	script	fishing	{
             setnpcdir getarg(0), DOWN;
 
             deltimer getarg(0) + "::OnBiteBait";
+            deltimer getarg(0) + "::OnRemoveBait";
             narrator l("You pulled too soon and lost the bait.");
 
             close;
         case LEFT:
             @occupy = false;
+            deltimer getarg(0) + "::OnRemoveBait";
+
             setnpcdir getarg(0), DOWN;
 
             getmapxy (.@mapbis$, .@xbis, .@ybis, 0);
@@ -170,6 +173,7 @@ OnChooseBait:
     .@delay = rand(.@wait_time_min, .@wait_time_max);
 
     addtimer .@delay, getarg(0) + "::OnBiteBait";
+    addtimer (.@delay + 5000), getarg(0) + "::OnRemoveBait";
 
     close;
 }
