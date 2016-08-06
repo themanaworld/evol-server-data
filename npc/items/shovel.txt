@@ -135,7 +135,7 @@
 OnUse:
     if (!CheckDigLocation())
     {
-        narrator l("You can't use the shovel here.");
+        message strcharinfo(0), l("I can't use the shovel here.");
         close;
     }
 
