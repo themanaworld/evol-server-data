@@ -70,7 +70,7 @@
 
     function explain_service {
         speech 5,
-            l("You are on the human ressource wing of the Town Hall."),
+            l("You are on the human resource wing of the Town Hall."),
             l("We offer party and guild certifications and we can also teach you how to use some basic communication skills."),
             l("Do you know how to speak with people around you?");
 
@@ -82,7 +82,7 @@
             if (compareandsetq (General_Janus, 0, 1))
             {
                 speech 12,
-                    l("This book resumes everything you should know about it, take it!");
+                    l("This book contains everything you should know about it, take it!");
 
                 inventoryplace CommunicationTheory, 1;
                 getitem CommunicationTheory, 1;
@@ -99,7 +99,7 @@
             {
                 speech 12,
                     l("Anyway."),
-                    l("This book resumes everything you should know about it, take it!");
+                    l("This book contains everything you should know about it, take it!");
 
                 inventoryplace CommunicationTheory, 1;
                 getitem CommunicationTheory, 1;
