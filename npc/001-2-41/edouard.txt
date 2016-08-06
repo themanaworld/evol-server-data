@@ -94,11 +94,11 @@ OnInit:
             mesn;
         }
         speech 12,
-            l("I am new in this town, just like you are."),
+            l("I am new in this town, just like you."),
             l("I came here, looking for a better life."),
-            l("And so far, the Merchant Guild helped me to find this appartment so I don't complain!"),
+            l("And so far, the Merchant Guild helped me find this appartment so I can't complain!"),
             l("Anyway."),
-            l("I'm a barber, you see. I can change your hair style or color to your liking.");
+            l("I'm a barber, you see. I can change your hairstyle or hair color to your current taste.");
 
         Edouard_StoryTold = 1;
 
@@ -106,7 +106,7 @@ OnInit:
     }
 
 OnWrongPlace:
-    npctalkonce ("Sit on the chair I will come in a second!");
+    npctalkonce ("Sit on the chair, I will come in a second!");
     close;
 
 OnNotSit:

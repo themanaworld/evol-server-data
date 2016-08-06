@@ -11,11 +11,11 @@
 //         LEFT    Fish bite bait
 //
 // player log on .dir is DOWN, start by choose bait menu
-// player choose bait, script addtimer in npc .dir is UP
-// if player pull before signal npc, bait is lose, set .bait to DOWN goto choose bait
-// if player pull after pull delay max, bait is lose, set .bait to DOWN goto choose bait
+// player chooses bait, script addtimer in npc .dir is UP
+// if player pulls before signal npc, bait is lost, set .bait to DOWN goto choose bait
+// if player pulls after pull delay max, bait is lost, set .bait to DOWN goto choose bait
 // npc signal .dir is LEFT
-// player pull between npc signal and pull delay max, got the fish, set .dir to DOWN goto choose bait
+// player pulls between npc signal and pulls delay max, got the fish, set .dir to DOWN goto choose bait
 
 function	script	fishingspot	{
 
@@ -46,7 +46,7 @@ function	script	fishing	{
     if (countitem(FishingRod) < 1)
     {
         narrator
-            l("You don't have a @@.", getitemlink(FishingRod));
+            l("You don't have any @@.", getitemlink(FishingRod));
         return -1;
     }
 
@@ -133,7 +133,7 @@ OnChooseBait:
         for (.@i = 1; .@i < getarraysize(.@bait_ids); .@i++)
             .@bait_names$ = .@bait_names$ + ", " + getitemlink(.@bait_ids[.@i]);
         narrator
-            l("You don't have any food suitable for bait."),
+            l("You don't have any food to use as bait."),
             l("You need at least one of these: ") + .@bait_names$;
             return -2;
     }
@@ -158,7 +158,7 @@ OnChooseBait:
     }
     @occupy = true;
 
-    // The player occupy this spot, his bait is ready, he just have to wait the signal.
+    // The player uses this spot, his bait is ready, he just has to wait for the signal.
     closedialog;
 
     setnpcdir getarg(0), UP;
