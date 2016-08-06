@@ -56,7 +56,7 @@
             mesn;
             mesq l("Oh thank you so much!");
             next;
-            mesq l("Please take this lollypop for your help. Mum says they are bad for my teeth anyway (FIXME)");
+            mesq l("Please take this @@ for your help.", getitemlink(Aquada)); // Need a different reward.
             setq ArtisQuests_LazyBrother, 4;
             getitem Aquada, 1;
             getexp 500, 0;
