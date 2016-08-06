@@ -19,7 +19,7 @@ OnInit:
     sellitem PiouSlayer, -1, 15;
 
     .sex = G_OTHER;
-    .distance = 2;
+    .distance = 3;
     end;
 
 OnClock0000:
