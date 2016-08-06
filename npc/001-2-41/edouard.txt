@@ -25,7 +25,7 @@ function	script	EdouardCheckChair	{
     close;
 }
 
-001-2-41,29,23,0	script	Chair#Chair1-001-2-41	NPC_NO_SPRITE,{
+001-2-41,29,24,0	script	Chair#Chair1-001-2-41	NPC_NO_SPRITE,{
 
     EdouardCheckChair .map$, .x, .y;
 
@@ -35,7 +35,7 @@ OnInit:
     end;
 }
 
-001-2-41,31,23,0	script	Chair#Chair2-001-2-41	NPC_NO_SPRITE,{
+001-2-41,31,24,0	script	Chair#Chair2-001-2-41	NPC_NO_SPRITE,{
 
     EdouardCheckChair .map$, .x, .y;
 
