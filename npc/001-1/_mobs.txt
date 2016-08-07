@@ -35,6 +35,9 @@
     end;
 
 OnFluffyDeath:
-    set ArtisFluffyKilled, ArtisFluffyKilled + 1;
+    if (playerattached())
+    {
+        set ArtisFluffyKilled, ArtisFluffyKilled + 1;
+    }
     end;
 }
