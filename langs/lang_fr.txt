@@ -279,7 +279,7 @@ et %d secondes
 '%s' a volé %s's %s (chance : %0.02f%%)
 
 'That', as you call it, is a @@. There are plenty on this island!
-
+'Ça', comme tu l'appelles, est un @@. Il y en a plein sur l'île !
 
 (%s) 
 (%s)
@@ -465,7 +465,7 @@ et %d secondes
 ... et 1 @@.
 
 ...I mean log! Made of log!
-
+...Je veux dire bûche ! Fait de bûches !
 
 ...this might be because of Don, he is the master blacksmith of this place and a model to me!
 ...c'est peut-être à cause de Don, il est le maître forgeron de cet endroit et un mentor pour moi !
@@ -528,7 +528,7 @@ et %d secondes
 @@ @@ @@
 
 @@ and @@ just got married!
-
+@@ et @@ sont maintenant mariés !
 
 @@ divorced!
 @@ a divorcé !
@@ -795,10 +795,13 @@ Although the more powerful you are, the more plushrooms you will need.
 Cependant, le plus fort deviens, le plus de peluchignons tu auras besoin.
 
 Although, if you want to visit a place nearby, we could take you there.
-
+Cependant, si tu veux visiter un endroit pas très loin, on peut t'y emmener.
 
 Amount?
 Combien ?
+
+An explorer left behind some incomplete manuscripts about the people and dangers in the land of Kaizei.
+
 
 An invalid number was specified.
 Un nombre invalide a été utilisé.
@@ -818,6 +821,9 @@ Et maintenant, je veux te voir courir !
 And now I'm a sailor, as you can see!
 Et maintenant je suis un marin, comme tu peux le voir.
 
+And so far, the Merchant Guild helped me find this appartment so I can't complain!
+
+
 And then what happened?
 Et après, qu'est-il arrivé ?
 
@@ -825,7 +831,7 @@ And what would you give me in exchange for that information?
 Et que me donnerais-tu en échange de cette information ?
 
 And when we have enough money for ourselves without needing anybody else.
-
+Et lorsque nous aurons assez d'argent pour prendre soin de nous sans avoir besoin de personne d'autre.
 
 And where can I find these potions?
 Et où puis-je trouver ces potions ?
@@ -849,7 +855,7 @@ Any contribution to the game (translations, graphics creation/edition, concepts,
 Toute contribution au jeu (traductions, création/édition de graphismes, concepts, code/scripts, etc...) est récompensée !
 
 Anything else?
-
+Ça sera tout ?
 
 Anyway I am glad I can give you some of these yoyoxs.
 Peu importe, je suis ravi de te donner de ces boî-boîtes.
@@ -927,16 +933,16 @@ Are you sure about this?#1
 Es-tu certain de cela ?
 
 Are you sure that these are my potions?#0
-
+Es-tu sûre que ce sont mes potions ?
 
 Are you sure that these are my potions?#1
-
+Es-tu sûr que ce sont mes potions ?
 
 Are you sure?#0
-
+En est-tu certaine ?
 
 Are you sure?#1
-
+En est-tu certain ?
 
 Are you yaying here to explore the island?#0
 Yeyiens-tu ici pour explorer l'île ?
@@ -962,6 +968,15 @@ AreaTop
 Armbands
 Brassards
 
+Arrow 1
+
+
+Arrow 2
+
+
+Arrow 3
+
+
 Artaxe
 Artaxe
 
@@ -972,7 +987,7 @@ Artis Tank Top
 Débardeur d'Artis
 
 Artis is a very nice place. There are some hot chicks...
-
+Artis est un endroit très sympa. Il y a de jolies gonzesses...
 
 Artis of course!
 Artis pardi !
@@ -991,9 +1006,6 @@ Comme tu pourrais peut-être le savoir, nous sommes des explorateurs sur un voya
 
 As you want!
 Comment tu veux !
-
-Ash brown
-Marron cendré
 
 Ask other merchants, they might know where he is.
 Demande aux autres marchands, il pourraient peut-être savoir où il est.
@@ -1024,9 +1036,6 @@ Pour le moment, nous équipage est occupé à rassembler des @@s, des @@s et des
 
 Atropos Mixture
 Mixture d'Atropos
-
-Auburn brown
-Marron cramé
 
 Auction is disabled
 L'enchère est désactivée.
@@ -1214,9 +1223,6 @@ Sac#000-1
 Bag#001-1
 Sac#000-1
 
-Bald
-Chauve
-
 Ban failed, it is not possible to ban this user.
 Le bannissement à échoué, il n'est pas possible de bannir cet utilisateur.
 
@@ -1260,16 +1266,16 @@ Battlegrounds ON
 Lieux de combats ON
 
 Be a friend and bring me @@ @@.#0
-
+Sois une amie et apporte moi @@ @@.
 
 Be a friend and bring me @@ @@.#1
-
+Sois un ami et apporte moi @@ @@.
 
 Be patient a little while longer, in the next few days we will arrive at the port of Artis...#0
-
+Sois un peu plus patiente, nous arriverons au port d'Artis dans quelques jours...
 
 Be patient a little while longer, in the next few days we will arrive at the port of Artis...#1
-
+Sois un peu plus patient, nous arriverons au port d'Artis dans quelques jours...
 
 Because I am an orc I can't read such things? That's rubbish.
 C'est parce que je suis un orc que je peux pas lire de telles choses ? Foutaises.
@@ -1337,8 +1343,11 @@ Bobo
 Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
 Taux d'Abandon du Boss : Commun %.2fx / Soin %.2fx / Utilisable %.2fx / Équipement %.2fx / carte %.2fx
 
-Bowl cut
-Coupe au bol
+Bow 1
+
+
+Bow 2
+
 
 Box
 Boîte
@@ -1372,12 +1381,6 @@ Teinture Coton Marron
 
 Brown Trousers
 Pantalon Marron
-
-Bun
-Chignon
-
-Bunches
-Grappes
 
 Bury.
 Enterrer.
@@ -1466,9 +1469,6 @@ Mais tu seras toujours la bienvenue pour remettre à zéro des statistiques si t
 But you are welcome to reset your stats again if you bring me some more plushrooms!#1
 Mais tu seras toujours le bienvenu pour remettre à zéro des statistiques si tu me rapportes d'autres peluchignons !
 
-But you decide to patiently wait.
-Mais tu décides d'attendre patiemment.
-
 But you won't *hic* me this time...
 Mais tu ne me *hic*ra pas cette fois...
 
@@ -1538,11 +1538,11 @@ Ne peut pas créer de salles de discussion dans cette zone.
 Can't show boss mobs!
 Ne peut pas afficher les monstres boss !
 
-Can't talk right now, i'm on patrol duty.
-Je ne peux pas te parler maintenant, je suis en patrouille.
+Can't talk right now, I'm on patrol duty.
+
 
 Can't you remember anything at all? Or do you have some memories of your past?
-
+Tu ne te souviens de rien du tout ? Ou as-tu quelques petits souvenirs de ton passé ?
 
 Can't you see I'm working?!
 Tu ne vois pas que je travaille là ?!
@@ -1589,8 +1589,23 @@ Cachemire#Teinture001-1
 Cat got your tongue?
 Tu as perdu ta langue au chat ?
 
-Center parting
-Raie au milieu
+Chair#Chair1-001-2-41
+
+
+Chair#Chair2-001-2-41
+
+
+Chair#Chair3-001-2-41
+
+
+Chair#Chair4-001-2-41
+
+
+Chair#Chair5-001-2-41
+
+
+Chair#Chair6-001-2-41
+
 
 Champion
 Champion
@@ -1679,9 +1694,6 @@ Chelios, son apprenti, travaille le plus souvent dehors.
 Chelios... He is part of the blacksmith house, is he not?
 Chelios... Il fait parti de la maison des forgerons, je me trompe ?
 
-Cherry blossom
-Fleur de cerise
-
 Cherry tree leaves have begun to fall.
 Les feuilles des cerisiers ont commencé à tomber.
 
@@ -1705,9 +1717,6 @@ Détends-toi, je ne dirai rien.
 
 Chocolate Cashmere Dye
 Teinture Cachemire Chocolat
-
-Choppy
-Saccadé
 
 Chorus of the Woods
 Chant des Bois
@@ -1751,11 +1760,8 @@ Clown
 Colorant is not the yeying color. Some wear out from light, others look great but inflict itai-itai, and others become spotty or wash-away.
 Les colorants ne sont pas les yeyeures couleurs. Certains s'effacent lorsqu'ils sont exposés au soleil, d'autres sont superbes mais grattes et enfin d'autres encore laissent des trasses au lavage.
 
-Combed back
-Peignés en arrière
-
 Come after a little while.
-
+Reviens après un petit peu de temps.
 
 Come back later if you changed your mind!
 Reviens plus tard si tu changes d'avis!
@@ -1813,9 +1819,6 @@ Les cookies te donnent de la force, de la vie et du charme.
 
 Copper Armbands
 Brassards Cuivrés
-
-Copper blonde
-Blond cuivré
 
 Coral
 Corail
@@ -1949,12 +1952,6 @@ Collecteur Sombre
 Dark Red Cotton Dye
 Teinture Coton Rouge Foncé
 
-Dark brown
-Marron foncé
-
-Dark copper
-Cuivre foncé
-
 Darlin
 Darlin
 
@@ -2010,7 +2007,7 @@ Did you say reward? I want it!
 As-tu dis une récompense ? Je la veux !
 
 Did you see Don the blacksmith? He might know how you could improve your metal equipment.
-
+As-tu vu Don le forgeron ? Il devrait savoir comment tu peux améliorer ton équipement en métal.
 
 Different ways, each part of your equipment can be generally upgraded.
 De différentes façons, chaque partie de ton équipement peut être améliorée en général.
@@ -2036,6 +2033,9 @@ Affiche la Nuit !
 Divorce error!
 Erreur de divorce.
 
+Do I look like a tree? I feel like one.
+
+
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Jenna
 Ne donne jamais le mot de passe de ta chambre à quiconque ! Garde-le secrètement et essaye de ne jamais utiliser le même pour les autres chambres dans le futur. - Jenna
 
@@ -2049,7 +2049,7 @@ Do you feel too weak even to do damage to this areas wishy-washy wildlife?
 Te sens-tu trop faible même pour faire des dégâts à la faune de cet endroit insipide ?
 
 Do you have @@s for me?
-
+As-tu des @@s pour moi ?
 
 Do you have any other questions for me?
 As-tu une autre question à me poser ?
@@ -2064,10 +2064,10 @@ Do you know how to speak with people around you?
 Sais-tu comment parler aux gens autour de toi ?
 
 Do you know what happened to the gold I had when you guys saved me?#0
-
+Saurais-tu ce qu'il est arrivé à l'argent que j'avais quand vous m'avez sauvée ?
 
 Do you know what happened to the gold I had when you guys saved me?#1
-
+Saurais-tu ce qu'il est arrivé à l'argent que j'avais quand vous m'avez sauvé ?
 
 Do you know where can I find Gulukan?
 Sais-tu où je pourrais trouver Gulukan ?
@@ -2124,7 +2124,7 @@ Do? I don't do them.
 Fait ? Je ne les fait pas.
 
 Docks Warehouse
-
+Entrepôt du Port
 
 Does anyone know a good place to hang out in Esperia? - M. Arpan
 Est-ce que quelqu'un connaît un bon endroit où traîner dans Esperia ? - M. Arpan
@@ -2142,13 +2142,13 @@ Dolfina
 Dolfina
 
 Don gave me some black iron... after I asked him nearly ten times.
-
+Don m'a donné du fer noir... Après lui avoir demandé près de dix fois.
 
 Don is a renowned blacksmith throughout Andorra, it's crazy that you never heard of him.
-
+Don est un forgeron renommé à travers tout Andorra, c'est fou que tu n'aies jamais entendu parler de lui.
 
 Don is renowned throughout the entire archipelagos for his blacksmith skills, and he is here, in Artis.
-
+Don est connu à travers tout l'archipel pour ses talents de forgeron et il est ici, à Artis.
 
 Don#001-2-27
 Don#001-2-27
@@ -2166,10 +2166,10 @@ Don't fall!
 N'échoue pas!
 
 Don't get too excited about it...#0
-
+N'en sois pas trop excitée...
 
 Don't get too excited about it...#1
-
+N'en sois pas trop excité...
 
 Don't say it so loudly, other people could hear us.
 Ne le dis pas trop fort, d'autres personnes pourraient nous entendre.
@@ -2181,13 +2181,13 @@ Don't try to poison me! I know what that does!
 N'essaye pas de m'empoisonner ! Je sais c'que ça fait !
 
 Don't worry sister, I didn't forget you.
-
+Ne t'en fais pas sœurette, je ne t'ai pas oubliée.
 
 Don't worry, I'm sure you will help them soon enough!
 Ne t'en fais pas, je suis sûre que tu les aideras sans plus tarder !
 
 Don't you recognize the great city of Artis?
-
+Ne reconnais-tu par la grande cité d'Artis ?
 
 Don't you try to cheat an old merchant! You don't have enough money, you need @@ E.
 N'essaye même pas d'entourlouper un vieux marchand ! Tu n'as pas assez d'argent, tu as besoin de @@ E.
@@ -2259,7 +2259,7 @@ Dummy
 Mannequin
 
 During the next few days, we will finally reach Artis.
-
+Durant les prochains jours, nous allons enfin arriver à Artis.
 
 Duty calls me, *hic*, see you later, dude.#1
 Le devoir m'appelle, *hic*, à plus tard, mec.
@@ -2268,7 +2268,7 @@ Duty calls me, *hic*, see you later, honey.#0
 Le devoir m'appelle, *hic*, à plus tard, ma puce.
 
 Each big city hosts a Legion chapter, Artis' chapter building is located in the north-west.
-
+Chaque grande ville accueille un chapitre de la Légion, celui d'Artis est le bâtiment situé au nord-ouest.
 
 Each card improves your gear by a ratio or a fixed number on a predefined stat.
 Chaque carte améliore ton équipement avec un ratio ou un nombre fix sur une statistique prédéfinie.
@@ -2288,8 +2288,8 @@ Est
 Easter Egg
 Œuf de Pâques
 
-Edouard#001-2-29
-Edouard#001-2-29
+Edouard#001-2-41
+
 
 Ehm... He was really upset because of some past stories.
 Euh... Il était vraiment fâché à cause d'anciennes histoires.
@@ -2313,16 +2313,16 @@ Elmo and Gugli told me that you did all of the tasks outside, congrats!
 Elmo et Gugli m'ont dit que tu avais fait toutes les tâches à l'extérieur, bravo !
 
 Elmo brought reports to me about some frictions between my old and new lieutenants. You probably already met Julia and Chef Gado.
-
+Elmo m'a rapporté des conflits entre mon vieux et mon nouveau lieutenant. Tu as probablement déjà rencontré Julia et le Chef Gado.
 
 Elmo told me what Nard said, congrats!
 Elmo m'a annoncé ce que Nard avait dit, bravo !
 
 Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.#0
-
+Elmo m'a dit que tu es maintenant considérée comme de la famille et est comptée parmis nous pour les activités sur cette île. J'apprécie vraiment beaucoup les efforts que tu as fournis là-bas.
 
 Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.#1
-
+Elmo m'a dit que tu es maintenant considéré comme de la famille et est compté parmis nous pour les activités sur cette île. J'apprécie vraiment beaucoup les efforts que tu as fournis là-bas.
 
 Elmo#001-1
 Elmo#001-1
@@ -2332,9 +2332,6 @@ Elmo#marins
 
 Elven Voice
 Voix d'Elfe
-
-Emo
-Gothique
 
 Enabled Mapflags in this map:
 Activer les Mapflags sur cette carte :
@@ -2358,7 +2355,7 @@ Enora#001-1
 Énora#001-1
 
 Enora, from the Legion of Aemil, has been warned that you were aboard.
-
+Énora, de la Légion d'Aemil, a été avertie que tu étais à bord.
 
 Enough of this island?
 Tu en as assez de cette île ?
@@ -2374,9 +2371,6 @@ Erreur lors de la lecture de atcommand.conf, le rechargement a échoué.
 
 Error reading groups.conf, reload failed.
 Erreur lors de la lecture de groups.conf, le rechargement a échoué.
-
-Esperia blue
-
 
 Eugene
 Eugène.
@@ -2433,7 +2427,7 @@ Fates Potion
 Potion du Destin
 
 Feel free to come visit me another time.
-
+Sens-toi libre de venir me rendre visite à tout moment.
 
 Fexil
 Fexil
@@ -2474,9 +2468,6 @@ Bien
 Fine... I was just going to give you some help...
 Très bien... J'étais juste venu t'apporter un peu d'aide.
 
-Fire red
-Rouge feu
-
 Fireworks are launched.
 Les feux d'artifice sont lancés.
 
@@ -2501,14 +2492,11 @@ Canne à Pêche
 Five Castles
 Cinq Châteaux
 
-Flat ponytail
-Queue de cheval plate
-
 Fluffy
 Pluche
 
 Fluffy Fur
-
+Fourrure de Pluche
 
 Fog hangs over.
 Le bourrière reste au dessus.
@@ -2523,10 +2511,10 @@ Follow mode ON.
 Mode suivre ON.
 
 Follow the canal to the north-east and you will find it.
-
+Suis la rivière jusqu'au nord-est et tu la trouvera.
 
 Follow the up-stream and cross the canal twice using the two bridges north from here.
-
+Suis le courant ascendant et traverse le canal deux fois grâce aux deux ponts situés au nord d'ici.
 
 Following these lines are some other writings on this paper.
 À la suite de ces lignes se trouvent d'autres écritures sur ce papier.
@@ -2546,9 +2534,6 @@ Pour un chef ? Qui a dit que j'étais un... Ah mais oui, j'en suis un.
 For what kind of tissue?
 Pour quel type de tissus ?
 
-Forest green
-
-
 Four Castles
 Quatre Châteaux
 
@@ -2565,7 +2550,7 @@ Friend removed.
 L'ami a été supprimé.
 
 From what I heard, my brother Gugli needs the help of as many people as possible in order to collect a lot of neat things that can be found on this island.
-
+D'après ce que j'ai entendu, mon frère Gugli a besoin de l'aide d'un maximum de gens pour récupérer un grand nombre de chouettes choses qui peuvent être trouvées sur l'île.
 
 Frostiana
 Frostiana
@@ -2651,9 +2636,6 @@ Redonne-moi ce plat, vilain petit menteur !
 Give me some space.
 Donne-moi de l'espace.
 
-Give up.
-Abandonner.
-
 Go and grab one of them. A good knife will help with your hunting the creatures of this island.
 Va en prendre un. Un bon couteau t'aidera à chasser les créatures de cette île.
 
@@ -2664,19 +2646,16 @@ Go fly a kite.
 Vas faire voler un cerf-volant.
 
 Go meet him, and return me the package, it's an easy task.
-
+Vas le rencontrer et rapporte-moi le paquet, ça devrait être une tâche facile.
 
 Go north from here until you to the dock warehouse, cross the bridge to the west side of the canal, continue north until you reach another bridge then cross it to the east side of the canal.
-
+Vas au nord d'ici jusqu'à l'entrepôt du port, traverse le pont pour arriver à l'ouest du canal, continue au nord jusqu'à ce que tu arrives à un second pont, traverse-le vers l'est du canal.
 
 Go on the upper level if you want to change your room or to use it.
 Va au niveau supérieur si tu veux changer de chambre ou bien l'utiliser.
 
 Go on.
 Continue.
-
-Golden blonde
-Blond doré
 
 Good day miss.
 Bonjour mademoiselle.
@@ -2727,7 +2706,7 @@ Good, good... Hey, could you help me please? I beg you, please, pleeeease...
 Bien, bien... Eh, pourrais-tu m'aider s'il-te-plaît ? Je t'en supplie, s'il-te-plaît, s'il-te-plaît...
 
 Good, take a look in the bag next to me then!
-
+Bien, jette un œil dans le sac près de moi alors !
 
 Goodbye.
 Au revoir.
@@ -3099,7 +3078,7 @@ Hey you! Can you hear us? Are you okay?
 Eh toi ! Tu nous entends ? Tu vas bien ?
 
 Hey you, do you have any @@s?
-
+Eh toi, as-tu des @@s ?
 
 Hey you, sorry for leaving your room so quickly. I needed to speak with the captain about the food reserves. You know, now that we have a new mouth to feed, we need to check what we have.
 Eh toi, désolé d'être parti si rapidement de ta chambre. Je devais parler au capitaine à propos des réserves de nourriture. Tu sais, maintenant qu'on a une nouvelle bouche à nourrire, nous devons vérifier ce que nous avons.
@@ -3165,10 +3144,10 @@ Hi @@.
 Salut @@.
 
 Hi customer! What do you want today?#0
-
+Bonjour chère cliente. Que voudrais-tu aujourd'hui ?
 
 Hi customer! What do you want today?#1
-
+Bonjour cher client. Que voudrais-tu aujourd'hui ?
 
 Hi! I can finally see you under the sunlight!
 Salut ! Je peux enfin te voir à la lumière du jour !
@@ -3186,10 +3165,10 @@ Hi, nice to see you!
 Eh, heureuse de te voir !
 
 Hi, what do you want kiddo?#0
-
+Salut, qu'est-ce que tu veux ma petite ?
 
 Hi, what do you want kiddo?#1
-
+Salut, qu'est-ce que tu veux petit gars ?
 
 Hi.
 Bonjour.
@@ -3236,9 +3215,6 @@ Hm... il semblerait qu'un autre joueur essaye déjà d'attraper le piou, je ne d
 Hm... Shhhh...
 Hm... Shhhh...
 
-Hmm, I'm fine for now, thank you.
-Hmm, je vais bien pour le moment, merci.
-
 Hmm... Let's see, take this one.
 Hm... Voyons voir, prends celle-ci.
 
@@ -3259,9 +3235,6 @@ Statistiques de l'homoncule :
 
 Honestly, it's quite far-fetched according to me.
 Honnêtement, je dirais que ton histoire est tirée par les cheveux.
-
-Honey brown
-Marron miel
 
 How about I ask you to help the crew? It would mean that you're one of us and that you will be able to get one of these hats.
 Et si je te demandais d'aider l'équipage ? Cela voudrait dire que tu serais l'un des nôtres et que tu pourrais avoir un de ces chapeaux.
@@ -3365,11 +3338,11 @@ Je suis %s Super Novice~
 I am an alchemist, I bear the name of Ivan.
 Je suis un alchimiste, je porte le nom d'Ivan.
 
-I am new in this town, just like you are.
-Je suis nouveau dans cette ville, tout comme toi.
+I am new in this town, just like you.
+
 
 I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment.
-
+Je ne suis pas un expert de la sorte, mais je sais de quoi je parle quand il s'agit d'améliorer son équipement.
 
 I am not worried about rewards. I just want to help.
 Je ne me préoccupe pas des récompenses. Je veux juste aider.
@@ -3417,13 +3390,13 @@ I asked for food but... *hips* Ah, that'll do nicely!
 J'ai demandé de la nourriture mais... *hips* Ah, ça fera parfaitement l'affaire !
 
 I asked for food but... *hips* Ah, that'll do!
-
+J'ai demandé de la nourriture mais... *hips* Ah, ça fera l'affaire !
 
 I asked you to do me a favor, did you forget?#0
-
+Je t'ai demandée de me faire une faveur, tu as oublié ?
 
 I asked you to do me a favor, did you forget?#1
-
+Je t'ai demandé de me faire une faveur, tu as oublié ?
 
 I borrowed it from the library, you should try to cultivate yourself more instead of insinuate things about people you don't know!
 Je l'ai emprunté à la bibliothèque, tu devrais essayer de te cultiver au lieu d'insinuer des choses sur des gens que tu ne connais pas !
@@ -3435,10 +3408,10 @@ I came here, looking for a better life.
 Je suis venu ici à la recherche d'une meilleure vie.
 
 I came to retrieve a package for Enora.#0
-
+Je suis venue récupérer un paquet pour Énora.
 
 I came to retrieve a package for Enora.#1
-
+Je suis venu récupérer un paquet pour Énora.
 
 I can finally pay off my debts.
 Je peux enfin rembourser mes dettes.
@@ -3463,6 +3436,9 @@ Je n'arrive à me souvenir de rien.
 
 I can't stay here and talk all day. I have a job to do.
 Je ne peux pas rester ici à te parler toute la journée. J'ai un travail à faire.
+
+I can't use the shovel here.
+
 
 I can't wait all day!
 Je ne peux pas attendre toute la journée !
@@ -3522,7 +3498,7 @@ I don't need your help right now, come back later.
 Je n'ai pas besoin de ton aide pour le moment, reviens me voir plus tard.
 
 I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E).
-
+Je n'ai pas vraiment le temps d'aller à la chasse aux pious, laisse-moi juste en acheter un au prix initial (30000 E).
 
 I don't see anything else other than... water?
 Je ne vois rien d'autre que... de l'eau ?
@@ -3666,10 +3642,10 @@ I need somebody who can rid the hold of the ship of these rattos. Can you help m
 J'ai besoin de quelqu'un qui peut me débarrasser la cave de ces rattos. Peux-tu m'aider ?
 
 I need someone to help me clean the edge of the ship, but you aren't strong enough for now.#0
-
+J'ai besoin d'aide pour nettoyer la cale de ce navire, mais tu n'es pas assez forte pour m'aider pour le moment.
 
 I need someone to help me clean the edge of the ship, but you aren't strong enough for now.#1
-
+J'ai besoin d'aide pour nettoyer la cale de ce navire, mais tu n'es pas assez fort pour m'aider pour le moment.
 
 I need to go, sorry.
 Je dois y aller, désolé.
@@ -3758,9 +3734,6 @@ Je parle russe.
 I speak Spanish.
 Je parle espagnol.
 
-I still didn't find a cheap building to open my own business, so for now I will stay in this inn.
-Je n'ai toujours pas trouvé un bâtiment peu cher où ouvrir mon commerce, alors pour l'instant je vais rester dans l'auberge.
-
 I still didn't find my brother...
 Je n'ai toujours pas trouvé mon frère...
 
@@ -3795,7 +3768,7 @@ I think that my wine has a great quality! I'm on my second bottle and I already.
 Je pense que mon vin est de très bonne qualité ! J'en suis à ma deuxième bouteille et je me sens déjà... De quoi parlions-nous au fait ?
 
 I think that we will stay in port for a great time.
-
+Je pense que nous allons rester à ce port pendant un long moment.
 
 I think that yeye's soon be done. Yeye'll soon have a full box of @@s!
 Je pense que tu auras bientôt terminé. Tu auras bientôt une boîte pleine de ces @@s !
@@ -3813,13 +3786,13 @@ I want to be the first merchant of this square to sell clothes made from @@s!
 Je veux être le premier marchand de cet endroit à vendre des vêtements faits à partir de @@s !
 
 I want to divorce.
-
+Je veux divorcer.
 
 I want to make my own dyes.
 Je voudrais créer mes propres teintures.
 
 I want to register for marriage.
-
+Je veux m'enregistrer pour le marriage.
 
 I was afraid to get busted, so I decided to get rid of the evidence.
 J'ai eu peur d'être attrapé, alors j'ai décidé de me débarasser de la preuve.
@@ -3852,7 +3825,7 @@ I will not tell you all the details, but after a month, she was ruling the ship 
 Je ne te donnerai pas tous les détails, mais un mois plus tard, elle dirigeait le navire et j'ai été envoyé ici, en bas, à cuisiner pour ces traîtres !
 
 I will send you this letter as soon as I arrive.
-
+Je t'enverrai cette lettre dès que j'arrive.
 
 I will surely visit him. Do you need any help with your boxes?
 Je ne manquerai pas de lui rendre visite. As-tu besoin d'aide avec tes boîtes ?
@@ -3900,7 +3873,7 @@ I work under the protection and the supervision of the Legion of Aemil.
 Je travail sous la protection et la surveillance de la Légion d'Aemil.
 
 I would like to come back home when the days are better.
-
+J'espère rentrer chez moi lorsque les jours se seront calmés.
 
 I would like to create a guild.
 Je voudrais créer une guilde.
@@ -3939,10 +3912,10 @@ I'll be back in no time.
 Je serai de retour dans un rien de temps.
 
 I'll be here, come back when you'll be ready.#0
-
+Je serai ici, reviens quand tu seras prête.
 
 I'll be here, come back when you'll be ready.#1
-
+Je serai ici, reviens quand tu seras prêt.
 
 I'll give her everything she needs, don't worry.#0
 Je lui donnerai tout ce dont elle a besoin, ne t'en fais pas.
@@ -3953,8 +3926,8 @@ Je lui donnerai tout ce dont elle a besoin, ne t'en fais pas.
 I'll share my berries with you if you help me.
 Je partagerai mes baies avec toi si tu m'aide.
 
-I'm a barber, you see. I can change your hair style or color to your liking.
-Vois-tu, je suis un barbier. Je peux changer ta coupe de cheveux ainsi que sa couleur comme tu le désires.
+I'm a barber, you see. I can change your hairstyle or hair color to your current taste.
+
 
 I'm a bit sick...#0
 Je suis un peu malade...
@@ -3975,7 +3948,7 @@ I'm done.
 J'ai fini.
 
 I'm fine for now, thank you.
-
+Je vais bien pour l'instant, merci.
 
 I'm glad to see you're okay.#0
 Je suis content que tu n'aies rien.
@@ -3999,16 +3972,16 @@ I'm losing my mind here, I need something else to eat!
 Je perds la tête ici, j'ai besoin de manger autre chose !
 
 I'm lost, where should I go?#0
-
+Je suis perdue, où dois-je aller ?
 
 I'm lost, where should I go?#1
-
+Je suis perdu, où dois-je aller ?
 
 I'm not a pawn of the Legion, I don't have to obey you!
 Je ne suis pas un pion de la Légion, je n'ai pas à t'obéir !
 
 I'm not proud of it, but I had to steal money from others to keep on living.
-
+Je n'en suis pas fier, mais j'avais besoin de voler l'argent des autres pour que je puisse survivre.
 
 I'm not suited for this kind of work!
 Je ne suis juste pas fait pour ce genre de travail !
@@ -4017,7 +3990,7 @@ I'm not sure. They probably left the ship early this morning. I was not awake ye
 Je ne suis pas sûr. Ils sont probablement sorti du bateau tôt ce matin. Je n'étais alors pas encore réveillé.
 
 I'm not that numb eeh *hic* what did ever yous disco... ...vered there, the Legion of Aemil won't get me!
-
+Je ne suis pas si lourd eeh *hic* peu importe ce que tu as décou... ...vert là-bas, la Légion d'Aemil ne m'aura pas !
 
 I'm on my way! I will bring it back to you.
 Je suis en chemin. Je te le rapporterai.
@@ -4080,7 +4053,7 @@ I'm sure you'll appreciate its effect, but be careful, these cookies are rare, a
 Je suis certaine que tu apprécieras son effet, mais sois prudent, ces cookies sont rares et tu auras besoin d'aider la communauté encore une fois avant de pouvoir en récupérer un autre.
 
 I'm talking about the cookie inside which I put all my love!
-
+Je parle du cookie dans lequel j'ai mis tout mon amour !
 
 I'm the cook's assistant of the ship. I help Gado, La Johanne's Chef, in his daily work.
 Je suis l'assistant du cuisinier de ce navire. J'ai Gado, le chef de La Johanne, dans son travail quotidien.
@@ -4110,7 +4083,7 @@ I... I just like to eat the purple and delightful... And natural, and...
 Je... J'aime juste manger le délicieux et violet... Et naturel, et...
 
 Ianus is from the Legion of Aemil, don't compare me to this brigand.
-
+Ianus fait partie de la Légion d'Aemil, ne me compare pas à ce brigand.
 
 If Enora wants her sword now, I need to ask for your help.
 Si Énora veut son épée maintenant, j'ai besoin de te demander ton aide.
@@ -4125,10 +4098,10 @@ If yoiis wants to see a different use for the cards he can yeye for Resa at the 
 Si yoiis veut voir une utilisation différente pour les cartes, il peut yeyander à Resa à la boutique d'armure légère pour une description des cartes de style.
 
 If you are registered somewhere else you will loose that reservation.#0
-
+Tu es enregistrée autrepart, tu perdras cette réservation.
 
 If you are registered somewhere else you will loose that reservation.#1
-
+Tu es enregistré autrepart, tu perdras cette réservation.
 
 If you catch the escaped piou and bring it back, I will give you a 90% discount on a piou.
 Si tu attrapes le piou qui s'est échappé et que tu me le rapportes, je te ferai une remise de 90% sur un piou.
@@ -4140,10 +4113,10 @@ If you ever find the time, pass by Esperia, it's the capital city of the archipe
 Si jamais tu en trouves le temps, va à Esperia, c'est la capitale de cet archipel !
 
 If you feel bored or anxious, you can always ask some of the people around Artis if they need your help.#0
-
+Si tu t'ennuies ou si tu es anxieuse, tu peux toujours demander aux gens dans Artis s'ils ont besoin de ton aide.
 
 If you feel bored or anxious, you can always ask some of the people around Artis if they need your help.#1
-
+Si tu t'ennuies ou si tu es anxieux, tu peux toujours demander aux gens dans Artis s'ils ont besoin de ton aide.
 
 If you feel bored or like running around in circles, you may want to talk with the other sailors around here to get some tasks to do.
 Si tu t'ennuies ou court en cercles, tu pourrais parler aux autres marins aux alentours afin d'avoir des tâches à faire.
@@ -4184,9 +4157,6 @@ Si tu veux lire cette page une nouvelle fois, il y en a une copie sur le mur de 
 If you're looking for us there, most of us will be at the tavern of the Red Plush, at the bar counter, for Silvio's case...
 Si tu nous cherches là-bas, la plupart d'entre nous serons à la taverne de la Peluche Rouge, au comptoir du bar, pour l'affaire de Silvio...
 
-Imperial
-Impérial
-
 Impossible to increase the number/value.
 Impossible d'augmenter le nombre/la valeur.
 
@@ -4213,9 +4183,6 @@ En effet, je ne le suis pas.
 
 Indeed, I am not.#1
 En effet, je ne le suis pas.
-
-Infinitely long
-Infiniment long
 
 Information sent to login-server via char-server.
 Information envoyée au login-server via le char-server.
@@ -4326,10 +4293,10 @@ Is there a reward?
 Y-a-t'il une récompense ?
 
 Is this for you or somebody else? Because you need to be registered to obtain these materials.#0
-
+Est-ce pour toi ou quelqu'un d'autre ? Parce que tu as besoin d'être enregistrée pour obtenir ces matériaux.
 
 Is this for you or somebody else? Because you need to be registered to obtain these materials.#1
-
+Est-ce pour toi ou quelqu'un d'autre ? Parce que tu as besoin d'être enregistré pour obtenir ces matériaux.
 
 Is this some kind of joke?!
 C'est une blague ?
@@ -4359,7 +4326,7 @@ It looks like the sweet lady is curious, am I right?
 Il semblerait que la jeune demoiselle est curieuse, je me trompe ?
 
 It looks like you are an expert of the life inside 'La Johanne'. Do you know any hidden secrets nobody knows?
-Il semblerait que tu es un expert dans la vie à l'intérieur de 'La Johann'. Serais-tu au courant d'un secret que personne ne sait ?
+Il semblerait que tu sois un expert de la vie à l'intérieur de 'La Johanne'. Serais-tu au courant d'un secret que personne ne connaîtrait ?
 
 It looks like you can't carry anything else for now.
 Il semblerait que tu ne puisses rien porter d'autre pour l'instant.
@@ -4386,7 +4353,7 @@ It seems you still have some work to do.
 Il semblerait que tu as toujours du travail à faire.
 
 It was at night, so I could barely escape. I ran to Artis hill.
-
+C'était la nuit, j'ai à peine pu m'échapper. J'ai couru à la colline d'Artis.
 
 It was something like a long nap.
 C'était plutôt comme une longue sieste.
@@ -4404,13 +4371,13 @@ It's @@ @@.
 C'est @@ @@.
 
 It's Ivan... I'm sure that he sent you to annoy me...#0
-
+C'est Ivan... Je suis certain qu'il t'a envoyée pour m'embêter...
 
 It's Ivan... I'm sure that he sent you to annoy me...#1
-
+C'est Ivan... Je suis certain qu'il t'a envoyé pour m'embêter...
 
 It's a commercial port of Andorra, it's weird that you don't know about it since it is one of the most famous cities throughout the whole world. But hey, back to me. Remember me telling you that I'm hun...grrr...eee!
-
+C'est un port commercial d'Andorra, c'est bizarre que tu ne le connaisses pas car c'est sûrement l'une des plus grandes villes à travers le monde entier. Mais eh, retournons à moi. Tu te souviens quand je t'ai dit que j'avais faai...aiii...iim !
 
 It's a dangerous place out here. Beware of the mischievous creatures living here!
 C'est un endroit dangereux ici. Fais attention aux créatures malicieuses qui vivent ici !
@@ -4419,7 +4386,7 @@ It's a good place to earn money, it can also help you to travel throughout the a
 C'est un bon endroit pour se faire de l'argent, il peut aussi t'aider à voyager à travers l'archipel !
 
 It's a great honor for us, at the Legion, to hold the security of his business!
-
+C'est un grand honneur pour nous, à la Légion, de maintenir la sécurité de son commerce !
 
 It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?
 C'est un type de champignon qui a le goût d'un marshmallow et l'apparence d'une peluche ! @@, tu comprends ?
@@ -4445,10 +4412,7 @@ It's been a while, boy!#1
 It's been a while, girl!#0
 Ça fait un bail, fillette !
 
-It's better than running around in circles doing nothing.#0
-
-
-It's better than running around in circles doing nothing.#1
+It's better than running around in circles doing nothing.
 
 
 It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!
@@ -4485,7 +4449,7 @@ It's still too young to fly too far away, so it just circles nearby.
 Il est encore trop jeune pour s'envoler, alors il fait des cercles aux alentours.
 
 It's the big building at northern Artis, at the top of a small hill.
-
+C'est le grand bâtiment au nord d'Artis, en haut d'une petite colline.
 
 It's true!
 C'est vrai !
@@ -4533,7 +4497,7 @@ Ivan grumbles and resumes his work.
 Ivan marmonne quelque chose et retourne à son travail.
 
 Ivan is the one you should look for now.
-
+Tu dois maintenant aller à la recherche d'Ivan.
 
 Jalad
 Jalad
@@ -4578,10 +4542,10 @@ Julia made an appeal to the Legion of Aemil to get in touch with you, exit the s
 Julia a fait un appel à la Légion d'Aemil pour qu'elle entre en contact avec toi, sors du bateau et tu verras ton escorte !
 
 Julia told me how they found you in the sea, on a raft with a logo of...#0
-
+Julia m'a dit comment ils t'ont trouvée dans la mer, sur un radeau avec le logo de...
 
 Julia told me how they found you in the sea, on a raft with a logo of...#1
-
+Julia m'a dit comment ils t'ont trouvé dans la mer, sur un radeau avec le logo de...
 
 Julia#Artis
 Julia#Artis
@@ -4640,9 +4604,6 @@ Chevalier
 Lachesis Brew
 Brassage de Lachésis
 
-Lagoon blue
-Bleu lagon
-
 Last time I saw you, you were lost at sea on your raft.#0
 La dernière fois que je t'ai vue, tu étais perdue en mer sur ton radeau.
 
@@ -4662,7 +4623,7 @@ Leather Shield
 Bouclier en Cuir
 
 Leave it.
-
+Ne pas y toucher.
 
 Leaves have stopped falling.
 Les feuilles ont arrêté de tomber.
@@ -4757,17 +4718,14 @@ Bibliothèque
 Light Armor Shop
 Boutique d'Armures Légères
 
-Light violet
-Violet célair
-
 Like I promised, here is your share.
 Comme promis, voici ta part.
 
 Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.#0
-
+Comme le reste de l'équipage, tu es la bienvenue pour venir te reposer ici à n'importe quel moment pendant ton séjour à Artis.
 
 Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.#1
-
+Comme le reste de l'équipage, tu es le bienvenu pour venir te reposer ici à n'importe quel moment pendant ton séjour à Artis.
 
 Like, a defensive mythril card can be used on any mythril equipment, and it will improve the defense by 5% of the latter.
 Par exemple, une carte défensive de mythril peut être utilisée sur n'importe équipement en mythril, et il améliorera la défense de 5% de ce dernier.
@@ -4788,7 +4746,7 @@ Lloyd still owes me, but beware of those money-grubbers, or they will sell your 
 Lloyd me doit encore, mais attention à ces extirpeurs d'argent, ou il te venderont tes propres dents.
 
 Lloyd the Banker
-
+Lloyd le Banquier
 
 Logic is the beginning of wisdom, not the end.
 La logique est le début de la sagesse, non pas sa fin.
@@ -4798,15 +4756,6 @@ Il a été demandé au login-server de %s le joueur '%.*s'.
 
 Login-server is offline. Impossible to %s the player '%.*s'.
 Le login-server est hors-ligne. Il est impossible de %s le joueur '%.*s'.
-
-Long and curly
-Long et bouclé
-
-Long and slick
-Long et lisse
-
-Long ponytail
-Longue queue de cheval
 
 Look at your equipment, can you guess what material it is made from?
 Regarde ton équipement, peux-tu deviner de quoi il est fait ?
@@ -4882,9 +4831,6 @@ Manana
 
 Manana Tree
 Mananier
-
-Mane
-Crinière
 
 Map not found.
 Carte introuvable.
@@ -4967,9 +4913,6 @@ La miséricorde a été montrée.
 Merlin
 Merlin
 
-Messy
-Ébouriffé
-
 Minstrel
 Ménestrel
 
@@ -4987,9 +4930,6 @@ Le monstre fait son bruit quotidien, la nature chante sa mélodie somptueuse, pe
 
 Mobs#001-1
 Monstres#001-1
-
-Mohawk
-Mohawk
 
 Mommy sent me to find my brother Bobo.
 Ma maman m'a envoyée à la recherche de mon frère Bobo.
@@ -5042,14 +4982,14 @@ Mouboo#Artis2
 Mouboo#Artis3
 Mouboo#Artis3
 
-Move kid.
-Bouge gamin.
-
 Mushroom Spores
 Spores de Champignons
 
 My beauty, I was not always a sailor, you know, I was once an important individual!#0
 Ma belle, je n'ai pas toujours été un marin, vois-tu, j'étais quelqu'un d'important autrefois.
+
+My breath smells bad.
+
 
 My friend, I was not always a sailor, you know, I was once an important individual!#1
 Mon ami, je n'ai pas toujours été un marin, vois-tu, j'étais quelqu'un d'important autrefois.
@@ -5076,7 +5016,7 @@ My name is Q'Onan, I'm a member of Nard's crew.
 Je m'appelle Q'Onan, je suis un membre de l'équipage de Nard.
 
 My stats are too good, I won't need it.
-
+Mes statistiques sont bonnes, je n'en aurai pas besoin.
 
 NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT!
 RIEN D'AUTRE QUE DES REQUINS ET UNE ÉTRANGE LUMIÈRE !
@@ -5127,7 +5067,7 @@ Nard
 Nard
 
 Nard and his crew are taking us to the city of Artis.
-
+Nard et son équipage nous emmènent à la ville d'Artis.
 
 Nard looks surprised and stops you.
 Nard semble surpris et t'arrête.
@@ -5143,9 +5083,6 @@ Narrateur#000-0-1
 
 Navy Blue Cotton Dye
 Teinture Coton Bleu Marine
-
-Navy blue
-Bleu marine
 
 Nevertheless, you can craft some cards that you can then attach to your equipment.
 Néanmoins, tu peux fabriquer des cartes que tu peux attacher à ton équipement.
@@ -5208,10 +5145,10 @@ No Save, Save Point: %s,Random
 Pas de Sauvegarde, Point de Sauvegarde : %s, aléatoire
 
 No and *hic*... No, you and you and your... *burp* stup*hic* guild!#0
-
+Non et *hic*... Non, toi et toi et ta... *burp* stup*hic* guilde !
 
 No and *hic*... No, you and you and your... *burp* stup*hic* guild!#1
-
+Non et *hic*... Non, toi et toi et ta... *burp* stup*hic* guilde !
 
 No cookie for you!
 Pas de cookie pour toi !
@@ -5271,7 +5208,7 @@ No! No, no, my precious plushrooms! Don’t take me to them, they wants my preci
 Non ! Non, non, mes précieux peluchignons ! Ne me les prends paas, ils veulent mon précieux.
 
 No, I can't. I won't! All I wanted was to travel across the seas for fun, growl... sniff. And in this hole in the floor, as you can see, I have lots of fun.
-
+Non, je ne peux pas. Je ne le ferai pas ! Tout ce que je voulais c'était de traverser les océans pour m'amuser, growl... sniff. Et dans ce trou du plancher, comme tu peux le voir, je m'amuse beaucoup.
 
 No, I don't, but I would like to know more about that.
 Bien sûr que non, mais j'aimerais en savoir plus à ce sujet.
@@ -5463,7 +5400,7 @@ Now that I think about it, I have another task for you. I asked Resa from the li
 Maintenant que j'y pense, j'ai une autre tâche pour toi. J'ai demandé à Resa de l'échoppe d'armures légères de me fabriquer de nouveaux habits, elle est un peu loin d'ici, je ne peux pas y aller car je dois surveiller le port.
 
 Now that I think about it, they are the only shops that are independent in Artis...
-
+Maintenant que j'y pense, ce sont les deux seuls magasins indépendants d'Artis...
 
 Now that you bring up that topic, that reminds me of something...
 Maintenant que tu soulèves ce sujet, ça me fait penser à quelque chose...
@@ -5540,9 +5477,6 @@ Parmis les deux, qui a le 'bon' sentiment de leur côté ?
 Off
 Off
 
-Off black
-Noir profond
-
 Oh I see... Sailors are not able to do their job anymore, is it like that?!
 Oh je vois... Les marins ne sont plus capables de faire leur travail, c'est ça ?!
 
@@ -5553,10 +5487,10 @@ Oh and guess what! I'm almost out of potions anyway.
 Oh et devine quoi ! Je n'ai presque plus de potions de toute façon.
 
 Oh darling, what brought you here?#0
-
+Oh ma chère, qu'est-ce qui t'a amenée ici ?
 
 Oh darling, what brought you here?#1
-
+Oh mon cher, qu'est-ce qui t'a amené ici ?
 
 Oh good! Did he give you your money back as well?
 Très bien ! T'a-t-il aussi restitué ton argent ?
@@ -5594,10 +5528,7 @@ Oh vraiment? Comment pourrais-je oublier quelque chose d'aussi important que ça
 Oh really? I'll put more food in the next box then.
 Oh vraiment ? Je mettrai plus de nourriture dans la prochaine boîte alors.
 
-Oh right, I totally forgot about that, here you go.#0
-
-
-Oh right, I totally forgot about that, here you go.#1
+Oh right, I totally forgot about that, here you go.
 
 
 Oh sure I remember you.
@@ -5724,7 +5655,7 @@ Oh... eating rattos. Sounds... ehm... Delicious, yes.
 Oh... manger des rattos... Ça à l'air... euh... Délicieux, oui.
 
 Oh... um... actually... all I wanted was to get to Artis. Err... but I didn't, uhm... have enough money to pay for the ferry!
-
+Oh... uhm... en fait... tout ce que je voulais c'était arriver à Artis. Err... mais je n'avais pas, ah, assez d'argent pour payer le ferry !
 
 Ok I add your name... @@...
 Ok, j'ajoute ton nom... @@...
@@ -5858,17 +5789,11 @@ Notre mère nous défend d'y aller car c'est dangereux. Mais il n'écoute jamais
 Our only wish to eat a plush, so juicy sweet...
 Notre seul vœux est de manger une peluche, si douce et juteuse...
 
-Out of my way.
-Hors de mon chemin.
-
 Packet 0x%x length: %d
 Paquet 0x%x longueur : %d
 
 Paladin
 Paladin
-
-Parted
-Séparés
 
 Partner not ready.
 Partenaire pas prêt.
@@ -5890,9 +5815,6 @@ Parfait !
 
 Perfect! I will wait for you here.
 Parfait ! Je t'attendrai ici.
-
-Perky ponytail
-Queue de cheval guillerette
 
 Pet hunger changed.
 La faim du familier a changé.
@@ -5919,10 +5841,7 @@ Piberries
 Baies Pi
 
 Piberries Infusion
-
-
-Pigtails
-Couettes
+Infusion de Baies Pi
 
 Pikpik
 Pikpik
@@ -5932,9 +5851,6 @@ Blobime Rose
 
 Pink Cotton Dye
 Teinture Coton Rose
-
-Pinky pink
-Rose rosé
 
 Piou
 Piou
@@ -6279,7 +6195,7 @@ Please find my daddy...
 Trouve mon papa s'il-te-plaît...
 
 Please find the small chest, buried somewhere on Artis hill.
-
+Trouve le petit coffre s'il-te-plaît, enterré quelque part sur la Colline d'Artis.
 
 Please guide me.
 Guide-moi je te prie.
@@ -6287,8 +6203,8 @@ Guide-moi je te prie.
 Please specify a display name or monster name/id.
 Spécifie s'il-te-plaît un nom d'affichage ou un nom de monstre/id.
 
-Please take this lollypop for your help. Mum says they are bad for my teeth anyway (FIXME)
-Prends au moins cette sucette pour ton aide. Ma mère me dit toujours que c'est mauvais pour mes dents de toute façon. (À CORRIGER)
+Please take this @@ for your help.
+
 
 Please try to figure out what went wrong with this order and bring me these potions.
 Essaye de découvrir ce qu'il s'est passé de mal avec cette commande et apporte-moi ces potions.
@@ -6317,14 +6233,14 @@ Poème de Poèmes
 Poisoned Dish
 Plat Empoisonné
 
-Pompadour
-Pompadour
-
 Poor Chelios, I don't envy him...
 Pauvre de Chelios, je ne l'envie pas...
 
 Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body
 Position : 1:Haut 2:Milieu 3:Bas 4:Arme 5:Bouclier 6:Chaussures 7:Robe 8:Corps
+
+Practice! There are no secrets to becoming a warrior.
+
 
 Priest
 Prêtre
@@ -6337,9 +6253,6 @@ Professeur
 
 Protect me, please...
 Protège-moi, s'il-te-plaît...
-
-Pull!
-Tirer !
 
 Pumpkin
 Citrouille
@@ -6356,20 +6269,11 @@ Citrouche
 Pumpkish Juice
 Jus de Citrouche
 
-Punk
-Punk
-
-Pure platinum
-Platine pur
-
 Purple Blobime
 Blobime Violet
 
 Purple Cotton Dye
 Teinture Coton Violet
-
-Purple plum
-Violet prune
 
 PvP Flags: 
 Drapeaux PVP:
@@ -6441,7 +6345,7 @@ RattosControl#001-2-23
 ContrôleDeRattos#001-2-23
 
 Read it.
-
+La lire.
 
 Really? That's kind of you, I accept your help!
 Vraiment ? C'est vraiment gentil de ta part, j'accepte ton aide !
@@ -6459,7 +6363,7 @@ Registration is open for everybody, but newcomers need to pay a fee for all of t
 L'enregistrement est ouvert à tout le monde, mais les nouveaux-venus doivent payer des frais pour toute la paperasse.
 
 Remember, you have to find my brother on the hill east of here.
-
+N'oublie pas, tu dois trouver mon frère sur la colline à l'est d'ici.
 
 Remind me, what should I do?
 Rappelle-moi, que dois-je faire ?
@@ -6633,7 +6537,7 @@ Server Uptime: %ld days, %ld hours, %ld minutes, %ld seconds.
 Temps d'Actvité du Serveur : %ld jours, %ld heures, %ld minutes, %ld secondes.
 
 Server is jammed due to overpopulation.
-
+Le serveur est bloqué en raison d'une surpopulation.
 
 Server time (normal time): %A, %B %d %Y %X.
 Temps du serveur (temps normal) : %A, %B %d %Y %X.
@@ -6692,12 +6596,6 @@ Shht shht !
 Shop is out of stock! Come again later!
 Le magasin est à court de stock ! Reviens plus tard !
 
-Short and curly
-Court et bouclé
-
-Side strand
-Mèche de côté
-
 Sign#001-1-s-alchemist
 Sign#001-1-s-alchimiste
 
@@ -6752,9 +6650,6 @@ Signe#001-1-s-entrepôt
 Silver Cotton Dye
 Teinture Coton Argenté
 
-Silver grey
-
-
 Silvio
 Silvio
 
@@ -6771,7 +6666,7 @@ Since Don settled in Artis he and his band refused to register to the Merchant G
 Puisque Don s'est installé à Artis, lui et sa bande ont refusé de s'enregistrer à la Guilde des Marchands.
 
 Sincerely yours, Dan.
-
+Sincèrement vôtre, Dan
 
 Six Castles
 Six Châteaux
@@ -6813,10 +6708,10 @@ Snow |
 Neige |
 
 So I was going to ask if maybe you would be interested in giving me a hand with a few errands.#0
-
+Alors j'allais te demander si peut-être tu serais intéressée à me donner un coup de main avec quelques courses.
 
 So I was going to ask if maybe you would be interested in giving me a hand with a few errands.#1
-
+Alors j'allais te demander si peut-être tu serais intéressé à me donner un coup de main avec quelques courses.
 
 So close!
 Tellement proche !
@@ -6835,6 +6730,9 @@ C'est pour cela que nous voulions t'avertir, peut-être qu'il vient de cette gui
 
 So that's why we wanted to warn you, maybe she comes from that guild, as that sign was on her raft.#0
 C'est pour cela que nous voulions t'avertir, peut-être qu'elle vient de cette guilde, en raison du signe sur son radeau.
+
+So you think you're tough? A warrior must also be loyal and patient.
+
 
 So you're under the control of a dictatorship? That's... reassuring!
 Alors, tu es sous le contrôle d'un dictateur ? C'est... rassurant !
@@ -6908,11 +6806,14 @@ Quelqu'un s'entraîne probablement, mieux vaut attendre qu'il ai fini.
 Somebody is waiting for you outside!
 Quelqu'un t'attend dehors !
 
+Somebody took your place on this spot!
+
+
 Somebody tried to stroke the word "fish" and tried to replace it with "sharkes".
 
 
 Somehow you don't feel good about your deed.
-
+D'une certaine manière, tu ne te sens pas très bien à propos de tes actes.
 
 Something else?
 Quelque chose d'autre ?
@@ -6954,16 +6855,16 @@ Sorry, I have to go.
 Désolé, je dois y aller.
 
 Sorry, I'm busy with other registrations.
-
+Désolé, je suis occupé avec d'autres inscriptions.
 
 Sorry, I'm doing other things at the moment.
-
+Désolé, je fais autre chose pour le moment.
 
 Sorry, but I can't tell you anything about that.
 Désolé, mais je ne peux rien te dire à ce sujet.
 
 Sorry, but you don't have what I need.
-
+Désolé, mais tu n'as pas ce dont j'ai besoin.
 
 Sorry, but you have no pet.
 Désolé, mais tu n'as pas de familier.
@@ -6972,7 +6873,7 @@ Soul Linker
 Lieur d'Âmes
 
 Sounds good!
-
+Ça m'a l'air bien !
 
 Sounds like a good deal to me. I'll do it.
 Ça m'a l'air d'être une bonne affaire. Je vais le faire.
@@ -6997,12 +6898,6 @@ Vitesse retournée à la normale.
 
 Spend it wisely this time.
 Dépense-le avec sagesse maintenant.
-
-Splash!
-Splash !
-
-Spring green
-
 
 Spying on the %s guild.
 Espionnage de la guilde %s.
@@ -7122,7 +7017,7 @@ Surely. Take this box full of @@s.
 Bien sûr. Prends cette boîte de @@s.
 
 Surprise me!
-
+Surprends-moi !
 
 Swordsman
 Épéiste
@@ -7167,10 +7062,7 @@ Talk to you soon!
 Je te parle bientôt!
 
 Talk with Lloyd the Banker in the Merchant Guild, it's a big building at the northern part of Artis, at the top of the small hill.
-
-
-Tapered nape
-
+Parle au Banquier Lloyd dans la Guilde des Marchands, c'est un grand bâtiment sur la partie nord d'Artis, en haut de la petite colline.
 
 Taree
 Taree
@@ -7197,7 +7089,7 @@ Tell him that everything went fine and that we're almost done with the requisiti
 Dis-lui que tout s'est bien passé et que nous avons presque terminé avec réquésitions.
 
 Tell me, where are we right now?
-
+Dis-moi, où sommes-nous en ce moment ?
 
 Ten Castles
 Dix Châteaux
@@ -7253,8 +7145,11 @@ Merci.
 Thank you. I'll wait here.
 Merci. Je vais attendre ici.
 
-Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.
+Thanks again for helping me. Drats these rattos for infesting our fair vessal!
 
+
+Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.
+Merci encore de m'avoir aidé. Crotte, ces rattos infestent notre fier vaisseau ! Ils sont un problème permanent et c'est pourquoi j'aurai toujours besoin de ton aide pour les exterminer afin de garder leur nombre sous contrôle. En effet, ton aide est grandement appréciée. Cependant, je ne peux te donner la récompense que pour la première extermination.
 
 Thanks for helping me!
 Merci de m'avoir aidé !
@@ -7263,7 +7158,7 @@ Thanks for the help!
 Merci pour l'aide !
 
 That part of the town is called the gilded hill, it's also where the Merchant Guild has its headquarters.
-
+Cette partie de la ville est surnommée la colline dorée, c'est aussi l'endroit où la Guilde des Marchands a son quartier général.
 
 That poor one is doing his best to fly... But his last meal and the gravity is not helping him so far!
 Ce pauvre petit essaye de voler du mieux qu'il peut... Mais son dernier repas et la gravité ne l'aident pas vraiment !
@@ -7296,7 +7191,7 @@ The @@ is a one time item, you can use it as many times as you want, but you can
 La @@ est un objet d'une seule fois, tu peux l'utiliser autant de fois que le souhaites, mais tu ne peux en avoir qu'une.
 
 The Legion needs some potions.
-
+La Légion a besoin de potions.
 
 The Legion of Aemil are a group of mercenaries who vowed to protect and serve their neighbors.
 La Légion d'Aemil est un groupe de mercenaires qui ont juré protection et service à leurs voisins.
@@ -7338,7 +7233,7 @@ The elven from the library flirted with me a while ago, so has Enora from the Le
 L'elfe de la bibliothèque a flirté avec moi il y a déjà un bon moment, tout comme Énora de la Légion.
 
 The end of the story got erased, probably because of the sea water. Some pages are still missing. Thus much is left obscure, including the author's name.
-
+La fin de l'histoire a été effacée, probablement à cause de l'eau de mer. Quelques pages manquent. C'est pourquoi encore beaucoup reste obscure, y compris le nom de l'auteur.
 
 The fear to see her sleeping on this quiet and lonely bed is becoming more and more unbearable, I think that I won't get the bravery to see her this time...
 La peur de la voir dormir sur ce lit si tranquille, mise à l'écart, devient de plus en plus insupportable. Je pense que je n'aurai pas le courage de la voir cette fois-ci...
@@ -7348,12 +7243,6 @@ Les frais s'élèvent à @@ E. Alors, veut-tu t'enregistrer ?
 
 The first thing you should do is to evaluate your enemy.
 La première chose que tu devrais faire c'est évaluer ton ennemi.
-
-The fish ate all your bait.
-Le poisson a mangé tout ton appât.
-
-The fish ate small part of your bait.
-Le poisson a mangé une partie de ton appât.
 
 The fog has gone.
 Le brouillard a disparu.
@@ -7395,7 +7284,7 @@ The mapserver has spy command support disabled.
 La prise en charge de la part du mapserver de la commande d'espionnage est désactivée.
 
 The market is located at the south-east of Artis, it is known as Merchant Guild's exhibit.
-
+Le marché se situe au sud-est d'Artis, il connu pour être l'exposition de la Guilde des Marchands.
 
 The miracle is this: the more we share, the more we have.
 Voici le miracle : le plus on partage, le plus on possède.
@@ -7437,7 +7326,7 @@ The sailors take you aboard their ship.
 Les marins te prennent à bord de leur navire.
 
 The ship, La Johanne, has left Drasil Island, finally.
-
+Le navire, La Johanne, a enfin quitté l'Île Drasil.
 
 The stowaway doesn't answer.
 Le passager clandestin de répond pas.
@@ -7500,13 +7389,13 @@ There are still some rattos left! Do you want to abort the quest?
 Il y a encore des rattos vivants ! Veux-tu abandonner la quête ?
 
 There are two different kinds of cards, the first changes the style of your clothes, the second changes their stats.
-
+Il y a deux sortes de cartes, la première change le style de tes vêtements, la seconde ses statistiques.
 
 There are two kinds of dialogue, the one with citizen, and the one with other adventurer.
 Il y a deux types de dialoguqes, celui avec un citoyen, et l'autre avec un autre aventurier.
 
 There are two shops inside, they are independent from the Merchant Guild of Artis.
-
+Il y a deux boutiques à l'intérieur, elles sont indépendantes de la Guilde des Marchands d'Artis.
 
 There is a paper with some rules written on it.
 Il y a un papier avec des règles écrites dessus.
@@ -7519,6 +7408,9 @@ Il y a un effet secondaire encore inconnu dans ces peluchignons, ils peuvent te 
 
 There is no help for %c%s.
 Il n'y a pas d'aide pour %c%s.
+
+There is no honor in fighting a weak opponent.
+
 
 There's been no change in the setting.
 Il n'y a eu aucun changement dans l'environnement.
@@ -7552,6 +7444,9 @@ Ces champignons violets s'appellent des @@s. Il y en a partout sur cette île !
 
 These yeye boxes are way too heavy to be carried alone onto the ship.
 Ces boîtes sont bien trop lourdes pour être portées tout seul sur le navire.
+
+They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control.
+
 
 They are all around the island.
 Ils sont tout autour de l'île.
@@ -7601,8 +7496,8 @@ Ce PNJ n'existe pas.
 This action can't be performed at the moment. Please try again later.
 Cette action ne peut pas être accomplie pour le moment. Merci de réessayer plus tard.
 
-This book resumes everything you should know about it, take it!
-Ce livre résume tout ce dont tu as besoin de savoir à son sujet, prends-le !
+This book contains everything you should know about it, take it!
+
 
 This bound item cannot be stored there.
 Cet objet lié ne peut pas être entreposé ici.
@@ -7615,6 +7510,12 @@ Ce personnage a été banni jusqu'à
 
 This door is locked.
 Cette porte est verrouillée. 
+
+This fishing spot has just been used, give it a rest.
+
+
+This fishing spot is already being used!
+
 
 This floor is reserved for quiet reading, don't speak too loud.
 Cet étage est réservé pour de la lecture calme, ne parle pas trop fort.
@@ -7632,7 +7533,7 @@ This guy needs help, we need to rescue him!#1
 Ce gars a besoin d'aide, nous devons le sauver !
 
 This is Drasil Island, I named it after an ancient mythical tree.
-
+Voici l'Île Drasil, je me suis inspiré d'un ancien arbre mythologique.
 
 This is a harsh word to use, you are never alone in the beautiful place of Artis.
 C'est un mot très fort que tu utilises, tu n'es jamais tout seul dans de si beaux lieux à Artis.
@@ -7764,7 +7665,7 @@ Too bad. I'm not hungry enough for these cookies of yours. Maybe I'll come back 
 Dommage. Je n'ai pas assez faim pour tes cookies. Mais je reviendrai plus tard.
 
 Too bad... Come back when you'll have some nice food for me. Growl... grumble... grumble.
-
+Dommage... Reviens quand tu auras de la bonne nourriture pour moi. Growl... grumble... grumble.
 
 Too risky, I might end up in jail. Do it yourself.
 Trop risqué, je finirai peut-être en prison. Fais-le toi-même.
@@ -7846,9 +7747,6 @@ Twenty-Three Castles
 
 Twenty-Two Castles
  Vingt-deux Châteaux
-
-Twisted teal
-Sarcelle torsadée
 
 Two Castles
 Deux Châteaux
@@ -8042,11 +7940,14 @@ QU'AS-TU DIT ?!
 Wait a minute, where's the cookie I gave you?
 Attends une minute, où est le cookie que j'avais donné ?
 
-Wait, are you one of those from the Legion of Aemil? I didn't do anything wrong, I promise!#0
+Wait for the bait to sink underwater.
 
+
+Wait, are you one of those from the Legion of Aemil? I didn't do anything wrong, I promise!#0
+Attends, tu fais partie de la Légion d'Aemil ? Je n'ai rien fait de mal, je le jure !
 
 Wait, are you one of those from the Legion of Aemil? I didn't do anything wrong, I promise!#1
-
+Attends, tu fais partie de la Légion d'Aemil ? Je n'ai rien fait de mal, je le jure !
 
 Wait, it seems someone is blocking the door from the other side!
 Attends, il semblerait qu'il y ai quelqu'un derrière qui bloque la porte.
@@ -8056,9 +7957,6 @@ Attends, pourquoi as-tu toujours le plat sur toi ?!
 
 Wait, you never came here before?
 Attends, tu n'es jamais venu ici auparavant ?
-
-Wait...
-Attends...
 
 Wait... That's not a proper place for a chef, what are you doing there?
 Attends... Ce n'est pas la bonne place pour un chef, qu'est-ce que tu fabriques ?
@@ -8126,12 +8024,6 @@ Téléportation au point de sauvegarde.
 Water, salt, spicy herbs and meat stuffed with my special surprise!
 De l'eau, du sel, des herbes épicées et de la viande farcie avec ma surprise, très spéciale !
 
-Wave
-Vague
-
-Wavy
-Ondulé
-
 We also feature some services like a storage and a bank for members.
 Nous proposons également des services comme un stockage et une banque pour les membres.
 
@@ -8148,10 +8040,10 @@ We are glad captain Nard has let you join us down here!#1
 Nous somme heureux que le capitaine t'a permis de nous rejoindre ici !
 
 We are very lucky, my friend.#0
-
+Nous avons beaucoup de chance, mon amie.
 
 We are very lucky, my friend.#1
-
+Nous avons beaucoup de chance, mon ami.
 
 We arrived in Artis today.
 Nous sommes arrivés à Artis aujourd'hui.
@@ -8180,8 +8072,8 @@ Nous avons besoin de la force d'hommes sur cette île.
 We need manpower on the island... Oh forgive me, women are also welcome, of course.#0
 Nous avons besoin de la force d'hommes sur cette île... Oh, toutes mes excuses, les femmes sont aussi les bienvenues, bien sûr.
 
-We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranted to be right as rain after a night here!
-Nous offrons une chambre aux aventuriers passant par Artis, nos lits sont douillets et peuvent te garantir d'être aussi droit que la luie après une nuit ici !
+We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranteed to be right as rain after a night here!
+
 
 We offer party and guild certifications and we can also teach you how to use some basic communication skills.
 Nous offrons des certifications de groupe et de guilde et pouvons aussi t'apprendre les compétences de base de communication.
@@ -8196,10 +8088,10 @@ We thought that you could help us understand this, all we know is that we found 
 Nous pensions que tu pouvais nous aider à comprendre cela, tout ce que nous savons de toi c'est que nous t'avons trouvé à la dérive en pleine mer, sur ton radeau.
 
 We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.#0
-
+Nous pensions que tu pouvais nous aider à comprendre cela, tout ce que nous savons de toi c'est que nous t'avons trouvée à la dérive en pleine mer, sur ton radeau.
 
 We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.#1
-
+Nous pensions que tu pouvais nous aider à comprendre cela, tout ce que nous savons de toi c'est que nous t'avons trouvé à la dérive en pleine mer, sur ton radeau.
 
 We tried to clean them but the sea water mostly destroyed them. It's why we gave you these clothes. They're not very nice, but that's all that we have for you.#0
 On a essayé de les nettoyer mais l'eau de la mer les a principalement détruits. C'est pourquoi nous t'avons donnée ces vêtements. Ils ne sont pas super beaux mais c'est tout ce que nous avond pour toi.
@@ -8217,7 +8109,7 @@ We will be yaying there in a few days, so we will drop you off there.
 On arrivera là-bas dans quelques jours donc on t'y lâchera.
 
 We will talk about it later.
-
+Nous en parlerons plus tard.
 
 We're soon leaving that island, please return to your cabine.
 Nous allons bientôt quitter cette île, retourne s'il-te-plaît à ta cabine.
@@ -8247,7 +8139,7 @@ Welcome to the Merchant Guild of Artis!
 Bienvenue dans la Guilde des Marchands d'Artis !
 
 Welcome to the Red Plush inn!
-
+Bienvenue à l'auberge de la Peluche Rouge !
 
 Welcome!
 Bienvenue !
@@ -8256,10 +8148,10 @@ Well I'm working too! Don't you want me to carry one of these boxes back to Gugl
 Eh bien, je travaille aussi ! Ne veux-tu pas que j'apporte une de ces boîtes à Gugli ?
 
 Well done! Collect all the ingredients and then come back here. You will be rewarded once I am satisfied that they understand who rules this ship!#0
-
+Bien joué ! Récupère tous les ingrédients et reviens ici. Tu sera récompensée une fois que je serai satisfait qu'il comprendront qui règne sur ce bateau !
 
 Well done! Collect all the ingredients and then come back here. You will be rewarded once I am satisfied that they understand who rules this ship!#1
-
+Bien joué ! Récupère tous les ingrédients et reviens ici. Tu sera récompensé une fois que je serai satisfait qu'il comprendront qui règne sur ce bateau !
 
 Well done! The ship is now ready to sail again!
 Bien joué ! Le vaisseau est prêt à naviguer à nouveau !
@@ -8432,6 +8324,9 @@ Qu'est-ce qu'une carte ?
 What is growing and shrinking at the same time?
 Qu'est-ce qui grogne et rétrécit en même temps ?
 
+What is my current hairstyle and hair color?
+
+
 What is this "legion"?
 
 
@@ -8478,7 +8373,7 @@ What will be the bait for the fish?
 Quel sera l'appât pour le poisson ?
 
 What would you like me to do?
-
+Que voudrais-tu que je fasse ?
 
 What would you like to bury?
 Que veux-tu enterrer ?
@@ -8492,8 +8387,8 @@ Dis-moi, que puis faire pour toi ?
 What yoiis should know:
 Ce que yoiis devrait savoir :
 
-What you looking at?!
-Que regardes-tu ?!
+What're you looking at?!
+
 
 What's that food?
 Qu'est-ce que cette nourriture ?
@@ -8619,10 +8514,10 @@ Why Frenchy? It's a Russian!#1
 Pourquoi français ? C'est un russe !
 
 Why are you asking? And who are you too? I've never seen you around before...#0
-
+Pourquoi demandes-tu ? Et qui es-tu toi aussi ? Je ne t'ai jamais vue ici avant...
 
 Why are you asking? And who are you too? I've never seen you around before...#1
-
+Pourquoi demandes-tu ? Et qui es-tu toi aussi ? Je ne t'ai jamais vu ici avant...
 
 Why are you hiding?
 Pourquoi te caches-tu ?
@@ -8654,9 +8549,6 @@ Pourquoi ?
 Why? And who should you bring it back to?
 Pourquoi ? Et ensuite, à qui devras-tu le rapporter ?
 
-Wild
-Sauvage
-
 Wind and grass is nice and cool, so juicy sweet...
 Le vent et l'herbe, c'est si sympa et cool à la fois, tellement juteux et doux.
 
@@ -8673,7 +8565,7 @@ With script
 Avec script
 
 With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their business.
-
+Avec l'aide de l'hôtel de ville et la Légion d'Aemil, nous organisons une vente aux enchères et nous aidons les marchands locaux à démarrer leurs affaires.
 
 Withdraw.
 Retirer.
@@ -8763,7 +8655,7 @@ Yes, I have some! "5x Black Iron Ingots"
 
 
 Yes, and he promised to be home soon.
-
+Oui, et il a promi de revenir rapidement à la maison.
 
 Yes, indeed. I prefer to explore places I have never been to, before doing anything else.
 Oui, en effet. Je préfère explorer les endroits où je ne suis jamais allé, avant de faire une quelconque autre chose.
@@ -8817,10 +8709,10 @@ Yeye's brain is probably still full of sea water if yeye can't see the beauty of
 Ton cerveau est probablement toujours plein d'eau de mer si tu ne peux pas voir la beauté de cet endroit.
 
 Yeye, it's the logo of the Legion of Aemil in Esperia! I wonder what this yoiis was doing so far away from the coast.#0
-
+Yuiyui, c'est le logo de la Légion d'Aemil à Esperia ! Je me demande ce que cette yoiise faisait si loin de la côte.
 
 Yeye, it's the logo of the Legion of Aemil in Esperia! I wonder what this yoiis was doing so far away from the coast.#1
-
+Yuiyui, c'est le logo de la Légion d'Aemil à Esperia ! Je me demande ce que ce yoiis faisait si loin de la côte.
 
 Yeye, you are really lucky to be alive. You are in good enough shape for walking, do you remember what happened?#0
 Youiyoui, tu as de la chance d'être vivante. Tu es suffisamment assez en forme pour marcher, te souviens-tu ce qu'il t'es arrivée ?
@@ -8829,10 +8721,10 @@ Yeye, you are really lucky to be alive. You are in good enough shape for walking
 Youiyoui, tu as de la chance d'être vivant. Tu es suffisamment assez en forme pour marcher, te souviens-tu ce qu'il t'es arrivé ?
 
 Yeye, you still did not get your new clothes from the chest next to your bed!#0
-
+Eh, tu n'as toujours pas pris tes vêtements dans le coffre près de ton lit !
 
 Yeye, you still did not get your new clothes from the chest next to your bed!#1
-
+Eh, tu n'as toujours pas pris tes vêtements dans le coffre près de ton lit !
 
 Yeye.
 Oui.
@@ -8868,7 +8760,7 @@ You already looked here.
 Tu as déjà regardé ici.
 
 You already registered. Waiting for your partner...
-
+Tu es déjà enregistré. En attente de ton partenaire.
 
 You already took a @@, please put this one back in the box.
 Tu as déjà pris un @@, remets celui-là à sa place dans la boîte.
@@ -8877,16 +8769,16 @@ You are already mounting something else
 Tu es déjà en train de chevaucher autre chose.
 
 You are already registered here.#0
-
+Tu es déjà enregristrée ici.
 
 You are already registered here.#1
-
+Tu es déjà enregristré ici.
 
 You are exhausted, you should rest a bit.#0
-
+Tu es épuisée, tu devrais te reposer un peu.
 
 You are exhausted, you should rest a bit.#1
-
+Tu es épuisé, tu devrais te reposer un peu.
 
 You are full of wine, my friend...
 Tu es rempli d'alcool mon ami...
@@ -8901,10 +8793,10 @@ You are just sitting on the shadow of your store.
 Tu t'asseois juste en dessous de l'ombre de ton magasin.
 
 You are new around here, right?#0
-
+Tu es nouvelle par ici, pas vrai ?
 
 You are new around here, right?#1
-
+Tu es nouveau par ici, pas vrai ?
 
 You are no longer killable.
 Tu ne peux plus être tué.
@@ -8943,7 +8835,7 @@ You are now
 Tu es maintenant
 
 You are now divorced!
-
+Tu es maintenant divorcé !
 
 You are now immune to attacks.
 Tu es maintenant immunisé aux attaques.
@@ -8957,8 +8849,8 @@ Tu fais maintenant partie de l'équipage... Du moins pour nous, ici !
 You are on a raft, adrift in the sea.
 Tu es sur un radeau à la dérive en pleine mer.
 
-You are on the human ressource wing of the Town Hall.
-Tu es sur l'aile des ressources humaines de l'Hôtel de Ville.
+You are on the human resource wing of the Town Hall.
+
 
 You are unable to change your job.
 Tu ne peux pas changer ton métier.
@@ -9027,7 +8919,7 @@ You can have %d items on your autolootitem list.
 Tu peux avoir %d objets dans ta liste de ramassage automatique d'objets.
 
 You can keep your current party as it is, while leading or being part of a guild in order to talk and share different items with all of its members!
-
+Tu peux garder ton groupe comme il est et même pendant que tu es le chef ou que tu fais partie d'une guilde afin de parler et échanger différents objets avec tous ses membres !
 
 You can not change to this job by command.
 Tu ne peux pas changer pour ce métier avec cette commande.
@@ -9110,9 +9002,6 @@ Tu ne peux pas effectuer des échanges sur cette carte.
 You can't use commands while dead.
 Tu ne peux pas utiliser des commandes si tu es mort.
 
-You can't use the shovel here.
-Tu ne peux pas utiliser la pelle ici.
-
 You can't withdraw that much money
 Tu ne peux pas retirer cette quantité d'argent
 
@@ -9188,14 +9077,14 @@ Il semblerait que tu n'aies pas assez d'argent, reviens plus tard !
 You don't expect me to eat that, do you? Give me something else!
 Tu n'attends quand même pas que je mange ça, si ? Donne-moi autre chose !
 
-You don't have a @@.
-Tu n'as pas de @@.
-
 You don't have any @@, are you mocking me?
 Tu n'as aucune @@, te moques-tu de moi ?
 
-You don't have any food suitable for bait.
-Tu n'as aucune nourriture susceptible d'être utilisée comme appât.
+You don't have any @@.
+
+
+You don't have any food to use as bait.
+
 
 You don't have enough @@s on you.
 Tu n'as pas assez de @@s sur toi.
@@ -9216,13 +9105,13 @@ You failed!
 Tu as échoué !
 
 You feel numb and everything around you looks foggy, but you can recall the feeling of the cold hard wood of your raft on a stormy night.
-
+Tu te sens engourdi et tout semble brumeux autour de toi, mais tu peux te rappeler la sensation du bois froid et dur de ton radeau dans une nuit d'orages.
 
 You fell asleep.#0
-
+Tu t'es endormie.
 
 You fell asleep.#1
-
+Tu t'es endormi.
 
 You found a small chest, surprisingly heavy for it's size.
 Tu as trouvé un petit coffre, étonnamment lourd pour sa taille.
@@ -9234,7 +9123,7 @@ You found something!
 Tu as trouvé quelque chose !
 
 You got married to @@!
-
+Tu t'es marrié à @@ !
 
 You have %d new emails (%d unread)
 Tu as %s nouveaux mails (%d non lus)
@@ -9321,7 +9210,7 @@ You hear a loud scream. It must be the creaking of the wooden door...
 Tu entends un cri très fort. Ça doit être le craquement de la porte en bois...
 
 You hear some creeping and crawling sounds from the murkiness below.
-
+Tu entends des sons effrayants et rampants venant de l'obscurité des profondeurs.
 
 You hear some sound behind the door.
 Tu entends du bruit de derrière la porte.
@@ -9396,7 +9285,7 @@ You need %s to mount!
 Tu requiert %s pour chevaucher !
 
 You need at least one of these: 
-
+Tu as besoin d'au moins d'un de ceux-ci :
 
 You need to be a Guild Master to use this command.
 Tu dois être un Chef de Guilde pour utiliser cette commande.
@@ -9431,9 +9320,6 @@ Tu ouvres le livre, mais il semblerait que l'eau de mer l'ai endommagé sévère
 You opened the @@ in two parts, but you crushed one of them.
 Tu as ouvert cette @@ en deux parties, mais tu as détruit l'une d'entre elles.
 
-You patiently wait...
-Tu attends patiemment...
-
 You perfectly cut your @@ into two edible parts.
 Tu as parfaitement coupé ta @@ en deux parties comestibles.
 
@@ -9443,8 +9329,11 @@ Tu ramasses ton paquet.
 You probably don't have much business in this city as you don't remember who you are.
 Tu n'a probablement pas beaucoup d'affaire dans cette ville puisque tu ne te souviens pas de qui tu es.
 
-You pulled too late and lost the bait.
-Tu as tiré trop tard et a perdu ton appât.
+You pulled too late and lost a @@...
+
+
+You pulled too soon and lost the bait.
+
 
 You receive @@ E!
 Tu reçois @@ E !
@@ -9555,7 +9444,7 @@ You step on something, a panel with a bitten corner and clear inscriptions on it
 Tu marches sur quelque chose, un panneau avec un coin rongé et des inscriptions très claires dessus...
 
 You step on something, a shaky and fragile panel with barely visible inscriptions on it...
-
+Tu marches sur quelque chose, un panneau fragile et branlant avec des inscriptions à peine visibles dessus...
 
 You still got a few days before we arrive at the port, maybe you can learn something from them?
 Encore quelques jours avant que l'on atteigne le port, peux-être peux-tu apprendre quelque chose grâce à l'équipage ?
@@ -9596,11 +9485,8 @@ Tu as essayé de m'embarrasser, je me trompe ?!
 You tried to get rid of me, eeh? But surprise! I'm still here... *hic* Or there...
 Tu as essayé de te débarrasser de moi, hein ? Eh bien surprise ! Je suis toujours là... *hic* Ou ici...
 
-You use a @@ as bait.
-Tu utilises un @@ comme appât.
-
 You were gone so I thought you let me down.
-
+Tu étais partie alors je pensais que tu m'avais laissé tomber.
 
 You were in bad shape, you should be happy we found you before the sea killed you.#0
 Tu étais dans un sale état, tu devrais être contente qu'on t'ai trouvée, avant que la mer ne t'ai tuée.
@@ -9618,7 +9504,7 @@ You will be able to find Don's house in the west of this city, it's the first ho
 Tu pourras trouver la maison de Don à l'ouest de la ville, c'est la première maison juste après le pont à gauche, tu ne peux pas la rater !
 
 You will be able to find her in the market on the south-west of Artis.
-
+Tu auras la possibilité de la trouver au marché au sud-ouest d'Artis.
 
 You will find a wooden sign near a crossroad. He is a few steps on the left.
 Tu trouveras une pancarte de bois près du chemin. Il se trouve un peu à sa gauche.
@@ -9798,10 +9684,10 @@ Your account has expired.
 Ton compte a expiré.
 
 Your account is 'Unregistered'.
-
+Ton compte est 'Non Enregistré'.
 
 Your account is no longer authorized.
-
+Ton compte n'est plus authorisé.
 
 Your account time limit is: %d-%m-%Y %H:%M:%S.
 Ton temps limite de compte est de : %d-%m-%Y %H:%M:%S.
@@ -9857,6 +9743,9 @@ Ton entrepôt de guilde a été nettoyé.
 Your guild's storage has already been opened by another member, try again later.
 L'entrepôt de ta guilde a déjà été ouverte par un autre membre, essaye plus tard.
 
+Your hairstyle is @@ and its color is @@.
+
+
 Your hands are too weak, you did not succeed in opening this @@.
 Tes mains sont trop faibles, tu n'as pas réussi à ouvrir cette @@.
 
@@ -9865,6 +9754,9 @@ Ta tête est soudainement lourde, tes yeux se ferment...
 
 Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand.
 Ton cœur s'accélère lorsque ton regard se concentre sur un petit panneau de bois, partiellement obscurci sous une couche de sable apporté par le vent.
+
+Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only.
+
 
 Your homunculus doesn't evolve.
 Ton homoncule n'évolue pas.
@@ -9885,10 +9777,10 @@ Your sex has been changed (disconnection required to complete the process)...
 Ton sexe a été changé (la déconnexion est nécessaire pour terminer le processus)...
 
 Your sister sent me to find you. Your mother is worried.#0
-
+Ta sœur m'a envoyée de trouver. Ta mère est inquiète.
 
 Your sister sent me to find you. Your mother is worried.#1
-
+Ta sœur m'a envoyé de trouver. Ta mère est inquiète.
 
 Your storage was cleaned.
 Ton entrepôt a été nettoyé.
@@ -9955,6 +9847,9 @@ pieds,
 
 garment, 
 vêtement,
+
+hairstyle_config
+
 
 left accessory, 
 accessoire gauche,
