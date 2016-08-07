@@ -11,12 +11,13 @@
 //    0   Treasure Chest has not been opened yet.
 //    1   Treasure Chest has been opened.
 
-000-1,83,70,0	script	#chest	NPC_CHEST,{
+000-1,83,70,0	script	Chest#000-1	NPC_CHEST,{
     if (.dir != 4)
     {
         .dir = 2;
         initnpctimer;
         startnpctimer;
+        misceffect 24;
         close;
     }
 
@@ -33,6 +34,7 @@
     .dir = 6;
     initnpctimer;
     startnpctimer;
+    misceffect 25;
     close;
 
 OnTimer160:
