@@ -4,18 +4,6 @@
 // Description:
 //    Jumping piou.
 
-001-2-24,27,23,4	script	#piourocketArtis	NPC_PIOU_ROCKET,{
-    .dir = 2;
-    stopnpctimer;
-    initnpctimer;
-    close;
+// actual source is in npc/000-2-3/piourocket.txt
 
-OnTimer1420:
-    .dir = 4;
-    stopnpctimer;
-    end;
-
-OnInit:
-    .distance = 3;
-    end;
-}
+001-2-24,27,23,4	duplicate(#piourocket)	#piourocketArtis	NPC_PIOU_ROCKET
