@@ -48,7 +48,7 @@ function	script	legiontalk	{
             npctalk3 lg("Keep moving girl.", "Keep moving boy.");
             break;
         case 11:
-            npctalk3 l("So you think you're tough? A warrior must also be loyal and patient.");
+            npctalk3 lg("So you think you're tough? A warrior must also be loyal and patient.");
             break;
         case 12:
             emotion E_LOOKAWAY;
