@@ -173,3 +173,13 @@ OnInit:
     .sex = G_OTHER;
     end;
 }
+
+001-1,51,98,0	script	Sign#001-1-s-barber	NPC_NO_SPRITE,{
+    npctalkonce l("Barber");
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
