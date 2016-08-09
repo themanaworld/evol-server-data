@@ -1,0 +1,182 @@
+function	script	displayMOTD	{
+    .@size = getvariableofnpc(.size, "@motd");
+    .@dsize = getvariableofnpc(.dsize, "@motd");
+
+    // generic MOTD
+    for (.@i = 0; .@i < .@size; ++.@i)
+    {
+        dispbottom $MOTD_Messages$[.@i];
+    }
+
+    // git stuff and such
+    if (debug)
+    {
+        for (.@i = 0; .@i < .@dsize; ++.@i)
+        {
+            dispbottom $Debug_Messages$[.@i]; // FIXME: send this to the Debug tab instead
+        }
+    }
+    return;
+}
+
+function	script	MOTDConfig	{
+
+    function	toggleMOTD	{
+        $MOTD_Disabled = !($MOTD_Disabled);
+        // FIXME: log to GM log
+    }
+
+    function	addNewLine	{
+        clear;
+        mes l("Please enter the new line.");
+        input .@s$;
+        .@s$ = strip(.@s$);
+        if (.@s$ != "")
+        {
+            .@size = getvariableofnpc(.size, "@motd");
+            $MOTD_Messages$[.@size] = .@s$;
+            set getvariableofnpc(.size, "@motd"), getarraysize($MOTD_Messages$);
+            // FIXME: log to GM log
+        }
+    }
+
+    function	modifyLine	{
+
+        function	removeLine	{
+            .@l = getarg(0);
+            deletearray $MOTD_Messages$[.@l], 1; // remove and shift
+            mes l("Line @@ has been removed.", .@l);
+            set getvariableofnpc(.size, "@motd"), getarraysize($MOTD_Messages$);
+            // FIXME: log to GM log
+        }
+
+        function	moveUp	{
+            .@l = getarg(0);
+            .@top$ = $MOTD_Messages$[.@l - 1];
+            $MOTD_Messages$[.@l - 1] = $MOTD_Messages$[.@l];
+            $MOTD_Messages$[.@l] = .@top$;
+        }
+
+        function	moveDown	{
+            .@l = getarg(0);
+            .@bottom$ = $MOTD_Messages$[.@l + 1];
+            $MOTD_Messages$[.@l + 1] = $MOTD_Messages$[.@l];
+            $MOTD_Messages$[.@l] = .@bottom$;
+        }
+
+        function	editLine	{
+            .@l = getarg(0);
+            clear;
+            mes l("Old line:");
+            mes "---";
+            mes $MOTD_Messages$[.@l];
+            mes "---";
+            mes "";
+            mes l("Enter new line:");
+            next;
+            input .@s$;
+            .@s$ = strip(.@s$);
+            if (.@s$ != "")
+            {
+                $MOTD_Messages$[.@l] = .@s$;
+                // FIXME: log to GM log
+            }
+        }
+
+        .@max = (getarg(0) - 1);
+
+        do
+        {
+            mes l("Enter line number:");
+            next;
+            input .@n;
+            if ($MOTD_Messages$[.@n] != "")
+            {
+                clear;
+                mes l("line @@: @@", .@n, $MOTD_Messages$[.@n]);
+                next;
+                menuint
+                    l("Modify another line"), 1,
+                    l("Remove this line"), 2,
+                    l("Modify this line"), 3,
+                    rif(.@n > 0, l("Move this line up")), 4,
+                    rif(.@n < .@max, l("Move this line down")), 5,
+                    l("Return to main menu"), 6;
+
+                switch (@menuret)
+                {
+                    case 2: removeLine .@n; return;
+                    case 3: editLine .@n; return;
+                    case 4: moveUp .@n; return;
+                    case 5: moveDown .@n; return;
+                    case 6: return;
+                }
+            }
+        } while (1);
+    }
+
+    do
+    {
+        clear;
+        setnpcdialogtitle l("MOTD Config");
+        mes l("This menu allows you to modify the generic message that is sent to players on login.");
+        mes "";
+
+        mes "---";
+        .@size = getvariableofnpc(.size, "@motd");
+        for (.@i = 0; .@i < .@size; ++.@i)
+        {
+            mes l("line @@: @@", .@i, $MOTD_Messages$[.@i]);
+        }
+        if (.@size == 0)
+        {
+            mes "(" + l("no active MOTD") + ")";
+        }
+        mes "---";
+        .@d = $MOTD_Disabled;
+        mes l("Enabled: @@", (.@d ? l("no") : l("yes")));
+        next;
+
+        menuint
+            (.@d ? l("Enable") : l("Disable")), 1,
+            l("Add a new line"), 2,
+            rif(.@size, l("Modify or remove a line")), 3,
+            rif(.@size, l("Test MOTD")), 4,
+            rif(getarg(0,0), l("Return to Super Menu")), 5,
+            l("Close"), 6;
+
+        switch (@menuret)
+        {
+            case 1: toggleMOTD; break;
+            case 2: addNewLine; break;
+            case 3: modifyLine .@size; break;
+            case 4: displayMOTD; break;
+            case 6: closedialog; end;
+            default: return;
+        }
+    } while (1);
+}
+
+
+
+
+-	script	@motd	32767,{
+    end;
+
+OnCall:
+    MOTDConfig;
+    closedialog;
+    end;
+
+OnPCLoginEvent:
+    if ($MOTD_Disabled < 1)
+    {
+        displayMOTD;
+    }
+    end;
+
+OnInit:
+    .size = getarraysize($MOTD_Messages$);
+    .dsize = getarraysize($Debug_Messages$);
+    bindatcmd "motd", "@motd::OnCall", 3, 99, 0;
+}

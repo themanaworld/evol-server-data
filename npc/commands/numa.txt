@@ -1,0 +1,49 @@
+function	script	SuperMenu	{
+    do
+    {
+        .@gid = getgroupid();
+        clear;
+        setnpcdialogtitle l("Super Menu");
+        mes l("This menu contains all options available to you, based on your access privileges.");
+        mes "";
+        mes l("What do you want to access?");
+        next;
+        menuint
+            rif(.@gid >= 3, l("Scheduled broadcasts")), 1,
+            rif(.@gid >= 3, l("MOTD")), 2,
+            rif(.@gid >= 4, l("Event management")), 3,
+            l("Debug"), 4,
+            l("Close"), 5;
+
+        switch (@menuret)
+        {
+            //case 1: StoneBoard 1; break;
+            case 2: MOTDConfig 1; break;
+            //case 3: GlobalEventMenu 1; break;
+            //case 4: GlobalDebugMenu 1; break;
+            default: return;
+        }
+    } while (1);
+}
+
+
+
+-	script	@numa	32767,{
+    end;
+
+OnCall:
+    .@gid = getgroupid();
+
+    if (!debug && .@gid < 3)
+    {
+        dispbottom l("You do not have the required access privileges to use the Super Menu.");
+        end;
+    }
+
+    SuperMenu;
+    closedialog;
+    end;
+
+OnInit:
+    bindatcmd "numa", "@numa::OnCall", 0, 99, 0;
+}
