@@ -96,12 +96,12 @@ function	script	MOTDConfig	{
                 mes l("line @@: @@", .@n, $MOTD_Messages$[.@n]);
                 next;
                 menuint
-                    l("Modify another line"), 1,
-                    l("Remove this line"), 2,
-                    l("Modify this line"), 3,
-                    rif(.@n > 0, l("Move this line up")), 4,
-                    rif(.@n < .@max, l("Move this line down")), 5,
-                    l("Return to main menu"), 6;
+                    menuimage("actions/back", l("Modify another line")), 1,
+                    menuimage("actions/remove", l("Remove this line")), 2,
+                    menuimage("actions/edit", l("Modify this line")), 3,
+                    rif(.@n > 0, menuimage("actions/raise", l("Move this line up"))), 4,
+                    rif(.@n < .@max, menuimage("actions/lower", l("Move this line down"))), 5,
+                    menuimage("actions/home", l("Return to main menu")), 6;
 
                 switch (@menuret)
                 {
@@ -119,7 +119,7 @@ function	script	MOTDConfig	{
     {
         clear;
         setnpcdialogtitle l("MOTD Config");
-        mes l("This menu allows you to modify the generic message that is sent to players on login.");
+        mes l("This menu allows you to modify the generic message that is sent to players when they log in.");
         mes "";
 
         mes "---";
@@ -138,12 +138,12 @@ function	script	MOTDConfig	{
         next;
 
         menuint
-            (.@d ? l("Enable") : l("Disable")), 1,
-            l("Add a new line"), 2,
-            rif(.@size, l("Modify or remove a line")), 3,
-            rif(.@size, l("Test MOTD")), 4,
-            rif(getarg(0,0), l("Return to Super Menu")), 5,
-            l("Close"), 6;
+            menuimage("actions/toggle", (.@d ? l("Enable") : l("Disable"))), 1,
+            menuimage("actions/add", l("Add a new line")), 2,
+            rif(.@size, menuimage("actions/manage", l("Modify, move, or remove a line"))), 3,
+            rif(.@size, menuimage("actions/test", l("Test MOTD"))), 4,
+            rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu"))), 5,
+            menuimage("actions/exit", l("Close")), 6;
 
         switch (@menuret)
         {
@@ -156,7 +156,6 @@ function	script	MOTDConfig	{
         }
     } while (1);
 }
-
 
 
 
