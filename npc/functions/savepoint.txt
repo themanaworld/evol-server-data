@@ -16,6 +16,10 @@
 //      getarg(3)   INN flag.
 
 function	script	savepointparticle	{
+
+    if (gettimetick(2) - @lastSave < 5)
+        return;
+
     .@mapname$ = getarg(0, "");
     .@mapx = getarg(1, -1);
     .@mapy = getarg(2, -1);
@@ -38,5 +42,7 @@ function	script	savepointparticle	{
     }
     savepoint .@mapname$, .@mapx, .@mapy;
     misceffect 4, getcharid(3);
+    @lastSave = gettimetick(2);
+
     return;
 }
