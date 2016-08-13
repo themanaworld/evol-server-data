@@ -118,7 +118,7 @@ function	script	GlobalDebugMenu	{
         {
             case 1: changeLevel; break;
             case 2: changeStats; break;
-            //case 3: GlobalSkillDebug .@c; break;
+            case 3: GlobalSkillDebug .@c; break;
             //case 4: BarberDebug .@c; break;
             //case 5: changeQuests; break;
             //case 6: DebugPresets; break;
