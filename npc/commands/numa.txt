@@ -20,7 +20,7 @@ function	script	SuperMenu	{
             //case 1: StoneBoard 1; break;
             case 2: MOTDConfig 1; break;
             case 3: GlobalEventMenu 1; break;
-            //case 4: GlobalDebugMenu 1; break;
+            case 4: GlobalDebugMenu 1; break;
             default: return;
         }
     } while (1);
