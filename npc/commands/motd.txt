@@ -172,6 +172,10 @@ OnPCLoginEvent:
     {
         displayMOTD;
     }
+    if (debug)
+    {
+        dispbottom "##7<<##B @@?test-server|" + col(l("Click here for instructions on how to use the test server."),6) + "@@ ##7>>";
+    }
     end;
 
 OnInit:

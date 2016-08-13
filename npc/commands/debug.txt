@@ -145,4 +145,5 @@ OnCall:
 
 OnInit:
     bindatcmd "debug", "@debug::OnCall", 0, 99, 0;
+    // TODO / FIXME: add a @test command that opens the help window for test-server
 }
