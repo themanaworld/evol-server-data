@@ -21,6 +21,7 @@ function	script	menuint	{
         }
     }
 
+    .@vals[.@cnt] = -1;
     @menu = 255;
     @menuret = -1;
     select(.@menustr$);
@@ -28,7 +29,7 @@ function	script	menuint	{
         return -1;
 
     @menu --;
-    if (@menu < 0 || @menu >= getarraysize(.@vals))
+    if (@menu < 0 || @menu >= getarraysize(.@vals) - 1)
         return -1;
 
     @menuret = .@vals[@menu];
