@@ -11,11 +11,7 @@ function	script	GlobalDebugMenu	{
                 doevent "::OnGlobalQuestReset"; // executes in all quest npcs // FIXME: maybe have a `resetquest` buildin?
                 Zeny = 0;
                 #MerchantBank = 0;
-                getinventorylist;
-                for (.@o = 0; .@o < @inventorylist_count; ++.@o)
-                {
-                    delitem @inventorylist_id[.@o], @inventorylist_amount[.@o];
-                }
+                clearitem;
                 warp "000-0", 0, 0; // starting point
                 end; // script must end for doevent to execute
             }
@@ -121,7 +117,7 @@ function	script	GlobalDebugMenu	{
             case 3: GlobalSkillDebug .@c; break;
             case 4: BarberDebug .@c; break;
             //case 5: changeQuests; break;
-            //case 6: DebugPresets; break;
+            case 6: DebugPresets "m"; break;
             case 7: resetAll; break;
             case 8: return;
             case 9: closedialog; end;
