@@ -1,0 +1,27 @@
+// Alige quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug2	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ShipQuests_Alige";
+        mes "---";
+        mes l("Quest state: @@", getq(ShipQuests_Alige));
+        next;
+
+        GenericQuestDebug ShipQuests_Alige,
+            l("Does not have the quest"), 0,
+            l("First encounter"), 1,
+            l("Alige asks for food"), 2,
+            l("Completed"), 3;
+
+        if (@menuret == 32766)
+        {
+            return;
+        }
+
+    } while (1);
+}

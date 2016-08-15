@@ -1,0 +1,25 @@
+// Lloyd quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug30	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_Lloyd";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_Lloyd));
+        next;
+
+        GenericQuestDebug ArtisQuests_Lloyd,
+            l("Does not have the quest"), 0,
+            l("Registered"), 1;
+
+        if (@menuret == 32766)
+        {
+            return;
+        }
+
+    } while (1);
+}

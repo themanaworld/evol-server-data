@@ -116,7 +116,7 @@ function	script	GlobalDebugMenu	{
             case 2: changeStats; break;
             case 3: GlobalSkillDebug .@c; break;
             case 4: BarberDebug .@c; break;
-            //case 5: changeQuests; break;
+            case 5: GlobalQuestDebug .@c; break;
             case 6: DebugPresets "m"; break;
             case 7: resetAll; break;
             case 8: return;

@@ -1,0 +1,30 @@
+// Peter quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug3	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ShipQuests_Peter";
+        mes "---";
+        mes l("Quest state: @@", getq(ShipQuests_Peter));
+        next;
+
+        GenericQuestDebug ShipQuests_Peter,
+            l("Does not have the quest"), 0,
+            l("Peter needs help"), 6,
+            l("Peter asks to kill rattos"), 1,
+            l("Killed rattos"), 2,
+            l("Got no reward"), 3,
+            l("Peter asks to kill rattos again"), 4,
+            l("Peter gave reward"), 5;
+
+        if (@menuret == 32766)
+        {
+            return;
+        }
+
+    } while (1);
+}

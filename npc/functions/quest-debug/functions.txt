@@ -1,0 +1,73 @@
+// generic quest debug functions
+
+function	script	GenericQuestDebug	{
+    if (!debug)
+    {
+        select
+            menuimage("actions/back", l("Go back")),
+            menuimage("actions/exit", l("Close"));
+
+        if (@menu == 1)
+        {
+            @menuret = 32766;
+            return 32766;
+        }
+
+        closedialog;
+        end;
+    }
+
+    mes l("Choose desired quest state:");
+
+    deletearray .@vals;
+    .@menustr$ = menuimage("actions/abort", l("Do nothing")) + ":";
+    .@vals[0] = 32766;
+    .@cnt = 1;
+
+    for (.@f = 1; .@f < getargcount(); .@f += 2)
+    {
+        if (getarg(.@f) != "")
+        {
+            .@qv = getarg(.@f + 1);
+            .@s$ = menuimage("actions/" + (.@qv ? "edit" : "reset"), "[" + .@qv + "] " + getarg(.@f));
+            .@menustr$ += (.@qv >= 32700 ? getarg(.@f) : .@s$) + ":";
+            .@vals[.@cnt] = .@qv;
+            ++.@cnt;
+        }
+    }
+
+    if (getgroupid() >= 99)
+    {
+        .@menustr$ += menuimage("actions/nuke", l("Set state manually")) + ":";
+        .@vals[.@cnt] = 32765;
+        ++.@cnt;
+    }
+
+    .@menustr$ += menuimage("actions/exit", l("Close"));
+    .@vals[.@cnt] = 32767;
+
+    @menu = 255;
+    @menuret = -1;
+    select(.@menustr$);
+    if (@menu == 255)
+        return -1;
+
+    --@menu;
+    if (@menu < 0 || @menu >= getarraysize(.@vals))
+        return -1;
+
+    @menuret = .@vals[@menu];
+
+    switch (@menuret)
+    {
+        case 32765: input .@w; setq getarg(0,0), .@w;
+        case 32766: return 1;
+        case 32767: closedialog; end;
+    }
+
+    if (@menuret < 32700)
+    {
+        setq getarg(0,0), @menuret;
+    }
+    return;
+}

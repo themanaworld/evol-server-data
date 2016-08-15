@@ -1,0 +1,25 @@
+// Knife quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug5	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ShipQuests_Knife";
+        mes "---";
+        mes l("Quest state: @@", getq(ShipQuests_Knife));
+        next;
+
+        GenericQuestDebug ShipQuests_Knife,
+            l("Does not have the quest"), 0,
+            l("Got the knife"), 1;
+
+        if (@menuret == 32766)
+        {
+            return;
+        }
+
+    } while (1);
+}

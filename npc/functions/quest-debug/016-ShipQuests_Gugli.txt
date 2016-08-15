@@ -1,0 +1,46 @@
+// Part of Gugli quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug16	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ShipQuests_Gugli";
+        mes "---";
+        mes l("Quest state: @@", getq(ShipQuests_Gugli));
+        mes "---";
+        mes l("Subquests:");
+        mes "ShipQuests_Ale: " + getq(ShipQuests_Ale);
+        mes "ShipQuests_Astapolos: " + getq(ShipQuests_Astapolos);
+        mes "ShipQuests_Gulukan: " + getq(ShipQuests_Gulukan);
+        mes "ShipQuests_Jalad: " + getq(ShipQuests_Jalad);
+        mes "ShipQuests_QMuller: " + getq(ShipQuests_QMuller);
+        mes "ShipQuests_Tibbo: " + getq(ShipQuests_Tibbo);
+        next;
+
+        GenericQuestDebug ShipQuests_Gugli,
+            l("Does not have the quest"), 0,
+            l("Gugli asks to collect packages"), 1,
+            menuimage("actions/manage", l("Reset subquests")), 32700,
+            menuimage("actions/manage", l("Set subquests as completed")), 32701,
+            l("Got reward from gugli"), 2;
+
+        switch (@menuret)
+        {
+            case 0:
+            case 32700:
+            case 32701:
+                setq ShipQuests_Ale, (@menuret == 32701 ? 1 : 0);
+                setq ShipQuests_Astapolos, (@menuret == 32701 ? 1 : 0);
+                setq ShipQuests_Gulukan, (@menuret == 32701 ? 1 : 0);
+                setq ShipQuests_Jalad, (@menuret == 32701 ? 1 : 0);
+                setq ShipQuests_QMuller, (@menuret == 32701 ? 1 : 0);
+                setq ShipQuests_Tibbo, (@menuret == 32701 ? 1 : 0);
+                break;
+            case 32766: return;
+        }
+
+    } while (1);
+}

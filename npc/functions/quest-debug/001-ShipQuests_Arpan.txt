@@ -1,0 +1,27 @@
+// Arpan quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug1	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ShipQuests_Arpan";
+        mes "---";
+        mes l("Quest state: @@", getq(ShipQuests_Arpan));
+        next;
+
+        GenericQuestDebug ShipQuests_Arpan,
+            l("Arpan is waiting for you"), 0,
+            l("Arpan told you to open the chest"), 1,
+            l("You opened the chest"), 2,
+            l("Completed"), 3;
+
+        if (@menuret == 32766)
+        {
+            return;
+        }
+
+    } while (1);
+}

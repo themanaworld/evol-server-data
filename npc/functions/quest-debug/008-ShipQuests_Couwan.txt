@@ -1,0 +1,26 @@
+// Couwan quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug8	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ShipQuests_Couwan";
+        mes "---";
+        mes l("Quest state: @@", getq(ShipQuests_Couwan));
+        next;
+
+        GenericQuestDebug ShipQuests_Couwan,
+            l("Does not have the quest"), 0,
+            l("Couwan asks to deliver box"), 1,
+            l("Delivered box, got reward"), 2;
+
+        if (@menuret == 32766)
+        {
+            return;
+        }
+
+    } while (1);
+}
