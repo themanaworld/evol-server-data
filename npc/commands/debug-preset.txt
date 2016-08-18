@@ -23,6 +23,11 @@ function	script	DoRoutine	{
             clearitem;
         }
 
+        if (compare(.@routine$[0], "e"))
+        {
+            nude;
+        }
+
         if (compare(.@routine$[0], "k"))
         {
             resetskill;
@@ -91,39 +96,9 @@ function	script	DoRoutine	{
             }
         }
     }
+
+    return;
 }
-
-function	script	DebugPresets	{
-
-    if (getarg(0, "m") != "m")
-    {
-        DoRoutine getarg(0);
-        end;
-    }
-
-    clear;
-    setnpcdialogtitle l("Debug Presets");
-    mes l("This menu allows you to select debug presets.");
-    mes "";
-    mes l("What preset do you want to use?");
-    next;
-    // TODO: create presets and add them to a hash table, then dynamically build this menu
-    menuint
-        menuimage("actions/abort", l("Abort")), 1,
-        l("New player"), 2,
-        rif(getarg(0,"") == "m", menuimage("actions/back", l("Return to Debug menu"))), 1,
-        menuimage("actions/exit", l("Close")), 3;
-
-    switch (@menuret)
-    {
-        case 1: return;
-        case 2: DoRoutine "-tksxq z w000-0"; break;
-    }
-
-    closedialog;
-}
-
-
 
 -	script	@pre	32767,{
     end;
@@ -137,8 +112,7 @@ OnCall:
     {
         .@atcmd_parameters$[0] = implode(.@atcmd_parameters$[0], " ");
     }
-    DebugPresets strip(.@atcmd_parameters$[0]);
-    closedialog;
+    DoRoutine strip(.@atcmd_parameters$[0]);
     end;
 
 OnInit:

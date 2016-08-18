@@ -81,13 +81,14 @@
     do
     {
         .@enora = getq (ArtisQuests_Enora);
-        menuint rif (.@enora == 1, lg("I came to retrieve a package for Enora.")), 1,
-                rif (.@enora == 3, l("I have your black iron.")), 2,
-                rif (.@enora >= 2, l("Where is the Merchant Guild?")), 3,
-                l("What is this building?"), 4,
-                menuaction(l("Quit")), 5;
+        select
+            rif (.@enora == 1, lg("I came to retrieve a package for Enora.")),
+            rif (.@enora == 3, l("I have your black iron.")),
+            rif (.@enora >= 2, l("Where is the Merchant Guild?")),
+            l("What is this building?"),
+            menuaction(l("Quit"));
 
-        switch (@menuret)
+        switch (@menu)
         {
             case 1:
                 give_small_quest;
@@ -101,10 +102,8 @@
             case 4:
                 blacksmith_house;
                 break;
-            case 5:
-                break;
         }
-    } while (@menuret != 5);
+    } while (@menu != 5);
 
     closedialog;
     goodbye;

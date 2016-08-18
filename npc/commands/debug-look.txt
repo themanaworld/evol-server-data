@@ -21,28 +21,31 @@ function	script	BarberDebug	{
     function	setStyle	{
         clear;
         setnpcdialogtitle l("Appearance Debug - Barber");
-        mes l("Please enter the desired hairstyle:");
+        mes l("Hair style") + ": " + getlook (LOOK_HAIR);
         next;
-        input .@h;
-        setlook LOOK_HAIR, max(0, min(0x7F, .@h));
+        mes l("Please enter the desired style") + " (1-255)";
+        input .@h, 1, 0xFF;
+        setlook LOOK_HAIR, max(1, min(0xFF, .@h));
         return;
     }
     function	setColor	{
         clear;
         setnpcdialogtitle l("Appearance Debug - Barber");
-        mes l("Please enter the desired hair color:");
+        mes l("Hair color") + ": " + getlook (LOOK_HAIR_COLOR);
         next;
-        input .@h;
-        setlook LOOK_HAIR_COLOR, max(0, min(0x7F, .@h));
+        mes l("Please enter the desired color") + " (0-255)";
+        input .@h, 0, 0xFF;
+        setlook LOOK_HAIR_COLOR, max(0, min(0xFF, .@h));
         return;
     }
     function	setRace	{
         clear;
         setnpcdialogtitle l("Appearance Debug - Race");
-        mes l("Please enter the desired race:");
+        mes l("Race") + ": " + Class;
         next;
-        input .@r;
-        jobchange max(0, min(0x7FFF, .@h));
+        mes l("Please enter the desired race") + " (0-32767)";
+        input .@r, 0, 0x7FFF;
+        jobchange max(0, min(0x7FFF, .@r));
         return;
     }
 
@@ -60,25 +63,22 @@ function	script	BarberDebug	{
         mes l("Race") + ": " + Class;
         mes "---";
 
-        mes "";
-        mes l("What do you want to change?");
         next;
-        menuint
-            menuimage("actions/edit", l("Gender")), 1,
-            menuimage("actions/edit", l("Hair style")), 2,
-            menuimage("actions/edit", l("Hair color")), 3,
-            menuimage("actions/edit", l("Race")), 4,
-            rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu"))), 5,
-            menuimage("actions/exit", l("Close")), 6;
+        mes l("What do you want to change?");
+        select
+            menuimage("actions/edit", l("Gender") + " [" + l("Requires logout") + "]"),
+            menuimage("actions/edit", l("Hair style")),
+            menuimage("actions/edit", l("Hair color")),
+            menuimage("actions/edit", l("Race")),
+            rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu")));
 
-        switch (@menuret)
+        switch (@menu)
         {
             case 1: setGender; break;
             case 2: setStyle; break;
             case 3: setColor; break;
             case 4: setRace; break;
             case 5: return;
-            case 6: closedialog; end;
         }
     } while (1);
 }

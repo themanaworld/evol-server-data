@@ -4,16 +4,14 @@ function	script	GlobalEventMenu	{
     mes l("This menu allows you to manage events and gives access to event-related tools.");
     mes "";
     mes l("There is no event available right now.");
-    menuint
-        rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu"))), 1,
-        menuimage("actions/exit", l("Close")), 2;
 
-    if (@menuret == 1)
+    if (getarg(0,0))
     {
-        return;
+        select
+            menuimage("actions/home", l("Return to Super Menu"));
     }
 
-    closedialog;
+    return;
 }
 
 

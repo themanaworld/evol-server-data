@@ -16,7 +16,7 @@ function	script	QuestDebug10	{
             l("Does not have the quest"), 0,
             l("Got the package"), 1;
 
-        if (@menuret == 32766)
+        if (@menuret < 0)
         {
             return;
         }

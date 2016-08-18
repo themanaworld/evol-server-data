@@ -44,13 +44,13 @@
         l("I'm afraid to go there myself, but if you take the risk, you can have half of the loot."),
         l("So, what do you say?");
 
-    menuint
-        l("I like money! Consider it done."), 0,
-        l("Too risky, I might end up in jail. Do it yourself."), 1;
+    select
+        l("I like money! Consider it done."),
+        l("Too risky, I might end up in jail. Do it yourself.");
 
-    switch(@menuret)
+    switch(@menu)
     {
-        case 0:
+        case 1:
             setq ArtisQuests_QOnan, 1;
             getrandompoint(178,26,182,29);
             npcdebug "Chest buriad at (" + .move__rand_x + "," + .move__rand_y + ")";
@@ -61,7 +61,7 @@
                 l("I hope to see you soon.");
             getitem IronShovel, 1;
             close;
-        case 1:
+        case 2:
             speech 3,
                 l("Come on, don't be a coward!"),
                 l("Anyway, let me know if you change your mind.");

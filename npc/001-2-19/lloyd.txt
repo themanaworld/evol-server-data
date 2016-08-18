@@ -246,31 +246,32 @@
     {
         .@enora = getq (ArtisQuests_Enora);
 
-        menuint rif (.@enora == 2, l("I'm searching some black iron ingots.")), 0,
-                l("I would like to store some items."), 1,
-                l("I would like to deposit some money."), 2,
-                l("What is this guild for?"), 3,
-                l("Does the guild has any work for me right now?"), 4,
-                l("Bye."), 5;
+        select
+            rif (.@enora == 2, l("I'm searching some black iron ingots.")),
+            l("I would like to store some items."),
+            l("I would like to deposit some money."),
+            l("What is this guild for?"),
+            l("Does the guild has any work for me right now?"),
+            l("Bye.");
 
-        switch (@menuret)
+        switch (@menu)
         {
-            case 0:
+            case 1:
                 enora_quest;
                 break;
-            case 1:
+            case 2:
                 openstorage;
                 closedialog;
                 close;
                 break;
-            case 2:
+            case 3:
                 bank_account;
                 break;
-            case 3:
+            case 4:
                 mes "";
                 explain_guild;
                 break;
-            case 4:
+            case 5:
                 if (getq(ArtisQuests_Fexil) >= 1)
                 {
                     speech 5,
@@ -281,15 +282,13 @@
                 paper_to_deliver;
 
                 continue;
-            case 5:
-                break;
         }
-        if (@menuret != 5)
+        if (@menu != 6)
         {
             speech 5,
                 l("Something else?");
         }
-    } while (@menuret != 5);
+    } while (@menu != 6);
 
     closedialog;
     goodbye;

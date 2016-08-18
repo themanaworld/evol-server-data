@@ -19,19 +19,19 @@ function	script	QuestDebug4	{
         GenericQuestDebug ShipQuests_Nard,
             l("Does not have the quest"), 0,
             l("Nard asks to help crew"), 1,
-            menuimage("actions/manage", l("Debug Gugli quest")), 32700,
+            menuimage("actions/manage", l("Debug Gugli quest")), -1,
             l("Completed Gugli's task"), 2,
             l("Nard asks to solve conflict"), 3,
-            menuimage("actions/manage", l("Debug Gado quest")), 32701,
+            menuimage("actions/manage", l("Debug Gado quest")), -2,
             l("Solved conflict"), 4,
             l("Official crew member"), 5,
             l("Talked to narrator"), 6;
 
         switch (@menuret)
         {
-            case 32700: callfunc "QuestDebug16"; break;
-            case 32701: callfunc "QuestDebug17"; break;
-            case 32766: return;
+            case -1: callfunc "QuestDebug16"; break;
+            case -2: callfunc "QuestDebug17"; break;
+            default: if (@menuret < 0) return;
         }
 
     } while (1);

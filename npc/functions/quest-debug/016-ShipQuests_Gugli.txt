@@ -23,23 +23,25 @@ function	script	QuestDebug16	{
         GenericQuestDebug ShipQuests_Gugli,
             l("Does not have the quest"), 0,
             l("Gugli asks to collect packages"), 1,
-            menuimage("actions/manage", l("Reset subquests")), 32700,
-            menuimage("actions/manage", l("Set subquests as completed")), 32701,
+            menuimage("actions/manage", l("Reset subquests")), -1,
+            menuimage("actions/manage", l("Set subquests as completed")), -2,
             l("Got reward from gugli"), 2;
 
         switch (@menuret)
         {
             case 0:
-            case 32700:
-            case 32701:
-                setq ShipQuests_Ale, (@menuret == 32701 ? 1 : 0);
-                setq ShipQuests_Astapolos, (@menuret == 32701 ? 1 : 0);
-                setq ShipQuests_Gulukan, (@menuret == 32701 ? 1 : 0);
-                setq ShipQuests_Jalad, (@menuret == 32701 ? 1 : 0);
-                setq ShipQuests_QMuller, (@menuret == 32701 ? 1 : 0);
-                setq ShipQuests_Tibbo, (@menuret == 32701 ? 1 : 0);
+            case 2:
+            case -1:
+            case -2:
+                .@v = (@menuret == -2 || @menuret == 2);
+                setq ShipQuests_Ale, .@v;
+                setq ShipQuests_Astapolos, .@v;
+                setq ShipQuests_Gulukan, .@v;
+                setq ShipQuests_Jalad, .@v;
+                setq ShipQuests_QMuller, .@v;
+                setq ShipQuests_Tibbo, .@v;
                 break;
-            case 32766: return;
+            default: if (@menuret < 0) return;
         }
 
     } while (1);

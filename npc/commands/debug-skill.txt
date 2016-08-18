@@ -13,22 +13,20 @@ function	script	GlobalSkillDebug	{
         setnpcdialogtitle l("Skill Debug - Modify Skill");
         .@k = getarg(0,1);
         .@v = getskilllv(.@k);
-        menuint
-            menuimage("actions/abort", l("Abort")), 1,
-            rif(.@v > 0, menuimage("actions/remove", l("Remove this skill"))), 2,
-            rif(.@v < 10, menuimage("actions/raise", l("Raise this skill"))), 3,
-            rif(.@v > 0, menuimage("actions/lower", l("Lower this skill"))), 4,
-            menuimage("actions/edit", l("Set the level manually")), 5,
-            menuimage("actions/back", l("Return to skill debug menu")), 1,
-            menuimage("actions/exit", l("Close")), 6;
+        select
+            menuimage("actions/abort", l("Abort")),
+            rif(.@v > 0, menuimage("actions/remove", l("Remove this skill"))),
+            rif(.@v < 10, menuimage("actions/raise", l("Raise this skill"))),
+            rif(.@v > 0, menuimage("actions/lower", l("Lower this skill"))),
+            menuimage("actions/edit", l("Set the level manually")),
+            menuimage("actions/back", l("Return to skill debug menu"));
 
-        switch (@menuret)
+        switch (@menu)
         {
             case 2: skill .@k, 0, 0; break;
             case 3: skill .@k, min(10, .@v + 1), 0; break;
             case 4: skill .@k, max(0, .@v - 1), 0; break;
             case 5: setSkill .@k; break;
-            case 6: closedialog; end;
         }
 
         return;
@@ -52,13 +50,11 @@ function	script	GlobalSkillDebug	{
 
         menuint
             "NV_BASIC", NV_BASIC,
-            rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu"))), 32766,
-            menuimage("actions/exit", l("Close")), 32767;
+            rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu"))), -1;
 
         switch (@menuret)
         {
-            case 32766: return;
-            case 32767: closedialog; end;
+            case -1: return;
         }
 
         modifySkill @menuret;

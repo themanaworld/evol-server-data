@@ -127,14 +127,14 @@ OnChair:
 
     do
     {
-        menuint
-            l("What is my current hairstyle and hair color?"), 1,
-            l("I'd like to get a different style."), 2,
-            l("Can you do something with my color?"), 3,
-            l("What's your story again?"), 4,
-            l("I'm fine for now, thank you."), 5;
+        select
+            l("What is my current hairstyle and hair color?"),
+            l("I'd like to get a different style."),
+            l("Can you do something with my color?"),
+            l("What's your story again?"),
+            l("I'm fine for now, thank you.");
 
-        switch (@menuret)
+        switch (@menu)
         {
             case 1:
                 BarberSayStyle 3;

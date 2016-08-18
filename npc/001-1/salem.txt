@@ -18,12 +18,13 @@
         .@price = getarg(0);
         mesq l("The piou costs @@ E.", .@price);
         next;
-        menuint l("Alright, I'll take one."), 1,
-                l("I changed my mind."), 2;
+        select
+            l("Alright, I'll take one."),
+            l("I changed my mind.");
 
         mes "";
         mesn;
-        if (@menuret == 2)
+        if (@menu == 2)
             return 4;
         if (Zeny < .@price)
         {
@@ -107,23 +108,23 @@
 L_SalemMenuShop:
     .@fexil = getq(ArtisQuests_Fexil);
 
-    menuint
-        l("What about those pious? They look so cute."), 0,
-        l("Let's trade."), 1,
-        rif(.@q != 0, l("I'd like to buy a piou.")), 2,
-        rif(.@fexil == 1, l("I'm looking for somebody named Fexil.")), 3,
-        menuaction(l("Quit")), 4;
+    select
+        l("What about those pious? They look so cute."),
+        l("Let's trade."),
+        rif(.@q != 0, l("I'd like to buy a piou.")),
+        rif(.@fexil == 1, l("I'm looking for somebody named Fexil.")),
+        menuaction(l("Quit"));
 
-    switch (@menuret)
+    switch (@menu)
     {
-        case 0:
+        case 1:
             goto L_AboutPious;
             break;
-        case 1:
+        case 2:
             closedialog;
             shop "Store#General001-1";
             close;
-        case 2:
+        case 3:
             if (.@q == 2 && ArtisQuests_PiouDiscount)
             {
                 speech 5,
@@ -133,11 +134,9 @@ L_SalemMenuShop:
             if (!BuyPiou(@ArtisQuests_PiouPrice))
                 ArtisQuests_PiouDiscount = 0;
             break;
-        case 3:
+        case 4:
             speech 5,
                 l("I think that I've seen this weakling wandering around the beach south from here this morning.");
-            break;
-        case 5:
             break;
     }
 
@@ -168,25 +167,21 @@ L_AboutPious:
     mesq l("If you catch the escaped piou and bring it back, I will give you a 90% discount on a piou.");
     next;
 
-    menuint rif (.@q == 0, l("Sounds like a good deal to me. I'll do it.")), 0,
-            rif (.@q == 1, l("I'm on my way! I will bring it back to you.")), 1,
-            l("I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E)."), 2,
-            l("I don't want to buy a piou right now."), 3;
+    select
+        rif (.@q == 0, l("Sounds like a good deal to me. I'll do it.")),
+        rif (.@q == 1, l("I'm on my way! I will bring it back to you.")),
+        l("I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E)."),
+        l("I don't want to buy a piou right now.");
 
     mes "";
     mesn;
 
-    switch (@menuret)
+    switch (@menu)
     {
-        case 0:
-            goto L_QuestInfo;
         case 1:
-            break;
-        case 2:
-            BuyPiou @ArtisQuests_PiouPrice;
-            break;
+            goto L_QuestInfo;
         case 3:
-            break;
+            BuyPiou @ArtisQuests_PiouPrice;
     }
     closedialog;
     goodbye;

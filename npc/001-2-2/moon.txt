@@ -141,12 +141,12 @@ L_QuestStarted:
     mesq l("Do you have @@s for me?", getitemlink("CrocClaw"));
     next;
 
-    menuint
-        l("Check out this one."), 1,
-        l("I should put more effort into this."), 2,
-        l("Where can I find some Croc Claws?"), 3;
+    select
+        l("Check out this one."),
+        l("I should put more effort into this."),
+        l("Where can I find some Croc Claws?");
 
-    switch (@menuret)
+    switch (@menu)
     {
         case 1:
             .@MustRepeat = CheckCrowClaw;

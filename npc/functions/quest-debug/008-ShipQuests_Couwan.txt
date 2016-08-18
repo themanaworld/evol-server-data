@@ -17,7 +17,7 @@ function	script	QuestDebug8	{
             l("Couwan asks to deliver box"), 1,
             l("Delivered box, got reward"), 2;
 
-        if (@menuret == 32766)
+        if (@menuret < 0)
         {
             return;
         }

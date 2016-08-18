@@ -95,15 +95,15 @@ function	script	MOTDConfig	{
                 clear;
                 mes l("line @@: @@", .@n, $MOTD_Messages$[.@n]);
                 next;
-                menuint
-                    menuimage("actions/back", l("Modify another line")), 1,
-                    menuimage("actions/remove", l("Remove this line")), 2,
-                    menuimage("actions/edit", l("Modify this line")), 3,
-                    rif(.@n > 0, menuimage("actions/raise", l("Move this line up"))), 4,
-                    rif(.@n < .@max, menuimage("actions/lower", l("Move this line down"))), 5,
-                    menuimage("actions/home", l("Return to main menu")), 6;
+                select
+                    menuimage("actions/back", l("Modify another line")),
+                    menuimage("actions/remove", l("Remove this line")),
+                    menuimage("actions/edit", l("Modify this line")),
+                    rif(.@n > 0, menuimage("actions/raise", l("Move this line up"))),
+                    rif(.@n < .@max, menuimage("actions/lower", l("Move this line down"))),
+                    menuimage("actions/home", l("Return to main menu"));
 
-                switch (@menuret)
+                switch (@menu)
                 {
                     case 2: removeLine .@n; return;
                     case 3: editLine .@n; return;
@@ -137,21 +137,19 @@ function	script	MOTDConfig	{
         mes l("Enabled: @@", (.@d ? l("no") : l("yes")));
         next;
 
-        menuint
-            menuimage("actions/toggle", (.@d ? l("Enable") : l("Disable"))), 1,
-            menuimage("actions/add", l("Add a new line")), 2,
-            rif(.@size, menuimage("actions/manage", l("Modify, move, or remove a line"))), 3,
-            rif(.@size, menuimage("actions/test", l("Test MOTD"))), 4,
-            rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu"))), 5,
-            menuimage("actions/exit", l("Close")), 6;
+        select
+            menuimage("actions/toggle", (.@d ? l("Enable") : l("Disable"))),
+            menuimage("actions/add", l("Add a new line")),
+            rif(.@size, menuimage("actions/manage", l("Modify, move, or remove a line"))),
+            rif(.@size, menuimage("actions/test", l("Test MOTD"))),
+            rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu")));
 
-        switch (@menuret)
+        switch (@menu)
         {
             case 1: toggleMOTD; break;
             case 2: addNewLine; break;
             case 3: modifyLine .@size; break;
             case 4: displayMOTD; break;
-            case 6: closedialog; end;
             default: return;
         }
     } while (1);
@@ -174,7 +172,7 @@ OnPCLoginEvent:
     }
     if (debug)
     {
-        dispbottom "##7<<##B @@?test-server|" + col(l("Click here for instructions on how to use the test server."),6) + "@@ ##7>>";
+        dispbottom "##7<<##B @@help://test-server|" + col(l("Click here for instructions on how to use the test server."),6) + "@@ ##7>>";
     }
     end;
 

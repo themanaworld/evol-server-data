@@ -171,39 +171,37 @@
     {
         .@enora = getq(ArtisQuests_Enora);
 
-        menuint
-            rif (.@enora == 7, l("Enora wants her potions.")), 0,
-            menuaction(l("Trade")), 1,
-            rif (.@enora > 7, l("What was your riddle?")), 2,
-            l("How do you do your potions?"), 3,
-            l("What are you reading?"), 4,
-            menuaction(l("Quit")), 5;
+        select
+            rif (.@enora == 7, l("Enora wants her potions.")),
+            menuaction(l("Trade")),
+            rif (.@enora > 7, l("What was your riddle?")),
+            l("How do you do your potions?"),
+            l("What are you reading?"),
+            menuaction(l("Quit"));
 
-        switch (@menuret)
+        switch (@menu)
         {
-            case 0:
+            case 1:
                 enora_quest;
                 break;
-            case 1:
+            case 2:
                 closedialog;
                 shop "Store#Potion001-1";
                 close;
-            case 2:
+            case 3:
                 riddle_enigma;
                 break;
-            case 3:
+            case 4:
                 alchemist_information;
                 break;
-            case 4:
+            case 5:
                 speech 5,
                     l("It's a poem, about poems... Why are you asking that?"),
                     l("Because I am an orc I can't read such things? That's rubbish."),
                     l("I borrowed it from the library, you should try to cultivate yourself more instead of insinuate things about people you don't know!");
                 break;
-            case 5:
-                break;
         }
-    } while (@menuret != 5);
+    } while (@menu != 6);
 
     closedialog;
     goodbye;

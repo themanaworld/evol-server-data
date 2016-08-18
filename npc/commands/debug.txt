@@ -20,21 +20,19 @@ function	script	GlobalDebugMenu	{
         clear;
         setnpcdialogtitle l("Debug - Reset");
         mes l("What do you want to reset?");
-        menuint
-            menuimage("actions/abort", l("Abort")), 1,
-            menuimage("actions/reset", l("Reset stats, skills, level")), 2,
-            menuimage("actions/nuke", l("Reset EVERYTHING")), 3,
-            menuimage("actions/back", l("Return to Debug menu")), 1,
-            menuimage("actions/exit", l("Close")), 4;
+        select
+            menuimage("actions/abort", l("Abort")),
+            menuimage("actions/reset", l("Reset stats, skills, level")),
+            menuimage("actions/nuke", l("Reset EVERYTHING")),
+            menuimage("actions/back", l("Return to Debug menu"));
 
-            switch (@menuret)
-            {
-                case 2:
-                case 3: doReset @menuret;
-                case 1: return;
-            }
+        switch (@menu)
+        {
+            case 2:
+            case 3: doReset @menu;
+        }
 
-        closedialog;
+        return;
     }
 
     function	changeLevel	{
@@ -97,30 +95,26 @@ function	script	GlobalDebugMenu	{
         mes l("This menu allows you to modify your account data.");
         mes "";
         mes l("What do you want to do?");
-        menuint
-            menuimage("actions/manage", l("Change my level")), 1,
-            menuimage("actions/manage", l("Change my stats")), 2,
-            menuimage("actions/manage", l("Change my skills")), 3,
-            menuimage("actions/manage", l("Change my appearance")), 4,
-            menuimage("actions/edit", l("Change my quests")), 5,
-            menuimage("actions/reset", l("Select a preset")), 6,
-            menuimage("actions/nuke", l("Reset")), 7,
-            rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu"))), 8,
-            menuimage("actions/exit", l("Close")), 9;
+        select
+            menuimage("actions/manage", l("Change my level")),
+            menuimage("actions/manage", l("Change my stats")),
+            menuimage("actions/manage", l("Change my skills")),
+            menuimage("actions/manage", l("Change my appearance")),
+            menuimage("actions/edit", l("Change my quests")),
+            menuimage("actions/reset", l("Reset")),
+            rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu")));
 
         .@c = getarg(0,0) ? 2 : 1;
 
-        switch (@menuret)
+        switch (@menu)
         {
             case 1: changeLevel; break;
             case 2: changeStats; break;
             case 3: GlobalSkillDebug .@c; break;
             case 4: BarberDebug .@c; break;
             case 5: GlobalQuestDebug .@c; break;
-            case 6: DebugPresets "m"; break;
-            case 7: resetAll; break;
-            case 8: return;
-            case 9: closedialog; end;
+            case 6: resetAll; break;
+            case 7: return;
         }
     } while(1);
 }

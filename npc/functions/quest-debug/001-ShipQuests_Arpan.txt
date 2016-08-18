@@ -18,7 +18,7 @@ function	script	QuestDebug1	{
             l("You opened the chest"), 2,
             l("Completed"), 3;
 
-        if (@menuret == 32766)
+        if (@menuret < 0)
         {
             return;
         }

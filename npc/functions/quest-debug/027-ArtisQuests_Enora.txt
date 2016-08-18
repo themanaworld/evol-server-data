@@ -26,7 +26,7 @@ function	script	QuestDebug27	{
             l("Enora asks to kill fluffys"), 10,
             l("Completed, got reward"), 11;
 
-        if (@menuret == 32766)
+        if (@menuret < 0)
         {
             return;
         }

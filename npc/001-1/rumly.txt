@@ -27,20 +27,20 @@ L_Menu:
     .@visited = getq(General_Rumly);
     .@plush_count = lognbaselvl(1, 10);
 
-    menuint
-        l("Plushrooms you say?"), 0,
-        l("Who are you?"), 1,
-        rif(.@visited >  0, l("Can you reset my stats please?")), 2,
-        lg("You are weird, I have to go sorry."), 3;
+    select
+        l("Plushrooms you say?"),
+        l("Who are you?"),
+        rif(.@visited >  0, l("Can you reset my stats please?")),
+        lg("You are weird, I have to go sorry.");
 
-    switch (@menuret)
+    switch (@menu)
     {
-        case 0:
+        case 1:
             speech 5,
                 l("Wind and grass is nice and cool, so juicy sweet..."),
                 l("Our only wish to eat a plush, so juicy sweet...");
             goto L_Menu;
-        case 1:
+        case 2:
             speech 5,
                 lg("Why are you asking? And who are you too? I've never seen you around before..."),
                 lg("Wait, are you one of those from the Legion of Aemil? I didn't do anything wrong, I promise!"),
@@ -63,15 +63,15 @@ L_Menu:
                 l("Bring me some of these plushrooms and I will show you how it works!"),
                 l("Although the more powerful you are, the more plushrooms you will need.");
 
-            menuint
-                l("Sounds good!"), 0,
-                rif(countitem(Plushroom) >= .@plush_count, lg("I think I have enough plushrooms on me.")), 1,
-                l("We will talk about it later."), 2,
-                l("My stats are too good, I won't need it."), 3;
+            select
+                l("Sounds good!"),
+                rif(countitem(Plushroom) >= .@plush_count, lg("I think I have enough plushrooms on me.")),
+                l("We will talk about it later."),
+                l("My stats are too good, I won't need it.");
 
-            switch (@menuret)
+            switch (@menu)
             {
-                case 0:
+                case 1:
                     if (.@visited < 2)
                     {
                         setq General_Rumly, 2;
@@ -81,17 +81,17 @@ L_Menu:
                         l("Great! Can't wait for some tasty mushrooms!");
 
                     goto L_Menu;
-                case 1:
-                    goto L_ResetStats;
                 case 2:
-                    goto L_Later;
+                    goto L_ResetStats;
                 case 3:
+                    goto L_Later;
+                case 4:
                     goto L_Never;
             }
 
-        case 2:
-            goto L_ResetStats;
         case 3:
+            goto L_ResetStats;
+        case 4:
             if (.@visited < 2) goto L_Quit;
 
             .@rand = rand (2);
@@ -139,55 +139,49 @@ L_ConfirmReset:
             speech 5,
                 l("Let me just have a quick look at you. Hm... I will need @@ @@s to reset your stats.", .@plush_count, getitemlink(Plushroom));
 
-            menuint
-                rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")), 0,
-                rif(countitem(Plushroom) > 0 && countitem(Plushroom) < .@plush_count, lg("I don't have enough plushrooms...")), 1,
-                rif(countitem(Plushroom) == 0, lg("Oh no, I don't have any plushroom on me right now.")), 2,
-                lg("I have to go, sorry."), 3;
+            select
+                rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")),
+                rif(countitem(Plushroom) > 0 && countitem(Plushroom) < .@plush_count, lg("I don't have enough plushrooms...")),
+                rif(countitem(Plushroom) == 0, lg("Oh no, I don't have any plushroom on me right now.")),
+                lg("I have to go, sorry.");
 
-            switch (@menuret)
+            if (@menu > 1)
             {
-                case 0:
-                    delitem Plushroom, .@plush_count;
-
-                    speech 5,
-                        l("Thank you."),
-                        l("Now stand still... It should not take much time...");
-
-                    .@wasSP = StatusPoint;
-                    resetstatus;
-                    if (.@visited < 3)
-                    {
-                        setq General_Rumly, 3;
-                    }
-                    if (StatusPoint == .@wasSP)
-                    {
-                        speech 4,
-                            l("It seems that you have no status points to reset!"),
-                            lg("But the plushroom you brought was really awesome you know."),
-                            lg("Come back when you will really need me. And bring more plushrooms with you!");
-                    }
-                    else
-                    {
-                        speech 4,
-                            l("Let's see... @@ of your status points have just been reset!", StatusPoint - .@wasSP),
-                            l("Spend it wisely this time."),
-                            lg("But you are welcome to reset your stats again if you bring me some more plushrooms!");
-                    }
-                    goto L_Quit;
-                    break;
-                case 1:
-                case 2:
-                case 3:
-                    goto L_Later;
-                    break;
+                goto L_Later;
             }
+
+            delitem Plushroom, .@plush_count;
+
+            speech 5,
+                l("Thank you."),
+                l("Now stand still... It should not take much time...");
+
+            .@wasSP = StatusPoint;
+            resetstatus;
+            if (.@visited < 3)
+            {
+                setq General_Rumly, 3;
+            }
+            if (StatusPoint == .@wasSP)
+            {
+                speech 4,
+                    l("It seems that you have no status points to reset!"),
+                    lg("But the plushroom you brought was really awesome you know."),
+                    lg("Come back when you will really need me. And bring more plushrooms with you!");
+            }
+            else
+            {
+                speech 4,
+                    l("Let's see... @@ of your status points have just been reset!", StatusPoint - .@wasSP),
+                    l("Spend it wisely this time."),
+                    lg("But you are welcome to reset your stats again if you bring me some more plushrooms!");
+            }
+            goto L_Quit;
+
         case 2:
             goto L_Later;
-            break;
         case 3:
             goto L_Never;
-            break;
     }
 
 L_Later:

@@ -86,5 +86,11 @@ OnCall:
     end;
 
 OnInit:
+    if (debug > 0)
+    {
+        bindatcmd "esp", "@esp::OnCall", 0, 2, 0;
+        end;
+    }
+
     bindatcmd "esp", "@esp::OnCall", 3, 99, 1;
 }

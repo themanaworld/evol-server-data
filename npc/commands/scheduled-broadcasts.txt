@@ -30,7 +30,7 @@ function	script	StoneBoard	{
             l("Every 24 hours"), 24,
             l("Never (only on login)"), 0;
 
-        return max(0, @menuret);
+        return @menuret;
     }
 
     function	setMaxRep	{
@@ -50,7 +50,7 @@ function	script	StoneBoard	{
             l("Send 20 times"), 20,
             l("Send indefinitely"), 0;
 
-        return max(0, @menuret);
+        return @menuret;
     }
 
     function	setOnLogin	{
@@ -61,11 +61,11 @@ function	script	StoneBoard	{
         clear;
         mes l("Send this message also on login?");
         next;
-        menuint
-            l("No"), 0,
-            l("Yes"), 1;
+        select
+            l("No"),
+            l("Yes");
 
-        return max(0, @menuret);
+        return (@menu - 1);
     }
 
     function	newBroadcast	{
@@ -98,14 +98,13 @@ function	script	StoneBoard	{
             }
 
             next;
-            menuint
-                menuimage("actions/cancel", l("Discard")), 1,
-                menuimage("actions/edit", l("Start over")), 2,
-                menuimage("actions/test", l("Start broadcasting")), 3,
-                menuimage("actions/test", l("Start broadcasting, and make an extra broadcast right now")), 4,
-                menuimage("actions/exit", l("Close")), 5;
+            select
+                menuimage("actions/cancel", l("Discard")),
+                menuimage("actions/edit", l("Start over")),
+                menuimage("actions/test", l("Start broadcasting")),
+                menuimage("actions/test", l("Start broadcasting, and make an extra broadcast right now"));
 
-            switch (@menuret)
+            switch (@menu)
             {
                 case 3:
                 case 4:
@@ -120,12 +119,11 @@ function	script	StoneBoard	{
                         {
                             initnpctimer "@sched";
                         }
-                        if (@menuret == 4)
+                        if (@menu == 4)
                         {
                             announce $@SCHED_Msg$, bc_all;
                         }
                 case 1: return;
-                case 5: closedialog; end;
             }
 
         } while(1);
@@ -147,7 +145,7 @@ function	script	StoneBoard	{
             mes l("Sent on login: @@", ($@SCHED_Opt[0] ? l("yes") : l("no")));
             if ($@SCHED_Opt[1])
             {
-                .@next = max(1, ((3600000 * ($@SCHED_Opt[1] - $@SCHED_Opt[4])) - getnpctimer(0)));
+                .@next = max(1, ((3600000 * ($@SCHED_Opt[1] - $@SCHED_Opt[4])) - getnpctimer(0, "@sched")));
                 mes l("Interval: every @@ hour(s)", $@SCHED_Opt[1]);
                 mes l("Next broadcast: @@", FuzzyTimeFromMs(.@next));
             }
@@ -160,20 +158,18 @@ function	script	StoneBoard	{
         }
         next;
 
-        menuint
-            menuimage("actions/abort", l("Abort")), 5,
-            rif(.@a, menuimage("actions/test", l("Manually trigger the current broadcast"))), 2,
-            rif(.@a, menuimage("actions/remove", l("Stop broadcasting"))), 3,
-            rif(!(.@a), menuimage("actions/add", l("Set a new broadcast"))), 4,
-            rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu"))), 5,
-            menuimage("actions/exit", l("Close")), 6;
+        select
+            menuimage("actions/abort", l("Abort")),
+            rif(.@a, menuimage("actions/test", l("Manually trigger the current broadcast"))),
+            rif(.@a, menuimage("actions/remove", l("Stop broadcasting"))),
+            rif(!(.@a), menuimage("actions/add", l("Set a new broadcast"))),
+            rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu")));
 
-        switch (@menuret)
+        switch (@menu)
         {
             case 2: announce $@SCHED_Msg$, bc_all; break;
             case 3: $@SCHED_Msg$ = ""; break;
             case 4: newBroadcast; break;
-            case 6: closedialog; end;
             default: return;
         }
     } while (1);
@@ -185,21 +181,26 @@ function	script	StoneBoard	{
     end;
 
 OnTimer3600000:
-    ++$@SCHED_Opt[4];
-    if ($@SCHED_Opt[4] == ($@SCHED_Opt[1] - 1))
+    if ($@SCHED_Msg$ == "")
     {
         stopnpctimer;
-        ++$@SCHED_Opt[2];
-        if ($@SCHED_Msg$ != "")
+        end;
+    }
+
+    ++$@SCHED_Opt[4]; // increase hours counter
+    if ($@SCHED_Opt[4] == $@SCHED_Opt[1])
+    {
+        stopnpctimer;
+        ++$@SCHED_Opt[2]; // increase total counter
+        announce $@SCHED_Msg$, bc_all;
+        $@SCHED_Opt[4] = 0; // reset hours counter
+        if ($@SCHED_Opt[2] >= $@SCHED_Opt[3] && $@SCHED_Opt[3] > 0)
         {
-            announce $@SCHED_Msg$, bc_all;
-            $@SCHED_Opt[4] = 0;
-            if ($@SCHED_Opt[2] < $@SCHED_Opt[3] && $@SCHED_Opt[3] > 0)
-            {
-                initnpctimer;
-            }
+            $@SCHED_Msg$ = ""; // reset message
+            end;
         }
     }
+    initnpctimer;
     end;
 
 OnCall:

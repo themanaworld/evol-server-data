@@ -17,7 +17,7 @@ function	script	QuestDebug6	{
             l("Elmo told about money"), 1,
             l("Arpan gave money"), 2;
 
-        if (@menuret == 32766)
+        if (@menuret < 0)
         {
             return;
         }

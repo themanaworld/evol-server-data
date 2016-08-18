@@ -11,20 +11,18 @@ function	script	GlobalQuestDebug	{
                 mes l("Please select a quest:");
 
                 menuint
-                    menuimage("actions/back", l("Go back")), 32766,
-                    l("Gugli (main quest)"), 16,
-                    "Ale", 10,
-                    "Astapolos", 11,
-                    "Gulukan", 12,
-                    "Jalad", 13,
-                    "QMuller", 14,
-                    "Tibbo", 15,
-                    menuimage("actions/exit", l("Close")), 32767;
+                    menuimage("actions/back", l("Go back")), -1,
+                    l("Gugli (main quest)"), ShipQuests_Gugli,
+                    "Ale", ShipQuests_Ale,
+                    "Astapolos", ShipQuests_Astapolos,
+                    "Gulukan", ShipQuests_Gulukan,
+                    "Jalad", ShipQuests_Jalad,
+                    "Q'Muller", ShipQuests_QMuller,
+                    "Tibbo", ShipQuests_Tibbo;
 
                 switch (@menuret)
                 {
-                    case 32766: return;
-                    case 32767: closedialog; end;
+                    case -1: return;
                     default: callfunc "QuestDebug" + @menuret;
                 }
             } while (1);
@@ -39,26 +37,24 @@ function	script	GlobalQuestDebug	{
             mes l("Please select a quest:");
 
             menuint
-                menuimage("actions/back", l("Go back")), 32766,
-                "Julia", 0,
-                "Arpan", 1,
-                "Alige", 2,
-                "Peter", 3,
-                "Nard", 4,
-                l("Knife"), 5,
-                l("Money"), 6,
-                l("Door"), 7,
-                "Couwan", 8,
-                l("Treasure Chest"), 9,
-                "Gugli", 16,
-                "Gado", 17,
-                menuimage("actions/exit", l("Close")), 32767;
+                menuimage("actions/back", l("Go back")), -1,
+                "Julia", ShipQuests_Julia,
+                "Arpan", ShipQuests_Arpan,
+                "Alige", ShipQuests_Alige,
+                "Peter", ShipQuests_Peter,
+                "Nard", ShipQuests_Nard,
+                l("Knife"), ShipQuests_Knife,
+                l("Money"), ShipQuests_ArpanMoney,
+                l("Door"), ShipQuests_Door,
+                "Couwan", ShipQuests_Couwan,
+                l("Treasure Chest"), ShipQuests_TreasureChest,
+                "Gugli", ShipQuests_Gugli,
+                "Gado", ShipQuests_ChefGado;
 
             switch (@menuret)
             {
                 case 16: qDebugGugli; break;
-                case 32766: return;
-                case 32767: closedialog; end;
+                case -1: return;
                 default: callfunc "QuestDebug" + @menuret;
             }
         } while (1);
@@ -74,22 +70,20 @@ function	script	GlobalQuestDebug	{
             mes l("Please select a quest:");
 
             menuint
-                menuimage("actions/back", l("Go back")), 32766,
-                l("Lazy Brother"), 19,
-                l("Urchin"), 20,
-                l("Catching a piou"), 21,
-                "Eugene (" + l("fisherman") + ")", 22,
-                "Q'Onan", 23,
-                "Enora", 27,
-                "Fexil", 29,
-                "Lloyd", 30,
-                l("Mona's dad"), 32,
-                menuimage("actions/exit", l("Close")), 32767;
+                menuimage("actions/back", l("Go back")), ,
+                l("Lazy Brother"), ArtisQuests_LazyBrother,
+                l("Urchin"), ArtisQuests_Urchin,
+                l("Catching a piou"), ArtisQuests_CatchPiou,
+                "Eugene (" + l("fisherman") + ")", ArtisQuests_Fishman,
+                "Q'Onan", ArtisQuests_QOnan,
+                "Enora", ArtisQuests_Enora,
+                "Fexil", ArtisQuests_Fexil,
+                "Lloyd", ArtisQuests_Lloyd,
+                l("Mona's dad"), ArtisQuests_MonaDad;
 
             switch (@menuret)
             {
-                case 32766: return;
-                case 32767: closedialog; end;
+                case -1: return;
                 default: callfunc "QuestDebug" + @menuret;
             }
         } while (1);
@@ -105,17 +99,15 @@ function	script	GlobalQuestDebug	{
             mes l("Please select a quest:");
 
             menuint
-                menuimage("actions/back", l("Go back")), 32766,
-                l("Cookies"), 18,
-                "Rumly", 26,
-                l("Narrator"), 28,
-                "Janus", 31,
-                menuimage("actions/exit", l("Close")), 32767;
+                menuimage("actions/back", l("Go back")), -1,
+                l("Cookies"), General_Cookies,
+                "Rumly", General_Rumly,
+                l("Narrator"), General_Narrator,
+                "Janus", General_Janus;
 
             switch (@menuret)
             {
-                case 32766: return;
-                case 32767: closedialog; end;
+                case -1: return;
                 default: callfunc "QuestDebug" + @menuret;
             }
         } while (1);
@@ -133,8 +125,7 @@ function	script	GlobalQuestDebug	{
             l("Prologue"),
             "Artis",
             l("Other"),
-            rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu"))),
-            menuimage("actions/exit", l("Close"));
+            rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu")));
 
         switch (@menu)
         {
@@ -142,7 +133,6 @@ function	script	GlobalQuestDebug	{
             case 2: qDebugArtis; break;
             case 3: qDebugGeneral; break;
             case 4: return;
-            default: closedialog; end;
         }
     } while (1);
 }

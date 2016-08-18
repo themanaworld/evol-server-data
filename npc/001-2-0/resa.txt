@@ -45,26 +45,27 @@
     do
     {
         .@enora = getq (ArtisQuests_Enora);
-        menuint rif (.@enora == 5, lg("I came to retrieve a package for Enora.")), 0,
-                menuaction(l("Trade")), 1,
-                l("How can I improve my equipment?"), 2,
-                menuaction(l("Quit")), 3;
+        select
+            rif (.@enora == 5, lg("I came to retrieve a package for Enora.")),
+            menuaction(l("Trade")),
+            l("How can I improve my equipment?"),
+            menuaction(l("Quit"));
 
-        switch (@menuret)
+        switch (@menu)
         {
-            case 0:
+            case 1:
                 enora_quest;
                 closedialog;
                 goodbye;
                 close;
-            case 1:
+            case 2:
                 closedialog;
                 shop "Store#001-2-0";
                 close;
-            case 2:
+            case 3:
                 explain_craft;
                 break;
-            case 3:
+            case 4:
                 closedialog;
                 goodbye;
                 close;

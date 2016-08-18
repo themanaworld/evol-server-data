@@ -21,7 +21,7 @@ function	script	QuestDebug3	{
             l("Peter asks to kill rattos again"), 4,
             l("Peter gave reward"), 5;
 
-        if (@menuret == 32766)
+        if (@menuret < 0)
         {
             return;
         }
