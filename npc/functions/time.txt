@@ -1,0 +1,143 @@
+// FuzzyTime( <unix timestamp>, <options> )
+// gives time in a human-readable  format
+//
+// <options> is bitmasked:
+// 1  do not show "ago" when in past
+// 2  do not show "in" when in the future
+// 4  show "from now" instead of "in" when in the future
+
+function	script	FuzzyTime	{
+    .@now = gettimetick(2);
+    .@future = getarg(0, .@now);
+    .@options = getarg(1,0);
+    .@diff = max(.@future - .@now);
+    .@ret$ = "";
+    .@past = 0;
+    .@s = 0; // for serial comma
+
+    // define units
+    .@unit_second = 1;
+    .@unit_second$ = l("second");
+    .@unit_seconds$ = l("seconds");
+
+    .@unit_minute = (.@unit_second * 60);
+    .@unit_minute$ = l("minute");
+    .@unit_minutes$ = l("minutes");
+
+    .@unit_hour = (.@unit_minute * 60);
+    .@unit_hour$ = l("hour");
+    .@unit_hours$ = l("hours");
+
+    .@unit_day = (.@unit_hour * 24);
+    .@unit_day$ = l("day");
+    .@unit_days$ = l("days");
+
+    .@unit_year = (.@unit_day * 365);
+    .@unit_year$ = l("year");
+    .@unit_years$ = l("years");
+
+    // check if in the past, or in the future
+    if (.@diff < 0)
+    {
+        .@diff *= -1;
+        .@past = 1;
+    }
+
+    .@diff = max(1, .@diff);
+
+    if (.@diff >= .@unit_year)
+    {
+        .@years = (.@diff / .@unit_year);
+        .@diff = (.@diff % .@unit_year);
+        .@ret$ += .@years + " " + getd(".@unit_year" + (.@years > 1 ? "s$" : "$"));
+        ++.@s;
+    }
+
+    if (.@diff >= .@unit_day)
+    {
+        .@days = (.@diff / .@unit_day);
+        .@diff = (.@diff % .@unit_day);
+
+        if (.@ret$ != "")
+        {
+            .@ret$ += .@diff > 0 ? ", " : l(", and ");
+        }
+
+        .@ret$ += .@days + " " + getd(".@unit_day" + (.@days > 1 ? "s$" : "$"));
+        ++.@s;
+    }
+
+    if (.@diff >= .@unit_hour)
+    {
+        .@hours = (.@diff / .@unit_hour);
+        .@diff = (.@diff % .@unit_hour);
+
+        if (.@ret$ != "")
+        {
+            .@ret$ += .@diff > 0 ? ", " : (.@s >= 2 ? ", " : " ") + l("and ");
+        }
+
+        .@ret$ += .@hours + " " + getd(".@unit_hour" + (.@hours > 1 ? "s$" : "$"));
+        ++.@s;
+    }
+
+    if (.@diff >= .@unit_minute)
+    {
+        .@minutes = (.@diff / .@unit_minute);
+        .@diff = (.@diff % .@unit_minute);
+
+        if (.@ret$ != "")
+        {
+            .@ret$ += .@diff > 0 ? ", " : (.@s >= 2 ? ", " : " ") + l("and ");
+        }
+
+        .@ret$ += .@minutes + " " + getd(".@unit_minute" + (.@minutes > 1 ? "s$" : "$"));
+        ++.@s;
+    }
+
+    if (.@diff >= .@unit_second)
+    {
+        .@seconds = (.@diff / .@unit_second);
+        .@diff = (.@diff % .@unit_second);
+
+        if (.@ret$ != "")
+        {
+            .@ret$ += .@diff > 0 ? ", " : (.@s >= 2 ? ", " : " ") + l("and ");
+        }
+
+        .@ret$ += .@seconds + " " + getd(".@unit_second" + (.@seconds > 1 ? "s$" : "$"));
+        ++.@s;
+    }
+
+    if (.@past > 0 && !(.@options & 1))
+    {
+        .@ret$ += l(" ago");
+    }
+
+    if (.@past < 1 && !(.@options & 2))
+    {
+        .@ret$ = (.@options & 4) ? l("@@ from now", .@ret$) : l("in @@", .@ret$);
+    }
+
+    return .@ret$;
+}
+
+function	script	FuzzyTimeFromSeconds	{
+    return FuzzyTime((gettimetick(2) + getarg(0,0)), getarg(1,0));
+}
+
+function	script	FuzzyTimeFromMs	{
+    return FuzzyTimeFromSeconds((getarg(0,0) / 1000), getarg(1,0));
+}
+
+function	script	FuzzyTimeFromMinutes	{
+    return FuzzyTimeFromSeconds((getarg(0,0) * 60), getarg(1,0));
+}
+
+function	script	FuzzyTimeFromHours	{
+    return FuzzyTimeFromMinutes((getarg(0,0) * 60), getarg(1,0));
+}
+
+function	script	FuzzyTimeFromDays	{
+    return FuzzyTimeFromHours((getarg(0,0) * 24), getarg(1,0));
+}

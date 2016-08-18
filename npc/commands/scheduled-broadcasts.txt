@@ -114,6 +114,7 @@ function	script	StoneBoard	{
                         $@SCHED_Opt[1] = .@int;
                         $@SCHED_Opt[2] = 0;
                         $@SCHED_Opt[3] = .@max;
+                        $@SCHED_Opt[4] = 0;
                         $@SCHED_Msg$ = .@msg$;
                         if (.@int)
                         {
@@ -146,8 +147,9 @@ function	script	StoneBoard	{
             mes l("Sent on login: @@", ($@SCHED_Opt[0] ? l("yes") : l("no")));
             if ($@SCHED_Opt[1])
             {
+                .@next = max(1, ((3600000 * ($@SCHED_Opt[1] - $@SCHED_Opt[4])) - getnpctimer(0)));
                 mes l("Interval: every @@ hour(s)", $@SCHED_Opt[1]);
-                //mes l("Next broadcast: "); // FIXME: (needs a HumanTime function)
+                mes l("Next broadcast: @@", FuzzyTimeFromMs(.@next));
             }
             else
             {
@@ -183,14 +185,19 @@ function	script	StoneBoard	{
     end;
 
 OnTimer3600000:
-    stopnpctimer;
-    ++$@SCHED_Opt[2];
-    if ($@SCHED_Msg$ != "")
+    ++$@SCHED_Opt[4];
+    if ($@SCHED_Opt[4] == ($@SCHED_Opt[1] - 1))
     {
-        announce $@SCHED_Msg$, bc_all;
-        if ($@SCHED_Opt[2] < $@SCHED_Opt[3] && $@SCHED_Opt[3] > 0)
+        stopnpctimer;
+        ++$@SCHED_Opt[2];
+        if ($@SCHED_Msg$ != "")
         {
-            initnpctimer;
+            announce $@SCHED_Msg$, bc_all;
+            $@SCHED_Opt[4] = 0;
+            if ($@SCHED_Opt[2] < $@SCHED_Opt[3] && $@SCHED_Opt[3] > 0)
+            {
+                initnpctimer;
+            }
         }
     }
     end;
