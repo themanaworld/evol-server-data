@@ -1,6 +1,7 @@
 stages:
 - build
 - test
+- valgrind
 - fail
 - ok
 
@@ -116,6 +117,40 @@ mariadb_run_latest:
   image: debian:unstable
   services:
   - mariadb:latest
+
+mysql_run_valgrind_latest:
+  stage: valgrind
+  script:
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-6
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev
+    valgrind"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/initdb.sh mysql
+  - ./.tools/jobs/build.sh "--enable-debug --disable-manager --enable-Werror --enable-buildbot" "--enable-werror"
+  - ./.tools/jobs/runservervalgrind.sh mysql
+  image: debian:unstable
+  services:
+  - mysql:latest
+
+mariadb_run_valgrind_latest:
+  stage: valgrind
+  script:
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-6
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev
+    valgrind"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/initdb.sh mariadb
+  - ./.tools/jobs/build.sh "--enable-debug --disable-manager --enable-Werror --enable-buildbot" "--enable-werror"
+  - ./.tools/jobs/runservervalgrind.sh mariadb
+  image: debian:unstable
+  services:
+  - mysql:latest
 
 ok_job:
   stage: ok
