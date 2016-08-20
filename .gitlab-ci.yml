@@ -150,7 +150,7 @@ mariadb_run_valgrind_latest:
   - ./.tools/jobs/runservervalgrind.sh mariadb
   image: debian:unstable
   services:
-  - mysql:latest
+  - mariadb:latest
 
 ok_job:
   stage: ok
