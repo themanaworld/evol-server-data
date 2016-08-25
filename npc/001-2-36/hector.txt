@@ -1,0 +1,410 @@
+// TrainingRoom
+// Author:
+//    jak1
+//    omatt
+// Story:
+//    Reid
+//    Teru
+// Spellchecking & Dialogs:
+//     Reid
+// Variable:
+// 'fightingActive
+//    0 = no wave, end of timer or end of waves
+//    1 = waves activated, then fence block escape to player
+// ArtisQuests_TrainingLegion
+// 0    not started at all
+// 1    start first waves got sword
+// 2    got bow
+// 3    second wave
+// 4    got skill
+// 5    third wave
+// 6    end of training
+// .mobID is related to quest state
+// 1    1021 dummy for sword wave
+// 3    1025 dummy for bow wave
+// 5    1024 dummy for skill wave
+//
+// TODO adding rand messages like "try hit it harder..." for wave's
+// TODO in first, second, and third training, input some tips about related weapon given.
+// TODO in basiControl few tips are not enough related to recent change of game
+
+
+001-2-36,32,36,0	script	Hector#001-2-36	NPC_LUCAS,{
+
+    'currentWaveLevel = 1;
+    'instanceID = instance_id();
+    'npcName$ = strnpcinfo(NPC_NAME_UNIQUE); // required for call the label in the npc of this one instance
+
+    function basicControl {
+
+        // same text of Ian npc of tmw
+        // feel free to adapt text
+        // a case for skill need to be add
+        do
+        {
+            clear;
+            speech(3,
+                l("Would you like to know about something?"));
+
+            select(
+                l("Fighting."),
+                l("Items."),
+                l("Monsters."),
+                l("Commands."),
+                l("Attributes."),
+                l("Quick Keys."),
+                l("Laws."),
+                l("I know everything!"));
+
+            switch (@menu)
+            {
+                case 1:
+                    speech(7,
+                        l("People live in this world by living off of monsters."),
+                        l("You can fight monsters and even players by hitting the [CTRL] key, or left mouse click."),
+                        l("If you get tired of pressing the key too much, you can also type [SHIFT]+[CTRL]."),
+                        l("This will make your character attack continuously for the time you are inactive."));
+                    break;
+
+                case 2:
+                    speech(7,
+                        l("There are three types of items."),
+                        l("They can be Consumables, Equipment or Miscellaneous."),
+                        l("Consumable items such as Potions, can be used only once. After use, they will disappear from your inventory."),
+                        l("Equipment items like Armors, Weapons, Accessories can be equipped for fashionable purposes or to raise your status."),
+                        l("Miscellaneous items such as maggot slime, are used in creating other items, or just to trade and sell."));
+                    break;
+
+                case 3:
+                    speech(7,
+                        l("In every world, there are beasts. Monsters can be found almost anywhere!~"),
+                        l("To fight them, please read [Fighting] if you do not know how."),
+                        l("There a several types of monsters, Aggressive, Neutral, and Assistants."),
+                        l("Aggressive monsters know that they are always in danger so therefore they always keep their guard up, making them attack anybody in sight."),
+                        l("Neutral monsters tend to just lounge around until attacked. They will leave everything alone unless they are threatened."),
+                        l("Assistants are monsters who help each other. You should always check how many are around you before attacking a single one!"));
+                    break;
+
+                case 4:
+                    speech(7,
+                        l("/clear clears the text box."),
+                        l("/help displays the client commands (ones starting with a /) in the chat box."),
+                        l("/whisper [name] allows you to message someone privately."),
+                        l("/who displays the current number of online users."),
+                        l("/where displays the current map's name."));
+                    break;
+
+                case 5:
+                    // tips about stats is about tmw, then pre renowal, then not good for here who are renewal
+                    // but since i don't play of renewal, i can't change them for better fit .__.
+                    speech(7,
+                        l("People vary greatly by how much strength, agility, dexterity, intelligence, vitality, and luck they have."),
+                        l("Strength helps you carry items, and it also allows you to hit harder – but it is not too helpful if you focus on missile weapons."),
+                        l("More agility allows you to attack faster, and to dodge attacks more easily."),
+                        l("Your dexterity determines how likely you are to hit a monster, and how effective you are with missile weapons."),
+                        l("Vitality determines how resistant to injuries you are, and how much damage you can take before you die."),
+                        l("Intelligence is useful for alchemy and magic, but there are few opportunities for either at the moment."),
+                        l("Luck determines many small things, including the likelihood of both recieving and dealing critical hits."),
+                        l("I recommend that you practice your dexterity, since some of the more dangerous monsters are very hard to hit otherwise."),
+                        l("Don't bother trying to work on your luck, and your intelligence is probably not something anyone cares about either."));
+                    break;
+
+                case 6:
+                    speech(7,
+                        l("There are many key combinations, press F1 for a short list of them!"));
+                    break;
+
+                case 7:
+                    narrator(7,
+                        l("There is a paper with some rules written on it."),
+                        l("1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle."),
+                        l("2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s)."),
+                        l("3. ##BDo not spam/flood other players.##b This includes chat spam and spam by trade requests."),
+                        l("4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language."),
+                        l("5. ##BDo not beg others##b for money, items or favours of any kind. If you want to ask for something, do it politely and only once. Try not to annoy other players."),
+                        l("6. ##BFollow the [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Evol Social Convention)."),
+                        l("7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time."));
+                    break;
+
+                default: return 1;
+            }
+        } while (1);
+    }
+
+    function waveEnded {
+
+        npctalk3("Con. u finished it...");
+
+        delcells("training_fence"+'npcName$);
+        'fightingActive = 0;
+        'mobDead = 0;
+
+        setq(.quest_training, getq(.quest_training) + 1);
+
+        end;
+    }
+
+    function mobSpawn {
+
+        if ('fightingActive == 1)
+        {
+            if ('currentWaveLevel == .maxWaves)
+            {
+                npctalk3("Last Wave!");
+            }
+            else
+            {
+                npctalk3("Wave " + 'currentWaveLevel + "!");
+            }
+
+            areamonster('map$, .mobCoordinate[0], .mobCoordinate[1], .mobCoordinate[2], .mobCoordinate[3],
+            /*           map          x1                 y1                x2                 y2            */
+                        .mobName$, .mobID['trainingQuest], 'currentWaveLevel, 'npcName$+"::OnTrainingMobDead");
+            /*          mob display        mob id                amount                  label              */
+        }
+        else
+        {
+            'currentWaveLevel = 0;
+        }
+
+        end;
+    }
+
+    function mobKilled {
+
+        'mobDead = 0; // reset the count
+
+        if ('currentWaveLevel == .maxWaves )
+        {
+            waveEnded;
+        }
+
+        // here check if the player don't use the sword of training and are in wave of sword training
+        if (getequipid(EQI_HAND_R) != .sword && getq(.quest_training) == 1)
+        {
+            npctalk3("Hey ! I gave you a sword no ? Equip it now !");
+            sleep2(3000);
+            npctalk3("Well...");
+            sleep2(1000);
+        }
+
+        // check if wave of skill, and if in first wave, then after kill the first dummy, the player receive explain and mana potion
+        if (getq(.quest_training) == 5 && 'currentWaveLevel == 1)
+        {
+            setcamnpc(strnpcinfo(NPC_NAME_UNIQUE)); // focus the npc when he talk to the player
+            speech(4,
+                l("This skill consume some spell points."),
+                l("And for regain spell point you have to wait."),
+                l("The speed of regen depend of your intelligence (i don't suspect you are stupid...)."),
+                l("If you sit, you can regain your spell points more faster."),
+                l("Or you can drink a mana potion for restore some spell point when you need."),
+                l("And, i'm a good guy, then i give you few of mine for free, take !"));
+            closedialog;
+            getitem(.mana_potion, 1);
+            sleep2(3000);
+        }
+
+        'currentWaveLevel++; // next wave after killed dummy
+
+        mobSpawn;
+    }
+
+    function waitFight {
+
+        speech(6,
+        l("Then? Are you ready for some training? Don't be shy and attack my dummys!"));
+
+        askyesno;
+        if (@menu == 2)
+        {
+            closedialog;
+            end;
+        }
+    }
+
+    function firstTraining {
+        speech(6,
+        l("You seem weak, lemme training you !"),
+        l("But, first you have to see what weapon you prefer..."),
+        l("Let's give a try, i have 3 type of weapon for you, after you can make a proper choice."));
+        setq(.quest_training, 1);
+
+        inventoryplace(.sword, 1);
+        getitem(.sword, 1);
+
+        speech(10,
+        l("A beautiful sword, no?"),
+        l("It's time to use this sword, i call a dummy for you, @@ waves of dummy, kill them and we see what weapon we can try after.", .maxWaves),
+        l("Ready ?"));
+
+        askyesno;
+        if (@menu == 2)
+        {
+            closedialog;
+            end;
+        }
+    }
+
+    function secondTraining {
+
+        speech(6,
+        l("Ok, now you have mastered the sword, let's try to bow !"));
+        setq(.quest_training, 3);
+
+        inventoryplace(.bow, 2);
+        getitem(.bow, 1);
+        getitem(.arrow, 300);
+
+        speech(10,
+        l("Not bad bow, no?"),
+        l("You know the system of my training, now. Prepare yourself for the fight against dummy!"),
+        l("Fight with a bow is not a close fight, use your range for kill them."),
+        l("Ready ?"));
+
+        askyesno;
+        if (@menu == 2)
+        {
+            closedialog;
+            end;
+        }
+    }
+
+    function thirdTraining {
+
+        speech(6,
+        l("Then, you know how to use a sword and a bow."),
+        l("the last weapon is a skill!"));
+        setq(.quest_training, 5);
+
+        // give SM_BASH skill
+        skill(.skill_name, 1, 0);
+
+        speech(10,
+        l("@@ waves of dummys, you know how that end.", .maxWaves),
+        l("Ready ?"));
+
+        askyesno;
+        if (@menu == 2)
+        {
+            closedialog;
+            end;
+        }
+    }
+
+    function trainingStart {
+
+        switch (getq(.quest_training))
+        {
+            case 0: firstTraining; break;
+            case 1: waitFight; break;
+            case 2: secondTraining; break;
+            case 3: waitFight; break;
+            case 4: thirdTraining; break;
+            case 5: waitFight; break;
+            default:
+                speech(6, l("It's all for my job, i learned all i know. Now try to use your brain and be a wonderful member of Legion"));
+                closedialog;
+                end;
+        }
+
+        closedialog;
+
+        getmapxy('map$, @x, @y, 0);
+        if (@x < 24 || @x > 32 || @y < 33 || @y > 43)
+        {
+            speech(1, l("Please enter the combat zone on the left."));
+
+            closedialog;
+            end;
+        }
+
+        // the fence for block the player to leave the training, here mask 3 for water
+        setcells('map$, 33, 35, 33, 38, 3, "training_fence"+'npcName$);
+
+        npctalk3(l("Let's begin"));
+
+        'trainingQuest = getq(.quest_training); // required for spawn the good one mob
+        'fightingActive = 1;
+
+        mobSpawn;
+    }
+
+    function firstCheck {
+
+        // here different messages, when the player are in fight and talk to npc, message is realted to the state fo quest
+        if ('fightingActive)
+        {
+            switch (getq(.quest_training))
+            {
+                case 1: npctalk3("Attack with your sword, and kill them!"); end;
+                case 3: npctalk3("Use your bow, and kill them!"); end;
+                case 5: npctalk3("You have a skill, use it for kill them! If your spell point are too low for use the skill, use the mana potion what i gave you."); end;
+                default: break;
+            }
+        }
+
+        // start menu
+        speech(5,
+            l(.mockingGreeting$[rand(getarraysize(.mockingGreeting$))]),
+            l("Do you want some training ? To be honnest, it seem that you need..."));
+
+        do
+        {
+            selectd(
+                l("Yeah, I like to want training me!"),
+                l("Hmm... But what is exactly this training ?"),
+                l("I'm a bit lost in this game, can you first give me few tips ?"));
+
+            switch (@menu)
+            {
+                case 1: trainingStart; break;
+                case 2:
+                    // here text who explain what is the training of this npc
+                    speech(15,
+                        l("In this training, my goal is to learn you how to be a good player, who can use a sword, a bow, and a skill."),
+                        l("For this, i give you weapons of you need."),
+                        l("Then i call few dummy, use what i learned you on them."));
+                    break;
+                case 3: basicControl; break;
+
+                default: closedialog; end;
+            }
+
+        } while (1);
+    }
+
+    // Here called function who start dialog
+    firstCheck;
+
+    closedialog;
+    end;
+
+
+OnTrainingMobDead:
+    // the amount of mob spawned depend of currentwave
+    if (++'mobDead == 'currentWaveLevel)
+    {
+        mobKilled;
+    }
+
+    end;
+
+OnInit:
+    .arrow = TrainingArrow;
+    .bow = WoodenBow;
+    .sword = WoodenSword;
+    .mana_potion = Croconut; // here need to change the potion
+    .skill_name = SM_BASH;
+    .quest_training = ArtisQuests_TrainingLegion;
+    .quest_debug = .quest_training;
+    .maxWaves = 3;
+    .mobName$ = "Dummy";
+
+    // here input some sentences "hello noob" like, the npc pick randomly a sentence
+    setarray .mockingGreeting$[0], "Hy noob !", "Hey somethingwholooklikeawarrior...", "Sup' chibi.";
+    setarray .mobID[0], 0, 1021, 0, 1025, 0, 1024; // mob id, in array because change for different state of quest
+    setarray .mobCoordinate[0], 24, 34, 31, 41; // this represent the square of "ring" training
+
+    end;
+
+}

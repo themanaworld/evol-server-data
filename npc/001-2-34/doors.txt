@@ -7,23 +7,33 @@
 001-2-34,23,29,0	script	ToTrainingRoom#001-2-34	NPC_HIDDEN,0,0,{
 
 OnTouch:
-    if ((getmapusers($@MAP_NAME$) == 0) && ($@FightingIsActive > 0))
-    {
-        set $@FightingIsActive, 0;
-        killmonsterall "001-2-36";
+
+    function doorBlock {
+        .@trainingMap$ = "001-2-36";  // map to create
+        .@PCName$ = strcharinfo(PC_NAME); // name of player character used for set the name of instance
+
+        if (has_instance("001-2-36") == .@PCName$+"@map1")
+        // check if an training instance attached to the player, then warp into or create another
+        {
+            warp(.@PCName$+"@map1", 36, 30);
+            end;
+        }
+
+        // same process of /test/npc1.txt
+        .@instTraining = instance_create("training@instance", getcharid(CHAR_ID_ACCOUNT), IOT_CHAR);
+        .@instanceMapName$ = instance_attachmap(.@trainingMap$, .@instTraining, 0, .@PCName$+"@map1");
+
+        instance_set_timeout(1000000, 1000000, .@instTraining);
+        instance_init(.@instTraining);
+
+        // respawn the player in front of door of training room if the player relog inside the instance
+        // do not effect the savepoint
+        setmapflagnosave(.@instanceMapName$, .map$, 24, 29);
+
+        warp(.@instanceMapName$, 36, 30);
+        end;
     }
 
-    if (mobcount("001-2-36","all") > 0 && $@FightingIsActive > 0)
-    {
-        narrator
-        l("You hear some sound behind the door."),
-        l("Somebody is probably training, better wait for him to finish.");
-    }
-    else
-    {
-        warp "001-2-36", 36, 30;
-    }
-
-    closeclientdialog;
-    close;
+    doorBlock;
+    end;
 }

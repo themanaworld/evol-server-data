@@ -80,7 +80,8 @@ function	script	GlobalQuestDebug	{
                 "Fexil", ArtisQuests_Fexil,
                 "Lloyd", ArtisQuests_Lloyd,
                 l("Mona's dad"), ArtisQuests_MonaDad,
-                l("Artis legion progress"), Artis_Legion_Progress;
+                l("Artis legion progress"), Artis_Legion_Progress,
+                l("Training legion"), ArtisQuests_TrainingLegion;
 
             switch (@menuret)
             {

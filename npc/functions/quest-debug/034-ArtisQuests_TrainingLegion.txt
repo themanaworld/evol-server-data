@@ -1,0 +1,30 @@
+// Training Legion quest
+// Authors:
+//    omatt
+
+function	script	QuestDebug34	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_TrainingLegion";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_TrainingLegion));
+        next;
+
+        GenericQuestDebug ArtisQuests_TrainingLegion,
+            l("Does not have the quest"), 0,
+            l("Start first waves got sword"), 1,
+            l("Got bow"), 2,
+            l("Second wave"), 3,
+            l("Got skill"), 4,
+            l("Third wave"), 5,
+            l("End of training"), 6;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}
