@@ -1,0 +1,31 @@
+// Janus quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug31	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "General_Janus";
+        mes "---";
+        mes l("Quest state: @@", getq(General_Janus));
+        next;
+
+        GenericQuestDebug General_Janus,
+            l("Does not have the quest"), 0,
+            l("Talked to Janus"), 1,
+            l("Can create party"), 2,
+            l("Can create guild"), 3;
+
+        switch (@menuret)
+        {
+            case 0:
+            case 1: skill NV_BASIC, min(6, getskilllv(NV_BASIC)), 0; break;
+            case 2:
+            case 3: skill NV_BASIC, max(7, getskilllv(NV_BASIC)), 0; break;
+            default: if (@menuret < 0) return;
+        }
+
+    } while (1);
+}

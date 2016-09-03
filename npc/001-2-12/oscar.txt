@@ -113,12 +113,12 @@
 
     do
     {
-        menuint
-            l("Could you bleach my clothes?"), 1,
-            l("Do you live here alone?"), 2,
-            menuaction(l("Quit")), 3;
+        select
+            l("Could you bleach my clothes?"),
+            l("Do you live here alone?"),
+            menuaction(l("Quit"));
 
-        switch (@menuret)
+        switch (@menu)
         {
             case 1:
                 remove_cards_from_item();
@@ -131,7 +131,7 @@
                 break;
         }
 
-    } while (@menuret != 3);
+    } while (@menu != 3);
 
     closedialog;
     goodbye;

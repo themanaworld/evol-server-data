@@ -1,0 +1,27 @@
+// Q'Onan quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug23	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_QOnan";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_QOnan));
+        next;
+
+        GenericQuestDebug ArtisQuests_QOnan,
+            l("Does not have the quest"), 0,
+            l("Q'Onan asks to find chest"), 1,
+            l("Found the chest"), 2,
+            l("Gave to Q'Onan, got reward"), 3;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

@@ -1,0 +1,26 @@
+// Piou quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug21	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_CatchPiou";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_CatchPiou));
+        next;
+
+        GenericQuestDebug ArtisQuests_CatchPiou,
+            l("Does not have the quest"), 0,
+            l("Salem asks to catch piou"), 1,
+            l("Returned piou to Salem"), 2;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

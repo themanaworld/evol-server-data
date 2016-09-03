@@ -133,13 +133,14 @@
             setq General_Janus, 2;
         }
 
-        menuint rif (getq (General_Janus) == 1, l("I would like to create a party.")), 1,
-                rif (getq (General_Janus) == 2, l("I would like to create a guild.")), 2,
-                l("What service do you offer?"), 3,
-                l("Your name is Ianus or Janus?"), 4,
-                menuaction(l("Quit")), 5;
+        select
+            rif (getq (General_Janus) == 1, l("I would like to create a party.")),
+            rif (getq (General_Janus) == 2, l("I would like to create a guild.")),
+            l("What service do you offer?"),
+            l("Your name is Ianus or Janus?"),
+            menuaction(l("Quit"));
 
-        switch (@menuret)
+        switch (@menu)
         {
             case 1:
                 create_party;
@@ -153,10 +154,8 @@
             case 4:
                 janus_is_not_ianus;
                 break;
-            case 5:
-                break;
         }
-    } while (@menuret != 5);
+    } while (@menu != 5);
 
     closedialog;
     goodbye;

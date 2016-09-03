@@ -1,0 +1,38 @@
+// Nard quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug4	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ShipQuests_Nard";
+        mes "---";
+        mes l("Quest state: @@", getq(ShipQuests_Nard));
+        mes "---";
+        mes l("Subquests:");
+        mes "ShipQuests_Gugli: " + getq(ShipQuests_Gugli);
+        mes "ShipQuests_ChefGado: " + getq(ShipQuests_ChefGado);
+        next;
+
+        GenericQuestDebug ShipQuests_Nard,
+            l("Does not have the quest"), 0,
+            l("Nard asks to help crew"), 1,
+            menuimage("actions/manage", l("Debug Gugli quest")), -1,
+            l("Completed Gugli's task"), 2,
+            l("Nard asks to solve conflict"), 3,
+            menuimage("actions/manage", l("Debug Gado quest")), -2,
+            l("Solved conflict"), 4,
+            l("Official crew member"), 5,
+            l("Talked to narrator"), 6;
+
+        switch (@menuret)
+        {
+            case -1: callfunc "QuestDebug16"; break;
+            case -2: callfunc "QuestDebug17"; break;
+            default: if (@menuret < 0) return;
+        }
+
+    } while (1);
+}

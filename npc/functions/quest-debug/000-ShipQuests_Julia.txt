@@ -1,0 +1,26 @@
+// Julia quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug0	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ShipQuests_Julia";
+        mes "---";
+        mes l("Quest state: @@", getq(ShipQuests_Julia));
+        next;
+
+        GenericQuestDebug ShipQuests_Julia,
+            l("Does not have the quest"), 0,
+            l("Got the quest"), 1,
+            l("Completed"), 2;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

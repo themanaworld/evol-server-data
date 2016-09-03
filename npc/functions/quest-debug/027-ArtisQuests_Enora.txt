@@ -1,0 +1,35 @@
+// Newbie quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug27	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_Enora";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_Enora));
+        next;
+
+        GenericQuestDebug ArtisQuests_Enora,
+            l("Does not have the quest"), 0,
+            l("Enora asks to visit Chelios"), 1,
+            l("Chelios asks to visit Lloyd"), 2,
+            l("Lloyd gave package"), 3,
+            l("Chelios made sword"), 4,
+            l("Enora asks to visit Resa"), 5,
+            l("Resa gave package"), 6,
+            l("Enora asks to visit Q'Pid"), 7,
+            l("Lost the riddle"), 8,
+            l("Ivan gave package"), 9,
+            l("Enora asks to kill fluffys"), 10,
+            l("Completed, got reward"), 11;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

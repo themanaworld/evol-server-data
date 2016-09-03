@@ -1,0 +1,69 @@
+function	script	SuperMenu	{
+    do
+    {
+        .@gid = getgroupid();
+
+        if (.@gid < 3)
+        {
+            GlobalDebugMenu;
+            return;
+        }
+
+        clear;
+        setnpcdialogtitle l("Super Menu");
+        mes l("This menu contains all options available to you, based on your access privileges.");
+        mes "";
+        mes l("What do you want to access?");
+        next;
+        select
+            l("Scheduled broadcasts"),
+            l("MOTD"),
+            rif(.@gid >= 4, l("Event management")),
+            l("Debug");
+
+        switch (@menu)
+        {
+            case 1: StoneBoard 1; break;
+            case 2: MOTDConfig 1; break;
+            case 3: GlobalEventMenu 1; break;
+            case 4: GlobalDebugMenu 1; break;
+        }
+    } while (1);
+}
+
+
+
+-	script	@super	32767,{
+    end;
+
+OnCall:
+    .@gid = getgroupid();
+
+    if (!debug && .@gid < 3)
+    {
+        dispbottom l("You do not have the required access privileges to use the Super Menu.");
+        end;
+    }
+
+    SuperMenu;
+    closedialog;
+    end;
+
+OnPCLoginEvent:
+    .@debug_skill = getskilllv(EVOL_SUPER_MENU);
+
+    if (.@debug_skill > 0 && !debug)
+    {
+        skill EVOL_SUPER_MENU, 0, 0; // remove debug skill
+    }
+
+    else if (.@debug_skill < 1 && debug)
+    {
+        skill EVOL_SUPER_MENU, 1, 0; // give debug skill
+    }
+    end;
+
+OnInit:
+    bindatcmd "super", "@super::OnCall", 0, 99, 0;
+    bindatcmd "numa", "@super::OnCall", 0, 99, 0; // alias for those used to TMW's @numa
+}

@@ -1,0 +1,102 @@
+function	script	BarberDebug	{
+
+    function	setGender	{
+        //clear;
+        //setnpcdialogtitle l("Appearance Debug - Sex Change");
+        //mes l("Please choose the desired gender:");
+        //next;
+        //menuint
+        //    l("Male"), G_MALE,
+        //    l("Female"), G_FEMALE,
+        //    l("Non-binary"), G_OTHER;
+
+        //Sex = @menuret; // FIXME: make this work like in tmwAthena
+        //return;
+
+
+        // ^ Future code, Doesn't work yet
+        closedialog;
+        changecharsex;
+    }
+    function	setStyle	{
+        clear;
+        setnpcdialogtitle l("Appearance Debug - Barber");
+        mes l("Hair style") + ": " + getlook (LOOK_HAIR);
+        next;
+        mes l("Please enter the desired style") + " (1-255)";
+        input .@h, 1, 0xFF;
+        setlook LOOK_HAIR, max(1, min(0xFF, .@h));
+        return;
+    }
+    function	setColor	{
+        clear;
+        setnpcdialogtitle l("Appearance Debug - Barber");
+        mes l("Hair color") + ": " + getlook (LOOK_HAIR_COLOR);
+        next;
+        mes l("Please enter the desired color") + " (0-255)";
+        input .@h, 0, 0xFF;
+        setlook LOOK_HAIR_COLOR, max(0, min(0xFF, .@h));
+        return;
+    }
+    function	setRace	{
+        clear;
+        setnpcdialogtitle l("Appearance Debug - Race");
+        mes l("Race") + ": " + Class;
+        next;
+        mes l("Please enter the desired race") + " (0-32767)";
+        input .@r, 0, 0x7FFF;
+        jobchange max(0, min(0x7FFF, .@r));
+        return;
+    }
+
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Appearance Debug");
+        mes l("This menu allows you to customize your appearance.");
+        mes "";
+
+        mes "---";
+        mes l("Gender") + ": " + Sex;
+        mes l("Hair style") + ": " + getlook (LOOK_HAIR);
+        mes l("Hair color") + ": " + getlook (LOOK_HAIR_COLOR);
+        mes l("Race") + ": " + Class;
+        mes "---";
+
+        next;
+        mes l("What do you want to change?");
+        select
+            menuimage("actions/edit", l("Gender") + " [" + l("Requires logout") + "]"),
+            menuimage("actions/edit", l("Hair style")),
+            menuimage("actions/edit", l("Hair color")),
+            menuimage("actions/edit", l("Race")),
+            rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu")));
+
+        switch (@menu)
+        {
+            case 1: setGender; break;
+            case 2: setStyle; break;
+            case 3: setColor; break;
+            case 4: setRace; break;
+            case 5: return;
+        }
+    } while (1);
+}
+
+
+
+-	script	@look	32767,{
+    end;
+
+OnCall:
+    if (!debug && getgroupid() < 3)
+    {
+        end;
+    }
+    BarberDebug;
+    closedialog;
+    end;
+
+OnInit:
+    bindatcmd "look", "@look::OnCall", 0, 99, 0;
+}

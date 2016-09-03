@@ -227,5 +227,11 @@ OnCall:
     end;
 
 OnInit:
+    if (debug > 0)
+    {
+        bindatcmd "w", "@w::OnCall", 0, 2, 0;
+        end;
+    }
+
     bindatcmd "w", "@w::OnCall", 1, 2, 1;
 }

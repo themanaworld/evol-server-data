@@ -1,0 +1,25 @@
+// Mona quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug32	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_MonaDad";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_MonaDad));
+        next;
+
+        GenericQuestDebug ArtisQuests_MonaDad,
+            l("Does not have the quest"), 0,
+            l("Mona's dad is missing"), 1;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

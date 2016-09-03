@@ -1,0 +1,123 @@
+// Preset / routine system
+// author: gumi
+// description: allows to execute multiple commands in a single step
+//              to ease testing and debugging
+//
+// usage: @pre [options] <instruction>[, <instruction>...]
+// usage: DoRoutine "[options] <instruction>[, <instruction>...]";
+//
+// example: @pre -s a22 v14
+//          resets all stats, gives 22 agi, gives 14 vit
+//
+// ^ actual documentation may come one day, when I feel like it
+//   *hides*
+
+function	script	DoRoutine	{
+    .@routine$ = strip(getarg(0,""));
+    .@m = explode(.@routine$[0], .@routine$, " "); // prep the base array
+
+    if (charat(.@routine$[0], 0) == "-")
+    {
+        if (compare(.@routine$[0], "t"))
+        {
+            clearitem;
+        }
+
+        if (compare(.@routine$[0], "e"))
+        {
+            nude;
+        }
+
+        if (compare(.@routine$[0], "k"))
+        {
+            resetskill;
+        }
+
+        if (compare(.@routine$[0], "s"))
+        {
+            resetstatus;
+        }
+
+        if (compare(.@routine$[0], "x"))
+        {
+            resetlvl 2;
+        }
+
+        if (compare(.@routine$[0], "q"))
+        {
+            //doevent "::OnGlobalQuestReset"; // executes in all quest npcs // FIXME: maybe have a `resetquest` buildin?
+            // FIXME: ^ need a buildin that can run *right now* instead of on script end
+        }
+
+        .@o = 1;
+    }
+
+    for (.@i = (.@o ? 1 : 0); .@i < .@m; ++.@i)
+    {
+        .@type$ = charat(strip(.@routine$[.@i]), 0);
+        .@type = 0x7FFF;
+        if (.@type$ != "")
+        {
+            .@args = explode(.@args$, delchar(.@routine$[.@i], 0), ",");
+            .@a = atoi(.@args$[0]);
+            .@b = atoi(.@args$[1]);
+            .@c = atoi(.@args$[2]);
+
+            for (.@l = 0; .@l < 36; ++.@l)
+            {
+                if ($@PresetCmds$[.@l] == .@type$)
+                {
+                    .@type = .@l;
+                    break;
+                }
+            }
+            // FIXME: ^ this whole for() loop could be removed if there was a ord() buildin
+
+            switch (.@type)
+            {
+                case 0: statusup2 bAgi, max(1,min(99,.@a)) - readparam(bAgi); break;
+                case 2: jobchange max(0,min(6,.@a)); break;
+                case 3: statusup2 bDex, max(1,min(99,.@a)) - readparam(bDex); break;
+                case 4: equip max(1,min(32767,.@a)); break;
+                //case 6: break; <= gender
+                case 8: statusup2 bInt, max(1,min(99,.@a)) - readparam(bInt); break;
+                case 10: skill max(1,min(32767,.@a)), max(0,min(10,.@b)), max(0,min(2,.@c)); break;
+                case 11: statusup2 bLuk, max(1,min(99,.@a)) - readparam(bLuk); break;
+                //case 12: break; <= mercenary
+                case 15: makepet max(1002,min(32767,.@a)); break;
+                case 16: setq max(0,min(32767,.@a)), max(0,min(32767,.@b)); break;
+                case 18: statusup2 bStr, max(1,min(99,.@a)) - readparam(bStr); break;
+                case 19: getitem max(1,min(32767,.@a)), max(1,min(32767,.@b)); break;
+                case 21: statusup2 bVit, max(1,min(99,.@a)) - readparam(bVit); break;
+                case 22: warp .@args$[0], .@b, .@c; break;
+                case 23: BaseLevel = max(1,min(99,.@a)); break; // XXX: maybe also set BaseExp
+                case 24: JobLevel = max(1,min(255,.@a)); break; // XXX: maybe also set JobExp
+                case 25: Zeny = max(0,min(0x7FFFFFFE,.@a)); #MerchantBank = max(0,min(0x7FFFFFFF,.@b)); break;
+            }
+        }
+    }
+
+    return;
+}
+
+-	script	@pre	32767,{
+    end;
+
+OnCall:
+    if (!debug && getgroupid() < 99)
+    {
+        end;
+    }
+    if (.@atcmd_parameters$[0] != "")
+    {
+        .@atcmd_parameters$[0] = implode(.@atcmd_parameters$[0], " ");
+    }
+    DoRoutine strip(.@atcmd_parameters$[0]);
+    end;
+
+OnInit:
+    setarray $@PresetCmds$[0], "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+        "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
+        "y", "z", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9;
+    bindatcmd "pre", "@pre::OnCall", 0, 99, 0;
+}

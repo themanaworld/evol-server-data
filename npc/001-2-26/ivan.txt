@@ -59,19 +59,18 @@
 
     speech 4, l("Yes what do you need?");
 
-    menuint rif(.@enora == 8, l("The Legion needs some potions.")), 1,
-            rif(.@enora >= 8, l("Who are you?")), 2,
-            menuaction(l("Quit")), 3;
+    select
+        rif(.@enora == 8, l("The Legion needs some potions.")),
+        rif(.@enora >= 8, l("Who are you?")),
+        menuaction(l("Quit"));
 
-    switch (@menuret)
+    switch (@menu)
     {
         case 1:
             enora_quest;
             break;
         case 2:
             ivan_description;
-            break;
-        case 3:
             break;
     }
 

@@ -1,0 +1,139 @@
+function	script	GlobalDebugMenu	{
+    function	resetAll	{
+        function	doReset	{
+            resetstatus;
+            resetskill;
+            resetlvl 1;
+            dispbottom l("Reset done!");
+            if (getarg(0,0) == 3)
+            {
+                closedialog;
+                doevent "::OnGlobalQuestReset"; // executes in all quest npcs // FIXME: maybe have a `resetquest` buildin?
+                Zeny = 0;
+                #MerchantBank = 0;
+                clearitem;
+                warp "000-0", 0, 0; // starting point
+                end; // script must end for doevent to execute
+            }
+            return;
+        }
+        clear;
+        setnpcdialogtitle l("Debug - Reset");
+        mes l("What do you want to reset?");
+        select
+            menuimage("actions/abort", l("Abort")),
+            menuimage("actions/reset", l("Reset stats, skills, level")),
+            menuimage("actions/nuke", l("Reset EVERYTHING")),
+            menuimage("actions/back", l("Return to Debug menu"));
+
+        switch (@menu)
+        {
+            case 2:
+            case 3: doReset @menu;
+        }
+
+        return;
+    }
+
+    function	changeLevel	{
+        clear;
+        setnpcdialogtitle l("Debug - Change level");
+        mes l("To change your base level, use this command:");
+        mes "";
+        mes "    " + col("@blvl <" + l("delta") + ">", 3);
+        next;
+        mes l("Example:");
+        mes "@blvl 50";
+        mes "    " + l("Raises your base level by 50");
+        mes "@blvl -50";
+        mes "    " + l("Reduces your base level by 50");
+        next;
+        mes l("To change your job level, use this command:");
+        mes "";
+        mes "    " + col("@jlvl <" + l("delta") + ">", 3);
+        next;
+        mes l("Example:");
+        mes "@jlvl 50";
+        mes "    " + l("Raises your job level by 50");
+        mes "@jlvl -50";
+        mes "    " + l("Reduces your job level by 50");
+        next;
+        return;
+    }
+    function	changeStats	{
+        clear;
+        setnpcdialogtitle l("Debug - Change stats");
+        mes l("To change your stats, use these commands:");
+        mes "";
+        mes "    " + col("@str <" + l("delta") + ">", 3);
+        mes "    " + col("@agi <" + l("delta") + ">", 3);
+        mes "    " + col("@vit <" + l("delta") + ">", 3);
+        mes "    " + col("@int <" + l("delta") + ">", 3);
+        mes "    " + col("@dex <" + l("delta") + ">", 3);
+        mes "    " + col("@luk <" + l("delta") + ">", 3);
+        next;
+        mes l("Example:");
+        mes "@int 50";
+        mes "    " + l("Raises your Int by 50");
+        mes "@int -50";
+        mes "    " + l("Reduces your Int by 50");
+        next;
+        mes l("If you simply wish to get 99 in all stats:");
+        mes "";
+        mes "    " + col("@allstats", 3);
+        next;
+        mes l("If you wish to reset your stats:");
+        mes "";
+        mes "    " + col("@streset", 3);
+        next;
+        return;
+    }
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Debug");
+        mes l("This menu allows you to modify your account data.");
+        mes "";
+        mes l("What do you want to do?");
+        select
+            menuimage("actions/manage", l("Change my level")),
+            menuimage("actions/manage", l("Change my stats")),
+            menuimage("actions/manage", l("Change my skills")),
+            menuimage("actions/manage", l("Change my appearance")),
+            menuimage("actions/edit", l("Change my quests")),
+            menuimage("actions/reset", l("Reset")),
+            rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu")));
+
+        .@c = getarg(0,0) ? 2 : 1;
+
+        switch (@menu)
+        {
+            case 1: changeLevel; break;
+            case 2: changeStats; break;
+            case 3: GlobalSkillDebug .@c; break;
+            case 4: BarberDebug .@c; break;
+            case 5: GlobalQuestDebug .@c; break;
+            case 6: resetAll; break;
+            case 7: return;
+        }
+    } while(1);
+}
+
+
+
+-	script	@debug	32767,{
+    end;
+
+OnCall:
+    if (!debug && getgroupid() < 99)
+    {
+        end;
+    }
+    GlobalDebugMenu;
+    closedialog;
+    end;
+
+OnInit:
+    bindatcmd "debug", "@debug::OnCall", 0, 99, 0;
+    // TODO / FIXME: add a @test command that opens the help window for test-server
+}

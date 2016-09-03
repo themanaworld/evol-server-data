@@ -1,0 +1,27 @@
+// Rumly quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug26	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "General_Rumly";
+        mes "---";
+        mes l("Quest state: @@", getq(General_Rumly));
+        next;
+
+        GenericQuestDebug General_Rumly,
+            l("Does not have the quest"), 0,
+            l("Rumly needs your help"), 1,
+            l("Rumly wants @@", l("Plushroom")), 2,
+            l("Gave @@ to Rumly", l("Plushroom")), 3;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

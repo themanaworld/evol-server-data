@@ -76,13 +76,13 @@
 
     .@fexil = getq(ArtisQuests_Fexil);
 
-    menuint
-        l("OK, let's trade."), 1,
-        rif(.@fexil == 2, l("Do you still need help?")), 2,
-        rif(.@fexil > 2 && countitem(FluffyFur) > 0, l("I have some fur for you.")), 3,
-        l("No. Sorry."), 4;
+    select
+        l("OK, let's trade."),
+        rif(.@fexil == 2, l("Do you still need help?")),
+        rif(.@fexil > 2 && countitem(FluffyFur) > 0, l("I have some fur for you.")),
+        l("No. Sorry.");
 
-    switch (@menuret)
+    switch (@menu)
     {
         case 1:
             closedialog;

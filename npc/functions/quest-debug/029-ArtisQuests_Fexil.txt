@@ -1,0 +1,27 @@
+// Fexil quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug29	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_Fexil";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_Fexil));
+        next;
+
+        GenericQuestDebug ArtisQuests_Fexil,
+            l("Does not have the quest"), 0,
+            l("Lloyd gave pass"), 1,
+            l("Fexil needs help"), 2,
+            l("Fexil wants to buy fur"), 3;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

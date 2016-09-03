@@ -1,0 +1,25 @@
+// Narrator debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug28	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "General_Narrator";
+        mes "---";
+        mes l("Quest state: @@", getq(General_Narrator));
+        next;
+
+        GenericQuestDebug General_Narrator,
+            l("Game introduction"), 0,
+            l("Visited Artis at least once"), 1;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

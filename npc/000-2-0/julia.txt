@@ -33,6 +33,266 @@
 //    25   Reward taken from the box.
 
 000-2-0,27,24,0	script	Julia	NPC_JULIA,2,10,{
+
+    function	ynMenu	{
+        if (select(l("Yes, I do."), l("No, none.")) == 1) {
+            return;
+        }
+        closedialog;
+    }
+
+    function	poisonJulia	{
+        mes "";
+        mesn;
+        mesq l("Seems yummy! Let me taste it!");
+        next;
+        mesq l("Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*");
+        if (countitem(PoisonedDish) > 0) delitem PoisonedDish, 1;
+        setq ShipQuests_ChefGado, 3;
+        close;
+    }
+
+    function	gotoSleep	{
+        speech 5,
+            l("You already did enough for us, follow Nard's advice and get some rest."),
+            l("We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!"),
+            l("Do you have any other questions for me?");
+        ynMenu;
+        return;
+    }
+
+    function	heardRumors	{
+        mes "";
+        mesn;
+        mesq l("You shouldn't believe every tale drunken sailors tell you.");
+        next;
+
+        select
+            l("Let's say the person who told me about that is well respected on this ship and never drunk.");
+
+        mes "";
+        mesn;
+        mesq l("Hahaha! All sailors aboard this ship are always drunk... Well... Except... Wait, what?! Nard told you?!");
+        next;
+        mesq l("Doesn't he like the way I'm taking care of his ship? Everything is clean and tidy with me, rightful lieutenant of La Johanne.");
+        next;
+        mesq l("I give tasks to every single sailor, all day long. That should make him happy!");
+        next;
+
+        select
+            l("Well... I don't think it is the best way to rule a ship. Think about it."),
+            l("In fact, everything seems to work perfectly under your guidance. Nard has made the right choice.");
+
+        if (@menu == 1)
+        {
+            closedialog;
+            end;
+        }
+
+        mes "";
+        mesn;
+        mesq l("I'm glad you're on my side.");
+        next;
+        mesq l("Take this money as a reward for your nice words.");
+
+        setq ShipQuests_ChefGado, 6;
+        Zeny += 100;
+        message strcharinfo(0), l("You receive @@ E!", 100);
+        getexp 8, 0;
+        close;
+    }
+
+    function	gotRegrets	{
+        mes "";
+        mesn;
+        mesq l("Why? And who should you bring it back to?");
+        next;
+
+        select
+            l("Ehm... He was really upset because of some past stories.");
+
+        mes "";
+        mesn;
+        mesq l("Gado! That coward lives in the past, I will ask Nard to punish him, again!");
+        next;
+        mesq l("Take this money for your wise choice. But do not try it again. The open sea has been merciful with you once... Do not further tempt the fates!");
+
+        setq ShipQuests_ChefGado, 5;
+        Zeny += 200;
+        message strcharinfo(0), l("You receive @@ E!", 200);
+        getexp 15, 0;
+        close;
+    }
+
+    function	basicSkill	{
+        mes "";
+        mesn;
+        mesq l("Let me check into it...");
+        next;
+        adddefaultskills;
+        mesq l("Here you go, everything is fixed.");
+        emotion E_HAPPY;
+        next;
+        mesq l("Do you have any other questions for me?");
+        next;
+        ynMenu;
+        return;
+    }
+
+    function	chooseLang	{
+        mes "";
+        mesn;
+        mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
+        next;
+
+        select
+            menuimage("flags/en", l("I speak English.") + " (English)"),
+            menuimage("flags/fr", l("I speak French.") + " (Français)"),
+            menuimage("flags/ru", l("I speak Russian.") + " (Русский)"),
+            menuimage("flags/es", l("I speak Spanish.") + " (Español)"),
+            menuimage("flags/pt_BR", l("I speak Portuguese.") + " (Português)"),
+            menuimage("flags/de", l("I speak German.") + " (Deutsch)"),
+            menuimage("flags/vls", l("I speak Flemish.") + " (Vlaams)"),
+            menuimage("flags/pl", l("I speak Polish.") + " (Polski)"),
+            menuimage("flags/it", l("I speak Italian.") + " (Italiano)"),
+            menuimage("flags/nl_BE", l("I speak Dutch.") + " (Nederlands)"),
+            menuimage("flags/ca", l("I speak Catalan.") + " (Català)"),
+            getarg(0, "");
+
+        .@lang = @menu-1;
+        if (.@lang < 0 || .@lang > 10)
+        {
+            mes "";
+            mesn;
+            mesq l("No problem, do you have any other questions for me?");
+            next;
+            ynMenu;
+            return;
+        }
+        Lang = .@lang;
+
+        mes "";
+        mesn;
+        mesq l("Ok, done.");
+
+        if (getq(ShipQuests_Julia) == 2)
+        {
+            next;
+            mesq l("Do you have any other questions for me?");
+            next;
+            ynMenu;
+            return;
+        }
+
+        next;
+        mesq l("I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.");
+
+        mesq l("Here they are.");
+        next;
+
+        narrator 0x4,
+            l("There is a paper with some rules written on it."),
+            l("1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle."),
+            l("2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s)."),
+            l("3. ##BDo not spam/flood other players.##b This includes chat spam and spam by trade requests."),
+            l("4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language."),
+            l("5. ##BDo not beg others##b for money, items or favours of any kind. If you want to ask for something, do it politely and only once. Try not to annoy other players."),
+            l("6. ##BFollow the [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Evol Social Convention)."),
+            l("7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.");
+
+        mesn;
+        mesq l("Oh, and I almost forgot! Do not give the password of your room to anybody! I am the only one who has the other key and I won't ask for yours so keep it secret and try not to use the same password for any other room in the future.");
+        next;
+        mesq l("If you want to read this page again, there is a copy up on the left wall.");
+        next;
+        mesq l("I think I'm done with that now. Do you have any questions?");
+        next;
+
+        setq ShipQuests_Julia, 2;
+        return;
+    }
+
+    function	whereAmI	{
+        mes "";
+        mesn;
+        mesq l("You're on a ship, we're on our way to the commercial capital of Artis.");
+        next;
+        mesq l("We should be there in a few days, once we arrive, I will warn the Legion of Aemil about what happened, I'm sure they can help.");
+        next;
+        mesq l("But for now, you can relax on the ship, or visit the island we're docked at! Its a small island, but a good place to get some exercise and stretch your legs.");
+        next;
+        mesq l("Do you have any other questions for me?");
+        next;
+        ynMenu;
+        return;
+    }
+
+    function	whatHappened	{
+        mes "";
+        mesn;
+        mesq l("We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.");
+        next;
+        mesq lg("You were in bad shape, you should be happy we found you before the sea killed you.");
+        next;
+        mesq l("Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?");
+        next;
+
+        select
+            l("Sorry, but I can't tell you anything about that."),
+            l("Nothing, sorry.");
+
+        mes "";
+        mesn;
+        mesq l("No problem, do you have any other questions for me?");
+        next;
+        ynMenu;
+        return;
+    }
+
+    function	readRules	{
+        mes "";
+        mesn;
+        mesq l("Of course, they are on the left wall, go have a look at them.");
+        next;
+        mesq l("Do you have any other questions for me?");
+        next;
+        ynMenu;
+        return;
+    }
+
+    function	mainMenu	{
+        do
+        {
+            select
+                rif(debug, menuaction(l("debug"))),
+                rif(.@q3 == 5 && .@q4 < 1, l("What can I do now?")),
+                rif(.@q3 == 3 && .@q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")),
+                rif(.@q2 == 2 && countitem(PoisonedDish), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")),
+                rif(.@q2 == 2 && countitem(PoisonedDish), l("I have brought you a tasty present for your delicate mouth.")),
+                rif(getskilllv(NV_BASIC) < 6, l("Something is wrong with me, I can't smile nor sit.")),
+                lg("I made a mistake, I would like to change my language."),
+                l("Could you explain to me where I am?"),
+                l("What happened to me?"),
+                l("Can I read these rules again?"),
+                l("Nothing, sorry.");
+
+            switch (@menu)
+            {
+                case 2: gotoSleep; break;
+                case 3: heardRumors; break;
+                case 4: gotRegrets; break;
+                case 5: poisonJulia; break;
+                case 6: basicSkill; break;
+                case 7: chooseLang .@s$; break;
+                case 8: whereAmI; break;
+                case 9: whatHappened; break;
+                case 10: readRules; break;
+                case 1: QuestDebug0;
+                case 11: closedialog; end;
+            }
+        } while (1);
+    }
+
     mesn;
     mesq lg("Hello dear!");
     next;
@@ -43,21 +303,12 @@
     .@q3 = getq(ShipQuests_Nard);
     .@q4 = getq(General_Narrator);
     .@s$ = l("I don't want to change my language, sorry.");
+    mainMenu;
 
-L_Menu:
-    menu
-        rif(.@q3 == 5 && .@q4 < 1, l("What can I do now?")), L_GotoSleep,
-        rif(.@q3 == 3 && .@q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")), L_Rumors,
-        rif(.@q2 == 2 && countitem(PoisonedDish), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")), L_Regret,
-        rif(.@q2 == 2 && countitem(PoisonedDish), l("I have brought you a tasty present for your delicate mouth.")), L_PoisonJulia,
-        rif(getskilllv(NV_BASIC) < 6, l("Something is wrong with me, I can't smile nor sit.")), L_BasicSkill,
-        lg("I made a mistake, I would like to change my language."), L_ChooseLang,
-        l("Could you explain to me where I am?"), L_WhereIam,
-        l("What happened to me?"), L_What,
-        l("Can I read these rules again?"), L_Rules,
-        l("Nothing, sorry."), L_Quit;
+OnTouch:
+    .@q = getq(ShipQuests_Julia);
+    if (.@q > 1) end;
 
-L_First:
     checkclientversion;
 
     mesn;
@@ -69,231 +320,11 @@ L_First:
     next;
     mesq lg("Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.");
     next;
-    .@s$ = "";
-    goto L_ChooseLang;
-
-  L_ChooseLang:
-    mes "";
-    mesn;
-    mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
-    next;
-
-    menu
-        menuimage("flags/en", l("I speak English.") + " (English)"), -,
-        menuimage("flags/fr", l("I speak French.") + " (Français)"), -,
-        menuimage("flags/ru", l("I speak Russian.") + " (Русский)"), -,
-        menuimage("flags/es", l("I speak Spanish.") + " (Español)"), -,
-        menuimage("flags/pt_BR", l("I speak Portuguese.") + " (Português)"), -,
-        menuimage("flags/de", l("I speak German.") + " (Deutsch)"), -,
-        menuimage("flags/vls", l("I speak Flemish.") + " (Vlaams)"), -,
-        menuimage("flags/pl", l("I speak Polish.") + " (Polski)"), -,
-        menuimage("flags/it", l("I speak Italian.") + " (Italiano)"), -,
-        menuimage("flags/nl_BE", l("I speak Dutch.") + " (Nederlands)"), -,
-        menuimage("flags/ca", l("I speak Catalan.") + " (Català)"), -,
-        .@s$, L_NoChanges;
-    .@lang = @menu-1;
-    if (.@lang < 0 || .@lang > 10) close;
-    Lang = .@lang;
-
-    mes "";
-    mesn;
-    mesq l("Ok, done.");
-
-    .@q = getq(ShipQuests_Julia);
-    if (.@q == 2) goto L_NoRules;
-
-    next;
-    mesq l("I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.");
-
-    mesq l("Here they are.");
-    next;
-
-    mesn "Narrator";
-    mes col(l("There is a paper with some rules written on it."), 9);
-    next;
-    mesq col(l("1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle."), 9);
-    next;
-    mesq col(l("2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s)."), 9);
-    next;
-    mesq col(l("3. ##BDo not spam/flood other players.##b This includes chat spam and spam by trade requests."), 9);
-    next;
-    mesq col(l("4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language."), 9);
-    next;
-    mesq col(l("5. ##BDo not beg others##b for money, items or favours of any kind. If you want to ask for something, do it politely and only once. Try not to annoy other players."), 9);
-    next;
-    mesq col(l("6. ##BFollow the [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Evol Social Convention)."), 9);
-    next;
-    mesq col(l("7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time."), 9);
-    next;
-
-    mesn;
-    mesq l("Oh, and I almost forgot! Do not give the password of your room to anybody! I am the only one who has the other key and I won't ask for yours so keep it secret and try not to use the same password for any other room in the future.");
-    next;
-    mesq l("If you want to read this page again, there is a copy up on the left wall.");
-    next;
-    mesq l("I think I'm done with that now. Do you have any questions?");
-    next;
-
-    setq ShipQuests_Julia, 2;
-    goto L_Menu;
-
-L_NoRules:
-    next;
-    mesq l("Do you have any other questions for me?");
-    next;
-
-    goto L_YNMenu;
-
-L_NoChanges:
-    mes "";
-    mesn;
-    mesq l("No problem, do you have any other questions for me?");
-    next;
-
-L_YNMenu:
-    menu
-        l("Yes, I do."), L_Menu,
-        l("No, none."), L_Quit;
-
-L_WhereIam:
-    mes "";
-    mesn;
-    mesq l("You're on a ship, we're on our way to the commercial capital of Artis.");
-    next;
-    mesq l("We should be there in a few days, once we arrive, I will warn the Legion of Aemil about what happened, I'm sure they can help.");
-    next;
-    mesq l("But for now, you can relax on the ship, or visit the island we're docked at! Its a small island, but a good place to get some exercise and stretch your legs.");
-    next;
-    mesq l("Do you have any other questions for me?");
-    next;
-
-    goto L_YNMenu;
-
-L_What:
-    mes "";
-    mesn;
-    mesq l("We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.");
-    next;
-    mesq lg("You were in bad shape, you should be happy we found you before the sea killed you.");
-    next;
-    mesq l("Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?");
-    next;
-
-    menu
-        l("Sorry, but I can't tell you anything about that."), L_NoChanges,
-        l("Nothing, sorry."), L_NoChanges;
-
-L_Rules:
-    mes "";
-    mesn;
-    mesq l("Of course, they are on the left wall, go have a look at them.");
-    next;
-    mesq l("Do you have any other questions for me?");
-    next;
-
-    goto L_YNMenu;
-
-OnTouch:
-    .@q = getq(ShipQuests_Julia);
-    if (.@q == 0 || .@q == 1) goto L_First;
-
-    close;
-
-L_PoisonJulia:
-    mes "";
-    mesn;
-    mesq l("Seems yummy! Let me taste it!");
-    next;
-    mesq l("Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*");
-    if (countitem(PoisonedDish) > 0) delitem PoisonedDish, 1;
-    setq ShipQuests_ChefGado, 3;
-
-    close;
-
-L_Regret:
-    mes "";
-    mesn;
-    mesq l("Why? And who should you bring it back to?");
-    next;
-
-    select
-        l("Ehm... He was really upset because of some past stories.");
-
-    mes "";
-    mesn;
-    mesq l("Gado! That coward lives in the past, I will ask Nard to punish him, again!");
-    next;
-    mesq l("Take this money for your wise choice. But do not try it again. The open sea has been merciful with you once... Do not further tempt the fates!");
-
-    setq ShipQuests_ChefGado, 5;
-    Zeny = Zeny + 200;
-    message strcharinfo(0), l("You receive @@ E!", 200);
-    getexp 15, 0;
-
-    close;
-
-L_Rumors:
-    mes "";
-    mesn;
-    mesq l("You shouldn't believe every tale drunken sailors tell you.");
-    next;
-
-    select
-        l("Let's say the person who told me about that is well respected on this ship and never drunk.");
-
-    mes "";
-    mesn;
-    mesq l("Hahaha! All sailors aboard this ship are always drunk... Well... Except... Wait, what?! Nard told you?!");
-    next;
-    mesq l("Doesn't he like the way I'm taking care of his ship? Everything is clean and tidy with me, rightful lieutenant of La Johanne.");
-    next;
-    mesq l("I give tasks to every single sailor, all day long. That should make him happy!");
-    next;
-
-    menu
-        l("Well... I don't think it is the best way to rule a ship. Think about it."), L_Quit,
-        l("In fact, everything seems to work perfectly under your guidance. Nard has made the right choice."), -;
-
-    mes "";
-    mesn;
-    mesq l("I'm glad you're on my side.");
-    next;
-    mesq l("Take this money as a reward for your nice words.");
-
-    setq ShipQuests_ChefGado, 6;
-    Zeny = Zeny + 100;
-    message strcharinfo(0), l("You receive @@ E!", 100);
-    getexp 8, 0;
-
-    close;
-
-L_BasicSkill:
-    mes "";
-    mesn;
-    mesq l("Let me check into it...");
-    next;
-    adddefaultskills;
-    mesq l("Here you go, everything is fixed.");
-    emotion E_HAPPY;
-    next;
-    mesq l("Do you have any other questions for me?");
-    next;
-
-    goto L_YNMenu;
-
-L_GotoSleep:
-    speech 5,
-        l("You already did enough for us, follow Nard's advice and get some rest."),
-        l("We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!"),
-        l("Do you have any other questions for me?");
-
-    goto L_YNMenu;
+    chooseLang "";
+    mainMenu;
+    end;
 
 OnInit:
     .sex = G_FEMALE;
     .distance = 10;
-    end;
-
-L_Quit:
-    goodbye;
 }

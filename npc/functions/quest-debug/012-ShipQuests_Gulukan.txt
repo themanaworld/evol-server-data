@@ -1,0 +1,25 @@
+// Part of Gugli quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug12	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ShipQuests_Gulukan";
+        mes "---";
+        mes l("Quest state: @@", getq(ShipQuests_Gulukan));
+        next;
+
+        GenericQuestDebug ShipQuests_Gulukan,
+            l("Does not have the quest"), 0,
+            l("Got the package"), 1;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

@@ -1,0 +1,26 @@
+// Urchin quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug20	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_Urchin";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_Urchin));
+        next;
+
+        GenericQuestDebug ArtisQuests_Urchin,
+            l("Does not have the quest"), 0,
+            l("Moon needs @@", l("Croc Claw")), 1,
+            l("Found @@, got exp", l("Croc Claw")), 2;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

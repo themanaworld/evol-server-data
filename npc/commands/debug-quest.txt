@@ -1,0 +1,156 @@
+function	script	GlobalQuestDebug	{
+
+    function	qDebugShip	{
+        function	qDebugGugli {
+            do
+            {
+                clear;
+                setnpcdialogtitle l("Quest debug") + " - " + l("Prologue") + " - Gugli";
+                mes l("This menu gives access to quest debug menus for @@ quest subquests.", "Gugli");
+                next;
+                mes l("Please select a quest:");
+
+                menuint
+                    menuimage("actions/back", l("Go back")), -1,
+                    l("Gugli (main quest)"), ShipQuests_Gugli,
+                    "Ale", ShipQuests_Ale,
+                    "Astapolos", ShipQuests_Astapolos,
+                    "Gulukan", ShipQuests_Gulukan,
+                    "Jalad", ShipQuests_Jalad,
+                    "Q'Muller", ShipQuests_QMuller,
+                    "Tibbo", ShipQuests_Tibbo;
+
+                switch (@menuret)
+                {
+                    case -1: return;
+                    default: callfunc "QuestDebug" + @menuret;
+                }
+            } while (1);
+        }
+
+        do
+        {
+            clear;
+            setnpcdialogtitle l("Quest debug") + " - " + l("Prologue");
+            mes l("This menu gives access to quest debug menus for @@ quests.", l("Prologue"));
+            next;
+            mes l("Please select a quest:");
+
+            menuint
+                menuimage("actions/back", l("Go back")), -1,
+                "Julia", ShipQuests_Julia,
+                "Arpan", ShipQuests_Arpan,
+                "Alige", ShipQuests_Alige,
+                "Peter", ShipQuests_Peter,
+                "Nard", ShipQuests_Nard,
+                l("Knife"), ShipQuests_Knife,
+                l("Money"), ShipQuests_ArpanMoney,
+                l("Door"), ShipQuests_Door,
+                "Couwan", ShipQuests_Couwan,
+                l("Treasure Chest"), ShipQuests_TreasureChest,
+                "Gugli", ShipQuests_Gugli,
+                "Gado", ShipQuests_ChefGado;
+
+            switch (@menuret)
+            {
+                case 16: qDebugGugli; break;
+                case -1: return;
+                default: callfunc "QuestDebug" + @menuret;
+            }
+        } while (1);
+    }
+
+    function	qDebugArtis	{
+        do
+        {
+            clear;
+            setnpcdialogtitle l("Quest debug") + " - " + l("Artis");
+            mes l("This menu gives access to quest debug menus for @@ quests.", "Artis");
+            next;
+            mes l("Please select a quest:");
+
+            menuint
+                menuimage("actions/back", l("Go back")), ,
+                l("Lazy Brother"), ArtisQuests_LazyBrother,
+                l("Urchin"), ArtisQuests_Urchin,
+                l("Catching a piou"), ArtisQuests_CatchPiou,
+                "Eugene (" + l("fisherman") + ")", ArtisQuests_Fishman,
+                "Q'Onan", ArtisQuests_QOnan,
+                "Enora", ArtisQuests_Enora,
+                "Fexil", ArtisQuests_Fexil,
+                "Lloyd", ArtisQuests_Lloyd,
+                l("Mona's dad"), ArtisQuests_MonaDad;
+
+            switch (@menuret)
+            {
+                case -1: return;
+                default: callfunc "QuestDebug" + @menuret;
+            }
+        } while (1);
+    }
+
+    function	qDebugGeneral	{
+        do
+        {
+            clear;
+            setnpcdialogtitle l("Quest debug") + " - " + l("Other");
+            mes l("This menu gives access to quest debug menus for @@ quests.", strtolower(l("Other")));
+            next;
+            mes l("Please select a quest:");
+
+            menuint
+                menuimage("actions/back", l("Go back")), -1,
+                l("Cookies"), General_Cookies,
+                "Rumly", General_Rumly,
+                l("Narrator"), General_Narrator,
+                "Janus", General_Janus;
+
+            switch (@menuret)
+            {
+                case -1: return;
+                default: callfunc "QuestDebug" + @menuret;
+            }
+        } while (1);
+    }
+
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes l("This menu gives access to all quest debug menus.");
+        next;
+        mes l("Please select a category:");
+
+        select
+            l("Prologue"),
+            "Artis",
+            l("Other"),
+            rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu")));
+
+        switch (@menu)
+        {
+            case 1: qDebugShip; break;
+            case 2: qDebugArtis; break;
+            case 3: qDebugGeneral; break;
+            case 4: return;
+        }
+    } while (1);
+}
+
+
+
+-	script	@qdebug	32767,{
+    end;
+
+OnCall:
+    if (!debug && getgroupid() < 1)
+    {
+        end;
+    }
+    GlobalQuestDebug;
+    closedialog;
+    end;
+
+OnInit:
+    bindatcmd "qdebug", "@qdebug::OnCall", 0, 99, 0;
+}

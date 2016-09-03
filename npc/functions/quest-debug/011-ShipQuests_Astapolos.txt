@@ -1,0 +1,25 @@
+// Part of Gugli quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug11	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ShipQuests_Astapolos";
+        mes "---";
+        mes l("Quest state: @@", getq(ShipQuests_Astapolos));
+        next;
+
+        GenericQuestDebug ShipQuests_Astapolos,
+            l("Does not have the quest"), 0,
+            l("Got the package"), 1;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

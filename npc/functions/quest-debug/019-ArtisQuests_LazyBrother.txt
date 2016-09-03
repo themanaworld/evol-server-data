@@ -1,0 +1,28 @@
+// Lazy brother quest debug
+// Authors:
+//    gumi
+
+function	script	QuestDebug19	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_LazyBrother";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_LazyBrother));
+        next;
+
+        GenericQuestDebug ArtisQuests_LazyBrother,
+            l("Does not have the quest"), 0,
+            l("Katja asked for help"), 1,
+            l("Found bobo, didn't tell Katja"), 2,
+            l("Told bobo to go home"), 3,
+            l("Katja gave reward"), 4;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

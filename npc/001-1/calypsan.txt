@@ -61,16 +61,16 @@
 
     do
     {
-        menuint
-            rif(.@fexil == 1, l("Have you seen Fexil?")), 0,
-            menuaction(l("Trade")), 1,
-            l("How do these dyes work?"), 2,
-            l("I want to make my own dyes."), 3,
-            menuaction(l("Quit")), 4;
+        select
+            rif(.@fexil == 1, l("Have you seen Fexil?")),
+            menuaction(l("Trade")),
+            l("How do these dyes work?"),
+            l("I want to make my own dyes."),
+            menuaction(l("Quit"));
 
-        switch (@menuret)
+        switch (@menu)
         {
-            case 0:
+            case 1:
                 setcamnpc "Fexil#001-1";
                 speech 5,
                     l("Oh yeye did, his store is just beside me!"),
@@ -78,22 +78,20 @@
                 restorecam;
 
                 break;
-            case 1:
+            case 2:
                 sell_dye;
                 close;
 
-            case 2:
+            case 3:
                 explain_dyes;
                 break;
-            case 3:
+            case 4:
                 speech 5,
                     l("Yoiis is not yet ready to make his own dyes."),
                     l("But in the future I might be able to help you create some of your own.");
                 break;
-            case 4:
-                break;
         }
-    } while (@menuret != 4);
+    } while (@menu != 5);
 
     closedialog;
     goodbye;

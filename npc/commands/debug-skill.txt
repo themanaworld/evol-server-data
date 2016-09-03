@@ -1,0 +1,81 @@
+function	script	GlobalSkillDebug	{
+
+    function	modifySkill	{
+
+        function	setSkill	{
+            clear;
+            mes l("Enter desired skill level:");
+            input .@y;
+            skill getarg(0,1), max(0, min(10, .@y)), 0;
+            return;
+        }
+
+        setnpcdialogtitle l("Skill Debug - Modify Skill");
+        .@k = getarg(0,1);
+        .@v = getskilllv(.@k);
+        select
+            menuimage("actions/abort", l("Abort")),
+            rif(.@v > 0, menuimage("actions/remove", l("Remove this skill"))),
+            rif(.@v < 10, menuimage("actions/raise", l("Raise this skill"))),
+            rif(.@v > 0, menuimage("actions/lower", l("Lower this skill"))),
+            menuimage("actions/edit", l("Set the level manually")),
+            menuimage("actions/back", l("Return to skill debug menu"));
+
+        switch (@menu)
+        {
+            case 2: skill .@k, 0, 0; break;
+            case 3: skill .@k, min(10, .@v + 1), 0; break;
+            case 4: skill .@k, max(0, .@v - 1), 0; break;
+            case 5: setSkill .@k; break;
+        }
+
+        return;
+    }
+
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Skill Debug");
+        mes l("This menu allows you to change your skills.");
+        mes "";
+
+        mes "---";
+        // FIXME: maybe get skills from an array or `getskilllist;` <= would need a `getskillinfo()` buildin though
+        mes "NV_BASIC: " + getskilllv(NV_BASIC);
+        mes "---";
+
+        mes "";
+        mes l("Which skill do you wish to change?");
+        next;
+
+        menuint
+            "NV_BASIC", NV_BASIC,
+            rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu"))), -1;
+
+        switch (@menuret)
+        {
+            case -1: return;
+        }
+
+        modifySkill @menuret;
+
+    } while (1);
+}
+
+
+
+-	script	@sdebug	32767,{
+    end;
+
+OnCall:
+    if (!debug && getgroupid() < 99)
+    {
+        end;
+    }
+    GlobalSkillDebug;
+    closedialog;
+    end;
+
+OnInit:
+    bindatcmd "sdebug", "@sdebug::OnCall", 0, 99, 0;
+}
