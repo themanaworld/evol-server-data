@@ -142,7 +142,7 @@
     function	chooseLang	{
         mes "";
         mesn;
-        mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
+        mesq l("Of course! Tell me which language you speak and I will change the note on the ship passenger list.");
         next;
 
         select
@@ -318,7 +318,7 @@ OnTouch:
     next;
     mesq lg("I'm glad to see you're okay.");
     next;
-    mesq lg("Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.");
+    mesq lg("Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.");
     next;
     chooseLang "";
     mainMenu;
