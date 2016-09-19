@@ -184,7 +184,7 @@ L_GiveFood:
         rif(countitem(PumpkinSeeds), l(getitemname(PumpkinSeeds))), 1,
         rif(countitem(UrchinMeat), l(getitemname(UrchinMeat))), 1,
         rif(countitem(EasterEgg), l(getitemname(EasterEgg))), 1,
-        rif(countitem(PumpkinJuice), l(getitemname(PumpkinJuice))), 527,
+        rif(countitem(PumpkishJuice), l(getitemname(PumpkishJuice))), 527,
         rif(countitem(Manana), l(getitemname(Manana))), 528,
         rif(countitem(Curshroom), l(getitemname(Curshroom))), 529,
         rif(countitem(Carrot), l(getitemname(Carrot))), 530,
