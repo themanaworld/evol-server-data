@@ -142,7 +142,7 @@
     function	chooseLang	{
         mes "";
         mesn;
-        mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
+        mesq l("Of course! Tell me which language you speak and I will change the note on the ship passenger list.");
         next;
 
         select
@@ -234,7 +234,7 @@
         next;
         mesq lg("You were in bad shape, you should be happy we found you before the sea killed you.");
         next;
-        mesq l("Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?");
+        mesq l("Oh, and there was this inscription on your raft. It represents the Legion of Aemil, one of the four main guilds of Gasaron. Does that help you remember anything, anything at all?");
         next;
 
         select
@@ -318,7 +318,7 @@ OnTouch:
     next;
     mesq lg("I'm glad to see you're okay.");
     next;
-    mesq lg("Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.");
+    mesq lg("Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.");
     next;
     chooseLang "";
     mainMenu;

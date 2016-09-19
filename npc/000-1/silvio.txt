@@ -21,7 +21,7 @@
     mesn;
     mesq lg("Hehe, no. But I'm sure a fox like you would love to meet a catch like me!", "Hehe, no. But I'm sure a noob like you would like to meet an idol like me.");
     next;
-    mesq lg("So, which good wind brought you here? Were you on your raft to meet me? Or is it because you've heard of my feats at Artis?", "So, which good wind brought you here? Were you on your raft to meet my Julia? Or is it because you wanted to see the beautiful waitress' at Artis?");
+    mesq lg("So, what good wind brought you here? Were you on your raft to meet me? Or is it because you've heard of my feats in Artis?", "So, what good wind brought you here? Were you on your raft to meet my Julia? Or is it because you wanted to see the beautiful waitresses of Artis?");
     next;
 
     menu
@@ -31,7 +31,7 @@
 
     mes "";
     mesn;
-    mesq lg("My beauty, I was not always a sailor, you know, I was once an important individual!", "My friend, I was not always a sailor, you know, I was once an important individual!");
+    mesq lg("My beauty. I was not always a sailor, you know, I was once an important individual!", "My friend. I was not always a sailor, you know, I was once an important individual!");
     next;
     mesq l("Before...");
     next;
@@ -70,7 +70,7 @@
     mesn;
     mesq l("Oh really? How could I forget something as important as that?!");
     next;
-    mesq l("I think that my wine has a great quality! I'm on my second bottle and I already... What were we talking about again?");
+    mesq l("I think that my wine is of great quality! I'm on my second bottle and I already... What were we talking about again?");
 
     close;
 
@@ -111,7 +111,7 @@ L_Piou:
     mesn;
     mesq l("Seriously?!");
     next;
-    mesq l("Hurry, hurry! We need to check it's teeth!");
+    mesq l("Hurry, hurry! We need to check its teeth!");
 
     close;
 
@@ -120,9 +120,9 @@ L_Artis:
     mesn;
     mesq l("Artis is a very nice place. There are some hot chicks...");
     next;
-    mesq l("The elven from the library flirted with me a while ago, so has Enora from the Legion.");
+    mesq l("The Raijin from the library flirted with me a while ago, so has Enora from the Legion.");
     next;
-    mesq l("Oh, and Olga from the market place as well!");
+    mesq l("Oh, and Olga from the marketplace as well!");
     next;
     mesq l("You should look for them when we arrive at the port. You won't regret it! Ehehe...");
 
@@ -138,7 +138,7 @@ L_ForeverAlone:
 L_Sailors:
     mes "";
     mesn;
-    mesq l("What? Why? They aren't sexier than me, why do you want to see them?");
+    mesq l("What? Why? They aren't more attractive than me, why do you want to see them?");
     next;
     mesq l("And what would you give me in exchange for that information?");
     next;

@@ -1,6 +1,7 @@
 // Evol scripts.
 // Authors:
 //    Reid
+//    WildX
 // Description:
 //    Aemil
 
@@ -146,22 +147,18 @@ OnInit:
 
     function read_book {
         narrator 1,
-            l("Aemil is a magnificent world unknown to us all."),
-            l("Its inhabitants did not know any kind of horror and in peace they lived as the earth gave them everything they needed to live."),
-            l("However, drought came with summers while winters became colder than ever."),
-            l("Therefore, starvation stalked the people of Aemil."),
-            l("Authorities began to control in order to have a peaceful society. This did not work well for long."),
-            l("People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose."),
-            l("New technologies assisted the slaughter instead of establishing peace. At some point, two different rivals were formed."),
+            l("Aemil was once a magnificent land unknown to us all."),
+            l("Before the end of the Mana War, a band of adventurers formed in the Ancean region of Argaes from those who had lost their homes and families."),
+            l("They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of humans."),
+            l("There, they gathered merchants and warriors to join them in a journey to find a new land on which to live."),
+            l("The group found the support of Tulimshar's merchant lords and was given ships to sail east."),
+            l("They sailed past the Clear Sea and towards the Long Ocean which nobody had explored before.."),
+            l("The newly created Fleet of Ancea travelled so far that they were never heard from again."),
             l("Their leaders then came to the conclusion that an alliance was the only way they could survive."),
-            l("The great people of Aemil split up into three groups when they reached the coast."),
-            l("Each of the groups was ordered to sail in a different direction to find a new, suitable land where to live."),
-            l("As they sailed on Oceania, great waters of Aemil, one of the alliances found a land."),
-            ("Even though they did not hear anything about the other groups, they decided to start a new life on this land, full of harmful animals."),
-            l("This new continent, in fact an archipelago, was called Andorra."),
-            l("A great city, now the capital of these islands, called Esperia, rose on the single island, Aurora, where everyone lived."),
+            l("They eventually found a new land after much hardship and named it Aurora, after its beautiful sunrise."),
+            l("A great city, eventually to become larger than the cities of Ancea, rose on the coast of Aemil. This city was named Esperia."),
             l("However..."),
-            l("The end of the story got erased, probably because of the sea water. Some pages are still missing. Thus much is left obscure, including the author's name.");
+            l("The end of the story got erased, probably because of the sea water. Some pages are still missing. Thus much is lost to time, including the author's name.");
     }
 
 OnUse:

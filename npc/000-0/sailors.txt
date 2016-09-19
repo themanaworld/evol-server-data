@@ -29,12 +29,12 @@ OnTouch:
     next;
 
     setcamnpc "Sailors", -64, -32;
-    mesn "Orc Voice";
+    mesn "Kralog Voice";
     mesq lg("Hey Frenchy!");
     next;
 
     setcamnpc "Sailors", 0, -32;
-    mesn "Elven Voice";
+    mesn "Human Voice";
     mesq lg("Why Frenchy? It's a Russian!");
     next;
 
@@ -45,7 +45,7 @@ OnTouch:
 
     setcamnpc;
     mesn "Raijin Voice";
-    mesq lg("You stupid, she's english, look at the shape of her head.", "You stupid, he's english, look at the shape of his head.");
+    mesq lg("You stupid, she's English, look at the shape of her head.", "You stupid, he's English, look at the shape of his head.");
     next;
     mesq l("Hey you! Can you hear us? Are you okay?");
     next;
