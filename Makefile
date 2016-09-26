@@ -5,7 +5,7 @@ server-update: updateconfig updatedb
 server-updatebuild: build updateconfig updatedb
 
 maps:
-	cd ../tools/hercules/ ; ./convert_tmx_to_mapcache.py
+	cd ../tools/hercules/ ; ./tmx_converter.py ../../client-data/ ../../server-data ; ./convert_tmx_to_mapcache.py
 
 build:
 	cd ../tools/localserver/ ; ./build.sh
