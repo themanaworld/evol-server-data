@@ -94,16 +94,30 @@ L_Start:
             break;
         case 5:
             mes "current";
-            .@val0 = getq(ShipQuests_Gugli);
-            mes "val=" + .@val0;
-            setq ShipQuests_Gugli, 10;
+            .@val1 = getq(ShipQuests_Gugli);
+            .@val2 = getq2(ShipQuests_Gugli);
+            .@val3 = getq3(ShipQuests_Gugli);
+            .@valTime = getqtime(ShipQuests_Gugli);
+            mes "val1=" + .@val1;
+            mes "val2=" + .@val2;
+            mes "val3=" + .@val3;
+            mes "valTime=" + .@valTime;
+            .@val1 ++;
+            .@val2 ++;
+            .@val3 ++;
+            .@valTime ++;
             next;
-            mes "test 10";
+            mes "test " + str(.@val1) + ", " + str(.@val2) + ", " + str(.@val3) + ", " + str(.@valTime);
+            setq ShipQuests_Gugli, .@val1, .@val2, .@val3, .@valTime;
             next;
-            .@val = getq(ShipQuests_Gugli);
-            mes "val=" + .@val;
-            setq ShipQuests_Gugli, .@val0;
-            next;
+            .@val1 = getq(ShipQuests_Gugli);
+            .@val2 = getq2(ShipQuests_Gugli);
+            .@val3 = getq3(ShipQuests_Gugli);
+            .@valTime = getqtime(ShipQuests_Gugli);
+            mes "val1=" + .@val1;
+            mes "val2=" + .@val2;
+            mes "val3=" + .@val3;
+            mes "valTime=" + .@valTime;
             break;
         case 6:
             while(1)

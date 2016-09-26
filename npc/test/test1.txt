@@ -19,6 +19,7 @@ function	script	test1function	{
 }
 
 test,10,5,0	script	test1	NPC_HAT_BOX,{
+    mes "Npc vars testing...";
     .var = .walkmask;
     if (.var != 3)
         mes "Error: testing test1 npc variables.";
@@ -29,6 +30,7 @@ test,10,5,0	script	test1	NPC_HAT_BOX,{
     if (.var != 4)
         mes "Error: testing test2 npc variables.";
     test1function;
+    mes "Formatting testing...";
     if (l("test @@", "") != "test ")
         mes "Error: format string 'l(\"test @@\", \"\")': " + l("test @@", "");
     if (l("test @@", "1") != "test 1")
@@ -41,6 +43,30 @@ test,10,5,0	script	test1	NPC_HAT_BOX,{
         mes "Error: format string 'l(\"@@ @@ @@\", \"this\", \"is\", \"test\") != \"this is test\"': " + l("@@ @@ @@", "this", "is", "test");
     if (l("data @@ @@ @@ data", "this", "is", "test") != "data this is test data")
         mes "Error: format string 'l(\"data @@ @@ @@ data\", \"this\", \"is\", \"test\")': " + l("data @@ @@ @@ data", "this", "is", "test");
+    mes "Quest vars testing...";
+    .@time = 1000;
+    setq Test_testing1, 1, 2, 3, .@time;
+    if (getq(Test_testing1) != 1)
+        mes "Error: quest variable 1 error. Must be 1, but get " + str(getq(Test_testing1));
+    if (getq2(Test_testing1) != 2)
+        mes "Error: quest variable 2 error. Must be 2, but get " + str(getq(Test_testing1));
+    if (getq3(Test_testing1) != 3)
+        mes "Error: quest variable 3 error. Must be 3, but get " + str(getq(Test_testing1));
+    if (getqtime(Test_testing1) != .@time)
+        mes "Error: quest variable 3 error. Must be 3, but get " + str(getqtime(Test_testing1));
+    next;
+    .@time = 2000;
+    setq Test_testing1, 2, 3, 4, .@time;
+    if (getq(Test_testing1) != 2)
+        mes "Error: quest variable 1 error. Must be 2, but get " + str(getq(Test_testing1));
+    if (getq2(Test_testing1) != 3)
+        mes "Error: quest variable 2 error. Must be 3, but get " + str(getq(Test_testing1));
+    if (getq3(Test_testing1) != 4)
+        mes "Error: quest variable 3 error. Must be 4, but get " + str(getq(Test_testing1));
+    if (getqtime(Test_testing1) != .@time)
+        mes "Error: quest variable 3 error. Must be 3, but get " + str(getqtime(Test_testing1));
+    next;
+    setq Test_testing1, 0;
     mes "Tests complete.";
     close;
 
