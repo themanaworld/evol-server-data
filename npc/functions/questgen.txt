@@ -1,0 +1,38 @@
+// Evol functions.
+// Authors:
+//    monwarez
+//    Reid
+// Description:
+//    Generate a random quest type and location.
+// Variables:
+//    @quests : 2D array containing quest type and location availability
+//        with @nb_type rows and @nb_location columns.
+//        boolean value determine if the connection is possible between
+//        the quest type and location selected.
+//    @nb_difficulty : difficulty value from 0 to N-1.
+// Argument:
+//    0 : quest type
+//    1 : quest location
+//    2 : quest difficulty
+// Return : Tridimentional array value;
+
+function	script	questgen	{
+
+    .@argc = getargcount();
+    @q_type = getarg(0, rand(@nb_type * 10) / 10);
+
+    do
+    {
+        @q_location = getarg(1, rand(@nb_location * 10) / 10);
+        .@cell = @q_type * @nb_location + @q_location;
+
+        if (!@quests[.@cell] && .@argc >= 2)
+        {
+            return false;
+        }
+    } while (!@quests[.@cell]);
+
+    @q_difficulty = getarg(2, rand(@nb_difficulty * 10) / 10);
+
+    return true;
+}
