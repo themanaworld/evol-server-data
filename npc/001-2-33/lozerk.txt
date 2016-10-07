@@ -1,16 +1,137 @@
 // Evol scripts.
 // Authors:
 //    Reid
+//    Tirifto
 // Description:
 //    Sword trainer from the Legion of Aemil guild.
+// Variables:
+//    Artis_Legion_Progress
+// Values:
+//    0    Default.
+//    1    Sent to training.
+//    2    Finished training.
+//    3    Sent to battle.
+//    4    Finished battle.
+//    5    Sent to Q'Anon.
 
 001-2-33,34,33,0	script	Lozerk	NPC_DEMON_MALE_SWORD,{
-    mesn;
-    mesq l("You can't join the sword training clothed that way.");
+
+// Quest-related functions
+ 
+    function send_training {
+        speech 5,
+            l("Oh, you were sent by Enora!"),
+            l("If Enora thinks this is the right place for you, then she's probably be right. She's a lieutenant of the Legion, you know?"),
+            l("The rank of lieutenant is granted only to people with proper control of their skill and good judgment, like Enora. Or me, of course."),
+            l("By the way, I am Lozerk. Lieutenant Lozerk.");
+        select(l("Pleasure to meet you. I am @@.", strcharinfo(PC_NAME)));
+        speech 5,         
+            l("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
+            l("But don't you worry! I don't know how to get you back your memories, but we can work on your muscles for now!"),
+            lg("After all, this is the Legion of Aemil! You want to be a great warrior? We'll make you one here!"),
+            l("For starters, you should probably do some stretching and practice on some dummies in our training room."),
+            l("That's right, we have our very own training room. The Legion is always well prepared!"),
+            l("It's to the west, on your left side. Just go through this door before the stairs and turn left afterwards. Can't miss it!"),
+            l("Talk to FightNPCName and he'll show you the ropes."),
+            l("Report back to me once you've had enough!");
+            
+        setq Artis_Legion_Progress, 1;
+        
+        return;
+    }
+
+function send_battle {
+        speech 5,
+            lg("So, did you get your blood boiling? Give the dummies a good lesson? Good!"),
+            l("But since it's not dummies that will go after you out there, this training won't be enough."),
+            lg("If you want to make a formidable foe for anyone, you'll need to train with real living opponents!"),
+            l("Of course, the Legion of Aemil can easily provide you with such training, even if you're not a member. Just great, isn't it?"),
+            l("We have a special room for this purpose, too. You may test your skills against all kinds of dreadful monsters in there."),
+            l("The room is to the east, on your right side. Just go through the door before the stairs and then turn right. It's like the mirror image of our training room.");
+ 
+        setq Artis_Legion_Progress, 3;
+            
+        return;
+    }
+
+function send_qanon {
+        speech 5,
+            lg("And you won! That means you should be able to handle yourself in battle from now on."),
+            lg("If you keep it up, you'll eventually become a fearsome warrior, just like me!"),
+            l("Or almost like me, at the very least."),
+            l("But if you really want to accomplish something, you should consider joining us."),
+            l("You have talent and the best place to utilize it is in the Legion! You can either pursue your goals with us or without us, but trust me, with us it's much better."),
+            l("I should know, I've not been a member for a while, too. But then I joined the Legion and look what a shining example of a great fighter I became!"),
+            l("You should definitely go talk to Q'Anon, our boss. You'll find him upstairs."),
+            l("Walk up the stairs, go through the door on either side, and the only other door in the room, few steps to the south, will lead you right to him.");
+            
+        setq Artis_Legion_Progress, 5;
+            
+        return;
+    }
+
+// Normal functions
+ 
+    function tell_about_legion {
+        speech 5,
+            l("The Legion of Aemil is the greatest organization on all continent! A town cannot be safer than when it's under our protection."),
+            l("This is where the bravest of warriors come together to put their skills to a good use, for a good cause."),
+            l("Our building here is also the finest place in the town. Just go and see for yourself!");
+ 
+        return;
+    }
+    
+    function praise_sword {
+        speech 5,
+            l("Thanks!");
+ 
+        return;
+    }
+ 
+// Conversation
+ 
+    speech 4,
+        l("Welcome to the the Legion of Aemil's building in Artis!");
+
+    do{
+        .@legion_progress = getq(Artis_Legion_Progress);
+        .@enora  = getq(ArtisQuests_Enora);
+         // some quest fetch before
+        select
+            rif((.@legion_progress == 0) && (.@enora == 11), l("Enora sent me here")),
+            rif(.@legion_progress == 2, lg("I'm done with my training.")),
+            rif(.@legion_progress == 4, lg("I'm back from battle!")),
+            l("What can you tell me about the legion?"),
+            l("That's a nice sword you have there."),
+            menuaction(l("Quit"));
+        
+        switch (@menu)
+        {
+            case 1:
+                send_training;
+                goto L_Close;
+            case 2:
+                send_battle;
+                goto L_Close;
+            case 3:
+                send_qanon;
+                goto L_Close;
+            case 4:
+                tell_about_legion;
+                break;
+            case 5:
+                praise_sword;
+                break;
+            case 6:
+                goto L_Close;
+        }
+    }while(1);
 
     goto L_Close;
 
 L_Close:
+    closedialog;
+    goodbye;
     close;
 
 OnInit:

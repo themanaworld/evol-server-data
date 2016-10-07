@@ -79,7 +79,8 @@ function	script	GlobalQuestDebug	{
                 "Enora", ArtisQuests_Enora,
                 "Fexil", ArtisQuests_Fexil,
                 "Lloyd", ArtisQuests_Lloyd,
-                l("Mona's dad"), ArtisQuests_MonaDad;
+                l("Mona's dad"), ArtisQuests_MonaDad,
+                l("Artis legion progress"), Artis_Legion_Progress;
 
             switch (@menuret)
             {

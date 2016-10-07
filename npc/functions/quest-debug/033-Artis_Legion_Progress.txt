@@ -1,0 +1,30 @@
+// Mona quest debug
+// Authors:
+//    gumi
+//    monwarez
+
+function	script	QuestDebug33	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "Artis_Legion_Progress";
+        mes "---";
+        mes l("Quest state: @@", getq(Artis_Legion_Progress));
+        next;
+
+        GenericQuestDebug Artis_Legion_Progress,
+            l("Does not have the quest"), 0,
+            l("Sent to training"), 1,
+            l("Finished  training"), 2,
+            l("Sent to battle"), 3,
+            l("Finished battle"), 4,
+            l("Sent to Q'Anon"), 5;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}
