@@ -439,3 +439,13 @@ OnInit:
     end;
 }
 
+001-1,0,0,0	script	Mobs#001-1	NPC_HIDDEN,{
+    end;
+
+OnFluffyDeath:
+    if (playerattached())
+    {
+        set ArtisFluffyKilled, ArtisFluffyKilled + 1;
+    }
+    end;
+}
