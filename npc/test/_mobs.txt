@@ -1,16 +1,5 @@
-// Test Map
-// mapID,x,y,sizex,sizey	monster Name	mobID,number,eAdeath,eAspawn,script
-test,38,12,1,1	monster	Piou	1002,1,1000,1000
-test,38,12,1,1	monster	Tortuga	1004,1,1000,1000
-test,44,12,1,1	monster	Piou	1002,3,1000,1000
-test,48,10,1,1	monster	Tortuga	1004,3,1000,1000
-test,48,10,0,0	monster	Piou	1002,1,1000,1000
-test,48,10,0,0	monster	Ratto	1005,1,1000,1000
-test,54,10,1,1	monster	Piou	1002,3,1000,1000
-// test,61,10,0,0	monster	Piou	1002,3,1000,1000
-test,68,9,0,0	monster	Piou	1002,3,1000,1000
-test,68,9,0,0	monster	Ratto	1005,1,1000,1000
-test,68,9,1,1	monster	Tortuga	1004,3,1000,1000
-test,76,10,1,1	monster	Piou	1002,3,1000,1000
-test,76,10,1,1	monster	Ratto	1005,1,1000,1000
-test,78,4,1,1	monster	Ratto	1005,3,1000,1000
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map test: test mobs
+test,51,37,12,19	monster	Tortuga	1004,3,16000,120000
+test,78,30,0,0	monster	Piou	1002,4,60000,15000
+test,79,38,0,0	monster	Ratto	1005,1,240000,420000

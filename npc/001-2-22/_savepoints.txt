@@ -1,0 +1,47 @@
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 001-2-22: Second Deck saves
+001-2-22,40,37,0	script	#save_001-2-22_40_37	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+001-2-22,46,37,0	script	#save_001-2-22_46_37	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+001-2-22,55,40,0	script	#save_001-2-22_55_40	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+001-2-22,50,38,0	script	#save_001-2-22_50_38	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+001-2-22,53,38,0	script	#save_001-2-22_53_38	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}

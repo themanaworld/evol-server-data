@@ -1,4 +1,51 @@
-// Map 001-2-19: Artis, Merchant Hall
-001-2-19,41,31,0	warp	ToArtisTop#001-2-19	0,0,001-1,104,33
-001-2-19,33,39,0	warp	ToArtisMiddle#001-2-19	0,0,001-1,101,37
-001-2-19,41,56,0	warp	ToMerchantRoom#001-2-19	0,0,001-2-20,29,27
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 001-2-19: Merchant Hall warps
+001-2-19,41,31,0	warp	#001-2-19_41_31	0,0,001-1,104,33
+001-2-19,41,24,0	script	#001-2-19_41_24_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-25", 29, 30;
+close;
+
+OnUnTouch:
+    doevent "#001-2-19_41_24::OnUnTouch";
+}
+001-2-19,41,24,0	script	#001-2-19_41_24	NPC_ARTIS_DOOR_WOOD,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-2-19,33,39,0	warp	#001-2-19_33_38	0,0,001-1,101,37
+001-2-19,41,56,0	warp	#001-2-19_41_55	0,0,001-2-20,29,27
+001-2-19,41,47,0	script	#001-2-19_41_47_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-1", 104, 42;
+close;
+
+OnUnTouch:
+    doevent "#001-2-19_41_47::OnUnTouch";
+}
+001-2-19,41,47,0	script	#001-2-19_41_47	NPC_ARTIS_DOOR_WOOD,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+

@@ -1,4 +1,5 @@
-// Map 001-2-21: La Johanne, First Deck
-001-2-21,31,25,0	warp	ToLevel1#001-2-21	0,0,001-2-22,72,29
-001-2-21,33,28,0	warp	ToNardRoom#001-2-21	0,0,001-2-24,20,27
-001-2-21,19,28,0	warp	ToArtis#001-2-21	0,0,001-1,193,109
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 001-2-21: First Deck warps
+001-2-21,19,28,0	warp	#001-2-21_19_28	0,0,001-1,193,109
+001-2-21,33,28,0	warp	#001-2-21_33_28	0,0,001-2-24,20,27
+001-2-21,31,25,0	warp	#001-2-21_31_25	0,0,001-2-22,72,29

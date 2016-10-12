@@ -1,5 +1,444 @@
-// Map 001-1: Artis
-001-1,194,109,0	warp	ToShip#001-1	0,0,001-2-21,20,28
-001-1,100,37,0	warp	ToMerchantHall#001-1	0,0,001-2-19,32,39
-001-1,104,43,0	warp	ToMerchantBottom#001-1	0,0,001-2-19,41,49
-001-1,134,83,0	warp	ToRedPlushINN#001-1	0,0,001-2-28,60,31
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 001-1: Artis warps
+001-1,51,80,0	script	#001-1_51_80_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-4", 48, 40;
+close;
+
+OnUnTouch:
+    doevent "#001-1_51_80::OnUnTouch";
+}
+001-1,51,80,0	script	#001-1_51_80	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,70,77,0	script	#001-1_70_77_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-2", 38, 38;
+close;
+
+OnUnTouch:
+    doevent "#001-1_70_77::OnUnTouch";
+}
+001-1,70,77,0	script	#001-1_70_77	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,51,65,0	script	#001-1_51_65_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-0", 30, 34;
+close;
+
+OnUnTouch:
+    doevent "#001-1_51_65::OnUnTouch";
+}
+001-1,51,65,0	script	#001-1_51_65	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,55,71,0	script	#001-1_55_71_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-0", 37, 45;
+close;
+
+OnUnTouch:
+    doevent "#001-1_55_71::OnUnTouch";
+}
+001-1,55,71,0	script	#001-1_55_71	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,168,98,0	script	#001-1_168_98_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-16", 32, 35;
+close;
+
+OnUnTouch:
+    doevent "#001-1_168_98::OnUnTouch";
+}
+001-1,168,98,0	script	#001-1_168_98	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,194,109,0	warp	#001-1_194_109	0,0,001-2-21,20,28
+001-1,100,37,0	warp	#001-1_100_37	0,0,001-2-19,32,39
+001-1,104,43,0	warp	#001-1_104_43	0,0,001-2-19,41,49
+001-1,134,83,0	warp	#001-1_134_83	0,0,001-2-28,60,31
+001-1,118,88,0	script	#001-1_118_88_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-28", 29, 39;
+close;
+
+OnUnTouch:
+    doevent "#001-1_118_88::OnUnTouch";
+}
+001-1,118,88,0	script	#001-1_118_88	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,182,74,0	script	#001-1_182_74_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-18", 39, 35;
+close;
+
+OnUnTouch:
+    doevent "#001-1_182_74::OnUnTouch";
+}
+001-1,182,74,0	script	#001-1_182_74	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,163,70,0	script	#001-1_163_70_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-26", 28, 42;
+close;
+
+OnUnTouch:
+    doevent "#001-1_163_70::OnUnTouch";
+}
+001-1,163,70,0	script	#001-1_163_70	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,132,67,0	script	#001-1_132_67_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-15", 34, 45;
+close;
+
+OnUnTouch:
+    doevent "#001-1_132_67::OnUnTouch";
+}
+001-1,132,67,0	script	#001-1_132_67	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,101,107,0	script	#001-1_101_107_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-27", 35, 34;
+close;
+
+OnUnTouch:
+    doevent "#001-1_101_107::OnUnTouch";
+}
+001-1,101,107,0	script	#001-1_101_107	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,89,65,0	script	#001-1_89_65_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-7", 36, 45;
+close;
+
+OnUnTouch:
+    doevent "#001-1_89_65::OnUnTouch";
+}
+001-1,89,65,0	script	#001-1_89_65	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,57,41,0	warp	#001-1_57_41	0,0,001-2-33,34,45
+001-1,142,30,0	script	#001-1_142_30_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-12", 34, 35;
+close;
+
+OnUnTouch:
+    doevent "#001-1_142_30::OnUnTouch";
+}
+001-1,142,30,0	script	#001-1_142_30	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,128,30,0	script	#001-1_128_30_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-1", 37, 40;
+close;
+
+OnUnTouch:
+    doevent "#001-1_128_30::OnUnTouch";
+}
+001-1,128,30,0	script	#001-1_128_30	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,104,32,0	script	#001-1_104_32_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-19", 41, 30;
+close;
+
+OnUnTouch:
+    doevent "#001-1_104_32::OnUnTouch";
+}
+001-1,104,32,0	script	#001-1_104_32	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,107,49,0	script	#001-1_107_49_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-20", 33, 34;
+close;
+
+OnUnTouch:
+    doevent "#001-1_107_49::OnUnTouch";
+}
+001-1,107,49,0	script	#001-1_107_49	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,148,54,0	script	#001-1_148_54_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-11", 46, 45;
+close;
+
+OnUnTouch:
+    doevent "#001-1_148_54::OnUnTouch";
+}
+001-1,148,54,0	script	#001-1_148_54	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,135,49,0	script	#001-1_135_49_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-10", 51, 44;
+close;
+
+OnUnTouch:
+    doevent "#001-1_135_49::OnUnTouch";
+}
+001-1,135,49,0	script	#001-1_135_49	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,118,49,0	script	#001-1_118_49_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-10", 27, 44;
+close;
+
+OnUnTouch:
+    doevent "#001-1_118_49::OnUnTouch";
+}
+001-1,118,49,0	script	#001-1_118_49	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-1,49,96,0	script	#001-1_49_96_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-31", 32, 39;
+close;
+
+OnUnTouch:
+    doevent "#001-1_49_96::OnUnTouch";
+}
+001-1,49,96,0	script	#001-1_49_96	NPC_ARTIS_DOOR,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+

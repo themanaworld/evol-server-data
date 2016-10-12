@@ -1,0 +1,11 @@
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 001-2-3: First Floor saves
+001-2-3,42,32,0	script	#save_001-2-3_42_32	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}

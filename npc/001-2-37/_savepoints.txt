@@ -1,0 +1,38 @@
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 001-2-37: unnamed saves
+001-2-37,25,41,0	script	#save_001-2-37_25_41	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+001-2-37,35,41,0	script	#save_001-2-37_35_41	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+001-2-37,35,46,0	script	#save_001-2-37_35_46	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+001-2-37,25,46,0	script	#save_001-2-37_25_46	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
