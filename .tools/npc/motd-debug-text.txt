@@ -1,0 +1,4 @@
+function	script	MOTD_debug_text	{
+    setarray $Debug_Messages$,"";
+    return;
+}

@@ -1,0 +1,4 @@
+function	script	MOTD_text	{
+    setarray $MOTD_Messages$,"";
+    return;
+}

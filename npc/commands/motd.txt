@@ -177,6 +177,8 @@ OnPCLoginEvent:
     end;
 
 OnInit:
+    MOTD_text;
+    MOTD_debug_text;
     .size = getarraysize($MOTD_Messages$);
     .dsize = getarraysize($Debug_Messages$);
     bindatcmd "motd", "@motd::OnCall", 3, 99, 0;
