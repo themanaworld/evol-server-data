@@ -206,6 +206,7 @@ function init_configs {
     ./installconfigs.sh
     cd ../..
     cp server-data/.tools/conf/$1/* server-data/conf/import/
+    cp server-data/.tools/npc/motd-* server-data/npc/commands/
     ls -la server-data/conf/import
     cat server-data/conf/import/inter_conf.txt
 }
