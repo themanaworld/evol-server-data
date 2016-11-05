@@ -10,7 +10,7 @@
 //    1   Talked to Arpan and needs to get clothes.
 //    2   Has the clothes.
 
-000-2-1,51,37,0	script	Chest	NPC_CHEST_BIG,{
+000-2-1,51,37,0	script	Chest#000-2-1	NPC_CHEST_BIG,{
     .@q = getq(ShipQuests_Arpan);
 
     if (.@q == 0) goto L_Talk;
@@ -19,6 +19,7 @@
     .dir = 2;
     initnpctimer;
     startnpctimer;
+    misceffect 24;
     close;
 
 L_Give:
@@ -31,7 +32,7 @@ L_Give:
     npctalk3 l("You take the clothes from the chest.");
     goto L_Quit;
 
-OnTimer220:
+OnTimer360:
     stopnpctimer;
     if (.dir == 2) .dir = 4;
     if (.dir == 6) .dir = 0;
@@ -46,6 +47,7 @@ L_Quit:
     .dir = 6;
     initnpctimer;
     startnpctimer;
+    misceffect 25;
     close;
 
 OnInit:
