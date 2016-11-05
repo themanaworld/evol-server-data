@@ -132,7 +132,7 @@ function	script	execmovecmd	{
             .@pos_idx = 2;
         }
         .@pos = findmovegraphlabel(.@cmd$[.@pos_idx]);
-        if (.@pos > 0)
+        if (.@pos != -1)
         {
             .@x = getvariableofnpc(.movepos_x1[.@pos], strnpcinfo(3));
             .@y = getvariableofnpc(.movepos_y1[.@pos], strnpcinfo(3));
