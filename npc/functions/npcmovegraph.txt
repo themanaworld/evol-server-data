@@ -173,6 +173,11 @@ function	script	execmovecmd	{
         deletearray .@cmd$[0], 1;
         npctalk implode(.@cmd$, " ");
     }
+    else if (.@cmd$[0] == "debugmes")
+    {
+        deletearray .@cmd$[0], 1;
+        debugmes implode(.@cmd$, " ");
+    }
     else if (.@cmd$[0] == "flags")
     {
         set getvariableofnpc(.mg_flags, strnpcinfo(3)), axtoi(.@cmd$[1]);
