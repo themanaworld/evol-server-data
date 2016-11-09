@@ -73,8 +73,8 @@ L_Menu:
 L_MenuQuest:
     menu
         l("What do you need?"), -,
-        l("Wait, you never came here before?"), L_DrasilIsland,
-        l("Is there a reward?"), L_NeedHead;
+        l("Is there a reward?"), L_NeedHead,
+        l("Wait, you never came here before?"), L_DrasilIsland;
 
     mes "";
     mesn;
@@ -92,17 +92,17 @@ L_NeedHead:
     next;
     mesq l("Hard work always pays off!");
     next;
+    mesq l("What? It's not good enough?");
+    next;
 
 L_NeedContent:
     mesq l("Our crew is like a family, and if you agree to help us, I would like to invite you to join our family!");
     next;
-    mesq l("What? It's not a good reward?");
+    mesq l("Hmm, I'll also give you one of these hats from the box near you, but only after you complete your task!");
     next;
-    mesq l("Oh well. I'll also give you one of these hats from the box near you, but only after you complete your task!");
+    mesq l("Here, take this key, it opens all the doors on this ship.");
     next;
-    mesq l("I give you this key, it opens all the doors on this ship.");
-    next;
-    mesq l("Now go outside and talk with Gugli, he'll tell you what we need.");
+    mesq l("Now go outside and talk to Gugli, he'll tell you what we need.");
     next;
 
     inventoryplace JohanneKey, 1;
