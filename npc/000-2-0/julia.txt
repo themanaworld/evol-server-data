@@ -145,31 +145,7 @@
         mesq l("Of course! Tell me which language you speak and I will change the note on the ship passenger list.");
         next;
 
-        select
-            menuimage("flags/en", l("I speak English.") + " (English)"),
-            menuimage("flags/fr", l("I speak French.") + " (Français)"),
-            menuimage("flags/ru", l("I speak Russian.") + " (Русский)"),
-            menuimage("flags/es", l("I speak Spanish.") + " (Español)"),
-            menuimage("flags/pt_BR", l("I speak Portuguese.") + " (Português)"),
-            menuimage("flags/de", l("I speak German.") + " (Deutsch)"),
-            menuimage("flags/vls", l("I speak Flemish.") + " (Vlaams)"),
-            menuimage("flags/pl", l("I speak Polish.") + " (Polski)"),
-            menuimage("flags/it", l("I speak Italian.") + " (Italiano)"),
-            menuimage("flags/nl_BE", l("I speak Dutch.") + " (Nederlands)"),
-            menuimage("flags/ca", l("I speak Catalan.") + " (Català)"),
-            getarg(0, "");
-
-        .@lang = @menu-1;
-        if (.@lang < 0 || .@lang > 10)
-        {
-            mes "";
-            mesn;
-            mesq l("No problem, do you have any other questions for me?");
-            next;
-            ynMenu;
-            return;
-        }
-        Lang = .@lang;
+        asklanguage (LANG_IN_SHIP);
 
         mes "";
         mesn;

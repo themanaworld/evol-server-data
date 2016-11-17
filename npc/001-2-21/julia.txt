@@ -20,7 +20,7 @@ L_Menu:
     .@enora = getq(ArtisQuests_Enora);
 
     menu
-        rif(getskilllv(1) != 9, l("Something is wrong with me, I can't smile nor sit.")), L_BasicSkill,
+        rif(getskilllv(1) < 6, l("Something is wrong with me, I can't smile nor sit.")), L_BasicSkill,
         rif (.@enora == 0, l("Where should I go?")), L_Enora,
         lg("I made a mistake, I would like to change my language."), L_ChooseLang,
         l("Is it possible to go back to Drasil Island?"), L_Island,
@@ -48,22 +48,7 @@ L_ChooseLang:
     mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
     next;
 
-    menu
-        menuimage("flags/en", l("I speak English.") + " (English)"), -,
-        menuimage("flags/fr", l("I speak French.") + " (Français)"), -,
-        menuimage("flags/ru", l("I speak Russian.") + " (Русский)"), -,
-        menuimage("flags/es", l("I speak Spanish.") + " (Español)"), -,
-        menuimage("flags/pt_BR", l("I speak Portuguese.") + " (Português)"), -,
-        menuimage("flags/de", l("I speak German.") + " (Deutsch)"), -,
-        menuimage("flags/vls", l("I speak Flemish.") + " (Vlaams)"), -,
-        menuimage("flags/pl", l("I speak Polish.") + " (Polski)"), -,
-        menuimage("flags/it", l("I speak Italian.") + " (Italiano)"), -,
-        menuimage("flags/nl_BE", l("I speak Dutch.") + " (Nederlands)"), -,
-        menuimage("flags/ca", l("I speak Catalan.") + " (Català)"), -,
-        .@s$, L_NoChanges;
-    .@lang = @menu-1;
-    if (.@lang < 0 || .@lang > 10) close;
-    Lang = .@lang;
+    asklanguage (LANG_IN_SHIP);
 
     mes "";
     mesn;

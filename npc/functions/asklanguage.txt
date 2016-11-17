@@ -1,0 +1,80 @@
+// Evol functions.
+// Author:
+//    Reid
+// Description:
+//    Function setting the player language
+
+function	script	asklanguage	{
+
+    .@nb_language = 11;
+
+    switch (getarg(0, 0))
+    {
+        case LANG_ON_SEA:
+            setarray .@messages$[0], l("I hear you... (English)"),
+                                     l("Je vous entends... (Français)"),
+                                     l("Да я вас слышу... (Русский)"),
+                                     l("Te oigo... (Español)"),
+                                     l("Eu te ouço... (Português)"),
+                                     l("Ich höre euch... (Deutsch)"),
+                                     l("'k hoar ui wel... (Vlaams)"),
+                                     l("Słyszę cię... (Polski)"),
+                                     l("Vi sento... (Italiano)"),
+                                     l("Ik kan je horen... (Nederlands)"),
+                                     l("Et escolto (Català)"),
+                                     l("Mi aŭdas vin... (Angle)");
+            break;
+        case LANG_IN_SHIP:
+            setarray .@messages$[0], l("I speak English."),
+                                     l("I speak French."),
+                                     l("I speak Russian."),
+                                     l("I speak Spanish."),
+                                     l("I speak Portuguese."),
+                                     l("I speak German."),
+                                     l("I speak Flemish."),
+                                     l("I speak Polish."),
+                                     l("I speak Italian."),
+                                     l("I speak Dutch."),
+                                     l("I speak Catalan."),
+                                     l("I speak Esperanto.");
+            break;
+        default:
+            return;
+    }
+
+    setarray .@flags$[0],    l("flags/en"),
+                             l("flags/fr"),
+                             l("flags/ru"),
+                             l("flags/es"),
+                             l("flags/pt_BR"),
+                             l("flags/de"),
+                             l("flags/vls"),
+                             l("flags/pl"),
+                             l("flags/it"),
+                             l("flags/nl_BE"),
+                             l("flags/ca"),
+                             l("flags/eo");
+
+    .@menustr$ = "";
+    .@separator$ = ":";
+
+    for (.@i = 0; .@i <= .@nb_language; .@i++)
+    {
+        if (.@i == .@nb_language)
+        {
+            .@separator$ = "";
+        }
+        .@menustr$ = .@menustr$ + .@flags$[.@i] + "|" + .@messages$[.@i] + .@separator$;
+    }
+
+    select (.@menustr$);
+
+    .@lang = @menu - 1;
+
+    if (.@lang >= 0 || .@lang <= .@nb_language)
+    {
+        Lang = .@lang;
+    }
+
+    return;
+}
