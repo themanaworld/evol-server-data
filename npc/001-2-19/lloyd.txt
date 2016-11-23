@@ -34,14 +34,14 @@
             case 1:
                 speech 1,
                     l("This is your first time asking for something, you won't pay this time, take it as a sign of good faith!"),
-                    l("If you need something in the future, do not hesitate to pass by here, our stock is full of box collecting dust.");
+                    l("If you need something in the future, do not hesitate to pass by here, our stock is full of boxes collecting dust.");
                 emotion E_WINK;
                 break;
             case 2:
                 speech 1,
-                    l("Chelios... He is part of the blacksmith house, is he not?"),
+                    l("Chelios... He is part of the Blacksmith House, is he not?"),
                     l("Since Don settled in Artis he and his band refused to register to the Merchant Guild."),
-                    l("I will close my eyes for once, but only because it's your first time asking for something!"),
+                    l("I will close an eye for once, but only because it's your first time asking for something!"),
                     l("Sometimes a good merchant needs to reach out first. It's on the house, give Chelios my regards!");
                 emotion E_WINK;
                 break;
@@ -53,10 +53,10 @@
 
     function explain_guild {
         speech
-            l("The guild is in charge of the commerce regularization throughout Artis and its surrounding."),
-            l("With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their business."),
+            l("The guild is in charge of the commerce regularization throughout Artis and its surroundings."),
+            l("With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their businesses."),
             l("We also feature some services like a storage and a bank for members."),
-            l("Registration is open for everybody, but newcomers need to pay a fee for all of the paperwork.");
+            l("Registration is open to everybody, but newcomers need to pay a fee for all of the paperwork.");
 
         return;
     }
@@ -80,8 +80,8 @@
         if (selectd (l("How do you know?"), l("Yes I am.")) == 1)
         {
             speech 5,
-                l("Oh, it is simple. I have on this book the name of every citizen of Artis and its surrounding."),
-                l("And I have no sign of a so called \"@@\" on it!", strcharinfo(0));
+                l("Oh, it is simple. I have on this book the names of every citizen of Artis and its surroundings."),
+                l("And I have no mention of a so called \"@@\" on it!", strcharinfo(0));
         }
         else
         {
@@ -248,7 +248,7 @@
         .@enora = getq (ArtisQuests_Enora);
 
         selectd
-            rif (.@enora == 2, l("I'm searching some black iron ingots.")),
+            rif (.@enora == 2, l("I'm looking for some black iron ingots.")),
             l("I would like to store some items."),
             l("I would like to deposit some money."),
             l("What is this guild for?"),
@@ -276,7 +276,7 @@
                 if (getq(ArtisQuests_Fexil) >= 1)
                 {
                     speech 5,
-                        l("There are no open task for you right now.");
+                        l("There are no tasks for you right now.");
                     continue;
                 }
 

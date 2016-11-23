@@ -92,7 +92,7 @@
                     speech 5,
                         l("You failed!"),
                         l("Ivan is the one you should look for now."),
-                        l("He is on a small house between the dock's warehouse and the dojo."),
+                        l("He is in a small house between the dock's warehouse and the dojo."),
                         l("Follow the canal to the north-east and you will find it."),
                         l("And get out of here, I'm not a map!");
                 }
@@ -143,7 +143,7 @@
             l("I'm sure that you already knew the answer, didn't you?"),
             l("You tried to embarrass me, am I right?!"),
             lg("It's Ivan... I'm sure that he sent you to annoy me..."),
-            l("I'm just a merchant, I trade and make deals, yes \"excuse\" me if I'm not as skilled as this stupid alchemist."),
+            l("I'm just a merchant, I trade and make deals, yes \"excuse\" me if I'm not as skilled as that stupid alchemist."),
             l("But rare are those that receive grants from the Legion itself. For anybody else only a hard work can pay your bills!");
         emotion E_UPSET;
 
@@ -197,7 +197,7 @@
             case 5:
                 speech 5,
                     l("It's a poem, about poems... Why are you asking that?"),
-                    l("Because I am an orc I can't read such things? That's rubbish."),
+                    l("Because I am a Kralog I can't read such things? That's rubbish."),
                     l("I borrowed it from the library, you should try to cultivate yourself more instead of insinuate things about people you don't know!");
                 break;
         }

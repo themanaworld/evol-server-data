@@ -43,7 +43,7 @@ L_Menu:
         case 2:
             speech 5,
                 lg("Why are you asking? And who are you too? I've never seen you around before..."),
-                lg("Wait, are you one of those from the Legion of Aemil? I didn't do anything wrong, I promise!"),
+                lg("Wait, are you one of those from the Legion of Gasaron? I didn't do anything wrong, I promise!"),
                 l("I... I just like to eat the purple and delightful... And natural, and...");
 
             switch (select(l("Chill out I won't say anything."),

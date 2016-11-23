@@ -23,9 +23,9 @@
 
     function enora_don {
         speech 5,
-            l("Don is renowned throughout the entire archipelagos for his blacksmith skills, and he is here, in Artis."),
+            l("Don is renowned throughout the entire land of Aemil for his blacksmithing skills, and he is here, in Artis."),
             l("It's a great honor for us, at the Legion, to hold the security of his business!"),
-            l("If you search for him you should look to the west of this city, it's the first house just after the left bridge, you can't miss it!"),
+            l("If you search for him you should look in the west of the city, it's the first house just after the left bridge, you can't miss it!"),
             l("Chelios, his apprentice, practices outside, mostly.");
 
         return;
@@ -33,10 +33,10 @@
 
     function enora_legion {
         speech 5,
-            l("The Legion of Aemil are a group of mercenaries who vowed to protect and serve their neighbors."),
+            l("The Legion of Gasaron are a group of warriors who vowed to protect and serve their neighbours."),
             l("We hold various training sessions, and also have a task board with a heap of things to do for the city and its surroundings."),
-            l("It's a good place to earn money, it can also help you to travel throughout the archipelagos!"),
-            l("Each big city hosts a Legion chapter, Artis' chapter building is located in the north-west.");
+            l("It's a good place to earn money, it can also help you to travel throughout the land!"),
+            l("Each big city hosts a Legion building, Artis' building is located in the north-west.");
 
         return;
     }
@@ -45,14 +45,14 @@
         speech 5,
             l("The light armor shop is ran by Resa, she is part of the Merchant Guild of Artis."),
             l("She is very skilled when it comes to weaving an ordinary piece of cloth into a wonderful work of art!"),
-            l("Her shop is on the west part of the city, between the legion building and the library.");
+            l("Her shop is in the west side of the city, between the Legion building and the library.");
 
         return;
     }
 
     function enora_market {
         speech 5,
-            l("The market is located at the south-east of Artis, it is known as Merchant Guild's exhibit."),
+            l("The market is located in the south-east of Artis, it is known as Merchant Guild's exhibit."),
             l("You need to be a member of the Merchant Guild to have a chance there."),
             l("And I bet you don't know who is in charge of monitoring the security of this place?");
 
@@ -60,14 +60,14 @@
         {
             case 1:
                 speech 5,
-                    l("You hit the nail on the head, it's the Legion of Aemil!"),
+                    l("You hit the nail on the head, it's the Legion of Gasaron!"),
                     l("Our main responsibility in the city is to protect the Merchant Guild.");
                 break;
             case 2:
                 speech 5,
                     l("Cat got your tongue?"),
                     l("..."),
-                    l("Your brain liquefied to match the level of a piou! It's the Legion of Aemil.");
+                    l("Your brain liquified to match the level of a piou! It's the Legion of Gasaron.");
                 break;
         }
         return;
@@ -75,7 +75,7 @@
 
     function enora_hill {
         speech 5,
-            l("Go north from here until you to the dock warehouse, cross the bridge to the west side of the canal, continue north until you reach another bridge then cross it to the east side of the canal."),
+            l("Go north from here until you find the dock warehouse, cross the bridge to the west side of the canal, continue north until you reach another bridge then cross it to the east side of the canal."),
             l("You should arrive at a park with a hill nearby.");
 
         return;
@@ -150,9 +150,9 @@
 
         speech 4,
             l("I asked Don our blacksmith to prepare a black iron sword for morning, he should be done by now."),
-            l("Go meet him, and return me the package, it's an easy task."),
-            l("You will be able to find Don's house in the west of this city, it's the first house just after left bridge, you can't miss it!"),
-            l("A young apprentice called Chelios might be waiting outside, speak to him, and return the present to me.");
+            l("Go meet him, and take the package to me, it's an easy task."),
+            l("You will be able to find Don's house in the west of the city, it's the first house just after the bridge on the left, you can't miss it!"),
+            l("A young apprentice called Chelios might be waiting outside, speak to him, and return the package to me.");
             emotion E_HAPPY;
 
         setq ArtisQuests_Enora, 1;
@@ -166,7 +166,7 @@
         speech 5,
             l("Thank you for this commission, Chelios is as good as Don when it comes to forging metal."),
             l("By the way, did you ever talk with Don?"),
-            l("If so, I hope that he didn't give you any hard time, sometimes he get up on the wrong side of the bed he transforms himself into an embittered and grumpy old man..."),
+            l("If so, I hope that he didn't give you any hard time, sometimes he can get up on the wrong side of the bed he becomes an embittered and grumpy old man..."),
             l("Poor Chelios, I don't envy him..."),
             l("So, everything went fine?");
 
@@ -184,7 +184,7 @@
             case 2:
                 speech 5,
                     l("He may not have all of his wits but keep in mind one thing:"),
-                    l("Don is renowned throughout the entire archipelagos for his blacksmith skills, and he is here, in Artis."),
+                    l("Don is renowned throughout the entire land for his blacksmith skills, and he is here, in Artis."),
                     l("It's a great honor for us, at the Legion, to hold the security of his business!");
 
                 break;
@@ -192,10 +192,11 @@
 
         speech 4,
             l("After this small overview of Artis, what do you think of our city?"),
-            l("The Legion of Aemil is in charge of the security of the intramural part of most cities throughout the archipelagos."),
+            l("The Legion of Gasaron is in charge of the security of the intramural part of our cities."),
+            l("The control and administration of the cities passes hands sometimes. You may find the Mana Order or the Brotherhood in charge instead of us at some point!"),
             l("But we are quite lucky here, outside of some tipsy travelers there are no big problems around here, it's not like the capital, Esperia."),
             l("Now that I think about it, I have another task for you. I asked Resa from the light armor shop to craft me some new clothes, she is a bit far from here, I can't go there because I need to watch the dock."),
-            l("Her shop is on the west part of the city, between the legion building and the library.");
+            l("Her shop is on the west side of the city, between the Legion building and the library.");
 
         setq ArtisQuests_Enora, 5;
         enora_reward (60, 100);
@@ -211,8 +212,8 @@
             l("It's nearly as good as one from Esperia, have you ever been there?"),
             l("Ah... Sorry, I forgot, again."),
             l("I mean, you forgot... Well."),
-            l("If you ever find the time, pass by Esperia, it's the capital city of the archipelagos!"),
-            l("You can find a chapter of the Legion of Aemil there, like in any other city, but Esperia is important for us as our headquarters are there.");
+            l("If you ever find the time, pass by Esperia, it's the greatest city in all of Gasaron!"),
+            l("You can find the building of the Legion of Gasaron there, like in any other city, but Esperia is important for us as our headquarters are there.");
 
         do
         {
@@ -231,8 +232,8 @@
         speech 5,
             l("Oh yes, I have one last errand for you, Q'Pid in the market sells potions."),
             l("It has been some days now since I asked her for a box of @@s, but she hasn't delivered anything yet.", getitemlink (PiberriesInfusion)),
-            l("Please try to figure out what went wrong with this order and bring me these potions."),
-            l("You will be able to find her in the market on the south-west of Artis.");
+            l("Please try to figure out what went wrong with this order and bring me those potions."),
+            l("You will be able to find her in the market in the south-west of Artis.");
 
         setq ArtisQuests_Enora, 7;
         enora_reward (40, 125);

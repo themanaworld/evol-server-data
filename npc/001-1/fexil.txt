@@ -15,7 +15,7 @@
 
     function fexil_quest {
         speech 4,
-            l("You know, the life of merchant is hard. I really hope that Artis and the Merchant Guild will help me to succeed."),
+            l("You know, the life of the merchant is hard. I really hope that Artis and the Merchant Guild will help me to succeed."),
             l("Maybe you too you could help me?"),
             l("I want to be the first merchant of this square to sell clothes made from @@s!", getitemlink(FluffyFur)),
             l("I will buy all of the fur that you will bring me at a good price, let's say, 15 E piece."),
@@ -41,7 +41,7 @@
     next;
     mesq l("I have some clothes and other things for you at a fine price!");
     next;
-    mesq l("What I sell comes from every corner of this archipelago.");
+    mesq l("What I sell comes from every corner of Gasaron.");
     next;
     mesq lg("Interested?");
     next;
