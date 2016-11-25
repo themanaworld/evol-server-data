@@ -1,4 +1,5 @@
-// Map 001-2-7: Artis, City Hall
-001-2-7,26,31,0	warp	To Left Room#001-2-7	0,0,001-2-8,45,41
-001-2-7,46,31,0	warp	To Right Room#001-2-7	0,0,001-2-9,25,41
-001-2-7,36,46,0	warp	To Artis#001-2-7	0,0,001-1,89,66
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 001-2-7: City Hall warps
+001-2-7,36,46,0	warp	#001-2-7_36_46	0,0,001-1,89,66
+001-2-7,46,31,0	warp	#001-2-7_46_31	0,0,001-2-9,25,41
+001-2-7,26,31,0	warp	#001-2-7_26_31	0,0,001-2-8,45,41

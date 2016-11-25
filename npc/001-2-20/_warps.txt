@@ -1,2 +1,26 @@
-// Map 001-2-20: Artis, Merchant Hall, Backroom
-001-2-20,33,35,0	warp	ToArtis#001-2-20	0,0,001-1,107,50
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 001-2-20: Backroom warps
+001-2-20,33,35,0	warp	#001-2-20_33_35	0,0,001-1,107,50
+001-2-20,29,25,0	script	#001-2-20_29_25_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-19", 41, 54;
+close;
+
+OnUnTouch:
+    doevent "#001-2-20_29_25::OnUnTouch";
+}
+001-2-20,29,25,0	script	#001-2-20_29_25	NPC_ARTIS_DOOR_WOOD,2,3,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+

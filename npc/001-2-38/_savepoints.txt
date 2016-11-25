@@ -1,10 +1,6 @@
-// Evol scripts.
-// Author:
-//    Reid
-// Description:
-//    Free save point.
-
-001-2-38,25,41,0	script	#savepoint0-001-2-38	NPC_SAVE_POINT,{
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 001-2-38: unnamed saves
+001-2-38,25,41,0	script	#save_001-2-38_25_41	NPC_SAVE_POINT,{
     savepointparticle .map$, .x, .y, CURRENT_INN;
     close;
 
@@ -13,8 +9,7 @@ OnInit:
     .sex = G_OTHER;
     end;
 }
-
-001-2-38,35,41,0	script	#savepoint1-001-2-38	NPC_SAVE_POINT,{
+001-2-38,35,41,0	script	#save_001-2-38_35_41	NPC_SAVE_POINT,{
     savepointparticle .map$, .x, .y, CURRENT_INN;
     close;
 
@@ -23,8 +18,7 @@ OnInit:
     .sex = G_OTHER;
     end;
 }
-
-001-2-38,25,46,0	script	#savepoint2-001-2-38	NPC_SAVE_POINT,{
+001-2-38,35,46,0	script	#save_001-2-38_35_46	NPC_SAVE_POINT,{
     savepointparticle .map$, .x, .y, CURRENT_INN;
     close;
 
@@ -33,8 +27,7 @@ OnInit:
     .sex = G_OTHER;
     end;
 }
-
-001-2-38,35,46,0	script	#savepoint3-001-2-38	NPC_SAVE_POINT,{
+001-2-38,25,46,0	script	#save_001-2-38_25_46	NPC_SAVE_POINT,{
     savepointparticle .map$, .x, .y, CURRENT_INN;
     close;
 

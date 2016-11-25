@@ -1,6 +1,53 @@
-// Map 001-2-33: Artis, Legion of Aemil Headquarters
-001-2-33,34,47,0	warp	ToArtis#001-2-33	0,0,001-1,57,42
-001-2-33,23,30,0	warp	ToLeftDormroom#001-2-33	0,0,001-2-37,36,28
-001-2-33,45,30,0	warp	ToRightDormroom#001-2-33	0,0,001-2-38,24,28
-001-2-33,25,40,0	warp	ToLeftPvP#001-2-33	1,0,001-2-40,27,46
-001-2-33,43,40,0	warp	ToRightPvP#001-2-33	1,0,001-2-40,45,46
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 001-2-33: Legion of Aemil Headquarters warps
+001-2-33,29,32,0	script	#001-2-33_29_32_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-34", 29, 32;
+close;
+
+OnUnTouch:
+    doevent "#001-2-33_29_32::OnUnTouch";
+}
+001-2-33,29,32,0	script	#001-2-33_29_32	NPC_ARTIS_IN_DOOR,1,2,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-2-33,39,32,0	script	#001-2-33_39_32_h	NPC_HIDDEN,0,0,{
+OnTouch:
+    warp "001-2-32", 27, 32;
+close;
+
+OnUnTouch:
+    doevent "#001-2-33_39_32::OnUnTouch";
+}
+001-2-33,39,32,0	script	#001-2-33_39_32	NPC_ARTIS_IN_DOOR,1,2,{
+    close;
+OnTouch:
+    doorTouch;
+
+OnUnTouch:
+    doorUnTouch;
+
+OnTimer340:
+    doorTimer;
+
+OnInit:
+    doorInit;
+}
+
+001-2-33,45,30,0	warp	#001-2-33_45_28	0,0,001-2-38,24,28
+001-2-33,23,30,0	warp	#001-2-33_23_28	0,0,001-2-37,36,28
+001-2-33,25,40,0	warp	#001-2-33_25_40	2,0,001-2-40,27,46
+001-2-33,43,40,0	warp	#001-2-33_43_40	2,0,001-2-40,45,46
+001-2-33,34,47,0	warp	#001-2-33_34_46	0,0,001-1,57,42

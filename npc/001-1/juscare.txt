@@ -70,13 +70,13 @@ OnInit:
 
     // this is not very obvious stuff
     setmovegraphcmd
-        "inn_front",    "inn_door",  1, 0x1,    "flags_0 2; dir 4; call open_door #Door18",
+        "inn_front",    "inn_door",  1, 0x1,    "flags_0 2; dir 4; call open_door #001-1_118_88",
         "inn_front",    "inn_tree",  2,         "dir 2; wait 1; sit; wait 1; emote 106; wait 20; stand; wait 1",
         "inn_front",    "river_bank",1,         "flags_0 8; flags_1 4",
         "river_bank",   "eugene",    1, 0x4,    "moveon",
         "eugene",       "fishing_spot", 1, 0x4, "wait 7",
         "fishing_spot", "chelios",   1, 0x4,    "dir 6; wait 1; emote 103; wait 10",
-        "inn_tree",     "inn_door",  1,         "flags_1 1; flags_0 2; dir 4; call open_door #Door18",
+        "inn_tree",     "inn_door",  1,         "flags_1 1; flags_0 2; dir 4; call open_door #001-1_118_88",
         "inn_tree",     "fountain",  2,         "dir 4; wait 1; emote 122; wait 10; dir 0; wait 1",
         "fountain",     "chelios_road",         "moveon",
         "chelios_road", "chelios",              "dir 6; wait 1; emote 103; wait 7",
@@ -88,12 +88,12 @@ OnInit:
         "fishing_spot", "eugene",    1, 0x8,    "moveon",
         "eugene",       "river_bank",1, 0x8,    "moveon",
         "river_bank",   "inn_front", 1, 0x8,    "dir 0; wait 5",
-        "inn_door",     "inn_doorstep",1, 0x1,  "warp 001-2-28 inter_inn_doorstep; call close_door #Door18",
+        "inn_door",     "inn_doorstep",1, 0x1,  "warp 001-2-28 inter_inn_doorstep; call close_door #001-1_118_88",
         "inter_inn_doorstep",  "inter_inn_2tables",   1, 0x1, "moveon",
         "inter_inn_2tables",   "inter_inn_fav_table", 1, 0x1, "flags_1 2; flags_0 1; dir 6; wait 1; sit; wait 15; stand; wait 1",
         "inter_inn_fav_table", "inter_inn_2tables",   1, 0x2, "moveon",
-        "inter_inn_2tables",   "inter_inn_doorstep",  1, 0x2, "call open_door #Door18; warp 001-1 inn_doorstep",
-        "inn_doorstep",        "inn_door",            1, 0x2, "call close_door #Door18",
+        "inter_inn_2tables",   "inter_inn_doorstep",  1, 0x2, "call open_door #001-1_118_88; warp 001-1 inn_doorstep",
+        "inn_doorstep",        "inn_door",            1, 0x2, "call close_door #001-1_118_88",
         "inn_door",            "inn_front",           1, 0x2, "flags_1 1; flags_0 2; wait 10";
 
     firstmove "wait 4", "inn_front";
