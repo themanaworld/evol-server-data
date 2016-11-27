@@ -1,7 +1,7 @@
 // This file is generated automatically. All manually added changes will be removed when running the Converter.
 // Map 001-2-4: Library warps
 001-2-4,48,41,0	warp	#001-2-4_48_41	0,0,001-1,51,81
-001-2-4,57,27,0	warp	#001-2-4_57_26	3,0,001-2-6,57,34
+001-2-4,57,27,0	warp	#001-2-4_57_26	3,0,001-2-6,57,36
 001-2-4,52,27,0	script	#001-2-4_52_27_h	NPC_HIDDEN,0,0,{
 OnTouch:
     warp "001-2-5", 28, 37;
