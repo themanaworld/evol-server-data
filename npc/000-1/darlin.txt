@@ -70,12 +70,12 @@
     menu
         l("I said... WHY DON'T YOU COME DOWN TO TALK?"), L_GoDown,
         l("I SAID, SEE YOU LATER!"), L_Bye,
-        l("I'M CALLED, @@!", strcharinfo(0)), -;
+        l("I'M CALLED, @@!", strtoupper(strcharinfo(0))), -;
 
     setcamnpc;
     mes "";
     mesn;
-    mesq strcharinfo(0) + "? " + l("THAT'S A NICE NAME!");
+    mesq strtoupper(strcharinfo(0)) + "? " + l("THAT'S A NICE NAME!");
     next;
     mesq l("SO WHAT'S UP?! WHAT ARE YOU DOING?!");
     next;
