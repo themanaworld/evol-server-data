@@ -1,28 +1,87 @@
 // Evol functions.
 // Author:
 //    Reid
+//    gumi
 // Description:
+//    script terminator functions
+
+
+
+// goodbye_msg
 //    Tell a random goodbye sentence.
 // Variables:
 //    .@rand = Random number between the number of "goodbye" choice.
 
 function	script	goodbye_msg	{
-    setarray .byemsg$[0], l("See you!"),
-                          l("See you later!"),
-                          l("See you soon!"),
-                          l("Bye!"),
-                          l("Farewell."),
-                          l("Bye then!"),
-                          l("Goodbye."),
-                          l("Bye for now."),
-                          l("Talk to you soon!"),
-                          l("Talk to you later!"),
-                          l("Have a good day!"),
-                          l("Cheers!"),
-                          l("Take care!");
+    setarray .byemsg$[0],
+        l("See you!"),
+        l("See you later!"),
+        l("See you soon!"),
+        l("Bye!"),
+        l("Farewell."),
+        l("Bye then!"),
+        l("Goodbye."),
+        l("Bye for now."),
+        l("Talk to you soon!"),
+        l("Talk to you later!"),
+        l("Have a good day!"),
+        l("Cheers!"),
+        l("Take care!");
 
     return .byemsg$[rand(getarraysize(.byemsg$))];
 }
+
+
+
+// cwarp
+//     Closes the dialog, then warps the player.
+//     You almost always want to use this instead of `warp`.
+// usage:
+//     cwarp;
+//     cwarp x, y;
+//     cwarp map, x, y;
+
+function	script	cwarp	{
+    .@map$ = getarg(0, "");
+    .@x = getarg(1, 0);
+    .@y = getarg(2, 0);
+
+    if (getargcount() > 0 && getargcount() < 3)
+    {
+        .@npc$ = strnpcinfo(0);
+        .@map$ = getvariableofnpc(.map$, .@npc$);
+        .@x = getarg(0);
+        .@y = getarg(1);
+    }
+
+    getmapxy .@pc_map$, .@pc_x, .@pc_y, UNITTYPE_PC; // get char location
+
+    closedialog; // XXX: maybe send closeclientdialog in the future
+
+    if (getargcount() < 1)
+    {
+        warp .@pc_map$, .@pc_x, .@pc_y; // no arguments, just refresh
+        close;
+    }
+
+    if (.@map$ == .@pc_map$)
+    {
+        if (.@pc_x == .@x && .@pc_y == .@y)
+        {
+            close; // same location, don't move
+        }
+
+        else
+        {
+            slide .@x, .@y; // same map, slide instead of full warp
+            close;
+        }
+    }
+
+    warp .@map$, .@x, .@y; // different map, warp to given location
+    close;
+}
+
 
 function	script	goodbye	{
     closedialog;
