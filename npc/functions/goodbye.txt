@@ -131,3 +131,22 @@ function	script	goodbye	{
     npctalk3 goodbye_msg();
     bye getarg(0, -1);
 }
+
+
+
+// goodbye2
+//     Waits for the player to press close, displays a canned message,
+//     ends execution.
+//     Can also display an emote
+
+function	script	goodbye2	{
+    .@emote = getarg(0, -1);
+
+    close2;
+    npctalk3 goodbye_msg();
+
+    if (.@emote >= 0)
+        emotion .@emote;
+
+    end;
+}
