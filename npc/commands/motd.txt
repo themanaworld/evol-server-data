@@ -2,12 +2,6 @@ function	script	displayMOTD	{
     .@size = getvariableofnpc(.size, "@motd");
     .@dsize = getvariableofnpc(.dsize, "@motd");
 
-    // generic MOTD
-    for (.@i = 0; .@i < .@size; ++.@i)
-    {
-        dispbottom $MOTD_Messages$[.@i];
-    }
-
     // git stuff and such
     if (debug)
     {
@@ -15,7 +9,15 @@ function	script	displayMOTD	{
         {
             dispbottom $Debug_Messages$[.@i]; // FIXME: send this to the Debug tab instead
         }
+        dispbottom "---";
     }
+
+    // generic MOTD
+    for (.@i = 0; .@i < .@size; ++.@i)
+    {
+        dispbottom $MOTD_Messages$[.@i];
+    }
+
     return;
 }
 
