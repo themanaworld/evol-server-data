@@ -1,4 +1,14 @@
-// generic quest debug functions
+// Evol functions.
+// Authors:
+//     gumi
+// Description:
+//     generic quest debug functions
+
+
+
+// GenericQuestDebug
+//     makes a generic quest debug menu for the given quest when the server
+//     is in debug mode.
 
 function	script	GenericQuestDebug	{
     if (!debug)
@@ -59,4 +69,41 @@ function	script	GenericQuestDebug	{
         setq getarg(0,0), @menuret;
     }
     return;
+}
+
+
+
+// selectd
+//     like a normal select() but gives access to quest debug
+//
+//     quest id can either be passed as first argument
+//     or as the .quest_debug npc variable
+
+function	script	selectd	{
+    .@menustr$ = rif(debug, menuaction(l("debug")));
+    .@count = getargcount();
+    .@f = 0;
+    .@questID = getvariableofnpc(.quest_debug, strnpcinfo(0));
+
+    if (.@count > 1 && !isstr(getarg(0)))
+    {
+        ++.@f;
+        .@questID = getarg(0);
+    }
+
+    for (; .@f < .@count; ++.@f)
+    {
+        .@menustr$ += ":" + getarg(.@f);
+    }
+
+    @menu = 255;
+    select .@menustr$;
+
+    switch (@menu)
+    {
+        case -1:
+        case 255: return -1;
+        default: @menu -= 1; return @menu; // FIXME: here I would have done `return --@menu;` but hercules prevents this
+        case 1: callfunc "QuestDebug" + .@questID; closedialog; end;
+    }
 }
