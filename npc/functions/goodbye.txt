@@ -83,6 +83,18 @@ function	script	cwarp	{
 }
 
 
+
+// cshop
+//     closes the dialog, then opens a shop
+//     if no npc is given, calls "#<npc> $"
+
+function	script	cshop	{
+    closedialog; // XXX: maybe send closeclientdialog in the future
+    shop getarg(0, "#" + strnpcinfo(0) + " $");
+    //close; => the shop buildin already sends close, and is a terminator itself
+}
+
+
 function	script	goodbye	{
     closedialog;
 
