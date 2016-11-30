@@ -1,8 +1,13 @@
 // Evol functions.
 // Author:
 //    Reid
+//    gumi
 // Description:
 //    Adds a new save point location.
+// Usage:
+//    savepointparticle;
+//    savepointparticle NO_INN;
+//    savepointparticle map, x, y, NO_INN;
 // Description:
 //    Save location with arguments:
 //      getarg(0)   map name,
@@ -11,13 +16,27 @@
 //      getarg(3)   INN flag.
 
 function	script	savepointparticle	{
+    .@mapname$ = getarg(0, "");
+    .@mapx = getarg(1, -1);
+    .@mapy = getarg(2, -1);
+    .@i = 3;
+
+    if (.@mapy < 1)
+    {
+        .@npc$ = strnpcinfo(0);
+        .@mapname$ = getvariableofnpc(.map$, .@npc$);
+        .@mapx = getvariableofnpc(.x, .@npc$);
+        .@mapy = getvariableofnpc(.y, .@npc$);
+        .@i = 0;
+    }
+
     message strcharinfo(0), "Your position has been saved.";
 
-    if (getarg(3, NO_INN) == NO_INN)
+    if (getarg(.@i, NO_INN) == NO_INN)
     {
         INN_REGISTER = NO_INN;
     }
-    savepoint getarg(0), getarg(1), getarg(2);
+    savepoint .@mapname$, .@mapx, .@mapy;
     misceffect 4, getcharid(3);
     return;
 }
