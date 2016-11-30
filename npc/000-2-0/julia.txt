@@ -239,8 +239,11 @@
     function	mainMenu	{
         do
         {
-            select
-                rif(debug, menuaction(l("debug"))),
+            .@q2 = getq(ShipQuests_ChefGado);
+            .@q3 = getq(ShipQuests_Nard);
+            .@q4 = getq(General_Narrator);
+
+            selectd
                 rif(.@q3 == 5 && .@q4 < 1, l("What can I do now?")),
                 rif(.@q3 == 3 && .@q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")),
                 rif(.@q2 == 2 && countitem(PoisonedDish), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")),
@@ -254,17 +257,16 @@
 
             switch (@menu)
             {
-                case 2: gotoSleep; break;
-                case 3: heardRumors; break;
-                case 4: gotRegrets; break;
-                case 5: poisonJulia; break;
-                case 6: basicSkill; break;
-                case 7: chooseLang .@s$; break;
-                case 8: whereAmI; break;
-                case 9: whatHappened; break;
-                case 10: readRules; break;
-                case 1: QuestDebug0;
-                case 11: closedialog; end;
+                case 1: gotoSleep; break;
+                case 2: heardRumors; break;
+                case 3: gotRegrets; break;
+                case 4: poisonJulia; break;
+                case 5: basicSkill; break;
+                case 6: chooseLang .@s$; break;
+                case 7: whereAmI; break;
+                case 8: whatHappened; break;
+                case 9: readRules; break;
+                case 10: closedialog; end;
             }
         } while (1);
     }
@@ -275,10 +277,6 @@
     mesq l("What do you want today?");
     next;
 
-    .@q2 = getq(ShipQuests_ChefGado);
-    .@q3 = getq(ShipQuests_Nard);
-    .@q4 = getq(General_Narrator);
-    .@s$ = l("I don't want to change my language, sorry.");
     mainMenu;
 
 OnTouch:
@@ -296,11 +294,12 @@ OnTouch:
     next;
     mesq lg("Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.");
     next;
-    chooseLang "";
+    chooseLang;
     mainMenu;
     end;
 
 OnInit:
     .sex = G_FEMALE;
     .distance = 10;
+    .quest_debug = ShipQuests_Julia;
 }
