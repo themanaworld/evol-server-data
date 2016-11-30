@@ -95,6 +95,17 @@ function	script	cshop	{
 }
 
 
+
+// cstorage
+//     closes the dialog, then opens storage
+
+function	script	cstorage	{
+    closedialog; // XXX: maybe send closeclientdialog in the future
+    openstorage;
+    close;
+}
+
+
 function	script	goodbye	{
     closedialog;
 
