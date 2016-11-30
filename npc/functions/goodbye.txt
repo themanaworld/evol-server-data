@@ -106,10 +106,28 @@ function	script	cstorage	{
 }
 
 
-function	script	goodbye	{
-    closedialog;
 
-    npctalk3 goodbye_msg();
+// bye
+//     closes the dialog without waiting for the player to press close
+//     can also display an emote
+
+function	script	bye	{
+    .@emote = getarg(0, -1);
+    closedialog; // XXX: maybe send closeclientdialog in the future
+
+    if (.@emote >= 0)
+        emotion .@emote;
 
     close;
+}
+
+
+
+// goodbye
+//     same as bye, but also displays a canned message
+//     can also display an emote
+
+function	script	goodbye	{
+    npctalk3 goodbye_msg();
+    bye getarg(0, -1);
 }
