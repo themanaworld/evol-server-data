@@ -23,7 +23,7 @@ function	script	bedClic	{
 
     if (askyesno() == ASK_YES)
     {
-        savepointparticle (getarg (0), getarg (1), getarg (2), getarg (3));
+        savepointparticle getarg(0, ""), getarg(1, -1), getarg(2, -1), getarg(3, NO_INN);
     }
     closedialog;
     close;
