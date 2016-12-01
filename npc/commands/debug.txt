@@ -101,6 +101,7 @@ function	script	GlobalDebugMenu	{
             menuimage("actions/manage", l("Change my skills")),
             menuimage("actions/manage", l("Change my appearance")),
             menuimage("actions/add", l("Create items")),
+            menuimage("actions/add", l("Get money")),
             menuimage("actions/edit", l("Change my quests")),
             menuimage("actions/reset", l("Reset")),
             rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu")));
@@ -114,9 +115,10 @@ function	script	GlobalDebugMenu	{
             case 3: GlobalSkillDebug .@c; break;
             case 4: BarberDebug .@c; break;
             case 5: closedialog; clientcommand "createitems"; end;
-            case 6: GlobalQuestDebug .@c; break;
-            case 7: resetAll; break;
-            case 8: return;
+            case 6: Zeny = 0x7FFFFFFE; break;
+            case 7: GlobalQuestDebug .@c; break;
+            case 8: resetAll; break;
+            case 9: return;
         }
     } while(1);
 }
