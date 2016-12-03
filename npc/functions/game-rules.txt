@@ -1,0 +1,59 @@
+// Evol scripts.
+// Authors:
+//    Qwerty Dragon
+//    Reid
+//    WildX
+//    gumi
+// Description:
+//    7 main rules of Evol Online.
+
+function	script	GameRules	{
+    if (checkweight(BookOfLaws, 1) == true && countitem(BookOfLaws) < 1)
+        getitem BookOfLaws, 1; // give the book if the player lost it
+
+    narrator getarg(0, 0),
+        l("1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle."),
+        l("2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s)."),
+        l("3. ##BDo not spam/flood other players.##b This includes chat spam and spam by trade requests."),
+        l("4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language."),
+        l("5. ##BDo not beg others##b for money, items or favours of any kind. If you want to ask for something, do it politely and only once. Try not to annoy other players."),
+        l("6. ##BFollow the [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Evol Social Convention)."),
+        l("7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.");
+    return;
+}
+
+
+-	script	@rules	32767,{
+    end;
+
+    function read_book {
+        narrator 5 | 1,
+            l("This book outlines the laws of every city and holding in Gasaron"),
+            l("The first page contains the universal rules that have been agreed upon throughout the land.");
+
+        GameRules 8 | 4;
+
+        narrator 8,
+            l("The next page begins to list the complex trading laws of the City of Esperia"),
+            l("All this seems unimportant to you right now.");
+        close;
+    }
+
+OnCall:
+    GameRules;
+    close;
+
+OnUseBook:
+    if (openbook(.book_name$))
+        read_book;
+    bye;
+
+OnShelfUse:
+    if (openbookshelf(.book_name$))
+        read_book;
+    bye;
+
+OnInit:
+    .book_name$ = "The Book of Laws";
+    bindatcmd "rules", "@rules::OnCall", 0, 2, 0;
+}

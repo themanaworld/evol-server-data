@@ -1,0 +1,15 @@
+// Evol scripts.
+// Authors:
+//    gumi
+// Description:
+//    moar books
+
+001-2-4,28,29,0	script	#001-2-4-Book1	NPC_NO_SPRITE,{
+
+    doevent "@rules::OnShelfUse";
+    close;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+}

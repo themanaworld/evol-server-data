@@ -13,7 +13,7 @@
             l("You can select a specific person with the [N] key, and then, press the [T] key when you are surrounded by more than one person."),
             l("You can also simply talk to any citizen around you by clicking on them."),
             l("Nevertheless, you can talk with another adventurer by pressing the [Enter] key and then type what you want to say!"),
-            l("If you want to say something to a specific player, you can type \"\\query Playername\" or \"\\whisper Playername message\", this will create a new tab on your chat window.");
+            l("If you want to say something to a specific player, you can type \"/query Playername\" or \"/whisper Playername message\", this will create a new tab on your chat window.");
     }
 
 OnShelfUse:

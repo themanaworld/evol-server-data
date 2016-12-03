@@ -25,50 +25,34 @@
         return;
     }
 
-    function mythologise_people
-    {
-        npctalkonce l("In Artis they really do mythologise people when they die.");
 
-        return;
-    }
-
-    function no_matter_what
-    {
-        npctalkonce l("No matter what people tell you, words and ideas can change the world.");
-
-        return;
-    }
-
-    function outside_inside
-    {
-        npctalkonce l("What counts in a book is like so many things, not what is on the outside, but what is on the inside.");
-
-        return;
-    }
-
-    function kaizei_manuscripts
-    {
-        npctalkonce l("An explorer left behind some incomplete manuscripts about the people and dangers in the land of Kaizei.");
-
-        return;
-    }
-
-    switch (rand(5))
+    switch (rand(6))
     {
         case 0:
-            no_matter_what();
+            npctalkonce l("No matter what people tell you, words and ideas can change the world.");
             break;
         case 1:
-            mythologise_people();
+            npctalkonce l("In Artis they really do mythologize people when they die.");
             break;
         case 2:
-            outside_inside();
+            npctalkonce l("What counts in a book is like so many things, not what is on the outside, but what is on the inside.");
             break;
         case 3:
-            kaizei_manuscripts();
+            npctalkonce l("An explorer left behind some incomplete manuscripts about the people and dangers in the land of Kaizei.");
             break;
         case 4:
-            need_help();
+            speech 4,
+                l("Ow-oh!"),
+                l("Introduce yourself instead of poking me around. I almost fell from the lader, savage...");
+
+            setcamnpc "#001-2-4-Book1";
+
+            speech 8,
+                l("Go have a look at that shelf to my right, would you?"),
+                l("You clearly need to be more public-spirited.");
+            break;
+        default:
+            need_help;
             break;
     }
 
