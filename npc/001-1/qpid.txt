@@ -6,50 +6,6 @@
 
 001-1,65,116,0	script	Q'Pid#001-1	NPC_QPID,{
 
-    function verify_riddle_answer {
-        .@answer$ = getarg (0);
-        .@good$ = getarg (1);
-        .@good_translated$ = l(getarg(1));
-
-        .@size_answer = getstrlen (.@answer$);
-        .@size_good = getstrlen (.@good$);
-        .@size_good_translated = getstrlen (.@good_translated$);
-
-        if (.@size_answer > .@size_good)
-        {
-            .@max = (.@size_answer > .@size_good_translated)
-                ? .@size_answer
-                : .@size_good_translated;
-        }
-        else
-        {
-            .@max = (.@size_good > .@size_good_translated)
-                ? .@size_good
-                : .@size_good_translated;
-        }
-
-        for (.@j = 0; .@j < .@max; .@j++)
-        {
-            if (strtolower (charat (.@answer$, .@j)) == charat (.@good$, .@j))
-            {
-                .@k++;
-            }
-            if (strtolower (charat (.@answer$, .@j)) == charat (.@good_translated$, .@j))
-            {
-                .@k_translated++;
-            }
-        }
-        .@k *= 10;
-        .@k_translated *= 10;
-        .@size_good *= 7;
-        .@size_good_translated *= 7;
-        if (.@k >= .@size_good  || .@k_translated >= .@size_good_translated)
-        {
-            return 1;
-        }
-        return 0;
-    }
-
     function riddle_enigma {
         speech 5,
             l("Ok fine, you have up to 3 tries, here is the riddle:"),
@@ -64,7 +20,7 @@
             input .@answer$;
             .@i++;
 
-            if (verify_riddle_answer (.@answer$, "life"))
+            if (riddlevalidation (.@answer$, "life", l("life")))
             {
                 speech 5,
                     l("Oh..."),
@@ -104,7 +60,7 @@
 
                 break;
             }
-        } while (1);
+        } while (true);
 
         return;
     }
@@ -212,4 +168,3 @@ OnInit:
     .distance = 3;
     end;
 }
-

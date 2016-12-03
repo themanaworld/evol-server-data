@@ -1,0 +1,75 @@
+// Evol functions.
+// Authors:
+//    Reid
+//
+// Description:
+//    Riddle enigma validator
+//
+// Arguments
+//    0 PC answer
+//    1 English correct answer
+//    2 Translated correct answer
+
+// TODO: levenshtein(), similar_text(), and maybe even soundex()
+
+function	script	riddlevalidation	{
+    .@answer$          = strtolower (getarg (0));
+    .@good$            = strtolower (getarg (1));
+    .@good_translated$ = strtolower (getarg (2));
+
+    .@size_answer          = getstrlen (.@answer$);
+    .@size_good            = getstrlen (.@good$);
+    .@size_good_translated = getstrlen (.@good_translated$);
+
+    .@max = max (.@size_answer, .@size_good_translated, .@size_good);
+
+    // Input is too long.
+    if (.@max > 20)
+    {
+        return false;
+    }
+
+    .@size_good            *= 70;
+    .@size_good_translated *= 70;
+
+    for (.@i = 0; .@i < .@max; .@i++)
+    {
+        .@correct            = 0;
+        .@correct_translated = 0;
+
+        for (.@k = .@k_translated = .@j = .@i; .@j < .@max; .@j++)
+        {
+            if (charat (.@answer$, .@j) == charat (.@good$, .@k))
+            {
+                .@correct++;
+                .@k++;
+            }
+            else
+            {
+                .@correct--;
+            }
+
+            if (charat (.@answer$, .@j) ==
+                charat (.@good_translated$, .@k_translated))
+            {
+                .@correct_translated++;
+                .@k_translated++;
+            }
+            else
+            {
+                .@correct_translated--;
+            }
+        }
+        // if 70% of the word is correct
+        .@correct *= 100;
+        .@correct_translated *= 100;
+
+        if (.@correct >= .@size_good ||
+            .@correct_translated >= .@size_good_translated)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
