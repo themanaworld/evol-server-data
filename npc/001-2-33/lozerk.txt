@@ -2,6 +2,7 @@
 // Authors:
 //    Reid
 //    Tirifto
+//    monwarez
 // Description:
 //    Sword trainer from the Legion of Aemil guild.
 // Variables:
@@ -16,7 +17,7 @@
 
 001-2-33,34,33,0	script	Lozerk	NPC_DEMON_MALE_SWORD,{
 
-// Quest-related functions
+    // Quest-related functions
  
     function send_training {
         speech 5,
@@ -40,7 +41,7 @@
         return;
     }
 
-function send_battle {
+    function send_battle {
         speech 5,
             lg("So, did you get your blood boiling? Give the dummies a good lesson? Good!"),
             l("But since it's not dummies that will go after you out there, this training won't be enough."),
@@ -54,7 +55,7 @@ function send_battle {
         return;
     }
 
-function send_qanon {
+    function send_qanon {
         speech 5,
             lg("And you won! That means you should be able to handle yourself in battle from now on."),
             lg("If you keep it up, you'll eventually become a fearsome warrior, just like me!"),
@@ -70,7 +71,7 @@ function send_qanon {
         return;
     }
 
-// Normal functions
+    // Normal functions
  
     function tell_about_legion {
         speech 5,
@@ -88,7 +89,7 @@ function send_qanon {
         return;
     }
  
-// Conversation
+    // Conversation
  
     speech 4,
         l("Welcome to the the Legion of Aemil's building in Artis!");
@@ -109,34 +110,29 @@ function send_qanon {
         {
             case 1:
                 send_training;
-                goto L_Close;
+                break;
             case 2:
                 send_battle;
-                goto L_Close;
+                break;
             case 3:
                 send_qanon;
-                goto L_Close;
+                break;
             case 4:
                 tell_about_legion;
                 break;
             case 5:
                 praise_sword;
                 break;
-            case 6:
-                goto L_Close;
         }
-    }while(1);
+    }while(@menu != 6);
 
-    goto L_Close;
-
-L_Close:
     closedialog;
     goodbye;
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 3;
     end;
 }
 
