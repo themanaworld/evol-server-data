@@ -17,216 +17,72 @@
     end;
 
 OnCall:
-    .@m$ = strtoupper(.@atcmd_parameters$[0]); // sanitize
+    .@request$ = strtoupper(strip(.@atcmd_parameters$[0])); // sanitize
+    .@map$ = "";
+    .@x = 0;
+    .@y = 0;
 
-    // ------------------------------------
-    // ARTIS
-    if (startswith(.@m$, "ART"))
+    for (.@i = 0; .@i < .count; .@i += 2)
     {
-        .@map$ = "001-1";
-        .@x = 89;
-        .@y = 86;
+        if (.@request$ ~= .aliases$[.@i])
+        {
+            explode .@coords$, .aliases$[.@i + 1], " ";
+            .@map$ = .@coords$[0];
+            .@x = atoi(.@coords$[1]);
+            .@y = atoi(.@coords$[2]);
+            break;
+        }
     }
-
-    else if (startswith(.@m$, "LIGHT"))
-    {
-        .@map$ = "001-2-0";
-        .@x = 37;
-        .@y = 32;
-    }
-
-    else if (.@m$ == "NOBLE")
-    {
-        .@map$ = "001-2-1";
-        .@x = 37;
-        .@y = 37;
-    }
-
-    else if (startswith(.@m$, "MOON"))
-    {
-        .@map$ = "001-2-2";
-        .@x = 39;
-        .@y = 34;
-    }
-
-    else if (startswith(.@m$, "LIB"))
-    {
-        .@map$ = "001-2-4";
-        .@x = 49;
-        .@y = 37;
-    }
-
-    else if (startswith(.@m$, "CITY"))
-    {
-        .@map$ = "001-2-7";
-        .@x = 36;
-        .@y = 38;
-    }
-
-    else if (.@m$ == "NOBLE2")
-    {
-        .@map$ = "001-2-10";
-        .@x = 40;
-        .@y = 38;
-    }
-
-    else if (.@m$ == "NOBLE3")
-    {
-        .@map$ = "001-2-11";
-        .@x = 45;
-        .@y = 33;
-    }
-
-    else if (.@m$ == "NOBLE4")
-    {
-        .@map$ = "001-2-12";
-        .@x = 34;
-        .@y = 32;
-    }
-
-    else if (.@m$ == "NOBLE5")
-    {
-        .@map$ = "001-2-15";
-        .@x = 34;
-        .@y = 38;
-    }
-
-    else if (startswith(.@m$, "HARB"))
-    {
-        .@map$ = "001-2-16";
-        .@x = 32;
-        .@y = 33;
-    }
-
-    else if (startswith(.@m$, "WARE"))
-    {
-        .@map$ = "001-2-18";
-        .@x = 39;
-        .@y = 31;
-    }
-
-    else if (startswith(.@m$, "MERCH") || startswith(.@m$, "BANK"))
-    {
-        .@map$ = "001-2-19";
-        .@x = 29;
-        .@y = 31;
-    }
-
-    else if (.@m$ == "SHIP2")
-    {
-        .@map$ = "001-2-21";
-        .@x = 30;
-        .@y = 28;
-    }
-
-    else if (startswith(.@m$, "ALCH"))
-    {
-        .@map$ = "001-2-26";
-        .@x = 30;
-        .@y = 32;
-    }
-
-    else if (startswith(.@m$, "BLACK"))
-    {
-        .@map$ = "001-2-27";
-        .@x = 35;
-        .@y = 32;
-    }
-
-    else if (startswith(.@m$, "PLUSH"))
-    {
-        .@map$ = "001-2-28";
-        .@x = 32;
-        .@y = 32;
-    }
-
-    else if (startswith(.@m$, "LEG"))
-    {
-        .@map$ = "001-2-33";
-        .@x = 34;
-        .@y = 36;
-    }
-
-
-    // ------------------------------------
-    // BOAT
-    else if (.@m$ == "START")
-    {
-        .@map$ = "000-0";
-        .@x = 22;
-        .@y = 24;
-    }
-
-    else if (.@m$ == "START2")
-    {
-        .@map$ = "000-0-0";
-        .@x = 26;
-        .@y = 28;
-    }
-
-    else if (.@m$ == "START3")
-    {
-        .@map$ = "000-0-1";
-        .@x = 26;
-        .@y = 28;
-    }
-
-    else if (startswith(.@m$, "DRA"))
-    {
-        .@map$ = "000-1";
-        .@x = 77;
-        .@y = 110;
-    }
-
-    else if (startswith(.@m$, "FIRST"))
-    {
-        .@map$ = "000-2-0";
-        .@x = 27;
-        .@y = 27;
-    }
-
-    else if (startswith(.@m$, "SECOND"))
-    {
-        .@map$ = "000-2-1";
-        .@x = 53;
-        .@y = 33;
-    }
-
-    else if (.@m$ == "HOLD")
-    {
-        .@map$ = "000-2-2";
-        .@x = 43;
-        .@y = 30;
-    }
-
-    else if (startswith(.@m$, "NARD"))
-    {
-        .@map$ = "000-2-3";
-        .@x = 21;
-        .@y = 27;
-    }
-
-    else if (startswith(.@m$, "ALIG"))
-    {
-        .@map$ = "000-2-4";
-        .@x = 36;
-        .@y = 29;
-    }
-
 
     if (.@map$ == "")
     {
         .@map$ = .@atcmd_parameters$[0];
     }
+
     if (.@atcmd_parameters$[2] != "")
     {
         .@x = atoi(.@atcmd_parameters$[1]);
         .@y = atoi(.@atcmd_parameters$[2]);
     }
-    warp .@map$, .@x, .@y;
-    end;
+
+    cwarp .@map$, .@x, .@y; // XXX: maybe here use a slide_or_warp function
 
 OnInit:
+    setarray .aliases$[0],
+
+        // ARTIS
+        "^ART",             "001-1 89 86",    // artis town square
+        "^LIGHT",           "001-2-0 37 32",  // light armor shop
+        "^NOBLE1?$",        "001-2-1 37 37",  // noble house 1
+        "^NOBLE2$",         "001-2-10 40 38", // noble house 2
+        "^NOBLE3$",         "001-2-11 45 33", // noble house 3
+        "^NOBLE4$",         "001-2-12 34 32", // noble house 4
+        "^NOBLE5$",         "001-2-15 34 38", // noble house 5
+        "^MOON",            "001-2-2 39 34",  // moon's house
+        "^LIB",             "001-2-4 49 37",  // library
+        "^CITY|^HALL",      "001-2-7 36 38",  // city hall
+        "^HARB|^MASTER",    "001-2-16 32 33", // harbourmaster
+        "^WARE",            "001-2-18 39 31", // warehouse
+        "^MERCH|^BANK",     "001-2-19 29 31", // merchant hall
+        "^SHIP2$",          "001-2-21 30 28", // la johanne (artis)
+        "^ALCH",            "001-2-26 30 32", // alchemist
+        "^BLACK|SMITH",     "001-2-27 35 32", // blacksmith
+        "^RED|PLUSH|^INN",  "001-2-28 32 32", // red plush inn
+        "^LEG",             "001-2-33 34 36", // legion
+
+        // PROLOGUE
+        "^START|^BEGIN",    "000-0 22 24",    // starting point
+        "^START2$",         "000-0-0 26 28",  // starting point step 2
+        "^START3$",         "000-0-1 26 28",  // starting point step 3
+        "^DRA|ISLAND",      "000-1 77 110",   // drasil island
+        "^FIRST|^DECK1?$",  "000-2-0 27 27",  // first deck
+        "^SECOND|^DECK2$",  "000-2-1 53 33",  // second deck
+        "^HOLD$",           "000-2-2 43 30",  // hold
+        "^NARD",            "000-2-3 21 27",  // nard's room
+        "^ALIG|^HID",       "000-2-4 36 29";  // alige's hideout
+
+    .count = getarraysize(.aliases$[0]);
+
     if (debug > 0)
     {
         bindatcmd "w", "@w::OnCall", 0, 2, 0;
