@@ -27,7 +27,8 @@
             l("Yes, I have some! \"5x Black Iron Ingots\""),
             lg("Is this for you or somebody else? Because you need to be registered to obtain these materials.");
 
-        switch (select (l("This is for my own use."),
+        switch (selectd (ArtisQuests_Enora,
+                        l("This is for my own use."),
                         l("Chelios asked me to get it.")))
         {
             case 1:
@@ -65,7 +66,7 @@
             l("Welcome!"),
             l("My name is Lloyd, I am a representative of the Merchant Guild of Artis.");
 
-        select (l("My name is @@...", strcharinfo(0)));
+        selectd (l("My name is @@...", strcharinfo(0)));
 
         speech 5,
             l("\"@@\", I like this name!", strcharinfo(0)),
@@ -76,7 +77,7 @@
             l("I see."),
             lg("You are new around here, right?");
 
-        if (select (l("How do you know?"), l("Yes I am.")) == 1)
+        if (selectd (l("How do you know?"), l("Yes I am.")) == 1)
         {
             speech 5,
                 l("Oh, it is simple. I have on this book the name of every citizen of Artis and its surrounding."),
@@ -98,7 +99,7 @@
         speech 4,
             l("The fee is of @@ E. So, do you want to register?", .@price);
 
-        switch (select (l("Yes."),
+        switch (selectd (l("Yes."),
                         l("I don't have the time now.")))
         {
             case 1:
@@ -133,7 +134,8 @@
 
         do
         {
-            .@q = select (l("Ok, I will bring it to him."),
+            .@q = selectd (ArtisQuests_Fexil,
+                          l("Ok, I will bring it to him."),
                           l("I need more information first."),
                           l("I don't have the time."));
             switch (.@q)
@@ -245,7 +247,7 @@
     {
         .@enora = getq (ArtisQuests_Enora);
 
-        select
+        selectd
             rif (.@enora == 2, l("I'm searching some black iron ingots.")),
             l("I would like to store some items."),
             l("I would like to deposit some money."),
@@ -294,6 +296,7 @@
     close;
 
 OnInit:
+    .quest_debug = ArtisQuests_Lloyd;
     .sex = G_MALE;
     .distance = 4;
     end;
