@@ -104,14 +104,14 @@
             case 1:
                 if (Zeny < .@price)
                 {
-                    speech 4,
+                    speech 5,
                         l("You do not seem to have enough money, come back later!");
                 }
                 else
                 {
                     Zeny = Zeny - .@price;
                     setq ArtisQuests_Lloyd, 1;
-                    speech 4,
+                    speech 5,
                         l("Perfect!"),
                         l("I wrote your name on the book, you are now free to use the storage and bank services.");
                 }
@@ -223,7 +223,6 @@
                         l("You currently have @@ on your bank account.", #MerchantBank);
                     break;
                 case 4:
-                    mes "";
                     break;
             }
         } while (.@q != 4);
@@ -285,7 +284,7 @@
         }
         if (@menu != 6)
         {
-            speech 5,
+            speech 13,
                 l("Something else?");
         }
     } while (@menu != 6);
