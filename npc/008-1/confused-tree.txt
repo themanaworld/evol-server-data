@@ -1,0 +1,916 @@
+// Evol scripts.
+// Author:
+//    gumi
+// Based on CrazyTree, originally made by:
+//    gumi
+//    pclouds
+//    veryape
+//    wushin
+// Description:
+//    emulated confused tree prototype
+
+// ~t  lowercase hot word regex
+
+008-1,84,63,0	script	Confused Tree	NPC_CONFUSED_TREE,14,14,{
+
+    function tree_panel {
+        if (is_trusted() == false && #Tree_Trusted == false)
+        {
+            narrator(l("You see a tree."));
+            if (getq(HurnscaldQuests_Inspector) == 2)
+            {
+                select(
+                    l("Have you seen anything strange lately?"),
+                    l("Do you know anything about the recent robberies?"));
+
+                narrator(1,
+                    l("..."),
+                    l("It doesn't reply."));
+            }
+            close;
+        }
+
+        function clear_db {
+            clear();
+            mes(l("##BWARNING:##b you are about to permanently empty the quote database."));
+            next();
+            mes(l("Do you want to continue?"));
+
+            select(
+                l("Abort!"),
+                l("Empty the quote DB"));
+
+            if (@menu == 2)
+            {
+                query_sql("TRUNCATE TABLE tree_quotes;");
+                mes(l("Database erased."));
+                next();
+            }
+
+            return;
+        }
+
+        function list_commands {
+            clear();
+            mes(l("To grab a quote:"));
+            mes(col("    ~grab ##Bplayer name##b", 7));
+            next();
+            mes(l("To get a quote:"));
+            mes(col("    ~quote anyone", 7));
+            mes(col("    ~quote ##Bplayer name##b", 7));
+            mes(col("    ~quote ##B#number##b", 7));
+            next();
+            mes(l("To remove a quote:"));
+            mes(col("    ~remove quote ##B#number##b", 7));
+            mes(col("    ~remove last quote", 7));
+            next();
+            mes(l("Last seen:"));
+            mes(col("    ~seen ##Bplayer name##b", 7));
+            next();
+            mes(l("To ignore a player:"));
+            mes(col("    ~ignore ##Bplayer name##b", 7));
+            next();
+            mes(l("To unignore a player:"));
+            mes(col("    ~unignore ##Bplayer name##b", 7));
+            next();
+
+            if (is_admin())
+            {
+                mes(l("To trust a player:"));
+                mes(col("    ~trust ##Bplayer name##b", 7));
+                next();
+                mes(l("To de-trust a player:"));
+                mes(col("    ~untrust ##Bplayer name##b", 7));
+                next();
+            }
+            return;
+        }
+
+        do
+        {
+            clear();
+            setnpcdialogtitle(l("Tree Control Panel"));
+            mes(l("Oh noes! You found my secret backdoor!"));
+            next();
+            mes(l("Please select an option:"));
+
+            select(
+                l("List the commands"),
+                rif(is_admin(), l("Empty the quote DB")),
+                l("Dance for me"));
+
+            switch (@menu)
+            {
+            case 1: list_commands(); break;
+            case 2: clear_db(); break;
+            default: speech(l("Too lazy.")); close;
+            }
+
+        } while (true);
+
+        end;
+    }
+
+    // utility functions below
+
+    function check_is_ignored {
+        .@val = htget(.ignore_ht, strcharinfo(PC_NAME), 0);
+
+        if (.@val > gettimetick(2))
+        {
+            ++.ignored_times;
+            end;
+        }
+
+        else if (.@val > 0)
+        {
+            htput(.ignore_ht, strcharinfo(PC_NAME), 0); // remove expired entries
+        }
+
+        return;
+    }
+
+    function special_name {
+        .@name$ = strcharinfo(PC_NAME);
+        .@low$ = strtolower(.@name$);
+
+        if (rand(.sname_rate) == 0)
+        {
+            for (.@i = 0; .@i < .alias; .@i += 2)
+            {
+                if (.@low$ ~= .alias$[.@i])
+                {
+                    explode(.@aliases$, .alias$[.@i+1], "`");
+                    .@name$ = .@aliases$[rand(getarraysize(.@aliases$))];
+                    break;
+                }
+            }
+        }
+
+        return .@name$;
+    }
+
+    function face {
+        if (gettimetick(2) - .last_emote < .emote_rate)
+        {
+            ++.ignored_times;
+            end;
+        }
+
+        .last_emote = gettimetick(2);
+        emotion(getarg(0, E_SURPRISE));
+    }
+
+    function rp {
+        // used for queries
+        return replacestr(getarg(0,""), "~t", strtolower("(?:" + .name$ + "|" + .hotwords$ + ")"));
+    }
+
+    function format_reply {
+        // used for replies
+        .@str$ = getarg(0, "");
+
+        // search for {{mustaches}}
+        while (.@str$ ~= "{{([^}]+)}}")
+        {
+            .@sub$ = replacestr($@regexmatch$[1], " ", ""); // remove whitespaces
+            .@sub$ = strtolower(.@sub$); // always lowercase the var name
+            .@capitalize = .@titlecase = .@allcaps = false;
+
+            if (charat(.@sub$, 0) == "^")
+            {
+                .@capitalize = true;
+                .@sub$ = substr(.@sub$, 1, getstrlen(.@sub$) - 1); // strip first char
+            }
+
+            else if (charat(.@sub$, 0) == "+")
+            {
+                .@titlecase = true;
+                .@sub$ = substr(.@sub$, 1, getstrlen(.@sub$) - 1); // strip first char
+            }
+
+            else if (charat(.@sub$, 0) == "!")
+            {
+                .@allcaps = true;
+                .@sub$ = substr(.@sub$, 1, getstrlen(.@sub$) - 1); // strip first char
+            }
+
+            explode(.@sub2$, .@sub$, ",");
+            .@sub$ = .@sub2$[rand(getarraysize(.@sub2$))]; // allow to have multiple variables
+
+            .@rep$ = getd(sprintf(".D_%s$[%i]", .@sub$, rand(getd(".D_" + .@sub$)))); // get he value
+
+            if (.@capitalize) .@rep$ = capitalize(.@rep$);
+            else if (.@titlecase) .@rep$ = titlecase(.@rep$);
+            else if (.@allcaps) .@rep$ = strtoupper(.@rep$);
+
+            .@str$ = replacestr(.@str$, $@regexmatch$[0], .@rep$); // remove the mustache, replace by value
+        }
+
+        // search for emotes
+        if (.@str$ ~= "%%([^ ])")
+        {
+            // only handling a few of them
+            switch (ord($@regexmatch$[1]))
+            {
+            case 83: face(any(E_SAD, E_CRYING)); break;
+            case 85: face(E_SURPRISE); break;
+            case 93: face(any(E_HEARTEYE, E_HEART)); break;
+            case 94: face(E_DISGUST); break;
+            case 99: face(E_DEAD); break;
+            case 105: face(E_CRYING); break;
+            case 106:
+            case 91: face(any(E_SPEECH, E_BLAH)); break;
+            case 107: face(E_INSULTBUBBLE); break;
+            default: .@unhandled = true;
+            }
+
+            if (.@unhandled != true)
+            {
+                if (.@str$ == $@regexmatch$[0]) end; // don't send handled, emote-only messages
+                .@str$ = replacestr(.@str$, " "+ $@regexmatch$[0], ""); // otherwise strip the emote
+            }
+        }
+
+        // built-in variables
+        .@str$ = replacestr(.@str$, "~n", .name$); // npc name
+        .@str$ = replacestr(.@str$, "~p", special_name()); // player name or special name
+        .@str$ = replacestr(.@str$, "~P", strcharinfo(PC_NAME)); // unaltered player name
+
+        return rp(.@str$);
+    }
+
+    function strip_colors {
+        .@str$ = replacestr(getarg(0, ""), "##0", "");
+        .@str$ = replacestr(.@str$, "##1", "");
+        .@str$ = replacestr(.@str$, "##2", "");
+        .@str$ = replacestr(.@str$, "##3", "");
+        .@str$ = replacestr(.@str$, "##4", "");
+        .@str$ = replacestr(.@str$, "##5", "");
+        .@str$ = replacestr(.@str$, "##6", "");
+        .@str$ = replacestr(.@str$, "##7", "");
+        .@str$ = replacestr(.@str$, "##8", "");
+        .@str$ = replacestr(.@str$, "##9", "");
+        return replacestr(.@str$, "##a", "");
+    }
+
+    function strip_formatting {
+        .@str$ = strip_colors(getarg(0, ""));
+        .@str$ = replacestr(.@str$, "##B", "");
+        return replacestr(.@str$, "##b", "");
+    }
+
+    function delayed_reply {
+        ++.answered_times;
+        @tree_reply$ = getarg(0, "");
+        addtimer(.delay_reply, .name$ + "::OnDoReply");
+        return;
+    }
+
+    function reply {
+        .@reply$ = format_reply(getarg(0, ""));
+        getmapxy(.@pc_map$, .@pc_x, .@pc_y, UNITTYPE_PC); // get char location
+
+        if (((.@reply$ == .last_reply$ && gettimetick(2) - .last_reply < .repeat_rate)
+            || gettimetick(2) - .last_reply < .talk_rate
+            || (gettimetick(2) - .blocked < .block_time && is_trusted() == false)
+            || .@pc_map$ != .map$
+            || distance(.x, .y, .@pc_x, .@pc_y) > .distance
+            || .@reply$ == "")
+            && is_dev() == false)
+        {
+            ++.ignored_times;
+            end;
+        }
+
+        .last_reply = gettimetick(2);
+        .last_reply$= .@reply$;
+
+        delayed_reply(.@reply$);
+        return;
+    }
+
+    function seen_me {
+        if (playerattached() > 0)
+        {
+            htput(.seen_ht, strcharinfo(PC_NAME), gettimetick(2));
+        }
+    }
+
+    function have_you_seen {
+        .@player$ = getarg(0, "");
+        .@player = getcharid(CHAR_ID_ACCOUNT, .@player$);
+
+        if (.@player > 0)
+        {
+            // nested if, because they don't short-circuit
+            if (checkoption(Option_Invisible, .@player) == false) {
+                delayed_reply(sprintf("Player `%s` is currently online.", .@player$));
+                end;
+            }
+        }
+
+        .@time = htget(.seen_ht, .@player$, 0);
+
+        if (.@time < 1)
+            delayed_reply(sprintf("I haven't seen player `%s` today.", .@player$));
+
+        else
+            delayed_reply(sprintf("Player `%s` was last seen %s.", .@player$, FuzzyTime(.@time)));
+
+        end;
+    }
+
+    function special_drops {
+        .@drop$ = .drops$[rand(.drops)];
+        .@name$ = strcharinfo(PC_NAME);
+        .@low$ = strtolower(.@name$);
+
+        if (rand(.sdrop_rate) == 0)
+        {
+            for (.@i = 0; .@i < .sdrops; .@i += 2)
+            {
+                if (.@low$ ~= .sdrops$[.@i])
+                {
+                    explode(.@d$, .sdrops$[.@i+1], "`");
+                    .@drop$ = .@d$[rand(getarraysize(.@d$))];
+                    break;
+                }
+            }
+        }
+
+        return .@drop$;
+    }
+
+    function roll_dice {
+        .@dices = max(min(getarg(0, 1), 8), 1); // 1..8
+        .@sides = max((getarg(1, 6) < 1 ? 6 : getarg(1, 6)), 1); // 1..MAX_INT
+
+        .@result$ = sprintf("*rolls the dice%s: %d",
+                    rif(.@dices > 1, "s"), rand(1, .@sides)); // first dice
+
+        for (.@d = 1; .@d < .@dices; ++.@d)
+        {
+            .@result$ += ", " + rand(1, .@sides);
+        }
+
+        return .@result$ + ".*";
+    }
+
+    function flip_coin {
+        .@coins = getarg(0, 1);
+
+        .@result$ = sprintf("*flips the coin%s: %s",
+                    rif(.@coins > 1, "s"), (rand(2) == 1 ? "heads" : "tails")); // first coin
+
+        for (.@c = 1; .@c < .@coins; ++.@c)
+        {
+            .@result$ += ", " + (rand(2) == 1 ? "heads" : "tails");
+        }
+
+        return .@result$ + ".*";
+    }
+
+    function roulette {
+        if (.roulette == 1)
+        {
+            npctalk("*pulls the trigger: *##BBANG##b*.*");
+            delayed_reply("*reloads and spins the chambers.*");
+            .roulette = rand(1, 7); // the Nagant_M1895 has 7 chambers
+
+            // now the fun part
+            nude();
+            percentheal(-100, 0);
+        }
+
+        else
+        {
+            delayed_reply("*pulls the trigger: *click*.*");
+            .roulette = (.roulette == 7 ? 1 : .roulette + 1);
+        }
+
+        end;
+    }
+
+    function monologue_player {
+        return sprintf("Your current monologue is at least %d line%s long.",
+                @monologue, rif(@monologue > 1, "s"));
+    }
+
+    function who_player {
+        return sprintf("You seem to be ##B~P##b [%i:%i].",
+                getcharid(CHAR_ID_ACCOUNT), getcharid(CHAR_ID_CHAR));
+    }
+
+    function make_quote_table {
+        // Do not modify this
+        return query_sql("CREATE TABLE IF NOT EXISTS `tree_quotes` ("
+                         "  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,"
+                         "  `char_id` INT(11) UNSIGNED NOT NULL DEFAULT '0',"
+                         "  `grabber` INT(11) UNSIGNED NOT NULL DEFAULT '0',"
+                         "  `timestamp` INT(10) UNSIGNED NOT NULL DEFAULT '0',"
+                         "  `message` VARCHAR(150) NOT NULL DEFAULT '',"
+                         "  PRIMARY KEY (`id`),"
+                         "  KEY `char_id` (`char_id`),"
+                         "  KEY `grabber` (`grabber`)"
+                         ") ENGINE=MyISAM;");
+
+        .last_query = gettimetick(2);
+    }
+
+    function grab_quote {
+        .@name$ = getarg(0, "");
+
+        if (gettimetick(2) - .last_query < (is_trusted() ? .qpoll_rate : .qpoll_rate2))
+        {
+            ++.ignored_times;
+            end;
+        }
+
+        if (.@name$ == strcharinfo(PC_NAME))
+        {
+            delayed_reply("##BError: You may not grab yourself.");
+            end;
+        }
+
+        explode(.@tmp$[0], htget(.msg_ht, .@name$, ""), ":"); // get last message, if any
+        htput(.msg_ht, .@name$, ""); // ensure you can't grab twice the same message
+
+        .@char_id = atoi(.@tmp$[0]); // grab the char id part
+
+        if (.@char_id < 1)
+        {
+            delayed_reply(sprintf("##BError: I couldn't find anything to grab from player `%s`.", .@name$));
+            end;
+        }
+
+        .@msg$ = implode(.@tmp$, ":"); // put it back together
+        .@start = getstrlen(.@tmp$[0]) + getstrlen(.@tmp$[1]) + 2; // char:time:msg <= we just want the msg part
+        .@msg$ = escape_sql(strip_formatting(substr(.@msg$, .@start, getstrlen(.@msg$) - 1))); // sanitize
+
+        if (.@msg$ == "")
+        {
+            delayed_reply("##BError: Message is empty or malformed. It cannot be grabbed.");
+            end;
+        }
+
+        else if (.@msg$ ~= "^[!#~@]?(?:grab)?shield(?:ed)?(?:[:.!]? .*)?$")
+        {
+            delayed_reply("##BError: Message is shielded.");
+            end;
+        }
+
+        query_sql(sprintf("INSERT INTO tree_quotes (char_id,grabber,timestamp,message) VALUES (%i,%i,%i,'%s');",
+                          .@char_id, getcharid(CHAR_ID_CHAR), gettimetick(2), .@msg$));
+
+        query_sql("SELECT MAX(id) FROM tree_quotes;", .q_last_id); // get the last quote id
+
+        .last_query = gettimetick(2);
+
+        delayed_reply(sprintf("Success: Quote grabbed. (#%i)", .q_last_id));
+        end;
+    }
+
+    function remove_quote {
+        .@tmp = getarg(0, 0);
+
+        if (gettimetick(2) - .last_query < (is_trusted() ? .qpoll_rate : .qpoll_rate2))
+        {
+            ++.ignored_times;
+            end;
+        }
+
+        query_sql(sprintf("SELECT id FROM tree_quotes WHERE id = %i ORDER BY id DESC LIMIT 1;", .@tmp), .@id); // check if it exists
+
+        if (.@id < 1)
+        {
+            delayed_reply(sprintf("##BError: I couldn't find quote #%i in the database.", .@tmp));
+            end;
+        }
+
+        query_sql(sprintf("DELETE FROM tree_quotes WHERE id = %i ORDER BY id DESC LIMIT 1;", .@id));
+
+        .last_query = gettimetick(2);
+
+        delayed_reply(sprintf("Success: Quote removed. (#%i)", .@id));
+        end;
+    }
+
+    function cite_quote {
+        .@id = getarg(0,0);
+
+        if (gettimetick(2) - .last_query < (is_trusted() ? .qpoll_rate : .qpoll_rate2))
+        {
+            ++.ignored_times;
+            end;
+        }
+
+        query_sql(sprintf("SELECT t.id, c.name AS grabee, d.name AS grabber, t.timestamp, t.message "
+                          "FROM `tree_quotes` t "
+                          "JOIN `char` c ON t.char_id = c.char_id "
+                          "JOIN `char` d ON t.grabber = d.char_id "
+                          "WHERE t.id=%i ORDER BY t.id DESC LIMIT 1;",
+                          .@id),
+                  .@nid[0], .@grabee$[0], .@grabber$[0], .@time[0], .@msg$[0]);
+
+        .last_query = gettimetick(2);
+
+        if (.@nid[0] < 1)
+        {
+            delayed_reply(sprintf("##BError: I couldn't find quote #%i in the database.", .@id));
+            end;
+        }
+
+        delayed_reply(sprintf("<%s> ##B%s##b ##a— grabbed by %s %s.",
+                        .@grabee$[0], .@msg$[0], .@grabber$[0], FuzzyTime(.@time[0],0,1)));
+        end;
+    }
+
+    function random_quote {
+        .@name$ = escape_sql(getarg(0, ""));
+
+        if (gettimetick(2) - .last_query < (is_trusted() ? .qpoll_rate : .qpoll_rate2))
+        {
+            ++.ignored_times;
+            end;
+        }
+
+        query_sql("SELECT t.id, c.name AS grabee, d.name AS grabber, t.timestamp, t.message "
+                  "FROM `char` c "
+                  "JOIN `tree_quotes` t ON t.char_id = c.char_id "
+                  "JOIN `char` d ON d.char_id = t.grabber " +
+                  rif(.@name$ != "", sprintf("WHERE c.name='%s' ", .@name$)) +
+                  "ORDER BY RAND() LIMIT 1;",
+                  .@nid[0], .@grabee$[0], .@grabber$[0], .@time[0], .@msg$[0]);
+
+        .last_query = gettimetick(2);
+
+        if (.@nid[0] < 1)
+        {
+            if (.@name$ != "")
+                delayed_reply(sprintf("##BError: I couldn't find any quote from `%s` in the database.", getarg(0, "")));
+            else
+                delayed_reply("##BError: The quote database is empty.");
+            end;
+        }
+
+        delayed_reply(sprintf("<%s> ##B%s##b ##a— grabbed by %s %s. (#%i)",
+                        .@grabee$[0], .@msg$[0], .@grabber$[0], FuzzyTime(.@time[0],0,1), .@nid[0]));
+        end;
+    }
+
+    function trigger_hotword {
+        .@o$ = getarg(0, ""); // original lowercase
+        .@m$ = replacestr(.@o$, "*", ""); // original lowercase clean
+
+
+        if (.@m$ ~= "(?:^| )tell(?: me)? a(?:n ?other| lame| bad| boring)? joke")
+            reply(.jokes$[rand(.jokes)]);
+
+        else if (.@m$ ~= "(?:^| )heal me(?:$|[^a-z])")
+            reply(.healing$[rand(.healing)]);
+            // XXX: maybe actually heal the player once in a while
+
+        else if (.@m$ ~= "(?:^| )(?:what|who) are you")
+            reply(.whoami$[rand(.whoami)]);
+
+        else if (.@m$ ~= rp("(?:^| )(?:hi+|hello|heya?|hiya|good (?:morning|afternoon))[^a-z]* .*~t|~t.* (?:hi+|hello|heya?|hiya)"))
+        {
+            .blocked = 0;
+            reply(.greetings$[rand(.greetings)]);
+        }
+
+        else if (.@o$ ~= rp("(?:^[*]| )(?:kicks?|shakes?) .*~t"))
+            reply(special_drops());
+
+        else if (.@o$ ~= rp("(?:^[*]| )(?:cuts?|nukes?|kills?|chops? down) .*~t"))
+            reply(.kill$[rand(.kill)]);
+
+        else if (.@o$ ~= rp("(?:^[*]| )pokes? .*~t"))
+            reply(.poke$[rand(.poke)]);
+
+        else if (.@o$ ~= rp("(?:^[*]| )(?:waters?|pees?|licks?) .*~t"))
+            reply(.disgusting$[rand(.disgusting)]);
+
+        else if (compare(.@m$, " answer ") && .@m$ ~= "(?:life|universe|everything)(?:$|[^a-z])")
+            reply(.answer$[rand(.answer)]);
+
+        else if (.@o$ ~= rp("(?:^[*]| )burns? .*~t"))
+            reply(.burning$[rand(.burning)]);
+            // XXX: maybe here send a fire particle effect
+
+        else if (.@m$ ~= rp("(?:^| )die ~t"))
+            reply(.die$[rand(.die)]);
+
+        else if (.@o$ ~= rp("(?:^[*]| )bites? .*~t|(?:^[*]| )drops? .* on ~t"))
+            reply(.silly$[rand(.silly)]);
+
+        else if (.@m$ ~= rp("(?:^| )(?:loves?|hugs?|kiss(es)?) .*~t|~t.* love(?:$|[^a-z])"))
+            reply(.love$[rand(.love)]);
+
+        else if (.@m$ ~= rp("(?:^| )dance .*~t|~t.* dance(?:$|[^a-z])"))
+            reply(.dance$[rand(.dance)]);
+
+        else if (.@m$ ~= rp("(?:^| )hates? .*~t"))
+            reply(.hate$[rand(.hate)]);
+
+        else if (.@o$ ~= rp("(?:^[*]| )(?:eats?|shoots?|plucks?|tortures?|slaps?|slaps?|poisons?|breaks?|stabs?|throws?) .*~t"))
+            reply(.pain$[rand(.pain)]);
+
+        else if (.@m$ ~= "(?:^| )(?:see y(?:a|ou)|good night|(?:bye)?bye+)(?:$|[^a-z])")
+            reply(.bye$[rand(.bye)]);
+
+        else if (.@m$ ~= rp("(?:^| )bad ~t"))
+            reply(.bad$[rand(.bad)]);
+
+        else if (.@m$ ~= "(?:^| )(?:how old are you|uptime)(?:$|[^a-z])")
+            reply("%%B Server uptime: " + FuzzyTime(.uptime, 1) + ".");
+
+        else if (.@m$ ~= "(?:^| )how chatty are you(?:$|[^a-z])")
+            reply("%%B Answered " + .answered_times + " times, ignored " + .ignored_times + " times.");
+
+        else if (.@m$ ~= "(?:^| )what.* version(?:$|[^a-z])")
+            reply("%%B ~n, version " + .version + "."); // XXX: maybe return Hercules version and serverdata commit instead
+
+        else if (.@m$ ~= "(?:^| )(?:(?:8|eight)[ -]?ball|do you|should i)(?:$|[^a-z])")
+            reply(.eightball$[rand(.eightball)]);
+
+        else if (.@m$ ~= "(?:^| )roll(?: a| the)? dice(?:$|[^a-z])")
+            reply(roll_dice(1, 6));
+
+        else if (.@m$ ~= "(?:^| )roll(?: a)? ([1-8])d((?:[1-9][0-9]{0,10})?)(?:$|[^0-9a-z])")
+            reply(roll_dice(atoi($@regexmatch$[1]), atoi($@regexmatch$[2])));
+
+        else if (.@m$ ~= "(?:^| )roll ([1-8]) dices?(?:$|[^a-z])")
+            reply(roll_dice(atoi($@regexmatch$[1]), 6));
+
+        else if (.@m$ ~= "(?:^| )(?:flip|toss)(?: a| the)? coin(?:$|[^a-z])")
+            reply(flip_coin(1));
+
+        else if (.@m$ ~= "(?:^| )(?:flip|toss) ([1-8]) coins?(?:$|[^a-z])")
+            reply(flip_coin(atoi($@regexmatch$[1])));
+
+        else if (.@m$ ~= "(?:^| )(?:press|pull)(?: the)? trigger(?:$|[^a-z])")
+            roulette();
+
+        else if (.@m$ ~= "(?:^| )(?:how long|what) is(?: my)? monologue(?:$|[^a-z])")
+            reply(monologue_player());
+
+        else if (.@m$ ~= "(?:^| )who am i(?:$|[^a-z])")
+            reply(who_player());
+
+        else if (.@m$ ~= "(?:^| )shut up(?:$|[^a-z])")
+        {
+            reply(.shut_up$[rand(.shut_up)]);
+            .blocked = gettimetick(2);
+        }
+
+        else if (rand(.dunno_rate) == 0)
+            reply(.no_idea$[rand(.no_idea)]);
+
+        else
+            ++.ignored_times;
+
+        end;
+    }
+
+    function trigger_hiall {
+        if (rand(.hiall_rate) == 0)
+            reply(.greetings$[rand(.greetings)]);
+
+        else
+            ++.ignored_times;
+
+        end;
+    }
+
+OnClick:
+    tree_panel();
+    bye;
+
+
+OnTalkNearby:
+    .@no_nick$ = strip(strip_formatting(substr($@p0$, getstrlen(strcharinfo(PC_NAME)) + 3, getstrlen($@p0$) - 1))); // not very obvious stuff
+    .@no_nick_lower$ = strtolower(.@no_nick$); // FIXME: hercules doesn't have a way to do case insensitive regex yet
+    .@no_nick_clean$ = replacestr(.@no_nick_lower$, "*", "");
+
+    htput(.msg_ht, strcharinfo(PC_NAME), getcharid(CHAR_ID_CHAR) + ":" + gettimetick(2) + ":" + .@no_nick$); // log last message, for quotegrabs
+    .lastsender = getcharid(CHAR_ID_CHAR); // for monologue
+
+    .last_activity = gettimetick(2); // for the auto-janitor
+
+    if ((is_trusted() || #Tree_Trusted) && charat(.@no_nick$, 0) == .symbol$)
+    {
+        if (.@no_nick$ ~= "^.grab \"?([^#:@\"]{4,23})\"?$")
+            reply(grab_quote($@regexmatch$[1]));
+
+        else if (.@no_nick$ ~= "^.(?:ungrab|remove|delete)(?: quote)? #([0-9]+)$")
+            reply(remove_quote(atoi($@regexmatch$[1])));
+
+        else if (.@no_nick$ ~= "^.(?:ungrab|remove|delete)(?: last(?: quote)?)?$")
+            reply(remove_quote(.q_last_id));
+
+        else if (.@no_nick$ ~= "^.(?:quote|cite) #([0-9]+)$")
+            reply(cite_quote(atoi($@regexmatch$[1])));
+
+        else if (.@no_nick$ ~= "^.(?:(?:random )?quote|cite)(?: anyone| someone| random)?$")
+            reply(random_quote());
+
+        else if (.@no_nick$ ~= "^.(?:quote|cite) \"?([^#:@\"]{4,23})\"?$")
+            reply(random_quote($@regexmatch$[1]));
+
+        else if (.@no_nick$ ~= "^.seen \"?([^#:@\"]{4,23})\"?$")
+            reply(have_you_seen($@regexmatch$[1]));
+
+        // to allow trusted testers to reboot without knowing the exit code
+        else if (debug && .@no_nick$ ~= "^.re(?:boot|load|start)(?:(?: the)? server)?$")
+        {
+            announce("The server is rebooting. This may take a couple minutes.", bc_all);
+            useatcmd("@serverexit 104");
+        }
+
+        // exit, pull all, clean, build, reboot
+        else if (debug && .@no_nick$ ~= "^.re-?build(?:(?: the)? server)?$")
+        {
+            announce("The server is rebuilding. This will take several minutes.", bc_all);
+            useatcmd("@serverexit 108");
+        }
+
+        else if (.@no_nick$ ~= "^.(?:add )?ignored? \"?([^#:@\"]{4,23})\"?$")
+        {
+            .@chr = getcharid(CHAR_ID_ACCOUNT, $@regexmatch$[1]);
+            if (.@chr < 1)
+            {
+                reply("##BError: Player not found or not online.");
+                end;
+            }
+            htput(.ignore_ht, strcharinfo(PC_NAME, .@chr), gettimetick(2) + 3600);
+            reply(sprintf("Success: Player `%s` is now ignored for 1 hour.",
+                strcharinfo(PC_NAME, .@chr)));
+        }
+
+        else if (.@no_nick$ ~= "^.(?:un|de-?|remove )ignored? \"?([^#:@\"]{4,23})\"?$")
+        {
+            .@chr = getcharid(CHAR_ID_ACCOUNT, $@regexmatch$[1]);
+            if (.@chr < 1)
+            {
+                reply("##BError: Player not found or not online.");
+                end;
+            }
+            htput(.ignore_ht, strcharinfo(PC_NAME, .@chr), 0);
+            reply(sprintf("Success: Player `%s` is no longer ignored.",
+                strcharinfo(PC_NAME, .@chr)));
+        }
+
+        else if (is_admin() && .@no_nick$ ~= "^.(?:add )?trust(?:ed)? \"?([^#:@\"]{4,23})\"?$")
+        {
+            .@chr = getcharid(CHAR_ID_ACCOUNT, $@regexmatch$[1]);
+            if (.@chr < 1)
+            {
+                reply("##BError: Player not found or not online.");
+                end;
+            }
+            set(getvariableofpc(#Tree_Trusted, .@chr), true);
+            reply(sprintf("Success: Player `%s` can now use restricted commands.",
+                strcharinfo(PC_NAME, .@chr)));
+        }
+
+        else if (is_admin() && .@no_nick$ ~= "^.(?:un|de-?|remove )trust(?:ed)? \"?([^#:@\"]{4,23})\"?$")
+        {
+            .@chr = getcharid(CHAR_ID_ACCOUNT, $@regexmatch$[1]);
+            if (.@chr < 1)
+            {
+                reply("##BError: Player not found or not online.");
+                end;
+            }
+            set(getvariableofpc(#Tree_Trusted, .@chr), false);
+            reply(sprintf("Success: Player `%s` can no longer use restricted commands.",
+                strcharinfo(PC_NAME, .@chr)));
+        }
+
+        else
+            reply("##BError: Command not found or invalid syntax.");
+    }
+
+    else if (.@no_nick_lower$ ~= rp("^(~t[^a-z ]* .*|(?:.* (?:~t[^a-z ]* .*|~t[^ a-z]*)))$"))
+    {
+        check_is_ignored();
+        trigger_hotword($@regexmatch$[1]);
+    }
+
+    else if (.@no_nick_clean$ ~= "^(hi(ya)?|hello|heya?) (all|friends|every(one|body))")
+    {
+        check_is_ignored();
+        trigger_hiall();
+    }
+
+    else
+    {
+        if (.lastsender == getcharid(CHAR_ID_CHAR))
+            @monologue++;
+
+        else
+            @monologue = 1;
+    }
+
+    // TODO: eliza mode, whisper eliza mode
+    end;
+
+OnTouch:
+	if (rand(.touch_rate) == 0) {
+		face();
+	}
+	end;
+
+OnDoReply:
+	if (@tree_reply$ != "") {
+		npctalk(@tree_reply$);
+		@tree_reply$ = "";
+	}
+	end;
+
+OnPCLogoutEvent:
+	seen_me();
+	end;
+
+OnTimer3600000:
+	// scheduled janitor
+	.@now = gettimetick(2);
+	initnpctimer(); // schedule next
+
+	if (.last_activity > (.@now - 3600)) {
+		end; // last activity is too recent
+	}
+
+	// cleanup routine below
+	.lastsender = 0;
+	.last_activity = 0;
+	.last_reply = 0;
+	.last_emote = 0;
+	.last_query = 0;
+	.blocked = 0;
+	.enable_janitor = 0;
+
+	htclear(.msg_ht); // empty the message table (quotegrabs)
+	htclear(.ignore_ht); // empty the ignore table
+
+	.@it = htiterator(.seen_ht); // allocate new iterator
+	for (.@key$ = htinextkey(.@it); hticheck(.@it); .@key$ = htinextkey(.@it)) {
+		if (.@key$ == "") {
+			continue;
+		}
+
+		if (htget(.seen_ht, .@key$, 0) < (.@now - 86400)) {
+			htput(.seen_ht, .@key$, 0); // remove from hash table if older than 24h
+		}
+	}
+	htidelete(.@it); // free the iterator
+
+	face(); // do an emote (because why not)
+	end;
+
+
+OnInit:
+	// config below
+	.hotwords$ = "tree"; // what hot words the npc should listen to, besides its own name (regex)
+	.distance = 14; // the npc will only listen to player within X tiles
+	.sex = G_OTHER; // gender of the npc
+	.talk_rate = 1; // min number of seconds to wait between replies
+	.repeat_rate = 1; // min number of seconds to wait before sending the same message twice in a row
+	.block_time = 600; // how long to stay quiet after someone says shut up, in seconds
+	.emote_rate = 3; // min number of seconds to wait between emotes
+	.sdrop_rate = 8; // 1 in X chances to get a special drop
+	.sname_rate = 8; // 1 in X chances to get a special name
+	.dunno_rate = 2; // 1 in X chances to get a reply when the command is not found
+	.hiall_rate = 2; // 1 in X chances to reply to a "hi everyone"
+	.touch_rate = 4; // 1 in X chances to trigger the OnTouch action
+	.qpoll_rate = 1; // min number of seconds to wait before calling the sql db again for GMs
+	.qpoll_rate2 = 5; // min number of seconds to wait before calling the sql db again for non-GMs (currently unused)
+	.delay_reply = 250; // number of ms to wait to reply
+	.enable_janitor = true; // automatically free memory when idle
+	.symbol$ = "~"; // symbol for GM-only commands
+
+	// register some arrays
+	callfunc("TREE_dictionaries");
+
+	// do random stuff
+	make_quote_table();
+	face();
+
+	// boring stuff below
+	.version = 20; // increase this when you make a change
+	.uptime = gettimetick(2);
+	.pid = 1; // regex pattern id
+	.msg_ht = htnew(); // hashtable id for message history
+	.seen_ht = htnew(); // hashtable id for seen log
+	.ignore_ht = htnew(); // hashtable id for ignored players
+	.roulette = rand(1, 7); // spin the chambers
+	defpattern(.pid, "^(.*)$", "OnTalkNearby");
+	activatepset(.pid);
+	if (.enable_janitor) {
+		initnpctimer();
+	}
+}
+
+// Duplicates below
+//000-1,42,63,0	duplicate(Confused Tree)	Confused Palm Tree	NPC_NO_SPRITE,14,14

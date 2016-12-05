@@ -1,0 +1,544 @@
+// Evol scripts.
+// Author:
+//    gumi
+// Based on CrazyTree, originally made by:
+//    gumi
+//    pclouds
+//    veryape
+//    wushin
+// Description:
+//    dictionaries for confused tree
+
+// Built-in variables:
+//    ~t       lowercase hot word regex
+//    ~n       npc name
+//    ~p       player name or special name
+//    ~P       player name only
+//
+// Custom variables:
+//    {{var}}  random from array .D_var$
+//    {{^var}} same but capitalize
+//    {{+var}} same but title case
+//    {{!var}} same but all caps
+// You can also specify multiple variables, separated by a comma (,)
+//
+// Example:
+// "*drops a {{! size }} {{ color }} {{^ sizeable object, someone }} on ~p's head*"
+
+function	script	TREE_dictionaries	{
+    .npc$ = strnpcinfo(0);
+
+    // special aliases below (regex of lowercase char names)
+    // the substitutions are an array separated by backticks (`)
+    // XXX: this could become a hashtable at some point if it gets too big
+
+    setarray getvariableofnpc(.alias$[0], .npc$),
+        "^veryape(?:gm)?$",              "hairyape",
+
+        "^wu-?shin$",                    "Dwarven Princess`"
+                                         "She-Ra",
+
+        "^reid$",                        "Borg Queen`"
+                                         "Mistress`"
+                                         "Milady`"
+                                         "R'eid",
+
+        "^(?:slicer|madcamel)$",         "Camel Toe",
+
+        "^4144(?:4d494e)?$",             "NPC",
+
+        "^omatt$",                       "@@https://youtu.be/S2qiZoqH9OY|omatt@@`"
+                                         "o'matt",
+
+        "^prsm$",                        "Refractor`"
+                                         "Overlord";
+    set getvariableofnpc(.alias, .npc$), getarraysize(getvariableofnpc(.alias$, .npc$));
+
+
+
+    // special drops below (regex of lowercase char names)
+    // the substitutions are an array of standard replies separated by backticks (`)
+    // and allow {{variables}}
+    // XXX: this could become a hashtable at some point if it gets too big
+
+    setarray getvariableofnpc(.sdrops$[0], .npc$),
+        "^reid$",                        "*drops an empty jar of Nutella on ~p*",
+        "^omatt$",                       "*drops Elisabeth Granneman on ~p*";
+    set getvariableofnpc(.sdrops, .npc$), getarraysize(getvariableofnpc(.sdrops$, .npc$));
+
+
+    // variables below
+
+    setarray getvariableofnpc(.D_size$[0], .npc$), // {{size}}
+        "tiny",
+        "small",
+        "perfectly sized",
+        "large",
+        "huge",
+        "humongous",
+        "ginormous";
+    set getvariableofnpc(.D_size, .npc$), getarraysize(getvariableofnpc(.D_size$, .npc$));
+
+    setarray getvariableofnpc(.D_color$[0], .npc$), // {{color}}
+        "red",
+        "orange",
+        "yellow",
+        "pink",
+        "aqua",
+        "cyan",
+        "blue",
+        "indigo",
+        "violet",
+        "purple",
+        "magenta",
+        "pink",
+        "black",
+        "white",
+        "grey",
+        "greyscale",
+        "brown",
+        "maroon",
+        "turquoise",
+        "lime",
+        "sky blue",
+        "invisible";
+    set getvariableofnpc(.D_color, .npc$), getarraysize(getvariableofnpc(.D_color$, .npc$));
+
+    setarray getvariableofnpc(.D_violentadverb$[0], .npc$), // {{violent adverb}}
+        "violently",
+        "repeatedly",
+        "casually",
+        "forcefully",
+        "slowly",
+        "carefully",
+        "hopefully",
+        "dangerously",
+        "shockingly",
+        "religiously";
+    set getvariableofnpc(.D_violentadverb, .npc$), getarraysize(getvariableofnpc(.D_violentadverb$, .npc$));
+
+    setarray getvariableofnpc(.D_hello$[0], .npc$), // {{hello}}
+        "hi",
+        "hi",
+        "hi",
+        "hi",
+        "hey",
+        "hey",
+        "hey",
+        "yo",
+        "yo",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "howdy",
+        "bonjour";
+    set getvariableofnpc(.D_hello, .npc$), getarraysize(getvariableofnpc(.D_hello$, .npc$));
+
+    setarray getvariableofnpc(.D_violentverb$[0], .npc$), // {{violent verb}}
+        "slaps",
+        "slaps",
+        "slaps",
+        "slaps",
+        "slaps", // yeah the tree likes to slap a lot
+        "hits",
+        "pummels",
+        "beats",
+        "flattens",
+        "taunts",
+        "liquidates",
+        "spanks",
+        "affronts",
+        "tranquilizes",
+        "atomizes",
+        "impales",
+        "dismembers";
+    set getvariableofnpc(.D_violentverb, .npc$), getarraysize(getvariableofnpc(.D_violentverb$, .npc$));
+
+    setarray getvariableofnpc(.D_location$[0], .npc$), // {{location}}
+        "Artis",
+        "Hurnscald",
+        "Tulimshar",
+        "Nivalis",
+        "Candor",
+        "Drasil";
+    set getvariableofnpc(.D_location, .npc$), getarraysize(getvariableofnpc(.D_location$, .npc$));
+
+    setarray getvariableofnpc(.D_sizeableobject$[0], .npc$), // {{sizeable object}}
+        "trout",
+        "whale",
+        "space whale",
+        "penguin",
+        "coelacanth",
+        "squid",
+        "shrimp",
+        "crab",
+        "tentacle",
+        "dictionary",
+        "grammar book",
+        "textbook",
+        "dinosaur",
+        "t-rex",
+        "star-nosed mole",
+        "chimpanzee",
+        "mermaid",
+        "merman",
+        "piano",
+        "princess",
+        "pinkie",
+        "squirrel",
+        "mouboo",
+        "wet mop",
+        "drunken pirate",
+        "cake",
+        "cookie",
+        "chocobo",
+        "restraining order",
+        "freight train",
+        "carnival hammer",
+        "crate",
+        "bomb",
+        "bowl of petinuas",
+        "box",
+        "platypus",
+        "magic eightball",
+        "vase";
+    set getvariableofnpc(.D_sizeableobject, .npc$), getarraysize(getvariableofnpc(.D_sizeableobject$, .npc$));
+
+    setarray getvariableofnpc(.D_nsizeableobject$[0], .npc$), // {{n sizeable object}}
+        "octopus",
+        "elephant",
+        "angry cat",
+        "anvil",
+        "encyclopedia set";
+    set getvariableofnpc(.D_nsizeableobject, .npc$), getarraysize(getvariableofnpc(.D_nsizeableobject$, .npc$));
+
+    setarray getvariableofnpc(.D_someone$[0], .npc$), // {{someone}}
+        "Voldemort",
+        "Cthulhu",
+        "Platyna",
+        "Hitler",
+        "Luvia",
+        "General Krukan",
+        "Borg Queen",
+        "Freeyorp",
+        "MadCamel";
+    set getvariableofnpc(.D_someone, .npc$), getarraysize(getvariableofnpc(.D_someone$, .npc$));
+
+    // replies below
+
+    setarray getvariableofnpc(.greetings$[0], .npc$),
+        "{{^ hello }} ~p!",
+        "{{^ hello }} ~p!",
+        "{{^ hello }} ~p!",
+        "{{^ hello }} ~p!",
+        "{{^ hello }} ~p.",
+        "{{^ hello }} ~p.",
+        "{{^ hello }} ~p.",
+        "{{^ hello }} ~p.",
+        "{{^ hello }} ~p.",
+        "{{^ hello }} ~p.",
+        "{{^ hello }} ~p, what's up?",
+        "{{^ hello }} ~p, anything new?",
+        "{{^ hello }} ~p, how are you?",
+        "~p!!!!",
+        "~p!!!",
+        "~p!!",
+        "{{^ hello }} ~p! You are looking lovely today!",
+        "Welcome back, ~p.",
+        "Welcome back, ~p.",
+        "Welcome back, ~p.",
+        "~p is back!!",
+        "Hello and welcome to the Aperture Science computer-aided enrichment center.",
+        "Greetings ~p.",
+        "What's up ~p?",
+        "What's up ~p?",
+        "How are you ~p?";
+    set getvariableofnpc(.greetings, .npc$), getarraysize(getvariableofnpc(.greetings$, .npc$));
+
+    setarray getvariableofnpc(.jokes$[0], .npc$),
+        "How did the tree get drunk? On root beer.",
+        "Do you think I'm lazy?",
+        "I miss CrazyTree %%S.",
+        "I miss LazyTree %%S.",
+        "I'm not telling you!",
+        "*sighs.*",
+        "If I do it for you, then I have to do it for everybody.",
+        "What did the beaver say to the tree? It's been nice gnawing you.",
+        "What did the little tree say to the big tree? Leaf me alone.",
+        "What did the tree wear to the pool party? Swimming trunks.",
+        "What do trees give to their dogs? Treets.",
+        "What do you call a tree that only eats meat? Carniforous.",
+        "What do you call a tree who's always envious? Evergreen.",
+        "What is the tree's least favourite month? Sep-timber!",
+        "What kind of tree can fit into your hand? A palm-tree.",
+        "What was the tree's favorite subject in school? Chemistree.",
+        "Why did the leaf go to the doctor? It was feeling green.",
+        "Why doesn't the tree need sudo? Because it has root.",
+        "Why was the cat afraid of the tree? Because of its bark.",
+        "Why was the tree executed? For treeson.",
+        "How do trees get on the internet? They log in.",
+        "Why did the pine tree get into trouble? Because it was being knotty.",
+        "Did you hear the one about the oak tree? It's a corn-y one!",
+        "What do you call a blonde in a tree with a briefcase? Branch Manager.",
+        "How is an apple like a lawyer? They both look good hanging from a tree.",
+        "Why did the sheriff arrest the tree? Because its leaves rustled.",
+        "I'm too tired, ask someone else.",
+        "If you are trying to get me to tell jokes you are barking up the wrong tree!",
+        "You wooden think they were funny anyhow. Leaf me alone!",
+        "What is brown and sticky? A stick.",
+        "What's the best way to carve wood? Whittle by whittle.",
+        "What did the tree do when the bank closed? It started its own branch.",
+        "Do you want a brief explanation of an acorn? In a nutshell, it’s an oak tree.",
+        "A snare drum and a crash cymbal fell out of a tree. *BA-DUM TSSSHH*",
+        "How do you properly identify a dogwood tree? By the bark!",
+        "Where do saplings go to learn? Elementree school.",
+        "Why do trees make great thieves? Sticky fingers.",
+        "What is green, has leaves, and a trunk? A houseplant going on vacation.",
+        "Where can Adansonia trees go for a quick trim? To the baobarber.",
+        "What looks like half a spruce tree? The other half.",
+        "What do you give to a sick citrus tree? Lemon aid.",
+        "What did the tree say to the drill? You bore me.",
+        "What happened to the wooden car with wooden wheels and a wooden engine? It wooden go.",
+        "How do trees keep you in suspense? I'll tell you tomorrow.",
+        "Where do birch trees keep their valuables? In a river bank.",
+        "What kind of stories do giant sequoia trees tell? Tall tales.",
+        "What is the most frustrating thing about being a tree? Having so many limbs and not being able to walk.",
+        "What's black, highly dangerous, and lives in a tree? A crow with a machine gun.",
+        "What kind of wood doesn't float? Natalie Wood.";
+    set getvariableofnpc(.jokes, .npc$), getarraysize(getvariableofnpc(.jokes$, .npc$));
+
+    setarray getvariableofnpc(.healing$[0], .npc$),
+        "Eat an apple, they're good for you.",
+        "If I do it for you, then I have to do it for everybody.",
+        "Oh, go drink a potion or something.",
+        "Whoops! I lost my spellbook.",
+        "No mana.";
+    set getvariableofnpc(.healing, .npc$), getarraysize(getvariableofnpc(.healing$, .npc$));
+
+    setarray getvariableofnpc(.whoami$[0], .npc$),
+        "An undercover GM.",
+        "An exiled GM.",
+        "I'm not telling you!",
+        "I'm a bot! I'll be level 99 one day! Mwahahahaaha!!!111!",
+        "Somebody said I'm a Chinese copy of CrazyTree.",
+        "I am your evil twin.",
+        "I don't remember anything after I woke up! What happened to me?",
+        "I don't know. Why am I here??",
+        "Who are you?",
+        "On the 8th day, God was bored and said 'There will be bots'. So here I am.",
+        "♪ I'm your hell, I'm your dream, I'm nothing in between ♪♪",
+        "♪♪ Aperture Science. We do what we must, because... we can ♪",
+        "I'm just a reincarnation of a copy.";
+    set getvariableofnpc(.whoami, .npc$), getarraysize(getvariableofnpc(.whoami$, .npc$));
+
+    setarray getvariableofnpc(.drops$[0], .npc$),
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops an {{ n sizeable object }} on ~p's head.*",
+        "*drops an {{ n sizeable object }} on ~p's head.*",
+        "*drops {{ someone }} on ~p's head.*",
+        "*drops a coin on ~p's head.*",
+        "*drops a fruit on ~p's head.*",
+        "*drops an apple on ~p's head.*",
+        "*drops an iten on ~p's head.*",
+        "*drops a GM on ~p.*",
+        "*drops a piece of moon rock on ~p's head.*",
+        "*drops a pin on ~p's head.*",
+        "*drops a rock on ~p's head.*",
+        "*drops a tub of paint on ~p's head.*",
+        "*drops a sandworm on ~p.*",
+        "*drops an idea in ~p's head.*",
+        "*drops The Hitchhiker's Guide to the Galaxy on ~p's head.*",
+        "Ouch.",
+        "Ouchy.",
+        "*drops dead.*",
+        "*sighs.*",
+        "Leaf me alone.",
+        "Stop it! I doesn't drop branches, try the Druid tree for once!";
+    set getvariableofnpc(.drops, .npc$), getarraysize(getvariableofnpc(.drops$, .npc$));
+
+    setarray getvariableofnpc(.die$[0], .npc$),
+        "*drops an iten on ~p's head.*",
+        "*drops a piece of moon rock on ~p's head.*",
+        "*drops {{ someone }} on ~p's head.*",
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops a {{ sizeable object }} on ~p's head.*",
+        "*drops an {{ n sizeable object }} on ~p's head.*",
+        "*drops a {{ size }} {{ sizeable object, n sizeable object }} on ~p's head.*",
+        "*drops a {{ size }} {{ color }} {{ sizeable object, n sizeable object }} on ~p's head.*",
+        "*{{ violent adverb }} {{ violent verb }} ~p.*",
+        "*drops dead.*",
+        "*sighs.*",
+        "Avada Kedavra!",
+        "Make me!",
+        "Never!!",
+        "You die, ~p!",
+        "You die, ~p!",
+        "You die, ~p!",
+        "You die, ~p!",
+        "No!",
+        "In a minute.",
+        "Suuure... I'll get right on it...";
+    set getvariableofnpc(.die, .npc$), getarraysize(getvariableofnpc(.die$, .npc$));
+
+    setarray getvariableofnpc(.poke$[0], .npc$),
+        "*tickles.*";
+    set getvariableofnpc(.poke, .npc$), getarraysize(getvariableofnpc(.poke$, .npc$));
+
+    setarray getvariableofnpc(.disgusting$[0], .npc$),
+        "Ewwwww %%^.";
+    set getvariableofnpc(.disgusting, .npc$), getarraysize(getvariableofnpc(.disgusting$, .npc$));
+
+    setarray getvariableofnpc(.answer$[0], .npc$),
+        "42.",
+        "Kittens.";
+    set getvariableofnpc(.answer, .npc$), getarraysize(getvariableofnpc(.answer$, .npc$));
+
+    setarray getvariableofnpc(.burning$[0], .npc$),
+        "*curses ~p and dies %%c.*",
+        "Help! I'm on fire!",
+        "Oh hot.. hot hot!",
+        "*is glowing.*",
+        "*is flaming.*",
+        "Ehemm. Where are firefighters? I need them now!",
+        "*is so hot!.*";
+    set getvariableofnpc(.burning, .npc$), getarraysize(getvariableofnpc(.burning$, .npc$));
+
+    setarray getvariableofnpc(.kill$[0], .npc$),
+        "*curses ~p and dies %%c.*";
+    set getvariableofnpc(.kill, .npc$), getarraysize(getvariableofnpc(.kill$, .npc$));
+
+    setarray getvariableofnpc(.silly$[0], .npc$),
+        "Hahaha, good one!";
+    set getvariableofnpc(.silly, .npc$), getarraysize(getvariableofnpc(.silly$, .npc$));
+
+    setarray getvariableofnpc(.love$[0], .npc$),
+        "♪♪ and IIII.. will alwayyyys loooovvve youuuuu. ♪♪ %%]",
+        "♪♪ nothing's gonna change my love for you, you oughta know by now how much I love you.. ♪ %%]",
+        "♪ ..and then I go and spoil it all, by saying something stupid like: \"I love you.\" ♪",
+        "♪ ..won't you find a place for me? somewhere in your heart... ♪♪",
+        "Thank you.",
+        "♪♪ ..I can't love another when my heart is somewhere far away.. ♪",
+        "%%]";
+    set getvariableofnpc(.love, .npc$), getarraysize(getvariableofnpc(.love$, .npc$));
+
+    setarray getvariableofnpc(.dance$[0], .npc$),
+        "I would but I am rooted to the ground.",
+        "Have you ever seen a tree dance before?",
+        "Hahaha, good one!";
+    set getvariableofnpc(.dance, .npc$), getarraysize(getvariableofnpc(.dance$, .npc$));
+
+    setarray getvariableofnpc(.hate$[0], .npc$),
+        "Right back at you!",
+        "Ok...",
+        "*pats ~p, let it go...*",
+        "Hu hu hu, ~p hates me.";
+    set getvariableofnpc(.hate, .npc$), getarraysize(getvariableofnpc(.hate$, .npc$));
+
+    setarray getvariableofnpc(.bye$[0], .npc$),
+        "*waves goodbye to ~p in tears, come back soon!*";
+    set getvariableofnpc(.bye, .npc$), getarraysize(getvariableofnpc(.bye$, .npc$));
+
+    setarray getvariableofnpc(.pain$[0], .npc$),
+        "Ouch.",
+        "Ouchy.",
+        "Argh.",
+        "Eek.",
+        "*howls.*",
+        "*screams.*",
+        "*groans.*",
+        "*cries.*",
+        "*faints.*",
+        "%%k",
+        "Why, what did I do to you? %%i";
+    set getvariableofnpc(.pain, .npc$), getarraysize(getvariableofnpc(.pain$, .npc$));
+
+    setarray getvariableofnpc(.eightball$[0], .npc$),
+        "It is possible.",
+        "Yes!",
+        "Of course.",
+        "Naturally.",
+        "Obviously.",
+        "It shall be.",
+        "The outlook is good.",
+        "It is so.",
+        "One would be wise to think so.",
+        "The answer is certainly yes.",
+        "In your dreams.",
+        "I doubt it very much.",
+        "No chance.",
+        "The outlook is very poor.",
+        "Unlikely.",
+        "About as likely as pigs flying.",
+        "You're kidding, right?",
+        "NO!",
+        "NO.",
+        "No.",
+        "Maybe...",
+        "No clue.",
+        "I don't know.",
+        "The outlook is hazy, please ask again later.",
+        "What are you asking me for?",
+        "Come again?",
+        "You know the answer better than I.",
+        "The answer is def-- oooh! shiny thing!",
+        "No idea.",
+        "Perhaps.",
+        "I think it is better not to tell you.",
+        "Error 417: Expectation failed.";
+    set getvariableofnpc(.eightball, .npc$), getarraysize(getvariableofnpc(.eightball$, .npc$));
+
+    setarray getvariableofnpc(.bad$[0], .npc$),
+        "I'm not bad! You are bad!",
+        "OK, I'm bad.",
+        "I'm just a littttle bad.",
+        "Not as bad as the people that made me.";
+    set getvariableofnpc(.bad, .npc$), getarraysize(getvariableofnpc(.bad$, .npc$));
+
+    setarray getvariableofnpc(.no_idea$[0], .npc$),
+        "What?",
+        "What??",
+        "What?",
+        "Whatever.",
+        "Hmm...",
+        "Hmm...",
+        "Huh?",
+        "*yawns.*",
+        "Wait a minute...",
+        "What are you talking about?",
+        "Who are you?",
+        "What about me?",
+        "I don't know what you are talking about",
+        "Excuse me?",
+        "Very interesting.",
+        "Really?",
+        "Go on...",
+        "*scratches its leafy head.*",
+        "*feels a disturbance in the force.*",
+        "%%j",
+        "*senses a disturbance in the force.*",
+        "I'm bored...",
+        "%%U",
+        "%%[";
+    set getvariableofnpc(.no_idea, .npc$), getarraysize(getvariableofnpc(.no_idea$, .npc$));
+
+    setarray getvariableofnpc(.shut_up$[0], .npc$),
+        "*goes hide in a corner %%S.*";
+    set getvariableofnpc(.shut_up, .npc$), getarraysize(getvariableofnpc(.shut_up$, .npc$));
+
+    return;
+}
