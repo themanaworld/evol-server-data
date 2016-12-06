@@ -9,42 +9,29 @@
 
 function	script	inventoryplace	{
 
-    function inventoryplace_warn {
-        narrator
+    .@argc = getargcount();
+
+    if (.@argc % 2 != 0)
+    {
+        debugmes "inventoryplace: Wrong argument count.";
+        close;
+    }
+
+    for (.@i = .@j = 0; .@i < .@argc; .@i += 2)
+    {
+        setarray .@item[.@j], getarg(.@i);
+        setarray .@amount[.@j], getarg(.@i + 1);
+        ++.@j;
+    }
+
+    if (!checkweight2(.@item, .@amount))
+    {
+        narrator 1,
             l("It looks like you can't carry anything else for now."),
             l("You should come back when you have some free space.");
 
-        bye;
+        close;
     }
 
-    .@argc = getargcount();
-
-    if (.@argc < 2)
-    {
-        debugmes "Wrong argument count.";
-    }
-    else if (.@argc == 2)
-    {
-        if (!checkweight(getarg(0), getarg(1)))
-        {
-            inventoryplace_warn();
-        }
-    }
-    else
-    {
-        for (.@i = .@j = 0; .@i < .@argc; .@i += 2)
-        {
-            setarray .@item[.@j], getarg(.@i);
-            setarray .@amount[.@j], getarg(.@i + 1);
-
-            .@j++;
-        }
-
-        if (!checkweight2(.@item, .@amount))
-        {
-            inventoryplace_warn();
-        }
-    }
-    return;
-
+    return true;
 }
