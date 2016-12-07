@@ -4,28 +4,34 @@
 //    Reid
 // Description:
 //    Check if the player have enough place on his inventory to accept new items  with arguments:
-//      getarg(0)   item ID,
-//      getarg(1)   number of items,
-// Variables:
-//    .@iteminfo = Item information type. (See doc for list of item's types)
-//    .@countitem = Count item's number.
+//      getarg(even numbers)   item ID,
+//      getarg(odd numbers)    number of items,
 
 function	script	inventoryplace	{
-    getinventorylist;
-    .@iteminfo = getiteminfo(getarg(0), 2);
-    .@countitem = countitem(getarg(0));
 
-    if (checkweight(getarg(0), getarg(1)) == 0) goto L_Warn;
-    if ((.@iteminfo < 4) && (.@countitem == 0) && (.@inventorylist_count < 100)) return;
-    if ((.@iteminfo < 4) && (.@countitem > 0)) return;
-    if (.@inventorylist_count + getarg(1) <= 100) return;
+    .@argc = getargcount();
 
-L_Warn:
-    mes "";
-    mesn "Narrator";
-    mes col(l("It looks like you can't carry anything else for now."), 9);
-    next;
-    mes col(l("You should come back when you have some free space."), 9);
+    if (.@argc % 2 != 0)
+    {
+        debugmes "inventoryplace: Wrong argument count.";
+        close;
+    }
 
-    close;
+    for (.@i = .@j = 0; .@i < .@argc; .@i += 2)
+    {
+        setarray .@item[.@j], getarg(.@i);
+        setarray .@amount[.@j], getarg(.@i + 1);
+        ++.@j;
+    }
+
+    if (!checkweight2(.@item, .@amount))
+    {
+        narrator 1,
+            l("It looks like you can't carry anything else for now."),
+            l("You should come back when you have some free space.");
+
+        close;
+    }
+
+    return true;
 }
