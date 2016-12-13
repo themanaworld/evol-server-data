@@ -9,7 +9,9 @@ function	script	displayMOTD	{
         {
             dispbottom $Debug_Messages$[.@i]; // FIXME: send this to the Debug tab instead
         }
-        dispbottom "---";
+
+        if (.@dsize > 0)
+            dispbottom "---";
     }
 
     // generic MOTD
