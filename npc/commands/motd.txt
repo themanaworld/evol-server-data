@@ -7,7 +7,7 @@ function	script	displayMOTD	{
     {
         for (.@i = 0; .@i < .@dsize; ++.@i)
         {
-            dispbottom $Debug_Messages$[.@i]; // FIXME: send this to the Debug tab instead
+            dispbottom $@Debug_Messages$[.@i]; // FIXME: send this to the Debug tab instead
         }
 
         if (.@dsize > 0)
@@ -183,6 +183,6 @@ OnPCLoginEvent:
 OnInit:
     MOTD_debug_text;
     .size = getarraysize($MOTD_Messages$);
-    .dsize = getarraysize($Debug_Messages$);
+    .dsize = getarraysize($@Debug_Messages$);
     bindatcmd "motd", "@motd::OnCall", 3, 99, 0;
 }
