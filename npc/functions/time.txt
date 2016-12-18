@@ -1,19 +1,23 @@
-// FuzzyTime( <unix timestamp>, <options> )
+// FuzzyTime( <unix timestamp>, <options>, <precision> )
 // gives time in a human-readable  format
 //
 // <options> is bitmasked:
 // 1  do not show "ago" when in past
 // 2  do not show "in" when in the future
 // 4  show "from now" instead of "in" when in the future
+//
+// <precision> is the number of units to show,
+// by default uses max precision
 
 function	script	FuzzyTime	{
     .@now = gettimetick(2);
     .@future = getarg(0, .@now);
     .@options = getarg(1,0);
+    .@precision = getarg(2, 99);
     .@diff = max(.@future - .@now);
     .@ret$ = "";
     .@past = 0;
-    .@s = 0; // for serial comma
+    .@s = 0; // for serial comma & precision
 
     // define units
     .@unit_second = 1;
@@ -45,7 +49,7 @@ function	script	FuzzyTime	{
 
     .@diff = max(1, .@diff);
 
-    if (.@diff >= .@unit_year)
+    if (.@diff >= .@unit_year && .@s < .@precision)
     {
         .@years = (.@diff / .@unit_year);
         .@diff = (.@diff % .@unit_year);
@@ -53,7 +57,7 @@ function	script	FuzzyTime	{
         ++.@s;
     }
 
-    if (.@diff >= .@unit_day)
+    if (.@diff >= .@unit_day && .@s < .@precision)
     {
         .@days = (.@diff / .@unit_day);
         .@diff = (.@diff % .@unit_day);
@@ -67,7 +71,7 @@ function	script	FuzzyTime	{
         ++.@s;
     }
 
-    if (.@diff >= .@unit_hour)
+    if (.@diff >= .@unit_hour && .@s < .@precision)
     {
         .@hours = (.@diff / .@unit_hour);
         .@diff = (.@diff % .@unit_hour);
@@ -81,7 +85,7 @@ function	script	FuzzyTime	{
         ++.@s;
     }
 
-    if (.@diff >= .@unit_minute)
+    if (.@diff >= .@unit_minute && .@s < .@precision)
     {
         .@minutes = (.@diff / .@unit_minute);
         .@diff = (.@diff % .@unit_minute);
@@ -95,7 +99,7 @@ function	script	FuzzyTime	{
         ++.@s;
     }
 
-    if (.@diff >= .@unit_second)
+    if (.@diff >= .@unit_second && .@s < .@precision)
     {
         .@seconds = (.@diff / .@unit_second);
         .@diff = (.@diff % .@unit_second);
@@ -123,21 +127,21 @@ function	script	FuzzyTime	{
 }
 
 function	script	FuzzyTimeFromSeconds	{
-    return FuzzyTime((gettimetick(2) + getarg(0,0)), getarg(1,0));
+    return FuzzyTime((gettimetick(2) + getarg(0,0)), getarg(1,0), getarg(2,99));
 }
 
 function	script	FuzzyTimeFromMs	{
-    return FuzzyTimeFromSeconds((getarg(0,0) / 1000), getarg(1,0));
+    return FuzzyTimeFromSeconds((getarg(0,0) / 1000), getarg(1,0), getarg(2,99));
 }
 
 function	script	FuzzyTimeFromMinutes	{
-    return FuzzyTimeFromSeconds((getarg(0,0) * 60), getarg(1,0));
+    return FuzzyTimeFromSeconds((getarg(0,0) * 60), getarg(1,0), getarg(2,99));
 }
 
 function	script	FuzzyTimeFromHours	{
-    return FuzzyTimeFromMinutes((getarg(0,0) * 60), getarg(1,0));
+    return FuzzyTimeFromMinutes((getarg(0,0) * 60), getarg(1,0), getarg(2,99));
 }
 
 function	script	FuzzyTimeFromDays	{
-    return FuzzyTimeFromHours((getarg(0,0) * 24), getarg(1,0));
+    return FuzzyTimeFromHours((getarg(0,0) * 24), getarg(1,0), getarg(2,99));
 }
