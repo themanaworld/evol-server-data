@@ -30,7 +30,7 @@ function	script	savepointparticle	{
         .@i = 0;
     }
 
-    message strcharinfo(0), "Your position has been saved.";
+    message strcharinfo(0), l("Your position has been saved.");
 
     if (getarg(.@i, NO_INN) == NO_INN)
     {
