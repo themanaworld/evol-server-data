@@ -2,27 +2,29 @@
 // Authors:
 //    4144
 //    Reid
+//    gumi
 // Description:
 //    A box with clothes for new players.
 
 001-2-22,51,37,0	script	Chest#Artis	NPC_CHEST_BIG,{
 
-    .dir = 2;
-    initnpctimer;
-    startnpctimer;
-    close;
-
-OnTimer220:
-    stopnpctimer;
-    if (.dir == 2) .dir = 4;
-    if (.dir == 6) .dir = 0;
+    if (.busy == false)
+    {
+        misceffect .dir == 0 ? 24 : 25; // closed ? opening : closing
+        .dir = .dir == 0 ? 2 : 6; // closed ? opening : closing
+        .busy = true; // lock until available again
+        initnpctimer;
+    }
     end;
 
-L_Quit:
-    .dir = 6;
-    initnpctimer;
-    startnpctimer;
-    close;
+OnTimer220:
+    .dir = .dir == 6 ? 0 : 4; // closing ? closed : open
+    end;
+
+OnTimer500:
+    stopnpctimer;
+    .busy = false; // unlock
+    end;
 
 OnInit:
     .distance = 2;

@@ -2,6 +2,8 @@
 // Authors:
 //    4144
 //    Reid
+//    omatt
+//    gumi
 // Description:
 //    A box with clothes for new players.
 // Variable:
@@ -11,44 +13,41 @@
 //    2   Has the clothes.
 
 000-2-1,51,37,0	script	Chest#000-2-1	NPC_CHEST_BIG,{
-    .@q = getq(ShipQuests_Arpan);
 
-    if (.@q == 0) goto L_Talk;
-    if (.dir == 4) goto L_Give;
+    .@questState = getq(ShipQuests_Arpan);
 
-    .dir = 2;
-    initnpctimer;
-    startnpctimer;
-    misceffect 24;
-    close;
+    if (.@questState == 0)
+    {
+        npctalk3 l("You should talk to Magic Arpan first.");
+        end;
+    }
 
-L_Give:
-    if (.@q > 1) goto L_Quit;
-    inventoryplace CreasedShirt, 2;
+    if (.busy == false)
+    {
+        if (.dir == 4 && .@questState <= 1)
+        {
+            inventoryplace CreasedShirt, 2;
+            setq ShipQuests_Arpan, 2;
+            getitem CreasedShirt, 1;
+            getitem CreasedShorts, 1;
+            npctalk3 l("You take the clothes from the chest.");
+        }
 
-    setq ShipQuests_Arpan, 2;
-    getitem CreasedShirt, 1;
-    getitem CreasedShorts, 1;
-    npctalk3 l("You take the clothes from the chest.");
-    goto L_Quit;
-
-OnTimer360:
-    stopnpctimer;
-    if (.dir == 2) .dir = 4;
-    if (.dir == 6) .dir = 0;
+        misceffect .dir == 0 ? 24 : 25; // closed ? opening : closing
+        .dir = .dir == 0 ? 2 : 6; // closed ? opening : closing
+        .busy = true; // lock the animation
+        initnpctimer;
+    }
     end;
 
-L_Talk:
-    npctalk3 l("You should talk to Magic Arpan first.");
+OnTimer220:
+    .dir = .dir == 6 ? 0 : 4; // closing ? closed : open
+    end;
 
-    close;
-
-L_Quit:
-    .dir = 6;
-    initnpctimer;
-    startnpctimer;
-    misceffect 25;
-    close;
+OnTimer500:
+    stopnpctimer;
+    .busy = false; // unlock the animation
+    end;
 
 OnInit:
     .distance = 2;

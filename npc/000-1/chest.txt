@@ -3,6 +3,7 @@
 //    4144
 //    Hal9000
 //    Reid
+//    gumi
 // Description:
 //    A treasure chest, with... Treasures inside!
 // Variable:
@@ -12,35 +13,32 @@
 //    1   Treasure Chest has been opened.
 
 000-1,83,70,0	script	Chest#000-1	NPC_CHEST,{
-    if (.dir != 4)
+
+   if (.busy == false)
     {
-        .dir = 2;
+        if (getq(ShipQuests_TreasureChest) == 0)
+        {
+            inventoryplace OldBook, 1;
+            setq ShipQuests_TreasureChest, 1;
+            npctalk3 l("Chest opened.");
+            Zeny += 100;
+            getitem OldBook, 1;
+        }
+
+        misceffect .dir == 0 ? 24 : 25; // closed ? opening : closing
+        .dir = .dir == 0 ? 2 : 6; // closed ? opening : closing
+        .busy = true; // lock until available again
         initnpctimer;
-        startnpctimer;
-        misceffect 24;
-        close;
     }
-
-    .@q = getq(ShipQuests_TreasureChest);
-    if (.@q == 0)
-    {
-        inventoryplace OldBook, 1;
-        setq ShipQuests_TreasureChest, 1;
-        Zeny = Zeny + 100;
-        getitem OldBook, 1;
-        npctalk3 l("Chest opened.");
-    }
-
-    .dir = 6;
-    initnpctimer;
-    startnpctimer;
-    misceffect 25;
-    close;
+    end;
 
 OnTimer160:
+    .dir = .dir == 6 ? 0 : 4; // closing ? closed : open
+    end;
+
+OnTimer500:
     stopnpctimer;
-    if (.dir == 2) .dir = 4;
-    if (.dir == 6) .dir = 0;
+    .busy = false; // unlock
     end;
 
 OnInit:
