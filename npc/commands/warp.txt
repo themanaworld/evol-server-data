@@ -26,10 +26,7 @@ OnCall:
     {
         if (.@request$ ~= .aliases$[.@i])
         {
-            explode .@coords$, .aliases$[.@i + 1], " ";
-            .@map$ = .@coords$[0];
-            .@x = atoi(.@coords$[1]);
-            .@y = atoi(.@coords$[2]);
+            sscanf .aliases$[.@i + 1], "%s %d %d", .@map$, .@x, .@y;
             break;
         }
     }
