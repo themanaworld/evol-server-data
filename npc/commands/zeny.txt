@@ -90,6 +90,7 @@ OnInit:
     {
         bindatcmd "e", "@esp::OnCall", 0, 2, 0;
         bindatcmd "esp", "@esp::OnCall", 0, 2, 0;
+        bindatcmd "money", "@esp::OnCall", 0, 2, 0;
         end;
     }
 
