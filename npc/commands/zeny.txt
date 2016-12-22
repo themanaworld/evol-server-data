@@ -20,7 +20,7 @@
 OnCall:
     .@delta$ = .@atcmd_parameters$[0];
 
-    if (startswith(.@delta$, "--"))
+    if (debug && startswith(.@delta$, "--"))
     {
         Zeny = 0;
         if (.@delta$ == "---")
@@ -28,7 +28,7 @@ OnCall:
             #MerchantBank = 0;
         }
     }
-    else if (startswith(.@delta$, "++"))
+    else if (debug && startswith(.@delta$, "++"))
     {
         Zeny = 0x7FFFFFFE;
         if (.@delta$ == "+++")
