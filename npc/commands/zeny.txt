@@ -28,7 +28,7 @@ OnCall:
             #MerchantBank = 0;
         }
     }
-    else if (debug && startswith(.@delta$, "++"))
+    else if (debug && (startswith(.@delta$, "++") || .@delta$ == ""))
     {
         Zeny = 0x7FFFFFFE;
         if (.@delta$ == "+++")
