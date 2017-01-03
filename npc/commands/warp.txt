@@ -42,15 +42,19 @@ OnCall:
         .@y = atoi(.@atcmd_parameters$[2]);
     }
 
+    // FIXME: here getmapusers() is used only to check if the map exists
+    //        replace this when/if we get a dedicated function for that
     if (getmapusers(.@map$) < 0)
     {
         end; // invalid map
     }
 
-    else if (!checkcell(.@map$, .@x, .@y, cell_chkpass))
+    while (!checkcell(.@map$, .@x, .@y, cell_chkpass))
     {
-        // XXX: maybe send to random location?
-        end; // invalid coordinates
+        if (.@e == 50) end;
+        .@x = rand(20, 250);
+        .@y = rand(20, 250);
+        ++.@e;
     }
 
     cwarp .@map$, .@x, .@y; // XXX: maybe here use a slide_or_warp function
