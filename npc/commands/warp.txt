@@ -42,6 +42,17 @@ OnCall:
         .@y = atoi(.@atcmd_parameters$[2]);
     }
 
+    if (getmapusers(.@map$) < 0)
+    {
+        end; // invalid map
+    }
+
+    else if (!checkcell(.@map$, .@x, .@y, cell_chkpass))
+    {
+        // XXX: maybe send to random location?
+        end; // invalid coordinates
+    }
+
     cwarp .@map$, .@x, .@y; // XXX: maybe here use a slide_or_warp function
 
 OnInit:
