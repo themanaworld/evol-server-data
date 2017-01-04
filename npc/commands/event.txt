@@ -1,17 +1,40 @@
 function	script	GlobalEventMenu	{
-    clear;
-    setnpcdialogtitle l("Event Management");
-    mes l("This menu allows you to manage events and gives access to event-related tools.");
-    mes "";
-    mes l("There is no event available right now.");
 
-    if (getarg(0,0))
-    {
-        select
-            menuimage("actions/home", l("Return to Super Menu"));
+    function rateManagement {
+        clear;
+        mes l("To get the current rate:");
+        mes col("    @exprate", 7);
+        next;
+        mes l("To set the exp rate:");
+        mes col("    @exprate ##Brate##b hours", 7);
+        next;
+        mes l("To reset back to normal:");
+        mes col("    @exprate default", 7); // note to translators: any non-numerical value will reset so "default" is safe to translate
+        next;
+        return;
     }
 
-    return;
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Event Management");
+        mes l("This menu allows you to manage events and gives access to event-related tools.");
+        mes "";
+        mes l("What do you want to access?");
+
+        select
+            l("Rate management"),
+            rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu")));
+
+        //.@c = getarg(0,0) ? 2 : 1; // 1 = back to event menu, 2 = back to super menu
+
+        switch (@menu)
+        {
+            case 1: rateManagement; break;
+            default: return;
+        }
+
+    } while (true);
 }
 
 

@@ -1,0 +1,107 @@
+-	script	@exprate	32767,{
+    end;
+
+    function rateCleanUp {
+        stopnpctimer;
+        .hours = 0;
+        .max_hours = 0;
+        .current_rate = .original_exp_rate;
+        setbattleflag("base_exp_rate", .original_exp_rate);
+        setbattleflag("quest_exp_rate", .original_quest_rate);
+        charcommand("@reloadmobdb"); // this is on purpose (callable without RID)
+        charcommand("@reloadquestdb");
+    }
+
+    function remainingTime {
+        .@total_seconds = (3600 * .max_hours);
+        .@seconds_elapsed = (3600 * .hours) + (getnpctimer(0) / 1000);
+        .@seconds_remaining = max(1, .@total_seconds - .@seconds_elapsed);
+        return FuzzyTimeFromSeconds(.@seconds_remaining, 2, 2);
+    }
+
+OnCall:
+   if (getgroupid() < 3)
+    {
+        end;
+    }
+
+    .@special$ = strip(.@atcmd_parameters$[0]); // special value
+    .@new_rate = min(atoi(.@special$), 1000); // or just a regular integer
+    .@hours = min(0x7FFFFFFE, max(1, atoi(strip(.@atcmd_parameters$[1])))); // number of hours
+
+    if (.@new_rate > 0)
+    {
+        // set new exp rate
+        .hours = 0;
+        .max_hours = .@hours;
+        .current_rate = .@new_rate;
+        setbattleflag("base_exp_rate", .@new_rate);
+        setbattleflag("quest_exp_rate", .@new_rate);
+        charcommand("@reloadmobdb");
+        charcommand("@reloadquestdb");
+        initnpctimer; // start counting
+
+        dispbottom l("You successfully set the exp rate to @@%. It will reset to @@% (default value) in @@.",
+                    .@new_rate, .original_exp_rate, FuzzyTimeFromHours(.max_hours, 2, 2));
+        dispbottom l("You can also manually stop it at any time with: @exprate default");
+    }
+
+    else if (.@new_rate == 0 && .@special$ == "")
+    {
+        // get current exp rate
+        if (.current_rate == .original_exp_rate)
+        {
+            dispbottom l("Current exp rate is set to @@% (default value).", .current_rate);
+        }
+
+        else
+        {
+            dispbottom l("Current exp rate is set to @@%, and will reset to @@% (default value) in @@.",
+                        .current_rate, .original_exp_rate, remainingTime());
+
+            dispbottom l("If you meant to reset the exp rate to its default value: @exprate default");
+        }
+    }
+
+    else
+    {
+        // reset
+        rateCleanUp;
+        dispbottom l("Exp rate has been reset to @@% (default value).",
+                    .original_exp_rate);
+    }
+
+    end;
+
+OnTimer3600000:
+    // runs every hour
+    if (++.hours == .max_hours)
+    {
+        rateCleanUp;
+        end;
+    }
+    initnpctimer;
+    end;
+
+OnPCLoginEvent:
+    if (.max_hours > 0)
+    {
+        dispbottom col(l("Exp rate is set to @@% for the next @@.",
+                        .current_rate, remainingTime()), 6);
+    }
+    end;
+
+OnInit:
+    bindatcmd "exprate", "@exprate::OnCall", 3, 99, 1; // change exp rate
+
+    // WARNING: using @reloadscript will change the "original" value
+    .original_exp_rate = getbattleflag("base_exp_rate");
+    .original_quest_rate = getbattleflag("quest_exp_rate");
+    .current_rate = .original_exp_rate;
+
+    // XXX: maybe in the future:
+    //.original_item_rate = getbattleflag("item_rate_common");
+    //.original_job_rate = getbattleflag("base_job_rate");
+    //.original_pk_mode = getbattleflag("pk_mode");
+    //.original_death_penalty = getbattleflag("death_penalty_type");
+}
