@@ -12,7 +12,7 @@
 //    0   Treasure Chest has not been opened yet.
 //    1   Treasure Chest has been opened.
 
-000-1,83,70,0	script	Chest#000-1	NPC_CHEST,{
+000-1,83,70,0	script	Chest#000-1	NPC_CHEST,3,3,{
 
    if (.busy == false)
     {
@@ -25,7 +25,7 @@
             getitem OldBook, 1;
         }
 
-        misceffect .dir == 0 ? 24 : 25; // closed ? opening : closing
+        misceffect .dir == 0 ? 24 : 25, getnpcid(0); // closed ? opening : closing
         .dir = .dir == 0 ? 2 : 6; // closed ? opening : closing
         .busy = true; // lock until available again
         initnpctimer;
@@ -37,9 +37,27 @@ OnTimer160:
     end;
 
 OnTimer500:
-    stopnpctimer;
     .busy = false; // unlock
+
+    if (.dir == 0)
+    {
+        stopnpctimer; // stop here if the chest is closed
+    }
     end;
+
+OnUnTouch:
+    if (getareausers(.x - 3, .y - 3, .x + 3, .y + 3) > 0 || .dir == 0)
+    {
+        end;
+    }
+OnTimer30000:
+    .busy = true;
+    .dir = 6; // closing
+    misceffect 25, getnpcid(0); // closing
+    setnpctimer 0;
+OnTouch:
+    end;
+
 
 OnInit:
     .distance = 2;

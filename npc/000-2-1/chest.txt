@@ -12,7 +12,7 @@
 //    1   Talked to Arpan and needs to get clothes.
 //    2   Has the clothes.
 
-000-2-1,51,37,0	script	Chest#000-2-1	NPC_CHEST_BIG,{
+000-2-1,51,37,0	script	Chest#000-2-1	NPC_CHEST_BIG,2,4,{
 
     .@questState = getq(ShipQuests_Arpan);
 
@@ -24,7 +24,7 @@
 
     if (.busy == false)
     {
-        if (.dir == 4 && .@questState <= 1)
+        if (.@questState <= 1)
         {
             inventoryplace CreasedShirt, 2;
             setq ShipQuests_Arpan, 2;
@@ -33,7 +33,7 @@
             npctalk3 l("You take the clothes from the chest.");
         }
 
-        misceffect .dir == 0 ? 24 : 25; // closed ? opening : closing
+        misceffect .dir == 0 ? 24 : 25, getnpcid(0); // closed ? opening : closing
         .dir = .dir == 0 ? 2 : 6; // closed ? opening : closing
         .busy = true; // lock the animation
         initnpctimer;
@@ -45,8 +45,25 @@ OnTimer220:
     end;
 
 OnTimer500:
-    stopnpctimer;
-    .busy = false; // unlock the animation
+    .busy = false; // unlock
+
+    if (.dir == 0)
+    {
+        stopnpctimer; // stop here if the chest is closed
+    }
+    end;
+
+OnUnTouch:
+    if (getareausers(.x - 2, .y - 4, .x + 2, .y + 6) > 0 || .dir == 0)
+    {
+        end;
+    }
+OnTimer30000:
+    .busy = true;
+    .dir = 6; // closing
+    misceffect 25, getnpcid(0); // closing
+    setnpctimer 0;
+OnTouch:
     end;
 
 OnInit:
