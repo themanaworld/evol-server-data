@@ -49,18 +49,18 @@ function	script	FuzzyTime	{
 
     .@diff = max(1, .@diff);
 
-    if (.@diff >= .@unit_year && .@s < .@precision)
+    if (.@diff >= .@unit_year)
     {
         .@years = (.@diff / .@unit_year);
-        .@diff = (.@diff % .@unit_year);
+        .@diff = (.@s + 1 == .@precision ? 0 : (.@diff % .@unit_year));
         .@ret$ += .@years + " " + getd(".@unit_year" + (.@years > 1 ? "s$" : "$"));
         ++.@s;
     }
 
-    if (.@diff >= .@unit_day && .@s < .@precision)
+    if (.@diff >= .@unit_day)
     {
         .@days = (.@diff / .@unit_day);
-        .@diff = (.@diff % .@unit_day);
+        .@diff = (.@s + 1 == .@precision ? 0 : (.@diff % .@unit_day));
 
         if (.@ret$ != "")
         {
@@ -71,10 +71,10 @@ function	script	FuzzyTime	{
         ++.@s;
     }
 
-    if (.@diff >= .@unit_hour && .@s < .@precision)
+    if (.@diff >= .@unit_hour)
     {
         .@hours = (.@diff / .@unit_hour);
-        .@diff = (.@diff % .@unit_hour);
+        .@diff = (.@s + 1 == .@precision ? 0 : (.@diff % .@unit_hour));
 
         if (.@ret$ != "")
         {
@@ -85,10 +85,10 @@ function	script	FuzzyTime	{
         ++.@s;
     }
 
-    if (.@diff >= .@unit_minute && .@s < .@precision)
+    if (.@diff >= .@unit_minute)
     {
         .@minutes = (.@diff / .@unit_minute);
-        .@diff = (.@diff % .@unit_minute);
+        .@diff = (.@s + 1 == .@precision ? 0 : (.@diff % .@unit_minute));
 
         if (.@ret$ != "")
         {
@@ -99,18 +99,16 @@ function	script	FuzzyTime	{
         ++.@s;
     }
 
-    if (.@diff >= .@unit_second && .@s < .@precision)
+    if (.@diff >= .@unit_second)
     {
         .@seconds = (.@diff / .@unit_second);
-        .@diff = (.@diff % .@unit_second);
 
         if (.@ret$ != "")
         {
-            .@ret$ += .@diff > 0 ? ", " : (.@s >= 2 ? ", " : " ") + l("and ");
+            .@ret$ += (.@s >= 2 ? ", " : " ") + l("and ");
         }
 
         .@ret$ += .@seconds + " " + getd(".@unit_second" + (.@seconds > 1 ? "s$" : "$"));
-        ++.@s;
     }
 
     if (.@past > 0 && !(.@options & 1))
