@@ -1,7 +1,9 @@
 // Preset / routine system
-// author: gumi
-// description: allows to execute multiple commands in a single step
-//              to ease testing and debugging
+// Author:
+//    gumi
+// Description:
+//    allows to execute multiple commands in a single step
+//    to ease testing and debugging
 //
 // usage: @pre [options] <instruction>[, <instruction>...]
 // usage: DoRoutine "[options] <instruction>[, <instruction>...]";
