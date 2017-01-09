@@ -22,7 +22,7 @@
 //    6   Did not start the quest.
 // Others:
 // .@peter = Peter variable.
-// "000-2-2.gat" - map with mobs.
+// "000-2-2" - map with mobs.
 // "$@RAT_SAILOR_HELPER$" - Name of the participant.
 // "$@RAT_SAILOR_DEATHS - Number of deaths when the participant starts the fight.
 // "$@RAT_SAILOR_CONTROL" - Explanation of each index of the array.
@@ -211,7 +211,7 @@ OnStartOutside:
     $@RAT_SAILOR_HELPER$ = strcharinfo(0);
     $@RAT_SAILOR_DEATHS = PC_DIE_COUNTER;
     initnpctimer;
-    warp "000-2-2.gat", 48, 28;
+    warp "000-2-2", 48, 28;
     doevent "RattosControl::OnSpawn";
 
     goto L_Quit;
@@ -222,7 +222,7 @@ OnTimer2000:
     if ($@RAT_SAILOR_CONTROL[9] > 100) goto L_Timeout;
     if (PC_DIE_COUNTER > $@RAT_SAILOR_DEATHS) goto L_Dead;
     if ($@RAT_SAILOR_CONTROL[1] && $@RAT_SAILOR_CONTROL[2] && $@RAT_SAILOR_CONTROL[3] && $@RAT_SAILOR_CONTROL[4]) goto L_Done;
-    if (getmapusers("000-2-2.gat") == 0) goto L_CleaningEnd;
+    if (getmapusers("000-2-2") == 0) goto L_CleaningEnd;
     goto L_CheckRattos;
 
     end;
@@ -262,7 +262,7 @@ L_Logoff:
 
 L_Dead:
 // Warps the dead body outside, so it does not interfere with the getmapusers check.
-    if (getmapusers("000-2-2.gat") > 0) warp "000-2-1", 72, 36;
+    if (getmapusers("000-2-2") > 0) warp "000-2-1", 72, 36;
 
     goto L_CleaningEnd;
 
@@ -271,7 +271,7 @@ L_Done:
     if($@RAT_SAILOR_CONTROL[10] < 5) goto L_NotYet;
     .@peter = getq(ShipQuests_Peter);
     if (.@peter == 2 || .@peter == 4) goto L_Reward;
-    warp "000-2-1.gat", 72, 36;
+    warp "000-2-1", 72, 36;
 
     goto L_Thanks;
 
@@ -280,10 +280,10 @@ L_CleaningEnd:
     $@RAT_SAILOR_HELPER$ = "";
     $@RAT_SAILOR_DEATHS = 0;
     cleararray $@RAT_SAILOR_CONTROL, 0, 11;
-    killmonster "000-2-2.gat", "RattosControl::OnRatto1Death";
-    killmonster "000-2-2.gat", "RattosControl::OnRatto2Death";
-    killmonster "000-2-2.gat", "RattosControl::OnRatto3Death";
-    killmonster "000-2-2.gat", "RattosControl::OnRatto4Death";
+    killmonster "000-2-2", "RattosControl::OnRatto1Death";
+    killmonster "000-2-2", "RattosControl::OnRatto2Death";
+    killmonster "000-2-2", "RattosControl::OnRatto3Death";
+    killmonster "000-2-2", "RattosControl::OnRatto4Death";
 
     end;
 
@@ -293,16 +293,16 @@ L_CleaningClose:
     $@RAT_SAILOR_HELPER$ = "";
     $@RAT_SAILOR_DEATHS = 0;
     cleararray $@RAT_SAILOR_CONTROL, 0, 11;
-    killmonster "000-2-2.gat", "RattosControl::OnRatto1Death";
-    killmonster "000-2-2.gat", "RattosControl::OnRatto2Death";
-    killmonster "000-2-2.gat", "RattosControl::OnRatto3Death";
-    killmonster "000-2-2.gat", "RattosControl::OnRatto4Death";
+    killmonster "000-2-2", "RattosControl::OnRatto1Death";
+    killmonster "000-2-2", "RattosControl::OnRatto2Death";
+    killmonster "000-2-2", "RattosControl::OnRatto3Death";
+    killmonster "000-2-2", "RattosControl::OnRatto4Death";
     $@RAT_SAILOR_COUNTDOWN = gettimetick(2);
 
     close;
 
 L_Reward:
-    warp "000-2-1.gat", 72, 36;
+    warp "000-2-1", 72, 36;
     setq ShipQuests_Peter, 5;
     .@peter = getq(ShipQuests_Peter);
     mesn;

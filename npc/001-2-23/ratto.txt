@@ -20,32 +20,32 @@
 001-2-23,47,30,0	script	RattosControl#001-2-23	NPC_HIDDEN,{
 
 OnSpawn:
-    areamonster "001-2-23.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto1Death";
-    areamonster "001-2-23.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto2Death";
-    areamonster "001-2-23.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto3Death";
-    areamonster "001-2-23.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto4Death";
+    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto1Death";
+    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto2Death";
+    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto3Death";
+    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto4Death";
     close;
 
 OnRatto1Respawn:
-    areamonster "001-2-23.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto1Death";
+    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto1Death";
     $@ARTIS_RAT1_CONTROL[1] = 0;
     $@ARTIS_RAT1_CONTROL[5] = 0;
     end;
 
 OnRatto2Respawn:
-    areamonster "001-2-23.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto2Death";
+    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto2Death";
     $@ARTIS_RAT1_CONTROL[2] = 0;
     $@ARTIS_RAT1_CONTROL[6] = 0;
     end;
 
 OnRatto3Respawn:
-    areamonster "001-2-23.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto3Death";
+    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto3Death";
     $@ARTIS_RAT1_CONTROL[3] = 0;
     $@ARTIS_RAT1_CONTROL[7] = 0;
     end;
 
 OnRatto4Respawn:
-    areamonster "001-2-23.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto4Death";
+    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto4Death";
     $@ARTIS_RAT1_CONTROL[4] = 0;
     $@ARTIS_RAT1_CONTROL[8] = 0;
     end;

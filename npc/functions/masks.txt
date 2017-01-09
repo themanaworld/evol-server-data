@@ -9,9 +9,9 @@
 // Artis Aemil's Legion 
 
 function	script	artisALRemTopMask	{
-    if ((getareausers("001-2-33.gat", 23, 27, 45, 31) >= 1) ||
-        (getareausers("001-2-33.gat", 23, 32, 26, 38) >= 1) ||
-        (getareausers("001-2-33.gat", 42, 32, 45, 38) >= 1))
+    if ((getareausers("001-2-33", 23, 27, 45, 31) >= 1) ||
+        (getareausers("001-2-33", 23, 32, 26, 38) >= 1) ||
+        (getareausers("001-2-33", 42, 32, 45, 38) >= 1))
     {
         removemapmask "001-2-33", 4;
     }
@@ -19,9 +19,9 @@ function	script	artisALRemTopMask	{
 }
 
 function	script	artisALAddTopMask	{
-    if ((getareausers("001-2-33.gat", 23, 27, 45, 31) == 0) &&
-        (getareausers("001-2-33.gat", 23, 32, 26, 38) == 0) &&
-        (getareausers("001-2-33.gat", 42, 32, 45, 38) == 0))
+    if ((getareausers("001-2-33", 23, 27, 45, 31) == 0) &&
+        (getareausers("001-2-33", 23, 32, 26, 38) == 0) &&
+        (getareausers("001-2-33", 42, 32, 45, 38) == 0))
     {
         addmapmask "001-2-33", 4;
     }
@@ -29,7 +29,7 @@ function	script	artisALAddTopMask	{
 }
 
 function	script	artisALRemBotMask	{
-    if (getareausers("001-2-33.gat", 23, 32, 45, 46) >= 1)
+    if (getareausers("001-2-33", 23, 32, 45, 46) >= 1)
     {
         removemapmask "001-2-33", 8;
     }
@@ -37,7 +37,7 @@ function	script	artisALRemBotMask	{
 }
 
 function	script	artisALAddBotMask	{
-    if (getareausers("001-2-33.gat", 23, 32, 45, 46) == 0)
+    if (getareausers("001-2-33", 23, 32, 45, 46) == 0)
     {
         addmapmask "001-2-33", 8;
     }
@@ -45,7 +45,7 @@ function	script	artisALAddBotMask	{
 }
 
 function	script	artisALUpdateMask	{
-    if (getareausers("001-2-33.gat", 23, 32, 45, 46) >= 1)
+    if (getareausers("001-2-33", 23, 32, 45, 46) >= 1)
     {
         removemapmask "001-2-33", 8;
     }
@@ -53,9 +53,9 @@ function	script	artisALUpdateMask	{
     {
         addmapmask "001-2-33", 8;
     }
-    if ((getareausers("001-2-33.gat", 23, 27, 45, 31) >= 1) ||
-        (getareausers("001-2-33.gat", 23, 32, 26, 38) >= 1) ||
-        (getareausers("001-2-33.gat", 42, 32, 45, 38) >= 1))
+    if ((getareausers("001-2-33", 23, 27, 45, 31) >= 1) ||
+        (getareausers("001-2-33", 23, 32, 26, 38) >= 1) ||
+        (getareausers("001-2-33", 42, 32, 45, 38) >= 1))
     {
         removemapmask "001-2-33", 4;
     }

@@ -10,11 +10,11 @@ OnTouch:
 	if ((getmapusers($@MAP_NAME$) == 0) && ($@FightingIsActive > 0))
 	{
 		set $@FightingIsActive, 0;
-		killmonsterall "001-2-36.gat";
+		killmonsterall "001-2-36";
 		
 	}
 
-    if (mobcount("001-2-36.gat","all") > 0 && $@FightingIsActive > 0)
+    if (mobcount("001-2-36","all") > 0 && $@FightingIsActive > 0)
     {
         narrator
         l("You hear some sound behind the door."),

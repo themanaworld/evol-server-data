@@ -20,32 +20,32 @@
 000-2-2,47,30,0	script	RattosControl	NPC_HIDDEN,{
 
 OnSpawn:
-    areamonster "000-2-2.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto1Death";
-    areamonster "000-2-2.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto2Death";
-    areamonster "000-2-2.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto3Death";
-    areamonster "000-2-2.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto4Death";
+    areamonster "000-2-2", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto1Death";
+    areamonster "000-2-2", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto2Death";
+    areamonster "000-2-2", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto3Death";
+    areamonster "000-2-2", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto4Death";
     close;
 
 OnRatto1Respawn:
-    areamonster "000-2-2.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto1Death";
+    areamonster "000-2-2", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto1Death";
     $@RAT_SAILOR_CONTROL[1] = 0;
     $@RAT_SAILOR_CONTROL[5] = 0;
     end;
 
 OnRatto2Respawn:
-    areamonster "000-2-2.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto2Death";
+    areamonster "000-2-2", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto2Death";
     $@RAT_SAILOR_CONTROL[2] = 0;
     $@RAT_SAILOR_CONTROL[6] = 0;
     end;
 
 OnRatto3Respawn:
-    areamonster "000-2-2.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto3Death";
+    areamonster "000-2-2", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto3Death";
     $@RAT_SAILOR_CONTROL[3] = 0;
     $@RAT_SAILOR_CONTROL[7] = 0;
     end;
 
 OnRatto4Respawn:
-    areamonster "000-2-2.gat", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto4Death";
+    areamonster "000-2-2", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl::OnRatto4Death";
     $@RAT_SAILOR_CONTROL[4] = 0;
     $@RAT_SAILOR_CONTROL[8] = 0;
     end;

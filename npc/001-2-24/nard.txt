@@ -54,14 +54,14 @@
             speech 5,
                 l("Let's set sail then!");
 
-            savepoint "000-2-1.gat", 50, 38;
+            savepoint "000-2-1", 50, 38;
             if (!getmapxy(.@map$, .@x, .@y, 0))
             {
-                warp "000-2-3.gat", .@x, .@y;
+                warp "000-2-3", .@x, .@y;
             }
             else
             {
-                warp "000-2-3.gat", 22, 27;
+                warp "000-2-3", 22, 27;
             }
 
             closedialog;
