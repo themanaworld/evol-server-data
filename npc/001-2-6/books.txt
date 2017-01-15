@@ -37,19 +37,17 @@
     }
 
 OnShelfUse:
-    @book_name$ = .bookname$;
-    if (openbookshelf ())
+    if (openbookshelf())
         read_book;
     close;
 
 OnUse:
-    @book_name$ = .bookname$;
-    if (openbook ())
+    if (openbook())
         read_book;
     close;
 
 OnInit:
-    .bookname$ = "The Piou and The Fluffy";
+    .book_name$ = "The Piou and The Fluffy";
     .sex = G_OTHER;
     .distance = 1;
     end;
@@ -92,19 +90,17 @@ OnInit:
     }
 
 OnShelfUse:
-    @book_name$ = .bookname$;
-    if (openbookshelf ())
+    if (openbookshelf())
         read_book;
     close;
 
 OnUse:
-    @book_name$ = .bookname$;
-    if (openbook ())
+    if (openbook())
         read_book;
     close;
 
 OnInit:
-    .bookname$ = "Poem about Poems";
+    .book_name$ = "Poem about Poems";
     .sex = G_OTHER;
     .distance = 1;
     end;
@@ -125,19 +121,17 @@ OnInit:
     }
 
 OnShelfUse:
-    @book_name$ = .bookname$;
-    if (openbookshelf ())
+    if (openbookshelf())
         read_book;
     close;
 
 OnUse:
-    @book_name$ = .bookname$;
-    if (openbook ())
+    if (openbook())
         read_book;
     close;
 
 OnInit:
-    .bookname$ = "Chorus of the Woods";
+    .book_name$ = "Chorus of the Woods";
     .sex = G_OTHER;
     .distance = 1;
     end;

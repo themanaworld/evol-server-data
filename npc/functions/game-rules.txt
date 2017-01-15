@@ -44,12 +44,12 @@ OnCall:
     close;
 
 OnUseBook:
-    if (openbook(.book_name$))
+    if (openbook())
         read_book;
     bye;
 
 OnShelfUse:
-    if (openbookshelf(.book_name$))
+    if (openbookshelf())
         read_book;
     bye;
 

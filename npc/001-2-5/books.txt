@@ -17,19 +17,17 @@
     }
 
 OnShelfUse:
-    @book_name$ = .bookname$;
-    if (openbookshelf ())
+    if (openbookshelf())
         read_book;
     close;
 
 OnUse:
-    @book_name$ = .bookname$;
-    if (openbook ())
+    if (openbook())
         read_book;
     close;
 
 OnInit:
-    .bookname$ = "Communication Theory";
+    .book_name$ = "Communication Theory";
     .sex = G_OTHER;
     .distance = 1;
     end;
