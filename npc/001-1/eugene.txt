@@ -55,16 +55,18 @@ L_CheckItems:
     }
 
     speech
-        l("That's exactly what I needed."),
-        l("As a thank you, accept my old fishing rod."),
-        l("It's not as good as my new one, but still useful."),
-        l("Just look out at that water! There's plenty more fish there."),
-        l("With my old fishing rod you can catch something every day."),
-        lg("You might even get lucky, and get a @@.", getitemlink(GrassCarp)),
+        l("That's exactly what I needed!"),
+        l("To thank you, accept my old fishing rod."),
+        l("It's not as good as my new one, but still very useful."),
+        l("Just look at that water! There's a whole bunch of fish down there."),
+        l("Oh, and you will need this book too, it will help you learn the basics of fishing."),
+        lg("You might even get lucky, and get a @@.",
+           "You might even get lucky, and get a @@.", getitemlink(GrassCarp)),
         l("Have a good time fishing!");
 
     delitem .BaitID, .BaitCount;
     getitem FishingRod, 1;
+    getitem FishingGuideVolI, 1;
     setq ArtisQuests_Fishman, 2;
     close;
 
