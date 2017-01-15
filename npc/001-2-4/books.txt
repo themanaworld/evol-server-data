@@ -1,6 +1,7 @@
 // Evol scripts.
 // Author:
 //    gumi
+//    Tirifto
 // Description:
 //    moar books
 
@@ -12,4 +13,86 @@
 OnInit:
     .sex = G_OTHER;
     .distance = 1;
+}
+
+// FIXME: we need a no-sprite npc that is offset 1 tile north
+001-2-4,47,28,0	script	#001-2-4-Book2	NPC_NO_SPRITE,{
+
+    function read_book {
+
+        setnpcdialogtitle l(.book_name$);
+
+        narrator 1 | 4,
+            l("To get started with fishing, you'll need two things: a fishing rod and a bait."),
+            l("You just need one fishing rod, although you should take more than one single bait.");
+
+        @menu = 0; // reset for the rif
+
+        do
+        {
+            narrator 8,
+                l("Please select a chapter:");
+
+            select
+                rif(@menu == 1, "► ") + l("Ch 1 — Fishing apparatus"),
+                rif(@menu == 2, "► ") + l("Ch 2 — Baits"),
+                rif(@menu == 3, "► ") + l("Ch 3 — Location"),
+                rif(@menu == 4, "► ") + l("Ch 4 — Casting"),
+                rif(@menu == 5, "► ") + l("Ch 5 — Reeling");
+
+            switch(@menu)
+            {
+                case 1:
+                    narrator 1 | 4,
+                        l("You'll want your fishing rod to be flexible but solid."),
+                        l("Comfortable grip is important especially for newcomers, since they'll be holding it for quite a while.");
+                    break;
+                case 2:
+                    narrator 1 | 4,
+                        l("You can use many diverse items to lure fishes."),
+                        l("Some people prefer to catch fish using magic, but calling that \"fishing\" would be an insult to this traditional sport."),
+                        l("Most common and widely popular in the fish realm are @@ and pieces of @@.",
+                            getitemlink(SmallTentacles), getitemlink(Bread)),
+                        l("Some types of fish also enjoy @@ quite a bit.",
+                            getitemlink(Aquada)),
+                        l("Some people, however, prefer to fish with more unorthodox baits, such as @@ or @@.",
+                            getitemlink(UrchinMeat), getitemlink(TortugaTongue));
+                    break;
+                case 3:
+                    narrator 1 | 4,
+                        l("Find yourself a nice dry spot on a coast where you can easily reach into deep water."),
+                        l("Fishing next to shallow water is not going to work well, because fishes seldom go there.");
+                    break;
+                case 4:
+                    narrator 1 | 4,
+                        l("Toss the hook into deep water by clicking on where you want to cast it."),
+                        l("Make sure to put on a bait after you click, though!"),
+                        l("After that, stay still and be patient, but also alert!");
+                    break;
+                case 5:
+                    narrator 1 | 4,
+                        l("To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges."),
+                        l("Should you be too quick or wait too long, you will most likely fail.");
+                    break;
+            }
+        } while (true);
+
+        end;
+    }
+
+OnShelfUse:
+    if (openbookshelf())
+        read_book;
+    bye;
+
+OnUse:
+    if (openbook())
+        read_book;
+    bye;
+
+OnInit:
+    .book_name$ = getitemname(FishingGuideVolI);
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
 }
