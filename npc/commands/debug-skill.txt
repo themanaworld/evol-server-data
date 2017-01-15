@@ -1,8 +1,8 @@
 function	script	GlobalSkillDebug	{
 
-    function	modifySkill	{
+    function modifySkill {
 
-        function	setSkill	{
+        function setSkill {
             clear;
             mes l("Enter desired skill level:");
             input .@y;

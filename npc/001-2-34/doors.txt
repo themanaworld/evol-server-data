@@ -7,12 +7,11 @@
 001-2-34,23,29,0	script	ToTrainingRoom#001-2-34	NPC_HIDDEN,0,0,{
 
 OnTouch:
-	if ((getmapusers($@MAP_NAME$) == 0) && ($@FightingIsActive > 0))
-	{
-		set $@FightingIsActive, 0;
-		killmonsterall "001-2-36";
-		
-	}
+    if ((getmapusers($@MAP_NAME$) == 0) && ($@FightingIsActive > 0))
+    {
+        set $@FightingIsActive, 0;
+        killmonsterall "001-2-36";
+    }
 
     if (mobcount("001-2-36","all") > 0 && $@FightingIsActive > 0)
     {

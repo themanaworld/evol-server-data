@@ -25,12 +25,12 @@ function	script	displayMOTD	{
 
 function	script	MOTDConfig	{
 
-    function	toggleMOTD	{
+    function toggleMOTD {
         $MOTD_Disabled = !($MOTD_Disabled);
         // FIXME: log to GM log
     }
 
-    function	addNewLine	{
+    function addNewLine {
         clear;
         mes l("Please enter the new line.");
         input .@s$;
@@ -44,9 +44,9 @@ function	script	MOTDConfig	{
         }
     }
 
-    function	modifyLine	{
+    function modifyLine {
 
-        function	removeLine	{
+        function removeLine {
             .@l = getarg(0);
             deletearray $MOTD_Messages$[.@l], 1; // remove and shift
             mes l("Line @@ has been removed.", .@l);
@@ -54,21 +54,21 @@ function	script	MOTDConfig	{
             // FIXME: log to GM log
         }
 
-        function	moveUp	{
+        function moveUp {
             .@l = getarg(0);
             .@top$ = $MOTD_Messages$[.@l - 1];
             $MOTD_Messages$[.@l - 1] = $MOTD_Messages$[.@l];
             $MOTD_Messages$[.@l] = .@top$;
         }
 
-        function	moveDown	{
+        function moveDown {
             .@l = getarg(0);
             .@bottom$ = $MOTD_Messages$[.@l + 1];
             $MOTD_Messages$[.@l + 1] = $MOTD_Messages$[.@l];
             $MOTD_Messages$[.@l] = .@bottom$;
         }
 
-        function	editLine	{
+        function editLine {
             .@l = getarg(0);
             clear;
             mes l("Old line:");

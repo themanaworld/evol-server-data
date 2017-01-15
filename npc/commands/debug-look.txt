@@ -1,6 +1,6 @@
 function	script	BarberDebug	{
 
-    function	setGender	{
+    function setGender {
         //clear;
         //setnpcdialogtitle l("Appearance Debug - Sex Change");
         //mes l("Please choose the desired gender:");
@@ -18,7 +18,7 @@ function	script	BarberDebug	{
         closedialog;
         changecharsex;
     }
-    function	setStyle	{
+    function setStyle {
         clear;
         setnpcdialogtitle l("Appearance Debug - Barber");
         mes l("Hair style") + ": " + getlook (LOOK_HAIR);
@@ -28,7 +28,7 @@ function	script	BarberDebug	{
         setlook LOOK_HAIR, max(1, min(0xFF, .@h));
         return;
     }
-    function	setColor	{
+    function setColor {
         clear;
         setnpcdialogtitle l("Appearance Debug - Barber");
         mes l("Hair color") + ": " + getlook (LOOK_HAIR_COLOR);
@@ -38,7 +38,7 @@ function	script	BarberDebug	{
         setlook LOOK_HAIR_COLOR, max(0, min(0xFF, .@h));
         return;
     }
-    function	setRace	{
+    function setRace {
         clear;
         setnpcdialogtitle l("Appearance Debug - Race");
         mes l("Race") + ": " + Class;

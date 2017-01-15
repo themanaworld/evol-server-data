@@ -38,10 +38,10 @@
 //=========================================================================
 
 -	script	HerculesSelfTestCI	FAKE_NPC,{
-	end;
+    end;
 
 OnInit:
-	.@val = callfunc("HerculesSelfTestHelper");
-	mapquit(.@val);
-	end;
+    .@val = callfunc("HerculesSelfTestHelper");
+    mapquit(.@val);
+    end;
 }

@@ -1,7 +1,7 @@
 function	script	GlobalQuestDebug	{
 
-    function	qDebugShip	{
-        function	qDebugGugli {
+    function qDebugShip {
+        function qDebugGugli {
             do
             {
                 clear;
@@ -60,7 +60,7 @@ function	script	GlobalQuestDebug	{
         } while (1);
     }
 
-    function	qDebugArtis	{
+    function qDebugArtis {
         do
         {
             clear;
@@ -90,7 +90,7 @@ function	script	GlobalQuestDebug	{
         } while (1);
     }
 
-    function	qDebugGeneral	{
+    function qDebugGeneral {
         do
         {
             clear;
