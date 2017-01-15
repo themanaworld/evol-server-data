@@ -7,7 +7,7 @@
 001-2-32,33,29,0	script	ToFightRoom#001-2-32	NPC_HIDDEN,0,0,{
 
 OnTouch:
-    if (mobcount("001-2-35.gat","all") > 0)
+    if (mobcount("001-2-35","all") > 0)
     {
         narrator
         l("You hear some sound behind the door."),

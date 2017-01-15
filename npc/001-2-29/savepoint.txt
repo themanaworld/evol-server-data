@@ -5,7 +5,7 @@
 //    Saves locations in 001-2-29 map.
 
 001-2-29,29,28,0	script	#001-2-29-1	NPC_SAVE_POINT,0,0,{
-    bedClic ("001-2-29.gat", 29, 28, REDPLUSH_INN);
+    bedClic ("001-2-29", 29, 28, REDPLUSH_INN);
 
 OnInit:
     .distance = 2;
@@ -20,7 +20,7 @@ OnPCDieEvent:
 }
 
 001-2-29,29,35,0	script	#001-2-29-2	NPC_SAVE_POINT,0,0,{
-    bedClic ("001-2-29.gat", 29, 35, REDPLUSH_INN);
+    bedClic ("001-2-29", 29, 35, REDPLUSH_INN);
 
 OnInit:
     .distance = 2;
@@ -31,7 +31,7 @@ OnTouch:
 }
 
 001-2-29,29,42,0	script	#001-2-29-3	NPC_SAVE_POINT,0,0,{
-    bedClic ("001-2-29.gat", 29, 42, REDPLUSH_INN);
+    bedClic ("001-2-29", 29, 42, REDPLUSH_INN);
 
 OnInit:
     .distance = 2;
@@ -42,7 +42,7 @@ OnTouch:
 }
 
 001-2-29,29,49,0	script	#001-2-29-4	NPC_SAVE_POINT,0,0,{
-    bedClic ("001-2-29.gat", 29, 49, REDPLUSH_INN);
+    bedClic ("001-2-29", 29, 49, REDPLUSH_INN);
 
 OnInit:
     .distance = 2;

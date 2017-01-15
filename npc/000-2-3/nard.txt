@@ -238,14 +238,14 @@ L_GoBackArtis:
             speech 5,
                 l("Let's set sail then!");
 
-            savepoint "001-2-22.gat", 50, 38;
+            savepoint "001-2-22", 50, 38;
             if (!getmapxy(.@map$, .@x, .@y, 0))
             {
-                warp "001-2-24.gat", .@x, .@y;
+                warp "001-2-24", .@x, .@y;
             }
             else
             {
-                warp "001-2-24.gat", 22, 27;
+                warp "001-2-24", 22, 27;
             }
 
             closedialog;

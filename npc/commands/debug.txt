@@ -1,6 +1,6 @@
 function	script	GlobalDebugMenu	{
-    function	resetAll	{
-        function	doReset	{
+    function resetAll {
+        function doReset {
             resetstatus;
             resetskill;
             resetlvl 1;
@@ -35,7 +35,7 @@ function	script	GlobalDebugMenu	{
         return;
     }
 
-    function	changeLevel	{
+    function changeLevel {
         clear;
         setnpcdialogtitle l("Debug - Change level");
         mes l("To change your base level, use this command:");
@@ -60,7 +60,7 @@ function	script	GlobalDebugMenu	{
         next;
         return;
     }
-    function	changeStats	{
+    function changeStats {
         clear;
         setnpcdialogtitle l("Debug - Change stats");
         mes l("To change your stats, use these commands:");

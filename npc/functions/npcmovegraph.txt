@@ -61,7 +61,7 @@ function	script	findmovegraphlabel	{
  * fromPositionLabel, toPositionLabel -- starting and ending position of NPC move
  * moveChanceWeight -- positive integer, represents the chance of moving in given direction. (optional)
  * moveFlags -- if .mg_flags & moveFlags != 0, move is possible. (optional)
- * postCommand -- either "moveon" (start moving to next location straight after arriving from 
+ * postCommand -- either "moveon" (start moving to next location straight after arriving from
  *                fromPositionLabel to toPositionLabel) or a semicolon-separated set of commands
  *                ("wait 3", "emote 5" etc, see `execmovecmd') that will be executed after arrival.
  *                The commands don't have to end with ";moveon", it's executed in the end by default.
@@ -355,7 +355,7 @@ function	script	movetonextpoint	{
     if (!.@weight_sum)
     {
         npcdebug("error: cannot pick next walk point. flags=" +
-	         getvariableofnpc(.mg_flags, strnpcinfo(3)));
+            getvariableofnpc(.mg_flags, strnpcinfo(3)));
         return;
     }
 

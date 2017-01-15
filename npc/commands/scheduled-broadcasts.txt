@@ -1,6 +1,6 @@
 function	script	StoneBoard	{
 
-    function	setMessage	{
+    function setMessage {
         do
         {
             clear;
@@ -17,7 +17,7 @@ function	script	StoneBoard	{
         } while (1);
     }
 
-    function	setInterval	{
+    function setInterval {
         clear;
         mes l("Please select the interval:");
         next;
@@ -33,7 +33,7 @@ function	script	StoneBoard	{
         return @menuret;
     }
 
-    function	setMaxRep	{
+    function setMaxRep {
         if (getarg(0,0) == 0)
         {
             return 0;
@@ -53,7 +53,7 @@ function	script	StoneBoard	{
         return @menuret;
     }
 
-    function	setOnLogin	{
+    function setOnLogin {
         if (getarg(0,0) == 0)
         {
             return 1;
@@ -68,7 +68,7 @@ function	script	StoneBoard	{
         return (@menu - 1);
     }
 
-    function	newBroadcast	{
+    function newBroadcast {
         do
         {
             setnpcdialogtitle l("Scheduled broadcasts - Create new");

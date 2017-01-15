@@ -9,7 +9,7 @@
 001-2-23,48,29,0	script	DoorUpwards#001-2-23	NPC_HIDDEN,0,0,{
 
 OnTouch:
-    if (mobcount("001-2-23.gat","all") > 0) goto L_Warn;
+    if (mobcount("001-2-23","all") > 0) goto L_Warn;
 
     goto L_Warp;
 

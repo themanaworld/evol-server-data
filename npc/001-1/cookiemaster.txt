@@ -208,7 +208,7 @@ L_Kick:
     closedialog;
 
     npctalk3 l("No cookie for you!");
-    warp "001-1.gat", 39, 41;
+    warp "001-1", 39, 41;
 
     close;
 

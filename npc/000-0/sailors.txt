@@ -69,7 +69,7 @@ OnTouch:
     mes col(l("Click on the NPCs (Non-Player Characters) around you to continue the introduction."), 9);
     next;
 
-    warp "000-0-0.gat", 26, 28;
+    warp "000-0-0", 26, 28;
 
     closedialog;
     close;

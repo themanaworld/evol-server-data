@@ -34,14 +34,14 @@
 
 000-2-0,27,24,0	script	Julia	NPC_JULIA,2,10,{
 
-    function	ynMenu	{
+    function ynMenu {
         if (select(l("Yes, I do."), l("No, none.")) == 1) {
             return;
         }
         closedialog;
     }
 
-    function	poisonJulia	{
+    function poisonJulia {
         mes "";
         mesn;
         mesq l("Seems yummy! Let me taste it!");
@@ -52,7 +52,7 @@
         close;
     }
 
-    function	gotoSleep	{
+    function gotoSleep {
         speech 5,
             l("You already did enough for us, follow Nard's advice and get some rest."),
             l("We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!"),
@@ -61,7 +61,7 @@
         return;
     }
 
-    function	heardRumors	{
+    function heardRumors {
         mes "";
         mesn;
         mesq l("You shouldn't believe every tale drunken sailors tell you.");
@@ -102,7 +102,7 @@
         close;
     }
 
-    function	gotRegrets	{
+    function gotRegrets {
         mes "";
         mesn;
         mesq l("Why? And who should you bring it back to?");
@@ -124,7 +124,7 @@
         close;
     }
 
-    function	basicSkill	{
+    function basicSkill {
         mes "";
         mesn;
         mesq l("Let me check into it...");
@@ -139,7 +139,7 @@
         return;
     }
 
-    function	chooseLang	{
+    function chooseLang {
         mes "";
         mesn;
         mesq l("Of course! Tell me which language you speak and I will change the note on the ship passenger list.");
@@ -185,7 +185,7 @@
         return;
     }
 
-    function	whereAmI	{
+    function whereAmI {
         mes "";
         mesn;
         mesq l("You're on a ship, we're on our way to the commercial capital of Artis.");
@@ -200,7 +200,7 @@
         return;
     }
 
-    function	whatHappened	{
+    function whatHappened {
         mes "";
         mesn;
         mesq l("We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.");
@@ -222,7 +222,7 @@
         return;
     }
 
-    function	readRules	{
+    function readRules {
         mes "";
         mesn;
         mesq l("Of course, they are on the left wall, go have a look at them.");
@@ -233,7 +233,7 @@
         return;
     }
 
-    function	mainMenu	{
+    function mainMenu {
         do
         {
             .@q2 = getq(ShipQuests_ChefGado);

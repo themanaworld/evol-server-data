@@ -26,8 +26,8 @@
     if (countitem(JohanneKey) == 1) delitem JohanneKey, 1;
     setq General_Narrator, 1;
     setq ShipQuests_Nard, 6;
-    savepoint "001-2-22.gat", 50, 38;
-    warp "001-2-22.gat", 50, 38;
+    savepoint "001-2-22", 50, 38;
+    warp "001-2-22", 50, 38;
     closedialog;
     close;
 
