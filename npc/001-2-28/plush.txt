@@ -32,10 +32,10 @@
             PC_IS_DEAD = false;
 
             speech 5,
-                lg("I registered you on the @@ room of the upper level.",
-                    (Sex == G_FEMALE) ? "4th" : "2nd"),
+                lg("I registered you on the 4th room of the upper level.",
+                   "I registered you on the 2nd room of the upper level."),
                 l("You can go upstairs and choose a different room if you want.");
-            savepoint "001-2-29", 29, (Sex == G_FEMALE) ? 49 : 35;
+            savepoint "001-2-29", 29, g(49, 35);
         }
     }
 
@@ -79,7 +79,7 @@
 
             if (askyesno() == ASK_YES)
             {
-                register_room; 
+                register_room;
             }
         }
         return;
