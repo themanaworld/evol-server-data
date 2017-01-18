@@ -33,6 +33,8 @@ OnInit:
             narrator 8,
                 l("Please select a chapter:");
 
+            mes "";
+
             select
                 rif(@menu == 1, "► ") + l("Ch 1 — Fishing apparatus"),
                 rif(@menu == 2, "► ") + l("Ch 2 — Baits"),
