@@ -11,18 +11,18 @@ function	script	asklanguage	{
     switch (getarg(0, 0))
     {
         case LANG_ON_SEA:
-            setarray .@messages$[0], l("I hear you... (English)"),
-                                     l("Je vous entends... (Français)"),
-                                     l("Да я вас слышу... (Русский)"),
-                                     l("Te oigo... (Español)"),
-                                     l("Eu te ouço... (Português)"),
-                                     l("Ich höre euch... (Deutsch)"),
-                                     l("'k hoar ui wel... (Vlaams)"),
-                                     l("Słyszę cię... (Polski)"),
-                                     l("Vi sento... (Italiano)"),
-                                     l("Ik kan je horen... (Nederlands)"),
-                                     l("Et escolto (Català)"),
-                                     l("Mi aŭdas vin... (Angle)");
+            setarray .@messages$[0], "I hear you... (English)",
+                                     "Je vous entends... (Français)",
+                                     "Да я вас слышу... (Русский)",
+                                     "Te oigo... (Español)",
+                                     "Eu te ouço... (Português)",
+                                     "Ich höre euch... (Deutsch)",
+                                     "'k hoar ui wel... (Vlaams)",
+                                     "Słyszę cię... (Polski)",
+                                     "Vi sento... (Italiano)",
+                                     "Ik kan je horen... (Nederlands)",
+                                     "Et escolto (Català)",
+                                     "Mi aŭdas vin... (Angle)";
             break;
         case LANG_IN_SHIP:
             setarray .@messages$[0], l("I speak English."),
@@ -42,18 +42,18 @@ function	script	asklanguage	{
             return;
     }
 
-    setarray .@flags$[0],    l("flags/en"),
-                             l("flags/fr"),
-                             l("flags/ru"),
-                             l("flags/es"),
-                             l("flags/pt_BR"),
-                             l("flags/de"),
-                             l("flags/vls"),
-                             l("flags/pl"),
-                             l("flags/it"),
-                             l("flags/nl_BE"),
-                             l("flags/ca"),
-                             l("flags/eo");
+    setarray .@flags$[0],    "flags/en",
+                             "flags/fr",
+                             "flags/ru",
+                             "flags/es",
+                             "flags/pt_BR",
+                             "flags/de",
+                             "flags/vls",
+                             "flags/pl",
+                             "flags/it",
+                             "flags/nl_BE",
+                             "flags/ca",
+                             "flags/eo";
 
     .@menustr$ = "";
     .@separator$ = ":";
