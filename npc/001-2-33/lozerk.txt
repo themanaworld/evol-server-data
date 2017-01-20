@@ -99,7 +99,7 @@
         .@enora  = getq(ArtisQuests_Enora);
          // some quest fetch before
         select
-            rif((.@legion_progress == 0) && (.@enora == 11), l("Enora sent me here")),
+            rif((.@legion_progress == 0) && (.@enora == 11), l("Enora sent me here.")),
             rif(.@legion_progress == 2, lg("I'm done with my training.")),
             rif(.@legion_progress == 4, lg("I'm back from battle!")),
             l("What can you tell me about the legion?"),
