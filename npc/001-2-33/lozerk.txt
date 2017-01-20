@@ -21,13 +21,13 @@
  
     function send_training {
         speech 5,
-            l("Oh, you were sent by Enora!"),
-            l("If Enora thinks this is the right place for you, then she's probably be right. She's a lieutenant of the Legion, you know?"),
+            lg("Oh, you were sent by Enora!"),
+            l("If Enora thinks this is the right place for you, then she's probably be right. Did you know she's a lieutenant of the Legion?"),
             l("The rank of lieutenant is granted only to people with proper control of their skill and good judgment, like Enora. Or me, of course."),
-            l("By the way, I am Lozerk. Lieutenant Lozerk.");
+            l("By the way, I'm Lozerk. Lieutenant Lozerk.");
         select(l("Pleasure to meet you. I am @@.", strcharinfo(PC_NAME)));
         speech 5,         
-            l("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
+            lg("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
             l("But don't you worry! I don't know how to get you back your memories, but we can work on your muscles for now!"),
             lg("After all, this is the Legion of Aemil! You want to be a great warrior? We'll make you one here!"),
             l("For starters, you should probably do some stretching and practice on some dummies in our training room."),
