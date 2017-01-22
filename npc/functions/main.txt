@@ -246,3 +246,23 @@ function	script	lognbaselvl	{
 
     return .@ret;
 }
+
+function	script	getquestlink	{
+    return "[@@q" + getarg(0) + "|@@]";
+}
+
+function	script	getmonsterlink	{
+    return "[@@m" + getarg(0) + "|@@]";
+}
+
+function	script	getpetlink	{
+    return "[@@p" + getarg(0) + "|@@]";
+}
+
+function	script	getmercenarylink	{
+    return "[@@M" + getarg(0) + "|@@]";
+}
+
+function	script	gethomunculuslink	{
+    return "[@@h" + getarg(0) + "|@@]";
+}
