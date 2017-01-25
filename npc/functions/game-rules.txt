@@ -28,7 +28,7 @@ function	script	GameRules	{
 
     function read_book {
         narrator 5 | 1,
-            l("This book outlines the laws of every city and holding in Gasaron"),
+            l("This book outlines the laws of every city and holding in Gasaron."),
             l("The first page contains the universal rules that have been agreed upon throughout the land.");
 
         GameRules 8 | 4;
