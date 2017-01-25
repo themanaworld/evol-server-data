@@ -64,6 +64,8 @@ OnInit:
                     narrator 1 | 4,
                         l("Find yourself a nice dry spot on a coast where you can easily reach into deep water."),
                         l("Fishing next to shallow water is not going to work well, because fishes seldom go there.");
+                        l("You can easily identify fishing spots, small bubbles and fishes are visible from the surface."),
+                        l("Don't forget to come as close as possible to these spots!"),
                     break;
                 case 4:
                     narrator 1 | 4,

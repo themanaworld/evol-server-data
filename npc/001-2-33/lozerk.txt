@@ -92,7 +92,7 @@
     // Conversation
  
     speech 4,
-        l("Welcome to the the Legion of Aemil's building in Artis!");
+        l("Welcome to the Legion of Aemil's building in Artis!");
 
     do{
         .@legion_progress = getq(Artis_Legion_Progress);
