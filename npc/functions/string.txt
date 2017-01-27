@@ -64,3 +64,30 @@ function	script	zfill	{
 
     return .@str$;
 }
+
+// format_number( integer [, "separator"] )
+//
+// formats a number properly according to the language of the player,
+// or using the given separator
+function	script	format_number	{
+    .@number$ = str(getarg(0));
+    .@len = getstrlen(.@number$);
+    .@separator$ = getarg(1, ",");
+
+    if (getargcount() < 2 && playerattached())
+    {
+        // get from user language
+        switch (Lang)
+        {
+            case 1: .@separator$ = " "; break; // French
+            default: .@separator$ = ","; // English (default)
+        }
+    }
+
+    for (.@i = .@len - 3; .@i > 0; .@i -= 3)
+    {
+        .@number$ = insertchar(.@number$, .@separator$, .@i);
+    }
+
+    return .@number$;
+}

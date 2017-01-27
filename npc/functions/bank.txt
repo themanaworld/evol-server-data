@@ -9,7 +9,8 @@ function	script	MerchantGuild_Bank	{
         if (#MerchantBank > 0)
         {
             speech 1 | 4,
-                    l("You currently have @@ Esperin on your bank account.", #MerchantBank),
+                    l("You currently have @@ Esperin on your bank account.",
+                        format_number(#MerchantBank)),
                     l("What do you want to do with your money?");
         }
         else
@@ -31,14 +32,14 @@ function	script	MerchantGuild_Bank	{
 
                 menuint
                     l("Other."), -1,
-                    rif(Zeny >= 5000, "5,000 E."), 5000,
-                    rif(Zeny >= 10000, "10,000 E."), 10000,
-                    rif(Zeny >= 25000, "25,000 E."), 25000,
-                    rif(Zeny >= 50000, "50,000 E."), 50000,
-                    rif(Zeny >= 100000, "100,000 E."), 100000,
-                    rif(Zeny >= 250000, "250,000 E."), 250000,
-                    rif(Zeny >= 500000, "500,000 E."), 500000,
-                    rif(Zeny >= 1000000, "1,000,000 E."), 1000000,
+                    rif(Zeny >= 5000, format_number(5000) + " E."), 5000,
+                    rif(Zeny >= 10000, format_number(10000) + " E."), 10000,
+                    rif(Zeny >= 25000, format_number(25000) + " E."), 25000,
+                    rif(Zeny >= 50000, format_number(50000) + " E."), 50000,
+                    rif(Zeny >= 100000, format_number(100000) + " E."), 100000,
+                    rif(Zeny >= 250000, format_number(250000) + " E."), 250000,
+                    rif(Zeny >= 500000, format_number(500000) + " E."), 500000,
+                    rif(Zeny >= 1000000, format_number(1000000) + " E."), 1000000,
                     l("All of my money."), -2,
                     l("I changed my mind."), -3;
 
@@ -71,7 +72,7 @@ function	script	MerchantGuild_Bank	{
                         Zeny -= .@deposit; // remove from inventory
 
                         speech 1 | 4,
-                            l("You made a cash deposit of @@ E.", .@deposit);
+                            l("You made a cash deposit of @@ E.", format_number(.@deposit));
                     }
                 }
                 break;
@@ -82,14 +83,14 @@ function	script	MerchantGuild_Bank	{
 
                 menuint
                     l("Other."), -1,
-                    rif(#MerchantBank >= 5000, "5,000 E."), 5000,
-                    rif(#MerchantBank >= 10000, "10,000 E."), 10000,
-                    rif(#MerchantBank >= 25000, "25,000 E."), 25000,
-                    rif(#MerchantBank >= 50000, "50,000 E."), 50000,
-                    rif(#MerchantBank >= 100000, "100,000 E."), 100000,
-                    rif(#MerchantBank >= 250000, "250,000 E."), 250000,
-                    rif(#MerchantBank >= 500000, "500,000 E."), 500000,
-                    rif(#MerchantBank >= 1000000, "1,000,000 E."), 1000000,
+                    rif(#MerchantBank >= 5000, format_number(5000) + " E."), 5000,
+                    rif(#MerchantBank >= 10000, format_number(10000) + " E."), 10000,
+                    rif(#MerchantBank >= 25000, format_number(25000) + " E."), 25000,
+                    rif(#MerchantBank >= 50000, format_number(50000) + " E."), 50000,
+                    rif(#MerchantBank >= 100000, format_number(100000) + " E."), 100000,
+                    rif(#MerchantBank >= 250000, format_number(250000) + " E."), 250000,
+                    rif(#MerchantBank >= 500000, format_number(500000) + " E."), 500000,
+                    rif(#MerchantBank >= 1000000, format_number(1000000) + " E."), 1000000,
                     l("All of my money."), -2,
                     l("I changed my mind."), -3;
 
@@ -122,7 +123,7 @@ function	script	MerchantGuild_Bank	{
                         #MerchantBank -= .@withdrawal; // remove from bank
 
                         speech 1 | 4,
-                            l("You withdrew a total of @@ E.", .@withdrawal);
+                            l("You withdrew a total of @@ E.", format_number(.@withdrawal));
                     }
                 }
                 break;
