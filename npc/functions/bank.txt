@@ -1,0 +1,76 @@
+// Evol scripts.
+// Authors:
+//    gumi
+//    Reid
+
+function	script	MerchantGuild_Bank	{
+    speech 5,
+        l("Fine, what do you want to do with your money?");
+
+    do
+    {
+        .@q = select (l("Deposit."),
+                     l("Withdraw."),
+                     l("Check my balance."),
+                     l("I'm done."));
+        switch (.@q)
+        {
+            case 1:
+                speech 1,
+                    l("Enter the amount that you want to deposit.");
+                mes "";
+
+                input .@amount;
+                if (.@amount < 1)
+                {
+                    speech 5,
+                        l("Please enter a valid amount.");
+                    continue;
+                }
+                if (.@amount > Zeny)
+                {
+                    speech 5,
+                        l("You do not have enough Esperin on yourself.");
+                    continue;
+                }
+                set Zeny, Zeny - .@amount;
+                set #MerchantBank, #MerchantBank + .@amount;
+
+                speech 5,
+                    l("You made a cash deposit of @@ E.", .@amount);
+
+                break;
+            case 2:
+                speech 1,
+                    l("Enter the amount that you want to withdraw.");
+                mes "";
+
+                input .@amount;
+                if (.@amount < 1)
+                {
+                    speech 5,
+                        l("Please enter a valid amount.");
+                    continue;
+                }
+                if (.@amount > #MerchantBank)
+                {
+                    speech 5,
+                        l("You do not have enough Esperin on your bank account.");
+                    continue;
+                }
+                set #MerchantBank, #MerchantBank - .@amount;
+                set Zeny, Zeny + .@amount;
+
+                speech 5,
+                    l("You withdrawn a total of @@ E.", .@amount);
+
+                break;
+            case 3:
+                speech 5,
+                    l("You currently have @@ on your bank account.", #MerchantBank);
+                break;
+        }
+    } while (.@q != 4);
+
+    return;
+}
