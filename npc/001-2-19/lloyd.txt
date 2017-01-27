@@ -1,5 +1,6 @@
 // Evol scripts.
-// Author:
+// Authors:
+//    gumi
 //    Reid
 // Description:
 //    Lloyd the banker NPC.
@@ -52,12 +53,16 @@
     }
 
     function explain_guild {
-        speech
+        speech 4,
             l("The guild is in charge of the commerce regularization throughout Artis and its surroundings."),
             l("With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their businesses."),
             l("We also feature some services like a storage and a bank for members."),
             l("Registration is open to everybody, but newcomers need to pay a fee for all of the paperwork.");
 
+        narrator 1,
+            l("The bank and item storage is shared between all characters within a same account."),
+            l("With it, you can safely move items and funds between your characters."),
+            l("To move between characters that are on different accounts, you have to use the Trade function.");
         return;
     }
 
@@ -178,7 +183,7 @@
         selectd
             rif (.@enora == 2, l("I'm looking for some black iron ingots.")),
             l("I would like to store some items."),
-            l("I would like to deposit some money."),
+            l("I would like to perform money transactions."),
             l("What is this guild for?"),
             l("Does the guild has any work for me right now?"),
             l("Bye.");
