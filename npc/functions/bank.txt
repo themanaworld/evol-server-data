@@ -4,73 +4,130 @@
 //    Reid
 
 function	script	MerchantGuild_Bank	{
-    speech 5,
-        l("Fine, what do you want to do with your money?");
-
     do
     {
-        .@q = select (l("Deposit."),
-                     l("Withdraw."),
-                     l("Check my balance."),
-                     l("I'm done."));
-        switch (.@q)
+        if (#MerchantBank > 0)
+        {
+            speech 1 | 4,
+                    l("You currently have @@ Esperin on your bank account.", #MerchantBank),
+                    l("What do you want to do with your money?");
+        }
+        else
+        {
+            speech 1 | 4,
+                l("What do you want to do with your money?");
+        }
+
+        select
+            rif(Zeny > 0, l("Deposit.")),
+            rif(#MerchantBank > 0, l("Withdraw.")),
+            l("I'm done.");
+
+        switch (@menu)
         {
             case 1:
-                speech 1,
-                    l("Enter the amount that you want to deposit.");
-                mes "";
+                speech 1 | 4,
+                    l("How much do you want to deposit?");
 
-                input .@amount;
-                if (.@amount < 1)
+                menuint
+                    l("Other."), -1,
+                    rif(Zeny >= 5000, "5,000 E."), 5000,
+                    rif(Zeny >= 10000, "10,000 E."), 10000,
+                    rif(Zeny >= 25000, "25,000 E."), 25000,
+                    rif(Zeny >= 50000, "50,000 E."), 50000,
+                    rif(Zeny >= 100000, "100,000 E."), 100000,
+                    rif(Zeny >= 250000, "250,000 E."), 250000,
+                    rif(Zeny >= 500000, "500,000 E."), 500000,
+                    rif(Zeny >= 1000000, "1,000,000 E."), 1000000,
+                    l("All of my money."), -2,
+                    l("I changed my mind."), -3;
+
+                switch (@menuret)
                 {
-                    speech 5,
-                        l("Please enter a valid amount.");
-                    continue;
+                    case -1:
+                        input @menuret;
+                        break;
+                    case -2:
+                        @menuret = Zeny;
                 }
-                if (.@amount > Zeny)
+
+                if (@menuret > 0)
                 {
-                    speech 5,
-                        l("You do not have enough Esperin on yourself.");
-                    continue;
+                    if (@menuret > Zeny)
+                    {
+                        speech 1 | 4,
+                            l("You do not have enough Esperin on yourself.");
+                        break;
+                    }
+
+                    @menuret = min(0x7FFFFFFF, @menuret); // make sure the variable can't overflow
+                    .@before = #MerchantBank; // amount before the deposit
+                    .@max = 0x7FFFFFFF - #MerchantBank; // maximum possible deposit
+                    .@deposit = min(.@max, @menuret); // actual deposit
+
+                    if (.@deposit > 0)
+                    {
+                        #MerchantBank += .@deposit; // add to bank
+                        Zeny -= .@deposit; // remove from inventory
+
+                        speech 1 | 4,
+                            l("You made a cash deposit of @@ E.", .@deposit);
+                    }
                 }
-                set Zeny, Zeny - .@amount;
-                set #MerchantBank, #MerchantBank + .@amount;
-
-                speech 5,
-                    l("You made a cash deposit of @@ E.", .@amount);
-
                 break;
+
             case 2:
-                speech 1,
-                    l("Enter the amount that you want to withdraw.");
-                mes "";
+                speech 1 | 4,
+                    l("How much do you want to withdraw?");
 
-                input .@amount;
-                if (.@amount < 1)
+                menuint
+                    l("Other."), -1,
+                    rif(#MerchantBank >= 5000, "5,000 E."), 5000,
+                    rif(#MerchantBank >= 10000, "10,000 E."), 10000,
+                    rif(#MerchantBank >= 25000, "25,000 E."), 25000,
+                    rif(#MerchantBank >= 50000, "50,000 E."), 50000,
+                    rif(#MerchantBank >= 100000, "100,000 E."), 100000,
+                    rif(#MerchantBank >= 250000, "250,000 E."), 250000,
+                    rif(#MerchantBank >= 500000, "500,000 E."), 500000,
+                    rif(#MerchantBank >= 1000000, "1,000,000 E."), 1000000,
+                    l("All of my money."), -2,
+                    l("I changed my mind."), -3;
+
+                switch (@menuret)
                 {
-                    speech 5,
-                        l("Please enter a valid amount.");
-                    continue;
+                    case -1:
+                        input @menuret;
+                        break;
+                    case -2:
+                        @menuret = #MerchantBank;
                 }
-                if (.@amount > #MerchantBank)
+
+                if (@menuret > 0)
                 {
-                    speech 5,
-                        l("You do not have enough Esperin on your bank account.");
-                    continue;
+                    if (@menuret > #MerchantBank)
+                    {
+                        speech 1 | 4,
+                            l("You do not have enough Esperin on your bank account.");
+                        break;
+                    }
+
+                    @menuret = min(0x7FFFFFFE, @menuret); // make sure the variable can't overflow
+                    .@before = Zeny; // amount before the withdrawal
+                    .@max = 0x7FFFFFFE - Zeny; // maximum possible withdrawal
+                    .@withdrawal = min(.@max, @menuret); // actual withdrawal
+
+                    if (.@withdrawal > 0)
+                    {
+                        Zeny += .@withdrawal; // add to inventory
+                        #MerchantBank -= .@withdrawal; // remove from bank
+
+                        speech 1 | 4,
+                            l("You withdrew a total of @@ E.", .@withdrawal);
+                    }
                 }
-                set #MerchantBank, #MerchantBank - .@amount;
-                set Zeny, Zeny + .@amount;
-
-                speech 5,
-                    l("You withdrawn a total of @@ E.", .@amount);
-
                 break;
-            case 3:
-                speech 5,
-                    l("You currently have @@ on your bank account.", #MerchantBank);
-                break;
+
+            default: return;
         }
-    } while (.@q != 4);
-
-    return;
+    } while (true);
 }
