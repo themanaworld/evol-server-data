@@ -59,6 +59,11 @@ function	script	addremovemapmask	{
     return;
 }
 
+// returns a randomly picked argument from the given ones
+function	script	any	{
+    return getarg(rand(getargcount()));
+}
+
 // remove spaces at the start and end of string and return result
 function	script	strip	{
     .@s$ = getarg(0);
