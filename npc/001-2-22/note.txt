@@ -4,7 +4,7 @@
 // Description:
 //    
 
-001-2-22,22,33,0	script	Note#001-2-22	NPC_NO_SPRITE,{
+001-2-22,31,31,0	script	Note#001-2-22	NPC_DAN_NOTE,{
     mesn;
     mesq l("This note was left by somebody.");
     next;
@@ -18,7 +18,7 @@
 L_Content:
     mesn;
     mes "\"" + l("Dear sister,");
-    mes l("During the next few days, we will finally reach Artis.");
+    mes l("In a couple of days, we will finally reach Artis.");
     next;
 
     mes l("I will send you this letter as soon as I arrive.");
