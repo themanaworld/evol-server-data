@@ -1,0 +1,23 @@
+// Evol scripts.
+// Authors:
+//    4144
+// Description:
+//    test npc1
+
+test,30,10,0	trader	npc6	NPC_SHOP_BAG_TEST,{
+     end;
+
+OnCountFunds:
+    setcurrency 10000;
+    end;
+
+OnPayFunds:
+     dispbottom "Hi: price="+@price+" and points="+@points;
+     // check and remove points
+     purchaseok;
+     end;
+OnInit:
+     tradertype NST_CUSTOM;
+     sellitem Acorn, 500;
+     sellitem Bread, 200;
+}
