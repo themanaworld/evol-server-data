@@ -743,6 +743,9 @@ All monsters summoned!
 All of a sudden, you hear voices from above.
 
 
+All of my money.
+
+
 All of your items have been removed.
 
 
@@ -1751,9 +1754,6 @@ Charcommand failed (usage: %c<command> <char name> <parameters>).
 Chat: %s | Player: %s | Location: %d %d
 
 
-Check my balance.
-
-
 Check out this one.
 
 
@@ -1936,6 +1936,9 @@ Congrats, you are now part of the crew. Thanks again for your help.
 
 Congratulations!
 Gratulacje!
+
+Congratulations! You are the MVP! Your reward EXP Points are %u !!
+
 
 Cookie Master
 Mistrz Ciastek
@@ -2348,6 +2351,9 @@ Nie zaaa.. *hik* ze mną eh!
 Don't fall!
 
 
+Don't forget to come as close as possible to these spots!
+
+
 Don't get too excited about it...#0
 
 
@@ -2445,9 +2451,6 @@ Duel| You've left the duel.
 
 
 Dummy
-
-
-During the next few days, we will finally reach Artis.
 
 
 Duty calls me, *hic*, see you later, dude.#1
@@ -2552,7 +2555,10 @@ Enora is carefully inspecting the sword.
 Enora needs them.
 
 
-Enora sent me here.
+Enora sent me here.#0
+
+
+Enora sent me here.#1
 
 
 Enora wants her potions.
@@ -2574,12 +2580,6 @@ Enter line number:
 
 
 Enter new line:
-
-
-Enter the amount that you want to deposit.
-
-
-Enter the amount that you want to withdraw.
 
 
 Error reading atcommand.conf, reload failed.
@@ -2715,9 +2715,6 @@ Fine, take these potions, I will replenish them in the next couple hours anyway.
 
 
 Fine, tell me, who are these all important friends of yours?
-
-
-Fine, what do you want to do with your money?
 
 
 Fine.
@@ -3356,9 +3353,6 @@ Help me out~ Please~ T_T
 Help me!
 
 
-Her shop is in the west side of the city, between the Legion building and the library.
-
-
 Her shop is on the west side of the city, between the Legion building and the library.
 
 
@@ -3633,6 +3627,12 @@ How many Fluffies did I kill on the hill?
 
 
 How many? What kind? I can produce two dozen boxes per day.
+
+
+How much do you want to deposit?
+
+
+How much do you want to withdraw?
 
 
 How rude! What is the reason behind your malice?
@@ -4058,42 +4058,6 @@ I should know, I've not been a member for a while, too. But then I joined the Le
 I should put more effort into this.
 
 
-I speak Catalan.
-
-
-I speak Dutch.
-Mówię po holendersku.
-
-I speak English.
-Mówię po angielsku.
-
-I speak Esperanto.
-
-
-I speak Flemish.
-Mówię po flamandzku.
-
-I speak French.
-Mówię po francusku.
-
-I speak German.
-Mówię po niemiecku.
-
-I speak Italian.
-Mówię po włosku.
-
-I speak Polish.
-Mówię po polsku.
-
-I speak Portuguese.
-Mówię po portugalsku.
-
-I speak Russian.
-Mówię po rosyjsku.
-
-I speak Spanish.
-Mówię po hiszpańsku.
-
 I still didn't find my brother...
 
 
@@ -4241,7 +4205,7 @@ I would like to create a guild.
 I would like to create a party.
 
 
-I would like to deposit some money.
+I would like to perform money transactions.
 
 
 I would like to stay here a bit more.
@@ -4554,6 +4518,9 @@ Impossible to increase the number/value.
 
 
 In Artis they really do mythologize people when they die.
+
+
+In a couple of days, we will finally reach Artis.
 
 
 In fact, everything seems to work perfectly under your guidance. Nard has made the right choice.
@@ -6302,6 +6269,9 @@ Poza tym niewiele wiem, dobrym pomysłem byłoby zapytać Kapitana.
 Other things are written but are not legible anymore.
 Coś jeszcze jest napisane, ale nieczytelnie.
 
+Other.
+
+
 Ouch!
 
 
@@ -8036,6 +8006,9 @@ The Raijin from the library flirted with me a while ago, so has Enora from the L
 The answer is a single word, without conjugation.
 
 
+The bank and item storage is shared between all characters within a same account.
+
+
 The best, the wonderful, the most choice cookie among all others, the...
 
 
@@ -8321,7 +8294,7 @@ They eventually found a new land after much hardship and named it Aurora, after 
 They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of humans.
 
 
-They sailed past the Clear Sea and towards the Long Ocean which nobody had explored before..
+They sailed past the Clear Sea and towards the Long Ocean which nobody had explored before.
 
 
 They shouldn't be too far from each other.
@@ -8357,7 +8330,7 @@ This action can't be performed at the moment. Please try again later.
 This book contains everything you should know about it, take it!
 
 
-This book outlines the laws of every city and holding in Gasaron
+This book outlines the laws of every city and holding in Gasaron.
 
 
 This bound item cannot be stored there.
@@ -8550,6 +8523,9 @@ To change your stats, use these commands:
 
 
 To get started with fishing, you'll need two things: a fishing rod and a bait.
+
+
+To move between characters that are on different accounts, you have to use the Trade function.
 
 
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
@@ -9071,13 +9047,13 @@ Welcome to my office.
 Welcome to our inn!
 
 
+Welcome to the Legion of Aemil's building in Artis!
+
+
 Welcome to the Merchant Guild of Artis!
 
 
 Welcome to the Red Plush inn!
-
-
-Welcome to the the Legion of Aemil's building in Artis!
 
 
 Welcome!
@@ -9237,6 +9213,9 @@ What do you want to change?
 
 
 What do you want to do with it?
+
+
+What do you want to do with your money?
 
 
 What do you want to do?
@@ -9510,6 +9489,9 @@ Wind and grass is nice and cool, so juicy sweet...
 
 
 With hunger, thirst, and sleep as your only companions, you have the disturbing realization that you can't remember anything of your former life or identity.
+
+
+With it, you can safely move items and funds between your characters.
 
 
 With proper training, a piou can become a good friend and faithful companion in your adventures.
@@ -9857,6 +9839,9 @@ You can attack a monster by clicking on it, or from your keyboard you can press 
 You can drag and drop an item to the NPC window or select an item through your inventory.
 
 
+You can easily identify fishing spots, small bubbles and fishes are visible from the surface.
+
+
 You can easily see if a monster is easy to kill or just impossible to defeat. Do not try against creatures that are way more powerful than you... You'd be risking your life for nothing.
 Możesz łatwo zauważyć czy potwór jest łatwy do zabicia czy nie. Nie próbuj atakować potworów które są o wiele silniejsze niż ty.... Będziesz niepotrzebnie ryzykować życie.
 
@@ -10016,7 +10001,7 @@ You could start by talking to Gugli. He always has tasks for people willing to h
 You currently cannot open your storage.
 
 
-You currently have @@ on your bank account.
+You currently have @@ Esperin on your bank account.
 
 
 You do not give me much options.
@@ -10499,7 +10484,7 @@ You will see, citizens are polite and you can still ask for help in the Legion o
 You wipe off enough of the sand to manage to read the message written on this crude piece of wood.
 
 
-You withdrawn a total of @@ E.
+You withdrew a total of @@ E.
 
 
 You yoiis should walk to the north.
@@ -10923,6 +10908,9 @@ npc4
 
 
 npc5
+
+
+npc6
 
 
 option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
