@@ -1,0 +1,41 @@
+// Inspector quest debug
+// Author:
+//    gumi
+
+function	script	QuestDebug38	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "HurnscaldQuests_Inspector";
+        mes "---";
+        mes l("Quest state: @@",
+            getq(HurnscaldQuests_Inspector));
+        next;
+
+        GenericQuestDebug HurnscaldQuests_Inspector,
+            l("Cannot do the quest"), 0,
+            l("Can do the quest"), 1,
+            l("Talked to Inspector (1)"), 2,
+            l("Talked to Old Woman (1)"), 3,
+            l("Talked to Old Woman (2)"), 4,
+            l("Talked to Inspector (2)"), 5,
+            l("Talked to Troupe Leader (1)"), 6,
+            l("Talked to Inspector (3)"), 7,
+            l("Talked to Old Man"), 8,
+            l("Talked to Old Woman (3)"), 9,
+            l("Talked to Inspector (4)"), 10,
+            l("Talked to Old Woman (4)"), 11,
+            l("Talked to Malek"), 12,
+            l("Searched the bookcase"), 13,
+            l("Talked to Inspector (5)"), 14,
+            l("Talked to Troupe Leader (2)"), 15,
+            l("Talked to Inspector (6)"), 16;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

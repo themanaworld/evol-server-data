@@ -1,0 +1,37 @@
+// Jack Lumber quest debug
+// Author:
+//    gumi
+
+function	script	QuestDebug40	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "HurnscaldQuests_WoodenShield";
+        mes "---";
+        mes l("Quest state: @@", getq(HurnscaldQuests_WoodenShield));
+        mes "---";
+        mes l("Related quests:");
+        mes "HurnscaldQuests_ForestBow: " + getq(HurnscaldQuests_ForestBow);
+        next;
+
+        GenericQuestDebug HurnscaldQuests_WoodenShield,
+            menuimage("actions/manage", l("Debug Forest Bow")), -1,
+            l("Cannot do the quest"), 0,
+            l("Can do the quest"), 1,
+            l("Jack proposes shield"), 2,
+            l("Accepted the quest"), 3,
+            l("Got the shield"), 4;
+
+        switch (@menuret)
+        {
+            case -1: callfunc "QuestDebug39"; break;
+            case 1:
+            case 2:
+            case 3:
+            case 4: setq(HurnscaldQuests_ForestBow, max(5, getq(HurnscaldQuests_ForestBow))); break;
+            default: if (@menuret < 0) return;
+        }
+
+    } while (1);
+}

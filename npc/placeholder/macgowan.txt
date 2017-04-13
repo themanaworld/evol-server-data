@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    gumi
+
+008-2-8,38,29,0	script	Macgowan	NPC_HUMAN_M_ARTIS,{
+    npctalk3(l("Hello, I am Macgowan, apprentice to Nicholas."));
+    end;
+
+OnInit:
+    .distance = 3;
+
+////////// UNFINISHED //////////
+////////////////////////////////
+// REMOVE THIS CODE WHEN THIS //
+// NPC IS NO LONGER A WIP //////
+////////////////////////////////
+if (!debug) disablenpc(.name$);
+///////// UNFINISHED ///////////
+
+    end;
+}

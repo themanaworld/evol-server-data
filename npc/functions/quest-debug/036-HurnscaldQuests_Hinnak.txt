@@ -1,0 +1,32 @@
+// Hinnak quest debug
+// Author:
+//    gumi
+
+function	script	QuestDebug36	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "HurnscaldQuests_Hinnak";
+        mes "---";
+        mes l("Quest state: @@, @@",
+            getq(HurnscaldQuests_Hinnak),
+            getq2(HurnscaldQuests_Hinnak));
+        next;
+
+        GenericQuestDebug HurnscaldQuests_Hinnak,
+            l("Cannot do the quest"), 0,
+            l("Can do the quest"), 1,
+            l("Hinnak asked for help"), 2,
+            l("Helped Hinnak"), 3;
+
+        switch (@menuret)
+        {
+            case 0:
+            case 1:
+            case 2: setq HurnscaldQuests_Hinnak, getq(HurnscaldQuests_Hinnak), 0; break;
+            default: if (@menuret < 0) return;
+        }
+
+    } while (1);
+}
