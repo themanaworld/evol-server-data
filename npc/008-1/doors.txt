@@ -1,6 +1,0 @@
-008-1,104,27,0	script	CottageDoor	NPC_WARP,0,0,{
-    end;
-
-OnTouch:
-    dispbottom(l("Locked."));
-}

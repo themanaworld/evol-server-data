@@ -90,6 +90,31 @@ function	script	GlobalQuestDebug	{
         } while (1);
     }
 
+    function qDebugHurnscald {
+        do
+        {
+            clear;
+            setnpcdialogtitle l("Quest debug") + " - Hurnscald";
+            mes l("This menu gives access to quest debug menus for @@ quests.", "Hurnscald");
+            next;
+            mes l("Please select a quest:");
+
+            menuint
+                menuimage("actions/back", l("Go back")), -1,
+                "Hinnak", HurnscaldQuests_Hinnak,
+                l("Maggot soup"), HurnscaldQuests_Soup,
+                l("Inspector"), HurnscaldQuests_Inspector,
+                l("Forest bow"), HurnscaldQuests_ForestBow,
+                l("Wooden shield"), HurnscaldQuests_WoodenShield;
+
+            switch (@menuret)
+            {
+                case -1: return;
+                default: callfunc "QuestDebug" + @menuret;
+            }
+        } while (1);
+    }
+
     function qDebugGeneral {
         do
         {
@@ -125,6 +150,7 @@ function	script	GlobalQuestDebug	{
         select
             l("Prologue"),
             "Artis",
+            "Hurnscald",
             l("Other"),
             rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu")));
 
@@ -132,8 +158,9 @@ function	script	GlobalQuestDebug	{
         {
             case 1: qDebugShip; break;
             case 2: qDebugArtis; break;
-            case 3: qDebugGeneral; break;
-            case 4: return;
+            case 3: qDebugHurnscald; break;
+            case 4: qDebugGeneral; break;
+            case 5: return;
         }
     } while (1);
 }

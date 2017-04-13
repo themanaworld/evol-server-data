@@ -1,0 +1,90 @@
+// Evol scripts.
+// Author:
+//    gumi
+// Quest states:
+//    [1] 0  - cannot do the quest
+//    [1] 1  - can do the quest
+//    [1] 2  - talked to inspector (1) <= start
+//    [1] 3  - talked to old woman (1)
+//    [1] 4  - talked to old woman (2)
+//    [1] 5  - talked to inspector (2)
+//    [1] 6  - talked to troupe leader (1)
+//    [1] 7  - talked to inspector (3)
+//    [1] 8  - talked to old man
+//    [1] 9  - talked to old woman (3)
+//    [1] 10 - talked to inspector (4)
+//    [1] 11 - talked to old woman (4)
+//    [1] 12 - talked to malek
+//    [1] 13 - searched the bookcase
+//    [1] 14 - talked to inspector (5)
+//    [1] 15 - talked to troupe leader (2) <= reward
+//    [1] 16 - talked to inspector (6) <= reward, end
+//    [2] unused
+//    [3] unused
+//    [t] unused
+// Description:
+//    robberies in hurnscald
+
+008-1,293,124,0	script	Old Man	NPC_HUMAN_M_ARTIS,{
+
+    function oldman_ask {
+        speech(4,
+            l("Hi there, need something?"));
+
+        selectd(
+            l("Have you seen anything strange lately?"),
+            l("Do you know anything about the recent robberies?"));
+
+        speech(
+            l("I'm sorry, but I didn't see anything."),
+            l("You should ask my old woman."));
+        close;
+    }
+
+    function oldman_accuse {
+        speech(4,
+            l("Found anything new?"));
+
+        selectd(
+            l("The leader of the troupe said you hung around them a lot while they were in town."));
+
+        speech(
+            l("Yes, I hung around the theater a lot."),
+            l("I was an actor when I was younger."),
+            l("But I wasn't there that night."),
+            l("Me and the wife were at home all night."));
+
+        close2;
+        setq(.quest_inspector, 8);
+        end;
+    }
+
+    // OnTalk:
+    switch (getq(.quest_inspector))
+    {
+    case 2: oldman_ask; break;
+    case 7: oldman_accuse; break;
+    }
+
+    // initial intro
+    npctalk3(l("Don't let those monsters get to you."));
+    end;
+
+OnInit:
+    .quest_inspector = HurnscaldQuests_Inspector;
+    .quest_debug = .quest_inspector;
+    .sex = G_MALE;
+    .distance = 1; // this npc has bad hearing
+    .speed = 2000; // this npc is very old
+    // TODO: move graph (after the Hurnscald map is finalized)
+
+////////// UNFINISHED //////////
+////////////////////////////////
+// REMOVE THIS CODE WHEN THIS //
+// NPC IS NO LONGER A WIP //////
+////////////////////////////////
+if (!debug) disablenpc(.name$);
+///////// UNFINISHED ///////////
+
+    end;
+}
