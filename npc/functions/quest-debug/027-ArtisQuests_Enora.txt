@@ -5,14 +5,16 @@
 function	script	QuestDebug27	{
     do
     {
-        clear;
-        setnpcdialogtitle l("Quest debug");
-        mes "ArtisQuests_Enora";
-        mes "---";
-        mes l("Quest state: @@", getq(ArtisQuests_Enora));
-        next;
+        clear();
+        setnpcdialogtitle(l("Quest debug"));
+        mes("ArtisQuests_Enora");
+        mes("---");
+        mes(l("Quest state: @@, @@",
+            getq(ArtisQuests_Enora),
+            getq2(ArtisQuests_Enora)));
+        next();
 
-        GenericQuestDebug ArtisQuests_Enora,
+        GenericQuestDebug(ArtisQuests_Enora,
             l("Does not have the quest"), 0,
             l("Enora asks to visit Chelios"), 1,
             l("Chelios asks to visit Lloyd"), 2,
@@ -23,12 +25,24 @@ function	script	QuestDebug27	{
             l("Enora asks to visit Q'Pid"), 7,
             l("Lost the riddle"), 8,
             l("Ivan gave package"), 9,
-            l("Enora asks to kill fluffys"), 10,
-            l("Completed, got reward"), 11;
+            l("Enora asks to kill fluffies"), 10,
+            l("Completed, got reward"), 11);
 
-        if (@menuret < 0)
+        switch (@menuret)
         {
-            return;
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10: setq(ArtisQuests_Enora, getq(ArtisQuests_Enora), 0); break;
+            case 11: setq(ArtisQuests_Enora, getq(ArtisQuests_Enora), 10); break;
+            default: if (@menuret < 0) return;
         }
 
     } while (1);

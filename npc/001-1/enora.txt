@@ -287,14 +287,14 @@
     }
 
     function enora_hill_cleaned {
-        if (ArtisFluffyKilled < 9)
+        if (getq2(ArtisQuests_Enora) < 9)
         {
             speech 5,
-                l("Oh no, you still have @@ Fluffies to kill.", 10 - ArtisFluffyKilled);
+                l("Oh no, you still have @@ Fluffies to kill.", 10 - getq2(ArtisQuests_Enora));
 
             return;
         }
-        else if (ArtisFluffyKilled < 10)
+        else if (getq2(ArtisQuests_Enora) < 10)
         {
             speech 5,
                 l("Only one more Fluffy to kill and it's done!");
@@ -400,8 +400,8 @@
                 break;
             case 5:
                 speech 5,
-                    l("You killed @@ Fluffies.", ArtisFluffyKilled);
-                if (ArtisFluffyKilled > 8)
+                    l("You killed @@ Fluffies.", getq2(ArtisQuests_Enora));
+                if (getq2(ArtisQuests_Enora) > 8)
                 {
                     mesq l("If you continue there will be none left!");
                     next;
@@ -443,10 +443,13 @@ OnInit:
 001-1,0,0,0	script	Mobs#001-1	NPC_HIDDEN,{
     end;
 
-OnFluffyDeath:
-    if (playerattached())
+OnNPCKillEvent:
+    if (getq(ArtisQuests_Enora) == 10
+             && killedrid == Fluffy
+             && strcharinfo(PC_MAP) == "001-1"
+             && getq2(ArtisQuests_Enora) < 10)
     {
-        set ArtisFluffyKilled, ArtisFluffyKilled + 1;
+        setq(ArtisQuests_Enora, 10, getq2(ArtisQuests_Enora) + 1);
     }
     end;
 }
