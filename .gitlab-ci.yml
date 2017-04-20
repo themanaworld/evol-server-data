@@ -11,7 +11,7 @@ image: debian:stable
 
 variables:
   MYSQL_ROOT_PASSWORD: root
-  CPPFLAGS: "--enable-packetver=20150513"
+  packetver: "20150513"
 
 build_test:
   stage: build
@@ -22,7 +22,7 @@ build_test:
     make autoconf automake autopoint
     libtool libmysqlclient-dev libz-dev libpcre3-dev"
   - ./.tools/jobs/cloneall.sh
-  - ./.tools/jobs/build.sh "--enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
   image: debian:unstable
   services:
   - mysql:latest
@@ -97,7 +97,7 @@ mysql_run_latest:
     libtool libmysqlclient-dev libz-dev libpcre3-dev"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mysql
-  - ./.tools/jobs/build.sh "--enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
   - ./.tools/jobs/runserver.sh mysql
   image: debian:unstable
   services:
@@ -113,7 +113,7 @@ mariadb_run_latest:
     libtool libmysqlclient-dev libz-dev libpcre3-dev"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mariadb
-  - ./.tools/jobs/build.sh "--enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
   - ./.tools/jobs/runserver.sh mariadb
   image: debian:unstable
   services:
@@ -130,7 +130,7 @@ mysql_run_valgrind_latest:
     valgrind"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mysql
-  - ./.tools/jobs/build.sh "--enable-debug --disable-manager --enable-Werror --enable-buildbot" "--enable-werror"
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --disable-manager --enable-Werror --enable-buildbot" "--enable-werror"
   - ./.tools/jobs/runservervalgrind.sh mysql
   image: debian:unstable
   services:
@@ -147,7 +147,7 @@ mariadb_run_valgrind_latest:
     valgrind"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mariadb
-  - ./.tools/jobs/build.sh "--enable-debug --disable-manager --enable-Werror --enable-buildbot" "--enable-werror"
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --disable-manager --enable-Werror --enable-buildbot" "--enable-werror"
   - ./.tools/jobs/runservervalgrind.sh mariadb
   image: debian:unstable
   services:

@@ -110,12 +110,15 @@ function aptget_install {
 function make_server {
     ls -la ../server-data
     ls -la ../server-data/plugins
+    echo source src/evol/tools/vars.sh
+    source ./src/evol/tools/vars.sh
+    check_error $?
     export CPPFLAGS="$CPPFLAGS -DI_AM_AWARE_OF_THE_RISK_AND_STILL_WANT_TO_RUN_HERCULES_AS_ROOT"
     echo "autoreconf -i"
     autoreconf -i
     check_error $?
-    echo "./configure $*"
-    ./configure $1
+    echo ./configure $1 CPPFLAGS=\"${CPPFLAGS}\"
+    ./configure $1 CPPFLAGS="$CPPFLAGS"
     export err="$?"
     if [ "$err" != 0 ]; then
         echo "Error $err"
@@ -139,8 +142,8 @@ function make_server {
     check_error $?
     mkdir build
     cd build
-    echo "../configure $2"
-    ../configure $2
+    echo ../configure $2 CPPFLAGS=\"${VARS}\"
+    ../configure $2  CPPFLAGS="${VARS}"
     check_error $?
     echo "make -j2 V=0"
     make -j2 V=0
