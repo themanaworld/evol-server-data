@@ -11,6 +11,7 @@ image: debian:stable
 
 variables:
   MYSQL_ROOT_PASSWORD: root
+  CPPFLAGS: "--enable-packetver=20150513"
 
 build_test:
   stage: build
