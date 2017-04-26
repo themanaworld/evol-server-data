@@ -6,11 +6,11 @@
 function	script	MerchantGuild_Bank	{
     do
     {
-        if (#MerchantBank > 0)
+        if (BankVault > 0)
         {
             speech 1 | 4,
                     l("You currently have @@ Esperin on your bank account.",
-                        format_number(#MerchantBank)),
+                        format_number(BankVault)),
                     l("What do you want to do with your money?");
         }
         else
@@ -21,7 +21,7 @@ function	script	MerchantGuild_Bank	{
 
         select
             rif(Zeny > 0, l("Deposit.")),
-            rif(#MerchantBank > 0, l("Withdraw.")),
+            rif(BankVault > 0, l("Withdraw.")),
             l("I'm done.");
 
         switch (@menu)
@@ -61,14 +61,14 @@ function	script	MerchantGuild_Bank	{
                         break;
                     }
 
-                    @menuret = min(0x7FFFFFFF, @menuret); // make sure the variable can't overflow
-                    .@before = #MerchantBank; // amount before the deposit
-                    .@max = 0x7FFFFFFF - #MerchantBank; // maximum possible deposit
+                    @menuret = min(MAX_BANK_ZENY, @menuret); // make sure the variable can't overflow
+                    .@before = BankVault; // amount before the deposit
+                    .@max = MAX_BANK_ZENY - BankVault; // maximum possible deposit
                     .@deposit = min(.@max, @menuret); // actual deposit
 
                     if (.@deposit > 0)
                     {
-                        #MerchantBank += .@deposit; // add to bank
+                        BankVault += .@deposit; // add to bank
                         Zeny -= .@deposit; // remove from inventory
 
                         speech 1 | 4,
@@ -83,14 +83,14 @@ function	script	MerchantGuild_Bank	{
 
                 menuint
                     l("Other."), -1,
-                    rif(#MerchantBank >= 5000, format_number(5000) + " E."), 5000,
-                    rif(#MerchantBank >= 10000, format_number(10000) + " E."), 10000,
-                    rif(#MerchantBank >= 25000, format_number(25000) + " E."), 25000,
-                    rif(#MerchantBank >= 50000, format_number(50000) + " E."), 50000,
-                    rif(#MerchantBank >= 100000, format_number(100000) + " E."), 100000,
-                    rif(#MerchantBank >= 250000, format_number(250000) + " E."), 250000,
-                    rif(#MerchantBank >= 500000, format_number(500000) + " E."), 500000,
-                    rif(#MerchantBank >= 1000000, format_number(1000000) + " E."), 1000000,
+                    rif(BankVault >= 5000, format_number(5000) + " E."), 5000,
+                    rif(BankVault >= 10000, format_number(10000) + " E."), 10000,
+                    rif(BankVault >= 25000, format_number(25000) + " E."), 25000,
+                    rif(BankVault >= 50000, format_number(50000) + " E."), 50000,
+                    rif(BankVault >= 100000, format_number(100000) + " E."), 100000,
+                    rif(BankVault >= 250000, format_number(250000) + " E."), 250000,
+                    rif(BankVault >= 500000, format_number(500000) + " E."), 500000,
+                    rif(BankVault >= 1000000, format_number(1000000) + " E."), 1000000,
                     l("All of my money."), -2,
                     l("I changed my mind."), -3;
 
@@ -100,27 +100,27 @@ function	script	MerchantGuild_Bank	{
                         input @menuret;
                         break;
                     case -2:
-                        @menuret = #MerchantBank;
+                        @menuret = BankVault;
                 }
 
                 if (@menuret > 0)
                 {
-                    if (@menuret > #MerchantBank)
+                    if (@menuret > BankVault)
                     {
                         speech 1 | 4,
                             l("You do not have enough Esperin on your bank account.");
                         break;
                     }
 
-                    @menuret = min(0x7FFFFFFE, @menuret); // make sure the variable can't overflow
+                    @menuret = min(MAX_ZENY, @menuret); // make sure the variable can't overflow
                     .@before = Zeny; // amount before the withdrawal
-                    .@max = 0x7FFFFFFE - Zeny; // maximum possible withdrawal
+                    .@max = MAX_ZENY - Zeny; // maximum possible withdrawal
                     .@withdrawal = min(.@max, @menuret); // actual withdrawal
 
                     if (.@withdrawal > 0)
                     {
                         Zeny += .@withdrawal; // add to inventory
-                        #MerchantBank -= .@withdrawal; // remove from bank
+                        BankVault -= .@withdrawal; // remove from bank
 
                         speech 1 | 4,
                             l("You withdrew a total of @@ E.", format_number(.@withdrawal));

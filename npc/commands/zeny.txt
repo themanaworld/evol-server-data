@@ -25,15 +25,15 @@ OnCall:
         Zeny = 0;
         if (.@delta$ == "---")
         {
-            #MerchantBank = 0;
+            BankVault = 0;
         }
     }
     else if (debug && (startswith(.@delta$, "++") || .@delta$ == ""))
     {
-        Zeny = 0x7FFFFFFE;
+        Zeny = MAX_ZENY;
         if (.@delta$ == "+++")
         {
-            #MerchantBank = 0x7FFFFFFF;
+            BankVault = MAX_BANK_ZENY;
         }
     }
     else
@@ -45,14 +45,14 @@ OnCall:
             if (.@a < 0) // If we can't remove that much zeny, try removing from bank too
             {
                 Zeny = 0;
-                .@b = #MerchantBank + .@a; // amount remaining in bank after
+                .@b = BankVault + .@a; // amount remaining in bank after
                 if (.@b < 0)
                 {
-                    #MerchantBank = 0;
+                    BankVault = 0;
                 }
                 else
                 {
-                    #MerchantBank += .@a;
+                    BankVault += .@a;
                 }
             }
             else // We can remove that much zeny
@@ -63,18 +63,18 @@ OnCall:
         else
         {
             .@a = Zeny + .@d; // The amount of zeny after
-            if (.@a < 0 || .@a >= 0x7FFFFFFE) // If we can't add that much zeny, try adding to bank
+            if (.@a < 0 || .@a >= MAX_ZENY) // If we can't add that much zeny, try adding to bank
             {
                 .@c = .@d - (.@a - Zeny); // the amount to put in bank
-                Zeny = 0x7FFFFFFE;
-                .@b = #MerchantBank + .@c; // amout in bank after
-                if (.@b < 0 || .@b == 0x7FFFFFFF)
+                Zeny = MAX_ZENY;
+                .@b = BankVault + .@c; // amout in bank after
+                if (.@b < 0 || .@b == MAX_BANK_ZENY)
                 {
-                    #MerchantBank = 0x7FFFFFFF;
+                    BankVault = MAX_BANK_ZENY;
                 }
                 else
                 {
-                    #MerchantBank += .@c;
+                    BankVault += .@c;
                 }
             }
             else // We can add that much zeny

@@ -10,7 +10,7 @@ function	script	GlobalDebugMenu	{
                 closedialog;
                 doevent "::OnGlobalQuestReset"; // executes in all quest npcs // FIXME: maybe have a `resetquest` buildin?
                 Zeny = 0;
-                #MerchantBank = 0;
+                BankVault = 0;
                 clearitem;
                 warp "000-0", 0, 0; // starting point
                 end; // script must end for doevent to execute

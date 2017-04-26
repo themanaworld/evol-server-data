@@ -217,7 +217,7 @@ function	script	DoRoutine	{
                 break;
             case 122: /* z => zeny */
                 Zeny = parsev(Zeny, .@args$[0], 0, 0x7FFFFFFE);
-                #MerchantBank = parsev(#MerchantBank, .@args$[1], 0, 0x7FFFFFFF);
+                BankVault = parsev(BankVault, .@args$[1], 0, MAX_BANK_ZENY);
                 break;
             }
         }

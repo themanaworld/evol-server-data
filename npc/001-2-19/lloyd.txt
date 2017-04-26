@@ -233,4 +233,12 @@ OnInit:
     .sex = G_MALE;
     .distance = 4;
     end;
+
+OnPCLoginEvent:
+    if (#MerchantBank)
+    {
+        BankVault += max(0, #MerchantBank);
+        #MerchantBank = 0;
+    }
+    end;
 }
