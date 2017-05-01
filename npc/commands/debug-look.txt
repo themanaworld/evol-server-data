@@ -89,7 +89,7 @@ function	script	BarberDebug	{
     end;
 
 OnCall:
-    if (!debug && getgroupid() < 3)
+    if (!debug && !is_dev())
     {
         end;
     }

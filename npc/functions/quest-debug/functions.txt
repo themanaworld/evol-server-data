@@ -11,7 +11,7 @@
 //     is in debug mode.
 
 function	script	GenericQuestDebug	{
-    if (!debug)
+    if (!debug && !is_admin())
     {
         select
             menuimage("actions/back", l("Go back"));
@@ -39,7 +39,7 @@ function	script	GenericQuestDebug	{
         }
     }
 
-    if (getgroupid() >= 99)
+    if (is_admin())
     {
         .@menustr$ += menuimage("actions/nuke", l("Set state manually"));
         .@vals[.@cnt] = -0x7FFFFFFE;

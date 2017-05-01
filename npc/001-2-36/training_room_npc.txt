@@ -27,7 +27,7 @@
     set $@CURRENT_WAVE_LEVEL, 1;
     set $@MAX_WAVES,    10;
 
-    //Room and Mobspawn Coordinates 
+    //Room and Mobspawn Coordinates
     // TL        BR
     setarray $@MOB_SPAWN_COORDINATES,     24,    34,    31,    41;
     setarray $@MAP_NAME$, "001-2-36";
@@ -46,7 +46,7 @@
     //call in Warp door if (1 = block)
     set $@FightingIsActive, 1;
 
-    if (getgmlevel() <= 61)
+    if (!debug || !is_dev())
         goto start;
 
     //can be removed later!

@@ -68,7 +68,7 @@ function	script	GlobalSkillDebug	{
     end;
 
 OnCall:
-    if (!debug && getgroupid() < 99)
+    if (!debug && !is_admin())
     {
         end;
     }

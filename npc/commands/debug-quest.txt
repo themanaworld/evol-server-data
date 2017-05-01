@@ -144,7 +144,7 @@ function	script	GlobalQuestDebug	{
     end;
 
 OnCall:
-    if (!debug && getgroupid() < 1)
+    if (!debug && !is_trusted())
     {
         end;
     }

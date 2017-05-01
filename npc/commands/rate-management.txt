@@ -20,7 +20,7 @@
     }
 
 OnCall:
-   if (getgroupid() < 3)
+   if (!is_evtc())
     {
         end;
     }

@@ -1,9 +1,7 @@
 function	script	SuperMenu	{
     do
     {
-        .@gid = getgroupid();
-
-        if (.@gid < 3)
+        if (debug && !is_dev())
         {
             GlobalDebugMenu;
             return;
@@ -18,7 +16,7 @@ function	script	SuperMenu	{
         select
             l("Scheduled broadcasts"),
             l("MOTD"),
-            rif(.@gid >= 4, l("Event management")),
+            rif(is_evtc(), l("Event management")),
             l("Debug");
 
         switch (@menu)
@@ -37,9 +35,8 @@ function	script	SuperMenu	{
     end;
 
 OnCall:
-    .@gid = getgroupid();
 
-    if (!debug && .@gid < 3)
+    if (!debug && !is_dev())
     {
         dispbottom l("You do not have the required access privileges to use the Super Menu.");
         end;
