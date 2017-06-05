@@ -60,7 +60,7 @@ function	script	ArtisFlyingPiouLogic	{
     {
         message strcharinfo(0), l("Dang, I scared it! More patience, @@, more patience.", strcharinfo(0));
         .LastTimeTouched = .@tick;
-        specialeffect2 33, SELF;
+        specialeffect(33, SELF);
         end;
     }
 
@@ -81,7 +81,7 @@ function	script	ArtisFlyingPiouLogic	{
         set getvariableofnpc(.LastPiouHunterID, .@trader$), .@charid;
         set getvariableofnpc(.PiouCaught, .@trader$), 1;
         donpcevent .@trader$ + "::OnPiouFlee";
-        specialeffect2 26, SELF;
+        specialeffect(26, SELF);
         close2;
         disablenpc strnpcinfo(3);
         close;
@@ -93,7 +93,7 @@ function	script	ArtisFlyingPiouLogic	{
         message strcharinfo(0), .RandomFailureMessages$[.@r];
         .speed = max(140, 200 - 10 * (@ArtisQuests_CatchPiouTries +
                      ArtisQuests_CatchPiou_Difficulcy));
-        specialeffect2 33, SELF;
+        specialeffect(33, SELF);
     }
     end;
 

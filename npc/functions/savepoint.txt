@@ -41,7 +41,7 @@ function	script	savepointparticle	{
         INN_REGISTER = NO_INN;
     }
     savepoint .@mapname$, .@mapx, .@mapy;
-    misceffect 4, getcharid(3);
+    specialeffect(4, SELF, getcharid(3));
     @lastSave = gettimetick(2);
 
     return;
