@@ -38,7 +38,7 @@ OnBite:
 
     setnpcdir @fishing_spot$, LEFT;
     @fishing_tick = gettimetick(0);
-    misceffect getvariableofnpc(.bite_fx, @fishing_spot$);
+    specialeffect(getvariableofnpc(.bite_fx, @fishing_spot$), SELF, playerattached());
     end;
 
 OnCleanUp:
@@ -279,7 +279,7 @@ function	script	fishing	{
     // The player uses this spot, his bait is ready, he just has to wait for the signal.
     closedialog;
 
-    misceffect .@initial_fx; // throw the bait
+    specialeffect(.@initial_fx, SELF); // throw the bait
     sleep2 800;    // wait 0.8s for synchronize the sound of "plop" in water with the npc dir UP.
     setnpcdir .@npc$, UP;
 

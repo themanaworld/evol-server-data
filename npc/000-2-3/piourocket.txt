@@ -12,7 +12,7 @@
     {
         .dir = 2;
         .last = .@now;
-        misceffect 26;
+        specialeffect(26);
         initnpctimer;
     }
 

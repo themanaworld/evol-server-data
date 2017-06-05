@@ -33,7 +33,7 @@
             npctalk3 l("You take the clothes from the chest.");
         }
 
-        misceffect .dir == 0 ? 24 : 25, getnpcid(0); // closed ? opening : closing
+        specialeffect(.dir == 0 ? 24 : 25, AREA, getnpcid(0)); // closed ? opening : closing
         .dir = .dir == 0 ? 2 : 6; // closed ? opening : closing
         .busy = true; // lock the animation
         initnpctimer;
@@ -61,7 +61,7 @@ OnUnTouch:
 OnTimer30000:
     .busy = true;
     .dir = 6; // closing
-    misceffect 25, getnpcid(0); // closing
+    specialeffect(25, AREA, getnpcid(0)); // closing
     setnpctimer 0;
 OnTouch:
     end;
