@@ -2,34 +2,39 @@
 // ** does not require PCRE
 
 
-// startswith( "string", "search" )
-//
-// returns true if "string" begins with "search"
+// startswith("<string>", "<search>")
+//     returns true if <string> begins with <search>
+
 function	script	startswith	{
     return substr(getarg(0), 0, getstrlen(getarg(1)) - 1) == getarg(1);
 }
 
-// endswith( "string", "search" )
-//
-// returns true if "string" ends with "search"
+
+
+// endswith("<string>", "<search>")
+//     returns true if <string> ends with <search>
+
 function	script	endswith	{
     .@t = getstrlen(getarg(0)); // total length
     .@n = getstrlen(getarg(1)); // substring length
     return substr(getarg(0), .@t - .@n, .@t - 1) == getarg(1);
 }
 
-// capitalize( "string" )
-//
-// returns "string" with its first letter capitalized
+
+
+// capitalize("<string>")
+//     returns <string> with its first letter capitalized
+
 function	script	capitalize	{
-    .@original$ = charat(getarg(0), 0);
-    return setchar(getarg(0), strtoupper(.@original$), 0);
+    return setchar(getarg(0), strtoupper(charat(getarg(0), 0)), 0);
 }
 
-// titlecase( "string" [, "delimiter" [, camel]] )
-//
-// returns "string" with the first letter of each word capitalized
-// if camel is true, the string is joined in a camelCase fashion
+
+
+// titlecase("<string>" {, "<delimiter>" {, <camel>}})
+//     returns <string> with the first letter of each word capitalized
+//     if <camel> is true, the string is joined in a camelCase fashion
+
 function	script	titlecase	{
     .@delimiter$ = getarg(1, " ");
     .@c = getarg(2, 0);
@@ -42,16 +47,25 @@ function	script	titlecase	{
             break;
         }
 
-        .@original$ = charat(.@words$[.@i], 0);
-        .@words$[.@i] = setchar(.@words$[.@i], strtoupper(.@original$), 0);
+        .@words$[.@i] = setchar(.@words$[.@i], strtoupper(charat(.@words$[.@i], 0)), 0);
     }
 
     return implode(.@words$, (.@c ? "" : .@delimiter$));
 }
 
-// zfill( "string" [, width [, "padding"]] )
-//
-// returns "string" padded to the left with "padding" up to width
+
+
+// camelcase("<string" {, "<delimiter>"})
+
+function	script	camelcase	{
+    return titlecase(getarg(0), getarg(1, " "), true);
+}
+
+
+
+// zfill("<string>" {, <width> {, "<padding>"}})
+//     returns <string> padded to the left with <padding> up to width
+
 function	script	zfill	{
     .@str$ = getarg(0);
     .@width = getarg(1, 8);
@@ -65,29 +79,108 @@ function	script	zfill	{
     return .@str$;
 }
 
-// format_number( integer [, "separator"] )
-//
-// formats a number properly according to the language of the player,
-// or using the given separator
+
+
+// format_number(<integer> {, "<separator>"})
+//     formats a number properly
+
 function	script	format_number	{
     .@number$ = str(getarg(0));
     .@len = getstrlen(.@number$);
     .@separator$ = getarg(1, ",");
 
-    if (getargcount() < 2 && playerattached())
-    {
+    if (getargcount() < 2 && playerattached()) {
         // get from user language
-        switch (Lang)
-        {
-            case 1: .@separator$ = " "; break; // French
-            default: .@separator$ = ","; // English (default)
+        switch (Lang) {
+        case 1: .@separator$ = " "; break; // French
+        default: .@separator$ = ","; // English (default)
         }
     }
 
-    for (.@i = .@len - 3; .@i > 0; .@i -= 3)
-    {
+    for (.@i = .@len - 3; .@i > 0; .@i -= 3) {
         .@number$ = insertchar(.@number$, .@separator$, .@i);
     }
 
     return .@number$;
+}
+
+
+
+// strip("<string>")
+//     removes spaces at the start and end
+
+function	script	strip	{
+    .@s$ = getarg(0);
+    if (.@s$ == "") {
+        return "";
+    }
+    .@start = 0;
+    .@end = getstrlen(.@s$) - 1;
+    for (.@i = .@start; .@i < .@end; .@i++)
+    {
+        if (charat(.@s$, .@i) != " ") {
+            break;
+        } else {
+            .@start++;
+        }
+    }
+    for (.@i = .@end; .@i >= .@start; .@i--)
+    {
+        if (charat(.@s$, .@i) != " ") {
+            break;
+        } else {
+            .@end--;
+        }
+    }
+    return substr(.@s$, .@start, .@end);
+}
+
+
+
+// reverse("<string>")
+//     returns <string> reversed
+
+function	script	reverse	{
+    .@str$ = getarg(0);
+    .@len = getstrlen(.@str$);
+
+    for (.@i = 0; .@i < (.@len / 2); ++.@i) {
+        .@tmp$ = charat(.@str$, .@i);
+        .@str$ = setchar(.@str$, charat(.@str$, (.@len - 1 - .@i)), .@i); // a <= b
+        .@str$ = setchar(.@str$, .@tmp$, (.@len - 1 - .@i)); // b <= a
+    }
+
+    return .@str$;
+}
+
+
+
+// repeat("<string>", <multiplier>)
+//     repeats <string> many times and returns it
+
+function	script	repeat	{
+    .@mul = getarg(1);
+
+    for (.@i = 0; .@i < .@mul; ++.@i) {
+        .@str$ += getarg(0);
+    }
+
+    return .@str$;
+}
+
+
+
+// shuffle("<string>")
+//     returns <string> shuffled
+
+function	script	shuffle	{
+    .@str$ = getarg(0);
+
+    for (.@len = getstrlen(.@str$); .@len > 0; --.@len) {
+        .@rnd = rand(.@len);
+        .@out$ += charat(.@str$, .@rnd);
+        .@str$ = delchar(.@str$, .@rnd);
+    }
+
+    return .@out$;
 }

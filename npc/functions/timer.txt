@@ -1,0 +1,56 @@
+// areatimer("<map>", <x1>, <y1>, <x2>, <y2>, <tick>, "<npc>::<event>")
+function	script	areatimer	{
+    .@c = getunits(BL_PC, .@players, false, getarg(0), getarg(1), getarg(2), getarg(3), getarg(4));
+    for (.@i = 0; .@i < .@c; .@i++) {
+        addtimer(getarg(5), getarg(6), .@players[.@i]);
+    }
+    return .@i;
+}
+
+// areadeltimer("<map>", <x1>, <y1>, <x2>, <y2>, "<npc>::<event>")
+function	script	areadeltimer	{
+    .@c = getunits(BL_PC, .@players, false, getarg(0), getarg(1), getarg(2), getarg(3), getarg(4));
+    for (.@i = 0; .@i < .@c; .@i++) {
+        deltimer(getarg(5), .@players[.@i]);
+    }
+    return .@i;
+}
+
+// areatimer2("<map>", <x1>, <y1>, <x2>, <y2>, <tick>, "<npc>::<event>")
+function	script	areatimer2	{
+    .@c = getunits(BL_PC, .@players, false, getarg(0), getarg(1), getarg(2), getarg(3), getarg(4));
+    for (.@i = 0; .@i < .@c; .@i++) {
+        deltimer(getarg(6), .@players[.@i]);
+        addtimer(getarg(5), getarg(6), .@players[.@i]);
+    }
+    return .@i;
+}
+
+
+// maptimer("<map>", <tick>, "<npc>::<event>")
+function	script	maptimer	{
+    .@c = getunits(BL_PC, .@players, false, getarg(0));
+    for (.@i = 0; .@i < .@c; .@i++) {
+        addtimer(getarg(1), getarg(2), .@players[.@i]);
+    }
+    return .@i;
+}
+
+// maptimer2("<map>", <tick>, "<npc>::<event>")
+function	script	maptimer2	{
+    .@c = getunits(BL_PC, .@players, false, getarg(0));
+    for (.@i = 0; .@i < .@c; .@i++) {
+        deltimer(getarg(2), .@players[.@i]);
+        addtimer(getarg(1), getarg(2), .@players[.@i]);
+    }
+    return .@i;
+}
+
+// mapdeltimer("<map>", "<npc>::<event>")
+function	script	mapdeltimer	{
+    .@c = getunits(BL_PC, .@players, false, getarg(0));
+    for (.@i = 0; .@i < .@c; .@i++) {
+        deltimer(getarg(1), .@players[.@i]);
+    }
+    return .@i;
+}

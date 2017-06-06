@@ -1,0 +1,410 @@
+// array_pad(<array>, <size>, <value>)
+//     prepend or append <value> until the array is of <size> size
+//     returns the amount added on success, or false (0) if nothing changed
+
+function	script	array_pad	{
+    .@index = getarrayindex(getarg(0)); // passed index
+    .@count = getarraysize(getarg(0)) - .@index; // actual size
+    .@size = getarg(1); // desired size
+    .@absolute = (.@size >= 0 ? .@size : -(.@size)); // |size|
+    .@delta = .@absolute - .@count; // amount to fill
+
+    if (.@absolute <= .@count) {
+        return false; // nothing to do
+    }
+
+    if (.@size < 0) {
+        copyarray(getelementofarray(getarg(0), .@index + .@delta), getarg(0), .@count); // shift to the right
+        cleararray(getarg(0), getarg(2), .@delta); // prepend
+    } else {
+        cleararray(getelementofarray(getarg(0), .@index + .@count), getarg(2), .@delta); // append
+    }
+
+    return .@delta;
+}
+
+
+
+// array_replace(<array>, <needle>, <replace>{, <neq>})
+//     replace every occurence of <needle> with <replace>
+//     returns the number of replaced elements
+
+function	script	array_replace	{
+    .@size = getarraysize(getarg(0));
+    .@neq = getarg(3, false);
+    freeloop(true);
+
+    for (.@i = getarrayindex(getarg(0)); .@i < .@size; ++.@i) {
+        if ((.@neq && (getelementofarray(getarg(0), .@i) != getarg(1))) ||
+            (!(.@neq) && (getelementofarray(getarg(0), .@i) == getarg(1)))) {
+            set(getelementofarray(getarg(0), .@i), getarg(2));
+            ++.@count;
+        }
+    }
+
+    freeloop(false);
+    return .@count;
+}
+
+
+
+// array_find(<array>, <needle>{, <neq>})
+//     return the index of the first occurence of <needle> in <array>
+//     if not found it returns -1
+
+function	script	array_find	{
+    .@size = getarraysize(getarg(0));
+    .@neq = getarg(2, false);
+    freeloop(true);
+
+    for (.@i = getarrayindex(getarg(0)); .@i < .@size; ++.@i) {
+        if ((.@neq && (getelementofarray(getarg(0), .@i) != getarg(1))) ||
+            (!(.@neq) && (getelementofarray(getarg(0), .@i) == getarg(1)))) {
+            freeloop(false);
+            return .@i;
+        }
+    }
+
+    freeloop(false);
+    return -1;
+}
+
+
+
+// array_rfind(<array>, <needle>{, <neq>})
+//     return the index of the last occurence of <needle> in <array>
+//     if not found it returns -1
+
+function	script	array_rfind	{
+    .@min = getarrayindex(getarg(0));
+    .@neq = getarg(2, false);
+    freeloop(true);
+
+    for (.@i = (getarraysize(getarg(0)) - 1); .@i >= .@min; --.@i) {
+        if ((.@neq && (getelementofarray(getarg(0), .@i) != getarg(1))) ||
+            (!(.@neq) && (getelementofarray(getarg(0), .@i) == getarg(1)))) {
+            freeloop(false);
+            return .@i;
+        }
+    }
+
+    freeloop(false);
+    return -1;
+}
+
+
+
+// array_exists(<array>, <needle>{, <neq>})
+//     return true or false accordingly if <needle> is found in <array>
+
+function	script	array_exists	{
+    return array_find(getarg(0), getarg(1), getarg(2, false)) > -1;
+}
+
+
+
+// array_count(<array>, <needle>{, <neq>})
+//     counts the number of occurrence of <needle> in the <array>
+
+function	script	array_count	{
+    .@size = getarraysize(getarg(0));
+    .@neq = getarg(2, false);
+    freeloop(true);
+
+    for (.@i = getarrayindex(getarg(0)); .@i < .@size; ++.@i) {
+        if ((.@neq && (getelementofarray(getarg(0), .@i) != getarg(1))) ||
+            (!(.@neq) && (getelementofarray(getarg(0), .@i) == getarg(1)))) {
+            ++.@count;
+        }
+    }
+
+    freeloop(false);
+    return .@count;
+}
+
+
+
+// array_entries(<array>)
+//     returns the number of non-empty entries
+
+function	script	array_entries	{
+    if (isstr(getarg(0)) == 1) {
+        return array_count(getarg(0), "", true);
+    }
+    return array_count(getarg(0), 0, true);
+}
+
+
+
+// array_remove(<array>, <needle>{, <neq>})
+//     removes every occurrence of <needle> in the <array> while shifting left
+
+function	script	array_remove	{
+    .@size = getarraysize(getarg(0));
+    .@neq = getarg(2, false);
+    freeloop(true);
+
+    for (.@i = getarrayindex(getarg(0)); .@i < .@size; ++.@i) {
+        if ((.@neq && (getelementofarray(getarg(0), .@i) != getarg(1))) ||
+            (!(.@neq) && (getelementofarray(getarg(0), .@i) == getarg(1)))) {
+            deletearray(getelementofarray(getarg(0), .@i), 1); // shift left
+            ++.@count; // increase the counter
+            --.@size; // reduce the size
+            --.@i; // step back
+        }
+    }
+
+    freeloop(false);
+    return .@count;
+}
+
+
+
+// array_reverse(<array>)
+//     reverses the array
+
+function	script	array_reverse	{
+    .@index = getarrayindex(getarg(0));
+    .@size = getarraysize(getarg(0));
+    freeloop(true);
+
+    for (.@i = .@index; .@i < ((.@size + .@index) / 2); ++.@i) {
+        swap(getelementofarray(getarg(0), .@i), getelementofarray(getarg(0), .@size + .@index - 1 - .@i)); // a <> b
+    }
+
+    freeloop(false);
+    return true;
+}
+
+
+
+// array_sum(<array>)
+//     return the sum of every element of the array
+
+function	script	array_sum	{
+    .@size = getarraysize(getarg(0));
+    freeloop(true);
+
+    for (.@i = getarrayindex(getarg(0)); .@i < .@size; ++.@i) {
+        .@sum += getelementofarray(getarg(0), .@i);
+    }
+
+    freeloop(false);
+    return .@sum;
+}
+
+
+
+// array_difference(<array>)
+//     return the difference of every element of the array
+
+function	script	array_difference	{
+    .@size = getarraysize(getarg(0));
+    freeloop(true);
+
+    for (.@i = getarrayindex(getarg(0)); .@i < .@size; ++.@i) {
+        .@diff -= getelementofarray(getarg(0), .@i);
+    }
+
+    freeloop(false);
+    return .@diff;
+}
+
+
+
+// array_product(<array>)
+//     return the product of every element of the array
+
+function	script	array_product	{
+    .@size = getarraysize(getarg(0));
+    freeloop(true);
+
+    for (.@i = getarrayindex(getarg(0)); .@i < .@size; ++.@i) {
+        .@prod *= getelementofarray(getarg(0), .@i);
+    }
+
+    freeloop(false);
+    return .@prod;
+}
+
+
+
+// array_quotient(<array>)
+//     return the product of every element of the array
+
+function	script	array_quotient	{
+    .@size = getarraysize(getarg(0));
+    freeloop(true);
+
+    for (.@i = getarrayindex(getarg(0)); .@i < .@size; ++.@i) {
+        .@quot /= getelementofarray(getarg(0), .@i);
+    }
+
+    freeloop(false);
+    return .@quot;
+}
+
+
+
+// array_shift(<array>)
+//     returns the first element of the array and removes it, while shifting left
+
+function	script	array_shift	{
+    if (isstr(getarg(0)) == 1) {
+        .@val$ = getarg(0);
+    } else {
+        .@int = true;
+        .@val = getarg(0);
+    }
+
+    deletearray(getarg(0), 1); // shift left
+
+    return .@int ? .@val : .@val$;
+}
+
+
+
+// array_unshift(<array>, <value>)
+//     adds <value> to the start of the array, while shifting right
+//     returns the new size
+
+function	script	array_unshift	{
+    .@size = getarraysize(getarg(0)) + 1;
+    array_pad(getarg(0), -(.@size - getarrayindex(getarg(0))), getarg(1));
+    return .@size;
+}
+
+
+
+// array_pop(<array>)
+//     returns the last element of the array and removes it
+
+function	script	array_pop	{
+    .@last = getarraysize(getarg(0)) - 1;
+
+    if (isstr(getelementofarray(getarg(0), .@last)) == 1) {
+        .@val$ = getelementofarray(getarg(0), .@last);
+    } else {
+        .@int = true;
+        .@val = getelementofarray(getarg(0), .@last);
+    }
+
+    deletearray(getelementofarray(getarg(0), .@last), 1);
+
+    return .@int ? .@val : .@val$;
+}
+
+
+
+// array_push(<array>, <value>)
+//     adds <value> to the end of the array
+//     returns the new size
+
+function	script	array_push	{
+    .@size = getarraysize(getarg(0));
+    set(getelementofarray(getarg(0), .@size), getarg(1));
+    return .@size + 1;
+}
+
+
+
+// array_shuffle(<array>)
+//     shuffles the array
+
+function	script	array_shuffle	{
+    .@index = getarrayindex(getarg(0));
+    .@size = getarraysize(getarg(0)) - .@index;
+    freeloop(true);
+
+    if (isstr(getarg(0)) == 1) {
+        copyarray(.@tmp$[0], getarg(0), .@size);
+        for (; .@size >= 1; --.@size) {
+            set(getelementofarray(getarg(0), .@index + .@size - 1), array_shift(.@tmp$[rand(.@size)]));
+        }
+    } else {
+        copyarray(.@tmp[0], getarg(0), .@size);
+        for (; .@size >= 1; --.@size) {
+            set(getelementofarray(getarg(0), .@index + .@size - 1), array_shift(.@tmp[rand(.@size)]));
+        }
+    }
+
+    freeloop(false);
+    return true;
+}
+
+
+
+// array_unique(<array>{, <threshold>})
+//     allows entries to appear up to <threshold> in the array
+
+function	script	array_unique	{
+    .@size = getarraysize(getarg(0));
+    .@max = getarg(1, 1);
+    freeloop(true);
+
+    for (.@i = getarrayindex(getarg(0)); .@i < .@size; ++.@i) {
+        .@count = 1;
+        for (.@e = .@i + 1; .@e < .@size; ++.@e) {
+            if (getelementofarray(getarg(0), .@i) == getelementofarray(getarg(0), .@e)) {
+                if (++.@count >= .@max) {
+                    deletearray(getelementofarray(getarg(0), .@e), 1);
+                    ++.@removed; // increase counter
+                    --.@size; // reduce size
+                    --.@e; // step back
+                }
+            }
+        }
+    }
+
+    freeloop(false);
+    return .@removed;
+}
+
+
+
+// array_diff(<array1>, <array2>{, <array>...}, <array>)
+//     compares array1 against one or more other arrays and fills the last array
+//     with the values in array1 that are not present in any of the other arrays
+//     returns the number of entries not matching
+
+function	script	array_diff	{
+    .@size = getarraysize(getarg(0));
+    .@index = getarrayindex(getarg(0));
+    freeloop(true);
+
+    for (.@a = 1; .@a < (getargcount() - 1); ++.@a) {
+        for (.@i = .@index; .@i < .@size; ++.@i) {
+            if (!array_exists(getarg(.@a), getelementofarray(getarg(0), .@i))) {
+                array_push(getarg(getargcount() - 1), getelementofarray(getarg(0), .@i));
+                ++.@count;
+            }
+        }
+    }
+
+    freeloop(false);
+    return .@count;
+}
+
+
+
+// array_filter(<array>, "<function>")
+//     filters the array using a callback function
+
+function	script	array_filter	{
+    .@size = getarraysize(getarg(0));
+    .@neq = getarg(2, false);
+    freeloop(true);
+
+    for (.@i = getarrayindex(getarg(0)); .@i < .@size; ++.@i) {
+        .@eq = callfunc(getarg(1), getelementofarray(getarg(0), .@i)) != false;
+        if ((.@neq && .@eq) || (!(.@neq) && !(.@eq))) {
+            deletearray(getelementofarray(getarg(0), .@i), 1); // shift left
+            ++.@count; // increase the counter
+            --.@size; // reduce the size
+            --.@i; // step back
+        }
+    }
+
+    freeloop(false);
+    return .@count;
+}

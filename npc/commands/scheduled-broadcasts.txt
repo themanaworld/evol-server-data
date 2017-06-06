@@ -147,7 +147,7 @@ function	script	StoneBoard	{
             {
                 .@next = max(1, ((3600000 * ($@SCHED_Opt[1] - $@SCHED_Opt[4])) - getnpctimer(0, "@sched")));
                 mes l("Interval: every @@ hour(s)", $@SCHED_Opt[1]);
-                mes l("Next broadcast: @@", FuzzyTimeFromMs(.@next));
+                mes l("Next broadcast: @@", FuzzyTime(time_from_ms(.@next)));
             }
             else
             {

@@ -16,7 +16,7 @@
         .@total_seconds = (3600 * .max_hours);
         .@seconds_elapsed = (3600 * .hours) + (getnpctimer(0) / 1000);
         .@seconds_remaining = max(1, .@total_seconds - .@seconds_elapsed);
-        return FuzzyTimeFromSeconds(.@seconds_remaining, 2, 2);
+        return FuzzyTime(time_from_seconds(.@seconds_remaining), 2, 2);
     }
 
 OnCall:
@@ -42,7 +42,7 @@ OnCall:
         initnpctimer; // start counting
 
         dispbottom l("You successfully set the exp rate to @@%. It will reset to @@% (default value) in @@.",
-                    .@new_rate, .original_exp_rate, FuzzyTimeFromHours(.max_hours, 2, 2));
+                    .@new_rate, .original_exp_rate, FuzzyTime(time_from_hours(.max_hours), 2, 2));
         dispbottom l("You can also manually stop it at any time with: @exprate default");
     }
 

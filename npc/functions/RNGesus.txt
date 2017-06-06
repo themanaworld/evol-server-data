@@ -1,0 +1,23 @@
+// Evol functions.
+// Authors:
+//    gumi
+// Description:
+//    Randomization helper functions.
+
+
+
+// any(<arg>{, ...<arg>})
+//     returns one argument randomly
+
+function	script	any	{
+    return getarg(rand(getargcount()));
+}
+
+
+
+// any_of(<array>)
+//     returns any member of the array
+
+function	script	any_of	{
+    return getelementofarray(getarg(0), getarrayindex(getarg(0)) + rand(getarraysize(getarg(0)) - getarrayindex(getarg(0))));
+}

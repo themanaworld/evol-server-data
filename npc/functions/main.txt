@@ -59,35 +59,6 @@ function	script	addremovemapmask	{
     return;
 }
 
-// returns a randomly picked argument from the given ones
-function	script	any	{
-    return getarg(rand(getargcount()));
-}
-
-// remove spaces at the start and end of string and return result
-function	script	strip	{
-    .@s$ = getarg(0);
-    if (.@s$ == "")
-        return "";
-    .@start = 0;
-    .@end = getstrlen(.@s$) - 1;
-    for (.@i = .@start; .@i < .@end; .@i++)
-    {
-        if (charat(.@s$, .@i) != " ")
-            break;
-        else
-            .@start++;
-    }
-    for (.@i = .@end; .@i >= .@start; .@i--)
-    {
-        if (charat(.@s$, .@i) != " ")
-            break;
-        else
-            .@end--;
-    }
-    return substr(.@s$, .@start, .@end);
-}
-
 // Function to show narrator text. Accepts string args.
 // If first arg is a number N, then it represents bit flags.
 // Bit flags :
