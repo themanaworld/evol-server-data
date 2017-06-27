@@ -262,6 +262,11 @@ L_Start:
                                     {
                                         mes "slot " + str(.@i) + " = " + str(getcardbyindex(.@item, .@i));
                                     }
+                                    mes "item options:";
+                                    for (.@i = 0; .@i < 5; .@i ++)
+                                    {
+                                        mes sprintf("%d: Option: %d, Value: %d", .@i, getitemoptionidbyindex(.@item, .@i), getitemoptionvaluebyindex(.@item, .@i));
+                                    }
                                     break;
                                 case 8:
                                     removecardbyindex(.@item, 0);
