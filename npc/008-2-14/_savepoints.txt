@@ -1,0 +1,11 @@
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 008-2-14: Hurnscald Clinic saves
+008-2-14,31,27,0	script	#save_008-2-14_31_27	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}

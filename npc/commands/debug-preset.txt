@@ -72,10 +72,10 @@ function	script	DoRoutine	{
             }
         }
 
-        if (getarg(2, 0) && getargcount() >= 3)
+        if (getargcount() >= 3)
             .@value = max(getarg(2), .@value);
 
-        if (getarg(3, 0) && getargcount() >= 4)
+        if (getargcount() >= 4)
             .@value = min(getarg(3), .@value);
 
         return .@value;
@@ -166,7 +166,7 @@ function	script	DoRoutine	{
             /* (j) */
             case 107: /* k => skill */
                 .@k = max(1, min(32767, .@a));
-                skill .@k, parsev(getskilllv(.@k), .@args$[1], 0, 10);
+                skill .@k, parsev(getskilllv(.@k), .@args$[1], 0, 10), 0;
                 break;
             case 108: /* l => luk */
                 .@base = readparam(bLuk);

@@ -91,7 +91,18 @@ OnInit:
         "^SECOND|^DECK2$",  "000-2-1 53 33",  // second deck
         "^HOLD$",           "000-2-2 43 30",  // hold
         "^NARD",            "000-2-3 21 27",  // nard's room
-        "^ALIG|^HID",       "000-2-4 36 29";  // alige's hideout
+        "^ALIG|^HID",       "000-2-4 36 29",  // alige's hideout
+
+        // WOODLAND
+        "^HURN",            "008-1 79 64",    // hurnscald: town square
+        "^CELE",            "008-2-0 25 27",  // hurnscald: celestia
+        "^HMER",            "008-2-1 33 39",  // hurnscald: merchant guild
+        "^RUST",            "008-2-2 37 30",  // hurnscald: inn
+        "^ARRO|^ARCH",      "008-2-6 27 29",  // hurnscald: archery shop
+        "^A?POT",           "008-2-7 34 27",  // hurnscald: potion shop
+        "^HBLA",            "008-2-8 36 34",  // hurnscald: forge
+        "^HHAL|^HCIT",      "008-2-10 36 31", // hurnscald: city hall
+        "HOSP|CLIN",        "008-2-13 25 31"; // hurnscald: clinic / hospital
 
     .count = getarraysize(.aliases$[0]);
 
