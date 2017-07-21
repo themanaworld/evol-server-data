@@ -15,6 +15,11 @@
     end;
 
 OnCall:
+    if (!is_evtc())
+    {
+        end;
+    }
+
     // TODO: tmw-like argv splitter
     getmapxy .@map$, .@void, .@void, UNITTYPE_PC; // get map
 
@@ -30,12 +35,7 @@ OnCall:
     end;
 
 OnInit:
-    if (.hash)
-    {
-        htdelete(.hash); // delete it on Live-Reload (@reloadscripts)
-    }
-
-    bindatcmd "music", "@music::OnCall", 2, 99, 1;
+    bindatcmd "music", "@music::OnCall", 0, 99, 1;
 
     .hash = htnew; // create hashtable
     htput(.hash, "forest",     "bartk - in the forest of the birches");

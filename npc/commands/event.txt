@@ -43,10 +43,15 @@ function	script	GlobalEventMenu	{
     end;
 
 OnCall:
+    if (!is_evtc())
+    {
+        end;
+    }
+
     GlobalEventMenu;
     closedialog;
     end;
 
 OnInit:
-    bindatcmd "event", "@event::OnCall", 4, 99, 0;
+    bindatcmd "event", "@event::OnCall", 0, 99, 0;
 }

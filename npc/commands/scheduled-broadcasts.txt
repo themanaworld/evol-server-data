@@ -204,6 +204,11 @@ OnTimer3600000:
     end;
 
 OnCall:
+    if (!is_evtc() && !is_dev())
+    {
+        end;
+    }
+
     StoneBoard;
     closedialog;
     end;
@@ -216,5 +221,5 @@ OnPCLoginEvent:
     end;
 
 OnInit:
-    bindatcmd "sched", "@sched::OnCall", 3, 99, 0;
+    bindatcmd "sched", "@sched::OnCall", 0, 99, 0;
 }

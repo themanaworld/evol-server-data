@@ -3,28 +3,33 @@
 //    gumi
 // Description:
 //    checks player permissions
-
-// any staff member
-function	script	is_trusted	{
-    return has_permission("show_client_version", getarg(0, getcharid(CHAR_ID_ACCOUNT)));
-}
-
-// developer
-function	script	is_dev	{
-    return has_permission(PERM_RECEIVE_REQUESTS, getarg(0, getcharid(CHAR_ID_ACCOUNT)));
-}
-
-// event coordinator
-function	script	is_evtc	{
-    return can_use_command("@monster", getarg(0, getcharid(CHAR_ID_ACCOUNT)));
-}
-
-// game master
-function	script	is_gm	{
-    return has_permission("send_gm", getarg(0, getcharid(CHAR_ID_ACCOUNT)));
-}
+//    ** admins are implicitly everything
 
 // administrator
 function	script	is_admin	{
     return has_permission(PERM_USE_ALL_COMMANDS, getarg(0, getcharid(CHAR_ID_ACCOUNT)));
+}
+
+// any staff member
+function	script	is_trusted	{
+    return is_admin(getarg(0, getcharid(CHAR_ID_ACCOUNT))) ||
+        has_permission("show_client_version", getarg(0, getcharid(CHAR_ID_ACCOUNT)));
+}
+
+// developer
+function	script	is_dev	{
+    return is_admin(getarg(0, getcharid(CHAR_ID_ACCOUNT))) ||
+        has_permission(PERM_RECEIVE_REQUESTS, getarg(0, getcharid(CHAR_ID_ACCOUNT)));
+}
+
+// event coordinator
+function	script	is_evtc	{
+    return is_admin(getarg(0, getcharid(CHAR_ID_ACCOUNT))) ||
+        can_use_command("@monster", getarg(0, getcharid(CHAR_ID_ACCOUNT)));
+}
+
+// game master
+function	script	is_gm	{
+    return is_admin(getarg(0, getcharid(CHAR_ID_ACCOUNT))) ||
+        has_permission("send_gm", getarg(0, getcharid(CHAR_ID_ACCOUNT)));
 }

@@ -165,6 +165,11 @@ function	script	MOTDConfig	{
     end;
 
 OnCall:
+    if (!is_dev())
+    {
+        end;
+    }
+
     MOTDConfig;
     closedialog;
     end;
@@ -184,5 +189,5 @@ OnInit:
     MOTD_debug_text;
     .size = getarraysize($MOTD_Messages$);
     .dsize = getarraysize($@Debug_Messages$);
-    bindatcmd "motd", "@motd::OnCall", 3, 99, 0;
+    bindatcmd "motd", "@motd::OnCall", 0, 99, 0;
 }

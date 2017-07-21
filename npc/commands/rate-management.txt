@@ -92,7 +92,7 @@ OnPCLoginEvent:
     end;
 
 OnInit:
-    bindatcmd "exprate", "@exprate::OnCall", 3, 99, 1; // change exp rate
+    bindatcmd "exprate", "@exprate::OnCall", 0, 99, 1; // change exp rate
 
     // WARNING: using @reloadscript will change the "original" value
     .original_exp_rate = getbattleflag("base_exp_rate");
