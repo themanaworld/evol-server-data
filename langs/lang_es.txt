@@ -95,9 +95,6 @@ Copyright (C) 2010-2014 Evol Online
  MVP Items:
 Artículos MVP:
 
- ago
-hace años
-
  and %d second
  y %d segundo
 
@@ -251,9 +248,6 @@ El Canal '%s' está protegido con contraseña (uso: %s <#channel_name> <password
 '%s' channel color updated to '%s' 
 El color del canal '%s' actualizado a '%s' 
 
-'%s' got %s's %s (chance: %0.02f%%)
-'%s' obtuvo algo de %s: %s (probabilidad: %0.02f%%)
-
 '%s' is not a known channel option
 '%s' no es una opción de canal conocida
 
@@ -277,9 +271,6 @@ Restablecer puntos de la habilidad '%s'.
 
 '%s' stats:
 Atributos de '%s':
-
-'%s' stole %s's %s (chance: %0.02f%%)
-'%s' robó algo a %s: %s (probabilidad: %0.02f%%)
 
 'That', as you call it, is a @@. There are plenty on this island!
 'Eso', como usted lo llama, es un @@. ¡Hay muchos en esta isla!
@@ -313,9 +304,6 @@ Atributos de '%s':
 
 *burp*
 *burp*
-
-, and 
-, y
 
 - #%s ( %d users )
 - #%s ( %d usuarios)
@@ -538,9 +526,6 @@ Atributos de '%s':
 
 @@ divorced!
 ¡@@ se ha divorciado!
-
-@@ from now
-@@ desde ahora
 
 @@ is helping me.
 @@ está ayudándome.
@@ -892,6 +877,9 @@ Any clue on where Astapolos may be hidden?
 
 Any contribution to the game (translations, graphics creation/edition, concepts, coding/scripting, etc...) is rewarded!
 ¡Cualquier contribución al juego (traducción, creación/edición de gráficos, conceptos, codificación/scripting, etc...) es recompensada!
+
+Any work in progress (NPC dialog, manufacturing ...) quit and try again.
+
 
 Anything else?
 ¿Algo más?
@@ -1964,6 +1952,9 @@ Coral
 Costume '%s' removed.
 Disfraz '%s' eliminado.
 
+CottageDoor
+
+
 Cotton
 Algodón
 
@@ -2062,6 +2053,12 @@ Cuco
 
 Current amount of zeny changed.
 La cantidad actual de zeny cambió.
+
+Current exp rate is set to @@% (default value).
+
+
+Current exp rate is set to @@%, and will reset to @@% (default value) in @@.
+
 
 Curshroom
 Curshroom
@@ -2644,6 +2641,12 @@ Excuse me? Do you know who I am?#1
 
 Exemple for yoiis:
 Por ejemploiis:
+
+Exp rate has been reset to @@% (default value).
+
+
+Exp rate is set to @@% for the next @@.
+
 
 Expanded Super Baby
 Super Bebé Extendido
@@ -4469,6 +4472,9 @@ If you keep it up, you'll eventually become a fearsome warrior, just like me!#0
 If you keep it up, you'll eventually become a fearsome warrior, just like me!#1
 
 
+If you meant to reset the exp rate to its default value: @exprate default
+
+
 If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.
 Si necesita que alguien elabore un arma o una placa de diagramas yo soy a quien necesita.
 
@@ -5143,6 +5149,9 @@ Lloyd still owes me, but beware of those money-grabbers, or they might sell your
 
 Lloyd the Banker
 Lloyd el Banquero
+
+Locked.
+
 
 Logic is the beginning of wisdom, not the end.
 La lógica es el principio de la sabiduría, no el final.
@@ -6392,6 +6401,9 @@ Huevo de Piou
 Piousse
 Piousse
 
+Planting not implemented.
+
+
 Player '%s' (session #%d) | Location: %d,%d
 Jugador '%s' (sesión #%d) | Ubicación: %d,%d
 
@@ -6910,6 +6922,9 @@ Guardabosques
 
 Ranger T
 Guardabosques T
+
+Rate management
+
 
 Ratto
 Ratto
@@ -7706,6 +7721,9 @@ Deja de molestarle, Silvio, o le diré que siempre lloras como un bebé durante 
 Stop it!
 ¡Basta!
 
+Storage has been not loaded yet.
+
+
 Storage opened.
 Almacén abierto.
 
@@ -8225,9 +8243,6 @@ Siempre hay algo que puede hacer aquí, como matar algunas tortugas o ayudar a P
 There is an unknown side effect to these plushrooms, they can free you from your past mistakes.
 Hay un efecto secundario desconocido de estos plushrooms, pueden liberarle de los errores de su pasado.
 
-There is no event available right now.
-Ahora mismo no hay evento disponible.
-
 There is no help for %c%s.
 No hay ayuda para %c%s.
 
@@ -8399,6 +8414,9 @@ No se puede comerciar con este artícuo.
 This item cannot be used as bait here.
 
 
+This job has no alternate body styles.
+
+
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.#0
 Este tipo de charla debería tomarse con una pizca de sal, pero estoy de acuerdo y admito que yo también soy escéptico, así que no le quitéis el ojo de encima.#0
 
@@ -8525,11 +8543,20 @@ Para cambiar sus estadísticas, use estos comandos:
 To get started with fishing, you'll need two things: a fishing rod and a bait.
 
 
+To get the current rate:
+
+
 To move between characters that are on different accounts, you have to use the Trade function.
 
 
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
 Para abrir tu inventario, usa la tecla F3 o usa el ratón para seleccionarlo en el menú de arriba del cliente.
+
+To reset back to normal:
+
+
+To set the exp rate:
+
 
 To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges.
 
@@ -9821,6 +9848,9 @@ También puedes atacar un enemigo desde tu teclado presionando la tecla 'A' para
 You can also improve your equipment in a totally different way with the use of cards.
 También puede mejorar su equipamiento de una forma totalmente distinta con el uso de tarjetas.
 
+You can also manually stop it at any time with: @exprate default
+
+
 You can also read The Book of Laws at any time to see the rules.
 
 
@@ -10424,6 +10454,9 @@ You stupid, he's English, look at the shape of his head.#1
 You stupid, she's English, look at the shape of her head.#0
 
 
+You successfully set the exp rate to @@%. It will reset to @@% (default value) in @@.
+
+
 You take good care of your piou. Remember to feed it every day.
 Cuida bien a tu piou. Recuerda alimentarlo a diario.
 
@@ -10781,6 +10814,9 @@ Zzzzzzzzz...
 [ ^EE0000%s^000000 ]
 [ ^EE0000%s^000000 ]
 
+[%d] seconds left until you can use
+
+
 [^EE0000%s^000000]
 [^EE0000%s^000000]
 
@@ -10789,9 +10825,6 @@ a ground!
 
 a quiet place,
 un lugar tranquilo,
-
-and 
-y
 
 ban
 proscribir
@@ -10814,12 +10847,6 @@ conf/import/msg_conf.txt
 data @@ @@ @@ data
 información @@ @@ @@ información
 
-day
-día
-
-days
-días
-
 debug
 Depurar
 
@@ -10837,15 +10864,6 @@ prenda,
 
 hairstyle_config
 hairstyle_config
-
-hour
-hora
-
-hours
-horas
-
-in @@
-en @@
 
 left accessory, 
 accesorio izquierdo,
@@ -10876,12 +10894,6 @@ matrimonio1
 
 mid head, 
 cabeza media, 
-
-minute
-minuto
-
-minutes
-minutos
 
 no
 no
@@ -10934,12 +10946,6 @@ accesorio derecho,
 right hand, 
 mano derecha,
 
-second
-segundo
-
-seconds
-segundos
-
 skill %d: %s (%s)
 habilidad %d: %s (%s)
 
@@ -10963,12 +10969,6 @@ desbloquear
 
 value '%d' for option '%s' is out of range (limit is 0-10)
 el valor  '%d' para la opción '%s' está fuera del rango (el límite es 0-10)
-
-year
-año
-
-years
-años
 
 yes
 sí

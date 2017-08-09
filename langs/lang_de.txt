@@ -95,9 +95,6 @@ Lv:%d HP:%d Basis EXP:%u Job EXP:%u HIT:%d FLEE:%d
  MVP Items:
 MVP Gegenstände:
 
- ago
-her
-
  and %d second
 und %d Sekunde
 
@@ -251,9 +248,6 @@ und %d Sekunden
 '%s' channel color updated to '%s' 
 '%s' Channelfarbe aktualisiert zu '%s' 
 
-'%s' got %s's %s (chance: %0.02f%%)
-'%s' hat %s's %s (Chance: %0.02f%%)
-
 '%s' is not a known channel option
 '%s' ist eine unbekannte Channel Option
 
@@ -277,9 +271,6 @@ und %d Sekunden
 
 '%s' stats:
 '%s' Status:
-
-'%s' stole %s's %s (chance: %0.02f%%)
-'%s' stahl %s's %s (Chance: %0.02f%%)
 
 'That', as you call it, is a @@. There are plenty on this island!
 'Das Ding', wie du es nennst, ist ein @@. Es gibt davon Unmengen auf der Insel!
@@ -313,9 +304,6 @@ und %d Sekunden
 
 *burp*
 *rülps*
-
-, and 
-, and
 
 - #%s ( %d users )
 - #%s ( %d Nutzer )
@@ -538,9 +526,6 @@ Ich spreche von einem Baumstamm! Aus Holz!
 
 @@ divorced!
 @@ geschieden!
-
-@@ from now
-@@ von jetzt an
 
 @@ is helping me.
 @@ hilft mir.
@@ -892,6 +877,9 @@ Irgendeine Ahnung, so Astapolos versteckt sein könnte?
 
 Any contribution to the game (translations, graphics creation/edition, concepts, coding/scripting, etc...) is rewarded!
 Jegliche Zuarbeit zum Spiel (Übersetzungen, Erstellen und Editieren von Grafiken und Konzepten, Coding/Scripting etc.) wird belohnt!
+
+Any work in progress (NPC dialog, manufacturing ...) quit and try again.
+
 
 Anything else?
 Noch irgendwas?
@@ -1964,6 +1952,9 @@ Koralle
 Costume '%s' removed.
 Costume '%s' entfernt.
 
+CottageDoor
+
+
 Cotton
 Baumwolle
 
@@ -2062,6 +2053,12 @@ Cuco
 
 Current amount of zeny changed.
 Aktuelle Zenymenge geändert.
+
+Current exp rate is set to @@% (default value).
+
+
+Current exp rate is set to @@%, and will reset to @@% (default value) in @@.
+
 
 Curshroom
 Curpilz
@@ -2644,6 +2641,12 @@ Entschuldigen? Weißt du mit wem du hier redest?
 
 Exemple for yoiis:
 Beispül für yoiis:
+
+Exp rate has been reset to @@% (default value).
+
+
+Exp rate is set to @@% for the next @@.
+
 
 Expanded Super Baby
 Erweitertes Super Baby
@@ -4469,6 +4472,9 @@ Wenn du dich ranhälst, wirst du vielleicht eine furchteinflößender Krieger, g
 If you keep it up, you'll eventually become a fearsome warrior, just like me!#1
 Wenn du dich ranhälst, wirst du vielleicht eine furchteinflößende Kriegerin, genau wie ich!
 
+If you meant to reset the exp rate to its default value: @exprate default
+
+
 If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.
 Wenn du jemand brauchst, der aufgrund von Zeichnungen eine Waffe oder ein Schild herstellen soll, dann bin ich dein Mann.
 
@@ -5143,6 +5149,9 @@ Llyod schuldet mir noch was, aber hüte dich vor diesen Geldschefflern. Die verk
 
 Lloyd the Banker
 Lloyd der Banker
+
+Locked.
+
 
 Logic is the beginning of wisdom, not the end.
 Logik ist der Anfang der Weißheit, nicht das Ende.
@@ -6392,6 +6401,9 @@ Piou Ei
 Piousse
 Piousse
 
+Planting not implemented.
+
+
 Player '%s' (session #%d) | Location: %d,%d
 Spieler '%' (Sitzung #%d) | Standort: %d,%d
 
@@ -6910,6 +6922,9 @@ Förster
 
 Ranger T
 Förster T
+
+Rate management
+
 
 Ratto
 Ratto
@@ -7706,6 +7721,9 @@ Hör auf, ihn zu stören, Silvio. Sonst erzähl ich ihm, wie du dich bei Sturm i
 Stop it!
 Hör damit auf!
 
+Storage has been not loaded yet.
+
+
 Storage opened.
 Lager geöffnet.
 
@@ -8225,9 +8243,6 @@ Es gibt hier immer irgendwas zu tun. Zum Beispiel Tortugas töten oder Peter dab
 There is an unknown side effect to these plushrooms, they can free you from your past mistakes.
 Diese Plushrooms haben einen unbekannten Nebeneffekt. Siekönnen dich von früheren Fehlern befreien.
 
-There is no event available right now.
-Es gibt im Moment kein verfügbares Event.
-
 There is no help for %c%s.
 Es gibt keine Hilfe für %c%s.
 
@@ -8399,6 +8414,9 @@ Dieses Item kannst du nicht tauschen.
 This item cannot be used as bait here.
 Dieser Gegenstand kann hier nicht als Köder verwendet werden.
 
+This job has no alternate body styles.
+
+
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.#0
 Auf solche Reden solltest du nicht allzuviel geben, aber ich stimme zu und bedaure meine eigene Skepsis. Behalt sie einfach im Auge.
 
@@ -8525,11 +8543,20 @@ Benutze diese Befehle zur Änderung deiner Statuspunkte:
 To get started with fishing, you'll need two things: a fishing rod and a bait.
 Um mit dem Angeln zu beginnen, braucht es zwei Dinge: Eine Angel und einen Köder.
 
+To get the current rate:
+
+
 To move between characters that are on different accounts, you have to use the Trade function.
 
 
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
 Um dein Inventar zu öffnen, drücke die F3-Taste oder nutze die Maus, um es im oberen Menü deines Clients auszuwählen.
+
+To reset back to normal:
+
+
+To set the exp rate:
+
 
 To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges.
 Um einen Fisch erfolgreich zu fangen, musst du die Angel durch Klicken anschlagen, sobald der Schwimmer untertaucht.
@@ -9821,6 +9848,9 @@ Du kannst auch angreifen, indem du die 'a' Taste zum Auswählen des Zieles und d
 You can also improve your equipment in a totally different way with the use of cards.
 Durch den Einsatz von Karten kannst du deine Ausrüstung in alle möglichen Richtungen verändern.
 
+You can also manually stop it at any time with: @exprate default
+
+
 You can also read The Book of Laws at any time to see the rules.
 Um die Regeln zu sehen, kannst du jederzeit im Grundgesetz nachschlagen.
 
@@ -10424,6 +10454,9 @@ Du Dummkopf, er ist Engländer! Schau dir mal seine Kopfform an.
 You stupid, she's English, look at the shape of her head.#0
 Du Dummerchen, er ist Engländer! Schau dir mal seine Kopfform an.
 
+You successfully set the exp rate to @@%. It will reset to @@% (default value) in @@.
+
+
 You take good care of your piou. Remember to feed it every day.
 Pass gut auf dein Piou auf. Vergiss nicht, es täglich zu füttern.
 
@@ -10781,6 +10814,9 @@ Zzzzzzzzz...
 [ ^EE0000%s^000000 ]
 [ ^EE0000%s^000000 ]
 
+[%d] seconds left until you can use
+
+
 [^EE0000%s^000000]
 [^EE0000%s^000000]
 
@@ -10789,9 +10825,6 @@ ein Boden!
 
 a quiet place,
 ein ruhiger Ort,
-
-and 
-und
 
 ban
 sperren
@@ -10814,12 +10847,6 @@ conf/import/msg_conf.txt
 data @@ @@ @@ data
 data @@ @@ @@ data
 
-day
-Tag
-
-days
-Tage
-
 debug
 Debug
 
@@ -10837,15 +10864,6 @@ Gewand,
 
 hairstyle_config
 hairstyle_config
-
-hour
-Stunde
-
-hours
-Stunden
-
-in @@
-in @@
 
 left accessory, 
 linkes Accessoire, 
@@ -10876,12 +10894,6 @@ Hochzeit1
 
 mid head, 
 Stirn, 
-
-minute
-Minute
-
-minutes
-Minuten
 
 no
 Nein
@@ -10934,12 +10946,6 @@ rechtes Accessoire,
 right hand, 
 rechte Hand,
 
-second
-Sekunde
-
-seconds
-Sekunden
-
 skill %d: %s (%s)
 Fähigkeit %d: %s (%s)
 
@@ -10963,12 +10969,6 @@ entblocken
 
 value '%d' for option '%s' is out of range (limit is 0-10)
 Wert '%d' für Option '%s' ist außerhalb der Grenzen (Limit ist 0-10)
-
-year
-Jahr
-
-years
-Jahre
 
 yes
 Ja

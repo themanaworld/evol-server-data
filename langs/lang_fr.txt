@@ -95,9 +95,6 @@ Bonus MVP EXP : %u
  MVP Items:
 Objets MVP :
 
- ago
-passé
-
  and %d second
 et %d seconde
 
@@ -251,9 +248,6 @@ et %d secondes
 '%s' channel color updated to '%s' 
 '%s' couleur de canal mise à jour en '%s'
 
-'%s' got %s's %s (chance: %0.02f%%)
-'%s' a %s's %s (chance : %0.02f%%)
-
 '%s' is not a known channel option
 '%s' n'est pas une option de canal connue
 
@@ -277,9 +271,6 @@ et %d secondes
 
 '%s' stats:
 '%s' statistiques :
-
-'%s' stole %s's %s (chance: %0.02f%%)
-'%s' a volé %s's %s (chance : %0.02f%%)
 
 'That', as you call it, is a @@. There are plenty on this island!
 'Ça', comme tu l'appelles, est un @@. Il y en a plein sur l'île !
@@ -313,9 +304,6 @@ et %d secondes
 
 *burp*
 *burp*
-
-, and 
-, et
 
 - #%s ( %d users )
 - #%s ( %d utilisateurs )
@@ -538,9 +526,6 @@ et %d secondes
 
 @@ divorced!
 @@ a divorcé !
-
-@@ from now
-@@ pour maintenant
 
 @@ is helping me.
 @@ m'aide en ce moment.
@@ -892,6 +877,9 @@ Aucun indice d'où Astapolos pourrait se cacher ?
 
 Any contribution to the game (translations, graphics creation/edition, concepts, coding/scripting, etc...) is rewarded!
 Toute contribution au jeu (traductions, création/édition de graphismes, concepts, code/scripts, etc...) est récompensée !
+
+Any work in progress (NPC dialog, manufacturing ...) quit and try again.
+
 
 Anything else?
 Ça sera tout ?
@@ -1964,6 +1952,9 @@ Corail
 Costume '%s' removed.
 Le costume '%s' a été enlevé.
 
+CottageDoor
+
+
 Cotton
 Coton
 
@@ -2062,6 +2053,12 @@ Cuco
 
 Current amount of zeny changed.
 Quantité actuelle de zeny changée.
+
+Current exp rate is set to @@% (default value).
+
+
+Current exp rate is set to @@%, and will reset to @@% (default value) in @@.
+
 
 Curshroom
 Malédichamp
@@ -2644,6 +2641,12 @@ Excuse-moi ? Sais-tu qui je suis ?
 
 Exemple for yoiis:
 Exemple pour yooi :
+
+Exp rate has been reset to @@% (default value).
+
+
+Exp rate is set to @@% for the next @@.
+
 
 Expanded Super Baby
 Super Bébé Étendu
@@ -4469,6 +4472,9 @@ Si tu continues comme ça, tu deviendras une guerrière redoutable, tout comme m
 If you keep it up, you'll eventually become a fearsome warrior, just like me!#1
 Si tu continues comme ça, tu deviendras un guerrier redoutable, tout comme moi !
 
+If you meant to reset the exp rate to its default value: @exprate default
+
+
 If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.
 Si tu as besoin de quelqu'un pour créer une arme ou une plaque à partir de diagrammes, je suis celui dont tu as besoin.
 
@@ -5143,6 +5149,9 @@ Lloyd me doit encore, mais attention à ces extirpeurs d'argent, ou il te vender
 
 Lloyd the Banker
 Lloyd le Banquier
+
+Locked.
+
 
 Logic is the beginning of wisdom, not the end.
 La logique est le début de la sagesse, non pas sa fin.
@@ -6392,6 +6401,9 @@ Piou egg
 Piousse
 Piousse
 
+Planting not implemented.
+
+
 Player '%s' (session #%d) | Location: %d,%d
 Joueur '%s' (session #%d) | Position : %d,%d
 
@@ -6910,6 +6922,9 @@ Ranger
 
 Ranger T
 Ranger T
+
+Rate management
+
 
 Ratto
 Ratto
@@ -7706,6 +7721,9 @@ Arrête de lui crier dessus Silvio, ou je lui dit comment tu cries comme un béb
 Stop it!
 Arrête ça !
 
+Storage has been not loaded yet.
+
+
 Storage opened.
 Entrepôt ouvert.
 
@@ -8225,9 +8243,6 @@ Il y a toujours quelque chose que tu peux faire ici, comme tuer des tortugas ou 
 There is an unknown side effect to these plushrooms, they can free you from your past mistakes.
 Il y a un effet secondaire encore inconnu dans ces peluchignons, ils peuvent te libérer de tes erreurs passées.
 
-There is no event available right now.
-Il n'y a pas d'évènement de disponible en ce moment.
-
 There is no help for %c%s.
 Il n'y a pas d'aide pour %c%s.
 
@@ -8399,6 +8414,9 @@ Cet objet ne peut pas être échangé.
 This item cannot be used as bait here.
 Cet objet ne peut pas être utilisé comme appât ici.
 
+This job has no alternate body styles.
+
+
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.#0
 Cette sorte de discours devrait être pris avec un grain de sel, mais je suis d'accord et j'admet être aussi susceptible, alors garde un œil sur elle.
 
@@ -8525,11 +8543,20 @@ Pour changer tes compétences, utilise ces commandes :
 To get started with fishing, you'll need two things: a fishing rod and a bait.
 Pour commencer la pêche, tu as besoin de deux choses : une canne à pêche et un appât.
 
+To get the current rate:
+
+
 To move between characters that are on different accounts, you have to use the Trade function.
 
 
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
 Pour ouvrir ton inventaire, utilises la touche F3 ou bien ta souris pour le sélectionner dans le menu en haut de ton client.
+
+To reset back to normal:
+
+
+To set the exp rate:
+
 
 To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges.
 Pour réussir à attraper un poisson, tu dois tirer ton hameçon en cliquant dessus, juste après qu'il coule.
@@ -9821,6 +9848,9 @@ Tu peux aussi attaquer un ennemi depuis ton clavier en appuyant sur la touche 'A
 You can also improve your equipment in a totally different way with the use of cards.
 Tu peux aussi améliorer ton équipement de façon totalement différente avec l'utilisation de cartes.
 
+You can also manually stop it at any time with: @exprate default
+
+
 You can also read The Book of Laws at any time to see the rules.
 Tu peux aussi lire le Livre des Lois à n'importe quel moment pour revoir les règles.
 
@@ -10424,6 +10454,9 @@ T'es stupide, il est anglais, regarde la forme de sa tête.
 You stupid, she's English, look at the shape of her head.#0
 T'es stupide, elle est anglaise, regarde la forme de sa tête.
 
+You successfully set the exp rate to @@%. It will reset to @@% (default value) in @@.
+
+
 You take good care of your piou. Remember to feed it every day.
 Prends bien soin de ton piou. N'oublie pas de le nourrir tous les jours.
 
@@ -10781,6 +10814,9 @@ Zzzzzzzzz...
 [ ^EE0000%s^000000 ]
 [ ^EE0000%s^000000 ]
 
+[%d] seconds left until you can use
+
+
 [^EE0000%s^000000]
 [^EE0000%s^000000]
 
@@ -10789,9 +10825,6 @@ une terre !
 
 a quiet place,
 un endroit tranquille,
-
-and 
-et
 
 ban
 bannir
@@ -10814,12 +10847,6 @@ conf/import/msg_conf.txt
 data @@ @@ @@ data
 données @@ @@ @@ données
 
-day
-jour
-
-days
-jours
-
 debug
 débogage
 
@@ -10837,15 +10864,6 @@ vêtement,
 
 hairstyle_config
 hairstyle_config
-
-hour
-heure
-
-hours
-heures
-
-in @@
-dans @@
 
 left accessory, 
 accessoire gauche,
@@ -10876,12 +10894,6 @@ marriage1
 
 mid head, 
 milieu de tête,
-
-minute
-minute
-
-minutes
-minutes
 
 no
 non
@@ -10934,12 +10946,6 @@ accessoire droit,
 right hand, 
 main droite,
 
-second
-seconde
-
-seconds
-secondes
-
 skill %d: %s (%s)
 compétence %d : %s (%s)
 
@@ -10963,12 +10969,6 @@ débloquer
 
 value '%d' for option '%s' is out of range (limit is 0-10)
 valeur '%d' pour l'option '%s' est hors de portée (limite entre 0-10)
-
-year
-année
-
-years
-années
 
 yes
 oui

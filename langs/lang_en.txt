@@ -95,9 +95,6 @@ Copyright (C) 2010-2014 Evol Online
  MVP Items:
  MVP Items:
 
- ago
- ago
-
  and %d second
  and %d second
 
@@ -251,9 +248,6 @@ Copyright (C) 2010-2014 Evol Online
 '%s' channel color updated to '%s' 
 '%s' channel color updated to '%s' 
 
-'%s' got %s's %s (chance: %0.02f%%)
-'%s' got %s's %s (chance: %0.02f%%)
-
 '%s' is not a known channel option
 '%s' is not a known channel option
 
@@ -277,9 +271,6 @@ Copyright (C) 2010-2014 Evol Online
 
 '%s' stats:
 '%s' stats:
-
-'%s' stole %s's %s (chance: %0.02f%%)
-'%s' stole %s's %s (chance: %0.02f%%)
 
 'That', as you call it, is a @@. There are plenty on this island!
 'That', as you call it, is a @@. There are plenty on this island!
@@ -313,9 +304,6 @@ Copyright (C) 2010-2014 Evol Online
 
 *burp*
 *burp*
-
-, and 
-, and 
 
 - #%s ( %d users )
 - #%s ( %d users )
@@ -538,9 +526,6 @@ Copyright (C) 2010-2014 Evol Online
 
 @@ divorced!
 @@ divorced!
-
-@@ from now
-@@ from now
 
 @@ is helping me.
 @@ is helping me.
@@ -892,6 +877,9 @@ Any clue on where Astapolos may be hidden?
 
 Any contribution to the game (translations, graphics creation/edition, concepts, coding/scripting, etc...) is rewarded!
 Any contribution to the game (translations, graphics creation/edition, concepts, coding/scripting, etc...) is rewarded!
+
+Any work in progress (NPC dialog, manufacturing ...) quit and try again.
+Any work in progress (NPC dialog, manufacturing ...) quit and try again.
 
 Anything else?
 Anything else?
@@ -1964,6 +1952,9 @@ Coral
 Costume '%s' removed.
 Costume '%s' removed.
 
+CottageDoor
+CottageDoor
+
 Cotton
 Cotton
 
@@ -2062,6 +2053,12 @@ Cuco
 
 Current amount of zeny changed.
 Current amount of zeny changed.
+
+Current exp rate is set to @@% (default value).
+Current exp rate is set to @@% (default value).
+
+Current exp rate is set to @@%, and will reset to @@% (default value) in @@.
+Current exp rate is set to @@%, and will reset to @@% (default value) in @@.
 
 Curshroom
 Curshroom
@@ -2644,6 +2641,12 @@ Excuse me? Do you know who I am?
 
 Exemple for yoiis:
 Exemple for yoiis:
+
+Exp rate has been reset to @@% (default value).
+Exp rate has been reset to @@% (default value).
+
+Exp rate is set to @@% for the next @@.
+Exp rate is set to @@% for the next @@.
 
 Expanded Super Baby
 Expanded Super Baby
@@ -4469,6 +4472,9 @@ If you keep it up, you'll eventually become a fearsome warrior, just like me!
 If you keep it up, you'll eventually become a fearsome warrior, just like me!#1
 If you keep it up, you'll eventually become a fearsome warrior, just like me!
 
+If you meant to reset the exp rate to its default value: @exprate default
+If you meant to reset the exp rate to its default value: @exprate default
+
 If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.
 If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.
 
@@ -5143,6 +5149,9 @@ Lloyd still owes me, but beware of those money-grabbers, or they might sell your
 
 Lloyd the Banker
 Lloyd the Banker
+
+Locked.
+Locked.
 
 Logic is the beginning of wisdom, not the end.
 Logic is the beginning of wisdom, not the end.
@@ -6392,6 +6401,9 @@ Piou egg
 Piousse
 Piousse
 
+Planting not implemented.
+Planting not implemented.
+
 Player '%s' (session #%d) | Location: %d,%d
 Player '%s' (session #%d) | Location: %d,%d
 
@@ -6910,6 +6922,9 @@ Ranger
 
 Ranger T
 Ranger T
+
+Rate management
+Rate management
 
 Ratto
 Ratto
@@ -7706,6 +7721,9 @@ Stop heckling him, Silvio, or I'll tell him how you always cry like a little bab
 Stop it!
 Stop it!
 
+Storage has been not loaded yet.
+Storage has been not loaded yet.
+
 Storage opened.
 Storage opened.
 
@@ -8225,9 +8243,6 @@ There is always something you can do here, like killing some tortugas or helping
 There is an unknown side effect to these plushrooms, they can free you from your past mistakes.
 There is an unknown side effect to these plushrooms, they can free you from your past mistakes.
 
-There is no event available right now.
-There is no event available right now.
-
 There is no help for %c%s.
 There is no help for %c%s.
 
@@ -8399,6 +8414,9 @@ This item cannot be traded.
 This item cannot be used as bait here.
 This item cannot be used as bait here.
 
+This job has no alternate body styles.
+This job has no alternate body styles.
+
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.#0
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.
 
@@ -8525,11 +8543,20 @@ To change your stats, use these commands:
 To get started with fishing, you'll need two things: a fishing rod and a bait.
 To get started with fishing, you'll need two things: a fishing rod and a bait.
 
+To get the current rate:
+To get the current rate:
+
 To move between characters that are on different accounts, you have to use the Trade function.
 To move between characters that are on different accounts, you have to use the Trade function.
 
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
+
+To reset back to normal:
+To reset back to normal:
+
+To set the exp rate:
+To set the exp rate:
 
 To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges.
 To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges.
@@ -9821,6 +9848,9 @@ You can also attack an enemy from your keyboard pressing the 'A' key to select i
 You can also improve your equipment in a totally different way with the use of cards.
 You can also improve your equipment in a totally different way with the use of cards.
 
+You can also manually stop it at any time with: @exprate default
+You can also manually stop it at any time with: @exprate default
+
 You can also read The Book of Laws at any time to see the rules.
 You can also read The Book of Laws at any time to see the rules.
 
@@ -10424,6 +10454,9 @@ You stupid, he's English, look at the shape of his head.
 You stupid, she's English, look at the shape of her head.#0
 You stupid, she's English, look at the shape of her head.
 
+You successfully set the exp rate to @@%. It will reset to @@% (default value) in @@.
+You successfully set the exp rate to @@%. It will reset to @@% (default value) in @@.
+
 You take good care of your piou. Remember to feed it every day.
 You take good care of your piou. Remember to feed it every day.
 
@@ -10781,6 +10814,9 @@ Zzzzzzzzz...
 [ ^EE0000%s^000000 ]
 [ ^EE0000%s^000000 ]
 
+[%d] seconds left until you can use
+[%d] seconds left until you can use
+
 [^EE0000%s^000000]
 [^EE0000%s^000000]
 
@@ -10789,9 +10825,6 @@ a ground!
 
 a quiet place,
 a quiet place,
-
-and 
-and 
 
 ban
 ban
@@ -10814,12 +10847,6 @@ conf/import/msg_conf.txt
 data @@ @@ @@ data
 data @@ @@ @@ data
 
-day
-day
-
-days
-days
-
 debug
 debug
 
@@ -10837,15 +10864,6 @@ garment,
 
 hairstyle_config
 hairstyle_config
-
-hour
-hour
-
-hours
-hours
-
-in @@
-in @@
 
 left accessory, 
 left accessory, 
@@ -10876,12 +10894,6 @@ marriage1
 
 mid head, 
 mid head, 
-
-minute
-minute
-
-minutes
-minutes
 
 no
 no
@@ -10934,12 +10946,6 @@ right accessory,
 right hand, 
 right hand, 
 
-second
-second
-
-seconds
-seconds
-
 skill %d: %s (%s)
 skill %d: %s (%s)
 
@@ -10963,12 +10969,6 @@ unblock
 
 value '%d' for option '%s' is out of range (limit is 0-10)
 value '%d' for option '%s' is out of range (limit is 0-10)
-
-year
-year
-
-years
-years
 
 yes
 yes
