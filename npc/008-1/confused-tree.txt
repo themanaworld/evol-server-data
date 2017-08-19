@@ -900,6 +900,7 @@ OnInit:
 	// boring stuff below
 	.version = 20; // increase this when you make a change
 	.uptime = gettimetick(2);
+	.alwaysVisible = true; // the NPC doesn't de-spawn when moving away
 	.pid = 1; // regex pattern id
 	.msg_ht = htnew(); // hashtable id for message history
 	.seen_ht = htnew(); // hashtable id for seen log
