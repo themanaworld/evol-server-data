@@ -17,7 +17,19 @@ function	script	doorTouch	{
 }
 
 function	script	doorUnTouch	{
-    if (getareausers() == 0)
+    if (.map$ == "")
+    {
+        if (getmapxy(.@map$, .@x, .@y, UNITTYPE_NPC) != 0)
+        {
+            close;
+        }
+    }
+    else
+    {
+        .@map$ = .map$;
+    }
+
+    if (getareausers(.@map$) == 0)
     {
         .dir = 4;
         initnpctimer;
