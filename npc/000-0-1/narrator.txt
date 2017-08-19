@@ -11,7 +11,7 @@
 
 000-0-1,25,28,0	script	Narrator#000-0-1	NPC_NARRATOR,{
 
-    narrator 4,
+    narrator S_LAST_NEXT,
         l("Look, we finally meet."),
         l("I think that you already understood, you are asleep."),
         l("The ship, La Johanne, has left Drasil Island, finally."),

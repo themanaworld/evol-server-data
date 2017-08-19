@@ -63,7 +63,7 @@ start:
     getmapxy(.@map$, .@x, .@y, 0);
     if (.@x < 24 || .@x > 32 || .@y < 33 || .@y > 43)
     {
-        speech 1, l("Please enter the combat zone on the left.");
+        speech S_FIRST_BLANK_LINE, l("Please enter the combat zone on the left.");
         close;
     }
 

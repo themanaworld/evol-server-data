@@ -20,13 +20,13 @@
     // Quest-related functions
  
     function send_training {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             lg("Oh, you were sent by Enora!"),
             l("If Enora thinks this is the right place for you, then she's probably be right. Did you know she's a lieutenant of the Legion?"),
             l("The rank of lieutenant is granted only to people with proper control of their skill and good judgment, like Enora. Or me, of course."),
             l("By the way, I'm Lozerk. Lieutenant Lozerk.");
         select(l("Pleasure to meet you. I am @@.", strcharinfo(PC_NAME)));
-        speech 5,         
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,         
             lg("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
             l("But don't you worry! I don't know how to get you back your memories, but we can work on your muscles for now!"),
             lg("After all, this is the Legion of Aemil! You want to be a great warrior? We'll make you one here!"),
@@ -42,7 +42,7 @@
     }
 
     function send_battle {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             lg("So, did you get your blood boiling? Give the dummies a good lesson? Good!"),
             l("But since it's not dummies that will go after you out there, this training won't be enough."),
             lg("If you want to make a formidable foe for anyone, you'll need to train with real living opponents!"),
@@ -56,7 +56,7 @@
     }
 
     function send_qanon {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             lg("And you won! That means you should be able to handle yourself in battle from now on."),
             lg("If you keep it up, you'll eventually become a fearsome warrior, just like me!"),
             l("Or almost like me, at the very least."),
@@ -74,7 +74,7 @@
     // Normal functions
  
     function tell_about_legion {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("The Legion of Aemil is the greatest organization on all continent! A town cannot be safer than when it's under our protection."),
             l("This is where the bravest of warriors come together to put their skills to a good use, for a good cause."),
             l("Our building here is also the finest place in the town. Just go and see for yourself!");
@@ -83,7 +83,7 @@
     }
     
     function praise_sword {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Thanks!");
  
         return;
@@ -91,7 +91,7 @@
  
     // Conversation
  
-    speech 4,
+    speech S_LAST_NEXT,
         l("Welcome to the Legion of Aemil's building in Artis!");
 
     do{

@@ -15,7 +15,7 @@
         end;
     }
 
-    narrator(6,
+    narrator(S_LAST_BLANK_LINE | S_LAST_NEXT,
         l("You hear some creeping and crawling sounds from the murkiness below."),
         l("..."),
         l("Do you want to enter in sewer?"));
@@ -38,7 +38,7 @@ OnInit:
         end;
     }
 
-    narrator(6,
+    narrator(S_LAST_BLANK_LINE | S_LAST_NEXT,
         l("You hear some creeping and crawling sounds from the murkiness below."),
         l("..."),
         l("Do you want to enter in sewer?"));

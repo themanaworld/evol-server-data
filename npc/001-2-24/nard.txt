@@ -41,7 +41,7 @@
         l("How long will you stay here?"), -,
         rif(.@q > 0, lg("I'm lost, where should I go?")), L_Lost;
 
-    speech 5,
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
         l("We just returned from a long journey and Artis is a good city to rest and to conclude our exchange."),
         l("I think that we will stay in port for a great time."),
         l("Although, if you want to visit a place nearby, we could take you there."),
@@ -51,7 +51,7 @@
                    l("Nowhere, I'm fine here.")))
     {
         case 1:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Let's set sail then!");
 
             savepoint "000-2-1", 50, 38;
@@ -67,7 +67,7 @@
             closedialog;
             close;
         case 2:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Ok we stay docked here if you need our help.");
 
             closedialog;

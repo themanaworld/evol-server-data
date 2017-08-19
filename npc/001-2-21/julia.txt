@@ -116,7 +116,7 @@ L_BasicSkill:
     goto L_YNMenu;
 
 L_Enora:
-    speech 5,
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
         l("Enora, from the Legion of Aemil, has been warned that you were aboard."),
         l("She is waiting for you on the dock."),
         l("Do you have any other questions for me?");
@@ -127,7 +127,7 @@ L_Quit:
     goodbye;
 
 L_Island:
-    speech 5,
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
         l("Of course, as a fully-fledged crew member you can decide of the destination of La Johanne directly with Nard.");
         l("Do you have any other questions for me?");
     emotion E_HAPPY;

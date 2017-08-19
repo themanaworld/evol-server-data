@@ -9,7 +9,7 @@
 001-2-28,28,28,0	script	Plush#001-2-28	NPC_RED,{
 
     function narrator_explication {
-        narrator 4,
+        narrator S_LAST_NEXT,
             l("You will respawn at this place if defeated in combat."),
             l("All you have to do is to select a bed in the upper level anytime after your reservation."),
             l("Unlike other respawn points, an inn can fully restore your HP."),
@@ -22,7 +22,7 @@
         .@price = getarg (0);
         if (Zeny < .@price)
         {
-            speech 5, l("You don't have enough money, bring @@ E.", .@price);
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("You don't have enough money, bring @@ E.", .@price);
         }
         else
         {
@@ -31,7 +31,7 @@
             INN_REGISTER = REDPLUSH_INN;
             PC_IS_DEAD = false;
 
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 lg("I registered you on the 4th room of the upper level.",
                    "I registered you on the 2nd room of the upper level."),
                 l("You can go upstairs and choose a different room if you want.");
@@ -42,7 +42,7 @@
     function register_room {
         .@price = lognbaselvl(100, 10);
 
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("That will be @@ E to set your respawn point", .@price),
             l("This will remain your respawn point until set elsewhere."),
             l("Is that okay?");
@@ -53,7 +53,7 @@
         }
         else
         {
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Come back later if you changed your mind!");
         }
 
@@ -67,13 +67,13 @@
         }
         else if (INN_REGISTER == REDPLUSH_INN)
         {
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 lg("You are already registered here."),
                 l("Go on the upper level if you want to change your room or to use it.");
         }
         else
         {
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 lg("If you are registered somewhere else you will loose that reservation."),
                 l("Do you still want to lodge here?");
 
@@ -85,7 +85,7 @@
         return;
     }
 
-    speech 4,
+    speech S_LAST_NEXT,
         l("Welcome to the Red Plush inn!"),
         l("What do you need?");
 
@@ -104,14 +104,14 @@
                 break;
             case 2:
                 emotion E_WINK;
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranteed to be right as rain after a night here!"),
                     l("If you wake up at the inn after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.");
 
                 narrator_explication;
                 break;
             case 3:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("That poor one is doing his best to fly... But his last meal and the gravity is not helping him so far!");
                 break;
             case 4:

@@ -69,7 +69,7 @@
     {
         if (.PiouCaught)
         {
-        speech 0,
+        speech
             l("Look who is back..."),
             l("And with my piou. That's wonderful. I can only imagine how hard that little bugger was to catch!"),
             l("Great, and as I promised, I give you a 90% discount on the @@ of your choice.", getitemlink (PiouEgg));
@@ -87,13 +87,13 @@
             if (.@BoughtPiou == 0)
                 ArtisQuests_PiouDiscount = 0;
             else if (.@BoughtPiou == 4)
-                speech 1, l("See you next time!");
+                speech S_FIRST_BLANK_LINE, l("See you next time!");
 
             close;
         }
         else
         {
-            speech 0,
+            speech
                 l("Look who is back..."),
                 l("So, where is my piou? You should not keep an old man waiting. Go and catch it like you said you would.");
                 next;
@@ -101,7 +101,7 @@
         }
     }
 
-    speech 4,
+    speech S_LAST_NEXT,
         l("Good day, my friend, come closer, come closer!");
         l("Just look at my goods for sale! Fresh fruits and vegetables were shipped only this morning. And for reasonable price, of course.");
 
@@ -127,7 +127,7 @@ L_SalemMenuShop:
         case 3:
             if (.@q == 2 && ArtisQuests_PiouDiscount)
             {
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("You still have a 90% discount on one piou.");
                 @ArtisQuests_PiouPrice = 3000;
             }
@@ -135,7 +135,7 @@ L_SalemMenuShop:
                 ArtisQuests_PiouDiscount = 0;
             break;
         case 4:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("I think that I've seen this weakling wandering around the beach south from here this morning.");
             break;
     }
@@ -145,7 +145,7 @@ L_SalemMenuShop:
     close;
 
 L_AboutPious:
-    speech 5,
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
         l("Ah, the locals like keeping them as pets.");
         l("With proper training, a piou can become a good friend and faithful companion in your adventures.");
 

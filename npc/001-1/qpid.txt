@@ -7,10 +7,10 @@
 001-1,65,116,0	script	Q'Pid#001-1	NPC_QPID,{
 
     function riddle_enigma {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Ok fine, you have up to 3 tries, here is the riddle:"),
             l("What is growing and shrinking at the same time?");
-        narrator 4,
+        narrator S_LAST_NEXT,
             l("You need to type the answer of this riddle in the NPC window."),
             l("The answer is a single word, without conjugation."),
             l("You can also answer in your native language or in English.");
@@ -22,14 +22,14 @@
 
             if (riddlevalidation (.@answer$, "life", l("life")))
             {
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Oh..."),
                     l("You seem more cultivated than you look.");
 
                 if (getq (ArtisQuests_Enora) == 7)
                 {
                     setq (ArtisQuests_Enora, 9);
-                    speech 12,
+                    speech S_LAST_NEXT | S_NO_NPC_NAME,
                         l("Fine, take these potions, I will replenish them in the next couple hours anyway.");
                 }
 
@@ -37,7 +37,7 @@
             }
             else if (.@i < 3)
             {
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Too bad, try again.");
             }
             else
@@ -45,7 +45,7 @@
                 if (getq (ArtisQuests_Enora) == 7)
                 {
                     setq (ArtisQuests_Enora, 8);
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("You failed!"),
                         l("Ivan is the one you should look for now."),
                         l("He is in a small house between the dock's warehouse and the dojo."),
@@ -54,7 +54,7 @@
                 }
                 else
                 {
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("You failed!");
                 }
 
@@ -66,7 +66,7 @@
     }
 
     function enora_quest {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("She wants? What if I don't want?"),
             l("I'm not a pawn of the Legion, I don't have to obey you!"),
             l("Oh and guess what! I'm almost out of potions anyway.");
@@ -80,7 +80,7 @@
                 return;
         }
 
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("You don't seem to be from the Legion, let's do a game."),
             l("If you find the correct answer, I will give you these potions..."),
             l("But if you fail, you will have to get them from the alchemist."),
@@ -94,7 +94,7 @@
     }
 
     function alchemist_information {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Do? I don't do them."),
             l("I'm sure that you already knew the answer, didn't you?"),
             l("You tried to embarrass me, am I right?!"),
@@ -111,7 +111,7 @@
                 mesn;
                 break;
             case 2:
-                speech 5, l("You are honest, I like it.");
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("You are honest, I like it.");
                 break;
         }
         mesq l("Is that all you had to say?");
@@ -120,7 +120,7 @@
         return;
     }
 
-    speech 4,
+    speech S_LAST_NEXT,
         l("What?");
 
     do
@@ -151,7 +151,7 @@
                 alchemist_information;
                 break;
             case 5:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("It's a poem, about poems... Why are you asking that?"),
                     l("Because I am a Kralog I can't read such things? That's rubbish."),
                     l("I borrowed it from the library, you should try to cultivate yourself more instead of insinuate things about people you don't know!");

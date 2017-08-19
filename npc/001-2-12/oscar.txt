@@ -8,7 +8,7 @@
 
     function live_here_alone
     {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Meh!"),
             l("This is a harsh word to use, you are never alone in the beautiful place of Artis."),
             l("Mob is doing its daily noise, nature is singing its sumptuous melody, none is alone.");
@@ -68,39 +68,39 @@
     {
         .@item_index = -1;
 
-        speech 1,
+        speech S_FIRST_BLANK_LINE,
             l("What item would you like to bleach?");
 
-        narrator 5,
+        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("You can drag and drop an item to the NPC window or select an item through your inventory.");
 
         .@item_index = requestitemindex();
         if (!item_is_bleachable(.@item_index))
         {
-            speech 4,
+            speech S_LAST_NEXT,
                 l("You should know this, an item like this can't be bleached.");
 
             return;
         }
 
-        speech 4,
+        speech S_LAST_NEXT,
             l("Your mind is set? You will loose the color dye during this process.");
 
         switch (askyesno())
         {
             case 1:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Ok, let me see..."),
                     l("...");
 
                 failedremovecardsindex .@item_index, 1;
 
-                speech 12,
+                speech S_LAST_NEXT | S_NO_NPC_NAME,
                     l("..."),
                     l("Here it is, clean like a whistle!");
                 break;
             case 2:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Is it truly a hard choice to make?");
                 break;
         }
@@ -109,7 +109,7 @@
     }
 
     .@hour = gettime(GETTIME_HOUR);
-    speech 4, (.@hour > 6 && .@hour < 18) ? l("Good day to you.") : lg("Good night milady.", "Good evening sir.");
+    speech S_LAST_NEXT, (.@hour > 6 && .@hour < 18) ? l("Good day to you.") : lg("Good night milady.", "Good evening sir.");
 
     do
     {
@@ -127,7 +127,7 @@
                 live_here_alone();
                 break;
             case 3:
-                speech 5, l("I wish you a good time in town.");
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("I wish you a good time in town.");
                 break;
         }
 

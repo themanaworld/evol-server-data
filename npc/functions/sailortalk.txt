@@ -12,7 +12,7 @@ function	script	sailortalk	{
     if (.@rand == 0) goodbye;
     if (.@rand == 1)
     {
-        speech 4,
+        speech S_LAST_NEXT,
             l("These purple mushrooms are called @@s. There are plenty of 'em on this island!", getitemlink(Plushroom)),
             l("It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?", getitemlink(Plushroom)),
             l("These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.", getitemlink(Plushroom));
@@ -21,7 +21,7 @@ function	script	sailortalk	{
     if (.@rand == 3) npctalk3 l("So finally someone has came to visit me?");
     if (.@rand == 4)
     {
-        speech 4,
+        speech S_LAST_NEXT,
             l("A sunny and hot day,"),
             l("a quiet place,"),
             l("a ground!"),

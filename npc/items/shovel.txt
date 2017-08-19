@@ -47,7 +47,7 @@
         .@playertick = .PlayerTiredTime - readparam(bStr);
         if (@ShovelLastUsed + max(4, .@playertick) > .@tick)
         {
-            narrator 1,
+            narrator S_FIRST_BLANK_LINE,
                 lg("You are exhausted, you should rest a bit.");
             return 1;
         }
@@ -71,18 +71,18 @@
                 deletearray $WorldBuriedTreasures_x[.@i], 1;
                 deletearray $WorldBuriedTreasures_y[.@i], 1;
                 getitem .@id, .@amount;
-                narrator 1,
+                narrator S_FIRST_BLANK_LINE,
                     l("You found something!"),
                     l("It's @@ @@.", .@amount, getitemname(.@id));
                 return 1;
             }
         }
-        narrator 1, l("Sadly, you found nothing but dirt.");
+        narrator S_FIRST_BLANK_LINE, l("Sadly, you found nothing but dirt.");
         return 0;
     }
 
     function Bury {
-        narrator 3, l("What would you like to bury?");
+        narrator S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE, l("What would you like to bury?");
         .@items$ = "";
         getinventorylist;
         for (.@i = 0; .@i < @inventorylist_count; .@i++)
@@ -95,7 +95,7 @@
         .@amount = 1;
         if (@inventorylist_amount[.@idx] > 1)
         {
-            narrator 3, l("Amount?");
+            narrator S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE, l("Amount?");
             input .@amount, 1, @inventorylist_amount[.@idx];
         }
 
@@ -107,7 +107,7 @@
         $WorldBuriedTreasures_map$[.@wtc] = .@map$;
         $WorldBuriedTreasures_x[.@wtc] = .@x;
         $WorldBuriedTreasures_y[.@wtc] = .@y;
-        narrator 1, l("You buried @@ @@.", .@amount, getitemname(.@id));
+        narrator S_FIRST_BLANK_LINE, l("You buried @@ @@.", .@amount, getitemname(.@id));
 
         return 0;
     }
@@ -139,7 +139,7 @@ OnUse:
         close;
     }
 
-    narrator 2,
+    narrator S_LAST_BLANK_LINE,
         l("You hold the shovel in your hands."),
         l("What are you going to do?");
 
@@ -162,7 +162,7 @@ OnUse:
             Bury();
             break;
         case 3:
-            narrator 1, l("You hide your shovel.");
+            narrator S_FIRST_BLANK_LINE, l("You hide your shovel.");
             break;
     }
     close;

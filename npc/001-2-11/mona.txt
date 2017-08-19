@@ -13,7 +13,7 @@
 
     function find_daddy_quest
     {
-        speech 4,
+        speech S_LAST_NEXT,
             l("Hey you!");
 
         switch (select(l("Yes?"), l("Sorry, I have to go.")))
@@ -22,19 +22,19 @@
                 mes "";
                 break;
             case 2:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("No you don't have to go. I need your help, so you have to stay.");
                 break;
         }
 
-        speech 12,
+        speech S_LAST_NEXT | S_NO_NPC_NAME,
             l("Daddy did not come back home... He said that he would be back for lunch but it has already been a week!"),
             l("You have to find him, or else I will tell him that you did not help me.");
 
         switch (select(l("You do not give me much options."), l("The elder ran away from you.")))
         {
             case 1:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("He said that he would check why the manhole next to the house was doing weird sounds."),
                     l("But he never returned."),
                     l("Please find my daddy...");
@@ -42,7 +42,7 @@
                 setq ArtisQuests_MonaDad, 1;
                 break;
             case 2:
-                speech 1,
+                speech S_FIRST_BLANK_LINE,
                     l("I will tell my dad!");
                 break;
         }

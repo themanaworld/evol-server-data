@@ -22,7 +22,7 @@ function	script	BarberSayStyle	{
             message strcharinfo(0), l("@@", .@color_name$);
             break;
         case 3:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Your hairstyle is @@ and its color is @@.", .@style_name$, .@color_name$);
             break;
     }

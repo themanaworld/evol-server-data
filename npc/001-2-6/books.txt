@@ -140,7 +140,7 @@ OnInit:
 001-2-6,54,28,0	script	#001-2-6-Book4	NPC_NO_SPRITE,{
 
     function read_book {
-        narrator 1,
+        narrator S_FIRST_BLANK_LINE,
             l("Aemil was once a magnificent land unknown to us all."),
             l("Before the end of the Mana War, a band of adventurers formed in the Ancean region of Argaes from those who had lost their homes and families."),
             l("They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of humans."),

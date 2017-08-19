@@ -20,7 +20,7 @@
     stopnpctimer;
     initnpctimer;
 
-    speech 4,
+    speech S_LAST_NEXT,
         l("Hey you, do you have any @@s?", getitemlink(Plushroom));
 
 L_Menu:
@@ -36,12 +36,12 @@ L_Menu:
     switch (@menu)
     {
         case 1:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Wind and grass is nice and cool, so juicy sweet..."),
                 l("Our only wish to eat a plush, so juicy sweet...");
             goto L_Menu;
         case 2:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 lg("Why are you asking? And who are you too? I've never seen you around before..."),
                 lg("Wait, are you one of those from the Legion of Gasaron? I didn't do anything wrong, I promise!"),
                 l("I... I just like to eat the purple and delightful... And natural, and...");
@@ -51,12 +51,12 @@ L_Menu:
             {
                 case 1: break;
                 case 2:
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("No! No, no, my precious plushrooms! Don’t take me to them, they wants my precious.");
                     goto L_Quit;
             }
 
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("I won't forget it, I swear on my precious plushrooms!"),
                 l("There is an unknown side effect to these plushrooms, they can free you from your past mistakes."),
                 l("You can use it to clear your stats, to start freshly if you see what I mean..."),
@@ -77,7 +77,7 @@ L_Menu:
                         setq General_Rumly, 2;
                     }
 
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("Great! Can't wait for some tasty mushrooms!");
 
                     goto L_Menu;
@@ -98,17 +98,17 @@ L_Menu:
 
             if (.@rand)
             {
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("See you! And come back with the plushrooms!");
             }
             else
             {
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Oh noes!"),
                     l("A rabbit!"),
                     l("He has a guns!"),
                     l("*Bang bang*");
-                narrator 4,
+                narrator S_LAST_NEXT,
                     l("Rumly is hiding behind the tree.");
             }
 
@@ -118,7 +118,7 @@ L_Menu:
 L_ResetStats:
     if (.@visited == 1)
     {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             lg("Changed your mind, uh?"),
             l("Very good."),
             l("Status point reset can't be undone. Do you really want this?"),
@@ -126,7 +126,7 @@ L_ResetStats:
     }
     else
     {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             lg("Are you sure about this?");
     }
 
@@ -136,7 +136,7 @@ L_ConfirmReset:
                    lg("I won't need it, thank you.")))
     {
         case 1:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Let me just have a quick look at you. Hm... I will need @@ @@s to reset your stats.", .@plush_count, getitemlink(Plushroom));
 
             select
@@ -152,7 +152,7 @@ L_ConfirmReset:
 
             delitem Plushroom, .@plush_count;
 
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Thank you."),
                 l("Now stand still... It should not take much time...");
 
@@ -164,14 +164,14 @@ L_ConfirmReset:
             }
             if (StatusPoint == .@wasSP)
             {
-                speech 4,
+                speech S_LAST_NEXT,
                     l("It seems that you have no status points to reset!"),
                     lg("But the plushroom you brought was really awesome you know."),
                     lg("Come back when you will really need me. And bring more plushrooms with you!");
             }
             else
             {
-                speech 4,
+                speech S_LAST_NEXT,
                     l("Let's see... @@ of your status points have just been reset!", StatusPoint - .@wasSP),
                     l("Spend it wisely this time."),
                     lg("But you are welcome to reset your stats again if you bring me some more plushrooms!");
@@ -189,7 +189,7 @@ L_Later:
     {
         setq General_Rumly, 2;
     }
-    speech 5,
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
         l("Come back soon, and bring @@s!", getitemlink(Plushroom));
 
     goto L_Quit;
@@ -200,7 +200,7 @@ L_Never:
         setq General_Rumly, 1;
     }
 
-    speech 5,
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
         lg("I am sure that you will change your mind.");
 
     goto L_Quit;

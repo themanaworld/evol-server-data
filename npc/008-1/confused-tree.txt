@@ -23,7 +23,7 @@
                     l("Have you seen anything strange lately?"),
                     l("Do you know anything about the recent robberies?"));
 
-                narrator(1,
+                narrator(S_FIRST_BLANK_LINE,
                     l("..."),
                     l("It doesn't reply."));
             }

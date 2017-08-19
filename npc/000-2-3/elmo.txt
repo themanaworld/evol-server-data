@@ -7,7 +7,7 @@
 
 000-2-3,27,27,0	script	Elmo	NPC_ELMO,{
     function got_money {
-        speech 4,
+        speech S_LAST_NEXT,
             lg("Be patient a little while longer, in the next few days we will arrive at the port of Artis..."),
             l("If you feel bored or like running around in circles, you may want to talk with the other sailors around here to get some tasks to do."),
             l("From what I heard, my brother Gugli needs the help of as many people as possible in order to collect a lot of neat things that can be found on this island."),
@@ -26,24 +26,24 @@
         got_money;
     }
 
-    speech 4,
+    speech S_LAST_NEXT,
         l("Hey you, sorry for leaving your room so quickly. I needed to speak with the captain about the food reserves. You know, now that we have a new mouth to feed, we need to check what we have."),
         l("So, how is it going? Did you meet any other crew members yet?");
 
     switch (select (l("Yes, Arpan gave me these clothes."), l("Not yet.")))
     {
         case 1:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Oh good! Did he give you your money back as well?");
 
             switch (select (l("Yes he did."), l("He told me nothing about that.")))
             {
                 case 1:
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("Ok, be patient a little while longer, in the next few days we will arrive at the port of Artis...");
                     break;
                 case 2:
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("Hehe, sometimes he gets his head in the clouds, You should go ask him about that.");
                     setq ShipQuests_ArpanMoney, 1; 
                     break;
@@ -51,7 +51,7 @@
 
             break;
         case 2:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("You should go see them."),
                 l("You still got a few days before we arrive at the port, maybe you can learn something from them?");
 

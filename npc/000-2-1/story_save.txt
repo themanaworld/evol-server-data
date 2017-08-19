@@ -11,7 +11,7 @@
     if(.@q_nard == 5 && .@q_narr < 1)
     {        
 OnClick:
-        narrator 4,
+        narrator S_LAST_NEXT,
             l("You lie in the bed."),
             l("Your head is suddently heavy, your eyes are closing..."),
             lg("You fell asleep.");

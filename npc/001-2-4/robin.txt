@@ -8,7 +8,7 @@
 
     function need_help
     {
-        speech 4,
+        speech S_LAST_NEXT,
             l("Do you need help with something?");
 
         switch (select(l("What kinds of books are there here?"),
@@ -41,13 +41,13 @@
             npctalkonce l("An explorer left behind some incomplete manuscripts about the people and dangers in the land of Kaizei.");
             break;
         case 4:
-            speech 4,
+            speech S_LAST_NEXT,
                 l("Ow-oh!"),
                 l("Introduce yourself instead of poking me around. I almost fell from the lader, savage...");
 
             setcamnpc "#001-2-4-Book1";
 
-            speech 8,
+            speech S_NO_NPC_NAME,
                 l("Go have a look at that shelf to my right, would you?"),
                 l("You clearly need to be more public-spirited.");
             break;

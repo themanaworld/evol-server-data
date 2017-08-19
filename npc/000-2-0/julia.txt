@@ -53,7 +53,7 @@
     }
 
     function gotoSleep {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("You already did enough for us, follow Nard's advice and get some rest."),
             l("We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!"),
             l("Do you have any other questions for me?");
@@ -166,7 +166,7 @@
         mesq l("Here they are.");
         next;
 
-        narrator 4,
+        narrator S_LAST_NEXT,
             l("There is a paper with some rules written on it.");
 
         GameRules 8 | 4;

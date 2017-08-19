@@ -15,7 +15,7 @@
 001-1,95,109,0	script	Chelios	NPC_CHELIOS,{
 
     function give_small_quest {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Her sword... I'm having some trouble finishing it."),
             l("You see, Enora asked me to do a black iron sword, unfortunately I ran out of the material needed, and..."),
             l("Only Don and the Merchant Guild have that kind of material in stock. It's called black iron."),
@@ -28,13 +28,13 @@
             case 1:
                 break;
             case 2:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     lg("I'll be here, come back when you'll be ready.");
 
                 return;
         }
 
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Thank you very much!"),
             l("Talk with Lloyd the Banker in the Merchant Guild, it's a big building in the northern side of Artis, at the top of the small hill.");
 
@@ -44,7 +44,7 @@
     }
 
     function more_info {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("It's the big building in northern Artis, at the top of a small hill."),
             l("Take the east road that goes to the north and follow it until you are on top of the cliff."),
             l("That part of the town is called the Gilded Hill, it's also where the Merchant Guild has its headquarters."), //rich hill
@@ -54,7 +54,7 @@
     }
 
     function quest_completed {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Oh... Awesome!"),
             l("You were gone so I thought you let me down."),
             l("Don gave me some black iron... after I asked him nearly ten times."),
@@ -67,7 +67,7 @@
     }
 
     function blacksmith_house{
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Behind me? It's the Blacksmith House, the most renowned throughout Aemil."),
             l("There are two shops inside, they are independent from the Merchant Guild of Artis."),
             l("Now that I think about it, they are the only shops that are independent in Artis..."),
@@ -76,7 +76,7 @@
         return;
     }
 
-    speech 4, l("Can I be of any help?");
+    speech S_LAST_NEXT, l("Can I be of any help?");
 
     do
     {

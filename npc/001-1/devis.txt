@@ -22,7 +22,7 @@
         if (.@rand == 0) goodbye;
         else if (.@rand == 1)
         {
-            speech 4,
+            speech S_LAST_NEXT,
                 l("A sunny and hot day,"),
                 l("a quiet place,"),
                 l("a ground!"),

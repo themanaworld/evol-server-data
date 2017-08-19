@@ -23,7 +23,7 @@
         }
     }
 
-    speech 4, l("Do you want a drink?");
+    speech S_LAST_NEXT, l("Do you want a drink?");
 
     closedialog;
     shop "#Invisible001-2-28";

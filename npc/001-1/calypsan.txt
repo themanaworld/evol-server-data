@@ -16,7 +16,7 @@
 001-1,47,126,0	script	Calypsan#001-1	NPC_CALYPSAN,{
 
     function explain_dyes {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Look at your equipment, can you guess what material it is made from?"),
             l("Seek a colorant for that material:"),
             l("Cotton, cashmere, leather, ..."),
@@ -33,7 +33,7 @@
     }
 
     function sell_dye {
-        speech 5, l("For what kind of tissue?");
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("For what kind of tissue?");
         .@tissue_type = select (l("Cotton"), l("Cashmere"));
 
         closedialog;
@@ -52,7 +52,7 @@
         close;
     }
 
-    speech 4,
+    speech S_LAST_NEXT,
         l("Yoiis envies a rainbow in the sky?"),
         l("It is possible to yeye your cloth with my beautiful dyes."),
         l("What does yoiis want today?");
@@ -72,7 +72,7 @@
         {
             case 1:
                 setcamnpc "Fexil#001-1";
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Oh yeye did, his store is just beside me!"),
                     l("Yoiis should look there.");
                 restorecam;
@@ -86,7 +86,7 @@
                 explain_dyes;
                 break;
             case 4:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Yoiis is not yet ready to make his own dyes."),
                     l("But in the future I might be able to help you create some of your own.");
                 break;

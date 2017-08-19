@@ -17,7 +17,7 @@
     if (.@q == 2) goto L_ItemFound;
     if (.@q == 3) goto L_QuestDone;
 
-    speech 2,
+    speech S_LAST_BLANK_LINE,
         l("We haven't met, right?"),
         l("My name is Q'Onan, I'm a member of Nard's crew."),
         l("I have a lot of work here, so I don't even have time to go to the town."),
@@ -26,13 +26,13 @@
     switch (select (l("Go on."), l("I don't have the time sorry.")))
     {
         case 2:
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("No problem, see you next time.");
         closedialog;
         close;
     }
 
-    speech 3,
+    speech S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE,
         l("Before I joined Nard, I used to be a thief."),
         l("I'm not proud of it, but I had to steal money from others to keep on living."),
         l("Anyway, the last time I stole something I was almost caught."),
@@ -55,23 +55,23 @@
             getrandompoint(178,26,182,29);
             npcdebug "Chest buriad at (" + .move__rand_x + "," + .move__rand_y + ")";
             shovel_addquest("001-1", .move__rand_x, .move__rand_y, "QOnanFoundItem");
-            speech 3,
+            speech S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE,
                 l("Alright, you will need this shovel."),
                 l("You should check on the highest part of the cliff, I was hiding there."),
                 l("I hope to see you soon.");
             getitem IronShovel, 1;
             close;
         case 2:
-            speech 3,
+            speech S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE,
                 l("Come on, don't be a coward!"),
                 l("Anyway, let me know if you change your mind.");
             close;
     }
 
 L_QuestGiven:
-    speech 4, lg("I asked you to do me a favor, did you forget?");
+    speech S_LAST_NEXT, lg("I asked you to do me a favor, did you forget?");
     select l("What should I do, again?");
-    speech 1,
+    speech S_FIRST_BLANK_LINE,
         l("Please find the small chest, buried somewhere on Artis hill."),
         l("You should check on the highest part of the cliff, I was hiding there."),
         l("Bring it to me, and you will get your reward.");
@@ -103,7 +103,7 @@ OnInit:
 function	script	QOnanFoundItem	{
     setq ArtisQuests_QOnan, 2;
     // getitem SmallChest, 1;
-    narrator 1,
+    narrator S_FIRST_BLANK_LINE,
        l("You found a small chest, surprisingly heavy for it's size."),
        l("It's probably full of coins, but no matter how hard you try to open it, you can't."),
        l("Better take it back to Q'Onan.");

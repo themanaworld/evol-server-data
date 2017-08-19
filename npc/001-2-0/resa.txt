@@ -17,7 +17,7 @@
 001-2-0,37,28,0	script	Resa	NPC_ELVEN_FEMALE_ARMOR_SHOP,{
 
     function explain_craft {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Did you see Don the blacksmith? He might know how you could improve your metal equipment."),
             l("Nevertheless, you can craft some cards that you can then attach to your equipment."),
             l("We sell a brimmed hat, you can craft a feather card and attach it to this hat to obtain an enhanced version of it!");
@@ -26,19 +26,19 @@
     }
 
     function enora_quest {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("I thought that she would never come to pick it up!"),
             l("Here it is, a fashionable @@.", getitemlink (ArtisTankTop, CamelCottonDye)),
             l("I asked Calypsan to dye this tank top, now it has an unique look!");
 
-        narrator 4, l("You pick up the package.");
+        narrator S_LAST_NEXT, l("You pick up the package.");
 
         setq ArtisQuests_Enora, 6;
 
         return;
     }
 
-    speech 4,
+    speech S_LAST_NEXT,
         l("Welcome to my office."),
         l("What would you like today?");
 

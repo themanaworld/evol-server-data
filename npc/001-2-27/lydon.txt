@@ -5,7 +5,7 @@
 //    Lydon is the Weapon seller in Don's Blacksmith house on Artis.
 
 001-2-27,43,28,0	script	Lydon#001-2-27	NPC_LYDON,{
-    speech 4,
+    speech S_LAST_NEXT,
         lg("Hi customer! What do you want today?");
 
     switch (select (
@@ -18,7 +18,7 @@
             shop "Store#Weapon001-2-27";
             close;
         case 2:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Chef? He is Don's apprentice, he works on his hammering skill day and night."),
                 l("He is very lucky that Don took him under his wing, but being the student of such a teacher is not easy every day!");
             break;

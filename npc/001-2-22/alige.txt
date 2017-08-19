@@ -231,7 +231,7 @@ L_NoReward:
 
 L_Drunk:
     setcamnpc;
-    speech 5,
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
         l("I asked for food but... *hips* Ah, that'll do nicely!");
     restorecam;
 

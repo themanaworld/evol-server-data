@@ -241,13 +241,13 @@ L_EquipDone:
     goto L_Menu;
 
 L_GotoSleep:
-    speech 5,
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
         l("You already did enough for us, do you want to follow Nard's advice and get some rest?");
 
     switch (select (l("Yes."), l("No.")))
     {
         case 1:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Fine."),
                 l("We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!");
 
@@ -257,7 +257,7 @@ L_GotoSleep:
 
             break;
         case 2:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Alright, take your time we are not in a hurry.");
 
             break;

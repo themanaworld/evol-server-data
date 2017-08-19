@@ -16,7 +16,7 @@
     function create_party {
         .@party_price = 1000;
 
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Creating a party has some advantages, it's a pretty good choice!"),
             l("I remember when I created my first party, we were amazed to share some experience with a small group of adventurer..."),
             l("Oh! And our party chat was really entertaining, I do highly recommend you to share this fun as well."),
@@ -27,7 +27,7 @@
         {
             if (Zeny < .@party_price)
             {
-                speech 5, l("You don't have enough money, bring @@ E.", .@party_price);
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("You don't have enough money, bring @@ E.", .@party_price);
             }
             else
             {
@@ -35,7 +35,7 @@
                 setq General_Janus, 2;
                 skill NV_BASIC, 7, 0;
 
-                speech 5, l("Awesome, come back if you ever want to create a larger group!");
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("Awesome, come back if you ever want to create a larger group!");
             }
         }
     }
@@ -43,7 +43,7 @@
     function create_guild {
         .@guild_price = 35000;
 
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Oh oh... I see, your party became so big that you want to create an even larger structure?"),
             l("Or do you want to keep your friendships and adventures in different groups?"),
             l("Anyway, the guild creation is perfect for both!"),
@@ -56,7 +56,7 @@
         {
             if (Zeny < .@guild_price)
             {
-                speech 5, l("You don't have enough money, bring @@ E.", .@guild_price);
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("You don't have enough money, bring @@ E.", .@guild_price);
             }
             else
             {
@@ -65,25 +65,25 @@
                 setq General_Janus, 3;
                 getitem GuildCertification, 1;
 
-                speech 5, l("Enjoy the fraternity and excitement of your future guild!");
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("Enjoy the fraternity and excitement of your future guild!");
             }
         }
     }
 
     function explain_service {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("You are on the human resource wing of the Town Hall."),
             l("We offer party and guild certifications and we can also teach you how to use some basic communication skills."),
             l("Do you know how to speak with people around you?");
 
         if (askyesno () == 2)
         {
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("You lack some very basic skills...");
 
             if (compareandsetq (General_Janus, 0, 1))
             {
-                speech 12,
+                speech S_LAST_NEXT | S_NO_NPC_NAME,
                     l("This book contains everything you should know about it, take it!");
 
                 inventoryplace CommunicationTheory, 1;
@@ -91,7 +91,7 @@
             }
             else
             {
-                speech 12,
+                speech S_LAST_NEXT | S_NO_NPC_NAME,
                     l("You can read the book that I gave you earlier at the library if you lost it.");
             }
         }
@@ -99,7 +99,7 @@
         {
             if (compareandsetq (General_Janus, 0, 1))
             {
-                speech 12,
+                speech S_LAST_NEXT | S_NO_NPC_NAME,
                     l("Anyway."),
                     l("This book contains everything you should know about it, take it!");
 
@@ -113,18 +113,18 @@
     }
 
     function janus_is_not_ianus {
-        speech 1,
+        speech S_FIRST_BLANK_LINE,
             l("Janus!");
         emotion E_UPSET;
         next;
 
-        speech 12,
+        speech S_LAST_NEXT | S_NO_NPC_NAME,
             l("Ianus is from the Legion of Aemil, don't compare me to this brigand.");
 
         return;
     }
 
-    speech 4,
+    speech S_LAST_NEXT,
         lg("Welcome miss.", "Good day sir.");
 
     do

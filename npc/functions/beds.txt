@@ -19,7 +19,7 @@ function	script	bedTouch	{
 }
 
 function	script	bedClic	{
-    narrator 4, l("Do you want to use this place as save point?");
+    narrator S_LAST_NEXT, l("Do you want to use this place as save point?");
 
     if (askyesno() == ASK_YES)
     {

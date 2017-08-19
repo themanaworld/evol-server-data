@@ -27,13 +27,13 @@ function	script	GameRules	{
     end;
 
     function read_book {
-        narrator 5 | 1,
+        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("This book outlines the laws of every city and holding in Gasaron."),
             l("The first page contains the universal rules that have been agreed upon throughout the land.");
 
-        GameRules 8 | 4;
+        GameRules S_NO_NPC_NAME | S_LAST_NEXT;
 
-        narrator 8,
+        narrator S_NO_NPC_NAME,
             l("The next page begins to list the complex trading laws of the City of Esperia"),
             l("All this seems unimportant to you right now.");
         close;

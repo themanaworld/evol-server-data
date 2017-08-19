@@ -7,7 +7,7 @@
 001-2-5,30,32,0	script	#001-2-5-Book1	NPC_NO_SPRITE,{
 
     function read_book {
-        narrator 1,
+        narrator S_FIRST_BLANK_LINE,
             l("There are two kinds of dialogue, the ones with regular citizens, and the ones with other adventurers."),
             l("When you go near villagers, you can see a speech bubble above them, you can then talk to them by pressing the [T] key."),
             l("You can select a specific person with the [N] key, and then, press the [T] key when you are surrounded by more than one person."),

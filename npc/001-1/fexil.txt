@@ -14,7 +14,7 @@
 001-1,47,134,0	script	Fexil#001-1	NPC_ELVEN_MAN_TRADER,{
 
     function fexil_quest {
-        speech 4,
+        speech S_LAST_NEXT,
             l("You know, the life of the merchant is hard. I really hope that Artis and the Merchant Guild will help me to succeed."),
             l("Maybe you too you could help me?"),
             l("I want to be the first merchant of this square to sell clothes made from @@s!", getitemlink(FluffyFur)),
@@ -25,11 +25,11 @@
         {
             case 1:
                 setq ArtisQuests_Fexil, 3;
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Awesome! I will wait for you here.");
                 break;
             case 2:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Oh... Ok, I will be around here if you change your mind.");
                 break;
         }
@@ -49,7 +49,7 @@
     if (getq (ArtisQuests_Fexil) == 1)
     {
         select (l("I have your pass from the Merchant Guild."));
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Oh! You saved me, I was too afraid to unpack my stuff without this pass."),
             l("Hey, I remember you, we were on the same boat, you are the castaway.");
 
@@ -57,12 +57,12 @@
                         l("You're confusing me with someone else.")))
         {
             case 1:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Oh sure I remember you."),
                     l("The travel was fine for you? It was terrible for me, I was sea-sick.");
                 break;
             case 2:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Ah, I didn't have much sleep, it's possible.");
                 break;
         }
@@ -95,7 +95,7 @@
             break;
 
         case 3:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Awesome. How many of those do you want to give me?");
 
             do
@@ -103,13 +103,13 @@
                 input .@amount;
                 if (.@amount < 1)
                 {
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("Please enter a valid amount.");
                     continue;
                 }
                 if (.@amount > countitem(FluffyFur))
                 {
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("You don't have enough @@s on you.", getitemlink(FluffyFur));
                     continue;
                 }
@@ -118,7 +118,7 @@
             } while (1);
 
             .@price = 15 * .@amount;
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Deal, I offer you @@ E!", .@price);
 
             delitem FluffyFur, .@amount;
@@ -127,7 +127,7 @@
             break;
 
         case 4:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Oh... Well, I just started to trade... Thus my technique may not be the best."),
                 lg("Anyway, if you ever feel interested, just check my bag!");
             break;

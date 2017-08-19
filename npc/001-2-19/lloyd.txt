@@ -21,7 +21,7 @@
 001-2-19,31,25,0	script	Lloyd the Banker	NPC_LLOYD,{
 
     function enora_quest {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Black iron... That is a very specific request that you have for me!"),
             l("Let me check in my inventory book..."),
             l("..."),
@@ -33,13 +33,13 @@
                         l("Chelios asked me to get it.")))
         {
             case 1:
-                speech 1,
+                speech S_FIRST_BLANK_LINE,
                     l("This is your first time asking for something, you won't pay this time, take it as a sign of good faith!"),
                     l("If you need something in the future, do not hesitate to pass by here, our stock is full of boxes collecting dust.");
                 emotion E_WINK;
                 break;
             case 2:
-                speech 1,
+                speech S_FIRST_BLANK_LINE,
                     l("Chelios... He is part of the Blacksmith House, is he not?"),
                     l("Since Don settled in Artis he and his band refused to register to the Merchant Guild."),
                     l("I will close an eye for once, but only because it's your first time asking for something!"),
@@ -53,13 +53,13 @@
     }
 
     function explain_guild {
-        speech 4,
+        speech S_LAST_NEXT,
             l("The guild is in charge of the commerce regularization throughout Artis and its surroundings."),
             l("With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their businesses."),
             l("We also feature some services like a storage and a bank for members."),
             l("Registration is open to everybody, but newcomers need to pay a fee for all of the paperwork.");
 
-        narrator 1,
+        narrator S_FIRST_BLANK_LINE,
             l("The bank and item storage is shared between all characters within a same account."),
             l("With it, you can safely move items and funds between your characters."),
             l("To move between characters that are on different accounts, you have to use the Trade function.");
@@ -67,41 +67,41 @@
     }
 
     function first_visit {
-        speech 4,
+        speech S_LAST_NEXT,
             l("Welcome!"),
             l("My name is Lloyd, I am a representative of the Merchant Guild of Artis.");
 
         selectd (l("My name is @@...", strcharinfo(0)));
 
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("\"@@\", I like this name!", strcharinfo(0)),
             l("Oh, wait a second...");
-        narrator 4,
+        narrator S_LAST_NEXT,
             l("Lloyd is searching something in his book.");
-        speech 4,
+        speech S_LAST_NEXT,
             l("I see."),
             lg("You are new around here, right?");
 
         if (selectd (l("How do you know?"), l("Yes I am.")) == 1)
         {
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Oh, it is simple. I have on this book the names of every citizen of Artis and its surroundings."),
                 l("And I have no mention of a so called \"@@\" on it!", strcharinfo(0));
         }
         else
         {
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("I knew it!");
         }
 
-        speech 4,
+        speech S_LAST_NEXT,
             l("Let me explain to you what the Merchant Guild is for.");
 
         explain_guild;
         next;
 
         .@price = 500;
-        speech 4,
+        speech S_LAST_NEXT,
             l("The fee is of @@ E. So, do you want to register?", .@price);
 
         switch (selectd (l("Yes."),
@@ -110,14 +110,14 @@
             case 1:
                 if (Zeny < .@price)
                 {
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("You do not seem to have enough money, come back later!");
                 }
                 else
                 {
                     Zeny = Zeny - .@price;
                     setq ArtisQuests_Lloyd, 1;
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("Perfect!"),
                         l("I wrote your name on the book, you are now free to use the storage and bank services.");
                 }
@@ -130,7 +130,7 @@
     }
 
     function paper_to_deliver {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Now that you bring up that topic, that reminds me of something..."),
             l("Earlier today there was this young seller named Fexil that passed by here."),
             l("He asked to lend some money and a place to open his store, I think that he asked for a place on the merchant squares on the south-west of the city..."),
@@ -146,17 +146,17 @@
             switch (.@q)
             {
                 case 1:
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("Thank you for this!");
                     setq ArtisQuests_Fexil, 1;
                     break;
                 case 2:
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("You should look for a seller named Fexil around the merchant square."),
                         l("Ask other merchants, they might know where he is.");
                     break;
                 case 3:
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("No problem, come back later if you changed your mind!");
                     break;
             }
@@ -172,7 +172,7 @@
         close;
     }
 
-    speech 4,
+    speech S_LAST_NEXT,
         l("Welcome to the Merchant Guild of Artis!"),
         l("What do you want today?");
 
@@ -208,7 +208,7 @@
             case 5:
                 if (getq(ArtisQuests_Fexil) >= 1)
                 {
-                    speech 5,
+                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("There are no tasks for you right now.");
                     continue;
                 }
@@ -219,7 +219,7 @@
         }
         if (@menu != 6)
         {
-            speech 13,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT | S_NO_NPC_NAME,
                 l("Something else?");
         }
     } while (@menu != 6);

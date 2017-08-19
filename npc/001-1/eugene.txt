@@ -16,7 +16,7 @@
     .BaitID = SmallTentacles;
     .BaitCount = 10;
 
-    narrator 4,
+    narrator S_LAST_NEXT,
         l("You see a raijin boy, sitting on the edge of the dock."),
         l("He's holding a fishing rod, while gazing out at the sea.");
 
@@ -24,7 +24,7 @@
     if (.@q == 1) goto L_CheckItems;
     if (.@q == 2) goto L_QuestDone;
 
-    speech 2,
+    speech S_LAST_BLANK_LINE,
         l("Ahoi."),
         l("Hey, check out my brand new fishing rod. I bought it just today."),
         l("I was so excited, I wanted to try it as soon as possible."),
@@ -36,11 +36,11 @@
     {
         case 1:
             setq ArtisQuests_Fishman, 1;
-            speech 1,
+            speech S_FIRST_BLANK_LINE,
                 l("Thank you. I'll wait here.");
             close;
         case 2:
-            speech 1,
+            speech S_FIRST_BLANK_LINE,
                 l("But I'm almost out of @@...", getitemlink(.BaitID));
             close;
     }

@@ -93,7 +93,7 @@ OnInit:
             mes "";
             mesn;
         }
-        speech 12,
+        speech S_LAST_NEXT | S_NO_NPC_NAME,
             l("I am new in this town, just like you."),
             l("I came here, looking for a better life."),
             l("And so far, the Merchant Guild helped me find this appartment so I can't complain!"),
@@ -114,7 +114,7 @@ OnNotSit:
     close;
 
 OnChair:
-    speech 4,
+    speech S_LAST_NEXT,
         lg("Hello, young lady.", "Hello, young man.");
 
     if (Edouard_StoryTold == 0)
@@ -122,7 +122,7 @@ OnChair:
         tellStory;
     }
 
-    speech 12,
+    speech S_LAST_NEXT | S_NO_NPC_NAME,
         l("What would you like me to do?");
 
     do
@@ -141,13 +141,13 @@ OnChair:
                 break;
             case 2:
                 BarberChangeStyle;
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Enjoy your new style.");
                     l("Anything else?");
                 break;
             case 3:
                 BarberChangeColor;
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("I hope you like this color.");
                     l("Anything else?");
                 break;
@@ -155,7 +155,7 @@ OnChair:
                 tellStory;
                 break;
             case 5:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Feel free to come visit me another time.");
 
                 goodbye;

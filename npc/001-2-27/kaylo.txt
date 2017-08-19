@@ -5,7 +5,7 @@
 //    Kaylo is the Shield seller in Don's Blacksmith house on Artis.
 
 001-2-27,27,28,0	script	Kaylo#001-2-27	NPC_KAYLO,{
-    speech 4,
+    speech S_LAST_NEXT,
         lg("Hi customer! What do you want today?");
 
     switch (select (
@@ -19,13 +19,13 @@
             shop "Store#Shield001-2-27";
             close;
         case 2:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("I used a card to improve my clothes."),
                 l("There are two different kinds of cards, the first changes the style of your clothes, the second changes their stats."),
                 l("You should discuss with Don and Calypsan if you want to learn more about it, they are masters on this area!");
             break;
         case 3:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("You are in the Blacksmith's house, by Jove!"),
                 l("Don is a renowned blacksmith throughout Andorra, it's crazy that you never heard of him.");
             break;

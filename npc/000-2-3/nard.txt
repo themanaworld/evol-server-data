@@ -227,7 +227,7 @@ L_Already:
 
 L_GoBackArtis:
     checkclientversion;
-    speech 4,
+    speech S_LAST_NEXT,
         l("Enough of this island?"),
         l("Where would you like to go now?");
     switch (select(l("Let's go to Artis."),
@@ -235,7 +235,7 @@ L_GoBackArtis:
                    l("I would like to stay here a bit more.")))
     {
         case 1:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Let's set sail then!");
 
             savepoint "001-2-22", 50, 38;
@@ -257,7 +257,7 @@ L_GoBackArtis:
             close;
 
         case 3:
-            speech 5,
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Ok I stay here with my paperwork if you need my help.");
 
             closedialog;

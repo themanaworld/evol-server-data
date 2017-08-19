@@ -12,7 +12,7 @@ OnTouch:
 
     if (.@enora < 11)
     {
-        narrator 4,
+        narrator S_LAST_NEXT,
             l("The door to the legion building is temporarily closed.");
     }
     else

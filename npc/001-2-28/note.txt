@@ -8,12 +8,12 @@
 //    A small note presenting the 7 main rules of Evol Online.
 
 001-2-28,36,28,0	script	Note#001-2-28	NPC_PAPER_NOTE,{
-    narrator 4,
+    narrator S_LAST_NEXT,
             l("There is a paper with some rules written on it.");
 
     GameRules 8 | 4;
 
-    narrator 8,
+    narrator S_NO_NPC_NAME,
         l("Following these lines are some other writings on this paper."),
         l("Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Jenna");
 

@@ -26,7 +26,7 @@
 
     if (getq(ShipQuests_Couwan) == 1)
     {
-        speech 4,
+        speech S_LAST_NEXT,
             l("Great to see you! What can I do for you today?");
         goto L_Menu;
     }

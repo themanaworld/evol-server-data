@@ -222,7 +222,7 @@ function	script	fishing	{
 
 
     // begin fishing
-    narrator 4,
+    narrator S_LAST_NEXT,
         l("You see some fish reflecting the sun on the surface of the water."),
         l("What will be the bait for the fish?");
 
@@ -233,7 +233,7 @@ function	script	fishing	{
 
     if (.@bait < 1)
     {
-        narrator 1,
+        narrator S_FIRST_BLANK_LINE,
             l("You take your fishing rod and leave.");
 
         return -6;
@@ -255,7 +255,7 @@ function	script	fishing	{
 
     if (.@bait_c != true)
     {
-        narrator 1,
+        narrator S_FIRST_BLANK_LINE,
             l("This item cannot be used as bait here.");
 
         return -6;
@@ -263,7 +263,7 @@ function	script	fishing	{
 
     if (getvariableofnpc(.char_id, .@npc$) > 0)
     {
-        narrator 1,
+        narrator S_FIRST_BLANK_LINE,
             l("Somebody took your place on this spot!"),
             l("You take your fishing rod and leave.");
         return -8;

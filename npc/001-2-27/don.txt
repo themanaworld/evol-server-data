@@ -7,7 +7,7 @@
 001-2-27,35,29,0	script	Don#001-2-27	NPC_HUMAN_MALE_OLD,{
 
     function improve_equipment {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Different ways, each part of your equipment can be generally upgraded."),
             l("You have a level for each of your gear, by default when you buy or craft a piece, the level is set to 1."),
             l("You can also improve your equipment in a totally different way with the use of cards.");
@@ -15,7 +15,7 @@
     }
 
     function card_explanation {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("There are two different kinds of cards, the first changes the style of your clothes, the second changes their stats."),
             l("I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment."),
             l("A stat card works on different pieces of equipment."),
@@ -27,13 +27,13 @@
     }
 
     function take_apprentice {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("I do not.");
         emotion E_UPSET;
 
         select (l("What about Chelios?"));
 
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Chelios was stubborn in his youth, he never stopped annoying me with his questions while I was working at the forge."),
             l("He did not change while growing up, I repeatedly asked him to leave the forge but in the end he installed himself in front of it..."),
             l("He is mature and he rarely ask questions so I am fine. I can not stand the sight of a whiner anyway.");
@@ -41,7 +41,7 @@
     }
 
     function good_blacksmith {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("I do not like to brag about it but you won't find a better blacksmith on the whole island."),
             l("If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.");
 
@@ -49,7 +49,7 @@
                         l("Ok.")))
         {
             case 1:
-                speech 5,
+                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("You can try, but your chance of success is lesser than a well trained smith and master craftsman.");
                 break;
             case 2:
@@ -59,7 +59,7 @@
         return;
     }
 
-    speech 4,
+    speech S_LAST_NEXT,
         lg("Hi, what do you want kiddo?");
 
     do

@@ -26,7 +26,7 @@ function	script	inventoryplace	{
 
     if (!checkweight2(.@item, .@amount))
     {
-        narrator 1,
+        narrator S_FIRST_BLANK_LINE,
             l("It looks like you can't carry anything else for now."),
             l("You should come back when you have some free space.");
 

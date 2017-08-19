@@ -7,7 +7,7 @@
 001-2-6,57,46,0	script	Christopher	NPC_CHRISTOPHER,{
     function ghost_in_the_library
     {
-        narrator 4,
+        narrator S_LAST_NEXT,
             l("Christopher is surrounded by the sunlight from the window.");
 
         speech
@@ -20,7 +20,7 @@
 
     function need_help
     {
-        speech 4,
+        speech S_LAST_NEXT,
             l("Do you need help with something?");
 
         switch (select(l("What kinds of books are there here?"),

@@ -7,7 +7,7 @@
 001-2-26,28,30,0	script	Ivan	NPC_IVAN,{
 
     function ivan_description {
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("I am an alchemist, I bear the name of Ivan."),
             l("I work under the protection and the supervision of the Legion of Aemil."),
             l("Alchemical studies are prohibited in every city of the Archipelagos, do not dare to practice it in a public zone!");
@@ -16,17 +16,17 @@
     }
 
     function enora_quest {
-        speech 5, l("How many? What kind? I can produce two dozen boxes per day.");
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("How many? What kind? I can produce two dozen boxes per day.");
 
         select (l("5 Piberries Infusions"));
 
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("5 boxes... Alright, @@ are my speciality!", getitemlink (PiberriesInfusion)),
             l("I can prepare them in an hour or so!");
 
         select (l("You missunderstood, it's 5 potions."));
 
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Why would the Legion request my help for only 5 potions?"),
             l("Is this some kind of joke?!");
 
@@ -36,12 +36,12 @@
             case 1:
                 break;
             case 2:
-                narrator 1, l("Ivan grumbles and resumes his work.");
+                narrator S_FIRST_BLANK_LINE, l("Ivan grumbles and resumes his work.");
                 emotion E_UPSET;
                 close;
         }
 
-        speech 5,
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Oh... You should have started with this!"),
             l("I have some spare one, take them, and tell Enora that any fees are paid!");
 
@@ -57,7 +57,7 @@
         npctalk3 l("I'm busy, leave me alone.");
     }
 
-    speech 4, l("Yes what do you need?");
+    speech S_LAST_NEXT, l("Yes what do you need?");
 
     select
         rif(.@enora == 8, l("The Legion needs some potions.")),

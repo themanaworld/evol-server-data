@@ -5,7 +5,7 @@
 //    Panels to give advice and some random information to players.
 
 001-1,180,25,0	script	#ArtisPanel1	NPC_NO_SPRITE,{
-    narrator 4,
+    narrator S_LAST_NEXT,
         l("You step on something, a panel half overgrown by moss, it has writing on it...");
 
     mesq l("Don't fall!");
@@ -22,7 +22,7 @@ OnInit:
 }
 
 001-1,95,51,0	script	#ArtisPanel2	NPC_NO_SPRITE,{
-    narrator 4,
+    narrator S_LAST_NEXT,
         l("You step on something, a shaky and fragile panel with barely visible inscriptions on it...");
 
     mesq l("Beware of falling stones from the cliff!");
@@ -39,12 +39,12 @@ OnInit:
 }
 
 001-1,103,66,0	script	#ArtisPanel3	NPC_NO_SPRITE,{
-    narrator 4,
+    narrator S_LAST_NEXT,
         l("You step on something, a panel with a bitten corner and clear inscriptions on it...");
 
     mesq l("Warning! Dangerous fish, do not fall into the lake!");
     next;
-    narrator 4,
+    narrator S_LAST_NEXT,
         l("Somebody tried to stroke the word \"fish\" and tried to replace it with \"sharkes\".");
 
     closedialog;

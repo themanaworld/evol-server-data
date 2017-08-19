@@ -5,7 +5,7 @@
 //    Legion NPC blocking the north road of Artis.
 
 001-1,90,31,0	script	Artaxe	NPC_ARTAXE,{
-    speech 4,
+    speech S_LAST_NEXT,
         l("Sorry buddy, you can't pass by this way, we're moving some furniture."),
         l("Come back later!");
 
