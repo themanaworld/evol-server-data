@@ -16,6 +16,7 @@ variables:
 build_test:
   stage: build
   script:
+  - export CC=gcc-6
   - ./.tools/jobs/install.sh "mysql-client
     gcc-6
     git-core
@@ -90,8 +91,9 @@ mariadb_init_5.5:
 mysql_run_latest:
   stage: test
   script:
+  - export CC=gcc-4.9
   - ./.tools/jobs/install.sh "mysql-client
-    gcc-6
+    gcc-4.9
     git-core
     make autoconf automake autopoint
     libtool libmysqlclient-dev libz-dev libpcre3-dev"
@@ -99,15 +101,16 @@ mysql_run_latest:
   - ./.tools/jobs/initdb.sh mysql
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
   - ./.tools/jobs/runserver.sh mysql
-  image: debian:unstable
+  image: debian:jessie
   services:
   - mysql:latest
 
 mariadb_run_latest:
   stage: test
   script:
+  - export CC=gcc-4.9
   - ./.tools/jobs/install.sh "mysql-client
-    gcc-6
+    gcc-4.9
     git-core
     make autoconf automake autopoint
     libtool libmysqlclient-dev libz-dev libpcre3-dev"
@@ -115,13 +118,14 @@ mariadb_run_latest:
   - ./.tools/jobs/initdb.sh mariadb
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
   - ./.tools/jobs/runserver.sh mariadb
-  image: debian:unstable
+  image: debian:jessie
   services:
   - mariadb:latest
 
 mysql_run_valgrind_latest:
   stage: valgrind
   script:
+  - export CC=gcc-6
   - ./.tools/jobs/install.sh "mysql-client
     gcc-6
     git-core
@@ -139,6 +143,7 @@ mysql_run_valgrind_latest:
 mariadb_run_valgrind_latest:
   stage: valgrind
   script:
+  - export CC=gcc-6
   - ./.tools/jobs/install.sh "mysql-client
     gcc-6
     git-core
