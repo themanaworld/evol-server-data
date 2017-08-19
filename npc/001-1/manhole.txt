@@ -11,12 +11,20 @@
 
 001-1,152,52,0	script	#manhole1-001-1	NPC_NO_SPRITE,{
 
-    if (getq(ArtisQuests_MonaDad) == 1)
-    {
-        narrator l("You hear some creeping and crawling sounds from the murkiness below.");
+    if (getq(ArtisQuests_MonaDad) < 1) {
+        end;
     }
 
-    close;
+    narrator(6,
+        l("You hear some creeping and crawling sounds from the murkiness below."),
+        l("..."),
+        l("Do you want to enter in sewer?"));
+
+    if (askyesno() == 1) {
+        cwarp("001-3-0", 152, 56);
+    }
+
+    bye;
 
 OnInit:
     .sex = G_OTHER;
@@ -26,12 +34,20 @@ OnInit:
 
 001-1,196,35,0	script	#manhole2-001-1	NPC_NO_SPRITE,{
 
-    if (getq(ArtisQuests_MonaDad) == 1)
-    {
-        narrator l("You hear some creeping and crawling sounds from the murkiness below.");
+    if (getq(ArtisQuests_MonaDad) < 1) {
+        end;
     }
 
-    close;
+    narrator(6,
+        l("You hear some creeping and crawling sounds from the murkiness below."),
+        l("..."),
+        l("Do you want to enter in sewer?"));
+
+    if (askyesno() == 1) {
+        cwarp("001-3-0", 196, 36);
+    }
+
+    bye;
 
 OnInit:
     .sex = G_OTHER;
