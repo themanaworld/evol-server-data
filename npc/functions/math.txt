@@ -1,0 +1,40 @@
+// Evol functions.
+// Authors:
+//    4144
+//    Reid
+// Description:
+//    Math functions
+
+
+// abs(<int>)
+//    returns the absolute value of the passed integer
+
+function	script	abs	{
+    .@n = getarg(0);
+    return .@n >= 0 ? .@n : -.@n;
+}
+
+
+
+// lognbaselvl({<multiplicator>{, <min value>}})
+//     returns BaseLevel * logn (BaseLevel * alpha).
+
+function	script	lognbaselvl	{
+    .@alpha = getarg(0, 1);
+    .@min = getarg(1, 1);
+    .@ret = 0;
+    .@pc_level = BaseLevel * .@alpha;
+
+    while (.@pc_level >>= 1)
+    {
+        ++.@ret;
+    }
+    .@ret *= BaseLevel;
+
+    if (.@ret <= .@min)
+    {
+        .@ret = .@min;
+    }
+
+    return .@ret;
+}

@@ -2,6 +2,15 @@
 // ** does not require PCRE
 
 
+// str(<int>)
+//     returns whatever is passed, converted to string
+
+function	script	str	{
+    return "" + getarg(0);
+}
+
+
+
 // startswith("<string>", "<search>")
 //     returns true if <string> begins with <search>
 

@@ -50,10 +50,6 @@ function	script	adddefaultskills	{
     return;
 }
 
-function	script	str	{
-    return "" + getarg(0);
-}
-
 function	script	addremovemapmask	{
     setmapmask getarg(0), (getmapmask(getarg(0)) | (getarg(1) + getarg(2))) ^ getarg(2);
     return;
@@ -145,11 +141,6 @@ function	script	npcdebug	{
     return;
 }
 
-function	script	abs	{
-    .@n = getarg(0);
-    return .@n >= 0 ? .@n : -.@n;
-}
-
 function	script	askyesno	{
     return select (menuaction(l("Yes")),
         menuaction(l("No")));
@@ -178,49 +169,35 @@ function	script	compareandsetq	{
 //      1 = npctalk
 //      2 = message
 function	script	npctalkonce	{
-    if ((.@current_time = gettimetick(2)) < Repeat_NPC_lock)
+    if (getarg(2, 0) == 0)
     {
-        return false;
+        if (now() <= @misc_NPC_lock)
+        {
+            @misc_NPC_lock = now() + getarg(1, 1);
+            return false;
+        }
+        npctalk3(getarg(0));
     }
-    Repeat_NPC_lock = .@current_time + getarg(1,1);
-
-    if (getarg(2,0) == 0)
+    else if (getarg(2, 0) == 1)
     {
-        npctalk3 getarg(0);
+        if (now() <= .talk_lock)
+        {
+            .talk_lock = now() + getarg(1, 1);
+            return false;
+        }
+        npctalk(getarg(0));
     }
-    else if (getarg(2,0) == 1)
+    else if (getarg(2, 0) == 2)
     {
-        npctalk getarg(0);
-    }
-    else if (getarg(2,0) == 2)
-    {
-        message strcharinfo(0), getarg(0);
+        if (now() <= @misc_NPC_lock)
+        {
+            @misc_NPC_lock = now() + getarg(1, 1);
+            return false;
+        }
+        message(strcharinfo(0), getarg(0));
     }
 
     return true;
-}
-
-// A somehow of BaseLevel * logn (BaseLevel * alpha).
-// alpha = multiplicator factor.
-// min = minimum result value.
-function	script	lognbaselvl	{
-    .@alpha = getarg(0, 1);
-    .@min = getarg(1, 1);
-    .@ret = 0;
-    .@pc_level = BaseLevel * .@alpha;
-
-    while (.@pc_level >>= 1)
-    {
-        ++.@ret;
-    }
-    .@ret *= BaseLevel;
-
-    if (.@ret <= .@min)
-    {
-        .@ret = .@min;
-    }
-
-    return .@ret;
 }
 
 function	script	getquestlink	{
