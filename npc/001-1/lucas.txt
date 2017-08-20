@@ -6,15 +6,7 @@
 
 001-1,59,44,0	script	Lucas#001-1	NPC_LUCAS,{
 
-    function randomTalk {
-        if (Repeat_NPC_lock <= gettimetick(2))
-        {
-            Repeat_NPC_lock = gettimetick(2) + 2;
-            villagertalk;
-        }
-    }
-
-    randomTalk;
+    villagertalk();
 
     closedialog;
     close;

@@ -8,16 +8,16 @@ function	script	moubootalk	{
     switch (rand (4))
     {
         case 0:
-            npctalk3 l("Moooooo!");
+            npctalkonce(l("Moooooo!"));
             break;
         case 1:
-            npctalk3 l("Moo!");
+            npctalkonce(l("Moo!"));
             break;
         case 2:
-            npctalk3 l("Moooooooooooo!");
+            npctalkonce(l("Moooooooooooo!"));
             break;
         case 3:
-            npctalk3 l("Moooo!");
+            npctalkonce(l("Moooo!"));
             break;
     }
     return;
@@ -86,12 +86,4 @@ function	script	mouboograph	{
     firstmove "wait 2", "down_pos";
     initnpctimer;
     end;
-}
-
-function	script	mouboochecklock	{
-    if (Repeat_NPC_lock <= gettimetick (2))
-    {
-        Repeat_NPC_lock = gettimetick (2) + 1;
-        moubootalk;
-    }
 }

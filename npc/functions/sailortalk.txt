@@ -12,25 +12,26 @@ function	script	sailortalk	{
     if (.@rand == 0) goodbye;
     if (.@rand == 1)
     {
-        speech S_LAST_NEXT,
+        speech(
             l("These purple mushrooms are called @@s. There are plenty of 'em on this island!", getitemlink(Plushroom)),
             l("It's a kind of mushroom that tastes like a marshmallow and looks like a plush! @@, get it?", getitemlink(Plushroom)),
-            l("These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.", getitemlink(Plushroom));
+            l("These funny fungi are mushrooming all around this island. Just pick some @@s and have a try.", getitemlink(Plushroom)));
+        close;
     }
-    if (.@rand == 2) npctalk3 l("Good to hear from you!");
-    if (.@rand == 3) npctalk3 l("So finally someone has came to visit me?");
+    if (.@rand == 2) npctalkonce(l("Good to hear from you!"));
+    if (.@rand == 3) npctalkonce(l("So finally someone has came to visit me?"));
     if (.@rand == 4)
     {
-        speech S_LAST_NEXT,
+        speech(
             l("A sunny and hot day,"),
             l("a quiet place,"),
             l("a ground!"),
-            l("What else do you need?");
+            l("What else do you need?"));
+        close;
     }
-    if (.@rand == 5) npctalk3 l("A-hoy matey!");
-    if (.@rand == 6) npctalk3 l("We are glad captain Nard has let you join the crew!");
-    if (.@rand == 7) npctalk3 l("Howdy?");
+    if (.@rand == 5) npctalkonce(l("A-hoy matey!"));
+    if (.@rand == 6) npctalkonce(l("We are glad captain Nard has let you join the crew!"));
+    if (.@rand == 7) npctalkonce(l("Howdy?"));
 
-    closedialog;
-    close;
+    end;
 }

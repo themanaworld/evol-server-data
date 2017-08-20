@@ -11,53 +11,54 @@ function	script	legiontalk	{
     switch (rand(15))
     {
         case 0:
-            npctalk3 l("Do I look like a tree? I feel like one.");
-            //speech S_LAST_NEXT,
+            npctalkonce(l("Do I look like a tree? I feel like one."));
+            //speech(
             //    l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?"),
             //    l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."),
-            //    l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
+            //    l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops."));
+            //close;
             break;
         case 1:
-            npctalk3 l("I'm a little busy right now.");
+            npctalkonce(l("I'm a little busy right now."));
             break;
         case 2:
-            npctalk3 l("Not in the mood to chat.");
+            npctalkonce(l("Not in the mood to chat."));
             break;
         case 3:
-            npctalk3 l("My breath smells bad.");
+            npctalkonce(l("My breath smells bad."));
             break;
         case 4:
-            npctalk3 l("Don't distract me, I have to stay alert.");
+            npctalkonce(l("Don't distract me, I have to stay alert."));
             break;
         case 5:
-            npctalk3 l("Give me some space.");
+            npctalkonce(l("Give me some space."));
             break;
         case 6:
-            npctalk3 l("Can you please go away?");
+            npctalkonce(l("Can you please go away?"));
             break;
         case 7:
-            npctalk3 l("Can't talk right now, I'm on patrol duty.");
+            npctalkonce(l("Can't talk right now, I'm on patrol duty."));
             break;
         case 8:
-            npctalk3 l("What're you looking at?!");
+            npctalkonce(l("What're you looking at?!"));
             break;
         case 9:
-            npctalk3 l("I can't stay here and talk all day. I have a job to do.");
+            npctalkonce(l("I can't stay here and talk all day. I have a job to do."));
             break;
         case 10:
-            npctalk3 lg("Keep moving girl.", "Keep moving boy.");
+            npctalkonce(lg("Keep moving girl.", "Keep moving boy."));
             break;
         case 11:
-            npctalk3 lg("So you think you're tough? A warrior must also be loyal and patient.");
+            npctalkonce(lg("So you think you're tough? A warrior must also be loyal and patient."));
             break;
         case 12:
             emotion E_LOOKAWAY;
             break;
         case 13:
-            npctalk3 l("Practice! There are no secrets to becoming a warrior.");
+            npctalkonce(l("Practice! There are no secrets to becoming a warrior."));
             break;
         case 14:
-            npctalk3 l("There is no honor in fighting a weak opponent.");
+            npctalkonce(l("There is no honor in fighting a weak opponent."));
             break;
     }
 

@@ -128,7 +128,7 @@ function	script	bye	{
 //     can also display an emote
 
 function	script	goodbye	{
-    npctalk3 goodbye_msg();
+    npctalkonce(goodbye_msg());
     bye getarg(0, -1);
 }
 
@@ -143,7 +143,7 @@ function	script	goodbye2	{
     .@emote = getarg(0, -1);
 
     close2;
-    npctalk3 goodbye_msg();
+    npctalkonce(goodbye_msg());
 
     if (.@emote >= 0)
         emotion .@emote;

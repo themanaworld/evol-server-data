@@ -9,13 +9,13 @@ function	script	hello	{
     switch (rand(3))
     {
         case 0:
-            npctalk3 l("Heya!");
+            npctalkonce(l("Heya!"));
             break;
         case 1:
-            npctalk3 l("Hi.");
+            npctalkonce(l("Hi."));
             break;
         case 2:
-            npctalk3 l("Nice day to you.");
+            npctalkonce(l("Nice day to you."));
             break;
     }
 

@@ -8,14 +8,12 @@
 //    .@rand = Random number between the number of "sleeping" choice.
 
 function	script	asleep	{
-    closedialog;
-
-    .@rand = rand(5);
-    if (.@rand == 0) npctalk3 l("Zzzzzzzzz...");
-    else if (.@rand == 1) npctalk3 l("Rrrr... Pchhhh...");
-    else if (.@rand == 2) npctalk3 l("Ggrmm... Grmmmm...");
-    else if (.@rand == 3) npctalk3 l("Hm... Shhhh...");
-    else emotion E_SLEEPY;
-
-    close;
+    switch(rand(5)) {
+        case 0: npctalkonce(l("Zzzzzzzzz...")); break;
+        case 1: npctalkonce(l("Rrrr... Pchhhh...")); break;
+        case 2: npctalkonce(l("Ggrmm... Grmmmm...")); break;
+        case 3: npctalkonce(l("Hm... Shhhh...")); break;
+        default: emotion(E_SLEEPY);
+    }
+    end;
 }

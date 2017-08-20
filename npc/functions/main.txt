@@ -171,29 +171,29 @@ function	script	compareandsetq	{
 function	script	npctalkonce	{
     if (getarg(2, 0) == 0)
     {
-        if (now() <= @misc_NPC_lock)
+        if (gettimetick(2) <= @NPC_TALK_LOCK[getnpcid(0)])
         {
-            @misc_NPC_lock = now() + getarg(1, 1);
             return false;
         }
+        @NPC_TALK_LOCK[getnpcid(0)] = gettimetick(2) + getarg(1, 1);
         npctalk3(getarg(0));
     }
     else if (getarg(2, 0) == 1)
     {
-        if (now() <= .talk_lock)
+        if (gettimetick(2) <= .talk_lock)
         {
-            .talk_lock = now() + getarg(1, 1);
             return false;
         }
+        .talk_lock = gettimetick(2) + getarg(1, 1);
         npctalk(getarg(0));
     }
     else if (getarg(2, 0) == 2)
     {
-        if (now() <= @misc_NPC_lock)
+        if (gettimetick(2) <= @NPC_TALK_LOCK[getnpcid(0)])
         {
-            @misc_NPC_lock = now() + getarg(1, 1);
             return false;
         }
+        @NPC_TALK_LOCK[getnpcid(0)] = gettimetick(2) + getarg(1, 1);
         message(strcharinfo(0), getarg(0));
     }
 

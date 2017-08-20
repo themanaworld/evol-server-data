@@ -6,7 +6,7 @@
 
 001-1,67,79,4	script	Mouboo#Artis0	NPC_MOUBOO,{
 
-    mouboochecklock;
+    moubootalk();
     close;
 
 OnTimer2000:
@@ -21,7 +21,7 @@ OnInit:
 
 001-1,67,80,4	script	Mouboo#Artis1	NPC_MOUBOO,{
 
-    mouboochecklock;
+    moubootalk();
     close;
 
 OnTimer2000:
@@ -36,7 +36,7 @@ OnInit:
 
 001-1,67,81,4	script	Mouboo#Artis2	NPC_MOUBOO,{
 
-    mouboochecklock;
+    moubootalk();
     close;
 
 OnTimer2000:
@@ -51,7 +51,7 @@ OnInit:
 
 001-1,67,82,4	script	Mouboo#Artis3	NPC_MOUBOO,{
 
-    mouboochecklock;
+    moubootalk();
     close;
 
 OnTimer2000:

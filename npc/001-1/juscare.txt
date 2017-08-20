@@ -22,14 +22,6 @@
         close;
     }
 
-    function randomTalk {
-        if (Repeat_NPC_lock <= gettimetick(2))
-        {
-            Repeat_NPC_lock = gettimetick(2) + 2;
-            villagertalk;
-        }
-    }
-
     npc_pausemove;
     @Juscar_old_dir = -1;
     if (shouldTurn())
@@ -39,7 +31,7 @@
         npc_turntoxy(.@cx, .@cy);
     }
 
-    randomTalk;
+    villagertalk();
 
     localClose;
 

@@ -24,7 +24,7 @@ function	script	villagertalk	{
         }
         else
         {
-            npctalk3 l("Stop it!");
+            npctalkonce(l("Stop it!"));
         }
 
         return;
@@ -36,13 +36,13 @@ function	script	villagertalk	{
             darn_or_smile();
             break;
         case 1:
-            npctalk3 l("It is a sunny day, don't you think?");
+            npctalkonce(l("It is a sunny day, don't you think?"));
             break;
         case 2:
-            npctalk3 l("Go fly a kite.");
+            npctalkonce(l("Go fly a kite."));
             break;
         case 3:
-            npctalk3 l("I just want to live my life in peace.");
+            npctalkonce(l("I just want to live my life in peace."));
             break;
         default:
             emotion E_HAPPY;
