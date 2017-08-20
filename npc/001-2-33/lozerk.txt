@@ -111,7 +111,7 @@
  
     function forget_direction {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("You are lucky there are no minimum mental faculty to join the Legion!");
+            lg("You are lucky there are no mental faculty requirements to join the Legion!");
 
         explain_direction;
 
