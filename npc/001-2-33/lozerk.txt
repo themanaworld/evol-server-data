@@ -18,6 +18,42 @@
 001-2-33,34,33,0	script	Lozerk	NPC_DEMON_MALE_SWORD,{
 
     // Quest-related functions
+
+    function explain_direction {
+        
+        switch (getq(Artis_Legion_Progress))
+        {
+            case 1:
+                setcamnpc "#001-2-33_29_32";
+
+                speech(S_LAST_NEXT | S_NO_NPC_NAME,
+                    l("It's to the west, on your left side. Just go through this door before the stairs and turn left afterwards. Can't miss it!"),
+                    l("Talk to FightNPCName and he'll show you the ropes."),
+                    l("Report back to me once you've had enough!"));
+
+                restorecam;
+    
+                break;
+            case 3:
+                setcamnpc "#001-2-33_39_32";
+
+                speech(S_LAST_NEXT | S_NO_NPC_NAME,
+                    l("The room is to the east, on your right side. Just go through the door before the stairs and then turn right. It's like the mirror image of our training room."));
+
+                restorecam;
+                break;
+            case 5:
+                setcamnpc "#001-2-33_45_28";
+
+                speech(S_LAST_NEXT | S_NO_NPC_NAME,
+                    l("Walk up the stairs, go through the door on either side, and the only other door in the room, few steps to the south, will lead you right to him."));
+
+                restorecam;
+                break;
+        }
+
+        return;
+    }
  
     function send_training {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
@@ -25,18 +61,18 @@
             l("If Enora thinks this is the right place for you, then she's probably be right. Did you know she's a lieutenant of the Legion?"),
             l("The rank of lieutenant is granted only to people with proper control of their skill and good judgment, like Enora. Or me, of course."),
             l("By the way, I'm Lozerk. Lieutenant Lozerk.");
+
         select(l("Pleasure to meet you. I am @@.", strcharinfo(PC_NAME)));
+
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,         
             lg("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
             l("But don't you worry! I don't know how to get you back your memories, but we can work on your muscles for now!"),
             lg("After all, this is the Legion of Aemil! You want to be a great warrior? We'll make you one here!"),
             l("For starters, you should probably do some stretching and practice on some dummies in our training room."),
-            l("That's right, we have our very own training room. The Legion is always well prepared!"),
-            l("It's to the west, on your left side. Just go through this door before the stairs and turn left afterwards. Can't miss it!"),
-            l("Talk to FightNPCName and he'll show you the ropes."),
-            l("Report back to me once you've had enough!");
-            
+            l("That's right, we have our very own training room. The Legion is always well prepared!");
+
         setq Artis_Legion_Progress, 1;
+        explain_direction();
         
         return;
     }
@@ -47,11 +83,11 @@
             l("But since it's not dummies that will go after you out there, this training won't be enough."),
             lg("If you want to make a formidable foe for anyone, you'll need to train with real living opponents!"),
             l("Of course, the Legion of Aemil can easily provide you with such training, even if you're not a member. Just great, isn't it?"),
-            l("We have a special room for this purpose, too. You may test your skills against all kinds of dreadful monsters in there."),
-            l("The room is to the east, on your right side. Just go through the door before the stairs and then turn right. It's like the mirror image of our training room.");
- 
+            l("We have a special room for this purpose, too. You may test your skills against all kinds of dreadful monsters in there.");
+
         setq Artis_Legion_Progress, 3;
-            
+        explain_direction();
+        
         return;
     }
 
@@ -63,15 +99,24 @@
             l("But if you really want to accomplish something, you should consider joining us."),
             l("You have talent and the best place to utilize it is in the Legion! You can either pursue your goals with us or without us, but trust me, with us it's much better."),
             l("I should know, I've not been a member for a while, too. But then I joined the Legion and look what a shining example of a great fighter I became!"),
-            l("You should definitely go talk to Q'Anon, our boss. You'll find him upstairs."),
-            l("Walk up the stairs, go through the door on either side, and the only other door in the room, few steps to the south, will lead you right to him.");
-            
+            l("You should definitely go talk to Q'Anon, our boss. You'll find him upstairs.");
+
         setq Artis_Legion_Progress, 5;
+        explain_direction();
             
         return;
     }
 
     // Normal functions
+ 
+    function forget_direction {
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("You are lucky there are no minimum mental faculty to join the Legion!");
+
+        explain_direction;
+
+        return;
+    }
  
     function tell_about_legion {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
@@ -94,14 +139,16 @@
     speech S_LAST_NEXT,
         l("Welcome to the Legion of Aemil's building in Artis!");
 
-    do{
+    do
+    {
         .@legion_progress = getq(Artis_Legion_Progress);
         .@enora  = getq(ArtisQuests_Enora);
-         // some quest fetch before
+        debugmes .@legion_progress + " " + .@enora;
         select
             rif((.@legion_progress == 0) && (.@enora == 11), lg("Enora sent me here.")),
             rif(.@legion_progress == 2, lg("I'm done with my training.")),
             rif(.@legion_progress == 4, lg("I'm back from battle!")),
+            rif(.@legion_progress == 1 || .@legion_progress == 3 || .@legion_progress == 5, l("Where should I go?")),
             l("What can you tell me about the legion?"),
             l("That's a nice sword you have there."),
             menuaction(l("Quit"));
@@ -118,13 +165,16 @@
                 send_qanon;
                 break;
             case 4:
-                tell_about_legion;
+                forget_direction;
                 break;
             case 5:
+                tell_about_legion;
+                break;
+            case 6:
                 praise_sword;
                 break;
         }
-    }while(@menu != 6);
+    } while(@menu != 7);
 
     closedialog;
     goodbye;
