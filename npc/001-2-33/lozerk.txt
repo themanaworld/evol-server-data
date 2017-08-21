@@ -28,7 +28,7 @@
 
                 speech(S_LAST_NEXT | S_NO_NPC_NAME,
                     l("It's to the west, on your left side. Just go through this door before the stairs and turn left afterwards. Can't miss it!"),
-                    l("Talk to FightNPCName and he'll show you the ropes."),
+                    l("Talk to Hector and he'll show you the ropes."),
                     l("Report back to me once you've had enough!"));
 
                 restorecam;
