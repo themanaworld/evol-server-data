@@ -10,7 +10,7 @@
 //      DOWN:      Winter, 21/12
 //      DOWNLEFT:  Spring, 20/03
 //      LEFT:      Summer, 21/06
-//      LEFTUP:    Autumn, 22/09
+//      UPLEFT:    Autumn, 22/09
 
 function	script	season_direction	{
     .@current_month = getarg(0, gettime(GETTIME_MONTH));
