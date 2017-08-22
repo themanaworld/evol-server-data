@@ -10,10 +10,10 @@ OnTouch:
     switch(rand(6))
     {
         case 0: npctalkonce(l("Fish, come and see my fish!")); break;
-        case 0: npctalkonce(l("They are fresh, they are good!")); break;
-        case 0: npctalkonce(l("Fresh from the sea and cheap!")); break;
-        case 0: npctalkonce(l("Come, come and see!")); break;
-        case 0: npctalkonce(l("They are fresh!")); break;
+        case 1: npctalkonce(l("They are fresh, they are good!")); break;
+        case 2: npctalkonce(l("Fresh from the sea and cheap!")); break;
+        case 3: npctalkonce(l("Come, come and see!")); break;
+        case 4: npctalkonce(l("They are fresh!")); break;
         default: npctalkonce(l("Fish is good for the brain!"));
     }
     end;
