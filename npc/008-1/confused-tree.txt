@@ -817,100 +817,121 @@ OnTalkNearby:
     end;
 
 OnTouch:
-	if (rand(.touch_rate) == 0) {
-		face();
-	}
-	end;
+    if (rand(.touch_rate) == 0) {
+        face();
+    }
+    end;
 
 OnDoReply:
-	if (@tree_reply$ != "") {
-		npctalk(@tree_reply$);
-		@tree_reply$ = "";
-	}
-	end;
+    if (@tree_reply$ != "") {
+        npctalk(@tree_reply$);
+        @tree_reply$ = "";
+    }
+    end;
 
 OnPCLogoutEvent:
-	seen_me();
-	end;
+    seen_me();
+    end;
 
 OnTimer3600000:
-	// scheduled janitor
-	.@now = gettimetick(2);
-	initnpctimer(); // schedule next
+    // scheduled janitor
+    .@now = gettimetick(2);
+    initnpctimer(); // schedule next
 
-	if (.last_activity > (.@now - 3600)) {
-		end; // last activity is too recent
-	}
+    if (.last_activity > (.@now - 3600)) {
+        end; // last activity is too recent
+    }
 
-	// cleanup routine below
-	.lastsender = 0;
-	.last_activity = 0;
-	.last_reply = 0;
-	.last_emote = 0;
-	.last_query = 0;
-	.blocked = 0;
-	.enable_janitor = 0;
+    // cleanup routine below
+    .lastsender = 0;
+    .last_activity = 0;
+    .last_reply = 0;
+    .last_emote = 0;
+    .last_query = 0;
+    .blocked = 0;
+    .enable_janitor = 0;
 
-	htclear(.msg_ht); // empty the message table (quotegrabs)
-	htclear(.ignore_ht); // empty the ignore table
+    htclear(.msg_ht); // empty the message table (quotegrabs)
+    htclear(.ignore_ht); // empty the ignore table
 
-	.@it = htiterator(.seen_ht); // allocate new iterator
-	for (.@key$ = htinextkey(.@it); hticheck(.@it); .@key$ = htinextkey(.@it)) {
-		if (.@key$ == "") {
-			continue;
-		}
+    .@it = htiterator(.seen_ht); // allocate new iterator
+    for (.@key$ = htinextkey(.@it); hticheck(.@it); .@key$ = htinextkey(.@it)) {
+        if (.@key$ == "") {
+            continue;
+        }
 
-		if (htget(.seen_ht, .@key$, 0) < (.@now - 86400)) {
-			htput(.seen_ht, .@key$, 0); // remove from hash table if older than 24h
-		}
-	}
-	htidelete(.@it); // free the iterator
+        if (htget(.seen_ht, .@key$, 0) < (.@now - 86400)) {
+            htput(.seen_ht, .@key$, 0); // remove from hash table if older than 24h
+        }
+    }
+    htidelete(.@it); // free the iterator
 
-	face(); // do an emote (because why not)
-	end;
+    face(); // do an emote (because why not)
+    end;
+
+
+OnDay0320:
+    .dir = DOWNLEFT;
+    end;
+
+
+OnDay0621:
+    .dir = LEFT;
+    end;
+
+
+OnDay0922:
+    .dir = LEFTUP;
+    end;
+
+
+OnDay1221:
+    .dir = DOWN;
+    end;
 
 
 OnInit:
-	// config below
-	.hotwords$ = "tree"; // what hot words the npc should listen to, besides its own name (regex)
-	.distance = 14; // the npc will only listen to player within X tiles
-	.sex = G_OTHER; // gender of the npc
-	.talk_rate = 1; // min number of seconds to wait between replies
-	.repeat_rate = 1; // min number of seconds to wait before sending the same message twice in a row
-	.block_time = 600; // how long to stay quiet after someone says shut up, in seconds
-	.emote_rate = 3; // min number of seconds to wait between emotes
-	.sdrop_rate = 8; // 1 in X chances to get a special drop
-	.sname_rate = 8; // 1 in X chances to get a special name
-	.dunno_rate = 2; // 1 in X chances to get a reply when the command is not found
-	.hiall_rate = 2; // 1 in X chances to reply to a "hi everyone"
-	.touch_rate = 4; // 1 in X chances to trigger the OnTouch action
-	.qpoll_rate = 1; // min number of seconds to wait before calling the sql db again for GMs
-	.qpoll_rate2 = 5; // min number of seconds to wait before calling the sql db again for non-GMs (currently unused)
-	.delay_reply = 250; // number of ms to wait to reply
-	.enable_janitor = true; // automatically free memory when idle
-	.symbol$ = "~"; // symbol for GM-only commands
+    // config below
+    .hotwords$ = "tree"; // what hot words the npc should listen to, besides its own name (regex)
+    .distance = 14; // the npc will only listen to player within X tiles
+    .sex = G_OTHER; // gender of the npc
+    .dir = season_direction(); // sprite direction according to the season
+    .talk_rate = 1; // min number of seconds to wait between replies
+    .repeat_rate = 1; // min number of seconds to wait before sending the same message twice in a row
+    .block_time = 600; // how long to stay quiet after someone says shut up, in seconds
+    .emote_rate = 3; // min number of seconds to wait between emotes
+    .sdrop_rate = 8; // 1 in X chances to get a special drop
+    .sname_rate = 8; // 1 in X chances to get a special name
+    .dunno_rate = 2; // 1 in X chances to get a reply when the command is not found
+    .hiall_rate = 2; // 1 in X chances to reply to a "hi everyone"
+    .touch_rate = 4; // 1 in X chances to trigger the OnTouch action
+    .qpoll_rate = 1; // min number of seconds to wait before calling the sql db again for GMs
+    .qpoll_rate2 = 5; // min number of seconds to wait before calling the sql db again for non-GMs (currently unused)
+    .delay_reply = 250; // number of ms to wait to reply
+    .enable_janitor = true; // automatically free memory when idle
+    .symbol$ = "~"; // symbol for GM-only commands
 
-	// register some arrays
-	callfunc("TREE_dictionaries");
+    // register some arrays
+    callfunc("TREE_dictionaries");
 
-	// do random stuff
-	make_quote_table();
-	face();
+    // do random stuff
+    make_quote_table();
+    face();
 
-	// boring stuff below
-	.version = 20; // increase this when you make a change
-	.uptime = gettimetick(2);
-	.alwaysVisible = true; // the NPC doesn't de-spawn when moving away
-	.pid = 1; // regex pattern id
-	.msg_ht = htnew(); // hashtable id for message history
-	.seen_ht = htnew(); // hashtable id for seen log
-	.ignore_ht = htnew(); // hashtable id for ignored players
-	.roulette = rand(1, 7); // spin the chambers
-	defpattern(.pid, "^(.*)$", "OnTalkNearby");
-	activatepset(.pid);
-	if (.enable_janitor) {
-		initnpctimer();
-	}
+    // boring stuff below
+    .version = 20; // increase this when you make a change
+    .uptime = gettimetick(2);
+    .alwaysVisible = true; // the NPC doesn't de-spawn when moving away
+    .pid = 1; // regex pattern id
+    .msg_ht = htnew(); // hashtable id for message history
+    .seen_ht = htnew(); // hashtable id for seen log
+    .ignore_ht = htnew(); // hashtable id for ignored players
+    .roulette = rand(1, 7); // spin the chambers
+    defpattern(.pid, "^(.*)$", "OnTalkNearby");
+    activatepset(.pid);
+    if (.enable_janitor) {
+        initnpctimer();
+    }
 }
 
 // Duplicates below

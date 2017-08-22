@@ -1,0 +1,35 @@
+// Evol functions.
+// Authors:
+//    Reid
+// Description:
+//    Util functions
+
+
+// season_direction({day, month})
+//    returns the direction that represents our current season (approximation)
+//      DOWN:      Winter, 21/12
+//      DOWNLEFT:  Spring, 20/03
+//      LEFT:      Summer, 21/06
+//      LEFTUP:    Autumn, 22/09
+
+function	script	season_direction	{
+    .@current_month = getarg(0, gettime(GETTIME_MONTH));
+
+    if (.@current_month % 3 == 0)
+    {
+        .@current_day = getarg(1, gettime(GETTIME_DAYOFMONTH));
+
+        switch (.@current_month)
+        {
+            case MARCH:     .@season_day = 20; break;
+            case JUNE:      .@season_day = 21; break;
+            case SEPTEMBER: .@season_day = 22; break;
+            case DECEMBER:  .@season_day = 21; break;
+            default: break;
+        }
+        
+        .@is_after_season_day = .@current_day >= .@season_day ? 0 : -1;
+    }
+
+    return (.@current_month / 3 + .@is_after_season_day) % 4;
+}
