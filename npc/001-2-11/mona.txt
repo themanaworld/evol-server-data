@@ -34,7 +34,7 @@
         switch (select(l("You do not give me much options."), l("The elder ran away from you.")))
         {
             case 1:
-                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                speech S_FIRST_BLANK_LINE,
                     l("He said that he would check why the manhole next to the house was doing weird sounds."),
                     l("But he never returned."),
                     l("Please find my daddy...");
