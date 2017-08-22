@@ -55,6 +55,7 @@
     if (.@enora < 8)
     {
         npctalk3 l("I'm busy, leave me alone.");
+        end;
     }
 
     speech S_LAST_NEXT, l("Yes what do you need?");
