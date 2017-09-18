@@ -726,14 +726,16 @@ OnTalkNearby:
         else if (debug && .@no_nick$ ~= "^.re(?:boot|load|start)(?:(?: the)? server)?$")
         {
             announce("The server is rebooting. This may take a couple minutes.", bc_all);
-            useatcmd("@serverexit 104");
+            sleep2(1000);
+            atcommand("@serverexit 104");
         }
 
         // exit, pull all, clean, build, reboot
         else if (debug && .@no_nick$ ~= "^.re-?build(?:(?: the)? server)?$")
         {
             announce("The server is rebuilding. This will take several minutes.", bc_all);
-            useatcmd("@serverexit 108");
+            sleep2(1000);
+            atcommand("@serverexit 108");
         }
 
         else if (.@no_nick$ ~= "^.(?:add )?ignored? \"?([^#:@\"]{4,23})\"?$")
