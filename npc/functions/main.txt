@@ -169,32 +169,26 @@ function	script	compareandsetq	{
 //      1 = npctalk
 //      2 = message
 function	script	npctalkonce	{
-    if (getarg(2, 0) == 0)
+    // lock mechanism
+    switch (getarg(2, 0))
     {
+    case 1:
+        if (gettimetick(2) <= getvariableofnpc(.talk_lock, strnpcinfo(NPC_NAME_UNIQUE)))
+            return false;
+        set(getvariableofnpc(.talk_lock, strnpcinfo(NPC_NAME_UNIQUE)), gettimetick(2) + getarg(1, 1));
+        break;
+    default:
         if (gettimetick(2) <= @NPC_TALK_LOCK[getnpcid(0)])
-        {
             return false;
-        }
         @NPC_TALK_LOCK[getnpcid(0)] = gettimetick(2) + getarg(1, 1);
-        npctalk3(getarg(0));
     }
-    else if (getarg(2, 0) == 1)
+
+    // talk mechanism
+    switch (getarg(2, 0))
     {
-        if (gettimetick(2) <= .talk_lock)
-        {
-            return false;
-        }
-        .talk_lock = gettimetick(2) + getarg(1, 1);
-        npctalk(getarg(0));
-    }
-    else if (getarg(2, 0) == 2)
-    {
-        if (gettimetick(2) <= @NPC_TALK_LOCK[getnpcid(0)])
-        {
-            return false;
-        }
-        @NPC_TALK_LOCK[getnpcid(0)] = gettimetick(2) + getarg(1, 1);
-        message(strcharinfo(0), getarg(0));
+    case 0: npctalk3(getarg(0)); break;
+    case 1: npctalk(getarg(0)); break;
+    case 2: message(strcharinfo(0), getarg(0));
     }
 
     return true;
