@@ -34,7 +34,7 @@
 
     function sell_dye {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("For what kind of tissue?");
-        .@tissue_type = select (l("Cotton"), l("Cashmere"));
+        .@tissue_type = select(l("Cotton"), l("Cashmere"));
 
         closedialog;
         switch (.@tissue_type)

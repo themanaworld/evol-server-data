@@ -98,7 +98,7 @@ L_Already:
     setcamnpc "Nard";
     mes "";
     mesn "Nard";
-    mesq l("You already took a @@, please put this one back in the box.", getitemlink (Bandana));
+    mesq l("You already took a @@, please put this one back in the box.", getitemlink(Bandana));
 
     close;
 

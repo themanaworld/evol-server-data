@@ -18,7 +18,7 @@
             return;
         }
 
-        .@rand = rand (5);
+        .@rand = rand(5);
         if (.@rand == 0) goodbye;
         else if (.@rand == 1)
         {

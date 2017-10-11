@@ -8,7 +8,7 @@
     speech S_LAST_NEXT,
         lg("Hi customer! What do you want today?");
 
-    switch (select (
+    switch (select(
         l("Let's make a trade."),
         l("What's wrong with your clothes?"),
         l("What is this place?"),

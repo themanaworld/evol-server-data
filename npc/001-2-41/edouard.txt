@@ -106,11 +106,11 @@ OnInit:
     }
 
 OnWrongPlace:
-    npctalkonce ("Sit on the chair, I will come in a second!");
+    npctalkonce("Sit on the chair, I will come in a second!");
     close;
 
 OnNotSit:
-    npctalkonce ("Please sit.");
+    npctalkonce("Please sit.");
     close;
 
 OnChair:

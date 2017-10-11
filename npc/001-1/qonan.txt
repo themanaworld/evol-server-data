@@ -23,7 +23,7 @@
         l("I have a lot of work here, so I don't even have time to go to the town."),
         l("Could you do a small favor for me?");
 
-    switch (select (l("Go on."), l("I don't have the time sorry.")))
+    switch (select(l("Go on."), l("I don't have the time sorry.")))
     {
         case 2:
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,

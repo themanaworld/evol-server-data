@@ -72,7 +72,7 @@
         speech
             l("Look who is back..."),
             l("And with my piou. That's wonderful. I can only imagine how hard that little bugger was to catch!"),
-            l("Great, and as I promised, I give you a 90% discount on the @@ of your choice.", getitemlink (PiouEgg));
+            l("Great, and as I promised, I give you a 90% discount on the @@ of your choice.", getitemlink(PiouEgg));
             next;
 
             @ArtisQuests_PiouPrice = 3000;
@@ -168,8 +168,8 @@ L_AboutPious:
     next;
 
     select
-        rif (.@q == 0, l("Sounds like a good deal to me. I'll do it.")),
-        rif (.@q == 1, l("I'm on my way! I will bring it back to you.")),
+        rif(.@q == 0, l("Sounds like a good deal to me. I'll do it.")),
+        rif(.@q == 1, l("I'm on my way! I will bring it back to you.")),
         l("I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E)."),
         l("I don't want to buy a piou right now.");
 

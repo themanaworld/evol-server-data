@@ -21,7 +21,7 @@
             l("I will buy all of the fur that you will bring me at a good price, let's say, 15 E piece."),
             l("Do we have a deal?");
 
-        switch (select (l("Ok."), l("I don't want to be part of this joke.")))
+        switch (select(l("Ok."), l("I don't want to be part of this joke.")))
         {
             case 1:
                 setq ArtisQuests_Fexil, 3;
@@ -46,14 +46,14 @@
     mesq lg("Interested?");
     next;
 
-    if (getq (ArtisQuests_Fexil) == 1)
+    if (getq(ArtisQuests_Fexil) == 1)
     {
-        select (l("I have your pass from the Merchant Guild."));
+        select(l("I have your pass from the Merchant Guild."));
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Oh! You saved me, I was too afraid to unpack my stuff without this pass."),
             l("Hey, I remember you, we were on the same boat, you are the castaway.");
 
-        switch (select (l("Yes I am."),
+        switch (select(l("Yes I am."),
                         l("You're confusing me with someone else.")))
         {
             case 1:

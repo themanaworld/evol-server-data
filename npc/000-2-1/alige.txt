@@ -44,8 +44,8 @@ OnUnTouch:
 OnTimer190:
     stopnpctimer;
 
-    if (getnpcdir ("Alige") == 2) setnpcdir "Alige", 6;
-    if (getnpcdir ("Alige") == 4) setnpcdir "Alige", 8;
+    if (getnpcdir("Alige") == 2) setnpcdir "Alige", 6;
+    if (getnpcdir("Alige") == 4) setnpcdir "Alige", 8;
 
     end;
 }

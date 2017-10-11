@@ -23,7 +23,7 @@
             lg("The cost to create a party is @@ E, are you interested?",
                "The cost to create a party is @@ E, are you interested?", .@party_price);
 
-        if (askyesno () == 1)
+        if (askyesno() == 1)
         {
             if (Zeny < .@party_price)
             {
@@ -48,11 +48,11 @@
             l("Or do you want to keep your friendships and adventures in different groups?"),
             l("Anyway, the guild creation is perfect for both!"),
             l("You can keep your current party as it is, while leading or being part of a guild in order to talk and share different items with all of its members!"),
-            l("The @@ is a one time item, you can use it as many times as you want, but you can only have one!", getitemlink (GuildCertification)),
+            l("The @@ is a one time item, you can use it as many times as you want, but you can only have one!", getitemlink(GuildCertification)),
             lg("The cost to create a guild is @@ E, are you interested?",
                "The cost to create a guild is @@ E, are you interested?", .@guild_price);
 
-        if (askyesno () == 1)
+        if (askyesno() == 1)
         {
             if (Zeny < .@guild_price)
             {
@@ -76,12 +76,12 @@
             l("We offer party and guild certifications and we can also teach you how to use some basic communication skills."),
             l("Do you know how to speak with people around you?");
 
-        if (askyesno () == 2)
+        if (askyesno() == 2)
         {
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("You lack some very basic skills...");
 
-            if (compareandsetq (General_Janus, 0, 1))
+            if (compareandsetq(General_Janus, 0, 1))
             {
                 speech S_LAST_NEXT | S_NO_NPC_NAME,
                     l("This book contains everything you should know about it, take it!");
@@ -97,7 +97,7 @@
         }
         else
         {
-            if (compareandsetq (General_Janus, 0, 1))
+            if (compareandsetq(General_Janus, 0, 1))
             {
                 speech S_LAST_NEXT | S_NO_NPC_NAME,
                     l("Anyway."),
@@ -130,14 +130,14 @@
     do
     {
         // Beta users by-pass check.
-        if (getskilllv(NV_BASIC) > 6 && getq (General_Janus) == 1)
+        if (getskilllv(NV_BASIC) > 6 && getq(General_Janus) == 1)
         {
             setq General_Janus, 2;
         }
 
         select
-            rif (getq (General_Janus) == 1, l("I would like to create a party.")),
-            rif (getq (General_Janus) == 2, l("I would like to create a guild.")),
+            rif(getq(General_Janus) == 1, l("I would like to create a party.")),
+            rif(getq(General_Janus) == 2, l("I would like to create a guild.")),
             l("What service do you offer?"),
             l("Your name is Ianus or Janus?"),
             menuaction(l("Quit"));

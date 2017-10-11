@@ -19,7 +19,7 @@
     }
 
     function accepted_room {
-        .@price = getarg (0);
+        .@price = getarg(0);
         if (Zeny < .@price)
         {
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("You don't have enough money, bring @@ E.", .@price);
@@ -49,7 +49,7 @@
 
         if (askyesno() == ASK_YES)
         {
-            accepted_room (.@price);
+            accepted_room(.@price);
         }
         else
         {
@@ -91,7 +91,7 @@
 
     do
     {
-        .@q = select (
+        .@q = select(
             l("Could I lodge here for a while?"),
             l("What service do you offer?"),
             l("What is your tipiou trying to do?"),

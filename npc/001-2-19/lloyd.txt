@@ -28,7 +28,7 @@
             l("Yes, I have some! \"5x Black Iron Ingots\""),
             lg("Is this for you or somebody else? Because you need to be registered to obtain these materials.");
 
-        switch (selectd (ArtisQuests_Enora,
+        switch (selectd(ArtisQuests_Enora,
                         l("This is for my own use."),
                         l("Chelios asked me to get it.")))
         {
@@ -71,7 +71,7 @@
             l("Welcome!"),
             l("My name is Lloyd, I am a representative of the Merchant Guild of Artis.");
 
-        selectd (l("My name is @@...", strcharinfo(0)));
+        selectd(l("My name is @@...", strcharinfo(0)));
 
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("\"@@\", I like this name!", strcharinfo(0)),
@@ -82,7 +82,7 @@
             l("I see."),
             lg("You are new around here, right?");
 
-        if (selectd (l("How do you know?"), l("Yes I am.")) == 1)
+        if (selectd(l("How do you know?"), l("Yes I am.")) == 1)
         {
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Oh, it is simple. I have on this book the names of every citizen of Artis and its surroundings."),
@@ -104,7 +104,7 @@
         speech S_LAST_NEXT,
             l("The fee is of @@ E. So, do you want to register?", .@price);
 
-        switch (selectd (l("Yes."),
+        switch (selectd(l("Yes."),
                         l("I don't have the time now.")))
         {
             case 1:
@@ -139,7 +139,7 @@
 
         do
         {
-            .@q = selectd (ArtisQuests_Fexil,
+            .@q = selectd(ArtisQuests_Fexil,
                           l("Ok, I will bring it to him."),
                           l("I need more information first."),
                           l("I don't have the time."));
@@ -163,7 +163,7 @@
         } while (.@q == 2);
     }
 
-    if (getq (ArtisQuests_Lloyd) == 0)
+    if (getq(ArtisQuests_Lloyd) == 0)
     {
         first_visit;
 
@@ -178,10 +178,10 @@
 
     do
     {
-        .@enora = getq (ArtisQuests_Enora);
+        .@enora = getq(ArtisQuests_Enora);
 
         selectd
-            rif (.@enora == 2, l("I'm looking for some black iron ingots.")),
+            rif(.@enora == 2, l("I'm looking for some black iron ingots.")),
             l("I would like to store some items."),
             l("I would like to perform money transactions."),
             l("What is this guild for?"),

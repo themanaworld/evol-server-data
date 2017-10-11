@@ -56,7 +56,7 @@
             l("You need to be a member of the Merchant Guild to have a chance there."),
             l("And I bet you don't know who is in charge of monitoring the security of this place?");
 
-        switch (select (l("The Legion?"), l("I don't know.")))
+        switch (select(l("The Legion?"), l("I don't know.")))
         {
             case 1:
                 speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
@@ -89,7 +89,7 @@
             l("Does your mind go all fuzzy or does it feel like your head is going to explode??"),
             l("Try doing that now!");
 
-        switch (select (l("Okay, but there won't be any explosions."),
+        switch (select(l("Okay, but there won't be any explosions."),
                         lg("Don't get too excited about it...")))
         {
             case 1:
@@ -101,7 +101,7 @@
                 speech S_LAST_NEXT,
                     l("So? You haven't exploded yet! Are you getting anything?");
 
-                select (l("Not really. All I got was a headache..."));
+                select(l("Not really. All I got was a headache..."));
 
                 speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("It's like your memories are locked away in your head! Cool!");
@@ -119,8 +119,8 @@
     }
 
     function enora_reward {
-        .@exp_reward = getarg (0);
-        .@zeny_reward = getarg (1);
+        .@exp_reward = getarg(0);
+        .@zeny_reward = getarg(1);
 
         getexp .@exp_reward, 0;
         Zeny = Zeny + .@zeny_reward;
@@ -136,7 +136,7 @@
             l("You probably don't have much business in this city as you don't remember who you are."),
             lg("So I was going to ask if maybe you would be interested in giving me a hand with a few errands.");
 
-        switch (select (l("I guess so. What's in it for me?"),
+        switch (select(l("I guess so. What's in it for me?"),
                         l("Of course! What do you need?")))
         {
             case 1:
@@ -170,7 +170,7 @@
             l("Poor Chelios, I don't envy him..."),
             l("So, everything went fine?");
 
-        switch (select (l("Chelios managed to do excellent work."),
+        switch (select(l("Chelios managed to do excellent work."),
                         l("The old man seemed to be senile.")))
         {
             case 1:
@@ -199,7 +199,7 @@
             l("Her shop is on the west side of the city, between the Legion building and the library.");
 
         setq ArtisQuests_Enora, 5;
-        enora_reward (60, 100);
+        enora_reward(60, 100);
 
         closedialog;
         npctalk3 l("Thank you very much!");
@@ -208,7 +208,7 @@
 
     function enora_third_quest {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("Look how splendid this @@ is!", getitemlink (ArtisTankTop, CamelCottonDye)),
+            l("Look how splendid this @@ is!", getitemlink(ArtisTankTop, CamelCottonDye)),
             l("It's nearly as good as one from Esperia, have you ever been there?"),
             l("Ah... Sorry, I forgot, again."),
             l("I mean, you forgot... Well."),
@@ -217,7 +217,7 @@
 
         do
         {
-            .@q = select (l("Do you still need help?"),
+            .@q = select(l("Do you still need help?"),
                           l("What is this \"legion\"?"));
             switch (.@q)
             {
@@ -231,12 +231,12 @@
 
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Oh yes, I have one last errand for you, Q'Pid in the market sells potions."),
-            l("It has been some days now since I asked her for a box of @@s, but she hasn't delivered anything yet.", getitemlink (PiberriesInfusion)),
+            l("It has been some days now since I asked her for a box of @@s, but she hasn't delivered anything yet.", getitemlink(PiberriesInfusion)),
             l("Please try to figure out what went wrong with this order and bring me those potions."),
             l("You will be able to find her in the market in the south-west of Artis.");
 
         setq ArtisQuests_Enora, 7;
-        enora_reward (40, 125);
+        enora_reward(40, 125);
 
         closedialog;
         npctalk3 l("Thank you very much!");
@@ -262,12 +262,12 @@
         getitem2 ArtisTankTop, 1, 1, 0, 0, 5005, 0, 0, 0;
         getitem PiberriesInfusion, 5;
         setq ArtisQuests_Enora, 10;
-        enora_reward (80, 175);
+        enora_reward(80, 175);
 
         speech S_LAST_NEXT,
             l("Do you know where the hill is?");
 
-        switch (select (l("Yes I do."),
+        switch (select(l("Yes I do."),
                         l("Please guide me.")))
         {
             case 1:
@@ -310,10 +310,10 @@
             l("It's a very good place if you want to make some more money.");
             emotion E_WINK;
 
-        if (getq (ArtisQuests_Enora) == 10)
+        if (getq(ArtisQuests_Enora) == 10)
         {
             setq ArtisQuests_Enora, 11;
-            enora_reward (140, 500);
+            enora_reward(140, 500);
         }
 
         return;

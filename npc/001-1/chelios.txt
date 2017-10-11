@@ -22,7 +22,7 @@
             l("It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!"),
             l("If Enora wants her sword now, I need to ask for your help.");
 
-        switch (select (l("Let's not keep her waiting."),
+        switch (select(l("Let's not keep her waiting."),
                         l("Not now.")))
         {
             case 1:
@@ -80,11 +80,11 @@
 
     do
     {
-        .@enora = getq (ArtisQuests_Enora);
+        .@enora = getq(ArtisQuests_Enora);
         select
-            rif (.@enora == 1, lg("I came to retrieve a package for Enora.")),
-            rif (.@enora == 3, l("I have your black iron.")),
-            rif (.@enora >= 2, l("Where is the Merchant Guild?")),
+            rif(.@enora == 1, lg("I came to retrieve a package for Enora.")),
+            rif(.@enora == 3, l("I have your black iron.")),
+            rif(.@enora >= 2, l("Where is the Merchant Guild?")),
             l("What is this building?"),
             menuaction(l("Quit"));
 

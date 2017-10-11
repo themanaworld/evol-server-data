@@ -20,15 +20,15 @@
             input .@answer$;
             .@i++;
 
-            if (riddlevalidation (.@answer$, "life", l("life")))
+            if (riddlevalidation(.@answer$, "life", l("life")))
             {
                 speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("Oh..."),
                     l("You seem more cultivated than you look.");
 
-                if (getq (ArtisQuests_Enora) == 7)
+                if (getq(ArtisQuests_Enora) == 7)
                 {
-                    setq (ArtisQuests_Enora, 9);
+                    setq(ArtisQuests_Enora, 9);
                     speech S_LAST_NEXT | S_NO_NPC_NAME,
                         l("Fine, take these potions, I will replenish them in the next couple hours anyway.");
                 }
@@ -42,9 +42,9 @@
             }
             else
             {
-                if (getq (ArtisQuests_Enora) == 7)
+                if (getq(ArtisQuests_Enora) == 7)
                 {
-                    setq (ArtisQuests_Enora, 8);
+                    setq(ArtisQuests_Enora, 8);
                     speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("You failed!"),
                         l("Ivan is the one you should look for now."),
@@ -71,7 +71,7 @@
             l("I'm not a pawn of the Legion, I don't have to obey you!"),
             l("Oh and guess what! I'm almost out of potions anyway.");
 
-        switch (select (l("And where can I find these potions?"),
+        switch (select(l("And where can I find these potions?"),
                         l("You bored me, see you later.")))
         {
             case 1:
@@ -103,7 +103,7 @@
             l("But rare are those that receive grants from the Legion itself. For anybody else only a hard work can pay your bills!");
         emotion E_UPSET;
 
-        switch (select (l("Sorry I didn't mean to bother you."),
+        switch (select(l("Sorry I didn't mean to bother you."),
                         l("You are just sitting on the shadow of your store.")))
         {
             case 1:
@@ -128,9 +128,9 @@
         .@enora = getq(ArtisQuests_Enora);
 
         select
-            rif (.@enora == 7, l("Enora wants her potions.")),
+            rif(.@enora == 7, l("Enora wants her potions.")),
             menuaction(l("Trade")),
-            rif (.@enora > 7, l("What was your riddle?")),
+            rif(.@enora > 7, l("What was your riddle?")),
             l("How do you do your potions?"),
             l("What are you reading?"),
             menuaction(l("Quit"));

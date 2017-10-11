@@ -31,7 +31,7 @@
             l("I do not.");
         emotion E_UPSET;
 
-        select (l("What about Chelios?"));
+        select(l("What about Chelios?"));
 
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Chelios was stubborn in his youth, he never stopped annoying me with his questions while I was working at the forge."),
@@ -45,7 +45,7 @@
             l("I do not like to brag about it but you won't find a better blacksmith on the whole island."),
             l("If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.");
 
-        switch (select (l("Can I craft them myself?"),
+        switch (select(l("Can I craft them myself?"),
                         l("Ok.")))
         {
             case 1:
@@ -64,7 +64,7 @@
 
     do
     {
-        switch (.@q = select (l("How can I improve my equipment?"),
+        switch (.@q = select(l("How can I improve my equipment?"),
                               l("What is a card?"),
                               l("Are you a good blacksmith?"),
                               l("Do you take apprentices?"),

@@ -21,7 +21,7 @@ function	script	BarberDebug	{
     function setStyle {
         clear;
         setnpcdialogtitle l("Appearance Debug - Barber");
-        mes l("Hair style") + ": " + getlook (LOOK_HAIR);
+        mes l("Hair style") + ": " + getlook(LOOK_HAIR);
         next;
         mes l("Please enter the desired style") + " (1-255)";
         input .@h, 1, 0xFF;
@@ -31,7 +31,7 @@ function	script	BarberDebug	{
     function setColor {
         clear;
         setnpcdialogtitle l("Appearance Debug - Barber");
-        mes l("Hair color") + ": " + getlook (LOOK_HAIR_COLOR);
+        mes l("Hair color") + ": " + getlook(LOOK_HAIR_COLOR);
         next;
         mes l("Please enter the desired color") + " (0-255)";
         input .@h, 0, 0xFF;
@@ -58,8 +58,8 @@ function	script	BarberDebug	{
 
         mes "---";
         mes l("Gender") + ": " + Sex;
-        mes l("Hair style") + ": " + getlook (LOOK_HAIR);
-        mes l("Hair color") + ": " + getlook (LOOK_HAIR_COLOR);
+        mes l("Hair style") + ": " + getlook(LOOK_HAIR);
+        mes l("Hair color") + ": " + getlook(LOOK_HAIR_COLOR);
         mes l("Race") + ": " + Class;
         mes "---";
 

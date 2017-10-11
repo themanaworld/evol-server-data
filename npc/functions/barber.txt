@@ -8,8 +8,8 @@
 
 function	script	BarberSayStyle	{
 
-    .@get_color = getlook (LOOK_HAIR_COLOR);
-    .@get_look = getlook (LOOK_HAIR);
+    .@get_color = getlook(LOOK_HAIR_COLOR);
+    .@get_look = getlook(LOOK_HAIR);
     .@style_name$ = $@hairstyle$[.@get_look];
     .@color_name$ = $@haircolor$[.@get_color];
 
@@ -32,7 +32,7 @@ function	script	BarberChangeStyle	{
     do
     {
         .@hairsizearray = getarraysize($@hairstyle$);
-        .@get_look = getlook (LOOK_HAIR);
+        .@get_look = getlook(LOOK_HAIR);
 
         // Here .@i starts from 1 because hairstyle 0 doesn't exist.
         for (.@i = 1; .@i < .@hairsizearray; .@i++)
@@ -43,9 +43,9 @@ function	script	BarberChangeStyle	{
         }
 
         .@menustr$ = .@menustr$ + l("I'm fine for now, thank you.");
-    
+
         .@idx = select(l("As you want!"),.@menustr$);
-                    
+
         if (.@idx == .@i + 1) return; // last choice to quit dialog
 
         switch (@menu)
@@ -55,15 +55,15 @@ function	script	BarberChangeStyle	{
                 {
                     // here "- 1" because i don't use the 0 of array
                     .@rand_hair = rand(1,(.@hairsizearray - 1));
-                } while (.@rand_hair == getlook (LOOK_HAIR));
+                } while (.@rand_hair == getlook(LOOK_HAIR));
                 setlook LOOK_HAIR, .@rand_hair;
-                setlook LOOK_HAIR_COLOR, getlook (LOOK_HAIR_COLOR);
+                setlook LOOK_HAIR_COLOR, getlook(LOOK_HAIR_COLOR);
                 BarberSayStyle 1;
                 break;
             default:
                 // and here "- 1" because the first choice is taken by the random
                 setlook LOOK_HAIR, (@menu - 1);
-                setlook LOOK_HAIR_COLOR, getlook (LOOK_HAIR_COLOR);
+                setlook LOOK_HAIR_COLOR, getlook(LOOK_HAIR_COLOR);
                 break;
         }
         .@menustr$ = "";
@@ -73,7 +73,7 @@ function	script	BarberChangeStyle	{
 function	script	BarberChangeColor	{
     do
     {
-        .@get_look = getlook (LOOK_HAIR_COLOR);
+        .@get_look = getlook(LOOK_HAIR_COLOR);
         .@hairsizearray = getarraysize($@haircolor$);
 
         for (.@i = 0; .@i < .@hairsizearray; .@i++)
@@ -84,9 +84,9 @@ function	script	BarberChangeColor	{
         }
 
         .@menustr$ = l("Surprise me!") + ":" + .@menustr$ + l("I'm fine for now, thank you.");
-    
+
         .@idx = select(.@menustr$);
-                    
+
         if (.@idx == .@i + 2) return;
 
         switch (@menu)
@@ -95,7 +95,7 @@ function	script	BarberChangeColor	{
                 do
                 {
                     .@rand_color = rand(0, .@hairsizearray);
-                } while (.@rand_color == getlook (LOOK_HAIR_COLOR));
+                } while (.@rand_color == getlook(LOOK_HAIR_COLOR));
                 setlook LOOK_HAIR_COLOR, .@rand_color;
                 BarberSayStyle 2;
                 break;

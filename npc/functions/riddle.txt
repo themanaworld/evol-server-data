@@ -12,15 +12,15 @@
 // TODO: levenshtein(), similar_text(), and maybe even soundex()
 
 function	script	riddlevalidation	{
-    .@answer$          = strtolower (getarg (0));
-    .@good$            = strtolower (getarg (1));
-    .@good_translated$ = strtolower (getarg (2));
+    .@answer$          = strtolower(getarg(0));
+    .@good$            = strtolower(getarg(1));
+    .@good_translated$ = strtolower(getarg(2));
 
-    .@size_answer          = getstrlen (.@answer$);
-    .@size_good            = getstrlen (.@good$);
-    .@size_good_translated = getstrlen (.@good_translated$);
+    .@size_answer          = getstrlen(.@answer$);
+    .@size_good            = getstrlen(.@good$);
+    .@size_good_translated = getstrlen(.@good_translated$);
 
-    .@max = max (.@size_answer, .@size_good_translated, .@size_good);
+    .@max = max(.@size_answer, .@size_good_translated, .@size_good);
 
     // Input is too long.
     if (.@max > 20)
@@ -38,7 +38,7 @@ function	script	riddlevalidation	{
 
         for (.@k = .@k_translated = .@j = .@i; .@j < .@max; .@j++)
         {
-            if (charat (.@answer$, .@j) == charat (.@good$, .@k))
+            if (charat(.@answer$, .@j) == charat(.@good$, .@k))
             {
                 .@correct++;
                 .@k++;
@@ -48,8 +48,8 @@ function	script	riddlevalidation	{
                 .@correct--;
             }
 
-            if (charat (.@answer$, .@j) ==
-                charat (.@good_translated$, .@k_translated))
+            if (charat(.@answer$, .@j) ==
+                charat(.@good_translated$, .@k_translated))
             {
                 .@correct_translated++;
                 .@k_translated++;

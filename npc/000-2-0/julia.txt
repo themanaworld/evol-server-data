@@ -145,7 +145,7 @@
         mesq l("Of course! Tell me which language you speak and I will change the note on the ship passenger list.");
         next;
 
-        asklanguage (LANG_IN_SHIP);
+        asklanguage(LANG_IN_SHIP);
 
         mes "";
         mesn;

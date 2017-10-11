@@ -94,7 +94,7 @@ L_Menu:
         case 4:
             if (.@visited < 2) goto L_Quit;
 
-            .@rand = rand (2);
+            .@rand = rand(2);
 
             if (.@rand)
             {
@@ -215,8 +215,8 @@ L_Quit:
 OnTimer1800:
     stopnpctimer;
 
-    if (getnpcdir ("Rumly#001-1") == 2) setnpcdir "Rumly#001-1", 6;
-    if (getnpcdir ("Rumly#001-1") == 4) setnpcdir "Rumly#001-1", 8;
+    if (getnpcdir("Rumly#001-1") == 2) setnpcdir "Rumly#001-1", 6;
+    if (getnpcdir("Rumly#001-1") == 4) setnpcdir "Rumly#001-1", 8;
 
     end;
 

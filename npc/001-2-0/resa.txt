@@ -28,7 +28,7 @@
     function enora_quest {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("I thought that she would never come to pick it up!"),
-            l("Here it is, a fashionable @@.", getitemlink (ArtisTankTop, CamelCottonDye)),
+            l("Here it is, a fashionable @@.", getitemlink(ArtisTankTop, CamelCottonDye)),
             l("I asked Calypsan to dye this tank top, now it has an unique look!");
 
         narrator S_LAST_NEXT, l("You pick up the package.");
@@ -44,9 +44,9 @@
 
     do
     {
-        .@enora = getq (ArtisQuests_Enora);
+        .@enora = getq(ArtisQuests_Enora);
         select
-            rif (.@enora == 5, lg("I came to retrieve a package for Enora.")),
+            rif(.@enora == 5, lg("I came to retrieve a package for Enora.")),
             menuaction(l("Trade")),
             l("How can I improve my equipment?"),
             menuaction(l("Quit"));

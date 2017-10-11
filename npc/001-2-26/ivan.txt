@@ -18,19 +18,19 @@
     function enora_quest {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("How many? What kind? I can produce two dozen boxes per day.");
 
-        select (l("5 Piberries Infusions"));
+        select(l("5 Piberries Infusions"));
 
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("5 boxes... Alright, @@ are my speciality!", getitemlink (PiberriesInfusion)),
+            l("5 boxes... Alright, @@ are my speciality!", getitemlink(PiberriesInfusion)),
             l("I can prepare them in an hour or so!");
 
-        select (l("You missunderstood, it's 5 potions."));
+        select(l("You missunderstood, it's 5 potions."));
 
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Why would the Legion request my help for only 5 potions?"),
             l("Is this some kind of joke?!");
 
-        switch (select (l("Enora needs them."),
+        switch (select(l("Enora needs them."),
                         l("Excuse me that was a mistake.")))
         {
             case 1:
@@ -50,7 +50,7 @@
         return;
     }
 
-    .@enora = getq (ArtisQuests_Enora);
+    .@enora = getq(ArtisQuests_Enora);
 
     if (.@enora < 8)
     {

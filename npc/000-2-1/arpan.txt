@@ -244,7 +244,7 @@ L_GotoSleep:
     speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
         l("You already did enough for us, do you want to follow Nard's advice and get some rest?");
 
-    switch (select (l("Yes."), l("No.")))
+    switch (select(l("Yes."), l("No.")))
     {
         case 1:
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,

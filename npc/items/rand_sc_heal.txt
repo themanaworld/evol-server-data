@@ -18,10 +18,10 @@
     // Add remaning bonus if the last one hasn't finished
     function remaining_bonus
     {
-        if (getstatus (getarg (0)))
+        if (getstatus(getarg(0)))
         {
-            .@old_val1 = getstatus (getarg (0), 1);
-            .@old_delay = getstatus (getarg (0), 4) * 1000;
+            .@old_val1 = getstatus(getarg(0), 1);
+            .@old_delay = getstatus(getarg(0), 4) * 1000;
 
             // change the delay to prevent fast healing
             if (.@old_delay > @delay)
@@ -45,8 +45,8 @@ OnUse:
     if (@delay <= 0) close;
 
     // minimum between @min and bVit / 2 * BaseLevel / 10
-    .@vitality_bonus = min (@min, readparam (bVit) * BaseLevel / 20);
-    .@rand_heal_val = rand (@min, @max);
+    .@vitality_bonus = min(@min, readparam(bVit) * BaseLevel / 20);
+    .@rand_heal_val = rand(@min, @max);
 
     // val1 is the heal value without the vitality bonus
     @val1 = .@rand_heal_val / @delay;
@@ -76,7 +76,7 @@ OnUse:
     }
     if (.@skill != 0)
     {
-        remaining_bonus (.@skill);
+        remaining_bonus(.@skill);
         sc_end .@skill;
         sc_start2 .@skill, @delay, @val1, 1;
     }

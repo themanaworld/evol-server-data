@@ -44,8 +44,8 @@ OnUnTouch:
 OnTimer190:
     stopnpctimer;
 
-    if (getnpcdir ("Alige#Artis") == 2) setnpcdir "Alige#Artis", 6;
-    if (getnpcdir ("Alige#Artis") == 4) setnpcdir "Alige#Artis", 8;
+    if (getnpcdir("Alige#Artis") == 2) setnpcdir "Alige#Artis", 6;
+    if (getnpcdir("Alige#Artis") == 4) setnpcdir "Alige#Artis", 8;
 
     end;
 }

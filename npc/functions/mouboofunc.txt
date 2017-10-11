@@ -5,7 +5,7 @@
 //    Various scripts used in walking mouboo NPCs.
 
 function	script	moubootalk	{
-    switch (rand (4))
+    switch (rand(4))
     {
         case 0:
             npctalkonce(l("Moooooo!"));
@@ -31,13 +31,13 @@ function	script	mouboocheckxy	{
                            "Taree";
     for (.@size = 0; .@size < getarraysize(.nearnpc$); .@size++)
     {
-        if (strcmp (.name$, .nearnpc$[.@size]) == 0)
+        if (strcmp(.name$, .nearnpc$[.@size]) == 0)
         {
             continue;
         }
 
-        .@npc_x = getvariableofnpc (.x, .nearnpc$[.@size]);
-        .@npc_y = getvariableofnpc (.y, .nearnpc$[.@size]);
+        .@npc_x = getvariableofnpc(.x, .nearnpc$[.@size]);
+        .@npc_y = getvariableofnpc(.y, .nearnpc$[.@size]);
 
         if (.@npc_x == .x && .@npc_y == .y)
         {
@@ -49,13 +49,13 @@ function	script	mouboocheckxy	{
 }
 
 function	script	moubootimer	{
-    if (mouboocheckxy () && !isunitwalking ())
+    if (mouboocheckxy() && !isunitwalking())
     {
         movetonextpoint;
     }
-    else if (rand (0,6) == 5)
+    else if (rand(0,6) == 5)
     {
-        if (!isunitwalking ())
+        if (!isunitwalking())
         {
             movetonextpoint;
         }

@@ -51,7 +51,7 @@ OnTouch:
     next;
     restorecam;
 
-    asklanguage (LANG_ON_SEA);
+    asklanguage(LANG_ON_SEA);
 
     setcamnpc;
     mes "";

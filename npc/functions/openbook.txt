@@ -13,7 +13,7 @@ function	script	openbook	{
         l("You open a book named @@.", .@book_name$),
         l("Do you want to read it?");
 
-    return (select ("Yes.", "No.") == 1);
+    return (select("Yes.", "No.") == 1);
 }
 
 function	script	openbookshelf	{
@@ -24,7 +24,7 @@ function	script	openbookshelf	{
         l("The name of the book is @@.", .@book_name$),
         l("Do you want to read it?");
 
-    return (select ("Yes.", "No.") == 1);
+    return (select("Yes.", "No.") == 1);
 }
 
 function	script	openoldbook	{
@@ -32,5 +32,5 @@ function	script	openoldbook	{
         l("You open the book, but it looks like the sea water and time damaged it severely. Some pages are not readable anymore. Some others are simply missing."),
         l("The old book seems to tell about the legend of Aemil. Would you like to read it?");
 
-    return (select ("Yes.", "No.") == 1);
+    return (select("Yes.", "No.") == 1);
 }

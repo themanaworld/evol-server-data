@@ -67,7 +67,7 @@ function	script	asklanguage	{
         .@menustr$ = .@menustr$ + .@flags$[.@i] + "|" + .@messages$[.@i] + .@separator$;
     }
 
-    select (.@menustr$);
+    select(.@menustr$);
 
     .@lang = @menu - 1;
 

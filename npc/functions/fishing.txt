@@ -273,7 +273,7 @@ function	script	fishing	{
     set getvariableofnpc(.account_id, .@npc$), getcharid(CHAR_ID_ACCOUNT); // record account id
     set getvariableofnpc(.char_id, .@npc$), getcharid(CHAR_ID_CHAR); // record char id
     set getvariableofnpc(.last_used, .@npc$), gettimetick(2);
-    getmapxy (@fishing_loc$[0], @fishing_loc[0], @fishing_loc[1], 0); // record char pos
+    getmapxy(@fishing_loc$[0], @fishing_loc[0], @fishing_loc[1], 0); // record char pos
     delitem .@bait, 1;
 
     // The player uses this spot, his bait is ready, he just has to wait for the signal.
