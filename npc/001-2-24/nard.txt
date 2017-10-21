@@ -64,17 +64,17 @@
                 warp "000-2-3", 22, 27;
             }
 
-            closedialog;
+            closeclientdialog;
             close;
         case 2:
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Ok we stay docked here if you need our help.");
 
-            closedialog;
+            closeclientdialog;
             close;
     }
 L_Info:
-    closedialog;
+    closeclientdialog;
     npctalk3 l("Don't you recognize the great city of Artis?");
     close;
 
@@ -84,7 +84,7 @@ L_Lost:
     mesq l("Julia made an appeal to the Legion of Aemil to get in touch with you, exit the ship and you should see your escort!");
     next;
 
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

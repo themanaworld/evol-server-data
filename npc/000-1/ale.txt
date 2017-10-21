@@ -100,7 +100,7 @@ L_TaskDone:
     close;
 
 L_Quit:
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

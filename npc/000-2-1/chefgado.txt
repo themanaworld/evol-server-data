@@ -203,7 +203,7 @@ L_QuestAborted:
     close;
 
 L_Quit:
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

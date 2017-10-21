@@ -149,7 +149,7 @@ OnCall:
         end;
     }
     GlobalQuestDebug;
-    closedialog;
+    closeclientdialog;
     end;
 
 OnInit:

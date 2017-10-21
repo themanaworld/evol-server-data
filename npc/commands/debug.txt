@@ -7,7 +7,7 @@ function	script	GlobalDebugMenu	{
             dispbottom l("Reset done!");
             if (getarg(0,0) == 3)
             {
-                closedialog;
+                closeclientdialog;
                 doevent "::OnGlobalQuestReset"; // executes in all quest npcs // FIXME: maybe have a `resetquest` buildin?
                 Zeny = 0;
                 BankVault = 0;
@@ -114,7 +114,7 @@ function	script	GlobalDebugMenu	{
             case 2: changeStats; break;
             case 3: GlobalSkillDebug .@c; break;
             case 4: BarberDebug .@c; break;
-            case 5: closedialog; clientcommand "createitems"; end;
+            case 5: closeclientdialog; clientcommand "createitems"; end;
             case 6: Zeny = 0x7FFFFFFE; break;
             case 7: GlobalQuestDebug .@c; break;
             case 8: resetAll; break;
@@ -134,7 +134,7 @@ OnCall:
         end;
     }
     GlobalDebugMenu;
-    closedialog;
+    closeclientdialog;
     end;
 
 OnInit:

@@ -20,7 +20,7 @@ OnTouch:
         warp "001-2-33", 34, 46;
     }
 
-    closedialog;
+    closeclientdialog;
     close;
 
 OnUnTouch:

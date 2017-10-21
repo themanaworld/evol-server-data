@@ -77,7 +77,7 @@ L_CallFunc:
         rif(getq(ShipQuests_Tibbo) == 0, l("Tibbo.")), L_Bottom,
         l("Nobody."), -;
 
-    closedialog;
+    closeclientdialog;
     close;
 
 L_Bottom:

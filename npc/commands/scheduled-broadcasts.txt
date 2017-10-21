@@ -210,7 +210,7 @@ OnCall:
     }
 
     StoneBoard;
-    closedialog;
+    closeclientdialog;
     end;
 
 OnPCLoginEvent:

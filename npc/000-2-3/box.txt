@@ -103,7 +103,7 @@ L_Already:
     close;
 
 L_Quit:
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

@@ -119,7 +119,7 @@
         }
     } while (.@q != 1 && .@q != 4);
 
-    closedialog;
+    closeclientdialog;
     goodbye;
     close;
 

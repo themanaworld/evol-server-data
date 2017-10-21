@@ -96,7 +96,7 @@ L_CallFunc:
         rif(getq(ShipQuests_Tibbo) == 0, l("Tibbo.")), L_Bottom,
         l("Nobody."), -;
 
-    closedialog;
+    closeclientdialog;
     close;
 
 L_HowAreYou:
@@ -143,7 +143,7 @@ L_Top:
 L_NoTask:
     npctalk3 l("Just leave me alone.");
 
-    closedialog;
+    closeclientdialog;
     close;
 
 L_TaskDone:
@@ -156,7 +156,7 @@ L_TaskDone:
 L_Whyning:
     npctalk3 l("Then leave me alone.");
 
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

@@ -43,7 +43,7 @@ OnCall:
     }
 
     SuperMenu;
-    closedialog;
+    closeclientdialog;
     end;
 
 OnPCLoginEvent:

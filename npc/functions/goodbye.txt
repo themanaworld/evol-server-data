@@ -56,7 +56,7 @@ function	script	cwarp	{
 
     getmapxy .@pc_map$, .@pc_x, .@pc_y, UNITTYPE_PC; // get char location
 
-    closedialog; // XXX: maybe send closeclientdialog in the future
+    closeclientdialog;
 
     if (getargcount() < 1)
     {
@@ -89,7 +89,7 @@ function	script	cwarp	{
 //     if no npc is given, calls "#<npc> $"
 
 function	script	cshop	{
-    closedialog; // XXX: maybe send closeclientdialog in the future
+    closeclientdialog;
     shop getarg(0, "#" + strnpcinfo(0) + " $");
     //close; => the shop buildin already sends close, and is a terminator itself
 }
@@ -100,7 +100,7 @@ function	script	cshop	{
 //     closes the dialog, then opens storage
 
 function	script	cstorage	{
-    closedialog; // XXX: maybe send closeclientdialog in the future
+    closeclientdialog;
     openstorage;
     close;
 }
@@ -113,7 +113,7 @@ function	script	cstorage	{
 
 function	script	bye	{
     .@emote = getarg(0, -1);
-    closedialog; // XXX: maybe send closeclientdialog in the future
+    closeclientdialog;
 
     if (.@emote >= 0)
         emotion .@emote;

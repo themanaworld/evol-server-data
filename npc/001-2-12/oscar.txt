@@ -133,7 +133,7 @@
 
     } while (@menu != 3);
 
-    closedialog;
+    closeclientdialog;
     goodbye;
     close;
 

@@ -71,7 +71,7 @@ OnTouch:
 
     warp "000-0-0", 26, 28;
 
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

@@ -67,7 +67,7 @@ OnTalk:
     setq General_Narrator, 0;
     warp "000-2-1", 50, 38;
     savepoint "000-2-1", 50, 38;
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

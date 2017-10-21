@@ -166,14 +166,14 @@ L_Sailors:
         l("See you."), L_Quit,
         l("*Imitate a thunder's sound.*"), -;
 
-    closedialog;
+    closeclientdialog;
 
     npctalk3 l("Aaaaaahhhhhh!");
 
     close;
 
 L_Quit:
-    closedialog;
+    closeclientdialog;
 
     npctalk3 l("Give me a kiss before you say goodbye!");
 

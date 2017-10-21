@@ -155,7 +155,7 @@ L_Menu:
         rif(!.@equipped, l("Thank you, I'll take them and put them on.")), -,
         l("Nothing, sorry."), -;
 
-    closedialog;
+    closeclientdialog;
     close;
 
 L_Where:
@@ -251,7 +251,7 @@ L_GotoSleep:
                 l("Fine."),
                 l("We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!");
 
-                closedialog;
+                closeclientdialog;
                 doevent "#name3::OnClick";
                 close;
 

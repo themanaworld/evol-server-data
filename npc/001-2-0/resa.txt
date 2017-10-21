@@ -55,18 +55,18 @@
         {
             case 1:
                 enora_quest;
-                closedialog;
+                closeclientdialog;
                 goodbye;
                 close;
             case 2:
-                closedialog;
+                closeclientdialog;
                 shop "Store#001-2-0";
                 close;
             case 3:
                 explain_craft;
                 break;
             case 4:
-                closedialog;
+                closeclientdialog;
                 goodbye;
                 close;
         }

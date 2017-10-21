@@ -157,7 +157,7 @@
 
         setq ArtisQuests_Enora, 1;
 
-        closedialog;
+        closeclientdialog;
         goodbye;
         close;
     }
@@ -201,7 +201,7 @@
         setq ArtisQuests_Enora, 5;
         enora_reward(60, 100);
 
-        closedialog;
+        closeclientdialog;
         npctalk3 l("Thank you very much!");
         close;
     }
@@ -238,7 +238,7 @@
         setq ArtisQuests_Enora, 7;
         enora_reward(40, 125);
 
-        closedialog;
+        closeclientdialog;
         npctalk3 l("Thank you very much!");
         close;
     }
@@ -281,7 +281,7 @@
                 break;
         }
 
-        closedialog;
+        closeclientdialog;
         npctalk3 l("Thank you very much!");
         close;
     }
@@ -430,7 +430,7 @@
         }
     } while (@menu != 12);
 
-    closedialog;
+    closeclientdialog;
     goodbye;
     close;
 

@@ -15,7 +15,7 @@ function	script	BarberDebug	{
 
 
         // ^ Future code, Doesn't work yet
-        closedialog;
+        closeclientdialog;
         changecharsex;
     }
     function setStyle {
@@ -94,7 +94,7 @@ OnCall:
         end;
     }
     BarberDebug;
-    closedialog;
+    closeclientdialog;
     end;
 
 OnInit:
