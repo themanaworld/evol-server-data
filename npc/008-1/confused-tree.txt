@@ -42,6 +42,17 @@
 
             if (@menu == 2)
             {
+                .@sentence$ = "I am an idiot";
+                mes(l("Please write the following sentence:"));
+                mes("");
+                mesf("    ##B%s.", .@sentence$);
+                input(.@confirm$);
+
+                if (!startswith(strtoupper(.@confirm$), strtoupper(.@sentence$))) {
+                    mes(l("Invalid!"));
+                    close;
+                }
+
                 query_sql("TRUNCATE TABLE tree_quotes;");
                 mes(l("Database erased."));
                 next();
@@ -154,11 +165,11 @@
         if (gettimetick(2) - .last_emote < .emote_rate)
         {
             ++.ignored_times;
-            end;
+            return;
         }
 
         .last_emote = gettimetick(2);
-        emotion(getarg(0, E_SURPRISE));
+        return emotion(getarg(0, E_SURPRISE));
     }
 
     function rp {
@@ -213,6 +224,7 @@
             // only handling a few of them
             switch (ord($@regexmatch$[1]))
             {
+            case 73: face(any(E_WINK, E_ANGEL)); break;
             case 83: face(any(E_SAD, E_CRYING)); break;
             case 85: face(E_SURPRISE); break;
             case 93: face(any(E_HEARTEYE, E_HEART)); break;
@@ -280,7 +292,7 @@
             && is_dev() == false)
         {
             ++.ignored_times;
-            end;
+            return;
         }
 
         .last_reply = gettimetick(2);
@@ -295,6 +307,7 @@
         {
             htput(.seen_ht, strcharinfo(PC_NAME), gettimetick(2));
         }
+        return;
     }
 
     function have_you_seen {
@@ -394,7 +407,7 @@
 
     function monologue_player {
         return sprintf("Your current monologue is at least %d line%s long.",
-                @monologue, rif(@monologue > 1, "s"));
+                @monologue, rif(@monologue != 1, "s"));
     }
 
     function who_player {
@@ -404,18 +417,19 @@
 
     function make_quote_table {
         // Do not modify this
-        return query_sql("CREATE TABLE IF NOT EXISTS `tree_quotes` ("
-                         "  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,"
-                         "  `char_id` INT(11) UNSIGNED NOT NULL DEFAULT '0',"
-                         "  `grabber` INT(11) UNSIGNED NOT NULL DEFAULT '0',"
-                         "  `timestamp` INT(10) UNSIGNED NOT NULL DEFAULT '0',"
-                         "  `message` VARCHAR(150) NOT NULL DEFAULT '',"
-                         "  PRIMARY KEY (`id`),"
-                         "  KEY `char_id` (`char_id`),"
-                         "  KEY `grabber` (`grabber`)"
-                         ") ENGINE=MyISAM;");
+        query_sql("CREATE TABLE IF NOT EXISTS `tree_quotes` ("
+                 "  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,"
+                 "  `char_id` INT(11) UNSIGNED NOT NULL DEFAULT '0',"
+                 "  `grabber` INT(11) UNSIGNED NOT NULL DEFAULT '0',"
+                 "  `timestamp` INT(10) UNSIGNED NOT NULL DEFAULT '0',"
+                 "  `message` VARCHAR(150) NOT NULL DEFAULT '',"
+                 "  PRIMARY KEY (`id`),"
+                 "  KEY `char_id` (`char_id`),"
+                 "  KEY `grabber` (`grabber`)"
+                 ") ENGINE=MyISAM;");
 
         .last_query = gettimetick(2);
+        return;
     }
 
     function grab_quote {
@@ -564,7 +578,7 @@
         .@m$ = replacestr(.@o$, "*", ""); // original lowercase clean
 
 
-        if (.@m$ ~= "(?:^| )tell(?: me)? a(?:n ?other| lame| bad| boring)? joke")
+        if (.@m$ ~= "(?:^| )tell(?: (?:me|him|her|us|them))? a(?:n ?other| lame| bad| boring)? joke")
             reply(.jokes$[rand(.jokes)]);
 
         else if (.@m$ ~= "(?:^| )heal me(?:$|[^a-z])")
@@ -583,7 +597,7 @@
         else if (.@o$ ~= rp("(?:^[*]| )(?:kicks?|shakes?) .*~t"))
             reply(special_drops());
 
-        else if (.@o$ ~= rp("(?:^[*]| )(?:cuts?|nukes?|kills?|chops? down) .*~t"))
+        else if (.@o$ ~= rp("(?:^[*]| )(?:cuts?|nukes?|kills?|chops? down|saws?|hews?|murders?) .*~t"))
             reply(.kill$[rand(.kill)]);
 
         else if (.@o$ ~= rp("(?:^[*]| )pokes? .*~t"))
@@ -595,7 +609,7 @@
         else if (compare(.@m$, " answer ") && .@m$ ~= "(?:life|universe|everything)(?:$|[^a-z])")
             reply(.answer$[rand(.answer)]);
 
-        else if (.@o$ ~= rp("(?:^[*]| )burns? .*~t"))
+        else if (.@o$ ~= rp("(?:^[*]| )(?:burns?|incinerates?|ignites?) .*~t"))
             reply(.burning$[rand(.burning)]);
             // XXX: maybe here send a fire particle effect
 
@@ -614,8 +628,11 @@
         else if (.@m$ ~= rp("(?:^| )hates? .*~t"))
             reply(.hate$[rand(.hate)]);
 
-        else if (.@o$ ~= rp("(?:^[*]| )(?:eats?|shoots?|plucks?|tortures?|slaps?|slaps?|poisons?|breaks?|stabs?|throws?) .*~t"))
+        else if (.@o$ ~= rp("(?:^[*]| )(?:eats?|shoots?|plucks?|tortures?|slaps?|slaps?|poisons?|breaks?|stabs?|throws?|punch(?:es)?) .*~t"))
             reply(.pain$[rand(.pain)]);
+
+        else if (.@o$ ~= rp("(?:^[*]| )(?:climbs?|rides?|mounts?) .*~t"))
+            reply(.climb$[rand(.climb)]);
 
         else if (.@m$ ~= "(?:^| )(?:see y(?:a|ou)|good night|(?:bye)?bye+)(?:$|[^a-z])")
             reply(.bye$[rand(.bye)]);
@@ -632,7 +649,7 @@
         else if (.@m$ ~= "(?:^| )what.* version(?:$|[^a-z])")
             reply("%%B ~n, version " + .version + "."); // XXX: maybe return Hercules version and serverdata commit instead
 
-        else if (.@m$ ~= "(?:^| )(?:(?:8|eight)[ -]?ball|do you|should i)(?:$|[^a-z])")
+        else if (.@m$ ~= "(?:^| )(?:(?:8|eight)[ -]?ball|(?:should|would|will|do|does) (?:i|you|he|she|it|we|they))(?:$|[^a-z])")
             reply(.eightball$[rand(.eightball)]);
 
         else if (.@m$ ~= "(?:^| )roll(?: a| the)? dice(?:$|[^a-z])")
@@ -921,7 +938,7 @@ OnInit:
     face();
 
     // boring stuff below
-    .version = 20; // increase this when you make a change
+    .version = 21; // increase this when you make a change
     .uptime = gettimetick(2);
     .alwaysVisible = true; // the NPC doesn't de-spawn when moving away
     .pid = 1; // regex pattern id

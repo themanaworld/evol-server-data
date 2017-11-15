@@ -1,6 +1,7 @@
 // Evol scripts.
 // Author:
 //    gumi
+//    rein
 // Based on CrazyTree, originally made by:
 //    gumi
 //    pclouds
@@ -190,6 +191,7 @@ function	script	TREE_dictionaries	{
         "mermaid",
         "merman",
         "piano",
+        "prince",
         "princess",
         "pinkie",
         "squirrel",
@@ -311,7 +313,8 @@ function	script	TREE_dictionaries	{
         "What kind of stories do giant sequoia trees tell? Tall tales.",
         "What is the most frustrating thing about being a tree? Having so many limbs and not being able to walk.",
         "What's black, highly dangerous, and lives in a tree? A crow with a machine gun.",
-        "What kind of wood doesn't float? Natalie Wood.";
+        "What kind of wood doesn't float? Natalie Wood.",
+        "Two men passed a sign while looking for work. It was for tree fellers. They said: “what a shame, there are only two of us”.";
     set getvariableofnpc(.jokes, .npc$), getarraysize(getvariableofnpc(.jokes$, .npc$));
 
     setarray getvariableofnpc(.healing$[0], .npc$),
@@ -415,7 +418,10 @@ function	script	TREE_dictionaries	{
         "*is glowing.*",
         "*is flaming.*",
         "Ehemm. Where are firefighters? I need them now!",
-        "*is so hot!.*";
+        "*is so hot!.*",
+        "*slowly catches fire.*",
+        "*trembles with trepidation.*",
+        "*is immune to fire.*";
     set getvariableofnpc(.burning, .npc$), getarraysize(getvariableofnpc(.burning$, .npc$));
 
     setarray getvariableofnpc(.kill$[0], .npc$),
@@ -429,7 +435,7 @@ function	script	TREE_dictionaries	{
     setarray getvariableofnpc(.love$[0], .npc$),
         "♪♪ and IIII.. will alwayyyys loooovvve youuuuu. ♪♪ %%]",
         "♪♪ nothing's gonna change my love for you, you oughta know by now how much I love you.. ♪ %%]",
-        "♪ ..and then I go and spoil it all, by saying something stupid like: \"I love you.\" ♪",
+        "♪ ..and then I go and spoil it all, by saying something stupid like: “I love you.” ♪",
         "♪ ..won't you find a place for me? somewhere in your heart... ♪♪",
         "Thank you.",
         "♪♪ ..I can't love another when my heart is somewhere far away.. ♪",
@@ -463,6 +469,8 @@ function	script	TREE_dictionaries	{
         "*groans.*",
         "*cries.*",
         "*faints.*",
+        "*shrieks.*",
+        "*hides behind itself.*",
         "%%k",
         "Why, what did I do to you? %%i";
     set getvariableofnpc(.pain, .npc$), getarraysize(getvariableofnpc(.pain$, .npc$));
@@ -539,6 +547,14 @@ function	script	TREE_dictionaries	{
     setarray getvariableofnpc(.shut_up$[0], .npc$),
         "*goes hide in a corner %%S.*";
     set getvariableofnpc(.shut_up, .npc$), getarraysize(getvariableofnpc(.shut_up$, .npc$));
+
+    setarray getvariableofnpc(.climb$[0], .npc$),
+        "*sways violently.*",
+        "*bends all the way to the ground.*",
+        "*creaks and bends.*",
+        "*welcomes those who come to play %%I.*",
+        "*beams with pride.*";
+    set getvariableofnpc(.climb, .npc$), getarraysize(getvariableofnpc(.climb$, .npc$));
 
     return;
 }
