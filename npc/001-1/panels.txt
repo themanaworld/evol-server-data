@@ -13,7 +13,7 @@
     mesq l("You've reached the highest natural place of Artis, enjoy the view.");
     next;
 
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:
@@ -30,7 +30,7 @@ OnInit:
     mesq l("The other part of this sign has been crushed by a rock.");
     next;
 
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:
@@ -47,7 +47,7 @@ OnInit:
     narrator S_LAST_NEXT,
         l("Somebody tried to stroke the word \"fish\" and tried to replace it with \"sharkes\".");
 
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

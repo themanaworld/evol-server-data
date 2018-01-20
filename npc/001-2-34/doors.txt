@@ -24,6 +24,6 @@ OnTouch:
         warp "001-2-36", 36, 30;
     }
 
-    closedialog;
+    closeclientdialog;
     close;
 }

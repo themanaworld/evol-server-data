@@ -205,7 +205,7 @@ L_Control:
     next;
 
 L_Kick:
-    closedialog;
+    closeclientdialog;
 
     npctalk3 l("No cookie for you!");
     warp "001-1", 39, 41;
@@ -245,7 +245,7 @@ L_LostCookie:
     npctalk3 l("You receive a @@!", getitemlink(DeliciousCookie));
 
 L_Bye:
-    closedialog;
+    closeclientdialog;
 
     npctalk3 l("See you later!");
 

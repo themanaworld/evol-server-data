@@ -248,11 +248,11 @@ L_GoBackArtis:
                 warp "001-2-24", 22, 27;
             }
 
-            closedialog;
+            closeclientdialog;
             close;
 
         case 2:
-            closedialog;
+            closeclientdialog;
             npctalk3 l("This is Drasil Island, I named it after an ancient mythical tree.");
             close;
 
@@ -260,7 +260,7 @@ L_GoBackArtis:
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Ok I stay here with my paperwork if you need my help.");
 
-            closedialog;
+            closeclientdialog;
             close;
     }
 

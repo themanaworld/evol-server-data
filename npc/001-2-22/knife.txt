@@ -22,7 +22,7 @@
         l("Yes."), L_Give,
         l("No."), -;
 
-    closedialog;
+    closeclientdialog;
     close;
 
 L_Give:

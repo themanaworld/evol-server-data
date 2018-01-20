@@ -141,7 +141,7 @@
                 enora_quest;
                 break;
             case 2:
-                closedialog;
+                closeclientdialog;
                 shop "Store#Potion001-1";
                 close;
             case 3:
@@ -159,7 +159,7 @@
         }
     } while (@menu != 6);
 
-    closedialog;
+    closeclientdialog;
     goodbye;
     close;
 

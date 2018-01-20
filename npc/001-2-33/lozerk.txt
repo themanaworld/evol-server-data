@@ -176,7 +176,7 @@
         }
     } while(@menu != 7);
 
-    closedialog;
+    closeclientdialog;
     goodbye;
     close;
 

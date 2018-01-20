@@ -22,7 +22,7 @@
         l("Some food."), L_Food,
         l("Nothing, just hanging around."), -;
 
-    closedialog;
+    closeclientdialog;
     npctalk3 l("Ok, see you then!");
     goto L_Quit;
 

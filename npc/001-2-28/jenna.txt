@@ -25,7 +25,7 @@
 
     speech S_LAST_NEXT, l("Do you want a drink?");
 
-    closedialog;
+    closeclientdialog;
     shop "#Invisible001-2-28";
     close;
 

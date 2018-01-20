@@ -159,7 +159,7 @@
         }
     } while (@menu != 5);
 
-    closedialog;
+    closeclientdialog;
     goodbye;
     close;
 

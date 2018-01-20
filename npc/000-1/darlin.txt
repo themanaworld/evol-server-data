@@ -139,7 +139,7 @@ L_DangerAround:
     goto L_Quit;
 
 L_Quit:
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

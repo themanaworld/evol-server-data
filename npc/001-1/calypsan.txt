@@ -36,7 +36,7 @@
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("For what kind of tissue?");
         .@tissue_type = select(l("Cotton"), l("Cashmere"));
 
-        closedialog;
+        closeclientdialog;
         switch (.@tissue_type)
         {
             case 1:
@@ -93,7 +93,7 @@
         }
     } while (@menu != 5);
 
-    closedialog;
+    closeclientdialog;
     goodbye;
     close;
 

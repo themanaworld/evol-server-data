@@ -14,7 +14,7 @@
         l("Bye.")))
     {
         case 1:
-            closedialog;
+            closeclientdialog;
             shop "Store#Weapon001-2-27";
             close;
         case 2:

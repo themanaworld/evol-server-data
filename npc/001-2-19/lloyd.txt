@@ -167,7 +167,7 @@
     {
         first_visit;
 
-        closedialog;
+        closeclientdialog;
         goodbye;
         close;
     }
@@ -195,7 +195,7 @@
                 break;
             case 2:
                 openstorage;
-                closedialog;
+                closeclientdialog;
                 close;
                 break;
             case 3:
@@ -224,7 +224,7 @@
         }
     } while (@menu != 6);
 
-    closedialog;
+    closeclientdialog;
     goodbye;
     close;
 

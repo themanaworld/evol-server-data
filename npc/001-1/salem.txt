@@ -121,7 +121,7 @@ L_SalemMenuShop:
             goto L_AboutPious;
             break;
         case 2:
-            closedialog;
+            closeclientdialog;
             shop "Store#General001-1";
             close;
         case 3:
@@ -140,7 +140,7 @@ L_SalemMenuShop:
             break;
     }
 
-    closedialog;
+    closeclientdialog;
     goodbye;
     close;
 
@@ -183,7 +183,7 @@ L_AboutPious:
         case 3:
             BuyPiou @ArtisQuests_PiouPrice;
     }
-    closedialog;
+    closeclientdialog;
     goodbye;
     close;
 

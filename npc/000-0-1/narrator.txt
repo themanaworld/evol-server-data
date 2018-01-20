@@ -28,7 +28,7 @@
     setq ShipQuests_Nard, 6;
     savepoint "001-2-22", 50, 38;
     warp "001-2-22", 50, 38;
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

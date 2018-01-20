@@ -104,6 +104,6 @@ function	script	selectd	{
         case -1:
         case 255: return -1;
         default: @menu -= 1; return @menu; // FIXME: here I would have done `return --@menu;` but hercules prevents this
-        case 1: callfunc "QuestDebug" + .@questID; closedialog; end;
+        case 1: callfunc "QuestDebug" + .@questID; closeclientdialog; end;
     }
 }

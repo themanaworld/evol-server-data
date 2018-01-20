@@ -28,7 +28,7 @@
         case 2:
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("No problem, see you next time.");
-        closedialog;
+        closeclientdialog;
         close;
     }
 

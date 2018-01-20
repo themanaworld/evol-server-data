@@ -9,7 +9,7 @@
         l("Sorry buddy, you can't pass by this way, we're moving some furniture."),
         l("Come back later!");
 
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

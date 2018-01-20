@@ -30,14 +30,14 @@
                        l("Nothing.")))
         {
             case 1:
-                closedialog;
+                closeclientdialog;
                 npctalk3 l("You can find novels and poems on this floor.");
                 break;
             case 2:
                 esperia_city();
                 break;
             case 3:
-                closedialog;
+                closeclientdialog;
                 npctalk3 l("Good day to you!");
         }
         return;

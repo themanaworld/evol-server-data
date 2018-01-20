@@ -38,7 +38,7 @@
         if (select(l("Yes, I do."), l("No, none.")) == 1) {
             return;
         }
-        closedialog;
+        closeclientdialog;
     }
 
     function poisonJulia {
@@ -85,7 +85,7 @@
 
         if (@menu == 1)
         {
-            closedialog;
+            closeclientdialog;
             end;
         }
 
@@ -263,7 +263,7 @@
                 case 7: whereAmI; break;
                 case 8: whatHappened; break;
                 case 9: readRules; break;
-                case 10: closedialog; end;
+                case 10: closeclientdialog; end;
             }
         } while (1);
     }

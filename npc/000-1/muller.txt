@@ -122,7 +122,7 @@ L_TaskDone:
     goodbye;
 
 L_Quit:
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:

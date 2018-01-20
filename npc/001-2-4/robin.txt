@@ -15,11 +15,11 @@
                        l("Nothing.")))
         {
             case 1:
-                closedialog;
+                closeclientdialog;
                 npctalk3 l("Mostly manuals and tutorials but you won't find out until you open one!");
                 break;
             case 2:
-                closedialog;
+                closeclientdialog;
                 npctalk3 l("Good day to you!");
         }
         return;

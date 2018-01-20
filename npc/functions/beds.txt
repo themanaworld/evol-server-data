@@ -25,6 +25,6 @@ function	script	bedClic	{
     {
         savepointparticle getarg(0, ""), getarg(1, -1), getarg(2, -1), getarg(3, NO_INN);
     }
-    closedialog;
+    closeclientdialog;
     close;
 }

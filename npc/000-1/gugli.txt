@@ -232,7 +232,7 @@ L_AllComplete:
     goto L_Menu;
 
 L_Quit:
-    closedialog;
+    closeclientdialog;
     close;
 
 OnInit:
