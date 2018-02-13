@@ -27,7 +27,22 @@ test,10,10,0	script	npc1	NPC_TEST1,3,3,{
     }
 
 L_Start:
-    switch (select("show area", "map", "pc", "change npc direction", "quest test", "cart", "items", "chat", "wall", "craft", "hashtable", "instance", "mercenary", "npc"))
+    switch (select(
+            "show area",
+            "map",
+            "pc",
+            "change npc direction",
+            "quest test",
+            "cart",
+            "items",
+            "chat",
+            "wall",
+            "craft",
+            "hashtable",
+            "instance",
+            "mercenary",
+            "npc",
+            "clan"))
     {
         case 1:
             areatest;
@@ -622,6 +637,38 @@ L_Start:
                         setunitdata(.@npcId, UDT_HEADTOP, 0);
                         break;
                     case 5:
+                        goto L_Start;
+                        break;
+                }
+            }
+            break;
+        case 15:
+            while(1)
+            {
+                switch (select(
+                        "join sword clan",
+                        "join arc wand clan",
+                        "join golden mace clan",
+                        "join crossbox clan",
+                        "leave clan",
+                        "back"))
+                {
+                    case 1:
+                        mes(str(clan_join(1)));
+                        break;
+                    case 2:
+                        mes(str(clan_join(2)));
+                        break;
+                    case 3:
+                        mes(str(clan_join(3)));
+                        break;
+                    case 4:
+                        mes(str(clan_join(4)));
+                        break;
+                    case 5:
+                        mes(str(clan_leave()));
+                        break;
+                    case 6:
                         goto L_Start;
                         break;
                 }
