@@ -26,7 +26,7 @@ OnCall:
     {
         if (.@request$ ~= .aliases$[.@i])
         {
-            sscanf .aliases$[.@i + 1], "%s %d %d", .@map$, .@x, .@y;
+            sscanf(.aliases$[.@i + 1], "%s %d %d", .@map$, .@x, .@y);
             break;
         }
     }
@@ -57,7 +57,8 @@ OnCall:
         ++.@e;
     }
 
-    cwarp .@map$, .@x, .@y; // XXX: maybe here use a slide_or_warp function
+    slide_or_warp(.@map$, .@x, .@y);
+    end;
 
 OnInit:
     setarray .aliases$[0],

@@ -6,28 +6,12 @@
 
 001-1,52,44,0	script	Xilaxa#001-1	NPC_UKAR_MALE_LEGION_ARTIS,{
 
-    function face_to_PC {
-        getmapxy(.@map$, .@cx, .@cy, 0);
-        @Devis_old_dir = .dir;
-        npc_turntoxy(.@cx, .@cy);
-
-        return;
-    }
-
-    function local_close {
-        if (@Devis_old_dir != .dir)
-        {
-            .dir = @Devis_old_dir;
-        }
-        npc_resumemove;
-
-        close;
-    }
-
-    npc_pausemove;
-    face_to_PC;
-    npctalkonce goodbye_msg();
-    local_close;
+    npc_pausemove();
+    getmapxy(.@map$, .@cx, .@cy, 0);
+    npc_turntoxy(.@cx, .@cy);
+    npctalkonce("Hello.");
+    npc_resumemove();
+    close;
 
 OnTimer1000:
     dographmovestep;

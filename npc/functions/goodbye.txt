@@ -1,19 +1,13 @@
 // Evol functions.
 // Authors:
-//    gumi
 //    Reid
-// Description:
-//    script terminator functions
 
 
+// goodbye
+//     displays a canned message and quits
 
-// goodbye_msg
-//    Tell a random goodbye sentence.
-// Variables:
-//    .@rand = Random number between the number of "goodbye" choice.
-
-function	script	goodbye_msg	{
-    setarray .byemsg$[0],
+function	script	goodbye	{
+    setarray(.@byemsg$[0],
         l("See you!"),
         l("See you later!"),
         l("See you soon!"),
@@ -26,127 +20,9 @@ function	script	goodbye_msg	{
         l("Talk to you later!"),
         l("Have a good day!"),
         l("Cheers!"),
-        l("Take care!");
+        l("Take care!"));
 
-    return .byemsg$[rand(getarraysize(.byemsg$))];
-}
-
-
-
-// cwarp
-//     Closes the dialog, then warps the player.
-//     You almost always want to use this instead of `warp`.
-// usage:
-//     cwarp;
-//     cwarp x, y;
-//     cwarp map, x, y;
-
-function	script	cwarp	{
-    .@map$ = getarg(0, "");
-    .@x = getarg(1, 0);
-    .@y = getarg(2, 0);
-
-    if (getargcount() > 0 && getargcount() < 3)
-    {
-        .@npc$ = strnpcinfo(0);
-        .@map$ = getvariableofnpc(.map$, .@npc$);
-        .@x = getarg(0);
-        .@y = getarg(1);
-    }
-
-    getmapxy .@pc_map$, .@pc_x, .@pc_y, UNITTYPE_PC; // get char location
-
-    closeclientdialog;
-
-    if (getargcount() < 1)
-    {
-        warp .@pc_map$, .@pc_x, .@pc_y; // no arguments, just refresh
-        close;
-    }
-
-    if (.@map$ == .@pc_map$)
-    {
-        if (.@pc_x == .@x && .@pc_y == .@y)
-        {
-            close; // same location, don't move
-        }
-
-        else
-        {
-            slide .@x, .@y; // same map, slide instead of full warp
-            close;
-        }
-    }
-
-    warp .@map$, .@x, .@y; // different map, warp to given location
+    closeclientdialog();
+    npctalkonce(.@byemsg$[rand(getarraysize(.@byemsg$))]);
     close;
-}
-
-
-
-// cshop
-//     closes the dialog, then opens a shop
-//     if no npc is given, calls "#<npc> $"
-
-function	script	cshop	{
-    closeclientdialog;
-    shop getarg(0, "#" + strnpcinfo(0) + " $");
-    //close; => the shop buildin already sends close, and is a terminator itself
-}
-
-
-
-// cstorage
-//     closes the dialog, then opens storage
-
-function	script	cstorage	{
-    closeclientdialog;
-    openstorage;
-    close;
-}
-
-
-
-// bye
-//     closes the dialog without waiting for the player to press close
-//     can also display an emote
-
-function	script	bye	{
-    .@emote = getarg(0, -1);
-    closeclientdialog;
-
-    if (.@emote >= 0)
-        emotion .@emote;
-
-    close;
-}
-
-
-
-// goodbye
-//     same as bye, but also displays a canned message
-//     can also display an emote
-
-function	script	goodbye	{
-    npctalkonce(goodbye_msg());
-    bye getarg(0, -1);
-}
-
-
-
-// goodbye2
-//     Waits for the player to press close, displays a canned message,
-//     ends execution.
-//     Can also display an emote
-
-function	script	goodbye2	{
-    .@emote = getarg(0, -1);
-
-    close2;
-    npctalkonce(goodbye_msg());
-
-    if (.@emote >= 0)
-        emotion .@emote;
-
-    end;
 }

@@ -46,12 +46,14 @@ OnCall:
 OnUseBook:
     if (openbook())
         read_book;
-    bye;
+    closeclientdialog();
+    close;
 
 OnShelfUse:
     if (openbookshelf())
         read_book;
-    bye;
+    closeclientdialog();
+    close;
 
 OnInit:
     .book_name$ = "The Book of Laws";

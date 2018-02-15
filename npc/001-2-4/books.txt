@@ -87,12 +87,14 @@ OnInit:
 OnShelfUse:
     if (openbookshelf())
         read_book;
-    bye;
+    closeclientdialog();
+    close;
 
 OnUse:
     if (openbook())
         read_book;
-    bye;
+    closeclientdialog();
+    close;
 
 OnInit:
     .book_name$ = getitemname(FishingGuideVolI);

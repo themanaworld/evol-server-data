@@ -194,8 +194,8 @@
                 enora_quest;
                 break;
             case 2:
-                openstorage;
-                closeclientdialog;
+                closeclientdialog();
+                openstorage();
                 close;
                 break;
             case 3:

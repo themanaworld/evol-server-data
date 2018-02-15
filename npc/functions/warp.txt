@@ -1,0 +1,47 @@
+// Evol functions.
+// Authors:
+//    gumi
+
+
+// slide_or_warp
+//     Slides the player instead of warping, when possible.
+// usage:
+//     slide_or_warp({<aid>});
+//     slide_or_warp(<x>, <y>{, <aid>});
+//     slide_or_warp("<map>", <x>, <y>{, <aid>});
+
+function	script	slide_or_warp	{
+    if (getargcount() <= 1) {
+        .@aid = getarg(1, 0);
+    } else {
+        if (getargcount() >= 3 && getdatatype(getarg(0)) & DATATYPE_STR) {
+            .@map$ = getarg(0);
+            .@x = getarg(1);
+            .@y = getarg(2);
+            .@aid = getarg(3, 0);
+        } else {
+            .@x = getarg(0);
+            .@y = getarg(1);
+            .@aid = getarg(2, 0);
+        }
+    }
+
+    if (!isloggedin(.@aid)) {
+        if (.@aid = playerattached() == 0) {
+            debugmes("slide_or_warp: no player attached!");
+            return false;
+        }
+    }
+
+    getmapxy(.@pc_map$, .@pc_x, .@pc_y, UNITTYPE_PC, .@aid); // get char location
+
+    if (getargcount() < 1) {
+        warpchar(.@pc_map$, .@pc_x, .@pc_y, .@aid); // no arguments, just refresh
+    } else if (.@map$ == .@pc_map$ && (.@pc_x != .@x || .@pc_y != .@y)) {
+        slide(.@x, .@y); // same map, slide instead of full warp
+        // FIXME: make slide take GID as optional arg
+    } else {
+        warpchar(.@map$, .@x, .@y, .@aid); // different map, warp to given location
+    }
+    return true;
+}

@@ -20,11 +20,9 @@
         l("..."),
         l("Do you want to enter in sewer?"));
 
-    if (askyesno() == 1) {
-        cwarp("001-3-0", 152, 56);
-    }
-
-    bye;
+    closeclientdialog();
+    if (askyesno() == 1) slide_or_warp("001-3-0", 152, 56);
+    close;
 
 OnInit:
     .sex = G_OTHER;
@@ -43,11 +41,9 @@ OnInit:
         l("..."),
         l("Do you want to enter in sewer?"));
 
-    if (askyesno() == 1) {
-        cwarp("001-3-0", 196, 36);
-    }
-
-    bye;
+    closeclientdialog();
+    if (askyesno() == 1) slide_or_warp("001-3-0", 196, 36);
+    close;
 
 OnInit:
     .sex = G_OTHER;
