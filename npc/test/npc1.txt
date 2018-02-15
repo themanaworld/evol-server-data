@@ -535,7 +535,7 @@ L_Start:
                 switch (select("create", "warp", "info", "warp back", "delete", "back"))
                 {
                     case 1:
-                        if (.instid >= 0)
+                        if (.instid >= 0 && isinstance(.instid))
                         {
                             mes "Error: test instance already created";
                             break;
