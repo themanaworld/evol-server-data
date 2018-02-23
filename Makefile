@@ -1,3 +1,5 @@
+.PHONY: new server-update server-updatebuild maps build buildasan config updateconfig initdb updatedb givegm updates
+
 new: build config initdb
 
 server-update: updateconfig updatedb
