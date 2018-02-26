@@ -30,7 +30,7 @@ test,10,5,0	script	test1	NPC_HAT_BOX,{
     if (.var != 4)
         mes "Error: testing test2 npc variables.";
     test1function;
-    mes "Formatting testing...";
+    mes "Formatting testing for sex: " + str(Sex);
     if (l("test @@", "") != "test ")
         mes "Error: format string 'l(\"test @@\", \"\")': " + l("test @@", "");
     if (l("test @@", "1") != "test 1")
@@ -43,6 +43,26 @@ test,10,5,0	script	test1	NPC_HAT_BOX,{
         mes "Error: format string 'l(\"@@ @@ @@\", \"this\", \"is\", \"test\") != \"this is test\"': " + l("@@ @@ @@", "this", "is", "test");
     if (l("data @@ @@ @@ data", "this", "is", "test") != "data this is test data")
         mes "Error: format string 'l(\"data @@ @@ @@ data\", \"this\", \"is\", \"test\")': " + l("data @@ @@ @@ data", "this", "is", "test");
+    if (l("test") != "test")
+        mes "Error: l(\"test\"): " + l("test");
+    if (Sex == 1)
+    {
+        if (lg("test") != "test#1")
+            mes "Error: lg(\"test\"): " + lg("test");
+        if (lg("test1", "test2") != "test2#1")
+            mes "Error: lg(\"test1\", \"test2\"): " + lg("test1", "test2");
+        if (lg("test1 @@", "test2 @@", "line") != "test2 line#1")
+            mes "Error: lg(\"test1 @@\", \"test2 @@\", \"line\"): " + lg("test1 @@", "test2 @@", "line");
+    }
+    else if (Sex == 0)
+    {
+        if (lg("test") != "test#0")
+            mes "Error: lg(\"test\"): " + lg("test");
+        if (lg("test1", "test2") != "test1#0")
+            mes "Error: lg(\"test1\", \"test2\"): " + lg("test1", "test2");
+        if (lg("test1 @@", "test2 @@", "line") != "test1 line#0")
+            mes "Error: lg(\"test1 @@\", \"test2 @@\", \"line\"): " + lg("test1 @@", "test2 @@", "line");
+    }
     mes "Quest vars testing...";
     .@time = 1000;
     setq Test_testing1, 1, 2, 3, .@time;
