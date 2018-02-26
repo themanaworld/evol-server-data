@@ -303,7 +303,7 @@
     }
 
     function seen_me {
-        if (playerattached() > 0)
+        if (playerattached() > 0 && htexists(.seen_ht))
         {
             htput(.seen_ht, strcharinfo(PC_NAME), gettimetick(2));
         }
