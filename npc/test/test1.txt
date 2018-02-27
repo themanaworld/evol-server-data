@@ -2,7 +2,7 @@
 // Author:
 //    4144
 // Description:
-//    script tests 
+//    script tests
 
 function	script	test1function	{
     .var = .walkmask;
@@ -19,75 +19,90 @@ function	script	test1function	{
 }
 
 test,10,5,0	script	test1	NPC_HAT_BOX,{
-    mes "Npc vars testing...";
+
+    function assert {
+        if (getarg(0)) {
+            .stats[1]++;
+            // comment out the next line for less verbosity
+            mesf("Success: %s.", getarg(1));
+        } else {
+            mesf("##BError##b: %s.", getarg(1));
+        }
+        return .stats[0]++;
+    }
+
+    setarray(.stats[0], 0, 0); // make sure we have a clean state
+
+    mes("##2Testing NPC variables...##0");
     .var = .walkmask;
-    if (.var != 3)
-        mes "Error: testing test1 npc variables.";
+    assert(.var == 3, "test1 npc variales");
     .var = getvariableofnpc(.walkmask, "test1");
-    if (.var != 3)
-        mes "Error: testing test1 npc variables from function.";
+    assert(.var == 3, "test1 npc variables from function");
     .var = getvariableofnpc(.walkmask, "test2");
-    if (.var != 4)
-        mes "Error: testing test2 npc variables.";
-    test1function;
-    mes "Formatting testing for sex: " + str(Sex);
-    if (l("test @@", "") != "test ")
-        mes "Error: format string 'l(\"test @@\", \"\")': " + l("test @@", "");
-    if (l("test @@", "1") != "test 1")
-        mes "Error: format string 'l(\"test @@\", \"1\")': " + l("test @@", "1");
-    if (l("@@", "") != "")
-        mes "Error: format string 'l(\"@@\", \"\")': " + l("@@", "");
-    if (l("@@") != "@@")
-        mes "Error: format string 'l(\"@@\")': " + l("@@");
-    if (l("@@ @@ @@", "this", "is", "test") != "this is test")
-        mes "Error: format string 'l(\"@@ @@ @@\", \"this\", \"is\", \"test\") != \"this is test\"': " + l("@@ @@ @@", "this", "is", "test");
-    if (l("data @@ @@ @@ data", "this", "is", "test") != "data this is test data")
-        mes "Error: format string 'l(\"data @@ @@ @@ data\", \"this\", \"is\", \"test\")': " + l("data @@ @@ @@ data", "this", "is", "test");
-    if (l("test") != "test")
-        mes "Error: l(\"test\"): " + l("test");
+    assert(.var == 4, "test2 npc variables");
+    test1function();
+
+    mes("##2Testing old translation system without gender...##0");
+    assert(l("test @@", "") == "test ", "\"test @@\", \"\"");
+    assert(l("test @@", "foo") == "test foo", "\"test @@\", \"foo\"");
+    assert(l("@@", "") == "", "\"@@\", \"\"");
+    assert(l("@@") == "@@", "\"@@\"");
+    assert(l("@@ @@ @@", "this", "is", "test") == "this is test", "\"@@ @@ @@\", \"this\", \"is\", \"test\"");
+    assert(l("data @@ @@ @@ data", "this", "is", "test") == "data this is test data", "\"data @@ @@ @@ data\", \"this\", \"is\", \"test\"");
+
+    mesf("##2Testing old translation system as %s gender...##0", g("female", "male"));
     if (Sex == 1)
     {
-        if (lg("test") != "test#1")
-            mes "Error: lg(\"test\"): " + lg("test");
-        if (lg("test1", "test2") != "test2#1")
-            mes "Error: lg(\"test1\", \"test2\"): " + lg("test1", "test2");
-        if (lg("test1 @@", "test2 @@", "line") != "test2 line#1")
-            mes "Error: lg(\"test1 @@\", \"test2 @@\", \"line\"): " + lg("test1 @@", "test2 @@", "line");
+        assert(lg("test1 @@", "test2 @@", "line") == "test2 line#1", "\"test1 @@\", \"test2 @@\", \"line\"");
     }
     else if (Sex == 0)
     {
-        if (lg("test") != "test#0")
-            mes "Error: lg(\"test\"): " + lg("test");
-        if (lg("test1", "test2") != "test1#0")
-            mes "Error: lg(\"test1\", \"test2\"): " + lg("test1", "test2");
-        if (lg("test1 @@", "test2 @@", "line") != "test1 line#0")
-            mes "Error: lg(\"test1 @@\", \"test2 @@\", \"line\"): " + lg("test1 @@", "test2 @@", "line");
+        assert(lg("test1 @@", "test2 @@", "line") == "test1 line#0", "\"test1 @@\", \"test2 @@\", \"line\"");
     }
-    mes "Quest vars testing...";
+
+    mes("##2Testing new translation system without gender...##0");
+    assert(l("") == "", "\"\"");
+    assert(l("test") == "test", "\"test\"");
+    assert(l("test %s", "") == "test ", "\"test %s\", \"\"");
+    assert(l("test %s", "foo") == "test foo", "\"test %s\", \"foo\"");
+    assert(l("%s", "") == "", "\"%s\", \"\"");
+    assert(l("%s") == "%s", "\"%s\"");
+    assert(l("%s %s %s", "this", "is", "test") == "this is test", "\"%s %s %s\", \"this\", \"is\", \"test\"");
+    assert(l("%s %d %s", "foo", 69, "bar") == "foo 69 bar", "\"%s %d %s\", \"foo\", 69, \"bar\"");
+    assert(l("data %s %s %s data", "this", "is", "test") == "data this is test data", "\"data %s %s %s data\", \"this\", \"is\", \"test\"");
+
+    mesf("##2Testing new translation system as %s...##0", g("female", "male"));
+    if (Sex == 1)
+    {
+        assert(lg("test") == "test#1", "\"test\"");
+        assert(lg("test1", "test2") == "test2#1", "\"test1\", \"test2\"");
+        assert(lg("test1 %s", "test2 %s", "line") == "test2 line#1", "\"test1 %s\", \"test2 %s\", \"line\"");
+    }
+    else if (Sex == 0)
+    {
+        assert(lg("test") == "test#0", "\"test\"");
+        assert(lg("test1", "test2") == "test1#0", "\"test1\", \"test2\"");
+        assert(lg("test1 %s", "test2 %s", "line") == "test1 line#0", "\"test1 %s\", \"test2 %s\", \"line\"");
+    }
+
+    mes("##2Testing quest variables...##0");
     .@time = 1000;
-    setq Test_testing1, 1, 2, 3, .@time;
-    if (getq(Test_testing1) != 1)
-        mes "Error: quest variable 1 error. Must be 1, but get " + str(getq(Test_testing1));
-    if (getq2(Test_testing1) != 2)
-        mes "Error: quest variable 2 error. Must be 2, but get " + str(getq(Test_testing1));
-    if (getq3(Test_testing1) != 3)
-        mes "Error: quest variable 3 error. Must be 3, but get " + str(getq(Test_testing1));
-    if (getqtime(Test_testing1) != .@time)
-        mes "Error: quest variable 3 error. Must be 3, but get " + str(getqtime(Test_testing1));
-    next;
+    setq(Test_testing1, 1, 2, 3, .@time);
+    assert(getq(Test_testing1) == 1, "getq1 = 1");
+    assert(getq2(Test_testing1) == 2, "getq2 = 2");
+    assert(getq3(Test_testing1) == 3, "getq3 = 3");
+    assert(getqtime(Test_testing1) == .@time, "getqtime = 1000");
+    next();
     .@time = 2000;
-    setq Test_testing1, 2, 3, 4, .@time;
-    if (getq(Test_testing1) != 2)
-        mes "Error: quest variable 1 error. Must be 2, but get " + str(getq(Test_testing1));
-    if (getq2(Test_testing1) != 3)
-        mes "Error: quest variable 2 error. Must be 3, but get " + str(getq(Test_testing1));
-    if (getq3(Test_testing1) != 4)
-        mes "Error: quest variable 3 error. Must be 4, but get " + str(getq(Test_testing1));
-    if (getqtime(Test_testing1) != .@time)
-        mes "Error: quest variable 3 error. Must be 3, but get " + str(getqtime(Test_testing1));
-    next;
-    setq Test_testing1, 0;
-    mes "Tests complete.";
+    setq(Test_testing1, 2, 3, 4, .@time);
+    assert(getq(Test_testing1) == 2, "getq1 = 2");
+    assert(getq2(Test_testing1) == 3, "getq2 = 3");
+    assert(getq3(Test_testing1) == 4, "getq3 = 4");
+    assert(getqtime(Test_testing1) == .@time, "getqtime = 2000");
+    next();
+    setq(Test_testing1, 0);
+
+    mesf("##BTests complete. [%02d/%02d]", .stats[1], .stats[0]);
     close;
 
 OnInit:
