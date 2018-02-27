@@ -31,78 +31,128 @@ test,10,5,0	script	test1	NPC_HAT_BOX,{
         return .stats[0]++;
     }
 
-    setarray(.stats[0], 0, 0); // make sure we have a clean state
-
-    mes("##2Testing NPC variables...##0");
-    .var = .walkmask;
-    assert(.var == 3, "test1 npc variales");
-    .var = getvariableofnpc(.walkmask, "test1");
-    assert(.var == 3, "test1 npc variables from function");
-    .var = getvariableofnpc(.walkmask, "test2");
-    assert(.var == 4, "test2 npc variables");
-    test1function();
-
-    mes("##2Testing old translation system without gender...##0");
-    assert(l("test @@", "") == "test ", "\"test @@\", \"\"");
-    assert(l("test @@", "foo") == "test foo", "\"test @@\", \"foo\"");
-    assert(l("@@", "") == "", "\"@@\", \"\"");
-    assert(l("@@") == "@@", "\"@@\"");
-    assert(l("@@ @@ @@", "this", "is", "test") == "this is test", "\"@@ @@ @@\", \"this\", \"is\", \"test\"");
-    assert(l("data @@ @@ @@ data", "this", "is", "test") == "data this is test data", "\"data @@ @@ @@ data\", \"this\", \"is\", \"test\"");
-
-    mesf("##2Testing old translation system as %s gender...##0", g("female", "male"));
-    if (Sex == 1)
-    {
-        assert(lg("test1 @@", "test2 @@", "line") == "test2 line#1", "\"test1 @@\", \"test2 @@\", \"line\"");
-    }
-    else if (Sex == 0)
-    {
-        assert(lg("test1 @@", "test2 @@", "line") == "test1 line#0", "\"test1 @@\", \"test2 @@\", \"line\"");
+    function test_npc_vars {
+        mes("##2Testing NPC variables...##0");
+        .var = .walkmask;
+        assert(.var == 3, "test1 npc variales");
+        .var = getvariableofnpc(.walkmask, "test1");
+        assert(.var == 3, "test1 npc variables from function");
+        .var = getvariableofnpc(.walkmask, "test2");
+        assert(.var == 4, "test2 npc variables");
+        test1function();
+        next();
     }
 
-    mes("##2Testing new translation system without gender...##0");
-    assert(l("") == "", "\"\"");
-    assert(l("test") == "test", "\"test\"");
-    assert(l("test %s", "") == "test ", "\"test %s\", \"\"");
-    assert(l("test %s", "foo") == "test foo", "\"test %s\", \"foo\"");
-    assert(l("%s", "") == "", "\"%s\", \"\"");
-    assert(l("%s") == "%s", "\"%s\"");
-    assert(l("%s %s %s", "this", "is", "test") == "this is test", "\"%s %s %s\", \"this\", \"is\", \"test\"");
-    assert(l("%s %d %s", "foo", 69, "bar") == "foo 69 bar", "\"%s %d %s\", \"foo\", 69, \"bar\"");
-    assert(l("data %s %s %s data", "this", "is", "test") == "data this is test data", "\"data %s %s %s data\", \"this\", \"is\", \"test\"");
-
-    mesf("##2Testing new translation system as %s...##0", g("female", "male"));
-    if (Sex == 1)
-    {
-        assert(lg("test") == "test#1", "\"test\"");
-        assert(lg("test1", "test2") == "test2#1", "\"test1\", \"test2\"");
-        assert(lg("test1 %s", "test2 %s", "line") == "test2 line#1", "\"test1 %s\", \"test2 %s\", \"line\"");
-    }
-    else if (Sex == 0)
-    {
-        assert(lg("test") == "test#0", "\"test\"");
-        assert(lg("test1", "test2") == "test1#0", "\"test1\", \"test2\"");
-        assert(lg("test1 %s", "test2 %s", "line") == "test1 line#0", "\"test1 %s\", \"test2 %s\", \"line\"");
+    function test_quest_vars {
+        mes("##2Testing quest variables...##0");
+        .@time = 1000;
+        setq(Test_testing1, 1, 2, 3, .@time);
+        assert(getq(Test_testing1) == 1, "getq1 = 1");
+        assert(getq2(Test_testing1) == 2, "getq2 = 2");
+        assert(getq3(Test_testing1) == 3, "getq3 = 3");
+        assert(getqtime(Test_testing1) == .@time, "getqtime = 1000");
+        next();
+        .@time = 2000;
+        setq(Test_testing1, 2, 3, 4, .@time);
+        assert(getq(Test_testing1) == 2, "getq1 = 2");
+        assert(getq2(Test_testing1) == 3, "getq2 = 3");
+        assert(getq3(Test_testing1) == 4, "getq3 = 4");
+        assert(getqtime(Test_testing1) == .@time, "getqtime = 2000");
+        next();
+        setq(Test_testing1, 0);
     }
 
-    mes("##2Testing quest variables...##0");
-    .@time = 1000;
-    setq(Test_testing1, 1, 2, 3, .@time);
-    assert(getq(Test_testing1) == 1, "getq1 = 1");
-    assert(getq2(Test_testing1) == 2, "getq2 = 2");
-    assert(getq3(Test_testing1) == 3, "getq3 = 3");
-    assert(getqtime(Test_testing1) == .@time, "getqtime = 1000");
-    next();
-    .@time = 2000;
-    setq(Test_testing1, 2, 3, 4, .@time);
-    assert(getq(Test_testing1) == 2, "getq1 = 2");
-    assert(getq2(Test_testing1) == 3, "getq2 = 3");
-    assert(getq3(Test_testing1) == 4, "getq3 = 4");
-    assert(getqtime(Test_testing1) == .@time, "getqtime = 2000");
-    next();
-    setq(Test_testing1, 0);
+    function test_translation_old {
+        mes("##2Testing old translation system without gender...##0");
+        assert(l("test @@", "") == "test ", "\"test @@\", \"\"");
+        assert(l("test @@", "foo") == "test foo", "\"test @@\", \"foo\"");
+        assert(l("@@", "") == "", "\"@@\", \"\"");
+        assert(l("@@") == "@@", "\"@@\"");
+        assert(l("@@ @@ @@", "this", "is", "test") == "this is test", "\"@@ @@ @@\", \"this\", \"is\", \"test\"");
+        assert(l("data @@ @@ @@ data", "this", "is", "test") == "data this is test data", "\"data @@ @@ @@ data\", \"this\", \"is\", \"test\"");
+        next();
 
-    mesf("##BTests complete. [%02d/%02d]", .stats[1], .stats[0]);
+        mesf("##2Testing old translation system as %s gender...##0", g("female", "male"));
+        if (Sex == 1)
+            assert(lg("test1 @@", "test2 @@", "line") == "test2 line#1", "\"test1 @@\", \"test2 @@\", \"line\"");
+        else if (Sex == 0)
+            assert(lg("test1 @@", "test2 @@", "line") == "test1 line#0", "\"test1 @@\", \"test2 @@\", \"line\"");
+        next();
+    }
+
+    function test_translation_new {
+        mes("##2Testing new translation system without gender...##0");
+        assert(l("") == "", "\"\"");
+        assert(l("test") == "test", "\"test\"");
+        assert(l("test %s", "") == "test ", "\"test %s\", \"\"");
+        assert(l("test %s", "foo") == "test foo", "\"test %s\", \"foo\"");
+        assert(l("%s", "") == "", "\"%s\", \"\"");
+        assert(l("%s") == "%s", "\"%s\"");
+        assert(l("%%") == "%%", "\"%##0%\""); // XXX: %% is reserved for emotes in manaplus, so we escape it with color
+        assert(l("%d%%", 6) == "6%", "\"%d%##0%\", 6"); // XXX: %% is reserved for emotes in manaplus, so we escape it with color
+        assert(l("%s %s %s", "this", "is", "test") == "this is test", "\"%s %s %s\", \"this\", \"is\", \"test\"");
+        assert(l("%s %d %s", "foo", 69, "bar") == "foo 69 bar", "\"%s %d %s\", \"foo\", 69, \"bar\"");
+        assert(l("data %s %s %s data", "this", "is", "test") == "data this is test data", "\"data %s %s %s data\", \"this\", \"is\", \"test\"");
+        next();
+
+        mesf("##2Testing new translation system as %s gender...##0", g("female", "male"));
+        if (Sex == 1) {
+            assert(lg("test") == "test#1", "\"test\"");
+            assert(lg("test1", "test2") == "test2#1", "\"test1\", \"test2\"");
+            assert(lg("test1 %s", "test2 %s", "line") == "test2 line#1", "\"test1 %s\", \"test2 %s\", \"line\"");
+        } else if (Sex == 0) {
+            assert(lg("test") == "test#0", "\"test\"");
+            assert(lg("test1", "test2") == "test1#0", "\"test1\", \"test2\"");
+            assert(lg("test1 %s", "test2 %s", "line") == "test1 line#0", "\"test1 %s\", \"test2 %s\", \"line\"");
+        }
+        next();
+
+        mes("##2Testing advanced translation...##0");
+        assert(l("foo %2$s bar %1$s baz", "qux", "quux") == "foo quux bar qux baz", "\"foo %2$s bar %1$s baz\", \"qux\", \"quux\"");
+        assert(l("%5d",   6) == "    6", "\"%5d\", 6");
+        assert(l("%5d",  -6) == "   -6", "\"%5d\", -6");
+        assert(l("%+5d",  6) == "   +6", "\"%+5d\", 6");
+        assert(l("%+5d", -6) == "   -6", "\"%+5d\", -6");
+        assert(l("%-5d",  6) == "6    ", "\"%-5d\", 6");
+        assert(l("%-5d", -6) == "-6   ", "\"%-5d\", -6");
+        assert(l("% 5d",  6) == "    6", "\"% 5d\", 6");
+        assert(l("% 5d", -6) == "   -6", "\"% 5d\", -6");
+        assert(l("%05d",  6) == "00006", "\"%05d\", 6");
+        assert(l("%05d", -6) == "-0006", "\"%05d\", -6");
+        assert(l("%10s", "test")  == "      test", "\"%10s\", \"test\"");
+        assert(l("% 10s", "test") == "      test", "\"% 10s\", \"test\"");
+        assert(l("%-10s", "test") == "test      ", "\"%-10s\", \"test\"");
+        next();
+    }
+
+
+    do {
+        mes("Please select a test:");
+        select(
+            "NPC variables",
+            "quest variables",
+            "translation (old)",
+            "translation (new)",
+            "everything");
+
+        setarray(.stats[0], 0, 0); // make sure we have a clean state
+        clear();
+
+        switch (@menu) {
+        case 1: test_npc_vars(); break;
+        case 2: test_quest_vars(); break;
+        case 3: test_translation_old(); break;
+        case 4: test_translation_new(); break;
+        default:
+            test_translation_old();
+            test_translation_new();
+            test_npc_vars();
+            test_quest_vars();
+        }
+
+        mesf("##BTests complete. [%02d/%02d]", .stats[1], .stats[0]);
+        next();
+    } while (true);
     close;
 
 OnInit:
