@@ -1,13 +1,18 @@
 // Evol functions.
 // Author:
 //    4144
+//    Jesusalva
 // Description:
 //    Shops utility functions
-// Variables:
-//    none
+
+
+
+// restoreshopitem(<item nameid>, <amount>{, <price>})
+//     adds back an item to the sell list if less than the specified amount
+//     returns true
 
 function	script	restoreshopitem	{
     if (shopcount(getarg(0)) < getarg(1))
-        sellitem getarg(0), -1, getarg(1);
+        sellitem(getarg(0), getarg(2, -1), getarg(1));
     return;
 }
