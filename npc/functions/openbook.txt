@@ -3,26 +3,24 @@
 //    Reid
 // Description:
 //    Narrator dialogue to show the selected book.
-// Variables:
-//    @book_name$ = The name of the book to read.
 
 function	script	openbook	{
-    .@book_name$ = "\"" + l(getarg(0, getvariableofnpc(.book_name$, strnpcinfo(0)))) + "\"";
+    .@book_name$ = getarg(0, getvariableofnpc(.book_name$, strnpcinfo(0)));
 
-    narrator S_LAST_NEXT,
-        l("You open a book named @@.", .@book_name$),
-        l("Do you want to read it?");
+    narrator(S_LAST_NEXT,
+        l("You open a book named \"%s\".", .@book_name$),
+        l("Do you want to read it?"));
 
     return (select("Yes.", "No.") == 1);
 }
 
 function	script	openbookshelf	{
-    .@book_name$ = "\"" + l(getarg(0, getvariableofnpc(.book_name$, strnpcinfo(0)))) + "\"";
+    .@book_name$ = getarg(0, getvariableofnpc(.book_name$, strnpcinfo(0)));
 
-    narrator S_LAST_NEXT,
+    narrator(S_LAST_NEXT,
         l("You see a dust covered book on the shelf..."),
-        l("The name of the book is @@.", .@book_name$),
-        l("Do you want to read it?");
+        l("The name of the book is \"%s\".", .@book_name$),
+        l("Do you want to read it?"));
 
     return (select("Yes.", "No.") == 1);
 }

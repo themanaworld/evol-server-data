@@ -146,7 +146,7 @@ L_SalemMenuShop:
 
 L_AboutPious:
     speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-        l("Ah, the locals like keeping them as pets.");
+        l("Ah, the locals like keeping them as pets."),
         l("With proper training, a piou can become a good friend and faithful companion in your adventures.");
 
     if (getq(ArtisQuests_CatchPiou) >= 2)
