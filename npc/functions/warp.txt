@@ -27,21 +27,22 @@ function	script	slide_or_warp	{
     }
 
     if (!isloggedin(.@aid)) {
-        if (.@aid = playerattached() == 0) {
+        if ((.@aid = playerattached()) == 0) {
             debugmes("slide_or_warp: no player attached!");
             return false;
         }
     }
 
     getmapxy(.@pc_map$, .@pc_x, .@pc_y, UNITTYPE_PC, .@aid); // get char location
+    .@cid = getcharid(CHAR_ID_CHAR, strcharinfo(PC_NAME, .@aid)); // FIXME: [Hercules] make it so you can pass account id directly to getcharid
 
     if (getargcount() < 1) {
-        warpchar(.@pc_map$, .@pc_x, .@pc_y, .@aid); // no arguments, just refresh
+        warpchar(.@pc_map$, .@pc_x, .@pc_y, .@cid); // no arguments, just refresh
     } else if (.@map$ == .@pc_map$ && (.@pc_x != .@x || .@pc_y != .@y)) {
         slide(.@x, .@y); // same map, slide instead of full warp
         // FIXME: make slide take GID as optional arg
     } else {
-        warpchar(.@map$, .@x, .@y, .@aid); // different map, warp to given location
+        warpchar(.@map$, .@x, .@y, .@cid); // different map, warp to given location
     }
     return true;
 }

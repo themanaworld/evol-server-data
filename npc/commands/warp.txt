@@ -17,37 +17,37 @@
     end;
 
 OnCall:
-    .@request$ = strtoupper(strip(.@atcmd_parameters$[0])); // sanitize
-    .@map$ = "";
-    .@x = 0;
-    .@y = 0;
+    .@params$ = strtoupper(strip(implode(.@atcmd_parameters$[0], " ")));
+    .@request$ = replacestr(.@params$, " ", "");
 
-    for (.@i = 0; .@i < .count; .@i += 2)
+    cleararray($@regexmatch$[1], "", 3);
+    if (.@params$ ~= "^(.+) ([0-9]+) ([0-9]+)$")
     {
-        if (.@request$ ~= .aliases$[.@i])
+        .@request$ = replacestr(strip($@regexmatch$[1]), " ", "");
+        .@req_x = atoi(strip($@regexmatch$[2]));
+        .@req_y = atoi(strip($@regexmatch$[3]));
+    }
+
+    .@ht = getvariableofnpc(.ht, "__anchors__");
+    .@it = htiterator(.@ht);
+    for (.@key$ = htinextkey(.@it); hticheck(.@it); .@key$ = htinextkey(.@it))
+    {
+        if (.@request$ ~= .@key$)
         {
-            sscanf(.aliases$[.@i + 1], "%s %d %d", .@map$, .@x, .@y);
+            sscanf(htget(.@ht, .@key$, ""), "%s %d %d", .@map$, .@x, .@y);
             break;
         }
     }
+    htidelete(.@it);
 
-    if (.@map$ == "")
-    {
-        .@map$ = .@atcmd_parameters$[0];
-    }
-
-    if (.@atcmd_parameters$[2] != "")
-    {
-        .@x = atoi(.@atcmd_parameters$[1]);
-        .@y = atoi(.@atcmd_parameters$[2]);
-    }
+    .@map$ = .@map$ ? .@map$ : .@request$;
+    .@x = .@req_y ? .@req_x : .@x;
+    .@y = .@req_y ? .@req_y : .@y;
 
     // FIXME: here getmapusers() is used only to check if the map exists
     //        replace this when/if we get a dedicated function for that
     if (getmapusers(.@map$) < 0)
-    {
         end; // invalid map
-    }
 
     while (!checkcell(.@map$, .@x, .@y, cell_chkpass))
     {
@@ -61,57 +61,8 @@ OnCall:
     end;
 
 OnInit:
-    setarray .aliases$[0],
-
-        // ARTIS
-        "^ART",             "001-1 89 86",    // artis town square
-        "^LIGHT",           "001-2-0 37 32",  // light armor shop
-        "^NOBLE1?$",        "001-2-1 37 37",  // noble house 1
-        "^NOBLE2$",         "001-2-10 40 38", // noble house 2
-        "^NOBLE3$",         "001-2-11 45 33", // noble house 3
-        "^NOBLE4$",         "001-2-12 34 32", // noble house 4
-        "^NOBLE5$",         "001-2-15 34 38", // noble house 5
-        "^MOON",            "001-2-2 39 34",  // moon's house
-        "^LIB",             "001-2-4 49 37",  // library
-        "^CITY|^HALL",      "001-2-7 36 38",  // city hall
-        "^HARB|^MASTER",    "001-2-16 32 33", // harbourmaster
-        "^WARE",            "001-2-18 39 31", // warehouse
-        "^MERCH|^BANK",     "001-2-19 29 31", // merchant hall
-        "^SHIP2$",          "001-2-21 30 28", // la johanne (artis)
-        "^ALCH",            "001-2-26 30 32", // alchemist
-        "^BLACK|SMITH",     "001-2-27 35 32", // blacksmith
-        "^RED|PLUSH|^INN",  "001-2-28 32 32", // red plush inn
-        "^LEG",             "001-2-33 34 36", // legion
-
-        // PROLOGUE
-        "^START|^BEGIN",    "000-0 22 24",    // starting point
-        "^START2$",         "000-0-0 26 28",  // starting point step 2
-        "^START3$",         "000-0-1 26 28",  // starting point step 3
-        "^DRA|ISLAND",      "000-1 77 110",   // drasil island
-        "^FIRST|^DECK1?$",  "000-2-0 27 27",  // first deck
-        "^SECOND|^DECK2$",  "000-2-1 53 33",  // second deck
-        "^HOLD$",           "000-2-2 43 30",  // hold
-        "^NARD",            "000-2-3 21 27",  // nard's room
-        "^ALIG|^HID",       "000-2-4 36 29",  // alige's hideout
-
-        // WOODLAND
-        "^HURN",            "008-1 79 64",    // hurnscald: town square
-        "^CELE",            "008-2-0 25 27",  // hurnscald: celestia
-        "^HMER",            "008-2-1 33 39",  // hurnscald: merchant guild
-        "^RUST",            "008-2-2 37 30",  // hurnscald: inn
-        "^ARRO|^ARCH",      "008-2-6 27 29",  // hurnscald: archery shop
-        "^A?POT",           "008-2-7 34 27",  // hurnscald: potion shop
-        "^HBLA",            "008-2-8 36 34",  // hurnscald: forge
-        "^HHAL|^HCIT",      "008-2-10 36 31", // hurnscald: city hall
-        "HOSP|CLIN",        "008-2-13 25 31"; // hurnscald: clinic / hospital
-
-    .count = getarraysize(.aliases$[0]);
-
     if (debug > 0)
-    {
-        bindatcmd "w", "@w::OnCall", 0, 2, 0;
-        end;
-    }
-
-    bindatcmd "w", "@w::OnCall", 1, 2, 1;
+        bindatcmd("w", "@w::OnCall", 0, 2, 0);
+    else
+        bindatcmd("w", "@w::OnCall", 1, 2, 1);
 }
