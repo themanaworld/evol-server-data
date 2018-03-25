@@ -156,7 +156,7 @@ function do_init_data {
     mkdir shared
     cd ..
     rm -rf server-data
-    cp -r serverdata server-data
+    cp -r ${CI_PROJECT_NAME:=serverdata} server-data
     ls -la server-data
     check_error $?
 }
