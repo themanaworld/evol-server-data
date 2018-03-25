@@ -7,6 +7,10 @@
 //    none
 
 function	script	doorTouch	{
+    getmapxy(.@pc_map$, .@pc_x, .@pc_y, UNITTYPE_PC); // get char location
+    if (.@pc_y < .y)
+        end;
+
     if (getareausers() <= 1)
     {
         .dir = 2;
@@ -17,6 +21,9 @@ function	script	doorTouch	{
 }
 
 function	script	doorUnTouch	{
+    if (.dir != 2 && .dir != 6)
+        end;
+
     if (getareausers(.map$) == 0)
     {
         .dir = 4;
