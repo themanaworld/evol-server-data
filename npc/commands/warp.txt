@@ -30,7 +30,7 @@ OnCall:
 
     .@ht = getvariableofnpc(.ht, "__anchors__");
     .@it = htiterator(.@ht);
-    for (.@key$ = htinextkey(.@it); hticheck(.@it); .@key$ = htinextkey(.@it))
+    for (.@key$ = htifirstkey(.@it); hticheck(.@it); .@key$ = htinextkey(.@it))
     {
         if (.@request$ ~= .@key$)
         {
@@ -47,7 +47,17 @@ OnCall:
     // FIXME: here getmapusers() is used only to check if the map exists
     //        replace this when/if we get a dedicated function for that
     if (getmapusers(.@map$) < 0)
-        end; // invalid map
+    {
+        if (getmapusers(.@atcmd_parameters$[0]) >= 0)
+        {
+            .@map$ = .@atcmd_parameters$[0];
+        }
+        else
+        {
+            dispbottom(l("Map or anchor not found: %s", .@atcmd_parameters$[0]));
+            end;
+        }
+    }
 
     while (!checkcell(.@map$, .@x, .@y, cell_chkpass))
     {
@@ -62,7 +72,17 @@ OnCall:
 
 OnInit:
     if (debug > 0)
+    {
         bindatcmd("w", "@w::OnCall", 0, 2, 0);
+        bindatcmd("go", "@w::OnCall", 0, 2, 0);
+        bindatcmd("to", "@w::OnCall", 0, 2, 0);
+        bindatcmd("warp", "@w::OnCall", 0, 2, 0);
+    }
     else
-        bindatcmd("w", "@w::OnCall", 1, 2, 1);
+    {
+        bindatcmd("w", "@w::OnCall", 2, 2, 1);
+        bindatcmd("go", "@w::OnCall", 2, 2, 1);
+        bindatcmd("to", "@w::OnCall", 2, 2, 1);
+        bindatcmd("warp", "@w::OnCall", 2, 2, 1);
+    }
 }
