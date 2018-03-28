@@ -44,11 +44,9 @@ OnCall:
     .@x = .@req_y ? .@req_x : .@x;
     .@y = .@req_y ? .@req_y : .@y;
 
-    // FIXME: here getmapusers() is used only to check if the map exists
-    //        replace this when/if we get a dedicated function for that
-    if (getmapusers(.@map$) < 0)
+    if (!map_exists(.@map$))
     {
-        if (getmapusers(.@atcmd_parameters$[0]) >= 0)
+        if (map_exists(.@atcmd_parameters$[0]))
         {
             .@map$ = .@atcmd_parameters$[0];
         }

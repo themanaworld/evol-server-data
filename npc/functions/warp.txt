@@ -3,6 +3,16 @@
 //    gumi
 
 
+
+// map_exists
+//     self-explanatory
+
+function	script	map_exists	{
+    return getmapinfo(MAPINFO_ID, getarg(0)) >= 0;
+}
+
+
+
 // slide_or_warp
 //     Slides the player instead of warping, when possible.
 // usage:
