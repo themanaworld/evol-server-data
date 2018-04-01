@@ -1,4 +1,4 @@
-// Mob Skill Database 
+// Mob Skill Database
 // Based on Aegis Episode 14.2
 //
 // Structure of Database:
@@ -69,4 +69,5 @@
 1016,Tipiou@NPC_SUMMONSLAVE,idle,196,5,10000,0,0,no,self,onspawn,0,1002,,,,,,
 1016,Tipiou@NPC_SUMMONSLAVE,attack,196,2,2000,700,10000,no,self,slavele,4,1002,,,,,,
 1016,Tipiou@NPC_SUMMONSLAVE,idle,196,2,7000,700,10000,no,self,slavele,4,1002,,,,,,
+1024,Green Slime@NPC_SUMMONMONSTER,dead,209,2,10000,0,0,no,self,always,2,1025,,,,,,
 1050,PoisonSkull@NPC_POISON,attack,176,20,2500,0,100,yes,target,always,0,,,,,,,
