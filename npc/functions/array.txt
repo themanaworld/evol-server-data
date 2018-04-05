@@ -310,22 +310,15 @@ function	script	array_push	{
 
 // array_shuffle(<array>)
 //     shuffles the array
+//     uses the Durstenfeld implementation of the Fisher-Yates algorithm
 
 function	script	array_shuffle	{
     .@index = getarrayindex(getarg(0));
     .@size = getarraysize(getarg(0)) - .@index;
     freeloop(true);
 
-    if (isstr(getarg(0)) == 1) {
-        copyarray(.@tmp$[0], getarg(0), .@size);
-        for (; .@size >= 1; --.@size) {
-            set(getelementofarray(getarg(0), .@index + .@size - 1), array_shift(.@tmp$[rand(.@size)]));
-        }
-    } else {
-        copyarray(.@tmp[0], getarg(0), .@size);
-        for (; .@size >= 1; --.@size) {
-            set(getelementofarray(getarg(0), .@index + .@size - 1), array_shift(.@tmp[rand(.@size)]));
-        }
+    for (.@i = .@size - 1; .@i >= .@index + 1; --.@i) {
+        swap(getelementofarray(getarg(0), rand(.@index, .@i)), getelementofarray(getarg(0), .@i));
     }
 
     freeloop(false);
@@ -387,7 +380,7 @@ function	script	array_diff	{
 
 
 
-// array_filter(<array>, "<function>")
+// array_filter(<array>, "<function>"{, <neq>})
 //     filters the array using a callback function
 
 function	script	array_filter	{
@@ -407,4 +400,54 @@ function	script	array_filter	{
 
     freeloop(false);
     return .@count;
+}
+
+
+
+// array_sort(<array>)
+//     sorts the array in ascending order
+//     uses the Lomuto implementation of the Quicksort algorithm
+
+function	script	array_sort	{
+    callsub(S_Quicksort, getarg(0), getarrayindex(getarg(0)), getarraysize(getarg(0)) - 1);
+    return true;
+
+S_Quicksort:
+    if (getarg(1) < getarg(2)) {
+        .@p = callsub(S_Partition, getarg(0), getarg(1), getarg(2));
+        callsub(S_Quicksort, getarg(0), getarg(1), .@p - 1);
+        callsub(S_Quicksort, getarg(0), .@p + 1, getarg(2));
+    }
+    return true;
+
+S_Partition:
+    .@i = getarg(1) - 1;
+
+    freeloop(true);
+    if (isstr(getarg(0))) {
+        for (.@j = getarg(1); .@j <= getarg(2) - 1; ++.@j) {
+            if (strcmp(getelementofarray(getarg(0), .@j), getelementofarray(getarg(0), getarg(2))) < 0) {
+                swap(getelementofarray(getarg(0), ++.@i), getelementofarray(getarg(0), .@j));
+            }
+        }
+    } else {
+        for (.@j = getarg(1); .@j <= getarg(2) - 1; ++.@j) {
+            if (getelementofarray(getarg(0), .@j) < getelementofarray(getarg(0), getarg(2))) {
+                swap(getelementofarray(getarg(0), ++.@i), getelementofarray(getarg(0), .@j));
+            }
+        }
+    }
+    freeloop(false);
+
+    swap(getelementofarray(getarg(0), ++.@i), getelementofarray(getarg(0), getarg(2)));
+    return .@i;
+}
+
+
+
+// array_rsort(<array>)
+//     sorts the array in descending order
+
+function	script	array_rsort	{
+    return array_sort(getarg(0)) && array_reverse(getarg(0));
 }
