@@ -28,7 +28,7 @@ build_test:
   services:
   - mysql:latest
 
-mysql_init_latest:
+.mysql_init_latest:
   stage: build
   script:
   - ./.tools/jobs/install.sh "mysql-client"
@@ -57,6 +57,16 @@ mysql_init_5.6:
   image: debian:unstable
   services:
   - mysql:5.6
+
+mysql_init_5.7:
+  stage: build
+  script:
+  - ./.tools/jobs/install.sh "mysql-client"
+  - ./.tools/jobs/clonedata.sh
+  - ./.tools/jobs/initdb.sh mysql
+  image: debian:unstable
+  services:
+  - mysql:5.7
 
 mariadb_init_latest:
   stage: build
@@ -88,7 +98,7 @@ mariadb_init_5.5:
   services:
   - mariadb:5.5
 
-mysql_run_latest:
+.mysql_run_latest:
   stage: test
   script:
   - export CC=gcc-4.9
@@ -104,6 +114,23 @@ mysql_run_latest:
   image: debian:jessie
   services:
   - mysql:latest
+
+mysql_run_5.7:
+  stage: test
+  script:
+  - export CC=gcc-4.9
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-4.9
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/initdb.sh mysql
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  - ./.tools/jobs/runserver.sh mysql
+  image: debian:jessie
+  services:
+  - mysql:5.7
 
 mariadb_run_latest:
   stage: test
@@ -122,7 +149,7 @@ mariadb_run_latest:
   services:
   - mariadb:latest
 
-mysql_run_valgrind_latest:
+.mysql_run_valgrind_latest:
   stage: valgrind
   script:
   - export CC=gcc-6
@@ -139,6 +166,24 @@ mysql_run_valgrind_latest:
   image: debian:unstable
   services:
   - mysql:latest
+
+mysql_run_valgrind_5.7:
+  stage: valgrind
+  script:
+  - export CC=gcc-6
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-6
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev
+    valgrind"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/initdb.sh mysql
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --disable-manager --enable-Werror --enable-buildbot" "--enable-werror"
+  - ./.tools/jobs/runservervalgrind.sh mysql
+  image: debian:unstable
+  services:
+  - mysql:5.7
 
 mariadb_run_valgrind_latest:
   stage: valgrind
