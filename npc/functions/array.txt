@@ -424,17 +424,9 @@ S_Partition:
     .@i = getarg(1) - 1;
 
     freeloop(true);
-    if (isstr(getarg(0))) {
-        for (.@j = getarg(1); .@j <= getarg(2) - 1; ++.@j) {
-            if (strcmp(getelementofarray(getarg(0), .@j), getelementofarray(getarg(0), getarg(2))) < 0) {
-                swap(getelementofarray(getarg(0), ++.@i), getelementofarray(getarg(0), .@j));
-            }
-        }
-    } else {
-        for (.@j = getarg(1); .@j <= getarg(2) - 1; ++.@j) {
-            if (getelementofarray(getarg(0), .@j) < getelementofarray(getarg(0), getarg(2))) {
-                swap(getelementofarray(getarg(0), ++.@i), getelementofarray(getarg(0), .@j));
-            }
+    for (.@j = getarg(1); .@j <= getarg(2) - 1; ++.@j) {
+        if (getelementofarray(getarg(0), .@j) < getelementofarray(getarg(0), getarg(2))) {
+            swap(getelementofarray(getarg(0), ++.@i), getelementofarray(getarg(0), .@j));
         }
     }
     freeloop(false);
