@@ -82,6 +82,7 @@ function update_repos {
 
 function aptget_update {
     update_repos
+    echo apt-get update
     apt-get update
     if [ "$?" != 0 ]; then
         sleep 1s
@@ -95,13 +96,14 @@ function aptget_update {
 }
 
 function aptget_install {
-    apt-get -y -qq install $*
+    echo apt-get -y install $*
+    apt-get -y install $*
     if [ "$?" != 0 ]; then
         sleep 1s
-        apt-get -y -qq install $*
+        apt-get -y install $*
         if [ "$?" != 0 ]; then
             sleep 2s
-            apt-get -y -qq install $*
+            apt-get -y install $*
         fi
     fi
     check_error $?
