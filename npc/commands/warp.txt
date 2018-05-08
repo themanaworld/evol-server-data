@@ -59,9 +59,13 @@ OnCall:
 
     while (!checkcell(.@map$, .@x, .@y, cell_chkpass))
     {
-        if (.@e == 50) end;
-        .@x = rand(20, 250);
-        .@y = rand(20, 250);
+        // FIXME: this whole cell finding loop is DIRTY!
+        //        we should have a command to get a random free coordinate
+        //        or we should make buildin_warp silently ignore 0,0
+
+        if (.@e == 50) break; // FIXME: triggers a console warning
+        .@x = rand(20, 20 + (.@e * 5));
+        .@y = rand(20, 20 + (.@e * 5));
         ++.@e;
     }
 
