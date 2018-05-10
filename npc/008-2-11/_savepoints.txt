@@ -1,6 +1,6 @@
 // This file is generated automatically. All manually added changes will be removed when running the Converter.
 // Map 008-2-11: Hurnscald City Hall saves
-008-2-11,25,27,0	script	#save_008-2-11_25_27	NPC_SAVE_POINT,{
+008-2-11,26,27,0	script	#save_008-2-11_26_27	NPC_SAVE_POINT,{
     savepointparticle .map$, .x, .y, CURRENT_INN;
     close;
 

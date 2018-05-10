@@ -7,11 +7,15 @@ OnInit:
     htput(.ht, "^ALIG|^HID", "000-2-4 36 30");
     htput(.ht, "^ART", "001-1 89 86");
     htput(.ht, "^BLACK|SMITH", "001-2-27 35 32");
+    htput(.ht, "^CAMP|FIRE", "008-1 55 46");
     htput(.ht, "^CITY|^HALL", "001-2-7 36 41");
+    htput(.ht, "^DIMOND", "008-1 106 222");
     htput(.ht, "^DRA|ISLAND", "000-1 62 111");
+    htput(.ht, "^FARM", "008-1 71 129");
     htput(.ht, "^FIRST|^DECK1?$", "000-2-0 23 28");
     htput(.ht, "^HARB|^MASTER", "001-2-16 28 32");
     htput(.ht, "^HOLD$", "000-2-2 42 31");
+    htput(.ht, "^HURNS", "008-1 250 109");
     htput(.ht, "^LEG", "001-2-33 34 42");
     htput(.ht, "^LIB", "001-2-4 42 35");
     htput(.ht, "^LIGHT", "001-2-0 37 32");

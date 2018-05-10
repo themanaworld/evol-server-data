@@ -1,0 +1,74 @@
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 008-2-3: The Rusty Pick saves
+008-2-3,61,31,0	script	#save_008-2-3_61_31	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+008-2-3,60,35,0	script	#save_008-2-3_60_35	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+008-2-3,57,31,0	script	#save_008-2-3_57_31	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+008-2-3,57,35,0	script	#save_008-2-3_57_35	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+008-2-3,53,35,0	script	#save_008-2-3_53_35	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+008-2-3,53,31,0	script	#save_008-2-3_53_31	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+008-2-3,49,31,0	script	#save_008-2-3_49_31	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+008-2-3,49,35,0	script	#save_008-2-3_49_35	NPC_SAVE_POINT,{
+    savepointparticle .map$, .x, .y, CURRENT_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
