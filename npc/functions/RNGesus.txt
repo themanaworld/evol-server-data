@@ -21,3 +21,38 @@ function	script	any	{
 function	script	any_of	{
     return getelementofarray(getarg(0), getarrayindex(getarg(0)) + rand(getarraysize(getarg(0)) - getarrayindex(getarg(0))));
 }
+
+
+
+// relative_array_random(<array: 0, {[value, probability]..}>)
+//     returns a random entry from the array, by relative probability
+//     the first key of the array should be 0 and every entries are a tuple
+//     of [value, probability]
+
+function	script	relative_array_random	{
+    .@total_prob = getelementofarray(getarg(0), 0);
+    .@initial_index = getarrayindex(getarg(0));
+    .@initial_index = .@initial_index ? .@initial_index : 1;
+    freeloop(true);
+
+    if (.@total_prob < 1 || getarg(1, false))
+    {
+        // first calculation, or forced re-calculation
+        .@total_prob = 0;
+        .@size = getarraysize(getarg(0));
+
+        for (.@i = .@initial_index + 1; .@i < .@size; .@i += 2)
+            .@total_prob += getelementofarray(getarg(0), .@i);
+
+        // we cache on the first key
+        set(getelementofarray(getarg(0), 0), .@total_prob);
+    }
+
+    .@target_sum = rand(.@total_prob);
+
+    for (.@i = .@initial_index; .@sum < .@target_sum; .@i += 2)
+        .@sum += getelementofarray(getarg(0), .@i + 1);
+
+    freeloop(false);
+    return getelementofarray(getarg(0), max(0, .@i - 2));
+}
