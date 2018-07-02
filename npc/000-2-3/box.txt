@@ -22,9 +22,9 @@
     .@q = getq(ShipQuests_Nard);
 
     mesn "Narrator";
-    mes col(l("Some Bandanas and Sailor Hats are inside this box."), 9);
+    mesc(l("Some Bandanas and Sailor Hats are inside this box."), 9);
     next;
-    mes col(l("What do you wish to do?"), 9);
+    mesc(l("What do you wish to do?"), 9);
     next;
 
     menu
@@ -45,7 +45,7 @@
 L_NoQuest:
     mes "";
     mesn "Narrator";
-    mes col(l("Nard looks surprised and stops you."), 9);
+    mesc(l("Nard looks surprised and stops you."), 9);
     next;
 
     setcamnpc "Nard";

@@ -1,6 +1,7 @@
 // Evol functions.
 // Authors:
 //    4144
+//    Jesusalva
 //    Travolta
 // Description:
 //    Build in functions.
@@ -40,6 +41,10 @@ function	script	col	{
     if (.@color < 0) .@color = 0;
     if (.@color > 9) .@color = 9;
     return "##" + .@color + getarg(0) + "##0";
+}
+
+function	script	mesc	{
+    return mes(col(getarg(0, ""), getarg(1, 9)));
 }
 
 function	script	adddefaultskills	{

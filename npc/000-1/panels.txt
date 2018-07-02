@@ -7,9 +7,9 @@
 
 000-1,65,93,0	script	#panel1	NPC_NO_SPRITE,{
     mesn "Narrator";
-    mes col(l("Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand."), 9);
+    mesc(l("Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand."), 9);
     next;
-    mes col(l("You wipe off enough of the sand to manage to read the message written on this crude piece of wood."), 9);
+    mesc(l("You wipe off enough of the sand to manage to read the message written on this crude piece of wood."), 9);
     next;
     mesq l("It's a dangerous place out here. Beware of the mischievous creatures living here!");
     next;
@@ -27,9 +27,9 @@ OnInit:
 
 000-1,89,51,0	script	#panel2	NPC_NO_SPRITE,{
     mesn "Narrator";
-    mes col(l("This panel looks in rather good shape, as though some people take care of it regularly. Maybe it has important information."), 9);
+    mesc(l("This panel looks in rather good shape, as though some people take care of it regularly. Maybe it has important information."), 9);
     next;
-    mes col(l("You can read some lines that are nicely carved into the soft wooden planks."), 9);
+    mesc(l("You can read some lines that are nicely carved into the soft wooden planks."), 9);
     next;
     mesq l("The further you go, the more experience you will get, so here's a small description of all the stats you can upgrade with time. But note that these will probably change in the future and have more complex effects.");
     next;

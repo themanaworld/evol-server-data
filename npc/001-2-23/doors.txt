@@ -18,7 +18,7 @@ L_Warn:
     if (.@q == 5) goto L_Warp;
 
     mesn "Narrator";
-    mes col(l("There are still some rattos left! Do you want to abort the quest?"), 9);
+    mesc(l("There are still some rattos left! Do you want to abort the quest?"), 9);
     next;
 
     menu
@@ -39,9 +39,9 @@ L_Warp:
 
 OnTouch:
     mesn "Narrator";
-    mes col(l("It seems that you need a key to open this door."), 9);
+    mesc(l("It seems that you need a key to open this door."), 9);
     next;
-    mes col(l("What do you want to do?"), 9);
+    mesc(l("What do you want to do?"), 9);
     next;
 
     menu
@@ -56,14 +56,14 @@ L_Break:
 
     mes "";
     mesn "Narrator";
-    mes col(l("You hear a loud scream. It must be the creaking of the wooden door..."), 9);
+    mesc(l("You hear a loud scream. It must be the creaking of the wooden door..."), 9);
 
     close;
 
 L_Warp:
     mes "";
     mesn "Narrator";
-    mes col(l("Wait, it seems someone is blocking the door from the other side!"), 9);
+    mesc(l("Wait, it seems someone is blocking the door from the other side!"), 9);
 
     close;
 }

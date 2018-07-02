@@ -131,7 +131,7 @@ L_Artis:
 L_ForeverAlone:
     mes "";
     mesn "Narrator";
-    mes col(l("Silvio starts to speak to his bottle, you leave, letting him have a private conversation."), 9);
+    mesc(l("Silvio starts to speak to his bottle, you leave, letting him have a private conversation."), 9);
 
     close;
 

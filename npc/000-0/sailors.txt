@@ -15,17 +15,17 @@ OnTouch:
     if (.@lang >= 0 && .@lang <= 9) Lang = .@lang;
 
     mesn "Narrator";
-    mes col(l("You are on a raft, adrift in the sea."), 9);
+    mesc(l("You are on a raft, adrift in the sea."), 9);
     next;
-    mes col(l("With hunger, thirst, and sleep as your only companions, you have the disturbing realization that you can't remember anything of your former life or identity."), 9);
+    mesc(l("With hunger, thirst, and sleep as your only companions, you have the disturbing realization that you can't remember anything of your former life or identity."), 9);
     next;
-    mes col(l("All of a sudden, you hear voices from above."), 9);
+    mesc(l("All of a sudden, you hear voices from above."), 9);
     next;
-    mes col(l("Your body aches, even your hair hurts, and the bright daylight is painful."), 9);
+    mesc(l("Your body aches, even your hair hurts, and the bright daylight is painful."), 9);
     next;
-    mes col(l("But still, you open your eyes and see a large ship before you!"), 9);
+    mesc(l("But still, you open your eyes and see a large ship before you!"), 9);
     next;
-    mes col(l("Aboard stand sailors trying to communicate with you."), 9);
+    mesc(l("Aboard stand sailors trying to communicate with you."), 9);
     next;
 
     setcamnpc "Sailors", -64, -32;
@@ -64,9 +64,9 @@ OnTouch:
     restorecam;
 
     mesn "Narrator";
-    mes col(l("The sailors take you aboard their ship."), 9);
+    mesc(l("The sailors take you aboard their ship."), 9);
     next;
-    mes col(l("Click on the NPCs (Non-Player Characters) around you to continue the introduction."), 9);
+    mesc(l("Click on the NPCs (Non-Player Characters) around you to continue the introduction."), 9);
     next;
 
     warp "000-0-0", 26, 28;

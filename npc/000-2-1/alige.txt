@@ -71,7 +71,7 @@ OnFirstEncounter:
 
     mes "";
     mesn "Narrator";
-    mes col(l("The stowaway doesn't answer."), 9);
+    mesc(l("The stowaway doesn't answer."), 9);
 
     close;
 
@@ -299,9 +299,9 @@ L_FindFood:
     next;
     restorecam;
     mesn "Narrator";
-    mes col(l("You can attack a monster by clicking on it, or from your keyboard you can press the 'A' key to select the monster followed by 'Ctrl' to attack it."), 9);
+    mesc(l("You can attack a monster by clicking on it, or from your keyboard you can press the 'A' key to select the monster followed by 'Ctrl' to attack it."), 9);
     next;
-    mes col(l("Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops."), 9);
+    mesc(l("Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops."), 9);
 
     close;
 

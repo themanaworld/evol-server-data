@@ -77,13 +77,13 @@ L_Quest:
 L_Quit:
     mes "";
     mesn "Narrator";
-    mes col(l("Dan keeps silent since your last question."), 9);
+    mesc(l("Dan keeps silent since your last question."), 9);
 
     close;
 
 L_Quit2:
     mesn "Narrator";
-    mes col(l("Dan ends the conversation and resumes to write his letter."), 9);
+    mesc(l("Dan ends the conversation and resumes to write his letter."), 9);
 
     close;
 

@@ -86,7 +86,7 @@
     if (.@q < 2)
     {
         mesn "Narrator";
-        mes col(l("You see a young elven girl, with a strong sense of pain in her face."), 9);
+        mesc(l("You see a young elven girl, with a strong sense of pain in her face."), 9);
         next;
     }
     else
@@ -132,7 +132,7 @@ L_Story:
         case 2:
             mes "";
             mesn "Narrator";
-            mes col(l("The girl looks desperate."),9);
+            mesc(l("The girl looks desperate."),9);
     }
     goto L_Close;
 

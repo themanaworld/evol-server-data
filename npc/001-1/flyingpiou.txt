@@ -50,7 +50,7 @@ function	script	ArtisFlyingPiouLogic	{
     if (.@q != 1)
     {
         mesn "Narrator";
-        mes col(l("You scare the piou, but let it go."), 9);
+        mesc(l("You scare the piou, but let it go."), 9);
         close;
     }
 
@@ -75,7 +75,7 @@ function	script	ArtisFlyingPiouLogic	{
         npcwalkto .@x, .@y;
         .@trader$ = "Salem#001-1";
         mesn "Narrator";
-        mes col(l("You caught the piou, but it's trying to escape from you. You'd better hurry back to Salem."), 9);
+        mesc(l("You caught the piou, but it's trying to escape from you. You'd better hurry back to Salem."), 9);
         set getvariableofnpc(.LastPiouHunter$, .@trader$), strcharinfo(0);
         set getvariableofnpc(.PiouEscapedMessage$, .@trader$), l("Oh no, the piou escaped!");
         set getvariableofnpc(.LastPiouHunterID, .@trader$), .@charid;
