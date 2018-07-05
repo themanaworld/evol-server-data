@@ -8,6 +8,15 @@
 
     function CheckDigLocation {
         getmapxy(.@map$, .@x, .@y, 0);
+
+        if (getunits(BL_NPC, .@units, 1, .@map$, .@x - 1, .@y, .@x + 1, .@y + 1))
+        {
+            dispbottom(l("You cannot bury under a NPC!"));
+            return false;
+        }
+
+        // TODO: we should have a way to check for GROUNDTOP collisions too
+
         for (.@i = 0; .@i < getarraysize(.WorldDigRect_Map$); .@i++)
         {
             if (!strcmp(.WorldDigRect_Map$[.@i], .@map$) &&
@@ -16,10 +25,12 @@
                 .WorldDigRect_y1[.@i] <= .@y &&
                 .WorldDigRect_y2[.@i] >= .@y)
             {
-                return 1;
+                return true;
             }
         }
-        return 0;
+
+        dispbottom(l("You can't use the shovel here."));
+        return false;
     }
 
     function AddDigRect {
@@ -43,16 +54,19 @@
     }
 
     function PlayerIsTired {
+        if (is_evtc())
+            return false; // event coordinators are never tired
+
         .@tick = gettimetick(1);
         .@playertick = .PlayerTiredTime - readparam(bStr);
         if (@ShovelLastUsed + max(4, .@playertick) > .@tick)
         {
             narrator S_FIRST_BLANK_LINE,
                 lg("You are exhausted, you should rest a bit.");
-            return 1;
+            return true;
         }
         @ShovelLastUsed = .@tick;
-        return 0;
+        return false;
     }
 
     function Dig {
@@ -82,24 +96,32 @@
     }
 
     function Bury {
-        narrator S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE, l("What would you like to bury?");
-        .@items$ = "";
-        getinventorylist;
-        for (.@i = 0; .@i < @inventorylist_count; .@i++)
+        narrator(S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("What would you like to bury?"));
+
+        mes("##B" + l("Drag and drop an item from your inventory.") + "##b");
+        .@id = requestitem();
+
+        // You cannot bury: Items you don't have, your shovel, Bound Items, and items which are not dropped by any mobs.
+        // The "item not dropped by any mob" is temporary, and should be replaced by "items with trade restrictions" later. [JESUS]
+        // event coordinators can always bury
+        if (!is_evtc() && (.@id < 1 || countitem(.@id) < 1 ||
+            compare(getitemname(.@id), "shovel") || checkbound(.@id) ||
+            !getiteminfo(.@id, ITEMINFO_MAXCHANCE)))
         {
-            .@items$ = .@items$ + getitemname(@inventorylist_id[.@i]) + ":";
-            debugmes getitemname(@inventorylist_id[.@i]);
+            mesc(l("You cannot bury this item!"));
+            return false;
         }
-        .@idx = select(.@items$) - 1;
-        .@id = @inventorylist_id[.@idx];
+
         .@amount = 1;
-        if (@inventorylist_amount[.@idx] > 1)
+        if (countitem(.@id) > 1)
         {
             narrator S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE, l("Amount?");
-            input .@amount, 1, @inventorylist_amount[.@idx];
+            input .@amount, 1, countitem(.@id);
         }
 
         getmapxy(.@map$, .@x, .@y, 0);
+
         delitem .@id, .@amount;
         .@wtc = getarraysize($WorldBuriedTreasures_id);
         $WorldBuriedTreasures_id[.@wtc] = .@id;
@@ -109,7 +131,7 @@
         $WorldBuriedTreasures_y[.@wtc] = .@y;
         narrator S_FIRST_BLANK_LINE, l("You buried @@ @@.", .@amount, getitemname(.@id));
 
-        return 0;
+        return true;
     }
 
     function ShovelQuests {
@@ -134,10 +156,7 @@
 
 OnUse:
     if (!CheckDigLocation())
-    {
-        message strcharinfo(0), l("I can't use the shovel here.");
-        close;
-    }
+        end;
 
     narrator S_LAST_BLANK_LINE,
         l("You hold the shovel in your hands."),
@@ -174,7 +193,7 @@ OnHour00:
 
 OnInit:
     .PlayerTiredTime = 20;
-    AddDigRect("001-1", 172, 26, 200, 48);
+    AddDigRect("001-1", 100, 26, 200, 48);
     end;
 
 }
