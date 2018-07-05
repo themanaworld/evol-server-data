@@ -193,7 +193,7 @@ OnHour00:
 
 OnInit:
     .PlayerTiredTime = 20;
-    AddDigRect("001-1", 100, 26, 200, 48);
+    AddDigRect("001-1", 172, 26, 200, 48);
     end;
 
 }
