@@ -101,25 +101,27 @@ function	script	fishing	{
     .@pull_rand_max = getvariableofnpc(.pull_rand_max, .@npc$);
     .@pull_rand_max = (.@pull_rand_max ? .@pull_rand_max : 800);
 
-    .@fish_id = getvariableofnpc(.common_fish, .@npc$);
-    .@fish_id = (.@fish_id ? .@fish_id : CommonCarp);
 
-    .@rare_id = getvariableofnpc(.rare_fish, .@npc$);
-    .@rare_fish = (.@rare_fish ? .@rare_fish : GrassCarp);
-
-    .@rare_fish_chance = getvariableofnpc(.rare_fish_chance, .@npc$);
-    .@rare_fish_chance = (.@rare_fish_chance ? .@rare_fish_chance : 25);
-
-    if (getvariableofnpc(.bait_ids[0], .@npc$) < 1)
+    if (getvariableofnpc(.bait_ids[1], .@npc$) < 1)
     {
         // default baits (bait, chance booster)
-        setarray getvariableofnpc(.bait_ids[0], .@npc$),
+        // TODO: we should have some fish prefer certain baits while other
+        //       prefer other bait. currently all fish prefer the same baits
+        setarray getvariableofnpc(.bait_ids[1], .@npc$),
             SmallTentacles, 0,
             Bread, 0,
             Aquada, 1,
             UrchinMeat, 0,
             TortugaTongue, 2,
             Tentacles, 0;
+    }
+
+    if (getvariableofnpc(.fish_ids[1], .@npc$) < 1)
+    {
+        // default fish: <array: 0, {[fish, probability]..}>
+        setarray getvariableofnpc(.fish_ids[1], .@npc$),
+            CommonCarp, 25,
+            GrassCarp, 1;
     }
 
     if (.@baits < 1)
@@ -178,17 +180,10 @@ function	script	fishing	{
             return -4;
         }
 
-        // RNG to obtain a rare fish
-        // TODO: chance booster
-        if (rand(.@rare_fish_chance) == 0)
-        {
-            // TODO: rare fish array
-            .@fish_id = .@rare_id;
-        }
-        // TODO: else common fish array
+        .@fish_id = relative_array_random(getvariableofnpc(.fish_ids[0], .@npc$));
 
         // RNG to obtain a fish
-        if (rand(gettimetick(0) - @fishing_tick) <= .@pull_rand_max)
+        if (rand(gettimetick(0) - @fishing_tick) <= .@pull_rand_max + (100 * .@booster))
         {
             specialeffect(.@success_fx, SELF, playerattached()); // event success
 
@@ -244,11 +239,12 @@ function	script	fishing	{
         return -6;
     }
 
-    for (.@i = 0; .@i < .@baits; .@i += 2)
+    for (.@i = 1; .@i < .@baits; .@i += 2)
     {
         if (getvariableofnpc(.bait_ids[.@i], .@npc$) == .@bait)
         {
             .@bait_c = true;
+            .@booster = getvariableofnpc(.bait_ids[.@i + 1], .@npc$);
             break;
         }
     }
