@@ -10,8 +10,14 @@ before_script:
 image: debian:stable
 
 variables:
+  GET_SOURCES_ATTEMPTS: "5"
+  ARTIFACT_DOWNLOAD_ATTEMPTS: "5"
   MYSQL_ROOT_PASSWORD: root
   packetver: "20150513"
+artifacts:
+  untracked: true
+  when: always
+  expire_in: 3 week
 
 build_test:
   stage: build
