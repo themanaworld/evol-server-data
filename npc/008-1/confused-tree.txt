@@ -11,7 +11,7 @@
 
 // ~t  lowercase hot word regex
 
-008-1,84,63,0	script	Confused Tree	NPC_CONFUSED_TREE,14,14,{
+008-1,255,109,0	script	Confused Tree	NPC_CONFUSED_TREE,14,14,{
 
     function tree_panel {
         if (is_trusted() == false && #Tree_Trusted == false)
@@ -938,7 +938,8 @@ OnInit:
     face();
 
     // boring stuff below
-    .version = 21; // increase this when you make a change
+    .version[0] = 21; // increase this when you make a change
+    .version[1] = 1;
     .uptime = gettimetick(2);
     .alwaysVisible = true; // the NPC doesn't de-spawn when moving away
     .pid = 1; // regex pattern id
