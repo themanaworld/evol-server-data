@@ -169,7 +169,7 @@ mariadb_run_latest:
   - ./.tools/jobs/initdb.sh mysql
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --disable-manager --enable-Werror --enable-buildbot" "--enable-werror"
   - ./.tools/jobs/runservervalgrind.sh mysql
-  image: debian:unstable
+  image: debian:stretch
   services:
   - mysql:latest
 
@@ -181,13 +181,13 @@ mysql_run_valgrind_5.7:
     gcc-6
     git-core
     make autoconf automake autopoint
-    libtool libmysqlclient-dev libz-dev libpcre3-dev
+    libtool libmariadbclient-dev libz-dev libpcre3-dev
     valgrind"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mysql
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --disable-manager --enable-Werror --enable-buildbot" "--enable-werror"
   - ./.tools/jobs/runservervalgrind.sh mysql
-  image: debian:unstable
+  image: debian:stretch
   services:
   - mysql:5.7
 
@@ -199,13 +199,13 @@ mariadb_run_valgrind_latest:
     gcc-6
     git-core
     make autoconf automake autopoint
-    libtool libmysqlclient-dev libz-dev libpcre3-dev
+    libtool libmariadbclient-dev libz-dev libpcre3-dev
     valgrind"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mariadb
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --disable-manager --enable-Werror --enable-buildbot" "--enable-werror"
   - ./.tools/jobs/runservervalgrind.sh mariadb
-  image: debian:unstable
+  image: debian:stretch
   services:
   - mariadb:latest
 
