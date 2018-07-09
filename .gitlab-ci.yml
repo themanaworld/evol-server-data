@@ -1,7 +1,6 @@
 stages:
 - build
 - test
-- valgrind
 - fail
 - ok
 
@@ -283,7 +282,7 @@ mariadb_run_latest_gcc7:
     expire_in: 3 week
 
 .mysql_run_valgrind_latest:
-  stage: valgrind
+  stage: test
   script:
   - export CC=gcc-6
   - ./.tools/jobs/install.sh "mysql-client
@@ -305,7 +304,7 @@ mariadb_run_latest_gcc7:
     expire_in: 3 week
 
 mysql_run_valgrind_5.7:
-  stage: valgrind
+  stage: test
   script:
   - export CC=gcc-6
   - ./.tools/jobs/install.sh "mysql-client
@@ -327,7 +326,7 @@ mysql_run_valgrind_5.7:
     expire_in: 3 week
 
 mariadb_run_valgrind_latest:
-  stage: valgrind
+  stage: test
   script:
   - export CC=gcc-6
   - ./.tools/jobs/install.sh "mysql-client
