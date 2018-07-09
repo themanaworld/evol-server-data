@@ -14,10 +14,6 @@ variables:
   ARTIFACT_DOWNLOAD_ATTEMPTS: "5"
   MYSQL_ROOT_PASSWORD: root
   packetver: "20150513"
-artifacts:
-  untracked: true
-  when: always
-  expire_in: 3 week
 
 build_test:
   stage: build
@@ -33,6 +29,10 @@ build_test:
   image: debian:unstable
   services:
   - mysql:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 .mysql_init_latest:
   stage: build
@@ -43,6 +43,10 @@ build_test:
   image: debian:unstable
   services:
   - mysql:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mysql_init_5.5:
   stage: build
@@ -53,6 +57,10 @@ mysql_init_5.5:
   image: debian:unstable
   services:
   - mysql:5.5
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mysql_init_5.6:
   stage: build
@@ -63,6 +71,10 @@ mysql_init_5.6:
   image: debian:unstable
   services:
   - mysql:5.6
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mysql_init_5.7:
   stage: build
@@ -73,6 +85,10 @@ mysql_init_5.7:
   image: debian:unstable
   services:
   - mysql:5.7
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mariadb_init_latest:
   stage: build
@@ -83,6 +99,10 @@ mariadb_init_latest:
   image: debian:unstable
   services:
   - mariadb:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mariadb_init_10.0:
   stage: build
@@ -93,6 +113,10 @@ mariadb_init_10.0:
   image: debian:unstable
   services:
   - mariadb:10.0
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mariadb_init_5.5:
   stage: build
@@ -103,6 +127,10 @@ mariadb_init_5.5:
   image: debian:unstable
   services:
   - mariadb:5.5
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 .mysql_run_latest:
   stage: test
@@ -120,6 +148,10 @@ mariadb_init_5.5:
   image: debian:jessie
   services:
   - mysql:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mysql_run_5.7_gcc4.9:
   stage: test
@@ -137,6 +169,10 @@ mysql_run_5.7_gcc4.9:
   image: debian:jessie
   services:
   - mysql:5.7
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mariadb_run_latest_gcc4.9:
   stage: test
@@ -154,6 +190,10 @@ mariadb_run_latest_gcc4.9:
   image: debian:jessie
   services:
   - mariadb:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mariadb_run_latest_gcc5:
   stage: test
@@ -171,6 +211,10 @@ mariadb_run_latest_gcc5:
   image: debian:unstable
   services:
   - mariadb:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mariadb_run_latest_gcc6:
   stage: test
@@ -188,6 +232,10 @@ mariadb_run_latest_gcc6:
   image: debian:unstable
   services:
   - mariadb:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mariadb_run_latest_gcc7:
   stage: test
@@ -205,6 +253,10 @@ mariadb_run_latest_gcc7:
   image: debian:unstable
   services:
   - mariadb:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mariadb_run_latest_gcc8:
   stage: test
@@ -222,6 +274,10 @@ mariadb_run_latest_gcc8:
   image: debian:unstable
   services:
   - mariadb:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 .mysql_run_valgrind_latest:
   stage: valgrind
@@ -240,6 +296,10 @@ mariadb_run_latest_gcc8:
   image: debian:stretch
   services:
   - mysql:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mysql_run_valgrind_5.7:
   stage: valgrind
@@ -258,6 +318,10 @@ mysql_run_valgrind_5.7:
   image: debian:stretch
   services:
   - mysql:5.7
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 mariadb_run_valgrind_latest:
   stage: valgrind
@@ -276,6 +340,10 @@ mariadb_run_valgrind_latest:
   image: debian:stretch
   services:
   - mariadb:latest
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
 
 ok_job:
   stage: ok
