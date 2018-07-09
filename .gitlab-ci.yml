@@ -121,7 +121,7 @@ mariadb_init_5.5:
   services:
   - mysql:latest
 
-mysql_run_5.7:
+mysql_run_5.7_gcc4.9:
   stage: test
   script:
   - export CC=gcc-4.9
@@ -138,7 +138,7 @@ mysql_run_5.7:
   services:
   - mysql:5.7
 
-mariadb_run_latest:
+mariadb_run_latest_gcc4.9:
   stage: test
   script:
   - export CC=gcc-4.9
@@ -152,6 +152,74 @@ mariadb_run_latest:
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
   - ./.tools/jobs/runserver.sh mariadb
   image: debian:jessie
+  services:
+  - mariadb:latest
+
+mariadb_run_latest_gcc5:
+  stage: test
+  script:
+  - export CC=gcc-5
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-5
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/initdb.sh mariadb
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  - ./.tools/jobs/runserver.sh mariadb
+  image: debian:unstable
+  services:
+  - mariadb:latest
+
+mariadb_run_latest_gcc6:
+  stage: test
+  script:
+  - export CC=gcc-6
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-6
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/initdb.sh mariadb
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  - ./.tools/jobs/runserver.sh mariadb
+  image: debian:unstable
+  services:
+  - mariadb:latest
+
+mariadb_run_latest_gcc7:
+  stage: test
+  script:
+  - export CC=gcc-7
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-7
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/initdb.sh mariadb
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  - ./.tools/jobs/runserver.sh mariadb
+  image: debian:unstable
+  services:
+  - mariadb:latest
+
+mariadb_run_latest_gcc8:
+  stage: test
+  script:
+  - export CC=gcc-8
+  - ./.tools/jobs/install.sh "mysql-client
+    gcc-8
+    git-core
+    make autoconf automake autopoint
+    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+  - ./.tools/jobs/cloneall.sh
+  - ./.tools/jobs/initdb.sh mariadb
+  - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
+  - ./.tools/jobs/runserver.sh mariadb
+  image: debian:unstable
   services:
   - mariadb:latest
 
