@@ -241,6 +241,7 @@ mariadb_run_latest_gcc7:
   stage: test
   script:
   - export CC=gcc-7
+  - export HERCCPPFLAGS=" -Wno-format-overflow"
   - ./.tools/jobs/install.sh "mysql-client
     gcc-7
     git-core
@@ -262,6 +263,7 @@ mariadb_run_latest_gcc8:
   stage: test
   script:
   - export CC=gcc-8
+  - export HERCCPPFLAGS=" -Wno-format-overflow"
   - ./.tools/jobs/install.sh "mysql-client
     gcc-8
     git-core

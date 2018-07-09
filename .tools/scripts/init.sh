@@ -119,8 +119,8 @@ function make_server {
     echo "autoreconf -i"
     autoreconf -i
     check_error $?
-    echo ./configure $1 CPPFLAGS=\"${CPPFLAGS}\"
-    ./configure $1 CPPFLAGS="$CPPFLAGS"
+    echo ./configure $1 CPPFLAGS=\"${CPPFLAGS}${HERCCPPFLAGS}\"
+    ./configure $1 CPPFLAGS="$CPPFLAGS$HERCCPPFLAGS"
     export err="$?"
     if [ "$err" != 0 ]; then
         echo "Error $err"
