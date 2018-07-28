@@ -30,6 +30,7 @@ function	script	any_of	{
 //     of [value, probability]
 
 function	script	relative_array_random	{
+    .@is_str = getdatatype(getarg(0)) & DATATYPE_STR;
     .@total_prob = getelementofarray(getarg(0), 0);
     .@initial_index = getarrayindex(getarg(0));
     .@initial_index = .@initial_index ? .@initial_index : 1;
@@ -41,8 +42,13 @@ function	script	relative_array_random	{
         .@total_prob = 0;
         .@size = getarraysize(getarg(0));
 
-        for (.@i = .@initial_index + 1; .@i < .@size; .@i += 2)
-            .@total_prob += getelementofarray(getarg(0), .@i);
+        for (.@i = .@initial_index + 1; .@i < .@size; .@i += 2) {
+            if (.@is_str) {
+                .@total_prob += atoi(getelementofarray(getarg(0), .@i));
+            } else {
+                .@total_prob += getelementofarray(getarg(0), .@i);
+            }
+        }
 
         // we cache on the first key
         set(getelementofarray(getarg(0), 0), .@total_prob);
@@ -50,9 +56,14 @@ function	script	relative_array_random	{
 
     .@target_sum = rand(.@total_prob);
 
-    for (.@i = .@initial_index; .@sum < .@target_sum; .@i += 2)
-        .@sum += getelementofarray(getarg(0), .@i + 1);
+    for (.@i = .@initial_index; .@sum < .@target_sum; .@i += 2) {
+        if (.@is_str) {
+            .@sum += atoi(getelementofarray(getarg(0), .@i + 1));
+        } else {
+            .@sum += getelementofarray(getarg(0), .@i + 1);
+        }
+    }
 
     freeloop(false);
-    return getelementofarray(getarg(0), max(0, .@i - 2));
+    return getelementofarray(getarg(0), .@i);
 }

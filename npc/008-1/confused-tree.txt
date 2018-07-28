@@ -206,10 +206,24 @@
                 .@sub$ = substr(.@sub$, 1, getstrlen(.@sub$) - 1); // strip first char
             }
 
-            explode(.@sub2$, .@sub$, ",");
-            .@sub$ = .@sub2$[rand(getarraysize(.@sub2$))]; // allow to have multiple variables
+            if (compare(.@sub$, ",")) {
+                .@var$ = sprintf(".H%s$", substr(md5(.@sub$), 0, 25));
 
-            .@rep$ = getd(sprintf(".D_%s$[%i]", .@sub$, rand(getd(".D_" + .@sub$)))); // get he value
+                if (getelementofarray(getd(.@var$), 1) == "") {
+                    explode(.@sub2$, .@sub$, ",");
+                    .@size = 1;
+
+                    for (.@i = 0; .@i < getarraysize(.@sub2$); ++.@i) {
+                        .@subsize = getd(sprintf(".D_%s", .@sub2$));
+                        copyarray(getelementofarray(getd(.@var$), .@size), getd(sprintf(".D_%s$[1]", .@sub2$)), .@subsize);
+                        .@size += .@subsize;
+                    }
+                }
+            } else {
+                .@var$ = sprintf(".D_%s$", .@sub$);
+            }
+
+            .@rep$ = relative_array_random(getd(.@var$));
 
             if (.@capitalize) .@rep$ = capitalize(.@rep$);
             else if (.@titlecase) .@rep$ = titlecase(.@rep$);
@@ -335,7 +349,7 @@
     }
 
     function special_drops {
-        .@drop$ = .drops$[rand(.drops)];
+        .@drop$ = relative_array_random(.drops$);
         .@name$ = strcharinfo(PC_NAME);
         .@low$ = strtolower(.@name$);
 
@@ -579,66 +593,67 @@
 
 
         if (.@m$ ~= "(?:^| )tell(?: (?:me|him|her|us|them))? a(?:n ?other| lame| bad| boring)? joke")
-            reply(.jokes$[rand(.jokes)]);
+            reply(relative_array_random(.jokes$));
 
         else if (.@m$ ~= "(?:^| )heal me(?:$|[^a-z])")
-            reply(.healing$[rand(.healing)]);
+            reply(relative_array_random(.healing$));
             // XXX: maybe actually heal the player once in a while
 
         else if (.@m$ ~= "(?:^| )(?:what|who) are you")
-            reply(.whoami$[rand(.whoami)]);
+            reply(relative_array_random(.whoami$));
 
         else if (.@m$ ~= rp("(?:^| )(?:hi+|hello|heya?|hiya|good (?:morning|afternoon))[^a-z]* .*~t|~t.* (?:hi+|hello|heya?|hiya)"))
         {
             .blocked = 0;
-            reply(.greetings$[rand(.greetings)]);
+            .@rpl$ = relative_array_random(.greetings$);
+            reply(.@rpl$);
         }
 
         else if (.@o$ ~= rp("(?:^[*]| )(?:kicks?|shakes?) .*~t"))
             reply(special_drops());
 
         else if (.@o$ ~= rp("(?:^[*]| )(?:cuts?|nukes?|kills?|chops? down|saws?|hews?|murders?) .*~t"))
-            reply(.kill$[rand(.kill)]);
+            reply(relative_array_random(.kill$));
 
         else if (.@o$ ~= rp("(?:^[*]| )pokes? .*~t"))
-            reply(.poke$[rand(.poke)]);
+            reply(relative_array_random(.poke$));
 
         else if (.@o$ ~= rp("(?:^[*]| )(?:waters?|pees?|licks?) .*~t"))
-            reply(.disgusting$[rand(.disgusting)]);
+            reply(relative_array_random(.disgusting$));
 
         else if (compare(.@m$, " answer ") && .@m$ ~= "(?:life|universe|everything)(?:$|[^a-z])")
-            reply(.answer$[rand(.answer)]);
+            reply(relative_array_random(.answer$));
 
         else if (.@o$ ~= rp("(?:^[*]| )(?:burns?|incinerates?|ignites?) .*~t"))
-            reply(.burning$[rand(.burning)]);
+            reply(relative_array_random(.burning$));
             // XXX: maybe here send a fire particle effect
 
         else if (.@m$ ~= rp("(?:^| )die ~t"))
-            reply(.die$[rand(.die)]);
+            reply(relative_array_random(.die$));
 
         else if (.@o$ ~= rp("(?:^[*]| )bites? .*~t|(?:^[*]| )drops? .* on ~t"))
-            reply(.silly$[rand(.silly)]);
+            reply(relative_array_random(.silly$));
 
         else if (.@m$ ~= rp("(?:^| )(?:loves?|hugs?|kiss(es)?) .*~t|~t.* love(?:$|[^a-z])"))
-            reply(.love$[rand(.love)]);
+            reply(relative_array_random(.love$));
 
         else if (.@m$ ~= rp("(?:^| )dance .*~t|~t.* dance(?:$|[^a-z])"))
-            reply(.dance$[rand(.dance)]);
+            reply(relative_array_random(.dance$));
 
         else if (.@m$ ~= rp("(?:^| )hates? .*~t"))
-            reply(.hate$[rand(.hate)]);
+            reply(relative_array_random(.hate$));
 
         else if (.@o$ ~= rp("(?:^[*]| )(?:eats?|shoots?|plucks?|tortures?|slaps?|slaps?|poisons?|breaks?|stabs?|throws?|punch(?:es)?) .*~t"))
-            reply(.pain$[rand(.pain)]);
+            reply(relative_array_random(.pain$));
 
         else if (.@o$ ~= rp("(?:^[*]| )(?:climbs?|rides?|mounts?) .*~t"))
-            reply(.climb$[rand(.climb)]);
+            reply(relative_array_random(.climb$));
 
         else if (.@m$ ~= "(?:^| )(?:see y(?:a|ou)|good night|(?:bye)?bye+)(?:$|[^a-z])")
-            reply(.bye$[rand(.bye)]);
+            reply(relative_array_random(.bye$));
 
         else if (.@m$ ~= rp("(?:^| )bad ~t"))
-            reply(.bad$[rand(.bad)]);
+            reply(relative_array_random(.bad$));
 
         else if (.@m$ ~= "(?:^| )(?:how old are you|uptime)(?:$|[^a-z])")
             reply("%%B Server uptime: " + FuzzyTime(.uptime, 1) + ".");
@@ -650,7 +665,7 @@
             reply("%%B ~n, version " + .version + "."); // XXX: maybe return Hercules version and serverdata commit instead
 
         else if (.@m$ ~= "(?:^| )(?:(?:8|eight)[ -]?ball|(?:should|would|will|do|does) (?:i|you|he|she|it|we|they))(?:$|[^a-z])")
-            reply(.eightball$[rand(.eightball)]);
+            reply(relative_array_random(.eightball$));
 
         else if (.@m$ ~= "(?:^| )roll(?: a| the)? dice(?:$|[^a-z])")
             reply(roll_dice(1, 6));
@@ -678,12 +693,12 @@
 
         else if (.@m$ ~= "(?:^| )shut up(?:$|[^a-z])")
         {
-            reply(.shut_up$[rand(.shut_up)]);
+            reply(relative_array_random(.shut_up$));
             .blocked = gettimetick(2);
         }
 
         else if (rand(.dunno_rate) == 0)
-            reply(.no_idea$[rand(.no_idea)]);
+            reply(relative_array_random(.no_idea$));
 
         else
             ++.ignored_times;
@@ -693,7 +708,7 @@
 
     function trigger_hiall {
         if (rand(.hiall_rate) == 0)
-            reply(.greetings$[rand(.greetings)]);
+            reply(relative_array_random(.greetings$));
 
         else
             ++.ignored_times;
