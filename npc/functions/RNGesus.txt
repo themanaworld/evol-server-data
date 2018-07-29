@@ -44,9 +44,9 @@ function	script	relative_array_random	{
 
         for (.@i = .@initial_index + 1; .@i < .@size; .@i += 2) {
             if (.@is_str) {
-                .@total_prob += atoi(getelementofarray(getarg(0), .@i));
+                .@total_prob += max(1, atoi(getelementofarray(getarg(0), .@i)));
             } else {
-                .@total_prob += getelementofarray(getarg(0), .@i);
+                .@total_prob += max(1, getelementofarray(getarg(0), .@i));
             }
         }
 
@@ -54,13 +54,17 @@ function	script	relative_array_random	{
         set(getelementofarray(getarg(0), 0), .@total_prob);
     }
 
-    .@target_sum = rand(.@total_prob);
+    .@target_sum = rand(0, .@total_prob);
 
     for (.@i = .@initial_index; .@sum < .@target_sum; .@i += 2) {
         if (.@is_str) {
             .@sum += atoi(getelementofarray(getarg(0), .@i + 1));
         } else {
             .@sum += getelementofarray(getarg(0), .@i + 1);
+        }
+
+        if (.@sum >= .@target_sum) {
+            break;
         }
     }
 
