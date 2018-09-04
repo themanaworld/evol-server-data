@@ -110,6 +110,42 @@ Copyright (C) 2010-2014 Evol Online
 "@alootid reset" will clear your autolootitem list.
 
 
+"Mister Piou, good day to you.
+
+
+"My good Sir,
+
+
+##BWARNING:##b you are about to permanently empty the quote database.
+
+
+% 10s
+
+
+% 5d
+
+
+%%
+
+
+%+5d
+
+
+%-10s
+
+
+%-5d
+
+
+%05d
+
+
+%10s
+
+
+%5d
+
+
 %d - void
 
 
@@ -164,6 +200,9 @@ Copyright (C) 2010-2014 Evol Online
 %d results found.
 
 
+%d%%
+
+
 %d: Body Armor
 
 
@@ -192,6 +231,15 @@ Copyright (C) 2010-2014 Evol Online
 
 
 %d: Top Headgear
+
+
+%s
+
+
+%s %d %s
+
+
+%s %s %s
 
 
 %s :Main: %s
@@ -371,7 +419,7 @@ Copyright (C) 2010-2014 Evol Online
 - unbans everyone from <channel name>
 
 
-- unbinds your global chat from its attached channel (if binded)
+- unbinds your global chat from its attached channel (if bound)
 
 
 -- %s
@@ -419,6 +467,15 @@ Copyright (C) 2010-2014 Evol Online
 -- Available options
 
 
+-- Continues on Volume II --
+
+
+-- Continues on Volume III --
+
+
+-- Continues on Volume IV --
+
+
 -- Displaying first %d partial matches
 
 
@@ -456,6 +513,9 @@ Copyright (C) 2010-2014 Evol Online
 
 
 ... and 1 @@.
+
+
+...And if you're still trying to check your pet stats, just hover it with your mouse. Thanks.
 
 
 ...I mean log! Made of log!
@@ -515,6 +575,18 @@ Copyright (C) 2010-2014 Evol Online
 7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.
 
 
+<MSG>2949</MSG>
+
+
+<MSG>2950</MSG>
+
+
+<MSG>3455</MSG>
+
+
+<MSG>3456,%d</MSG>
+
+
 @@
 
 
@@ -548,6 +620,9 @@ Copyright (C) 2010-2014 Evol Online
 A GM has discharged you from jail.
 
 
+A band of adventurers formed in Argaes from those who had lost their homes and families. They visited the three permanent human settlements: Tulimshar, Hurnscald and Nivalis.
+
+
 A cookie!
 
 
@@ -555,6 +630,9 @@ A great city, eventually to become larger than the cities of Ancea, rose on the 
 
 
 A headache hits you and you lose your concentration.
+
+
+A large tree was found in a deep cave underneath the island of Candor. Despise the darkness of the cave and absence of leaves, the tree grew strong. It gave light off itself and its energy empowered the wizards.
 
 
 A rabbit!
@@ -581,10 +659,16 @@ ATK: %d - MATK: %d~%d
 Aaaaaahhhhhh!
 
 
+Able to write a poem
+
+
 Aboard stand sailors trying to communicate with you.
 
 
 Abort
+
+
+Abort!
 
 
 About the Legion of Aemil, I'm not sure about them, frankly.
@@ -623,6 +707,9 @@ Add a new line
 Aemil was once a magnificent land unknown to us all.
 
 
+Aemilean Era. Tulimshar, Hurnscald and Nivalis held power of their surrounding lands, except for the Land Of Fire and Keshlam City.
+
+
 Aesop
 
 
@@ -641,7 +728,13 @@ After choosing your weapon, you also need to know how to use it.
 After that, stay still and be patient, but also alert!
 
 
+After the Mana War, the Ancea continent was mostly destroyed. It would take years to nature start repairing the damage of the event.
+
+
 After this small overview of Artis, what do you think of our city?
+
+
+After this war, the Raijin race was born. A race born of Magic. Humans encapsulated in a Mana storm and altered forever.
 
 
 Agi: %d (%d~%d)
@@ -707,6 +800,12 @@ AligeTrigger
 AligeTrigger#Artis
 
 
+Alizarin Herb
+
+
+Alizarin Plant
+
+
 All characters recalled!
 
 
@@ -741,6 +840,9 @@ All online characters of the %s party have been recalled to your position.
 
 
 All players have been kicked!
+
+
+All races were in peace until the Humans set forth to discover the Source of Magic, based on Ukar scholars studies.
 
 
 All skills have been added to your skill tree.
@@ -815,6 +917,12 @@ Although the more powerful you are, the more plushrooms you will need.
 Although, if you want to visit a place nearby, we could take you there.
 
 
+Amethyst
+
+
+Amethyst Shard
+
+
 Amount?
 
 
@@ -839,10 +947,19 @@ And now I want to see you run!
 And now I'm a sailor, as you can see!
 
 
+And rhyming is not too
+
+
 And so far, the Merchant Guild helped me find this appartment so I can't complain!
 
 
 And then what happened?
+
+
+And to demonstrate his beautiful voice,
+
+
+And tried to attract him thus.
 
 
 And what would you give me in exchange for that information?
@@ -870,6 +987,9 @@ And you? How's it going on your side?
 
 
 And you? How's it yaying on your side?
+
+
+Animals Protection Agency of Aemil
 
 
 Any clue on where Astapolos may be hidden?
@@ -1040,6 +1160,9 @@ Artis of course!
 As captain of this ship, I officially name this newly discovered land the ##BDrasil Island##b!
 
 
+As on anvil strikes the hammer
+
+
 As you may know, we are explorers on a long distance voyage, and our swashbuckling mariners need to store enough food to survive. You don't know how dangerous the sea life can be.
 
 
@@ -1077,6 +1200,9 @@ Atropos Mixture
 
 
 Auction is disabled
+
+
+Auto loot item are disabled on this map.
 
 
 Autoloot is now off.
@@ -1322,7 +1448,13 @@ Because I am a Kralog I can't read such things? That's rubbish.
 Because of the dense foliage, you need to go up close to the trees so you don't miss him.
 
 
+Because the voices of death sing a sweet song
+
+
 Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
+
+
+Bee
 
 
 Before I joined Nard, I used to be a thief.
@@ -1338,6 +1470,9 @@ Before...
 
 
 Behind me? It's the Blacksmith House, the most renowned throughout Aemil.
+
+
+Bent trees whistling with the beat of the drum
 
 
 Besides, I need to be here to watch out for thieves while La Johanne is docked.
@@ -1416,6 +1551,9 @@ Brown Cotton Dye
 
 
 Brown Trousers
+
+
+Bug Leg
 
 
 Bury.
@@ -1524,6 +1662,9 @@ But... If he has amnesia like Julia said... We don't need to worry about him. At
 
 
 But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet.#0
+
+
+Butterfly
 
 
 By the way, I'm Lozerk. Lieutenant Lozerk.
@@ -1644,6 +1785,9 @@ Cat got your tongue?
 
 
 Catching a piou
+
+
+Cave Maggot
 
 
 Ch 1 — Fishing apparatus
@@ -1853,7 +1997,22 @@ Clouds |
 Clouds2 | 
 
 
+Clover Patch
+
+
 Clown
+
+
+Coal
+
+
+Coal Vein
+
+
+Cobalt Herb
+
+
+Cobalt Plant
 
 
 Colorant is not the yeying color. Some wear out from light, others look great but inflict itai-itai, and others become spotty or wash-away.
@@ -1919,6 +2078,9 @@ Completed, Julia wins (returned poison)
 Completed, got reward
 
 
+Confused Tree
+
+
 Congrats, you are now part of the crew. Thanks again for your help.
 
 
@@ -1944,6 +2106,9 @@ Cookies provide you strength, health and cuteness.
 
 
 Copper Armbands
+
+
+Copper Necklace
 
 
 Coral
@@ -2045,6 +2210,24 @@ CroconutMob
 Crocotree
 
 
+Crude Amethyst
+
+
+Crude Diamond
+
+
+Crude Emerald
+
+
+Crude Ruby
+
+
+Crude Sapphire
+
+
+Crude Topaz
+
+
 Crusader
 
 
@@ -2061,6 +2244,21 @@ Current exp rate is set to @@%, and will reset to @@% (default value) in @@.
 
 
 Curshroom
+
+
+CvC ON |
+
+
+CvC is already Off.
+
+
+CvC is already On.
+
+
+CvC: Off
+
+
+CvC: On
 
 
 DO YOU FEEL BETTER?!
@@ -2081,6 +2279,9 @@ Dan keeps silent since your last question.
 Dan#000-2-1
 
 
+Dance for me
+
+
 Dancer
 
 
@@ -2094,6 +2295,9 @@ Dark Red Cotton Dye
 
 
 Darlin
+
+
+Database erased.
 
 
 Day Mode Activated.
@@ -2168,6 +2372,15 @@ Dex: %d (%d~%d)
 Dexterity increases your bow damage and your accuracy.
 
 
+Diamond
+
+
+Diamond Shard
+
+
+Diamond Vein
+
+
 Did you find my brother?
 
 
@@ -2216,6 +2429,9 @@ Do not give the password of your room to anybody! Keep it secret and try not to 
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia
 
 
+Do not let intimacy and hunger get to zero. If any of those get to zero, it'll leave you forever.
+
+
 Do nothing
 
 
@@ -2236,6 +2452,9 @@ Do you have anything else for me?
 
 Do you have anything for me today?
 È j' entwadde veur ik vandoage?
+
+Do you know anything about the recent robberies?
+
 
 Do you know how to speak with people around you?
 
@@ -2279,7 +2498,13 @@ Do you want a drink?
 Do you want me to go see her instead of you?
 
 
+Do you want to continue?
+
+
 Do you want to cut this @@?
+
+
+Do you want to enter in sewer?
 
 
 Do you want to go somewhere?
@@ -2334,6 +2559,9 @@ Don is renowned throughout the entire land of Aemil for his blacksmithing skills
 
 
 Don#001-2-27
+
+
+Don't be shy, you are nice
 
 
 Don't belittle me, my work is deserving of the highest esteem.
@@ -2394,6 +2622,9 @@ Drag and drop an item from your inventory.
 
 
 Drasil Island.
+
+
+Due to neglect with day-to-day administration, which she delegated to her council, and uncontrolled expenses, the kingdom faced its first economic crisis.
 
 
 Duel| Can't use %s in duel.
@@ -2519,6 +2750,21 @@ Elmo#001-1
 Elmo#sailors
 
 
+Emerald
+
+
+Emerald Shard
+
+
+Empty Bottle
+
+
+Empty Mug
+
+
+Empty the quote DB
+
+
 Enable
 
 
@@ -2534,7 +2780,7 @@ Enjoy the fraternity and excitement of your future guild!
 Enjoy your new style.
 
 
-Enora asks to kill fluffys
+Enora asks to kill fluffies
 
 
 Enora asks to visit Chelios
@@ -2705,6 +2951,9 @@ File not found.
 File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
 
 
+Find an order with them
+
+
 Find yourself a nice dry spot on a coast where you can easily reach into deep water.
 
 
@@ -2810,6 +3059,12 @@ For starters, you should probably do some stretching and practice on some dummie
 For what kind of tissue?
 
 
+Forest Armor
+
+
+Forest Maggot
+
+
 Found @@, got exp
 
 
@@ -2825,6 +3080,9 @@ Four Castles
 Fourteen Castles
 
 
+Free Mana travels in many directions, and this search took several years before the expedition finally found the right direction to follow.
+
+
 Fresh from the sea and cheap!
 
 
@@ -2835,6 +3093,12 @@ Friend removed.
 
 
 From what I heard, my brother Gugli needs the help of as many people as possible in order to collect a lot of neat things that can be found on this island.
+
+
+From your mind, break the ice
+
+
+Frost held the title of Lord Prince of the Republic for eighteen months, when the council deposed him and declared itself head of the state.
 
 
 Frostiana
@@ -2874,6 +3138,12 @@ Gained zeny is now shown.
 
 
 Gained zeny will not be shown.
+
+
+Gamboge Herb
+
+
+Gamboge Plant
 
 
 Game introduction
@@ -2939,6 +3209,9 @@ Give me back this dish, you dirty liar!#1
 Give me some space.
 
 
+Give your pet a nice name, and keep it healthy, and you'll be a successful pet owner!
+
+
 Go and grab one of them. A good knife will help with your hunting the creatures of this island.
 
 
@@ -2964,6 +3237,12 @@ Go on the upper level if you want to change your room or to use it.
 
 
 Go on.
+
+
+Gold Nuggets
+
+
+Gold Vein
 
 
 Good day miss.
@@ -3044,6 +3323,9 @@ Got the quest
 Grass Carp
 
 
+Grass Snake
+
+
 Great to see you! What can I do for you today?
 
 
@@ -3063,6 +3345,9 @@ Great, what food do you have for me today?#1
 
 
 Green Cotton Dye
+
+
+Green Slime
 
 
 Greetings traveler.#0
@@ -3221,6 +3506,9 @@ Half Croconut
 Half Eggshell
 
 
+Hard Spike
+
+
 Hard work always pays off!
 
 
@@ -3246,6 +3534,9 @@ Have you seen Fexil?
 
 
 Have you seen anything dangerous?
+
+
+Have you seen anything strange lately?
 
 
 He asked to lend some money and a place to open his store, I think that he asked for a place on the merchant squares on the south-west of the city...
@@ -3281,6 +3572,9 @@ He may not have all of his wits but keep in mind one thing:
 He needs more food.
 
 
+He opened his mouth wide and let drop his prey.
+
+
 He said he is going to climb the highest hill in Artis, which is not far from here.
 
 
@@ -3300,6 +3594,9 @@ Hear me *hic* well, what ever, whatididever you will *hic* said ab... uhm... out
 
 
 Heard conversation
+
+
+Hearing these words the Piou felt great joy,
 
 
 Hehe!
@@ -3572,6 +3869,9 @@ Hmm... Let's see, take this one.
 Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*
 
 
+Holding a cheese in his beak.
+
+
 Homunculus growth stats (Lv %d %s):
 
 
@@ -3647,6 +3947,9 @@ Howdy, partner in crime?
 Howdy?
 
 
+However, you should only give food when it's hungry, otherwise it'll believe you're a bad owner and intimacy will decrease.
+
+
 However...
 
 
@@ -3663,6 +3966,9 @@ Hurry up!
 
 
 Hurry, hurry! We need to check its teeth!
+
+
+Hush now and hear the chorus of the woods
 
 
 I ALSO AVOID THE DANGEROUS ANIMALS!
@@ -3792,9 +4098,6 @@ I can't remember anything.#1
 'k weete niks mer.
 
 I can't stay here and talk all day. I have a job to do.
-
-
-I can't use the shovel here.
 
 
 I can't wait all day!
@@ -4433,7 +4736,13 @@ If Enora wants her sword now, I need to ask for your help.
 If I saw *hic* who you were... *hic* Would not have helped you! 
 
 
+If not, how could CrazyKatiektch
+
+
 If so, I hope that he didn't give you any hard time, sometimes he can get up on the wrong side of the bed he becomes an embittered and grumpy old man...
+
+
+If words beat in rhythm
 
 
 If yoiis wants to see a different use for the cards he can yeye for Resa at the light armor shop for a description of the styling cards.
@@ -4449,6 +4758,9 @@ If you catch the escaped piou and bring it back, I will give you a 90% discount 
 
 
 If you continue there will be none left!
+
+
+If you don't like to
 
 
 If you ever find the time, pass by Esperia, it's the greatest city in all of Gasaron!
@@ -4533,6 +4845,12 @@ In fact, everything seems to work perfectly under your guidance. Nard has made t
 
 
 In fact... Oh, the things that I could tell... But ran out of space on this... Just be reasonable and go home.
+
+
+In hopes of one day reconnect with the people of Ancea and establish a trade between the two continents, The City of Artis was founded. The Aemil Continent has then grown without contact with the people of Ancea.
+
+
+In truth, if your song is as beautiful as your plumage,
 
 
 Incorrect name/ID, or no one from the specified guild is online.
@@ -4640,6 +4958,9 @@ Invalid time for ban command.
 Invalid time for jail command.
 
 
+Invalid!
+
+
 Invisible: Off
 
 
@@ -4649,7 +4970,13 @@ Invisible: On
 Iron Armbands
 
 
+Iron Ore
+
+
 Iron Shovel
+
+
+Iron Vein
 
 
 Is it possible to go back to Drasil Island?
@@ -4674,6 +5001,9 @@ Is this for you or somebody else? Because you need to be registered to obtain th
 
 
 Is this some kind of joke?!
+
+
+It doesn't reply.
 
 
 It escaped!
@@ -4826,6 +5156,9 @@ It's still too young to fly too far away, so it just circles nearby.
 It's the big building in northern Artis, at the top of a small hill.
 
 
+It's the good one and, ahem!
+
+
 It's to the west, on your left side. Just go through this door before the stairs and turn left afterwards. Can't miss it!
 
 
@@ -4949,6 +5282,9 @@ Just look at my goods for sale! Fresh fruits and vegetables were shipped only th
 Just look at that water! There's a whole bunch of fish down there.
 
 
+Just say something sparkling
+
+
 Kagerou
 
 
@@ -4973,6 +5309,9 @@ Keep moving girl.#0
 Keep the sword and the jacket, you deserved them!
 
 
+Keshlam expanded rapidly under the rule of King Janeb the Founder, and soon annexed the whole Ancea continent - excluding solely the Land Of Fire - to its domains, creating the Platinum Kingdom.
+
+
 Khaki Cotton Dye
 
 
@@ -4988,10 +5327,16 @@ Knife
 Knight
 
 
+Know that every flatterer,
+
+
 Kralog Voice
 
 
 Lachesis Brew
+
+
+Last seen:
 
 
 Last time I saw you, you were lost at sea on your raft.#0
@@ -5129,7 +5474,16 @@ Lime Cotton Dye
 Line @@ has been removed.
 
 
+List the commands
+
+
 Little Blub
+
+
+Little Green Slime
+
+
+Lives at the expense of those who take him seriously:
 
 
 Living inside a ship is great, but we sometimes need some fresh air.
@@ -5151,6 +5505,9 @@ Lloyd the Banker
 
 
 Locked.
+
+
+Log Head
 
 
 Logic is the beginning of wisdom, not the end.
@@ -5234,6 +5591,12 @@ MOTD Config
 MVP Monster: '%s'/'%s'/'%s' (%d)
 
 
+Maggot
+
+
+Maggot Slime
+
+
 Magic Arpan
 Magisch'n Arpan
 
@@ -5252,6 +5615,12 @@ Makes sense. Do you think we should inform the capt'n about it?
 Male
 
 
+Mana Bug
+
+
+Mana Torch
+
+
 Manana
 
 
@@ -5264,6 +5633,9 @@ Manually trigger the current broadcast
 Map not found.
 
 
+Map or anchor not found: %s
+
+
 Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d
 
 
@@ -5273,7 +5645,19 @@ Market Place
 Marriage failed.
 
 
+Master Fluffy was attracted by the odour,
+
+
+Master Piou sat on a tree,
+
+
 Mauve Cotton Dye
+
+
+Mauve Herb
+
+
+Mauve Plant
 
 
 Max HP: %d (%d~%d)
@@ -5424,6 +5808,9 @@ Most common and widely popular in the fish realm are @@ and pieces of @@.
 
 
 Mostly manuals and tutorials but you won't find out until you open one!
+
+
+Mouboo
 
 
 Mouboo#Artis0
@@ -5642,6 +6029,12 @@ No longer spying on the %s guild.
 No longer spying on the %s party.
 
 
+No matter the grammar
+
+
+No matter the spelling
+
+
 No matter what people tell you, words and ideas can change the world.
 
 
@@ -5700,6 +6093,9 @@ No.
 Nen'k.
 
 No. Sorry.
+
+
+NoAutoloot | 
 
 
 NoBaseEXP | 
@@ -5912,6 +6308,9 @@ OH, LOOK THERE!
 OK, let's trade.
 
 
+Oak
+
+
 Oboro
 
 
@@ -6003,6 +6402,9 @@ Oh no, you still have @@ Fluffies to kill.
 
 
 Oh noes!
+
+
+Oh noes! You found my secret backdoor!
 
 
 Oh oh... I see, your party became so big that you want to create an even larger structure?
@@ -6227,7 +6629,13 @@ Old line:
 On
 
 
+On March 213CCE, Chancellor Benjamin Frost, with support of the council, proclaimed the Republic of Ancea. This event would become known as the Blue Revolution.
+
+
 On one hand, ranged weapons are generally weaker than melee ones, but you attack from a safer position. On the other hand, depending on the level of the weapon, melee ones potentially can yeild quicker kills.
+
+
+On the year 206CCE, after a long crisis of succession, a minor noble only known as Queen Platyna the Red came to inherit the Platinum Crown.
 
 
 Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
@@ -6305,6 +6713,9 @@ Our mommy doesn't allow us to go there, because it's dangerous. But he doesn't l
 Our only wish to eat a plush, so juicy sweet...
 
 
+Over lovers under a starry night
+
+
 Ow-oh!
 
 
@@ -6371,13 +6782,31 @@ Piberries
 Piberries Infusion
 
 
+Pickaxe
+
+
 Pikpik
+
+
+Pile Of Ash
+
+
+Pink Antennae
 
 
 Pink Blobime
 
 
 Pink Cotton Dye
+
+
+Pink Flower
+
+
+Pink Petal
+
+
+Pinkie
 
 
 Piou
@@ -6398,10 +6827,10 @@ Piou and The Fluffy
 Piou egg
 
 
+Pious must keep a strict diet composed of Piberries.
+
+
 Piousse
-
-
-Planting not implemented.
 
 
 Player '%s' (session #%d) | Location: %d,%d
@@ -6605,7 +7034,7 @@ Please enter a player name (usage: @unmute <char name>).
 Please enter a player name (usage: @where <char name>).
 
 
-Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
+Please enter a position bitmask and an amount (usage: @refine <equip position> <+/- amount>).
 
 
 Please enter a quest skill ID.
@@ -6758,6 +7187,9 @@ Please select a chapter:
 Please select a quest:
 
 
+Please select an option:
+
+
 Please select the interval:
 
 
@@ -6768,6 +7200,9 @@ Please take this @@ for your help.
 
 
 Please try to figure out what went wrong with this order and bring me those potions.
+
+
+Please write the following sentence:
 
 
 Please, have a seat.
@@ -6794,6 +7229,12 @@ Plushrooms you say?
 Poem about Poems
 
 
+Poem is making the words dance
+
+
+Poison Skull
+
+
 Poisoned Dish
 
 
@@ -6815,6 +7256,12 @@ Priest
 Princess Slayer
 
 
+PrivateAirshipEndable | 
+
+
+PrivateAirshipStartable | 
+
+
 Professor
 
 
@@ -6830,13 +7277,13 @@ Pumpkin
 Pumpkin Hat
 
 
+Pumpkin Juice
+
+
 Pumpkin Seeds
 
 
-Pumpkish
-
-
-Pumpkish Juice
+PumpkinMob
 
 
 Purple Blobime
@@ -6896,6 +7343,9 @@ Quest debug
 Quest state: @@
 
 
+Quest state: @@, @@
+
+
 Quit
 
 
@@ -6939,6 +7389,9 @@ RattosControl
 RattosControl
 
 RattosControl#001-2-23
+
+
+Raw Log
 
 
 Read it.
@@ -7091,6 +7544,12 @@ Royal Guard T
 Rrrr... Pchhhh...
 
 
+Ruby
+
+
+Ruby Shard
+
+
 Rumly is hiding behind the tree.
 
 
@@ -7139,10 +7598,22 @@ Samantha
 Sapartan
 
 
+Sapphire
+
+
+Sapphire Shard
+
+
+Say her love to glamourous Gliktch?
+
+
 Scheduled broadcasts
 
 
 Scheduled broadcasts - Create new
+
+
+Scorpion
 
 
 Script could not be loaded.
@@ -7152,6 +7623,9 @@ Script loaded.
 
 
 Scripts have been reloaded.
+
+
+Scythe
 
 
 Sea Drops
@@ -7289,6 +7763,9 @@ Shadow Chaser
 Shadow Chaser T
 
 
+Share your mind is your mission
+
+
 She is a good friend of mine... We wanted to marry a few weeks before her accident but...
 
 
@@ -7385,6 +7862,15 @@ Sign#001-1-s-merchantg
 Sign#001-1-s-warehouse
 
 
+Silk Cocoon
+
+
+Silk Robe
+
+
+Silkworm
+
+
 Silver Cotton Dye
 
 
@@ -7439,6 +7925,9 @@ Skills have been enabled in this map.
 Slave clone spawned.
 
 
+Sleep well my angel but don't follow along
+
+
 Small Tentacles
 
 
@@ -7473,6 +7962,9 @@ So that's why we wanted to warn you, maybe he comes from that guild, as that sig
 
 
 So that's why we wanted to warn you, maybe she comes from that guild, as that sign was on her raft.#0
+
+
+So you have now a pet, who is loyal to you. It'll follow you everywhere, but there are two things you must know.
 
 
 So you think you're tough? A warrior must also be loyal and patient.#0
@@ -7664,6 +8156,12 @@ Speed returned to normal.
 Spend it wisely this time.
 
 
+Spider
+
+
+Spiky Mushroom
+
+
 Spying on the %s guild.
 
 
@@ -7671,6 +8169,9 @@ Spying on the %s party.
 
 
 Squichy Claws
+
+
+Squirrel
 
 
 Stalker
@@ -7766,6 +8267,9 @@ Strength multiplies the damage of your hits, especially melee ones. You will als
 Stupid yeye...
 
 
+Styling Shop
+
+
 Subquests:
 
 
@@ -7811,6 +8315,9 @@ Surprise me!
 Swordsman
 
 
+Swore, though somewhat later, that he would never be 
+
+
 THAT'S A NICE NAME!
 
 
@@ -7844,7 +8351,7 @@ Take this money for your wise choice. But do not try it again. The open sea has 
 Take your reward from the box next to my desk!
 
 
-Talk to FightNPCName and he'll show you the ropes.
+Talk to Hector and he'll show you the ropes.
 
 
 Talk to you later!
@@ -7961,6 +8468,9 @@ Thanks for the help!
 Thanks!
 
 
+That makes everybody
+
+
 That part of the town is called the Gilded Hill, it's also where the Merchant Guild has its headquarters.
 
 
@@ -7980,6 +8490,9 @@ That's exactly what I needed!
 
 
 That's good to hear!
+
+
+That's not the question
 
 
 That's perfect, yoiis.#0
@@ -8003,6 +8516,9 @@ The @@ is a one time item, you can use it as many times as you want, but you can
 The Book of Laws
 
 
+The Fluffy seized it and said:
+
+
 The Legion needs some potions.
 
 
@@ -8018,7 +8534,22 @@ The Legion of Gasaron is in charge of the security of the intramural part of our
 The Legion?
 
 
+The Mana Tree was lost, the caves entrances destroyed, and the Wizard Order was split in two: One part was on Candor, and other at the Magic Tower.
+
+
+The Piou, embarrassed and confused,
+
+
+The Platinum Kingdom grew and prospered, and drew most of the human population to the safety of the walls of Keshlam, Tulimshar, Hurnscald and Nivalis.
+
+
 The Raijin from the library flirted with me a while ago, so has Enora from the Legion.
+
+
+The Republic of Ancea ceased to exist officially in August 216CCE, when the cities of Tulimshar, Hurnscald and Nivalis installed their own independent governments.
+
+
+The Ukar Historical Association on Aemil
 
 
 The answer is a single word, without conjugation.
@@ -8039,7 +8570,13 @@ The captain is waiting for you! Hurry up.
 The captain wants:
 
 
+The collection of four books entitled “World Story For Dummies” is based on the uncessable work from the Ukar scholars, thanks to whom this wouldn't be possible.
+
+
 The control and administration of the cities passes hands sometimes. You may find the Mana Order or the Brotherhood in charge instead of us at some point!
+
+
+The council, however, neglected day-to-day administration duties, and focused their efforts in regaining control of the rest of Ancea.
 
 
 The detail and craftsmanship that went into this sword can only be accomplished by the most practiced of blacksmiths.
@@ -8060,10 +8597,16 @@ The fear to see her sleeping on this quiet and lonely bed is becoming more and m
 The fee is of @@ E. So, do you want to register?
 
 
+The first human settlement to develop an advanced political structure and to become a city-state was Keshlam.
+
+
 The first page contains the universal rules that have been agreed upon throughout the land.
 
 
 The first thing you should do is to evaluate your enemy.
+
+
+The first village build was named Esperia. Aurora region was very fertile, and for this reason they moved towards countryside and built farms.
 
 
 The fog has gone.
@@ -8090,10 +8633,10 @@ The hill is located on the north-east of Artis.
 The holy messenger has given judgement.
 
 
-The item (%d: '%s') is not equipable.
+The item (%d: '%s') is not equippable.
 
 
-The item is not equipable.
+The item is not equippable.
 
 
 The light armor shop is ran by Resa, she is part of the Merchant Guild of Artis.
@@ -8117,10 +8660,19 @@ The miracle is this: the more we share, the more we have.
 The monster/egg name/ID doesn't exist.
 
 
-The name of the book is @@.
+The music of the trees floats through the breeze
+
+
+The name of the book is "%s".
 
 
 The newly created Fleet of Ancea travelled so far that they were never heard from again.
+
+
+The newly created Fleet of Ancea travelled so far that they were never heard from again. They found a continent, present on legends of explorers who never came back.
+
+
+The next and final battle happened at Candor. Wizards attacks from both sides near the Mana Tree provoked a Mana Storm. A Great Quake shook the earth of Ancea and the land began to split. Geography changed, and Keshlan vanished from the map.
 
 
 The next page begins to list the complex trading laws of the City of Esperia
@@ -8171,10 +8723,16 @@ The stowaway doesn't answer.
 The travel was fine for you? It was terrible for me, I was sea-sick.
 
 
+The tree was entitled The Mana Tree, and the Wizard Order took control over Candor Island. They learnt to control the mana flow, and limited its use, claiming Magic to be too dangerous for public use.
+
+
 The two cannot wed because one is either a baby or already married.
 
 
 The usurper has been punished! This is a great day! Take this reward as a prize for your loyalty to the old commander!
+
+
+The “Ancean Era” is a term used to defined the time period between the beginning of recorded history and the events at the Mana Tree, and thanks to Ukar scholars, this is widely accepted as year 1 on all Gasaron.
 
 
 Their leaders then came to the conclusion that an alliance was the only way they could survive.
@@ -8306,6 +8864,12 @@ They are so tasty when cooked with some @@. Don't drop any of them!
 They eventually found a new land after much hardship and named it Aurora, after its beautiful sunrise.
 
 
+They gathered merchants and warriors to join them in a journey to find new lands to live in. Tulimshar's merchant lords gave them ships to sail east.
+
+
+They named this continent as Aemil, in honour of one of such explorers. The area they docked in was called Aurora, after its beautiful sunrise.
+
+
 They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of humans.
 
 
@@ -8340,6 +8904,9 @@ This NPC doesn't exist.
 
 
 This action can't be performed at the moment. Please try again later.
+
+
+This action was met with widespread opposition from all races, and a war broke. The tritans led the offensive, in attempts to keep the tree untouched and mana available for all.
 
 
 This book contains everything you should know about it, take it!
@@ -8387,6 +8954,9 @@ This is Drasil Island, I named it after an ancient mythical tree.
 This is a harsh word to use, you are never alone in the beautiful place of Artis.
 
 
+This is a lesson that is worth a cheese no doubt."
+
+
 This is an @@, a light blue sea fruit. They're highly desired in the archipelago.
 
 
@@ -8414,6 +8984,9 @@ This item cannot be traded.
 This item cannot be used as bait here.
 
 
+This item cannot be used within this area.
+
+
 This job has no alternate body styles.
 
 
@@ -8421,6 +8994,9 @@ This kind of talk should be taken with a grain of salt, but I agree and admit th
 
 
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on him.#1
+
+
+This led Keshlam into rapid decline and its citizen began to emigrate to the other Cities. By the end of the Ancean Era, Keshlam City was a quarter of the original size.
 
 
 This menu allows you to change your skills.
@@ -8492,6 +9068,9 @@ This player is not in jail.
 This player is now
 
 
+This skill cannot be used within this area.
+
+
 This skill number doesn't exist or isn't a quest skill.
 
 
@@ -8502,6 +9081,9 @@ This will remain your respawn point until set elsewhere.
 
 
 Three Castles
+
+
+Three cities developed on the eastern side of Ancea: Tulimshar, Hurnscald and Nivalis.
 
 
 Tibbo
@@ -8540,16 +9122,34 @@ To change your job level, use this command:
 To change your stats, use these commands:
 
 
+To de-trust a player:
+
+
+To get a quote:
+
+
 To get started with fishing, you'll need two things: a fishing rod and a bait.
 
 
 To get the current rate:
 
 
+To grab a quote:
+
+
+To ignore a player:
+
+
 To move between characters that are on different accounts, you have to use the Trade function.
 
 
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
+
+
+To perform most actions, like feeding and renaming, just right-click it. You can even put it back on the egg if its following gets too annoying.
+
+
+To remove a quote:
 
 
 To reset back to normal:
@@ -8562,6 +9162,12 @@ To successfully catch a fish, you need to pull up your hook by clicking it, righ
 
 
 To thank you, accept my old fishing rod.
+
+
+To trust a player:
+
+
+To unignore a player:
 
 
 ToFightRoom#001-2-32
@@ -8585,7 +9191,16 @@ Too bad. I'm not hungry enough for these cookies of yours. Maybe I'll come back 
 Too bad... Come back when you'll have some nice food for me. Growl... grumble... grumble.
 
 
+Too lazy.
+
+
 Too risky, I might end up in jail. Do it yourself.
+
+
+Topaz
+
+
+Topaz Shard
 
 
 Toppy Blub
@@ -8618,6 +9233,9 @@ Trade
 Training Arrow
 
 
+Training Wand
+
+
 TrainingGladius
 
 
@@ -8627,10 +9245,16 @@ Transforming into monster is not allowed in Guild Wars.
 Treasure Chest
 
 
+Tree Control Panel
+
+
 Tritan Voice
 Tritan Stemme
 
 Trozz#001-2-40
+
+
+True be or not true be
 
 
 True but now he seems pretty fine! Am I right?#1
@@ -8693,6 +9317,9 @@ Uhm, bye.
 Uhm... Your story seems...
 
 
+Unable to Teleport in this area
+
+
 Unable to decrease the number/value.
 
 
@@ -8703,6 +9330,9 @@ Unable to spawn evil clone.
 
 
 Unable to spawn slave clone.
+
+
+Unable to win, the tritans attacked Hurnscald. While human troops moved in attempts to avoid its fall, the Kralog and Ukar joined the tritans and they took the city.
 
 
 Understood, I will help you.
@@ -9377,7 +10007,16 @@ What? Why? They aren't more attractive than me, why do you want to see them?
 What?! This tritan is the worse shirker I ever met!
 
 
+Whatever inside can be
+
+
+Whatever your idea
+
+
 When you go near villagers, you can see a speech bubble above them, you can then talk to them by pressing the [T] key.
+
+
+When you intimacy is high, it'll increase your stats and who knows, might even help you in combat!
 
 
 When you see something that looks more like a bug than a feature, report it on http://bugs.evolonline.org or try to contact a game contributor.
@@ -9470,6 +10109,9 @@ Who should I search for?
 Who's this Julia?
 
 
+Whose eyes listen under Moonlight
+
+
 Why Frenchy? It's a Russian!#0
 Vowa Frenchy? 't ès en Russische!
 
@@ -9512,6 +10154,9 @@ Why?
 Why? And who should you bring it back to?
 
 
+Wicked Mushroom
+
+
 Wind and grass is nice and cool, so juicy sweet...
 
 
@@ -9521,10 +10166,16 @@ With hunger, thirst, and sleep as your only companions, you have the disturbing 
 With it, you can safely move items and funds between your characters.
 
 
+With no choir master nor voice to be sung
+
+
 With proper training, a piou can become a good friend and faithful companion in your adventures.
 
 
 With script
+
+
+With the growth of the Kingdom halted, slow maintenance, and two great famines which killed over half the human population, the council decided to seize power and depose Platyna the Red.
 
 
 With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their businesses.
@@ -9540,6 +10191,21 @@ Wooden Bow
 
 
 Wooden Sword
+
+
+Words become music and glance
+
+
+World Story For Dummies, Vol I - Ancean Era: From Keshlam to an Empire
+
+
+World Story For Dummies, Vol II - Ancean Era: Revolutions and Independence
+
+
+World Story For Dummies, Vol III - Aemilean Era: The Mana Tree and The Mana War
+
+
+World Story For Dummies, Vol IV - Aemilean Era: The Fleet of Ancea
 
 
 Wow, it seems everyone knows my name!
@@ -9731,6 +10397,9 @@ You already registered. Waiting for your partner...
 You already took a @@, please put this one back in the box.
 
 
+You are a handsome and good looking bird!
+
+
 You are already mounting something else
 
 
@@ -9756,6 +10425,12 @@ You are in the Blacksmith's house, by Jove!
 
 
 You are just sitting on the shadow of your store.
+
+
+You are lucky there are no mental faculty requirements to join the Legion!#0
+
+
+You are lucky there are no mental faculty requirements to join the Legion!#1
 
 
 You are new around here, right?#0
@@ -9816,6 +10491,9 @@ You are on a raft, adrift in the sea.
 Ge zit ip en vlot, an't ronddrijven in de zee.
 
 You are on the human resource wing of the Town Hall.
+
+
+You are the Phoenix of this forest."
 
 
 You are unable to change your job.
@@ -9959,6 +10637,9 @@ You can't drop items in this map
 You can't go there!
 Ge kunt 'ier nie passer'n
 
+You can't join in a clan if you're in a guild.
+
+
 You can't leave battleground guilds.
 
 
@@ -9977,10 +10658,19 @@ You can't trade in this map
 You can't use commands while dead.
 
 
+You can't use the shovel here.
+
+
 You can't withdraw that much money
 
 
 You cannot autotrade when dead.
+
+
+You cannot bury this item!
+
+
+You cannot bury under a NPC!
 
 
 You cannot change guild leaders in this map.
@@ -10295,7 +10985,7 @@ You notice a young boy sitting on one of the highest branches of the tree.
 You now also have access to the Legion building. Good job, you earned it.
 
 
-You open a book named @@.
+You open a book named "%s".
 
 
 You open the book, but it looks like the sea water and time damaged it severely. Some pages are not readable anymore. Some others are simply missing.
@@ -10344,6 +11034,9 @@ You see a dust covered book on the shelf...
 
 
 You see a raijin boy, sitting on the edge of the dock.
+
+
+You see a tree.
 
 
 You see a young elven girl, with a strong sense of pain in her face.
@@ -10844,6 +11537,9 @@ change the sex of
 conf/import/msg_conf.txt
 
 
+data %s %s %s data
+
+
 data @@ @@ @@ data
 
 
@@ -10857,6 +11553,9 @@ feet,
 
 
 fisherman
+
+
+foo %2$s bar %1$s baz
 
 
 garment, 
@@ -10949,16 +11648,49 @@ right hand,
 skill %d: %s (%s)
 
 
+test
+
+
+test %s
+
+
 test @@
+
+
+test#0
+
+
+test#1
 
 
 test1
 
 
+test1 %s#0
+
+
+test1 @@#0
+
+
+test1#0
+
+
 test2
 
 
+test2 %s#1
+
+
+test2 @@#1
+
+
+test2#1
+
+
 top head, 
+
+
+tricked thus again.
 
 
 unban

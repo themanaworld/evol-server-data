@@ -110,6 +110,42 @@ Artículos MVP:
 "@alootid reset" will clear your autolootitem list.
 
 
+"Mister Piou, good day to you.
+
+
+"My good Sir,
+
+
+##BWARNING:##b you are about to permanently empty the quote database.
+
+
+% 10s
+
+
+% 5d
+
+
+%%
+
+
+%+5d
+
+
+%-10s
+
+
+%-5d
+
+
+%05d
+
+
+%10s
+
+
+%5d
+
+
 %d - void
 %d - vacío
 
@@ -164,6 +200,9 @@ Artículos MVP:
 %d results found.
 %d resultados encontrados.
 
+%d%%
+
+
 %d: Body Armor
 %d: Armadura Corporal
 
@@ -193,6 +232,15 @@ Artículos MVP:
 
 %d: Top Headgear
 %d: Equipo para parte Superior de la Cabeza
+
+%s
+
+
+%s %d %s
+
+
+%s %s %s
+
 
 %s :Main: %s
 %s :Principal: %s
@@ -371,8 +419,8 @@ Atributos de '%s':
 - unbans everyone from <channel name>
 - desbloquea a todos del canal <channel name>
 
-- unbinds your global chat from its attached channel (if binded)
-- desenlaza tu chat global del canal al que esté fijado (si está enlazado)
+- unbinds your global chat from its attached channel (if bound)
+
 
 -- %s
 -- %s
@@ -419,6 +467,15 @@ Atributos de '%s':
 -- Available options
 -- Opciones disponibles
 
+-- Continues on Volume II --
+
+
+-- Continues on Volume III --
+
+
+-- Continues on Volume IV --
+
+
 -- Displaying first %d partial matches
 -- Mostrando las primeras %d correspondencias parciales
 
@@ -457,6 +514,9 @@ Atributos de '%s':
 
 ... and 1 @@.
 ... y 1 @@.
+
+...And if you're still trying to check your pet stats, just hover it with your mouse. Thanks.
+
 
 ...I mean log! Made of log!
 ¡...quiero decir leño! ¡Hecho de leño!
@@ -515,6 +575,18 @@ Atributos de '%s':
 7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.
 7. ##BNo hacer multibox.##b No se permite entrar en combate controlando más de un personaje al mismo tiempo.
 
+<MSG>2949</MSG>
+
+
+<MSG>2950</MSG>
+
+
+<MSG>3455</MSG>
+
+
+<MSG>3456,%d</MSG>
+
+
 @@
 @@
 
@@ -548,6 +620,9 @@ Atributos de '%s':
 A GM has discharged you from jail.
 Un GM te ha liberado de la cárcel.
 
+A band of adventurers formed in Argaes from those who had lost their homes and families. They visited the three permanent human settlements: Tulimshar, Hurnscald and Nivalis.
+
+
 A cookie!
 ¡Una galleta!
 
@@ -556,6 +631,9 @@ Una gran ciudad, al fin más grande que las ciudades de Ancea, rosa de la costa 
 
 A headache hits you and you lose your concentration.
 Tienes un dolor de cabeza y pierdes la concentración.
+
+A large tree was found in a deep cave underneath the island of Candor. Despise the darkness of the cave and absence of leaves, the tree grew strong. It gave light off itself and its energy empowered the wizards.
+
 
 A rabbit!
 ¡Un conejo!
@@ -581,11 +659,17 @@ Ataque: %d - At. Mágico: %d~%d
 Aaaaaahhhhhh!
 ¡Aaaaaahhhhhh!
 
+Able to write a poem
+
+
 Aboard stand sailors trying to communicate with you.
 Los marineros a bordo están de pie intentando comunicarse contigo.
 
 Abort
 Abortar
+
+Abort!
+
 
 About the Legion of Aemil, I'm not sure about them, frankly.
 Sobre la Legión de Aemil, no estóy seguro acerca de ellos, francamente.
@@ -623,6 +707,9 @@ Añadir una nueva línea
 Aemil was once a magnificent land unknown to us all.
 Aemil fue una vez una tierra magnífica desconocida para todos nosotros.
 
+Aemilean Era. Tulimshar, Hurnscald and Nivalis held power of their surrounding lands, except for the Land Of Fire and Keshlam City.
+
+
 Aesop
 Aesop
 
@@ -641,8 +728,14 @@ Después de elegir tu arma, también necesitas saber cómo usarla.
 After that, stay still and be patient, but also alert!
 Después de eso, quédate quieto y sé paciente, ¡pero permanece también alerta!
 
+After the Mana War, the Ancea continent was mostly destroyed. It would take years to nature start repairing the damage of the event.
+
+
 After this small overview of Artis, what do you think of our city?
 Tras esta pequeña visión de Artis, ¿qué opina de nuestra ciudad?
+
+After this war, the Raijin race was born. A race born of Magic. Humans encapsulated in a Mana storm and altered forever.
+
 
 Agi: %d (%d~%d)
 Agilidad: %d (%d~%d)
@@ -707,6 +800,12 @@ AligeTrigger
 AligeTrigger#Artis
 AligeTrigger#Artis
 
+Alizarin Herb
+
+
+Alizarin Plant
+
+
 All characters recalled!
 ¡Todos los personajes han sido traídos!
 
@@ -742,6 +841,9 @@ Todos los personajes conectados del grupo %s han sido traídos a tu posición.
 
 All players have been kicked!
 ¡Todos los jugadores han sido expulsados!
+
+All races were in peace until the Humans set forth to discover the Source of Magic, based on Ukar scholars studies.
+
 
 All skills have been added to your skill tree.
 Todas las habilidades han sido agregadas a tu árbol de habilidades.
@@ -815,6 +917,12 @@ Aunque cuanto más poderoso sea usted, más habitaciones de lujo necesitará.
 Although, if you want to visit a place nearby, we could take you there.
 Aunque, si quiere visitar un lugar cercano, podríamos llevarle allí.
 
+Amethyst
+
+
+Amethyst Shard
+
+
 Amount?
 ¿Cantidad?
 
@@ -839,11 +947,20 @@ And now I want to see you run!
 And now I'm a sailor, as you can see!
 Y como puedes ver, ¡ahora soy un marinero!
 
+And rhyming is not too
+
+
 And so far, the Merchant Guild helped me find this appartment so I can't complain!
 Y hasta aquí, el Gremio de Mercaderes me ayudó a encontrar este apartamento, ¡así que no puedo quejarme!
 
 And then what happened?
 ¿Y entonces qué pasó?
+
+And to demonstrate his beautiful voice,
+
+
+And tried to attract him thus.
+
 
 And what would you give me in exchange for that information?
 ¿Y qué me daría a cambio de esa información?
@@ -871,6 +988,9 @@ And you? How's it going on your side?
 
 And you? How's it yaying on your side?
 ¿Y a ti? ¿Cómo te yaying de tu lado?
+
+Animals Protection Agency of Aemil
+
 
 Any clue on where Astapolos may be hidden?
 ¿Alguna pista de en dónde podría estar escondido Astapolos?
@@ -1040,6 +1160,9 @@ Artis of course!
 As captain of this ship, I officially name this newly discovered land the ##BDrasil Island##b!
 Como capitán de este barco, nombro oficialmente a esta recientemente descubierta tierra de ##BIsta Drasil##b!
 
+As on anvil strikes the hammer
+
+
 As you may know, we are explorers on a long distance voyage, and our swashbuckling mariners need to store enough food to survive. You don't know how dangerous the sea life can be.
 Como quizás ya sepas, somos exploradores en un viaje de larga distancia y nuestros marineros de capa y espada necesitan almacenar suficiente comida para sobrevivir. No sabes cuán peligrosa puede ser la vida en el mar.
 
@@ -1078,6 +1201,9 @@ Mezcla de Atropos
 
 Auction is disabled
 La subasta está deshabilitada
+
+Auto loot item are disabled on this map.
+
 
 Autoloot is now off.
 El saqueo automático ahora está apagado.
@@ -1322,8 +1448,14 @@ Because I am a Kralog I can't read such things? That's rubbish.
 Because of the dense foliage, you need to go up close to the trees so you don't miss him.
 Por el denso follaje, necesita acercarse más a los árboles para no perderle.
 
+Because the voices of death sing a sweet song
+
+
 Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
 Porque no está autorizado a girar desde algunos mapas, %d jugador(es) no han sido recordados.
+
+Bee
+
 
 Before I joined Nard, I used to be a thief.
 Antes de unirme a Nard, yo era un ladrón.
@@ -1339,6 +1471,9 @@ Antes...
 
 Behind me? It's the Blacksmith House, the most renowned throughout Aemil.
 ¿Detrás de mí? Eso es la Casa del Herrero, el más prestigioso de todo Aemil.
+
+Bent trees whistling with the beat of the drum
+
 
 Besides, I need to be here to watch out for thieves while La Johanne is docked.
 Además, necesito estar aquí para estar atento a los ladrones mientras La Johanne se cierra.
@@ -1417,6 +1552,9 @@ Tinte de algodón marrón
 
 Brown Trousers
 Pantalones marrones
+
+Bug Leg
+
 
 Bury.
 Enterrar.
@@ -1525,6 +1663,9 @@ Pero... Si era amnesia como Julia dice... No tenemos que preocuparnos por él. A
 
 But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet.#0
 Pero... Si era amnesia como Julia dice... No tenemos que preocuparnos por él. Al menos no todavía.#0
+
+Butterfly
+
 
 By the way, I'm Lozerk. Lieutenant Lozerk.
 Por cierto, soy Lozerk. Teniente Lozerk.
@@ -1645,6 +1786,9 @@ Cat got your tongue?
 
 Catching a piou
 Capturando un piou
+
+Cave Maggot
+
 
 Ch 1 — Fishing apparatus
 Ch 1 — Aparatos de pesca
@@ -1853,8 +1997,23 @@ Nubes |
 Clouds2 | 
 Nubes2 | 
 
+Clover Patch
+
+
 Clown
 Payaso
+
+Coal
+
+
+Coal Vein
+
+
+Cobalt Herb
+
+
+Cobalt Plant
+
 
 Colorant is not the yeying color. Some wear out from light, others look great but inflict itai-itai, and others become spotty or wash-away.
 El colorante no es el color. Alguno agotado del claro, otros parecen buenos pero inflijen itai-itai, y otros se hacen punteados o limpios.
@@ -1919,6 +2078,9 @@ Completado, Julia gana (vuelta a la posición)
 Completed, got reward
 Completado, obtuvo la recompensa
 
+Confused Tree
+
+
 Congrats, you are now part of the crew. Thanks again for your help.
 Felicidades, ahora eres parte de la tripulación. Gracias de nuevo por tu ayuda.
 
@@ -1945,6 +2107,9 @@ Las Galletas te proporcionan fuerza, salud y ternura.
 
 Copper Armbands
 Brazaletes de cobre
+
+Copper Necklace
+
 
 Coral
 Coral
@@ -2045,6 +2210,24 @@ CroconutMob
 Crocotree
 Crocotree
 
+Crude Amethyst
+
+
+Crude Diamond
+
+
+Crude Emerald
+
+
+Crude Ruby
+
+
+Crude Sapphire
+
+
+Crude Topaz
+
+
 Crusader
 Cruzado
 
@@ -2062,6 +2245,21 @@ Current exp rate is set to @@%, and will reset to @@% (default value) in @@.
 
 Curshroom
 Curshroom
+
+CvC ON |
+
+
+CvC is already Off.
+
+
+CvC is already On.
+
+
+CvC: Off
+
+
+CvC: On
+
 
 DO YOU FEEL BETTER?!
 ¡¿TE SIENTES MEJOR?!
@@ -2081,6 +2279,9 @@ Dan se queda en silencio desde tu última pregunta.
 Dan#000-2-1
 Dan#000-2-1
 
+Dance for me
+
+
 Dancer
 Bailarín
 
@@ -2095,6 +2296,9 @@ Tinte de algodón rojo oscuro
 
 Darlin
 Darlin
+
+Database erased.
+
 
 Day Mode Activated.
 Modo de Día Activado.
@@ -2168,6 +2372,15 @@ Destreza: %d (%d~%d)
 Dexterity increases your bow damage and your accuracy.
 La Destreza incremente el daño que haces con el arco y tu precisión.
 
+Diamond
+
+
+Diamond Shard
+
+
+Diamond Vein
+
+
 Did you find my brother?
 ¿Ha encontrado a mi hermano?
 
@@ -2216,6 +2429,9 @@ Do not give the password of your room to anybody! Keep it secret and try not to 
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia
 ¡No le des la contraseña de tu habitación a nadie! Mantenla en secreto y, en el futuro, intenta no usar la misma en ninguna otra habitación. - Julia
 
+Do not let intimacy and hunger get to zero. If any of those get to zero, it'll leave you forever.
+
+
 Do nothing
 No haga nada
 
@@ -2236,6 +2452,9 @@ Do you have anything else for me?
 
 Do you have anything for me today?
 ¿Tienes algo para mí el día de hoy?
+
+Do you know anything about the recent robberies?
+
 
 Do you know how to speak with people around you?
 ¿Sabe cómo hablar con la gente de su alrededor?
@@ -2279,8 +2498,14 @@ Do you want a drink?
 Do you want me to go see her instead of you?
 ¿Quieres que vaya a verla en tu lugar?
 
+Do you want to continue?
+
+
 Do you want to cut this @@?
 ¿Quieres cortar este @@?
+
+Do you want to enter in sewer?
+
 
 Do you want to go somewhere?
 ¿Quieres ir a algún sitio?
@@ -2335,6 +2560,9 @@ Don es conocido por toda la tierra de Aemil por sus habilidades de herrería, y 
 
 Don#001-2-27
 Don#001-2-27
+
+Don't be shy, you are nice
+
 
 Don't belittle me, my work is deserving of the highest esteem.
 No me subestime, mi trabajo es digno de la mayor consideración.
@@ -2395,6 +2623,9 @@ Arrastra y suelta un artículo de tu inventario.
 
 Drasil Island.
 Isla Drasil.
+
+Due to neglect with day-to-day administration, which she delegated to her council, and uncontrolled expenses, the kingdom faced its first economic crisis.
+
 
 Duel| Can't use %s in duel.
 Duelo| No puede utilizar %s en duelo.
@@ -2519,6 +2750,21 @@ Elmo#001-1
 Elmo#sailors
 Elmo#sailors
 
+Emerald
+
+
+Emerald Shard
+
+
+Empty Bottle
+
+
+Empty Mug
+
+
+Empty the quote DB
+
+
 Enable
 Habilitar
 
@@ -2534,8 +2780,8 @@ Enjoy the fraternity and excitement of your future guild!
 Enjoy your new style.
 Disfrute de su nuevo estilo.
 
-Enora asks to kill fluffys
-Enora pide matar peluches
+Enora asks to kill fluffies
+
 
 Enora asks to visit Chelios
 Enora pide visitar a Chelios
@@ -2705,6 +2951,9 @@ Archivo no encontrado.
 File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
 Archivo descargado. Sepa que las banderas de mapa y los monstruos engendrados directamente no se eliminan.
 
+Find an order with them
+
+
 Find yourself a nice dry spot on a coast where you can easily reach into deep water.
 Encuentra un buen punto seco en una costa en la que pueda alcanzar fácilmente aguas profundas.
 
@@ -2810,6 +3059,12 @@ Para principiantes, probablemente deberías hacer algunos estiramientos y practi
 For what kind of tissue?
 ¿Para qué tipo de tejido?
 
+Forest Armor
+
+
+Forest Maggot
+
+
 Found @@, got exp
 Encontrado @@, obtuvo experiencia
 
@@ -2825,6 +3080,9 @@ Cuatro Castillos
 Fourteen Castles
 Catorce Castillos
 
+Free Mana travels in many directions, and this search took several years before the expedition finally found the right direction to follow.
+
+
 Fresh from the sea and cheap!
 ¡Fresco del mar y barato!
 
@@ -2836,6 +3094,12 @@ Amigo quitado.
 
 From what I heard, my brother Gugli needs the help of as many people as possible in order to collect a lot of neat things that can be found on this island.
 Por lo que he oído, mi hermano Gugli necesita la ayuda de tanta gente como sea posible para recolectar un montón de cosas geniales que pueden encontrarse en esta isla.
+
+From your mind, break the ice
+
+
+Frost held the title of Lord Prince of the Republic for eighteen months, when the council deposed him and declared itself head of the state.
+
 
 Frostiana
 Frostiana
@@ -2875,6 +3139,12 @@ El zeny obtenido se muestra ahora.
 
 Gained zeny will not be shown.
 El zeny obtenido no se mostrará.
+
+Gamboge Herb
+
+
+Gamboge Plant
+
 
 Game introduction
 Introducción al juego
@@ -2939,6 +3209,9 @@ Give me back this dish, you dirty liar!#1
 Give me some space.
 Deme espacio.
 
+Give your pet a nice name, and keep it healthy, and you'll be a successful pet owner!
+
+
 Go and grab one of them. A good knife will help with your hunting the creatures of this island.
 Ve y agarra uno de ellos. Un buen cuchillo te ayudará en tu cacería de las criaturas de esta isla.
 
@@ -2965,6 +3238,12 @@ Vaya al nivel superior si quiere cambiar su habitación o para utilizarla.
 
 Go on.
 Partir.
+
+Gold Nuggets
+
+
+Gold Vein
+
 
 Good day miss.
 Buen día, señorita.
@@ -3044,6 +3323,9 @@ Obtuvo la misión
 Grass Carp
 Carpa herbívora
 
+Grass Snake
+
+
 Great to see you! What can I do for you today?
 ¡Me alegro de verte! ¿Qué puedo hacer hoy por ti?
 
@@ -3064,6 +3346,9 @@ Genial, ¿Qué comida tiene para mí hoy?#1
 
 Green Cotton Dye
 Tinte de algodón verde
+
+Green Slime
+
 
 Greetings traveler.#0
 Saludos, viajero.#0
@@ -3221,6 +3506,9 @@ Medio Croconut
 Half Eggshell
 Media cáscara de huevo
 
+Hard Spike
+
+
 Hard work always pays off!
 ¡El trabajo duro siempre compensa!
 
@@ -3247,6 +3535,9 @@ Have you seen Fexil?
 
 Have you seen anything dangerous?
 ¿No has visto nada peligroso?
+
+Have you seen anything strange lately?
+
 
 He asked to lend some money and a place to open his store, I think that he asked for a place on the merchant squares on the south-west of the city...
 Pidió prestar algún dinero y un lugar para abrir su tienda, creo que pidió un lugar en las plazas de mercado al suroeste de la ciudad...
@@ -3281,6 +3572,9 @@ Puede que él no tenga todo su buen juicio pero tenga en mente una cosa:
 He needs more food.
 Él necesita más comida.
 
+He opened his mouth wide and let drop his prey.
+
+
 He said he is going to climb the highest hill in Artis, which is not far from here.
 Dijo que va a escalar la colina más alta de Artis, que no está lejos de aquí.
 
@@ -3301,6 +3595,9 @@ Escúchame *hic* bien, ¡¿de qué... acerca 'e qué vas a hablar?! Lo que viste
 
 Heard conversation
 Escuchar conversación
+
+Hearing these words the Piou felt great joy,
+
 
 Hehe!
 ¡Jeje!
@@ -3572,6 +3869,9 @@ Hmm... Déjame ver, toma ésta.
 Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*
 Hmmm, hm... *tos*, *tos*, *eructo*, *tos*. ¡¿Qué... Qué es eso?!... *tos*, *eructo*... Maldición Gado... *tos*
 
+Holding a cheese in his beak.
+
+
 Homunculus growth stats (Lv %d %s):
 Estadísticas de crecimiento del homúnculo (Lv %d %s):
 
@@ -3647,6 +3947,9 @@ Howdy, partner in crime?
 Howdy?
 ¿Qué tal?
 
+However, you should only give food when it's hungry, otherwise it'll believe you're a bad owner and intimacy will decrease.
+
+
 However...
 Sin embargo...
 
@@ -3664,6 +3967,9 @@ Hurry up!
 
 Hurry, hurry! We need to check its teeth!
 ¡Rápido, rápido! ¡Necesitamos revisar sus dientes!
+
+Hush now and hear the chorus of the woods
+
 
 I ALSO AVOID THE DANGEROUS ANIMALS!
 ¡TAMBIÉN EVITO LOS ANIMALES PELIGROSOS!
@@ -3793,9 +4099,6 @@ No puedo recordar nada.#1
 
 I can't stay here and talk all day. I have a job to do.
 No puedo quedarme aquí y hablar todo el día. Tengo trabajo que hacer.
-
-I can't use the shovel here.
-No puedo usar la pala aquí.
 
 I can't wait all day!
 ¡No puedo esperar todo el día!
@@ -4433,7 +4736,13 @@ Si Enora quiere su espada ahora, necesito pedirle a usted que me ayude.
 If I saw *hic* who you were... *hic* Would not have helped you! 
 Si hubiese visto *hic* quién eras... *hic* ¡No te habría ayudado!
 
+If not, how could CrazyKatiektch
+
+
 If so, I hope that he didn't give you any hard time, sometimes he can get up on the wrong side of the bed he becomes an embittered and grumpy old man...
+
+
+If words beat in rhythm
 
 
 If yoiis wants to see a different use for the cards he can yeye for Resa at the light armor shop for a description of the styling cards.
@@ -4450,6 +4759,9 @@ Si capturas al piou que escapó y lo traes de regreso, te daré un 90% de descue
 
 If you continue there will be none left!
 ¡Si continúa ahí no dejará ninguna!
+
+If you don't like to
+
 
 If you ever find the time, pass by Esperia, it's the greatest city in all of Gasaron!
 
@@ -4534,6 +4846,12 @@ De hecho, todo parece funcionar perfectamente bajo su guia. Nard ha tomado la de
 
 In fact... Oh, the things that I could tell... But ran out of space on this... Just be reasonable and go home.
 De hecho... Oh, las cosas que podría contar... Pero me quedo sin tiempo para esto... Sea razonable y vaya a casa.
+
+In hopes of one day reconnect with the people of Ancea and establish a trade between the two continents, The City of Artis was founded. The Aemil Continent has then grown without contact with the people of Ancea.
+
+
+In truth, if your song is as beautiful as your plumage,
+
 
 Incorrect name/ID, or no one from the specified guild is online.
 Nombre/ID incorrecto, o nadie del gremio especificado está en línea.
@@ -4640,6 +4958,9 @@ Momento inválido para prohibir comando.
 Invalid time for jail command.
 Momento inválido para encerrar comando.
 
+Invalid!
+
+
 Invisible: Off
 Invisible: Apagado
 
@@ -4649,8 +4970,14 @@ Invisible: Encendido
 Iron Armbands
 Brazaletes de Hierro
 
+Iron Ore
+
+
 Iron Shovel
 Pala de Hierro
+
+Iron Vein
+
 
 Is it possible to go back to Drasil Island?
 ¿Es posible volver a la isla Drasil?
@@ -4675,6 +5002,9 @@ Is this for you or somebody else? Because you need to be registered to obtain th
 
 Is this some kind of joke?!
 ¡¿Es algún tipo de broma?!
+
+It doesn't reply.
+
 
 It escaped!
 ¡Escapé!
@@ -4826,6 +5156,9 @@ Aún es demasiado joven para echar a volar tan lejos, a sí que sólo va en cír
 It's the big building in northern Artis, at the top of a small hill.
 
 
+It's the good one and, ahem!
+
+
 It's to the west, on your left side. Just go through this door before the stairs and turn left afterwards. Can't miss it!
 
 
@@ -4949,6 +5282,9 @@ Just look at my goods for sale! Fresh fruits and vegetables were shipped only th
 Just look at that water! There's a whole bunch of fish down there.
 
 
+Just say something sparkling
+
+
 Kagerou
 Kagerou
 
@@ -4973,6 +5309,9 @@ Sigue moviéndote, chica.#0
 Keep the sword and the jacket, you deserved them!
 Guarda la espada y la chamarra, ¡Los mereces!
 
+Keshlam expanded rapidly under the rule of King Janeb the Founder, and soon annexed the whole Ancea continent - excluding solely the Land Of Fire - to its domains, creating the Platinum Kingdom.
+
+
 Khaki Cotton Dye
 Tinte de algodón caquí
 
@@ -4988,11 +5327,17 @@ Cuchillo
 Knight
 Caballero
 
+Know that every flatterer,
+
+
 Kralog Voice
 
 
 Lachesis Brew
 Infusión de lachesis
+
+Last seen:
+
 
 Last time I saw you, you were lost at sea on your raft.#0
 La última vez que le vi, estaba perdida en el mar en su balsa.#0
@@ -5129,8 +5474,17 @@ Tinte de algodón limón
 Line @@ has been removed.
 La línea @@ se ha eliminado.
 
+List the commands
+
+
 Little Blub
 Blub Pequeño
+
+Little Green Slime
+
+
+Lives at the expense of those who take him seriously:
+
 
 Living inside a ship is great, but we sometimes need some fresh air.
 Vivir dentro del barco es estupendo, pero a veces necesitamos algo de aire fresco,
@@ -5151,6 +5505,9 @@ Lloyd the Banker
 Lloyd el Banquero
 
 Locked.
+
+
+Log Head
 
 
 Logic is the beginning of wisdom, not the end.
@@ -5234,6 +5591,12 @@ Configuración de MOTD
 MVP Monster: '%s'/'%s'/'%s' (%d)
 Monstruo MVP: '%s'/'%s'/'%s' (%d)
 
+Maggot
+
+
+Maggot Slime
+
+
 Magic Arpan
 Magic Arpan
 
@@ -5252,6 +5615,12 @@ Tiene sentido. ¿Cree que deberíamos informar al capitán sobre eso?
 Male
 Varón
 
+Mana Bug
+
+
+Mana Torch
+
+
 Manana
 Mañana
 
@@ -5264,6 +5633,9 @@ Desatar manualmente la transmisión actual
 Map not found.
 Mapa no encontrado.
 
+Map or anchor not found: %s
+
+
 Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d
 Mapa: %s (Zone:%s) | Jugadores: %d | NPCs: %d | Chats: %d | Ventas: %d
 
@@ -5273,8 +5645,20 @@ Mercado
 Marriage failed.
 El matrimonio falló.
 
+Master Fluffy was attracted by the odour,
+
+
+Master Piou sat on a tree,
+
+
 Mauve Cotton Dye
 Tinte de algodón malva
+
+Mauve Herb
+
+
+Mauve Plant
+
 
 Max HP: %d (%d~%d)
 HP máximos: %d (%d~%d)
@@ -5425,6 +5809,9 @@ Most common and widely popular in the fish realm are @@ and pieces of @@.
 
 Mostly manuals and tutorials but you won't find out until you open one!
 ¡Muchos manuales y tutoriales pero no descubrirá hasta que abra uno!
+
+Mouboo
+
 
 Mouboo#Artis0
 Mouboo#Artis0
@@ -5642,6 +6029,12 @@ No espiar más al gremio %s.
 No longer spying on the %s party.
 No espiar más al grupo %s.
 
+No matter the grammar
+
+
+No matter the spelling
+
+
 No matter what people tell you, words and ideas can change the world.
 No importa lo que la gente le diga, las palabras e ideas pueden cambiar el mundo.
 
@@ -5701,6 +6094,9 @@ No.
 
 No. Sorry.
 No. Lo siento.
+
+NoAutoloot | 
+
 
 NoBaseEXP | 
 NoBaseEXP | 
@@ -5912,6 +6308,9 @@ OH, LOOK THERE!
 OK, let's trade.
 De acuerdo, comerciemos.
 
+Oak
+
+
 Oboro
 Oboro
 
@@ -6004,6 +6403,9 @@ Oh no, ahún le quedan @@ Fluffies por matar.
 
 Oh noes!
 ¡Oh noes!
+
+Oh noes! You found my secret backdoor!
+
 
 Oh oh... I see, your party became so big that you want to create an even larger structure?
 Oh, oh... Ya veo, ¿su grupo se ha hecho tan grande que quiere crear una estructura mayor?
@@ -6227,8 +6629,14 @@ Línea vieja:
 On
 Encendido
 
+On March 213CCE, Chancellor Benjamin Frost, with support of the council, proclaimed the Republic of Ancea. This event would become known as the Blue Revolution.
+
+
 On one hand, ranged weapons are generally weaker than melee ones, but you attack from a safer position. On the other hand, depending on the level of the weapon, melee ones potentially can yeild quicker kills.
 Por un lado, las armas de largo alcance, generalmente, son más débiles que las de cuerpo a cuerpo, pero atacas desde una posición segura. Por el otro lado, dependiendo del nivel del arma, las de cuerpo a cuerpo potencialmente pueden producir muertes más rápidas.
+
+On the year 206CCE, after a long crisis of succession, a minor noble only known as Queen Platyna the Red came to inherit the Platinum Crown.
+
 
 Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
 Una vez que el mostruo esté muerto, dale clic en los artículos que suelta para agregarlos a tu inventario. También puedes usar la tecla 'Z' para reclamar lo que se le caiga.
@@ -6305,6 +6713,9 @@ Nuestra mamá no nos permite ir allí, porque es peligroso. ¡Pero él no escuch
 Our only wish to eat a plush, so juicy sweet...
 Sólo deseamos comer un jugoso caramelo...
 
+Over lovers under a starry night
+
+
 Ow-oh!
 
 
@@ -6371,14 +6782,32 @@ Pibayas
 Piberries Infusion
 Infusión de Pibayas
 
+Pickaxe
+
+
 Pikpik
 Pikpik
+
+Pile Of Ash
+
+
+Pink Antennae
+
 
 Pink Blobime
 Blobime Rosa
 
 Pink Cotton Dye
 Tinte de algodón rosa
+
+Pink Flower
+
+
+Pink Petal
+
+
+Pinkie
+
 
 Piou
 Piou
@@ -6398,11 +6827,11 @@ El Piou y el Peluche
 Piou egg
 Huevo de Piou
 
+Pious must keep a strict diet composed of Piberries.
+
+
 Piousse
 Piousse
-
-Planting not implemented.
-
 
 Player '%s' (session #%d) | Location: %d,%d
 Jugador '%s' (sesión #%d) | Ubicación: %d,%d
@@ -6605,8 +7034,8 @@ Por favor introduzca un nombre de jugador (uso: @unmute <char name>).
 Please enter a player name (usage: @where <char name>).
 Por favor introduzca un nombre de jugador (uso: @where <char name>).
 
-Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
-Por favor introduzca una posición y una cantidad (uso: @refine <equip position> <+/- amount>).
+Please enter a position bitmask and an amount (usage: @refine <equip position> <+/- amount>).
+
 
 Please enter a quest skill ID.
 Por favor introduzca una ID de misión.
@@ -6758,6 +7187,9 @@ Please select a chapter:
 Please select a quest:
 Por favor selecione una misión:
 
+Please select an option:
+
+
 Please select the interval:
 Por favor seleccione el intervalo:
 
@@ -6768,6 +7200,9 @@ Please take this @@ for your help.
 Por favor coja este @@ por su ayuda.
 
 Please try to figure out what went wrong with this order and bring me those potions.
+
+
+Please write the following sentence:
 
 
 Please, have a seat.
@@ -6794,6 +7229,12 @@ Plushrooms you say?
 Poem about Poems
 Poema sobre Poemas
 
+Poem is making the words dance
+
+
+Poison Skull
+
+
 Poisoned Dish
 Plato envenenado
 
@@ -6815,6 +7256,12 @@ Sacerdote
 Princess Slayer
 Princesa Slayer
 
+PrivateAirshipEndable | 
+
+
+PrivateAirshipStartable | 
+
+
 Professor
 Profesor
 
@@ -6830,14 +7277,14 @@ Calabaza
 Pumpkin Hat
 Sombrero de calabaza
 
+Pumpkin Juice
+
+
 Pumpkin Seeds
 Semillas de calabaza
 
-Pumpkish
-Pumpkish
+PumpkinMob
 
-Pumpkish Juice
-Zumo de calabaza
 
 Purple Blobime
 Blobime púrpura
@@ -6896,6 +7343,9 @@ Limpieza de misión
 Quest state: @@
 Estado de la misión: @@
 
+Quest state: @@, @@
+
+
 Quit
 Salir
 
@@ -6940,6 +7390,9 @@ RattosControl
 
 RattosControl#001-2-23
 RattosControl#001-2-23
+
+Raw Log
+
 
 Read it.
 Léalo.
@@ -7091,6 +7544,12 @@ Guardia Real T
 Rrrr... Pchhhh...
 Rrrr... Pchhhh...
 
+Ruby
+
+
+Ruby Shard
+
+
 Rumly is hiding behind the tree.
 Rumly se está escondiendo detrás del árbol.
 
@@ -7139,11 +7598,23 @@ Samantha
 Sapartan
 Sapartan
 
+Sapphire
+
+
+Sapphire Shard
+
+
+Say her love to glamourous Gliktch?
+
+
 Scheduled broadcasts
 Emisiones programadas
 
 Scheduled broadcasts - Create new
 Emisiones programadas - Crear nueva
+
+Scorpion
+
 
 Script could not be loaded.
 El script no ha podido cargarse.
@@ -7153,6 +7624,9 @@ Script cargado.
 
 Scripts have been reloaded.
 El scripts se ha recargado.
+
+Scythe
+
 
 Sea Drops
 Caídas en el Mar
@@ -7289,6 +7763,9 @@ Cazador de sombra
 Shadow Chaser T
 Cazador de sombra T
 
+Share your mind is your mission
+
+
 She is a good friend of mine... We wanted to marry a few weeks before her accident but...
 Ella es una buena amiga mía... Queríamos casarnos unas semanas antes de su accidente, pero...
 
@@ -7385,6 +7862,15 @@ Señal#001-1-s-merchantg
 Sign#001-1-s-warehouse
 Señal#001-1-s-almacén
 
+Silk Cocoon
+
+
+Silk Robe
+
+
+Silkworm
+
+
 Silver Cotton Dye
 Tinte de algodón plateado
 
@@ -7439,6 +7925,9 @@ Las habilidades se han habilitado en este mapa.
 Slave clone spawned.
 Clon esclavo engendrado.
 
+Sleep well my angel but don't follow along
+
+
 Small Tentacles
 Tentáculos Pequeños
 
@@ -7474,6 +7963,9 @@ Por eso queríamos avisarle, quizá él viene desde ese gremio, como esa señal 
 
 So that's why we wanted to warn you, maybe she comes from that guild, as that sign was on her raft.#0
 Por eso queríamos avisarle, quizá él viene desde ese gremio, como esa señal que había en la balsa.#0
+
+So you have now a pet, who is loyal to you. It'll follow you everywhere, but there are two things you must know.
+
 
 So you think you're tough? A warrior must also be loyal and patient.#0
 ¿Así que se cre dura? Un guerrero debe ser también leal y paciente.#0
@@ -7664,6 +8156,12 @@ La velocidad volvió a normal.
 Spend it wisely this time.
 Gástelo sabiamente esta vez.
 
+Spider
+
+
+Spiky Mushroom
+
+
 Spying on the %s guild.
 Espiando al gremio %s.
 
@@ -7672,6 +8170,9 @@ Espiando al grupo %s.
 
 Squichy Claws
 Garras de Squichy
+
+Squirrel
+
 
 Stalker
 Acechador
@@ -7766,6 +8267,9 @@ La Fuerza multiplica el daño de tus golpes, especialmente en combates cuerpo a 
 Stupid yeye...
 Estúpido yeye...
 
+Styling Shop
+
+
 Subquests:
 Submisiones:
 
@@ -7811,6 +8315,9 @@ Surprise me!
 Swordsman
 Espadachín
 
+Swore, though somewhat later, that he would never be 
+
+
 THAT'S A NICE NAME!
 ¡ESE ES UN BONITO NOMBRE!
 
@@ -7844,7 +8351,7 @@ Ten este dinero por su sabia elección. Pero no lo intentes de nuevo. El mar abi
 Take your reward from the box next to my desk!
 ¡Recoge tu recompensa, que está la caja junto a mi escritorio!
 
-Talk to FightNPCName and he'll show you the ropes.
+Talk to Hector and he'll show you the ropes.
 
 
 Talk to you later!
@@ -7961,6 +8468,9 @@ Thanks for the help!
 Thanks!
 
 
+That makes everybody
+
+
 That part of the town is called the Gilded Hill, it's also where the Merchant Guild has its headquarters.
 
 
@@ -7981,6 +8491,9 @@ That's exactly what I needed!
 
 That's good to hear!
 ¡Es bueno escuchar eso!
+
+That's not the question
+
 
 That's perfect, yoiis.#0
 Eso es perfecto, yoiis.
@@ -8003,6 +8516,9 @@ El @@ es un artículo de una vez, puede usarlo todas las veces que quiera, ¡per
 The Book of Laws
 
 
+The Fluffy seized it and said:
+
+
 The Legion needs some potions.
 La Legión necesita algunas pociones.
 
@@ -8018,7 +8534,22 @@ The Legion of Gasaron is in charge of the security of the intramural part of our
 The Legion?
 ¿La Legión?
 
+The Mana Tree was lost, the caves entrances destroyed, and the Wizard Order was split in two: One part was on Candor, and other at the Magic Tower.
+
+
+The Piou, embarrassed and confused,
+
+
+The Platinum Kingdom grew and prospered, and drew most of the human population to the safety of the walls of Keshlam, Tulimshar, Hurnscald and Nivalis.
+
+
 The Raijin from the library flirted with me a while ago, so has Enora from the Legion.
+
+
+The Republic of Ancea ceased to exist officially in August 216CCE, when the cities of Tulimshar, Hurnscald and Nivalis installed their own independent governments.
+
+
+The Ukar Historical Association on Aemil
 
 
 The answer is a single word, without conjugation.
@@ -8039,7 +8570,13 @@ The captain is waiting for you! Hurry up.
 The captain wants:
 El capitán quiere:
 
+The collection of four books entitled “World Story For Dummies” is based on the uncessable work from the Ukar scholars, thanks to whom this wouldn't be possible.
+
+
 The control and administration of the cities passes hands sometimes. You may find the Mana Order or the Brotherhood in charge instead of us at some point!
+
+
+The council, however, neglected day-to-day administration duties, and focused their efforts in regaining control of the rest of Ancea.
 
 
 The detail and craftsmanship that went into this sword can only be accomplished by the most practiced of blacksmiths.
@@ -8060,11 +8597,17 @@ El miedo a verla dormir en esta cama silenciosa y tranquila se está volviendo m
 The fee is of @@ E. So, do you want to register?
 La couta es de @@ E. Así que, ¿quiere registrarse?
 
+The first human settlement to develop an advanced political structure and to become a city-state was Keshlam.
+
+
 The first page contains the universal rules that have been agreed upon throughout the land.
 
 
 The first thing you should do is to evaluate your enemy.
 La primera cosa que debes hacer es evaluar a tu enemigo.
+
+The first village build was named Esperia. Aurora region was very fertile, and for this reason they moved towards countryside and built farms.
+
 
 The fog has gone.
 La niebla se ha ido.
@@ -8090,11 +8633,11 @@ La colina se ubica al nordeste de Artis.
 The holy messenger has given judgement.
 El santo mesnsajero ha sido juzgado.
 
-The item (%d: '%s') is not equipable.
-El artículo (%d: '%s') no puede equiparse.
+The item (%d: '%s') is not equippable.
 
-The item is not equipable.
-El artículo no puede equiparse.
+
+The item is not equippable.
+
 
 The light armor shop is ran by Resa, she is part of the Merchant Guild of Artis.
 La tienda de armaduras ligeras es dirigida por Resa, ella es parte del Gremio Mercantil.
@@ -8117,10 +8660,19 @@ El milagro es este: cuanto más compartimos, más tenemos.
 The monster/egg name/ID doesn't exist.
 El nombre/ID de monstruo/huevo no existe.
 
-The name of the book is @@.
-El nombre del libro es @@.
+The music of the trees floats through the breeze
+
+
+The name of the book is "%s".
+
 
 The newly created Fleet of Ancea travelled so far that they were never heard from again.
+
+
+The newly created Fleet of Ancea travelled so far that they were never heard from again. They found a continent, present on legends of explorers who never came back.
+
+
+The next and final battle happened at Candor. Wizards attacks from both sides near the Mana Tree provoked a Mana Storm. A Great Quake shook the earth of Ancea and the land began to split. Geography changed, and Keshlan vanished from the map.
 
 
 The next page begins to list the complex trading laws of the City of Esperia
@@ -8171,11 +8723,17 @@ El polizón no responde.
 The travel was fine for you? It was terrible for me, I was sea-sick.
 ¿Fue bien el viaje para usted? Fue terrible para mí, estaba mareado.
 
+The tree was entitled The Mana Tree, and the Wizard Order took control over Candor Island. They learnt to control the mana flow, and limited its use, claiming Magic to be too dangerous for public use.
+
+
 The two cannot wed because one is either a baby or already married.
 Ninguno de los dos pudo casarse porque uno es un bebé o ya está casado.
 
 The usurper has been punished! This is a great day! Take this reward as a prize for your loyalty to the old commander!
 ¡El usurpador ha sido castigado! ¡Éste es un gran día! ¡Ten esta recompensa como premio por tu lealtad al viejo comandante!
+
+The “Ancean Era” is a term used to defined the time period between the beginning of recorded history and the events at the Mana Tree, and thanks to Ukar scholars, this is widely accepted as year 1 on all Gasaron.
+
 
 Their leaders then came to the conclusion that an alliance was the only way they could survive.
 Sus líderes entonces llegaron a la conclusión de que una alianza era la única manera en que ellos podrías sobrevivir.
@@ -8306,6 +8864,12 @@ Son muy sabrosos cuando se cocinan con @@. ¡Que no se le caiga ninguno!
 They eventually found a new land after much hardship and named it Aurora, after its beautiful sunrise.
 
 
+They gathered merchants and warriors to join them in a journey to find new lands to live in. Tulimshar's merchant lords gave them ships to sail east.
+
+
+They named this continent as Aemil, in honour of one of such explorers. The area they docked in was called Aurora, after its beautiful sunrise.
+
+
 They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of humans.
 
 
@@ -8341,6 +8905,9 @@ Este NPC no exista.
 
 This action can't be performed at the moment. Please try again later.
 Esta acción no puede cumplirse por ahora. Por favor vuelva a intentarlo más tarde.
+
+This action was met with widespread opposition from all races, and a war broke. The tritans led the offensive, in attempts to keep the tree untouched and mana available for all.
+
 
 This book contains everything you should know about it, take it!
 Este libro contiene todo lo que debería saber sobre eso, ¡cójalo!
@@ -8387,6 +8954,9 @@ Esta es la isla Drasil. La llamé así tras un antiguo árbol místico.
 This is a harsh word to use, you are never alone in the beautiful place of Artis.
 Esa es una palabra dura, usted nunca está solo en el bello palacio de Artis.
 
+This is a lesson that is worth a cheese no doubt."
+
+
 This is an @@, a light blue sea fruit. They're highly desired in the archipelago.
 Esto es un @@, una fruta azul ligera. Ellas son altamente deseadas en el archipiélago.
 
@@ -8414,6 +8984,9 @@ No se puede comerciar con este artícuo.
 This item cannot be used as bait here.
 
 
+This item cannot be used within this area.
+
+
 This job has no alternate body styles.
 
 
@@ -8422,6 +8995,9 @@ Este tipo de charla debería tomarse con una pizca de sal, pero estoy de acuerdo
 
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on him.#1
 Este tipo de charla debería tomarse con una pizca de sal, pero estoy de acuerdo y admito que yo también soy escéptico, así que no le quitéis el ojo de encima.#1
+
+This led Keshlam into rapid decline and its citizen began to emigrate to the other Cities. By the end of the Ancean Era, Keshlam City was a quarter of the original size.
+
 
 This menu allows you to change your skills.
 Este menú le permite cambiar sus habilidades.
@@ -8492,6 +9068,9 @@ Este jugador no está en la cárcel.
 This player is now
 Ahora este jugador es
 
+This skill cannot be used within this area.
+
+
 This skill number doesn't exist or isn't a quest skill.
 Este número de habilidad no existe o no es una habilidad de misión.
 
@@ -8503,6 +9082,9 @@ Esto mantendrá su punto de reaparición hasta que se ubique en otra parte.
 
 Three Castles
 Tres Castillos
+
+Three cities developed on the eastern side of Ancea: Tulimshar, Hurnscald and Nivalis.
+
 
 Tibbo
 Tibbo
@@ -8540,10 +9122,22 @@ Para cambiar su nivel de oficio, use este comando:
 To change your stats, use these commands:
 Para cambiar sus estadísticas, use estos comandos:
 
+To de-trust a player:
+
+
+To get a quote:
+
+
 To get started with fishing, you'll need two things: a fishing rod and a bait.
 
 
 To get the current rate:
+
+
+To grab a quote:
+
+
+To ignore a player:
 
 
 To move between characters that are on different accounts, you have to use the Trade function.
@@ -8551,6 +9145,12 @@ To move between characters that are on different accounts, you have to use the T
 
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
 Para abrir tu inventario, usa la tecla F3 o usa el ratón para seleccionarlo en el menú de arriba del cliente.
+
+To perform most actions, like feeding and renaming, just right-click it. You can even put it back on the egg if its following gets too annoying.
+
+
+To remove a quote:
+
 
 To reset back to normal:
 
@@ -8562,6 +9162,12 @@ To successfully catch a fish, you need to pull up your hook by clicking it, righ
 
 
 To thank you, accept my old fishing rod.
+
+
+To trust a player:
+
+
+To unignore a player:
 
 
 ToFightRoom#001-2-32
@@ -8585,8 +9191,17 @@ Demasiado malo. No tengo suficiente hambre para estas galletas suyas. Quizá vue
 Too bad... Come back when you'll have some nice food for me. Growl... grumble... grumble.
 Demasiado malo... Vuelva cuando tenga buena comida para mí. Gruñido... refunfuño... refunfuño.
 
+Too lazy.
+
+
 Too risky, I might end up in jail. Do it yourself.
 Demasiado arriesgado, puedo acabar en la cárcel. Hágalo usted mismo.
+
+Topaz
+
+
+Topaz Shard
+
 
 Toppy Blub
 Toppy Blub
@@ -8618,6 +9233,9 @@ Comercio
 Training Arrow
 Flecha de Entrenamiento
 
+Training Wand
+
+
 TrainingGladius
 Gladius de Entrenamiento
 
@@ -8627,11 +9245,17 @@ No se permite transformarse en monstruo en Guerras de Gremio.
 Treasure Chest
 Cofre del tesoro
 
+Tree Control Panel
+
+
 Tritan Voice
 Voz de Tritan
 
 Trozz#001-2-40
 Trozz#001-2-40
+
+True be or not true be
+
 
 True but now he seems pretty fine! Am I right?#1
 ¡Es cierto, pero ahora se ve mucho mejor! ¿Estoy en lo cierto?
@@ -8693,6 +9317,9 @@ Uhm, adiós.
 Uhm... Your story seems...
 Uhm... Tu historia parece...
 
+Unable to Teleport in this area
+
+
 Unable to decrease the number/value.
 Incapaz de bajar el número/valor.
 
@@ -8704,6 +9331,9 @@ Incapaz de generar clon maligno.
 
 Unable to spawn slave clone.
 Incapaz de generar clon esclavo.
+
+Unable to win, the tritans attacked Hurnscald. While human troops moved in attempts to avoid its fall, the Kralog and Ukar joined the tritans and they took the city.
+
 
 Understood, I will help you.
 Entendido. Te ayudaré.
@@ -9377,7 +10007,16 @@ What? Why? They aren't more attractive than me, why do you want to see them?
 What?! This tritan is the worse shirker I ever met!
 ¿¡Qué!? ¡Este tritan es el peor haragán que he conocido en la vida!
 
+Whatever inside can be
+
+
+Whatever your idea
+
+
 When you go near villagers, you can see a speech bubble above them, you can then talk to them by pressing the [T] key.
+
+
+When you intimacy is high, it'll increase your stats and who knows, might even help you in combat!
 
 
 When you see something that looks more like a bug than a feature, report it on http://bugs.evolonline.org or try to contact a game contributor.
@@ -9470,6 +10109,9 @@ Who should I search for?
 Who's this Julia?
 ¿Quién es Julia?
 
+Whose eyes listen under Moonlight
+
+
 Why Frenchy? It's a Russian!#0
 ¿Por qué gabacha? ¡Es una rusa!#0
 
@@ -9512,6 +10154,9 @@ Why?
 Why? And who should you bring it back to?
 ¿Por qué? ¿Y a quién se lo regresarías?
 
+Wicked Mushroom
+
+
 Wind and grass is nice and cool, so juicy sweet...
 Viento y hierba es bueno y fresco, un dulce tan jugoso...
 
@@ -9521,11 +10166,17 @@ Con hambre, sed, y sueño como únicos compañeros, tiene la inquietante compren
 With it, you can safely move items and funds between your characters.
 
 
+With no choir master nor voice to be sung
+
+
 With proper training, a piou can become a good friend and faithful companion in your adventures.
 Con el entrenamiento adecuado, un piou puede llegar a ser un buen amigo y un fiel compañero en tus aventuras.
 
 With script
 Con guión
+
+With the growth of the Kingdom halted, slow maintenance, and two great famines which killed over half the human population, the council decided to seize power and depose Platyna the Red.
+
 
 With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their businesses.
 
@@ -9541,6 +10192,21 @@ Arco de madera
 
 Wooden Sword
 Espada de madera
+
+Words become music and glance
+
+
+World Story For Dummies, Vol I - Ancean Era: From Keshlam to an Empire
+
+
+World Story For Dummies, Vol II - Ancean Era: Revolutions and Independence
+
+
+World Story For Dummies, Vol III - Aemilean Era: The Mana Tree and The Mana War
+
+
+World Story For Dummies, Vol IV - Aemilean Era: The Fleet of Ancea
+
 
 Wow, it seems everyone knows my name!
 ¡Wow, parece que todo el mundo sabe mi nombre!
@@ -9731,6 +10397,9 @@ Ya se ha registrado. Esperando a su pareja...
 You already took a @@, please put this one back in the box.
 Ya ha cogido un @@, por favor devuelva este a la caja.
 
+You are a handsome and good looking bird!
+
+
 You are already mounting something else
 Ya estás montando algo más
 
@@ -9757,6 +10426,12 @@ You are in the Blacksmith's house, by Jove!
 
 You are just sitting on the shadow of your store.
 Está sentado justo en la sombra de su tienda.
+
+You are lucky there are no mental faculty requirements to join the Legion!#0
+
+
+You are lucky there are no mental faculty requirements to join the Legion!#1
+
 
 You are new around here, right?#0
 Usted es nueva por aquí, ¿verdad?#0
@@ -9817,6 +10492,9 @@ Estás en una balsa, a la deriva en el mar.
 
 You are on the human resource wing of the Town Hall.
 Está en el ala de recursos humanos del Recibidor de la Ciudad.
+
+You are the Phoenix of this forest."
+
 
 You are unable to change your job.
 No puede cambiar su oficio.
@@ -9959,6 +10637,9 @@ No puedes arrojar artículos en este mapa
 You can't go there!
 ¡No puedes ir allá!
 
+You can't join in a clan if you're in a guild.
+
+
 You can't leave battleground guilds.
 No puede dejar los gremios en campo de batalla.
 
@@ -9977,11 +10658,20 @@ No puede comerciar en este mapa
 You can't use commands while dead.
 No puede utilizar comandos estando muerto.
 
+You can't use the shovel here.
+
+
 You can't withdraw that much money
 No puede retirar tanto dinero
 
 You cannot autotrade when dead.
 No puede autocomerciar estando muerto.
+
+You cannot bury this item!
+
+
+You cannot bury under a NPC!
+
 
 You cannot change guild leaders in this map.
 No puede cambiar los líderes de gremio en este mapa.
@@ -10295,8 +10985,8 @@ Usted ve a un joven sentado en una de las ramas más altas del árbol.
 You now also have access to the Legion building. Good job, you earned it.
 Ahora también tiene acceso al edificio de la Legión. Buen trabajo, lo ha conseguido.
 
-You open a book named @@.
-Abre un libro llamado @@.
+You open a book named "%s".
+
 
 You open the book, but it looks like the sea water and time damaged it severely. Some pages are not readable anymore. Some others are simply missing.
 Abres el libro, pero parece que el agua marina y el paso del tiempo lo han dañado severamente. Algunas páginas ya no son legibles. Y otras simplemente están perdidas.
@@ -10345,6 +11035,9 @@ Ves un libro cubiero de polvo en el estante...
 
 You see a raijin boy, sitting on the edge of the dock.
 Ve a un niño raijin, sentado al borde del muelle.
+
+You see a tree.
+
 
 You see a young elven girl, with a strong sense of pain in her face.
 Ve a una joven elfa, con un intenso dolor en su faz.
@@ -10844,6 +11537,9 @@ cambiar el sexo de
 conf/import/msg_conf.txt
 conf/import/msg_conf.txt
 
+data %s %s %s data
+
+
 data @@ @@ @@ data
 información @@ @@ @@ información
 
@@ -10858,6 +11554,9 @@ pies,
 
 fisherman
 pescador
+
+foo %2$s bar %1$s baz
+
 
 garment, 
 prenda,
@@ -10949,17 +11648,50 @@ mano derecha,
 skill %d: %s (%s)
 habilidad %d: %s (%s)
 
+test
+
+
+test %s
+
+
 test @@
 test @@
+
+test#0
+
+
+test#1
+
 
 test1
 test1
 
+test1 %s#0
+
+
+test1 @@#0
+
+
+test1#0
+
+
 test2
 test2
+
+test2 %s#1
+
+
+test2 @@#1
+
+
+test2#1
+
 
 top head, 
 cabeza superior, 
+
+tricked thus again.
+
 
 unban
 quitar proscripción

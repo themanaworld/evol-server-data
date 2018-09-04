@@ -28,6 +28,9 @@ hace años
 - 2 @@
 - 2 @@
 
+- unbinds your global chat from its attached channel (if binded)
+- desenlaza tu chat global del canal al que esté fijado (si está enlazado)
+
 .
 .
 
@@ -538,6 +541,9 @@ Elmo#sailors
 Elven Voice
 Voz de Elven
 
+Enora asks to kill fluffys
+Enora pide matar peluches
+
 Enora from the Legion of Aemil has been warned that you were aboard.
 Enora, de la Legión de Aemil, ha sido informada de que estuviste a bordo.
 
@@ -819,6 +825,9 @@ Te lo ruego, por favor, por favoooooooor...
 
 I can't help you to be on my list, nor can I give you a cookie for free.
 No te puedo ayudar a estar en mi lista, ni tampoco puedo darte una galleta gratis.
+
+I can't use the shovel here.
+No puedo usar la pala aquí.
 
 I do not want to point my finger on someone. I just put my trust in you. I am sure you will be able to judge and solve this annoying problem.
 No quiero apuntar mi dedo sobre nadie. Sólo deposito mi confianza en ti. Estoy seguro de que serás capaz de juzgar y resolver este molesto problema.
@@ -1600,6 +1609,9 @@ Por favor no le digas a la gente que me has visto, No quiero que me arrojen al m
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, at least not again!
 Por favor, no le digas a la gente que me viste. No quiero ser decapitado o lanzado al mar como comida de tiburones, ¡al menos no de nuevo!
 
+Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
+Por favor introduzca una posición y una cantidad (uso: @refine <equip position> <+/- amount>).
+
 Please, don't tell people that you've seen me, I don't want to be thrown to sea as food for sharks or decapitated, not again!
 Por favor, no le digas a la gente que me has visto. No quiero ser lanzado al mar como comida para tiburones, o decapitado, ¡no de nuevo!
 
@@ -1611,6 +1623,12 @@ Caja de Plushroom
 
 Pumpkin Seeds
 Semillas de Calabaza
+
+Pumpkish
+Pumpkish
+
+Pumpkish Juice
+Zumo de calabaza
 
 Purple Blobime
 Purple Blobime
@@ -1896,6 +1914,15 @@ El gremio se encarga de regular el comercio a lo largo de Artis y sus alrededore
 
 The hidden person doesn't answer.
 La persona escondida no responde.
+
+The item (%d: '%s') is not equipable.
+El artículo (%d: '%s') no puede equiparse.
+
+The item is not equipable.
+El artículo no puede equiparse.
+
+The name of the book is @@.
+El nombre del libro es @@.
 
 The piou costs @@E.
 El piou cuesta @@E.
@@ -2373,6 +2400,9 @@ Te gustan, ¿no? Sólo habla con Peter, entonces. Él está en la segunda cubier
 
 You mentioned the quality of your wine
 Habías mencionado la calidad de tu vino.
+
+You open a book named @@.
+Abre un libro llamado @@.
 
 You open the treasure chest.
 Abres el cofre del tesoro.

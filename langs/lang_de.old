@@ -19,6 +19,9 @@ her
 - 2 @@
 - 2 @@
 
+- unbinds your global chat from its attached channel (if binded)
+- entkoppelt deinen global Chat von seinen verknüpften Channels (falls vorhanden)
+
 ...
 ...
 
@@ -556,6 +559,9 @@ Elfen Stimme
 Emo
 Emo
 
+Enora asks to kill fluffys
+Enora bittet dich, Fluffies zu töten
+
 Enora from the Legion of Aemil has been warned that you were aboard.
 Enora von der Legion von Aemil wurde ob deiner Anwesenheit an Bord unterrichtet.
 
@@ -843,6 +849,9 @@ Ich bitte dich, Bitte, Biiiiiitte...
 
 I came to retrieve a package for Enora.
 Ich bin hier, um ein Päckchen für Enora abzuholen.
+
+I can't use the shovel here.
+Ich kann die Schaufel hier nicht benutzen.
 
 I don't need any help right now, come back later.
 Ich brauche deine Hilfe jetzt nicht. Komm später wieder.
@@ -1750,6 +1759,9 @@ Piousbeinchen
 Please don't tell people that you've seen me. I don't want to be thrown in the sea as food for sharks or decapitated. At least not again!
 Bitte erzähl ihnen nicht, dass du mich gesehen hast. Ich möchte nicht den Haien zum Fraß vorgeworfen oder geköpft werden. Nicht schon wieder!
 
+Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
+Bitte eine Position und eine Anzahl eingeben (usage: @refine <equip position> <+/- amount>).
+
 Please find the small chest, buried somewhere on Artis Hill.
 Bitte finde eine kleine Kiste, die irgendwo in den Artis Bergen vergraben ist.
 
@@ -1770,6 +1782,12 @@ Ziehen!
 
 Pumpkin Seeds
 Kürbissamen
+
+Pumpkish
+Pumpkish
+
+Pumpkish Juice
+Pumpkish Saft
 
 Punk
 Punk
@@ -1975,6 +1993,9 @@ Nimm ein Kopftuch
 Take a nap
 Ein Nickerchen machen
 
+Talk to FightNPCName and he'll show you the ropes.
+Rede mit FightNPCName, er wird dich einweisen.
+
 Talk with Lloyd the Banker in the Merchant Guild, it's a big building at the northern part of Artis, at the top of the small hill.
 Sprich mit Lloyd dem Bänker in der Handelsgilde. Es ist ein großes Gebäude auf dem kleinen Hügel im Norden von Artis.
 
@@ -2071,8 +2092,17 @@ Diese Gilde ist verantwortlich für die monetäre Regulierung innerhalb von Arti
 The hidden person doesn't answer.
 Die versteckte Person antwortet nicht.
 
+The item (%d: '%s') is not equipable.
+Der Gegenstand (%d: '%s') ist nicht ausrüstbar.
+
+The item is not equipable.
+Der Gegenstand ist nicht ausrüstbar.
+
 The market is located at the south-east of Artis, it is known as Merchant Guild's exhibit.
 Der Markt befindet sich im Südosten von Artis. Er ist bekannt als "Ausstellung" der Händlergilde.
+
+The name of the book is @@.
+Das Buch trägt den Titel @@.
 
 The sailor chugs his beer
 Der Matrose hebt sein Bier
@@ -2568,6 +2598,9 @@ Du brauchst eins von diesen:
 
 You need to walk north!!
 Sie müssen nach Norden gehen!
+
+You open a book named @@.
+Du öffnest ein Buch mit dem Titel @@.
 
 You open the treasure chest.
 Du öffnest die Schatztruhe.

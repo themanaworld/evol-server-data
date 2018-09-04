@@ -34,6 +34,9 @@ passé
 - QMuller
 - QMuller
 
+- unbinds your global chat from its attached channel (if binded)
+- délie ta conversation globale des canaux (si liés)
+
 .
 .
 
@@ -640,6 +643,9 @@ Voix d'Elfe
 Emo
 Gothique
 
+Enora asks to kill fluffys
+Énora a demandé de tuer des pluches
+
 Enter the amount that you want to deposit.
 Entre la quantité que tu veux déposer.
 
@@ -972,6 +978,9 @@ Je t'en supplie, s'il te plait, s'il te plaiiittttt...
 
 I can't help you to be on my list, nor can I give you a cookie for free.
 Je ne peux pas t'aider pour que tu sois sur ma liste, et je ne peux non plus pas te donner un cookie gratuitement.
+
+I can't use the shovel here.
+Je ne peux pas utiliser la pelle ici.
 
 I do not want to point my finger on someone. I just put my trust in you. I am sure you will be able to judge and solve this annoying problem.
 Je ne veux viser personne. Je mets juste ma confiance en toi. Je suis certain que tu seras capable de juger et résoudre cet ennuyeux problème.
@@ -1930,6 +1939,9 @@ Je t'en supplie, ne dis à personne que tu m'as vu. Je ne veux pas être jeté �
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, at least not again!
 Je t'en prie, ne dis à personne que tu m'as vu. Je ne veux pas finir décapité ou jeté à la mer comme nourriture pour requins, du moins pas une nouvelle fois !
 
+Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
+Entre s'il-te-plaît une position et une quantité (utilisation : @refine <position d'équipement> <+/- quantité>).
+
 Please take this lollypop for your help. Mum says they are bad for my teeth anyway (FIXME)
 Prends au moins cette sucette pour ton aide. Ma mère me dit toujours que c'est mauvais pour mes dents de toute façon. (À CORRIGER)
 
@@ -1953,6 +1965,12 @@ Tirer !
 
 Pumpkin Seeds
 Graines de Citrouille
+
+Pumpkish
+Citrouche
+
+Pumpkish Juice
+Jus de Citrouche
 
 Punk
 Punk
@@ -2185,6 +2203,9 @@ Faire un somme
 Take this money for your wise choice. But do not try it again. Water has been merciful with you once... Do not tempt fate once more!
 Prends cet argent pour ton sage choix. Mais n'essaye pas de nouveau. L'eau a eu pitié de toi cette seule fois... Ne tente pas le destin une fois de plus !
 
+Talk to FightNPCName and he'll show you the ropes.
+Parle à FightNPCName et il te montrera les cordes.
+
 Talk with Lloyd the Banker in the Merchant Guild, it's a big building at the northern part of Artis, at the top of the small hill.
 Parle au Banquier Lloyd dans la Guilde des Marchands, c'est un grand bâtiment sur la partie nord d'Artis, en haut de la petite colline.
 
@@ -2287,8 +2308,17 @@ La guide est responsable de la régularisation du commerce à travers Artis et s
 The hidden person doesn't answer.
 Pas de réponse.
 
+The item (%d: '%s') is not equipable.
+L'objet (%d: '%s') n'est pas équipable.
+
+The item is not equipable.
+L'objet ne peut pas être équipé. 
+
 The market is located at the south-east of Artis, it is known as Merchant Guild's exhibit.
 Le marché se situe au sud-est d'Artis, il connu pour être l'exposition de la Guilde des Marchands.
+
+The name of the book is @@.
+Le nom du livre est @@.
 
 The sailor chugs his beer
 Le marin siffle sa bière
@@ -2922,6 +2952,9 @@ Tu as besoin d'au moins d'un de ceux-ci :
 
 You need to walk north!!
 Tu dois marcher vers le nord.
+
+You open a book named @@.
+Tu ouvres un livre appelé @@.
 
 You open the treasure chest.
 Tu ouvres le coffre au trésor.
