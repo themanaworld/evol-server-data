@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    The Inspector not willing to do his job.
+// THIS IS A PLACEHOLDER!
+
+008-1,30,34,0	script	Inspector#008-1	NPC_INSPECTOR,{
+    speech
+        l("Oh hey!"),
+        lg("Got a beer for me? No? Then I am too busy for your stupid problems.");
+        l("Go away, and bring a beer next time you pass by.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

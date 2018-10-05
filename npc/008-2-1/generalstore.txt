@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    General Store.
+// THIS IS A PLACEHOLDER!
+
+008-1,38,35,0	script	Generalstore#008-1	NPC_GENERAL_STORE,{
+    speech
+        l("Hi!"),
+        lg("My name is General Store, they still call me this although I left the army a few years ago.");
+        l("I have nothing to sell, come back later.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
