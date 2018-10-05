@@ -5,8 +5,8 @@
 //    Airlia, the girl in the townhall.
 // THIS IS A PLACEHOLDER!
 
-008-2-10,41,29,0	script Airlia	NPC_AIRLIA,{
-    speech
+008-2-10,41,29,0	script	Airlia	NPC_AIRLIA,{
+     speech
         l("Hi!"),
         lg("Did you visit the graveyard already? I havent met people coming back alive for ages.");
         l("There must be cruel things going on.");
