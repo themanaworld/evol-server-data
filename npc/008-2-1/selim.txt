@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Selim the Dyer.
+// THIS IS A PLACEHOLDER!
+
+008-1,38,40,0	script	Selim#008-1	NPC_GUMI_THE_DYER,{
+    speech
+        l("Oh hey!"),
+        lg("Good you are here, you could be handy for me right now.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

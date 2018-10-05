@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Richard the Hurns storage guy.
+// THIS IS A PLACEHOLDER!
+
+008-1,26,35,0	script	Richard#008-1	NPC_RICHARD_LEGACY,{
+    speech
+        l("Oh hey!"),
+        lg("I was supposed to act as storagekeeper, but I forgot my key.");
+        l("Come back later, perhaps I can find it.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
