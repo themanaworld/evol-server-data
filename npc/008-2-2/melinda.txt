@@ -1,0 +1,22 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Melinda, waitress in Hurns` Rusty Pick.
+
+008-2-2,40,29,0	script	Melinda#008-2-2	NPC_MELINDA,1,1,{
+
+    speech
+        l("Oh hey!"),
+        l("I would like to serve you a beer or a sandwich, or even a shot (alcohol is bad, remember)."),
+        l("But I am afraid we need Tomminator to teach me this."),
+        lg("So, see you later.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}
+
