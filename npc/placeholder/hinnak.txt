@@ -332,7 +332,7 @@ OnInit:
     .reward_money = 0; // reward money
     .reward_exp = 0; // reward exp
     .bad_hat = BrimmedFlowerHat; // hinnak attacks you when you wear this hat // FIXME: make this pinky hat when we get it
-    .drink_item = PumpkishJuice; // the item hinnak asks to drink // FIXME: make this beer when we have it
+    .drink_item = Beer; // the item hinnak asks to drink // FIXME: make this beer when we have it
 
     .quest = HurnscaldQuests_Hinnak;
     .quest_inspector = HurnscaldQuests_Inspector;
