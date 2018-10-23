@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Little Milly, looking for a new hero.
+// THIS IS A PLACEHOLDER!
+
+008-1,282,114,0	script	Milly#008-1	NPC_GIRL_MILLY,{
+    speech
+        l("Oh, hi."),
+        l("Are you a hero? For sure not such a great hero than Kfahr!"),
+        l("If you could prove it, I would give you my Beanie Copter, but unfortunately someone threw it away."),
+        lg("My beautiful Beanie Copter!");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}

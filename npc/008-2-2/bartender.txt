@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Bartender of the Rusty Pick.
+// THIS IS A PLACEHOLDER!
+
+008-2-2,43,28,0	script	Bartender#008-1	NPC_GENERAL_STORE,{
+    speech
+        l("Hi!"),
+        l("I am the Bartender here, the name doesnt matter at all.");
+        lg("If you need something, please ask this beautiful girl on my right. (She needs the tip).");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

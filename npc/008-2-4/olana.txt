@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Olana, the old woman who is looking for her daughter Rossy.
+// THIS IS A PLACEHOLDER!
+
+008-2-4,30,28,0	script	Olana#008-2-4	NPC_OLANA,{
+    speech
+        l("Oh, a traveller. Welcome."),
+        l("Did you see my daughter Rossy, by chance?"),
+        l("She wasn't at home for two days now. I worry about her!"),
+        lg("If you see her, please tell her to come home.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

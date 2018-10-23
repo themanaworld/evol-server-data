@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Drinker Roamingo
+// THIS IS A PLACEHOLDER!
+
+008-2-2,43,34,0	script	Roamingo#008-2-2	NPC_DRINKER_ROAMINGO,{
+    speech
+        l("Oh hi my friend *hicks*"),
+        l("Eh... shiver me timbers! *hicks* Where did you find this hat??");
+        lg("Know what *hicks*, if you give me the hat, the next round will be on me.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
