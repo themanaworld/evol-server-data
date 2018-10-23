@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    The crazy Hurnscald Doctor.
+// THIS IS A PLACEHOLDER!
+
+008-2-14,27,27,0	script	Doctor#008-2-14	NPC_DOCTOR_LEGACY,{
+    speech
+        l("Hey."),
+        l("Do you have some kind of pain?"),
+        lg("Oh, I see. You should go see your pixcialist.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}

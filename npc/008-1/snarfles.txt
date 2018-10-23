@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Snarfles the mouboo farmer.
+// THIS IS A PLACEHOLDER!
+
+008-1,79,118,0	script	Snarfles#008-1	NPC_SNARFLES,{
+    speech
+        l("My Mouboos, my beloved Mouboos!"),
+        l("Oh, hi, isn't it cool to live among all those Mouboos? I don't understand how some people can eat Mouboo steak."),
+        lg("Murderers!");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

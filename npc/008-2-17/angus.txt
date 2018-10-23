@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Angus the Smith.
+// THIS IS A PLACEHOLDER!
+
+008-2-17,34,47,0	script	Angus#008-2-17	NPC_ANGUS_THE_SMITH,{
+    speech
+        l("Hello."),
+        l("Do you need your pickaxe or your shovel fixed? Then I am your man."),
+        lg("If you want to play with unicorns, you better piss off now.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

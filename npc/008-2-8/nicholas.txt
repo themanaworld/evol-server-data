@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Nicholas the Smith.
+// THIS IS A PLACEHOLDER!
+
+008-2-8,39,27,0	script	Nicholas#008-2-8	NPC_NICHOLAS,{
+    speech
+        l("Hi Sir."),
+        lg("If you need stable metal gear, you are right! But first I must bring the steel atoms in the right order, hold on.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

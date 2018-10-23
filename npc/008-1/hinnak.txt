@@ -325,15 +325,15 @@ OnPCBaseLvUpEvent:
 
 OnInit:
     .min_level = 15; // min level to do the quest
-    .monster_id = Fluffy; // monster to kill // FIXME: change this when we have pinkies
-    .monster_drop = FluffyFur; // monster drop to collect // FIXME: change this when we have pinkies
+    .monster_id = Pinkie; // monster to kill
+    .monster_drop = PinkAntennae; // monster drop to collect
     .drop_count = 10; // amount of that drop needed
     .kill_count = 10; // min number of kills
-    .reward_item = WoodenSword; // reward item // FIXME: change this when we have he Scythe
+    .reward_item = Scythe; // reward item
     .reward_money = 0; // reward money
     .reward_exp = 0; // reward exp
-    .bad_hat = BrimmedFlowerHat; // hinnak attacks you when you wear this hat // FIXME: make this pinky hat when we get it
-    .drink_item = PumpkishJuice; // the item hinnak asks to drink // FIXME: make this beer when we have it
+    .bad_hat = PinkieHat; // hinnak attacks you when you wear this hat
+    .drink_item = Beer; // the item hinnak asks to drink
 
     .quest = HurnscaldQuests_Hinnak;
     .quest_inspector = HurnscaldQuests_Inspector;

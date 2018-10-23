@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Malik.
+// THIS IS A PLACEHOLDER!
+
+008-2-18,32,24,0	script	Malik#008-2-18	NPC_MALIK,{
+    speech
+        l("Hi there."),
+        l("My name is Malik. I used to make the finest Gempowder. But since Overlord WildX prohibited magic in Hurns, and along with this making gem powders, I can only try to melt gem shards into crude gems."),
+        l("Anyhow, this does not work well yet. Perhaps you should come back later."),
+        lg("Psst, if one day you may need gem powder, meet me in the basement.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

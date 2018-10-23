@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Hurnscald Nurse.
+// THIS IS A PLACEHOLDER!
+
+008-2-12,28,30,0	script	Nurse#008-2-12	NPC_NURSE_LEGACY,{
+    speech
+        l("Hey."),
+        l("The doctor is upstairs, but perhaps he can't help you much today."),
+        lg("Just smile, everything will be better soon then.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}

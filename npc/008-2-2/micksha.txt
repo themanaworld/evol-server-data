@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Drinker Micksha
+// THIS IS A PLACEHOLDER!
+
+008-2-2,46,34,0	script	Micksha#008-2-2	NPC_DRINKER_MICKSHA,{
+    speech
+        l("Hello Sir *hicks*."),
+        l("Umm, can you perhaps spring for a beer? *hicks* I'm broken.");
+        lg("*burp* ... .");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Wyara the witch.
+// THIS IS A PLACEHOLDER!
+
+008-2-7,27,28,0	script	Wyara#008-2-7	NPC_DARK_DRUID,{
+    speech
+        l("What? Is there someone?"),
+        l("Please, leave me alone. I have to pixel potions."),
+        lg("I will sell some when you return a bit later.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}

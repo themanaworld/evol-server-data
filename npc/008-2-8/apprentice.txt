@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    The Smith's apprentice.
+// THIS IS A PLACEHOLDER!
+
+008-2-8,38,29,0	script	Apprentice#008-2-8	NPC_YOUNG_MAN_APPRENTICE,{
+    speech
+        l("Hi Sir."),
+        l("If you bring us ores, we will be able to make the finest equipment."),
+        lg("Come back a bit later when you are interested.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

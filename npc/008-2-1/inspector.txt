@@ -5,11 +5,11 @@
 //    The Inspector not willing to do his job.
 // THIS IS A PLACEHOLDER!
 
-008-1,30,34,0	script	Inspector#008-1	NPC_INSPECTOR,{
+008-2-1,30,34,0	script	Inspector#008-1	NPC_INSPECTOR,{
     speech
         l("Oh hey!"),
-        lg("Got a beer for me? No? Then I am too busy for your stupid problems.");
-        l("Go away, and bring a beer next time you pass by.");
+        l("Got a beer for me? No? Then I am too busy for your stupid problems.");
+        lg("Go away, and bring a beer next time you pass by.");
 
     close;
 
