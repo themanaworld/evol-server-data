@@ -1,4 +1,4 @@
-// Evol scripts.
+/// Evol scripts.
 // Author:
 //    gumi
 // Quest states:
@@ -23,9 +23,9 @@
 //    [3] unused
 //    [t] unused
 // Description:
-//    robberies in hurnscald
+//    Old Lady in the flower field, Robberies in Hurnscald.
 
-008-1,230,113,0	script	Old Woman	NPC_HUMAN_M_ARTIS,{
+008-1,231,114,0	script	Old Woman	NPC_OLD_LADY,{
 
     function is_inspector {
         return (getequipcardid(EQI_HEAD_MID, 0) == NavyBlueCottonDye /*&&
@@ -130,7 +130,7 @@ OnInit:
 // REMOVE THIS CODE WHEN THIS //
 // NPC IS NO LONGER A WIP //////
 ////////////////////////////////
-if (!debug) disablenpc(.name$);
+//if (!debug) disablenpc(.name$);
 ///////// UNFINISHED ///////////
 
     end;

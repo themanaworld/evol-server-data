@@ -16,7 +16,7 @@
 // Description:
 //    Bernard wants to make a maggot slime soup
 
-008-2-4,34,29,0	script	Bernard	NPC_HUMAN_M_ARTIS,{
+008-2-4,34,29,0	script	Bernard	NPC_BERNARD,{
 
     if (BaseLevel < .min_level)
     {
@@ -202,14 +202,14 @@ OnPCBaseLvUpEvent:
 OnInit:
     .min_level = 10; // min level to do the quest
 
-    .first_item = Aquada; // FIXE: change this when we have RoastedMaggot
-    .first_reward_item = Aquada; // reward item // FIXME: change this when we have CherryCake
+    .first_item = RoastedMaggot; 
+    .first_reward_item = CherryCake;
     .first_reward_amount = 5;
     .first_reward_exp = 100;
 
-    .second_item = Aquada; // FIXE: change this when we have MaggotSlime
+    .second_item = MaggotSlime;
     .second_item_qty = 3;
-    .second_reward_item = Aquada; // reward item // FIXME: change this when we have Beer
+    .second_reward_item = Beer;
     .second_reward_amount = 3;
     .second_reward_exp = 100;
 
@@ -223,7 +223,7 @@ OnInit:
 // REMOVE THIS CODE WHEN THIS //
 // NPC IS NO LONGER A WIP //////
 ////////////////////////////////
-if (!debug) disablenpc(.name$);
+//if (!debug) disablenpc(.name$);
 ///////// UNFINISHED ///////////
 
     end;

@@ -25,32 +25,28 @@
 // Description:
 //    robberies in hurnscald
 
-008-1,291,97,0	script	Sabine	NPC_HUMAN_M_ARTIS,{
+008-2-19,33,21,0	script	bookcase	NPC_NO_SPRITE,{
 
-    if (getq(.quest_inspector) != 2)
+    if (getq(.quest_inspector) != 12)
     {
-        npctalk3(generic(1 | 16));
+        dispbottom(l("You see an ordinary bookcase."));
         end;
     }
 
-    speech(4,
-        l("Isn't this place pretty?"),
-        l("I love hanging out here!"));
+    narrator(
+        l("You see an ordinary bookcase."),
+        l("Looking over closely, you find a book that is upside down."),
+        l("The book has been hollowed out."),
+        l("Inside is a theater mask and a note that you cannot even begin to read."));
 
-    selectd(
-        l("Have you seen anything strange lately?"),
-        l("Do you know anything about the recent robberies?"));
-
-    speech(
-        l("No, sorry."));
-
-    close;
+    close2;
+    setq(.quest_inspector, 13);
+    end;
 
 OnInit:
     .quest_inspector = HurnscaldQuests_Inspector;
     .quest_debug = .quest_inspector;
-    .sex = G_FEMALE;
-    .distance = 3;
+    .distance = 1;
 
 ////////// UNFINISHED //////////
 ////////////////////////////////

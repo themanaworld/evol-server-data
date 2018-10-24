@@ -25,7 +25,7 @@
 // Description:
 //    robberies in hurnscald
 
-008-1,293,124,0	script	Old Man	NPC_HUMAN_M_ARTIS,{
+008-1,290,139,0	script	Old Man	NPC_OLD_MAN_HURNS,{
 
     function oldman_ask {
         speech(4,
@@ -83,7 +83,7 @@ OnInit:
 // REMOVE THIS CODE WHEN THIS //
 // NPC IS NO LONGER A WIP //////
 ////////////////////////////////
-if (!debug) disablenpc(.name$);
+//if (!debug) disablenpc(.name$);
 ///////// UNFINISHED ///////////
 
     end;

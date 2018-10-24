@@ -16,7 +16,7 @@
 // Description:
 //    takes part in the slime soup quest (Bernard)
 
-008-1,308,72,0	script	Mikhail	NPC_HUMAN_M_ARTIS,{
+008-1,298,95,0	script	Mikhail	NPC_MIKHAIL,{
 
     function soup_scared {
         speech 4,
@@ -108,9 +108,9 @@
     close;
 
 OnInit:
-    .third_item = Aquada; // FIXME: change this when we have MaggotSlime
+    .third_item = MaggotSlime;
     .third_item_qty = 5;
-    .third_item_mob = Fluffy; // FIXME: change this when we have Maggot
+    .third_item_mob = Maggot;
 
     .third_reward_exp = 100;
 
@@ -124,7 +124,7 @@ OnInit:
 // REMOVE THIS CODE WHEN THIS //
 // NPC IS NO LONGER A WIP //////
 ////////////////////////////////
-if (!debug) disablenpc(.name$);
+//if (!debug) disablenpc(.name$);
 ///////// UNFINISHED ///////////
 
     end;

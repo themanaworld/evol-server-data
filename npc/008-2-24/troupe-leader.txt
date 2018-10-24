@@ -25,7 +25,7 @@
 // Description:
 //    robberies in hurnscald
 
-008-1,306,115,0	script	Troupe Leader	NPC_HUMAN_M_ARTIS,{
+008-2-24,41,39,0	script	Troupe Leader	NPC_DIMOND,{
 
     function nohmask_question {
         // XXX: shouldn't the player ask a question before she replies Yes? this feels too abrupt
@@ -99,7 +99,7 @@
     close;
 
 OnInit:
-    .reward_item = Aquada; // FIXME: change this when we get NohMask
+    .reward_item = NohMask; // FIXME: change this when we get NohMask
     .reward_exp = 1500;
 
     .quest_inspector = HurnscaldQuests_Inspector;
@@ -112,7 +112,7 @@ OnInit:
 // REMOVE THIS CODE WHEN THIS //
 // NPC IS NO LONGER A WIP //////
 ////////////////////////////////
-if (!debug) disablenpc(.name$);
+//if (!debug) disablenpc(.name$);
 ///////// UNFINISHED ///////////
 
     end;

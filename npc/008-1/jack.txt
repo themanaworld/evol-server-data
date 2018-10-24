@@ -24,9 +24,10 @@
 // Description:
 //    Jack Lumber, the handsome lumberjack
 
-008-1,242,117,0	script	Jack	NPC_HUMAN_M_ARTIS,{
 
-    function bow_intro {
+008-1,241,116,0	script	Jack	NPC_LUMBERJACK,{
+
+     function bow_intro {
         speech(4,
             l("Why not?!"),
             l("I value my life, that's why!"));
@@ -288,11 +289,11 @@
     close;
 
 OnInit:
-    .logs_item = Aquada; // FIXME: change this when we get RawLog
+    .logs_item = RawLog;
     .logs_amount = 40; // XXX: maybe nlogn?
     .shield_cost = 5000; // XXX: maybe nlogn?
     .shield_exp = 2500;
-    .shield_item = Aquada; // FIXME: change this when we get WoodenShield
+    .shield_item = WoodenShield;
 
     .quest_bow = HurnscaldQuests_ForestBow;
     .quest_shield = HurnscaldQuests_WoodenShield;
@@ -306,7 +307,7 @@ OnInit:
 // REMOVE THIS CODE WHEN THIS //
 // NPC IS NO LONGER A WIP //////
 ////////////////////////////////
-if (!debug) disablenpc(.name$);
+//if (!debug) disablenpc(.name$);
 ///////// UNFINISHED ///////////
 
     end;

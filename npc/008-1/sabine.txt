@@ -25,32 +25,31 @@
 // Description:
 //    robberies in hurnscald
 
-008-1,233,42,0	script	Malek	NPC_HUMAN_M_ARTIS,{
+008-1,291,97,0	script	Sabine	NPC_SABINE,{
 
-    if (getq(.quest_inspector) == 11)
+    if (getq(.quest_inspector) != 2)
     {
-        speech(4,
-            l("Hi, can I help you at all?"));
-
-        selectd(
-            l("The inspector sent me here to investigate."));
-
-        speech(4,
-            l("Yeah, we did hear a commotion."),
-            l("We thought we heard someone go down to the basement, but we checked the whole place over and didn't see anything out of the ordinary."));
-
-        close2;
-        setq(.quest_inspector, 12);
+        npctalk3(generic(1 | 16));
         end;
     }
 
-    npctalk3(generic(32 | 256));
-    end;
+    speech(4,
+        l("Isn't this place pretty?"),
+        l("I love hanging out here!"));
+
+    selectd(
+        l("Have you seen anything strange lately?"),
+        l("Do you know anything about the recent robberies?"));
+
+    speech(
+        l("No, sorry."));
+
+    close;
 
 OnInit:
     .quest_inspector = HurnscaldQuests_Inspector;
     .quest_debug = .quest_inspector;
-    .sex = G_MALE;
+    .sex = G_FEMALE;
     .distance = 3;
 
 ////////// UNFINISHED //////////
@@ -58,7 +57,7 @@ OnInit:
 // REMOVE THIS CODE WHEN THIS //
 // NPC IS NO LONGER A WIP //////
 ////////////////////////////////
-if (!debug) disablenpc(.name$);
+//if (!debug) disablenpc(.name$);
 ///////// UNFINISHED ///////////
 
     end;

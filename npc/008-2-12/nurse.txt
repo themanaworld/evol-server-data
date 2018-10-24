@@ -1,20 +1,101 @@
 // Evol scripts.
 // Author:
-//    Micksha
+//    gumi
+// Quest states:
+//    [1] 0  - cannot do the quest
+//    [1] 1  - can do the quest
+//    [1] 2  - talked to inspector (1) <= start
+//    [1] 3  - talked to old woman (1)
+//    [1] 4  - talked to old woman (2)
+//    [1] 5  - talked to inspector (2)
+//    [1] 6  - talked to troupe leader (1)
+//    [1] 7  - talked to inspector (3)
+//    [1] 8  - talked to old man
+//    [1] 9  - talked to old woman (3)
+//    [1] 10 - talked to inspector (4)
+//    [1] 11 - talked to old woman (4)
+//    [1] 12 - talked to malek
+//    [1] 13 - searched the bookcase
+//    [1] 14 - talked to inspector (5)
+//    [1] 15 - talked to troupe leader (2) <= reward
+//    [1] 16 - talked to inspector (6) <= reward, end
+//    [2] unused
+//    [3] unused
+//    [t] unused
 // Description:
-//    Hurnscald Nurse.
-// THIS IS A PLACEHOLDER!
+//    Hurnscald Nurse. Robberies in Hurnscald.
 
-008-2-12,28,30,0	script	Nurse#008-2-12	NPC_NURSE_LEGACY,{
-    speech
-        l("Hey."),
-        l("The doctor is upstairs, but perhaps he can't help you much today."),
-        lg("Just smile, everything will be better soon then.");
+008-2-12,28,30,0	script	Nurse	NPC_NURSE_LEGACY,{
 
-    close;
+    speech(4,
+        l("How can I help you?"));
+
+    // TODO: check for AxeHat when we get it
+    // XXX: this npc used to teach the resist poison skill, do we still want that?
+
+    selectd(
+        l("Oooh, these wounds! They hurt so much!"),
+        l("I don't feel so well, I might be sick."),
+        l("No, I'm fine."),
+        rif(getq(.quest_inspector) == 2, l("Have you seen anything out of the ordinary?")));
+
+    switch (@menu)
+    {
+    case 1:
+        if (BaseLevel > .heal_max_level)
+        {
+            speech(
+                l("I'm sorry but I'm here only to help young people."), // XXX: this sounds cruel towards elderly people
+                l("Your level is already higher than %d.", .heal_max_level),
+                l("You can get some rest at the inn near here."));
+            close;
+        }
+        speech(4,
+            l("Here, let me heal you."));
+
+        npcskill(AL_HEAL, .heal_skill_level, .heal_npc_stats, .heal_npc_level);
+
+        speech(
+            l("There you go, like new."));
+        close;
+    case 2:
+        speech(
+            l("Then you should better see the doctor."),
+            l("He is usually in his office on the 3rd floor."));
+        close;
+    case 3:
+        speech(
+            l("Then I would ask you to leave."),
+            l("There are people who really need our help."));
+        close;
+    case 4:
+        speech(
+            l("I'm too busy here to observe the town."));
+        close;
+    }
+
+
+    end;
 
 OnInit:
+    .heal_max_level = 20; // she will only heal low level players
+
+    .heal_skill_level = 10; // what level of the healing skill to use
+    .heal_npc_stats = 99; // what stat points the NPC has
+    .heal_npc_level = 60; // what level the npc has
+
+    .quest_inspector = HurnscaldQuests_Inspector;
+    .quest_debug = .quest_inspector;
     .sex = G_FEMALE;
-    .distance = 2;
+    .distance = 3;
+
+////////// UNFINISHED //////////
+////////////////////////////////
+// REMOVE THIS CODE WHEN THIS //
+// NPC IS NO LONGER A WIP //////
+////////////////////////////////
+if (!debug) disablenpc(.name$);
+///////// UNFINISHED ///////////
+
     end;
 }
