@@ -1,22 +1,156 @@
+
 // Evol scripts.
-// Author:
-//    Micksha
+// Authors:
+//    Toams
 // Description:
-//    Melinda, waitress in Hurns` Rusty Pick.
+//    Melinda, Rusty Pick's waitress
 
 008-2-2,40,29,0	script	Melinda#008-2-2	NPC_MELINDA,1,1,{
 
-    speech
-        l("Oh hey!"),
-        l("I would like to serve you a beer or a sandwich, or even a shot (alcohol is bad, remember)."),
-        l("But I am afraid we need Tomminator to teach me this."),
-        lg("So, see you later.");
-
+function StartConversation {
+ 
+        .@tick = gettimetick(1);
+        if (.@tick > @Hurns_Rusty_Pick_WaitressTick + 10)
+        {
+            setarray .messages$[0], l("Welcome to our inn!"),
+                                    l("Welcome to the Rusty Pick."),
+                                    l("Please, have a seat."),
+                                    l("Lovely day, isn't it?");
+ 
+            .@r = rand(getarraysize(.messages$));
+            .@msg$ = .messages$[.@r];
+            npctalk3 .@msg$;
+            @Hurns_Rusty_Pick_WaitressTick = .@tick;
+        }
+    }
+ 
+mes "";
+mesn;
+mesq l("Hi, sweetie! Want a fresh beer for 170 Florin?");
+switch (select(l("Sure! [Don't tip]"),
+               l("Sure! [Tip 5 Florin]"),
+               l("Sure! [Tip 10 Florin]"),
+               l("Nah, maybe later.")))
+{
+    case 1:
+        if (Zeny < 170)
+            goto L_NoMoney;
+        getinventorylist;
+        if (@inventorylist_count == 100 && countitem("Beer") == 0)
+            goto L_TooMany;
+        set Zeny, Zeny - 170;
+        getitem Beer, 1;
+        mes "";
+        mesn;
+        mesq l("Pff... Nickel nurser!");
+        goto L_Close;
+    case 2:
+        if (Zeny < 175)
+            goto L_NoMoney;
+        getinventorylist;
+        if (@inventorylist_count == 100 && countitem("Beer") == 0)
+            goto L_TooMany;
+        set Zeny, Zeny - 175;
+        getitem "Beer", 1;
+        mes "";
+        mesn;
+        mesq l("Thanks for the tip!");
+        goto L_Close;
+    case 3:
+        if (Zeny < 180)
+            goto L_NoMoney;
+        getinventorylist;
+        if (@inventorylist_count == 100 && countitem("Beer") == 0)
+            goto L_TooMany;
+        set Zeny, Zeny - 180;
+        getitem "Beer", 1;
+        mes "";
+        mesn;
+        mesq l("Thank you, sweetie! Want to hear a secret?");
+        switch (select(l("What is it, darling?"),
+                       l("Nah, I don't feel like chatting.")))
+        {
+            case 1:
+                mes "";
+                mesn;
+                mesq l("The master bowyer in this village used to construct exceptional bows. When you want one you should go and ask him.");
+                goto L_Close;
+            case 2:
+                goto L_No;
+        }
+        goto L_Close;
+    case 4:
+        goto L_No;
+}
+ 
+L_NoMoney:
+    mes "";
+    mesn;
+    mesq l("You look broke. Don't think that you can dine and dash here!");
+    goto L_Close;
+ 
+L_No:
+    mes "";
+    mesn;
+    mesq l("Just call me when you changed your mind.");
+    goto L_Close;
+   
+L_Close:
+    initnpctimer;
     close;
-
+   
+L_TooMany:
+    mes "";
+    mesn;
+    mesq l("You don't have room for a beer!");
+    goto L_Close;
+   
+OnTimer1000:
+    dographmovestep;
+   
+OnTouch:
+    StartConversation;
+    end;
+ 
 OnInit:
     .sex = G_FEMALE;
-    .distance = 2;
-    end;
+    .distance = 5;
+    .speed = 300;
+    initmovegraph "barkeeper",  43, 30,
+                  "kfahr",      44, 36,
+                  "l_table_b",  36, 36,
+                  "l_table_r",  38, 33,
+                  "m_table_l",  39, 33,
+                  "m_table_b",  41, 36,
+                  "r_table_r",  46, 32,
+                  "bucket",     46, 30;
+                 
+                 
+                 
+     setmovegraphcmd "barkeeper",  "kfahr",      1,  "dir 4; wait 1",
+                     "barkeeper",  "r_table_r",  1,  "dir 2; wait 1",
+                     "kfahr",      "barkeeper",  1,  "dir 4; wait 1; say Another round for kfahr's table.;"
+                                                     "wait 1; say They sure are thirsty today;"
+                                                     "wait 1; moveon",
+                     "kfahr",      "bucket",     1,  "dir 4; wait 1; emote 1;"// todo: find angry emote
+                                                     "wait 15; moveon",
+                     "kfahr",      "r_table_r",  1,  "dir 2; wait 1",
+                     "bucket",     "l_table_b",  1,  "dir 4; wait 1",
+                     "bucket",     "l_table_r",  1,  "dir 2; wait 1",
+                     "bucket",     "m_table_l",  1,  "dir 3; wait 1",
+                     "bucket",     "m_table_b",  1,  "dir 4; wait 1",
+                     "bucket",     "r_table_r",  1,  "dir 2; wait 1",
+                     "bucket",     "kfahr",      1,  "dir 4; wait 1",
+                     "l_table_b",  "barkeeper",  1,  "dir 4; wait 1",
+                     "l_table_b",  "bucket",     1,  "dir 4; wait 1; emote 1;" // todo: find angry emote
+                                                     "wait 15; moveon",
+                     "l_table_b",  "m_table_l",  1,  "dir 1; wait 1",
+                     "m_table_b",  "l_table_b",  1,  "dir 4; wait 1",
+                     "r_table_r",  "kfahr",      1,  "dir 4; wait 1",
+                     "m_table_l",  "bucket",     1,  "dir 4; wait 1",
+                     "l_table_r",  "kfahr",      1,  "dir 4; wait 1";
+                     
+   
+    firstmove "wait 8";    
+    initnpctimer;
 }
-
