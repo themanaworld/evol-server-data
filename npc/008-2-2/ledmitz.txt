@@ -2,7 +2,7 @@
 // Author:
 //    gumi
 
-008-2-2,43,34,0	script	Ledd	NPC_HUMAN_M_ARTIS,{
+008-2-2,43,34,0	script	Ledd	NPC_DRINKER_ROAMINGO,{
                 // XXX: ^ I know it should be Led and Mitz but 4144 made names
                 //        shorter than 4 characters illegal
 
@@ -24,13 +24,13 @@ OnInit:
 // REMOVE THIS CODE WHEN THIS //
 // NPC IS NO LONGER A WIP //////
 ////////////////////////////////
-if (!debug) disablenpc(.name$);
+//if (!debug) disablenpc(.name$);
 ///////// UNFINISHED ///////////
 
     end;
 }
 
-008-2-2,46,34,0	script	Mitz	NPC_HUMAN_M_ARTIS,{
+008-2-2,46,34,0	script	Mitz	NPC_DRINKER_MICKSHA,{
 
     deltimer("Ledd::OnTalk");
     addtimer(rand(500, 900), "Ledd::OnTalk");
@@ -48,7 +48,7 @@ OnInit:
 // REMOVE THIS CODE WHEN THIS //
 // NPC IS NO LONGER A WIP //////
 ////////////////////////////////
-if (!debug) disablenpc(.name$);
+//if (!debug) disablenpc(.name$);
 ///////// UNFINISHED ///////////
 
     end;

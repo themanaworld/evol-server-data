@@ -1,20 +1,80 @@
 // Evol scripts.
 // Author:
-//    Micksha
+//    gumi
+// Quest states:
+//    [1] 0  - cannot do the quest
+//    [1] 1  - can do the quest
+//    [1] 2  - talked to inspector (1) <= start
+//    [1] 3  - talked to old woman (1)
+//    [1] 4  - talked to old woman (2)
+//    [1] 5  - talked to inspector (2)
+//    [1] 6  - talked to troupe leader (1)
+//    [1] 7  - talked to inspector (3)
+//    [1] 8  - talked to old man
+//    [1] 9  - talked to old woman (3)
+//    [1] 10 - talked to inspector (4)
+//    [1] 11 - talked to old woman (4)
+//    [1] 12 - talked to malek
+//    [1] 13 - searched the bookcase
+//    [1] 14 - talked to inspector (5)
+//    [1] 15 - talked to troupe leader (2) <= reward
+//    [1] 16 - talked to inspector (6) <= reward, end
+//    [2] unused
+//    [3] unused
+//    [t] unused
 // Description:
 //    The crazy Hurnscald Doctor.
-// THIS IS A PLACEHOLDER!
 
-008-2-14,27,27,0	script	Doctor#008-2-14	NPC_DOCTOR_LEGACY,{
-    speech
-        l("Hey."),
-        l("Do you have some kind of pain?"),
-        lg("Oh, I see. You should go see your pixcialist.");
+008-2-14,27,27,0	script	Doctor	NPC_DOCTOR_LEGACY,{
 
-    close;
+    speech(4,
+        l("Hello, can I help you?"));
+
+    // TODO: check for AxeHat when we get it
+    // TODO: check for EyePatch when we get it
+
+    selectd(
+        l("I think I am sick!"),
+        l("No, I feel fine."),
+        rif(getq(.quest_inspector) == 2, l("Have you seen anything strange in town? Anything that might have to do with the robberies?")));
+
+    switch (@menu)
+    {
+    case 1:
+        narrator(4,
+            l("The doctor examines you briefly."));
+        // TODO: check for poison or other status conditions currently in use
+        speech(
+            l("Nonsense!"),
+            l("You look fine and dandy to me."),
+            l("All you need is a bit more exercise and fresh fruit in your diet!"));
+        close;
+    case 2:
+        speech(
+            l("Then please stop wasting my precious time."));
+        close;
+    case 3:
+        speech(
+            l("No, I haven't seen anything."));
+        close;
+    }
+
+
+    end;
 
 OnInit:
-    .sex = G_FEMALE;
-    .distance = 2;
+    .quest_inspector = HurnscaldQuests_Inspector;
+    .quest_debug = .quest_inspector;
+    .sex = G_MALE;
+    .distance = 3;
+
+////////// UNFINISHED //////////
+////////////////////////////////
+// REMOVE THIS CODE WHEN THIS //
+// NPC IS NO LONGER A WIP //////
+////////////////////////////////
+//if (!debug) disablenpc(.name$);
+///////// UNFINISHED ///////////
+
     end;
 }

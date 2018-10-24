@@ -2,19 +2,302 @@
 // Author:
 //    Micksha
 // Description:
-//    Alan the bow-seller.
-// THIS IS A PLACEHOLDER!
+//    Alan the bow-maker.
 
-008-2-6,31,25,0	script	Alan#008-2-4	NPC_YOUNG_MAN_KFAHR,{
-    speech
-        l("Hi Sir."),
-        l("Bad timing when you are asking for bows. Our bowmaker Gumi hasn't been seen for days now."),
-        lg("Come back later, perhaps we are lucky and he teaches you how to chop trees for wood.");
+008-2-6,32,24,0	script	Alan	NPC_YOUNG_MAN_KFAHR,{
 
+    function bow_intro {
+        speech(4,
+            l("When you want to buy something then please speak to my apprentice."),
+            l("I am only doing special requests."));
+
+        selectd(
+            l("OK, thanks."),
+            rif(BaseLevel >= .min_level, l("Can you make me a really good bow?")),
+            rif(getq(.quest_inspector) == 2, l("Have you seen anything strange recently that might be connected to the robberies?")));
+
+        switch (@menu)
+        {
+        case 1: closeclientdialog(); close;
+        case 3: speech(l("No.")); close;
+        }
+
+        speech(4,
+            l("You mean like one of my legendary forest bows?"));
+
+        selectd(
+            l("Yes, that would be nice."));
+
+        speech(4,
+            l("Sorry, I am not making these anymore."));
+
+        selectd(
+            l("Oh, too bad."),
+            l("What? Why not?"));
+
+        if (@menu == 1) {
+            closeclientdialog();
+            close;
+        }
+
+        speech(4,
+            l("The problem is that I am short of material."),
+            l("My forestbows are not made of regular wood, you know."),
+            l("They are made of special living wood."),
+            l("And only the best logs of living wood are good enough for them."),
+            l("I used to get these logs from Jack, the handsome lumberjack."),
+            l("But the last time I asked him for a new delivery he said that he would never again get any for me."));
+
+        selectd(
+            l("Too bad."),
+            l("Did you ask him why?"));
+
+        if (@menu == 1) {
+            closeclientdialog();
+            close;
+        }
+
+        speech(4,
+            l("Sure I did."),
+            l("But he just told me to leave him alone."),
+            l("Maybe you could ask him what's wrong?"));
+
+        selectd(
+            l("OK, I'll ask him."),
+            l("I am sure he got his reasons."));
+
+        setq(.quest_bow, 2);
+        closeclientdialog();
+        close;
+    }
+
+    function bow_reminder {
+        if (getq(.quest_inspector) == 2)
+        {
+            speech(4,
+                l("Did you already ask Jack why he won't deliver me any more living wood?"));
+
+            selectd(
+                l("Have you seen anything strange recently that might be connected to the robberies?"));
+
+            speech(l("No."));
+            close;
+        }
+
+        npctalk3(l("Did you already ask Jack why he won't deliver me any more living wood?"));
+        end;
+    }
+
+    function bow_explain {
+        speech(4,
+            l("Did you already ask Jack why he won't deliver me any more living wood?"));
+
+        selectd(
+            l("Yes, I did. He said that the trees turned into dangerous monsters."),
+            rif(getq(.quest_inspector) == 2, l("Have you seen anything strange recently that might be connected to the robberies?")));
+
+        if (@menu != 1)
+        {
+            speech(l("No."));
+            close;
+        }
+
+        speech(
+            l("Oh, that's really bad news."),
+            l("Maybe you can do his job?"),
+            l("If you kill some of these tree monsters and bring me their wood I could take a look at them."),
+            l("Maybe you will find a piece of wood that is strong enough to become one of my forest bows."));
+
+        close2;
+        setq(.quest_bow, 4);
+        end;
+    }
+
+    function bow_make {
+        speech(4,
+            l("I can make you a really nice forest bow out of this."),
+            l("I just need %s E for material and work time.",
+                format_number(.req_esp)));
+
+        selectd(
+            l("%s??? What a ripoff!", format_number(.req_esp)),
+            rif(Zeny >= .req_esp, l("Sure, here you go!")),
+            rif(getq(.quest_inspector) == 2, l("Have you seen anything strange recently that might be connected to the robberies?")));
+
+        switch (@menu)
+        {
+        case 1: speech(l("Fine, I'll just hold on to this log should you ever change your mind.")); close;
+        case 3: speech(l("No.")); close;
+        }
+
+        // XXX: maybe here we could make the player wait real-world hours for Alan to finish?
+
+        if (checkweight(.reward_item, 1) != true)
+        {
+            speech(
+                l("It seems you can't carry the bow right now."),
+                l("Go clean up your inventory and come back."));
+            close;
+        }
+
+        if (Zeny < .req_esp)
+            close; // double-check
+
+        setq(.quest_bow, 6);
+        Zeny -= .req_esp;
+        getitem(.reward_item, 1);
+        getexp(.reward_exp, 0);
+
+        speech(
+            l("Here you go - have fun with it."));
+        close;
+    }
+
+    function bow_check_wood {
+        speech(4,
+            l("How is the hunt going?"),
+            l("Did you bring me any wood?"));
+
+        selectd(
+            l("No, sorry."),
+            rif(countitem(.req_item) >= 1, l("Here, take a look!")),
+            rif(getq(.quest_inspector) == 2, l("Have you seen anything strange recently that might be connected to the robberies?")));
+
+        switch (@menu)
+        {
+        case 1: closeclientdialog(); close;
+        case 3: speech(l("No.")); close;
+        }
+
+        .@first = true;
+
+        do {
+            if (countitem(.req_item) < 1)
+                break;
+
+            if (.@first == false)
+            {
+                narrator(4,
+                    l("You hand him another log."));
+            }
+
+            delitem(.req_item, 1);
+            .@first = false;
+
+            speech(4,
+                l("Hmmm... looks ok, but is it strong enough?"));
+
+            narrator(4,
+                l("Alan bends the log over his knee."));
+
+            if (rand(.success_rate) == 0)
+            {
+                narrator(4 | 8,
+                    l("Alan tries as hard as he can but the log won't bend."));
+
+                speech(4,
+                    l("Aaah!"),
+                    l("Yes!"),
+                    l("That is a really fine piece of wood you brought me."),
+                    l("It will make an excellent bow!"));
+
+                setq(.quest_bow, 5);
+                setq(.quest_shield, 1);
+
+                narrator(4,
+                    l("He proceeds to further scrutinize the log."));
+
+                bow_make;
+                end;
+            }
+
+             narrator(4 | 8,
+                l("The log breaks with a loud crack."));
+
+             speech(4,
+                l("Sorry, this log was too weak for one of my forest bows."),
+                l("Now it is junk."),
+                l("Do you wish to try again?"));
+
+             selectd(
+                l("Sure, here you go."),
+                l("Hey! Stop breaking my stuff!"));
+
+             if (@menu != 1) {
+                closeclientdialog();
+                close;
+             }
+
+        } while (true);
+
+        speech(l("It seems you have no wood left."));
+        close;
+    }
+
+    function bow_done {
+        speech(4,
+            l("I hope you are satisfied with your forest bow."),
+            l("It is one of my best works."));
+
+        selectd(
+            l("I am!"),
+            rif(getq(.quest_inspector) == 2, l("Have you seen anything strange recently that might be connected to the robberies?")));
+
+        switch (@menu)
+        {
+        case 2: speech(l("No.")); close;
+        default: closeclientdialog(); close;
+        }
+    }
+
+    // OnTalk:
+    switch (getq(.quest_bow))
+    {
+    case 0:
+    case 1: bow_intro; break;
+    case 2: bow_reminder; break;
+    case 3: bow_explain; break;
+    case 4: bow_check_wood; break;
+    case 5: bow_make; break;
+    default: bow_done; break;
+    }
+
+    closeclientdialog();
     close;
 
+OnPCLoginEvent:
+OnPCBaseLvUpEvent:
+    if (BaseLevel >= .min_level && getq(.quest_bow) < 1)
+    {
+        setq(.quest_bow, 1); // allow the player to do the quest
+        dispbottom(l("New quest available: %s (level %d+)",
+            getquestlink(.quest_bow), .min_level)); // XXX: requires new manaplus versions, maybe show a different message for old versions?
+    }
+    end;
+
 OnInit:
+    .min_level = 25; // min level to do the quest
+
+    .req_item = RawLog; // item required to make the bow
+    .req_esp = 10000; // amount of Esperin required to make the bow
+    .reward_item = ForestBow; // quest reward (item)
+    .reward_exp = 500; // quest reward (exp)
+    .success_rate = 20; // one in X chances to get a perfect log
+
+    .quest_bow = HurnscaldQuests_ForestBow;
+    .quest_shield = HurnscaldQuests_WoodenShield;
+    .quest_inspector = HurnscaldQuests_Inspector;
+    .quest_debug = .quest_bow;
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 3;
+
+////////// UNFINISHED //////////
+////////////////////////////////
+// REMOVE THIS CODE WHEN THIS //
+// NPC IS NO LONGER A WIP //////
+////////////////////////////////
+//if (!debug) disablenpc(.name$);
+///////// UNFINISHED ///////////
+
     end;
 }
