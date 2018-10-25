@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    The rowboat, picking up the player on small beach in order to bring it to Koga.
+// THIS IS A PLACEHOLDER!
+
+001-1,203,64,0	script	Rowboat	NPC_ROWBOAT_STAND_WE,{
+    speech
+        l("Oh, hi."),
+        l("In case you don't have a commendatory letter from you-know-whom, I am just sitting here and observe the whales.");
+        l("Perhaps, and only perhaps, if you bring me the latter, I can bring you to a ship that will perhaps, and only perhaps, be able to bring you to Woodland.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 3;
+    end;
+}
