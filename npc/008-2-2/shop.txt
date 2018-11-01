@@ -1,0 +1,25 @@
+// Evol scripts.
+// Authors:
+//    4144
+//    Reid
+// Description:
+//    Inn hidden shop.
+
+008-2-2,40,30,0	trader	#Invisible008-2-2	NPC_HIDDEN,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem Beer, -1, 50;
+
+    .sex = G_OTHER;
+    .distance = 10;
+    end;
+
+OnClock0000:
+    restoreshopitem Beer, 20;
+OnClock0800:
+    restoreshopitem Beer, 20;
+OnClock1600:
+    restoreshopitem Beer, 20;
+}
