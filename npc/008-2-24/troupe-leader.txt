@@ -1,0 +1,119 @@
+// Evol scripts.
+// Author:
+//    gumi
+// Quest states:
+//    [1] 0  - cannot do the quest
+//    [1] 1  - can do the quest
+//    [1] 2  - talked to inspector (1) <= start
+//    [1] 3  - talked to old woman (1)
+//    [1] 4  - talked to old woman (2)
+//    [1] 5  - talked to inspector (2)
+//    [1] 6  - talked to troupe leader (1)
+//    [1] 7  - talked to inspector (3)
+//    [1] 8  - talked to old man
+//    [1] 9  - talked to old woman (3)
+//    [1] 10 - talked to inspector (4)
+//    [1] 11 - talked to old woman (4)
+//    [1] 12 - talked to malek
+//    [1] 13 - searched the bookcase
+//    [1] 14 - talked to inspector (5)
+//    [1] 15 - talked to troupe leader (2) <= reward
+//    [1] 16 - talked to inspector (6) <= reward, end
+//    [2] unused
+//    [3] unused
+//    [t] unused
+// Description:
+//    robberies in hurnscald
+
+008-2-24,41,39,0	script	Troupe Leader	NPC_DIMOND,{
+
+    function nohmask_question {
+        // XXX: shouldn't the player ask a question before she replies Yes? this feels too abrupt
+        speech(4,
+            l("Yes, a mask was stolen from us the last night we were in Hurnscald."));
+
+        selectd(
+            l("Any ideas on who might have taken it?"),
+            l("Are you sure one of your troupe members didn't hide it and commit those robberies?"),
+            l("Hmm..."));
+
+        switch (@menu)
+        {
+        case 1:
+            speech(
+                l("Hm..."),
+                l("I did see an old man hang out near the theater after our last show."));
+            close2;
+            setq(.quest_inspector, 6);
+            close;
+
+        case 2:
+            speech(
+                l("I am absolutely positive."),
+                l("None of my troupe have left the city since we got here."),
+                l("Good day!"));
+            close;
+        }
+
+        closeclientdialog();
+        close;
+    }
+
+    function nohmask_found {
+        // XXX: shouldn't the player say "I found your mask" before the npc says thanks?
+        speech(4,
+            l("Thank you for finding the mask."),
+            l("You did such a good job, you should keep it."));
+
+        if (checkweight(.reward_item, 1) != true)
+        {
+            speech(8,
+                l("It seems you can't carry it right now..."));
+            close;
+        }
+
+        setq(.quest_inspector, 15);
+        getexp(.reward_exp, 0);
+        getitem(.reward_item, 1);
+
+        speech(
+            l("We don't need it anymore."),
+            l("We're doing different shows here."));
+        close;
+    }
+
+    // OnTalk:
+    switch (getq(.quest_inspector))
+    {
+    case 5: nohmask_question; break;
+    // XXX: shouldn't it have an in-between state where it says good luck or something?
+    case 14: nohmask_found; break;
+    // XXX: shouldn't it have a "completed" state where it says thanks, come back any time?
+    }
+
+    // initial intro
+    speech(
+        l("Hello."),
+        l("I'm the leader of a traveling theater troupe."),
+        l("We'll be staying here in Tulimshar for a while."));
+    close;
+
+OnInit:
+    .reward_item = NohMask; // FIXME: change this when we get NohMask
+    .reward_exp = 1500;
+
+    .quest_inspector = HurnscaldQuests_Inspector;
+    .quest_debug = .quest_inspector;
+    .sex = G_FEMALE;
+    .distance = 3;
+
+////////// UNFINISHED //////////
+////////////////////////////////
+// REMOVE THIS CODE WHEN THIS //
+// NPC IS NO LONGER A WIP //////
+////////////////////////////////
+//if (!debug) disablenpc(.name$);
+///////// UNFINISHED ///////////
+
+    end;
+}

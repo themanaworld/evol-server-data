@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    The Koga in Artis, only accessable via Rowboat.
+// THIS IS A PLACEHOLDER!
+
+001-1,225,59,0	script	Koga	NPC_KOGA,{
+    speech
+        l("Oh, hi."),
+        l("In case you don't have a commendatory letter from you-know-whom, I am just sitting here and observe the whales.");
+        l("Perhaps, and only perhaps, if you bring me the latter, I can bring you to a ship that will perhaps, and only perhaps, be able to bring you to Woodland.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 4;
+    end;
+}

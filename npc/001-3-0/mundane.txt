@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Mundane, Monas dad, lost in sewers.
+// THIS IS A PLACEHOLDER!
+
+001-3-0,97,66,0	script	Mundane#001-3-0	NPC_MUNDANE,{
+    speech
+        l("Oh, Hi."),
+        l("I didn't expect someone coming here. I need help.");
+        lg("Do you know the way out of here? My daughter Mona may worry already.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

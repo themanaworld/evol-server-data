@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Oscar the farmer.
+// THIS IS A PLACEHOLDER!
+
+008-1,160,77,0	script	Oscar#008-1	NPC_CAUL,{
+    speech
+        l("Hi, my name is Oscar."),
+        l("I used to be a farmer, but my magic attempts were banned by the gouvernment."),
+        lg("Now I remain poor and unemployed.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Airlia, the major's daughter.
+// THIS IS A PLACEHOLDER!
+
+008-2-10,42,29,0	script	Airlia#008-2-8	NPC_AIRLIA,{
+    speech
+        l("Hello."),
+        l("Do you know where the graveyard is?"),
+        lg("No? Better is that. Its so dangerous there.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}

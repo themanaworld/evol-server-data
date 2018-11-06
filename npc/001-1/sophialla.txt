@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Sophialla, the connection between Artis and the Brotherhood in Hurns.
+// THIS IS A PLACEHOLDER!
+
+001-1,73,40,0	script	Sophialla#001-1	NPC_SOPHIALLA,{
+    speech
+        l("Hello."),
+        l("Can't you see I am reading? If you need something, tell me the secret password.");
+        lg("If you don't know it, just go, please.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}

@@ -1,0 +1,354 @@
+// Evol scripts.
+// Author:
+//   gumi, Micksha
+// Quest states:
+//    [1] 0 - cannot do the quest
+//    [1] 1 - can do the quest
+//    [1] 2 - hinnak asked for help
+//    [1] 3 - helped hinnak
+//    [2]     kill counter
+// Description:
+	
+//    Hinnak needs help to get rid of the same stuff than ever.
+
+008-1,270,74,0	script	Hinnak#008-1	NPC_HINNAK,{
+
+       if (BaseLevel < .min_level)
+    {
+        npctalk3 generic(1 | 16 | 64);
+        end;
+    }
+
+    function hinn_new_player
+    {
+        if(getequipid(EQI_HEAD_TOP) == .bad_hat)
+        {
+            narrator 4,
+                l("The farmer lunges at you with a farming implement.");
+            heal -50, 0;
+
+            selectd
+                l("I'm out of here."),
+                l("Whoa, what are you doing?");
+
+            if (@menu == 1)
+            {
+                return;
+            }
+
+            speech 4 | 1,
+                l("Sorry, you look like a pinkie."),
+                l("They've been destroying my fields, and I guess I got a bit worked up.");
+        }
+
+        else
+        {
+            speech 4,
+                l("Argh!"),
+                l("I hate them!"),
+                l("I @#$% hate them!"),
+                l("I @#$% hate these @#$% pinkies!");
+
+            selectd
+                l("You need some anger control therapy."),
+                l("Why do you hate them?");
+
+            if (@menu == 1)
+            {
+                return;
+            }
+
+            speech 4 | 1,
+                l("These @#$% beasts are jumping around in my fields destroying all my harvest."),
+                l("But they are too fast."),
+                l("I can't catch them.");
+        }
+
+        selectd
+            l("Want me to help you?");
+
+        speech 4 | 1,
+            l("Yes, you look quite fast."),
+            l("Maybe you can catch some of them."),
+            l("That will pay them a lesson."),
+            l("Slay some of them and bring me %d of their antennae.", .drop_count);
+
+        setq .quest, 2, 0;
+
+        selectd
+            l("How much is this worth to you?");
+
+        speech 1,
+            l("Well, I can't offer you much."),
+            l("But I got an old scythe laying around."),
+            l("Maybe you can use it as a weapon.");
+
+        close;
+    }
+
+    function hinn_help
+    {
+        if (getequipid(EQI_HEAD_TOP) == .bad_hat)
+        {
+            narrator 4,
+                l("The farmer glares at your hat.");
+        }
+
+        speech 4,
+            l("Have you got the %d antennae?", .drop_count);
+
+        selectd
+            l("Not yet, but I am working on it."),
+            rif(countitem(.monster_drop) >= .drop_count, l("Sure, here they are!"));
+
+        if (@menu == 1)
+        {
+            return;
+        }
+
+        if (getq2(.quest) < .kill_count)
+        {
+            speech 1,
+                l("Don't try to fool me!"),
+                l("I know you didn't kill them yourself!"),
+                l("Kill at least %d pinkies and come back.", .kill_count);
+            close;
+        }
+
+        speech 1,
+            l("Thank you very much"),
+            l("As promised, here's my old scythe."),
+            l("Maybe you can use it as a weapon."),
+            l("It is a bit cumbersome but its strikes are deadly.");
+
+        if (countitem(.monster_drop) >= .drop_count)
+        {
+            delitem .monster_drop, .drop_count;
+            getitem .reward_item, 1;
+            Zeny += .reward_money;
+            //getexp .reward_exp, 0;
+            setq .quest, 3;
+        }
+        close;
+    }
+
+    function hinn_thanks
+    {
+        if (getequipid(EQI_HEAD_TOP) == .bad_hat)
+        {
+            speech 4,
+                l("That better be a trophy on your head.");
+
+            selectd
+                l("It is.");
+
+            speech 4 | 1,
+                l("Good then."),
+                l("Thanks for your help with the pinkies.");
+        }
+
+        else
+        {
+            speech 4,
+                l("Good to see you again."),
+                l("Thanks again for helping me with the pinkies!");
+        }
+
+        selectd
+            l("Sure, any time!"),
+            l("Anything else you want me to do?"),
+            l("You're welcome. Bye!");
+
+        if (@menu == 3)
+        {
+            return;
+        }
+
+        speech 4 | 1,
+            l("Actually, it's been a long day."),
+            l("If it's no trouble, could you get me a %s?",
+                getitemlink(.drink_item));
+
+        selectd
+            rif(countitem(.drink_item) >= 1, l("Here you are.")),
+            l("Sure, I'll go get one. Bye!"),
+            l("You shouldn't drink while working!");
+
+        do
+        {
+            switch (@menu)
+            {
+                case 2: return;
+                case 3:
+                    speech 1,
+                        l("Well, I'm done for the day, and I'm quite old enough to decide when I can have a %s, thank you!",
+                            getitemname(.drink_item));
+                    selectd
+                        rif(countitem(.drink_item) >= 1, l("Sorry... here you are.")),
+                        l("I don't have any.");
+                    break;
+                default:
+                    if (countitem(.drink_item) < 1)
+                    {
+                        return;
+                    }
+                    delitem .drink_item, 1;
+
+                    narrator 4 | 8 | 2 | 1,
+                        l("%s takes a sip.", .name$);
+
+                    speech 4,
+                        l("Aaah!"),
+                        l("Nothing like a well-deserved %s after a long day of tending the crops!",
+                            getitemname(.drink_item)),
+                        l("Thanks, that was very kind of you!");
+
+                    narrator 4 | 8 | 1 | 2,
+                        l("He takes another sip.");
+
+                    speech 4,
+                        l("Thanks!"),
+                        l("You know, I had the strangest thing happen to me."),
+                        l("I had this patch of ground that was really clumpy; lots of clay, you see."),
+                        l("Right over there."),
+                        // TODO: move cam to the spot
+                        l("Looks much better now, doesn't it?"),
+                        // TODO: restore cam
+                        l("But how I got there is kind of scary..."),
+                        l("I'd been trying to break it up for a while, but that kind of work is a pain."),
+                        l("So my wife said that I should go and see the witch, just in case she knows something."),
+                        l("And sure enough I ask the witch, and she has a look at it."),
+                        l("“Nothing I can do”, she says, “but I can ask a friend”."),
+                        l("So the next day another witch shows up."),
+                        l("Gorgeous woman, but when she looked at me, the scares went scuttling down my spine..."),
+                        l("First thing she asked was if I'm a farmer."),
+                        l("Said her friend had told her that I needed help."),
+                        l("I show her what the problem is, and she tells me to go inside and wait.");
+
+                    narrator 4 | 8 | 1 | 2,
+                        l("%s drains his mug in one long sip, then hesitates.", .name$);
+
+                    speech 4,
+                        l("So I go inside."),
+                        l("I'm barely in when it starts raining outside, pouring cats and mouboos!"),
+                        l("Not so weird, perhaps, except that it was been bright and sunny just a second before!"),
+                        l("So I rush out, my wife telling me to leave the witch alone, and I see her standing there in the middle of the rain..."),
+                        l("None of the raindrops touched her, as if they were afraid!"),
+                        l("Then she yells out some gobbledygook word, and out of the ground there comes a swarm of maggots, crawling and digging and climbing over each other's backs..."),
+                        // XXX: maybe here insert a reference to SUSAN?
+                        l("And then she turns to me!"),
+                        l("Seeing her gaze, for a moment there I thought she would turn me into a pinkie, for sure..."),
+                        l("But all she says is, “had you stayed inside, you wouldn't be wet now”.");
+
+                    selectd
+                        l("Hahaha!"),
+                        l("Whoah, scary..."),
+                        l("What was that gobbledygook word?"),
+                        l("I better go now. Bye.");
+
+                    switch (@menu)
+                    {
+                        case 1:
+                            speech 1,
+                                l("Yeah, funny now..."),
+                                l("But you should've seen that gaze!"),
+                                l("Ah, well, never mind.");
+                            close;
+                        case 2:
+                            speech 1,
+                                l("Yeah, you could say that...");
+                            close;
+                        case 3:
+                            speech 1,
+                                l("Oh, I can't be sure..."),
+                                l("But something like “Nanaj princino”, I think."); // this is "Dwarven Princess" translated to Esperanto
+                            close;
+                    }
+                    return;
+            }
+        } while(true);
+    }
+
+    // OnTalk:
+
+    if (getq(.quest_inspector) == 11)
+    {
+        selectd
+            l("Did you see anyone in a mask come by here at night?"),
+            l("Did you see anyone with a large satchel come by here at night?"),
+            l("Hello.");
+
+        switch (@menu)
+        {
+            case 1:
+                speech
+                    l("No."),
+                    l("It tends to be too dark to see a mask.");
+                close;
+
+            case 2:
+                speech
+                    l("Yes, I saw someone with a large sack on their back go to the mining camp.");
+                close;
+        }
+    }
+
+    switch (getq(.quest))
+    {
+        case 0:
+        case 1: hinn_new_player; break;
+        case 2: hinn_help; break;
+        default: hinn_thanks;
+    }
+
+    closeclientdialog();
+    close;
+
+OnNPCKillEvent:
+    // XXX: maybe have a OnTakeScript on the pinky antena item so we count pickups instead of kills
+    if (killedrid == .monster_id && getq(.quest) == 2 &&
+        getq2(.quest) < .kill_count && strcharinfo(PC_MAP) == .map$)
+    {
+        setq .quest, 2, getq2(.quest) + 1;
+    }
+    end;
+
+OnPCLoginEvent:
+OnPCBaseLvUpEvent:
+    if (BaseLevel >= .min_level && getq(.quest) < 1)
+    {
+        setq .quest, 1; // allow the player to do the quest
+        dispbottom l("New quest available: %s (level %d+)",
+            getquestlink(.quest), .min_level); // XXX: requires new manaplus versions, maybe show a different message for old versions?
+    }
+    end;
+
+OnInit:
+    .min_level = 15; // min level to do the quest
+    .monster_id = Pinkie; // monster to kill
+    .monster_drop = PinkAntennae; // monster drop to collect
+    .drop_count = 10; // amount of that drop needed
+    .kill_count = 10; // min number of kills
+    .reward_item = Scythe; // reward item
+    .reward_money = 0; // reward money
+    .reward_exp = 0; // reward exp
+    .bad_hat = PinkieHat; // hinnak attacks you when you wear this hat
+    .drink_item = Beer; // the item hinnak asks to drink
+
+    .quest = HurnscaldQuests_Hinnak;
+    .quest_inspector = HurnscaldQuests_Inspector;
+    .quest_debug = .quest;
+    .sex = G_MALE;
+    .distance = 3;
+
+////////// UNFINISHED //////////
+////////////////////////////////
+// REMOVE THIS CODE WHEN THIS //
+// NPC IS NO LONGER A WIP //////
+////////////////////////////////
+//if (!debug) disablenpc(.name$);
+///////// UNFINISHED ///////////
+
+    end;
+}
+

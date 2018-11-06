@@ -1,0 +1,24 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    The Smith's apprentice.
+// THIS IS A PLACEHOLDER!
+
+008-2-8,38,29,0	script	Macgowan	NPC_YOUNG_MAN_APPRENTICE,{
+    npctalk3(l("Hello, I am Macgowan, apprentice to Nicholas."));
+    end;
+
+OnInit:
+    .distance = 3;
+
+////////// UNFINISHED //////////
+////////////////////////////////
+// REMOVE THIS CODE WHEN THIS //
+// NPC IS NO LONGER A WIP //////
+////////////////////////////////
+//if (!debug) disablenpc(.name$);
+///////// UNFINISHED ///////////
+
+    end;
+}

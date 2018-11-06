@@ -1,0 +1,314 @@
+// Evol scripts.
+// Author:
+//    gumi
+// Quest states (forest bow):
+//    [1] 0 - cannot do the quest
+//    [1] 1 - can do the quest
+//    [1] 2 - alan wants to ask jack
+//    [1] 3 - jack explained problem
+//    [1] 4 - alan asks to find wood
+//    [1] 5 - found perfect wood
+//    [1] 6 - got the bow
+//    [2] unused
+//    [3] unused
+//    [t] unused
+// Quest states (wooden shield):
+//    [1] 0 - cannot do the quest
+//    [1] 1 - can do the quest
+//    [1] 2 - jack proposes shield
+//    [1] 3 - player accepted quest
+//    [1] 4 - got the shield
+//    [2] unused
+//    [3] unused
+//    [t] unused
+// Description:
+//    Jack Lumber, the handsome lumberjack
+
+
+008-1,241,116,0	script	Jack	NPC_LUMBERJACK,{
+
+     function bow_intro {
+        speech(4,
+            l("Why not?!"),
+            l("I value my life, that's why!"));
+
+        selectd(l("What do you mean?"));
+
+        speech(4,
+            l("A week ago, I was going to chop down one of those twigleaf trees in the forest to the southwest."),
+            l("These twigleafs are the trees that give me the living wood you speak of."), // XXX: were Log Heads named "Twigleaf" at some point in the past?
+            l("I was just chopping away with my axe, and guess what happened?"),
+            l("One of its branches hit me!"),
+            l("At first, I thought it fell down or the wind blew it, but it hurt!"),
+            l("After I shook it off and struck the tree again with my axe, another branch hit me!"),
+            l("I got angry and started to chop off all the low-hanging branches so this couldn't happen anymore."),
+            l("Even after all that though, I still can't believe what happened next."));
+
+        selectd(l("What happened?"));
+
+        speech(4,
+            l("You'll think I'm insane if I tell you..."));
+
+        selectd(l("I won't. I promise."));
+
+        speech(4,
+            l("Alright, well..."),
+            l("After I chopped off a few branches, the whole tree started to move!"),
+            l("Its roots tore out of the earth, all the branches started to wave around, and a face appeared on the trunk."),
+            l("The whole tree CAME TO LIFE! It was mad!"));
+
+        selectd(l("Did you run away?"), l("Did you fight it?"));
+
+        speech(4,
+            l("I fought it, of course!"),
+            l("I took my axe and attacked the beast!"),
+            l("It hit me here *points at a bruise on his shoulder*, here *lifts his trouser leg to show another bruise*, and here *lifts his shirt and reveals even worse bruises*."), // XXX: that's kinda dirty imho... maybe we could use the narrator?
+            l("But I didn't give up!"),
+            l("I chopped away at it, branch after branch, and in the end I chopped off its roots, and it fell to the ground, motionless."));
+
+        selectd(l("So you beat the monster? Then why are you so scared?"));
+
+        speech(4,
+            l("Well, I was exhausted and had to rest."),
+            l("A few minutes passed, and suddenly I was practically surrounded by a dozen or more of these living trees!"));
+
+        selectd(l("Did you fight them too?"));
+
+        speech(4,
+            l("Are you crazy?"),
+            l("I barely destroyed one of those beasts."),
+            l("I was in no shape to fight again!"),
+            l("I ran away as fast as I could, and lucky for me the monsters aren't that fast on their tiny root legs, Ha!"));
+
+        selectd(l("So, I guess you aren't chopping down trees anymore?"));
+
+        speech(4,
+            l("I still do; it's my job."),
+            l("But I'll no longer chop those twigleafs, I'll tell you that."),
+            l("I know the bow master wants some twigleaf wood, but I don't care."),
+            l("I won't risk MY life for a few gold pieces!"),
+            l("If you really want to, just go to the southwest, but I  can't help you."),
+            l("I won't go there ever again."));
+
+        selectd(l("Southwest you say? OK, thank you."));
+
+        speech(l("Don't say I didn't warn you!"));
+
+        // What a huge text wall, I feel sorry for the players
+
+        close2;
+        setq(.quest_bow, 3);
+        end;
+    }
+
+    function bow_good_luck {
+        if (getq(.quest_inspector) == 2)
+        {
+            speech(4,
+                l("Good luck hunting those tree monsters – you'll need it."));
+
+            selectd(l("Have you seen anything that might be connected to the recent robberies in town?"));
+
+            speech(l("Sorry, no."));
+            close;
+        }
+
+        npctalk3(l("Good luck hunting those tree monsters – you'll need it."));
+        end;
+    }
+
+    function shield_intro {
+        speech(4,
+            l("I have an idea."),
+            l("What would you say about a new shield?"));
+
+        setq(.quest_shield, 2);
+
+        selectd(
+            l("No thanks."),
+            l("Yes, please!"),
+            rif(getq(.quest_inspector) == 2, l("Have you seen anything that might be connected to the recent robberies in town?")));
+
+        switch (@menu)
+        {
+            case 1: closeclientdialog(); close;
+            case 2:
+                speech(
+                    l("All I need is %d %s.", .logs_amount, getitemlink(.logs_item)),
+                    l("This needn't be high quality wood; pretty much any log you can find should work."),
+                    l("Oh, and I'll also need %s E for other materials.", format_number(.shield_cost)));
+
+                close2;
+                setq(.quest_shield, 3);
+                end;
+            case 3: speech(l("Sorry, no.")); close;
+        }
+    }
+
+    function bow_congrats {
+        speech(4,
+            l("You've finally found that perfect piece of living wood that Alan needs to make a Forest Bow, haven't you?"));
+
+        selectd(
+            l("I couldn't afford the bow, though..."),
+            l("No, I'm still looking."),
+            l("Yes, I've got the Forest bow now."),
+            l("I'm a melee warrior, I don't need bows."),
+            rif(getq(.quest_inspector) == 2, l("Have you seen anything that might be connected to the recent robberies in town?")));
+
+        switch (@menu)
+        {
+        case 3:
+            if (getq(.quest_bow) <= 5)
+            {
+                speech(4,
+                    l("Hrmph."),
+                    l("I'm someone who respects those speaking the truth."));
+            }
+            // fallthrough
+        case 1:
+        case 4:
+            speech(4,
+                l("You no doubt remember how I struggled with those beasts, fighting for my life."),
+                l("Scared me, those seven-branched little stumps did!"),
+                l("Never since that day have I strayed near them, and yet there you are, cutting them down one by one."),
+                l("I'm proud of you – to dare to fight those trunks is admirable indeed."),
+                l("You're as strong as if you were my own child!"));
+
+            shield_intro;
+            break;
+        case 2: speech(l("You should go talk to Alan again.")); close;
+        case 5: speech(l("Sorry, no.")); close;
+        }
+    }
+
+    function shield_make {
+        speech(4,
+            l("Do you have the %d %s and %s E for the shield?",
+                .logs_amount, getitemlink(.logs_item), format_number(.shield_cost)));
+
+        selectd(
+            rif(countitem(.logs_item) >= .logs_amount && Zeny >= .shield_cost,
+                l("Here it is.")),
+            l("I'll come back later."));
+
+        if (@menu != 1) {
+            closeclientdialog();
+            close;
+        }
+
+        speech(4,
+            l("Have a seat."));
+
+        narrator(4,
+            l("Jack saws the logs into pieces and then sands them until they are smooth to the touch."),
+            l("Applying some strong-smelling liquid, he tans them to a darker hue."),
+            l("Grabbing one of two leftover pieces, he begins to carve it into a round shape, then repeats this with the second piece – shield handles from what you can tell."),
+            l("Meanwhile, the sun has dried the other pieces."),
+            l("Jack places them next to each other, adds a frame, and nails everything together."),
+            l("The resulting shield looks usable already, but Jack applies another liquid to it and leaves it to dry for a few moments."),
+            l("Finally, he hands the shield to you."));
+
+        if (checkweight(.shield_item, 1) != true)
+        {
+            speech(
+                l("It seems you can't carry the %s.", getitemlink(.shield_item)),
+                l("Come back when you do."));
+            close;
+        }
+
+        if (Zeny < .shield_cost || countitem(.logs_item) < .logs_amount)
+            close; // double-check
+
+        setq(.quest_shield, 4);
+        delitem(.logs_item, .logs_amount);
+        getitem(.shield_item, 1);
+        Zeny -= .shield_cost;
+        getexp(.shield_exp, 0);
+
+        speech(
+            l("Enjoy your new shield!"));
+
+        close;
+    }
+
+    function wood_daily {
+        speech(4,
+            l("I hope that my shield will serve you well!"));
+
+        selectd(
+            l("Me too."),
+            rif(getq(.quest_inspector) == 2, l("Have you seen anything that might be connected to the recent robberies in town?")));
+
+        switch (@menu)
+        {
+        case 2: speech(l("Sorry, no.")); close;
+        }
+
+        closeclientdialog(); // TODO: daily quest (needs the generic daily quest script)
+        close;
+    }
+
+    // OnTalk:
+    switch (getq(.quest_shield))
+    {
+    case 2: shield_intro; break;
+    case 3: shield_make; break;
+    case 4: wood_daily; break;
+    }
+
+    switch (getq(.quest_bow))
+    {
+    case 3:
+    case 4: bow_good_luck; break;
+    case 5:
+    case 6: bow_congrats; break;
+    }
+
+    // initial intro
+    {
+        speech(4,
+            l("Hello there!"),
+            l("My name is Jack Lumber, the enemy of all trees."),
+            l("If you need some firewood, just let me know."));
+
+        selectd(
+            l("I'll keep that in mind."),
+            rif(getq(.quest_inspector) == 2, l("Have you seen anything that might be connected to the recent robberies in town?")),
+            rif(getq(.quest_bow) == 2, l("I heard you aren't delivering any more living wood. Why not?")));
+
+        switch (@menu)
+        {
+        case 2: speech(l("Sorry, no.")); close;
+        case 3: bow_intro; break;
+        }
+
+    }
+
+    closeclientdialog();
+    close;
+
+OnInit:
+    .logs_item = RawLog;
+    .logs_amount = 40; // XXX: maybe nlogn?
+    .shield_cost = 5000; // XXX: maybe nlogn?
+    .shield_exp = 2500;
+    .shield_item = WoodenShield;
+
+    .quest_bow = HurnscaldQuests_ForestBow;
+    .quest_shield = HurnscaldQuests_WoodenShield;
+    .quest_inspector = HurnscaldQuests_Inspector;
+    .quest_debug = .quest_bow;
+    .sex = G_MALE;
+    .distance = 3;
+
+////////// UNFINISHED //////////
+////////////////////////////////
+// REMOVE THIS CODE WHEN THIS //
+// NPC IS NO LONGER A WIP //////
+////////////////////////////////
+//if (!debug) disablenpc(.name$);
+///////// UNFINISHED ///////////
+
+    end;
+}

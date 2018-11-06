@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Lena the Bowwoman.
+// THIS IS A PLACEHOLDER!
+
+008-2-13,27,27,0	script	Lena#008-2-13	NPC_LENA,{
+    speech
+        l("Hey."),
+        l("Did you hear about the Bandit's attacks? They must have a hideout somewhere outside Hurnscald."),
+        lg("I will inform you when I have more information about all this.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}

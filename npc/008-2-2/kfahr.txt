@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Kfahr the hero.
+// THIS IS A PLACEHOLDER!
+
+008-2-2,44,36,0	script	Kfahr#008-2-2	NPC_YOUNG_MAN_KFAHR,{
+    speech
+        l("Oh hey *hicks*"),
+        l("This waitress *hicks* is great, she never stops to bring beer *hicks.");
+        lg("When I am less busy *hicks*, I can tell you stories of my heroism.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

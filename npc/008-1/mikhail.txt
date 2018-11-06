@@ -1,0 +1,131 @@
+// Evol scripts.
+// Author:
+//    gumi
+// Quest states:
+//    [1] 0 - cannot do the quest
+//    [1] 1 - can do the quest
+//    [1] 2 - bernard wants roasted maggot
+//    [1] 3 - brought maggot
+//    [1] 4 - bernard wants maggot slime
+//    [1] 5 - brought maggot slime
+//    [1] 6 - mikhail needs maggot slime
+//    [1] 7 - brought maggot slime
+//    [2] unused
+//    [3] unused
+//    [t] unused
+// Description:
+//    takes part in the slime soup quest (Bernard)
+
+008-1,298,95,0	script	Mikhail	NPC_MIKHAIL,{
+
+    function soup_scared {
+        speech 4,
+            l("Hello..."),
+            l("I'm supposed to be helping Bernard from the Inn but...");
+
+        narrator 4,
+            l("His eyes grow wide");
+
+        speech 4,
+            l("Eeekkk another one.");
+
+        narrator
+            l("It seems that the boy would like to say more, but seems too terrified at the moment."),
+            l("Maybe you should help someone else first, so that he sees your intentions are good.");
+
+        close;
+    }
+
+    function soup_intro2 {
+        speech 4,
+            l("Bernard sent me to get %d %s from the %s in the fields, but they scare me so bad!",
+                .third_item_qty, getitemlink(.third_item), getmonsterlink(.third_item_mob)),
+            l("You look like a nice person."),
+            l("Would you go get them for me?");
+
+        selectd
+            l("Of course, I'll go get them for you.");
+
+        speech
+            l("Thank you so much!"),
+            l("I'll wait for you here.");
+
+        setq .quest, 6;
+        close;
+    }
+
+    function soup_reminder_slime2 {
+        speech
+            l("Did you bring me the %d %s I need?",
+                .third_item_qty, getitemlink(.third_item)),
+            l("It doesn't look like you have them all...");
+        close;
+    }
+
+    function soup_reward_slime2 {
+        speech
+            l("Did you bring me the %d %s I need?",
+                .third_item_qty, getitemlink(.third_item)),
+            l("Ooh!"),
+            l("Thank you so much!"),
+            l("I can get back to Bernard now!");
+
+        if (countitem(.third_item) < .third_item_qty)
+            close; // double-check
+
+        delitem .third_item, .third_item_qty;
+        setq .quest, 7;
+        getexp .third_reward_exp, 0;
+        close;
+    }
+
+    function soup_thanks_slime2 {
+        speech
+            l("Thanks again for helping me!") + " %%Q";
+
+        close;
+    }
+
+    switch(getq(.quest))
+    {
+
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4: soup_scared; break;
+        case 5: soup_intro2; break;
+        case 6:
+            if (countitem(.third_item) < .third_item_qty)
+                soup_reminder_slime2;
+            else
+                soup_reward_slime2;
+            break;
+        default: soup_thanks_slime2;
+    }
+
+    closeclientdialog();
+    close;
+
+OnInit:
+    .third_item = MaggotSlime;
+    .third_item_qty = 5;
+    .third_item_mob = Maggot;
+
+    .third_reward_exp = 100;
+
+    .quest = HurnscaldQuests_Soup;
+    .quest_debug = .quest;
+    .sex = G_MALE;
+    .distance = 3;
+
+////////// UNFINISHED //////////
+////////////////////////////////
+// REMOVE THIS CODE WHEN THIS //
+// NPC IS NO LONGER A WIP //////
+////////////////////////////////
+//if (!debug) disablenpc(.name$);
+///////// UNFINISHED ///////////
+
+    end;
+}

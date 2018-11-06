@@ -1,0 +1,32 @@
+// Mikhail & Bernard quest debug
+// Author:
+//    gumi
+
+function	script	QuestDebug37	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "HurnscaldQuests_Soup";
+        mes "---";
+        mes l("Quest state: @@",
+            getq(HurnscaldQuests_Soup));
+        next;
+
+        GenericQuestDebug HurnscaldQuests_Soup,
+            l("Cannot do the quest"), 0,
+            l("Can do the quest"), 1,
+            l("Bernard wants roasted maggot"), 2,
+            l("brought maggot"), 3,
+            l("Bernard wants maggot slime"), 4,
+            l("brought maggot slime"), 5,
+            l("Mikhail needs maggot slime"), 6,
+            l("brought maggot slime"), 7;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

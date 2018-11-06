@@ -1,0 +1,120 @@
+// Evol functions.
+// Authors:
+//    gumi
+// Description:
+//    text register
+
+function	script	generic	{
+    .@flags = getarg(0, 1);
+
+    .@villager =   (1 << 0);
+    .@old =        (1 << 1);
+    .@kid =        (1 << 2);
+    .@sailor =     (1 << 3);
+    .@busy =       (1 << 4);
+    .@tired =      (1 << 5);
+    .@angry =      (1 << 6);
+    .@legion =     (1 << 7);
+    .@crazy =      (1 << 8);
+
+    if (.@flags == 0)
+        return l("I'm sorry, I can't talk right now.");
+
+    if (.@flags & .@villager)
+    {
+        setarray(.@array$[.@count],
+            l("It is a sunny day, don't you think?"),
+            l("I just want to live my life in peace."),
+            l("Isn't this place pretty? I love hanging out here!"));
+
+        .@count += 3;
+    }
+
+    if (.@flags & .@old)
+    {
+        setarray(.@array$[.@count],
+            l("Come closer dear, I can't hear you."),
+            l("Hmm... where did I put it again?"),
+            l("I miss the good old days."));
+
+        .@count += 3;
+    }
+
+    if (.@flags & .@kid)
+    {
+        setarray(.@array$[.@count],
+            l("Mommy doesn't want me to talk to strangers."));
+
+        .@count += 1;
+    }
+
+    if (.@flags & .@sailor)
+    {
+        setarray(.@array$[.@count],
+            l("So finally someone has came to visit me?"),
+            l("A-hoy matey!"));
+
+        .@count += 2;
+    }
+
+    if (.@flags & .@busy)
+    {
+        setarray(.@array$[.@count],
+            l("Can't talk right now."),
+            l("Can't you see I'm busy?"),
+            l("Come back later."),
+            l("I'm a little busy right now."));
+
+        .@count += 4;
+    }
+
+    if (.@flags & .@tired)
+    {
+        setarray(.@array$[.@count],
+            l("I had a long day, come back tomorrow."),
+            l("I need to rest."),
+            l("*snores*"));
+
+        .@count += 3;
+    }
+
+    if (.@flags & .@angry)
+    {
+        setarray(.@array$[.@count],
+            l("Go pester someone else."),
+            l("I don't feel like talking to you."),
+            l("Stop wasting my time."),
+            l("Go fly a kite"),
+            l("Not in the mood to chat."),
+            l("Give me some space."),
+            l("Can you please go away?"));
+
+        .@count += 7;
+    }
+
+    if (.@flags & .@legion)
+    {
+        setarray(.@array$[.@count],
+            l("My breath smells bad."),
+            l("Don't distract me, I have to stay alert."),
+            l("Can't talk right now, I'm on patrol duty."),
+            l("I can't stay here and talk all day. I have a job to do."),
+            l("Keep moving."),
+            l("So you think you're tough? A warrior must also be loyal and patient."),
+            l("Practice! There are no secrets to becoming a warrior."),
+            l("There is no honor in fighting a weak opponent."));
+
+        .@count += 8;
+    }
+
+    if (.@flags & .@crazy)
+    {
+        setarray(.@array$[.@count],
+            l("Do I look like a tree? I feel like one."),
+            l("What're you looking at?!"));
+
+        .@count += 2;
+    }
+
+    return .@array$[rand(.@count)];
+}
