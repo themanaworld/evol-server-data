@@ -16,6 +16,7 @@ OnInit:
     htput(.ht, "^HARB|^MASTER", "001-2-16 28 32");
     htput(.ht, "^HOLD$", "000-2-2 42 31");
     htput(.ht, "^HURN", "008-1 250 109");
+    htput(.ht, "^LAVA", "008-3-0 35 28");
     htput(.ht, "^LEG", "001-2-33 34 42");
     htput(.ht, "^LIB", "001-2-4 42 35");
     htput(.ht, "^LIGHT", "001-2-0 37 32");
@@ -29,10 +30,12 @@ OnInit:
     htput(.ht, "^NOBLE4$", "001-2-12 34 32");
     htput(.ht, "^NOBLE5$", "001-2-15 34 38");
     htput(.ht, "^RED|PLUSH|^INN", "001-2-28 30 35");
+    htput(.ht, "^ROSSY", "008-3-0 130 108");
     htput(.ht, "^SECOND|^DECK2$", "000-2-1 67 32");
     htput(.ht, "^SHIP2$", "001-2-21 23 28");
     htput(.ht, "^START2$", "000-0-0 26 28");
     htput(.ht, "^START3$", "000-0-1 26 28");
     htput(.ht, "^START|^BEGIN", "000-0 22 24");
+    htput(.ht, "^VEIN", "008-3-0 85 172");
     htput(.ht, "^WARE", "001-2-18 37 31");
 }
