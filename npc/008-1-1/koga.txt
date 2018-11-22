@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    The Koga in Artis, only accessable via Rowboat.
+// THIS IS A PLACEHOLDER!
+
+008-1-1,30,60,0	script	Koga#008-1-1	NPC_KOGA,{
+    speech
+        l("So, finally, we are here."),
+        l("Do you want to go back to Artis? You really should be afraid of the Legion there, now that you have been here in Woodland. They somehow smell the odor of the Brotherhood.");
+        l("Better you stay here for a while. Come back when you are stronger.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 4;
+    end;
+}
