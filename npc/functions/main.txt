@@ -183,9 +183,9 @@ function	script	npctalkonce	{
         set(getvariableofnpc(.talk_lock, strnpcinfo(NPC_NAME_UNIQUE)), gettimetick(2) + getarg(1, 1));
         break;
     default:
-        if (gettimetick(2) <= @NPC_TALK_LOCK[getnpcid(0)])
+        if (gettimetick(2) <= @NPC_TALK_LOCK[getnpcid()])
             return false;
-        @NPC_TALK_LOCK[getnpcid(0)] = gettimetick(2) + getarg(1, 1);
+        @NPC_TALK_LOCK[getnpcid()] = gettimetick(2) + getarg(1, 1);
     }
 
     // talk mechanism

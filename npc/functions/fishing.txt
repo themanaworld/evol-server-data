@@ -183,7 +183,7 @@ function	script	fishing	{
         .@fish_id = relative_array_random(getvariableofnpc(.fish_ids[0], .@npc$));
 
         // RNG to obtain a fish
-        if (rand(gettimetick(0) - @fishing_tick) <= .@pull_rand_max + (100 * @FISHING_BOOSTER[getnpcid(0)]))
+        if (rand(gettimetick(0) - @fishing_tick) <= .@pull_rand_max + (100 * @FISHING_BOOSTER[getnpcid()]))
         {
             specialeffect(.@success_fx, SELF, playerattached()); // event success
 
@@ -244,7 +244,7 @@ function	script	fishing	{
         if (getvariableofnpc(.bait_ids[.@i], .@npc$) == .@bait)
         {
             .@bait_c = true;
-            @FISHING_BOOSTER[getnpcid(0)] = getvariableofnpc(.bait_ids[.@i + 1], .@npc$);
+            @FISHING_BOOSTER[getnpcid()] = getvariableofnpc(.bait_ids[.@i + 1], .@npc$);
             break;
         }
     }

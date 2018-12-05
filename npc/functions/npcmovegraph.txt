@@ -115,7 +115,7 @@ function	script	execmovecmd	{
     }
     else if (.@cmd$[0] == "emote")
     {
-        unitemote getnpcid(0), atoi(.@cmd$[1]);
+        unitemote getnpcid(), atoi(.@cmd$[1]);
     }
     else if (.@cmd$[0] == "class")
     {
@@ -137,7 +137,7 @@ function	script	execmovecmd	{
             .@x = getvariableofnpc(.movepos_x1[.@pos], strnpcinfo(3));
             .@y = getvariableofnpc(.movepos_y1[.@pos], strnpcinfo(3));
             if (getstrlen(.@map$) > 0)
-                unitwarp getnpcid(0), .@map$, .@x, .@y;
+                unitwarp getnpcid(), .@map$, .@x, .@y;
             else
                 movenpc strnpcinfo(3), .@x, .@y;
             set getvariableofnpc(.movepos, strnpcinfo(3)), .@pos;

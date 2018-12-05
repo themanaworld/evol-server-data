@@ -47,7 +47,7 @@ function	script	domoveaction	{
     }
     else if (.@cmd$ == "emote")
     {
-        unitemote getnpcid(0), getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
+        unitemote getnpcid(), getvariableofnpc(.movepathx[.@pos], strnpcinfo(3));
         return 2;
     }
     else if (.@cmd$ == "class")

@@ -25,7 +25,7 @@
             getitem OldBook, 1;
         }
 
-        specialeffect(.dir == 0 ? 24 : 25, AREA, getnpcid(0)); // closed ? opening : closing
+        specialeffect(.dir == 0 ? 24 : 25, AREA, getnpcid()); // closed ? opening : closing
         .dir = .dir == 0 ? 2 : 6; // closed ? opening : closing
         .busy = true; // lock until available again
         initnpctimer;
@@ -53,7 +53,7 @@ OnUnTouch:
 OnTimer30000:
     .busy = true;
     .dir = 6; // closing
-    specialeffect(25, AREA, getnpcid(0)); // closing
+    specialeffect(25, AREA, getnpcid()); // closing
     setnpctimer 0;
 OnTouch:
     end;
