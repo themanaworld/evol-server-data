@@ -24,6 +24,20 @@
     if (askyesno() == 1) slide_or_warp("001-3-0", 152, 56);
     close;
 
+OnTouch:
+    // (has_instance2 wasn't checked if it works)
+    if (getq(ArtisQuests_MonaDad) == 2 && has_instance2("mona@"+strcharinfo(0)) >= 0) {
+    mesn l("Mundane");
+    mesq l("Thanks for saving me. This is enough, I'll watch if Mona is fine and return to Sewers later.");
+    next;
+    inventoryplace WoodenBow, 1;
+    mesn l("Mundane");
+    mesq lg("Here, take this @@ as a gift. I'm sure someone as skilled you will make a good use of my old weapon.", "Here, take this @@ as a gift. I'm sure someone as skilled you will make a good use of my old weapon.", getitemlink(WoodenBow));
+    getitem WoodenBow, 1;
+    setq(ArtisQuests_MonaDad, 3);
+    }
+    end;
+
 OnInit:
     .sex = G_OTHER;
     .distance = 1;
