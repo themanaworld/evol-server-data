@@ -54,8 +54,14 @@
     {
         find_daddy_quest();
     }
-
-    npctalkonce l("Please find daddy...");
+    else if (getq(ArtisQuests_MonaDad) == 3)
+    {
+        npctalkonce l("Thanks for finding daddy... I wish he spent more time with me...");
+    }
+    else
+    {
+        npctalkonce l("Please find daddy...");
+    }
 
     emotion E_SAD;
     close;

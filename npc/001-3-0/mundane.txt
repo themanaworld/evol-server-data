@@ -1,20 +1,95 @@
-// Evol scripts.
+
+// Evol Scripts
 // Author:
-//    Micksha
+//    Jesusalva
 // Description:
-//    Mundane, Monas dad, lost in sewers.
-// THIS IS A PLACEHOLDER!
+//    Mundane (anagram of Unnamed) is Mona's father
 
-001-3-0,97,66,0	script	Mundane#001-3-0	NPC_MUNDANE,{
-    speech
-        l("Oh, Hi."),
-        l("I didn't expect someone coming here. I need help.");
-        lg("Do you know the way out of here? My daughter Mona may worry already.");
+// Note: Due technical limitations do not make Mundane move
+// Note: Temporary sprite
+001-3-0,161,59,0	script	Mundane	NPC_MUNDANE,{
 
+    function quest_completed
+    {
+    speech(0x0,
+        l("No matter how many times I come here, I can't find the reason for the strange sounds..."),
+        l("It is either a huge monster, some cultists, or someone throwing strange stuff into sewers."));
     close;
+    }
+
+    function rescue_mundane
+    {
+    speech(S_LAST_NEXT,
+        l("Scary... I am afraid of these blubs and rattos... And worse, I am lost..."),
+        l("I already killed many strong monsters, but I everyone have fears, right?!"),
+        l("My daughter is probably worried with me. Could you perhaps lead me out of here?"));
+
+        switch (select(l("Yes, follow me!"), l("Not now. You see, I am also afraid of Blubs and Rattos!")))
+        {
+            case 1:
+                mes "";
+                break;
+            case 2:
+                speech(S_FIRST_BLANK_LINE,
+                    l("That's too bad... Although I think you're lying."),
+                    l("If it is the latter, please take some courage and help me!"));
+                close;
+                break;
+        }
+        .@ID=getcharid(0);
+        .@MAP_NAME$="mona@"+str(.@ID);
+        .@MUNDANE_INSTID = instance_create("001-3-0@a"+(.@ID), getcharid(3), IOT_CHAR);
+        //debugmes "You are "+str(.@ID);
+
+        //if (.@MUNDANE_INSTID < 0) debugmes "Error: No instance ID";
+        //debugmes "new instance id: " + str(.@MUNDANE_INSTID);
+
+        // XXX - Important Note - XXX
+        // We currently have only FOUR chars to name the map. "001-3-0" or "mundane" have 7 chars, so that cannot be used.
+        // Thankfully, "mona" have 4 chars, so it's the name.
+        //
+        // Rationale: We have only 11 chars available, but 7 are reserved. So, longest name would be "abcd" + "@" + getcharid(0)
+        // Some test reported that (apparently) we have 15 whitespaces at map name start, not sure why.
+        .@instanceMapName$ = instance_attachmap("001-3-0", .@MUNDANE_INSTID, 0, .@MAP_NAME$);
+
+        //if (.@instanceMapName$ == "") debugmes "Error: Map 001-3-0 X failed";
+        //debugmes "Created map: "+ str(.@instanceMapName$);
+
+        // You have 5 minutes to complete the quest. This does not results in failure by itself, getq2 does that
+        instance_set_timeout(300, 300, .@MUNDANE_INSTID);
+        instance_init(.@MUNDANE_INSTID);
+        dispbottom(l("Mona Father's is right behind you. You have five minutes to bring him out of sewers!"));
+
+        // Not sure if Green Slimes are exactly what we want here - and shouldn't it be "Slime"? (mind upper-case)
+        areamonster(.@MAP_NAME$, 119, 51, 162, 85, l("Green Slime"), slime, 3);
+        setq ArtisQuests_MonaDad, 2;
+        warp(.@MAP_NAME$, 161,59);
+        close;
+
+    }
+
+    .@q=getq(ArtisQuests_MonaDad);
+    if (.@q != 1) quest_completed();
+    if (.@q == 1) rescue_mundane();
+
+    hello;
+    end;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 3;
+    end;
+
+OnInstanceInit:
+    disablenpc(instance_npcname(.name$));
+    end;
+
+OnPCDieEvent:
+    if (getq(ArtisQuests_MonaDad) != 2) end;
+    setq ArtisQuests_MonaDad, 1;
+    dispbottom l("What a pity! You've died.");
+    //warp("Save",0,0); // That works, but won't revive you without recovery();
     end;
 }
+
+// >>>>>>> Initial proof-of-concept version, works, but quest cannot be completed yet
