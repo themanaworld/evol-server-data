@@ -5,9 +5,9 @@
 008-2-2,32,28,0	script	Note#Hurnscald:pub	NPC_PAPER_NOTE,{
     narrator(8,
         l("We refuse service to anyone who:"),
-        l("• Has a bubblehead"),
-        l("• Is not properly shaded"),
-        l("• Can't walk without stopping after every step"));
+        "• " + l("Has a bubblehead"),
+        "• " + l("Is not properly shaded"),
+        "• " + l("Can't walk without stopping after every step"));
 
     // In case you don't get the joke, know that it's a parody on Illutia.
 
