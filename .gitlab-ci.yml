@@ -22,7 +22,7 @@ build_test:
     gcc-6
     git-core
     make autoconf automake autopoint
-    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+    libtool mariadb-client libmariadbclient-dev-compat libz-dev libpcre3-dev"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
   image: debian:stretch
@@ -223,7 +223,7 @@ mariadb_run_latest_gcc6:
     gcc-6
     git-core
     make autoconf automake autopoint
-    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+    libtool mariadb-client libmariadbclient-dev-compat libz-dev libpcre3-dev"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mariadb
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
@@ -289,7 +289,7 @@ mariadb_run_latest_gcc7:
     gcc-6
     git-core
     make autoconf automake autopoint
-    libtool libmysqlclient-dev libz-dev libpcre3-dev
+    libtool mariadb-client libmariadbclient-dev-compat libz-dev libpcre3-dev
     valgrind"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mysql
@@ -311,7 +311,7 @@ mysql_run_valgrind_5.7:
     gcc-6
     git-core
     make autoconf automake autopoint
-    libtool libmariadbclient-dev libz-dev libpcre3-dev
+    libtool mariadb-client libmariadbclient-dev-compat libz-dev libpcre3-dev
     valgrind"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mysql
@@ -333,7 +333,7 @@ mariadb_run_valgrind_latest:
     gcc-6
     git-core
     make autoconf automake autopoint
-    libtool libmariadbclient-dev libz-dev libpcre3-dev
+    libtool mariadb-client libmariadbclient-dev-compat libz-dev libpcre3-dev
     valgrind"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mariadb
