@@ -25,7 +25,7 @@ build_test:
     libtool libmysqlclient-dev libz-dev libpcre3-dev"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
-  image: debian:unstable
+  image: debian:stretch
   services:
   - mysql:latest
   artifacts:
@@ -228,7 +228,7 @@ mariadb_run_latest_gcc6:
   - ./.tools/jobs/initdb.sh mariadb
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
   - ./.tools/jobs/runserver.sh mariadb
-  image: debian:unstable
+  image: debian:stretch
   services:
   - mariadb:latest
   artifacts:
