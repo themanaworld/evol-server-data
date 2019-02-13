@@ -1,0 +1,55 @@
+// Evol scripts.
+// Author:
+//    Toams
+// Description:
+//    helper scripts for rowboat usage
+// TODO:
+// Check if mona's quest is done before being able to call the boat
+
+// calling the Rowboat
+001-1,200,60,0	script	Curious Hole	NPC_NO_SPRITE,{
+
+narrator(S_LAST_BLANK_LINE | S_LAST_NEXT,
+    l("You see a curious hole behind some rocks"),
+    l("'Hey anyone there?'"),
+    l("..."),
+    l("Altough you can't get rid of the feeling someone is listening on the other side, you don't get any replies"),
+    l("Now if only these lazy developers would write the missing parts of mona's quest so you would know the needed password."),
+    l("So for now just call the boat?"));
+    closeclientdialog();
+    if (askyesno() == 1) {
+        doevent("#Rowboat::OnMoveToBeach");
+    close;
+    }
+
+// Make sure to unmount the boat when player dies
+OnPCDieEvent:
+   setmount 0;
+  
+OnInit:
+    .distance = 1;    
+}
+
+
+//unmounting the rowboat
+001-1,202,62,0	script	unmountrowboat	NPC_HIDDEN,1,1,{
+
+function UnMount {
+    narrator(S_LAST_BLANK_LINE | S_LAST_NEXT,
+        l("Do you want to leave the boat?"));
+    closeclientdialog();
+    if (askyesno() == 1) {
+        slide_or_warp("001-1", 199, 62);
+        setmount 0;
+    close;
+    }
+}
+
+OnTouch:
+    UnMount;
+    end;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 1;
+}

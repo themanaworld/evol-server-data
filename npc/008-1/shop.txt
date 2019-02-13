@@ -1,0 +1,55 @@
+// Evol scripts.
+// Authors:
+//    4144
+//    Micksha
+//    Reid
+//    toams
+// Description:
+//    Blossom flower shop.
+
+008-1,201,136,0	trader	#Invisible008-1	NPC_HIDDEN,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem ARedRose, -1, 50;
+    sellitem AWhiteRose, -1, 50;
+    sellitem AYellowRose, -1, 50;
+    sellitem ABlueRose, -1, 20;
+    sellitem ARedTulip, -1, 50;
+    sellitem AWhiteTulip, -1, 50;
+    sellitem AYellowTulip, -1, 50;
+    sellitem ABlueTulip, -1, 20;
+    
+    .sex = G_OTHER;
+    .distance = 10;
+    end;
+
+OnClock0000:
+    restoreshopitem ARedRose, 10;
+    restoreshopitem AWhiteRose, 10;
+    restoreshopitem AYellowRose, 10;
+    restoreshopitem ABlueRose, 5;
+    restoreshopitem ARedTulip, 10;
+    restoreshopitem AWhiteTulip, 10;
+    restoreshopitem AYellowTulip, 10;
+    restoreshopitem ABlueTulip, 5;
+OnClock0800:
+    restoreshopitem ARedRose, 10;
+    restoreshopitem AWhiteRose, 10;
+    restoreshopitem AYellowRose, 10;
+    restoreshopitem ABlueRose, 5;
+    restoreshopitem ARedTulip, 10;
+    restoreshopitem AWhiteTulip, 10;
+    restoreshopitem AYellowTulip, 10;
+    restoreshopitem ABlueTulip, 5;
+OnClock1600:
+    restoreshopitem ARedRose, 10;
+    restoreshopitem AWhiteRose, 10;
+    restoreshopitem AYellowRose, 10;
+    restoreshopitem ABlueRose, 5;
+    restoreshopitem ARedTulip, 10;
+    restoreshopitem AWhiteTulip, 10;
+    restoreshopitem AYellowTulip, 10;
+    restoreshopitem ABlueTulip, 5;
+}
