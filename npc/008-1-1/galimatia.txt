@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Galmatia the beekeeper.
+// THIS IS A PLACEHOLDER!
+
+008-1-1,113,59,0	script	Galimatia	NPC_GALIMATIA,{
+    speech
+        l("Hello."),
+        l("If only someone could help me to make my flowers bloom again."),
+        l("I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}

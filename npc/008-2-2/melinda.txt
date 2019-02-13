@@ -1,4 +1,3 @@
-
 // Evol scripts.
 // Authors:
 //    Toams
@@ -23,7 +22,17 @@ function StartConversation {
             @Hurns_Rusty_Pick_WaitressTick = .@tick;
         }
     }
- 
+    
+function face_to_PC {
+        getmapxy(.@map$, .@cx, .@cy, 0);
+        @Melinda_ols_dir = .dir;
+        npc_turntoxy(.@cx, .@cy);
+
+        return;
+    }
+    
+npc_pausemove;
+face_to_PC;
 mes "";
 mesn;
 mesq l("Hi, sweetie! Want a fresh beer for 90 Florin?");
@@ -97,6 +106,7 @@ L_No:
    
 L_Close:
     initnpctimer;
+    npc_resumemove;
     close;
    
 L_TooMany:

@@ -7,7 +7,7 @@
 
 008-2-2,28,27,0	script	Melania	NPC_AIRLIA,{
     speech
-        l("Hello Sir."),
+        lg("Hello Sir.","Hello Miss."),
         l("Welcome to the Rusty Pick. Sorry, we have no room left today."),
         l("One advice: Don't take the things those drinkers say too serious. They are sitting here and drinking all day."),
         l("I wish you a beautiful day.");

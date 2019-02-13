@@ -1,0 +1,39 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Blossom the flower-seller girl.
+// THIS IS A PLACEHOLDER!
+
+008-1,198,138,0	script	Blossom#008-1	NPC_BLOSSOM,{
+    speech
+        l("Hi, my name is Blossom."),
+        l("Strange, it seems I became younger lately."),
+        l("Are you in need of some flowers?");
+
+    switch (select(l("I love flowers! What do you have for sale?"),
+                   l("Not now, thank you."),
+                   l("Dont you know something about fertility? I heard rumors.")))
+    {
+    case 1:
+        closeclientdialog;
+        shop "#Invisible008-1";
+        close;
+    case 2:
+        speech S_FIRST_BLANK_LINE,
+        l("Oh, ok. Come back later if you need something.");
+        close;
+    case 3:
+        speech S_FIRST_BLANK_LINE,
+        l("I heard something too. A girl named Galimatia seems to need help. If only those lazy developers could tell her what she needs.");
+        close;
+    }
+        
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}
