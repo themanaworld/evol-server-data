@@ -21,8 +21,8 @@
 // 6    end of training
 // .mobID is related to quest state
 // 1    1021 dummy for sword wave
-// 3    1025 dummy for bow wave
-// 5    1024 dummy for skill wave
+// 3    1102 dummy for bow wave
+// 5    1101 dummy for skill wave
 //
 // TODO adding rand messages like "try hit it harder..." for wave's
 // TODO in first, second, and third training, input some tips about related weapon given.
@@ -319,7 +319,7 @@
         }
 
         // the fence for block the player to leave the training, here mask 3 for water
-        setcells('map$, 33, 35, 33, 38, 3, "training_fence"+'npcName$);
+        setcells 'map$, 33, 35, 33, 38, 3, "training_fence"+'npcName$;
 
         npctalk3(l("Let's begin"));
 
@@ -402,7 +402,7 @@ OnInit:
 
     // here input some sentences "hello noob" like, the npc pick randomly a sentence
     setarray .mockingGreeting$[0], "Hy noob !", "Hey somethingwholooklikeawarrior...", "Sup' chibi.";
-    setarray .mobID[0], 0, 1021, 0, 1025, 0, 1024; // mob id, in array because change for different state of quest
+    setarray .mobID[0], 0, 1021, 0, 1102, 0, 1101; // mob id, in array because change for different state of quest
     setarray .mobCoordinate[0], 24, 34, 31, 41; // this represent the square of "ring" training
 
     end;
