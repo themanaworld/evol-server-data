@@ -1,0 +1,73 @@
+// TMW2 Script
+// Authors:
+//  Jesusalva
+// 
+// Description:
+//    Handles Artis manholes
+//    Relies on getmap, be sure coords are enough compatible
+//    ie. Leave a 2x2 area free of collision in the target coordinates
+//    Heights weren't checked
+
+// manhole_interact( dest_map )
+// Carries over getmapxy() for NPC
+// This is for Artis and thus, hackish.
+// Return Codes:
+//      -1 : Tried to enter Sewers
+//      >0 : ID of dropped item (in case it must be caught)
+
+function	script	manhole_interact	{
+    .@dest_map$=getarg(0);
+    getmapxy(.@m$, .@x, .@y, UNITTYPE_NPC);
+
+    narrator(S_LAST_BLANK_LINE | S_LAST_NEXT,
+        l("You hear some creeping and crawling sounds from the murkiness below."),
+        l("..."));
+
+    select
+        l("Do you want to leave it alone?"),
+        rif(getq(ArtisQuests_MonaDad), l("Do you want to enter in sewer?")),
+        l("Do you want to throw something inside?");
+
+    switch (@menu) {
+        case 1:
+            close; break;
+        case 2:
+            return -1; break;
+        case 3:
+            mes "##B" + l("Drag and drop an item from your inventory.") + "##b";
+
+            .@id = requestitem();
+
+            // If ID is invalid
+            if (.@id < 1) {
+                mesc l("You give up.");
+                close;
+            }
+
+            // If there's not enough items, it is bound, it cannot be traded/dropped/sold, etc.
+            if (countitem(.@id) < 1 || checkbound(.@id) || getiteminfo(.@id, ITEMINFO_TRADE)) {
+                mesc l("You cannot drop this item!");
+                close;
+            }
+
+            // Delete item and spawn it on the equivalent map
+            delitem .@id, 1;
+            makeitem .@id, 1, .@dest_map$, .@x+rand(-2, 2), .@y+rand(-2, 2);
+
+            // May spawn a monster if it is food (33% odds)
+            if (getiteminfo(.@id, ITEMINFO_TYPE) == IT_HEALING && rand(1,3) == 3) {
+                // Would be nice to customize but not needed atm
+                // 1 mob for every 30 levels (level 99 players spawn 4 mobs)
+                // Note that food type is currently disregarded (and it accepts any healing item)
+                .@monsterId=any(slime, Croc, LittleBlub, CaveMaggot);
+	            .@mobGID = monster(.@m$, .@x, .@y, strmobinfo(1, .@monsterId), .@monsterId, (BaseLevel/30)+1);
+	            unitattack(.@mobGID, getcharid(CHAR_ID_ACCOUNT)); // "It's not aggressive"? We don't care.
+            }
+
+            return .@id; break;
+    }
+
+
+
+}
+
