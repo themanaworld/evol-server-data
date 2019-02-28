@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Our beloved Evil Witch Valia.
+// THIS IS A PLACEHOLDER!
+
+008-2-20,32,22,0	script	Valia	NPC_VALIA,{
+    speech
+        l("Hi!"),
+        lg("You may remember me, I am Valia.");
+        l("Better stay away from my basement, you may end up like the poor guys down there.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}
