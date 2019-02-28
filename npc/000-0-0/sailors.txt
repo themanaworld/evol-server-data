@@ -9,6 +9,7 @@
 000-0-0,26,23,0	script	Elmo#sailors	NPC_ELMO,{
 
 OnTalk:
+    deltimer("Elmo#sailors::OnSlow");
     setcamnpc;
     mesn "Elmo";
     mesq lg("This girl is lucky we found her before a shark did. I have no idea where she comes from. By the way, did you see the logo on her raft?", "This guy is lucky we found him before a shark did. I have no idea where he comes from. By the way, did you see the logo on his raft?");
@@ -65,6 +66,7 @@ OnTalk:
     restorecam;
     adddefaultskills;
     setq General_Narrator, 0;
+    addtimer(45000,"Magic Arpan::OnSlow");
     warp "000-2-1", 50, 38;
     savepoint "000-2-1", 50, 38;
     closeclientdialog;
@@ -73,6 +75,12 @@ OnTalk:
 OnInit:
     .sex = G_MALE;
     end;
+
+OnSlow:
+    npctalk3(l("(Click on us to continue the introduction.)"));
+    dispbottom(l("Click on the NPCs (Non-Player Characters) around you to continue the introduction."));
+    addtimer(60000,"Elmo#sailors::OnSlow");
+    close;
 }
 
 000-0-0,25,23,0	script	Magic Arpan#sailors	NPC_MAGIC_ARPAN,{

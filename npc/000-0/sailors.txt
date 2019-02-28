@@ -69,6 +69,7 @@ OnTouch:
     mesc(l("Click on the NPCs (Non-Player Characters) around you to continue the introduction."), 9);
     next;
 
+    addtimer(15000,"Elmo#sailors::OnSlow");
     warp "000-0-0", 26, 28;
 
     closeclientdialog;
