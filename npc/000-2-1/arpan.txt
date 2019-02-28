@@ -94,10 +94,11 @@ OnTalk:
     mesn;
 
     if (.@q > 0) goto L_Menu;
+    setq ShipQuests_Arpan, 1;
+    deltimer("Magic Arpan::OnSlow");
 
     mesq lg("Yeye, you are really lucky to be alive. You are in good enough shape for walking, do you remember what happened?");
     next;
-    setq ShipQuests_Arpan, 1;
 
     menu
         lg("I only remember I was rescued by you."), L_Story,
@@ -264,6 +265,12 @@ L_GotoSleep:
     }
 
     goto L_Menu;
+
+OnSlow:
+    dispbottom(l("Use arrow keys to walk around and leave this room."));
+    npctalk3(l("Please come talk to me, I'll help you get dressed."));
+    addtimer(90000,"Magic Arpan::OnSlow");
+    close;
 
 OnInit:
     .sex = G_MALE;
