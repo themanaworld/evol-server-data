@@ -8,8 +8,6 @@
 // Make the rowboat move back to the cave if the player doesnt enter in time.
 
 001-1,193,26,0	script	#Rowboat	NPC_ROWBOAT_STAND_WE,{
-    
-
     speech S_LAST_BLANK_LINE | S_LAST_NEXT,
         l("Oh, hi."),
         l("In case you don't have a commendatory letter from you-know-whom, I am just sitting here and observe the whales."),
@@ -25,9 +23,9 @@
     }
 
 OnMoveToBeach:
-firstmove;
+    firstmove;
 end;
-    
+
 OnTimer1000:
     dographmovestep;
 
@@ -35,14 +33,15 @@ OnInit:
     .sex = G_MALE;
     .distance = 3;
     .speed = 175;
-    
+
     initmovegraph "Cave",  193, 26,
                   "CP1",   202, 27,
                   "CP2",   213, 58,
                   "Beach", 203, 64;
-                  
+
     setmovegraphcmd "Cave",   "CP1",      1,  "dir 4",
                     "CP1",    "CP2",      1,  "dir 4",
-                    "CP2",    "Beach",    1,  "dir 4"; 
+                    "CP2",    "Beach",    1,  "dir 4";
+    firstmove;
     initnpctimer;
 }
