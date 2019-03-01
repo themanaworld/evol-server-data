@@ -25,9 +25,9 @@ narrator(S_LAST_BLANK_LINE | S_LAST_NEXT,
 // Make sure to unmount the boat when player dies
 OnPCDieEvent:
    setmount 0;
-  
+
 OnInit:
-    .distance = 1;    
+    .distance = 1;
 }
 
 

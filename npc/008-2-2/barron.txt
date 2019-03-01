@@ -6,11 +6,11 @@
 //    Barron, the bartender of the Rusty Pick.
 
 008-2-2,43,28,0	script	Barron#008-2-2	NPC_GENERAL_STORE,{
-speech S_LAST_NEXT, 
+speech S_LAST_NEXT,
     l("Hi!"),
     l("I am the bartender here, can I provide you with some delicious beverage?"),
     l("Or you can take seat and ask Melinda if you need something.");
-    
+
     switch (select(l("What beverages do you have?"),
                    l("I'll ask Melinda later")))
     {
@@ -23,7 +23,7 @@ speech S_LAST_NEXT,
         l("Make sure to tip her, it will brighten up her day.");
         close;
     }
-        
+
 
 
 OnInit:

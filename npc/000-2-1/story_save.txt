@@ -9,7 +9,7 @@
     .@q_narr = getq(General_Narrator);
 
     if(.@q_nard == 5 && .@q_narr < 1)
-    {        
+    {
 OnClick:
         narrator S_LAST_NEXT,
             l("You lie in the bed."),

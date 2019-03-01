@@ -17,7 +17,7 @@ OnInit:
     sellitem Cheese, -1, 50;
     sellitem CherryCake, -1, 50;
     sellitem SmallHealing, -1, 50;
-    
+
     .sex = G_OTHER;
     .distance = 10;
     end;

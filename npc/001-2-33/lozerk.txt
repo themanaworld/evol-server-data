@@ -20,7 +20,7 @@
     // Quest-related functions
 
     function explain_direction {
-        
+
         switch (getq(Artis_Legion_Progress))
         {
             case 1:
@@ -32,7 +32,7 @@
                     l("Report back to me once you've had enough!"));
 
                 restorecam;
-    
+
                 break;
             case 3:
                 setcamnpc "#001-2-33_39_32";
@@ -54,7 +54,7 @@
 
         return;
     }
- 
+
     function send_training {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             lg("Oh, you were sent by Enora!"),
@@ -64,7 +64,7 @@
 
         select(l("Pleasure to meet you. I am @@.", strcharinfo(PC_NAME)));
 
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,         
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             lg("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
             l("But don't you worry! I don't know how to get you back your memories, but we can work on your muscles for now!"),
             lg("After all, this is the Legion of Aemil! You want to be a great warrior? We'll make you one here!"),
@@ -73,7 +73,7 @@
 
         setq Artis_Legion_Progress, 1;
         explain_direction();
-        
+
         return;
     }
 
@@ -87,7 +87,7 @@
 
         setq Artis_Legion_Progress, 3;
         explain_direction();
-        
+
         return;
     }
 
@@ -103,12 +103,12 @@
 
         setq Artis_Legion_Progress, 5;
         explain_direction();
-            
+
         return;
     }
 
     // Normal functions
- 
+
     function forget_direction {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             lg("You are lucky there are no mental faculty requirements to join the Legion!");
@@ -117,25 +117,25 @@
 
         return;
     }
- 
+
     function tell_about_legion {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("The Legion of Aemil is the greatest organization on all continent! A town cannot be safer than when it's under our protection."),
             l("This is where the bravest of warriors come together to put their skills to a good use, for a good cause."),
             l("Our building here is also the finest place in the town. Just go and see for yourself!");
- 
+
         return;
     }
-    
+
     function praise_sword {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Thanks!");
- 
+
         return;
     }
- 
+
     // Conversation
- 
+
     speech S_LAST_NEXT,
         l("Welcome to the Legion of Aemil's building in Artis!");
 
@@ -152,7 +152,7 @@
             l("What can you tell me about the legion?"),
             l("That's a nice sword you have there."),
             menuaction(l("Quit"));
-        
+
         switch (@menu)
         {
             case 1:

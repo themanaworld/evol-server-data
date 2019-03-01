@@ -20,7 +20,7 @@ OnInit:
     sellitem AWhiteTulip, -1, 50;
     sellitem AYellowTulip, -1, 50;
     sellitem ABlueTulip, -1, 20;
-    
+
     .sex = G_OTHER;
     .distance = 10;
     end;

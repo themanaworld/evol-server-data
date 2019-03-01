@@ -27,7 +27,7 @@ function	script	season_direction	{
             case DECEMBER:  .@season_day = 21; break;
             default: break;
         }
-        
+
         .@is_after_season_day = .@current_day >= .@season_day ? 0 : -1;
     }
 

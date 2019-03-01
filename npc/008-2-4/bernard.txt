@@ -202,7 +202,7 @@ OnPCBaseLvUpEvent:
 OnInit:
     .min_level = 10; // min level to do the quest
 
-    .first_item = RoastedMaggot; 
+    .first_item = RoastedMaggot;
     .first_reward_item = CherryCake;
     .first_reward_amount = 5;
     .first_reward_exp = 100;

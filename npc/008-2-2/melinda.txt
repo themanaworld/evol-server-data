@@ -7,7 +7,7 @@
 008-2-2,40,29,0	script	Melinda#008-2-2	NPC_MELINDA,1,1,{
 
 function StartConversation {
- 
+
         .@tick = gettimetick(1);
         if (.@tick > @Hurns_Rusty_Pick_WaitressTick + 10)
         {
@@ -15,14 +15,14 @@ function StartConversation {
                                     l("Welcome to the Rusty Pick."),
                                     l("Please, have a seat."),
                                     l("Lovely day, isn't it?");
- 
+
             .@r = rand(getarraysize(.messages$));
             .@msg$ = .messages$[.@r];
             npctalk3 .@msg$;
             @Hurns_Rusty_Pick_WaitressTick = .@tick;
         }
     }
-    
+
 function face_to_PC {
         getmapxy(.@map$, .@cx, .@cy, 0);
         @Melinda_ols_dir = .dir;
@@ -30,7 +30,7 @@ function face_to_PC {
 
         return;
     }
-    
+
 npc_pausemove;
 face_to_PC;
 mes "";
@@ -91,37 +91,37 @@ switch (select(l("Sure! [Don't tip]"),
     case 4:
         goto L_No;
 }
- 
+
 L_NoMoney:
     mes "";
     mesn;
     mesq l("You look broke. Don't think that you can dine and dash here!");
     goto L_Close;
- 
+
 L_No:
     mes "";
     mesn;
     mesq l("Just call me when you changed your mind.");
     goto L_Close;
-   
+
 L_Close:
     initnpctimer;
     npc_resumemove;
     close;
-   
+
 L_TooMany:
     mes "";
     mesn;
     mesq l("You don't have room for a beer!");
     goto L_Close;
-   
+
 OnTimer1000:
     dographmovestep;
-   
+
 OnTouch:
     StartConversation;
     end;
- 
+
 OnInit:
     .sex = G_FEMALE;
     .distance = 5;
@@ -142,41 +142,41 @@ OnInit:
                   "basement_cabinet",  30,31,
                   "cabinet",    42, 28,
                   "bucket",     46, 30;
-                 
-                 
-                 
+
+
+
      setmovegraphcmd "startspot",  "firewood",   1,  "dir 4; wait 5",
                      "firewood",   "fireplace",  1,  "dir 4; wait 3",
                      "fireplace",  "startspot",  1,  "dir 0; wait 10",
-                     
+
                      "startspot",  "l_table_b",  1,   "dir 4; wait 3",
-                     "l_table_b",  "l_table_r",  1,  "dir 2; wait 3", 
+                     "l_table_b",  "l_table_r",  1,  "dir 2; wait 3",
                      "l_table_r",  "m_table_l",  1,  "dir 6; wait 3",
                      "m_table_l",  "m_table_b",  1,  "dir 4; wait 3",
                      "m_table_b",  "r_table_r",  1,  "dir 2; wait 3",
                      "r_table_r",  "bucket",     1,  "dir 4; wait 1; emote 1;"
-                                                     "wait 15; moveon", 
+                                                     "wait 15; moveon",
                      "bucket",     "startspot",  1,  "dir 0; wait 5",
-                     
+
                      "startspot",  "kfahr_r",    2,  "dir 4; wait 5",
-                     "kfahr_r",    "barkeeper",  1,  "dir 4; wait 1;" 
+                     "kfahr_r",    "barkeeper",  1,  "dir 4; wait 1;"
                                                      "say Another round for kfahr's table.;"
                                                      "wait 1; say They sure are thirsty today;"
                                                      "wait 5; moveon",
                      "barkeeper",  "kfahr_l",    1,  "dir 6; wait 3;"
                                                      "say Cheers!;"
                                                      "wait 3; moveon",
-                     "kfahr_l",    "startspot",  1,  "dir 0; wait 10",  
-                     
+                     "kfahr_l",    "startspot",  1,  "dir 0; wait 10",
+
                      "startspot",         "to_basement",   1,  "dir 4; warp 008-2-5 basement_entrance",
                      "basement_entrance", "basement_cabinet", 1, "dir 4; wait 5",
                      "basement_cabinet",  "basement_entrance", 1, "dir 4; warp 008-2-2 to_basement",
                      "to_basement",       "cabinet",   1,  "dir 4; wait 5",
                      "cabinet",           "startspot",  1,  "dir 0; wait 15";
-                     
-     
-                     
-   
-    firstmove "wait 8";    
+
+
+
+
+    firstmove "wait 8";
     initnpctimer;
 }
