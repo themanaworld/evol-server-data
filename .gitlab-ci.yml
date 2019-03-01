@@ -14,6 +14,29 @@ variables:
   MYSQL_ROOT_PASSWORD: root
   packetver: "20150513"
 
+newlines:
+  stage: build
+  script:
+  - ./.tools/jobs/install.sh "dos2unix git-core"
+  - ./.tools/jobs/newlines.sh
+  image: debian:unstable
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
+
+spaces:
+  stage: build
+  script:
+  - ./.tools/jobs/install.sh "sed git-core"
+  - cd npc
+  - ../.tools/jobs/spaces.sh
+  image: debian:unstable
+  artifacts:
+    untracked: true
+    when: always
+    expire_in: 3 week
+
 build_test:
   stage: build
   script:
