@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Yannika, Hinnaks Wife.
+// THIS IS A PLACEHOLDER!
+
+008-2-16,28,29,0	script	Yannika	NPC_YANNIKA,{
+    speech
+        l("Hi Sir."),
+        l("Sandwiches? Lets wait for Jesusalva to add something here."),
+        lg("Come back later.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}
