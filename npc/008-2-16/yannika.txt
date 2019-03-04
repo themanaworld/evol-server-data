@@ -1,16 +1,129 @@
 // Evol scripts.
 // Author:
 //    Micksha
+//    Jesusalva
 // Description:
 //    Yannika, Hinnaks Wife.
-// THIS IS A PLACEHOLDER!
+//    Makes delicious sandwiches for the player
 
 008-2-16,28,29,0	script	Yannika	NPC_YANNIKA,{
-    speech
-        l("Hi Sir."),
-        l("Sandwiches? Lets wait for Jesusalva to add something here."),
-        lg("Come back later.");
 
+    // Yannika can make sandwiches for players
+    function sudo_make_sandwich
+    {
+        speech
+            l("When cooking, the order of ingredients matter."),
+            l("Even a simple sandwich will be ruined if you place lettuce above the cheese!"),
+            l("Anyway, to make a sandwich, you'll need to place, in this order:"),
+            l("1x @@, 3x @@, 2x @@, and the ingredient of your choice.", getitemlink(Bread), getitemlink(LettuceLeaf), getitemlink(Cheese));
+
+            do
+            {
+                mes "##B" + l("Drag and drop the items from your inventory in the frames.") + "##b";
+
+                // Crafting skin with 4 columns
+                setskin "craft4";
+                .@var$ = requestcraft(4); // Limit: 4 items
+                .@craft = initcraft(.@var$);
+                .@entry = findcraftentry(.@craft, CRAFT_SANDWICH);
+                setskin "";
+
+                // Does the recipe exist and is a sandwich?
+                if (.@entry < 0)
+                {
+                        speech
+                            l("Sorry. I can't make a sandwich with that."),
+                            l("Do you want to try again?");
+                        if (askyesno() == ASK_YES)
+                            .@tryAgain=true;
+                        else
+                            .@tryAgain=false;
+                }
+                else
+                {
+                    // Did player cheat? If not, proceed with the craft
+                    if (!validatecraft(.@craft))
+                    {
+                        speech
+                            l("Sorry, my eyesight is a bit poor nowadays. Where are the ingredients?");
+                        .@tryAgain=true;
+                    }
+                    else
+                    {
+                        usecraft .@craft;
+                        speech
+                            l("@@ skillfully cuts the bread in half, throws the ingredients in air, and they land in the sandwich!", .name$),
+                            l("There you go. Please enjoy yourself! ^.^");
+
+                        // TODO: We would like some other quest to learn the recipes, but that is NYI, so....
+                        // You can learn by sight, right? Chances are average of Dex and Int
+                        if (rand(1,100) <= ((readparam(bDex)+readparam(bInt))/2) && !COOKING_RECIPES[.@entry])
+                        {
+                            COOKING_RECIPES[.@entry]=true;
+                            narrator
+                                l("Suddenly, it doesn't seems so hard. You feel like you've learn this recipe today.");
+                        }
+
+
+                        .@tryAgain=false;
+                    }
+                }
+
+                // Clear unused variables and clear the screen. Then print recipe again.
+                deletecraft .@craft;
+                if (.@tryAgain) {
+                    clear;
+                    mesc l("1x @@, 3x @@, 2x @@, and the ingredient of your choice.", getitemlink(Bread), getitemlink(LettuceLeaf), getitemlink(Cheese));
+                }
+            } while (.@tryAgain);
+        return;
+    }
+
+    // Teach player how to cook, providing a recipe book if they don't have one
+    function teach_cooking
+    {
+        speech
+            l("Well, of course. First of all, you need a @@. The recipes you collect yourself.", getitemlink(RecipeBook)),
+            l("Then, you need to know how to cook something. You can use my stove to prepare.");
+        // For now, lets give player a recipe book if they haven't one already
+        if (!countitem(RecipeBook))
+        {
+            inventoryplace RecipeBook, 1;
+            getitem RecipeBook, 1;
+            mesq l("You can have my recipe book, if you want.");
+        }
+        return;
+    }
+
+    // If player haven't finished Hinnak quest yet, Yannika says so
+    .@q=getq(HurnscaldQuests_Hinnak);
+    if (.@q < 3)
+    {
+        speech
+            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Isn't my husband Hinnak so hardworking?"),
+            lg("Come back later.");
+        close;
+    }
+    // Player completed Hinnak quest, we can continue in making Sandwiches
+    speech
+        lg(l("Hello madam."), l("Hi Sir.")),
+        l("Thanks for helping my husband Hinnak."),
+        l("He likes to eat sandwiches. A good thing they are so easy to make!");
+
+    select
+        l("Easy to make? Could you make one for me?"),
+        l("Easy to make? Could you teach me how to make them?"),
+        l("Good to know, thanks.");
+
+    if (@menu == 1)
+        sudo_make_sandwich();
+    else if (@menu == 2)
+        teach_cooking();
+
+    next;
+    closeclientdialog;
+    goodbye;
     close;
 
 OnInit:

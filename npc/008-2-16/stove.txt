@@ -1,0 +1,88 @@
+// Evol scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Stove to make sandwiches
+
+008-2-16,32,29,0	script	Stove	NPC_NO_SPRITE,{
+    // If player haven't finished Hinnak quest yet, they can't use the stove
+    .@q=getq(HurnscaldQuests_Hinnak);
+    if (.@q < 3)
+    {
+        setcamnpc "Yannika";
+        mesn l("Yannika");
+        mesq l("Please don't touch my stove without my authorization.");
+        close;
+    }
+
+    // Cooking loop
+    do
+    {
+        mesc lg("It is time to make some sandwiches myself!");
+        mes "##B" + l("Drag and drop the items from your inventory in the frames.") + "##b";
+
+        // Crafting skin with 4 columns
+        setskin "craft4";
+        .@var$ = requestcraft(4); // Limit: 4 items
+        .@craft = initcraft(.@var$);
+        .@entry = findcraftentry(.@craft, CRAFT_SANDWICH);
+        setskin "";
+
+        // Does the recipe exist and is a sandwich?
+        if (.@entry < 0)
+        {
+                narrator
+                    l("You don't know how to make a sandwich with that."),
+                    l("Do you want to try again?");
+                if (askyesno() == ASK_YES)
+                    .@tryAgain=true;
+                else
+                    .@tryAgain=false;
+        }
+        else
+        {
+            // Did player cheat? If not, proceed with the craft
+            if (!validatecraft(.@craft))
+            {
+                narrator
+                    l("Where are the ingredients?");
+                .@tryAgain=true;
+            }
+            else
+            {
+                // Even if the recipe is right, if you don't have it on your
+                // recipe book, it should be deemed invalid.
+                if (COOKING_RECIPES[.@entry])
+                {
+                    usecraft .@craft;
+                    narrator
+                        l("Done!"),
+                        l("Do you want to try again?");
+                }
+               else
+                {
+                    narrator
+                        l("You don't know how to make a sandwich with that."),
+                        l("Do you want to try again?");
+                }
+
+                if (askyesno() == ASK_YES)
+                    .@tryAgain=true;
+                else
+                    .@tryAgain=false;
+            }
+        }
+
+        // Clear unused variables and clear the screen.
+        deletecraft .@craft;
+        clear;
+    } while (.@tryAgain);
+
+    closeclientdialog;
+    close;
+
+OnInit:
+    .sex = G_OTHER;
+    .distance = 2;
+    end;
+}
