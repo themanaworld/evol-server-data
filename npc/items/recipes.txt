@@ -1,0 +1,60 @@
+// Evol script.
+// Author:
+//    Jesusalva
+//    Micksha
+// Description:
+//    Contains recipe books for Evol Online
+
+-	script	#RecipeBook	NPC_HIDDEN,{
+
+    function read_book {
+
+        setnpcdialogtitle l(.book_name$);
+
+        mesc l("Eating is a necessity, but cooking is an art.");
+        mesc l("(All items must be placed exactly in this order for cooking work.)");
+        next;
+        mesc l("List of known cooking recipes:");
+        mes "";
+        mes ".:: " + l("Sandwiches") + " ::.";
+        mes "";
+        if (COOKING_RECIPES[CraftCarpSandwich]) {
+            mes l("@@", getitemlink(CarpSandwich));
+            mesc l("* @@ @@", 1, getitemlink(Bread));
+            mesc l("* @@ @@", 3, getitemlink(LettuceLeaf));
+            mesc l("* @@ @@", 2, getitemlink(Cheese));
+            mesc l("* @@ @@", 1, getitemlink(CommonCarp));
+            mes "";
+        }
+        if (COOKING_RECIPES[CraftPioulegSandwich]) {
+            mes l("@@", getitemlink(PioulegSandwich));
+            mesc l("* @@ @@", 1, getitemlink(Bread));
+            mesc l("* @@ @@", 3, getitemlink(LettuceLeaf));
+            mesc l("* @@ @@", 2, getitemlink(Cheese));
+            mesc l("* @@ @@", 1, getitemlink(PiouLegs));
+            mes "";
+        }
+        if (COOKING_RECIPES[CraftMananaSandwich]) {
+            mes l("@@", getitemlink(MananaSandwich));
+            mesc l("* @@ @@", 1, getitemlink(Bread));
+            mesc l("* @@ @@", 3, getitemlink(LettuceLeaf));
+            mesc l("* @@ @@", 2, getitemlink(Cheese));
+            mesc l("* @@ @@", 1, getitemlink(Manana));
+            mes "";
+        }
+
+        close;
+    }
+
+OnUse:
+    if (openbook())
+        read_book;
+    closeclientdialog();
+    close;
+
+OnInit:
+    .book_name$ = getitemname(RecipeBook);
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
