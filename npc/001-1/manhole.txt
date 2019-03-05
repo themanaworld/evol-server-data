@@ -1,5 +1,6 @@
 // Evol scripts.
 // Author:
+//    Jesusalva
 //    Reid
 // Description:
 //    A manhole near Mona's house.
@@ -11,32 +12,14 @@
 
 001-1,152,52,0	script	#manhole1-001-1	NPC_NO_SPRITE,{
 
-    if (getq(ArtisQuests_MonaDad) < 1) {
-        end;
-    }
-
-    narrator(S_LAST_BLANK_LINE | S_LAST_NEXT,
-        l("You hear some creeping and crawling sounds from the murkiness below."),
-        l("..."),
-        l("Do you want to enter in sewer?"));
-
+    .@i=manhole_interact("001-3-0");
     closeclientdialog();
-    if (askyesno() == 1) slide_or_warp("001-3-0", 152, 56);
-    close;
-
-OnTouch:
-    // (has_instance2 wasn't checked if it works)
-    if (getq(ArtisQuests_MonaDad) == 2 && has_instance2("mona@"+strcharinfo(0)) >= 0) {
-    mesn l("Mundane");
-    mesq l("Thanks for saving me. This is enough, I'll watch if Mona is fine and return to Sewers later.");
-    next;
-    inventoryplace WoodenBow, 1;
-    mesn l("Mundane");
-    mesq lg("Here, take this @@ as a gift. I'm sure someone as skilled you will make a good use of my old weapon.", "Here, take this @@ as a gift. I'm sure someone as skilled you will make a good use of my old weapon.", getitemlink(WoodenBow));
-    getitem WoodenBow, 1;
-    setq(ArtisQuests_MonaDad, 3);
+    if (.@i == -1) {
+        slide_or_warp("001-3-0", 152, 56);
+    } else if (.@i == TrainingArrow || .@i == WoodenBow) {
+        npctalk3 l("(You hear a faint sound in distance, but can't say what sound it was.)");
     }
-    end;
+    close;
 
 OnInit:
     .sex = G_OTHER;
@@ -51,7 +34,7 @@ OnInit:
     if (.@i == -1) {
         slide_or_warp("001-3-0", 196, 36);
     } else if (.@i == TrainingArrow || .@i == WoodenBow) {
-        npctalk3 l("Mundane: Hey! Is someone there? Please, help, it's so dark down here!");
+        npctalk3 l("???: Hey! Is someone there? Please, help, it's so dark down here!");
     }
     close;
 
@@ -106,3 +89,4 @@ OnInit:
 
 // To quickly create more sewer mouths we can use:
 //001-1,86,131,0	duplicate(#manhole3-001-1)	#manhole4-001-1	NPC_NO_SPRITE
+
