@@ -1,6 +1,9 @@
 // Peter quest debug
 // Author:
 //    gumi
+//    jesusalva
+// Notes:
+//    Using l() usually is not a good idea (translating debug text? What?)
 
 function	script	QuestDebug3	{
     do
@@ -10,16 +13,19 @@ function	script	QuestDebug3	{
         mes "ShipQuests_Peter";
         mes "---";
         mes l("Quest state: @@", getq(ShipQuests_Peter));
+        mes l("Killed mob bitmask: @@", getq2(ShipQuests_Peter));
+        mes l("Instance ID: @@", getq3(ShipQuests_Peter));
         next;
+
+        .@q=getq(ShipQuests_Peter);
 
         GenericQuestDebug ShipQuests_Peter,
             l("Does not have the quest"), 0,
-            l("Peter needs help"), 6,
-            l("Peter asks to kill rattos"), 1,
-            l("Killed rattos"), 2,
-            l("Got no reward"), 3,
-            l("Peter asks to kill rattos again"), 4,
-            l("Peter gave reward"), 5;
+            l("Peter needs help"), 1,
+            l("Toggle Tortuga Bounty"), .@q^2,
+            l("Toggle Ratto Bounty"), .@q^4,
+            l("Toggle Croc Bounty"), .@q^8,
+            l("Quest complete"), 15;
 
         if (@menuret < 0)
         {

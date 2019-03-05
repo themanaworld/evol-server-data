@@ -2,40 +2,46 @@
 // Authors:
 //    Ablu
 //    Alastrim
+//    Jesusalva
 //    Reid
 // Description:
 //    Doors NPCs.
 
-001-2-23,48,29,0	script	DoorUpwards#001-2-23	NPC_HIDDEN,0,0,{
+001-2-23,48,29,0	script	DoorUpwards#Artis	NPC_HIDDEN,0,0,{
 
 OnTouch:
+    // Actually this will never work because Instanced map
     if (mobcount("001-2-23","all") > 0) goto L_Warn;
 
     goto L_Warp;
 
 L_Warn:
     .@q = getq(ShipQuests_Peter);
-    if (.@q == 5) goto L_Warp;
+    if (.@q >= 15) goto L_Warp;
 
     mesn "Narrator";
-    mesc(l("There are still some rattos left! Do you want to abort the quest?"), 9);
+    mesc(l("There are still some monsters left! Do you want to abort the quest?"), 9);
     next;
 
     menu
         l("Yes."), L_Warp,
         l("No."), -;
 
-    warp "001-2-23", 48, 28;
+    slide 48, 28;
     closeclientdialog;
     close;
 
 L_Warp:
     warp "001-2-22", 72, 36;
+
+    deltimer("Peter#Artis::OnLowTime");
+    deltimer("Peter#Artis::OnTimeout");
     closeclientdialog;
     close;
 }
 
-001-2-23,24,31,0	script	LeftDoor#001-2-23	NPC_HIDDEN,0,0,{
+// Besides the door, Alige is hiding himself and would rather not be disturbed
+001-2-23,24,31,0	script	LeftDoor#Artis	NPC_HIDDEN,0,0,{
 
 OnTouch:
     mesn "Narrator";
@@ -45,7 +51,7 @@ OnTouch:
     next;
 
     menu
-        rif(countitem(718) > 0, l("Use the key.")), L_Warp,
+        rif(countitem(JohanneKey) > 0, l("Use the key.")), L_Warp,
         l("Break the door."), L_Break,
         l("Go away."), -;
 
