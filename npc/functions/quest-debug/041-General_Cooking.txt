@@ -1,0 +1,51 @@
+// Cooking quest debug
+// Author:
+//    Jesusalva
+
+function	script	QuestDebug41	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "General_Cooking";
+        mes "---";
+        mes l("Quest state: @@", getq(General_Cooking));
+        mes l("Known Recipes: @@", array_entries(COOKING_RECIPES));
+        next;
+
+        select
+            l("Return"),
+            l("Reset Quest"),
+            l("Complete Quest"),
+            l("Get a Recipe Book"),
+            l("Learn all recipes"),
+            l("Reset all recipes");
+
+        switch (@menu)
+        {
+            case 2:
+                setq General_Cooking, 0;
+                break;
+            case 3:
+                setq General_Cooking, 2;
+                break;
+            case 4:
+                getitem RecipeBook, 1;
+                break;
+            case 5:
+                COOKING_RECIPES[CraftCarpSandwich]=true;
+                COOKING_RECIPES[CraftMananaSandwich]=true;
+                COOKING_RECIPES[CraftPioulegSandwich]=true;
+                break;
+            case 6:
+                COOKING_RECIPES[CraftCarpSandwich]=false;
+                COOKING_RECIPES[CraftMananaSandwich]=false;
+                COOKING_RECIPES[CraftPioulegSandwich]=false;
+                break;
+
+        }
+
+        return;
+
+    } while (@menu != 1);
+}

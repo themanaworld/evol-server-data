@@ -1,20 +1,310 @@
 // Evol scripts.
 // Author:
 //    Micksha
+//    Jesusalva
 // Description:
 //    Yannika, Hinnaks Wife.
-// THIS IS A PLACEHOLDER!
+//    Makes delicious sandwiches for the player
+// Variables:
+//    General_Cooking
+//  0: Doesn't knows the quest
+//  1: Received the quest for the Cookbook
+//  2: Completed the quest for the Cookbook
+//    COOKING_RECIPES
+//  Controls which recipes you know and doesn't.
+//  It is an array with Craft Constants.
 
 008-2-16,28,29,0	script	Yannika	NPC_YANNIKA,{
-    speech
-        l("Hi Sir."),
-        l("Sandwiches? Lets wait for Jesusalva to add something here."),
-        lg("Come back later.");
 
+    // Quest state 0
+    function yannika_intro
+    {
+        speech
+            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Thanks for helping my husband Hinnak."),
+            l("Could you please bring me 2 new knives?"),
+            l("Hinnak wasted all my good kitchen knives trying to get rid of his accursed Pinkies.");
+
+        select
+            l("Yes, sure thing."),
+            lg("Not my problem.");
+
+        if (@menu == 1)
+        {
+            speech
+                l("I'll be waiting for you, then!");
+            setq .quest, 1;
+            next;
+        }
+    }
+
+    // Quest state 1
+    function yannika_knives
+    {
+        speech
+            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Thanks for helping my husband Hinnak."),
+            l("Did you brought me 2 new knives?");
+
+        select
+            rif(countitem(Knife) >= 2, l("Yes, here they are.")),
+            lg("Not yet, I'll be back.");
+
+        if (@menu == 1)
+        {
+            // No need to countitem() because it is already at the menu
+            // Technically, a hacked client could bypass earlier check though
+            // Jesusalva doesn't likes hacks, so he puts delitem first.
+            // delitem halts the script if it cannot delete all items.
+            inventoryplace RecipeBook, 1;
+            delitem Knife, 2;
+            getitem RecipeBook, 1;
+            setq .quest, 2;
+
+            speech
+                l("Many thanks. I can now do sandwiches again!"),
+                l("Well, of course. First of all, you need a @@. You can have mine, if you want.", getitemlink(RecipeBook)),
+                l("The recipes, of course, you must collect yourself. Even sandwiches are not so simple as to simply put ingredients and hope for the best."),
+                l("Cooking is an art. You need to know how to cook something. You can use my stove to prepare."),
+                lg("Or, you can just forget all that, and let me prepare sandwiches for you, too! %%H"), // %%H - Smile Emote
+                l("Oh, but I'll still need the book. Even if all pages are white.");
+            next;
+        }
+    }
+
+    // Learn a new Sandwich Recipe
+    // yannika_recipe ( Craft ID, Ammo 1, Item 1, Ammo 2, Item 2, Sandwich ID )
+    function yannika_recipe
+    {
+        .@craft=getarg(0);
+        .@ammo1=getarg(1);
+        .@item1=getarg(2);
+        .@ammo2=getarg(3);
+        .@item2=getarg(4);
+        .@sanid=getarg(5);
+        speech
+            l("I do know a recipe with this!"),
+            l("You'll need to bring me @@ @@ and @@ @@ for the recipe.", .@ammo1, getitemlink(.@item1), .@ammo2, getitemlink(.@item2));
+
+        select
+            l("Yes, in fact, you can take them now."),
+            l("Maybe later.");
+
+        if (@menu == 1)
+        {
+            if (countitem(.@item1) < .@ammo1 ||
+                countitem(.@item2) < .@ammo2)
+            {
+                speech
+                    l("You don't have everything I have asked for.");
+                close;
+            }
+            delitem .@item1, .@ammo1;
+            delitem .@item2, .@ammo2;
+            COOKING_RECIPES[.@craft]=true;
+            speech
+                l("This is how you do it! HAAH!");
+            next;
+            mesc l("You learned how to cook @@.", getitemlink(.@sanid));
+            next;
+        }
+        return;
+    }
+
+    // Yannika can make sandwiches for players
+    function sudo_make_sandwich
+    {
+        speech
+            l("When cooking, the order of ingredients matter."),
+            l("Even a simple sandwich will be ruined if you place lettuce above the cheese!"),
+            l("Anyway, to make a sandwich, you'll need to place, in this order:"),
+            l("1x @@, 3x @@, 2x @@, and the ingredient of your choice.", getitemlink(Bread), getitemlink(LettuceLeaf), getitemlink(Cheese));
+
+            do
+            {
+                mes "##B" + l("Drag and drop the items from your inventory in the frames.") + "##b";
+
+                // Crafting skin with 4 columns
+                setskin "craft4";
+                .@var$ = requestcraft(4); // Limit: 4 items
+                .@craft = initcraft(.@var$);
+                .@entry = findcraftentry(.@craft, CRAFT_SANDWICH);
+                setskin "";
+
+                // Does the recipe exist and is a sandwich?
+                if (.@entry < 0)
+                {
+                        speech
+                            l("Sorry. I can't make a sandwich with that."),
+                            l("Do you want to try again?");
+                        if (askyesno() == ASK_YES)
+                            .@tryAgain=true;
+                        else
+                            .@tryAgain=false;
+                }
+                else
+                {
+                    // Did player cheat? If not, proceed with the craft
+                    if (!validatecraft(.@craft))
+                    {
+                        speech
+                            l("Sorry, my eyesight is a bit poor nowadays. Where are the ingredients?");
+                        .@tryAgain=true;
+                    }
+                    else
+                    {
+                        usecraft .@craft;
+                        speech
+                            l("@@ skillfully cuts the bread in half, throws the ingredients in air, and they land in the sandwich!", .name$),
+                            l("There you go. Please enjoy yourself! ^.^");
+
+                        .@tryAgain=false;
+                    }
+                }
+
+                // Clear unused variables and clear the screen. Then print recipe again.
+                deletecraft .@craft;
+                if (.@tryAgain) {
+                    clear;
+                    mesc l("1x @@, 3x @@, 2x @@, and the ingredient of your choice.", getitemlink(Bread), getitemlink(LettuceLeaf), getitemlink(Cheese));
+                }
+            } while (.@tryAgain);
+        return;
+    }
+
+    // Teach player how to cook, providing a recipe book if they don't have one
+    function teach_cooking
+    {
+        // Check if your stats aren't enough (bonuses aren't counted)
+        if (readparam(bInt) < 10 ||
+            readparam(bDex) < 20)
+        {
+            speech
+                l("Well, cooking is an art, and thus, you need intelligence and dexterity to learn."),
+                l("Please come again with at least 10 INT and 20 DEX. Stat Bonuses aren't counted.");
+            close;
+        }
+
+        speech
+            l("Well, of course, I can show you how to cook sandwiches. But you'll need to bring ingredients for practice."),
+            l("Why don't you show me a main ingredient, and I'll tell you what can be done?");
+
+        do
+        {
+            mes "##B" + l("Drag and drop an item from your inventory.") + "##b";
+            .@id = requestitem();
+
+            // If ID is invalid
+            if (.@id < 1) {
+                speech
+                    l("Out of creativity already? Don't worry, I don't judge! Hehe.");
+                close;
+            }
+            // If you are cheating ManaPlus interface
+            if (countitem(.@id) < 1) {
+                mesc l("You do not have the item!");
+                close;
+            }
+
+            // Now we will switch your result and check recipe on the meanwhile
+            switch (.@id)
+            {
+                case CommonCarp:
+                case GrassCarp:
+                    if (COOKING_RECIPES[CraftCarpSandwich])
+                    {
+                        speech
+                            lg("Haha, silly you! You already know the recipe! Read the @@ if you forgot!", getitemlink(RecipeBook));
+                    }
+                    else
+                    {
+                        yannika_recipe(CraftCarpSandwich, 2, GrassCarp, 10, CommonCarp, CarpSandwich);
+                    }
+                    break;
+
+                case Manana:
+                    if (COOKING_RECIPES[CraftMananaSandwich])
+                    {
+                        speech
+                            lg("Haha, silly you! You already know the recipe! Read the @@ if you forgot!", getitemlink(RecipeBook));
+                    }
+                    else
+                    {
+                        yannika_recipe(CraftMananaSandwich, 3, Carrot, 30, Manana, MananaSandwich);
+                    }
+                    break;
+
+                case PiouLegs:
+                    if (COOKING_RECIPES[CraftPioulegSandwich])
+                    {
+                        speech
+                            lg("Haha, silly you! You already know the recipe! Read the @@ if you forgot!", getitemlink(RecipeBook));
+                    }
+                    else
+                    {
+                        yannika_recipe(CraftPioulegSandwich, 10, Croconut, 20, PiouLegs, PioulegSandwich);
+                    }
+                    break;
+
+                default:
+                    speech
+                        l("Sorry, I don't know any recipe with this."),
+                        l("Maybe you have more luck with something else?");
+                    next;
+                    break;
+            }
+        } while (true);
+
+        return;
+    }
+
+    // If player haven't finished Hinnak quest yet, Yannika says so
+    .@q=getq(HurnscaldQuests_Hinnak);
+    if (.@q < 3)
+    {
+        speech
+            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Isn't my husband Hinnak so hardworking?"),
+            lg("Come back later.");
+        close;
+    }
+
+    // Player completed Hinnak quest, we can continue in making Sandwiches
+    switch (getq(.quest))
+    {
+        case 0:
+            yannika_intro();
+            break;
+        case 1:
+            yannika_knives();
+            break;
+        case 2:
+        speech
+            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Thanks for helping my husband Hinnak."),
+            l("He likes to eat sandwiches. A good thing they are so easy to make!");
+
+        select
+            l("Easy to make? Could you make one for me?"),
+            l("Easy to make? Could you teach me how to make them?"),
+            l("Good to know, thanks.");
+
+        if (@menu == 1)
+            sudo_make_sandwich();
+        else if (@menu == 2)
+            teach_cooking();
+
+        next;
+        break;
+    }
+    closeclientdialog;
+    goodbye;
     close;
 
 OnInit:
     .sex = G_FEMALE;
     .distance = 2;
+    .quest=General_Cooking;
+
     end;
 }
