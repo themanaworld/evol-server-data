@@ -3,6 +3,7 @@
 //    4144
 //    Ablu
 //    Alastrim
+//    Jesusalva
 //    Qwerty Dragon
 //    Reid
 //    Vasily_Makarov
@@ -12,98 +13,58 @@
 //    ShipQuests
 // Variable:
 //    ShipQuests_Peter
-// Values:
+// Values is a bitmask:
 //    0   Doesn't know the quest.
-//    1   Task given.
-//    2   Task given and reward expected.
-//    3   Task completed without reward.
-//    4   Asked for reward after completion of the task.
-//    5   Task done and reward given.
-//    6   Did not start the quest.
+//    1   Task given. (To prevent bugs because zero is a valid instance id)
+//    2   Already completed the first stage
+//    4   Already completed the second stage
+//    8   Already completed the third stage
+//    ...
+//    =15 Completed every stage.
+// Setq2:
+//      Number of killed Rattos:
+//      & 1 - Ratto 1
+//      & 2 - Ratto 2
+//      & 4 - Ratto 3
+//      & 8 - Ratto 4
+//      = 15: All rattos killed
+//      (Adding more monsters etc. is possible, but be careful with the == 15 checks)
+// Setq3:
+//      Instance ID (so we can destroy it later if needed, and check it too)
 // Others:
-// .@peter = Peter#001-2-22 variable.
+// .@q = Peter variable.
+// PETER_TIME = gettimetick(2) for daily
+// @peter = Control Variable
+// @pt_mob = Control Variable
+// @MAP_NAME$ = Control Variable
 // "001-2-23" - map with mobs.
-// "$@ARTIS_RAT1_HELPER$" - Name of the participant.
-// "$@ARTIS_RAT1_DEATHS - Number of deaths when the participant starts the fight.
-// "$@ARTIS_RAT1_CONTROL" - Explanation of each index of the array.
-// "$@ARTIS_RAT1_OLD_HELPER$" - Name of the participant.
-// "$@ARTIS_RAT1_COUNTDOWN" - Seconds since the epoch of when the player done the quest.
-// [1] = Shows status of ratto number 1 (1 is dead and 0 is alive).
-// [2] = Shows status of ratto number 2 (1 is dead and 0 is alive).
-// [3] = Shows status of ratto number 3 (1 is dead and 0 is alive).
-// [4] = Shows status of ratto number 4 (1 is dead and 0 is alive).
-// [5] = Shows how many seconds passed since ratto number 1 died.
-// [6] = Shows how many seconds passed since ratto number 2 died.
-// [7] = Shows how many seconds passed since ratto number 3 died.
-// [8] = Shows how many seconds passed since ratto number 4 died.
-// [9] = Shows how many seconds passed since the player started the quest.
-// [10] = Shows how many seconds passed since the player done the quest.
 
-001-2-22,72,34,0	script	AreaNPC#001-2-22	NPC_HIDDEN,0,1,{
-
+001-2-22,72,34,0	script	AreaNPC#Artis	NPC_HIDDEN,0,1,{
+    end;
 OnTouch:
-    if (BaseLevel < 5) goto L_Stop;
-    if ($@ARTIS_RAT1_COUNTDOWN == 0) goto L_NoCountDown;
-    if ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 10) goto L_NoGoodTick;
-    if (($@ARTIS_RAT1_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 60)) goto L_NoGoodTick;
-    $@ARTIS_RAT1_COUNTDOWN = 0;
-
-L_NoCountDown:
-    if ($@ARTIS_RAT1_HELPER$ != "") goto L_Occupied;
-    .@peter = getq(ShipQuests_Peter);
-    if (.@peter < 1 || .@peter > 5) goto L_Task;
-    if (.@peter == 1 || .@peter == 2) goto L_Rfail;
-    if (.@peter == 3 || .@peter == 4) goto L_Rwin;
-    if (.@peter > 5) goto L_SecondTime;
-    doevent "Peter#001-2-22::OnReturnWin";
-    close;
-
-L_Stop:
-    doevent "Peter#001-2-22::OnStop";
-
-    close;
-
-L_Occupied:
-    doevent "Peter#001-2-22::OnDontneedHelp";
-
-    close;
-
-L_Task:
-    doevent "Peter#001-2-22::OnGiveTask";
-
-    close;
-
-L_Rfail:
-    doevent "Peter#001-2-22::OnReturnFail";
-
-    close;
-
-L_Rwin:
-    doevent "Peter#001-2-22::OnReturnWin";
-
-    close;
-
-L_NoGoodTick:
-    doevent "Peter#001-2-22::OnNoGoodTick";
-
+    doevent "Peter::OnPeterMain";
     close;
 }
 
-001-2-22,70,35,0	script	Peter#001-2-22	NPC_RATTO_SAILOR,{
-    if (BaseLevel < 5) goto OnTooWeak;
-    if ($@ARTIS_RAT1_COUNTDOWN == 0) goto L_NoCountDown;
-    if ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 10) goto OnNoGoodTick;
-    if (($@ARTIS_RAT1_OLD_HELPER$ == strcharinfo(0)) && ((gettimetick(2) - $@ARTIS_RAT1_COUNTDOWN) < 60)) goto OnNoGoodTick;
-    $@ARTIS_RAT1_COUNTDOWN = 0;
+001-2-22,70,35,0	script	Peter#Artis	NPC_RATTO_SAILOR,{
+    goto L_Main;
 
-L_NoCountDown:
-    .@peter = getq(ShipQuests_Peter);
-    if (.@peter == 1 || .@peter == 2) goto OnReturnFail;
-    if (.@peter == 3 || .@peter == 4 || .@peter == 5)  goto OnReturnWin;
+OnPeterMain:
+L_Main:
+    .@q = getq(ShipQuests_Peter);
+    .@q2 = getq2(ShipQuests_Peter);
+    .@q3 = getq3(ShipQuests_Peter);
+    if (BaseLevel < 5) goto OnTooWeak;
+
+    if (!.@q || !isinstance(.@q3) || .@q3 <= 0) goto L_Task;
+    if (.@q2 < 15) goto L_ReturnFail;
+    dispbottom l("I am broken?! Please report! Debug data: @@ (@@)", .@q, .@q2);
+    close;
 
 OnGiveTask:
-    setq ShipQuests_Peter, 6;
-    .@peter = getq(ShipQuests_Peter);
+L_Task:
+    if (!.@q)
+        setq ShipQuests_Peter, 1, 0, -1;
     mesn;
     mesq lg("Hey, girl!", "Hey, man!");
     next;
@@ -112,221 +73,227 @@ OnGiveTask:
 
     menu
         l("Yeah, but what reward will I get?"), L_BonusTask,
-        l("Why not, I need to train anyway."), L_Task,
+        l("Why not, I need to train anyway."), L_BonusTask,
         l("No, they are way too dangerous for me!"), -;
 
     mes "";
     mesn;
     mesq l("Hehe, hehe. Well, come back if you change your mind.");
 
-    goto L_Quit;
+    close;
 
+// Friendly reminder that you have about 20 secs to finish
+OnLowTime:
+    if ((getmap() ~= "001-2-22") || (getmap() ~= "nard*"))
+        dispbottom lg("I'm starting to feel dizzy... I shouldn't stay here much longer.");
+    end;
+
+// Minimum Quest Level (any difficulty setting) is on L_Main (and currently is 5)
 OnTooWeak:
     mesn;
     mesq lg("I need someone to help me clean the edge of the ship, but you aren't strong enough for now.");
 
-    goto L_Quit;
+    close;
 
+/*
 OnStop:
-    warp "001-2-22", 72, 36;
+    slide 72, 36;
 
     mesn;
     mesq l("You can't go there!");
 
     close;
+*/
 
+// This is cast if player dies in Basement, but not automatically (bad design?)
+// instance_destroy() is being recklessy called here, some sanity check is good.
 OnReturnFail:
+L_ReturnFail:
+    .@q3 = getq3(ShipQuests_Peter);
+    //instance_destroy(.@q3); // This would allow players to try again at once, but is DANGEROUS!
+    setq2 ShipQuests_Peter, 0;
+    setq3 ShipQuests_Peter, -1;
     mesn;
     mesq l("I see it's not so easy to get rid of these rattos. Do you want to try again?");
     next;
 
     menu
         l("Yeah, but I would like to make sure I get a reward."), L_BonusTask,
-        l("Why not, I need to train anyway."), L_Task,
+        l("Why not, I need to train anyway."), L_BonusTask,
         l("No, they are way too dangerous for me!"), -;
 
     mes "";
     mesn;
     mesq l("Hehe, hehe. Well, come back if you change your mind.");
 
-    goto L_Quit;
-
-OnReturnWin:
-    .@peter = getq(ShipQuests_Peter);
-    mesn;
-    mesq l("Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.");
-    next;
-
-    if (.@peter == 3 || .@peter == 4)
-        menu
-            l("Did you say reward? I want it!"), L_BonusTask,
-            l("I am not worried about rewards. I just want to help."), L_Task,
-            l("Sorry, I am not in the mood for another fight with these rattos."), -;
-
-    if (.@peter == 5)
-        menu
-            l("No problem, I can help you anyway."), L_Task,
-            l("Sorry, I am not in the mood for another fight with these rattos."), -;
-
-    mes "";
-    mesn;
-    mesq l("Hehe, hehe. Well, come back if you change your mind.");
-
     close;
+
 
 L_BonusTask:
     mes "";
     mesn;
-    mesq l("What if I give you 1000 Esperin for that job, is it ok?");
+    mesq l("There are three kind of monsters which frequently or seldomly attacks our fair vessel.");
+    next;
+    mesn;
+    .@q = getq(ShipQuests_Peter);
+    if (!(.@q & 2)) {
+        mes l("- I currently need your help with @@.", getmonsterlink(Tortuga));
+        mes l("I'll give you @@ GP for this job.", 500);
+        mes "";
+    }
+    if (!(.@q & 4)) {
+        mes l("- I currently need your help with @@.", getmonsterlink(Ratto));
+        mes l("I'll give you @@ GP for this job.", 1000);
+        mes "";
+    }
+    if (!(.@q & 8)) {
+        mes l("- I currently need your help with @@.", getmonsterlink(Croc));
+        mes l("I'll give you @@ GP for this job.", 1500);
+        mes "";
+    }
+    // If you already took all three bounties, you can only repeat the quest daily
+    if (.@q == 15 && PETER_TIME <= gettimetick(2)) {
+        mes l("- I currently need your help with @@.", getmonsterlink(Ratto));
+        mes l("I'll give you @@ GP for this job.", 750);
+    } else if (.@q == 15) {
+        mes l("I don't need your help right now, but maybe tomorrow, who knows?");
+        close;
+    }
     next;
 
-    menu
-        lg("Okay, I'm ready to work!"), -,
-        l("What? This reward is too small!"), L_Quit;
+    select
+        l("I'm not feeling like it today... Sorry."),
+        rif(!(.@q & 2), l("I will take the @@ Bounty.", "Tortuga")),
+        rif(!(.@q & 4), l("I will take the @@ Bounty.", "Ratto")),
+        rif(!(.@q & 8), l("I will take the @@ Bounty.", "Croc")),
+        rif(.@q == 15, l("Why not, I need to train anyway."));
 
-    .@peter = getq(ShipQuests_Peter);
-    if ($@ARTIS_RAT1_HELPER$ != "") goto OnDontneedHelp;
-    if (.@peter == 6) setq ShipQuests_Peter, 2;
-    if (.@peter == 3) setq ShipQuests_Peter, 4;
-    .@peter = getq(ShipQuests_Peter);
+    if (@menu == 1)
+        close;
+
+    @peter=@menu;
+
     goto L_Start;
 
-L_Task:
-    .@peter = getq(ShipQuests_Peter);
-    if ($@ARTIS_RAT1_HELPER$ != "") goto OnDontneedHelp;
-    if (.@peter == 6) setq ShipQuests_Peter, 1;
-    .@peter = getq(ShipQuests_Peter);
-
+// In Moubootaur Legends, there's a small tutorial about Hit'n'run here
+// I didn't add it here but that can be arranged
 L_Start:
-    mes "";
-    mesn;
-    mesq l("Okay, you can start!");
-
+// Init Instance
 OnStartOutside:
-    if ($@ARTIS_RAT1_HELPER$ != "") goto OnDontneedHelp;
-    $@ARTIS_RAT1_HELPER$ = strcharinfo(0);
-    $@ARTIS_RAT1_DEATHS = PC_DIE_COUNTER;
-    initnpctimer;
-    warp "001-2-23", 48, 28;
-    doevent "RattosControl#001-2-23::OnSpawn";
+    .@ID=getcharid(0);
+    @MAP_NAME$="nard@"+str(.@ID); // Max 4 chars for map name
+    .@INSTID = instance_create("ratto@a"+(.@ID), getcharid(3), IOT_CHAR);
+    .@instanceMapName$ = instance_attachmap("001-2-23", .@INSTID, 0, @MAP_NAME$);
 
-    goto L_Quit;
+    // Instance already exists, or something went wrong
+    if (.@instanceMapName$ == "") {
+        mesn;
+        mesq l("Actually, you just took a bounty, right?");
+        next;
+        mesn;
+        mesq l("Why don't you take a break? Breath in some fresh air. The basement is pretty damp.");
+        close;
+    }
 
-OnTimer2000:
-    if (attachrid(getcharid(3, $@ARTIS_RAT1_HELPER$)) == 0) goto L_Logoff;
-    $@ARTIS_RAT1_CONTROL[9] = $@ARTIS_RAT1_CONTROL[9] + 2;
-    if ($@ARTIS_RAT1_CONTROL[9] > 100) goto L_Timeout;
-    if (PC_DIE_COUNTER > $@ARTIS_RAT1_DEATHS) goto L_Dead;
-    if ($@ARTIS_RAT1_CONTROL[1] && $@ARTIS_RAT1_CONTROL[2] && $@ARTIS_RAT1_CONTROL[3] && $@ARTIS_RAT1_CONTROL[4]) goto L_Done;
-    if (getmapusers("001-2-23") == 0) goto L_CleaningEnd;
-    goto L_CheckRattos;
+    setq2 ShipQuests_Peter, 0;
+    setq3 ShipQuests_Peter, .@INSTID;
 
-    end;
+    // It'll be self-destroyed when time runs out (3 minutes)
+    instance_set_timeout(180, 180, .@INSTID);
+    instance_init(.@INSTID);
 
-L_CheckRattos:
-    if ($@ARTIS_RAT1_CONTROL[1]) $@ARTIS_RAT1_CONTROL[5] = $@ARTIS_RAT1_CONTROL[5] + 2;
-    if ($@ARTIS_RAT1_CONTROL[2]) $@ARTIS_RAT1_CONTROL[6] = $@ARTIS_RAT1_CONTROL[6] + 2;
-    if ($@ARTIS_RAT1_CONTROL[3]) $@ARTIS_RAT1_CONTROL[7] = $@ARTIS_RAT1_CONTROL[7] + 2;
-    if ($@ARTIS_RAT1_CONTROL[4]) $@ARTIS_RAT1_CONTROL[8] = $@ARTIS_RAT1_CONTROL[8] + 2;
-    if ($@ARTIS_RAT1_CONTROL[5] > 45) doevent "RattosControl#001-2-23::OnRatto1Respawn";
-    if ($@ARTIS_RAT1_CONTROL[6] > 45) doevent "RattosControl#001-2-23::OnRatto2Respawn";
-    if ($@ARTIS_RAT1_CONTROL[7] > 45) doevent "RattosControl#001-2-23::OnRatto3Respawn";
-    if ($@ARTIS_RAT1_CONTROL[8] > 45) doevent "RattosControl#001-2-23::OnRatto4Respawn";
+    // Save in a less reliable way the challenge you took
+    if (@peter == 2) {
+        @peter=2;
+        @pt_mob=Tortuga;
+    } else if (@peter == 3) {
+        @peter=4;
+        @pt_mob=Ratto;
+    } else if (@peter == 4) {
+        @peter=8;
+        @pt_mob=Croc;
+    } else {
+        @peter=0;
+        @pt_mob=Ratto;
+    }
 
-L_NotYet:
-    setnpctimer 0;
+    warp @MAP_NAME$, 48, 28;
+    // Control how much time you have left
+    addtimer(120000, "Peter#Artis::OnLowTime");
+    addtimer(140000, "Peter#Artis::OnTimeout");
 
-    end;
+    // Spawn the Monsters
+    areamonster @MAP_NAME$, 23, 19, 57, 40, strmobinfo(1, @pt_mob), @pt_mob, 1, "RattosControl::OnRatto1Death";
+    areamonster @MAP_NAME$, 23, 19, 57, 40, strmobinfo(1, @pt_mob), @pt_mob, 1, "RattosControl::OnRatto2Death";
+    areamonster @MAP_NAME$, 23, 19, 57, 40, strmobinfo(1, @pt_mob), @pt_mob, 1, "RattosControl::OnRatto3Death";
+    areamonster @MAP_NAME$, 23, 19, 57, 40, strmobinfo(1, @pt_mob), @pt_mob, 1, "RattosControl::OnRatto4Death";
 
-OnDontneedHelp:
-    mesn;
-    mesq l("I don't need your help right now, come back later.");
-    next;
-    mesq l("@@ is helping me.", $@ARTIS_RAT1_HELPER$);
+    dispbottom l("Okay, you can start!");
+    closeclientdialog;
+    close;
 
-    goto L_Quit;
+// TODO: This is very reckless, instance_destroy() could possibly affect others
+// If you agree with me, we can force player to wait until instance expire on its
+// own (3 minutes after start) instead of allowing immediate retry. That's safer,
+// and code will end up looking like Mundane (exploiting attach_map failures)
 
-L_Timeout:
+// (Or if you are set in disregarding this, just uncomment instance_destroy.)
+// (Don't blame me if server SIGSEGV's because that, though)
+OnTimeout:
+    if (!(getmap() ~= "001-2-23") && !(getmap() ~= "nard*"))
+        end;
+    warp "001-2-22", 72, 36;
+    .@q3 = getq3(ShipQuests_Peter);
+    //instance_destroy(.@q3);
+    setq2 ShipQuests_Peter, 0;
+    setq3 ShipQuests_Peter, -1;
     mesn;
     mesq l("Hey! Be careful. You can't stay in this basement for so long, you're going to get sick. Come outside and take a break, maybe you can try again later.");
-    warp "001-2-22", 72, 36;
-
-    goto L_CleaningClose;
-
-L_Logoff:
-    goto L_CleaningEnd;
-
-L_Dead:
-// Warps the dead body outside, so it does not interfere with the getmapusers check.
-    if (getmapusers("001-2-23") > 0) warp "001-2-22", 72, 36;
-
-    goto L_CleaningEnd;
-
-L_Done:
-    $@ARTIS_RAT1_CONTROL[10] = $@ARTIS_RAT1_CONTROL[10] + 2;
-    if($@ARTIS_RAT1_CONTROL[10] < 5) goto L_NotYet;
-    .@peter = getq(ShipQuests_Peter);
-    if (.@peter == 2 || .@peter == 4) goto L_Reward;
-    warp "001-2-22", 72, 36;
-
-    goto L_Thanks;
-
-L_CleaningEnd:
-    stopnpctimer;
-    $@ARTIS_RAT1_HELPER$ = "";
-    $@ARTIS_RAT1_DEATHS = 0;
-    cleararray $@ARTIS_RAT1_CONTROL, 0, 11;
-    killmonster "001-2-23", "RattosControl#001-2-23::OnRatto1Death";
-    killmonster "001-2-23", "RattosControl#001-2-23::OnRatto2Death";
-    killmonster "001-2-23", "RattosControl#001-2-23::OnRatto3Death";
-    killmonster "001-2-23", "RattosControl#001-2-23::OnRatto4Death";
-
-    end;
-
-L_CleaningClose:
-    stopnpctimer;
-    $@ARTIS_RAT1_OLD_HELPER$ = $@ARTIS_RAT1_HELPER$;
-    $@ARTIS_RAT1_HELPER$ = "";
-    $@ARTIS_RAT1_DEATHS = 0;
-    cleararray $@ARTIS_RAT1_CONTROL, 0, 11;
-    killmonster "001-2-23", "RattosControl#001-2-23::OnRatto1Death";
-    killmonster "001-2-23", "RattosControl#001-2-23::OnRatto2Death";
-    killmonster "001-2-23", "RattosControl#001-2-23::OnRatto3Death";
-    killmonster "001-2-23", "RattosControl#001-2-23::OnRatto4Death";
-    $@ARTIS_RAT1_COUNTDOWN = gettimetick(2);
-
     close;
 
-L_Reward:
-    warp "001-2-22", 72, 36;
-    setq ShipQuests_Peter, 5;
-    .@peter = getq(ShipQuests_Peter);
+// This is called by npc/001-2-23/ratto.txt and completes the quest
+// Just like OnReturnFail and OnTimeout, this recklessy destroys the instance
+// It's not _buggy_, it is just reckless. I would like a setting to restrict it
+// to destroy only instances owned by the char, or to destroy by name :p
+OnDone:
+    .@q3 = getq3(ShipQuests_Peter);
+    //instance_destroy(.@q3);
+    if (@peter)
+        setq ShipQuests_Peter, getq(ShipQuests_Peter)|@peter, 0, -1;
+
+    .@q = getq(ShipQuests_Peter);
     mesn;
     mesq l("Good job!") + " " + l("Here's your reward!");
-    getexp 100, 0;
-    Zeny = Zeny + 1000;
-    message strcharinfo(0), l("You receive @@ E!", 1000);
 
-    goto L_CleaningClose;
 
-L_Thanks:
-    mesn;
-    mesq l("Thanks for helping me!");
-    .@peter = getq(ShipQuests_Peter);
-    if (.@peter == 1) setq ShipQuests_Peter, 3;
-    .@peter = getq(ShipQuests_Peter);
+    // Before handling the rewards, we should be sure we'll handle daily loop.
+    // You're already in daily phase if @peter is zero.
+    // PS. This is not exactly "daily", this is actually a forced 24-hours wait.
+    if (!@peter) {
+        PETER_TIME=gettimetick(2)+24*60*60;
+        @peter=1; // This allows you to get 32 EXP from daily repeat. Tweak as needed.
+    }
 
-    goto L_CleaningClose;
+    // You get some EXP based on difficulty taken
+    getexp @peter*32, @peter;
 
-L_Quit:
-    .@peter = 0;
+    // We don't need @peter anymore, so reuse it to give you GP rewards
+    switch (@peter) {
+        case 2: @peter=500; break;
+        case 4: @peter=1000; break;
+        case 8: @peter=1500; break;
+        default: @peter=750; break;
+    }
 
+    Zeny = Zeny + @peter;
+    message strcharinfo(0), l("You receive @@ E!", @peter);
+
+    // Some cleanup. Shouldn't cause bugs but it's absence causes a ugly behavior.
+    deltimer("Peter#Artis::OnLowTime");
+    deltimer("Peter#Artis::OnTimeout");
+    @peter=0;
     close;
 
-OnNoGoodTick:
-    mesn;
-    mesq l("I don't need your help right now, come back later.");
-    close;
 
 OnInit:
     .sex = G_MALE;

@@ -1,68 +1,97 @@
-// Evol scripts.
-// Authors:
-//    Ablu
-//    Alastrim
-//    Reid
+// Evol Script.
+// Author:
+//      Ablu
+//      Alastrim
+//      Jesusalva
+//      Reid
 // Description:
 //    Ratto killer.
+//    The only "lose" conditions are:
+//    1- dying, but this is not handled anywhere
+//    2- Time running out, Peter handles that automatically.
+//   Note that if you die here, you won't be able to return and will need to
+//   start the quest over again. (I wonder why it is not handled by an OnDeath event)
+//   iirc, logout will automatically destroy the instance and clear timers, so it
+//   doesn't needs the script writer to handle logout cleanup (only death).
 
-// $@ARTIS_RAT1_CONTROL array explanation:
-// [1] = Shows status of ratto number 1 (1 is dead and 0 is alive).
-// [2] = Shows status of ratto number 2 (1 is dead and 0 is alive).
-// [3] = Shows status of ratto number 3 (1 is dead and 0 is alive).
-// [4] = Shows status of ratto number 4 (1 is dead and 0 is alive).
-// [5] = Shows how many seconds passed since ratto number 1 died.
-// [6] = Shows how many seconds passed since ratto number 2 died.
-// [7] = Shows how many seconds passed since ratto number 3 died.
-// [8] = Shows how many seconds passed since ratto number 4 died.
-// [9] = Shows how many seconds passed since the player started the quest.
+001-2-23,0,0,0	script	RattosControl#Artis	NPC_HIDDEN,{
+    end;
 
-001-2-23,47,30,0	script	RattosControl#001-2-23	NPC_HIDDEN,{
-
-OnSpawn:
-    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto1Death";
-    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto2Death";
-    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto3Death";
-    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto4Death";
-    close;
-
+// Each monster on the basement have its own respawn cycle.
+// We use a XOR (^) operand to mark that the killed monster is not dead anymore.
+// This is to reproduce as accurate as possible the legacy behavior of the quest.
 OnRatto1Respawn:
-    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto1Death";
-    $@ARTIS_RAT1_CONTROL[1] = 0;
-    $@ARTIS_RAT1_CONTROL[5] = 0;
+    .@q2=getq2(ShipQuests_Peter);
+    setq2 ShipQuests_Peter, .@q2^1;
+    areamonster @MAP_NAME$, 23, 19, 57, 40, strmobinfo(1, @pt_mob), @pt_mob, 1, "RattosControl#Artis::OnRatto1Death";
     end;
 
 OnRatto2Respawn:
-    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto2Death";
-    $@ARTIS_RAT1_CONTROL[2] = 0;
-    $@ARTIS_RAT1_CONTROL[6] = 0;
+    .@q2=getq2(ShipQuests_Peter);
+    setq2 ShipQuests_Peter, .@q2^2;
+    areamonster @MAP_NAME$, 23, 19, 57, 40, strmobinfo(1, @pt_mob), @pt_mob, 1, "RattosControl#Artis::OnRatto2Death";
     end;
 
 OnRatto3Respawn:
-    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto3Death";
-    $@ARTIS_RAT1_CONTROL[3] = 0;
-    $@ARTIS_RAT1_CONTROL[7] = 0;
+    .@q2=getq2(ShipQuests_Peter);
+    setq2 ShipQuests_Peter, .@q2^4;
+    areamonster @MAP_NAME$, 23, 19, 57, 40, strmobinfo(1, @pt_mob), @pt_mob, 1, "RattosControl#Artis::OnRatto3Death";
     end;
 
 OnRatto4Respawn:
-    areamonster "001-2-23", 23, 19, 50, 40, "Ratto", 1005, 1, "RattosControl#001-2-23::OnRatto4Death";
-    $@ARTIS_RAT1_CONTROL[4] = 0;
-    $@ARTIS_RAT1_CONTROL[8] = 0;
+    .@q2=getq2(ShipQuests_Peter);
+    setq2 ShipQuests_Peter, .@q2^8;
+    areamonster @MAP_NAME$, 23, 19, 57, 40, strmobinfo(1, @pt_mob), @pt_mob, 1, "RattosControl#Artis::OnRatto4Death";
     end;
 
+// When you kill a monster on basement, we must check the mob as dead, see if you
+// finally killed the last one and quest is complete, and add a timer to respawn it
+// after 1m25s (for flavor purposes, makes quest harder though)
 OnRatto1Death:
-    $@ARTIS_RAT1_CONTROL[1] = 1;
+    .@q2=getq2(ShipQuests_Peter);
+    setq2 ShipQuests_Peter, .@q2|1;
+    .@q2=getq2(ShipQuests_Peter);
+    if (.@q2 == 15)
+        goto L_Victor;
+    addtimer(85000, "RattosControl#Artis::OnRatto1Respawn");
     end;
 
 OnRatto2Death:
-    $@ARTIS_RAT1_CONTROL[2] = 1;
+    .@q2=getq2(ShipQuests_Peter);
+    setq2 ShipQuests_Peter, .@q2|2;
+    .@q2=getq2(ShipQuests_Peter);
+    if (.@q2 == 15)
+        goto L_Victor;
+    addtimer(85000, "RattosControl#Artis::OnRatto2Respawn");
     end;
 
 OnRatto3Death:
-    $@ARTIS_RAT1_CONTROL[3] = 1;
+    .@q2=getq2(ShipQuests_Peter);
+    setq2 ShipQuests_Peter, .@q2|4;
+    .@q2=getq2(ShipQuests_Peter);
+    if (.@q2 == 15)
+        goto L_Victor;
+    addtimer(85000, "RattosControl#Artis::OnRatto3Respawn");
     end;
 
 OnRatto4Death:
-    $@ARTIS_RAT1_CONTROL[4] = 1;
+    .@q2=getq2(ShipQuests_Peter);
+    setq2 ShipQuests_Peter, .@q2|8;
+    .@q2=getq2(ShipQuests_Peter);
+    if (.@q2 == 15)
+        goto L_Victor;
+    addtimer(85000, "RattosControl#Artis::OnRatto4Respawn");
+    end;
+
+// This label is reached when all rattos are dead. We clear the respawn timers
+// (as we are going to delete the instance map anyway), warp you outside, and
+// from there onwards, Peter handles properly rewarding you.
+L_Victor:
+    warp "001-2-22", 72, 36;
+    deltimer("RattosControl#Artis::OnRatto1Respawn");
+    deltimer("RattosControl#Artis::OnRatto2Respawn");
+    deltimer("RattosControl#Artis::OnRatto3Respawn");
+    deltimer("RattosControl#Artis::OnRatto4Respawn");
+    doevent("Peter#Artis::OnDone");
     end;
 }

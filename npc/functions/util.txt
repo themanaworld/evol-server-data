@@ -1,5 +1,6 @@
 // Evol functions.
 // Authors:
+//    Jesusalva
 //    Reid
 // Description:
 //    Util functions
@@ -33,3 +34,43 @@ function	script	season_direction	{
 
     return (.@current_month / 3 + .@is_after_season_day) % 4;
 }
+
+// This is part of Jesusalva script toolkit to make his life easier when writing
+// quests. Many of these are actually redudant functions.
+
+// Four different flavours of setq() to quickly preserve old values
+function	script	setq1	{
+    //   Quest,     val1     , val2            , val3            , time
+    setq getarg(0), getarg(1), getq2(getarg(0)), getq3(getarg(0)), getqtime(getarg(0));
+    return;
+}
+
+function	script	setq2	{
+    //   Quest,     val1           , val2     , val3            , time
+    setq getarg(0), getq(getarg(0)), getarg(1), getq3(getarg(0)), getqtime(getarg(0));
+    return;
+}
+
+function	script	setq3	{
+    //   Quest,     val1           , val2            , val3     , time
+    setq getarg(0), getq(getarg(0)), getq2(getarg(0)), getarg(1), getqtime(getarg(0));
+    return;
+}
+
+function	script	setqtime	{
+    //   Quest,     val1           , val2            , val3     , time
+    setq getarg(0), getq(getarg(0)), getq2(getarg(0)), getq3(getarg(0)), getarg(1);
+    return;
+}
+
+// Function to quickly disregard part of getmapxy().
+// If you use this function too much, you'll lose efficiency, and it'll be better
+// to use getmapxy() normally to save to temporary variables.
+// Can take one optional argument (unittype argument).
+function	script	getmap	{
+    if (getmapxy(.@mapName$, .@xpos, .@ypos, getarg(0,0)) != 0)
+        return false;
+    return .@mapName$;
+}
+
+
