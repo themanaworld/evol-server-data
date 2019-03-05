@@ -1,13 +1,23 @@
-
 // Evol Scripts
 // Author:
 //    Jesusalva
 // Description:
 //    Mundane (anagram of Unnamed) is Mona's father
+//    He likes to smoke cigarettes while looking for the strange sounds.
+//    He is an old bowman of the Legion. He was married but it is not clear
+//    what happened to his wife.
+// Lore Problems:
+//    If he is missing for a week already, how is he eating anyway?
+//    Also, is he afraid of blubs/rattos or of Green Slimes?
 
-// Note: Due technical limitations do not make Mundane move
-// Note: Temporary sprite
-001-3-0,161,59,0	script	Mundane	NPC_MUNDANE,{
+// Note: Jesusalva is not someone to care a lot with code styling, and he uses
+// a convention of his own, gumi will need to cleanse the code before it gets
+// compliant with Evol Coding Style Guidelines.
+// Note 2: Logout is not handled. Making logout at an instanced map may randomly
+// warp you back to Drasil Island (000-1) or something like that. I don't know.
+// This behavior remains to be checked.
+
+001-3-0,96,66,0	script	Mundane	NPC_MUNDANE,{
 
     function quest_completed
     {
@@ -17,14 +27,21 @@
     close;
     }
 
+    function quest_inprogress
+    {
+    speech(0x0,
+        l("We need to get out of here soon. I'm scared of the Slimes!"));
+    close;
+    }
+
     function rescue_mundane
     {
     speech(S_LAST_NEXT,
-        l("Scary... I am afraid of these blubs and rattos... And worse, I am lost..."),
-        l("I already killed many strong monsters, but I everyone have fears, right?!"),
-        l("My daughter is probably worried with me. Could you perhaps lead me out of here?"));
+        l("Scary... I am afraid of these Slimes, Rattos and Maggots... And worse, I am lost..."),
+        l("I already killed many strong monsters, but everyone has fears, right?!"),
+        l("My daughter is probably worried about me. Could you perhaps lead me out of here?"));
 
-        switch (select(l("Yes, follow me!"), l("Not now. You see, I am also afraid of Blubs and Rattos!")))
+        switch (select(l("Yes, follow me!"), l("Not now. You see, I am also afraid of Slimes and Rattos!")))
         {
             case 1:
                 mes "";
@@ -38,11 +55,11 @@
         }
         .@ID=getcharid(0);
         .@MAP_NAME$="mona@"+str(.@ID);
-        .@MUNDANE_INSTID = instance_create("001-3-0@a"+(.@ID), getcharid(3), IOT_CHAR);
+        @MUNDANE_INSTID = instance_create("001-3-0@a"+(.@ID), getcharid(3), IOT_CHAR);
         //debugmes "You are "+str(.@ID);
 
-        //if (.@MUNDANE_INSTID < 0) debugmes "Error: No instance ID";
-        //debugmes "new instance id: " + str(.@MUNDANE_INSTID);
+        //if (@MUNDANE_INSTID < 0) debugmes "Error: No instance ID";
+        //debugmes "new instance id: " + str(@MUNDANE_INSTID);
 
         // XXX - Important Note - XXX
         // We currently have only FOUR chars to name the map. "001-3-0" or "mundane" have 7 chars, so that cannot be used.
@@ -50,27 +67,49 @@
         //
         // Rationale: We have only 11 chars available, but 7 are reserved. So, longest name would be "abcd" + "@" + getcharid(0)
         // Some test reported that (apparently) we have 15 whitespaces at map name start, not sure why.
-        .@instanceMapName$ = instance_attachmap("001-3-0", .@MUNDANE_INSTID, 0, .@MAP_NAME$);
+        .@instanceMapName$ = instance_attachmap("001-3-0", @MUNDANE_INSTID, 0, .@MAP_NAME$);
 
-        //if (.@instanceMapName$ == "") debugmes "Error: Map 001-3-0 X failed";
-        //debugmes "Created map: "+ str(.@instanceMapName$);
+        // This can be a bug, but most likely is because instance already exists.
+        // I don't know what would happen if we continue, so let's "penalize" the player
+        if (.@instanceMapName$ == "") {
+            speech(0x0,
+                l("Wait... You are that @@ from earlier, aren't you?", strcharinfo(0)),
+                l("If my memory serves me right, you died just before. Why don't you go out to buy better equipment?"));
+            close;
+        }
 
         // You have 5 minutes to complete the quest. This does not results in failure by itself, getq2 does that
-        instance_set_timeout(300, 300, .@MUNDANE_INSTID);
-        instance_init(.@MUNDANE_INSTID);
+        instance_set_timeout(300, 300, @MUNDANE_INSTID);
+        instance_init(@MUNDANE_INSTID);
         dispbottom(l("Mona Father's is right behind you. You have five minutes to bring him out of sewers!"));
 
         // Not sure if Green Slimes are exactly what we want here - and shouldn't it be "Slime"? (mind upper-case)
         areamonster(.@MAP_NAME$, 119, 51, 162, 85, l("Green Slime"), slime, 3);
+        areamonster(.@MAP_NAME$, 190, 65, 193, 68, l("Ratto"), Ratto, 5);
+        areamonster(.@MAP_NAME$, 90, 67, 92, 72, l("Cave Maggot"), CaveMaggot, 3);
+        areamonster(.@MAP_NAME$, 99, 106, 102, 111, l("Green Slime"), slime, 3);
+        areamonster(.@MAP_NAME$, 115, 93, 115, 75, l("Green Slime"), slime, 3);
+        areamonster(.@MAP_NAME$, 120, 85, 7, 2, l("Little Green Slime"), slime-littleslime, 7);
+        areamonster(.@MAP_NAME$, 114, 65, 121, 68, l("Cave Maggot"), CaveMaggot, 5);
+        areamonster(.@MAP_NAME$, 137, 76, 130, 87, l("Spider"), Spider, 4);
+        areamonster(.@MAP_NAME$, 98, 92, 101, 94, l("Green Slime"), slime, 3);
         setq ArtisQuests_MonaDad, 2;
-        warp(.@MAP_NAME$, 161,59);
+        warp(.@MAP_NAME$, 96,66);
+        addtimer(150, "Mundane::OnMove");
+
+        // Important temporary variables
+        @MUNDANE_OLDX=96;
+        @MUNDANE_OLDY=66;
         close;
 
     }
 
     .@q=getq(ArtisQuests_MonaDad);
-    if (.@q != 1) quest_completed();
+    if (.@q >= 3) quest_completed();
+    if (.@q == 2) quest_inprogress();
     if (.@q == 1) rescue_mundane();
+    // Impossible situation, but let's not trust this. You must talk to Mona first!
+    if (.@q == 0) quest_completed();
 
     hello;
     end;
@@ -80,16 +119,75 @@ OnInit:
     .distance = 3;
     end;
 
+/*
+// If we are to use a fake-NPC (a monster which actually is a NPC, for example),
+// We need to uncomment this code block. As we are moving the actual NPC, this is
+// not needed (and harmful, too)
 OnInstanceInit:
     disablenpc(instance_npcname(.name$));
+    end;
+*/
+
+// This functions serves two major purposes:
+//  1- Move Mundane accordingly
+//  2- Be able to determine if you brought Mundane to exit or cheat (warp, etc.)
+// NOTE: Using instance_npcname(.name$) can be unreliable at times.
+//  It should work with addtimer(), but if it breaks, move @MUNDANE_INSTID to
+//  the @ varspace, and use instance_npcname(.name$, @MUNDANE_INSTID)
+//  That'll fix any problem when playtesting.
+OnMove:
+    getmapxy(.@m$, .@x, .@y, 0);
+    // You left the map, we don't need to move NPC anymore
+    if (!(.@m$ ~= "mona@*") && (.@m$ != "001-3-0")) {
+        disablenpc(instance_npcname(.name$, @MUNDANE_INSTID));
+        // This check shouldn't be needed but better safe than sorry
+        if (.@m$ == "001-1")
+            dispbottom l("Mundane ran straight home. He must be missing his daughter.");
+        end;
+    }
+    // We actually won't move the NPC to your position, but to where you were last.
+    // The NPC should not walk right in you because I thought it looks weird ingame.
+    if (.@x == @MUNDANE_OLDX && .@y == @MUNDANE_OLDY) {
+        addtimer(150, "Mundane::OnMove");
+        end;
+    }
+
+    // movenpc() will cause NPC to "jump" to player position.
+    // npcwalkto(x, y) could be better, but there are concerns about instance NPC,
+    // and the server code behind this function would need to be changed to actually
+    // use NPC walking animation (instead of just sliding it around).
+    //
+    // Mind the note about instance_npcname and about ignoring your position
+    // We should in future at least figure out the right direction to display too
+    movenpc(instance_npcname(.name$, @MUNDANE_INSTID), @MUNDANE_OLDX, @MUNDANE_OLDY);
+
+    // We now update the misleading @MUNDANE_OLD* variable with your current
+    // position.
+    @MUNDANE_OLDX=.@x;
+    @MUNDANE_OLDY=.@y;
+    // We must handle this every 150ms or so, which is player walk delay.
+    // When you leave the map this timer will die.
+    addtimer(150, "Mundane::OnMove");
     end;
 
 OnPCDieEvent:
     if (getq(ArtisQuests_MonaDad) != 2) end;
     setq ArtisQuests_MonaDad, 1;
     dispbottom l("What a pity! You've died.");
-    //warp("Save",0,0); // That works, but won't revive you without recovery();
+
+    // We must disable Mona's Dad NPC sprite if you are still on the map
+    // This will cause the NPC to "vanish", player is left to guess that he ran
+    // back to where he originally was.
+    // (ie. The NPC won't be fine without you if we have code to handle that).
+    getmapxy(.@m$, .@x, .@y, 0);
+    if (.@m$ ~= "mona@*") {
+        disablenpc(instance_npcname(.name$, @MUNDANE_INSTID));
+    }
+
+    // Uncommenting the code piece will warp you back to your savepoint.
+    // It's better to don't use this if the previous code works.
+    //recovery();
+    //warp("Save",0,0);
     end;
 }
 
-// >>>>>>> Initial proof-of-concept version, works, but quest cannot be completed yet

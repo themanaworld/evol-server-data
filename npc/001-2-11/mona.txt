@@ -1,13 +1,20 @@
 // Evol scripts.
 // Author:
 //    Reid
+//    Jesusalva
 // Description:
-//    A rich girl holding a candle.
+//    A rich girl holding a candle. Her father went to examine weird noises on
+//    sewers and still haven't come back. Her mother is gone, but it is not clear
+//    if she died, abandoned them, or something else.
 // Variable:
 //    ArtisQuests_MonaDad
 // Quest states:
 //    0  - Quest not started
 //    1  - Mona explained that her dad was missing
+//    2  - Player is bringing Mundane out of Sewers
+//    3  - Quest is complete
+// Note:
+//    Any misformatted code is Jesusalva's fault.
 
 001-2-11,39,30,0	script	Mona	NPC_MONA,{
 
@@ -50,13 +57,51 @@
         close;
     }
 
+    // You're here to report that Mundane is out of the sewers.
+    // Forcing you to enter an instanced map would require more work.
+    // This means adding a warp NPC and a global instance.
+    // Global Instances get reset every 10 days or so, it would need a patch
+    // only to support Global Instances and in general is not a smart thing to do.
+    function check_daddy_quest
+    {
+        // Did you really brought Mundane to sewer exit (152, 56)?
+        // We need to add 1 tile in each direction of tolerance because addtimer()
+        // is not exactly what I would call “a reliable way to do stuff”
+        // Note that @variables sometimes get erasen AT RANDOM.
+        // If this problem happens, move it char variables.
+        // (that might cause problems with logout though.)
+        // Temporary variables give you a time limit to report back...
+        if (@MUNDANE_OLDX >= 151 && @MUNDANE_OLDX <= 153 &&
+            @MUNDANE_OLDY >= 55 && @MUNDANE_OLDY <= 57) {
+            // There's no need to check if instance still exists, because
+            // when the instance expires, you get warped to *somewhere*.
+            // This means the timer will die and MUNDANE_OLD* variables will stop
+            // being updated.
+            inventoryplace WoodenBow, 1;
+            speech 0x0,
+                l("Daddy finally came back home! He grabbed a snack and said he would be returning to the sewers."),
+                lg("He did said to you take this @@ as a gift. He says you are very skilled and will make a good use of his old weapon.",
+                   "He did said to you take this @@ as a gift. He says you are very skilled and will make a good use of his old weapon.",
+                    getitemlink(WoodenBow)),
+                l("He was never the same since mommy vanished...");
+            getitem WoodenBow, 1;
+            setq(ArtisQuests_MonaDad, 3);
+            close;
+        }
+    }
+
+    // Here the script really starts
     if (getq(ArtisQuests_MonaDad) == 0)
     {
         find_daddy_quest();
     }
     else if (getq(ArtisQuests_MonaDad) == 3)
     {
-        npctalkonce l("Thanks for finding daddy... I wish he spent more time with me...");
+        npctalkonce l("Thanks for finding daddy... I wish he spent more time with me..."); // TODO: Sophialla
+    }
+    else if (getq(ArtisQuests_MonaDad) == 2)
+    {
+        check_daddy_quest();
     }
     else
     {
@@ -68,6 +113,7 @@
 
 OnInit:
     .sex = G_FEMALE;
-    .distance = 2;
+    .distance = 3;
     end;
 }
+
