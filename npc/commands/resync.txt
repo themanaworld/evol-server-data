@@ -1,0 +1,40 @@
+// Evol script
+// Author: Jesusalva <admin@tmw2.org>
+//
+// Introduces @resync
+//
+// It'll cast slide to your own position
+// Hopefully making client update your real position without causing server warning
+
+-	script	@resync	32767,{
+    end;
+
+// Soft Resync
+OnCall:
+    // Sliding a dead player have undesired side effects
+    if (ispcdead()) {
+        dispbottom l("Impossible to resync: You are dead.");
+        end;
+    }
+    // I add a small delay in case slide() trigger some invincibility timer or something
+    if (@rsync_delay > gettimetick(2)) {
+        dispbottom l("Not resync'ing to prevent flood.");
+        end;
+    }
+
+    // This is a hack
+    getmapxy(.@m$, .@x, .@y, 0);
+    slide .@x, .@y;
+    @rsync_delay=gettimetick(2)+rand(4,6);
+
+    // Uncomment this line to cause server to resend every packet to ManaPlus
+    // and get rid of latency effect (like dead mobs still being shown)
+    //atcommand("@refresh");
+    end;
+
+// Anyone can call @resync, but only support and upwards for other players.
+// ie. GMs can try to fix lag for other people.
+OnInit:
+    bindatcmd "resync", "@resync::OnCall", 0, 2, 0;
+    end;
+}
