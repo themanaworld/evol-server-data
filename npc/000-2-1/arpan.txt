@@ -40,13 +40,13 @@
     doevent "Magic Arpan::OnClothNotTaken";
 
 L_Equip:
-    warp "000-2-1", 49, 32;
+    slide 49, 32;
     doevent "Magic Arpan::OnEquip";
 
     close;
 
 L_GetCloth:
-    warp "000-2-1", 49, 32;
+    slide 49, 32;
     doevent "Magic Arpan::OnClothNotTaken";
 
     close;
@@ -67,13 +67,13 @@ L_EquipDone:
     doevent "Magic Arpan::OnClothNotTaken";
 
 L_Equip:
-    warp "000-2-1", 55, 32;
+    slide 55, 32;
     doevent "Magic Arpan::OnEquip";
 
     close;
 
 L_GetCloth:
-    warp "000-2-1", 55, 32;
+    slide 55, 32;
     doevent "Magic Arpan::OnClothNotTaken";
 
     close;
