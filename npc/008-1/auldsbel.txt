@@ -6,6 +6,20 @@
 // THIS IS A PLACEHOLDER!
 
 008-1,119,114,0	script	Auldsbel#008-1	NPC_WIZARD,{
+    // Placeholder please remove
+    if (!MASTERBOOK_PAGES)
+    {
+        inventoryplace MasterBook, 1;
+        getitem MasterBook, 1;
+        MASTERBOOK_PAGES=1;
+        mesc l("Auldsbel discretly stuffs a book on your backpack.");
+        next;
+        speech
+            l("Don't tell anyone about this. Once you kill you a boss, you can try to learn the boss skill by using the book."),
+            l("Beware you have a limited number of pages. Do not let the Legion or the Brotherhood find out you have one."),
+            l("And by the way. I know nothing about this book. And I don't know how to get more pages either.");
+        close;
+    }
     speech
         l("Hello."),
         l("Oh, you look more interested in magic.. the brotherhood did forbid most of the interesting paths of magic, but boring baby spells are still allowed."),
