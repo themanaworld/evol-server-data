@@ -1,0 +1,113 @@
+// Evol script.
+// Author:
+//    Jesusalva
+//    Elvano
+// Description:
+//    Contains master skills which can only be learnt after killing boss
+//    See also: <link to tmw forum topic>
+// Notes:
+//    Not exactly equal as Elvano proposal. I actually care for restrictions you know...
+// Variables:
+//  PERMANENT:
+//      MASTERBOOK_PAGES - How many pages your Master Book have.
+//                         Defaults to zero, so you can't @item it.
+//      MASTERBOOK_SKILL - An array with the skills you have learnt from Master Book.
+//                       - It's more flexible this way.
+//  TEMPORARY:
+//      @mb_BossId  - Contains the MobID of the boss your party killed.
+//      @mb_SkillId - Contains the SkillID which can be learnt with the boss.
+//      @mb_ItemId  - Contains the Ink Id to write (or whatever)
+//      @mb_ItemAm  - How many ink is required to write the skill
+//  Remember: @mb_BossId will be reset to zero after 15 seconds from boss death.
+//  Or upon logout. Or when changing maps. Temporary variables aren't reliable.
+//
+//  @mb_BossId controls if you'll try to LEARN a skill, or READ the book.
+//  Remember: A dialog prevents timer events from happening, but doesn't stops the timer.
+//    TODO: Currently no way to get skill name from database (add getskillinfo() to server-plugin please)
+//    TODO: Reset @mb_* when register_skill() finish
+//    TODO: Add Magic Ink
+//    TODO: When another party/player kills the boss, book should say so.
+
+-	script	#MasterBook	NPC_HIDDEN,{
+
+
+    function register_skill {
+
+        setnpcdialogtitle l(.book_name$);
+
+        .@mb_lvl=strmobinfo(3, @mb_BossId);
+        mesc l("You just defeated the following boss: @@ (Lv. @@)", strmobinfo(1, @mb_BossId), .@mb_lvl);
+        // Check if all reqs are met
+        // The boss must have a skill
+        if (!@mb_SkillId)
+        {
+            mesc l("But there is no skill to be learnt from this boss.");
+            close;
+        }
+        // You must have free pages
+        if (array_entries(MASTERBOOK_SKILL) >= MASTERBOOK_PAGES)
+        {
+            mesc l("But you ran out of empty pages on this book.");
+            close;
+        }
+        // TODO: Party Level Range
+        // You must be at most 30 levels below the monster level
+        if (BaseLevel+30 < .@mb_lvl)
+        {
+            mesc l("But you are out of the boss level range.");
+            close;
+        }
+        // You must have enough materials
+        if (countitem(@mb_ItemId) < @mb_ItemAm)
+        {
+            mesc l("But you do not have enough Magic Ink. (You need: @@ @@)", @mb_ItemAm, getitemlink(@mb_ItemId));
+            close;
+        }
+
+        // Allow you to check which skills are here to learn
+        mes "";
+        mesc l("You have: @@/@@ @@", countitem(@mb_ItemId), @mb_ItemAm, getitemlink(@mb_ItemId));
+        select
+            rif(!getskilllv(@mb_SkillId), l("Learn Skill")),
+            l("Do not learn");
+        mes "";
+        if (@menu == 1)
+        {
+            delitem @mb_ItemId, @mb_ItemAm;
+            skill(@mb_SkillId, 1, 0);
+            array_push(MASTERBOOK_SKILL, @mb_SkillId);
+            closeclientdialog;
+            dispbottom l("You have learnt the skill.");
+        }
+        close;
+    }
+
+
+    function read_book {
+
+        setnpcdialogtitle l(.book_name$);
+        mesc l("@@/@@ pages used.", array_entries(MASTERBOOK_SKILL), MASTERBOOK_PAGES);
+
+        mesc l("List of known master skills:");
+        mes "";
+        for (.@i = 0; .@i < getarraysize(MASTERBOOK_SKILL); ++.@i) {
+            mesc l("* Skill ID: @@", MASTERBOOK_SKILL[.@i]);
+        }
+        close;
+    }
+
+OnUse:
+    // We assume if @mb_BossId is set, everything else is set, too
+    if (@mb_BossId)
+        register_skill;
+    if (openbook())
+        read_book;
+    closeclientdialog();
+    close;
+
+OnInit:
+    .book_name$ = getitemname(MasterBook);
+    .sex = G_OTHER;
+    .distance = 1;
+    end;
+}
