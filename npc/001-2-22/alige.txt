@@ -171,39 +171,19 @@ L_Accepted:
 
 L_GiveFood:
     mes "";
-    menuint
-        rif(countitem(Acorn), l(getitemname(Acorn))), 0,
-        rif(countitem(Bread), l(getitemname(Bread))), 502,
-        rif(countitem(Fungus), l(getitemname(Fungus))), 503,
-        rif(countitem(Cheese), l(getitemname(Cheese))), 504,
-        rif(countitem(PiouLegs), l(getitemname(PiouLegs))), 505,
-        rif(countitem(LettuceLeaf), l(getitemname(LettuceLeaf))), 0,
-        rif(countitem(Piberries), l(getitemname(Piberries))), 2,
-        rif(countitem(SeaDrops), l(getitemname(SeaDrops))), 1,
-        rif(countitem(Aquada), l(getitemname(Aquada))), 509,
-        rif(countitem(PinkBlobime), l(getitemname(PinkBlobime))), 1,
-        rif(countitem(HalfCroconut), l(getitemname(HalfCroconut))), 512,
-        rif(countitem(Croconut), l(getitemname(Croconut))), 0,
-        rif(countitem(Plushroom), l(getitemname(Plushroom))), 515,
-        rif(countitem(PumpkinSeeds), l(getitemname(PumpkinSeeds))), 1,
-        rif(countitem(UrchinMeat), l(getitemname(UrchinMeat))), 1,
-        rif(countitem(EasterEgg), l(getitemname(EasterEgg))), 1,
-        rif(countitem(PumpkinJuice), l(getitemname(PumpkinJuice))), 527,
-        rif(countitem(Manana), l(getitemname(Manana))), 528,
-        rif(countitem(Curshroom), l(getitemname(Curshroom))), 529,
-        rif(countitem(Carrot), l(getitemname(Carrot))), 530,
-        rif(countitem(RedPlushWine), l(getitemname(RedPlushWine))), 3,
-        l("I don't have anything good for you today."), -1;
 
-    .@id = @menuret;
-    if (.@id == -1) goto L_Quit; // Quit message.
-    if (.@id == 0) goto L_NoReward; // In case of wrong food.
-    if (.@id == 1) goto L_Poison; // In case of poisoned food.
-    if (.@id == 2) goto L_NoMore; // In case of Piberries.
-    if (.@id == 3) goto L_Drunk; // In case of Alcohol.
-    if (countitem(.@id) == 0) goto L_Quit;
-//  if (.@id == item's ID) then food is correct.
-// Do not put any other number than -1, 0, 1, 2 or the item's ID, that'll avoid confusion.
+    mes "##B" + l("Drag and drop an item from your inventory.") + "##b";
+    .@id = requestitem();
+    if (.@id <= 0) goto L_Quit; // Quit message.
+    if (countitem(.@id) == 0) goto L_Quit; // If don't have the food
+
+    if (array_find(.vegetables, .@id) >= 0) goto L_NoReward; // In case of wrong food.
+    if (array_find(.poisonable, .@id) >= 0) goto L_Poison; // In case of poisoned food (or food with effects).
+    if (.@id == Piberries) goto L_NoMore; // In case of Piberries.
+    if (.@id == RedPlushWine) goto L_Drunk; // In case of Alcohol.
+
+    // Default message for non food
+    if (array_find(.commonfood, .@id) == -1) goto L_NoFood;
 
     inventoryplace Piberries, 3;
     delitem .@id, 1;
@@ -232,7 +212,24 @@ L_NoReward:
 L_Drunk:
     setcamnpc;
     speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-        l("I asked for food but... *hips* Ah, that'll do nicely!");
+        l("I asked for food but... *hips* Ah, that'll do!");
+    restorecam;
+
+    goto L_GiveFood;
+
+L_NoFood:
+    setcamnpc;
+    // We must first determine if it is at least edible (IT_HEALING)
+    if (getiteminfo(.@id, ITEMINFO_TYPE) == IT_HEALING)
+    {
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("That looks too exotic for me to eat!");
+    }
+    else
+    {
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("That doesn't looks edible to me!");
+    }
     restorecam;
 
     goto L_GiveFood;
@@ -320,5 +317,10 @@ L_Quit:
 OnInit:
     .sex = G_MALE;
     .distance = 2;
+
+    // Array of foods (remember to update in 000-2-1 as well)
+    setarray .commonfood, Bread, Fungus, Cheese, PiouLegs, Aquada, HalfCroconut, Plushroom, PumpkinJuice, Manana, Curshroom, Carrot, CarpSandwich, PioulegSandwich;
+    setarray .vegetables, Acorn, LettuceLeaf, Croconut, MananaSandwich;
+    setarray .poisonable, SeaDrops, PinkBlobime, PumpkinSeeds, UrchinMeat, EasterEgg;
     end;
 }
