@@ -36,6 +36,10 @@ function	script	g	{
     return Sex == 0 ? getarg(0) : getarg(1);
 }
 
+function	script	b	{
+    return "##B" + getarg(0) + "##b";
+}
+
 function	script	col	{
     .@color = getarg(1);
     if (.@color < 0) .@color = 0;

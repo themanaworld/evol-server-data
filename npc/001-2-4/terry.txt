@@ -4,20 +4,13 @@
 // Description:
 //    Librarian
 
-001-2-4,51,35,4	script	Terry	NPC_TERRY,{
+001-2-4,51,35,2	script	Terry	NPC_TERRY,{
     mesn;
     mesq l("Hi.");
-    next;
-    mesq l("");
-    goto L_Quit;
+    close;
 
 OnInit:
     .sex = G_MALE;
     .distance = 2;
-    .dir = 2;
     end;
-
-L_Quit:
-    .dir = 2;
-    close;
 }
