@@ -7,25 +7,25 @@
 // Transition Top triggers
 001-2-33,26,35,0	script	#001-2-33LeftRemTop	NPC_HIDDEN,0,2,{
 OnTouch:
-    artisALRemTopMask;
+    artisALResetMask;
     close;
 }
 
 001-2-33,27,35,0	script	#001-2-33LeftAddTop	NPC_HIDDEN,0,2,{
 OnTouch:
-    artisALAddTopMask;
+    artisALTopMask;
     close;
 }
 
 001-2-33,42,35,0	script	#001-2-33RightRemTop	NPC_HIDDEN,0,2,{
 OnTouch:
-    artisALRemTopMask;
+    artisALResetMask;
     close;
 }
 
 001-2-33,41,35,0	script	#001-2-33RightAddTop	NPC_HIDDEN,0,2,{
 OnTouch:
-    artisALAddTopMask;
+    artisALTopMask;
     close;
 }
 
@@ -33,69 +33,70 @@ OnTouch:
 
 001-2-33,25,32,0	script	#001-2-33LeftRemBot	NPC_HIDDEN,1,0,{
 OnTouch:
-    artisALRemBotMask;
+    artisALResetMask;
     close;
 }
 
 001-2-33,25,31,0	script	#001-2-33LeftAddBot	NPC_HIDDEN,1,0,{
 OnTouch:
-    artisALAddBotMask;
+    artisALBottomMask;
     close;
 }
 
 001-2-33,43,32,0	script	#001-2-33RightRemBot	NPC_HIDDEN,1,0,{
 OnTouch:
-    artisALRemBotMask;
+    artisALResetMask;
     close;
 }
 
 001-2-33,43,31,0	script	#001-2-33RightAddBot	NPC_HIDDEN,1,0,{
 OnTouch:
-    artisALAddBotMask;
+    artisALBottomMask;
     close;
 }
 
 // Warped location triggers
 
-001-2-33,24,30,0	script	#001-2-33WarpTopLeft	NPC_HIDDEN,1,1,{
+001-2-33,24,30,0	script	#001-2-33WarpTopLeft	NPC_HIDDEN,0,0,{
 OnTouch:
-    artisALUpdateMask;
+    artisALBottomMask;
     close;
 }
 
-001-2-33,44,30,0	script	#001-2-33WarpTopRight	NPC_HIDDEN,1,1,{
+001-2-33,44,30,0	script	#001-2-33WarpTopRight	NPC_HIDDEN,0,0,{
 OnTouch:
-    artisALUpdateMask;
+    artisALBottomMask;
     close;
 }
 
-001-2-33,29,32,0	script	#001-2-33WarpMidLeft	NPC_HIDDEN,1,1,{
+// WarpMid is crazy and not working correctly, cause unknown.
+001-2-33,29,34,0	script	#001-2-33WarpMidLeft	NPC_HIDDEN,1,1,{
 OnTouch:
-    artisALUpdateMask;
+    artisALTopMask;
     close;
 }
 
-001-2-33,39,32,0	script	#001-2-33WarpMidRight	NPC_HIDDEN,1,1,{
+001-2-33,39,34,0	script	#001-2-33WarpMidRight	NPC_HIDDEN,1,1,{
 OnTouch:
-    artisALUpdateMask;
+    artisALTopMask;
     close;
 }
 
-001-2-33,34,45,0	script	#001-2-33WarpArtis	NPC_HIDDEN,1,1,{
+001-2-33,34,45,0	script	#001-2-33WarpArtis	NPC_HIDDEN,2,3,{
 OnTouch:
-    artisALUpdateMask;
+    artisALTopMask;
     close;
 }
 
 // Bottom Warp location triggers
-001-2-33,43,38,0	script	#001-2-33WarpBotLeft	NPC_HIDDEN,1,0,{
+001-2-33,43,39,0	script	#001-2-33WarpBotLeft	NPC_HIDDEN,1,0,{
 OnTouch:
-    artisALUpdateMask;
+    artisALResetMask;
     close;
 }
 
-001-2-33,25,38,0	script	#001-2-33WarpBotRight	NPC_HIDDEN,1,0,{
+001-2-33,25,39,0	script	#001-2-33WarpBotRight	NPC_HIDDEN,1,0,{
 OnTouch:
-    artisALUpdateMask;
+    artisALResetMask;
     close;
 }
