@@ -3,15 +3,78 @@
 //    Micksha
 // Description:
 //    Wyara the witch.
-// THIS IS A PLACEHOLDER!
+// TODO: Buy or make plushroom potions
+// TODO: Should she ask for a money comission when resetting status?
 
 008-2-7,27,28,0	script	Wyara#008-2-7	NPC_DARK_DRUID,{
+    function confirmStatusReset;
+    function doStatusReset;
     speech
         l("What? Is there someone?"),
         l("Please, leave me alone. I have to pixel potions."),
-        lg("I will sell some when you return a bit later.");
-
+        lg("I will sell some when you return a bit later."),
+        l("Unless you are interested in a status reset?");
+    next;
+    do
+    {
+        select
+            l("I'm fine, thanks."),
+            l("I actually could use a status reset!");
+        switch (@menu) {
+            case 2:
+                @plush_count = lognbaselvl(1, 10);
+                @plush_count = @plush_count*12/10;
+                if (confirmStatusReset())
+                    doStatusReset();
+                break;
+        }
+    } while (@menu != 1);
+    // Note: There is some dark magic here, because confirmStatusReset() overrides @menu.
     close;
+
+function confirmStatusReset {
+    mesn;
+    mesq l("Let me just have a quick look at you. Hm... I will need @@ @@s to reset your stats.", @plush_count, getitemlink(Plushroom));
+    next;
+    mesn;
+    mesq l("Also, status point reset can't be undone. Do you really want this?");
+    next;
+    if (askyesno() == ASK_YES)
+    {
+        if (countitem(Plushroom) >= @plush_count)
+            return 1;
+        mesn;
+        mesq l("Alright, but... You only have @@ @@, and I need @@ to do the status reset for you!", countitem(Plushroom), getitemlink(Plushroom), @plush_count);
+    }
+    return 0;
+}
+
+function doStatusReset {
+    delitem Plushroom, @plush_count;
+
+    .@wasSP = StatusPoint;
+    resetstatus;
+
+    // Everything was done before dialog in case of forced disconnection
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Thank you."),
+        l("Now stand still... It should not take much time...");
+    if (StatusPoint == .@wasSP)
+    {
+        speech
+            l("It seems that you have no status points to reset!"),
+            l("I'll return the plushroom to you, but please, do not waste my time.");
+        getitem Plushroom, @plush_count;
+    }
+    else
+    {
+        speech
+            l("Let's see... @@ of your status points have just been reset!", StatusPoint - .@wasSP),
+            l("Spend it wisely this time."),
+            lg("But you are welcome to reset your stats again if you bring me some more plushrooms!");
+    }
+    return;
+}
 
 OnInit:
     .sex = G_FEMALE;
