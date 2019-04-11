@@ -1,0 +1,36 @@
+// Evol scripts.
+// Authors:
+//    4144
+//    Micksha
+//    Reid
+//    toams
+// Description:
+//    Simons Potion Shop.
+
+008-2-7,30,26,0	trader	#Invisible008-2-7	NPC_HIDDEN,{
+
+OnInit:
+    tradertype(NST_MARKET);
+
+    sellitem SmallHealing, -1, 10;
+    sellitem MediumHealing, -1, 5;
+    sellitem SmallMana, -1, 10;
+    sellitem MediumMana, -1, 5;
+    sellitem ConcPotion, -1, 3;
+    sellitem IronPotion, -1, 3;
+
+    .sex = G_OTHER;
+    .distance = 2;
+    end;
+
+OnClock0000:
+OnClock0800:
+OnClock1600:
+    restoreshopitem SmallHealing, 10;
+    restoreshopitem MediumHealing, 5;
+    restoreshopitem SmallMana, 10;
+    restoreshopitem MediumMana, 5;
+    restoreshopitem ConcPotion, 3;
+    restoreshopitem IronPotion, 3;
+    end;
+}
