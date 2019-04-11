@@ -1,0 +1,39 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Simon, Wyaras Apprentice.
+// THIS IS A PLACEHOLDER!
+
+008-2-7,30,26,0	script	Simon	NPC_SIMON,{
+    speech
+        l("Hi, I am Simon."),
+        l("I am Wyaras apprentice, helping her with selling her potions."),
+        l("I would prefer becoming a real Sorcerer one time. *sighs*");
+
+    switch (select(l("Potions? That sounds useful. What do you have?"),
+                   l("Thats your problem, really."),
+                   l("Becoming a Sorcerer? I want that too!")))
+    {
+    case 1:
+        closeclientdialog;
+        shop "#Invisible008-2-7";
+        close;
+    case 2:
+        speech S_FIRST_BLANK_LINE,
+        l("Leave me alone.");
+        close;
+    case 3:
+        speech S_FIRST_BLANK_LINE,
+        l("It needs so much training, but Wyara only leaves me here, standing and selling something instead of teaching me.");
+        close;
+    }
+
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
