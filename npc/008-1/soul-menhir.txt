@@ -5,7 +5,11 @@
 //    place of power, mana refills faster when sitting nearby
 
 008-1,252,111,0	script	Soul Menhir#hurnscald	NPC_NO_SPRITE,{
-
+    if (!@menhir_meditation_message)
+    {
+        dispbottom(l("You feel a strong magic aura. You want to sit near it and meditate."));
+        @menhir_meditation_message=1;
+    }
     end;
 
 OnRefill:
