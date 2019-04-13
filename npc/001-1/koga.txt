@@ -16,5 +16,6 @@
 OnInit:
     .sex = G_MALE;
     .distance = 4;
+    .alwaysVisible = true;
     end;
 }
