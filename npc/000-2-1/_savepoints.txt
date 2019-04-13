@@ -1,6 +1,6 @@
 // This file is generated automatically. All manually added changes will be removed when running the Converter.
 // Map 000-2-1: Second Deck saves
-000-2-1,40,37,0	script	#save_000-2-1_40_37	NPC_SAVE_POINT,{
+000-2-1,40,37,0	script	#save_000-2-1_40_37	NPC_SAVE_POINT,0,0,{
     savepointparticle .map$, .x, .y, NO_INN;
     close;
 
@@ -8,8 +8,12 @@ OnInit:
     .distance = 2;
     .sex = G_OTHER;
     end;
+
+OnTouch:
+    bedTouch();
+    end;
 }
-000-2-1,46,37,0	script	#save_000-2-1_46_37	NPC_SAVE_POINT,{
+000-2-1,46,37,0	script	#save_000-2-1_46_37	NPC_SAVE_POINT,0,0,{
     savepointparticle .map$, .x, .y, NO_INN;
     close;
 
@@ -17,8 +21,12 @@ OnInit:
     .distance = 2;
     .sex = G_OTHER;
     end;
+
+OnTouch:
+    bedTouch();
+    end;
 }
-000-2-1,50,38,0	script	#save_000-2-1_50_38	NPC_SAVE_POINT,{
+000-2-1,50,38,0	script	#save_000-2-1_50_38	NPC_SAVE_POINT,0,0,{
     savepointparticle .map$, .x, .y, NO_INN;
     close;
 
@@ -26,13 +34,21 @@ OnInit:
     .distance = 2;
     .sex = G_OTHER;
     end;
+
+OnTouch:
+    bedTouch();
+    end;
 }
-000-2-1,55,40,0	script	#save_000-2-1_55_40	NPC_SAVE_POINT,{
+000-2-1,55,40,0	script	#save_000-2-1_55_40	NPC_SAVE_POINT,0,0,{
     savepointparticle .map$, .x, .y, NO_INN;
     close;
 
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
+    end;
+
+OnTouch:
+    bedTouch();
     end;
 }

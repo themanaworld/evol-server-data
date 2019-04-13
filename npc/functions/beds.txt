@@ -2,14 +2,16 @@
 // Authors:
 //    4144
 //    Reid
+//    Jesusalva
 // Description:
 //    Beds utility functions
 
+// bedTouch({inn})
 function	script	bedTouch	{
     if (PC_IS_DEAD)
     {
         PC_IS_DEAD = 0;
-        if (INN_REGISTER == REDPLUSH_INN)
+        if (INN_REGISTER != NO_INN)
         {
             INN_REGISTER = NO_INN;
             percentheal 100,100;
@@ -18,13 +20,3 @@ function	script	bedTouch	{
     close;
 }
 
-function	script	bedClic	{
-    narrator S_LAST_NEXT, l("Do you want to use this place as save point?");
-
-    if (askyesno() == ASK_YES)
-    {
-        savepointparticle getarg(0, ""), getarg(1, -1), getarg(2, -1), getarg(3, NO_INN);
-    }
-    closeclientdialog;
-    close;
-}

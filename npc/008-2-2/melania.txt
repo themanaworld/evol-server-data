@@ -3,19 +3,106 @@
 //    Micksha
 // Description:
 //    Receptionist of Rusty Pick.
-// THIS IS A PLACEHOLDER!
 
 008-2-2,28,27,0	script	Melania	NPC_AIRLIA,{
+    function accepted_room;
+    function register_room;
+    function lodge_check;
+
     speech
         lg("Hello Sir.","Hello Miss."),
-        l("Welcome to the Rusty Pick. Sorry, we have no room left today."),
+        l("Welcome to the Rusty Pick."),
         l("One advice: Don't take the things those drinkers say too serious. They are sitting here and drinking all day."),
-        l("I wish you a beautiful day.");
+        l("How can we serve you today?");
 
+    do
+    {
+        select
+            l("Could I lodge here for a while?"),
+            l("Nothing.");
+        mes "";
+
+        if (@menu == 1)
+            lodge_check();
+
+    } while (@menu != 2);
+    mesn;
+    l("I wish you a beautiful day.");
     close;
+
+    // Check if you are booked here or somewhere else
+    function lodge_check {
+        if (INN_REGISTER == NO_INN)
+        {
+            register_room();
+        }
+        else if (INN_REGISTER == .inn)
+        {
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                lg("You are already registered here."),
+                l("Go on the upper level if you want to change your room or to use it.");
+        }
+        else
+        {
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                lg("If you are registered somewhere else you will loose that reservation."),
+                l("Do you still want to lodge here?");
+
+            if (askyesno() == ASK_YES)
+            {
+                register_room();
+            }
+        }
+        return;
+    }
+
+    // Find out prices
+    function register_room {
+        .@price = lognbaselvl(100, 10);
+        .@price = .@price*12/10; // Make the price 20% higher by WildX request
+
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("That will be @@ E to set your respawn point", .@price),
+            l("This will remain your respawn point until set elsewhere."),
+            l("Is that okay?");
+
+        if (askyesno() == ASK_YES)
+        {
+            accepted_room(.@price);
+        }
+        else
+        {
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("Come back later if you changed your mind!");
+        }
+
+        return;
+    }
+
+    // Book a room
+    function accepted_room {
+        .@price = getarg(0);
+        if (Zeny < .@price)
+        {
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("You don't have enough money, bring @@ E.", .@price);
+        }
+        else
+        {
+            emotion E_HAPPY;
+            Zeny = Zeny - .@price;
+            INN_REGISTER = .inn;
+            PC_IS_DEAD = false;
+
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                lg("I registered you on a random bed on the upper level."),
+                l("You can go upstairs and choose a different room if you want.");
+            savepoint "008-2-3", any(49, 53, 57), any(31, 35);
+        }
+    }
 
 OnInit:
     .sex = G_FEMALE;
     .distance = 2;
+    .inn=RUSTYPICK_INN;
     end;
 }
