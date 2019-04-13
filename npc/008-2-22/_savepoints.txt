@@ -1,11 +1,15 @@
 // This file is generated automatically. All manually added changes will be removed when running the Converter.
 // Map 008-2-22: Mages Hut saves
-008-2-22,26,31,0	script	#save_008-2-22_26_31	NPC_SAVE_POINT,{
-    savepointparticle .map$, .x, .y, CURRENT_INN;
+008-2-22,26,31,0	script	#save_008-2-22_26_31	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, NO_INN;
     close;
 
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
+    end;
+
+OnTouch:
+    bedTouch();
     end;
 }

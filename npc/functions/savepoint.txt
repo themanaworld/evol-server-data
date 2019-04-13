@@ -34,12 +34,21 @@ function	script	savepointparticle	{
         .@i = 0;
     }
 
-    message strcharinfo(0), l("Your position has been saved.");
-
-    if (getarg(.@i, NO_INN) == NO_INN)
+    // If this will override your current inn, a confirmation is required.
+    // Unless you already don't have a booked place, then, confirmation is never shown.
+    if (getarg(.@i, NO_INN) != INN_REGISTER && INN_REGISTER != NO_INN)
     {
+        mesc l("Do you want to use this place as save point?");
+        mesc b(l("Warning: ")) + l("Previous Inn reservation will be lost!");
+
+        if (askyesno() != ASK_YES)
+            close;
+
         INN_REGISTER = NO_INN;
     }
+
+    message strcharinfo(0), l("Your position has been saved.");
+
     savepoint .@mapname$, .@mapx, .@mapy;
     specialeffect(4, SELF, getcharid(3));
     @lastSave = gettimetick(2);

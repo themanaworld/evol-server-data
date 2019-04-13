@@ -1,38 +1,54 @@
 // This file is generated automatically. All manually added changes will be removed when running the Converter.
 // Map 001-2-38: unnamed saves
-001-2-38,25,41,0	script	#save_001-2-38_25_41	NPC_SAVE_POINT,{
-    savepointparticle .map$, .x, .y, CURRENT_INN;
+001-2-38,25,41,0	script	#save_001-2-38_25_41	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, NO_INN;
     close;
 
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
     end;
+
+OnTouch:
+    bedTouch();
+    end;
 }
-001-2-38,35,41,0	script	#save_001-2-38_35_41	NPC_SAVE_POINT,{
-    savepointparticle .map$, .x, .y, CURRENT_INN;
+001-2-38,35,41,0	script	#save_001-2-38_35_41	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, NO_INN;
     close;
 
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
     end;
+
+OnTouch:
+    bedTouch();
+    end;
 }
-001-2-38,35,46,0	script	#save_001-2-38_35_46	NPC_SAVE_POINT,{
-    savepointparticle .map$, .x, .y, CURRENT_INN;
+001-2-38,35,46,0	script	#save_001-2-38_35_46	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, NO_INN;
     close;
 
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
     end;
+
+OnTouch:
+    bedTouch();
+    end;
 }
-001-2-38,25,46,0	script	#save_001-2-38_25_46	NPC_SAVE_POINT,{
-    savepointparticle .map$, .x, .y, CURRENT_INN;
+001-2-38,25,46,0	script	#save_001-2-38_25_46	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, NO_INN;
     close;
 
 OnInit:
     .distance = 2;
     .sex = G_OTHER;
+    end;
+
+OnTouch:
+    bedTouch();
     end;
 }

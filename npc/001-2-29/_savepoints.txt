@@ -1,7 +1,7 @@
 // This file is generated automatically. All manually added changes will be removed when running the Converter.
-// Map 008-2-13: Hurnscald Clinic saves
-008-2-13,29,27,0	script	#save_008-2-13_29_27	NPC_SAVE_POINT,0,0,{
-    savepointparticle .map$, .x, .y, NO_INN;
+// Map 001-2-29: First Floor saves
+001-2-29,29,28,0	script	#save_001-2-29_29_28	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, REDPLUSH_INN;
     close;
 
 OnInit:
@@ -13,8 +13,8 @@ OnTouch:
     bedTouch();
     end;
 }
-008-2-13,32,27,0	script	#save_008-2-13_32_27	NPC_SAVE_POINT,0,0,{
-    savepointparticle .map$, .x, .y, NO_INN;
+001-2-29,29,35,0	script	#save_001-2-29_29_35	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, REDPLUSH_INN;
     close;
 
 OnInit:
@@ -26,8 +26,8 @@ OnTouch:
     bedTouch();
     end;
 }
-008-2-13,29,31,0	script	#save_008-2-13_29_31	NPC_SAVE_POINT,0,0,{
-    savepointparticle .map$, .x, .y, NO_INN;
+001-2-29,29,42,0	script	#save_001-2-29_29_42	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, REDPLUSH_INN;
     close;
 
 OnInit:
@@ -39,8 +39,8 @@ OnTouch:
     bedTouch();
     end;
 }
-008-2-13,32,31,0	script	#save_008-2-13_32_31	NPC_SAVE_POINT,0,0,{
-    savepointparticle .map$, .x, .y, NO_INN;
+001-2-29,29,49,0	script	#save_001-2-29_29_49	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, REDPLUSH_INN;
     close;
 
 OnInit:
