@@ -9,7 +9,18 @@
     speech
         l("Ah, whom did you bring here?"),
         l("Isnt that the one Nard found on a float in the sea, with the sign of the Legion on his chest?");
-        l("I hope they know what they are doing. So, come on board. I am looking forward to go back to Woodland, haven't been there for a while.");
+    next;
+    mesc l("Travel to woodlands?");
+    if (askyesno() == ASK_YES)
+    {
+        speech
+            l("I hope they know what they are doing. So, come on board. I am looking forward to go back to Woodland, haven't been there for a while.");
+        next;
+        closeclientdialog;
+        setmount 0;
+        warp "008-1-1", 33, 63;
+        dispbottom l("After a tiring, yet fast, travel by Koga, you arrive at @@.", l("Woodlands"));
+    }
 
     close;
 

@@ -6,11 +6,13 @@
 
 001-2-40,36,46,0	script	Trozz#001-2-40	NPC_HUMAN_MALE_CHIEF_ARTIS_LEGION,{
     mesn;
-    mesq l("Hi.");
-
-    goto L_Close;
-
-L_Close:
+    mesq l("Hi. I am Trozz, and I am the chief of legion training in Artis.");
+    next;
+    mesn;
+    mesq l("If you want to challenge someone for a friendly match, you are at the right place.");
+    next;
+    mesn;
+    mesq l("But if you need to deal with more burocratic stuff, go talk to Q'Anon. He is the boss here.");
     close;
 
 OnInit:

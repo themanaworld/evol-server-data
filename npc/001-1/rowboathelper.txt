@@ -27,8 +27,9 @@
             l("Maybe you should try this phrase?"));
         if (askyesno() == ASK_YES)
         {
-            narrator(S_LAST_BLANK_LINE | S_LAST_NEXT,
-                l("'Enter strange phrase here.'"));
+            mesn strcharinfo(0);
+            mesc l("Sagratha is great.");
+            next;
 
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Hello, a rowboat is on his way to the beach. Please wait for a while for it to arrive.");

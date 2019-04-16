@@ -97,7 +97,9 @@
     }
     else if (getq(ArtisQuests_MonaDad) == 3)
     {
-        npctalkonce l("Thanks for finding daddy... I wish he spent more time with me..."); // TODO: Sophialla
+        npctalkonce any(
+            l("Thanks for finding daddy... I wish he spent more time with me..."),
+            l("Sagratha is great. Why the strange woman near the Legion building always say that to daddy...")); // TODO: Polish
     }
     else if (getq(ArtisQuests_MonaDad) == 2)
     {

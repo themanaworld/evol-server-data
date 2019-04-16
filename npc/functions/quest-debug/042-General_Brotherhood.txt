@@ -1,0 +1,27 @@
+// Mona quest debug
+// Authors:
+//    gumi
+//    monwarez
+//    jesusalva
+
+function	script	QuestDebug42	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "General_Brotherhood";
+        mes "---";
+        mes l("Quest state: @@", getq(General_Brotherhood));
+        next;
+
+        GenericQuestDebug General_Brotherhood,
+            l("Does not have the quest"), 0,
+            l("Contacted by Sopiahalla"), 1;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

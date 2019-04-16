@@ -6,9 +6,7 @@
 
 001-2-32,27,27,0	script	Serena	NPC_SERENA,{
     mesn;
-    mesq lg("Oh darling, what brought you here?");
-    //          ^^^^^^^
-    // Expresses familiarity or elderliness in relation to PC.
+    mesq lg("Oh darling, what brought you here?"); // TRANSLATORS: Darling - Expresses familiarity or elderliness in relation to PC.
 
     // <scratch>
     // [ PC]: I was just looking around.
@@ -47,9 +45,6 @@
     // Alt-Siege
     // The city is being attacked. Go help the warriors and town-guard.
 
-    goto L_Close;
-
-L_Close:
     close;
 
 OnInit:
