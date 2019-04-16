@@ -6,15 +6,59 @@
 // THIS IS A PLACEHOLDER!
 
 001-1,73,40,0	script	Sophialla#001-1	NPC_SOPHIALLA,{
+    .@q=getq(General_Brotherhood);
+    if (!.@q)
+    {
+        speech
+            l("Hello."),
+            l("Can't you see I am reading? Please go, please.");
+        close;
+    }
     speech
         l("Hello."),
         l("Can't you see I am reading? If you need something, tell me the secret password.");
-        lg("If you don't know it, just go, please.");
+    // TODO: Use a token to know password or whatever
+    select
+        l("Sorry to disturb you."),
+        rif(getq(ArtisQuests_MonaDad) == 3, l("Sagratha is great.")),
+        l("I don't know the password");
+    mes "";
+    if (@menu == 2)
+    {
+        speech
+            l("If you visit the sewers again... You'll find secret passages..."),
+            l("Look for the hideout, but tell no one about this. Then, say the password again.");
+        compareandsetq General_Brotherhood, 1, 2;
+    }
 
+    speech
+        lg("If you don't know it, just go, please.");
+    close;
+
+OnLegionComplete:
+    restorecam;
+    mesn "???";
+    mesc l("A strange voice seems to be calling out your name.");
+    next;
+    // NOTE: Sophialla is more than 15 tiles of distance from player
+    // Server refuses to send client data about where she is and that makes
+    // setcamnpc fail. This is why I set .alwaysVisible attribute to true.
+    // Note: you can work around with coordinates, but she won't be drawn.
+    setcamnpc "Sophialla#001-1";
+    mesn;
+    mesq l("Hey. ppst. I have something important to tell you.");
+    next;
+    mesn;
+    mesq l("I just can't remember what. But come talk to me later once devs becomes less lazy.");
+    setq General_Brotherhood, 1;
+    next;
+    restorecam;
+    closeclientdialog;
     close;
 
 OnInit:
     .sex = G_FEMALE;
     .distance = 2;
+    .alwaysVisible = true;
     end;
 }

@@ -15,9 +15,16 @@
         l("Do you have this commendatory letter?");
         closeclientdialog();
     if (askyesno() == 1) {
-        slide 204, 62;
-        movenpc("#Rowboat", 192, 25);
-        setmount 1;
+        if (getq(General_Brotherhood) >= 2)
+        {
+            slide 204, 62;
+            movenpc("#Rowboat", 192, 25);
+            setmount 1;
+        }
+        else
+        {
+            npctalk3 l("You're lying, aren't you? I heard nothing from you-know-whom!");
+        }
     close;
     }
 

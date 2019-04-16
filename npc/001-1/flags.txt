@@ -1,25 +1,17 @@
 // Evol scripts.
 // Author:
 //    Micksha
+//    Jesusalva
 // Description:
 //    The flags supposed to mark Rowboat unmounting spots in Artis
 // THIS IS A PLACEHOLDER!
 
 001-1,200,63,0	script	Flag#1	NPC_FLAG_L,{
     OnTouch:
-        narrator S_LAST_NEXT,
+        narrator
             l("You see a suspicious greenish flag. It reminds you of something you seem to have forgotten.");
+        close;
 }
 
-001-1,27,101,0	script	Flag#2	NPC_FLAG_R,{
-    OnTouch:
-        narrator S_LAST_NEXT,
-            l("You see a suspicious greenish flag. It reminds you of something you seem to have forgotten.");
-}
-
-001-1,68,139,0	script	Flag#3	NPC_FLAG_R,{
-    OnTouch:
-        narrator S_LAST_NEXT,
-            l("You see a suspicious greenish flag. It reminds you of something you seem to have forgotten.");
-}
-
+001-1,27,101,0	duplicate(Flag#1)	Flag#2	NPC_FLAG_R
+001-1,68,139,0	duplicate(Flag#1)	Flag#3	NPC_FLAG_R

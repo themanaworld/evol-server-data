@@ -32,11 +32,15 @@ OnUnTouch:
 
 OnTouch:
     .@enora = getq(ArtisQuests_Enora);
+    .@legion = getq(Artis_Legion_Progress);
+    .@brotherhood = getq(General_Brotherhood);
     if (.@enora < 11)
     {
         setfakecells 57, 41, 1;
         end;
     }
+    if (.@legion == 6 && !.@brotherhood)
+        addtimer 30, "Sophialla#001-1::OnLegionComplete";
     setfakecells 57, 41, 0;
     doorTouch;
 

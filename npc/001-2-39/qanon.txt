@@ -4,15 +4,85 @@
 //    Reid
 // Description:
 //    Artis's Legion of Aemil leader.
+// Variables:
+//    Artis_Legion_Progress
+// Values:
+//    5    Sent by Lozerk.
+//    6    Train forever (Cannot resume legion, must see brotherhood first)
+//          Technically, Q'Anon wants to see if player will recover his memory.
+//          After all, player memories might have something important.
+//    7    Arrived at Hurnscald (This means we can resume legion)
 
 001-2-39,34,41,0	script	Q'Anon	NPC_Q_ANON,{
+    function legionState;
+    function notaMember;
+    .@q=getq(Artis_Legion_Progress);
     mesn;
     mesq lg("It's been a while, girl!", "It's been a while, boy!");
+    next;
+    if (.@q < 5)
+        notaMember();
 
-    goto L_Close;
-
-L_Close:
+    select
+        rif(.@q == 5, l("Lozerk told me to talk to you and join the legion.")),
+        l("Thanks, sir Q'Anon.");
+    mes "";
+    switch (@menu)
+    {
+        case 1:
+            legionState();
+            break;
+        case 2:
+            mesn;
+            mesq lg("Make me proud, girl.", "Make me proud, boy.");
+            break;
+    }
     close;
+
+function notaMember {
+    mesn;
+    mesq col(l("*ahem*"), 9) + " " + l("Heh, did you saw me at the port? No?");
+    next;
+    mesn;
+    mesq l("This is how good we Legion Members are. I was informed of your arrival way before you left Drasil Island.");
+    next;
+    mesn;
+    mesq l("I usually would not care, but it is not every day a complete stranger arrives at Artis.");
+    next;
+    mesn;
+    mesq l("You're welcome to stay here as long as you wish. Just don't do anything stupid, like a riot, for example.");
+    close;
+    return;
+}
+
+function legionState {
+    mesn;
+    mesq l("Oh? And do you think you have what it takes to be a proud Legion Member?");
+    next;
+    mesn;
+    mesq lg("Listen, kid. Being a legion member is not a joke.");
+    next;
+    mesn;
+    mesq l("Hmm, why don't you go train a little more? We have several training rooms here.");
+    next;
+    mesn;
+    mesq l("Yes, I am authorizing you to use them as you deem fit, until you get stronger.");
+    next;
+    mesn;
+    mesq l("Also, build a reputation with the Legion. Talk to everyone. Help everyone. Prove me your worth!");
+    next;
+    mesn;
+    mesq l("Only after you prove yourself, you may join our ranks as a proud member! Hahah!");
+    setq Artis_Legion_Progress, 6;
+    // So, we probably should use Clan System for the major guilds.
+    // I guess major guilds are: Legion, Brotherhood
+    // minor guilds: Merchants, Thieves and Mages.
+
+    // It would be the commands below:
+    // join_clan(CLAN_LEGION);
+    // clan_leave();
+    return;
+}
 
 OnInit:
     .sex = G_MALE;

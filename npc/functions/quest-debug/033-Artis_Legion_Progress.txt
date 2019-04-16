@@ -19,7 +19,8 @@ function	script	QuestDebug33	{
             l("Finished  training"), 2,
             l("Sent to battle"), 3,
             l("Finished battle"), 4,
-            l("Sent to Q'Anon"), 5;
+            l("Sent to Q'Anon"), 5,
+            l("Indefinite Traning"), 6;
 
         if (@menuret < 0)
         {

@@ -130,7 +130,8 @@ function	script	GlobalQuestDebug	{
                 "Rumly", General_Rumly,
                 l("Narrator"), General_Narrator,
                 "Janus", General_Janus,
-                l("Cooking"), General_Cooking;
+                l("Cooking"), General_Cooking,
+                l("Brotherhood"), General_Brotherhood;
 
             switch (@menuret)
             {
