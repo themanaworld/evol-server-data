@@ -95,7 +95,7 @@
         areamonster(.@MAP_NAME$, 98, 92, 101, 94, l("Green Slime"), slime, 3);
         setq ArtisQuests_MonaDad, 2;
         warp(.@MAP_NAME$, 96,66);
-        addtimer(150, "Mundane::OnMove");
+        addtimer(150, instance_npcname(.name$, @MUNDANE_INSTID)+"::OnMove");
 
         // Important temporary variables
         @MUNDANE_OLDX=96;
@@ -117,16 +117,16 @@
 OnInit:
     .sex = G_MALE;
     .distance = 3;
+    .speed = 150;
     end;
 
-/*
 // If we are to use a fake-NPC (a monster which actually is a NPC, for example),
 // We need to uncomment this code block. As we are moving the actual NPC, this is
-// not needed (and harmful, too)
+// not needed (and harmful, too). Notes regarding disablenpc().
 OnInstanceInit:
-    disablenpc(instance_npcname(.name$));
+    //disablenpc(instance_npcname(.name$));
+    .speed = 150; // Double-sure
     end;
-*/
 
 // This functions serves two major purposes:
 //  1- Move Mundane accordingly
@@ -148,7 +148,7 @@ OnMove:
     // We actually won't move the NPC to your position, but to where you were last.
     // The NPC should not walk right in you because I thought it looks weird ingame.
     if (.@x == @MUNDANE_OLDX && .@y == @MUNDANE_OLDY) {
-        addtimer(150, "Mundane::OnMove");
+        addtimer(150, instance_npcname(.name$, @MUNDANE_INSTID)+"::OnMove");
         end;
     }
 
@@ -159,7 +159,8 @@ OnMove:
     //
     // Mind the note about instance_npcname and about ignoring your position
     // We should in future at least figure out the right direction to display too
-    movenpc(instance_npcname(.name$, @MUNDANE_INSTID), @MUNDANE_OLDX, @MUNDANE_OLDY);
+    //movenpc(instance_npcname(.name$, @MUNDANE_INSTID), @MUNDANE_OLDX, @MUNDANE_OLDY);
+    npcwalkto @MUNDANE_OLDX, @MUNDANE_OLDY;
 
     // We now update the misleading @MUNDANE_OLD* variable with your current
     // position.
@@ -167,7 +168,7 @@ OnMove:
     @MUNDANE_OLDY=.@y;
     // We must handle this every 150ms or so, which is player walk delay.
     // When you leave the map this timer will die.
-    addtimer(150, "Mundane::OnMove");
+    addtimer(150, instance_npcname(.name$, @MUNDANE_INSTID)+"::OnMove");
     end;
 
 OnPCDieEvent:
