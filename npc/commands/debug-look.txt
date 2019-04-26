@@ -41,7 +41,7 @@ function	script	BarberDebug	{
     function setRace {
         clear;
         setnpcdialogtitle l("Appearance Debug - Race");
-        mes l("Race") + ": " + Class;
+        mes l("Race") + ": " + Class + " (" + get_race(GETRACE_FULL) + ")";
         next;
         mes l("Please enter the desired race") + " (0-32767)";
         input .@r, 0, 0x7FFF;
@@ -60,7 +60,7 @@ function	script	BarberDebug	{
         mes l("Gender") + ": " + Sex;
         mes l("Hair style") + ": " + getlook(LOOK_HAIR);
         mes l("Hair color") + ": " + getlook(LOOK_HAIR_COLOR);
-        mes l("Race") + ": " + Class;
+        mes l("Race") + ": " + Class + " (" + get_race() + ")";;
         mes "---";
 
         next;
