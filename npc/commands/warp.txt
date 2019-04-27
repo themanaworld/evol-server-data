@@ -70,6 +70,7 @@ OnCall:
     }
 
     slide_or_warp(.@map$, .@x, .@y);
+    updateSpotlight();
     end;
 
 OnInit:
