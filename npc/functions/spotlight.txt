@@ -1,0 +1,102 @@
+// Evol functions.
+// Author:
+//    Jesusalva
+//    Micksha
+// Description:
+//    Update spotlight on caves
+// Variables:
+//    2 - the darkest mask
+//    4 - the average mask
+//    8 - the lightest mask
+
+// forced_update - if set to true, will ignore if the map is known as valid
+// (required for instance maps)
+// updateSpotlight ( {forced_update} )
+function	script	updateSpotlight	{
+    // A small delay of 80 ms in case player is changing map
+    // It will be cast twice when switching caves. This sleep prevents obscure bugs.
+    sleep2(80);
+
+    // Maps which this system
+    setarray .@mapz$,
+                      "001-3-0", "001-3-1", "001-3-2",
+                      "008-3-0", "008-3-1", "008-4-1";
+
+    getmapxy(.@m$, .@x, .@y, 0);
+    //debugmes "Begin";
+
+    // Is your map valid (or is the check skipped)
+    /*
+    if (!getarg(0,false))
+    {
+        if (array_find(.@mapz$, .@m$) < 0)
+            return;
+    }
+    */
+
+    // Retrieve default map masks
+    .@ms=getmapmask(.@m$);
+    //debugmes "Default: %d", .@ms;
+
+    // Which equipments provide bonuses?
+    setarray .@b_head, CandleHelmet;
+    setarray .@b_weapon, ManaTorch, TrainingWand, Torch;
+
+    // Calc your lighting score (it should NOT start on zero)
+    .@score=1;
+    if (array_find(.@b_head, getequipid(EQI_HEAD_TOP)) >= 0)
+        .@score+=1;
+    if (array_find(.@b_weapon, getequipid(EQI_HAND_R)) >= 0)
+        .@score+=1;
+    // TODO: Lighting scrolls
+
+    //debugmes "Score: %d", .@score;
+    //debugmes "Equips: %d and %d", getequipid(EQI_HEAD_TOP), getequipid(EQI_HAND_R);
+    //debugmes "Headvalue: %d", .@b_head[0];
+    //debugmes "Weappnvalue: %d, %d, %d", .@b_weapon[0], .@b_weapon[1], .@b_weapon[2];
+    // Sanitize score
+    .@score=min(3, .@score);
+
+    // Calculate and send new map mask
+    .@ms=.@ms|(2**.@score);
+    sendmapmask(.@ms);
+    //debugmes "Data sent: %d", .@ms;
+    return;
+}
+
+// MAIN FUNCTION - DO NOT REMOVE
+// Every NPC will be duplicating this one
+001-3-0,0,0,0	script	#SpotlightMaster	NPC_HIDDEN,0,0,{
+OnTouch:
+    updateSpotlight();
+    end;
+}
+
+
+// I'm too lazy to do this in different files and in the right spot.....
+
+// npc/001-3-0/_warps.txt
+001-3-0,196,35,0	duplicate(#SpotlightMaster)	#SPOT001-3-0_196_35	NPC_HIDDEN,2,2
+001-3-0,172,41,0	duplicate(#SpotlightMaster)	#SPOT001-3-0_172_41	NPC_HIDDEN,2,2
+001-3-0,162,40,0	duplicate(#SpotlightMaster)	#SPOT001-3-0_162_40	NPC_HIDDEN,2,2
+001-3-0,198,60,0	duplicate(#SpotlightMaster)	#SPOT001-3-0_198_60	NPC_HIDDEN,2,2
+001-3-0,152,55,0	duplicate(#SpotlightMaster)	#SPOT001-3-0_152_55	NPC_HIDDEN,2,2
+001-3-0,85,130,0	duplicate(#SpotlightMaster)	#SPOT001-3-0_85_130	NPC_HIDDEN,2,2
+
+// npc/001-3-1/_warps.txt
+001-3-1,24,58,0	duplicate(#SpotlightMaster)	#SPOT001-3-1_24_58	NPC_HIDDEN,2,2
+001-3-1,35,59,0	duplicate(#SpotlightMaster)	#SPOT001-3-1_35_59	NPC_HIDDEN,2,2
+001-3-1,30,19,0	duplicate(#SpotlightMaster)	#SPOT001-3-1_30_19	NPC_HIDDEN,2,2
+
+// npc/001-3-2/_warps.txt
+001-3-2,30,117,0	duplicate(#SpotlightMaster)	#SPOT001-3-2_30_117	NPC_HIDDEN,2,2
+
+// npc/008-3-0/_warps.txt
+008-3-0,130,113,0	duplicate(#SpotlightMaster)	#SPOT008-3-0_130_113	NPC_HIDDEN,2,2
+
+// npc/008-3-1/_warps.txt
+008-3-1,34,34,0	duplicate(#SpotlightMaster)	#SPOT008-3-1_34_34	NPC_HIDDEN,2,2
+
+// npc/008-4-1/_warps.txt
+008-4-1,175,18,0	duplicate(#SpotlightMaster)	#SPOT008-4-1_175_18	NPC_HIDDEN,2,2
+

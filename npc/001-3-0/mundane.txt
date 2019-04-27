@@ -96,6 +96,7 @@
         setq ArtisQuests_MonaDad, 2;
         warp(.@MAP_NAME$, 96,66);
         addtimer(150, instance_npcname(.name$, @MUNDANE_INSTID)+"::OnMove");
+        updateSpotlight(true);
 
         // Important temporary variables
         @MUNDANE_OLDX=96;
