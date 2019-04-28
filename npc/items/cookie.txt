@@ -1,0 +1,18 @@
+// Evol script.
+// Author:
+//    Jesusalva
+//    Reid (?)
+// Description:
+//    Prevents cookie from being used for too long
+
+-	script	#DeliciousCookie	NPC_HIDDEN,{
+    end;
+
+OnPCLogoutEvent:
+OnUnequip:
+    if (getequipid(EQI_HEAD_MID) == DeliciousCookie)
+        unequip(EQI_HEAD_MID);
+    end;
+
+}
+
