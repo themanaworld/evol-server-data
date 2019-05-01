@@ -3,10 +3,12 @@
 //    Reid
 //    Jesusalva
 // Description:
-//    A rich girl holding a candle. Her father went to examine weird noises on
-//    sewers and still haven't come back. Her mother is gone, but it is not clear
-//    if she died, abandoned them, or something else.
+//    A rich girl holding a candle. Her father went to examine weird noises in the
+//    sewers and still hasn't come back. Her mother is gone, but it is not clear
+//    whether she died, abandoned them, or something else.
 // Variable:
+//    MONA_TIME = gettimeparam(GETTIME_DAYOFMONTH) so you need 3 days
+//    MONA_REPEAT = How many times the quest was done
 //    ArtisQuests_MonaDad
 // Quest states:
 //    0  - Quest not started
@@ -35,14 +37,14 @@
         }
 
         speech S_LAST_NEXT | S_NO_NPC_NAME,
-            l("Daddy did not come back home... He said that he would be back for lunch but it has already been a week!"),
+            l("Daddy never came back home... He said that he would be back for lunch but it has already been two days!"),
             l("You have to find him, or else I will tell him that you did not help me.");
 
-        switch (select(l("You do not give me much options."), l("The elder ran away from you.")))
+        switch (select(l("You do not give me a lot of options."), l("Your dad ran away from you!")))
         {
             case 1:
                 speech S_FIRST_BLANK_LINE,
-                    l("He said that he would check why the manhole next to the house was doing weird sounds."),
+                    l("He said that he would check why weird noises were coming from the manhole next to the house."),
                     l("But he never returned."),
                     l("Please find my daddy...");
 
@@ -64,30 +66,41 @@
     // only to support Global Instances and in general is not a smart thing to do.
     function check_daddy_quest
     {
-        // Did you really brought Mundane to sewer exit (152, 56)?
+        // Did you really bring Mundane to sewer exit?
         // We need to add 1 tile in each direction of tolerance because addtimer()
         // is not exactly what I would call “a reliable way to do stuff”
         // Note that @variables sometimes get erasen AT RANDOM.
         // If this problem happens, move it char variables.
         // (that might cause problems with logout though.)
         // Temporary variables give you a time limit to report back...
-        if (@MUNDANE_OLDX >= 151 && @MUNDANE_OLDX <= 153 &&
-            @MUNDANE_OLDY >= 55 && @MUNDANE_OLDY <= 57) {
-            // There's no need to check if instance still exists, because
-            // when the instance expires, you get warped to *somewhere*.
-            // This means the timer will die and MUNDANE_OLD* variables will stop
-            // being updated.
-            inventoryplace WoodenBow, 1;
-            speech 0x0,
-                l("Daddy finally came back home! He grabbed a snack and said he would be returning to the sewers."),
-                lg("He did said to you take this @@ as a gift. He says you are very skilled and will make a good use of his old weapon.",
-                   "He did said to you take this @@ as a gift. He says you are very skilled and will make a good use of his old weapon.",
-                    getitemlink(WoodenBow)),
-                l("He was never the same since mommy vanished...");
-            getitem WoodenBow, 1;
-            setq(ArtisQuests_MonaDad, 3);
-            close;
-        }
+        //
+        // There's no need to check if instance still exists, because
+        // when the instance expires, you get warped to *somewhere*.
+        // This means the timer will die and MUNDANE_OLD* variables will stop
+        // being updated.
+        .@success=false;
+
+        // Sewer mouths (warps to 001-1)
+        if (is_between(151, 153, @MUNDANE_OLDX) &&
+            is_between(55, 57, @MUNDANE_OLDY))
+            .@success=true;
+
+        if (is_between(195, 197, @MUNDANE_OLDX) &&
+            is_between(34, 36, @MUNDANE_OLDY))
+            .@success=true;
+
+        if (is_between(197, 199, @MUNDANE_OLDX) &&
+            is_between(59, 61, @MUNDANE_OLDY))
+            .@success=true;
+
+        if (is_between(84, 86, @MUNDANE_OLDX) &&
+            is_between(129, 131, @MUNDANE_OLDY))
+            .@success=true;
+
+        if (.@success)
+            return true;
+        else
+            return false;
     }
 
     // Here the script really starts
@@ -97,13 +110,51 @@
     }
     else if (getq(ArtisQuests_MonaDad) == 3)
     {
+        // Quest Repeat takes priority. Don't worry, you won't lose password unless
+        // you accept the quest again.
+        if (MONA_TIME <= gettimeparam(GETTIME_DAYOFMONTH)) {
+            find_daddy_quest();
+        }
+
+        // Sagratha is Great B-)
         npctalkonce any(
             l("Thanks for finding daddy... I wish he spent more time with me..."),
-            l("Sagratha is great. Why the strange woman near the Legion building always say that to daddy...")); // TODO: Polish
+            l("Sagratha is great. Why does the strange woman near the Legion building always say that to daddy...?")); // TODO: Polish
     }
     else if (getq(ArtisQuests_MonaDad) == 2)
     {
-        check_daddy_quest();
+        if (check_daddy_quest())
+        {
+            if (!MONA_REPEAT)
+            {
+                inventoryplace WoodenBow, 1;
+                speech 0x0,
+                    l("Daddy finally came back home! He grabbed a snack and said he would be returning to the sewers."),
+                    lg("He did say that I should give you this @@ as a gift. He says you are very skilled and will make good use of his old weapon.",
+                       "He did say that I should give you this @@ as a gift. He says you are very skilled and will make good use of his old weapon.",
+                        getitemlink(WoodenBow)),
+                    l("He has never been the same since mommy went away...");
+                getitem WoodenBow, 1;
+            }
+            else if (MONA_REPEAT == 10)
+            {
+                speech
+                    l("Daddy asked me to give you some money as a thank you for looking out for me."),
+                    l("I don't want you! I want daddy!");
+                mesc l("*sniff sniff*");
+                emotion E_SAD;
+                Zeny+=1000;
+            }
+            else
+            {
+                inventoryplace TrainingArrow, 100;
+                getitem TrainingArrow, min(MONA_REPEAT*20, 100);
+            }
+            setq(ArtisQuests_MonaDad, 3);
+            MONA_TIME=gettimeparam(GETTIME_DAYOFMONTH)+3;
+            MONA_REPEAT+=1;
+            close;
+        }
     }
     else
     {

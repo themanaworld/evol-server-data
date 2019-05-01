@@ -2,6 +2,7 @@
 // Authors:
 //    4144
 //    Reid
+//    Jesusalva
 // Description:
 //    Math functions
 
@@ -38,3 +39,12 @@ function	script	lognbaselvl	{
 
     return .@ret;
 }
+
+
+// result is: lower < target <= higher
+// is_between ( lower, higher, target)
+function	script	is_between	{
+    .@val=getarg(2);
+    return (getarg(0) < .@val && getarg(1) >= .@val);
+}
+

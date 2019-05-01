@@ -107,6 +107,40 @@ function	script	get_race	{
         return .@allskins$[.@g];
     else
         return .@allskins$[.@g] + " " + .@allraces$[.@g];
-
 }
 
+// gettimeparam(GETTIME_X)
+//   Returns the number of seconds/minutes/hours/days/months/years since 01/01/1970
+//   This is for truly daily quests, which doesn't imposes a timed wait in hours
+function	script	gettimeparam	{
+    .@p=getarg(0, GETTIME_MINUTE);
+
+    // Seconds (same as gettimetick(2) - use that instead)
+    .@t=gettimetick(2);
+    if (.@p == GETTIME_SECOND)
+        return .@t;
+
+    // Minutes (default)
+    .@t=.@t/60;
+    if (.@p == GETTIME_MINUTE)
+        return .@t;
+
+    // Hours
+    .@t=.@t/60;
+    if (.@p == GETTIME_HOUR)
+        return .@t;
+
+    // Days
+    .@t=.@t/24;
+    if (.@p == GETTIME_DAYOFMONTH)
+        return .@t;
+
+    // Months (estimative)
+    .@t=.@t/30;
+    if (.@p == GETTIME_MONTH)
+        return .@t;
+
+    // Years (estimative, unused, fallback)
+    .@t=.@t/12;
+    return .@t;
+}
