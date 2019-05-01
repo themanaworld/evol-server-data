@@ -37,8 +37,8 @@
     function rescue_mundane
     {
     speech(S_LAST_NEXT,
-        l("Scary... I am afraid of these Slimes, Rattos and Maggots... And worse, I am lost..."),
-        l("I already killed many strong monsters, but everyone has fears, right?!"),
+        l("Scary... I am afraid of all these Slimes, Rattos and Maggots... And worse, I am lost..."),
+        l("I was an archer of the Legion and shouldn't be scared of a few maggots, but everyone has fears, right?!"),
         l("My daughter is probably worried about me. Could you perhaps lead me out of here?"));
 
         switch (select(l("Yes, follow me!"), l("Not now. You see, I am also afraid of Slimes and Rattos!")))
@@ -49,17 +49,13 @@
             case 2:
                 speech(S_FIRST_BLANK_LINE,
                     l("That's too bad... Although I think you're lying."),
-                    l("If it is the latter, please take some courage and help me!"));
+                    l("If so, please take some courage and help me!"));
                 close;
                 break;
         }
         .@ID=getcharid(0);
         .@MAP_NAME$="mona@"+str(.@ID);
         @MUNDANE_INSTID = instance_create("001-3-0@a"+(.@ID), getcharid(3), IOT_CHAR);
-        //debugmes "You are "+str(.@ID);
-
-        //if (@MUNDANE_INSTID < 0) debugmes "Error: No instance ID";
-        //debugmes "new instance id: " + str(@MUNDANE_INSTID);
 
         // XXX - Important Note - XXX
         // We currently have only FOUR chars to name the map. "001-3-0" or "mundane" have 7 chars, so that cannot be used.
@@ -74,33 +70,35 @@
         if (.@instanceMapName$ == "") {
             speech(0x0,
                 l("Wait... You are that @@ from earlier, aren't you?", strcharinfo(0)),
-                l("If my memory serves me right, you died just before. Why don't you go out to buy better equipment?"));
+                l("If my memory serves me right, you were just defeated. Why don't you go out to buy better equipment?"));
             close;
         }
 
         // You have 5 minutes to complete the quest. This does not results in failure by itself, getq2 does that
         instance_set_timeout(300, 300, @MUNDANE_INSTID);
         instance_init(@MUNDANE_INSTID);
-        dispbottom(l("Mona Father's is right behind you. You have five minutes to bring him out of sewers!"));
+        dispbottom(l("Mona's father is right behind you. You have five minutes to bring him out of sewers!"));
 
-        // Not sure if Green Slimes are exactly what we want here - and shouldn't it be "Slime"? (mind upper-case)
-        areamonster(.@MAP_NAME$, 119, 51, 162, 85, l("Green Slime"), slime, 3);
-        areamonster(.@MAP_NAME$, 190, 65, 193, 68, l("Ratto"), Ratto, 5);
-        areamonster(.@MAP_NAME$, 90, 67, 92, 72, l("Cave Maggot"), CaveMaggot, 3);
-        areamonster(.@MAP_NAME$, 99, 106, 102, 111, l("Green Slime"), slime, 3);
-        areamonster(.@MAP_NAME$, 115, 93, 115, 75, l("Green Slime"), slime, 3);
-        areamonster(.@MAP_NAME$, 120, 85, 7, 2, l("Little Green Slime"), slime-littleslime, 7);
-        areamonster(.@MAP_NAME$, 114, 65, 121, 68, l("Cave Maggot"), CaveMaggot, 5);
-        areamonster(.@MAP_NAME$, 137, 76, 130, 87, l("Spider"), Spider, 4);
-        areamonster(.@MAP_NAME$, 98, 92, 101, 94, l("Green Slime"), slime, 3);
+        // Note: Difficulty is based on your level
+        .@BLVLBOOST=BaseLevel/10;
+        areamonster(.@MAP_NAME$, 119, 51, 162, 85, strmobinfo(1, slime), slime, 3+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 190, 65, 193, 68, strmobinfo(1, Ratto), Ratto, 5);
+        areamonster(.@MAP_NAME$, 90, 67, 92, 72, strmobinfo(1, CaveMaggot), CaveMaggot, 3+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 99, 106, 102, 111, strmobinfo(1, slime), slime, 3+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 115, 93, 115, 75, strmobinfo(1, slime), slime, 3+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 120, 85, 7, 2, strmobinfo(1, slime-littleslime), slime-littleslime, 7+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 114, 65, 121, 68, strmobinfo(1, CaveMaggot), CaveMaggot, 5+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 137, 76, 130, 87, strmobinfo(1, Spider), Spider, 4+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 98, 92, 101, 94, strmobinfo(1, slime), slime, 3+.@BLVLBOOST);
+
+        // Important temporary variables and move you accordingly
+        @MUNDANE_OLDX=.x;
+        @MUNDANE_OLDY=.y;
+        warp(.@MAP_NAME$, .x, .y);
+
         setq ArtisQuests_MonaDad, 2;
-        warp(.@MAP_NAME$, 96,66);
         addtimer(150, instance_npcname(.name$, @MUNDANE_INSTID)+"::OnMove");
         updateSpotlight(true);
-
-        // Important temporary variables
-        @MUNDANE_OLDX=96;
-        @MUNDANE_OLDY=66;
         close;
 
     }
@@ -113,20 +111,6 @@
     if (.@q == 0) quest_completed();
 
     hello;
-    end;
-
-OnInit:
-    .sex = G_MALE;
-    .distance = 3;
-    .speed = 150;
-    end;
-
-// If we are to use a fake-NPC (a monster which actually is a NPC, for example),
-// We need to uncomment this code block. As we are moving the actual NPC, this is
-// not needed (and harmful, too). Notes regarding disablenpc().
-OnInstanceInit:
-    //disablenpc(instance_npcname(.name$));
-    .speed = 150; // Double-sure
     end;
 
 // This functions serves two major purposes:
@@ -144,6 +128,8 @@ OnMove:
         // This check shouldn't be needed but better safe than sorry
         if (.@m$ == "001-1")
             dispbottom l("Mundane ran straight home. He must be missing his daughter.");
+        else
+            dispbottom l("Mundane ran away, he did not trust the path you chose.");
         end;
     }
     // We actually won't move the NPC to your position, but to where you were last.
@@ -154,13 +140,7 @@ OnMove:
     }
 
     // movenpc() will cause NPC to "jump" to player position.
-    // npcwalkto(x, y) could be better, but there are concerns about instance NPC,
-    // and the server code behind this function would need to be changed to actually
-    // use NPC walking animation (instead of just sliding it around).
-    //
-    // Mind the note about instance_npcname and about ignoring your position
-    // We should in future at least figure out the right direction to display too
-    //movenpc(instance_npcname(.name$, @MUNDANE_INSTID), @MUNDANE_OLDX, @MUNDANE_OLDY);
+    // npcwalkto(x, y) will make it walk to your position.
     npcwalkto @MUNDANE_OLDX, @MUNDANE_OLDY;
 
     // We now update the misleading @MUNDANE_OLD* variable with your current
@@ -172,6 +152,11 @@ OnMove:
     addtimer(150, instance_npcname(.name$, @MUNDANE_INSTID)+"::OnMove");
     end;
 
+OnPCLogoutEvent:
+    if (getq(ArtisQuests_MonaDad) != 2) end;
+    setq ArtisQuests_MonaDad, 1;
+    end;
+
 OnPCDieEvent:
     if (getq(ArtisQuests_MonaDad) != 2) end;
     setq ArtisQuests_MonaDad, 1;
@@ -181,15 +166,41 @@ OnPCDieEvent:
     // This will cause the NPC to "vanish", player is left to guess that he ran
     // back to where he originally was.
     // (ie. The NPC won't be fine without you if we have code to handle that).
+    // NOTE: Maybe we could send the NPC running back to his original position?
+    // For future thought and testing by anyone interested.
     getmapxy(.@m$, .@x, .@y, 0);
     if (.@m$ ~= "mona@*") {
         disablenpc(instance_npcname(.name$, @MUNDANE_INSTID));
     }
-
-    // Uncommenting the code piece will warp you back to your savepoint.
-    // It's better to don't use this if the previous code works.
-    //recovery();
-    //warp("Save",0,0);
     end;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 3;
+    .speed = 140;
+
+// Move Mundane every Sunday, Wednesday, and Friday
+// to be less repetitive, and save also where it is
+OnSun0000:
+OnWed0000:
+OnFri0000:
+    if (.begin)
+        delcells "MundaneProtection";
+
+    // Micksha may tweak this.
+    setarray .@valid_x, 96, 132, 150, 49;
+    setarray .@valid_y, 66,  86, 118, 47;
+    .@index=rand(0,getarraysize(.@valid_x)-1);
+    movenpc .name$, .@valid_x[.@index], .@valid_y[.@index];
+
+    // Create a 3x3 monster collision block over Mundane
+    setcells .map$, .x-3, .y-3, .x+3, .y+3, 6, "MundaneProtection";
+    .begin=true;
+    end;
+
+OnInstanceInit:
+    .speed = 140; // Double-sure
+    end;
+
 }
 

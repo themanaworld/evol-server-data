@@ -14,7 +14,8 @@ function	script	QuestDebug32	{
 
         GenericQuestDebug ArtisQuests_MonaDad,
             l("Does not have the quest"), 0,
-            l("Mona's dad is missing"), 1;
+            l("Mona's dad is missing"), 1,
+            l("Mona's dad was rescued"), 3;
 
         if (@menuret < 0)
         {
