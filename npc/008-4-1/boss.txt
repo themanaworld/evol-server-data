@@ -34,12 +34,15 @@ OnBossDeath:
     }
     else
     {
-        addtimer(10, "#BossCtrl_008-4-1::OnBegin");
+        $@MB_00841=-2;
+        areatimer("008-4-1", .@x-15, .@y-15, .@x+15, .@y+15, 10, "#BossCtrl_008-4-1::OnBossCheck");
+        addtimer(20, "#BossCtrl_008-4-1::OnBegin");
         mapannounce "008-4-1", "Boss deafeated by: " + strcharinfo(0), bc_all;
     }
     end;
 
 OnBossCheck:
+    @mb_BossId=-1;
     // TODO: Check if you really fought or was just lurking
     // Check if party is correct
     if (getcharid(1) != $@MB_00841)
@@ -47,7 +50,7 @@ OnBossCheck:
 OnBegin:
     @mb_BossId=GameBalance;
     @mb_SkillId=MG_COLDBOLT;
-    @mb_ItemId=Manana; // Placeholder
+    @mb_ItemId=MagicFeather; // Placeholder
     @mb_ItemAm=1;
     addtimer(15000, "#BossCtrl_008-4-1::OnFinish");
     end;

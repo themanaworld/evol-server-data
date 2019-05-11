@@ -6,7 +6,7 @@
 //    Contains master skills which can only be learnt after killing boss
 //    See also: <link to tmw forum topic>
 // Notes:
-//    Not exactly equal as Elvano proposal. I actually care for restrictions you know...
+//    Not exactly as Elvano proposal. I actually care for restrictions you know...
 // Variables:
 //  PERMANENT:
 //      MASTERBOOK_PAGES - How many pages your Master Book have.
@@ -16,7 +16,7 @@
 //  TEMPORARY:
 //      @mb_BossId  - Contains the MobID of the boss your party killed.
 //      @mb_SkillId - Contains the SkillID which can be learnt with the boss.
-//      @mb_ItemId  - Contains the Ink Id to write (or whatever)
+//      @mb_ItemId  - Contains the Feather Id to write (or whatever)
 //      @mb_ItemAm  - How many ink is required to write the skill
 //  Remember: @mb_BossId will be reset to zero after 15 seconds from boss death.
 //  Or upon logout. Or when changing maps. Temporary variables aren't reliable.
@@ -25,8 +25,8 @@
 //  Remember: A dialog prevents timer events from happening, but doesn't stops the timer.
 //    TODO: Currently no way to get skill name from database (add getskillinfo() to server-plugin please)
 //    TODO: Reset @mb_* when register_skill() finish
-//    TODO: Add Magic Ink
-//    TODO: When another party/player kills the boss, book should say so.
+//    TODO: You cannot get Magic Feather anywhere in the game (yet)
+//    TODO: See if the time (15s) is enough.
 
 -	script	#MasterBook	NPC_HIDDEN,{
 
@@ -35,19 +35,30 @@
 
         setnpcdialogtitle l(.book_name$);
 
+        // If boss is set, but is negative, this means somebody else defeated it
+        if (@mb_BossId < 0)
+        {
+            mesc l("You did not defeat the boss, you can't learn any skills.");
+            @mb_BossId=0;
+            close;
+        }
+
+        // Report the boss you killed, and the boss level
         .@mb_lvl=strmobinfo(3, @mb_BossId);
         mesc l("You just defeated the following boss: @@ (Lv. @@)", strmobinfo(1, @mb_BossId), .@mb_lvl);
-        // Check if all reqs are met
+
         // The boss must have a skill
         if (!@mb_SkillId)
         {
             mesc l("But there is no skill to be learnt from this boss.");
+            @mb_BossId=0;
             close;
         }
         // You must have free pages
         if (array_entries(MASTERBOOK_SKILL) >= MASTERBOOK_PAGES)
         {
             mesc l("But you ran out of empty pages on this book.");
+            @mb_BossId=0;
             close;
         }
         // TODO: Party Level Range
@@ -55,12 +66,14 @@
         if (BaseLevel+30 < .@mb_lvl)
         {
             mesc l("But you are out of the boss level range.");
+            @mb_BossId=0;
             close;
         }
         // You must have enough materials
         if (countitem(@mb_ItemId) < @mb_ItemAm)
         {
             mesc l("But you do not have enough Magic Ink. (You need: @@ @@)", @mb_ItemAm, getitemlink(@mb_ItemId));
+            //@mb_BossId=0;
             close;
         }
 
@@ -79,6 +92,7 @@
             closeclientdialog;
             dispbottom l("You have learnt the skill.");
         }
+        @mb_BossId=0;
         close;
     }
 
