@@ -35,12 +35,12 @@ function	script	initmovegraph	{
 function	script	findmovegraphlabel	{
     if (!getargcount())
     {
-        debugmes "findmovegraphlabel: no argument";
+        consolemes(CONSOLEMES_DEBUG, "findmovegraphlabel: no argument");
         return -1;
     }
     if (!isstr(getarg(0)))
     {
-        debugmes "findmovegraphlabel: need string argument";
+        consolemes(CONSOLEMES_DEBUG, "findmovegraphlabel: need string argument");
         return -1;
     }
 
@@ -144,7 +144,7 @@ function	script	execmovecmd	{
         }
         else
         {
-            debugmes "execmovecmd: unknown WARP destination label: " + .@cmd$[1];
+            consolemes(CONSOLEMES_DEBUG, "execmovecmd: unknown WARP destination label: " + .@cmd$[1]);
         }
     }
     else if (.@cmd$[0] == "call")
@@ -152,7 +152,7 @@ function	script	execmovecmd	{
         switch (getarraysize(.@cmd$))
         {
             case 1:
-                debugmes "execmovecmd: CALL command needs some parameters";
+                consolemes(CONSOLEMES_DEBUG, "execmovecmd: CALL command needs some parameters");
                 return 0;
             case 2:
                 return callfunc(.@cmd$[1]);
@@ -176,7 +176,7 @@ function	script	execmovecmd	{
     else if (.@cmd$[0] == "debugmes")
     {
         deletearray .@cmd$[0], 1;
-        debugmes implode(.@cmd$, " ");
+        consolemes(CONSOLEMES_DEBUG, implode(.@cmd$, " "));
     }
     else if (.@cmd$[0] == "flags")
     {
@@ -196,7 +196,7 @@ function	script	execmovecmd	{
     }
     else
     {
-        debugmes "Unknown move graph cmd: " + .@cmd$[0];
+        consolemes(CONSOLEMES_DEBUG, "Unknown move graph cmd: " + .@cmd$[0]);
     }
     return 0;
 }
@@ -226,7 +226,7 @@ function	script	getnextmovecmd	{
 function	script	getrandompoint	{
     if (getargcount() < 4)
     {
-        debugmes "error: getrandompoint(x1, y1, x2, y2) takes 4 arguments";
+        consolemes(CONSOLEMES_DEBUG, "error: getrandompoint(x1, y1, x2, y2) takes 4 arguments");
         return -1;
     }
 
@@ -264,7 +264,7 @@ function	script	getrandompoint	{
                 goto L_Found;
 
     // finally, if we don't find anything
-    debugmes "error: getrandompoint: cannot find walkable cell in rectangle [(" + .@x1 + ","  + .@y1 + ") , (" + .@x2 + "," + .@y2 + ")]";
+    consolemes(CONSOLEMES_DEBUG, "error: getrandompoint: cannot find walkable cell in rectangle [(" + .@x1 + ","  + .@y1 + ") , (" + .@x2 + "," + .@y2 + ")]");
     return -1;
 
 L_Found:
@@ -282,7 +282,7 @@ L_Found:
 function	script	mg_npcwalkto	{
     if (getargcount() < 2)
     {
-        debugmes "usage: mg_npcwalkto(x1,y1[,x2,y2])";
+        consolemes(CONSOLEMES_DEBUG, "usage: mg_npcwalkto(x1,y1[,x2,y2])");
         return -1;
     }
 

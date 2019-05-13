@@ -38,7 +38,7 @@ function	script	slide_or_warp	{
 
     if (!isloggedin(.@aid)) {
         if ((.@aid = playerattached()) == 0) {
-            debugmes("slide_or_warp: no player attached!");
+            consolemes(CONSOLEMES_DEBUG, "slide_or_warp: no player attached!");
             return false;
         }
     }

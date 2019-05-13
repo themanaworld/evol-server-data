@@ -146,7 +146,7 @@ function	script	speech	{
 // Show debug message if .debug variable of NPC is set to 1
 function	script	npcdebug	{
     if (getvariableofnpc(.debug, strnpcinfo(3)))
-        debugmes strnpcinfo(3) + ": " + getarg(0);
+        consolemes(CONSOLEMES_DEBUG, strnpcinfo(3) + ": " + getarg(0));
     return;
 }
 

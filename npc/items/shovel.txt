@@ -36,7 +36,7 @@
     function AddDigRect {
         if (getargcount() < 5)
         {
-            debugmes "usage: AddDigRect(map$,x1,y1,x2,y2)";
+            consolemes(CONSOLEMES_ERROR, "usage: AddDigRect(map$,x1,y1,x2,y2)");
             return 0;
         }
         .@map$ = str(getarg(0));
@@ -201,7 +201,7 @@ OnInit:
 function	script	shovel_addquest	{
     if (getargcount() < 4)
     {
-        debugmes "usage: shovel_addquest(map$,x,y,func$)";
+        consolemes(CONSOLEMES_ERROR, "usage: shovel_addquest(map$,x,y,func$)");
         return 0;
     }
     .@map$ = str(getarg(0));
@@ -219,7 +219,7 @@ function	script	shovel_addquest	{
 function	script	shovel_adddigrect	{
     if (getargcount() < 5)
     {
-        debugmes "usage: shovel_adddigrect(map$,x1,y1,x2,y2)";
+        consolemes(CONSOLEMES_ERROR, "usage: shovel_adddigrect(map$,x1,y1,x2,y2)");
         return 0;
     }
     .@map$ = str(getarg(0));

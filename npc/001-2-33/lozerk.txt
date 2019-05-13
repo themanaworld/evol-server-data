@@ -143,7 +143,7 @@
     {
         .@legion_progress = getq(Artis_Legion_Progress);
         .@enora  = getq(ArtisQuests_Enora);
-        debugmes .@legion_progress + " " + .@enora;
+        consolemes(CONSOLEMES_DEBUG, .@legion_progress + " " + .@enora);
         select
             rif((.@legion_progress == 0) && (.@enora == 11), lg("Enora sent me here.")),
             rif(.@legion_progress == 2, lg("I'm done with my training.")),

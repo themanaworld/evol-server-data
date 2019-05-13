@@ -730,10 +730,10 @@ function	script	HerculesSelfTestHelper	{
     callsub(OnCheckStr, "sprintf (positional)", sprintf("'%2$s' '%1$c'", "First", "Second"), "'Second' 'F'");
 
     if (.errors) {
-        debugmes "Script engine self-test   [ \033[0;31mFAILED\033[0m ]";
-        debugmes "**** The test was completed with " + .errors + " errors. ****";
+        consolemes(CONSOLEMES_DEBUG, "Script engine self-test   [ \033[0;31mFAILED\033[0m ]");
+        consolemes(CONSOLEMES_ERROR, "**** The test was completed with " + .errors + " errors. ****");
     } else {
-        debugmes "Script engine self-test   [ \033[0;32mPASSED\033[0m ]";
+        consolemes(CONSOLEMES_DEBUG, "Script engine self-test   [ \033[0;32mPASSED\033[0m ]");
     }
     return .errors;
     end;
@@ -778,8 +778,8 @@ OnReportError:
     .@val$ = getarg(1,"");
     .@ref$ = getarg(2,"");
     if (.errors == 1)
-        debugmes "**** WARNING: Any self-test results past this point are unreliable because of previous errors. ****";
-    debugmes "Error: "+.@msg$+": '"+.@val$+"' (found) != '"+.@ref$+"' (expected)";
+        consolemes(CONSOLEMES_ERROR, "**** WARNING: Any self-test results past this point are unreliable because of previous errors. ****");
+    consolemes(CONSOLEMES_ERROR, "Error: "+.@msg$+": '"+.@val$+"' (found) != '"+.@ref$+"' (expected)");
     ++.errors;
     //end;
     return;

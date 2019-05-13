@@ -46,7 +46,7 @@
                 shop "Cashmere#Dye001-1";
                 break;
             default:
-                debugmes "Calypsan script error, tissue_type is incorrect";
+                consolemes(CONSOLEMES_ERROR, "Calypsan script error, tissue_type is incorrect");
                 break;
         }
         close;
