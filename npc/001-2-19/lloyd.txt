@@ -240,7 +240,7 @@ OnPCLoginEvent:
         BankVault += max(0, #MerchantBank);
         #MerchantBank = 0;
     }
-    if (getmap() ~= "*-3-*")
-        updateSpotlight();
+//    if (getmap() ~= "*-3-*")
+//        updateSpotlight();
     end;
 }
