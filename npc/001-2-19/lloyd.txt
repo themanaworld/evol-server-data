@@ -240,7 +240,8 @@ OnPCLoginEvent:
         BankVault += max(0, #MerchantBank);
         #MerchantBank = 0;
     }
-//    if (getmap() ~= "*-3-*")
-//        updateSpotlight();
+    // If you're inside a cave, update spotlights
+    if (strpos(getmap(), "-3-") >= 0)
+        updateSpotlight();
     end;
 }
