@@ -12,7 +12,7 @@ variables:
   GET_SOURCES_ATTEMPTS: "5"
   ARTIFACT_DOWNLOAD_ATTEMPTS: "5"
   MYSQL_ROOT_PASSWORD: root
-  packetver: "20150513"
+  packetver: "20170517"
 
 newlines:
   stage: build
