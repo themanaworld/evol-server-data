@@ -4,7 +4,7 @@
 // Description:
 //    Invisible tree NPCs for "Lazy Brother" quest
 // Variables:
-//    AtrilQuests_LazyBrother = 19  -- quest var
+//    ArtisQuests_LazyBrother = 19  -- quest var
 //    LazyBrother_TreesLeft = 15    -- how many trees left to search
 //    LazyBrother_TreeSearched[15]  -- whether given tree was searched
 //    LazyBrother_TreeWithBrother   -- the number of tree where he's hiding
@@ -99,7 +99,7 @@ L_FoundHim:
     close;
 }
 
-001-1,179,30,0	script	#AtrilTree1	NPC_KATJA_TREE,{
+001-1,179,30,0	script	#ArtisTree1	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(1);
     end;
 OnInit:
@@ -108,7 +108,7 @@ OnInit:
     end;
 }
 
-001-1,177,29,0	script	#AtrilTree2	NPC_KATJA_TREE,{
+001-1,177,29,0	script	#ArtisTree2	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(2);
     end;
 OnInit:
@@ -117,7 +117,7 @@ OnInit:
     end;
 }
 
-001-1,183,28,0	script	#AtrilTree3	NPC_KATJA_TREE,{
+001-1,183,28,0	script	#ArtisTree3	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(3);
     end;
 OnInit:
@@ -126,7 +126,7 @@ OnInit:
     end;
 }
 
-001-1,182,25,0	script	#AtrilTree4	NPC_KATJA_TREE,{
+001-1,182,25,0	script	#ArtisTree4	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(4);
     end;
 OnInit:
@@ -135,7 +135,7 @@ OnInit:
     end;
 }
 
-001-1,187,26,0	script	#AtrilTree5	NPC_KATJA_TREE,{
+001-1,187,26,0	script	#ArtisTree5	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(5);
     end;
 OnInit:
@@ -144,7 +144,7 @@ OnInit:
     end;
 }
 
-001-1,189,28,0	script	#AtrilTree6	NPC_KATJA_TREE,{
+001-1,189,28,0	script	#ArtisTree6	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(6);
     end;
 OnInit:
@@ -153,7 +153,7 @@ OnInit:
     end;
 }
 
-001-1,184,30,0	script	#AtrilTree7	NPC_KATJA_TREE,{
+001-1,184,30,0	script	#ArtisTree7	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(7);
     end;
 OnInit:
@@ -162,7 +162,7 @@ OnInit:
     end;
 }
 
-001-1,189,31,0	script	#AtrilTree8	NPC_KATJA_TREE,{
+001-1,189,31,0	script	#ArtisTree8	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(8);
     end;
 OnInit:
@@ -171,7 +171,7 @@ OnInit:
     end;
 }
 
-001-1,191,30,0	script	#AtrilTree9	NPC_KATJA_TREE,{
+001-1,191,30,0	script	#ArtisTree9	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(9);
     end;
 OnInit:
@@ -180,7 +180,7 @@ OnInit:
     end;
 }
 
-001-1,191,33,0	script	#AtrilTree10	NPC_KATJA_TREE,{
+001-1,191,33,0	script	#ArtisTree10	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(10);
     end;
 OnInit:
@@ -189,7 +189,7 @@ OnInit:
     end;
 }
 
-001-1,187,34,0	script	#AtrilTree11	NPC_KATJA_TREE,{
+001-1,187,34,0	script	#ArtisTree11	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(11);
     end;
 OnInit:
@@ -198,7 +198,7 @@ OnInit:
     end;
 }
 
-001-1,185,35,0	script	#AtrilTree12	NPC_KATJA_TREE,{
+001-1,185,35,0	script	#ArtisTree12	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(12);
     end;
 OnInit:
@@ -207,7 +207,7 @@ OnInit:
     end;
 }
 
-001-1,182,34,0	script	#AtrilTree13	NPC_KATJA_TREE,{
+001-1,182,34,0	script	#ArtisTree13	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(13);
     end;
 OnInit:
@@ -216,7 +216,7 @@ OnInit:
     end;
 }
 
-001-1,180,33,0	script	#AtrilTree14	NPC_KATJA_TREE,{
+001-1,180,33,0	script	#ArtisTree14	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(14);
     end;
 OnInit:
@@ -225,7 +225,7 @@ OnInit:
     end;
 }
 
-001-1,181,32,0	script	#AtrilTree15	NPC_KATJA_TREE,{
+001-1,181,32,0	script	#ArtisTree15	NPC_KATJA_TREE,{
     LazyBrotherTreeFunc(15);
     end;
 OnInit:
