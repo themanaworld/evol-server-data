@@ -3,384 +3,259 @@
 //    Ernando <ernando.quirino@hotmail.com>
 //    Lunovox <rui.gravata@gmail.com>
 //    Jesusalva <supremo@brasil.byethost22.com>
+//    Toams
 // Objective:        Complete Tutorial about Evol/Hercules mechanics
 // License:          GPL v3
 
 001-2-5,34,32,0	script	#EvolTutorial	NPC_NO_SPRITE,{
-OnRemoteHelp:
-    function TutorialMenu;
-    function Manaplus;
 
-    function ExplicaGrama;
-    function Monstros;
-    function Quests;
-    function Status;
-    function NPC;
-    function Magica;
-    function Regras;
-    function Temporada;
-    function Experiencia;
-    function ExplicaBagagem;
-    function ExplicaTrade;
-    function ExplicaBatalha;
-    function ExplicaDialogo;
-    function Estilo;
-    function Comandos;
-    function Teclado;
+    function read_book {
 
-    mesc lg("This book contains the knowledge collected by ukars about how the world works.");
-    next;
-    TutorialMenu();
+        setnpcdialogtitle l(.book_name$);
 
-function TutorialMenu {
-    do
-    {
-        mesn strcharinfo(0);
-        select
-            l("I wanted info about how to play."),
-            l("How do I make money?"),
-            l("Monsters."),
-            l("Quests."),
-            l("Status."),
-            l("NPCs."),
-            l("Magic."),
-            l("Rules."),
-            l("Weather & Seasons."),
-            l("Experience."),
-            l("No, thanks!");
-        mes "";
-        switch (@menu) {
-            case 1:
-                Manaplus(); break;
-            case 2:
-                ExplicaGrama(); break;
-            case 3:
-                Monstros(); break;
-            case 4:
-                Quests(); break;
-            case 5:
-                Status(); break;
-            case 6:
-                NPC(); break;
-            case 7:
-                Magica(); break;
-            case 8:
-                Regras(); break;
-            case 9:
-                Temporada(); break;
-            case 10:
-                Experiencia(); break;
-            default:
-                close(); break;
-        }
+            narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("This book contains the knowledge collected by ukars about how the world works.");
 
-        // Here we can repeat stuff
-    } while (true);
-    return;
-}
+            @menu = 0; // reset for the rif
 
-function Manaplus {
-    do
-    {
-        mesc l("What do you want to learn more about?");
-        next;
-        mesn strcharinfo(0);
-        select
-            l("How I see my items?"),
-            l("How trade with other players?"),
-            l("How hunt monsters?"),
-            l("How talk with someone?"),
-            l("Styles."),
-            l("Commands."),
-            l("Shortcuts."),
-            l("I changed my mind.");
-        mes "";
-        switch (@menu) {
-            case 1:
-                ExplicaBagagem(); break;
-            case 2:
-                ExplicaTrade(); break;
-            case 3:
-                ExplicaBatalha(); break;
-            case 4:
-                ExplicaDialogo(); break;
-            case 5:
-                Estilo(); break;
-            case 6:
-                Comandos(); break;
-            case 7:
-                Teclado(); break;
-            // case 8 is on the while condition
-        }
+            do
+            {
+                narrator S_NO_NPC_NAME,
+                    l("Please select a chapter:");
 
-    } while (@menu != 8);
-    return;
-}
+                mes "";
 
-// Anything below this line is copy-pasted from SG:ManaBird, a TMW-BR clone
-// It was translated by Google and therefore may have bad terms about ManaPlus interface.
-// The data was then adapted by Moubootaur Legends and might have features NYI in Evol
+                select
+                    rif(@menu == 1, "► ") + l("Ch 1 — How to make money."),
+                    rif(@menu == 2, "► ") + l("Ch 2 — Everything about monsters."),
+                    rif(@menu == 3, "► ") + l("Ch 3 — Quests."),
+                    rif(@menu == 4, "► ") + l("Ch 4 — Status."),
+                    rif(@menu == 5, "► ") + l("Ch 5 — NPC's."),
+                    rif(@menu == 6, "► ") + l("Ch 6 — Magic."),
+                    rif(@menu == 7, "► ") + l("Ch 7 — Rules."),
+                    rif(@menu == 8, "► ") + l("Ch 8 — Weather & Seasons."),
+                    rif(@menu == 9, "► ") + l("Ch 9 — Experience."),
+                    rif(@menu == 10, "► ") + l("Ch 10 — How I see my items?"),
+                    rif(@menu == 11, "► ") + l("Ch 11 — How trade with other players?"),
+                    rif(@menu == 12, "► ") + l("Ch 12 — How hunt monsters?"),
+                    rif(@menu == 13, "► ") + l("Ch 13 — How talk with someone?"),
+                    rif(@menu == 14, "► ") + l("Ch 14 — Change your appearing."),
+                    rif(@menu == 15, "► ") + l("Ch 15 — Commands."),
+                    rif(@menu == 16, "► ") + l("Ch 16 — Shortcuts.");
 
-function ExplicaGrama {
-    mes l("Merchants like to buy body parts of killed monsters and animals because they can make items and equipment.");
-    next;
-    mes l("Some others also like to buy them to keep as trophies. Either way, you can make some money with that.");
-    next;
-    mes l("You must find someone willing to buy, they usually will buy almost anything you have, even items which cannot be replaced, so be careful.");
-    next;
-    mes l("You must \"add\" the items you plan on selling, and then press \"sell\" to confirm. You'll have this time to review.");
-    mes l("Some, but not all, from the rare or non-replaceable items will have a warning when you try to sell them.");
-    next;
-    mes l("You can also make money ##Bdoing quests##b. Nobody pays better than people in need of help.");
-    next;
-    return;
-}
-function ExplicaBagagem {
-    mes l("You can see all your equipment by pressing the F3 key.");
-    next;
-    mes l("To equip or unequip an item, select it and press the 'Equip' or 'Unequip' button. You can not 'Equip' or 'Unequip' when talking to someone.");
-    next;
-    mes l("Dress up! Do not walk without clothes! Always wear your items! They leave you less vulnerable to attacks and stronger to defeat your opponents.");
-    next;
-    /*
-    // TODO: Evol doesn't have equipment set bonuses yet
-    mes "##B"+l("Remember that some equipment sets will give you hidden stat bonuses! So dress yourself in a fashion way, if possible!")+"##b";
-    next;
-    */
-    mes l("To discard an item you no longer want, select it and press the 'Discard' button. Generic items can be discarded or sold.");
-    mes l("Some special items cannot be traded, discarded, nor sold. With a right click, you can also protect normal items as if they were special ones.");
-    next;
-    mes l("There are three types of items.");
-    mes l("Those for consumption, equipment and generics.");
-    next;
-    mes l("Items for consumption, like potions, can only be used once.");
-    mes l("Once used, they will disappear from your inventory.");
-    next;
-    mes l("Equippable items are armour, weapons and accessories.");
-    mes l("They can be equipped to make your look more interesting or to improve some of its features.");
-    next;
-    mes l("Generic items are used for different purposes. In creating other items, to swap and sell, to collect, etc.");
-    next;
-    return;
-}
-function ExplicaTrade {
-    mes l("Press the 'R' key to ignore or accept business proposals. You and the other citizen who want to negotiate need to be in the configuration that accepts negotiations. if your configuration is 'Ignoring business proposals', then you will not receive the warning from any citizen wanting to negotiate with you, and you will not be able to initiate negotiations.");
-    next;
-    mes l("To negotiate with other citizens, you should click the second mouse button on some other citizen who is accepting negotiations, and select the 'Negotiation' option from the menu that will appear.");
-    next;
-    mes l("After you have confirmed the negotiation, a window with a vertical split will appear. The left side are the items you intend to offer in trading. The right side are the items that the other citizen intends to offer in trading.");
-    next;
-    mes l("Open your inventory window (F3 key) next to the trading window. Select an item you want to offer, and then press the Add button. To add money to the negotiation, enter the amount you will offer and press the Change button.");
-    next;
-    mes l("When you have added all the items and money you want, press the 'Propose Business' button. The other citizen must also press the 'Propose Business' button.");
-    next;
-    mes l("if the proposal is not convenient for you, just close the trading window to cancel the exchange of items and money. But if both press the 'Accept Negotiation' button, then the marketing will be finished.");
-    next;
-    mes l("Remember! You're trading things, not lending/borrowing them. You are solely responsible for everything you own.");
-    next;
-    return;
-}
-// TODO: We have over nine instructions here. You usually can only memorise from three to five at a time!
-function ExplicaBatalha {
-    mes l("Note down. To hunt a target you must click the primary mouse button on it. Avoid fighting monsters or citizens much stronger than you. ##BYou will lose experience if you are defeated.##b");
-    next;
-    mes l("Within the cities is a place safe enough not to be attacked by another person (except during wars). But outside of them there are some places where the citizen can be attacked by enemies from other realms, or even by someone from the same realm.");
-    next;
-    mes l("There are some stones scattered around the world that mark your point of return in case of defeats. Some ship chests may also serve as a return point. You can also select some beds in case of defeats.");
-    next;
-    mes l("Almost all creatures drop useful items when defeated. To get the dropped item press the 'Z' key next to the item or click the primary button on the item.");
-    next;
-    mes l("To focus on a creature, press the 'A' key. To focus on another citizen, press the 'Q' key. To attack the focused target press the 'X' key or click the primary button on the creature.");
-    next;
-    mes l("To focus on an NPC, press the 'N' key. To talk to him press the 'T' key.");
-    next;
-    mes l("To defocus or stop attacking, press Shift + A.");
-    next;
-    mes l("You can, however, use ##BCtrl##b to auto-select a monster and attack them. This usually also collects drops, but press Z to be sure.");
-    next;
-    return;
-}
-function ExplicaDialogo {
-    mes l("To display the dialog box with other citizens, press the F7 key.");
-    next;
-    mes l("To speak in public select the 'General' tab. It serves to talk to people who are appearing on your screen.");
-    next;
-    mes l("To speak privately with someone, click the second mouse button on the citizen and select the 'Whisper' option.");
-    next;
-    mes l("In order to enter a message press the 'Enter' key, this will display the white box of typing. Type your message there and press 'Enter' again to send your speech.");
-    next;
-    mes l("To speak privately to a friend who is not appearing on your screen, type the command '##B /q Citizen Name ##b' and press 'Enter'. This command will open a long-distance dialog that has the name of who you want to talk to. Select this new tab and send your message through it.");
-    next;
-    //mes l("And by last, to speak to everyone online, besides whoever might be idling on Discord, select the '#world' tab.");
-    mes l("And by last, to speak to everyone online, besides whoever might be idling on IRC, select the '#irc' tab.");
-    next;
-    mes l("But be careful: do not scream when using a lot of capital letters, and do not keep repeating the lines, and above all DO NOT SPAM, or you may be severely penalized.");
-    next;
-    return;
-}
-function Monstros {
-    mes l("Monsters are everywhere. They're a plague we're trying to get rid of.");
-    next;
-    mes l("There are three types of monsters: the aggressive, the neutral, and the collaborative.");
-    next;
-    mes l("Aggressors always know when they are in danger! Therefore, they are always on standby, attacking anyone who appears ahead.");
-    next;
-    mes l("Neutral monsters do not have such a sense of danger.");
-    mes l("They will not attack anyone unless they are attacked first.");
-    next;
-    mes l("Normally, collaborative behave like neutral monsters. Unless some partner of the same species is in danger, at which point they all take an aggressive stance against the aggressor.");
-    mes l("It's always good to see if you have a lot of them around before you think about attacking one!");
-    next;
-    mes "\""+l("Also, most monsters get enraged and will attack whoever is closest to them, regardless of anything else.");
-    mes l("Not all monsters will do this, but most will. So if you see a monster running after a player and you stand in the way...");
-    mes l("...It'll most likely attack you, instead.")+"\"";
-    next;
-    mes l("One last thing to keep in mind... If you are surrounded, you'll suffer an agility and defense penalty.");
-    mes l("But if you and other players surrounds the monster instead, they'll suffer the same penalties!");
-    mes l("Any boss which was previously unhittable, can be hit with appropriate number of attackers.");
-    next;
-    return;
-}
-function Estilo {
-    mes l("NPC stylists will cut your hair!");
-    mes l("They are known to use a revolutionary hair growth formula.");
-    next;
-    return;
-}
-function Quests {
-    mes l("There are people in the world who need help!");
-    mes l("Most of these people will not think twice before giving a nice reward to anyone who helps them.");
-    mes l("So be nice and help people along the way!");
-    next;
-    mes l("Usually, they'll have an exclamation mark over their heads. But some quests are hidden, so talk to people and have fun!");
-    next;
-    return;
-}
-function NPC {
-    mes l("NPCs(Non Playable Characters) or non-playable characters are characters that are always in the game, offering a wide variety of reactions, from a simple friendly conversation to a desperate request for help.");
-    next;
-    mes l("##BIMPORTANT:##b People usually doesn't shout, they talk. Because this, if you are too far, an NPC won't hear you.");
-    mes l("When this is the case, you should get closer to the NPC, until they hear you.");
-    mes l("If you are above the NPC and they still doesn't hear you, this mean they are deaf - you should report this!");
-    next;
-    return;
-}
-function Comandos {
-    mes l("/ clear clears the text box.");
-    mes l("/ whisper [name] allows you to send a private message to the player. if [name] contains spaces, it must be enclosed in quotation marks.");
-    //mes l("/who mostra o número de jogadores conectados no momento.");
-    mes l("/ present shows the number of people in the neighbourhood.");
-    mes l("/ where shows the name of the map you are in.");
-    mes l("/ help explains how to use all client commands.");
-    mes l("@commands lists even more advanced commands, but you can't use all of them.");
-    next;
-    mes l("@resync will help when the client starts lagging. If you see an attack but no monsters, that's the cause.");
-    //mes l("@lang allows you to change game language, anytime, anywhere.");
-    mes l("@rules will tell you all the rules once again.");
-    //mes l("@toevent will warp you to event island, if an event is happening, of course.");
-    //mes l("@discord allows you to setup Discord integration settings.");
-    //mes l("@ucp allows you to manage your account, eg. recover lost email.");
-    //next;
-    //mes l("@resyncall is the more powerful version of @resync. It'll reload everything, even the clouds if needed.");
-    mes l("@info and @tutorial will show this informative and absurdely big tutorial book.");
-    next;
-    return;
-}
-function Status {
-    mes l("People vary greatly in the amount of strength, agility, dexterity, intelligence, vitality and luck.");
-    next;
-    mes l("@@ helps you carry more items and also gives you a more forceful blow, but ends up not being very interesting if you focus on weapons that use projectiles, such as the bow.", b(l("Strength")));
-    mes l("Greater @@ allows you to attack faster and has a greater chance of evading attacks.", b(l("agility")));
-    mes l("Your @@ determines your ability to hit monsters and is valuable to players who prefer weapons that use projectiles.", b(l("dexterity")));
-    next;
-    mes l("@@ determines how many blows you can take before you die. It also affects status effects, like poison.", b(l("Vitality")));
-    mes l("@@ is very useful for alchemy and magic, but nowadays there are few opportunities to use it.", b(l("Intelligence")));
-    //mes l("Your @@ determines several small things, including critical attacks and, limited to a certain extent, affect drop rates.", b(l("luck")));
-    mes l("Your @@ determines several small things, including critical attacks, but DOES NOT affect drop rates.", b(l("luck")));
-    next;
-    mes l("A critical hit deals added damage and disregards defense. A critical always hit, although it can be blocked just fine.");
-    mes l("On a side note, more defense is always good, but the damage won't decrease on the same rate that defense raises.");
-    mes l("Also note that if you are in overweight, your natural regen will halt. 90% in weight, and you won't be able to attack.");
-    next;
-    mes l("I recommend that you train your agility a great deal, since most monsters out there aren't really amazing at hitting you.");
-    mes l("For now do not take too much time to work on your intelligence, after all, magic use is very restricted nowadays.");
-    next;
-    mes l("You can allocate point on those attributes every time you level up.");
-    mes l("There's also a job level, which produces green sparkles when you level it.");
-    mes l("Job Level and certain equips can affect your status. You'll see the modifiers with a + sign.");
-    mes l("Do note that Job Level gives you skill points, and the status bonuses are really minor.");
-    next;
-    return;
-}
-function Magica {
-    mes l("Magic was banned for lore reasons? Seriously, after the mana war, only small tricks are allowed.");
-    next;
-    mes l("It was heard about some adventurers whom obtained and use advanced magic, but that is still seen with bad eyes.");
-    next;
-    return;
-}
-function Teclado {
-    mes l("There are many key combinations, press F1 to see a short list of them!");
-    next;
-    return;
-}
-function Temporada {
-    /*
-    // TODO: Implement Day/Night Cycle
-    mes l("First of, there's a day/night cycle on the game.");
-    if (is_night())
-        mes l("It's currently night, that's why Candor is dark.");
-    else
-        mes l("It's currently day, but when night falls, Candor will become darker.");
-    next;
-    mes l("During night, the monsters usually respawn faster. That can be a problem with aggressive monsters.");
-    mes l("I also hear fisherman likes to fish at night. They say the catch is bigger, if you understand me.");
-    next;
-    */
-    /*
-    // TODO: Implement Weather Cycle
-    mes l("There's also weather, meaning it can rain, snow, or even happen a sandstorm. They are usually cosmetic, but...");
-    mes l("...who knows if there isn't a secret in that?");
-    next;
-    */
-    /*
-    // TODO: Implement Season Cycle
-    mes l("Besides this, there is Seasons. You know, summer, autumn, winter and spring.");
-    mes l("Each season unlocks a set of quests and drops which can only be obtained on the season.");
-    next;
-    mes l("Think on Season Quests as a yearly quest which you have three months to do.");
-    mes l("We follow north hemisphere seasons in case you're wondering.");
-    next;
-    */
-    // We commented everything so we need something here
-    mes l("There is no day/night, weather, or season cycle in Evol... yet.");
-    next;
-    return;
-}
-function Experiencia {
-    mes l("Experience can be gained by completing quests and killing monsters. When you accumulate enough experience, you'll level up!");
-    next;
-    mes l("Each level up will buff your base stats, and give you stats points to allocate. However, there is Job Level.");
-    next;
-    mes l("There's also a job level, which produces green sparkles when you level it.");
-    mes l("Job Level and certain equips can affect your status. You'll see the modifiers with a + sign.");
-    next;
-    /*
-    // TODO: Evol doesn't have experience per mob level adjustment yet, nor have @monsterinfo for all players
-    mes l("Also, you'll get more experience by killing monsters stronger than you, and less experience by killing monsters weaker than you.");
-    mes l("You can find out the monster strength by using \"@monsterinfo <English Monster Name>\". Check the level in it!");
-    next;
-    */
-    return;
-}
-function Regras {
-    callfunc "GameRules";
-    next;
-    return;
-}
+                switch (@menu) {
+                    case 1:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("Merchants like to buy body parts of killed monsters and animals because they can make items and equipment."),
+                            l("Some others also like to buy them to keep as trophies. Either way, you can make some money with that."),
+                            l("You must find someone willing to buy, they usually will buy almost anything you have, even items which cannot be replaced, so be careful."),
+                            l("You must \"add\" the items you plan on selling, and then press \"sell\" to confirm. You'll have this time to review."),
+                            l("Some, but not all, from the rare or non-replaceable items will have a warning when you try to sell them."),
+                            l("You can also make money %s. Nobody pays better than people in need of help.", b(l("by doing quests")));
+                        break;
+                    case 2:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("Monsters are everywhere. They're a plague we're trying to get rid of."),
+                            l("There are three types of monsters: the aggressive, the neutral, and the collaborative."),
+                            l("Aggressors always know when they are in danger! Therefore, they are always on standby, attacking anyone who appears ahead."),
+                            l("Neutral monsters do not have such a sense of danger."),
+                            l("They will not attack anyone unless they are attacked first."),
+                            l("Normally, collaborative monsters behave like neutral monsters. Unless someone of the same species is in danger, at which point they all take an aggressive stance against the aggressor."),
+                            l("It's always good to see if you have a lot of them around before you think about attacking one!"),
+                            l("Also, most monsters get enraged and will attack whoever is closest to them, regardless of anything else."),
+                            l("Not all monsters will do this, but most will. So if you see a monster running after a player and you stand in the way..."),
+                            l("...It'll most likely attack you, instead."),
+                            l("One last thing to keep in mind... If you are surrounded, you'll suffer an agility and defense penalty."),
+                            l("But if you and other players surrounds the monster instead, they'll suffer the same penalties!"),
+                            l("Any boss which was previously unhittable, can be hit with appropriate number of attackers.");
+                        break;
+                    case 3:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("There are people in the world who need help!"),
+                            l("Most of these people will not think twice before giving a nice reward to anyone who helps them."),
+                            l("So be nice and help people along the way!"),
+                            l("Usually, they'll have an exclamation mark over their heads. But some quests are hidden, so talk to people and have fun!");
+                        break;
+                    case 4:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("People vary greatly in the amount of strength, agility, dexterity, intelligence, vitality and luck."),
+                            l("%s helps you carry more items and also gives you a more forceful blow, but ends up not being very interesting if you focus on weapons that use projectiles, such as the bow.", b(l("Strength"))),
+                            l("Greater %s allows you to attack faster and has a greater chance of evading attacks.", b(l("agility"))),
+                            l("Your %s determines your ability to hit monsters and is valuable to players who prefer weapons that use projectiles.", b(l("dexterity"))),
+                            l("%s determines how many blows you can take before you die. It also affects status effects, like poison.", b(l("Vitality"))),
+                            l("%s is very useful for alchemy and magic, but nowadays there are few opportunities to use it.", b(l("Intelligence"))),
+                            l("Your %s determines several small things, including critical attacks, but DOES NOT affect drop rates.", b(l("luck"))),
+                            l("A critical hit deals added damage and disregards defense. A critical always hit, although it can be blocked just fine."),
+                            l("On a side note, more defense is always good, but the damage won't decrease on the same rate that defense raises."),
+                            l("Also note that if you are in overweight, your natural regen will halt. 90% in weight, and you won't be able to attack."),
+                            l("I recommend that you train your agility a great deal, since most monsters out there aren't really amazing at hitting you."),
+                            l("For now do not take too much time to work on your intelligence, after all, magic use is very restricted nowadays."),
+                            l("You can allocate point on those attributes every time you level up."),l("There's also a job level, which produces green sparkles when you level it."),
+                            l("Job Level and certain equips can affect your status. You'll see the modifiers with a + sign."),
+                            l("Do note that Job Level gives you skill points, and the status bonuses are really minor.");
+                        break;
+                    case 5:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("NPC's or non-playable characters are characters that are always in the game, offering a wide variety of reactions, from a simple friendly conversation to a desperate request for help."),
+                            l("%s People usually doesn't shout, they talk. Because this, if you are too far, an NPC won't hear you.",b(l("IMPORTANT:"))),
+                            l("When this is the case, you should get closer to the NPC, until they hear you."), l("If you are above the NPC and they still doesn't hear you, this mean they are deaf - you should report this!");
+                        break;
+                    case 6:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("Magic was banned for lore reasons? Seriously, after the mana war, only small tricks are allowed."),
+                            l("It was heard about some adventurers whom obtained and use advanced magic, but that is still seen with bad eyes.");
+                        break;
+                    case 7:
+                        mes "";
+                        callfunc "GameRules";
+                        break;
+                    case 8:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            /*
+                            // TODO: Implement Day/Night Cycle
+                            mes l("First of, there's a day/night cycle on the game.");
+                            if (is_night())
+                                mes l("It's currently night, that's why Candor is dark.");
+                            else
+                                mes l("It's currently day, but when night falls, Candor will become darker.");
+                            next;
+                            mes l("During night, the monsters usually respawn faster. That can be a problem with aggressive monsters.");
+                            mes l("I also hear fisherman likes to fish at night. They say the catch is bigger, if you understand me.");
+                            next;
+                            */
+                            /*
+                            // TODO: Implement Weather Cycle
+                            mes l("There's also weather, meaning it can rain, snow, or even happen a sandstorm. They are usually cosmetic, but...");
+                            mes l("...who knows if there isn't a secret in that?");
+                            next;
+                            */
+                            /*
+                            // TODO: Implement Season Cycle
+                            mes l("Besides this, there is Seasons. You know, summer, autumn, winter and spring.");
+                            mes l("Each season unlocks a set of quests and drops which can only be obtained on the season.");
+                            next;
+                            mes l("Think on Season Quests as a yearly quest which you have three months to do.");
+                            mes l("We follow north hemisphere seasons in case you're wondering.");
+                            next;
+                            */
+                            // We commented everything so we need something here
+                            l("There is no day/night, weather, or season cycle in TMW yet.");
+                        break;
+                    case 9:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("Experience can be gained by completing quests and killing monsters. When you accumulate enough experience, you'll level up!"),
+                            l("Each level up will buff your base stats, and give you stats points to allocate."),
+                            l("There's also a job level, which produces green sparkles when you level it."),
+                            l("Job Level and certain equips can affect your status. You'll see the modifiers with a + sign.");
+                            /*
+                            // TODO: Evol doesn't have experience per mob level adjustment yet, nor have @monsterinfo for all players
+                            mes l("Also, you'll get more experience by killing monsters stronger than you, and less experience by killing monsters weaker than you.");
+                            mes l("You can find out the monster strength by using \"@monsterinfo <English Monster Name>\". Check the level in it!");
+                            next;
+                            */
+                        break;
+                    case 10:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("You can see all your equipment by pressing the F3 key."),
+                            l("To equip or unequip an item, select it and press the 'Equip' or 'Unequip' button. You can not 'Equip' or 'Unequip' when talking to someone."),
+                            l("Dress up! Do not walk without clothes! Always wear your items! They leave you less vulnerable to attacks and stronger to defeat your opponents."),
+                            /*
+                            // TODO: Evol doesn't have equipment set bonuses yet
+                            mes b(l("Remember that some equipment sets will give you hidden stat bonuses! So dress yourself in a fashion way, if possible!"));
+                            next;
+                            */
+                            l("To discard an item you no longer want, select it and press the 'Discard' button. Generic items can be discarded or sold."),
+                            l("Some special items cannot be traded, discarded, nor sold. With a right click, you can also protect normal items as if they were special ones."),
+                            l("There are three types of items."),
+                            l("Those for consumption, equipment and generics."),
+                            l("Items for consumption, like potions, can only be used once."),
+                            l("Once used, they will disappear from your inventory."),
+                            l("Equippable items are armour, weapons and accessories."),
+                            l("They can be equipped to make your look more interesting or to improve some of its features."),
+                            l("Generic items are used for different purposes. In creating other items, to swap and sell, to collect, etc.");
+                        break;
+                    case 11:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("Press the '###keyTrade;' key to ignore or accept business proposals. You and the other citizen who want to negotiate need to be in the configuration that accepts negotiations. if your configuration is 'Ignoring business proposals', then you will not receive the warning from any citizen wanting to negotiate with you, and you will not be able to initiate negotiations."),
+                            l("To negotiate with other citizens, you should click the second mouse button on some other citizen who is accepting negotiations, and select the 'Negotiation' option from the menu that will appear."),
+                            l("After you have confirmed the negotiation, a window with a vertical split will appear. The left side are the items you intend to offer in trading. The right side are the items that the other citizen intends to offer in trading."),
+                            l("Open your inventory window (###keyWindowInventory; key) next to the trading window. Select an item you want to offer, and then press the Add button. To add money to the negotiation, enter the amount you will offer and press the Change button."),
+                            l("When you have added all the items and money you want, press the 'Propose Trade' button. The other citizen must also press the 'Propose Trade' button."),
+                            l("If the proposal is not convenient for you, just close the trading window to cancel the exchange of items and money. But if both press the 'Accept Negotiation' button, then the marketing will be finished."),
+                            l("Remember! You're trading things, not lending/borrowing them. You are solely responsible for everything you own.");
+                        break;
+                    case 12:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("Note down. To hunt a target you must click the primary mouse button on it. Avoid fighting monsters or citizens much stronger than you. %s", b(l("You will lose experience if you are defeated."))),
+                            l("Within the cities is a place safe enough not to be attacked by another person (except during wars). But outside of them there are some places where the citizen can be attacked by enemies from other realms, or even by someone from the same realm."),
+                            l("There are some stones scattered around the world that mark your point of return in case of defeats. Some ship chests may also serve as a return point. You can also select some beds in case of defeats."),
+                            l("Almost all creatures drop useful items when defeated. To get the dropped item press the '###keyPickup;' key next to the item or click the primary button on the item."),
+                            l("To focus on a creature, press the '###keyTargetMonster;' key. To focus on another citizen, press the '###keyTargetPlayer;' key. To attack the focused target press the '###keyAttack;' key or click the primary button on the creature."),
+                            l("To focus on an NPC, press the '###keyTargetNPC;' key. To talk to him press the '###keyTalk;' key."),
+                            l("To defocus or stop attacking, press Shift + A."),
+                            l("You can, however, use '###keyTargetAttack;' to auto-select a monster and attack them. This usually also collects drops, but press '###keyPickup;' to be sure.");
+                        break;
+                    case 13:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("To display the dialog box with other citizens, press the '###keyWindowChat;' key."),
+                            l("To speak in public select the 'General' tab. It serves to talk to people who are appearing on your screen."),
+                            l("To speak privately with someone, click the second mouse button on the citizen and select the 'Whisper' option."),
+                            l("In order to enter a message press the '###keyChat;' key, this will display the white box of typing. Type your message there and press '###keyChat;' again to send your speech."),
+                            l("To speak privately to a friend who is not appearing on your screen, type the command '%s' and press '###keyChat;'. This command will open a long-distance dialog that has the name of who you want to talk to. Select this new tab and send your message through it.",b(l("/q [Player Name] "))),
+                            l("And by last, to speak to everyone online, besides whoever might be idling on IRC, select the '#irc' tab."),
+                            l("But be careful: do not scream by using a lot of capital letters, do not repeat yourself over and over, and above all DO NOT SPAM, or you may be severely penalized.");
+                        break;
+                    case 14:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("NPC stylists will cut your hair!"),
+                            l("They are known to use a revolutionary hair growth formula."),
+                            l("You will be amased by all the colors of hair dye they have.");
+                        break;
+                    case 15:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("You can execute commands by typing them in the chat window. They start with a '/' or '@' followed by the name of the command."),
+                            l("%s clears the text box.", b("/clear")),
+                            l("%s %s allows you to send a private message to the player. if [name] contains spaces, it must be enclosed in quotation marks.", b("/whisper"),l("[name]")),
+                            l("%s displays amount of currently connected players.", b("/who")),
+                            l("%s shows the number of people in the neighbourhood.", b("/present")),
+                            l("%s shows the name of the map you are in.", b("/where")),
+                            l("%s explains how to use all client commands.", b("/help")),
+                            l("%s lists even more advanced commands, but some of them can only be used by admins or GM's.", b("@commands")),
+                            l("%s will help when the client starts lagging. If you see an attack but no monsters, that's the cause.", b("@resync")),
+                            l("%s allows you to change game language, anytime, anywhere.", b("@lang")),
+                            l("%s will tell you all the rules once again.", b("@rules")),
+                            //mes l("@toevent will warp you to event island, if an event is happening, of course.");
+                            //mes l("@discord allows you to setup Discord integration settings.");
+                            //mes l("@ucp allows you to manage your account, eg. recover lost email.");
+                            //next;
+                            //mes l("@resyncall is the more powerful version of @resync. It'll reload everything, even the clouds if needed.");
+                            l("%s and %s will show this informative and absurdely big tutorial book." ,b("@info"),b("@tutorial"));
+                        break;
+                    case 16:
+                        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                            l("There are many key combinations, press F1 to see a short list of them!");
+                        break;
+                }
+
+            } while (true);
+        end;
+    }
+
+OnShelfUse:
+    if (openbookshelf())
+        read_book;
+    close;
+
+OnUse:
+    if (openbook())
+        read_book;
+    close;
+
 OnInit:
-    bindatcmd "info", "#EvolTutorial::OnRemoteHelp", 0, 0, 0;
-    bindatcmd "tutorial", "#EvolTutorial::OnRemoteHelp", 0, 0, 0;
+    .book_name$ = "Hitchiker's Guide To The Mana World";
+
+    bindatcmd "info", "#EvolTutorial::OnUse", 0, 0, 0;
+    bindatcmd "tutorial", "#EvolTutorial::OnUse", 0, 0, 0;
 
     .sex = G_OTHER;
     .distance = 1;
