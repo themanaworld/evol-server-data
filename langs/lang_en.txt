@@ -179,6 +179,9 @@ Copyright (C) 2010-2014 Evol Online
 %d item(s) removed. Player had only %d on %d items.
 %d item(s) removed. Player had only %d on %d items.
 
+%d items are dropped!
+%d items are dropped!
+
 %d items have been refined.
 %d items have been refined.
 
@@ -203,35 +206,74 @@ Copyright (C) 2010-2014 Evol Online
 %d%%
 %d%%
 
+%d: Accessory (Left)
+%d: Accessory (Left)
+
+%d: Accessory (Right)
+%d: Accessory (Right)
+
 %d: Body Armor
 %d: Body Armor
+
+%d: Costume Garment
+%d: Costume Garment
+
+%d: Costume Headgear (Low)
+%d: Costume Headgear (Low)
+
+%d: Costume Headgear (Mid)
+%d: Costume Headgear (Mid)
+
+%d: Costume Headgear (Top)
+%d: Costume Headgear (Top)
 
 %d: Garment
 %d: Garment
 
-%d: Left Accessory
-%d: Left Accessory
+%d: Hand (Left)
+%d: Hand (Left)
 
-%d: Left Hand
-%d: Left Hand
+%d: Hand (Right)
+%d: Hand (Right)
 
-%d: Lower Headgear
-%d: Lower Headgear
+%d: Headgear (Low)
+%d: Headgear (Low)
 
-%d: Mid Headgear
-%d: Mid Headgear
+%d: Headgear (Mid)
+%d: Headgear (Mid)
 
-%d: Right Accessory
-%d: Right Accessory
+%d: Headgear (Top)
+%d: Headgear (Top)
 
-%d: Right Hand
-%d: Right Hand
+%d: Refine All Equip (Costume)
+%d: Refine All Equip (Costume)
+
+%d: Refine All Equip (General)
+%d: Refine All Equip (General)
+
+%d: Refine All Equip (Shadow)
+%d: Refine All Equip (Shadow)
+
+%d: Shadow Accessory (Left)
+%d: Shadow Accessory (Left)
+
+%d: Shadow Accessory (Right)
+%d: Shadow Accessory (Right)
+
+%d: Shadow Armor
+%d: Shadow Armor
+
+%d: Shadow Shield
+%d: Shadow Shield
+
+%d: Shadow Shoes
+%d: Shadow Shoes
+
+%d: Shadow Weapon
+%d: Shadow Weapon
 
 %d: Shoes
 %d: Shoes
-
-%d: Top Headgear
-%d: Top Headgear
 
 %s
 %s
@@ -242,14 +284,38 @@ Copyright (C) 2010-2014 Evol Online
 %s %s %s
 %s %s %s
 
+%s %s allows you to send a private message to the player. if [name] contains spaces, it must be enclosed in quotation marks.
+%s %s allows you to send a private message to the player. if [name] contains spaces, it must be enclosed in quotation marks.
+
 %s :Main: %s
 %s :Main: %s
+
+%s People usually doesn't shout, they talk. Because this, if you are too far, an NPC won't hear you.
+%s People usually doesn't shout, they talk. Because this, if you are too far, an NPC won't hear you.
+
+%s allows you to change game language, anytime, anywhere.
+%s allows you to change game language, anytime, anywhere.
+
+%s and %s will show this informative and absurdely big tutorial book.
+%s and %s will show this informative and absurdely big tutorial book.
+
+%s clears the text box.
+%s clears the text box.
 
 %s data type is not supported :%u
 %s data type is not supported :%u
 
+%s determines how many blows you can take before you die. It also affects status effects, like poison.
+%s determines how many blows you can take before you die. It also affects status effects, like poison.
+
+%s displays amount of currently connected players.
+%s displays amount of currently connected players.
+
 %s drains his mug in one long sip, then hesitates.
 %s drains his mug in one long sip, then hesitates.
+
+%s explains how to use all client commands.
+%s explains how to use all client commands.
 
 %s failed
 %s failed
@@ -263,6 +329,9 @@ Copyright (C) 2010-2014 Evol Online
 %s has bought your item(s).
 %s has bought your item(s).
 
+%s helps you carry more items and also gives you a more forceful blow, but ends up not being very interesting if you focus on weapons that use projectiles, such as the bow.
+%s helps you carry more items and also gives you a more forceful blow, but ends up not being very interesting if you focus on weapons that use projectiles, such as the bow.
+
 %s in jail for %d years, %d months, %d days, %d hours and %d minutes
 %s in jail for %d years, %d months, %d days, %d hours and %d minutes
 
@@ -272,11 +341,23 @@ Copyright (C) 2010-2014 Evol Online
 %s is empty
 %s is empty
 
+%s is very useful for alchemy and magic, but nowadays there are few opportunities to use it.
+%s is very useful for alchemy and magic, but nowadays there are few opportunities to use it.
+
+%s lists even more advanced commands, but some of them can only be used by admins or GM's.
+%s lists even more advanced commands, but some of them can only be used by admins or GM's.
+
 %s recalled!
 %s recalled!
 
 %s revision '%s' (src) / '%s' (scripts)
 %s revision '%s' (src) / '%s' (scripts)
+
+%s shows the name of the map you are in.
+%s shows the name of the map you are in.
+
+%s shows the number of people in the neighbourhood.
+%s shows the number of people in the neighbourhood.
 
 %s spawns in:
 %s spawns in:
@@ -289,6 +370,12 @@ Copyright (C) 2010-2014 Evol Online
 
 %s value is now :%s
 %s value is now :%s
+
+%s will help when the client starts lagging. If you see an attack but no monsters, that's the cause.
+%s will help when the client starts lagging. If you see an attack but no monsters, that's the cause.
+
+%s will tell you all the rules once again.
+%s will tell you all the rules once again.
 
 %s: %d
 %s: %d
@@ -329,6 +416,9 @@ Copyright (C) 2010-2014 Evol Online
 '%s' stats:
 '%s' stats:
 
+'Hey anyone there?'
+'Hey anyone there?'
+
 'That', as you call it, is a @@. There are plenty on this island!
 'That', as you call it, is a @@. There are plenty on this island!
 
@@ -338,11 +428,26 @@ Copyright (C) 2010-2014 Evol Online
 (@request): %s
 (@request): %s
 
+(All items must be placed exactly in this order for cooking work.)
+(All items must be placed exactly in this order for cooking work.)
+
 (CID:%d/AID:%d) 
 (CID:%d/AID:%d) 
 
+(Click on us to continue the introduction.)
+(Click on us to continue the introduction.)
+
+(You hear a faint sound in distance, but can't say what sound it was.)
+(You hear a faint sound in distance, but can't say what sound it was.)
+
 * :%s %s: *
 * :%s %s: *
+
+* @@ @@
+* @@ @@
+
+* Skill ID: @@
+* Skill ID: @@
 
 *Bang bang*
 *Bang bang*
@@ -359,8 +464,14 @@ Copyright (C) 2010-2014 Evol Online
 *Uff*... And another box of @@s for our starving colleagues is ready.
 *Uff*... And another box of @@s for our starving colleagues is ready.
 
+*ahem*
+*ahem*
+
 *burp*
 *burp*
+
+*sniff sniff*
+*sniff sniff*
 
 *snores*
 *snores*
@@ -388,6 +499,9 @@ Copyright (C) 2010-2014 Evol Online
 
 - Gulukan
 - Gulukan
+
+- I currently need your help with @@.
+- I currently need your help with @@.
 
 - Jalad
 - Jalad
@@ -533,8 +647,17 @@ Copyright (C) 2010-2014 Evol Online
 ...I mean log! Made of log!
 ...I mean log! Made of log!
 
+...It'll most likely attack you, instead.
+...It'll most likely attack you, instead.
+
 ...it might be because of Don... he is the master blacksmith of this place and a model to me!
 ...it might be because of Don... he is the master blacksmith of this place and a model to me!
+
+...who knows if there isn't a secret in that?
+...who knows if there isn't a secret in that?
+
+/q [Player Name] 
+/q [Player Name] 
 
 1 GM found.
 1 GM found.
@@ -553,6 +676,9 @@ Copyright (C) 2010-2014 Evol Online
 
 1: The type of item yoiis want to dye.
 1: The type of item yoiis want to dye.
+
+1x @@, 3x @@, 2x @@, and the ingredient of your choice.
+1x @@, 3x @@, 2x @@, and the ingredient of your choice.
 
 2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s).
 2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s).
@@ -599,6 +725,12 @@ Copyright (C) 2010-2014 Evol Online
 <MSG>3456,%d</MSG>
 <MSG>3456,%d</MSG>
 
+???
+???
+
+???: Hey! Is someone there? Please, help, it's so dark down here!
+???: Hey! Is someone there? Please, help, it's so dark down here!
+
 @@
 @@
 
@@ -611,14 +743,17 @@ Copyright (C) 2010-2014 Evol Online
 @@ divorced!
 @@ divorced!
 
-@@ is helping me.
-@@ is helping me.
-
 @@ registered for marriage and accepted partner @@!
 @@ registered for marriage and accepted partner @@!
 
 @@ registered for marriage. Waiting for partner...
 @@ registered for marriage. Waiting for partner...
+
+@@ skillfully cuts the bread in half, throws the ingredients in air, and they land in the sandwich!
+@@ skillfully cuts the bread in half, throws the ingredients in air, and they land in the sandwich!
+
+@@/@@ pages used.
+@@/@@ pages used.
 
 @@? Welcome my dear!#0
 @@? Welcome my dear!
@@ -626,8 +761,20 @@ Copyright (C) 2010-2014 Evol Online
 @@? Welcome my dear!#1
 @@? Welcome my dear!
 
+@discord allows you to setup Discord integration settings.
+@discord allows you to setup Discord integration settings.
+
 @request sent.
 @request sent.
+
+@resyncall is the more powerful version of @resync. It'll reload everything, even the clouds if needed.
+@resyncall is the more powerful version of @resync. It'll reload everything, even the clouds if needed.
+
+@toevent will warp you to event island, if an event is happening, of course.
+@toevent will warp you to event island, if an event is happening, of course.
+
+@ucp allows you to manage your account, eg. recover lost email.
+@ucp allows you to manage your account, eg. recover lost email.
 
 A GM has discharged you from jail.
 A GM has discharged you from jail.
@@ -637,6 +784,9 @@ A band of adventurers formed in Argaes from those who had lost their homes and f
 
 A cookie!
 A cookie!
+
+A critical hit deals added damage and disregards defense. A critical always hit, although it can be blocked just fine.
+A critical hit deals added damage and disregards defense. A critical always hit, although it can be blocked just fine.
 
 A few minutes passed, and suddenly I was practically surrounded by a dozen or more of these living trees!
 A few minutes passed, and suddenly I was practically surrounded by a dozen or more of these living trees!
@@ -658,6 +808,9 @@ A small lie is really just a fib, and I could really use some cash...
 
 A stat card works on different pieces of equipment.
 A stat card works on different pieces of equipment.
+
+A strange voice seems to be calling out your name.
+A strange voice seems to be calling out your name.
 
 A sunny and hot day,
 A sunny and hot day,
@@ -728,6 +881,9 @@ Actually, I was here to help you with those boxes. Can I bring one of them back 
 Actually, it's been a long day.
 Actually, it's been a long day.
 
+Actually, you just took a bounty, right?
+Actually, you just took a bounty, right?
+
 Add a new line
 Add a new line
 
@@ -745,6 +901,9 @@ After I chopped off a few branches, the whole tree started to move!
 
 After I shook it off and struck the tree again with my axe, another branch hit me!
 After I shook it off and struck the tree again with my axe, another branch hit me!
+
+After a tiring, yet fast, travel by Koga, you arrive at @@.
+After a tiring, yet fast, travel by Koga, you arrive at @@.
 
 After all this time, it was still there!
 After all this time, it was still there!
@@ -770,6 +929,12 @@ After this small overview of Artis, what do you think of our city?
 After this war, the Raijin race was born. A race born of Magic. Humans encapsulated in a Mana storm and altered forever.
 After this war, the Raijin race was born. A race born of Magic. Humans encapsulated in a Mana storm and altered forever.
 
+After you have confirmed the negotiation, a window with a vertical split will appear. The left side are the items you intend to offer in trading. The right side are the items that the other citizen intends to offer in trading.
+After you have confirmed the negotiation, a window with a vertical split will appear. The left side are the items you intend to offer in trading. The right side are the items that the other citizen intends to offer in trading.
+
+Aggressors always know when they are in danger! Therefore, they are always on standby, attacking anyone who appears ahead.
+Aggressors always know when they are in danger! Therefore, they are always on standby, attacking anyone who appears ahead.
+
 Agi: %d (%d~%d)
 Agi: %d (%d~%d)
 
@@ -931,6 +1096,9 @@ Alliances cannot be made during Guild Wars!
 
 AllowKS | 
 AllowKS | 
+
+Almost all creatures drop useful items when defeated. To get the dropped item press the '###keyPickup;' key next to the item or click the primary button on the item.
+Almost all creatures drop useful items when defeated. To get the dropped item press the '###keyPickup;' key next to the item or click the primary button on the item.
 
 Almost got it!
 Almost got it!
@@ -950,6 +1118,9 @@ Alright, I'm going to his room, keep an eye on her, we still don't know if she's
 Alright, I'm going to his room, keep an eye on him, we still don't know if he's friend or foe...#1
 Alright, I'm going to his room, keep an eye on him, we still don't know if he's friend or foe...
 
+Alright, but... You only have @@ @@, and I need @@ to do the status reset for you!
+Alright, but... You only have @@ @@, and I need @@ to do the status reset for you!
+
 Alright, take your time we are not in a hurry.
 Alright, take your time we are not in a hurry.
 
@@ -964,6 +1135,18 @@ Alright. I will go looking for them now.
 
 Alright... Bye.
 Alright... Bye.
+
+Also note that if you are in overweight, your natural regen will halt. 90% in weight, and you won't be able to attack.
+Also note that if you are in overweight, your natural regen will halt. 90% in weight, and you won't be able to attack.
+
+Also, build a reputation with the Legion. Talk to everyone. Help everyone. Prove me your worth!
+Also, build a reputation with the Legion. Talk to everyone. Help everyone. Prove me your worth!
+
+Also, most monsters get enraged and will attack whoever is closest to them, regardless of anything else.
+Also, most monsters get enraged and will attack whoever is closest to them, regardless of anything else.
+
+Also, status point reset can't be undone. Do you really want this?
+Also, status point reset can't be undone. Do you really want this?
 
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#0
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.
@@ -971,6 +1154,9 @@ Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go c
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#1
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.
 
+Also, you'll get more experience by killing monsters stronger than you, and less experience by killing monsters weaker than you.
+Also, you'll get more experience by killing monsters stronger than you, and less experience by killing monsters weaker than you.
+
 Alternative clouds appeared.
 Alternative clouds appeared.
 
@@ -982,6 +1168,9 @@ Although the more powerful you are, the more plushrooms you will need.
 
 Although, if you want to visit a place nearby, we could take you there.
 Although, if you want to visit a place nearby, we could take you there.
+
+Altough you can't get rid of the feeling someone is listening on the other side, you don't get any replies
+Altough you can't get rid of the feeling someone is listening on the other side, you don't get any replies
 
 Amethyst
 Amethyst
@@ -1006,6 +1195,12 @@ And I bet you don't know who is in charge of monitoring the security of this pla
 
 And I have no mention of a so called "@@" on it!
 And I have no mention of a so called "@@" on it!
+
+And by last, to speak to everyone online, besides whoever might be idling on IRC, select the '#irc' tab.
+And by last, to speak to everyone online, besides whoever might be idling on IRC, select the '#irc' tab.
+
+And by the way. I know nothing about this book. And I don't know how to get more pages either.
+And by the way. I know nothing about this book. And I don't know how to get more pages either.
 
 And get out of here, I'm not a map!
 And get out of here, I'm not a map!
@@ -1067,11 +1262,17 @@ And you? How's it going on your side?
 And you? How's it yaying on your side?
 And you? How's it yaying on your side?
 
+AngryCrafty
+AngryCrafty
+
 Angus#008-2-17
 Angus#008-2-17
 
 Animals Protection Agency of Aemil
 Animals Protection Agency of Aemil
+
+Any boss which was previously unhittable, can be hit with appropriate number of attackers.
+Any boss which was previously unhittable, can be hit with appropriate number of attackers.
 
 Any clue on where Astapolos may be hidden?
 Any clue on where Astapolos may be hidden?
@@ -1118,6 +1319,9 @@ Anyway, the guild creation is perfect for both!
 Anyway, the last time I stole something I was almost caught.
 Anyway, the last time I stole something I was almost caught.
 
+Anyway, to make a sandwich, you'll need to place, in this order:
+Anyway, to make a sandwich, you'll need to place, in this order:
+
 Anyway.
 Anyway.
 
@@ -1171,6 +1375,9 @@ Are you crazy?
 
 Are you going to stand here all day long? Do the dishes or go away.
 Are you going to stand here all day long? Do the dishes or go away.
+
+Are you in need of some flowers?
+Are you in need of some flowers?
 
 Are you mad?!
 Are you mad?!
@@ -1208,8 +1415,8 @@ Are you yaying here to explore the island?
 AreaNPC
 AreaNPC
 
-AreaNPC#001-2-22
-AreaNPC#001-2-22
+AreaNPC#Artis
+AreaNPC#Artis
 
 AreaNPC#doors1
 AreaNPC#doors1
@@ -1219,6 +1426,9 @@ AreaNPC#doors2
 
 AreaTop
 AreaTop
+
+Argaes
+Argaes
 
 Argh!
 Argh!
@@ -1307,6 +1517,9 @@ Atropos Mixture
 Auction is disabled
 Auction is disabled
 
+Auldsbel discretly stuffs a book on your backpack.
+Auldsbel discretly stuffs a book on your backpack.
+
 Auldsbel#008-1
 Auldsbel#008-1
 
@@ -1381,6 +1594,9 @@ Awesome, come back if you ever want to create a larger group!
 
 Awesome. How many of those do you want to give me?
 Awesome. How many of those do you want to give me?
+
+Axe
+Axe
 
 Axe Hat
 Axe Hat
@@ -1490,6 +1706,9 @@ Baby Warlock
 Baby Wizard
 Baby Wizard
 
+Bad Bee
+Bad Bee
+
 Bag#000-1
 Bag#000-1
 
@@ -1501,6 +1720,27 @@ Ban failed, it is not possible to ban this user.
 
 Bandana
 Bandana
+
+Bandit
+Bandit
+
+Bandit Boots
+Bandit Boots
+
+Bandit Gloves
+Bandit Gloves
+
+Bandit Hood
+Bandit Hood
+
+Bandit Lord
+Bandit Lord
+
+Bandit Shawl
+Bandit Shawl
+
+Bandit Trousers
+Bandit Trousers
 
 Banking is disabled
 Banking is disabled
@@ -1571,6 +1811,9 @@ Because the voices of death sing a sweet song
 Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
 Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
 
+Becoming a Sorcerer? I want that too!
+Becoming a Sorcerer? I want that too!
+
 Bee
 Bee
 
@@ -1613,14 +1856,17 @@ Bernard wants maggot slime
 Bernard wants roasted maggot
 Bernard wants roasted maggot
 
+Besides this, there is Seasons. You know, summer, autumn, winter and spring.
+Besides this, there is Seasons. You know, summer, autumn, winter and spring.
+
 Besides, I need to be here to watch out for thieves while La Johanne is docked.
 Besides, I need to be here to watch out for thieves while La Johanne is docked.
 
-Better take it back to Q'Onan.
-Better take it back to Q'Onan.
+Better stay away from my basement, you may end up like the poor guys down there.
+Better stay away from my basement, you may end up like the poor guys down there.
 
-Better you stay here for a while. Come back when you are stronger.
-Better you stay here for a while. Come back when you are stronger.
+Better take it back to Q'Onan.
+Better take it back to Q'Onan.
 
 Beuss
 Beuss
@@ -1628,17 +1874,26 @@ Beuss
 Beware of falling stones from the cliff!
 Beware of falling stones from the cliff!
 
+Beware you have a limited number of pages. Do not let the Legion or the Brotherhood find out you have one.
+Beware you have a limited number of pages. Do not let the Legion or the Brotherhood find out you have one.
+
 Billy Bons
 Billy Bons
 
 Black Cotton Dye
 Black Cotton Dye
 
+Black Scorpion
+Black Scorpion
+
 Black iron... That is a very specific request that you have for me!
 Black iron... That is a very specific request that you have for me!
 
 Blacksmith
 Blacksmith
+
+Blossom#008-1
+Blossom#008-1
 
 Blub
 Blub
@@ -1654,6 +1909,12 @@ Blue Cotton Dye
 
 Blue Gray Cotton Dye
 Blue Gray Cotton Dye
+
+Blue Rose
+Blue Rose
+
+Blue Tulip
+Blue Tulip
 
 Bobo
 Bobo
@@ -1699,6 +1960,9 @@ Bring them to me, and I'll give you something nice.
 
 Bring this box to Gugli. He will be extremely happy!
 Bring this box to Gugli. He will be extremely happy!
+
+Brotherhood
+Brotherhood
 
 Brown Cotton Dye
 Brown Cotton Dye
@@ -1754,6 +2018,9 @@ But all she says is, “had you stayed inside, you wouldn't be wet now”.
 But anyway, take the road which goes to the north to find everybody.
 But anyway, take the road which goes to the north to find everybody.
 
+But be careful: do not scream by using a lot of capital letters, do not repeat yourself over and over, and above all DO NOT SPAM, or you may be severely penalized.
+But be careful: do not scream by using a lot of capital letters, do not repeat yourself over and over, and above all DO NOT SPAM, or you may be severely penalized.
+
 But discovering new territories is probably the best thing that can happen to sailors, don't you think?
 But discovering new territories is probably the best thing that can happen to sailors, don't you think?
 
@@ -1775,8 +2042,14 @@ But hey, back to me. Remember my mentioning that I'm hun...grrr...eee!
 But how I got there is kind of scary...
 But how I got there is kind of scary...
 
+But if you and other players surrounds the monster instead, they'll suffer the same penalties!
+But if you and other players surrounds the monster instead, they'll suffer the same penalties!
+
 But if you fail, you will have to get them from the alchemist.
 But if you fail, you will have to get them from the alchemist.
+
+But if you need to deal with more burocratic stuff, go talk to Q'Anon. He is the boss here.
+But if you need to deal with more burocratic stuff, go talk to Q'Anon. He is the boss here.
 
 But if you really want to accomplish something, you should consider joining us.
 But if you really want to accomplish something, you should consider joining us.
@@ -1826,6 +2099,9 @@ But the plushroom you brought was really awesome you know.
 But the plushroom you brought was really awesome you know.#1
 But the plushroom you brought was really awesome you know.
 
+But there is no skill to be learnt from this boss.
+But there is no skill to be learnt from this boss.
+
 But they are too fast.
 But they are too fast.
 
@@ -1834,12 +2110,21 @@ But we are quite lucky here, outside of some tipsy travelers there are no big pr
 
 But who am I?
 But who am I?
+
+But you are out of the boss level range.
+But you are out of the boss level range.
 
 But you are welcome to reset your stats again if you bring me some more plushrooms!#0
 But you are welcome to reset your stats again if you bring me some more plushrooms!
 
 But you are welcome to reset your stats again if you bring me some more plushrooms!#1
 But you are welcome to reset your stats again if you bring me some more plushrooms!
+
+But you do not have enough Magic Ink. (You need: @@ @@)
+But you do not have enough Magic Ink. (You need: @@ @@)
+
+But you ran out of empty pages on this book.
+But you ran out of empty pages on this book.
 
 But you should've seen that gaze!
 But you should've seen that gaze!
@@ -1955,6 +2240,9 @@ Can't you remember anything at all? Or do you have some memories of your past?
 Can't you see I am reading? If you need something, tell me the secret password.
 Can't you see I am reading? If you need something, tell me the secret password.
 
+Can't you see I am reading? Please go, please.
+Can't you see I am reading? Please go, please.
+
 Can't you see I'm busy?
 Can't you see I'm busy?
 
@@ -1991,6 +2279,9 @@ Captain Nard is in the room to your right.
 Carmie#001-1
 Carmie#001-1
 
+Carp Sandwich
+Carp Sandwich
+
 Carrot
 Carrot
 
@@ -2015,6 +2306,9 @@ Catching a piou
 Caul#008-2-17
 Caul#008-2-17
 
+Cave
+Cave
+
 Cave Maggot
 Cave Maggot
 
@@ -2024,17 +2318,65 @@ Celestia
 Ch 1 — Fishing apparatus
 Ch 1 — Fishing apparatus
 
+Ch 1 — How to make money.
+Ch 1 — How to make money.
+
+Ch 10 — How I see my items?
+Ch 10 — How I see my items?
+
+Ch 11 — How trade with other players?
+Ch 11 — How trade with other players?
+
+Ch 12 — How hunt monsters?
+Ch 12 — How hunt monsters?
+
+Ch 13 — How talk with someone?
+Ch 13 — How talk with someone?
+
+Ch 14 — Change your appearing.
+Ch 14 — Change your appearing.
+
+Ch 15 — Commands.
+Ch 15 — Commands.
+
+Ch 16 — Shortcuts.
+Ch 16 — Shortcuts.
+
 Ch 2 — Baits
 Ch 2 — Baits
+
+Ch 2 — Everything about monsters.
+Ch 2 — Everything about monsters.
 
 Ch 3 — Location
 Ch 3 — Location
 
+Ch 3 — Quests.
+Ch 3 — Quests.
+
 Ch 4 — Casting
 Ch 4 — Casting
 
+Ch 4 — Status.
+Ch 4 — Status.
+
+Ch 5 — NPC's.
+Ch 5 — NPC's.
+
 Ch 5 — Reeling
 Ch 5 — Reeling
+
+Ch 6 — Magic.
+Ch 6 — Magic.
+
+Ch 7 — Rules.
+Ch 7 — Rules.
+
+Ch 8 — Weather & Seasons.
+Ch 8 — Weather & Seasons.
+
+Ch 9 — Experience.
+Ch 9 — Experience.
 
 Chair#Chair1-001-2-41
 Chair#Chair1-001-2-41
@@ -2192,6 +2534,9 @@ Chocolate Cashmere Dye
 Choose desired quest state:
 Choose desired quest state:
 
+Chopstick
+Chopstick
+
 Chorus of the Woods
 Chorus of the Woods
 
@@ -2248,6 +2593,9 @@ Cobalt Herb
 
 Cobalt Plant
 Cobalt Plant
+
+Coin Bag
+Coin Bag
 
 Colorant is not the yeying color. Some wear out from light, others look great but inflict itai-itai, and others become spotty or wash-away.
 Colorant is not the yeying color. Some wear out from light, others look great but inflict itai-itai, and others become spotty or wash-away.
@@ -2315,6 +2663,9 @@ Common Carp
 Communication Theory
 Communication Theory
 
+Complete Quest
+Complete Quest
+
 Completed
 Completed
 
@@ -2348,6 +2699,9 @@ Congratulations!
 Congratulations! You are the MVP! Your reward EXP Points are %u !!
 Congratulations! You are the MVP! Your reward EXP Points are %u !!
 
+Contacted by Sopiahalla
+Contacted by Sopiahalla
+
 Cookie Master
 Cookie Master
 
@@ -2362,6 +2716,12 @@ Cookies are awesome, so am I.
 
 Cookies provide you strength, health and cuteness.
 Cookies provide you strength, health and cuteness.
+
+Cooking
+Cooking
+
+Cooking is an art. You need to know how to cook something. You can use my stove to prepare.
+Cooking is an art. You need to know how to cook something. You can use my stove to prepare.
 
 Copper Armbands
 Copper Armbands
@@ -2419,6 +2779,9 @@ Could you explain to me where I am?
 
 Could you interrogate him for me?
 Could you interrogate him for me?
+
+Could you please bring me 2 new knives?
+Could you please bring me 2 new knives?
 
 Could you please bring me something which isn't a berry, and I'm not big on vegetables either. I need proteins!
 Could you please bring me something which isn't a berry, and I'm not big on vegetables either. I need proteins!
@@ -2504,6 +2867,9 @@ Crusader
 Cuco
 Cuco
 
+Curious Hole
+Curious Hole
+
 Current amount of zeny changed.
 Current amount of zeny changed.
 
@@ -2534,8 +2900,14 @@ CvC: On
 DO YOU FEEL BETTER?!
 DO YOU FEEL BETTER?!
 
-Daddy did not come back home... He said that he would be back for lunch but it has already been a week!
-Daddy did not come back home... He said that he would be back for lunch but it has already been a week!
+Daddy asked me to give you some money as a thank you for looking out for me.
+Daddy asked me to give you some money as a thank you for looking out for me.
+
+Daddy finally came back home! He grabbed a snack and said he would be returning to the sewers.
+Daddy finally came back home! He grabbed a snack and said he would be returning to the sewers.
+
+Daddy never came back home... He said that he would be back for lunch but it has already been two days!
+Daddy never came back home... He said that he would be back for lunch but it has already been two days!
 
 Dagger
 Dagger
@@ -2560,6 +2932,9 @@ Dancer
 
 Dang, I scared it! More patience, @@, more patience.
 Dang, I scared it! More patience, @@, more patience.
+
+Dark
+Dark
 
 Dark Collector
 Dark Collector
@@ -2672,6 +3047,9 @@ Did you bring me any wood?
 Did you bring me the %d %s I need?
 Did you bring me the %d %s I need?
 
+Did you brought me 2 new knives?
+Did you brought me 2 new knives?
+
 Did you fight it?
 Did you fight it?
 
@@ -2689,9 +3067,6 @@ Did you look over the basement?
 
 Did you run away?
 Did you run away?
-
-Did you say reward? I want it!
-Did you say reward? I want it!
 
 Did you see Don the blacksmith? He might know how you could improve your metal equipment.
 Did you see Don the blacksmith? He might know how you could improve your metal equipment.
@@ -2744,8 +3119,14 @@ Do not give the password of your room to anybody! Keep it secret and try not to 
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia
 
+Do not learn
+Do not learn
+
 Do not let intimacy and hunger get to zero. If any of those get to zero, it'll leave you forever.
 Do not let intimacy and hunger get to zero. If any of those get to zero, it'll leave you forever.
+
+Do note that Job Level gives you skill points, and the status bonuses are really minor.
+Do note that Job Level gives you skill points, and the status bonuses are really minor.
 
 Do nothing
 Do nothing
@@ -2770,6 +3151,9 @@ Do you have anything for me today?
 
 Do you have the %d %s and %s E for the shield?
 Do you have the %d %s and %s E for the shield?
+
+Do you have this commendatory letter?
+Do you have this commendatory letter?
 
 Do you know anything about the recent robberies?
 Do you know anything about the recent robberies?
@@ -2837,11 +3221,23 @@ Do you want to go back to Artis? You really should be afraid of the Legion there
 Do you want to go somewhere?
 Do you want to go somewhere?
 
+Do you want to leave it alone?
+Do you want to leave it alone?
+
+Do you want to leave the boat?
+Do you want to leave the boat?
+
 Do you want to marry @@?
 Do you want to marry @@?
 
 Do you want to read it?
 Do you want to read it?
+
+Do you want to throw something inside?
+Do you want to throw something inside?
+
+Do you want to try again?
+Do you want to try again?
 
 Do you want to try?
 Do you want to try?
@@ -2927,6 +3323,9 @@ Don't say I didn't warn you!
 Don't say it so loudly, other people could hear us.
 Don't say it so loudly, other people could hear us.
 
+Don't tell anyone about this. Once you kill you a boss, you can try to learn the boss skill by using the book.
+Don't tell anyone about this. Once you kill you a boss, you can try to learn the boss skill by using the book.
+
 Don't tell me more, I know what you want...
 Don't tell me more, I know what you want...
 
@@ -2954,8 +3353,14 @@ Don't you try to cheat an old merchant! You don't have enough money, you need @@
 Donald
 Donald
 
+Done!
+Done!
+
 Done. Here, take it! Now, here is the plan. Go talk to her and offer our beautiful lady a bite of her arrogance!
 Done. Here, take it! Now, here is the plan. Go talk to her and offer our beautiful lady a bite of her arrogance!
+
+Dont you know something about fertility? I heard rumors.
+Dont you know something about fertility? I heard rumors.
 
 Door
 Door
@@ -2963,14 +3368,20 @@ Door
 DoorUpwards
 DoorUpwards
 
-DoorUpwards#001-2-23
-DoorUpwards#001-2-23
+DoorUpwards#Artis
+DoorUpwards#Artis
 
 Drag and drop an item from your inventory.
 Drag and drop an item from your inventory.
 
+Drag and drop the items from your inventory in the frames.
+Drag and drop the items from your inventory in the frames.
+
 Drasil Island.
 Drasil Island.
+
+Dress up! Do not walk without clothes! Always wear your items! They leave you less vulnerable to attacks and stronger to defeat your opponents.
+Dress up! Do not walk without clothes! Always wear your items! They leave you less vulnerable to attacks and stronger to defeat your opponents.
 
 Due to neglect with day-to-day administration, which she delegated to her council, and uncontrolled expenses, the kingdom faced its first economic crisis.
 Due to neglect with day-to-day administration, which she delegated to her council, and uncontrolled expenses, the kingdom faced its first economic crisis.
@@ -3028,6 +3439,9 @@ Duel| You've left the duel.
 
 Dummy
 Dummy
+
+During night, the monsters usually respawn faster. That can be a problem with aggressive monsters.
+During night, the monsters usually respawn faster. That can be a problem with aggressive monsters.
 
 Duty calls me, *hic*, see you later, dude.#1
 Duty calls me, *hic*, see you later, dude.
@@ -3041,8 +3455,14 @@ Each big city hosts a Legion building, Artis' building is located in the north-w
 Each card improves your gear by a ratio or a fixed number on a predefined stat.
 Each card improves your gear by a ratio or a fixed number on a predefined stat.
 
+Each level up will buff your base stats, and give you stats points to allocate.
+Each level up will buff your base stats, and give you stats points to allocate.
+
 Each piece of equipment has a predefined slot number.
 Each piece of equipment has a predefined slot number.
+
+Each season unlocks a set of quests and drops which can only be obtained on the season.
+Each season unlocks a set of quests and drops which can only be obtained on the season.
 
 Earlier today there was this young seller named Fexil that passed by here.
 Earlier today there was this young seller named Fexil that passed by here.
@@ -3052,6 +3472,15 @@ East
 
 Easter Egg
 Easter Egg
+
+Easy to make? Could you make one for me?
+Easy to make? Could you make one for me?
+
+Easy to make? Could you teach me how to make them?
+Easy to make? Could you teach me how to make them?
+
+Eating is a necessity, but cooking is an art.
+Eating is a necessity, but cooking is an art.
 
 Edouard#001-2-41
 Edouard#001-2-41
@@ -3182,6 +3611,9 @@ Enter line number:
 Enter new line:
 Enter new line:
 
+Equippable items are armour, weapons and accessories.
+Equippable items are armour, weapons and accessories.
+
 Error reading atcommand.conf, reload failed.
 Error reading atcommand.conf, reload failed.
 
@@ -3194,8 +3626,14 @@ Eugene
 Eugene needs tentacles
 Eugene needs tentacles
 
+Even a simple sandwich will be ruined if you place lettuce above the cheese!
+Even a simple sandwich will be ruined if you place lettuce above the cheese!
+
 Even after all that though, I still can't believe what happened next.
 Even after all that though, I still can't believe what happened next.
+
+Even with your Hercules strength, this lid is hopelessly struck.
+Even with your Hercules strength, this lid is hopelessly struck.
 
 Event Management
 Event Management
@@ -3260,6 +3698,9 @@ Expanded Super Baby
 Expanded Super Novice
 Expanded Super Novice
 
+Experience can be gained by completing quests and killing monsters. When you accumulate enough experience, you'll level up!
+Experience can be gained by completing quests and killing monsters. When you accumulate enough experience, you'll level up!
+
 Experience rates: Base %.2fx / Job %.2fx
 Experience rates: Base %.2fx / Job %.2fx
 
@@ -3289,6 +3730,9 @@ Feel free to come visit me another time.
 
 Female
 Female
+
+Fertility Potion
+Fertility Potion
 
 Fexil
 Fexil
@@ -3353,6 +3797,9 @@ Finished  training
 Finished battle
 Finished battle
 
+Fire
+Fire
+
 Fireworks are launched.
 Fireworks are launched.
 
@@ -3364,6 +3811,9 @@ Fireworks |
 
 First encounter
 First encounter
+
+First of, there's a day/night cycle on the game.
+First of, there's a day/night cycle on the game.
 
 First thing she asked was if I'm a farmer.
 First thing she asked was if I'm a farmer.
@@ -3388,6 +3838,9 @@ Fishing next to shallow water is not going to work well, because fishes seldom g
 
 Five Castles
 Five Castles
+
+Flag#1
+Flag
 
 Fluffy
 Fluffy
@@ -3427,6 +3880,9 @@ For '%s' you need the amount of seconds (from 0 to 10)
 
 For a chef? Who said I was a... Oh right, I am.
 For a chef? Who said I was a... Oh right, I am.
+
+For now do not take too much time to work on your intelligence, after all, magic use is very restricted nowadays.
+For now do not take too much time to work on your intelligence, after all, magic use is very restricted nowadays.
 
 For starters, you should probably do some stretching and practice on some dummies in our training room.
 For starters, you should probably do some stretching and practice on some dummies in our training room.
@@ -3485,6 +3941,9 @@ From what I heard, my brother Gugli needs the help of as many people as possible
 From your mind, break the ice
 From your mind, break the ice
 
+Frost
+Frost
+
 Frost held the title of Lord Prince of the Republic for eighteen months, when the council deposed him and declared itself head of the state.
 Frost held the title of Lord Prince of the Republic for eighteen months, when the council deposed him and declared itself head of the state.
 
@@ -3493,6 +3952,9 @@ Frostiana
 
 Fungus
 Fungus
+
+Fur Boots
+Fur Boots
 
 Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!
 Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!
@@ -3533,11 +3995,17 @@ Gained zeny is now shown.
 Gained zeny will not be shown.
 Gained zeny will not be shown.
 
+Galimatia
+Galimatia
+
 Gamboge Herb
 Gamboge Herb
 
 Gamboge Plant
 Gamboge Plant
+
+Game Balance
+Game Balance
 
 Game introduction
 Game introduction
@@ -3581,11 +4049,17 @@ Gender
 Generalstore#008-1
 Generalstore#008-1
 
+Generic items are used for different purposes. In creating other items, to swap and sell, to collect, etc.
+Generic items are used for different purposes. In creating other items, to swap and sell, to collect, etc.
+
 Genetic
 Genetic
 
 Genetic T
 Genetic T
+
+Get a Recipe Book
+Get a Recipe Book
 
 Get money
 Get money
@@ -3707,6 +4181,9 @@ Good to hear from you!
 Good to hear!
 Good to hear!
 
+Good to know, thanks.
+Good to know, thanks.
+
 Good to know.
 Good to know.
 
@@ -3733,9 +4210,6 @@ Gorgeous woman, but when she looked at me, the scares went scuttling down my spi
 
 Got a cookie
 Got a cookie
-
-Got no reward
-Got no reward
 
 Got poison from Gado
 Got poison from Gado
@@ -3784,6 +4258,9 @@ Great, what food do you have for me today?
 
 Great, what food do you have for me today?#1
 Great, what food do you have for me today?
+
+Greater %s allows you to attack faster and has a greater chance of evading attacks.
+Greater %s allows you to attack faster and has a greater chance of evading attacks.
 
 Green Cotton Dye
 Green Cotton Dye
@@ -4022,6 +4499,9 @@ He did not change while growing up, I repeatedly asked him to leave the forge bu
 He has a guns!
 He has a guns!
 
+He has never been the same since mommy went away...
+He has never been the same since mommy went away...
+
 He is a regular at the inn, located in the north-west part of town.
 He is a regular at the inn, located in the north-west part of town.
 
@@ -4046,6 +4526,9 @@ He is usually in his office on the 3rd floor.
 He is very lucky that Don took him under his wing, but being the student of such a teacher is not easy every day!
 He is very lucky that Don took him under his wing, but being the student of such a teacher is not easy every day!
 
+He likes to eat sandwiches. A good thing they are so easy to make!
+He likes to eat sandwiches. A good thing they are so easy to make!
+
 He likes to hide near the little lake in the north-west side of the island.
 He likes to hide near the little lake in the north-west side of the island.
 
@@ -4067,8 +4550,8 @@ He proceeds to further scrutinize the log.
 He said he is going to climb the highest hill in Artis, which is not far from here.
 He said he is going to climb the highest hill in Artis, which is not far from here.
 
-He said that he would check why the manhole next to the house was doing weird sounds.
-He said that he would check why the manhole next to the house was doing weird sounds.
+He said that he would check why weird noises were coming from the manhole next to the house.
+He said that he would check why weird noises were coming from the manhole next to the house.
 
 He takes another sip.
 He takes another sip.
@@ -4093,6 +4576,9 @@ Heard conversation
 
 Hearing these words the Piou felt great joy,
 Hearing these words the Piou felt great joy,
+
+Heh, did you saw me at the port? No?
+Heh, did you saw me at the port? No?
 
 Hehe!
 Hehe!
@@ -4118,7 +4604,10 @@ Hehehe, he is a bit nervous, please forgive him, it is not everyday we have a ne
 Hel... What?! Wait!
 Hel... What?! Wait!
 
-Hello Sir.
+Hello Miss.#1
+Hello Miss.
+
+Hello Sir.#0
 Hello Sir.
 
 Hello dear!#0
@@ -4130,6 +4619,9 @@ Hello dear!
 Hello deary.
 Hello deary.
 
+Hello madam.
+Hello madam.
+
 Hello there!
 Hello there!
 
@@ -4141,6 +4633,9 @@ Hello yeye.
 
 Hello, I am Macgowan, apprentice to Nicholas.
 Hello, I am Macgowan, apprentice to Nicholas.
+
+Hello, a rowboat is on his way to the beach. Please wait for a while for it to arrive.
+Hello, a rowboat is on his way to the beach. Please wait for a while for it to arrive.
 
 Hello, can I help you?
 Hello, can I help you?
@@ -4238,12 +4733,6 @@ Here, take as many as you need, I have plenty!
 Here, take as many as you need, I have plenty!#1
 Here, take as many as you need, I have plenty!
 
-Here, take this @@ as a gift. I'm sure someone as skilled you will make a good use of my old weapon.#0
-Here, take this @@ as a gift. I'm sure someone as skilled you will make a good use of my old weapon.
-
-Here, take this @@ as a gift. I'm sure someone as skilled you will make a good use of my old weapon.#1
-Here, take this @@ as a gift. I'm sure someone as skilled you will make a good use of my old weapon.
-
 Here, take this key, it opens all the doors on this ship.
 Here, take this key, it opens all the doors on this ship.
 
@@ -4331,6 +4820,9 @@ Hey, psst! You're not a sailor, right?
 Hey.
 Hey.
 
+Hey. ppst. I have something important to tell you.
+Hey. ppst. I have something important to tell you.
+
 Heya!
 Heya!
 
@@ -4367,6 +4859,9 @@ Hi! I can finally see you under the sunlight!
 Hi! No, I haven't seen him yet.
 Hi! No, I haven't seen him yet.
 
+Hi, I am Simon.
+Hi, I am Simon.
+
 Hi, can I help you at all?
 Hi, can I help you at all?
 
@@ -4375,6 +4870,9 @@ Hi, can I help you somehow?
 
 Hi, how is it going?
 Hi, how is it going?
+
+Hi, my name is Blossom.
+Hi, my name is Blossom.
 
 Hi, my name is Moon. This morning I went for a walk on the beach.
 Hi, my name is Moon. This morning I went for a walk on the beach.
@@ -4397,6 +4895,9 @@ Hi, what do you want kiddo?
 Hi.
 Hi.
 
+Hi. I am Trozz, and I am the chief of legion training in Artis.
+Hi. I am Trozz, and I am the chief of legion training in Artis.
+
 Hidden Person
 Hidden Person
 
@@ -4436,6 +4937,9 @@ Hill & Cliff
 Hinnak asked for help
 Hinnak asked for help
 
+Hinnak wasted all my good kitchen knives trying to get rid of his accursed Pinkies.
+Hinnak wasted all my good kitchen knives trying to get rid of his accursed Pinkies.
+
 Hinnak#008-1
 Hinnak#008-1
 
@@ -4459,6 +4963,9 @@ Hm... then it couldn't be him.
 
 Hmm, I'll also give you one of these hats from the box near you, but only after you complete your task!
 Hmm, I'll also give you one of these hats from the box near you, but only after you complete your task!
+
+Hmm, why don't you go train a little more? We have several training rooms here.
+Hmm, why don't you go train a little more? We have several training rooms here.
 
 Hmm...
 Hmm...
@@ -4502,6 +5009,9 @@ Honestly, sometimes I prefer nice explosions. Better keep back!
 Honestly, sometimes I prefer nice explosions. Better keep back!#1
 Honestly, sometimes I prefer nice explosions. Better keep back!
 
+Honey
+Honey
+
 How about I ask you to help the crew? It would mean that you're one of us and that you will be able to get one of these hats.
 How about I ask you to help the crew? It would mean that you're one of us and that you will be able to get one of these hats.
 
@@ -4526,6 +5036,9 @@ How can I help you?
 How can I improve my equipment?
 How can I improve my equipment?
 
+How can we serve you today?
+How can we serve you today?
+
 How could you... We said we wouldn't talk about that again!
 How could you... We said we wouldn't talk about that again!
 
@@ -4580,6 +5093,9 @@ However...
 Hrmph.
 Hrmph.
 
+Human
+Human
+
 Human Voice
 Human Voice
 
@@ -4622,11 +5138,14 @@ I WAS HERE WHEN THEY RESCUED YOU!
 I WOULD LOVE TO!
 I WOULD LOVE TO!
 
-I already killed many strong monsters, but I everyone have fears, right?!
-I already killed many strong monsters, but I everyone have fears, right?!
+I actually could use a status reset!
+I actually could use a status reset!
 
 I already know everything. Bye.
 I already know everything. Bye.
+
+I also hear fisherman likes to fish at night. They say the catch is bigger, if you understand me.
+I also hear fisherman likes to fish at night. They say the catch is bigger, if you understand me.
 
 I also heard you lost all your memories? That's a shame.
 I also heard you lost all your memories? That's a shame.
@@ -4634,20 +5153,23 @@ I also heard you lost all your memories? That's a shame.
 I am %s Super Novice~
 I am %s Super Novice~
 
+I am Wyaras apprentice, helping her with selling her potions.
+I am Wyaras apprentice, helping her with selling her potions.
+
 I am absolutely positive.
 I am absolutely positive.
 
 I am an alchemist, I bear the name of Ivan.
 I am an alchemist, I bear the name of Ivan.
 
+I am broken?! Please report! Debug data: @@ (@@)
+I am broken?! Please report! Debug data: @@ (@@)
+
 I am new in this town, just like you.
 I am new in this town, just like you.
 
 I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment.
 I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment.
-
-I am not worried about rewards. I just want to help.
-I am not worried about rewards. I just want to help.
 
 I am only doing special requests.
 I am only doing special requests.
@@ -4702,9 +5224,6 @@ I asked Don our blacksmith to prepare a black iron sword for morning, he should 
 
 I asked Hinnak, but he wants at least a beer in exchange for his scythe.
 I asked Hinnak, but he wants at least a beer in exchange for his scythe.
-
-I asked for food but... *hips* Ah, that'll do nicely!
-I asked for food but... *hips* Ah, that'll do nicely!
 
 I asked for food but... *hips* Ah, that'll do!
 I asked for food but... *hips* Ah, that'll do!
@@ -4802,6 +5321,9 @@ I didn't notice that a Pikpik was in my way, and when I stepped on it, my foot w
 I do feel better!
 I do feel better!
 
+I do know a recipe with this!
+I do know a recipe with this!
+
 I do not like to brag about it but you won't find a better blacksmith on the whole island.
 I do not like to brag about it but you won't find a better blacksmith on the whole island.
 
@@ -4819,9 +5341,6 @@ I don't feel so well, I might be sick.
 
 I don't have any.
 I don't have any.
-
-I don't have anything good for you today.
-I don't have anything good for you today.
 
 I don't have enough plushrooms...#0
 I don't have enough plushrooms...
@@ -4844,14 +5363,17 @@ I don't have the time.
 I don't know if I trust her eyesight or memory.
 I don't know if I trust her eyesight or memory.
 
+I don't know the password
+I don't know the password
+
 I don't know what to say...
 I don't know what to say...
 
 I don't know.
 I don't know.
 
-I don't need your help right now, come back later.
-I don't need your help right now, come back later.
+I don't need your help right now, but maybe tomorrow, who knows?
+I don't need your help right now, but maybe tomorrow, who knows?
 
 I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E).
 I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E).
@@ -4870,6 +5392,9 @@ I don't want to buy a piou right now.
 
 I don't want to change my language, sorry.
 I don't want to change my language, sorry.
+
+I don't want you! I want daddy!
+I don't want you! I want daddy!
 
 I feel ok.#0
 I feel ok.
@@ -4964,6 +5489,9 @@ I haven't seen anything strange.
 I heard rumors about some old hostilities between you and Gado. Are they true?
 I heard rumors about some old hostilities between you and Gado. Are they true?
 
+I heard something too. A girl named Galimatia seems to need help. If only those lazy developers could tell her what she needs.
+I heard something too. A girl named Galimatia seems to need help. If only those lazy developers could tell her what she needs.
+
 I heard you aren't delivering any more living wood. Why not?
 I heard you aren't delivering any more living wood. Why not?
 
@@ -5000,6 +5528,12 @@ I hope you like this color.
 I informed Julia about your monstrous plan.
 I informed Julia about your monstrous plan.
 
+I just can't remember what. But come talk to me later once devs becomes less lazy.
+I just can't remember what. But come talk to me later once devs becomes less lazy.
+
+I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.
+I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.
+
 I just need %s E for material and work time.
 I just need %s E for material and work time.
 
@@ -5023,6 +5557,9 @@ I know you didn't kill them yourself!
 
 I like money! Consider it done.
 I like money! Consider it done.
+
+I love flowers! What do you have for sale?
+I love flowers! What do you have for sale?
 
 I love hanging out here!
 I love hanging out here!
@@ -5099,8 +5636,17 @@ I ran away as fast as I could, and lucky for me the monsters aren't that fast on
 I recall seeing Gulukan, Astapolos and Q'Muller.
 I recall seeing Gulukan, Astapolos and Q'Muller.
 
+I recommend that you train your agility a great deal, since most monsters out there aren't really amazing at hitting you.
+I recommend that you train your agility a great deal, since most monsters out there aren't really amazing at hitting you.
+
 I recommend you to take a nap on the inferior level, we will soon leave this place.
 I recommend you to take a nap on the inferior level, we will soon leave this place.
+
+I registered you on a random bed on the upper level.#0
+I registered you on a random bed on the upper level.
+
+I registered you on a random bed on the upper level.#1
+I registered you on a random bed on the upper level.
 
 I remember I saw a few of them leaving the ship early this morning to get a head start on today's work.
 I remember I saw a few of them leaving the ship early this morning to get a head start on today's work.
@@ -5207,6 +5753,9 @@ I used to be a farmer, but my magic attempts were banned by the gouvernment.
 I used to get these logs from Jack, the handsome lumberjack.
 I used to get these logs from Jack, the handsome lumberjack.
 
+I usually would not care, but it is not every day a complete stranger arrives at Artis.
+I usually would not care, but it is not every day a complete stranger arrives at Artis.
+
 I value my life, that's why!
 I value my life, that's why!
 
@@ -5227,6 +5776,9 @@ I was afraid to get busted, so I decided to get rid of the evidence.
 
 I was an actor when I was younger.
 I was an actor when I was younger.
+
+I was an archer of the Legion and shouldn't be scared of a few maggots, but everyone has fears, right?!
+I was an archer of the Legion and shouldn't be scared of a few maggots, but everyone has fears, right?!
 
 I was going to ask you if you would need any help.
 I was going to ask you if you would need any help.
@@ -5287,6 +5839,9 @@ I will take care of the other ones don't worry.
 
 I will take it! Thank you captain!
 I will take it! Thank you captain!
+
+I will take the @@ Bounty.
+I will take the @@ Bounty.
 
 I will tell my dad!
 I will tell my dad!
@@ -5363,6 +5918,9 @@ I would like to stay here a bit more.
 I would like to store some items.
 I would like to store some items.
 
+I would prefer becoming a real Sorcerer one time. *sighs*
+I would prefer becoming a real Sorcerer one time. *sighs*
+
 I wrote your name on the book, you are now free to use the storage and bank services.
 I wrote your name on the book, you are now free to use the storage and bank services.
 
@@ -5399,6 +5957,9 @@ I'll be here, come back when you'll be ready.
 I'll be here, come back when you'll be ready.#1
 I'll be here, come back when you'll be ready.
 
+I'll be waiting for you, then!
+I'll be waiting for you, then!
+
 I'll come back later.
 I'll come back later.
 
@@ -5408,6 +5969,9 @@ I'll give her everything she needs, don't worry.
 I'll give him everything he needs, don't worry.#1
 I'll give him everything he needs, don't worry.
 
+I'll give you @@ GP for this job.
+I'll give you @@ GP for this job.
+
 I'll give you something if you do.
 I'll give you something if you do.
 
@@ -5416,6 +5980,9 @@ I'll keep that in mind.
 
 I'll keep track of this, while you return the mask to the troupe.
 I'll keep track of this, while you return the mask to the troupe.
+
+I'll return the plushroom to you, but please, do not waste my time.
+I'll return the plushroom to you, but please, do not waste my time.
 
 I'll share my berries with you if you help me.
 I'll share my berries with you if you help me.
@@ -5471,6 +6038,9 @@ I'm done.
 I'm fine for now, thank you.
 I'm fine for now, thank you.
 
+I'm fine, thanks.
+I'm fine, thanks.
+
 I'm glad to see you're okay.#0
 I'm glad to see you're okay.
 
@@ -5503,6 +6073,9 @@ I'm lost, where should I go?
 
 I'm not a pawn of the Legion, I don't have to obey you!
 I'm not a pawn of the Legion, I don't have to obey you!
+
+I'm not feeling like it today... Sorry.
+I'm not feeling like it today... Sorry.
 
 I'm not proud of it, but I had to steal money from others to keep on living.
 I'm not proud of it, but I had to steal money from others to keep on living.
@@ -5560,6 +6133,12 @@ I'm sorry, but I didn't see anything.
 
 I'm sorry, but I'm busy looking into this string of robberies.
 I'm sorry, but I'm busy looking into this string of robberies.
+
+I'm starting to feel dizzy... I shouldn't stay here much longer.#0
+I'm starting to feel dizzy... I shouldn't stay here much longer.
+
+I'm starting to feel dizzy... I shouldn't stay here much longer.#1
+I'm starting to feel dizzy... I shouldn't stay here much longer.
 
 I'm still a bit weak at the moment. We should probably talk later.#0
 I'm still a bit weak at the moment. We should probably talk later.
@@ -5642,6 +6221,9 @@ I...
 I... I just like to eat the purple and delightful... And natural, and...
 I... I just like to eat the purple and delightful... And natural, and...
 
+IMPORTANT:
+IMPORTANT:
+
 Ianus is from the Legion of Aemil, don't compare me to this brigand.
 Ianus is from the Legion of Aemil, don't compare me to this brigand.
 
@@ -5654,23 +6236,35 @@ If Enora wants her sword now, I need to ask for your help.
 If I saw *hic* who you were... *hic* Would not have helped you! 
 If I saw *hic* who you were... *hic* Would not have helped you! 
 
-If it is the latter, please take some courage and help me!
-If it is the latter, please take some courage and help me!
+If it's no trouble, could you get me a %s?
+If it's no trouble, could you get me a %s?
 
-If it's no trouble, could you get me a %s?
-If it's no trouble, could you get me a %s?
+If my memory serves me right, you were just defeated. Why don't you go out to buy better equipment?
+If my memory serves me right, you were just defeated. Why don't you go out to buy better equipment?
 
 If not, how could CrazyKatiektch
 If not, how could CrazyKatiektch
 
+If only someone could help me to make my flowers bloom again.
+If only someone could help me to make my flowers bloom again.
+
 If so, I hope that he didn't give you any hard time, sometimes he can get up on the wrong side of the bed he becomes an embittered and grumpy old man...
 If so, I hope that he didn't give you any hard time, sometimes he can get up on the wrong side of the bed he becomes an embittered and grumpy old man...
+
+If so, please take some courage and help me!
+If so, please take some courage and help me!
+
+If the proposal is not convenient for you, just close the trading window to cancel the exchange of items and money. But if both press the 'Accept Negotiation' button, then the marketing will be finished.
+If the proposal is not convenient for you, just close the trading window to cancel the exchange of items and money. But if both press the 'Accept Negotiation' button, then the marketing will be finished.
 
 If words beat in rhythm
 If words beat in rhythm
 
 If yoiis wants to see a different use for the cards he can yeye for Resa at the light armor shop for a description of the styling cards.
 If yoiis wants to see a different use for the cards he can yeye for Resa at the light armor shop for a description of the styling cards.
+
+If you are above the NPC and they still doesn't hear you, this mean they are deaf - you should report this!
+If you are above the NPC and they still doesn't hear you, this mean they are deaf - you should report this!
 
 If you are lucky he might tell you a story about his adventures.
 If you are lucky he might tell you a story about his adventures.
@@ -5759,6 +6353,9 @@ If you see weird things here and there, or things that just shouldn't be, or eve
 If you simply wish to get 99 in all stats:
 If you simply wish to get 99 in all stats:
 
+If you visit the sewers again... You'll find secret passages...
+If you visit the sewers again... You'll find secret passages...
+
 If you wake up at the inn after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.
 If you wake up at the inn after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.
 
@@ -5770,6 +6367,9 @@ If you want to be rewarded, help us in making this world a better place.
 
 If you want to be rewarded, help us in making this world a better place.#1
 If you want to be rewarded, help us in making this world a better place.
+
+If you want to challenge someone for a friendly match, you are at the right place.
+If you want to challenge someone for a friendly match, you are at the right place.
 
 If you want to make a formidable foe for anyone, you'll need to train with real living opponents!#0
 If you want to make a formidable foe for anyone, you'll need to train with real living opponents!
@@ -5798,6 +6398,9 @@ If you're looking for us there, most of us will be at the tavern of the Red Plus
 Impossible to increase the number/value.
 Impossible to increase the number/value.
 
+Impossible to resync: You are dead.
+Impossible to resync: You are dead.
+
 In Artis they really do mythologize people when they die.
 In Artis they really do mythologize people when they die.
 
@@ -5815,6 +6418,9 @@ In fact... Oh, the things that I could tell... But ran out of space on this... J
 
 In hopes of one day reconnect with the people of Ancea and establish a trade between the two continents, The City of Artis was founded. The Aemil Continent has then grown without contact with the people of Ancea.
 In hopes of one day reconnect with the people of Ancea and establish a trade between the two continents, The City of Artis was founded. The Aemil Continent has then grown without contact with the people of Ancea.
+
+In order to enter a message press the '###keyChat;' key, this will display the white box of typing. Type your message there and press '###keyChat;' again to send your speech.
+In order to enter a message press the '###keyChat;' key, this will display the white box of typing. Type your message there and press '###keyChat;' again to send your speech.
 
 In truth, if your song is as beautiful as your plumage,
 In truth, if your song is as beautiful as your plumage,
@@ -5834,6 +6440,9 @@ Indeed, I am not.
 Indeed, I am not.#1
 Indeed, I am not.
 
+Indefinite Traning
+Indefinite Traning
+
 Infantry Helmet
 Infantry Helmet
 
@@ -5849,11 +6458,17 @@ Inside is a theater mask and a note that you cannot even begin to read.
 Inspector
 Inspector
 
+Instance ID: @@
+Instance ID: @@
+
 Instance variables may not be used with @set.
 Instance variables may not be used with @set.
 
 Int: %d (%d~%d)
 Int: %d (%d~%d)
+
+Intelligence
+Intelligence
 
 Intelligence raises your maximum mana points (good for mages) and your mind abilities. Please note: Magic system has not yet been implemented in this world.
 Intelligence raises your maximum mana points (good for mages) and your mind abilities. Please note: Magic system has not yet been implemented in this world.
@@ -5984,6 +6599,9 @@ Is this for you or somebody else? Because you need to be registered to obtain th
 Is this some kind of joke?!
 Is this some kind of joke?!
 
+Isn't my husband Hinnak so hardworking?
+Isn't my husband Hinnak so hardworking?
+
 Isn't this place pretty?
 Isn't this place pretty?
 
@@ -6032,6 +6650,12 @@ It is possible to yeye your cloth with my beautiful dyes.
 It is them, after all, who have the ultimate decision as to those I can give my cookies to.
 It is them, after all, who have the ultimate decision as to those I can give my cookies to.
 
+It is time to make some sandwiches myself!#0
+It is time to make some sandwiches myself!
+
+It is time to make some sandwiches myself!#1
+It is time to make some sandwiches myself!
+
 It is.
 It is.
 
@@ -6046,6 +6670,9 @@ It looks like you are an expert of the life inside 'La Johanne'. Do you know any
 
 It looks like you can't carry anything else for now.
 It looks like you can't carry anything else for now.
+
+It needs so much training, but Wyara only leaves me here, standing and selling something instead of teaching me.
+It needs so much training, but Wyara only leaves me here, standing and selling something instead of teaching me.
 
 It really hurts, please hurry!
 It really hurts, please hurry!
@@ -6091,6 +6718,9 @@ It tends to be too dark to see a mask.
 
 It was at night, so I could barely escape. I ran to Artis hill.
 It was at night, so I could barely escape. I ran to Artis hill.
+
+It was heard about some adventurers whom obtained and use advanced magic, but that is still seen with bad eyes.
+It was heard about some adventurers whom obtained and use advanced magic, but that is still seen with bad eyes.
 
 It was something like a long nap.
 It was something like a long nap.
@@ -6146,6 +6776,9 @@ It's a very good place if you want to make some more money.
 It's alright! Just one more box and it'll be ok.
 It's alright! Just one more box and it'll be ok.
 
+It's always good to see if you have a lot of them around before you think about attacking one!
+It's always good to see if you have a lot of them around before you think about attacking one!
+
 It's been a while, boy!#1
 It's been a while, boy!
 
@@ -6158,6 +6791,12 @@ It's better than running around in circles doing nothing.
 It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!
 It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!
 
+It's currently day, but when night falls, Candor will become darker.
+It's currently day, but when night falls, Candor will become darker.
+
+It's currently night, that's why Candor is dark.
+It's currently night, that's why Candor is dark.
+
 It's good, good... I have a friend who is still in a coma, but I can't be with her without working...
 It's good, good... I have a friend who is still in a coma, but I can't be with her without working...
 
@@ -6227,6 +6866,9 @@ Item: '%s'/'%s'[%d] (%d) Type: %s | Extra Effect: %s
 Item: '%s'[%d]
 Item: '%s'[%d]
 
+Items for consumption, like potions, can only be used once.
+Items for consumption, like potions, can only be used once.
+
 Items have different effects. Some will heal you, some can be used as weapons or armor, and some can be sold for gold.
 Items have different effects. Some will heal you, some can be used as weapons or armor, and some can be sold for gold.
 
@@ -6280,6 +6922,9 @@ Jeans Chaps
 
 Jenna#001-2-28
 Jenna#001-2-28
+
+Job Level and certain equips can affect your status. You'll see the modifiers with a + sign.
+Job Level and certain equips can affect your status. You'll see the modifiers with a + sign.
 
 Job level can't go any higher.
 Job level can't go any higher.
@@ -6347,6 +6992,9 @@ Just say something sparkling
 Kagerou
 Kagerou
 
+Kaizei
+Kaizei
+
 Katja asked for help
 Katja asked for help
 
@@ -6383,8 +7031,8 @@ Khaki Cotton Dye
 Kill at least %d pinkies and come back.
 Kill at least %d pinkies and come back.
 
-Killed rattos
-Killed rattos
+Killed mob bitmask: @@
+Killed mob bitmask: @@
 
 Killer state reset.
 Killer state reset.
@@ -6398,17 +7046,26 @@ Knight
 Know that every flatterer,
 Know that every flatterer,
 
+Known Recipes: @@
+Known Recipes: @@
+
 Koga#001-1
 Koga#001-1
 
 Koga#008-1-1
 Koga#008-1-1
 
+Kralog
+Kralog
+
 Kralog Voice
 Kralog Voice
 
 Lachesis Brew
 Lachesis Brew
+
+Lake
+Lake
 
 Large Healing Potion
 Large Healing Potion
@@ -6437,6 +7094,12 @@ Lean
 Lean for example?
 Lean for example?
 
+Learn Skill
+Learn Skill
+
+Learn all recipes
+Learn all recipes
+
 Leather Gloves
 Leather Gloves
 
@@ -6448,6 +7111,9 @@ Leather Trousers
 
 Leave it.
 Leave it.
+
+Leave me alone.
+Leave me alone.
 
 Leaves have stopped falling.
 Leaves have stopped falling.
@@ -6470,8 +7136,8 @@ LeftBarrierCheck
 LeftDoor
 LeftDoor
 
-LeftDoor#001-2-23
-LeftDoor#001-2-23
+LeftDoor#Artis
+LeftDoor#Artis
 
 LeftDoorCheck
 LeftDoorCheck
@@ -6544,6 +7210,9 @@ Lettuce Leaf
 
 Library
 Library
+
+Light
+Light
 
 Light Armor Shop
 Light Armor Shop
@@ -6566,8 +7235,20 @@ Lime Cotton Dye
 Line @@ has been removed.
 Line @@ has been removed.
 
+List of known cooking recipes:
+List of known cooking recipes:
+
+List of known master skills:
+List of known master skills:
+
 List the commands
 List the commands
+
+Listen, kid. Being a legion member is not a joke.#0
+Listen, kid. Being a legion member is not a joke.
+
+Listen, kid. Being a legion member is not a joke.#1
+Listen, kid. Being a legion member is not a joke.
 
 Little Blub
 Little Blub
@@ -6610,6 +7291,9 @@ Login-server is offline. Impossible to %s the player '%.*s'.
 
 Look at your equipment, can you guess what material it is made from?
 Look at your equipment, can you guess what material it is made from?
+
+Look for the hideout, but tell no one about this. Then, say the password again.
+Look for the hideout, but tell no one about this. Then, say the password again.
 
 Look how splendid this @@ is!
 Look how splendid this @@ is!
@@ -6659,6 +7343,9 @@ Lower this skill
 Lozerk
 Lozerk
 
+Lozerk told me to talk to you and join the legion.
+Lozerk told me to talk to you and join the legion.
+
 Lucas#001-1
 Lucas#001-1
 
@@ -6707,8 +7394,20 @@ Magic Arpan
 Magic Arpan#sailors
 Magic Arpan#sailors
 
+Magic Feather
+Magic Feather
+
+Magic was banned for lore reasons? Seriously, after the mana war, only small tricks are allowed.
+Magic was banned for lore reasons? Seriously, after the mana war, only small tricks are allowed.
+
 Magician
 Magician
+
+Make me proud, boy.#1
+Make me proud, boy.
+
+Make me proud, girl.#0
+Make me proud, girl.
 
 Make sure to put on a bait after you click, though!
 Make sure to put on a bait after you click, though!
@@ -6728,17 +7427,26 @@ Malik#008-2-18
 Mana Bug
 Mana Bug
 
+Mana Ghost
+Mana Ghost
+
 Mana Torch
 Mana Torch
 
 Manana
 Manana
 
+Manana Sandwich
+Manana Sandwich
+
 Manana Tree
 Manana Tree
 
 Manually trigger the current broadcast
 Manually trigger the current broadcast
+
+Many thanks. I can now do sandwiches again!
+Many thanks. I can now do sandwiches again!
 
 Map not found.
 Map not found.
@@ -6754,6 +7462,9 @@ Market Place
 
 Marriage failed.
 Marriage failed.
+
+Master Book
+Master Book
 
 Master Fluffy was attracted by the odour,
 Master Fluffy was attracted by the odour,
@@ -6791,6 +7502,9 @@ Maybe he over did it with the bottle today to celebrate that!
 Maybe he was one of those who got lost last month? He could be the yoiis from Esperia who got a secret diplomatic mission from the Legion of Aemil!#1
 Maybe he was one of those who got lost last month? He could be the yoiis from Esperia who got a secret diplomatic mission from the Legion of Aemil!
 
+Maybe later.
+Maybe later.
+
 Maybe next time.
 Maybe next time.
 
@@ -6812,11 +7526,17 @@ Maybe you can use it as a weapon.
 Maybe you could ask him what's wrong?
 Maybe you could ask him what's wrong?
 
+Maybe you have more luck with something else?
+Maybe you have more luck with something else?
+
 Maybe you meant: 
 Maybe you meant: 
 
 Maybe you should help someone else first, so that he sees your intentions are good.
 Maybe you should help someone else first, so that he sees your intentions are good.
+
+Maybe you should try this phrase?
+Maybe you should try this phrase?
 
 Maybe you too you could help me?
 Maybe you too you could help me?
@@ -6866,6 +7586,9 @@ Merchant
 Merchant Guild
 Merchant Guild
 
+Merchants like to buy body parts of killed monsters and animals because they can make items and equipment.
+Merchants like to buy body parts of killed monsters and animals because they can make items and equipment.
+
 Mercy has been granted.
 Mercy has been granted.
 
@@ -6932,14 +7655,17 @@ Mommy sent me to find my brother Bobo.
 Mona
 Mona
 
-Mona Father's is right behind you. You have five minutes to bring him out of sewers!
-Mona Father's is right behind you. You have five minutes to bring him out of sewers!
-
 Mona's dad
 Mona's dad
 
 Mona's dad is missing
 Mona's dad is missing
+
+Mona's dad was rescued
+Mona's dad was rescued
+
+Mona's father is right behind you. You have five minutes to bring him out of sewers!
+Mona's father is right behind you. You have five minutes to bring him out of sewers!
 
 Money
 Money
@@ -6955,6 +7681,9 @@ Monster database has been reloaded.
 
 Monster: '%s'/'%s'/'%s' (%d)
 Monster: '%s'/'%s'/'%s' (%d)
+
+Monsters are everywhere. They're a plague we're trying to get rid of.
+Monsters are everywhere. They're a plague we're trying to get rid of.
 
 Moo!
 Moo!
@@ -6980,6 +7709,9 @@ Moss
 Most common and widely popular in the fish realm are @@ and pieces of @@.
 Most common and widely popular in the fish realm are @@ and pieces of @@.
 
+Most of these people will not think twice before giving a nice reward to anyone who helps them.
+Most of these people will not think twice before giving a nice reward to anyone who helps them.
+
 Mostly manuals and tutorials but you won't find out until you open one!
 Mostly manuals and tutorials but you won't find out until you open one!
 
@@ -6998,6 +7730,9 @@ Mouboo#Artis2
 Mouboo#Artis3
 Mouboo#Artis3
 
+Mountain
+Mountain
+
 Move this line down
 Move this line down
 
@@ -7006,6 +7741,12 @@ Move this line up
 
 Mundane
 Mundane
+
+Mundane ran away, he did not trust the path you chose.
+Mundane ran away, he did not trust the path you chose.
+
+Mundane ran straight home. He must be missing his daughter.
+Mundane ran straight home. He must be missing his daughter.
 
 Murderers!#0
 Murderers!
@@ -7025,8 +7766,8 @@ My beauty. I was not always a sailor, you know, I was once an important individu
 My breath smells bad.
 My breath smells bad.
 
-My daughter is probably worried with me. Could you perhaps lead me out of here?
-My daughter is probably worried with me. Could you perhaps lead me out of here?
+My daughter is probably worried about me. Could you perhaps lead me out of here?
+My daughter is probably worried about me. Could you perhaps lead me out of here?
 
 My forestbows are not made of regular wood, you know.
 My forestbows are not made of regular wood, you know.
@@ -7097,8 +7838,14 @@ NPC is not in this map.
 NPC moved.
 NPC moved.
 
+NPC stylists will cut your hair!
+NPC stylists will cut your hair!
+
 NPC variables may not be used with @set.
 NPC variables may not be used with @set.
+
+NPC's or non-playable characters are characters that are always in the game, offering a wide variety of reactions, from a simple friendly conversation to a desperate request for help.
+NPC's or non-playable characters are characters that are always in the game, offering a wide variety of reactions, from a simple friendly conversation to a desperate request for help.
 
 Nah, I don't feel like chatting.
 Nah, I don't feel like chatting.
@@ -7147,6 +7894,9 @@ Narrator#000-0-1
 
 Navy Blue Cotton Dye
 Navy Blue Cotton Dye
+
+Neutral monsters do not have such a sense of danger.
+Neutral monsters do not have such a sense of danger.
 
 Never (only on login)
 Never (only on login)
@@ -7273,9 +8023,6 @@ No player found in map '%s'.
 
 No player found.
 No player found.
-
-No problem, I can help you anyway.
-No problem, I can help you anyway.
 
 No problem, come back later if you changed your mind!
 No problem, come back later if you changed your mind!
@@ -7448,6 +8195,9 @@ Nope, there are no secrets hidden within the ship's hull. Some sailors swear the
 Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
 Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
 
+Normally, collaborative monsters behave like neutral monsters. Unless someone of the same species is in danger, at which point they all take an aggressive stance against the aggressor.
+Normally, collaborative monsters behave like neutral monsters. Unless someone of the same species is in danger, at which point they all take an aggressive stance against the aggressor.
+
 North
 North
 
@@ -7463,6 +8213,9 @@ Not a hexadecimal digit:
 Not a string:
 Not a string:
 
+Not all monsters will do this, but most will. So if you see a monster running after a player and you stand in the way...
+Not all monsters will do this, but most will. So if you see a monster running after a player and you stand in the way...
+
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Newbies are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Newbies are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
 
@@ -7472,14 +8225,26 @@ Not everybody has a kind mind. Scammers can be anywhere, even among us!
 Not in the mood to chat.
 Not in the mood to chat.
 
+Not my problem.#0
+Not my problem.
+
+Not my problem.#1
+Not my problem.
+
+Not now, thank you.
+Not now, thank you.
+
 Not now.
 Not now.
 
-Not now. You see, I am also afraid of Blubs and Rattos!
-Not now. You see, I am also afraid of Blubs and Rattos!
+Not now. You see, I am also afraid of Slimes and Rattos!
+Not now. You see, I am also afraid of Slimes and Rattos!
 
 Not really. All I got was a headache...
 Not really. All I got was a headache...
+
+Not resync'ing to prevent flood.
+Not resync'ing to prevent flood.
 
 Not so good actually... I would feel better on Nard's ship.
 Not so good actually... I would feel better on Nard's ship.
@@ -7490,6 +8255,12 @@ Not so weird, perhaps, except that it was been bright and sunny just a second be
 Not to kill your dream, but... Julia is mine!#1
 Not to kill your dream, but... Julia is mine!
 
+Not yet, I'll be back.#0
+Not yet, I'll be back.
+
+Not yet, I'll be back.#1
+Not yet, I'll be back.
+
 Not yet, but I am working on it.
 Not yet, but I am working on it.
 
@@ -7501,6 +8272,9 @@ Not yet. I will be back soon.
 
 Note
 Note
+
+Note down. To hunt a target you must click the primary mouse button on it. Avoid fighting monsters or citizens much stronger than you. %s
+Note down. To hunt a target you must click the primary mouse button on it. Avoid fighting monsters or citizens much stronger than you. %s
 
 Note#001-2-22
 Note#001-2-22
@@ -7802,6 +8576,9 @@ Oh, and there was this inscription on your raft. It represents the Legion of Aem
 Oh, and you will need this book too, it will help you learn the basics of fishing.
 Oh, and you will need this book too, it will help you learn the basics of fishing.
 
+Oh, but I'll still need the book. Even if all pages are white.
+Oh, but I'll still need the book. Even if all pages are white.
+
 Oh, but you didn't come here to talk about that, am I right?#0
 Oh, but you didn't come here to talk about that, am I right?
 
@@ -7837,6 +8614,9 @@ Oh, now that I remember, we also found some money in your pockets, here it is!
 
 Oh, now that I remember, we also found some money in your pockets, here it is!#1
 Oh, now that I remember, we also found some money in your pockets, here it is!
+
+Oh, ok. Come back later if you need something.
+Oh, ok. Come back later if you need something.
 
 Oh, please hurry and bring me a %s.
 Oh, please hurry and bring me a %s.
@@ -7895,6 +8675,9 @@ Oh... eating rattos. Sounds... ehm... Delicious, yes.
 Oh... um... actually... all I wanted was to get to Artis. Err... but I didn't, uhm... have enough money to pay for the ferry!
 Oh... um... actually... all I wanted was to get to Artis. Err... but I didn't, uhm... have enough money to pay for the ferry!
 
+Oh? And do you think you have what it takes to be a proud Legion Member?
+Oh? And do you think you have what it takes to be a proud Legion Member?
+
 Ok I add your name... @@...
 Ok I add your name... @@...
 
@@ -7943,12 +8726,6 @@ Ok.
 Okay, I'll be here, if you change your mind.
 Okay, I'll be here, if you change your mind.
 
-Okay, I'm ready to work!#0
-Okay, I'm ready to work!
-
-Okay, I'm ready to work!#1
-Okay, I'm ready to work!
-
 Okay, but there won't be any explosions.
 Okay, but there won't be any explosions.
 
@@ -7979,6 +8756,9 @@ On
 On March 213CCE, Chancellor Benjamin Frost, with support of the council, proclaimed the Republic of Ancea. This event would become known as the Blue Revolution.
 On March 213CCE, Chancellor Benjamin Frost, with support of the council, proclaimed the Republic of Ancea. This event would become known as the Blue Revolution.
 
+On a side note, more defense is always good, but the damage won't decrease on the same rate that defense raises.
+On a side note, more defense is always good, but the damage won't decrease on the same rate that defense raises.
+
 On one hand, ranged weapons are generally weaker than melee ones, but you attack from a safer position. On the other hand, depending on the level of the weapon, melee ones potentially can yeild quicker kills.
 On one hand, ranged weapons are generally weaker than melee ones, but you attack from a safer position. On the other hand, depending on the level of the weapon, melee ones potentially can yeild quicker kills.
 
@@ -7988,11 +8768,17 @@ On the year 206CCE, after a long crisis of succession, a minor noble only known 
 Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
 Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
 
+Once used, they will disappear from your inventory.
+Once used, they will disappear from your inventory.
+
 One Castle
 One Castle
 
 One advice: Don't take the things those drinkers say too serious. They are sitting here and drinking all day.
 One advice: Don't take the things those drinkers say too serious. They are sitting here and drinking all day.
+
+One last thing to keep in mind... If you are surrounded, you'll suffer an agility and defense penalty.
+One last thing to keep in mind... If you are surrounded, you'll suffer an agility and defense penalty.
 
 One of its branches hit me!
 One of its branches hit me!
@@ -8002,6 +8788,9 @@ One of these little boogers started flying early, and escaped from me.
 
 Only Don and the Merchant Guild have that kind of material in stock. It's called black iron.
 Only Don and the Merchant Guild have that kind of material in stock. It's called black iron.
+
+Only after you prove yourself, you may join our ranks as a proud member! Hahah!
+Only after you prove yourself, you may join our ranks as a proud member! Hahah!
 
 Only one more Fluffy to kill and it's done!
 Only one more Fluffy to kill and it's done!
@@ -8014,6 +8803,9 @@ Oooh, perfect! It's perfect!
 
 Oooh, these wounds! They hurt so much!
 Oooh, these wounds! They hurt so much!
+
+Open your inventory window (###keyWindowInventory; key) next to the trading window. Select an item you want to offer, and then press the Add button. To add money to the negotiation, enter the amount you will offer and press the Change button.
+Open your inventory window (###keyWindowInventory; key) next to the trading window. Select an item you want to offer, and then press the Add button. To add money to the negotiation, enter the amount you will offer and press the Change button.
 
 Opened treasure chest
 Opened treasure chest
@@ -8029,6 +8821,12 @@ Or do you want to keep your friendships and adventures in different groups?
 
 Or you can take seat and ask Melinda if you need something.
 Or you can take seat and ask Melinda if you need something.
+
+Or, you can just forget all that, and let me prepare sandwiches for you, too! %%H#0
+Or, you can just forget all that, and let me prepare sandwiches for you, too! %%H
+
+Or, you can just forget all that, and let me prepare sandwiches for you, too! %%H#1
+Or, you can just forget all that, and let me prepare sandwiches for you, too! %%H
 
 Orange Cotton Dye
 Orange Cotton Dye
@@ -8081,6 +8879,9 @@ Our mommy doesn't allow us to go there, because it's dangerous. But he doesn't l
 Our only wish to eat a plush, so juicy sweet...
 Our only wish to eat a plush, so juicy sweet...
 
+Out of creativity already? Don't worry, I don't judge! Hehe.
+Out of creativity already? Don't worry, I don't judge! Hehe.
+
 Over lovers under a starry night
 Over lovers under a starry night
 
@@ -8104,6 +8905,9 @@ PartyLock |
 
 Pearl
 Pearl
+
+People vary greatly in the amount of strength, agility, dexterity, intelligence, vitality and luck.
+People vary greatly in the amount of strength, agility, dexterity, intelligence, vitality and luck.
 
 Perfect!
 Perfect!
@@ -8129,20 +8933,11 @@ Pet intimacy is already at maximum.
 Peter
 Peter
 
-Peter asks to kill rattos
-Peter asks to kill rattos
-
-Peter asks to kill rattos again
-Peter asks to kill rattos again
-
-Peter gave reward
-Peter gave reward
-
 Peter needs help
 Peter needs help
 
-Peter#001-2-22
-Peter#001-2-22
+Peter#Artis
+Peter#Artis
 
 Pets are not allowed in Guild Wars.
 Pets are not allowed in Guild Wars.
@@ -8204,6 +8999,9 @@ Piou and The Fluffy
 Piou egg
 Piou egg
 
+Piouleg Sandwich
+Piouleg Sandwich
+
 Pious must keep a strict diet composed of Piberries.
 Pious must keep a strict diet composed of Piberries.
 
@@ -8261,8 +9059,14 @@ Please bring me @@s so I can pull out these spikes from my foot.
 Please choose the desired gender:
 Please choose the desired gender:
 
+Please come again with at least 10 INT and 20 DEX. Stat Bonuses aren't counted.
+Please come again with at least 10 INT and 20 DEX. Stat Bonuses aren't counted.
+
 Please come back anytime!
 Please come back anytime!
+
+Please come talk to me, I'll help you get dressed.
+Please come talk to me, I'll help you get dressed.
 
 Please continue talking to the villagers.
 Please continue talking to the villagers.
@@ -8272,6 +9076,9 @@ Please do hurry and bring me %d %s, so I can finish my soup!
 
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!
+
+Please don't touch my stove without my authorization.
+Please don't touch my stove without my authorization.
 
 Please don't touch these hats, they are for crew members only.
 Please don't touch these hats, they are for crew members only.
@@ -8645,8 +9452,17 @@ Poor Chelios, I don't envy him...
 Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body
 Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body
 
+Potions? That sounds useful. What do you have?
+Potions? That sounds useful. What do you have?
+
 Practice! There are no secrets to becoming a warrior.
 Practice! There are no secrets to becoming a warrior.
+
+Press the '###keyTrade;' key to ignore or accept business proposals. You and the other citizen who want to negotiate need to be in the configuration that accepts negotiations. if your configuration is 'Ignoring business proposals', then you will not receive the warning from any citizen wanting to negotiate with you, and you will not be able to initiate negotiations.
+Press the '###keyTrade;' key to ignore or accept business proposals. You and the other citizen who want to negotiate need to be in the configuration that accepts negotiations. if your configuration is 'Ignoring business proposals', then you will not receive the warning from any citizen wanting to negotiate with you, and you will not be able to initiate negotiations.
+
+Previous Inn reservation will be lost!
+Previous Inn reservation will be lost!
 
 Priest
 Priest
@@ -8735,6 +9551,9 @@ Q'Onan#001-1
 Q'Pid#001-1
 Q'Pid#001-1
 
+Quest complete
+Quest complete
+
 Quest database has been reloaded.
 Quest database has been reloaded.
 
@@ -8752,6 +9571,9 @@ Quit
 
 Race
 Race
+
+Raijin
+Raijin
 
 Raijin Voice
 Raijin Voice
@@ -8789,8 +9611,8 @@ Ratto Teeth
 RattosControl
 RattosControl
 
-RattosControl#001-2-23
-RattosControl#001-2-23
+RattosControl#Artis
+RattosControl#Artis
 
 Raw Log
 Raw Log
@@ -8804,11 +9626,20 @@ Really? That's kind of you, I accept your help!
 Rebellion
 Rebellion
 
+Recipe Book
+Recipe Book
+
 Red Cotton Dye
 Red Cotton Dye
 
 Red Plush Wine
 Red Plush Wine
+
+Red Rose
+Red Rose
+
+Red Tulip
+Red Tulip
 
 Reduces your Int by 50
 Reduces your Int by 50
@@ -8819,6 +9650,9 @@ Reduces your base level by 50
 Reduces your job level by 50
 Reduces your job level by 50
 
+Refinery UI is not available
+Refinery UI is not available
+
 Registered
 Registered
 
@@ -8828,8 +9662,14 @@ Registration is open to everybody, but newcomers need to pay a fee for all of th
 Related quests:
 Related quests:
 
+Remember that some equipment sets will give you hidden stat bonuses! So dress yourself in a fashion way, if possible!
+Remember that some equipment sets will give you hidden stat bonuses! So dress yourself in a fashion way, if possible!
+
 Remember to stay sharp. I might need your help on another case.
 Remember to stay sharp. I might need your help on another case.
+
+Remember! You're trading things, not lending/borrowing them. You are solely responsible for everything you own.
+Remember! You're trading things, not lending/borrowing them. You are solely responsible for everything you own.
 
 Remember, you have to find my brother on the hill east of here.
 Remember, you have to find my brother on the hill east of here.
@@ -8885,6 +9725,12 @@ Reset 'Feeling' maps.
 Reset EVERYTHING
 Reset EVERYTHING
 
+Reset Quest
+Reset Quest
+
+Reset all recipes
+Reset all recipes
+
 Reset done!
 Reset done!
 
@@ -8896,6 +9742,12 @@ Reset subquests
 
 Reset | 
 Reset | 
+
+Return
+Return
+
+Return to Artis?
+Return to Artis?
 
 Return to Debug menu
 Return to Debug menu
@@ -8945,11 +9797,14 @@ Roasted Maggot
 Robin
 Robin
 
+Robin Bandit
+Robin Bandit
+
 Rogue
 Rogue
 
-Rowboat
-Rowboat
+Rosehat
+Rosehat
 
 Royal Guard
 Royal Guard
@@ -8999,6 +9854,12 @@ Sadly, you found nothing but dirt.
 Sage
 Sage
 
+Sagratha is great.
+Sagratha is great.
+
+Sagratha is great. Why does the strange woman near the Legion building always say that to daddy...?
+Sagratha is great. Why does the strange woman near the Legion building always say that to daddy...?
+
 Said her friend had told her that I needed help.
 Said her friend had told her that I needed help.
 
@@ -9020,6 +9881,9 @@ Salem#001-1
 Samantha
 Samantha
 
+Sandwiches
+Sandwiches
+
 Sapartan
 Sapartan
 
@@ -9038,8 +9902,8 @@ Say her love to glamourous Gliktch?
 Scared me, those seven-branched little stumps did!
 Scared me, those seven-branched little stumps did!
 
-Scary... I am afraid of these blubs and rattos... And worse, I am lost...
-Scary... I am afraid of these blubs and rattos... And worse, I am lost...
+Scary... I am afraid of all these Slimes, Rattos and Maggots... And worse, I am lost...
+Scary... I am afraid of all these Slimes, Rattos and Maggots... And worse, I am lost...
 
 Scheduled broadcasts
 Scheduled broadcasts
@@ -9061,6 +9925,9 @@ Scripts have been reloaded.
 
 Scythe
 Scythe
+
+Sea
+Sea
 
 Sea Drops
 Sea Drops
@@ -9341,6 +10208,9 @@ Silvio for example?
 Silvio starts to speak to his bottle, you leave, letting him have a private conversation.
 Silvio starts to speak to his bottle, you leave, letting him have a private conversation.
 
+Simon
+Simon
+
 Simply contact them, by forum or wispers or irc. When you are helpful and kind, they respond in kind. And in time they may surely add you to my cookie list!
 Simply contact them, by forum or wispers or irc. When you are helpful and kind, they respond in kind. And in time they may surely add you to my cookie list!
 
@@ -9421,6 +10291,9 @@ So I was going to ask if maybe you would be interested in giving me a hand with 
 
 So I was going to ask if maybe you would be interested in giving me a hand with a few errands.#1
 So I was going to ask if maybe you would be interested in giving me a hand with a few errands.
+
+So be nice and help people along the way!
+So be nice and help people along the way!
 
 So close!
 So close!
@@ -9539,17 +10412,26 @@ Some of the crew are looking for goods we can trade with at our next destination
 Some of your items cannot be vended and were removed from the shop.
 Some of your items cannot be vended and were removed from the shop.
 
+Some others also like to buy them to keep as trophies. Either way, you can make some money with that.
+Some others also like to buy them to keep as trophies. Either way, you can make some money with that.
+
 Some people prefer to catch fish using magic, but calling that "fishing" would be an insult to this traditional sport.
 Some people prefer to catch fish using magic, but calling that "fishing" would be an insult to this traditional sport.
 
 Some people, however, prefer to fish with more unorthodox baits, such as @@ or @@.
 Some people, however, prefer to fish with more unorthodox baits, such as @@ or @@.
 
+Some special items cannot be traded, discarded, nor sold. With a right click, you can also protect normal items as if they were special ones.
+Some special items cannot be traded, discarded, nor sold. With a right click, you can also protect normal items as if they were special ones.
+
 Some tasks will help you become aquainted with Artis. Trust me.
 Some tasks will help you become aquainted with Artis. Trust me.
 
 Some types of fish also enjoy @@ quite a bit.
 Some types of fish also enjoy @@ quite a bit.
+
+Some, but not all, from the rare or non-replaceable items will have a warning when you try to sell them.
+Some, but not all, from the rare or non-replaceable items will have a warning when you try to sell them.
 
 Somebody is probably training, better wait for him to finish.
 Somebody is probably training, better wait for him to finish.
@@ -9602,14 +10484,17 @@ Sorry but I have no time for this.
 Sorry i can't help you. Go away!
 Sorry i can't help you. Go away!
 
+Sorry to disturb you.
+Sorry to disturb you.
+
 Sorry! I forgot to introduce myself. My name is Arpan, but other sailors call me Magic Arpan because I know one or two yaing magic spells.
 Sorry! I forgot to introduce myself. My name is Arpan, but other sailors call me Magic Arpan because I know one or two yaing magic spells.
 
-Sorry, I am not in the mood for another fight with these rattos.
-Sorry, I am not in the mood for another fight with these rattos.
+Sorry, I am not making these anymore.
+Sorry, I am not making these anymore.
 
-Sorry, I am not making these anymore.
-Sorry, I am not making these anymore.
+Sorry, I don't know any recipe with this.
+Sorry, I don't know any recipe with this.
 
 Sorry, I have to go.
 Sorry, I have to go.
@@ -9629,6 +10514,9 @@ Sorry, but you don't have what I need.
 Sorry, but you have no pet.
 Sorry, but you have no pet.
 
+Sorry, my eyesight is a bit poor nowadays. Where are the ingredients?
+Sorry, my eyesight is a bit poor nowadays. Where are the ingredients?
+
 Sorry, no.
 Sorry, no.
 
@@ -9640,6 +10528,9 @@ Sorry, we are sold out for today.
 
 Sorry, you look like a pinkie.
 Sorry, you look like a pinkie.
+
+Sorry. I can't make a sandwich with that.
+Sorry. I can't make a sandwich with that.
 
 Sorry... here you are.
 Sorry... here you are.
@@ -9788,8 +10679,20 @@ Store#Various001-1
 Store#Weapon001-2-27
 Store#Weapon001-2-27
 
+Stove
+Stove
+
 Str: %d (%d~%d)
 Str: %d (%d~%d)
+
+Strange, it seems I became younger lately.
+Strange, it seems I became younger lately.
+
+Strangely enough, this lid can only be open from inside.
+Strangely enough, this lid can only be open from inside.
+
+Strength
+Strength
 
 Strength multiplies the damage of your hits, especially melee ones. You will also be able to carry heavier stuff.
 Strength multiplies the damage of your hits, especially melee ones. You will also be able to carry heavier stuff.
@@ -9802,6 +10705,9 @@ Styling Shop
 
 Subquests:
 Subquests:
+
+Suddenly you remember the strange phrase Mona overheard Sophialla saying
+Suddenly you remember the strange phrase Mona overheard Sophialla saying
 
 Summer
 Summer
@@ -10076,20 +10982,11 @@ Thanks again for helping me with the pinkies!
 Thanks again for helping me!
 Thanks again for helping me!
 
-Thanks again for helping me. Drats these rattos for infesting our fair vessal!
-Thanks again for helping me. Drats these rattos for infesting our fair vessal!
-
-Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.
-Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.
-
 Thanks for finding daddy... I wish he spent more time with me...
 Thanks for finding daddy... I wish he spent more time with me...
 
-Thanks for helping me!
-Thanks for helping me!
-
-Thanks for saving me. This is enough, I'll watch if Mona is fine and return to Sewers later.
-Thanks for saving me. This is enough, I'll watch if Mona is fine and return to Sewers later.
+Thanks for helping my husband Hinnak.
+Thanks for helping my husband Hinnak.
 
 Thanks for the help!
 Thanks for the help!
@@ -10103,14 +11000,23 @@ Thanks for your help with the pinkies.
 Thanks!
 Thanks!
 
+Thanks, sir Q'Anon.
+Thanks, sir Q'Anon.
+
 Thanks, that was very kind of you!
 Thanks, that was very kind of you!
 
 That better be a trophy on your head.
 That better be a trophy on your head.
 
+That doesn't looks edible to me!
+That doesn't looks edible to me!
+
 That is a really fine piece of wood you brought me.
 That is a really fine piece of wood you brought me.
+
+That looks too exotic for me to eat!
+That looks too exotic for me to eat!
 
 That makes everybody
 That makes everybody
@@ -10160,6 +11066,9 @@ That's right, we have our very own training room. The Legion is always well prep
 That's too bad... Although I think you're lying.
 That's too bad... Although I think you're lying.
 
+Thats your problem, really.
+Thats your problem, really.
+
 The @@ is a one time item, you can use it as many times as you want, but you can only have one!
 The @@ is a one time item, you can use it as many times as you want, but you can only have one!
 
@@ -10241,9 +11150,6 @@ The doctor examines you briefly.
 The door to the legion building is temporarily closed.
 The door to the legion building is temporarily closed.
 
-The elder ran away from you.
-The elder ran away from you.
-
 The end of the story got erased, probably because of the sea water. Some pages are still missing. Thus much is lost to time, including the author's name.
 The end of the story got erased, probably because of the sea water. Some pages are still missing. Thus much is lost to time, including the author's name.
 
@@ -10309,6 +11215,9 @@ The item is not equippable.
 
 The leader of the troupe said you hung around them a lot while they were in town.
 The leader of the troupe said you hung around them a lot while they were in town.
+
+The lid is sealed shut, and you are too weak to open it.
+The lid is sealed shut, and you are too weak to open it.
 
 The light armor shop is ran by Resa, she is part of the Merchant Guild of Artis.
 The light armor shop is ran by Resa, she is part of the Merchant Guild of Artis.
@@ -10384,6 +11293,9 @@ The problem is that I am short of material.
 
 The rank of lieutenant is granted only to people with proper control of their skill and good judgment, like Enora. Or me, of course.
 The rank of lieutenant is granted only to people with proper control of their skill and good judgment, like Enora. Or me, of course.
+
+The recipes, of course, you must collect yourself. Even sandwiches are not so simple as to simply put ingredients and hope for the best.
+The recipes, of course, you must collect yourself. Even sandwiches are not so simple as to simply put ingredients and hope for the best.
 
 The resulting shield looks usable already, but Jack applies another liquid to it and leaves it to dry for a few moments.
 The resulting shield looks usable already, but Jack applies another liquid to it and leaves it to dry for a few moments.
@@ -10472,11 +11384,17 @@ There are a lot of things you must be wondering about.
 There are few groups of these @@s all around this island. Just pick some and have a try.
 There are few groups of these @@s all around this island. Just pick some and have a try.
 
+There are many key combinations, press F1 to see a short list of them!
+There are many key combinations, press F1 to see a short list of them!
+
 There are no items to appraise.
 There are no items to appraise.
 
 There are no tasks for you right now.
 There are no tasks for you right now.
+
+There are people in the world who need help!
+There are people in the world who need help!
 
 There are people who really need our help.
 There are people who really need our help.
@@ -10493,8 +11411,20 @@ There are some groups of these @@s all around this island. Just pick some and ha
 There are some knives on the table. Would you like to take one?
 There are some knives on the table. Would you like to take one?
 
-There are still some rattos left! Do you want to abort the quest?
-There are still some rattos left! Do you want to abort the quest?
+There are some stones scattered around the world that mark your point of return in case of defeats. Some ship chests may also serve as a return point. You can also select some beds in case of defeats.
+There are some stones scattered around the world that mark your point of return in case of defeats. Some ship chests may also serve as a return point. You can also select some beds in case of defeats.
+
+There are still some monsters left! Do you want to abort the quest?
+There are still some monsters left! Do you want to abort the quest?
+
+There are three kind of monsters which frequently or seldomly attacks our fair vessel.
+There are three kind of monsters which frequently or seldomly attacks our fair vessel.
+
+There are three types of items.
+There are three types of items.
+
+There are three types of monsters: the aggressive, the neutral, and the collaborative.
+There are three types of monsters: the aggressive, the neutral, and the collaborative.
 
 There are two different kinds of cards, the first changes the style of your clothes, the second changes their stats.
 There are two different kinds of cards, the first changes the style of your clothes, the second changes their stats.
@@ -10514,6 +11444,9 @@ There is always something you can do here, like killing some tortugas or helping
 There is an unknown side effect to these plushrooms, they can free you from your past mistakes.
 There is an unknown side effect to these plushrooms, they can free you from your past mistakes.
 
+There is no day/night, weather, or season cycle in TMW yet.
+There is no day/night, weather, or season cycle in TMW yet.
+
 There is no help for %c%s.
 There is no help for %c%s.
 
@@ -10525,6 +11458,15 @@ There was a traveling theater troupe in town recently, but they've moved on to T
 
 There you go, like new.
 There you go, like new.
+
+There you go. Please enjoy yourself! ^.^
+There you go. Please enjoy yourself! ^.^
+
+There's also a job level, which produces green sparkles when you level it.
+There's also a job level, which produces green sparkles when you level it.
+
+There's also weather, meaning it can rain, snow, or even happen a sandstorm. They are usually cosmetic, but...
+There's also weather, meaning it can rain, snow, or even happen a sandstorm. They are usually cosmetic, but...
 
 There's been no change in the setting.
 There's been no change in the setting.
@@ -10565,9 +11507,6 @@ These twigleafs are the trees that give me the living wood you speak of.
 These yeye boxes are way too heavy to be carried alone onto the ship.
 These yeye boxes are way too heavy to be carried alone onto the ship.
 
-They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control.
-They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control.
-
 They are all around the island.
 They are all around the island.
 
@@ -10580,6 +11519,9 @@ They are fresh!
 They are fresh, they are good!
 They are fresh, they are good!
 
+They are known to use a revolutionary hair growth formula.
+They are known to use a revolutionary hair growth formula.
+
 They are made of special living wood.
 They are made of special living wood.
 
@@ -10588,6 +11530,9 @@ They are married... wish them well.
 
 They are so tasty when cooked with some @@. Don't drop any of them!
 They are so tasty when cooked with some @@. Don't drop any of them!
+
+They can be equipped to make your look more interesting or to improve some of its features.
+They can be equipped to make your look more interesting or to improve some of its features.
 
 They eventually found a new land after much hardship and named it Aurora, after its beautiful sunrise.
 They eventually found a new land after much hardship and named it Aurora, after its beautiful sunrise.
@@ -10613,6 +11558,9 @@ They taste simply divine!
 They were all in the mining camp.
 They were all in the mining camp.
 
+They will not attack anyone unless they are attacked first.
+They will not attack anyone unless they are attacked first.
+
 They're perfect, just perfect!
 They're perfect, just perfect!
 
@@ -10621,6 +11569,12 @@ They've been destroying my fields, and I guess I got a bit worked up.
 
 Thief
 Thief
+
+Thief Slime
+Thief Slime
+
+Think on Season Quests as a yearly quest which you have three months to do.
+Think on Season Quests as a yearly quest which you have three months to do.
 
 Thirteen Castles
 Thirteen Castles
@@ -10651,6 +11605,9 @@ This action was met with widespread opposition from all races, and a war broke. 
 
 This book contains everything you should know about it, take it!
 This book contains everything you should know about it, take it!
+
+This book contains the knowledge collected by ukars about how the world works.
+This book contains the knowledge collected by ukars about how the world works.
 
 This book outlines the laws of every city and holding in Gasaron.
 This book outlines the laws of every city and holding in Gasaron.
@@ -10702,6 +11659,12 @@ This is an @@, a light blue sea fruit. They're highly desired in the archipelago
 
 This is for my own use.
 This is for my own use.
+
+This is how good we Legion Members are. I was informed of your arrival way before you left Drasil Island.
+This is how good we Legion Members are. I was informed of your arrival way before you left Drasil Island.
+
+This is how you do it! HAAH!
+This is how you do it! HAAH!
 
 This is the last one. If you use it again out of clumsiness, I will use your soft moist parts in the concoction of my next cookie batch.
 This is the last one. If you use it again out of clumsiness, I will use your soft moist parts in the concoction of my next cookie batch.
@@ -10826,6 +11789,9 @@ This waitress *hicks* is great, she never stops to bring beer *hicks.
 This will remain your respawn point until set elsewhere.
 This will remain your respawn point until set elsewhere.
 
+Those for consumption, equipment and generics.
+Those for consumption, equipment and generics.
+
 Three Castles
 Three Castles
 
@@ -10871,6 +11837,24 @@ To change your stats, use these commands:
 To de-trust a player:
 To de-trust a player:
 
+To defocus or stop attacking, press Shift + A.
+To defocus or stop attacking, press Shift + A.
+
+To discard an item you no longer want, select it and press the 'Discard' button. Generic items can be discarded or sold.
+To discard an item you no longer want, select it and press the 'Discard' button. Generic items can be discarded or sold.
+
+To display the dialog box with other citizens, press the '###keyWindowChat;' key.
+To display the dialog box with other citizens, press the '###keyWindowChat;' key.
+
+To equip or unequip an item, select it and press the 'Equip' or 'Unequip' button. You can not 'Equip' or 'Unequip' when talking to someone.
+To equip or unequip an item, select it and press the 'Equip' or 'Unequip' button. You can not 'Equip' or 'Unequip' when talking to someone.
+
+To focus on a creature, press the '###keyTargetMonster;' key. To focus on another citizen, press the '###keyTargetPlayer;' key. To attack the focused target press the '###keyAttack;' key or click the primary button on the creature.
+To focus on a creature, press the '###keyTargetMonster;' key. To focus on another citizen, press the '###keyTargetPlayer;' key. To attack the focused target press the '###keyAttack;' key or click the primary button on the creature.
+
+To focus on an NPC, press the '###keyTargetNPC;' key. To talk to him press the '###keyTalk;' key.
+To focus on an NPC, press the '###keyTargetNPC;' key. To talk to him press the '###keyTalk;' key.
+
 To get a quote:
 To get a quote:
 
@@ -10889,6 +11873,9 @@ To ignore a player:
 To move between characters that are on different accounts, you have to use the Trade function.
 To move between characters that are on different accounts, you have to use the Trade function.
 
+To negotiate with other citizens, you should click the second mouse button on some other citizen who is accepting negotiations, and select the 'Negotiation' option from the menu that will appear.
+To negotiate with other citizens, you should click the second mouse button on some other citizen who is accepting negotiations, and select the 'Negotiation' option from the menu that will appear.
+
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
 
@@ -10903,6 +11890,15 @@ To reset back to normal:
 
 To set the exp rate:
 To set the exp rate:
+
+To speak in public select the 'General' tab. It serves to talk to people who are appearing on your screen.
+To speak in public select the 'General' tab. It serves to talk to people who are appearing on your screen.
+
+To speak privately to a friend who is not appearing on your screen, type the command '%s' and press '###keyChat;'. This command will open a long-distance dialog that has the name of who you want to talk to. Select this new tab and send your message through it.
+To speak privately to a friend who is not appearing on your screen, type the command '%s' and press '###keyChat;'. This command will open a long-distance dialog that has the name of who you want to talk to. Select this new tab and send your message through it.
+
+To speak privately with someone, click the second mouse button on the citizen and select the 'Whisper' option.
+To speak privately with someone, click the second mouse button on the citizen and select the 'Whisper' option.
 
 To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges.
 To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges.
@@ -10922,11 +11918,23 @@ ToFightRoom#001-2-32
 ToTrainingRoom#001-2-34
 ToTrainingRoom#001-2-34
 
+Toggle Croc Bounty
+Toggle Croc Bounty
+
+Toggle Ratto Bounty
+Toggle Ratto Bounty
+
+Toggle Tortuga Bounty
+Toggle Tortuga Bounty
+
 Told bobo to go home
 Told bobo to go home
 
 Tomb
 Tomb
+
+Tonori
+Tonori
 
 Too bad, try again.
 Too bad, try again.
@@ -11000,11 +12008,17 @@ TrainingGladius
 Transforming into monster is not allowed in Guild Wars.
 Transforming into monster is not allowed in Guild Wars.
 
+Travel to woodlands?
+Travel to woodlands?
+
 Treasure Chest
 Treasure Chest
 
 Tree Control Panel
 Tree Control Panel
+
+Tritan
+Tritan
 
 Tritan Voice
 Tritan Voice
@@ -11069,6 +12083,9 @@ Two Castles
 Type "@mapflag available" to list the available mapflags.
 Type "@mapflag available" to list the available mapflags.
 
+Type List: (default) all = -1, healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5, card = 6, petegg = 7, petarmor = 8, ammo = 10, delayed-consumable = 11, cash = 18 
+Type List: (default) all = -1, healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5, card = 6, petegg = 7, petarmor = 8, ammo = 10, delayed-consumable = 11, cash = 18 
+
 UAHAHAHAAH! I am the cook of that bunch of donkeys, and I can be rude with everyone from this bossy captain to that harpy-lady!
 UAHAHAHAAH! I am the cook of that bunch of donkeys, and I can be rude with everyone from this bossy captain to that harpy-lady!
 
@@ -11080,6 +12097,9 @@ Uhm, bye.
 
 Uhm... Your story seems...
 Uhm... Your story seems...
+
+Ukar
+Ukar
 
 Unable to Teleport in this area
 Unable to Teleport in this area
@@ -11135,6 +12155,9 @@ Unknown packet: 0x%x
 Unknown type of value in:
 Unknown type of value in:
 
+Unless you are interested in a status reset?
+Unless you are interested in a status reset?
+
 Unlike other respawn points, an inn can fully restore your HP.
 Unlike other respawn points, an inn can fully restore your HP.
 
@@ -11173,6 +12196,9 @@ Usage: @changelook {<position>} <view id>
 
 Usage: @displayskill <skill ID> {<skill level>}
 Usage: @displayskill <skill ID> {<skill level>}
+
+Usage: @dropall {<type>}
+Usage: @dropall {<type>}
 
 Usage: @jailfor <time> <character name>
 Usage: @jailfor <time> <character name>
@@ -11228,6 +12254,9 @@ Use 0 or no parameter to return to normal font.
 Use @font <1-9> to change your message font.
 Use @font <1-9> to change your message font.
 
+Use arrow keys to walk around and leave this room.
+Use arrow keys to walk around and leave this room.
+
 Use the key.
 Use the key.
 
@@ -11246,8 +12275,14 @@ User '%s' permissions updated successfully. The changes are temporary.
 Usually I don't allow anyone to touch my boxes but...
 Usually I don't allow anyone to touch my boxes but...
 
+Usually, they'll have an exclamation mark over their heads. But some quests are hidden, so talk to people and have fun!
+Usually, they'll have an exclamation mark over their heads. But some quests are hidden, so talk to people and have fun!
+
 V-neck Jumper
 V-neck Jumper
+
+Valia
+Valia
 
 Very good.
 Very good.
@@ -11260,6 +12295,9 @@ Visited Artis at least once
 
 Vit: %d (%d~%d)
 Vit: %d (%d~%d)
+
+Vitality
+Vitality
 
 Vitality raises your maximum health points and defense.
 Vitality raises your maximum health points and defense.
@@ -11297,6 +12335,9 @@ Wait... That's not a proper place for a chef, what are you doing there?
 Wait... Where are we going?
 Wait... Where are we going?
 
+Wait... You are that @@ from earlier, aren't you?
+Wait... You are that @@ from earlier, aren't you?
+
 Waiting for @@...
 Waiting for @@...
 
@@ -11354,8 +12395,14 @@ Warlock T
 Warlord Helmet
 Warlord Helmet
 
+Warlord Plate
+Warlord Plate
+
 Warning! Dangerous fish, do not fall into the lake!
 Warning! Dangerous fish, do not fall into the lake!
+
+Warning: 
+Warning: 
 
 Warped.
 Warped.
@@ -11402,6 +12449,9 @@ We arrived this morning at the port of Artis, I already warned the Legion of Aem
 We don't need it anymore.
 We don't need it anymore.
 
+We follow north hemisphere seasons in case you're wondering.
+We follow north hemisphere seasons in case you're wondering.
+
 We have a special room for this purpose, too. You may test your skills against all kinds of dreadful monsters in there.
 We have a special room for this purpose, too. You may test your skills against all kinds of dreadful monsters in there.
 
@@ -11425,6 +12475,9 @@ We need manpower on the island.
 
 We need manpower on the island... Oh forgive me, women are also welcome, of course.#0
 We need manpower on the island... Oh forgive me, women are also welcome, of course.
+
+We need to get out of here soon. I'm scared of the Slimes!
+We need to get out of here soon. I'm scared of the Slimes!
 
 We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranteed to be right as rain after a night here!
 We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranteed to be right as rain after a night here!
@@ -11516,9 +12569,6 @@ Welcome to the Red Plush inn!
 Welcome to the Rusty Pick.
 Welcome to the Rusty Pick.
 
-Welcome to the Rusty Pick. Sorry, we have no room left today.
-Welcome to the Rusty Pick. Sorry, we have no room left today.
-
 Welcome!
 Welcome!
 
@@ -11555,6 +12605,9 @@ Well, I was in fact looking for them. Where are they now?
 Well, I'm done for the day, and I'm quite old enough to decide when I can have a %s, thank you!
 Well, I'm done for the day, and I'm quite old enough to decide when I can have a %s, thank you!
 
+Well, cooking is an art, and thus, you need intelligence and dexterity to learn.
+Well, cooking is an art, and thus, you need intelligence and dexterity to learn.
+
 Well, eh-heh... Welcome aboard, cutie!#0
 Well, eh-heh... Welcome aboard, cutie!
 
@@ -11578,6 +12631,12 @@ Well, is there anything I can do here to help?
 
 Well, it's not bad to finally feel something beneath my feet.
 Well, it's not bad to finally feel something beneath my feet.
+
+Well, of course, I can show you how to cook sandwiches. But you'll need to bring ingredients for practice.
+Well, of course, I can show you how to cook sandwiches. But you'll need to bring ingredients for practice.
+
+Well, of course. First of all, you need a @@. You can have mine, if you want.
+Well, of course. First of all, you need a @@. You can have mine, if you want.
 
 Well, thanks for the box. But... He was supposed to bring it back to me himself. I never asked him to give it to you!
 Well, thanks for the box. But... He was supposed to bring it back to me himself. I never asked him to give it to you!
@@ -11732,9 +12791,6 @@ What happened?
 What happens when you try to think about it?
 What happens when you try to think about it?
 
-What if I give you 1000 Esperin for that job, is it ok?
-What if I give you 1000 Esperin for that job, is it ok?
-
 What is Artis?
 What is Artis?
 
@@ -11843,9 +12899,6 @@ What? Is there someone?
 What? It's not good enough?
 What? It's not good enough?
 
-What? This reward is too small!
-What? This reward is too small!
-
 What? Why not?
 What? Why not?
 
@@ -11867,8 +12920,17 @@ When I am less busy *hicks*, I can tell you stories of my heroism.
 When I am less busy *hicks*, I can tell you stories of my heroism.#1
 When I am less busy *hicks*, I can tell you stories of my heroism.
 
+When cooking, the order of ingredients matter.
+When cooking, the order of ingredients matter.
+
+When this is the case, you should get closer to the NPC, until they hear you.
+When this is the case, you should get closer to the NPC, until they hear you.
+
 When you go near villagers, you can see a speech bubble above them, you can then talk to them by pressing the [T] key.
 When you go near villagers, you can see a speech bubble above them, you can then talk to them by pressing the [T] key.
+
+When you have added all the items and money you want, press the 'Propose Trade' button. The other citizen must also press the 'Propose Trade' button.
+When you have added all the items and money you want, press the 'Propose Trade' button. The other citizen must also press the 'Propose Trade' button.
 
 When you intimacy is high, it'll increase your stats and who knows, might even help you in combat!
 When you intimacy is high, it'll increase your stats and who knows, might even help you in combat!
@@ -11887,6 +12949,9 @@ When your inventory is open, you can equip an item by selecting it and clicking 
 
 Where are my old clothes?
 Where are my old clothes?
+
+Where are the ingredients?
+Where are the ingredients?
 
 Where can I find Julia?#0
 Where can I find Julia?
@@ -11941,6 +13006,12 @@ Which skill do you wish to change?
 
 While Jalad and Ale like to work together, as they usually do on the ship, last time I've seen them, they were near the big lake, north from here.
 While Jalad and Ale like to work together, as they usually do on the ship, last time I've seen them, they were near the big lake, north from here.
+
+White Rose
+White Rose
+
+White Tulip
+White Tulip
 
 Whitesmith
 Whitesmith
@@ -12005,6 +13076,12 @@ Why don't you come down to talk?
 Why don't you come out?
 Why don't you come out?
 
+Why don't you show me a main ingredient, and I'll tell you what can be done?
+Why don't you show me a main ingredient, and I'll tell you what can be done?
+
+Why don't you take a break? Breath in some fresh air. The basement is pretty damp.
+Why don't you take a break? Breath in some fresh air. The basement is pretty damp.
+
 Why not, I need to train anyway.
 Why not, I need to train anyway.
 
@@ -12059,6 +13136,9 @@ With the help of the town hall and the Legion of Aemil we organize some auction 
 Withdraw.
 Withdraw.
 
+Within the cities is a place safe enough not to be attacked by another person (except during wars). But outside of them there are some places where the citizen can be attacked by enemies from other realms, or even by someone from the same realm.
+Within the cities is a place safe enough not to be attacked by another person (except during wars). But outside of them there are some places where the citizen can be attacked by enemies from other realms, or even by someone from the same realm.
+
 Wizard
 Wizard
 
@@ -12073,6 +13153,9 @@ Wooden Sword
 
 Wooden shield
 Wooden shield
+
+Woodlands
+Woodlands
 
 Words become music and glance
 Words become music and glance
@@ -12103,6 +13186,9 @@ Wyara#008-2-7
 
 Xilaxa#001-1
 Xilaxa#001-1
+
+Yannika
+Yannika
 
 Yay, it worked! I removed a spike.
 Yay, it worked! I removed a spike.
@@ -12143,6 +13229,12 @@ Yeah, you could say that...
 Yellow Cotton Dye
 Yellow Cotton Dye
 
+Yellow Rose
+Yellow Rose
+
+Yellow Tulip
+Yellow Tulip
+
 Yes
 Yes
 
@@ -12169,6 +13261,9 @@ Yes! @@ is written on my cookie list.
 
 Yes, Arpan gave me these clothes.
 Yes, Arpan gave me these clothes.
+
+Yes, I am authorizing you to use them as you deem fit, until you get stronger.
+Yes, I am authorizing you to use them as you deem fit, until you get stronger.
 
 Yes, I am sure.#0
 Yes, I am sure.
@@ -12209,6 +13304,12 @@ Yes, but I'm only talking to the inspector himself!
 Yes, follow me!
 Yes, follow me!
 
+Yes, here they are.
+Yes, here they are.
+
+Yes, in fact, you can take them now.
+Yes, in fact, you can take them now.
+
 Yes, indeed. I prefer to explore places I have never been to, before doing anything else.
 Yes, indeed. I prefer to explore places I have never been to, before doing anything else.
 
@@ -12220,6 +13321,9 @@ Yes, it's me. It's such a fine view from here!
 
 Yes, please!
 Yes, please!
+
+Yes, sure thing.
+Yes, sure thing.
 
 Yes, that would be nice.
 Yes, that would be nice.
@@ -12452,6 +13556,9 @@ You brought me the %d %s!
 You buried @@ @@.
 You buried @@ @@.
 
+You can allocate point on those attributes every time you level up.
+You can allocate point on those attributes every time you level up.
+
 You can already rename your pet.
 You can already rename your pet.
 
@@ -12463,6 +13570,9 @@ You can also attack an enemy from your keyboard pressing the 'A' key to select i
 
 You can also improve your equipment in a totally different way with the use of cards.
 You can also improve your equipment in a totally different way with the use of cards.
+
+You can also make money %s. Nobody pays better than people in need of help.
+You can also make money %s. Nobody pays better than people in need of help.
 
 You can also manually stop it at any time with: @exprate default
 You can also manually stop it at any time with: @exprate default
@@ -12491,8 +13601,14 @@ You can easily identify fishing spots, small bubbles and fishes are visible from
 You can easily see if a monster is easy to kill or just impossible to defeat. Do not try against creatures that are way more powerful than you... You'd be risking your life for nothing.
 You can easily see if a monster is easy to kill or just impossible to defeat. Do not try against creatures that are way more powerful than you... You'd be risking your life for nothing.
 
+You can execute commands by typing them in the chat window. They start with a '/' or '@' followed by the name of the command.
+You can execute commands by typing them in the chat window. They start with a '/' or '@' followed by the name of the command.
+
 You can find novels and poems on this floor.
 You can find novels and poems on this floor.
+
+You can find out the monster strength by using "@monsterinfo <English Monster Name>". Check the level in it!
+You can find out the monster strength by using "@monsterinfo <English Monster Name>". Check the level in it!
 
 You can find some Crocs on the beach, you could look up at the one after the gate, on top of this city.
 You can find some Crocs on the beach, you could look up at the one after the gate, on top of this city.
@@ -12535,6 +13651,9 @@ You can read some lines that are nicely carved into the soft wooden planks.
 
 You can read the book that I gave you earlier at the library if you lost it.
 You can read the book that I gave you earlier at the library if you lost it.
+
+You can see all your equipment by pressing the F3 key.
+You can see all your equipment by pressing the F3 key.
 
 You can select a specific person with the [N] key, and then, press the [T] key when you are surrounded by more than one person.
 You can select a specific person with the [N] key, and then, press the [T] key when you are surrounded by more than one person.
@@ -12608,6 +13727,9 @@ You can't use the shovel here.
 You can't withdraw that much money
 You can't withdraw that much money
 
+You can, however, use '###keyTargetAttack;' to auto-select a monster and attack them. This usually also collects drops, but press '###keyPickup;' to be sure.
+You can, however, use '###keyTargetAttack;' to auto-select a monster and attack them. This usually also collects drops, but press '###keyPickup;' to be sure.
+
 You cannot autotrade when dead.
 You cannot autotrade when dead.
 
@@ -12625,6 +13747,9 @@ You cannot change party leaders in this map.
 
 You cannot decrease that stat anymore.
 You cannot decrease that stat anymore.
+
+You cannot drop this item!
+You cannot drop this item!
 
 You cannot increase that stat anymore.
 You cannot increase that stat anymore.
@@ -12671,11 +13796,14 @@ You currently cannot open your storage.
 You currently have @@ Esperin on your bank account.
 You currently have @@ Esperin on your bank account.
 
+You did not defeat the boss, you can't learn any skills.
+You did not defeat the boss, you can't learn any skills.
+
 You did such a good job, you should keep it.
 You did such a good job, you should keep it.
 
-You do not give me much options.
-You do not give me much options.
+You do not give me a lot of options.
+You do not give me a lot of options.
 
 You do not have a cart to be cleaned.
 You do not have a cart to be cleaned.
@@ -12688,6 +13816,9 @@ You do not have enough Esperin on your bank account.
 
 You do not have enough Esperin on yourself.
 You do not have enough Esperin on yourself.
+
+You do not have the item!
+You do not have the item!
 
 You do not have the required access privileges to use the Super Menu.
 You do not have the required access privileges to use the Super Menu.
@@ -12719,17 +13850,26 @@ You don't have enough money, bring @@ E.
 You don't have enough room in your backpack for a @@. Go stow some of your junk and come back.
 You don't have enough room in your backpack for a @@. Go stow some of your junk and come back.
 
+You don't have everything I have asked for.
+You don't have everything I have asked for.
+
 You don't have room for a beer!
 You don't have room for a beer!
 
 You don't have this quest skill.
 You don't have this quest skill.
 
+You don't know how to make a sandwich with that.
+You don't know how to make a sandwich with that.
+
 You don't seem to be from the Legion, let's do a game.
 You don't seem to be from the Legion, let's do a game.
 
 You failed!
 You failed!
+
+You feel a strong magic aura. You want to sit near it and meditate.
+You feel a strong magic aura. You want to sit near it and meditate.
 
 You feel numb and everything around you looks foggy, but you can recall the feeling of the cold hard wood of your raft on a stormy night.
 You feel numb and everything around you looks foggy, but you can recall the feeling of the cold hard wood of your raft on a stormy night.
@@ -12748,6 +13888,9 @@ You found him!
 
 You found something!
 You found something!
+
+You give up.
+You give up.
 
 You got married to @@!
 You got married to @@!
@@ -12797,6 +13940,9 @@ You have forgotten the skill.
 You have learned the skill.
 You have learned the skill.
 
+You have learnt the skill.
+You have learnt the skill.
+
 You have mounted a Peco Peco.
 You have mounted a Peco Peco.
 
@@ -12838,6 +13984,9 @@ You have to find him, or else I will tell him that you did not help me.
 
 You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of those damn sailors brought that 'nice' lady here.
 You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of those damn sailors brought that 'nice' lady here.
+
+You have: @@/@@ @@
+You have: @@/@@ @@
 
 You hear a loud scream. It must be the creaking of the wooden door...
 You hear a loud scream. It must be the creaking of the wooden door...
@@ -12863,6 +14012,9 @@ You hold the shovel in your hands.
 You honor me, my beauty, but I'm already taken by Julia!#0
 You honor me, my beauty, but I'm already taken by Julia!
 
+You just defeated the following boss: @@ (Lv. @@)
+You just defeated the following boss: @@ (Lv. @@)
+
 You just have to select the card, then you choose which piece of equipment you want to use it on, and you are done.
 You just have to select the card, then you choose which piece of equipment you want to use it on, and you are done.
 
@@ -12883,6 +14035,9 @@ You know, yeyes love to chat while working.
 
 You lack some very basic skills...
 You lack some very basic skills...
+
+You learned how to cook @@.
+You learned how to cook @@.
 
 You left your fishing spot!
 You left your fishing spot!
@@ -12923,6 +14078,12 @@ You may remember me, I am Celestia.
 You may remember me, I am Celestia.#1
 You may remember me, I am Celestia.
 
+You may remember me, I am Valia.#0
+You may remember me, I am Valia.
+
+You may remember me, I am Valia.#1
+You may remember me, I am Valia.
+
 You may search partial name by making use of '%' in the search, ex. "@accinfo %Mario%" lists all characters whose name contains "Mario".
 You may search partial name by making use of '%' in the search, ex. "@accinfo %Mario%" lists all characters whose name contains "Mario".
 
@@ -12935,11 +14096,17 @@ You mentioned the quality of your wine.
 You missunderstood, it's 5 potions.
 You missunderstood, it's 5 potions.
 
+You must "add" the items you plan on selling, and then press "sell" to confirm. You'll have this time to review.
+You must "add" the items you plan on selling, and then press "sell" to confirm. You'll have this time to review.
+
 You must enter a name.
 You must enter a name.
 
 You must enter a player name or ID.
 You must enter a player name or ID.
+
+You must find someone willing to buy, they usually will buy almost anything you have, even items which cannot be replaced, so be careful.
+You must find someone willing to buy, they usually will buy almost anything you have, even items which cannot be replaced, so be careful.
 
 You need %s to mount!
 You need %s to mount!
@@ -12964,6 +14131,9 @@ You need to input a option
 
 You need to type the answer of this riddle in the NPC window.
 You need to type the answer of this riddle in the NPC window.
+
+You need to wait @@ more before equipping this again.
+You need to wait @@ more before equipping this again.
 
 You no doubt remember how I struggled with those beasts, fighting for my life.
 You no doubt remember how I struggled with those beasts, fighting for my life.
@@ -13019,11 +14189,17 @@ You scare the piou, but let it go.
 You search the tree but don't find anybody.
 You search the tree but don't find anybody.
 
+You see a curious hole behind some rocks
+You see a curious hole behind some rocks
+
 You see a dust covered book on the shelf...
 You see a dust covered book on the shelf...
 
 You see a raijin boy, sitting on the edge of the dock.
 You see a raijin boy, sitting on the edge of the dock.
+
+You see a suspicious greenish flag. It reminds you of something you seem to have forgotten.
+You see a suspicious greenish flag. It reminds you of something you seem to have forgotten.
 
 You see a tree.
 You see a tree.
@@ -13196,8 +14372,14 @@ You will be able to find Don's house in the west of the city, it's the first hou
 You will be able to find her in the market in the south-west of Artis.
 You will be able to find her in the market in the south-west of Artis.
 
+You will be amased by all the colors of hair dye they have.
+You will be amased by all the colors of hair dye they have.
+
 You will find a wooden sign near a crossroad. He is a few steps on the left.
 You will find a wooden sign near a crossroad. He is a few steps on the left.
+
+You will lose experience if you are defeated.
+You will lose experience if you are defeated.
 
 You will remain
 You will remain
@@ -13219,6 +14401,9 @@ You yoiis should walk to the north.
 
 You'll first need to help my friends.
 You'll first need to help my friends.
+
+You'll need to bring me @@ @@ and @@ @@ for the recipe.
+You'll need to bring me @@ @@ and @@ @@ for the recipe.
 
 You'll think I'm insane if I tell you...
 You'll think I'm insane if I tell you...
@@ -13261,6 +14446,9 @@ You're like the rest of this filthy crew. Your name is now on the traitors list!
 
 You're lucky that I'm a generous person, here's another one.
 You're lucky that I'm a generous person, here's another one.
+
+You're lying, aren't you? I heard nothing from you-know-whom!
+You're lying, aren't you? I heard nothing from you-know-whom!
 
 You're not allowed to talk on this channel
 You're not allowed to talk on this channel
@@ -13319,6 +14507,9 @@ You're right, it's about you.
 You're too close to a NPC, you must be at least %d cells away from any NPC.
 You're too close to a NPC, you must be at least %d cells away from any NPC.
 
+You're welcome to stay here as long as you wish. Just don't do anything stupid, like a riot, for example.
+You're welcome to stay here as long as you wish. Just don't do anything stupid, like a riot, for example.
+
 You're welcome. Bye!
 You're welcome. Bye!
 
@@ -13351,6 +14542,12 @@ You... You eat... rattos? I think you're just a fool.
 
 You? Here?
 You? Here?
+
+Your %s determines several small things, including critical attacks, but DOES NOT affect drop rates.
+Your %s determines several small things, including critical attacks, but DOES NOT affect drop rates.
+
+Your %s determines your ability to hit monsters and is valuable to players who prefer weapons that use projectiles.
+Your %s determines your ability to hit monsters and is valuable to players who prefer weapons that use projectiles.
 
 Your GM level doesn't authorize you to %s the player '%.*s'.
 Your GM level doesn't authorize you to %s the player '%.*s'.
@@ -13424,6 +14621,9 @@ Your class can't mount!
 Your current memo positions are:
 Your current memo positions are:
 
+Your dad ran away from you!
+Your dad ran away from you!
+
 Your effect has changed.
 Your effect has changed.
 
@@ -13456,9 +14656,6 @@ Your head is suddently heavy, your eyes are closing...
 
 Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand.
 Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand.
-
-Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only.
-Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only.
 
 Your homunculus doesn't evolve.
 Your homunculus doesn't evolve.
@@ -13538,6 +14735,9 @@ a ground!
 a quiet place,
 a quiet place,
 
+agility
+agility
+
 ban
 ban
 
@@ -13559,6 +14759,9 @@ brought maggot
 brought maggot slime
 brought maggot slime
 
+by doing quests
+by doing quests
+
 change the sex of
 change the sex of
 
@@ -13576,6 +14779,9 @@ debug
 
 delta
 delta
+
+dexterity
+dexterity
 
 feet, 
 feet, 
@@ -13615,6 +14821,9 @@ lower/mid/top head,
 
 lower/top head, 
 lower/top head, 
+
+luck
+luck
 
 marriage1
 marriage1
@@ -13726,6 +14935,15 @@ unban
 
 unblock
 unblock
+
+unmountrowboateast
+unmountrowboateast
+
+unmountrowboatsouth
+unmountrowboatsouth
+
+unmountrowboatwest
+unmountrowboatwest
 
 usage @camerainfo range rotation latitude
 usage @camerainfo range rotation latitude

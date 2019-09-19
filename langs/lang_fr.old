@@ -1,6 +1,27 @@
  ago
 passé
 
+%d: Left Accessory
+%d : Accessoire gauche
+
+%d: Left Hand
+%d : Main Gauche
+
+%d: Lower Headgear
+%d : Équipement de tête basse
+
+%d: Mid Headgear
+%d : Équipement de tête 
+
+%d: Right Accessory
+%d : Accessoire droit
+
+%d: Right Hand
+%d : Main Droite
+
+%d: Top Headgear
+%d : Équipement de tête haute
+
 '%s' got %s's %s (chance: %0.02f%%)
 '%s' a %s's %s (chance : %0.02f%%)
 
@@ -101,7 +122,7 @@ passé
 @@ pour maintenant
 
 @@ is helping me.
-@@ m'aide.
+@@ m'aide en ce moment.
 
 @@? Welcome my dear!#0
 @@ ? Bienvenue, ma mignonne !
@@ -252,6 +273,9 @@ ZoneCentrale
 
 AreaNPC
 ZonePNJ
+
+AreaNPC#001-2-22
+AreaNPC#001-2-22
 
 AreaTop
 ZoneHaute
@@ -505,6 +529,9 @@ AS-TU DÉCOUVERT CE QUE CETTE LUMIÈRE ÉTAIT ?!
 DO YOU FEEL BETTER?
 TE SENS-TU MIEUX ?
 
+Daddy did not come back home... He said that he would be back for lunch but it has already been a week!
+Mon papa n'est pas rentré à la maison... Ça fait au moins une semaine qu'il a dit qu'il serait de retour pour le déjeuner !
+
 Damn @@.
 Saleté de @@.
 
@@ -550,6 +577,9 @@ Devis
 Did you find out what the light is?!
 As-tu trouvé ce que la lumière était ?
 
+Did you say reward? I want it!
+As-tu dis une récompense ? Je la veux !
+
 Do you feel better??
 Te sens-tu mieux ?
 
@@ -594,6 +624,9 @@ C'est fait. Voilà, prends-le ! Maintenant, voici le plan. Va lui parler et offr
 
 DoorUpwards
 PorteHaute
+
+DoorUpwards#001-2-23
+PorteVersleHaut#001-2-23
 
 During the next few days, we will finally reach Artis.
 Durant les prochains jours, nous allons enfin arriver à Artis.
@@ -739,6 +772,9 @@ Bien !
 Good, good! 
 Bien, bien !
 
+Got no reward
+N'a pas reçu de récompense
+
 Gugli asked me to help sailors with their food gatherings. Do you know where could I find them?
 Gugli m'a demandé d'aider les marins avec leur récoltes de nourriture. Sais-tu où je pourrais les trouver ?
 
@@ -780,6 +816,9 @@ Il se trouve dans une petite maison entre l'entrepôt du port et le dojo.
 
 He is right in the bottom of the ship, you can't miss him!!
 Il est déjà au fond du bateau, tu ne peux pas le manquer.
+
+He said that he would check why the manhole next to the house was doing weird sounds.
+Il a dit que tu devrais vérifier pourquoi l'ouverture des égouts près de la maison faisait d'étranges bruits.
 
 Hear me *hic* well, what ever, whatididever you will *hic* said ab... uhm... out what?! You saw there, the Guild of Esperia won't let it get public.
 Entends-moi *hic* bien, qu'est-ce que, quoituasdit que tu allais *hic* dire à pro... euh... à quoi ?! Tu l'as vu là, la Guilde d'Esperia ne la laissera pas devenir publique.
@@ -964,11 +1003,17 @@ Je suis aussi à la recherche d'animaux dangereux.
 I am new in this town, just like you are.
 Je suis nouveau dans cette ville, tout comme toi.
 
+I am not worried about rewards. I just want to help.
+Je ne me préoccupe pas des récompenses. Je veux juste aider.
+
 I am surprised someone has been sent here for help. It is quite... unusual.
 Je suis surpris que quelqu'un a été envoyé ici pour de l'aide. C'est assez... inopportun.
 
 I am, who are you?
 J'en suis un, qui es-tu?
+
+I asked for food but... *hips* Ah, that'll do nicely!
+J'ai demandé de la nourriture mais... *hips* Ah, ça fera parfaitement l'affaire !
 
 I beg you, please, pleeeease...
 Je t'en supplie, s'il-te-plaît, je t'en prie...
@@ -985,8 +1030,14 @@ Je ne peux pas utiliser la pelle ici.
 I do not want to point my finger on someone. I just put my trust in you. I am sure you will be able to judge and solve this annoying problem.
 Je ne veux viser personne. Je mets juste ma confiance en toi. Je suis certain que tu seras capable de juger et résoudre cet ennuyeux problème.
 
+I don't have anything good for you today.
+Je n'ai rien de bon pour toi aujourd'hui.
+
 I don't need any help right now, come back later.
 Je n'ai pas besoin d'aide en ce moment, reviens plus tard.
+
+I don't need your help right now, come back later.
+Je n'ai pas besoin de ton aide pour le moment, reviens me voir plus tard.
 
 I don't see anything else than... water?
 Je ne vois rien d'autre que... de l'eau?
@@ -1453,6 +1504,9 @@ Laisse-moi juste tranquille.
 Just look out at that water! There's plenty more fish there.
 Regarde juste à cette eau ! Il y a encore plein de poissons ici.
 
+Killed rattos
+Rattos tués
+
 Knife
 Couteau
 
@@ -1476,6 +1530,9 @@ BarriereGauche
 
 LeftDoor
 PorteGauche
+
+LeftDoor#001-2-23
+PorteGauche#001-2-23
 
 LeftDoorCheck
 PorteGauche
@@ -1623,6 +1680,9 @@ Non et *hic*... Non, toi et toi et ta... *burp* stupi*hic* guilde !
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#1
 Non et *hic*... Non, toi et toi et ta... *burp* stupi*hic* guilde !
+
+No problem, I can help you anyway.
+Pas de problème, je peux quand même t'aider.
 
 No problem, do you have an other question for me?
 Pas de problème, as-tu d'autres questions?
@@ -1846,6 +1906,12 @@ D'accord, mais Gugli a besoin de mon aide  d'abord.
 Ok, ok. Come back if you change your mind.
 D'accord, d'accord. Reviens quand si jamais tu changes d'avis.
 
+Okay, I'm ready to work!#0
+Entendu, je suis prête à travailler !
+
+Okay, I'm ready to work!#1
+Entendu, je suis prêt à travailler !
+
 Okay, but what can you offer me?
 D'accord, mais qu'est-ce que j'obtiens en échange?
 
@@ -1908,6 +1974,18 @@ Queue de cheval guillerette
 
 Peter
 Peter
+
+Peter asks to kill rattos
+Peter a demandé de tuer les rattos
+
+Peter asks to kill rattos again
+Peter a demandé de tuer les rattos encore une fois
+
+Peter gave reward
+Peter a donné la récompense
+
+Peter#001-2-22
+Pierre#001-2-22
 
 PeterBarrierCheck
 PeterBarrièreCheck
@@ -1989,6 +2067,9 @@ QMuller.
 
 RattosControl
 RattosControl
+
+RattosControl#001-2-23
+ContrôleDeRattos#001-2-23
 
 Registration is open for everybody, but newcomers need to pay a fee for all of the paperwork.
 L'enregistrement est ouvert à tout le monde, mais les nouveaux-venus doivent payer des frais pour toute la paperasse.
@@ -2149,6 +2230,9 @@ Parfois, j'espère que quelqu'un sera envoyé ici pour nous aider.
 Sorry but I can't tell you anything about that.
 Désolé mais je ne peux rien dire à ce sujet.
 
+Sorry, I am not in the mood for another fight with these rattos.
+Désolé, mais je ne suis pas d'humeur à me battre contre des rattos.
+
 Sorry, I am not in the mood for another fight with those Rattos.
 Pardon, mais je n'ai pas l'humeur de me battre encore contre ces Rattos.
 
@@ -2236,6 +2320,15 @@ Merci encore pour m'avoir aidé. Mais ces Rattos sont un problème permanent et 
 Thanks again for helping me. But those rattos are a permanent problem and your help is always welcome. The only problem is that I can give you a reward only one time.
 Merci encore de m'avoir aidé. Mais ces Rattos sont revenus, et ton aide est la bienvenue. Le seul problème étant que je ne peux plus te donner de récompense.
 
+Thanks again for helping me. Drats these rattos for infesting our fair vessal!
+Merci encore pour m'avoir aidé ! Ces fichus rats infestent tout notre vaisseau !
+
+Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.
+Merci encore de m'avoir aidé. Crotte, ces rattos infestent notre fier vaisseau ! Ils sont un problème permanent et c'est pourquoi j'aurai toujours besoin de ton aide pour les exterminer afin de garder leur nombre sous contrôle. En effet, ton aide est grandement appréciée. Cependant, je ne peux te donner la récompense que pour la première extermination.
+
+Thanks for helping me!
+Merci de m'avoir aidé !
+
 That part of the town is called the gilded hill, it's also where the Merchant Guild has its headquarters.
 Cette partie de la ville est surnommée la colline dorée, c'est aussi l'endroit où la Guilde des Marchands a son quartier général.
 
@@ -2274,6 +2367,9 @@ La porte est fermée.
 
 The door is locked.
 La porte est verrouillée.
+
+The elder ran away from you.
+L'aîne a courru loin de toi.
 
 The elven from the library flirted with me a while ago, so has Enora from the Legion.
 L'elfe de la bibliothèque a flirté avec moi il y a déjà un bon moment, tout comme Énora de la Légion.
@@ -2363,7 +2459,7 @@ There are still some Rattos left! Do you want to abort the quest?
 Il y a toujours des Rattos ! Veux-tu abandonner cette quête ?
 
 There are still some rattos left! Do you want to abort the quest?
-Il y a encore quelques Rattos présents ! Veux-tu abandonner la quête ?
+Il y a encore des rattos vivants ! Veux-tu abandonner la quête ?
 
 There are two kinds of dialogue, the one with citizen, and the one with other adventurer.
 Il y a deux types de dialoguqes, celui avec un citoyen, et l'autre avec un autre aventurier.
@@ -2418,6 +2514,9 @@ Ces boîtes me tuent, je ne sens même plus mes bras !
 
 These yeye box are way too yeavy to be carried alone onto the ship.
 Ces boîtes sont bien trop lourdes pour être montées seul sur ce bateau.
+
+They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control.
+C'est un problème permanent donc j'aurai toujours besoin de ton aide pour les exterminer afin de garder leur nombre sous contrôle.
 
 They are both valid and I need them. In the past, I probably did mistakes I now regret. I was wondering if you could investigate and... Sort out this situation.
 Tous deux sont correctes et j'en ai besoin. Dans le passé, j'ai probablement fais des erreurs que je regrette maintenant. Je me demandais si tu pouvais enquêter et... Résoudre cette situation.
@@ -2668,6 +2767,9 @@ Qu'est-ce que je reçois en échange ?
 What does Gugli said about the box? Was it ok?
 Qu'est-ce que Gugli a dit à propos de la boîte ? Etait-elle convenable ?
 
+What if I give you 1000 Esperin for that job, is it ok?
+Et si je te donnais 1000 Esperin pour ce travail, ça irait ?
+
 What should I add after taking these clothes?#1
 Que dois-je faire aprés avoir pris ces vêtements?
 
@@ -2682,6 +2784,9 @@ Qu'est-ce que ce fruit ?
 
 What? It's not a good reward?
 Quoi ? Ce n'est pas une bonne récompense ?
+
+What? This reward is too small!
+Quoi ? Ce n'est pas assez !
 
 What? This tritan is the worse shirker I ever met.
 Quoi? Ce Tritan est le pire tire-au-flanc que j'aie jamais rencontré.
@@ -2901,6 +3006,9 @@ Sale menteuse. Je vais ajouter ton nom sur la liste des traîtres.
 
 You dirty liar. I will add your name on the traitors list.#1
 Sale menteur. Je vais ajouter ton nom sur la liste des traîtres.
+
+You do not give me much options.
+Tu ne me donnes pas beaucoup de choix.
 
 You don't have a @@.
 Tu n'as pas de @@.
@@ -3168,6 +3276,9 @@ Tes mains sont trop faibles, tu n'as pas réussi à ouvrir cette @@.
 
 Your hands are too weak, you didn't open the @@.
 Tes mains sont trop faibles, tu n'as pas réussi à ouvrir la @@.
+
+Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only.
+Ton aide est en effet la bienvenue. Malheureusement, je ne peux te donner une récompense seulement pour la première extermination.
 
 Your position has been saved.
 Ta position a été sauvegardée.

@@ -179,6 +179,9 @@ et %d secondes
 %d item(s) removed. Player had only %d on %d items.
 %d objet(s) supprimé(s). Le joueur a seulement %d sur %d objets.
 
+%d items are dropped!
+
+
 %d items have been refined.
 %d objets ont étés raffinés.
 
@@ -203,38 +206,77 @@ et %d secondes
 %d%%
 
 
+%d: Accessory (Left)
+
+
+%d: Accessory (Right)
+
+
 %d: Body Armor
 %d: Plastron
+
+%d: Costume Garment
+
+
+%d: Costume Headgear (Low)
+
+
+%d: Costume Headgear (Mid)
+
+
+%d: Costume Headgear (Top)
+
 
 %d: Garment
 %d: Vêtement
 
-%d: Left Accessory
-%d : Accessoire gauche
+%d: Hand (Left)
 
-%d: Left Hand
-%d : Main Gauche
 
-%d: Lower Headgear
-%d : Équipement de tête basse
+%d: Hand (Right)
 
-%d: Mid Headgear
-%d : Équipement de tête 
 
-%d: Right Accessory
-%d : Accessoire droit
+%d: Headgear (Low)
 
-%d: Right Hand
-%d : Main Droite
+
+%d: Headgear (Mid)
+
+
+%d: Headgear (Top)
+
+
+%d: Refine All Equip (Costume)
+
+
+%d: Refine All Equip (General)
+
+
+%d: Refine All Equip (Shadow)
+
+
+%d: Shadow Accessory (Left)
+
+
+%d: Shadow Accessory (Right)
+
+
+%d: Shadow Armor
+
+
+%d: Shadow Shield
+
+
+%d: Shadow Shoes
+
+
+%d: Shadow Weapon
+
 
 %d: Shoes
 %d : Chaussures
 
-%d: Top Headgear
-%d : Équipement de tête haute
-
 %s
-
+%s
 
 %s %d %s
 
@@ -242,13 +284,37 @@ et %d secondes
 %s %s %s
 
 
+%s %s allows you to send a private message to the player. if [name] contains spaces, it must be enclosed in quotation marks.
+
+
 %s :Main: %s
 %s : Général : %s
+
+%s People usually doesn't shout, they talk. Because this, if you are too far, an NPC won't hear you.
+
+
+%s allows you to change game language, anytime, anywhere.
+
+
+%s and %s will show this informative and absurdely big tutorial book.
+
+
+%s clears the text box.
+
 
 %s data type is not supported :%u
 %s le type de donnée n'est pas pris en charge :%u
 
+%s determines how many blows you can take before you die. It also affects status effects, like poison.
+
+
+%s displays amount of currently connected players.
+
+
 %s drains his mug in one long sip, then hesitates.
+
+
+%s explains how to use all client commands.
 
 
 %s failed
@@ -263,6 +329,9 @@ et %d secondes
 %s has bought your item(s).
 %s a acheté le(s) objet(s).
 
+%s helps you carry more items and also gives you a more forceful blow, but ends up not being very interesting if you focus on weapons that use projectiles, such as the bow.
+
+
 %s in jail for %d years, %d months, %d days, %d hours and %d minutes
 %s est en prison pour %d année(s), %d mois, %d jour(s), %d heure(s) et %d minute(s)
 
@@ -272,11 +341,23 @@ et %d secondes
 %s is empty
 %s est vide
 
+%s is very useful for alchemy and magic, but nowadays there are few opportunities to use it.
+
+
+%s lists even more advanced commands, but some of them can only be used by admins or GM's.
+
+
 %s recalled!
 %s rappelé !
 
 %s revision '%s' (src) / '%s' (scripts)
 %s révision '%s' (src) / '%s' (scripts)
+
+%s shows the name of the map you are in.
+
+
+%s shows the number of people in the neighbourhood.
+
 
 %s spawns in:
 %s apparaît dans :
@@ -289,6 +370,12 @@ et %d secondes
 
 %s value is now :%s
 %s la valeur est maintenant : %s
+
+%s will help when the client starts lagging. If you see an attack but no monsters, that's the cause.
+
+
+%s will tell you all the rules once again.
+
 
 %s: %d
 %s : %d
@@ -329,6 +416,9 @@ et %d secondes
 '%s' stats:
 '%s' statistiques :
 
+'Hey anyone there?'
+
+
 'That', as you call it, is a @@. There are plenty on this island!
 'Ça', comme tu l'appelles, est un @@. Il y en a plein sur l'île !
 
@@ -338,11 +428,26 @@ et %d secondes
 (@request): %s
 (@request) : %s
 
+(All items must be placed exactly in this order for cooking work.)
+
+
 (CID:%d/AID:%d) 
 (CID:%d/AID:%d) 
 
+(Click on us to continue the introduction.)
+
+
+(You hear a faint sound in distance, but can't say what sound it was.)
+
+
 * :%s %s: *
 * :%s %s: *
+
+* @@ @@
+
+
+* Skill ID: @@
+
 
 *Bang bang*
 *Bang bang*
@@ -359,8 +464,14 @@ et %d secondes
 *Uff*... And another box of @@s for our starving colleagues is ready.
 *Ouf*... Et une autre boîte de @@ pour nos collègues affamés est prête.
 
+*ahem*
+
+
 *burp*
 *burp*
+
+*sniff sniff*
+
 
 *snores*
 
@@ -388,6 +499,9 @@ et %d secondes
 
 - Gulukan
 - Gulukan
+
+- I currently need your help with @@.
+
 
 - Jalad
 - Jalad
@@ -533,8 +647,17 @@ et %d secondes
 ...I mean log! Made of log!
 ...Je veux dire bûche ! Fait de bûches !
 
+...It'll most likely attack you, instead.
+
+
 ...it might be because of Don... he is the master blacksmith of this place and a model to me!
 ...c'est peut-être à cause de Don... il est le maître forgeron de cet endroit et un modèle pour moi !
+
+...who knows if there isn't a secret in that?
+
+
+/q [Player Name] 
+
 
 1 GM found.
 1 MJ trouvé.
@@ -553,6 +676,9 @@ et %d secondes
 
 1: The type of item yoiis want to dye.
 1 : Le type d'objet que tu veux teindre.
+
+1x @@, 3x @@, 2x @@, and the ingredient of your choice.
+
 
 2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s).
 2. ##BN'utilise pas de langage offensant ou malpoli##b dans les conversations ou dans le noms de tes personnages.
@@ -599,6 +725,12 @@ et %d secondes
 <MSG>3456,%d</MSG>
 
 
+???
+
+
+???: Hey! Is someone there? Please, help, it's so dark down here!
+
+
 @@
 @@
 
@@ -611,14 +743,17 @@ et %d secondes
 @@ divorced!
 @@ a divorcé !
 
-@@ is helping me.
-@@ m'aide en ce moment.
-
 @@ registered for marriage and accepted partner @@!
 @@ s'est enregistré pour le marriage et a accepté le partenaire @@ !
 
 @@ registered for marriage. Waiting for partner...
 @@ s'est enregistrer pour le marriage. En attente du partenaire...
+
+@@ skillfully cuts the bread in half, throws the ingredients in air, and they land in the sandwich!
+
+
+@@/@@ pages used.
+
 
 @@? Welcome my dear!#0
 @@ ? Bienvenue ma chère !
@@ -626,8 +761,20 @@ et %d secondes
 @@? Welcome my dear!#1
 @@ ? Bienvenue mon cher !
 
+@discord allows you to setup Discord integration settings.
+
+
 @request sent.
 @demande envoyée.
+
+@resyncall is the more powerful version of @resync. It'll reload everything, even the clouds if needed.
+
+
+@toevent will warp you to event island, if an event is happening, of course.
+
+
+@ucp allows you to manage your account, eg. recover lost email.
+
 
 A GM has discharged you from jail.
 Un MJ t'a libéré de prison.
@@ -637,6 +784,9 @@ A band of adventurers formed in Argaes from those who had lost their homes and f
 
 A cookie!
 Un cookie !
+
+A critical hit deals added damage and disregards defense. A critical always hit, although it can be blocked just fine.
+
 
 A few minutes passed, and suddenly I was practically surrounded by a dozen or more of these living trees!
 
@@ -658,6 +808,9 @@ Un petit mensonge n'est rien d'autre qu'un bobard, et j'ai vraiment besoin d'arg
 
 A stat card works on different pieces of equipment.
 Une carte de statistique fonctionne sur différentes pièces d'équipement.
+
+A strange voice seems to be calling out your name.
+
 
 A sunny and hot day,
 Un jour chaud et ensoleillé,
@@ -728,6 +881,9 @@ En fait, je suis venu t'apporter un coup de main avec ces boîtes. Puis-je en ap
 Actually, it's been a long day.
 
 
+Actually, you just took a bounty, right?
+
+
 Add a new line
 Ajouter une nouvelle ligne
 
@@ -744,6 +900,9 @@ After I chopped off a few branches, the whole tree started to move!
 
 
 After I shook it off and struck the tree again with my axe, another branch hit me!
+
+
+After a tiring, yet fast, travel by Koga, you arrive at @@.
 
 
 After all this time, it was still there!
@@ -768,6 +927,12 @@ After this small overview of Artis, what do you think of our city?
 Après ce bref aperçu d'Artis, que penses-tu de notre ville ?
 
 After this war, the Raijin race was born. A race born of Magic. Humans encapsulated in a Mana storm and altered forever.
+
+
+After you have confirmed the negotiation, a window with a vertical split will appear. The left side are the items you intend to offer in trading. The right side are the items that the other citizen intends to offer in trading.
+
+
+Aggressors always know when they are in danger! Therefore, they are always on standby, attacking anyone who appears ahead.
 
 
 Agi: %d (%d~%d)
@@ -858,7 +1023,7 @@ AligeTrigger#Artis
 AligeTrigger#Artis
 
 Alizarin Herb
-
+Herbe Alizarine
 
 Alizarin Plant
 
@@ -888,7 +1053,7 @@ All of a sudden, you hear voices from above.
 Soudain, tu entends des voix venant d'au dessus.
 
 All of my money.
-
+Tout mon argent.
 
 All of your items have been removed.
 Tous tes objets ont été supprimés.
@@ -932,6 +1097,9 @@ Les alliances ne peuvent pas être créées durant les Guerres de Guildes !
 AllowKS | 
 AutoriseKS |
 
+Almost all creatures drop useful items when defeated. To get the dropped item press the '###keyPickup;' key next to the item or click the primary button on the item.
+
+
 Almost got it!
 Presque eu !
 
@@ -945,10 +1113,13 @@ Alright, I'll take one.
 Très bien, je vais en prendre un.
 
 Alright, I'm going to his room, keep an eye on her, we still don't know if she's friend or foe...#0
-D'accord, je vais le voir dans son bureau, garde un œil sur elle, on ne sait toujours pas si elle est alliée ou ennemie...
+D'accord, je vais le voir dans son bureau, garde un œil sur elle, on ne sait toujours pas si c'est une alliée ou une ennemie...
 
 Alright, I'm going to his room, keep an eye on him, we still don't know if he's friend or foe...#1
-D'accord, je vais le voir dans son bureau, garde un œil sur lui, on ne sait toujours pas s'il est allié ou ennemi...
+D'accord, je vais le voir dans son bureau, garde un œil sur lui, on ne sait toujours pas si c'est un allié ou un ennemi...
+
+Alright, but... You only have @@ @@, and I need @@ to do the status reset for you!
+
 
 Alright, take your time we are not in a hurry.
 Entendu, prends ton temps, nous ne sommes pas pressés.
@@ -965,11 +1136,26 @@ D'accord. Je vais à leur recherche dès maintenant.
 Alright... Bye.
 D'accord... Salut.
 
+Also note that if you are in overweight, your natural regen will halt. 90% in weight, and you won't be able to attack.
+
+
+Also, build a reputation with the Legion. Talk to everyone. Help everyone. Prove me your worth!
+
+
+Also, most monsters get enraged and will attack whoever is closest to them, regardless of anything else.
+
+
+Also, status point reset can't be undone. Do you really want this?
+
+
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#0
 Aussi, nous avons pris tes vêtements yeyechirés, car ils étaient... Yeyeye... Dans un sale état. Regarde dans le coffre près de ton lit, il y en a d'autres pour toi.
 
 Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.#1
 Aussi, nous avons pris tes vêtements yeyechirés, car ils étaient... Yeyeye... Dans un sale état. Regarde dans le coffre près de ton lit, il y en a d'autres pour toi.
+
+Also, you'll get more experience by killing monsters stronger than you, and less experience by killing monsters weaker than you.
+
 
 Alternative clouds appeared.
 Des nuages alternatifs sont apparus.
@@ -983,8 +1169,11 @@ Cependant, le plus fort deviens, le plus de peluchignons tu auras besoin.
 Although, if you want to visit a place nearby, we could take you there.
 Cependant, si tu veux visiter un endroit pas très loin, on peut t'y emmener.
 
-Amethyst
+Altough you can't get rid of the feeling someone is listening on the other side, you don't get any replies
 
+
+Amethyst
+Améthyste
 
 Amethyst Shard
 
@@ -1005,6 +1194,12 @@ And I bet you don't know who is in charge of monitoring the security of this pla
 Et je parie que ne tu ne sais pas qui est en charge de la surveillance et de la sécurité de cet endroit ?
 
 And I have no mention of a so called "@@" on it!
+
+
+And by last, to speak to everyone online, besides whoever might be idling on IRC, select the '#irc' tab.
+
+
+And by the way. I know nothing about this book. And I don't know how to get more pages either.
 
 
 And get out of here, I'm not a map!
@@ -1067,10 +1262,16 @@ Et toi ? Comment ça va de ton côté ?
 And you? How's it yaying on your side?
 Et toi ? Comment ça va de ton côté ?
 
+AngryCrafty
+
+
 Angus#008-2-17
 
 
 Animals Protection Agency of Aemil
+
+
+Any boss which was previously unhittable, can be hit with appropriate number of attackers.
 
 
 Any clue on where Astapolos may be hidden?
@@ -1083,7 +1284,7 @@ Any ideas on who might have taken it?
 
 
 Any work in progress (NPC dialog, manufacturing ...) quit and try again.
-
+N'importe quel travail en cours (dialogues de PNJ, création...) quitte et réessaye.
 
 Anything else you want me to do?
 
@@ -1117,6 +1318,9 @@ Peu importe, la création d'une guilde est parfaite pour les deux !
 
 Anyway, the last time I stole something I was almost caught.
 Peu importe, la dernière fois que j'ai volé quelque chose, j'ai faillé être attrapé.
+
+Anyway, to make a sandwich, you'll need to place, in this order:
+
 
 Anyway.
 Peu importe.
@@ -1172,6 +1376,9 @@ Are you crazy?
 Are you going to stand here all day long? Do the dishes or go away.
 Vas-tu rester ici toute la journée ? Fais la vaisselle ou vas-t-en !
 
+Are you in need of some flowers?
+
+
 Are you mad?!
 Es-tu fou ?!
 
@@ -1208,8 +1415,8 @@ Yeyiens-tu ici pour explorer l'île ?
 AreaNPC
 AreaNPC
 
-AreaNPC#001-2-22
-AreaNPC#001-2-22
+AreaNPC#Artis
+
 
 AreaNPC#doors1
 AreaNPC#doors1
@@ -1219,6 +1426,9 @@ AreaNPC#doors2
 
 AreaTop
 AreaTop
+
+Argaes
+
 
 Argh!
 
@@ -1307,6 +1517,9 @@ Mixture d'Atropos
 Auction is disabled
 L'enchère est désactivée.
 
+Auldsbel discretly stuffs a book on your backpack.
+
+
 Auldsbel#008-1
 
 
@@ -1382,8 +1595,11 @@ Super, reviens si jamais tu veux créer un groupe plus grand !
 Awesome. How many of those do you want to give me?
 Super. Combien veux-tu m'en donner ?
 
-Axe Hat
+Axe
 
+
+Axe Hat
+Chapeau Hache 
 
 Ayouyouch! My head...
 Aïe ! Ma tête...
@@ -1490,6 +1706,9 @@ Bébé Ensorceleur
 Baby Wizard
 Bébé Magicien
 
+Bad Bee
+
+
 Bag#000-1
 Sac#000-1
 
@@ -1501,6 +1720,27 @@ Le bannissement à échoué, il n'est pas possible de bannir cet utilisateur.
 
 Bandana
 Bandana
+
+Bandit
+
+
+Bandit Boots
+
+
+Bandit Gloves
+
+
+Bandit Hood
+
+
+Bandit Lord
+
+
+Bandit Shawl
+
+
+Bandit Trousers
+
 
 Banking is disabled
 La banque est désactivée
@@ -1571,6 +1811,9 @@ Because the voices of death sing a sweet song
 Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
 Parce que tu n'es pas autorisé à te téléporter depuis certaines cartes, %d joueurs n'ont pas été rappelés.
 
+Becoming a Sorcerer? I want that too!
+
+
 Bee
 
 
@@ -1578,7 +1821,7 @@ Beehive
 
 
 Beer
-
+Bière
 
 Beer is life!
 
@@ -1613,14 +1856,17 @@ Bernard wants maggot slime
 Bernard wants roasted maggot
 
 
+Besides this, there is Seasons. You know, summer, autumn, winter and spring.
+
+
 Besides, I need to be here to watch out for thieves while La Johanne is docked.
 Par ailleurs, je dois rester ici pour garder un œil contre les voleurs pendant que La Johanne est amarrée.
 
+Better stay away from my basement, you may end up like the poor guys down there.
+
+
 Better take it back to Q'Onan.
 Mieux vaut le rapporter à Q'Onan.
-
-Better you stay here for a while. Come back when you are stronger.
-
 
 Beuss
 Beuss
@@ -1628,17 +1874,26 @@ Beuss
 Beware of falling stones from the cliff!
 Attention aux cailloux qui tombent de la falaise !
 
+Beware you have a limited number of pages. Do not let the Legion or the Brotherhood find out you have one.
+
+
 Billy Bons
 Billy Bons
 
 Black Cotton Dye
 Teinture Coton Noir
 
+Black Scorpion
+
+
 Black iron... That is a very specific request that you have for me!
 Du fer noir... C'est une demande très spécifique que tu me fais là !
 
 Blacksmith
 Forgeron
+
+Blossom#008-1
+
 
 Blub
 Blub
@@ -1655,6 +1910,12 @@ Teinture Coton Bleu
 Blue Gray Cotton Dye
 Teinture Coton Bleu-Gris
 
+Blue Rose
+
+
+Blue Tulip
+
+
 Bobo
 Bobo
 
@@ -1662,10 +1923,10 @@ Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx /
 Taux d'Abandon du Chef : Commun %.2fx / Soin %.2fx / Utilisable %.2fx / Équipement %.2fx / carte %.2fx
 
 Bottle of Water
-
+Bouteille d'Eau
 
 Bowler Hat
-
+Chapeau Melon
 
 Box
 Boîte
@@ -1700,6 +1961,9 @@ Bring them to me, and I'll give you something nice.
 Bring this box to Gugli. He will be extremely happy!
 Apporte cette boîte à Gugli. Il en sera ravi !
 
+Brotherhood
+
+
 Brown Cotton Dye
 Teinture Coton Marron
 
@@ -1707,7 +1971,7 @@ Brown Trousers
 Pantalon Marron
 
 Bug Leg
-
+Patte d'Insecte
 
 Bury.
 Enterrer.
@@ -1754,6 +2018,9 @@ But all she says is, “had you stayed inside, you wouldn't be wet now”.
 But anyway, take the road which goes to the north to find everybody.
 Mais peu importe, prends la route qui mène vers le nord pour trouver tout le monde.
 
+But be careful: do not scream by using a lot of capital letters, do not repeat yourself over and over, and above all DO NOT SPAM, or you may be severely penalized.
+
+
 But discovering new territories is probably the best thing that can happen to sailors, don't you think?
 Mais découvrir de nouveaux territoires est probablement la meilleure chose qui puissent arriver à des marins, tu ne penses pas ?
 
@@ -1775,8 +2042,14 @@ Mais eh, revenons à moi. Tu te souviens quand je t'ai dit que j'avais faa...hm.
 But how I got there is kind of scary...
 
 
+But if you and other players surrounds the monster instead, they'll suffer the same penalties!
+
+
 But if you fail, you will have to get them from the alchemist.
 Mais si tu échoues, tu devras aller les chercher chez l'achimiste.
+
+But if you need to deal with more burocratic stuff, go talk to Q'Anon. He is the boss here.
+
 
 But if you really want to accomplish something, you should consider joining us.
 Mais si tu veux vraiment accomplir quelque chose, tu devrais songer à nous rejoindre.
@@ -1812,7 +2085,7 @@ But something like “Nanaj princino”, I think.
 
 
 But still, you open your eyes and see a large ship before you!
-Toutefois, tu ouvres les yeux et vois un immense bateau devant toi !
+Tu ouvres tout de même les yeux et vois un imposant navire devant toi !
 
 But thank you anyway! I can refund him now!
 Mais merci quand même ! Je peux le rembourser maintenant !
@@ -1826,6 +2099,9 @@ Mais le peluchignon que tu m'as apporté était vraiment super tu sais.
 But the plushroom you brought was really awesome you know.#1
 Mais le peluchignon que tu m'as apporté était vraiment super tu sais.
 
+But there is no skill to be learnt from this boss.
+
+
 But they are too fast.
 
 
@@ -1835,11 +2111,20 @@ Mais nous sommes plutôt chanceux ici, sauf quelques voyageurs un peu pompettes,
 But who am I?
 Mais qui suis-je ?
 
+But you are out of the boss level range.
+
+
 But you are welcome to reset your stats again if you bring me some more plushrooms!#0
 Mais tu seras toujours la bienvenue pour réinitialiser tes statistiques si tu me rapportes encore plus de peluchignons !
 
 But you are welcome to reset your stats again if you bring me some more plushrooms!#1
 Mais tu seras toujours le bienvenu pour réinitialiser tes statistiques si tu me rapportes encore plus de peluchignons !
+
+But you do not have enough Magic Ink. (You need: @@ @@)
+
+
+But you ran out of empty pages on this book.
+
 
 But you should've seen that gaze!
 
@@ -1872,10 +2157,10 @@ By the way, stay sharp! I may call upon you again.
 
 
 Bye for now.
-Au revoir pour le moment.
+À la prochaine.
 
 Bye then!
-Alors au revoir !
+Et bien au revoir !
 
 Bye!
 Au revoir !
@@ -1955,6 +2240,9 @@ Tu ne te souviens de rien du tout ? Ou as-tu quelques petits souvenirs de ton pa
 Can't you see I am reading? If you need something, tell me the secret password.
 
 
+Can't you see I am reading? Please go, please.
+
+
 Can't you see I'm busy?
 
 
@@ -1962,7 +2250,7 @@ Can't you see I'm working?!
 Tu ne vois pas que je travaille là ?!
 
 Candle Helmet
-
+Chapeau Bougie
 
 Cannot clone a player of higher GM level than yourself.
 Ne peut pas cloner un joueur avec un niveau de MJ plus haut que le tien.
@@ -1991,6 +2279,9 @@ La capitaine Nard se trouve dans la pièce à ta droite.
 Carmie#001-1
 Carmie#001-1
 
+Carp Sandwich
+
+
 Carrot
 Carotte
 
@@ -2015,6 +2306,9 @@ Attraper un piou
 Caul#008-2-17
 
 
+Cave
+
+
 Cave Maggot
 
 
@@ -2024,17 +2318,65 @@ Celestia
 Ch 1 — Fishing apparatus
 Ch 1 — Accessoires de pêche
 
+Ch 1 — How to make money.
+
+
+Ch 10 — How I see my items?
+
+
+Ch 11 — How trade with other players?
+
+
+Ch 12 — How hunt monsters?
+
+
+Ch 13 — How talk with someone?
+
+
+Ch 14 — Change your appearing.
+
+
+Ch 15 — Commands.
+
+
+Ch 16 — Shortcuts.
+
+
 Ch 2 — Baits
 Ch 2 — Appâts
+
+Ch 2 — Everything about monsters.
+
 
 Ch 3 — Location
 Ch 3 — Emplacement
 
+Ch 3 — Quests.
+
+
 Ch 4 — Casting
 Ch 4 — Lancement
 
+Ch 4 — Status.
+
+
+Ch 5 — NPC's.
+
+
 Ch 5 — Reeling
 Ch 5 — Tirer
+
+Ch 6 — Magic.
+
+
+Ch 7 — Rules.
+
+
+Ch 8 — Weather & Seasons.
+
+
+Ch 9 — Experience.
+
 
 Chair#Chair1-001-2-41
 Chaise#Chaise1-001-2-41
@@ -2121,7 +2463,7 @@ Check out this one.
 Essaye avec celle-ci.
 
 Cheers!
-Tchao !
+Salut !
 
 Cheese
 Fromage
@@ -2160,7 +2502,7 @@ Chelios... He is part of the Blacksmith House, is he not?
 Chelios... Il fait parti de la maison des forgerons, n'est-ce pas ?
 
 Cherry Cake
-
+Gâteau à la Cerise
 
 Cherry tree leaves have begun to fall.
 Les feuilles des cerisiers ont commencé à tomber.
@@ -2192,6 +2534,9 @@ Teinture Cachemire Chocolat
 Choose desired quest state:
 Choisi l'état de quête désiré :
 
+Chopstick
+
+
 Chorus of the Woods
 Chant des Bois
 
@@ -2211,7 +2556,7 @@ Click here for instructions on how to use the test server.
 Cliques ici pour connaître les instructions pour utiliser le serveur test.
 
 Click on the NPCs (Non-Player Characters) around you to continue the introduction.
-Clique sur les PNJs (Personnages Non Joueurs) autour de toi pour continuer l'introduction.
+Clique sur les PNJ (Personnages Non Joueurs) autour de toi pour continuer l'introduction.
 
 Clone spawned.
 Le clone est apparu.
@@ -2238,15 +2583,18 @@ Clown
 Clown
 
 Coal
-
+Charbon
 
 Coal Vein
 
 
 Cobalt Herb
-
+Herbe Cobalt
 
 Cobalt Plant
+
+
+Coin Bag
 
 
 Colorant is not the yeying color. Some wear out from light, others look great but inflict itai-itai, and others become spotty or wash-away.
@@ -2315,6 +2663,9 @@ Carpe Commune
 Communication Theory
 Théorie de Communication
 
+Complete Quest
+
+
 Completed
 Terminé
 
@@ -2334,7 +2685,7 @@ Completed, got reward
 Terminé, récompense reçue
 
 Concentration Potion
-
+Potion de Concentration
 
 Confused Tree
 
@@ -2346,6 +2697,9 @@ Congratulations!
 Félicitations !
 
 Congratulations! You are the MVP! Your reward EXP Points are %u !!
+Félicitations! Tu es le MVP! Ta récompense en Points XP est %u !!
+
+Contacted by Sopiahalla
 
 
 Cookie Master
@@ -2363,6 +2717,12 @@ Les cookies sont incroyables, tout comme moi.
 Cookies provide you strength, health and cuteness.
 Les cookies te donnent de la force, de la vie et du charme.
 
+Cooking
+
+
+Cooking is an art. You need to know how to cook something. You can use my stove to prepare.
+
+
 Copper Armbands
 Brassards Cuivrés
 
@@ -2379,13 +2739,13 @@ Cotton
 Coton
 
 Cotton Boots
-
+Bottes en Coton
 
 Cotton Gloves
-
+Gants en Coton
 
 Cotton Skirt
-
+Jupe en Coton 
 
 Cotton#Dye001-1
 Coton#Teinture001-1
@@ -2418,6 +2778,9 @@ Could you explain to me where I am?
 Peux-tu me dire où je me trouve ?
 
 Could you interrogate him for me?
+
+
+Could you please bring me 2 new knives?
 
 
 Could you please bring me something which isn't a berry, and I'm not big on vegetables either. I need proteins!
@@ -2504,14 +2867,17 @@ Croisé
 Cuco
 Cuco
 
+Curious Hole
+
+
 Current amount of zeny changed.
 Quantité actuelle de zeny changée.
 
 Current exp rate is set to @@% (default value).
-
+Le taux d'exp actuel est réglé à @@% (valeur par défaut).
 
 Current exp rate is set to @@%, and will reset to @@% (default value) in @@.
-
+Le taux d'exp actuel est réglé à @@%, et se réinitialisera à @@% (valeur par défaut) dans @@.
 
 Curshroom
 Malédichamp
@@ -2534,11 +2900,17 @@ CvC: On
 DO YOU FEEL BETTER?!
 TE SENS-TU MIEUX ?!
 
-Daddy did not come back home... He said that he would be back for lunch but it has already been a week!
-Mon papa n'est pas rentré à la maison... Ça fait au moins une semaine qu'il a dit qu'il serait de retour pour le déjeuner !
+Daddy asked me to give you some money as a thank you for looking out for me.
+
+
+Daddy finally came back home! He grabbed a snack and said he would be returning to the sewers.
+
+
+Daddy never came back home... He said that he would be back for lunch but it has already been two days!
+
 
 Dagger
-
+Dague
 
 Damn @@.
 Saleté de @@.
@@ -2560,6 +2932,9 @@ Danseur
 
 Dang, I scared it! More patience, @@, more patience.
 Mince, je lui ai fait peur ! Plus de patience, @@, plus de patience.
+
+Dark
+
 
 Dark Collector
 Collecteur Sombre
@@ -2652,7 +3027,7 @@ Dexterity increases your bow damage and your accuracy.
 La dextérité augmente tes dégâts à l'arc ainsi que ta précision.
 
 Diamond
-
+Diamant 
 
 Diamond Shard
 
@@ -2672,6 +3047,9 @@ Did you bring me any wood?
 Did you bring me the %d %s I need?
 
 
+Did you brought me 2 new knives?
+
+
 Did you fight it?
 
 
@@ -2689,9 +3067,6 @@ Did you look over the basement?
 
 Did you run away?
 
-
-Did you say reward? I want it!
-As-tu dis une récompense ? Je la veux !
 
 Did you see Don the blacksmith? He might know how you could improve your metal equipment.
 As-tu vu Don le forgeron ? Il devrait savoir comment tu peux améliorer ton équipement en métal.
@@ -2744,7 +3119,13 @@ Ne donne jamais le mot de passe de ta chambre à quiconque ! Garde-le secrèteme
 Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia
 Ne donne le mot de passe de ta chambre à personne ! Garde-le secret et essaye de ne pas utiliser le même mot de passe pour d'autres chambres dans le futur. - Julia
 
+Do not learn
+
+
 Do not let intimacy and hunger get to zero. If any of those get to zero, it'll leave you forever.
+
+
+Do note that Job Level gives you skill points, and the status bonuses are really minor.
 
 
 Do nothing
@@ -2769,6 +3150,9 @@ Do you have anything for me today?
 As-tu quelque chose pour moi aujourd'hui ?
 
 Do you have the %d %s and %s E for the shield?
+
+
+Do you have this commendatory letter?
 
 
 Do you know anything about the recent robberies?
@@ -2837,11 +3221,23 @@ Do you want to go back to Artis? You really should be afraid of the Legion there
 Do you want to go somewhere?
 Veux-tu aller quelque part ?
 
+Do you want to leave it alone?
+
+
+Do you want to leave the boat?
+
+
 Do you want to marry @@?
 Veux-tu épouser @@ ?
 
 Do you want to read it?
 Veux-tu le lire ?
+
+Do you want to throw something inside?
+
+
+Do you want to try again?
+
 
 Do you want to try?
 Veux-tu essayer ?
@@ -2910,7 +3306,7 @@ Don't fall!
 N'échoue pas!
 
 Don't forget to come as close as possible to these spots!
-
+N'oublies pas de venir aussi proche que possible de ces endroits!
 
 Don't get too excited about it...#0
 N'en sois pas trop excitée...
@@ -2926,6 +3322,9 @@ Don't say I didn't warn you!
 
 Don't say it so loudly, other people could hear us.
 Ne le dis pas trop fort, d'autres personnes pourraient nous entendre.
+
+Don't tell anyone about this. Once you kill you a boss, you can try to learn the boss skill by using the book.
+
 
 Don't tell me more, I know what you want...
 Ne m'en dis pas plus, je sais ce que tu veux...
@@ -2954,8 +3353,14 @@ N'essaye même pas d'entourlouper un vieux marchand ! Tu n'as pas assez d'argent
 Donald
 
 
+Done!
+
+
 Done. Here, take it! Now, here is the plan. Go talk to her and offer our beautiful lady a bite of her arrogance!
 Fini. Tiens, prends-le ! Maintenant, voilà le plan. Va lui parler et offre à cette magnifique dame une bouchée de son arrogance !
+
+Dont you know something about fertility? I heard rumors.
+
 
 Door
 Porte
@@ -2963,14 +3368,20 @@ Porte
 DoorUpwards
 PorteHaute
 
-DoorUpwards#001-2-23
-PorteVersleHaut#001-2-23
+DoorUpwards#Artis
+
 
 Drag and drop an item from your inventory.
 Glisse et dépose un item de ton inventaire.
 
+Drag and drop the items from your inventory in the frames.
+
+
 Drasil Island.
 Île Drasil.
+
+Dress up! Do not walk without clothes! Always wear your items! They leave you less vulnerable to attacks and stronger to defeat your opponents.
+
 
 Due to neglect with day-to-day administration, which she delegated to her council, and uncontrolled expenses, the kingdom faced its first economic crisis.
 
@@ -3029,6 +3440,9 @@ Duel| Tu as quitté le duel.
 Dummy
 Mannequin
 
+During night, the monsters usually respawn faster. That can be a problem with aggressive monsters.
+
+
 Duty calls me, *hic*, see you later, dude.#1
 Le devoir m'appelle, *hic*, à plus tard, mec.
 
@@ -3041,8 +3455,14 @@ Chaque grande ville accueille un bâtiment de la légion, celui d'Artis est le b
 Each card improves your gear by a ratio or a fixed number on a predefined stat.
 Chaque carte améliore ton équipement avec un ratio ou un nombre fix sur une statistique prédéfinie.
 
+Each level up will buff your base stats, and give you stats points to allocate.
+
+
 Each piece of equipment has a predefined slot number.
 Chaque pièce de l'équipement a un numéro d'emplacement prédéfini.
+
+Each season unlocks a set of quests and drops which can only be obtained on the season.
+
 
 Earlier today there was this young seller named Fexil that passed by here.
 Plus tôt aujourd'hui, il y avait ce jeune vendeur appelé Fexil, qui est passé par ici.
@@ -3052,6 +3472,15 @@ Est
 
 Easter Egg
 Œuf de Pâques
+
+Easy to make? Could you make one for me?
+
+
+Easy to make? Could you teach me how to make them?
+
+
+Eating is a necessity, but cooking is an art.
+
 
 Edouard#001-2-41
 Edouard#001-2-41
@@ -3102,7 +3531,7 @@ Elmo#sailors
 Elmo#marins
 
 Emerald
-
+Emeraude
 
 Emerald Shard
 
@@ -3111,7 +3540,7 @@ Emerald Vein
 
 
 Empty Bottle
-
+Bouteille Vide
 
 Empty Mug
 
@@ -3156,10 +3585,10 @@ Enora needs them.
 Énora en a besoin.
 
 Enora sent me here.#0
-
+Enora m'a envoyé ici. #0
 
 Enora sent me here.#1
-
+Enora m'a envoyé ici. #1
 
 Enora wants her potions.
 Énora veut ses potions.
@@ -3182,6 +3611,9 @@ Entre le numéro de ligne :
 Enter new line:
 Entre une nouvelle ligne :
 
+Equippable items are armour, weapons and accessories.
+
+
 Error reading atcommand.conf, reload failed.
 Erreur lors de la lecture de atcommand.conf, le rechargement a échoué.
 
@@ -3194,7 +3626,13 @@ Eugène.
 Eugene needs tentacles
 Eugene a besoin de tentacules
 
+Even a simple sandwich will be ruined if you place lettuce above the cheese!
+
+
 Even after all that though, I still can't believe what happened next.
+
+
+Even with your Hercules strength, this lid is hopelessly struck.
 
 
 Event Management
@@ -3249,10 +3687,10 @@ Exemple for yoiis:
 Exemple pour yooi :
 
 Exp rate has been reset to @@% (default value).
-
+Le taux d'exp a été réinitialisé à @@% (valeur par défaut).
 
 Exp rate is set to @@% for the next @@.
-
+Le taux d'exp est réglé à @@% pour les prochaines @@.
 
 Expanded Super Baby
 Super Bébé Étendu
@@ -3260,14 +3698,17 @@ Super Bébé Étendu
 Expanded Super Novice
 Super Novice Étendu
 
+Experience can be gained by completing quests and killing monsters. When you accumulate enough experience, you'll level up!
+
+
 Experience rates: Base %.2fx / Job %.2fx
 Taux d'expérience : Base %.2fx / Métier %.2fx
 
 FINE, BYE!
-D'ACCORD, SALUT !
+TRÈS BIEN, SALUT !
 
 Fairy Hat
-
+Chapeau de Fée
 
 Fake name enabled.
 Faux nom utilisé.
@@ -3289,6 +3730,9 @@ Sens-toi libre de venir me rendre visite à tout moment.
 
 Female
 Féminin
+
+Fertility Potion
+
 
 Fexil
 Fexil
@@ -3324,7 +3768,7 @@ Find yourself a nice dry spot on a coast where you can easily reach into deep wa
 Trouve-toi un endroit au sec sur la côte où tu peux aisément atteindre le fond de l'eau.
 
 Fine Dress
-
+Robe Raffinée
 
 Fine, I'll just hold on to this log should you ever change your mind.
 
@@ -3353,6 +3797,9 @@ Entraînement terminé
 Finished battle
 Combat terminé
 
+Fire
+
+
 Fireworks are launched.
 Les feux d'artifice sont lancés.
 
@@ -3364,6 +3811,9 @@ Feux d'artifice |
 
 First encounter
 Première rencontre
+
+First of, there's a day/night cycle on the game.
+
 
 First thing she asked was if I'm a farmer.
 
@@ -3388,6 +3838,9 @@ Pêcher dans de l'eau peu profonde ne va pas fonctionner très bien car les pois
 
 Five Castles
 Cinq Châteaux
+
+Flag#1
+
 
 Fluffy
 Pluche
@@ -3428,6 +3881,9 @@ Pour '%s', tu as besoin du nombre de secondes (de 0 à 10)
 For a chef? Who said I was a... Oh right, I am.
 Pour un chef ? Qui a dit que j'étais un... Ah mais oui, j'en suis un.
 
+For now do not take too much time to work on your intelligence, after all, magic use is very restricted nowadays.
+
+
 For starters, you should probably do some stretching and practice on some dummies in our training room.
 Pour commencer, tu devrais probablement t'étirer et t'entraîner sur des mannequins dans notre salle d'entraînement.
 
@@ -3435,10 +3891,10 @@ For what kind of tissue?
 Pour quel type de tissus ?
 
 Forest Armor
-
+Armure des Forêts
 
 Forest Bow
-
+Arc des Forêts
 
 Forest Maggot
 
@@ -3485,6 +3941,9 @@ D'après ce que j'ai entendu, mon frère Gugli a besoin de l'aide d'un maximum d
 From your mind, break the ice
 
 
+Frost
+
+
 Frost held the title of Lord Prince of the Republic for eighteen months, when the council deposed him and declared itself head of the state.
 
 
@@ -3493,6 +3952,9 @@ Frostiana
 
 Fungus
 Champignon
+
+Fur Boots
+
 
 Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!
 De plus, sauf si tu comptes l'empaler à l'air libre, tu ne devrais non plus même pas penser à gagner de l'expérience en embêtant ces petites gelées roses collantes. Le rose pourrait se coller à toi, imagine l'horreur !
@@ -3533,10 +3995,16 @@ Les zeny gagnés ne sont pas affichés.
 Gained zeny will not be shown.
 Les zeny gagnés ne seront pas affichés.
 
-Gamboge Herb
+Galimatia
 
+
+Gamboge Herb
+Herbe Gamboge
 
 Gamboge Plant
+
+
+Game Balance
 
 
 Game introduction
@@ -3581,11 +4049,17 @@ Sexe
 Generalstore#008-1
 
 
+Generic items are used for different purposes. In creating other items, to swap and sell, to collect, etc.
+
+
 Genetic
 Génétic
 
 Genetic T
 Génétic T
+
+Get a Recipe Book
+
 
 Get money
 Recevoir l'argent
@@ -3707,6 +4181,9 @@ Heureux d'avoir de tes nouvelles !
 Good to hear!
 C'est bon à savoir !
 
+Good to know, thanks.
+
+
 Good to know.
 C'est bon à savoir.
 
@@ -3733,9 +4210,6 @@ Gorgeous woman, but when she looked at me, the scares went scuttling down my spi
 
 Got a cookie
 A reçu un cookie
-
-Got no reward
-N'a pas reçu de récompense
 
 Got poison from Gado
 Poison de Gugli récupéré
@@ -3784,6 +4258,9 @@ Génial, quelle nourriture m'as-tu apporté aujourd'hui ?
 
 Great, what food do you have for me today?#1
 Génial, quelle nourriture m'as-tu apporté aujourd'hui ?
+
+Greater %s allows you to attack faster and has a greater chance of evading attacks.
+
 
 Green Cotton Dye
 Teinture Coton Vert
@@ -3954,7 +4431,7 @@ Half Eggshell
 Demi Coquille d'Œuf
 
 Hard Spike
-
+Piquant Dur
 
 Hard work always pays off!
 Le travail paie toujours !
@@ -3969,7 +4446,7 @@ Has met its demise
 A rencontré sa fin
 
 Have a good day!
-Passe une bonne journée!
+Bonne journée !
 
 Have a good time fishing!
 Amuses-toi bien à pêcher !
@@ -4022,6 +4499,9 @@ Il n'a pas changé en grandissant, je lui demandais à plusieurs reprises de ne 
 He has a guns!
 Il a des flingues !
 
+He has never been the same since mommy went away...
+
+
 He is a regular at the inn, located in the north-west part of town.
 
 
@@ -4046,6 +4526,9 @@ He is usually in his office on the 3rd floor.
 He is very lucky that Don took him under his wing, but being the student of such a teacher is not easy every day!
 Il est très chanceux que Don l'ai pris sous son aile, mais être l'élève d'un tel professeur n'est pas chose facile tous les jours !
 
+He likes to eat sandwiches. A good thing they are so easy to make!
+
+
 He likes to hide near the little lake in the north-west side of the island.
 Il aime se cacher près du petit lac au nord-ouest de cette île.
 
@@ -4067,8 +4550,8 @@ He proceeds to further scrutinize the log.
 He said he is going to climb the highest hill in Artis, which is not far from here.
 Il a dit qu'il escaladerai la plus haute colline d'Artis, qui ne se situe pas très loin d'ici.
 
-He said that he would check why the manhole next to the house was doing weird sounds.
-Il a dit que tu devrais vérifier pourquoi l'ouverture des égouts près de la maison faisait d'étranges bruits.
+He said that he would check why weird noises were coming from the manhole next to the house.
+
 
 He takes another sip.
 
@@ -4094,6 +4577,9 @@ A entendu la conversation
 Hearing these words the Piou felt great joy,
 
 
+Heh, did you saw me at the port? No?
+
+
 Hehe!
 Hehe !
 
@@ -4110,7 +4596,7 @@ Hehe, sometimes he gets his head in the clouds, You should go ask him about that
 Hehe, parfois il a la téte dans les nuages, tu devrais aller le voir à ce sujet.
 
 Hehe... Ok, I'm going to inform the capt'n up there.
-Hehe... Bon, je vais là-haut, informer le capitaine.
+Héhé... Bon, je vais là-haut, informer le cap'taine.
 
 Hehehe, he is a bit nervous, please forgive him, it is not everyday we have a new member in the crew!
 Hehehe, il est un peu nerveux, pardonnes-le, ce n'est pas tous les jours qu'on a un nouveau membre dans l'équipage !
@@ -4118,7 +4604,10 @@ Hehehe, il est un peu nerveux, pardonnes-le, ce n'est pas tous les jours qu'on a
 Hel... What?! Wait!
 De l'aid... Quoi ?! Attends !
 
-Hello Sir.
+Hello Miss.#1
+
+
+Hello Sir.#0
 
 
 Hello dear!#0
@@ -4128,6 +4617,9 @@ Hello dear!#1
 Bonjour mon cher !
 
 Hello deary.
+
+
+Hello madam.
 
 
 Hello there!
@@ -4140,6 +4632,9 @@ Hello yeye.
 Salut toi.
 
 Hello, I am Macgowan, apprentice to Nicholas.
+
+
+Hello, a rowboat is on his way to the beach. Please wait for a while for it to arrive.
 
 
 Hello, can I help you?
@@ -4238,12 +4733,6 @@ Tiens, prends-en autant que tu en as besoin, j'en ai beaucoup !
 Here, take as many as you need, I have plenty!#1
 Tiens, prends-en autant que tu en as besoin, j'en ai beaucoup !
 
-Here, take this @@ as a gift. I'm sure someone as skilled you will make a good use of my old weapon.#0
-
-
-Here, take this @@ as a gift. I'm sure someone as skilled you will make a good use of my old weapon.#1
-
-
 Here, take this key, it opens all the doors on this ship.
 Tiens, prends cette clé, elle ouvre toutes les portes de ce navire.
 
@@ -4331,6 +4820,9 @@ Eh, psst ! Tu n'es pas un marin, pas vrai ?
 Hey.
 Hey.
 
+Hey. ppst. I have something important to tell you.
+
+
 Heya!
 Hey !
 
@@ -4367,6 +4859,9 @@ Salut ! Je peux enfin te voir à la lumière du jour !
 Hi! No, I haven't seen him yet.
 
 
+Hi, I am Simon.
+
+
 Hi, can I help you at all?
 
 
@@ -4375,6 +4870,9 @@ Salut, puis-je t'aider d'une quelconque façon ?
 
 Hi, how is it going?
 Salut, tout se passe bien ?
+
+Hi, my name is Blossom.
+
 
 Hi, my name is Moon. This morning I went for a walk on the beach.
 Salut, mon nom est Moon. Ce matin je suis allée faire une petite marche sur la plage.
@@ -4396,6 +4894,9 @@ Salut, qu'est-ce que tu veux petit gars ?
 
 Hi.
 Bonjour.
+
+Hi. I am Trozz, and I am the chief of legion training in Artis.
+
 
 Hidden Person
 Personne Cachée
@@ -4436,6 +4937,9 @@ Colline & Falaise
 Hinnak asked for help
 
 
+Hinnak wasted all my good kitchen knives trying to get rid of his accursed Pinkies.
+
+
 Hinnak#008-1
 
 
@@ -4459,6 +4963,9 @@ Hm... then it couldn't be him.
 
 Hmm, I'll also give you one of these hats from the box near you, but only after you complete your task!
 Hmm, je te donnerai aussi un de ces chapeaux dans la boîte près de toi, mais seulement après avoir fini ta tâche !
+
+Hmm, why don't you go train a little more? We have several training rooms here.
+
 
 Hmm...
 
@@ -4502,6 +5009,9 @@ Honestly, sometimes I prefer nice explosions. Better keep back!#0
 Honestly, sometimes I prefer nice explosions. Better keep back!#1
 
 
+Honey
+
+
 How about I ask you to help the crew? It would mean that you're one of us and that you will be able to get one of these hats.
 Et si je te demandais d'aider l'équipage ? Cela voudrait dire que tu serais l'un des nôtres et que tu pourrais avoir un de ces chapeaux.
 
@@ -4525,6 +5035,9 @@ How can I help you?
 
 How can I improve my equipment?
 Comment puis-je améliorer mon équipement ?
+
+How can we serve you today?
+
 
 How could you... We said we wouldn't talk about that again!
 Comment as-tu pu... On a dit qu'on en parlerait plus jamais !
@@ -4554,10 +5067,10 @@ How many? What kind? I can produce two dozen boxes per day.
 Combien ? Quel type ? Je peux produire des douzaines de boîtes par jour.
 
 How much do you want to deposit?
-
+Combien veux-tu déposer?
 
 How much do you want to withdraw?
-
+De combien veux-tu t'en désister?
 
 How much is this worth to you?
 
@@ -4578,6 +5091,9 @@ However...
 Cependant...
 
 Hrmph.
+
+
+Human
 
 
 Human Voice
@@ -4622,11 +5138,14 @@ J'ÉTAIS LÀ QUAND ILS T'ONT SAUVÉ !
 I WOULD LOVE TO!
 J'AIMERAIS BEAUCOUP !
 
-I already killed many strong monsters, but I everyone have fears, right?!
+I actually could use a status reset!
 
 
 I already know everything. Bye.
 Je sais déjà tout. Au revoir.
+
+I also hear fisherman likes to fish at night. They say the catch is bigger, if you understand me.
+
 
 I also heard you lost all your memories? That's a shame.
 J'ai aussi entendu que tu as perdu toute ta mémoire ? Quel dommage.
@@ -4634,20 +5153,23 @@ J'ai aussi entendu que tu as perdu toute ta mémoire ? Quel dommage.
 I am %s Super Novice~
 Je suis %s Super Novice~
 
+I am Wyaras apprentice, helping her with selling her potions.
+
+
 I am absolutely positive.
 
 
 I am an alchemist, I bear the name of Ivan.
 Je suis un alchimiste, je porte le nom d'Ivan.
 
+I am broken?! Please report! Debug data: @@ (@@)
+
+
 I am new in this town, just like you.
 Je suis nouveau dans cette ville, tout comme toi.
 
 I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment.
 Je ne suis pas un expert de la sorte, mais je sais de quoi je parle quand il s'agit d'améliorer son équipement.
-
-I am not worried about rewards. I just want to help.
-Je ne me préoccupe pas des récompenses. Je veux juste aider.
 
 I am only doing special requests.
 
@@ -4702,9 +5224,6 @@ J'ai demandé à Don notre forgeron de préparer une épée en fer noir pour ce 
 
 I asked Hinnak, but he wants at least a beer in exchange for his scythe.
 
-
-I asked for food but... *hips* Ah, that'll do nicely!
-J'ai demandé de la nourriture mais... *hips* Ah, ça fera parfaitement l'affaire !
 
 I asked for food but... *hips* Ah, that'll do!
 J'ai demandé de la nourriture mais... *hips* Ah, ça fera l'affaire !
@@ -4802,6 +5321,9 @@ Je n'ai pas vu qu'un Pikpik se trouvait sur mon chemin et quand j'ai marché des
 I do feel better!
 Je me sens en effet mieux !
 
+I do know a recipe with this!
+
+
 I do not like to brag about it but you won't find a better blacksmith on the whole island.
 Je n'aime pas me vanter à ce sujet mais tu ne trouveras de meilleur forgeron sur l'île entière.
 
@@ -4819,9 +5341,6 @@ I don't feel so well, I might be sick.
 
 I don't have any.
 
-
-I don't have anything good for you today.
-Je n'ai rien de bon pour toi aujourd'hui.
 
 I don't have enough plushrooms...#0
 Je n'ai aucun peluchignon...
@@ -4844,14 +5363,17 @@ Je n'ai pas le temps.
 I don't know if I trust her eyesight or memory.
 
 
+I don't know the password
+
+
 I don't know what to say...
 Je ne sais pas quoi dire.
 
 I don't know.
 Je ne sais pas.
 
-I don't need your help right now, come back later.
-Je n'ai pas besoin de ton aide pour le moment, reviens me voir plus tard.
+I don't need your help right now, but maybe tomorrow, who knows?
+
 
 I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E).
 Je n'ai pas vraiment le temps d'aller à la chasse aux pious, laisse-moi juste en acheter un au prix initial (30000 E).
@@ -4870,6 +5392,9 @@ Je ne veux pas acheter de piou dès maintenant.
 
 I don't want to change my language, sorry.
 Je ne veux plus changer de langue, toutes mes excuses.
+
+I don't want you! I want daddy!
+
 
 I feel ok.#0
 Je me sens bien.
@@ -4964,6 +5489,9 @@ I haven't seen anything strange.
 I heard rumors about some old hostilities between you and Gado. Are they true?
 J'ai entendu des rumeurs à propos d'anciennes hostilités entre toi et Gado ? Sont-elles vraies ?
 
+I heard something too. A girl named Galimatia seems to need help. If only those lazy developers could tell her what she needs.
+
+
 I heard you aren't delivering any more living wood. Why not?
 
 
@@ -5000,6 +5528,12 @@ J'espère que tu aimes cette couleur.
 I informed Julia about your monstrous plan.
 J'ai informé Julia de ton plan monstrueux.
 
+I just can't remember what. But come talk to me later once devs becomes less lazy.
+
+
+I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.
+
+
 I just need %s E for material and work time.
 
 
@@ -5023,6 +5557,9 @@ I know you didn't kill them yourself!
 
 I like money! Consider it done.
 J'aime l'argent ! Considère ça comme fait.
+
+I love flowers! What do you have for sale?
+
 
 I love hanging out here!
 
@@ -5099,8 +5636,17 @@ I ran away as fast as I could, and lucky for me the monsters aren't that fast on
 I recall seeing Gulukan, Astapolos and Q'Muller.
 Je me souviens avoir vu Gulukan, Astapolos et Q'Muller.
 
+I recommend that you train your agility a great deal, since most monsters out there aren't really amazing at hitting you.
+
+
 I recommend you to take a nap on the inferior level, we will soon leave this place.
 Je te recommande de faire une petite sieste sur le niveau inférieur, nous allons bientôt quitter cet endroit.
+
+I registered you on a random bed on the upper level.#0
+
+
+I registered you on a random bed on the upper level.#1
+
 
 I remember I saw a few of them leaving the ship early this morning to get a head start on today's work.
 Je me souviens en avoir vu quelques-uns partir du bateau tôt ce matin pour avoir une avance sur le travail d'aujourd'hui.
@@ -5207,6 +5753,9 @@ I used to be a farmer, but my magic attempts were banned by the gouvernment.
 I used to get these logs from Jack, the handsome lumberjack.
 
 
+I usually would not care, but it is not every day a complete stranger arrives at Artis.
+
+
 I value my life, that's why!
 
 
@@ -5226,6 +5775,9 @@ I was afraid to get busted, so I decided to get rid of the evidence.
 J'ai eu peur d'être attrapé, alors j'ai décidé de me débarasser de la preuve.
 
 I was an actor when I was younger.
+
+
+I was an archer of the Legion and shouldn't be scared of a few maggots, but everyone has fears, right?!
 
 
 I was going to ask you if you would need any help.
@@ -5288,11 +5840,14 @@ Je m'occuperai des autres, ne t'en fais pas.
 I will take it! Thank you captain!
 Je le prendrai ! Merci capitaine !
 
+I will take the @@ Bounty.
+
+
 I will tell my dad!
 Je le dirai à mon père !
 
 I will yaying do.
-Je le ferai.
+Je le ferai yay.
 
 I will.
 Je le ferai.
@@ -5355,13 +5910,16 @@ I would like to create a party.
 Je voudrais créer un groupe.
 
 I would like to perform money transactions.
-
+J'aimerais effectuer des transactions monétaires.
 
 I would like to stay here a bit more.
 Je voudrais rester ici un peu plus longtemps.
 
 I would like to store some items.
 Je voudrais entreposer des objets.
+
+I would prefer becoming a real Sorcerer one time. *sighs*
+
 
 I wrote your name on the book, you are now free to use the storage and bank services.
 J'ai écrit ton nom dans le livre, tu es maintenant libre d'utiliser les services d'entrepôt et de la banque.
@@ -5399,6 +5957,9 @@ Je serai ici, reviens quand tu seras prête.
 I'll be here, come back when you'll be ready.#1
 Je serai ici, reviens quand tu seras prêt.
 
+I'll be waiting for you, then!
+
+
 I'll come back later.
 
 
@@ -5406,7 +5967,10 @@ I'll give her everything she needs, don't worry.#0
 Je lui donnerai tout ce dont elle a besoin, ne t'en fais pas.
 
 I'll give him everything he needs, don't worry.#1
-Je lui donnerai tout ce dont elle a besoin, ne t'en fais pas.
+Je lui donnerai tout ce dont il a besoin, ne t'en fais pas.
+
+I'll give you @@ GP for this job.
+
 
 I'll give you something if you do.
 
@@ -5415,6 +5979,9 @@ I'll keep that in mind.
 
 
 I'll keep track of this, while you return the mask to the troupe.
+
+
+I'll return the plushroom to you, but please, do not waste my time.
 
 
 I'll share my berries with you if you help me.
@@ -5471,6 +6038,9 @@ J'ai fini.
 I'm fine for now, thank you.
 Je vais bien pour l'instant, merci.
 
+I'm fine, thanks.
+
+
 I'm glad to see you're okay.#0
 Je suis content que tu n'aies rien.
 
@@ -5503,6 +6073,9 @@ Je suis perdu, où dois-je aller ?
 
 I'm not a pawn of the Legion, I don't have to obey you!
 Je ne suis pas un pion de la Légion, je n'ai pas à t'obéir !
+
+I'm not feeling like it today... Sorry.
+
 
 I'm not proud of it, but I had to steal money from others to keep on living.
 Je n'en suis pas fier, mais j'avais besoin de voler l'argent des autres pour que je puisse survivre.
@@ -5559,6 +6132,12 @@ I'm sorry, but I didn't see anything.
 
 
 I'm sorry, but I'm busy looking into this string of robberies.
+
+
+I'm starting to feel dizzy... I shouldn't stay here much longer.#0
+
+
+I'm starting to feel dizzy... I shouldn't stay here much longer.#1
 
 
 I'm still a bit weak at the moment. We should probably talk later.#0
@@ -5642,6 +6221,9 @@ Je...
 I... I just like to eat the purple and delightful... And natural, and...
 Je... J'aime juste manger le délicieux et violet... Et naturel, et...
 
+IMPORTANT:
+
+
 Ianus is from the Legion of Aemil, don't compare me to this brigand.
 Ianus fait partie de la Légion d'Aemil, ne me compare pas à ce brigand.
 
@@ -5654,23 +6236,35 @@ Si Énora veut son épée maintenant, j'ai besoin de te demander ton aide.
 If I saw *hic* who you were... *hic* Would not have helped you! 
 Si je t'avais *hic* reconnus... *hic* Je ne t'aurais pas aidé !
 
-If it is the latter, please take some courage and help me!
-
-
 If it's no trouble, could you get me a %s?
+
+
+If my memory serves me right, you were just defeated. Why don't you go out to buy better equipment?
 
 
 If not, how could CrazyKatiektch
 
 
+If only someone could help me to make my flowers bloom again.
+
+
 If so, I hope that he didn't give you any hard time, sometimes he can get up on the wrong side of the bed he becomes an embittered and grumpy old man...
 Si c'est le cas, j'espère qu'il ne t'a pas fait passer un moment trop dur, parfois il se lève du mauvais pied et ça le transforme en un vieil homme aigri et ronchon...
+
+If so, please take some courage and help me!
+
+
+If the proposal is not convenient for you, just close the trading window to cancel the exchange of items and money. But if both press the 'Accept Negotiation' button, then the marketing will be finished.
+
 
 If words beat in rhythm
 
 
 If yoiis wants to see a different use for the cards he can yeye for Resa at the light armor shop for a description of the styling cards.
 Si yoiis veut voir une utilisation différente pour les cartes, il peut yeyander à Resa à la boutique d'armure légère pour une description des cartes de style.
+
+If you are above the NPC and they still doesn't hear you, this mean they are deaf - you should report this!
+
 
 If you are lucky he might tell you a story about his adventures.
 
@@ -5730,7 +6324,7 @@ If you kill some of these tree monsters and bring me their wood I could take a l
 
 
 If you meant to reset the exp rate to its default value: @exprate default
-
+Si tu voulais réinitialiser le taux d'exp à sa valeur par default : @exprate default
 
 If you need some firewood, just let me know.
 
@@ -5759,6 +6353,9 @@ Si tu vois des choses bizarres ici et là, ou des choses qui ne devraient pas y 
 If you simply wish to get 99 in all stats:
 Si tu désires simplement avoir 99 dans toutes les compétences :
 
+If you visit the sewers again... You'll find secret passages...
+
+
 If you wake up at the inn after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.
 Si tu te réveilles à l'auberge après un dur combat, tu verras que tu auras été revitalisé en un instant, contrairement aux autres endroits où tu peux te reposer.
 
@@ -5770,6 +6367,9 @@ Si tu veux être récompensée, aide-nous à faire de ce monde un monde meilleur
 
 If you want to be rewarded, help us in making this world a better place.#1
 Si tu veux être récompensé, aide-nous à faire de ce monde un monde meilleur.
+
+If you want to challenge someone for a friendly match, you are at the right place.
+
 
 If you want to make a formidable foe for anyone, you'll need to train with real living opponents!#0
 Si tu veux devenir un formidable ennemi de tous, tu devras t'entraîner contre de véritables adversaires vivants !
@@ -5798,11 +6398,14 @@ Si tu nous cherches là-bas, la plupart d'entre nous serons à la taverne de la 
 Impossible to increase the number/value.
 Impossible d'augmenter le nombre/la valeur.
 
+Impossible to resync: You are dead.
+
+
 In Artis they really do mythologize people when they die.
 À Artis, il mythifient beaucoup les gens lorsqu'ils meurent.
 
 In a couple of days, we will finally reach Artis.
-
+Dans quelques jours, nous arriverons finalement à Artis.
 
 In case you don't have a commendatory letter from you-know-whom, I am just sitting here and observe the whales.
 
@@ -5814,6 +6417,9 @@ In fact... Oh, the things that I could tell... But ran out of space on this... J
 En fait... Oh, les choses que je pourrais dire... Mais je n'ai plus de place sur ce... Sois juste raisonnable et rentre à la maison.
 
 In hopes of one day reconnect with the people of Ancea and establish a trade between the two continents, The City of Artis was founded. The Aemil Continent has then grown without contact with the people of Ancea.
+
+
+In order to enter a message press the '###keyChat;' key, this will display the white box of typing. Type your message there and press '###keyChat;' again to send your speech.
 
 
 In truth, if your song is as beautiful as your plumage,
@@ -5834,8 +6440,11 @@ En effet, je ne le suis pas.
 Indeed, I am not.#1
 En effet, je ne le suis pas.
 
-Infantry Helmet
+Indefinite Traning
 
+
+Infantry Helmet
+Casque d'Infanterie
 
 Information sent to login-server via char-server.
 Information envoyée au login-server via le char-server.
@@ -5849,11 +6458,17 @@ Inside is a theater mask and a note that you cannot even begin to read.
 Inspector
 
 
+Instance ID: @@
+
+
 Instance variables may not be used with @set.
 Les variables d'instance ne peuvent pas être utilisées avec @set.
 
 Int: %d (%d~%d)
 Int : %d (%d~%d)
+
+Intelligence
+
 
 Intelligence raises your maximum mana points (good for mages) and your mind abilities. Please note: Magic system has not yet been implemented in this world.
 L'intelligence augmente ton nombre maximum de points de mana (bien pour les mages) et tes capacités d'esprit. Note : Le système de magie n'a pas encore ajouté à ce monde.
@@ -5946,10 +6561,10 @@ Iron Armbands
 Brassards en Fer
 
 Iron Ore
-
+Minerai de Fer
 
 Iron Potion
-
+Potion de Fer
 
 Iron Shovel
 Pelle en Fer
@@ -5983,6 +6598,9 @@ Est-ce pour toi ou quelqu'un d'autre ? Parce que tu as besoin d'être enregistr�
 
 Is this some kind of joke?!
 C'est une blague ?
+
+Isn't my husband Hinnak so hardworking?
+
 
 Isn't this place pretty?
 
@@ -6032,6 +6650,12 @@ C'est possible de yeyeindre tes vêtements avec mes superbes teintures.
 It is them, after all, who have the ultimate decision as to those I can give my cookies to.
 C'est eux, après tout, qui décident à qui je peux donner mes cookies.
 
+It is time to make some sandwiches myself!#0
+
+
+It is time to make some sandwiches myself!#1
+
+
 It is.
 
 
@@ -6046,6 +6670,9 @@ Il semblerait que tu sois un expert de la vie à l'intérieur de 'La Johanne'. S
 
 It looks like you can't carry anything else for now.
 Il semblerait que tu ne puisses rien porter d'autre pour l'instant.
+
+It needs so much training, but Wyara only leaves me here, standing and selling something instead of teaching me.
+
 
 It really hurts, please hurry!
 Ça fait vraiment très mal, dépêche-toi !
@@ -6091,6 +6718,9 @@ It tends to be too dark to see a mask.
 
 It was at night, so I could barely escape. I ran to Artis hill.
 C'était la nuit, j'ai à peine pu m'échapper. J'ai couru à la colline d'Artis.
+
+It was heard about some adventurers whom obtained and use advanced magic, but that is still seen with bad eyes.
+
 
 It was something like a long nap.
 C'était plutôt comme une longue sieste.
@@ -6146,6 +6776,9 @@ C'est un très bon endroit si tu veux te faire de l'argent.
 It's alright! Just one more box and it'll be ok.
 C'est bien ! Encore une seule boîte et ça sera parfait.
 
+It's always good to see if you have a lot of them around before you think about attacking one!
+
+
 It's been a while, boy!#1
 Ça fait un bail, garçon !
 
@@ -6157,6 +6790,12 @@ C'est mieux que de courir en rond en ne faisant rien.
 
 It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!
 C'est mieux de faire affaire avec la Guilde des Marchands qu'avec le vieil homme, Don a la capacité de réduire ton enthousiaste grâce à une furie étincelante !
+
+It's currently day, but when night falls, Candor will become darker.
+
+
+It's currently night, that's why Candor is dark.
+
 
 It's good, good... I have a friend who is still in a coma, but I can't be with her without working...
 Bien, bien... J'ai une amie qui est toujours dans le coma mais je ne peux pas être avec elle sans travailler.
@@ -6227,6 +6866,9 @@ Objet : '%s'/'%s'[%d] (%d) Type: %s | Effet Supplémentaire : %s
 Item: '%s'[%d]
 Objet : '%s'[%d]
 
+Items for consumption, like potions, can only be used once.
+
+
 Items have different effects. Some will heal you, some can be used as weapons or armor, and some can be sold for gold.
 Les objets ont différents effets. Certains peuvent te soigner, d'autres peuvent être utilisés comme armes et armures, et enfin d'autres peuvent être vendus pour de l'or.
 
@@ -6276,10 +6918,13 @@ Janus!
 Janus !
 
 Jeans Chaps
-
+Jambières de Cuir
 
 Jenna#001-2-28
 Jenna#001-2-28
+
+Job Level and certain equips can affect your status. You'll see the modifiers with a + sign.
+
 
 Job level can't go any higher.
 Ton niveau de métier ne peut pas aller plus haut.
@@ -6347,6 +6992,9 @@ Just say something sparkling
 Kagerou
 Kagerou
 
+Kaizei
+
+
 Katja asked for help
 Katja a demandé de l'aide
 
@@ -6383,8 +7031,8 @@ Teinture Coton Khaki
 Kill at least %d pinkies and come back.
 
 
-Killed rattos
-Rattos tués
+Killed mob bitmask: @@
+
 
 Killer state reset.
 État de tueur réinitialisé.
@@ -6398,10 +7046,16 @@ Chevalier
 Know that every flatterer,
 
 
+Known Recipes: @@
+
+
 Koga#001-1
 
 
 Koga#008-1-1
+
+
+Kralog
 
 
 Kralog Voice
@@ -6410,8 +7064,11 @@ Voix de Kralog
 Lachesis Brew
 Brassage de Lachésis
 
-Large Healing Potion
+Lake
 
+
+Large Healing Potion
+Grande Potion de Soin
 
 Large Mana Potion
 
@@ -6437,17 +7094,26 @@ Lean
 Lean for example?
 Lean par exemple ?
 
-Leather Gloves
+Learn Skill
 
+
+Learn all recipes
+
+
+Leather Gloves
+Gants en Cuir
 
 Leather Shield
 Bouclier en Cuir
 
 Leather Trousers
-
+Pantalon en Cuir
 
 Leave it.
 Ne pas y toucher.
+
+Leave me alone.
+
 
 Leaves have stopped falling.
 Les feuilles ont arrêté de tomber.
@@ -6470,8 +7136,8 @@ BarriereGauche
 LeftDoor
 PorteGauche
 
-LeftDoor#001-2-23
-PorteGauche#001-2-23
+LeftDoor#Artis
+
 
 LeftDoorCheck
 PorteGauche
@@ -6545,6 +7211,9 @@ Feuille de Laitue
 Library
 Bibliothèque
 
+Light
+
+
 Light Armor Shop
 Boutique d'Armures Légères
 
@@ -6566,7 +7235,19 @@ Teinture Coton Citron
 Line @@ has been removed.
 La ligne @@ a été supprimée.
 
+List of known cooking recipes:
+
+
+List of known master skills:
+
+
 List the commands
+
+
+Listen, kid. Being a legion member is not a joke.#0
+
+
+Listen, kid. Being a legion member is not a joke.#1
 
 
 Little Blub
@@ -6610,6 +7291,9 @@ Le login-server est hors-ligne. Il est impossible de %s le joueur '%.*s'.
 
 Look at your equipment, can you guess what material it is made from?
 Regarde ton équipement, peux-tu deviner de quoi il est fait ?
+
+Look for the hideout, but tell no one about this. Then, say the password again.
+
 
 Look how splendid this @@ is!
 Regarde comment ce @@ est beau !
@@ -6659,6 +7343,9 @@ Réduire cette compétence
 Lozerk
 Lozerk
 
+Lozerk told me to talk to you and join the legion.
+
+
 Lucas#001-1
 Lucas#001-1
 
@@ -6693,10 +7380,10 @@ Made any progress yet?
 
 
 Maggot
-
+Ver
 
 Maggot Slime
-
+Bouillie d'Asticot
 
 Maggot soup
 
@@ -6707,8 +7394,20 @@ Arpan Magique
 Magic Arpan#sailors
 Arpan Magique#marins
 
+Magic Feather
+
+
+Magic was banned for lore reasons? Seriously, after the mana war, only small tricks are allowed.
+
+
 Magician
 Magicien
+
+Make me proud, boy.#1
+
+
+Make me proud, girl.#0
+
 
 Make sure to put on a bait after you click, though!
 Cependant, n'oublie pas d'ajouter un appât après avoir cliqué !
@@ -6717,7 +7416,7 @@ Make sure to tip her, it will brighten up her day.
 
 
 Makes sense. Do you think we should inform the capt'n about it?
-Cela fait sens. Penses-tu que nous devrions en informer le cap'taine ?
+C'est possible. Penses-tu que nous devrions en informer le cap'taine ?
 
 Male
 Masculin
@@ -6728,17 +7427,26 @@ Malik#008-2-18
 Mana Bug
 
 
+Mana Ghost
+
+
 Mana Torch
 
 
 Manana
 Manana
 
+Manana Sandwich
+
+
 Manana Tree
 Mananier
 
 Manually trigger the current broadcast
 Déclencher manuellement l'annonce actuelle
+
+Many thanks. I can now do sandwiches again!
+
 
 Map not found.
 Carte introuvable.
@@ -6755,6 +7463,9 @@ Place du Marché
 Marriage failed.
 Le marriage a échoué.
 
+Master Book
+
+
 Master Fluffy was attracted by the odour,
 
 
@@ -6765,7 +7476,7 @@ Mauve Cotton Dye
 Teinture Coton Mauve
 
 Mauve Herb
-
+Herbe Mauve
 
 Mauve Plant
 
@@ -6789,13 +7500,16 @@ Maybe he over did it with the bottle today to celebrate that!
 Peut-être qu'il l'a un peu trop fait avec sa bouteille aujourd'hui pour célébrer ça !
 
 Maybe he was one of those who got lost last month? He could be the yoiis from Esperia who got a secret diplomatic mission from the Legion of Aemil!#1
-Peut-être est-il l'un de ceux qui se sont perdus le mois dernier ? Il pourrait être le yoiis d'Esperia qui avait une quête secrète de la part de la Légion d'Aemil !
+Peut-être est-il l'un de ceux qui se sont perdus le mois dernier ? Il pourrait être le yoiis d'Esperia à qui la Légion d'Aemil avait confié une mission diplomatique secrète !
+
+Maybe later.
+
 
 Maybe next time.
 Peut-être une prochaine fois.
 
 Maybe she was one of those who got lost last month. She could be the yoiis from Esperia who got a secret diplomatic mission from the Legion of Aemil!#0
-Peut-être est-elle l'une de ceux qui se sont perdus le mois dernier ? Elle pourrait être la yoiis d'Esperia qui avait une quête secrète de la part de la Légion d'Aemil !
+Peut-être est-elle l'une de ceux qui se sont perdus le mois dernier ? Elle pourrait être la yoiis d'Esperia à qui la Légion d'Aemil avait confié une mission diplomatique secrète !
 
 Maybe you can catch some of them.
 
@@ -6812,10 +7526,16 @@ Maybe you can use it as a weapon.
 Maybe you could ask him what's wrong?
 
 
+Maybe you have more luck with something else?
+
+
 Maybe you meant: 
 Peut-être voulais-tu dire :
 
 Maybe you should help someone else first, so that he sees your intentions are good.
+
+
+Maybe you should try this phrase?
 
 
 Maybe you too you could help me?
@@ -6846,7 +7566,7 @@ Mechanic T
 Mécanicien T
 
 Medium Healing Potion
-
+Potion de Soins Moyens
 
 Medium Mana Potion
 
@@ -6865,6 +7585,9 @@ Marchand
 
 Merchant Guild
 Guilde des Marchands
+
+Merchants like to buy body parts of killed monsters and animals because they can make items and equipment.
+
 
 Mercy has been granted.
 La miséricorde a été accordée.
@@ -6932,14 +7655,17 @@ Ma maman m'a envoyée à la recherche de mon frère Bobo.
 Mona
 Mona
 
-Mona Father's is right behind you. You have five minutes to bring him out of sewers!
-
-
 Mona's dad
 Le père de Mona
 
 Mona's dad is missing
 Le père de Mona a disparu
+
+Mona's dad was rescued
+
+
+Mona's father is right behind you. You have five minutes to bring him out of sewers!
+
 
 Money
 Argent
@@ -6955,6 +7681,9 @@ La base de données des monstres a été rechargée.
 
 Monster: '%s'/'%s'/'%s' (%d)
 Monstre : '%s'/'%s'/'%s' (%d)
+
+Monsters are everywhere. They're a plague we're trying to get rid of.
+
 
 Moo!
 Moo !
@@ -6980,11 +7709,14 @@ Mousse
 Most common and widely popular in the fish realm are @@ and pieces of @@.
 Le poisson le plus commun et répandu dans le monde du poisson c'est la @@ et parfois quelques @@.
 
+Most of these people will not think twice before giving a nice reward to anyone who helps them.
+
+
 Mostly manuals and tutorials but you won't find out until you open one!
 Le plus souvent des manuels et des tutoriels mais tu ne le sauras pas jusqu'à ce que tu en ouvres un !
 
 Mouboo
-
+Mouboo
 
 Mouboo#Artis0
 Mouboo#Artis0
@@ -6997,6 +7729,9 @@ Mouboo#Artis2
 
 Mouboo#Artis3
 Mouboo#Artis3
+
+Mountain
+
 
 Move this line down
 Déplacer cette ligne vers le bas
@@ -7005,6 +7740,12 @@ Move this line up
 Déplacer cette ligne vers le haut
 
 Mundane
+
+
+Mundane ran away, he did not trust the path you chose.
+
+
+Mundane ran straight home. He must be missing his daughter.
 
 
 Murderers!#0
@@ -7025,7 +7766,7 @@ Ma belle, je n'ai pas toujours été un marin, vois-tu, j'étais quelqu'un d'imp
 My breath smells bad.
 J'ai une haleine horrible.
 
-My daughter is probably worried with me. Could you perhaps lead me out of here?
+My daughter is probably worried about me. Could you perhaps lead me out of here?
 
 
 My forestbows are not made of regular wood, you know.
@@ -7097,8 +7838,14 @@ PNJ n'est plus sur la carte.
 NPC moved.
 PNJ bougé.
 
+NPC stylists will cut your hair!
+
+
 NPC variables may not be used with @set.
 Les variables de PNJ ne peuvent pas être utilisées avec @set.
+
+NPC's or non-playable characters are characters that are always in the game, offering a wide variety of reactions, from a simple friendly conversation to a desperate request for help.
+
 
 Nah, I don't feel like chatting.
 
@@ -7147,6 +7894,9 @@ Narrateur#000-0-1
 
 Navy Blue Cotton Dye
 Teinture Coton Bleu Marine
+
+Neutral monsters do not have such a sense of danger.
+
 
 Never (only on login)
 Jamais (seulement en se connectant)
@@ -7273,9 +8023,6 @@ Aucun joueur trouvé dans la carte '%s'.
 
 No player found.
 Aucun joueur trouvé.
-
-No problem, I can help you anyway.
-Pas de problème, je peux quand même t'aider.
 
 No problem, come back later if you changed your mind!
 Pas de soucis, reviens plus tard si tu changes d'avis !
@@ -7419,7 +8166,7 @@ Nobody.
 Personne.
 
 Noh Mask
-
+Masque Nô
 
 Non-binary
 Pas binaire
@@ -7448,6 +8195,9 @@ Non, il n'y a pas de secret caché dans la coque de ce bateau. Certains marins j
 Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
 Taux d'Abandon Normaux : Commun %.2fx / Soins %.2fx / Utilisable %.2fx / Équipment %.2fx / Carte %.2fx
 
+Normally, collaborative monsters behave like neutral monsters. Unless someone of the same species is in danger, at which point they all take an aggressive stance against the aggressor.
+
+
 North
 Nord
 
@@ -7463,6 +8213,9 @@ Pas un chiffre hexadécimal :
 Not a string:
 Pas une chaîne :
 
+Not all monsters will do this, but most will. So if you see a monster running after a player and you stand in the way...
+
+
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Newbies are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
 Non contents de rester enterrés dans leurs terriers dans le sable, les Crocs peuvent être de véritables nuisances, infestant toute cette île. Pieds tendres et débutants sont avertis : Évite de toucher ces diables rouges rampants. Ils ont d'énormes pinces mortelles qui peuvent faire de toi du hachis ! Tu peux les reconnaître facilement grâce à leurs personnalité grincheuse. Sois prudent gamin.
 
@@ -7472,14 +8225,26 @@ Tout le monde n'est pas forcément agréable. Les escrocs sont partout, même pa
 Not in the mood to chat.
 Je ne suis pas dans l'humeur de parler.
 
+Not my problem.#0
+
+
+Not my problem.#1
+
+
+Not now, thank you.
+
+
 Not now.
 Pas maintenant.
 
-Not now. You see, I am also afraid of Blubs and Rattos!
+Not now. You see, I am also afraid of Slimes and Rattos!
 
 
 Not really. All I got was a headache...
 Pas vraiment. Tout ce que j'ai c'est un mal de tête...
+
+Not resync'ing to prevent flood.
+
 
 Not so good actually... I would feel better on Nard's ship.
 Pas très bien en réalité... Je me sentirais mieux sur le bateau de Nard.
@@ -7489,6 +8254,12 @@ Not so weird, perhaps, except that it was been bright and sunny just a second be
 
 Not to kill your dream, but... Julia is mine!#1
 Non pas pour te briser tes rêves, mais... Julia est mienne !
+
+Not yet, I'll be back.#0
+
+
+Not yet, I'll be back.#1
+
 
 Not yet, but I am working on it.
 
@@ -7501,6 +8272,9 @@ Pas encore. Je serais bientôt de retour.
 
 Note
 Note
+
+Note down. To hunt a target you must click the primary mouse button on it. Avoid fighting monsters or citizens much stronger than you. %s
+
 
 Note#001-2-22
 Note#001-2-22
@@ -7788,10 +8562,10 @@ Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick u
 Oh, et un fruit peut même tomber si tu as de la chance ! Mais fais attention à ne pas oublier de ramasser les objets abandonnés.
 
 Oh, and give her some clothes, the poor girl, the ones she had were in an even worse condition than the ones we have.#0
-Oh, et donne-lui des vêtements, la pauvre fille, ceux qu'elle avait étaient dans un état bien pire que ceux que nous avons nous.
+Oh, et donne-lui des vêtements, la pauvre fille, ceux qu'elle avait étaient dans un état bien pire que les nôtres.
 
 Oh, and give him some clothes, the poor guy, the ones he had were in an even worse condition than the ones we have.#1
-Oh, et donne-lui des vêtements, le pauvre garçon, ceux qu'il avait étaient dans un état bien pire que ceux que nous avons nous.
+Oh, et donne-lui des vêtements, le pauvre gars, ceux qu'il avait étaient dans un état bien pire que les nôtres.
 
 Oh, and there was this inscription on your raft. It represents the Legion of Aemil, one of the four main guilds of Gasaron. Does that help you remember anything, anything at all?
 Oh, et il y avait cette inscription sur ton radeau. Il représente la Légion d'Aemil, une des quatre plus grande quilde de Gasaron. Est-ce que ça t'aide à te souvenir de quelque chose, rien du tout ?
@@ -7801,6 +8575,9 @@ Oh, et il y avait cette inscription sur ton radeau. Il représente la Légion d'
 
 Oh, and you will need this book too, it will help you learn the basics of fishing.
 Oh, et tu auras aussi besoin de ce livre, il t'aidera à apprendre toutes les bases de la pêche.
+
+Oh, but I'll still need the book. Even if all pages are white.
+
 
 Oh, but you didn't come here to talk about that, am I right?#0
 Oh, mais tu n'es pas venue ici pour parler à propos de ça, n'ai-je pas raison ?
@@ -7837,6 +8614,9 @@ Oh, maintenant ça me revient, nous avons aussi trouvé de l'argent au fond de t
 
 Oh, now that I remember, we also found some money in your pockets, here it is!#1
 Oh, maintenant ça me revient, nous avons aussi trouvé de l'argent au fond de tes poches, le voici !
+
+Oh, ok. Come back later if you need something.
+
 
 Oh, please hurry and bring me a %s.
 
@@ -7895,6 +8675,9 @@ Oh... manger des rattos... Ça à l'air... euh... Délicieux, oui.
 Oh... um... actually... all I wanted was to get to Artis. Err... but I didn't, uhm... have enough money to pay for the ferry!
 Oh... uhm... en fait... tout ce que je voulais c'était arriver à Artis. Err... mais je n'avais pas, ah, assez d'argent pour payer le ferry !
 
+Oh? And do you think you have what it takes to be a proud Legion Member?
+
+
 Ok I add your name... @@...
 Ok, j'ajoute ton nom... @@...
 
@@ -7911,10 +8694,10 @@ Ok we stay docked here if you need our help.
 D'accord, nous restons amarrés ici si tu as besoin de notre aide.
 
 Ok, I think he's waking up, go see him.#1
-Oh, je crois qu'il se réveille, va le voir.
+D'accord, je crois qu'il se réveille, va le voir.
 
 Ok, I think she's waking up, go see her.#0
-Oh, je crois qu'elle se réveille, va la voir.
+D'accord, je crois qu'elle se réveille, va la voir.
 
 Ok, I will bring it to him.
 D'accord, je vais lui apporter.
@@ -7942,12 +8725,6 @@ Ok.
 
 Okay, I'll be here, if you change your mind.
 Ok, je serai ici, si tu changes d'avis.
-
-Okay, I'm ready to work!#0
-Entendu, je suis prête à travailler !
-
-Okay, I'm ready to work!#1
-Entendu, je suis prêt à travailler !
 
 Okay, but there won't be any explosions.
 Ok, mais il n'y aura aucune explosion.
@@ -7979,6 +8756,9 @@ On
 On March 213CCE, Chancellor Benjamin Frost, with support of the council, proclaimed the Republic of Ancea. This event would become known as the Blue Revolution.
 
 
+On a side note, more defense is always good, but the damage won't decrease on the same rate that defense raises.
+
+
 On one hand, ranged weapons are generally weaker than melee ones, but you attack from a safer position. On the other hand, depending on the level of the weapon, melee ones potentially can yeild quicker kills.
 D'une côté, les armes à distance sont en général moins puissantes que celles de mélée, mais tu attaques d'une position plus en sécurité. D'un autre côté, dépendant du niveau requis de l'arme, les armes de mélée peuvent potentiellement garantir des mises à mort bien plus rapides.
 
@@ -7988,10 +8768,16 @@ On the year 206CCE, after a long crisis of succession, a minor noble only known 
 Once the monster is dead, click on the dropped items to add them to your inventory. You can also use the 'Z' key to claim the drops.
 Une fois le monstre tué, clique sur ses objets abandonnés pour les ajouter dans ton inventaire. Tu peux aussi utiliser la touche 'Z' pour les ramasser.
 
+Once used, they will disappear from your inventory.
+
+
 One Castle
 Un Château
 
 One advice: Don't take the things those drinkers say too serious. They are sitting here and drinking all day.
+
+
+One last thing to keep in mind... If you are surrounded, you'll suffer an agility and defense penalty.
 
 
 One of its branches hit me!
@@ -8003,6 +8789,9 @@ Un de ces petits chenapants a commencé à voler très rapidement et m'a donc é
 Only Don and the Merchant Guild have that kind of material in stock. It's called black iron.
 Seuls Don et la Guilde des Marchands ont cette sorte de matériau en stock. Il se nomme le fer noir.
 
+Only after you prove yourself, you may join our ranks as a proud member! Hahah!
+
+
 Only one more Fluffy to kill and it's done!
 Encore un dernier Pluche à tuer et ça sera terminé !
 
@@ -8013,6 +8802,9 @@ Oooh, perfect! It's perfect!
 
 
 Oooh, these wounds! They hurt so much!
+
+
+Open your inventory window (###keyWindowInventory; key) next to the trading window. Select an item you want to offer, and then press the Add button. To add money to the negotiation, enter the amount you will offer and press the Change button.
 
 
 Opened treasure chest
@@ -8028,6 +8820,12 @@ Or do you want to keep your friendships and adventures in different groups?
 Ou veux-tu garder tes amitiés et aventures dans différents groupes ?
 
 Or you can take seat and ask Melinda if you need something.
+
+
+Or, you can just forget all that, and let me prepare sandwiches for you, too! %%H#0
+
+
+Or, you can just forget all that, and let me prepare sandwiches for you, too! %%H#1
 
 
 Orange Cotton Dye
@@ -8055,7 +8853,7 @@ Other things are written but are not legible anymore.
 D'autres choses sont écrites mais ne sont plus lisibles.
 
 Other.
-
+Autre.
 
 Ouch!
 Aïe !
@@ -8081,6 +8879,9 @@ Notre mère nous défend d'y aller car c'est dangereux. Mais il n'écoute jamais
 Our only wish to eat a plush, so juicy sweet...
 Notre seul vœux est de manger une peluche, si douce et juteuse...
 
+Out of creativity already? Don't worry, I don't judge! Hehe.
+
+
 Over lovers under a starry night
 
 
@@ -8104,6 +8905,9 @@ VerrouGroupe |
 
 Pearl
 Perle
+
+People vary greatly in the amount of strength, agility, dexterity, intelligence, vitality and luck.
+
 
 Perfect!
 Parfait !
@@ -8129,20 +8933,11 @@ L'intimité du familier est déjà au maximum.
 Peter
 Peter
 
-Peter asks to kill rattos
-Peter a demandé de tuer les rattos
-
-Peter asks to kill rattos again
-Peter a demandé de tuer les rattos encore une fois
-
-Peter gave reward
-Peter a donné la récompense
-
 Peter needs help
 Peter a besoin d'aide
 
-Peter#001-2-22
-Pierre#001-2-22
+Peter#Artis
+
 
 Pets are not allowed in Guild Wars.
 Les compagnons ne sont pas admis dans la Guerre des Guildes.
@@ -8178,13 +8973,13 @@ Pink Flower
 
 
 Pink Petal
-
+Pétale Rose
 
 Pinkie
 
 
 Pinkie Hat
-
+Chapeau Pinkie
 
 Piou
 Piou
@@ -8203,6 +8998,9 @@ Piou et le Pluche
 
 Piou egg
 Œuf de Piou
+
+Piouleg Sandwich
+
 
 Pious must keep a strict diet composed of Piberries.
 
@@ -8261,8 +9059,14 @@ Je te prie de me rapporter des @@s pour que je puisse me retirer ces piques de m
 Please choose the desired gender:
 Sélectionne le sexe désiré :
 
+Please come again with at least 10 INT and 20 DEX. Stat Bonuses aren't counted.
+
+
 Please come back anytime!
 Reviens quand tu veux !
+
+Please come talk to me, I'll help you get dressed.
+
 
 Please continue talking to the villagers.
 
@@ -8272,6 +9076,9 @@ Please do hurry and bring me %d %s, so I can finish my soup!
 
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, or get my hair mussed!
 S'il-te-plaît, ne dit à personne que tu m'as vu. Je ne veux pas être décapité ou jeté à la mer comme nourriture pour les requins, ou même avoir mes cheveux ébouriffés.
+
+Please don't touch my stove without my authorization.
+
 
 Please don't touch these hats, they are for crew members only.
 Ne touche pas à ces chapeaux s'il-te-plaît, ils sont pour les membres de l'équipage seulement.
@@ -8645,8 +9452,17 @@ Pauvre de Chelios, je ne l'envie pas...
 Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body
 Position : 1:Haut 2:Milieu 3:Bas 4:Arme 5:Bouclier 6:Chaussures 7:Robe 8:Corps
 
+Potions? That sounds useful. What do you have?
+
+
 Practice! There are no secrets to becoming a warrior.
 L'entraînement ! Il n'y a aucun secret pour devenir un guerrier.
+
+Press the '###keyTrade;' key to ignore or accept business proposals. You and the other citizen who want to negotiate need to be in the configuration that accepts negotiations. if your configuration is 'Ignoring business proposals', then you will not receive the warning from any citizen wanting to negotiate with you, and you will not be able to initiate negotiations.
+
+
+Previous Inn reservation will be lost!
+
 
 Priest
 Prêtre
@@ -8676,7 +9492,7 @@ Pumpkin Hat
 Chapeau Citrouille
 
 Pumpkin Juice
-
+Jus de Citrouille
 
 Pumpkin Seeds
 Graînes de Citrouille
@@ -8735,6 +9551,9 @@ Q'Onan#001-1
 Q'Pid#001-1
 Q'Pid#001-1
 
+Quest complete
+
+
 Quest database has been reloaded.
 La base de données des quêtes a été rechargée.
 
@@ -8752,6 +9571,9 @@ Quitter
 
 Race
 Race
+
+Raijin
+
 
 Raijin Voice
 Voix d'un Raijin
@@ -8775,7 +9597,7 @@ Ranger T
 Ranger T
 
 Rate management
-
+Gestion des taux
 
 Ratto
 Ratto
@@ -8789,11 +9611,11 @@ Dents de Ratto
 RattosControl
 RattosControl
 
-RattosControl#001-2-23
-ContrôleDeRattos#001-2-23
+RattosControl#Artis
+
 
 Raw Log
-
+Bout de Bois Vert
 
 Read it.
 La lire.
@@ -8804,11 +9626,20 @@ Vraiment ? C'est vraiment gentil de ta part, j'accepte ton aide !
 Rebellion
 Rébellion
 
+Recipe Book
+
+
 Red Cotton Dye
 Teinture Coton Rouge
 
 Red Plush Wine
 Vin de la Peluche Rouge
+
+Red Rose
+
+
+Red Tulip
+
 
 Reduces your Int by 50
 Int réduit de 50
@@ -8819,6 +9650,9 @@ Int niveau de base de 50
 Reduces your job level by 50
 Int niveau de métier de 50
 
+Refinery UI is not available
+
+
 Registered
 Enregistré
 
@@ -8828,7 +9662,13 @@ L'enregistrement est ouvert à tout le monde, mais les nouveaux-venus doivent pa
 Related quests:
 Quêtes en rapport :
 
+Remember that some equipment sets will give you hidden stat bonuses! So dress yourself in a fashion way, if possible!
+
+
 Remember to stay sharp. I might need your help on another case.
+
+
+Remember! You're trading things, not lending/borrowing them. You are solely responsible for everything you own.
 
 
 Remember, you have to find my brother on the hill east of here.
@@ -8885,6 +9725,12 @@ Réinitialiser les cartes 'Sentiment'.
 Reset EVERYTHING
 Réinitialiser TOUT
 
+Reset Quest
+
+
+Reset all recipes
+
+
 Reset done!
 Réinitialisation faite !
 
@@ -8896,6 +9742,12 @@ Réinitialiser les sous-quêtes
 
 Reset | 
 Réinitialiser | 
+
+Return
+
+
+Return to Artis?
+
 
 Return to Debug menu
 Revenir au menu de débogage
@@ -8940,15 +9792,18 @@ RightDoorCheck
 PorteDroite
 
 Roasted Maggot
-
+Asticot Rôti 
 
 Robin
 Robin
+
+Robin Bandit
+
 
 Rogue
 Escroc
 
-Rowboat
+Rosehat
 
 
 Royal Guard
@@ -8961,7 +9816,7 @@ Rrrr... Pchhhh...
 Rrrr... Pchhhh...
 
 Ruby
-
+Rubis
 
 Ruby Shard
 
@@ -8999,6 +9854,12 @@ Malheureusement, tu n'as rien trouvé d'autre que de la poussière.
 Sage
 Sage
 
+Sagratha is great.
+
+
+Sagratha is great. Why does the strange woman near the Legion building always say that to daddy...?
+
+
 Said her friend had told her that I needed help.
 
 
@@ -9020,11 +9881,14 @@ Salem#001-1
 Samantha
 Samantha
 
+Sandwiches
+
+
 Sapartan
 Sapartan
 
 Sapphire
-
+Saphir
 
 Sapphire Shard
 
@@ -9038,7 +9902,7 @@ Say her love to glamourous Gliktch?
 Scared me, those seven-branched little stumps did!
 
 
-Scary... I am afraid of these blubs and rattos... And worse, I am lost...
+Scary... I am afraid of all these Slimes, Rattos and Maggots... And worse, I am lost...
 
 
 Scheduled broadcasts
@@ -9060,6 +9924,9 @@ Scripts have been reloaded.
 Le script a été rechargé.
 
 Scythe
+Faux
+
+Sea
 
 
 Sea Drops
@@ -9084,19 +9951,19 @@ See you aboard.
 On se voit à bord.
 
 See you later!
-À la prochaine !
+À plus tard !
 
 See you next time!
-À la prochaine fois !
-
-See you soon!
-A bientôt!
-
-See you!
 À la prochaine !
 
+See you soon!
+À bientôt !
+
+See you!
+À plus !
+
 See you! And come back with the plushrooms!
-À la prochaine ! Et reviens avec des peluchignons !
+À plus ! Et reviens avec des peluchignons !
 
 See you.
 À plus !
@@ -9198,7 +10065,7 @@ Set the level manually
 Changer le niveau manuellement
 
 Setzer
-
+Setzer
 
 Seven Castles
 Sept Châteaux
@@ -9258,7 +10125,7 @@ Shop is out of stock! Come again later!
 Le magasin est à court de stock ! Reviens plus tard !
 
 Short Bow
-
+Arc Court
 
 Should you be too quick or wait too long, you will most likely fail.
 Si tu es trop rapide ou si tu attends trop longtemps, tu échoueras sans doute.
@@ -9318,13 +10185,13 @@ Sign#001-1-s-warehouse
 Signe#001-1-s-entrepôt
 
 Silk Cocoon
-
+Cocon de Soie
 
 Silk Pants
-
+Pantalon en Soie
 
 Silk Robe
-
+Robe en Soie
 
 Silkworm
 
@@ -9340,6 +10207,9 @@ Silvio par exemple ?
 
 Silvio starts to speak to his bottle, you leave, letting him have a private conversation.
 Silvio commence à parler avec sa bouteille, tu pars, en le laissant à sa conversation privée.
+
+Simon
+
 
 Simply contact them, by forum or wispers or irc. When you are helpful and kind, they respond in kind. And in time they may surely add you to my cookie list!
 Contacte-les tout simplement, sur le forum, par message privé ou irc. Lorsque tu est utile et gentil à la fois, ils te répondront de la même manière. Et avec du temps, il t'ajouteront sûrement à la liste des cookies !
@@ -9390,7 +10260,7 @@ Sleep well my angel but don't follow along
 
 
 Small Healing Potion
-
+Petite Potion de Soin
 
 Small Mana Potion
 
@@ -9421,6 +10291,9 @@ Alors j'allais te demander si peut-être tu serais intéressée à me donner un 
 
 So I was going to ask if maybe you would be interested in giving me a hand with a few errands.#1
 Alors j'allais te demander si peut-être tu serais intéressé à me donner un coup de main avec quelques courses.
+
+So be nice and help people along the way!
+
 
 So close!
 Tellement proche !
@@ -9453,7 +10326,7 @@ So you have now a pet, who is loyal to you. It'll follow you everywhere, but the
 
 
 So you think you're tough? A warrior must also be loyal and patient.
-
+Alors tu penses être un dur ? Un guerrier doit aussi être loyal et patient.
 
 So you think you're tough? A warrior must also be loyal and patient.#0
 Alors tu penses être une dure ? Une guerrière doit aussi être loyale et patiente.
@@ -9539,17 +10412,26 @@ Certains membres de l'équipage sont partis à la recherche de biens que nous po
 Some of your items cannot be vended and were removed from the shop.
 Certains de tes objets ne peuvent pas être vendus et ont été retirés du magasin.
 
+Some others also like to buy them to keep as trophies. Either way, you can make some money with that.
+
+
 Some people prefer to catch fish using magic, but calling that "fishing" would be an insult to this traditional sport.
 
 
 Some people, however, prefer to fish with more unorthodox baits, such as @@ or @@.
 En revanche, certaines personnes préfèrent pêcher avec des appâts peu orthodoxes comme de la @@ ou des @@.
 
+Some special items cannot be traded, discarded, nor sold. With a right click, you can also protect normal items as if they were special ones.
+
+
 Some tasks will help you become aquainted with Artis. Trust me.
 Certaines tâches te permettront de t'habituer à Artis. Crois-moi.
 
 Some types of fish also enjoy @@ quite a bit.
 Certaines espèces de poissons aiment bien les @@s.
+
+Some, but not all, from the rare or non-replaceable items will have a warning when you try to sell them.
+
 
 Somebody is probably training, better wait for him to finish.
 Quelqu'un s'entraîne probablement, mieux vaut attendre qu'il ai fini.
@@ -9602,13 +10484,16 @@ Désolé mais je n'ai pas le temps pour ça.
 Sorry i can't help you. Go away!
 Désolé je ne peux pas t'aider. Vas-t'en !
 
+Sorry to disturb you.
+
+
 Sorry! I forgot to introduce myself. My name is Arpan, but other sailors call me Magic Arpan because I know one or two yaing magic spells.
 Oh pardon ! J'ai complètement oublié de me présenter. Je me nomme Arpan, mais les autres m'appellent Arpan Magique, parce que je connais deux, trois tours de magie.
 
-Sorry, I am not in the mood for another fight with these rattos.
-Désolé, mais je ne suis pas d'humeur à me battre contre des rattos.
-
 Sorry, I am not making these anymore.
+
+
+Sorry, I don't know any recipe with this.
 
 
 Sorry, I have to go.
@@ -9629,6 +10514,9 @@ Désolé, mais tu n'as pas ce dont j'ai besoin.
 Sorry, but you have no pet.
 Désolé, mais tu n'as pas de familier.
 
+Sorry, my eyesight is a bit poor nowadays. Where are the ingredients?
+
+
 Sorry, no.
 
 
@@ -9639,6 +10527,9 @@ Sorry, we are sold out for today.
 
 
 Sorry, you look like a pinkie.
+
+
+Sorry. I can't make a sandwich with that.
 
 
 Sorry... here you are.
@@ -9732,7 +10623,7 @@ Stay here, I will be back as soon as I have some.
 Reste ici, je serai de retour dès que j'en aurai.
 
 Steel Shield
-
+Bouclier en Fer
 
 Stop broadcasting
 Arrêter l'annonce
@@ -9753,7 +10644,7 @@ Stop wasting my time.
 
 
 Storage has been not loaded yet.
-
+Le stockage n'a pas encore été chargé.
 
 Storage opened.
 Entrepôt ouvert.
@@ -9788,8 +10679,20 @@ Boutique#Divers001-1
 Store#Weapon001-2-27
 Boutique#Armes001-2-27
 
+Stove
+
+
 Str: %d (%d~%d)
 For : %d (%d~%d)
+
+Strange, it seems I became younger lately.
+
+
+Strangely enough, this lid can only be open from inside.
+
+
+Strength
+
 
 Strength multiplies the damage of your hits, especially melee ones. You will also be able to carry heavier stuff.
 La force multiplie les dégâts de tes coups, en particulier ceux de mélée. Tu auras aussi la capacité de pouvoir porter plus de choses.
@@ -9802,6 +10705,9 @@ Styling Shop
 
 Subquests:
 Sous-quêtes :
+
+Suddenly you remember the strange phrase Mona overheard Sophialla saying
+
 
 Summer
 Été 
@@ -9894,7 +10800,7 @@ Take an @@ and a @@, yeye obtains a @@.
 Prends un @@ et un @@, yuyu obtiendras un @@.
 
 Take care!
-Fais attention!
+Prends soin de toi !
 
 Take the east road that goes to the north and follow it until you are on top of the cliff.
 Prends la route de l'est qui va au nord et suis-la jusqu'à ce que tu sois en haut de la falaise.
@@ -9918,10 +10824,10 @@ Talk to Hector and he'll show you the ropes.
 
 
 Talk to you later!
-Je te parle plus tard!
+On se reparle plus tard !
 
 Talk to you soon!
-Je te parle bientôt!
+On se reparle bientôt !
 
 Talk with Lloyd the Banker in the Merchant Guild, it's a big building in the northern side of Artis, at the top of the small hill.
 Parle au Banquier Lloyd dans la Guilde des Marchands, c'est un grand bâtiment sur la partie nord d'Artis, en haut de la petite colline.
@@ -10076,19 +10982,10 @@ Thanks again for helping me with the pinkies!
 Thanks again for helping me!
 
 
-Thanks again for helping me. Drats these rattos for infesting our fair vessal!
-Merci encore pour m'avoir aidé ! Ces fichus rats infestent tout notre vaisseau !
-
-Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.
-Merci encore de m'avoir aidé. Crotte, ces rattos infestent notre fier vaisseau ! Ils sont un problème permanent et c'est pourquoi j'aurai toujours besoin de ton aide pour les exterminer afin de garder leur nombre sous contrôle. En effet, ton aide est grandement appréciée. Cependant, je ne peux te donner la récompense que pour la première extermination.
-
 Thanks for finding daddy... I wish he spent more time with me...
 
 
-Thanks for helping me!
-Merci de m'avoir aidé !
-
-Thanks for saving me. This is enough, I'll watch if Mona is fine and return to Sewers later.
+Thanks for helping my husband Hinnak.
 
 
 Thanks for the help!
@@ -10103,13 +11000,22 @@ Thanks for your help with the pinkies.
 Thanks!
 Merci !
 
+Thanks, sir Q'Anon.
+
+
 Thanks, that was very kind of you!
 
 
 That better be a trophy on your head.
 
 
+That doesn't looks edible to me!
+
+
 That is a really fine piece of wood you brought me.
+
+
+That looks too exotic for me to eat!
 
 
 That makes everybody
@@ -10160,6 +11066,9 @@ C'est ça, nous avons notre propre salle d'entraînement. La Légion est toujour
 That's too bad... Although I think you're lying.
 
 
+Thats your problem, really.
+
+
 The @@ is a one time item, you can use it as many times as you want, but you can only have one!
 La @@ est un objet d'une seule fois, tu peux l'utiliser autant de fois que le souhaites, mais tu ne peux en avoir qu'une.
 
@@ -10206,7 +11115,7 @@ The answer is a single word, without conjugation.
 La réponse est en un seul mot, sans conugaison.
 
 The bank and item storage is shared between all characters within a same account.
-
+La banque et le stockage d'objet est partagé entre tous les personnages d'un même compte.
 
 The best, the wonderful, the most choice cookie among all others, the...
 Le meilleur, le plus merveilleux, le cookie de premier choix parmis tous les autres, le...
@@ -10240,9 +11149,6 @@ The doctor examines you briefly.
 
 The door to the legion building is temporarily closed.
 La porte du bâtiment de la Légion est fermée temporairement.
-
-The elder ran away from you.
-L'aîne a courru loin de toi.
 
 The end of the story got erased, probably because of the sea water. Some pages are still missing. Thus much is lost to time, including the author's name.
 La fin de l'histoire a été effacée, sûrement à cause de l'eau de mer. Quelques pages manquent toujours. C'est pourquoi encore beaucoup reste obscure, y compris le nom de l'auteur.
@@ -10308,6 +11214,9 @@ The item is not equippable.
 
 
 The leader of the troupe said you hung around them a lot while they were in town.
+
+
+The lid is sealed shut, and you are too weak to open it.
 
 
 The light armor shop is ran by Resa, she is part of the Merchant Guild of Artis.
@@ -10384,6 +11293,9 @@ The problem is that I am short of material.
 
 The rank of lieutenant is granted only to people with proper control of their skill and good judgment, like Enora. Or me, of course.
 Le rang de lieutenant est accordé seulement aux personnes qui possèdent un contrôle parfait de leurs compétences et de bon jugement, comme Énora. Ou moi, bien sûr.
+
+The recipes, of course, you must collect yourself. Even sandwiches are not so simple as to simply put ingredients and hope for the best.
+
 
 The resulting shield looks usable already, but Jack applies another liquid to it and leaves it to dry for a few moments.
 
@@ -10472,11 +11384,17 @@ Tu te poses des questions à propos de beaucoup de choses.
 There are few groups of these @@s all around this island. Just pick some and have a try.
 Il y a quelques groupes de ces @@s à travers toute l'île. Ramasse-en juste et fais un essai.
 
+There are many key combinations, press F1 to see a short list of them!
+
+
 There are no items to appraise.
 Il n'y a pas d'objet à évaluer.
 
 There are no tasks for you right now.
 Il n'y a plus aucune tâche pour toi là maintenant.
+
+There are people in the world who need help!
+
 
 There are people who really need our help.
 
@@ -10493,8 +11411,20 @@ Il a des groupes de ces @@s à travers toute l'île. Ramasse-en juste et fais un
 There are some knives on the table. Would you like to take one?
 Il y a des couteaux sur la table. Veux-tu en prendre un ?
 
-There are still some rattos left! Do you want to abort the quest?
-Il y a encore des rattos vivants ! Veux-tu abandonner la quête ?
+There are some stones scattered around the world that mark your point of return in case of defeats. Some ship chests may also serve as a return point. You can also select some beds in case of defeats.
+
+
+There are still some monsters left! Do you want to abort the quest?
+
+
+There are three kind of monsters which frequently or seldomly attacks our fair vessel.
+
+
+There are three types of items.
+
+
+There are three types of monsters: the aggressive, the neutral, and the collaborative.
+
 
 There are two different kinds of cards, the first changes the style of your clothes, the second changes their stats.
 Il y a deux sortes de cartes, la première change le style de tes vêtements, la seconde ses statistiques.
@@ -10514,6 +11444,9 @@ Il y a toujours quelque chose que tu peux faire ici, comme tuer des tortugas ou 
 There is an unknown side effect to these plushrooms, they can free you from your past mistakes.
 Il y a un effet secondaire encore inconnu dans ces peluchignons, ils peuvent te libérer de tes erreurs passées.
 
+There is no day/night, weather, or season cycle in TMW yet.
+
+
 There is no help for %c%s.
 Il n'y a pas d'aide pour %c%s.
 
@@ -10524,6 +11457,15 @@ There was a traveling theater troupe in town recently, but they've moved on to T
 
 
 There you go, like new.
+
+
+There you go. Please enjoy yourself! ^.^
+
+
+There's also a job level, which produces green sparkles when you level it.
+
+
+There's also weather, meaning it can rain, snow, or even happen a sandstorm. They are usually cosmetic, but...
 
 
 There's been no change in the setting.
@@ -10565,9 +11507,6 @@ These twigleafs are the trees that give me the living wood you speak of.
 These yeye boxes are way too heavy to be carried alone onto the ship.
 Ces boîtes sont bien trop lourdes pour être portées tout seul sur le navire.
 
-They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control.
-C'est un problème permanent donc j'aurai toujours besoin de ton aide pour les exterminer afin de garder leur nombre sous contrôle.
-
 They are all around the island.
 Ils sont tout autour de l'île.
 
@@ -10580,6 +11519,9 @@ Ils sont frais !
 They are fresh, they are good!
 Ils sont frais, ils sont bons !
 
+They are known to use a revolutionary hair growth formula.
+
+
 They are made of special living wood.
 
 
@@ -10588,6 +11530,9 @@ Ils sont mariés... Souhaitons-leur du bonheur.
 
 They are so tasty when cooked with some @@. Don't drop any of them!
 Ils sont tellement goûtus lorsqu'ils sont cuisinés avec des @@. N'en fais tomber aucun !
+
+They can be equipped to make your look more interesting or to improve some of its features.
+
 
 They eventually found a new land after much hardship and named it Aurora, after its beautiful sunrise.
 Ils ont éventuellement trouvé une nouvelle terre après un grand nombre d'épreuves, ils l'ont nommée Aurora, suite à son levé de soleil magnifique.
@@ -10602,7 +11547,7 @@ They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent set
 Ils ont navigué d'Hurnscald à Tulimshar puis à Nivalis, la dernière colonie des humains.
 
 They sailed past the Clear Sea and towards the Long Ocean which nobody had explored before.
-
+Ils ont navigué à travers la Mer Claire en direction de l'Océan Long que personne n'a encore exploré.
 
 They shouldn't be too far from each other.
 Ils ne devraient pas être très loins l'un de l'autre.
@@ -10613,6 +11558,9 @@ They taste simply divine!
 They were all in the mining camp.
 
 
+They will not attack anyone unless they are attacked first.
+
+
 They're perfect, just perfect!
 
 
@@ -10621,6 +11569,12 @@ They've been destroying my fields, and I guess I got a bit worked up.
 
 Thief
 Voleur
+
+Thief Slime
+
+
+Think on Season Quests as a yearly quest which you have three months to do.
+
 
 Thirteen Castles
 Treize Châteaux
@@ -10652,8 +11606,11 @@ This action was met with widespread opposition from all races, and a war broke. 
 This book contains everything you should know about it, take it!
 Ce livre contient tout ce dont tu as besoin de savoir à son sujet, prends-le !
 
-This book outlines the laws of every city and holding in Gasaron.
+This book contains the knowledge collected by ukars about how the world works.
 
+
+This book outlines the laws of every city and holding in Gasaron.
+Ce livre souligne les lois de chaque cité et demeure à Gasaron.
 
 This bound item cannot be stored there.
 Cet objet lié ne peut pas être entreposé ici.
@@ -10677,13 +11634,13 @@ This floor is reserved for quiet reading, don't speak too loud.
 Cet étage est réservé pour de la lecture calme, ne parle pas trop fort.
 
 This girl is lucky we found her before a shark did. I have no idea where she comes from. By the way, did you see the logo on her raft?#0
-Cette fille a de la chance qu'on l'ai trouvée avant qu'un requin de le fasse. Je n'ai aucune idée d'où elle vient. D'ailleurs, as-tu vu le logo qu'il y avait sur son radeau ?
+Cette fille a de la chance qu'on l'ai trouvée avant qu'un requin ne le fasse. Je n'ai aucune idée d'où elle vient. D'ailleurs, as-tu vu le logo qu'il y avait sur son radeau ?
 
 This girl needs help, we need to rescue her!#0
 Cette fille a besoin d'aide, nous devons la sauver !
 
 This guy is lucky we found him before a shark did. I have no idea where he comes from. By the way, did you see the logo on his raft?#1
-Ce gars a de la chance qu'on l'ai trouvé avant qu'un requin de le fasse. Je n'ai aucune idée d'où il vient. D'ailleurs, as-tu vu le logo qu'il y avait sur son radeau ?
+Ce gars a de la chance qu'on l'ai trouvé avant qu'un requin ne le fasse. Je n'ai aucune idée d'où il vient. D'ailleurs, as-tu vu le logo qu'il y avait sur son radeau ?
 
 This guy needs help, we need to rescue him!#1
 Ce gars a besoin d'aide, nous devons le sauver !
@@ -10702,6 +11659,12 @@ Ceci est une @@, un fruit de mer bleu clair. Elles sont très désirées dans l'
 
 This is for my own use.
 C'est pour mon usage personnel.
+
+This is how good we Legion Members are. I was informed of your arrival way before you left Drasil Island.
+
+
+This is how you do it! HAAH!
+
 
 This is the last one. If you use it again out of clumsiness, I will use your soft moist parts in the concoction of my next cookie batch.
 C'est la dernier. Si tu l'utilises encore par maladresse, j'utiliserai tes parties molles et humides dans la concoction de mon prochain lot de cookies.
@@ -10728,7 +11691,7 @@ This item cannot be used within this area.
 
 
 This job has no alternate body styles.
-
+Ce travail n'a pas de style de corps alternative.
 
 This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.#0
 Cette sorte de discours devrait être pris avec un grain de sel, mais je suis d'accord et j'admet être aussi susceptible, alors garde un œil sur elle.
@@ -10826,6 +11789,9 @@ This waitress *hicks* is great, she never stops to bring beer *hicks.
 This will remain your respawn point until set elsewhere.
 Ceci restera ton point de réapparition jusqu'à ce qu'il soit établi ailleurs.
 
+Those for consumption, equipment and generics.
+
+
 Three Castles
 Trois Châteaux
 
@@ -10871,6 +11837,24 @@ Pour changer tes compétences, utilise ces commandes :
 To de-trust a player:
 
 
+To defocus or stop attacking, press Shift + A.
+
+
+To discard an item you no longer want, select it and press the 'Discard' button. Generic items can be discarded or sold.
+
+
+To display the dialog box with other citizens, press the '###keyWindowChat;' key.
+
+
+To equip or unequip an item, select it and press the 'Equip' or 'Unequip' button. You can not 'Equip' or 'Unequip' when talking to someone.
+
+
+To focus on a creature, press the '###keyTargetMonster;' key. To focus on another citizen, press the '###keyTargetPlayer;' key. To attack the focused target press the '###keyAttack;' key or click the primary button on the creature.
+
+
+To focus on an NPC, press the '###keyTargetNPC;' key. To talk to him press the '###keyTalk;' key.
+
+
 To get a quote:
 
 
@@ -10878,7 +11862,7 @@ To get started with fishing, you'll need two things: a fishing rod and a bait.
 Pour commencer la pêche, tu as besoin de deux choses : une canne à pêche et un appât.
 
 To get the current rate:
-
+Pour obtenir le taux actuel :
 
 To grab a quote:
 
@@ -10887,6 +11871,9 @@ To ignore a player:
 
 
 To move between characters that are on different accounts, you have to use the Trade function.
+Pour changer entre les personnages qui sont sur des comptes différents, vous devez utiliser la fonction commerce.
+
+To negotiate with other citizens, you should click the second mouse button on some other citizen who is accepting negotiations, and select the 'Negotiation' option from the menu that will appear.
 
 
 To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client.
@@ -10899,9 +11886,18 @@ To remove a quote:
 
 
 To reset back to normal:
-
+Pour réinitialiser au taux normal :
 
 To set the exp rate:
+Pour établir le taux d'exp :
+
+To speak in public select the 'General' tab. It serves to talk to people who are appearing on your screen.
+
+
+To speak privately to a friend who is not appearing on your screen, type the command '%s' and press '###keyChat;'. This command will open a long-distance dialog that has the name of who you want to talk to. Select this new tab and send your message through it.
+
+
+To speak privately with someone, click the second mouse button on the citizen and select the 'Whisper' option.
 
 
 To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges.
@@ -10922,11 +11918,23 @@ ToFightRoom#001-2-32
 ToTrainingRoom#001-2-34
 ÀPièced'Entraînement#001-2-34
 
+Toggle Croc Bounty
+
+
+Toggle Ratto Bounty
+
+
+Toggle Tortuga Bounty
+
+
 Told bobo to go home
 A dis à Bobo de rentrer à sa maison
 
 Tomb
 Tombeau
+
+Tonori
+
 
 Too bad, try again.
 Dommage, essaye encore.
@@ -10947,10 +11955,10 @@ Too risky, I might end up in jail. Do it yourself.
 Trop risqué, je finirai peut-être en prison. Fais-le toi-même.
 
 Top Hat
-
+Haut de Forme
 
 Topaz
-
+Topaze
 
 Topaz Shard
 
@@ -11000,10 +12008,16 @@ Glaived'Entraînement
 Transforming into monster is not allowed in Guild Wars.
 Se transformer en un monstre n'est pas autorisé pendant les Guerres des Guildes.
 
+Travel to woodlands?
+
+
 Treasure Chest
 Coffre au Trésor
 
 Tree Control Panel
+
+
+Tritan
 
 
 Tritan Voice
@@ -11069,6 +12083,9 @@ Deux Châteaux
 Type "@mapflag available" to list the available mapflags.
 
 
+Type List: (default) all = -1, healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5, card = 6, petegg = 7, petarmor = 8, ammo = 10, delayed-consumable = 11, cash = 18 
+
+
 UAHAHAHAAH! I am the cook of that bunch of donkeys, and I can be rude with everyone from this bossy captain to that harpy-lady!
 UAHAHAHAAH ! Je suis le cuisinier de cette bande d'ânes, et je peux être grossier avec tout le monde, de ce capitaine débile à cette femme harpie !
 
@@ -11080,6 +12097,9 @@ Hmm, au revoir.
 
 Uhm... Your story seems...
 Euh... Ton histoire semble être...
+
+Ukar
+
 
 Unable to Teleport in this area
 
@@ -11135,6 +12155,9 @@ Paquet inconnu : 0x%x
 Unknown type of value in:
 Type de valeur inconnue dans :
 
+Unless you are interested in a status reset?
+
+
 Unlike other respawn points, an inn can fully restore your HP.
 Contrairement aux points de réappartion, une auberge peut restorer toutes tes PV.
 
@@ -11173,6 +12196,9 @@ Utilisation : @changelook {<position>} <vue id>
 
 Usage: @displayskill <skill ID> {<skill level>}
 Utilisation : @displayskill <ID compétence> {<niveau compétence>}
+
+Usage: @dropall {<type>}
+
 
 Usage: @jailfor <time> <character name>
 Utilisation : @jailfor <temps> <nom personnage>
@@ -11228,6 +12254,9 @@ Utiliser 0 ou aucun paramètre pour revenir à la police de caractères normale.
 Use @font <1-9> to change your message font.
 Utiliser @font <1-9> pour changer la police de caractères ton message.
 
+Use arrow keys to walk around and leave this room.
+
+
 Use the key.
 Utilise la clé.
 
@@ -11246,8 +12275,14 @@ Les permissions de l'utilisateur '%s' mises à jour avec succès. Les changement
 Usually I don't allow anyone to touch my boxes but...
 Habituellement, je n'autorise personne à toucher mes boîtes mais...
 
+Usually, they'll have an exclamation mark over their heads. But some quests are hidden, so talk to people and have fun!
+
+
 V-neck Jumper
 Pull Col en V
+
+Valia
+
 
 Very good.
 Très bien.
@@ -11260,6 +12295,9 @@ A visité Artis au moins une fois
 
 Vit: %d (%d~%d)
 Vit : %d (%d~%d)
+
+Vitality
+
 
 Vitality raises your maximum health points and defense.
 La vitalité augmente ton nombre maximum de points de vie et de défense.
@@ -11296,6 +12334,9 @@ Attends... Ce n'est pas la bonne place pour un chef, qu'est-ce que tu fabriques 
 
 Wait... Where are we going?
 Attendez... Où allons-nous ?
+
+Wait... You are that @@ from earlier, aren't you?
+
 
 Waiting for @@...
 En attente de @@...
@@ -11352,10 +12393,16 @@ Warlock T
 Ensorceleur T
 
 Warlord Helmet
+Casque de Seigneur de la Guerre
+
+Warlord Plate
 
 
 Warning! Dangerous fish, do not fall into the lake!
 Attention ! Dangereux poisson, je tombe pas dans le lac !
+
+Warning: 
+
 
 Warped.
 Téléporté.
@@ -11402,6 +12449,9 @@ Nous sommes arrivés ce matin au port d'Artis, j'ai déjà averti la Légion d'A
 We don't need it anymore.
 
 
+We follow north hemisphere seasons in case you're wondering.
+
+
 We have a special room for this purpose, too. You may test your skills against all kinds of dreadful monsters in there.
 Nous avons aussi une salle spéciale dédiée à cet effet. Tu peux y essayer tes compétences contre un tas de monstres effrayants.
 
@@ -11425,6 +12475,9 @@ Nous avons besoin de la force d'hommes sur cette île.
 
 We need manpower on the island... Oh forgive me, women are also welcome, of course.#0
 Nous avons besoin de la force d'hommes sur cette île... Oh, toutes mes excuses, les femmes sont aussi les bienvenues, bien sûr.
+
+We need to get out of here soon. I'm scared of the Slimes!
+
 
 We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranteed to be right as rain after a night here!
 Nous offrons une chambre aux aventuriers passant par Artis, nos lits sont douillets et peuvent te garantir d'être aussi droit que la pluie après une nuit ici !
@@ -11505,7 +12558,7 @@ Welcome to our inn!
 Bienvenue dans notre auberge !
 
 Welcome to the Legion of Aemil's building in Artis!
-
+Bienvenue dans le bâtiment de la Légion d'Aemil à Artis !
 
 Welcome to the Merchant Guild of Artis!
 Bienvenue dans la Guilde des Marchands d'Artis !
@@ -11514,9 +12567,6 @@ Welcome to the Red Plush inn!
 Bienvenue à l'auberge de la Peluche Rouge !
 
 Welcome to the Rusty Pick.
-
-
-Welcome to the Rusty Pick. Sorry, we have no room left today.
 
 
 Welcome!
@@ -11555,6 +12605,9 @@ Eh bien, en fait je les cherchais. Où sont-ils maintenant ?
 Well, I'm done for the day, and I'm quite old enough to decide when I can have a %s, thank you!
 
 
+Well, cooking is an art, and thus, you need intelligence and dexterity to learn.
+
+
 Well, eh-heh... Welcome aboard, cutie!#0
 Eh bien, héhé... Bienvenue à bord ma mignonne !
 
@@ -11578,6 +12631,12 @@ Eh bien, y a-t-il quoique ce soit que je puisse faire pour aider ?
 
 Well, it's not bad to finally feel something beneath my feet.
 Eh bien, ce n'est pas mauvais que d'enfin sentir quelque chose sous mes pieds.
+
+Well, of course, I can show you how to cook sandwiches. But you'll need to bring ingredients for practice.
+
+
+Well, of course. First of all, you need a @@. You can have mine, if you want.
+
 
 Well, thanks for the box. But... He was supposed to bring it back to me himself. I never asked him to give it to you!
 Eh bien, merci pour la boîte. Mais... Il était supposé me l'apporter lui-même. Je ne lui ai jamais demandé de te la donner !
@@ -11700,7 +12759,7 @@ What do you want to do with it?
 Que veux-tu faire avec ça ?
 
 What do you want to do with your money?
-
+Que veux-tu faire avec ton argent ?
 
 What do you want to do?
 Qu'as-tu envie de faire ?
@@ -11731,9 +12790,6 @@ What happened?
 
 What happens when you try to think about it?
 Qu'arrive-t-il quand tu essayes d'y penser ?
-
-What if I give you 1000 Esperin for that job, is it ok?
-Et si je te donnais 1000 Esperin pour ce travail, ça irait ?
 
 What is Artis?
 Qu'est-ce-que Artis ?
@@ -11843,9 +12899,6 @@ What? Is there someone?
 What? It's not good enough?
 Quoi ? Ce n'est pas assez ?
 
-What? This reward is too small!
-Quoi ? Ce n'est pas assez !
-
 What? Why not?
 
 
@@ -11867,8 +12920,17 @@ When I am less busy *hicks*, I can tell you stories of my heroism.#0
 When I am less busy *hicks*, I can tell you stories of my heroism.#1
 
 
+When cooking, the order of ingredients matter.
+
+
+When this is the case, you should get closer to the NPC, until they hear you.
+
+
 When you go near villagers, you can see a speech bubble above them, you can then talk to them by pressing the [T] key.
 Lorsque tu t'approches de villageois, tu peux apercevoir une bulle de conversation au dessus d'eux et tu peux donc leur parler en appuyant sur la touche [T].
+
+When you have added all the items and money you want, press the 'Propose Trade' button. The other citizen must also press the 'Propose Trade' button.
+
 
 When you intimacy is high, it'll increase your stats and who knows, might even help you in combat!
 
@@ -11887,6 +12949,9 @@ Une fois ton inventaire ouvert, tu peux équiper un objet en le sélectionnant p
 
 Where are my old clothes?
 Où sont mes anciennes affaires ?
+
+Where are the ingredients?
+
 
 Where can I find Julia?#0
 Où puis-je trouver Julia ?
@@ -11941,6 +13006,12 @@ Quelle compétence voudrais-tu changer ?
 
 While Jalad and Ale like to work together, as they usually do on the ship, last time I've seen them, they were near the big lake, north from here.
 Alors qu'Ale et Jalad aiment travailler ensemble, comme ils le font généralement sur le navire, la dernière fois que je les ai vus, ils étaient près du grand lac, au nord d'ici.
+
+White Rose
+
+
+White Tulip
+
 
 Whitesmith
 Ferblantier
@@ -12005,6 +13076,12 @@ Pourquoi ne descends-tu pas pour parler ?
 Why don't you come out?
 Pourquoi ne sors-tu pas ?
 
+Why don't you show me a main ingredient, and I'll tell you what can be done?
+
+
+Why don't you take a break? Breath in some fresh air. The basement is pretty damp.
+
+
 Why not, I need to train anyway.
 Pourquoi pas, je dois m'entraîner de toute façon.
 
@@ -12036,10 +13113,10 @@ Wind and grass is nice and cool, so juicy sweet...
 Le vent et l'herbe, c'est si sympa et cool à la fois, tellement juteux et doux.
 
 With hunger, thirst, and sleep as your only companions, you have the disturbing realization that you can't remember anything of your former life or identity.
-Avec la faim, la soif et le sommeil comme seuls compagnons, tu as la réalisation inquiétante que tu ne peux te souvenir de rien concernant ton ancienne vie ou identité.
+Avec la faim, la soif et le sommeil comme seuls compagnons, tu prends conscience avec angoisse que tu ne te souviens pas de ton passé ou de ton identité.
 
 With it, you can safely move items and funds between your characters.
-
+Avec ceci, tu peux déplacer tes objets et ton argent entre les personnages de manière sécurisée.
 
 With no choir master nor voice to be sung
 
@@ -12059,6 +13136,9 @@ Avec l'aide de l'hôtel de ville et la Légion d'Aemil, nous organisons une vent
 Withdraw.
 Retirer.
 
+Within the cities is a place safe enough not to be attacked by another person (except during wars). But outside of them there are some places where the citizen can be attacked by enemies from other realms, or even by someone from the same realm.
+
+
 Wizard
 Sorcier
 
@@ -12066,12 +13146,15 @@ Wooden Bow
 Arc en Bois
 
 Wooden Shield
-
+Bouclier en Bois
 
 Wooden Sword
 Épée en Bois
 
 Wooden shield
+
+
+Woodlands
 
 
 Words become music and glance
@@ -12103,6 +13186,9 @@ Wyara#008-2-7
 
 Xilaxa#001-1
 Xilaxa#001-1
+
+Yannika
+
 
 Yay, it worked! I removed a spike.
 Génial, ça a fonctionné ! J'ai enlevé une épine.
@@ -12143,6 +13229,12 @@ Yeah, you could say that...
 Yellow Cotton Dye
 Teinture Coton Jaune
 
+Yellow Rose
+
+
+Yellow Tulip
+
+
 Yes
 Oui
 
@@ -12169,6 +13261,9 @@ Oui ! @@ est écrit sur ma liste de cookies.
 
 Yes, Arpan gave me these clothes.
 Oui, Arpan m'a donné ces vêtements.
+
+Yes, I am authorizing you to use them as you deem fit, until you get stronger.
+
 
 Yes, I am sure.#0
 Oui, j'en suis sûre.
@@ -12209,6 +13304,12 @@ Yes, but I'm only talking to the inspector himself!
 Yes, follow me!
 
 
+Yes, here they are.
+
+
+Yes, in fact, you can take them now.
+
+
 Yes, indeed. I prefer to explore places I have never been to, before doing anything else.
 Oui, en effet. Je préfère explorer les endroits où je ne suis jamais allé, avant de faire une quelconque autre chose.
 
@@ -12220,6 +13321,9 @@ Oui c'est moi. C'est une si belle vue depuis cet endroit !
 
 Yes, please!
 Oui, s'il-te-plaît !
+
+Yes, sure thing.
+
 
 Yes, that would be nice.
 
@@ -12452,6 +13556,9 @@ You brought me the %d %s!
 You buried @@ @@.
 Tu as enterré @@ @@.
 
+You can allocate point on those attributes every time you level up.
+
+
 You can already rename your pet.
 Tu peux déjà renommer ton familier.
 
@@ -12464,8 +13571,11 @@ Tu peux aussi attaquer un ennemi depuis ton clavier en appuyant sur la touche 'A
 You can also improve your equipment in a totally different way with the use of cards.
 Tu peux aussi améliorer ton équipement de façon totalement différente avec l'utilisation de cartes.
 
-You can also manually stop it at any time with: @exprate default
+You can also make money %s. Nobody pays better than people in need of help.
 
+
+You can also manually stop it at any time with: @exprate default
+Tu peux aussi l'arrêter manuelle à n'importe quel moment avec : @exprate default
 
 You can also read The Book of Laws at any time to see the rules.
 Tu peux aussi lire le Livre des Lois à n'importe quel moment pour revoir les règles.
@@ -12486,13 +13596,19 @@ You can drag and drop an item to the NPC window or select an item through your i
 Tu peux traîner et abandonner un objet dans la fenêtre du NPJ ou sélectionner un objet directement dans ton inventaire.
 
 You can easily identify fishing spots, small bubbles and fishes are visible from the surface.
-
+Tu peux facilement identifier les lieux de pêche par la présence de petites bulles et de poissons visibles à la surface.
 
 You can easily see if a monster is easy to kill or just impossible to defeat. Do not try against creatures that are way more powerful than you... You'd be risking your life for nothing.
 Tu peux facilement voir si un monstre est facile ou impossible à tuer. N'essaye pas de tuer les créatures plus puissants que toi... Tu risquerais ta vie pour un rien.
 
+You can execute commands by typing them in the chat window. They start with a '/' or '@' followed by the name of the command.
+
+
 You can find novels and poems on this floor.
 Tu peux trouver des romans et des poèmes à ce niveau.
+
+You can find out the monster strength by using "@monsterinfo <English Monster Name>". Check the level in it!
+
 
 You can find some Crocs on the beach, you could look up at the one after the gate, on top of this city.
 Tu peux trouver des Crocs sur la plage, tu pourrais regarder sur celle en haut, après le portail, en haut de la ville.
@@ -12535,6 +13651,9 @@ Tu peux lignes des lignes qui sont bien sculptées dans les douces planches de b
 
 You can read the book that I gave you earlier at the library if you lost it.
 Tu peux maintenant lire le livre que je t'ai donné un peu plus tôt à la bibliothèque si tu l'as perdu.
+
+You can see all your equipment by pressing the F3 key.
+
 
 You can select a specific person with the [N] key, and then, press the [T] key when you are surrounded by more than one person.
 Tu peux sélectionner une personne spécifique avec la touche [N] et puis appuyer sur la touche [T] lorsque tu es entourré par plus d'une personne.
@@ -12608,6 +13727,9 @@ Tu ne peux pas utiliser la pelle ici.
 You can't withdraw that much money
 Tu ne peux pas retirer cette quantité d'argent
 
+You can, however, use '###keyTargetAttack;' to auto-select a monster and attack them. This usually also collects drops, but press '###keyPickup;' to be sure.
+
+
 You cannot autotrade when dead.
 Tu ne peux pas échanter automatiquement lorsque tu es mort.
 
@@ -12625,6 +13747,9 @@ Tu ne peux pas changer de chef de groupe sur cette carte.
 
 You cannot decrease that stat anymore.
 Tu ne peux pas abaisser cette statistique davantage. 
+
+You cannot drop this item!
+
 
 You cannot increase that stat anymore.
 Tu ne peux pas augmenter cette statistique davantage.
@@ -12669,13 +13794,16 @@ You currently cannot open your storage.
 Tu ne peux pas ouvrir ton entrepôt actuellement.
 
 You currently have @@ Esperin on your bank account.
+Tu as @@ Esperin sur ton compte en banque.
+
+You did not defeat the boss, you can't learn any skills.
 
 
 You did such a good job, you should keep it.
 
 
-You do not give me much options.
-Tu ne me donnes pas beaucoup de choix.
+You do not give me a lot of options.
+
 
 You do not have a cart to be cleaned.
 Tu n'as pas de panier à nettoyer.
@@ -12688,6 +13816,9 @@ Tu n'as aucun Esperin dans ton compte en banque.
 
 You do not have enough Esperin on yourself.
 Tu n'as pas assez d'Esperins sur toi.
+
+You do not have the item!
+
 
 You do not have the required access privileges to use the Super Menu.
 Tu n'as pas les privilèges d'accès requis pour utiliser le Super Menu.
@@ -12719,17 +13850,26 @@ Tu n'as pas assez d'argent, apporte @@ E.
 You don't have enough room in your backpack for a @@. Go stow some of your junk and come back.
 Tu n'as pas assez d'espace dans ton sac à dos pour un @@. Va entreposer certaines de tes affaires et reviens.
 
+You don't have everything I have asked for.
+
+
 You don't have room for a beer!
 
 
 You don't have this quest skill.
 Tu n'as pas cette compétence de quête.
 
+You don't know how to make a sandwich with that.
+
+
 You don't seem to be from the Legion, let's do a game.
 Tu n'as pas l'air d'être de la Légion, allons faire un jeu.
 
 You failed!
 Tu as échoué !
+
+You feel a strong magic aura. You want to sit near it and meditate.
+
 
 You feel numb and everything around you looks foggy, but you can recall the feeling of the cold hard wood of your raft on a stormy night.
 Tu te sens engourdi et tout semble brumeux autour de toi, mais tu peux te rappeler la sensation du bois froid et dur de ton radeau dans une nuit d'orages.
@@ -12748,6 +13888,9 @@ Tu l'as trouvé !
 
 You found something!
 Tu as trouvé quelque chose !
+
+You give up.
+
 
 You got married to @@!
 Tu t'es marrié à @@ !
@@ -12797,6 +13940,9 @@ Tu as oublié la compétence.
 You have learned the skill.
 Tu as appris la compétence.
 
+You have learnt the skill.
+
+
 You have mounted a Peco Peco.
 Tu as chevauché un Peco Peco.
 
@@ -12839,6 +13985,9 @@ Tu dois le trouver, ou bien je lui dirai que tu ne m'as pas aidé.
 You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of those damn sailors brought that 'nice' lady here.
 Tu dois savoir qu'il y avait un temps durant lequel j'étais le lieutenant inarrêtable de cet équipage. Puis un jour, un de ces fichus marins a ammené cette 'chouette' femme ici.
 
+You have: @@/@@ @@
+
+
 You hear a loud scream. It must be the creaking of the wooden door...
 Tu entends un cri très fort. Ça doit être le craquement de la porte en bois...
 
@@ -12863,6 +14012,9 @@ Tu tiens ta pelle dans tes mains.
 You honor me, my beauty, but I'm already taken by Julia!#0
 Tu m'honores, ma beauté, mais je suis déjà pris par Julia !
 
+You just defeated the following boss: @@ (Lv. @@)
+
+
 You just have to select the card, then you choose which piece of equipment you want to use it on, and you are done.
 Tu dois juste sélectionner une carte, et puis tu choisis quel pièce d'équipement sur laquelle tu voudrait l'utiliser, et voilà, tu as fini.
 
@@ -12883,6 +14035,9 @@ Tu sais, les marins adorent parler pendant qu'ils travaillent.
 
 You lack some very basic skills...
 Il te manque des compétences vraiment très basiques...
+
+You learned how to cook @@.
+
 
 You left your fishing spot!
 Tu quitté ton lieu de pêche !
@@ -12923,6 +14078,12 @@ You may remember me, I am Celestia.#0
 You may remember me, I am Celestia.#1
 
 
+You may remember me, I am Valia.#0
+
+
+You may remember me, I am Valia.#1
+
+
 You may search partial name by making use of '%' in the search, ex. "@accinfo %Mario%" lists all characters whose name contains "Mario".
 
 
@@ -12935,11 +14096,17 @@ Tu as mentionné la qualité de ton vin.
 You missunderstood, it's 5 potions.
 Tu as mal compris, c'est 5 potions.
 
+You must "add" the items you plan on selling, and then press "sell" to confirm. You'll have this time to review.
+
+
 You must enter a name.
 Tu dois entrer un nombre.
 
 You must enter a player name or ID.
 Tu dois entrer un nom de joueur ou ID.
+
+You must find someone willing to buy, they usually will buy almost anything you have, even items which cannot be replaced, so be careful.
+
 
 You need %s to mount!
 Tu requiert %s pour chevaucher !
@@ -12964,6 +14131,9 @@ Tu dois entrer une option
 
 You need to type the answer of this riddle in the NPC window.
 Tu dois écrire la réponse à cette énigme dans la fenêtre de PNJ.
+
+You need to wait @@ more before equipping this again.
+
 
 You no doubt remember how I struggled with those beasts, fighting for my life.
 
@@ -13019,11 +14189,17 @@ Tu as fais peur au piou et le laisse s'enfuir.
 You search the tree but don't find anybody.
 Tu fouilles autour de cet arbre mais tu ne trouves personne.
 
+You see a curious hole behind some rocks
+
+
 You see a dust covered book on the shelf...
 Tu vois un livre recouvert de poussière sur l'étagère...
 
 You see a raijin boy, sitting on the edge of the dock.
 Tu vois un garçon raijin, assis sur le bord du ponton.
+
+You see a suspicious greenish flag. It reminds you of something you seem to have forgotten.
+
 
 You see a tree.
 
@@ -13149,7 +14325,7 @@ You stupid, she's English, look at the shape of her head.#0
 T'es stupide, elle est anglaise, regarde la forme de sa tête.
 
 You successfully set the exp rate to @@%. It will reset to @@% (default value) in @@.
-
+Tu as établi le taux d'exp à @@% avec succès. Il se réinitialisera à @@% (valeur par défaut) dans @@.
 
 You take good care of your piou. Remember to feed it every day.
 Prends bien soin de ton piou. N'oublie pas de le nourrir tous les jours.
@@ -13196,8 +14372,14 @@ Tu pourras trouver la maison de Don à l'ouest de la ville, c'est la première m
 You will be able to find her in the market in the south-west of Artis.
 Tu pourras la trouver au marché, au sud-ouest d'Artis.
 
+You will be amased by all the colors of hair dye they have.
+
+
 You will find a wooden sign near a crossroad. He is a few steps on the left.
 Tu trouveras une pancarte de bois près du chemin. Il se trouve un peu à sa gauche.
+
+You will lose experience if you are defeated.
+
 
 You will remain
 Tu resteras
@@ -13212,13 +14394,16 @@ You wipe off enough of the sand to manage to read the message written on this cr
 Tu essuies suffisamment de sable afin de pouvoir lire le message écrit sur cette pièce de bois brute.
 
 You withdrew a total of @@ E.
-
+Tu retires un total de @@ E.
 
 You yoiis should walk to the north.
 Toi le yoiis devrais marcher vers le nord.
 
 You'll first need to help my friends.
 Tu dois d'abord aider mes amis.
+
+You'll need to bring me @@ @@ and @@ @@ for the recipe.
+
 
 You'll think I'm insane if I tell you...
 
@@ -13261,6 +14446,9 @@ Tu es comme le reste de cet équipage crasseux. Ton nom est maintenant sur la li
 
 You're lucky that I'm a generous person, here's another one.
 Tu as de la chance que je sois une personne généreuse, tiens, en voilà un autre.
+
+You're lying, aren't you? I heard nothing from you-know-whom!
+
 
 You're not allowed to talk on this channel
 Tu n'as pas le droit de parler sur ce canal
@@ -13319,6 +14507,9 @@ Tu as raison, c'est à propos de Julia.
 You're too close to a NPC, you must be at least %d cells away from any NPC.
 Tu es trop près d'un PNJ, tu dois être à au moins %d cellules de distance de n'importe quel PNJ.
 
+You're welcome to stay here as long as you wish. Just don't do anything stupid, like a riot, for example.
+
+
 You're welcome. Bye!
 
 
@@ -13351,6 +14542,12 @@ Tu... Tu manges... des rattos ? Je pense que tu es tout simplement fou.
 
 You? Here?
 Toi ? Ici ?
+
+Your %s determines several small things, including critical attacks, but DOES NOT affect drop rates.
+
+
+Your %s determines your ability to hit monsters and is valuable to players who prefer weapons that use projectiles.
+
 
 Your GM level doesn't authorize you to %s the player '%.*s'.
 Ton niveau de MJ ne t'autorise pas à %s le joueur '%.*s'.
@@ -13410,7 +14607,7 @@ Your autoloottype list is empty.
 Ta liste de type de ramassage automatique est vide.
 
 Your body aches, even your hair hurts, and the bright daylight is painful.
-Ton corps souffre, même tes cheveux te font mal, et la lumière vive du jour est douloureuse.
+Tout ton corps est endolori, même ta chevelure te fait mal, et la lumière vive du jour est insoutenable.
 
 Your brain liquified to match the level of a piou! It's the Legion of Gasaron.
 Ton cerveau s'est liquéfié au point où il ressemble maintenant à celui d'un piou ! C'est la Légion de Gasaron.
@@ -13423,6 +14620,9 @@ Ta classe ne peut pas chevaucher !
 
 Your current memo positions are:
 Tes positions memo courantes sont :
+
+Your dad ran away from you!
+
 
 Your effect has changed.
 Ton effet a changé.
@@ -13456,9 +14656,6 @@ Ta tête est soudainement lourde, tes yeux se ferment...
 
 Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand.
 Ton cœur s'accélère lorsque ton regard se concentre sur un petit panneau de bois, partiellement obscurci sous une couche de sable apporté par le vent.
-
-Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only.
-Ton aide est en effet la bienvenue. Malheureusement, je ne peux te donner une récompense seulement pour la première extermination.
 
 Your homunculus doesn't evolve.
 Ton homoncule n'évolue pas.
@@ -13527,7 +14724,7 @@ Zzzzzzzzz...
 [ ^EE0000%s^000000 ]
 
 [%d] seconds left until you can use
-
+[%d] secondes restantes avant que tu puisses l'utiliser
 
 [^EE0000%s^000000]
 [^EE0000%s^000000]
@@ -13537,6 +14734,9 @@ une terre !
 
 a quiet place,
 un endroit tranquille,
+
+agility
+
 
 ban
 bannir
@@ -13559,6 +14759,9 @@ brought maggot
 brought maggot slime
 
 
+by doing quests
+
+
 change the sex of
 changer le sexe de
 
@@ -13576,6 +14779,9 @@ débogage
 
 delta
 delta
+
+dexterity
+
 
 feet, 
 pieds,
@@ -13616,6 +14822,9 @@ tête basse/milieu/haute,
 lower/top head, 
 tête basse/haute,
 
+luck
+
+
 marriage1
 marriage1
 
@@ -13650,7 +14859,7 @@ npc5
 pnj5
 
 npc6
-
+npc6
 
 option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
 l'option '%s' est déjà activée, si tu veux la désactiver, écris '@channel opt %s 0'
@@ -13677,7 +14886,7 @@ skill %d: %s (%s)
 compétence %d : %s (%s)
 
 test
-
+test
 
 test %s
 
@@ -13726,6 +14935,15 @@ débannir
 
 unblock
 débloquer
+
+unmountrowboateast
+
+
+unmountrowboatsouth
+
+
+unmountrowboatwest
+
 
 usage @camerainfo range rotation latitude
 

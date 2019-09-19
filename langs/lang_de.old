@@ -1,6 +1,27 @@
  ago
 her
 
+%d: Left Accessory
+%d: Linkes Accessoire
+
+%d: Left Hand
+%d: Linke Hand
+
+%d: Lower Headgear
+%d: Niedere Kopfbedeckung
+
+%d: Mid Headgear
+%d: Mittlere Kopfbedeckung
+
+%d: Right Accessory
+%d: Rechtes Accessoire
+
+%d: Right Hand
+%d: Rechte Hand
+
+%d: Top Headgear
+%d: Kopfbedeckung
+
 '%s' got %s's %s (chance: %0.02f%%)
 '%s' hat %s's %s (Chance: %0.02f%%)
 
@@ -183,6 +204,9 @@ AreaMiddle
 
 AreaNPC
 AreaNPC
+
+AreaNPC#001-2-22
+AreaNPC#001-2-22
 
 AreaTop
 AreaTop
@@ -412,6 +436,9 @@ HAST DU RAUSGEFUNDEN, WAS DAS LICHT WAR?
 DO YOU FEEL BETTER?
 GEHT ES DIR BESSER?
 
+Daddy did not come back home... He said that he would be back for lunch but it has already been a week!
+Papi ist nicht zurück Nachhause gekommen... Er hat gesagt, er würde zum Mittagessen wieder da sein, aber das ist jetzt schon eine ganze Woche her!
+
 Damn @@.
 Verdammte @@.
 
@@ -447,6 +474,9 @@ Devis
 
 Did you find out what the light is?!
 Hast du herausgefunden, was das für ein Licht ist?!
+
+Did you say reward? I want it!
+Sagtest du Belohnung? Ich will sie!
 
 Did you see Don the blacksmith? He might knows more about it if you want to improve your metal equipment.
 Hast du schon mit Don dem Schmied gesprochen? Er könnte mehr darüber wissen, wie du deine Metallausrüstung verbessern kannst.
@@ -510,6 +540,9 @@ Versuch nicht, einen alten Haudegen von Händler übers Ohr zu hauen. Du hast ni
 
 DoorUpwards
 DoorUpwards
+
+DoorUpwards#001-2-23
+DoorUpwards#001-2-23
 
 During the next few days, we will finally reach Artis.
 In den nächsten Tagen werden wir endlich Artis erreichen.
@@ -670,6 +703,9 @@ Gut, Gut!
 Good, take a look at the bag next to me then!
 Gut, dann wirf mal einen Blick in die Tasche neben mir.
 
+Got no reward
+Keine Belohnung erhalten
+
 Growl, sniff, grr!! You'd better not tell anyone you saw me!#0
 Knurr, fauch, grrr! Erzähl besser niemand, dass du mich gesehen hast!
 
@@ -690,6 +726,9 @@ Er ist in einem kleinen Haus zwischen dem Lagerhaus an den Docks und dem Dojo.
 
 He is right in the bottom of the ship, you can't miss him!!
 Er befindet sich direkt im Boden des Schiffes, Sie können ihn nicht verfehlen!
+
+He said that he would check why the manhole next to the house was doing weird sounds.
+Er wollte nachschauen, warum aus dem Kanaldeckel neben dem Haus so komische Geräusche kommen.
 
 Hear me *hick* well, what ever, whatididever you will*hick*said ab...euh..out wha?! You saw there, the Guild of Esperia won't let it go to public.
 Hör mir *hicks* äh, wie auch immer. Wasauchimmer du *hicks* hier her... her... aus... eh... heraus was?! Das du hier *hicks* siehst wird die Gilde von *hicks* Esp-eria nicht in die Öff-öffentlichkeit lassen.
@@ -835,8 +874,14 @@ Ich bin neu in dieser Stadt, genau wie du.
 I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment
 Für Ersteres bin ich kein Experte, aber wenn es um die Verbesserung von Ausrüstung geht, bin ich dein Mann.
 
+I am not worried about rewards. I just want to help.
+Mir sind Belohnungen egal. I will nur helfen.
+
 I am, who are you?
 Bin ich. Wer bist du?
+
+I asked for food but... *hips* Ah, that'll do nicely!
+Ich hab nach Essen gefragt, aber... *hicks* das wirds auch tun!
 
 I asked for food but... *hips* Ah, that'll do so!
 Ich hab nach Essen gefragt, aber... *hicks* das wirds auch tun!
@@ -853,8 +898,14 @@ Ich bin hier, um ein Päckchen für Enora abzuholen.
 I can't use the shovel here.
 Ich kann die Schaufel hier nicht benutzen.
 
+I don't have anything good for you today.
+Ich habe heute nichts interessantes für dich.
+
 I don't need any help right now, come back later.
 Ich brauche deine Hilfe jetzt nicht. Komm später wieder.
+
+I don't need your help right now, come back later.
+Ich brauche deine Hilfe zur Zeit nicht. Komme später wieder.
 
 I don't really have time to go chasing pious, let me just buy one at the regular price (30000E).
 Ich hab wirklich keine Zeit, Pious zu fangen. Verkauf mir einfach eins zum regulären Preis (30000E).
@@ -1324,6 +1375,9 @@ Julia erzählte mir, wie sie dich auf See gefunden haben, auf einem Floß mit de
 Just look out at that water! There's plenty more fish there.
 Schau einfach raus aufs Meer! Es gibt noch unendlich viel Fisch da draußen.
 
+Killed rattos
+Rattos getötet
+
 Knife
 Messer
 
@@ -1341,6 +1395,9 @@ Geh bitte
 
 LeftBarrierCheck
 LeftBarrierCheck
+
+LeftDoor#001-2-23
+LeftDoor#001-2-23
 
 LeftDoorCheck
 LeftDoorCheck
@@ -1479,6 +1536,9 @@ NEIN und *hicks* NEIN, du und deine... *burp* dähmliche *hicks* Gilde!
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#1
 NEIN und *hicks* NEIN, du und deine... *burp* dähmliche *hicks* Gilde!
+
+No problem, I can help you anyway.
+Kein Problem, ich kann dir trotzdem helfen.
 
 No problem, do you have an other question for me?
 Kein Problem. Hast du noch andere Fragen für mich?
@@ -1675,6 +1735,12 @@ Ok, aber Gugli braucht meine Hilfe zuerst.
 Ok, ok. Come back if you change your mind.
 Ok, ok. Komm wieder wenn du es dir anders überlegt hast.
 
+Okay, I'm ready to work!#0
+Okay, ich bin fertig für die Arbeit!#0
+
+Okay, I'm ready to work!#1
+Okay, ich bin fertig für die Arbeit!#1
+
 Okay, but what can you offer me?
 Ok. Aber was bietest du mir an?
 
@@ -1734,6 +1800,18 @@ Flotter Pferdeschwarz
 
 Peter
 Peter
+
+Peter asks to kill rattos
+Peter bittet dich, Rattos zu töten
+
+Peter asks to kill rattos again
+Peter bittet dich erneut, Rattos zu töten
+
+Peter gave reward
+Peter hat die Belohnung gegeben
+
+Peter#001-2-22
+Peter#001-2-22
 
 Piberries
 Pibeeren
@@ -1800,6 +1878,9 @@ Lila Pflaume
 
 RattosControl
 RattosController
+
+RattosControl#001-2-23
+RattosControl#001-2-23
 
 Read it
 Lies es
@@ -1939,6 +2020,9 @@ Tut mir leid, aber ich bin momentan mit anderen Registrierungen beschäftigt.
 Sorry but I can't tell you anything about that.
 Tut mir Leid, aber darüber kann ich dir nichts sagen.
 
+Sorry, I am not in the mood for another fight with these rattos.
+Nein, ich bin momentan nicht in der Stimmung, mit den Ratten zu kämpfen.
+
 Sorry, I am not in the mood for another fight with those rattos.
 Sorry, aber ich will nicht nochmal gegen diese Rattos kämpfen.
 
@@ -2023,6 +2107,15 @@ Danke nochmal, dass du geholfen hast. Allerdings sind diese Rattos ein unendlich
 Thanks again for helping me. But those rattos are a permanent problem and your help is always welcome. The only problem is that I can give you a reward only one time.
 Danke nochmal, dass du geholfen hast. Allerdings sind diese Rattos ein nicht endendes Problem und deine Hilfe ist willkommen. Das einzige Problem ist, dass ich dich nur einmal belohnen kann.
 
+Thanks again for helping me. Drats these rattos for infesting our fair vessal!
+Danke nochmal für die Hilfe. Sollen sich diese Mistratten nur blicken lassen!
+
+Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.
+Danke nochmal für die Hilfe. Diese Mistratten, auf unserem ordentlichen Schiff! Sie sind ein ständiges Problem; Du kannst sicher sein, daß deine Hilfe bei der Schädlingsbekämpfung gewürdigt wird und gern gesehen ist. Wir müssen sie schließlich irgendwie unter Kontrolle halten. Leider kann ich dir nur dieses eine Mal eine Belohnung geben.
+
+Thanks for helping me!
+Vielen Danke für die Hilfe!
+
 That part of the town is called the gilded hill, and where the Merchant Guild has its headquarters.
 Dieser Teil der Stadt wird Gildenberg genannt. Hier hat die Handelsgilde ihr Hauptquartier.
 
@@ -2064,6 +2157,9 @@ Eine Gilde zu erstellen kostet @@ E, interessiert?
 
 The door is closed.
 Die Tür ist verschlossen.
+
+The elder ran away from you.
+Der Alte wird wohl vor dir weggerannt sein.
 
 The elven from the library flirted with me a while ago, so has Enora from the Legion.
 Genau wie die Elfen aus der Bibliothek vor einer Weile, so hat mir auch Enora von der Kriegergilde schöne Augen gemacht.
@@ -2138,7 +2234,7 @@ There are still some Rattos left! Do you want to abort the quest?
 Es sind noch Rattos da! Willst du aufgeben?
 
 There are still some rattos left! Do you want to abort the quest?
-Es sind immer noch ein paar Ratten übrig! Willst du die Aufgabe abbrechen?
+Es sind immernoch Ratten übrig! Willst du die Quest abbrechen?
 
 There are two different kinds of card, the first changes the style of your clothes, the second changes their stats.
 Es gibt 2 verschiedene Arten von Karten. Die Einen verändern das Aussehen deiner Klamotten, die Anderen ihre Werte.
@@ -2184,6 +2280,9 @@ Diese Krokosnussbäume sind voller Krokosnüsse, aber es ist so schwierig, sie z
 
 These boxes are way too heavy to be brought alone onto the ship.
 Diese Kisten sind viel zu schwer um sie alleine an Bord bringen zu können.
+
+They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control.
+Sie sind ein andauerndes Problem, also werde ich deine Hilfe immer wieder benötigen, um ihre Anzahl unter Kontrolle zu halten.
 
 This book resumes everything you should know about it, take it!
 Dieses Buch wiederholt alles, was du wissen solltest. Nimm es!
@@ -2365,6 +2464,9 @@ Worüber redest du? Welche Gilde?
 What did you say??
 Was hast du gesagt?
 
+What if I give you 1000 Esperin for that job, is it ok?
+Was ist wenn ich dir 1000 Esperin für diesen Job gebe? Ist das ok?
+
 What should I add after taking these clothes?#1
 Was soll ich machen nachdem ich die Kleidung genommen habe?
 
@@ -2379,6 +2481,9 @@ Was ist das Abkommen mit diesem Aquada?
 
 What? It's not a good reward?
 Was? Es ist keine gute Belohnung?
+
+What? This reward is too small!
+Was? Diese Belohnung reicht mir nicht!
 
 What? Why? They aren't sexier than me, why do you want to see them?
 Was? Warum? Sie sind nicht attraktiver als ich, warum willst du sie sehen?
@@ -2550,6 +2655,9 @@ Du schließt für ein paar Sekunden die Augen ...
 
 You currently have @@ on your bank account.
 Du hast momentan @@ auf dem Konto.
+
+You do not give me much options.
+Du läßt mir nicht viele Möglichkeiten.
 
 You don't have a @@.
 Du hast kein @@.
@@ -2742,6 +2850,9 @@ Kann es sein, daß dein Hirn auf Piougröße geschrumpft ist? Das ist die Legion
 
 Your hands are too weak, you didn't open the @@.
 Deine Hände sind zu schwach, um die Krokosnuss zu öffnen.
+
+Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only.
+Deine Hilfe hier ist allerdings sehr willkommen. Leider kann ich dich nur für die erste Rattenvernichtung belohnen.
 
 Your position has been saved.
 Ihre Position wird gespeichert.
