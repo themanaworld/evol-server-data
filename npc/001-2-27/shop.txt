@@ -30,6 +30,7 @@ OnClock01600:
     restoreshopitem LeatherShield, 10;
     restoreshopitem CopperArmbands, 8;
     restoreshopitem IronArmbands, 6;
+    end;
 }
 
 001-2-27,43,29,0	trader	Store#Weapon001-2-27	NPC_NO_SPRITE,{
@@ -40,6 +41,7 @@ OnInit:
     sellitem PiouSlayer, -1, 50;
     sellitem TrainingGladius, -1, 25;
     sellitem WoodenSword, -1, 50;
+    sellitem TrainingArrow, -1, 20000;
 
     .sex = G_OTHER;
     .distance = 2;
@@ -57,4 +59,6 @@ OnClock01600:
     restoreshopitem PiouSlayer, 25;
     restoreshopitem TrainingGladius, 8;
     restoreshopitem WoodenSword, 25;
+    restoreshopitem TrainingArrow, 20000;
+    end;
 }
