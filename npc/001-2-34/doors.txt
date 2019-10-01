@@ -1,29 +1,29 @@
 // Evol scripts.
 // Author:
 //    Reid
+//    Omatt
+//    Toams
+//    Jesus
 // Description:
 //    Doors NPCs.
 
 001-2-34,23,29,0	script	ToTrainingRoom#001-2-34	NPC_HIDDEN,0,0,{
-
 OnTouch:
-    if ((getmapusers($@MAP_NAME$) == 0) && ($@FightingIsActive > 0))
-    {
-        set $@FightingIsActive, 0;
-        killmonsterall "001-2-36";
+
+        .@q2=getq2(ArtisQuests_TrainingLegion);
+    // Map name limit: 4 chars (atl1)
+    .@mapn$="atl1@"+getcharid(0);
+    if (isinstance(.@q2) && .@q2 > 0) {
+        warp .@mapn$, 36, 30;
+    } else {
+        .@inst = instance_create("Training Room "+getcharid(0), getcharid(3), IOT_CHAR);
+        instance_attachmap("001-2-36", .@inst, false, .@mapn$);
+        // 30 minutes (1800s) inside, or 5 minutes (300s) outside
+        instance_set_timeout(1800, 300, .@inst);
+        instance_init(.@inst);
+        setq2 ArtisQuests_TrainingLegion, .@inst;
+        warp .@mapn$, 36, 30;
     }
 
-    if (mobcount("001-2-36","all") > 0 && $@FightingIsActive > 0)
-    {
-        narrator
-        l("You hear some sound behind the door."),
-        l("Somebody is probably training, better wait for him to finish.");
-    }
-    else
-    {
-        warp "001-2-36", 36, 30;
-    }
-
-    closeclientdialog;
-    close;
+    end;
 }

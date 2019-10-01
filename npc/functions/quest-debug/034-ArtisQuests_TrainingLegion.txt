@@ -1,0 +1,28 @@
+// Training Legion quest
+// Authors:
+//    omatt
+
+function	script	QuestDebug34	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_TrainingLegion";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_TrainingLegion));
+        next;
+
+        GenericQuestDebug ArtisQuests_TrainingLegion,
+            l("Does not have the quest"), 0,
+            l("Finished sword training"), 1,
+            l("Finished bow training"), 2,
+            l("Both sword and bow training are finished"), 3,
+            l("Skill training finished, end of quest"), 4;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}
