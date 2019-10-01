@@ -1,0 +1,459 @@
+// TrainingRoom
+// Author:
+//    jak1
+//    omatt
+//    toams
+// Story:
+//    Reid
+//    Teru
+// Spellchecking & Dialogs:
+//     Reid
+//     toams
+// Variable:
+// .fightingActive
+//    0 = no fight active
+//    1 = swordfight active
+//    2 = bowfight active
+//    3 = skillfight
+// ArtisQuests_TrainingLegion
+// 0    not started at all
+// 1    swordTraining finished
+// 2    bowTraining finished
+// 3    bow and sword finished
+// 4    end of training
+// .mobID is related to quest state
+//
+// TODO adding rand messages like "try hit it harder..." for wave's
+// TODO in first, second, and third training, input some tips about related weapon given.
+
+
+001-2-36,32,36,0	script	Hector#001-2-36	NPC_LUCAS,{
+
+
+    'instanceID = instance_id();
+    'npcName$ = strnpcinfo(NPC_NAME_UNIQUE); // required for call the label in the npc of this one instance
+    attachnpctimer;
+    initnpctimer;
+
+    function waveEnded {
+
+        if (.fightingActive == 1)
+        {
+            npctalk3(l("Well done, you aren't even bleeding that much!"));
+            if (getq(.quest_training) == 0)
+                setq(.quest_training, 1);
+            if (getq(.quest_training) == 2)
+                setq(.quest_training, 3);
+        }
+        if (.fightingActive == 2)
+        {
+            npctalk3(l("Great! Don't mind those scorched hairs, they will grow back."));
+            if (getq(.quest_training) == 0)
+                setq(.quest_training, 2);
+            if (getq(.quest_training) == 1)
+                setq(.quest_training, 3);
+        }
+        if (.fightingActive == 3)
+        {
+            if (getq(.quest_training) == 3)
+            {
+                npctalk3(l("Congratulations, you have finished your training."));
+                sleep2(2000);
+                npctalk3(l("The only way to improve yourself is practice, practice and some more practice."));
+                setq(.quest_training, 4);
+                setq(Artis_Legion_Progress, 2);
+            }
+            else
+            {
+                npctalk3(l("You finished training the bashing skill. Pretty powerful isn't it?"));
+            }
+        }
+
+        .currentWaveLevel = 1;
+        .fightingActive = 0;
+        'mobDead = 0;
+        end;
+    }
+
+    function mobSpawn {
+
+        if (.fightingActive != 0)
+        {
+            if (.currentWaveLevel == .maxWaves)
+            {
+                npctalk3(l("Last Wave!"));
+            }
+            else
+            {
+                npctalk3(l("Wave " + .currentWaveLevel + "!"));
+            }
+
+            areamonster('map$, .mobCoordinate[0], .mobCoordinate[1], .mobCoordinate[2], .mobCoordinate[3],
+            /*           map          x1                 y1                x2                 y2            */
+                        strmobinfo(1, .mobID[.fightingActive]), .mobID[.fightingActive], .currentWaveLevel, 'npcName$+"::OnTrainingMobDead");
+            /*          mob display        mob id                amount                  label              */
+        }
+
+        end;
+    }
+
+    function trainingEnd {
+
+        sleep2(1500);
+        npctalk3(l("This training is over!"));
+        .fightingActive = 0;
+        .currentWaveLevel = 1;
+        killmonster('map$, "All");
+        stopnpctimer();
+        end;
+    }
+
+    function checkWeapon {
+        // check for sword in swordtraining
+        if (getiteminfo(getequipid(EQI_HAND_R), ITEMINFO_SUBTYPE) != W_1HSWORD && .fightingActive == 1)
+        {
+            npctalk3(l("Hey! Use your sword!"));
+            trainingEnd;
+        }
+
+        // check for bow in bowtraining
+        if (getiteminfo(getequipid(EQI_HAND_R), ITEMINFO_SUBTYPE) != W_BOW && .fightingActive == 2)
+        {
+            npctalk3(l("Hey! Use your bow!"));
+            trainingEnd;
+        }
+
+        // no weapons may be equiped when training skill
+        if (getequipid(EQI_HAND_R) != -1 && .fightingActive == 3)
+        {
+            npctalk3(l("Hey! No weapons allowed this round!"));
+            trainingEnd;
+        }
+
+    }
+
+
+    function mobKilled {
+
+        'mobDead = 0; // reset the count
+
+        checkWeapon; // check if correct weapon is in use
+
+        // on first skill training give SM_BASH skill and explain how to use it.
+        if (getq(.quest_training) == 3 && .currentWaveLevel == 1)
+            {
+                setcamnpc(strnpcinfo(NPC_NAME_UNIQUE)); // focus the npc when he talk to the player
+                speech(S_LAST_NEXT,
+                    l("Using a skill consumes Mana."),
+                    l("It takes a while to have full Mana again."),
+                    l("The more intelligence points you have, the faster it goes."),
+                    l("If you sit, you regain your Mana faster."),
+                    l("Or you can drink a mana potion. This restores some Mana. How much depends on the potion."),
+                    l("Here take one! I have plenty of them."));
+                closedialog;
+                getitem(.mana_potion, 1);
+                sleep2(3000);
+            }
+
+        if (.currentWaveLevel == .maxWaves )
+        {
+            waveEnded;
+        }
+
+
+        .currentWaveLevel++; // next wave after killed dummy
+
+        mobSpawn;
+    }
+
+    function swordTraining {
+        speech(S_LAST_BLANK_LINE | S_LAST_NEXT,
+            l("You chose the sword for this training, make sure to equip it or we can't start."));
+
+        speech(S_LAST_BLANK_LINE | S_NO_NPC_NAME,
+            l("I will place some dummies in the fighting arena. @@ waves of dummies, kill them to finish this training.", .maxWaves),
+            l("Ready?"));
+
+        askyesno;
+        if (@menu == ASK_NO)
+        {
+            closedialog;
+            end;
+        }
+
+        closedialog;
+        .fightingActive = 1;
+        initnpctimer;
+    }
+
+    function bowTraining {
+        speech(S_LAST_BLANK_LINE | S_LAST_NEXT,
+            l("You chose the bow for this training, make sure to equip it or we can't start."));
+
+        speech(S_LAST_BLANK_LINE | S_NO_NPC_NAME,
+            l("I've set these dummies on fire. Don't get too close to the dummies or the fire will hurt you."),
+            l("The range of your bow makes it possible to kill them from a distance."),
+            l("Ready?"));
+
+        askyesno;
+        if (@menu == ASK_NO)
+        {
+            closedialog;
+            end;
+        }
+
+        .fightingActive = 2;
+        initnpctimer;
+    }
+
+    function skillTraining {
+
+        if (getq(.quest_training) == 3)
+        {
+            //Give bashing skill
+            skill(.skill_name, 1, 0);
+
+            speech(S_LAST_BLANK_LINE | S_NO_NPC_NAME,
+                l("Lets teach you the bashing skill. This is a very powerful way to hit your enemy by using only your bare hands."),
+                l("To use the skill you have to open your skills menu. Here you select the offensive tab and select the bash skill. When the bash skill is selected, press the use button the use the skill."));
+        }
+
+        speech(S_LAST_BLANK_LINE | S_NO_NPC_NAME,
+            l("You can only use this skill with bare hands, so make sure to unequip your weapons."),
+            l("@@ waves of dummies, you know how that ends.", .maxWaves),
+            l("Ready?"));
+
+            askyesno;
+            if (@menu == ASK_NO)
+            {
+                closedialog;
+                end;
+            }
+
+        .fightingActive = 3;
+        initnpctimer;
+    }
+
+    function checkCombatZone {
+
+        getmapxy('map$, @x, @y, 0);
+                if (@x < 24 || @x > 32 || @y < 33 || @y > 43)
+                return 1;
+            return 0;
+    }
+
+    // choose training and start it
+    function trainingStart {
+
+        if (checkCombatZone())
+        {
+            npctalk3(l("Please enter the combat zone on the left."));
+            closedialog;
+            end;
+        }
+        if (.fightingActive == 0)
+        {
+            switch (getq(.quest_training))
+            {
+                case 0: speech(S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE,
+                    l("Which weapon do you want to train? Bow or sword?"));
+
+                    switch (select(l("I'll start with the sword."),
+                                   l("I would like to train the bow first."),
+                                   l("I don't feel like training today, see you later.")))
+                    {
+                        case 1: swordTraining; break;
+                        case 2: bowTraining; break;
+                        case 3: closedialog; end;
+                    }
+                    break;
+                case 1: speech(S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE,
+                    l("You have finished the sword training. Do you want to start training the bow?"));
+
+                    switch (select(l("Yes, I'm ready for some arrow shooting!"),
+                                   l("Can I train the sword some more?"),
+                                   l("I don't feel like training today, see you later.")))
+                    {
+                        case 1: bowTraining; break;
+                        case 2: swordTraining; break;
+                        case 3: closedialog; end;
+                    }
+                    break;
+                case 2: speech(S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE,
+                    l("You have finished the bow training. Do you want to start training the sword?"));
+
+                    switch (select(l("Yes, teach me how to cut and slice these dummies!"),
+                                   l("Can I train the bow some more?"),
+                                   l("I don't feel like training today, see you later.")))
+                    {
+                        case 1: swordTraining; break;
+                        case 2: bowTraining; break;
+                        case 3: closedialog; end;
+                    }
+                    break;
+                case 3: speech(S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE,
+                    l("You have mastered both the bow and the sword. The only thing left to teach you is the bashing skill."));
+
+                    switch (select(l("A skill? That sounds useful!"),
+                                   l("Can I train the sword some more?"),
+                                   l("I would rather like to train the bow again."),
+                                   l("I don't feel like training today, see you later.")))
+                    {
+                        case 1: skillTraining; break;
+                        case 2: swordTraining; break;
+                        case 3: bowTraining; break;
+                        case 4: closedialog; end;
+                    }
+                    break;
+                case 4: speech(S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE,
+                    l("Sure, which training do you want to start?"));
+
+                    switch (select(l("Skill training please"),
+                                l("Can I train the sword some more?"),
+                                l("I would like to train the bow again."),
+                                l("I've changed my mind, see you later.")))
+                    {
+                        case 1: skillTraining; break;
+                        case 2: swordTraining; break;
+                        case 3: bowTraining; break;
+                        case 4: closedialog; end;
+                    }
+                    break;
+            }
+        closedialog;
+
+        npctalk3(l("Let's begin"));
+
+        mobSpawn;
+        }
+    }
+
+    function mainLoop {
+
+        // if fighting is active say encouraging words to the player
+        if (.fightingActive != 0)
+        {
+            switch (.fightingActive)
+            {
+                case 1: npctalk3(l("Attack with your sword and kill them!")); end;
+                case 2: npctalk3(l("Use your bow and kill them!")); end;
+                case 3: npctalk3(l("Hey lazy bum! Attack the dummies")); end;
+                default: break;
+            }
+        }
+
+        // only start if player talked with Lozerk
+        if (getq(Artis_Legion_Progress) < 1 )
+        {
+            speech(S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                        l("This is the training ground. And I ain't training nobody unless Lieutenant Lozerk tells me to!"),
+                        l("So please get out!"));
+                        closedialog;
+                        end;
+        }
+        else
+        {
+            switch (getq(.quest_training))
+                {
+                    case 0: speech(S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                        l(.mockingGreeting$[rand(getarraysize(.mockingGreeting$))]),
+                        l("Do you want some training? To be honest, it looks like you could use some..."));
+                        break;
+                    case 4: speech(S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                        l("Your training is finished, I taught you all I know."),
+                        l("So now go and explore the world!"));
+                        switch (select(
+                            l("Can I first have an other look at your book?"),
+                            l("Before doing that can I improve my fighting skills some more?"),
+                            l("Okay!")))
+                        {
+                            case 1: doevent("#EvolTutorial::OnRemoteHelp");; break;
+                            case 2: trainingStart; break;
+                            case 3: closedialog; end;
+                        }
+                        closedialog;
+                        end;
+                    default: speech(S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                        l("Hello again, ready to continue your lessons?")); break;
+                }
+
+            do
+            {
+                selectd(
+                    l("Yes, train me!"),
+                    l("Hmm... But what is exactly this training?"),
+                    l("I'm a bit lost in this game, can you first give me few tips?"),
+                    l("Not right now, it looks like I got other stuff to do."));
+
+                switch (@menu)
+                {
+                    case 1: trainingStart; break;
+                    case 2:
+                        // here text who explain what is the training of this npc
+                        speech(S_FIRST_BLANK_LINE | S_LAST_NEXT | S_LAST_BLANK_LINE | S_NO_NPC_NAME,
+                            l("In this training, my goal is to teach you how to be a skilled warrior, who can use a sword, a bow and a skill."),
+                            l("For this, you need a sword and a bow."),
+                            l("After you gathered your weapons, I will teach you how to use them."));
+                        break;
+                    case 3:
+                        speech(S_FIRST_BLANK_LINE | S_LAST_NEXT | S_LAST_BLANK_LINE | S_NO_NPC_NAME,
+                        l("I have a book with all the info you need, do you want to read it?"));
+                            askyesno;
+                                if (@menu == ASK_YES)
+                                {
+                                    doevent("#EvolTutorial::OnRemoteHelp");
+                                    closedialog;
+                                    end;
+                                }
+                        break;
+                    case 4: closedialog; end;
+
+                    default: closedialog; end;
+                }
+            } while (1);
+        }
+    }
+
+    mainLoop;
+    closedialog;
+    end;
+
+OnTimer1000:
+    if (.fightingActive != 0)
+    {
+        if (checkCombatZone())
+            {
+            npctalk3(l("You left the combat zone!"));
+            trainingEnd;
+            }
+        checkWeapon;
+        initnpctimer;
+    }
+    end;
+
+OnTrainingMobDead:
+    // the amount of mob spawned depend on currentwave
+    if (++'mobDead == .currentWaveLevel)
+    {
+        mobKilled;
+    }
+    end;
+
+OnInit:
+    .mana_potion = LargeMana;
+    .skill_name = SM_BASH;
+    .quest_training = ArtisQuests_TrainingLegion;
+    .quest_debug = .quest_training;
+    .maxWaves = 3;
+
+    .currentWaveLevel = 1;
+    .fightingActive = 0;
+
+    // here input some sentences "hello noob" like, the npc pick randomly a sentence
+    setarray .mockingGreeting$[0], "Hey noob!", "Hey somethingwholooklikeawarrior...", "Sup' chibi.";
+    setarray .mobID[0],0, Dummy, FireDummy, Dummy2; // an array of dummies, one for each training
+    setarray .mobCoordinate[0], 24, 34, 31, 41; // this represent the square of "ring" training
+
+    end;
+
+}
