@@ -1,0 +1,91 @@
+// Evol Script
+// Author:
+//    Jesusalva
+//    WildX
+// Description:
+//    Andrei is not an human, according to studies conducted by TMW Team.
+//    He seems to be a highly advanced artificial intelligence.
+//    The fact that he was never seen contributes to this theory.
+//    Other members opinions:
+//    “4144 is a bot which sits on Hurnscald.” ~ Sagratha, 2016
+
+008-1,246,105,0	script	Andrei	NPC_PLAYER,{
+    function sittingBot;
+    function zealiteLore;
+    // TODO: Maybe we should use Karma here? For discussion
+    @is_billygates=(strcharinfo(0) == "WildX");
+    speech
+        l("Hi.");
+    next;
+    do
+    {
+        select
+            l("Hello."),
+            l("Can I sit on you?"),
+            l("What are you doing?");
+        mes "";
+        switch (@menu)
+        {
+            case 1:
+                break;
+            case 2:
+                sittingBot();
+                break;
+            case 3:
+                zealiteLore();
+                break;
+        }
+    } while (@menu != 1);
+
+    close;
+
+    // Sitting Bot
+    function sittingBot
+    {
+        // This is just an easter egg (for now)
+        if (@is_billygates) {
+            speech S_LAST_NEXT,
+                l("Only if everyone agrees. You'll need to do a vote for that."),
+                l("Just kidding.");
+        }
+
+        // Main dialog
+        speech S_LAST_NEXT,
+            l("I don't care, but there might be some adventurers and staff who might care."),
+            l("That's why you should always ask. This is good social etiqutte, you know?"),
+            l("Anyway, I would advise you to sit closer to the Soul Menhir, instead.");
+        return;
+    }
+
+    // Zealite Info
+    function zealiteLore
+    {
+        speech S_LAST_NEXT,
+            l("I am maintaing Hurnscald's Soul Menhir in working conditions."),
+            l("Soul Menhirs are pieces of Zealite Ore, really needed to cast magic around here."),
+            l("They are not like your usual Terra Ore. Zealite is way more magical and powerful."),
+            l("This is why sometimes people try to steal shards from it... Poor fools.");
+        // Note: On TMW-BR, it is possible to "hit" Soul Menhirs for shards, which allow you to
+        // instantly teleport back to savepoint, even if lore-wise that was prohibted.
+        // This reference doesn't means it is actually possible to try that at all here.
+        return;
+    }
+
+// TODO: Replace with a good sprite and dye robes in green
+OnInit:
+    .@npcId = getnpcid(.name$);
+    setunitdata(.@npcId, UDT_HEADTOP, FancyHat); // Wizard Hat
+    setunitdata(.@npcId, UDT_HEADMIDDLE, SilkRobe);
+    setunitdata(.@npcId, UDT_HEADBOTTOM, CottonGloves);
+    setunitdata(.@npcId, UDT_WEAPON, CottonBoots);
+
+    // What is 4144's hair? He is always wearing his wizard hat
+    setunitdata(.@npcId, UDT_HAIRSTYLE, 7);
+    setunitdata(.@npcId, UDT_HAIRCOLOR, rand(1,20));
+    npcsit;
+
+    .sex = G_MALE;
+    .distance = 4;
+    end;
+}
+
