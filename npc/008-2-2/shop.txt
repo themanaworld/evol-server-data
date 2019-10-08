@@ -1,6 +1,7 @@
 // Evol scripts.
 // Authors:
 //    4144
+//    jesusalva
 //    Reid
 //    toams
 // Description:
@@ -17,25 +18,17 @@ OnInit:
     sellitem Cheese, -1, 50;
     sellitem CherryCake, -1, 50;
     sellitem SmallHealing, -1, 50;
+    sellitem MaggotSlimePotion, -1, 50;
 
     .sex = G_OTHER;
     .distance = 10;
     end;
 
+// FIXME Note: "20" doesn't means "restock 20 units".
+// It means "restock if less than 20 units are being sold".
+// Is this behavior intended? Seems like a bug.
 OnClock0000:
-    restoreshopitem Beer, 20;
-    restoreshopitem Bread, 20;
-    restoreshopitem RedPlushWine, 20;
-    restoreshopitem Cheese, 20;
-    restoreshopitem CherryCake, 20;
-    restoreshopitem SmallHealing, 20;
 OnClock0800:
-    restoreshopitem Beer, 20;
-    restoreshopitem Bread, 20;
-    restoreshopitem RedPlushWine, 20;
-    restoreshopitem Cheese, 20;
-    restoreshopitem CherryCake, 20;
-    restoreshopitem SmallHealing, 20;
 OnClock1600:
     restoreshopitem Beer, 20;
     restoreshopitem Bread, 20;
@@ -43,4 +36,5 @@ OnClock1600:
     restoreshopitem Cheese, 20;
     restoreshopitem CherryCake, 20;
     restoreshopitem SmallHealing, 20;
+    restoreshopitem MaggotSlimePotion, 50;
 }
