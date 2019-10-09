@@ -28,8 +28,8 @@
 008-1,231,114,0	script	Old Woman	NPC_OLD_LADY,{
 
     function is_inspector {
-        return (getequipcardid(EQI_HEAD_MID, 0) == NavyBlueCottonDye /*&&
-                getequipcardid(EQI_HEAD_LOW, 0) == NavyBlueCottonDye*/); // TODO / FIXME: remove the /* */ whenever we have cotton pants
+        return (getequipcardid(EQI_HEAD_MID, 0) == NavyBlueCottonDye &&
+                getequipcardid(EQI_HEAD_LOW, 0) == NavyBlueCottonDye);
     }
 
     function oldwoman_ask {
