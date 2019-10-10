@@ -59,7 +59,7 @@ function	script	manhole_interact	{
                 // Would be nice to customize but not needed atm
                 // 1 mob for every 30 levels (level 99 players spawn 4 mobs)
                 // Note that food type is currently disregarded (and it accepts any healing item)
-                .@monsterId=any(slime, Croc, LittleBlub, CaveMaggot);
+                .@monsterId=any(Slime, Croc, LittleBlub, CaveMaggot);
 	            .@mobGID = monster(.@m$, .@x, .@y, strmobinfo(1, .@monsterId), .@monsterId, (BaseLevel/30)+1);
 	            unitattack(.@mobGID, getcharid(CHAR_ID_ACCOUNT)); // "It's not aggressive"? We don't care.
             }
