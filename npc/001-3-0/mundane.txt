@@ -81,15 +81,15 @@
 
         // Note: Difficulty is based on your level
         .@BLVLBOOST=BaseLevel/10;
-        areamonster(.@MAP_NAME$, 119, 51, 162, 85, strmobinfo(1, slime), slime, 3+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 119, 51, 162, 85, strmobinfo(1, Slime), Slime, 3+.@BLVLBOOST);
         areamonster(.@MAP_NAME$, 190, 65, 193, 68, strmobinfo(1, Ratto), Ratto, 5);
         areamonster(.@MAP_NAME$, 90, 67, 92, 72, strmobinfo(1, CaveMaggot), CaveMaggot, 3+.@BLVLBOOST);
-        areamonster(.@MAP_NAME$, 99, 106, 102, 111, strmobinfo(1, slime), slime, 3+.@BLVLBOOST);
-        areamonster(.@MAP_NAME$, 115, 93, 115, 75, strmobinfo(1, slime), slime, 3+.@BLVLBOOST);
-        areamonster(.@MAP_NAME$, 120, 85, 7, 2, strmobinfo(1, slime-littleslime), slime-littleslime, 7+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 99, 106, 102, 111, strmobinfo(1, Slime), Slime, 3+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 115, 93, 115, 75, strmobinfo(1, Slime), Slime, 3+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 120, 85, 7, 2, strmobinfo(1, LittleSlime), LittleSlime, 7+.@BLVLBOOST);
         areamonster(.@MAP_NAME$, 114, 65, 121, 68, strmobinfo(1, CaveMaggot), CaveMaggot, 5+.@BLVLBOOST);
         areamonster(.@MAP_NAME$, 137, 76, 130, 87, strmobinfo(1, Spider), Spider, 4+.@BLVLBOOST);
-        areamonster(.@MAP_NAME$, 98, 92, 101, 94, strmobinfo(1, slime), slime, 3+.@BLVLBOOST);
+        areamonster(.@MAP_NAME$, 98, 92, 101, 94, strmobinfo(1, Slime), Slime, 3+.@BLVLBOOST);
 
         // Important temporary variables and move you accordingly
         @MUNDANE_OLDX=.x;
