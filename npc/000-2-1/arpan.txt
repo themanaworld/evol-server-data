@@ -201,7 +201,7 @@ L_WhereOldClothes:
 
     setq ShipQuests_ArpanMoney, 2;
     .@q = getq(ShipQuests_Arpan);
-    Zeny = Zeny + 10;
+    Zeny += 10;
     message strcharinfo(0), l("You receive @@ E!", 10);
 
     goto L_BeforeMenu;
@@ -214,7 +214,7 @@ L_WhereMoney:
 
     setq ShipQuests_ArpanMoney, 2;
     .@q = getq(ShipQuests_Arpan);
-    Zeny = Zeny + 10;
+    Zeny += 10;
     message strcharinfo(0), l("You receive @@ E!", 10);
 
     goto L_BeforeMenu;

@@ -285,7 +285,7 @@ OnDone:
         default: @peter=750; break;
     }
 
-    Zeny = Zeny + @peter;
+    Zeny += @peter;
     message strcharinfo(0), l("You receive @@ E!", @peter);
 
     // Some cleanup. Shouldn't cause bugs but it's absence causes a ugly behavior.

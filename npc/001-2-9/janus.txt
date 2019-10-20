@@ -31,7 +31,7 @@
             }
             else
             {
-                Zeny = Zeny - .@party_price;
+                Zeny -= .@party_price;
                 setq General_Janus, 2;
                 skill NV_BASIC, 7, 0;
 
@@ -61,7 +61,7 @@
             else
             {
                 inventoryplace GuildCertification, 1;
-                Zeny = Zeny - .@guild_price;
+                Zeny -= .@guild_price;
                 setq General_Janus, 3;
                 getitem GuildCertification, 1;
 

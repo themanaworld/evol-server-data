@@ -47,7 +47,7 @@ switch (select(l("Sure! [Don't tip]"),
         getinventorylist;
         if (@inventorylist_count == 100 && countitem("Beer") == 0)
             goto L_TooMany;
-        set Zeny, Zeny - 90;
+        Zeny -= 90;
         getitem Beer, 1;
         mes "";
         mesn;
@@ -59,7 +59,7 @@ switch (select(l("Sure! [Don't tip]"),
         getinventorylist;
         if (@inventorylist_count == 100 && countitem("Beer") == 0)
             goto L_TooMany;
-        set Zeny, Zeny - 95;
+        Zeny -= 95;
         getitem "Beer", 1;
         mes "";
         mesn;
@@ -71,7 +71,7 @@ switch (select(l("Sure! [Don't tip]"),
         getinventorylist;
         if (@inventorylist_count == 100 && countitem("Beer") == 0)
             goto L_TooMany;
-        set Zeny, Zeny - 100;
+        Zeny -= 100;
         getitem "Beer", 1;
         mes "";
         mesn;

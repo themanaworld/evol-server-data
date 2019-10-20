@@ -48,7 +48,7 @@
 
             return 3;
         }
-        Zeny = Zeny - .@price;
+        Zeny -= .@price;
         getitem PiouEgg, 1;
         ArtisQuests_PiousBought += 1;
         mesq l("You take good care of your piou. Remember to feed it every day.");

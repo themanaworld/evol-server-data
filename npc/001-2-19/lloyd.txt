@@ -115,7 +115,7 @@
                 }
                 else
                 {
-                    Zeny = Zeny - .@price;
+                    Zeny -= .@price;
                     setq ArtisQuests_Lloyd, 1;
                     speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("Perfect!"),

@@ -150,7 +150,7 @@ L_Couwan:
 
     if (countitem(FishBox) > 0) delitem FishBox, 1;
     setq ShipQuests_Couwan, 2;
-    Zeny = Zeny + 10;
+    Zeny += 10;
     getexp 40, 0;
     message strcharinfo(0), l("You receive @@ E!", 10);
 
@@ -202,7 +202,7 @@ L_TaskDone:
     if (countitem(PlushroomBox) == 1) delitem PlushroomBox, 1;
     setq ShipQuests_Gugli, 2;
 
-    Zeny = Zeny + 250;
+    Zeny += 250;
     getexp 50, 0;
 
     mes "";

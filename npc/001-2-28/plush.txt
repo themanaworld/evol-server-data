@@ -27,7 +27,7 @@
         else
         {
             emotion E_HAPPY;
-            Zeny = Zeny - .@price;
+            Zeny -= .@price;
             INN_REGISTER = REDPLUSH_INN;
             PC_IS_DEAD = false;
 

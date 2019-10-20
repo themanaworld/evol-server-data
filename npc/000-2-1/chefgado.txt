@@ -161,7 +161,7 @@ L_PoisonJulia:
     mesq l("The usurper has been punished! This is a great day! Take this reward as a prize for your loyalty to the old commander!");
 
     setq ShipQuests_ChefGado, 4;
-    Zeny = Zeny + 200;
+    Zeny += 200;
     message strcharinfo(0), l("You receive @@ E!", 200);
     inventoryplace Bread, 1;
     getitem Bread, 1;

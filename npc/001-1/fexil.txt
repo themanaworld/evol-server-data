@@ -122,7 +122,7 @@
                 l("Deal, I offer you @@ E!", .@price);
 
             delitem FluffyFur, .@amount;
-            Zeny = Zeny + .@price;
+            Zeny += .@price;
 
             break;
 
