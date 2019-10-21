@@ -31,5 +31,5 @@ function	script	is_evtc	{
 // game master
 function	script	is_gm	{
     return is_admin(getarg(0, getcharid(CHAR_ID_ACCOUNT))) ||
-        has_permission("send_gm", getarg(0, getcharid(CHAR_ID_ACCOUNT)));
+        can_use_command("@jail", getarg(0, getcharid(CHAR_ID_ACCOUNT)));
 }

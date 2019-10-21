@@ -76,16 +76,16 @@ OnCall:
 OnInit:
     if (debug > 0)
     {
-        bindatcmd("w", "@w::OnCall", 0, 2, 0);
-        bindatcmd("go", "@w::OnCall", 0, 2, 0);
-        bindatcmd("to", "@w::OnCall", 0, 2, 0);
-        bindatcmd("warp", "@w::OnCall", 0, 2, 0);
+        bindatcmd("w", "@w::OnCall", 0, 20, 0);
+        bindatcmd("go", "@w::OnCall", 0, 20, 0);
+        bindatcmd("to", "@w::OnCall", 0, 20, 0);
+        bindatcmd("warp", "@w::OnCall", 0, 20, 0);
     }
     else
     {
-        bindatcmd("w", "@w::OnCall", 2, 2, 1);
-        bindatcmd("go", "@w::OnCall", 2, 2, 1);
-        bindatcmd("to", "@w::OnCall", 2, 2, 1);
-        bindatcmd("warp", "@w::OnCall", 2, 2, 1);
+        bindatcmd("w", "@w::OnCall", 20, 60, 1);
+        bindatcmd("go", "@w::OnCall", 20, 60, 1);
+        bindatcmd("to", "@w::OnCall", 20, 60, 1);
+        bindatcmd("warp", "@w::OnCall", 20, 60, 1);
     }
 }

@@ -35,6 +35,6 @@ OnCall:
 // Anyone can call @resync, but only support and upwards for other players.
 // ie. GMs can try to fix lag for other people.
 OnInit:
-    bindatcmd "resync", "@resync::OnCall", 0, 2, 0;
+    bindatcmd "resync", "@resync::OnCall", 0, 20, 0;
     end;
 }
