@@ -1,0 +1,41 @@
+// @showgm/@hidegm atcommand
+// TEMPORALY hides GM level (or revert it)
+//
+// group lv: 20+
+// group char lv: 99
+// log: False
+//
+// usage:
+//    @showgm
+//    #showgm "char" <delta>
+//
+
+-	script	@group	32767,{
+    end;
+
+OnHide:
+    .@gm=getgroupid();
+    if (.@gm < 20) end;
+    if (.@gm % 10 != 0) end;
+    setgroupid(.@gm+1);
+    dispbottom "hidelevel : "+l("Your GM level is now hidden.");
+    end;
+
+OnShow:
+    .@gm=getgroupid();
+    if (.@gm < 20) end;
+    if (.@gm % 10 != 1) end;
+    setgroupid(.@gm-1);
+    dispbottom "showlevel : "+l("Your GM level is now visible.");
+    end;
+
+OnInit:
+    bindatcmd "showgroup", "@group::OnShow", 20, 99, 0;
+    bindatcmd "showgm", "@group::OnShow", 20, 99, 0;
+    bindatcmd "showlevel", "@group::OnShow", 20, 99, 0;
+
+    bindatcmd "hidegroup", "@group::OnHide", 20, 99, 0;
+    bindatcmd "hidegm", "@group::OnHide", 20, 99, 0;
+    bindatcmd "hidelevel", "@group::OnHide", 20, 99, 0;
+    end;
+}

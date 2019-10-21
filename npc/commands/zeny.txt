@@ -94,5 +94,5 @@ OnInit:
         end;
     }
 
-    bindatcmd "esp", "@esp::OnCall", 3, 99, 1;
+    bindatcmd "esp", "@esp::OnCall", 99, 99, 1;
 }
