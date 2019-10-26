@@ -19,7 +19,6 @@ OnInit:
     sellitem ARedTulip, -1, 50;
     sellitem AWhiteTulip, -1, 50;
     sellitem AYellowTulip, -1, 50;
-    sellitem ABlueTulip, -1, 20;
 
     .sex = G_OTHER;
     .distance = 10;
@@ -33,7 +32,6 @@ OnClock0000:
     restoreshopitem ARedTulip, 10;
     restoreshopitem AWhiteTulip, 10;
     restoreshopitem AYellowTulip, 10;
-    restoreshopitem ABlueTulip, 5;
 OnClock0800:
     restoreshopitem ARedRose, 10;
     restoreshopitem AWhiteRose, 10;
@@ -42,7 +40,6 @@ OnClock0800:
     restoreshopitem ARedTulip, 10;
     restoreshopitem AWhiteTulip, 10;
     restoreshopitem AYellowTulip, 10;
-    restoreshopitem ABlueTulip, 5;
 OnClock1600:
     restoreshopitem ARedRose, 10;
     restoreshopitem AWhiteRose, 10;
@@ -51,5 +48,4 @@ OnClock1600:
     restoreshopitem ARedTulip, 10;
     restoreshopitem AWhiteTulip, 10;
     restoreshopitem AYellowTulip, 10;
-    restoreshopitem ABlueTulip, 5;
 }
