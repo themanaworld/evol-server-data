@@ -451,7 +451,7 @@ OnInit:
 
     // here input some sentences "hello noob" like, the npc pick randomly a sentence
     setarray .mockingGreeting$[0], "Hey noob!", "Hey somethingwholooklikeawarrior...", "Sup' chibi.";
-    setarray .mobID[0],0, Dummy, FireDummy, Dummy2; // an array of dummies, one for each training
+    setarray .mobID[0],0, Dummy, FireDummy, Dummy; // an array of dummies, one for each training
     setarray .mobCoordinate[0], 24, 34, 31, 41; // this represent the square of "ring" training
 
     end;
