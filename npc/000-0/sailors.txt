@@ -35,7 +35,7 @@ OnTouch:
 
     setcamnpc "Sailors", 0, -32;
     mesn "Human Voice";
-    mesq lg("Why Frenchy? It's a Russian!");
+    mesq lg("I think he's from the East...");
     next;
 
     setcamnpc "Sailors", 144, -80;
@@ -45,7 +45,7 @@ OnTouch:
 
     setcamnpc;
     mesn "Raijin Voice";
-    mesq lg("You stupid, she's English, look at the shape of her head.", "You stupid, he's English, look at the shape of his head.");
+    mesq lg("You think she's from the East? As in... Ancea?", "You think he's from the East? As in... Ancea?");
     next;
     mesq l("Hey you! Can you hear us? Are you okay?");
     next;
