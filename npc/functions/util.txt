@@ -8,17 +8,19 @@
 
 // season_direction({day, month})
 //    returns the direction that represents our current season (approximation)
-//      DOWN:      Winter, 21/12
-//      DOWNLEFT:  Spring, 20/03
-//      LEFT:      Summer, 21/06
-//      UPLEFT:    Autumn, 22/09
+//    Note: You may also use WINTER/SPRING/SUMMER/AUTUMN constants for scripts
+//    where the direction is not important, but the season is. (Readability)
+//      DOWN:      Winter, 21/12    WINTER
+//      DOWNLEFT:  Spring, 20/03    SPRING
+//      LEFT:      Summer, 21/06    SUMMER
+//      UPLEFT:    Autumn, 22/09    AUTUMN
 
 function	script	season_direction	{
-    .@current_month = getarg(0, gettime(GETTIME_MONTH));
+    .@current_month = getarg(1, gettime(GETTIME_MONTH));
 
     if (.@current_month % 3 == 0)
     {
-        .@current_day = getarg(1, gettime(GETTIME_DAYOFMONTH));
+        .@current_day = getarg(0, gettime(GETTIME_DAYOFMONTH));
 
         switch (.@current_month)
         {
@@ -36,7 +38,7 @@ function	script	season_direction	{
 }
 
 // This is part of Jesusalva script toolkit to make his life easier when writing
-// quests. Many of these are actually redudant functions.
+// quests. Many of these are actually redundant functions.
 
 // Four different flavours of setq() to quickly preserve old values
 function	script	setq1	{
@@ -63,14 +65,9 @@ function	script	setqtime	{
     return;
 }
 
-// Function to quickly disregard part of getmapxy().
-// If you use this function too much, you'll lose efficiency, and it'll be better
-// to use getmapxy() normally to save to temporary variables.
-// Can take one optional argument (unittype argument).
+// Shortcut for getmapname()
 function	script	getmap	{
-    if (getmapxy(.@mapName$, .@xpos, .@ypos, getarg(0,0)) != 0)
-        return false;
-    return .@mapName$;
+    return getmapname();
 }
 
 // Returns the player race in plain text
@@ -84,7 +81,7 @@ function	script	get_race	{
     .@g=getarg(1, Class);
 
     // We also allow this to run without player attached for... science.
-    if (getarg(1,-1) >= 0)
+    if (playerattached())
     {
         setarray .@allraces$, l("Human"), l("Ukar"), l("Kralog"),
          l("Raijin"), l("Kralog"), l("Raijin"), l("Tritan"),
