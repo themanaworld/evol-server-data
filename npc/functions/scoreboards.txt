@@ -83,21 +83,21 @@ function	script	HallOfAcorns	{
     mes "";
 	mes l("##BHall Of Acorns: TOP15##b");
     mesc l("Only %s in storage will be counted.", getitemlink(Acorn));
-	mesf("1. %s (%d)", $@hoalvl_name$[0], $@hoalvl_value[0]);
-	mesf("2. %s (%d)", $@hoalvl_name$[1], $@hoalvl_value[1]);
-	mesf("3. %s (%d)", $@hoalvl_name$[2], $@hoalvl_value[2]);
-	mesf("4. %s (%d)", $@hoalvl_name$[3], $@hoalvl_value[3]);
-	mesf("5. %s (%d)", $@hoalvl_name$[4], $@hoalvl_value[4]);
-	mesf("6. %s (%d)", $@hoalvl_name$[5], $@hoalvl_value[5]);
-	mesf("7. %s (%d)", $@hoalvl_name$[6], $@hoalvl_value[6]);
-	mesf("8. %s (%d)", $@hoalvl_name$[7], $@hoalvl_value[7]);
-	mesf("9. %s (%d)", $@hoalvl_name$[8], $@hoalvl_value[8]);
-	mesf("10. %s (%d)", $@hoalvl_name$[9], $@hoalvl_value[9]);
-	mesf("11. %s (%d)", $@hoalvl_name$[10], $@hoalvl_value[10]);
-	mesf("12. %s (%d)", $@hoalvl_name$[11], $@hoalvl_value[11]);
-	mesf("13. %s (%d)", $@hoalvl_name$[12], $@hoalvl_value[12]);
-	mesf("14. %s (%d)", $@hoalvl_name$[13], $@hoalvl_value[13]);
-	mesf("15. %s (%d)", $@hoalvl_name$[14], $@hoalvl_value[14]);
+	mesf("1. %s (%d)", $@hoa_name$[0], $@hoa_value[0]);
+	mesf("2. %s (%d)", $@hoa_name$[1], $@hoa_value[1]);
+	mesf("3. %s (%d)", $@hoa_name$[2], $@hoa_value[2]);
+	mesf("4. %s (%d)", $@hoa_name$[3], $@hoa_value[3]);
+	mesf("5. %s (%d)", $@hoa_name$[4], $@hoa_value[4]);
+	mesf("6. %s (%d)", $@hoa_name$[5], $@hoa_value[5]);
+	mesf("7. %s (%d)", $@hoa_name$[6], $@hoa_value[6]);
+	mesf("8. %s (%d)", $@hoa_name$[7], $@hoa_value[7]);
+	mesf("9. %s (%d)", $@hoa_name$[8], $@hoa_value[8]);
+	mesf("10. %s (%d)", $@hoa_name$[9], $@hoa_value[9]);
+	mesf("11. %s (%d)", $@hoa_name$[10], $@hoa_value[10]);
+	mesf("12. %s (%d)", $@hoa_name$[11], $@hoa_value[11]);
+	mesf("13. %s (%d)", $@hoa_name$[12], $@hoa_value[12]);
+	mesf("14. %s (%d)", $@hoa_name$[13], $@hoa_value[13]);
+	mesf("15. %s (%d)", $@hoa_name$[14], $@hoa_value[14]);
     return;
 }
 
