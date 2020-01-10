@@ -1,0 +1,218 @@
+// Moubootaur Legends Script
+// Author:
+//    Jesusalva
+// Description:
+//    Leaderboards
+
+// Scoreboard functions
+function	script	HallOfGuild	{
+    mes "";
+	mes l("##BHall Of Guild Level: TOP5##b");
+	mesf("1. %s (%d)", $@hoguild_name$[0], $@hoguild_value[0]);
+	mesf("2. %s (%d)", $@hoguild_name$[1], $@hoguild_value[1]);
+	mesf("3. %s (%d)", $@hoguild_name$[2], $@hoguild_value[2]);
+	mesf("4. %s (%d)", $@hoguild_name$[3], $@hoguild_value[3]);
+	mesf("5. %s (%d)", $@hoguild_name$[4], $@hoguild_value[4]);
+    return;
+}
+
+function	script	HallOfFortune	{
+    mes "";
+	mes l("##BHall Of Fortune: TOP15##b");
+	mesf("1. %s (%s E)", $@hofortune_name$[0],format_number($@hofortune_value[0]));
+	mesf("2. %s (%s E)", $@hofortune_name$[1],format_number($@hofortune_value[1]));
+	mesf("3. %s (%s E)", $@hofortune_name$[2],format_number($@hofortune_value[2]));
+	mesf("4. %s (%s E)", $@hofortune_name$[3],format_number($@hofortune_value[3]));
+	mesf("5. %s (%s E)", $@hofortune_name$[4],format_number($@hofortune_value[4]));
+	mesf("6. %s (%s E)", $@hofortune_name$[5],format_number($@hofortune_value[5]));
+	mesf("7. %s (%s E)", $@hofortune_name$[6],format_number($@hofortune_value[6]));
+	mesf("8. %s (%s E)", $@hofortune_name$[7],format_number($@hofortune_value[7]));
+	mesf("9. %s (%s E)", $@hofortune_name$[8],format_number($@hofortune_value[8]));
+	mesf("10. %s (%s E)", $@hofortune_name$[9],format_number($@hofortune_value[9]));
+	mesf("11. %s (%s E)", $@hofortune_name$[10],format_number($@hofortune_value[10]));
+	mesf("12. %s (%s E)", $@hofortune_name$[11],format_number($@hofortune_value[11]));
+	mesf("13. %s (%s E)", $@hofortune_name$[12],format_number($@hofortune_value[12]));
+	mesf("14. %s (%s E)", $@hofortune_name$[13],format_number($@hofortune_value[13]));
+	mesf("15. %s (%s E)", $@hofortune_name$[14],format_number($@hofortune_value[14]));
+    return;
+}
+
+function	script	HallOfLevel	{
+    mes "";
+	mes l("##BHall Of Level: TOP15##b");
+	mesf("1. %s (%d)", $@hoblvl_name$[0], $@hoblvl_value[0]);
+	mesf("2. %s (%d)", $@hoblvl_name$[1], $@hoblvl_value[1]);
+	mesf("3. %s (%d)", $@hoblvl_name$[2], $@hoblvl_value[2]);
+	mesf("4. %s (%d)", $@hoblvl_name$[3], $@hoblvl_value[3]);
+	mesf("5. %s (%d)", $@hoblvl_name$[4], $@hoblvl_value[4]);
+	mesf("6. %s (%d)", $@hoblvl_name$[5], $@hoblvl_value[5]);
+	mesf("7. %s (%d)", $@hoblvl_name$[6], $@hoblvl_value[6]);
+	mesf("8. %s (%d)", $@hoblvl_name$[7], $@hoblvl_value[7]);
+	mesf("9. %s (%d)", $@hoblvl_name$[8], $@hoblvl_value[8]);
+	mesf("10. %s (%d)", $@hoblvl_name$[9], $@hoblvl_value[9]);
+	mesf("11. %s (%d)", $@hoblvl_name$[10], $@hoblvl_value[10]);
+	mesf("12. %s (%d)", $@hoblvl_name$[11], $@hoblvl_value[11]);
+	mesf("13. %s (%d)", $@hoblvl_name$[12], $@hoblvl_value[12]);
+	mesf("14. %s (%d)", $@hoblvl_name$[13], $@hoblvl_value[13]);
+	mesf("15. %s (%d)", $@hoblvl_name$[14], $@hoblvl_value[14]);
+    return;
+}
+
+function	script	HallOfJob	{
+    mes "";
+	mes l("##BHall Of Job Level: TOP15##b");
+	mesf("1. %s (%d)", $@hojlvl_name$[0], $@hojlvl_value[0]);
+	mesf("2. %s (%d)", $@hojlvl_name$[1], $@hojlvl_value[1]);
+	mesf("3. %s (%d)", $@hojlvl_name$[2], $@hojlvl_value[2]);
+	mesf("4. %s (%d)", $@hojlvl_name$[3], $@hojlvl_value[3]);
+	mesf("5. %s (%d)", $@hojlvl_name$[4], $@hojlvl_value[4]);
+	mesf("6. %s (%d)", $@hojlvl_name$[5], $@hojlvl_value[5]);
+	mesf("7. %s (%d)", $@hojlvl_name$[6], $@hojlvl_value[6]);
+	mesf("8. %s (%d)", $@hojlvl_name$[7], $@hojlvl_value[7]);
+	mesf("9. %s (%d)", $@hojlvl_name$[8], $@hojlvl_value[8]);
+	mesf("10. %s (%d)", $@hojlvl_name$[9], $@hojlvl_value[9]);
+	mesf("11. %s (%d)", $@hojlvl_name$[10], $@hojlvl_value[10]);
+	mesf("12. %s (%d)", $@hojlvl_name$[11], $@hojlvl_value[11]);
+	mesf("13. %s (%d)", $@hojlvl_name$[12], $@hojlvl_value[12]);
+	mesf("14. %s (%d)", $@hojlvl_name$[13], $@hojlvl_value[13]);
+	mesf("15. %s (%d)", $@hojlvl_name$[14], $@hojlvl_value[14]);
+    return;
+}
+
+function	script	HallOfAcorns	{
+    mes "";
+	mes l("##BHall Of Acorns: TOP15##b");
+    mesc l("Only %s in storage will be counted.", getitemlink(Acorn));
+	mesf("1. %s (%d)", $@hoalvl_name$[0], $@hoalvl_value[0]);
+	mesf("2. %s (%d)", $@hoalvl_name$[1], $@hoalvl_value[1]);
+	mesf("3. %s (%d)", $@hoalvl_name$[2], $@hoalvl_value[2]);
+	mesf("4. %s (%d)", $@hoalvl_name$[3], $@hoalvl_value[3]);
+	mesf("5. %s (%d)", $@hoalvl_name$[4], $@hoalvl_value[4]);
+	mesf("6. %s (%d)", $@hoalvl_name$[5], $@hoalvl_value[5]);
+	mesf("7. %s (%d)", $@hoalvl_name$[6], $@hoalvl_value[6]);
+	mesf("8. %s (%d)", $@hoalvl_name$[7], $@hoalvl_value[7]);
+	mesf("9. %s (%d)", $@hoalvl_name$[8], $@hoalvl_value[8]);
+	mesf("10. %s (%d)", $@hoalvl_name$[9], $@hoalvl_value[9]);
+	mesf("11. %s (%d)", $@hoalvl_name$[10], $@hoalvl_value[10]);
+	mesf("12. %s (%d)", $@hoalvl_name$[11], $@hoalvl_value[11]);
+	mesf("13. %s (%d)", $@hoalvl_name$[12], $@hoalvl_value[12]);
+	mesf("14. %s (%d)", $@hoalvl_name$[13], $@hoalvl_value[13]);
+	mesf("15. %s (%d)", $@hoalvl_name$[14], $@hoalvl_value[14]);
+    return;
+}
+
+// HallOfGame()
+function	script	HallOfGame	{
+    if ($MOST_HEROIC$)
+        mes l("World hero: %s", $MOST_HEROIC$);
+
+    if ($TREE_PLANTED)
+        mes l("Planted Trees: %s", format_number($TREE_PLANTED)); // FIXME
+
+    mes l("Players Killed in PvP: %s", format_number($PLAYERS_KILLED));
+    mes l("Monsters Killed in PvE: %s", format_number($MONSTERS_KILLED));
+    mes "";
+    .@s$=(season_direction() == WINTER ? l("Winter") : .@s$);
+    .@s$=(season_direction() == AUTUMN ? l("Autumn") : .@s$);
+    .@s$=(season_direction() == SUMMER ? l("Summer") : .@s$);
+    .@s$=(season_direction() == SPRING ? l("Spring") : .@s$);
+    mes l("Current Season: %s", .@s$);
+    // weather ; game time ; world story ; etc.
+    mes "";
+    mes l("Notable mentions and thanks for our [@@https://www.patreon.com/themanaworld|sponsors@@] for their continued support.");
+    mes "";
+    return;
+}
+
+
+// Main script handler for scoreboards
+-	script	@scoreboard	NPC_HIDDEN,{
+    end;
+OnHour00:
+OnHour01:
+OnHour02:
+OnHour03:
+OnHour04:
+OnHour05:
+OnHour06:
+OnHour07:
+OnHour08:
+OnHour09:
+OnHour10:
+OnHour11:
+OnHour12:
+OnHour13:
+OnHour14:
+OnHour15:
+OnHour16:
+OnHour17:
+OnHour18:
+OnHour19:
+OnHour20:
+OnHour21:
+OnHour22:
+OnHour23:
+OnInit:
+    consolemes(CONSOLEMES_DEBUG, "Reloading scoreboards...");
+	.@nb = query_sql("select name, zeny from `char` ORDER BY zeny DESC LIMIT 15", $@hofortune_name$, $@hofortune_value);
+	.@nb = query_sql("select name, base_level from `char` ORDER BY base_level DESC LIMIT 15", $@hoblvl_name$, $@hoblvl_value);
+	.@nb = query_sql("select name, job_level from `char` ORDER BY job_level DESC LIMIT 15", $@hojlvl_name$, $@hojlvl_value);
+	.@nb = query_sql("select name, guild_lv from `guild` ORDER BY guild_lv DESC LIMIT 5", $@hoguild_name$, $@hoguild_value);
+	.@nb = query_sql("SELECT c.name, i.amount FROM `storage` AS i, `char` AS c WHERE i.nameid="+Acorn+" AND i.account_id=c.account_id ORDER BY i.amount DESC LIMIT 15", $@hoa_name$, $@hoa_value);
+    consolemes(CONSOLEMES_DEBUG, "Scoreboards reloaded");
+    if (!$@SCOREBOARD_BIND) {
+        bindatcmd "scoreboard", "@scoreboard::OnCall", 0, 100, 0;
+        bindatcmd "scoreboards", "@scoreboard::OnCall", 0, 100, 0;
+        $@SCOREBOARD_BIND=true;
+    }
+    end;
+
+OnCall:
+    do {
+        clear;
+        //HallOfSponsor(true);
+        mes l("The Mana World - rEvolt");
+        mesc l("All scoreboards are updated hourly."), 1;
+        mes "";
+        select
+            l("Hall Of Fortune"),
+            l("Hall Of Base Level"),
+            l("Hall Of Job Level"),
+            l("Hall Of Guilds"),
+            l("Hall Of Acorns"),
+            l("Game Statistics"),
+            l("Quit");
+        mes "";
+        switch (@menu) {
+        case 1:
+            HallOfFortune();
+            next;
+            break;
+        case 2:
+            HallOfLevel();
+            next;
+            break;
+        case 3:
+            HallOfJob();
+            next;
+            break;
+        case 4:
+            HallOfGuild();
+            next;
+            break;
+        case 5:
+            HallOfAcorns();
+            next;
+            break;
+        case 6:
+            HallOfGame();
+            next;
+            break;
+        default:
+            close;
+        }
+    } while (true);
+    end;
+}
+
+
