@@ -7,10 +7,6 @@
 001-2-34,29,27,0	script	Samantha	NPC_SAMANTHA,{
     mesn;
     mesq lg("Look who we have here, did you come for a training session?");
-
-    goto L_Close;
-
-L_Close:
     close;
 
 OnInit:

@@ -5,19 +5,63 @@
 //    Chief of the Legion of Aemil of the city of Artis.
 
 001-2-40,36,46,0	script	Trozz#001-2-40	NPC_HUMAN_MALE_CHIEF_ARTIS_LEGION,{
+    function Bureaucracy;
+    function Dueling;
     mesn;
     mesq l("Hi. I am Trozz, and I am the chief of legion training in Artis.");
     next;
     mesn;
     mesq l("If you want to challenge someone for a friendly match, you are at the right place.");
     next;
-    mesn;
-    mesq l("But if you need to deal with more burocratic stuff, go talk to Q'Anon. He is the boss here.");
+    do
+    {
+        select
+            l("That's everything, thanks."),
+            l("I'm looking to have some paperwork fixed."),
+            l("How can I challenge someone for a match?");
+        mes "";
+        switch (@menu) {
+            case 1:
+                goodbye();
+                break;
+            case 2:
+                Bureaucracy();
+                break;
+            case 3:
+                Dueling();
+                break;
+        }
+    } while (@menu != 1);
     close;
+
+function Bureaucracy {
+    mesn;
+    mesq l("If you need to deal with more bureaucratic stuff, go talk to Q'Anon. He is the boss here.");
+    next;
+    mesn;
+    mesq l("You can find him upstairs. Go left, then go right, and you'll find him.");
+    next;
+    return;
+}
+
+function Dueling {
+    mesn;
+    mesq l("First, you need to use %s to enter in duel mode.", b("@duel"));
+    next;
+    mesn;
+    mesq l("Then, to challenge a player, you'll use \"%s <player_name>\".", b("@invite"));
+    next;
+    mesn;
+    mesq l("If you were invited to the duel instead, you can use %s or %s.", b("@accept"), b("@reject"));
+    next;
+    mesn;
+    mesq l("You can exit duel mode with %s. You'll also leave it by death.", b("@leave"));
+    next;
+    return;
+}
 
 OnInit:
     .sex = G_MALE;
     .distance = 4;
     end;
 }
-
