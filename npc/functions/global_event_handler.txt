@@ -1,0 +1,56 @@
+// The Mana World scripts.
+// Author:
+//    The Mana World Team
+// Description:
+//    Controls most, if not all, global events on this server.
+//    Please only use callfunc("") here; This script is loaded
+//    early on and direct function assignment will cause fails.
+// TODO: Move "new quest" notification here. (Or deprecate)
+
+// Helper function for scripted Monster Kills.
+function	script	fix_mobkill	{
+    killedrid=getarg(0);
+    doevent "#GlobalHandler::OnNPCKillEvent";
+    return;
+}
+
+-	script	#GlobalHandler	NPC_HIDDEN,{
+    end;
+
+
+OnPCLoginEvent:
+    callfunc("updateSpotlight");
+    callfunc("ReceiveMOTD");
+    callfunc("ReceiveScheduledBroadcast");
+    callfunc("FixBankVault");
+    callfunc("GrantSuperSkill");
+    end;
+
+OnPCLogoutEvent:
+    callfunc("UnequipCookie");
+    callfunc("MundaneLogout");
+    callfunc("fishing_cleanup", @fishing_spot$);
+
+    // Variable cleanup
+    @fishing_spot$ = "";
+    end;
+
+OnPCDieEvent:
+    callfunc("ForcedUnmount");
+    callfunc("MundaneDeath");
+    end;
+
+OnPCBaseLvUpEvent:
+    //callfunc("newquestwarning");
+    end;
+
+OnNPCKillEvent:
+    callfunc("EnoraKills");
+    end;
+
+OnSkillInvoke:
+    callfunc("SkillInvoked");
+    end;
+
+}
+

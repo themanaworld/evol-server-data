@@ -174,7 +174,14 @@ OnCall:
     closeclientdialog;
     end;
 
-OnPCLoginEvent:
+OnInit:
+    MOTD_debug_text;
+    .size = getarraysize($MOTD_Messages$);
+    .dsize = getarraysize($@Debug_Messages$);
+    bindatcmd "motd", "@motd::OnCall", 0, 99, 0;
+}
+
+function	script	ReceiveMOTD	{
     if ($MOTD_Disabled < 1)
     {
         displayMOTD;
@@ -183,11 +190,5 @@ OnPCLoginEvent:
     {
         dispbottom "##7<<##B @@help://test-server|" + col(l("Click here for instructions on how to use the test server."),6) + "@@ ##7>>";
     }
-    end;
-
-OnInit:
-    MOTD_debug_text;
-    .size = getarraysize($MOTD_Messages$);
-    .dsize = getarraysize($@Debug_Messages$);
-    bindatcmd "motd", "@motd::OnCall", 0, 99, 0;
+    return;
 }

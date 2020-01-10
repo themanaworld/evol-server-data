@@ -213,13 +213,15 @@ OnCall:
     closeclientdialog;
     end;
 
-OnPCLoginEvent:
+OnInit:
+    bindatcmd "sched", "@sched::OnCall", 0, 99, 0;
+}
+
+function	script	ReceiveScheduledBroadcast	{
     if ($@SCHED_Opt[0] && $@SCHED_Msg$ != "")
     {
         announce $@SCHED_Msg$, bc_self;
     }
-    end;
-
-OnInit:
-    bindatcmd "sched", "@sched::OnCall", 0, 99, 0;
+    return;
 }
+

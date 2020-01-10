@@ -5,13 +5,17 @@
 // Description:
 //    Prevents cookie from being used for too long
 
+function	script	UnequipCookie	{
+    if (getequipid(EQI_HEAD_MID) == DeliciousCookie)
+        unequip(EQI_HEAD_MID);
+    return;
+}
+
 -	script	#DeliciousCookie	NPC_HIDDEN,{
     end;
 
-OnPCLogoutEvent:
 OnUnequip:
-    if (getequipid(EQI_HEAD_MID) == DeliciousCookie)
-        unequip(EQI_HEAD_MID);
+    UnequipCookie();
     end;
 
 }

@@ -152,28 +152,6 @@ OnMove:
     addtimer(150, instance_npcname(.name$, @MUNDANE_INSTID)+"::OnMove");
     end;
 
-OnPCLogoutEvent:
-    if (getq(ArtisQuests_MonaDad) != 2) end;
-    setq ArtisQuests_MonaDad, 1;
-    end;
-
-OnPCDieEvent:
-    if (getq(ArtisQuests_MonaDad) != 2) end;
-    setq ArtisQuests_MonaDad, 1;
-    dispbottom l("What a pity! You've died.");
-
-    // We must disable Mona's Dad NPC sprite if you are still on the map
-    // This will cause the NPC to "vanish", player is left to guess that he ran
-    // back to where he originally was.
-    // (ie. The NPC won't be fine without you if we have code to handle that).
-    // NOTE: Maybe we could send the NPC running back to his original position?
-    // For future thought and testing by anyone interested.
-    getmapxy(.@m$, .@x, .@y, 0);
-    if (.@m$ ~= "mona@*") {
-        disablenpc(instance_npcname(.name$, @MUNDANE_INSTID));
-    }
-    end;
-
 OnInit:
     .sex = G_MALE;
     .distance = 3;
@@ -202,5 +180,28 @@ OnInstanceInit:
     .speed = 140; // Double-sure
     end;
 
+}
+
+function	script	MundaneLogout	{
+    if (getq(ArtisQuests_MonaDad) != 2) end;
+    setq ArtisQuests_MonaDad, 1;
+    return;
+}
+
+function	script	MundaneDeath	{
+    if (getq(ArtisQuests_MonaDad) != 2) end;
+    setq ArtisQuests_MonaDad, 1;
+    dispbottom l("What a pity! You've died.");
+
+    // We must disable Mona's Dad NPC sprite if you are still on the map
+    // This will cause the NPC to "vanish", player is left to guess that he ran
+    // back to where he originally was.
+    // (ie. The NPC won't be fine without you if we have code to handle that).
+    // NOTE: Maybe we could send the NPC running back to his original position?
+    // For future thought and testing by anyone interested.
+    if (strpos(getmap(), "mona@") >= 0) {
+        disablenpc(instance_npcname(.name$, @MUNDANE_INSTID));
+    }
+    return;
 }
 

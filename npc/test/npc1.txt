@@ -704,10 +704,6 @@ OnWhisperGlobal:
     mes "cmd: " + @whispervar0$;
     close;
 
-OnSkillInvoke:
-    skillInvoke[@skillId] = skillInvoke[@skillId] + 1;
-    end;
-
 OnReadyCheck:
     consolemes(CONSOLEMES_DEBUG, "OnReadyCheck");
     $@bgid1 = waitingroom2bg("testbg", 10, 10, "bgnpc1::OnLogout","bgnpc1:OnDie");

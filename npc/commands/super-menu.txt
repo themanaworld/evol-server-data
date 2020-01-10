@@ -46,21 +46,23 @@ OnCall:
     closeclientdialog;
     end;
 
-OnPCLoginEvent:
+OnInit:
+    bindatcmd "super", "@super::OnCall", 0, 99, 0;
+    bindatcmd "numa", "@super::OnCall", 0, 99, 0; // alias for those used to TMW's @numa
+}
+
+function	script	GrantSuperSkill	{
     .@debug_skill = getskilllv(EVOL_SUPER_MENU);
 
     if (.@debug_skill > 0 && !debug)
     {
-        skill EVOL_SUPER_MENU, 0, 0; // remove debug skill
+        skill EVOL_SUPER_MENU, 0, 0; // remove debug skill. Not needed (skill tree)
     }
 
     else if (.@debug_skill < 1 && debug)
     {
         skill EVOL_SUPER_MENU, 1, 0; // give debug skill
     }
-    end;
-
-OnInit:
-    bindatcmd "super", "@super::OnCall", 0, 99, 0;
-    bindatcmd "numa", "@super::OnCall", 0, 99, 0; // alias for those used to TMW's @numa
+    return;
 }
+
