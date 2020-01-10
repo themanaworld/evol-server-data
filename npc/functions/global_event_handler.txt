@@ -45,7 +45,14 @@ OnPCBaseLvUpEvent:
     end;
 
 OnNPCKillEvent:
+    $MONSTERS_KILLED+=1;
+    MONSTERS_KILLED+=1;
     callfunc("EnoraKills");
+    end;
+
+OnPCKillEvent:
+    $PLAYERS_KILLED+=1;
+    PLAYERS_KILLED+=1;
     end;
 
 OnSkillInvoke:
