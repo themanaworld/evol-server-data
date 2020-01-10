@@ -44,8 +44,7 @@ OnBite:
 OnCleanUp:
     dispbottom l("You waited too long and lost the bait...");
     specialeffect(getvariableofnpc(.failure_fx, @fishing_spot$), SELF, playerattached()); // event fail
-OnPCLogoutEvent:
-    fishing_cleanup @fishing_spot$;
+    fishing_cleanup(@fishing_spot$);
     @fishing_spot$ = ""; // unbind fishing npc
     end;
 }

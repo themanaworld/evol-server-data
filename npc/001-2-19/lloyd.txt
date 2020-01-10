@@ -233,15 +233,14 @@ OnInit:
     .sex = G_MALE;
     .distance = 4;
     end;
+}
 
-OnPCLoginEvent:
+function	script	FixBankVault	{
     if (#MerchantBank)
     {
         BankVault += max(0, #MerchantBank);
         #MerchantBank = 0;
     }
-    // If you're inside a cave, update spotlights
-    if (strpos(getmap(), "-3-") >= 0)
-        updateSpotlight();
-    end;
+    return;
 }
+

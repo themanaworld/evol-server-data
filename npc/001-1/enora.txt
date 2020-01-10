@@ -440,10 +440,7 @@ OnInit:
     end;
 }
 
-001-1,0,0,0	script	Mobs#001-1	NPC_HIDDEN,{
-    end;
-
-OnNPCKillEvent:
+function	script	EnoraKills	{
     if (getq(ArtisQuests_Enora) == 10
              && killedrid == Fluffy
              && strcharinfo(PC_MAP) == "001-1"
@@ -451,5 +448,6 @@ OnNPCKillEvent:
     {
         setq(ArtisQuests_Enora, 10, getq2(ArtisQuests_Enora) + 1);
     }
-    end;
+    return;
 }
+

@@ -17,26 +17,17 @@ function	script	updateSpotlight	{
     // It will be cast twice when switching caves. This sleep prevents obscure bugs.
     sleep2(80);
 
-    // Maps which this system
-    setarray .@mapz$,
-                      "001-3-0", "001-3-1", "001-3-2",
-                      "008-3-0", "008-3-1", "008-4-1";
-
     getmapxy(.@m$, .@x, .@y, 0);
-    //debugmes "Begin";
 
     // Is your map valid (or is the check skipped)
-    /*
     if (!getarg(0,false))
     {
-        if (array_find(.@mapz$, .@m$) < 0)
+        if (strpos(getmapname(), "-3-") < 0)
             return;
     }
-    */
 
     // Retrieve default map masks
     .@ms=getmapmask(.@m$);
-    //debugmes "Default: %d", .@ms;
 
     // Which equipments provide bonuses?
     setarray .@b_head, CandleHelmet;
@@ -60,7 +51,6 @@ function	script	updateSpotlight	{
     // Calculate and send new map mask
     .@ms=.@ms|(2**.@score);
     sendmapmask(.@ms);
-    //debugmes "Data sent: %d", .@ms;
     return;
 }
 
@@ -68,7 +58,7 @@ function	script	updateSpotlight	{
 // Every NPC will be duplicating this one
 001-3-0,0,0,0	script	#SpotlightMaster	NPC_HIDDEN,0,0,{
 OnTouch:
-    updateSpotlight();
+    updateSpotlight(true);
     end;
 }
 

@@ -1,0 +1,13 @@
+// The Mana World scripts.
+// Author:
+//    The Mana World Team
+// Description:
+//    Controls script-based skills (which are rare);
+
+function	script	SkillInvoked	{
+    // Record to database that you used the skill
+    skillInvoke[@skillId] = skillInvoke[@skillId] + 1;
+
+    return;
+}
+

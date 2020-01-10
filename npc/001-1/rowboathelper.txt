@@ -41,10 +41,6 @@
             close;
     }
 
-// Make sure to unmount the boat when player dies
-OnPCDieEvent:
-   setmount 0;
-
 OnInit:
     .distance = 1;
 }
@@ -120,3 +116,9 @@ OnInit:
     .sex = G_OTHER;
     .distance = 1;
 }
+
+function	script	ForcedUnmount	{
+    setmount 0;
+    return;
+}
+
