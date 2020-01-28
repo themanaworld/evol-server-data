@@ -25,6 +25,17 @@
 // Description:
 //    robberies in hurnscald
 
+// Give player a Beanie Copter after 1,000,000 kills (server-wide)
+function	script	GetBeanieCopter	{
+    // Double-check against possible malpractices
+    if ($MONSTERS_KILLED % 1000000 == 0) {
+         announce(sprintf("Congratulations, \"%s\", on killing the %sth monster!.", strcharinfo(0), format_number($MONSTERS_KILLED)), bc_all);
+        getitem BeanieCopter, 1;
+        dispbottom l("How strange, this monster dropped a very rare hat!");
+    }
+    return;
+}
+
 008-1,282,114,0	script	Milly	NPC_GIRL_MILLY,{
 
        // TODO: make the actual beanie copter quest after those are finished:
