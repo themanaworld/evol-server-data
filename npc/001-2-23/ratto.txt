@@ -87,11 +87,12 @@ OnRatto4Death:
 // (as we are going to delete the instance map anyway), warp you outside, and
 // from there onwards, Peter handles properly rewarding you.
 L_Victor:
-    warp "001-2-22", 72, 36;
     deltimer("RattosControl#Artis::OnRatto1Respawn");
     deltimer("RattosControl#Artis::OnRatto2Respawn");
     deltimer("RattosControl#Artis::OnRatto3Respawn");
     deltimer("RattosControl#Artis::OnRatto4Respawn");
-    doevent("Peter#Artis::OnDone");
+    addtimercount("Peter#Artis::OnTimeout", 5000);
+    addtimer(5000, "Peter#Artis::OnDone");
+    dispbottom l("It looks like all monsters were killed.");
     end;
 }
