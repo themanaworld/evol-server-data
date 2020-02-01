@@ -256,6 +256,7 @@ OnTimeout:
 // It's not _buggy_, it is just reckless. I would like a setting to restrict it
 // to destroy only instances owned by the char, or to destroy by name :p
 OnDone:
+    warp "000-2-1", 72, 36;
     .@q3 = getq3(ShipQuests_Peter);
     //instance_destroy(.@q3);
     if (@peter)

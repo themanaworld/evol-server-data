@@ -86,12 +86,13 @@ OnRatto4Death:
 // This label is reached when all rattos are dead. We clear the respawn timers
 // (as we are going to delete the instance map anyway), warp you outside, and
 // from there onwards, Peter handles properly rewarding you.
-L_Victor:
-    warp "000-2-1", 72, 36;
+OnVictor:
     deltimer("RattosControl::OnRatto1Respawn");
     deltimer("RattosControl::OnRatto2Respawn");
     deltimer("RattosControl::OnRatto3Respawn");
     deltimer("RattosControl::OnRatto4Respawn");
-    doevent("Peter::OnDone");
+    addtimercount("Peter::OnTimeout", 5000);
+    addtimer(5000, "Peter::OnDone");
+    dispbottom l("It looks like all monsters were killed.");
     end;
 }
