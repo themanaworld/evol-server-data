@@ -1,0 +1,29 @@
+// The Mana World Script
+//
+// @monsterinfo <monsterAegis>
+// Sends @mobinfo with a delay (moved from atcommand.conf)
+// Requires EVOL_MONSTER_IDENTIFY
+//
+-	script	@monsterinfo	32767,{
+    end;
+
+OnCall:
+    // Check for skill level
+    if (!getskilllv(EVOL_MONSTER_IDENTIFY))
+        end;
+
+    // ...
+    if (@rsync_delay > gettimetick(2)) {
+        dispbottom l("Not doing that to prevent flood.");
+        end;
+    }
+
+    // Send @mobinfo and set a cooldown of 3 seconds.
+    atcommand("@mobinfo " + implode(.@atcmd_parameters$, " "));
+    @rsync_delay=gettimetick(2)+3;
+    end;
+
+OnInit:
+    bindatcmd "monsterinfo", "@monsterinfo::OnCall", 0, 60, 0;
+    end;
+}
