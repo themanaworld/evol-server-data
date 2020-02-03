@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Thamas the soldier.
+// THIS IS A PLACEHOLDER!
+
+008-2-32,36,31,0	script	Thamas	NPC_THAMAS,{
+    speech
+        l("Hi there."),
+        l("I am a legion soldier who never talks much, until Jesusalva or WildX puts words in my mouth."),
+        lg("Until then, let me be quiet. Talk to you later.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

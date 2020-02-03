@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Galmatia the beekeeper.
+// THIS IS A PLACEHOLDER!
+
+008-1-1,58,57,0	script	Morcant	NPC_MORCANT,{
+    speech
+        l("Hello."),
+        l("My name is Morcant. I am a Captain, a bit bored since this harbor is not frequented much."),
+        l("I would like to offer you food and tell you stories, but.. have you ever heard of WildX? I won't need to say more, do I?");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
