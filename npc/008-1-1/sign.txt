@@ -1,0 +1,24 @@
+// Evol scripts.
+// Authors:
+//    Micksha
+// Description:
+//    Sign pillars in West Woodland.
+
+008-1-1,53,58,0	script	Sign#008-1-1-merchant	NPC_NO_SPRITE,{
+    npctalkonce l("Merchant House");
+    close;
+
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
+008-1-1,157,87,0	script	Sign#008-1-1-central	NPC_NO_SPRITE,{
+    npctalkonce l("Right: Hurnscald | Down: Swamp");
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
