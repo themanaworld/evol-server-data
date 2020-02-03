@@ -1,0 +1,34 @@
+// Evol scripts.
+// Authors:
+//    Micksha
+// Description:
+//    Sign pillars in West Woodland.
+
+008-1-2,218,80,0	script	Sign#008-1-2-northeast	NPC_NO_SPRITE,{
+    npctalkonce l("Up: West Woodland | Right: Dimond's Cove | Left: Sorentown");
+    close;
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+
+008-1-2,145,80,0	script	Sign#008-1-2-sorentown	NPC_NO_SPRITE,{
+    npctalkonce l("Left: Asphodel Moor | Right: All directions");
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+
+008-1-2,39,192,0	script	Sign#008-1-2-asphodel	NPC_NO_SPRITE,{
+    npctalkonce l("Down: Graveyard (under construction) | Up: All directions");
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}

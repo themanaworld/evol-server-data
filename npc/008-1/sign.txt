@@ -1,0 +1,50 @@
+// Evol scripts.
+// Authors:
+//    Micksha
+// Description:
+//    Sign pillars in Hurnscald.
+
+008-1,142,105,0	script	Sign#008-1-central	NPC_NO_SPRITE,{
+    npctalkonce l("Right: Hurnscald | Down: Dimond's Cove | Left: West Woodland | Up: Nivalis (under construction)");
+    close;
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+
+008-1,126,160,0	script	Sign#008-1-south	NPC_NO_SPRITE,{
+    npctalkonce l("Down: Dimond's Cove | Left: Swamp");
+    close;
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+
+008-1,246,177,0	script	Sign#008-1-southeast	NPC_NO_SPRITE,{
+    npctalkonce l("Left: Dimond's Cove | Up: Hurnscald | Right: Forsaken Inn");
+    close;
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+
+008-1,251,104,0	script	Sign#008-1-hurns	NPC_NO_SPRITE,{
+    npctalkonce l("Left: West Woodland | Up: North Mine | Right: Harbor | Down: other directions");
+    close;
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+}
+
+008-1,247,105,0	script	Sign#008-1-4144	NPC_NO_SPRITE,{
+    npctalkonce l("This place is dedicated to 4144, the alltime Hero.");
+    close;
+OnInit:
+    .distance = 1;
+    .sex = G_OTHER;
+    end;
+}
