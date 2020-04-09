@@ -1,0 +1,18 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Sorfina, the former starting NPC. Could need a new job.
+// THIS IS A PLACEHOLDER!
+
+012-2-2,26,30,0	script	Sorfina	NPC_SORFINA,{
+    speech
+        l("Welcome."),
+        l("Someone was too lazy to even write a placeholder text, so please come back later");
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}

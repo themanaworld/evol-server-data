@@ -1,0 +1,18 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Hasan, the bad guy.
+// THIS IS A PLACEHOLDER!
+
+012-1,39,44,0	script	Hasan	NPC_HASAN,{
+    speech
+        l("Welcome."),
+        l("Someone was too lazy to even write a placeholder text, so please come back later");
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

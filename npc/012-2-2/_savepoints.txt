@@ -1,0 +1,28 @@
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Map 012-2-2: Sleeping Room saves
+012-2-2,25,27,0	script	#save_012-2-2_25_27	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, NO_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+
+OnTouch:
+    bedTouch();
+    end;
+}
+012-2-2,28,27,0	script	#save_012-2-2_28_27	NPC_SAVE_POINT,0,0,{
+    savepointparticle .map$, .x, .y, NO_INN;
+    close;
+
+OnInit:
+    .distance = 2;
+    .sex = G_OTHER;
+    end;
+
+OnTouch:
+    bedTouch();
+    end;
+}

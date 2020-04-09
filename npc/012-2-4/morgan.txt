@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Rosen, the salesman in Candor smith.
+// THIS IS A PLACEHOLDER!
+
+012-2-4,26,37,0	script	Morgan	NPC_MORGAN,{
+    speech
+        l("Hello Wanderer."),
+        l("I am Morgan, the alchimist."),
+        l("(People do not like to hear the word 'witch' so much, as we live close to Hurnscald)."),
+        l("Unfortunately my apprentice Zitoni does not bring fresh potions, so if you need something you should come back later.");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

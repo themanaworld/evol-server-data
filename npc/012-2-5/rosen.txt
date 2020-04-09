@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Rosen, the salesman in Candor smith.
+// THIS IS A PLACEHOLDER!
+
+012-2-5,31,34,0	script	Rosen	NPC_ROSEN,{
+    speech
+        l("Welcome."),
+        l("I am Rosen, I am selling the best weapons and armor you can get on this island."),
+        l("If only Toichi would work harder, I could even offer you something. But meh. Like things are, you must try to return at a later point."),
+        l("Toichi, go to work! Stop drinking beer!");
+
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
