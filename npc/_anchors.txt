@@ -36,7 +36,7 @@ OnInit:
     htput(.ht, "^START2$", "000-0-0 26 28");
     htput(.ht, "^START3$", "000-0-1 26 28");
     htput(.ht, "^START|^BEGIN", "000-0 22 24");
-    htput(.ht, "^VEIN", "008-3-0 85 172");
+    htput(.ht, "^VEIN", "008-3-0 87 172");
     htput(.ht, "^WARE", "001-2-18 37 31");
     htput(.ht, "^WEST|PORT", "008-1-1 52 60");
 }

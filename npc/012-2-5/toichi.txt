@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Toichi, the smith in Candor island.
+// THIS IS A PLACEHOLDER!
+
+012-2-5,40,35,0	script	Toichi	NPC_TOICHI,{
+    speech
+        l("Hi there."),
+        l("My name is Toichi, and it seems I am the only one working on this lazy island.");
+        next;
+        l("So I kindly request you not to listen to that stupid Rosen, saying 'Toichi is lazy'.");
+        next;
+        l("At least I am doing something!");
+    close;
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}

@@ -1,0 +1,18 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Vincent, a child at the Candor beach.
+// THIS IS A PLACEHOLDER!
+
+012-1,65,111,0	script	Ayasha	NPC_AYASHA,{
+    speech
+        l("Welcome."),
+        l("Someone was too lazy to even write a placeholder text, so please come back later");
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}

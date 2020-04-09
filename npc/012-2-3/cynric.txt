@@ -1,0 +1,18 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Cynric, Candor's banker.
+// THIS IS A PLACEHOLDER!
+
+012-2-3,27,28,0	script	Cynric	NPC_CYNRIC,{
+    speech
+        l("Welcome."),
+        l("Someone was too lazy to even write a placeholder text, so please come back later");
+    close;
+
+OnInit:
+    .sex = G_MALE;
+    .distance = 2;
+    end;
+}
