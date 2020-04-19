@@ -21,7 +21,7 @@
         sailortalk;
     }
 
-    if (getq(ShipQuests_ArpanMoney) == 2)
+    if (getq(ShipQuests_ArpanMoney) >= 2)
     {
         got_money;
     }

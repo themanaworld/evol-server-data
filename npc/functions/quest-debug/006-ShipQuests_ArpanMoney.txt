@@ -15,7 +15,8 @@ function	script	QuestDebug6	{
         GenericQuestDebug ShipQuests_ArpanMoney,
             l("Does not have the quest"), 0,
             l("Elmo told about money"), 1,
-            l("Arpan gave money"), 2;
+            l("Arpan gave money"), 2,
+            l("Arpan gave clothes"), 3;
 
         if (@menuret < 0)
         {

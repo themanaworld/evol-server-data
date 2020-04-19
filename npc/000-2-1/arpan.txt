@@ -7,6 +7,7 @@
 // Variable:
 //    0 ShipQuests_Arpan
 //    1 ShipQuests_Julia
+//    2 ShipQuests_ArpanMoney
 // Values:
 //    00   Has not talked to Arpan yet.
 //    01   Talked to Arpan and needs to get the clothes.
@@ -15,6 +16,10 @@
 //    10   Has not talked to Julia
 //    11   Need to see Julia
 //    12   Has been registered by Julia
+//    20   Does not knows about money
+//    21   Has not taken possession from Arpan
+//    22   Took money from Arpan
+//    23   Took money and clothes (Legacy only)
 
 000-2-1,49,36,0	script	LeftDoorCheck	NPC_HIDDEN,0,0,{
     .@q = getq(ShipQuests_Arpan);
@@ -84,6 +89,7 @@ L_EquipDone:
     close;
 }
 
+/////////////////////////////////////////////////////////////////////////////
 000-2-1,49,33,0	script	Magic Arpan	NPC_MAGIC_ARPAN,{
     .@q = getq(ShipQuests_Arpan);
     .@q_nard = getq(ShipQuests_Nard);
@@ -152,6 +158,7 @@ L_Menu:
         l("Who are you?"), L_Who,
         rif(getq(ShipQuests_ArpanMoney) == 1, lg("Do you know what happened to the gold I had when you guys saved me?")), L_WhereMoney,
         rif(getq(ShipQuests_ArpanMoney) < 2, l("Where are my old clothes?")), L_WhereOldClothes,
+        rif(getq(ShipQuests_ArpanMoney) == 2 && LEGACY, l("About my my old clothes...")), L_LegacyClothes,
         rif(!.@equipped, lg("What should I do after taking these clothes?")), L_WhatCloth,
         rif(!.@equipped, l("Thank you, I'll take them and put them on.")), -,
         l("Nothing, sorry."), -;
@@ -204,6 +211,25 @@ L_WhereOldClothes:
     Zeny += 10;
     message strcharinfo(0), l("You receive @@ E!", 10);
 
+    if (LEGACY)
+        goto L_LegacyClothes;
+
+    goto L_BeforeMenu;
+
+L_LegacyClothes:
+    if (LEGACY) {
+        mesn strcharinfo(0);
+        select
+            lg("But... I remember that my clothes were very dear to me..."),
+            l("Oh okay.");
+        mes "";
+        if (@menu == 1) {
+            mesn;
+            mesq l("Well, you can have them back, but they're yayaya, mostly destroyed. Not sure what yeye are going to do with that.");
+            getitem ClothesPack, 1;
+            setq ShipQuests_ArpanMoney, 3;
+        }
+    }
     goto L_BeforeMenu;
 
 L_WhereMoney:
