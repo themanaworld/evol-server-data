@@ -1,0 +1,12 @@
+// The Mana World Script
+// Author:
+//    Jesusalva
+// Controls additional jail cells
+
+sec_pri,49,75,0	script	#JailIntWarp	NPC_HIDDEN,0,0,{
+    end;
+
+OnTouch:
+    slide any(29, 33), 75;
+    end;
+}
