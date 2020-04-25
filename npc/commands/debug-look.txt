@@ -1,22 +1,19 @@
 function	script	BarberDebug	{
 
     function setGender {
-        //clear;
-        //setnpcdialogtitle l("Appearance Debug - Sex Change");
-        //mes l("Please choose the desired gender:");
-        //next;
-        //menuint
-        //    l("Male"), G_MALE,
-        //    l("Female"), G_FEMALE,
-        //    l("Non-binary"), G_OTHER;
+        clear();
+        setnpcdialogtitle(l("Appearance Debug - Gender Change"));
+        mes(l("Warning: changing your gender will send you back to the character selection screen."));
+        mes("");
+        mes(l("Please choose the desired gender:"));
+        next();
+        menuint(
+            l("Male"), GENDER_MALE,
+            l("Female"), GENDER_FEMALE,
+            l("Non-binary"), GENDER_NONBINARY);
 
-        //Sex = @menuret; // FIXME: make this work like in tmwAthena
-        //return;
-
-
-        // ^ Future code, Doesn't work yet
-        closeclientdialog;
-        changecharsex;
+        Gender = @menuret;
+        return;
     }
     function setStyle {
         clear;
@@ -57,7 +54,7 @@ function	script	BarberDebug	{
         mes "";
 
         mes "---";
-        mes l("Gender") + ": " + Sex;
+        mes l("Gender") + ": " + genderToString(Gender);
         mes l("Hair style") + ": " + getlook(LOOK_HAIR);
         mes l("Hair color") + ": " + getlook(LOOK_HAIR_COLOR);
         mes l("Race") + ": " + Class + " (" + get_race() + ")";;
