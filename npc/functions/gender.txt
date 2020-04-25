@@ -1,0 +1,13 @@
+function	script	stringToGender	{
+    .@short$ = strtolower(charat(getarg(0, ""), 0));
+
+    return .@short$ == "f" ? GENDER_FEMALE :
+        .@short$ == "m" ? GENDER_MALE : GENDER_NONBINARY;
+}
+
+function	script	genderToString	{
+    .@gender = getarg(0, Gender);
+
+    return .@gender == GENDER_FEMALE ? l("female") :
+        .@gender == GENDER_MALE ? l("male") : l("non-binary");
+}

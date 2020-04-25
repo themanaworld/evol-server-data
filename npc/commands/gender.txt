@@ -1,0 +1,35 @@
+// @gender atcommand
+// changes or returns the gender
+
+-	script	@gender	32767,{
+    end;
+
+OnCall:
+    if (.@atcmd_parameters$[0] == "") {
+        dispbottom("Your current gender is " + genderToString());
+        end;
+    }
+
+    .@desired = stringToGender(.@atcmd_parameters$[0]);
+
+    if (.@desired == Gender) {
+        dispbottom("Your gender is already " + genderToString());
+    } else {
+        Gender = .@desired;
+        dispbottom("Gender changed to " + genderToString());
+    }
+    end;
+
+OnInit:
+    bindatcmd("gender", "@gender::OnCall", 99, 99, false);
+    add_group_command("gender", 40, true, false);
+    add_group_command("gender", 50, true, true);
+    add_group_command("gender", 60, true, true);
+    add_group_command("gender", 80, true, true);
+
+    bindatcmd("changesex", "@gender::OnCall", 99, 99, false);
+    add_group_command("changesex", 40, true, false);
+    add_group_command("changesex", 50, true, true);
+    add_group_command("changesex", 60, true, true);
+    add_group_command("changesex", 80, true, true);
+}
