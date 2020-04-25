@@ -108,3 +108,18 @@ function	script	BarberChangeColor	{
 
     return;
 }
+
+function	script	BarberChangeGender	{
+    mesn("Warning");
+    mes(b(l("Changing your gender will send you back to the character selection screen.")));
+    next();
+
+    mes(l("Please select the desired gender:"));
+    menuint(
+        l("Female"), GENDER_FEMALE,
+        l("Male"), GENDER_MALE,
+        l("Non-binary"), GENDER_NONBINARY);
+
+    Gender = @menuret;
+    return;
+}
