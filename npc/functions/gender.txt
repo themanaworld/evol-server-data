@@ -2,7 +2,7 @@ function	script	stringToGender	{
     .@short$ = strtolower(charat(getarg(0, ""), 0));
 
     return .@short$ == "f" ? GENDER_FEMALE :
-        .@short$ == "m" ? GENDER_MALE : GENDER_NONBINARY;
+        .@short$ == "m" ? GENDER_MALE : GENDER_HIDDEN;
 }
 
 function	script	genderToString	{

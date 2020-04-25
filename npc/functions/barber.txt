@@ -118,7 +118,7 @@ function	script	BarberChangeGender	{
     menuint(
         l("Female"), GENDER_FEMALE,
         l("Male"), GENDER_MALE,
-        l("Non-binary"), GENDER_NONBINARY);
+        l("Non-binary"), GENDER_HIDDEN);
 
     Gender = @menuret;
     return;
