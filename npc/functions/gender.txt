@@ -1,13 +1,19 @@
 function	script	stringToGender	{
-    .@short$ = strtolower(charat(getarg(0, ""), 0));
-
-    return .@short$ == "f" ? GENDER_FEMALE :
-        .@short$ == "m" ? GENDER_MALE : GENDER_HIDDEN;
+    switch (ord(strtolower(charat(getarg(0, "n"), 0)))) {
+    case 50: // 2
+    case 102: // f
+        return GENDER_FEMALE;
+    case 51: // 3
+    case 109: // m
+        return GENDER_MALE;
+    default:
+        return GENDER_HIDDEN;
+    }
 }
 
 function	script	genderToString	{
     .@gender = getarg(0, Gender);
 
-    return .@gender == GENDER_FEMALE ? l("boobed") :
-        .@gender == GENDER_MALE ? l("tanky") : l("neutral");
+    return .@gender == GENDER_FEMALE ? l("type %i", 2) :
+        .@gender == GENDER_MALE ? l("type %i", 3) : l("type %i", 1);
 }

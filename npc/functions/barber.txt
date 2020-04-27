@@ -117,9 +117,9 @@ function	script	BarberChangeGender	{
 
     mes(l("Please select the desired body type:"));
     menuint(
-        l("Boobed"), GENDER_FEMALE,
-        l("Tanky"), GENDER_MALE,
-        l("Neutral"), GENDER_HIDDEN);
+        l("Body type %i", 1), GENDER_HIDDEN,
+        l("Body type %i", 2), GENDER_FEMALE,
+        l("Body type %i", 3), GENDER_MALE);
 
     Gender = @menuret;
     return;

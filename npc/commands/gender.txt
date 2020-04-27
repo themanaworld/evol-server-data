@@ -16,20 +16,38 @@ OnCall:
         dispbottom("Your body type is already " + genderToString());
     } else {
         Gender = .@desired;
-        dispbottom("Body Type changed to " + genderToString());
+        dispbottom("Body type changed to " + genderToString());
     }
     end;
 
 OnInit:
     bindatcmd("gender", "@gender::OnCall", 99, 99, false);
-    add_group_command("gender", 40, true, false);
-    add_group_command("gender", 50, true, true);
-    add_group_command("gender", 60, true, true);
-    add_group_command("gender", 80, true, true);
-
+    bindatcmd("bodytype", "@gender::OnCall", 99, 99, false);
+    bindatcmd("body", "@gender::OnCall", 99, 99, false);
+    bindatcmd("type", "@gender::OnCall", 99, 99, false);
     bindatcmd("changesex", "@gender::OnCall", 99, 99, false);
+
+    add_group_command("gender", 40, true, false);
+    add_group_command("bodytype", 40, true, false);
+    add_group_command("body", 40, true, false);
+    add_group_command("type", 40, true, false);
     add_group_command("changesex", 40, true, false);
-    add_group_command("changesex", 50, true, true);
-    add_group_command("changesex", 60, true, true);
-    add_group_command("changesex", 80, true, true);
+
+    add_group_command("gender", 50, true, false);
+    add_group_command("bodytype", 50, true, false);
+    add_group_command("body", 50, true, false);
+    add_group_command("type", 50, true, false);
+    add_group_command("changesex", 50, true, false);
+
+    add_group_command("gender", 60, true, false);
+    add_group_command("bodytype", 60, true, false);
+    add_group_command("body", 60, true, false);
+    add_group_command("type", 60, true, false);
+    add_group_command("changesex", 60, true, false);
+
+    add_group_command("gender", 80, true, false);
+    add_group_command("bodytype", 80, true, false);
+    add_group_command("body", 80, true, false);
+    add_group_command("type", 80, true, false);
+    add_group_command("changesex", 80, true, false);
 }
