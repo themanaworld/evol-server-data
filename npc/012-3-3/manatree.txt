@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    The Manatree.
+// THIS IS A PLACEHOLDER!
+
+012-3-3,37,32,0	script	Manatree#012-3-3	NPC_MANATREE,{
+    speech
+        l("Magic is all around."),
+        l("You just must listen to it, and feel it deep inside."),
+        lg("Now go, search for the unknown.");
+
+    close;
+
+OnInit:
+    .sex = G_FEMALE;
+    .distance = 2;
+    end;
+}
