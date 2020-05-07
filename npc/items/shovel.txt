@@ -1,6 +1,7 @@
 // Evol scripts.
 // Author:
 //    Travolta
+//    Jesusalva
 // Description:
 //    NPC to use shovel (dig, bury etc)
 
@@ -9,10 +10,12 @@
     function CheckDigLocation {
         getmapxy(.@map$, .@x, .@y, 0);
 
-        if (getunits(BL_NPC, .@units, 1, .@map$, .@x - 1, .@y, .@x + 1, .@y + 1))
-        {
-            dispbottom(l("You cannot bury under a NPC!"));
-            return false;
+        if (.@map$ != "001-1") {
+            if (getunits(BL_NPC, .@units, 1, .@map$, .@x - 1, .@y, .@x + 1, .@y + 1))
+            {
+                dispbottom(l("You cannot bury under a NPC!"));
+                return false;
+            }
         }
 
         // TODO: we should have a way to check for GROUNDTOP collisions too
@@ -51,6 +54,13 @@
         .WorldDigRect_x2[.@size] = .@x2;
         .WorldDigRect_y2[.@size] = .@y2;
         return 1;
+    }
+
+    function AddMapDigRect {
+        .@m$=getarg(0);
+        .@x=getmapinfo(MAPINFO_SIZE_X, .@m$)-20;
+        .@y=getmapinfo(MAPINFO_SIZE_Y, .@m$)-20;
+        return AddDigRect(.@m$, 20, 20, .@x, .@y);
     }
 
     function PlayerIsTired {
@@ -96,21 +106,28 @@
     }
 
     function Bury {
-        narrator(S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("What would you like to bury?"));
+        narrator S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE, l("What would you like to bury?");
+        .@items$ = "";
 
-        mes("##B" + l("Drag and drop an item from your inventory.") + "##b");
+        mes "##B" + l("Drag and drop an item from your inventory.") + "##b";
+
         .@id = requestitem();
 
-        // You cannot bury: Items you don't have, your shovel, Bound Items, and items which are not dropped by any mobs.
-        // The "item not dropped by any mob" is temporary, and should be replaced by "items with trade restrictions" later. [JESUS]
-        // event coordinators can always bury
-        if (!is_evtc() && (.@id < 1 || countitem(.@id) < 1 ||
-            compare(getitemname(.@id), "shovel") || checkbound(.@id) ||
-            !getiteminfo(.@id, ITEMINFO_MAXCHANCE)))
-        {
-            mesc(l("You cannot bury this item!"));
-            return false;
+        // If ID is invalid, there's not enough items, it is an Iron Shovel, it is bound = Cannot bury
+        // NOBODY bypass notrade check. (ITR_NONE is 0)
+        if (.@id < 1) close;
+        if (.@id < 1 || countitem(.@id) < 1 || .@id == IronShovel || checkbound(.@id) ||
+            (!getiteminfo(.@id, ITEMINFO_TRADE))
+            ) {
+            @ShovelLastUsed = 0;
+            if (.@id == IronShovel || .@id == SteelShovel || checkbound(.@id))
+                mesc l("You cannot bury this item!");
+            else if (!getiteminfo(.@id, ITEMINFO_TRADE))
+                mesc l("This item is too precious, you cannot part with it!");
+            else
+                mesc l("You give up.");
+            close;
+            return;
         }
 
         .@amount = 1;
@@ -193,7 +210,17 @@ OnHour00:
 
 OnInit:
     .PlayerTiredTime = 20;
-    AddDigRect("001-1", 172, 26, 200, 48);
+
+    // Partial maps
+    AddDigRect("001-1",   172,  26, 200,  48);
+    AddDigRect("008-1-1",  32,  42,  46,  88);
+    AddDigRect("008-1-2",  40,  52, 114, 146);
+    AddDigRect("012-1",    44,  21, 139,  47);
+
+    // Whole maps
+    AddMapDigRect("008-1");
+    AddMapDigRect("008-3-5");
+    AddMapDigRect("012-3-1");
     end;
 
 }
@@ -235,3 +262,97 @@ function	script	shovel_adddigrect	{
     set getvariableofnpc(.WorldDigRect_y2[.@size], strnpcinfo(3)), .@y2;
     return 1;
 }
+
+// [Treasure Map] functions
+
+function	script	shovel_getcity	{
+    .@a$=getarg(0);
+
+    // else is not required (return prevails)
+    if (.@a$ == "001-1")
+        return l("Artis Hills");
+    if (.@a$ == "008-1")
+        return l("East Woodlands");
+    if (.@a$ == "008-1-1")
+        return l("West Woodland Beach");
+    if (.@a$ == "008-1-2")
+        return l("Swamps");
+    if (.@a$ == "008-3-5")
+        return l("Hurnscald Bandit Cave");
+    if (.@a$ == "012-1")
+        return l("Candor North");
+    if (.@a$ == "012-3-1")
+        return l("Candor Main Cave");
+
+    return .@a$;
+}
+
+function	script	shovel_randomtreasure	{
+    .@id=any(TreasureKey,CoinBag,CoinBag,CoinBag,Coal,
+                    Diamond,Ruby,Emerald,Sapphire,Topaz,Amethyst,
+                    MaggotSlimePotion, LargeMana, LargeHealing);
+    delitem TreasureMap, 1;
+    .@amount=any(1,1,2);
+    // Very Commons
+    if (.@id == CoinBag || .@id == MaggotSlimePotion || .@id == TreasureKey)
+        .@amount+=any(0,1,0,1,2);
+    // Super commons
+    if (.@id == LargeMana || .@id == LargeHealing)
+        .@amount+=rand2(0,8);
+    // Rares
+    if (.@id == Coal)
+        .@amount=1;
+    getitem .@id, .@amount;
+    ShovelQuests_AssignedMAP$="";
+    ShovelQuests_AssignedX=0;
+    ShovelQuests_AssignedY=0;
+
+    mesn strcharinfo(0);
+    mesc l("You found something!");
+    mesc l("It's %d %s.", .@amount, getitemlink(.@id));
+    next;
+    closeclientdialog;
+    return;
+}
+
+function	script	shovel_genrandtreasure	{
+    .@m$=any("008-1", "008-1-1", "008-1-2", "008-3-5",
+             "012-1", "012-3-1");
+
+    // Prepare good defaults
+    .@x1=.@y1=20;
+    .@x2=getmapinfo(MAPINFO_SIZE_X, .@m$)-20;
+    .@y2=getmapinfo(MAPINFO_SIZE_Y, .@m$)-20;
+
+    // Default overrides
+    if (.@m$ == "008-1-1") {
+        // West Woodland Beach
+        .@x1=32; .@y1=42;
+        .@x2=46; .@y2=88;
+    } else if (.@m$ == "008-1-2") {
+        // Swamps
+        .@x1=40;  .@y1=52;
+        .@x2=114; .@y2=146;
+    } else if (.@m$ == "012-1") {
+        // Candor North
+        .@x1=44; .@y1=139;
+        .@x2=21; .@y2=47;
+    }
+
+    // Dangerous, but I never had issues with this
+    do {
+        .@x=rand2(.@x1, .@x2);
+        .@y=rand2(.@y1, .@y2);
+    } while (!checkcell(.@m$, .@x, .@y, cell_chkpass));
+
+    // Success
+    if (checkcell(.@m$, .@x, .@y, cell_chkpass)) {
+        shovel_addquest(.@m$, .@x, .@y, "shovel_randomtreasure");
+        ShovelQuests_AssignedMAP$=shovel_getcity(.@m$);
+        ShovelQuests_AssignedX=.@x;
+        ShovelQuests_AssignedY=.@y;
+    }
+    return;
+}
+
+

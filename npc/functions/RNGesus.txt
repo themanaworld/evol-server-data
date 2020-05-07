@@ -1,8 +1,22 @@
 // Evol functions.
 // Authors:
 //    gumi
+//    jesusalva
 // Description:
 //    Randomization helper functions.
+
+// pseudo-fix randomness
+// rand2( min, max )
+function	script	rand2	{
+    if (getargcount() == 2) {
+        .@min=getarg(0)*100;
+        .@max=getarg(1)*100+99;
+    } else {
+        .@min=0;
+        .@max=getarg(0)*100-1;
+    }
+    return rand(.@min, .@max)/100;
+}
 
 
 
@@ -10,7 +24,7 @@
 //     returns one argument randomly
 
 function	script	any	{
-    return getarg(rand(getargcount()));
+    return getarg(rand2(getargcount()));
 }
 
 
@@ -19,7 +33,7 @@ function	script	any	{
 //     returns any member of the array
 
 function	script	any_of	{
-    return getelementofarray(getarg(0), getarrayindex(getarg(0)) + rand(getarraysize(getarg(0)) - getarrayindex(getarg(0))));
+    return getelementofarray(getarg(0), getarrayindex(getarg(0)) + rand2(getarraysize(getarg(0)) - getarrayindex(getarg(0))));
 }
 
 
@@ -54,7 +68,7 @@ function	script	relative_array_random	{
         set(getelementofarray(getarg(0), 0), .@total_prob);
     }
 
-    .@target_sum = rand(0, .@total_prob);
+    .@target_sum = rand2(0, .@total_prob);
 
     for (.@i = .@initial_index; .@sum < .@target_sum; .@i += 2) {
         if (.@is_str) {

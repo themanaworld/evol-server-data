@@ -60,6 +60,9 @@
                 l("You should check on the highest part of the cliff, I was hiding there."),
                 l("I hope to see you soon.");
             getitem IronShovel, 1;
+            // For questlog
+            setq2 ArtisQuests_QOnan, .move__rand_x+any(-1,1);
+            setq3 ArtisQuests_QOnan, .move__rand_y+any(-1,1);
             close;
         case 2:
             speech S_FIRST_BLANK_LINE | S_LAST_BLANK_LINE,
@@ -101,7 +104,7 @@ OnInit:
 }
 
 function	script	QOnanFoundItem	{
-    setq ArtisQuests_QOnan, 2;
+    setq ArtisQuests_QOnan, 2, 0, 0;
     // getitem SmallChest, 1;
     narrator S_FIRST_BLANK_LINE,
        l("You found a small chest, surprisingly heavy for it's size."),

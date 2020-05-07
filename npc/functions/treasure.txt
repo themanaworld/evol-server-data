@@ -1,0 +1,134 @@
+// Moubootaur Legends functions.
+// Author:
+//    Jesusalva
+// Description:
+//    Random Treasure Box Utils
+
+function	script	TreasureBox	{
+    .@id=getnpcid();
+    if (RNGTREASURE_DATE[.@id] > gettimetick(2)) {
+        mesc l("The chest is unlocked and empty.");
+        close;
+    }
+
+    mesc l("Open the chest?");
+    mesc l("Cost: 1 %s", getitemlink(TreasureKey)), 1;
+    if (!countitem(TreasureKey))
+        close;
+    next;
+    if (askyesno() == ASK_NO)
+        close;
+
+    delitem TreasureKey, 1;
+    mesc l("You open the chest!");
+    RNGTREASURE_DATE[.@id]=gettimetick(2)+CHEST_WAITTIME; // Minimum 15 minutes
+
+    .@empty=getvariableofnpc(.empty, strnpcinfo(0));
+    if (!.@empty) {
+        TREASURE_OPEN=TREASURE_OPEN+1;
+        .@t=TREASURE_OPEN;
+        .@r=rand(0,10000)-(readbattleparam(getcharid(3), UDT_LUK)*2);
+
+        // Select treasure list
+        // You're warranted a rare (5%) every 25 open chests
+        // There's also uncommons (20%) and commons (75%)
+        if (.@t == 1)
+            .@loot=WoodenBow;
+        else if (.@t % 25 == 0 || .@r < 500) // Rare: 5%
+            .@loot=any(AtroposMixture, ElixirOfLife, BigHealing, BigMana, DeathPotion, MagicFeather);
+        else if (.@r < 2500) // Uncommon: 20%
+            .@loot=any(FatesPotion, ClothoLiquor, LachesisBrew, RedPlushWine, TreasureMap, MediumHealing, MediumMana);
+        else // Common: 75%
+            .@loot=any(Bread, Fungus, Cheese, Aquada, Croconut, PiberriesInfusion, Carrot, SmallHealing, SmallMana);
+
+
+        inventoryplace .@loot, 1;
+        mesc l("You find %s inside!", getitemlink(.@loot));
+        getitem .@loot, 1;
+    } else {
+        mesc l("You find %s inside!", l("nothing"));
+    }
+    return;
+}
+
+// Animation code by Evol Team
+// 4144, gumi, Hal9000, Reid
+// (Random) Treasure Chest
+//  Authored by Jesusalva
+// Regenerates every 6 hours
+001-3-0,0,0,0	script	#chest_001-3-0	NPC_CHEST,{
+    /*
+    // Extract the map name - Seems unused
+    explode(.@ni$, .name$, "_");
+    .@map$=.@ni$[1];
+    //if (.@map$ == "") debugmes "Error";
+    */
+
+    // Conditionals
+    if (!.busy) {
+        TreasureBox();
+
+        specialeffect(.dir == 0 ? 24 : 25, AREA, getnpcid()); // closed ? opening : closing
+        .dir = .dir == 0 ? 2 : 6; // closed ? opening : closing
+        .busy = true; // lock until available again
+        initnpctimer;
+    } else {
+        mesc l("Someone looted this treasure box already...");
+    }
+    close;
+
+OnTimer160:
+    .dir = .dir == 6 ? 0 : 4; // closing ? closed : open
+    end;
+
+OnTimer500:
+    // It's closed: Make available and stop timer
+    if (.dir == 0) {
+        .busy = false;
+        stopnpctimer;
+    }
+    end;
+
+// Autoclose
+OnTimer60000:
+    .dir = 6; // closing
+    specialeffect(25, AREA, getnpcid()); // closing
+    setnpctimer 0;
+    end;
+
+OnInit:
+    .busy = false;
+    .distance = 2;
+
+OnClock0156:
+OnClock0756:
+OnClock1356:
+OnClock1956:
+    // Try to warp randomly to a walkable spot, up to 20 attempts
+    // Otherwise, it'll stay where it already is (but will close and refill).
+    .@e=0; .@x=0; .@y=0;
+   while (!checkcell(.map$, .@x, .@y, cell_chkpass))
+    {
+        if (.@e == 20) {
+            .@x=.x;
+            .@y=.y;
+            break;
+        }
+        // Remember the +20 -20 margin adjustment
+        .@x = rand2(20, getmapinfo(MAPINFO_SIZE_X, .map$)-20);
+        .@y = rand2(20, getmapinfo(MAPINFO_SIZE_X, .map$)-20);
+        ++.@e;
+    }
+    .busy=false;
+    movenpc .name$, .@x, .@y, 0;
+    end;
+}
+
+// Lets bring some treasure to The Mana World
+008-3-4,0,0,0	duplicate(#chest_001-3-0)	#chest_008-3-4	NPC_TREASURE
+008-3-5,0,0,0	duplicate(#chest_001-3-0)	#chest_008-3-5	NPC_TREASURE
+008-3-6,0,0,0	duplicate(#chest_001-3-0)	#chest_008-3-6	NPC_TREASURE
+
+012-3-1,0,0,0	duplicate(#chest_001-3-0)	#chest_012-3-1	NPC_TREASURE
+012-3-3,0,0,0	duplicate(#chest_001-3-0)	#chest_012-3-3	NPC_TREASURE
+

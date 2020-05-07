@@ -300,6 +300,8 @@
                 l("Only one more Fluffy to kill and it's done!");
 
             return;
+        } else if (getq(ArtisQuests_Enora) == 10) {
+            inventoryplace TreasureKey, 1;
         }
 
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
@@ -314,6 +316,10 @@
         {
             setq ArtisQuests_Enora, 11;
             enora_reward(140, 500);
+            getitem TreasureKey, 1;
+            mesn;
+            mesq l("Also, here is a %s. If you find a Treasure Chest somewhere, you can open it with this!", getitemlink(TreasureKey));
+            next;
         }
 
         return;
