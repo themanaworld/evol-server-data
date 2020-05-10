@@ -63,7 +63,7 @@ L_QuestStory:
 L_She:
     mes "";
     mesn;
-    mesq l("She is a good friend of mine... We wanted to marry a few weeks before her accident but...");
+    mesq l("She is a good friend of mine... We wanted to move together a few weeks before her accident but...");
     next;
 
     goto L_Quit2;
