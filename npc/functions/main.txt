@@ -6,6 +6,25 @@
 // Description:
 //    Build in functions.
 
+/**
+ * checks whether the given argument is a char name or account id
+ * and tries to convert it to an account id
+ *
+ * @arg 0 - char name or account id
+ * @return the account id
+ */
+function	script	nameid2id	{
+    if (getdatatype(getarg(0, "")) & DATATYPE_STR != 0) {
+        if (getarg(0, "") == "") {
+            return playerattached();
+        } else {
+            return getcharid(CHAR_ID_ACCOUNT, getarg(0));
+        }
+    } else {
+        return getarg(0);
+    }
+}
+
 function	script	menuimage	{
     return getarg(0) + "|" + getarg(1);
 }
