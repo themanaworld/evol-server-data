@@ -1,0 +1,162 @@
+// NOTE: no script other than the functions in this file should EVER access
+//       ##LEGACY[] or LEGACY[]
+
+/**
+ * gets the timestamp of when the attached or provided account was ported from
+ * the Legacy snapshot through Vault
+ *
+ * Example:
+ *     getlegacyporttime();
+ *
+ * @param 0? - char name / account id (defaults to attached player)
+ * @return timestamp (seconds)
+ */
+function	script	getlegacyporttime	{
+    // we dereference the variable (+ 0) to avoid accidental assignment
+    return 0+ getvariableofpc(##LEGACY[1], nameid2id(getarg(0, "")), 0);
+}
+
+/**
+ * gets the former account id that was assigned to the attached or provided
+ * account on the Legacy server
+ *
+ * Example:
+ *     getlegacyaccountid();
+ *
+ * @param 0? - char name / account id (defaults to attached player)
+ * @return former account id
+ */
+function	script	getlegacyaccountid	{
+    // we dereference the variable (+ 0) to avoid accidental assignment
+    return 0+ getvariableofpc(##LEGACY[0], nameid2id(getarg(0, "")), 0);
+}
+
+/**
+ * checks whether the attached or provided account is a former Legacy account
+ *
+ * Example:
+ *     islegacyaccount()
+ *
+ * @param 0? - char name / account id (defaults to attached player)
+ * @return true/false
+ */
+function	script	islegacyaccount	{
+    return getlegacyaccountid(getarg(0, "")) > 0;
+}
+
+/**
+ * gets the former char id that was assigned to the attached or provided
+ * character on the Legacy server
+ *
+ * Example:
+ *     getlegacycharid();
+ *
+ * @param 0? - char name / account id (defaults to attached player)
+ * @return former char id
+ */
+function	script	getlegacycharid	{
+    // we dereference the variable (+ 0) to avoid accidental assignment
+    return 0+ getvariableofpc(LEGACY[0], nameid2id(getarg(0, "")), 0);
+}
+
+/**
+ * checks whether the attached or provided character is a former Legacy char
+ *
+ * Example:
+ *     islegacychar()
+ *
+ * @param 0? - char name / account id (defaults to attached player)
+ * @return true/false
+ */
+function	script	islegacychar	{
+    return getlegacycharid(getarg(0, "")) > 0;
+}
+
+/**
+ * gets the timestamp of when the attached or provided account completed the
+ * tutorial on the Legacy server
+ *
+ * Example:
+ *     getlegacytuttime("player name")
+ *
+ * @param 0? - char name / account id (defaults to attached player)
+ * @return timestamp (seconds)
+ */
+function	script	getlegacytuttime	{
+    .@tut_var = getvariableofpc(LEGACY[2], nameid2id(getarg(0, "")), 0);
+    return .@tut_var < 0x7F ? 0 : .@tut_var;
+}
+
+/**
+ * gets the level the attached or provided player had on the Legacy server at
+ * snapshot time
+ *
+ * Example:
+ *     getlegacylevel("player name")
+ *
+ * @param 0? - char name / account id (defaults to attached player)
+ * @return base level
+ */
+function	script	getlegacylevel	{
+    return bitwise_get(getvariableofpc(LEGACY[1], nameid2id(getarg(0, "")), 0), 0x000000FF, 0);
+}
+
+/**
+ * gets the boss points the attached or provided player had on the Legacy server
+ * at snapshot time
+ *
+ * Example:
+ *     getlegacybosspoints("player name")
+ *
+ * @param 0? - char name / account id (defaults to attached player)
+ * @return boss points
+ */
+function	script	getlegacybosspoints	{
+    return bitwise_get(getvariableofpc(LEGACY[1], nameid2id(getarg(0, "")), 0), 0x7FFFFF00, 8);
+}
+
+
+
+// the functions below can be used to mimic a Legacy account for local testing
+
+
+/**
+ * mimics a legacy account for local testing
+ *
+ * Example:
+ *     setfakelegacyaccount("player name");
+ *
+ * @param 0? - char name / account id (defaults to attached player)
+ * @param 1? - legacy level (defaults to 99)
+ * @param 2? - legacy boss points (defaults to 5000)
+ * @return true/false
+ */
+function	script	setfakelegacyaccount	{
+    if (!debug) {
+        consolemes(CONSOLEMES_ERROR, "setfakelegacyaccount() can only be used in debug mode");
+        return false;
+    }
+
+    .@acc = nameid2id(getarg(0, ""));
+
+    if (.@acc < 1) {
+        // player not found
+        return false;
+    }
+
+    // set the legacy account id to the current account id
+    set(getvariableofpc(##LEGACY[0], .@acc), .@acc);
+
+    // set the port time to yesterday
+    set(getvariableofpc(##LEGACY[1], .@acc), time_from_days(-1));
+
+    // set the legacy tut var to 180 days ago
+    set(getvariableofpc(LEGACY[2], .@acc), time_from_days(-180));
+
+    // set the legacy level
+    bitwise_set(getvariableofpc(LEGACY[1], .@acc), 0x000000FF, 0, getarg(1, 99));
+
+    // set the legacy boss points
+    bitwise_set(getvariableofpc(LEGACY[1], .@acc), 0x7FFFFF00, 8, getarg(2, 5000));
+    return true;
+}

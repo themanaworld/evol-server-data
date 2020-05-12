@@ -14,12 +14,14 @@
  * @return the account id
  */
 function	script	nameid2id	{
-    if (getdatatype(getarg(0, "")) & DATATYPE_STR != 0) {
+    if ((getdatatype(getarg(0, "")) & DATATYPE_STR) != 0) {
         if (getarg(0, "") == "") {
             return playerattached();
         } else {
             return getcharid(CHAR_ID_ACCOUNT, getarg(0));
         }
+    } else if (getarg(0) == 0) {
+        return playerattached();
     } else {
         return getarg(0);
     }
