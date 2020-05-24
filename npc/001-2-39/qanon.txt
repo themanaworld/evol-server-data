@@ -23,6 +23,12 @@
     if (.@q < 5)
         notaMember();
 
+    // Faction report
+    mesc l("Your current standing with the Legion: %s", faction_standing("LEGION", false));
+    if (LEGION_RANK)
+        mesc l("You are a Legion's %s", legionrank());
+
+    // Main Menu
     select
         rif(.@q == 5, l("Lozerk told me to talk to you and join the legion.")),
         l("Thanks, sir Q'Anon.");

@@ -1,0 +1,26 @@
+// Eugene quest debug
+// Author:
+//    gumi
+
+function	script	QuestDebug23	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ArtisQuests_Fishman";
+        mes "---";
+        mes l("Quest state: @@", getq(ArtisQuests_Fishman));
+        next;
+
+        GenericQuestDebug ArtisQuests_Fishman,
+            l("Does not have the quest"), 0,
+            l("Eugene needs tentacles"), 1,
+            l("Gave tentacles, got reward"), 2;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

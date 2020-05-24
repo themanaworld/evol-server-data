@@ -1,0 +1,356 @@
+// Evol scripts.
+// Author:
+//    Micksha
+//    Jesusalva
+// Description:
+//    Henry, a Brotherhood member managing the Hideout in Artis.
+// TODO: Koga-related functions (possibly in another NPC)
+
+001-3-2,24,51,0	script	Henry#001-3-2	NPC_HENRY,{
+    function proposeFirstQuest;
+    function reportFirstQuest;
+    function proposeSecondQuest;
+    function reportSecondQuest;
+    function proposeThirdQuest;
+    function reportThirdQuest;
+    function completedHenry;
+
+    .@q=getq(ThiefQuests_Artis);
+    switch (.@q) {
+        case 0:
+            proposeFirstQuest();
+            break;
+        case 1:
+        case 2:
+            reportFirstQuest();
+            break;
+        case 3:
+            proposeSecondQuest();
+            break;
+        case 4:
+        case 5:
+            reportSecondQuest();
+            break;
+        case 6:
+            proposeThirdQuest();
+            break;
+        case 7:
+        case 8:
+            reportThirdQuest();
+            break;
+        default:
+            completedHenry();
+            break;
+    }
+    close;
+
+///////////////////////////////////////////////////////
+function proposeFirstQuest {
+    speech
+        l("Stop! Who's there?"),
+        l("Ah, its you. Sophialla already informed me. I can help you to go to Woodland, but you also could do me a favor."),
+        l("The Legion has been on my tail for a while. They're a bit annoying, you know."),
+        l("I mean, what's wrong with smuggling goods?! The town markets would have way less stuff otherwise. You can understand me, right? Don't answer."),
+        l("Anyway, you want to get on my smuggling ship, right? So you better help me out!"),
+        b(l("In Artis Townhall Archives,"))+" "+l("there is an entry about me."),
+        l("If they somehow catch me again, they'll use this entry as evidence to get me on a harsher punishment..."),
+        l("So please find my file on the archives and, I don't know, deal with it?"),
+        l("I am smart, I'll know if you lie. Anyway, just don't get caught inside the archives.");
+        //l("After messing with the Major and the Legion here, I can teach you lockpicking. Ah, and you may try to find my friend Nunia in Woodland, once you go there. She seems to be disappeared."),
+        //l("Call for Micksha and Jesusalva to implement all this, please.");
+    next;
+    mesc l("Accept this quest?"), 3;
+    if (askyesno() == ASK_YES) {
+        mesn;
+        mesq l("Great! Then I'll be counting on you!");
+        setq ThiefQuests_Artis, 1, 0, 2**rand2(17);
+    }
+    return;
+}
+
+function reportFirstQuest {
+    .@q=getq(ThiefQuests_Artis);
+    mesn;
+    mesq l("Have you already did what I asked you to?");
+    select
+        l("Not yet, but I'll be back."),
+        l("What was I supposed to do, again?"),
+        l("Yes, the file has been dealt with.");
+    mes "";
+    switch (@menu) {
+    case 1:
+        mesn;
+        mesq l("I'm not in hurry if you're not in hurry...");
+        break;
+    case 2:
+        speech
+            l("You should invade the townhall archives - I don't care how."),
+            l("There'll be a file about an... incident... with me. Deal with the file - I also don't care how."),
+            l("Try to don't get too much attention, or they'll arrest you as well.");
+        break;
+    case 3:
+        mesn;
+        mesq l("Hm... Then tell me, what was I wearing on the file picture?");
+        next;
+        select
+            l("A fancy hat."),
+            l("A shemagh or a shawl."),
+            l("Sunglasses."),
+            l("A santa hat."),
+            l("A top hat."),
+            l("A legion armor."),
+            l("An eye patch."),
+            l("A bandit hood."),
+            rif(.@q == 2, l("There was no picture on the file."));
+        mes "";
+        if (@menu != 9) {
+            mesc l("%s lunges at you!", strnpcinfo(1));
+            mesc l("You've been stabbed!"), 1;
+            mes "";
+            mesn;
+            mesq l("Now I know you're lying; Go find my file and deal with it!");
+            percentheal -15, 0;
+            close;
+        } else {
+            // WUT How did this even happen?!
+            if (.@q != 2)
+                atcommand("@kick "+strcharinfo(0));
+
+            // TODO: Reward
+            mesn;
+            mesq l("Heh... I hope you disposed of the file.");
+            next;
+            mesn;
+            mesq l("I'll keep my end on the bargain. The Thieves Association will bring you to the Argaes region.");
+            next;
+            mesn;
+            mesq l("Can't bring you directly to the town, but don't worry.");
+            next;
+            mesn;
+            mesq l("Anyway, here's some gold. I might have another task for you if you want.");
+            // Reward Reference: Lv 10
+            getexp 30*BaseLevel, 30;
+            Zeny+=300;
+            setq ThiefQuests_Artis, 3;
+            // Previous state already wiped this:
+            //setq2 ThiefQuests_Artis, false; // Restart wheels
+        }
+
+    }
+    return;
+}
+
+///////////////////////////////////////////////////////
+function proposeSecondQuest {
+    speech
+        l("Ah, its you again. Welcome back."),
+        l("So, if you want to go to Hurnscald, just whistle on the beach."), // FIXME Not Koga? Talk to another NPC, though.
+        l("Anyway, I still could use your help! You see, I would like to play tricks on the legion members during the night."),
+        l("For this, I would like you to to repair the secret passage to the Legion Building."),
+        l("Don't use the passage, you're not skilled enough and will be busted! Just repair it, it'll be enough.");
+    mesc l("You suspect that he is withholding information. Do he really only wants to do pranks? But then, do you care with what he wants to do inside?");
+    next;
+    mesc l("Accept this quest?"), 3;
+    if (askyesno() == ASK_YES) {
+        mesn;
+        mesq l("Great! Then I'll be counting on you!");
+        setq1 ThiefQuests_Artis, 4;
+        close;
+    }
+    return;
+}
+
+function reportSecondQuest {
+    mesn;
+    mesq l("Have you already did what I asked you to?");
+    next;
+    select
+        l("Not yet, but I'll get to it."),
+        l("What was I supposed to do, again?"),
+        l("Yes, the deed is done.");
+    mes "";
+    switch (@menu) {
+    case 1:
+        break;
+    case 2:
+        speech
+            l("In the sewers, there is a passage to the Legion basement."),
+            l("I want to get in there, so please do me a favor, and repair the gate. Don't try to go inside yourself, you'll be caught."),
+            l("Also - don't ask me why I want this. Thieves doesn't make questions. You better remember this!");
+        break;
+    case 3:
+        mesn;
+        mesq l("Great! I'll send a scout to check. I hope you didn't blew up everything by going there, you're not very discrete.");
+        next;
+        mes "...";
+        next;
+        .@q2=getq2(ThiefQuests_Artis);
+        if (.@q2 != 2) {
+            mesn;
+            mesq l("Nope, it is still sealed tight. Go do your job if you want a reward.");
+            break;
+        }
+        mesn;
+        mesq l("Alright - This will be... good. Anyway, I should give you a reward.");
+        next;
+        mesn;
+        mesq l("Take this %s. There is something good on it; Just use a %s.",
+               getitemlink(TreasureMap), getitemlink(IronShovel));
+
+        // Obtain the map, quest is done
+        inventoryplace TreasureMap, 1;
+        getitem TreasureMap, 1;
+        setq1 ThiefQuests_Artis, 6;
+
+        // Override the treasure location, if already existing
+        .@m$="001-1";
+        .@x=any(199, 200);
+        .@y=any(61,62);
+
+        shovel_addquest(.@m$, .@x, .@y, "shovel_randomtreasure");
+        ShovelQuests_AssignedMAP$=shovel_getcity(.@m$);
+        ShovelQuests_AssignedX=.@x;
+        ShovelQuests_AssignedY=.@y;
+
+        // TODO: If we add a daily legion quest, it must be "redemption"~ish
+        // That is, destroy points from all other three factions
+        // ...Also, is *this* specific code a good idea at all?
+        .@t$=faction_addrep("Legion", -15);
+        mesc .@t$;
+        .@t$=faction_addrep("Thief", 15);
+        mesc .@t$;
+        next;
+        mesn;
+        mesq l("I don't know how to get a shovel, though.");
+        next;
+        mesn;
+        mesq l("Remember: \"Use\" the map, and use the debugger (F10) or \"/where\" in chat to check your coordinates!");
+    }
+    return;
+}
+
+///////////////////////////////////////////////////////
+function proposeThirdQuest {
+    speech
+        l("Thanks for the help the other day."),
+        l("I have a beloved friend called Nunia, who handles the Thieves' Guild branch in Hurnscald."),
+        l("What, you thought we wouldn't have an organization and structure? Please. We can even smuggle in a major ship route!"),
+        l("Anyway, I haven't heard about her from quite a while, which is concerning."),
+        l("Could you please go there see if she is well?"),
+        l("I'll give you something... useful... If you want to pursue in being a thief. I'll even put a good word about you.");
+    next;
+    mesc l("Accept this quest?"), 3;
+    if (askyesno() == ASK_YES) {
+        mesn;
+        mesq l("Great! Then I'll be counting on you!");
+        setq1 ThiefQuests_Artis, 7;
+        close;
+    }
+    return;
+}
+
+function reportThirdQuest {
+    mesn;
+    mesq l("Have you already did what I asked you to?");
+    next;
+    select
+        l("Not yet, but I'll get to it."),
+        l("What was I supposed to do, again?"),
+        l("Yes, the deed is done.");
+    mes "";
+    switch (@menu) {
+    case 2:
+        speech
+            l("My beloved friend Nunia in Hurnscald went missing."),
+            l("I mean, I do not receive any letter from her for a while, so I got worried."),
+            l("I would like you to check how she is doing. You know, the Brotherhood could have got her and she is in need of rescue, or something else.");
+        break;
+    case 3:
+        .@q=getq(ThiefQuests_Artis);
+        mesn;
+        mesq l("Before you go on any further, I wanna see the proof that you talked with her.");
+        next;
+        if (.@q != 8) {
+            mesc l("You don't know what sort of proof he is looking for.");
+            break;
+        }
+
+        select
+            l("She has white hair, blue eyes, and always carry a big sack."),
+            l("She told me a passphrase.");
+        mes "";
+        if (@menu == 2) {
+            mesn;
+            mesq l("Liar; Nunia is not creative enough to come up with a passphrase of her own!");
+            next;
+            mesn;
+            mesq l("Besides, if she could give you a passphrase, then I wouldn't have sent ya.");
+            break;
+        }
+
+        mesn;
+        mesq l("That's Nunia alright. So how she is doing?");
+        next;
+        mesc l("You describe to him how Nunia is supposed to lay low for a while.");
+        next;
+        mesn;
+        mesq l("Of course. I'm glad she is safe. You know, we don't really care with this Legion versus Brotherhood stifle.");
+        next;
+        mesn;
+        mesq l("The brotherhood members here are friendly, but mostly because our interests coincide. In Hurnscald, where their main base is, we're enemies.");
+        next;
+        inventoryplace Lockpicks, 5;
+        mesn;
+        mesq l("Anyway, thanks for the report. I'll give you some %s.", getitemlink(Lockpicks));
+        next;
+        mesn;
+        mesq l("Whenever you find a vault, a door, or anything of interest, you can use it to pry it open.");
+        next;
+        mesn;
+        mesq l("Lockpicks are not keys, they can break quite easily. Also, you don't want anyone watching you.");
+        next;
+        mesn;
+        mesq l("If you are caught while lockpicking, you'll be arrested. So be careful.");
+        // TODO: Add a lock here where player can train without being arrested.
+        next;
+        mesn;
+        mesq l("I have other matters to attend do, so you'll have to excuse me.");
+        getitem Lockpicks, 5;
+        setq1 ThiefQuests_Artis, 9;
+        break;
+    }
+    return;
+}
+
+///////////////////////////////////////////////////////
+function completedHenry {
+    mesc l("He seems to ignore you.");
+    mesc l("Probably better not disturb him.");
+    return;
+}
+
+
+///////////////////////////////////////////////////////
+OnInit:
+    .sex = G_MALE;
+    .distance = 3;
+    end;
+
+OnGiantMaggot:
+    .@q=getq(ThiefQuests_Artis);
+    .@q2=getq2(ThiefQuests_Artis);
+    .@max=(.@q == 1 ? true : (.@q == 4 ? true : false));
+
+    // To drop, or not to drop...?
+    if (!.@q2 && .@max) {
+        if (rand2(10000) < 1800) {
+		    getitem Gearwheel, 1;
+            setq2 ThiefQuests_Artis, true;
+        }
+    }
+
+    // Eh, whatever, continue with what you were doing, script.
+    fix_mobkill(GiantMaggot);
+    end;
+}
+

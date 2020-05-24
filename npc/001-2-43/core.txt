@@ -1,0 +1,146 @@
+// Evol scripts.
+// Author:
+//    Micksha, Jesusalva
+// Description:
+//    Core of Henry's Quest
+
+001-2-43,25,24,0	script	#ArtisThiefBook_1	NPC_NO_SPRITE,{
+    .@q=getq(ThiefQuests_Artis);
+    .@q3=getq3(ThiefQuests_Artis);
+
+    // Add a forced delay to prevent abuse
+    if (.@q != 1) end;
+    getmapxy(.@m$, @x, @y, 0); // Save in @x/@y
+    dispbottom l("Sec, lemme look this.");
+    addtimer 1000, .name$+"::OnRead";
+    end;
+
+OnRead:
+    // Prepare the Quest Variables
+    .@q=getq(ThiefQuests_Artis);
+    .@q3=getq3(ThiefQuests_Artis);
+
+    // You must not have moved
+    getmapxy(.@m$, .@x, .@y, 0);
+    if (.@x != @x || .@y != @y || .@q != 1) {
+        dispbottom l("I'm so busy, I can look there later.");
+        end;
+    }
+
+    // Clear temporary variables
+    @x=@y=0;
+
+    // Extract the quest ID from name (or fail trying)
+    explode(.@ni$, .name$, "_");
+    .@id=atoi(.@ni$[1]);
+
+    // Check if the file was here
+    if (.@q3 == .@id) {
+        // TODO: Dialog: How will you deal with the file?
+        // .@t$=faction_addrep("Legion", 50)
+        // .@t$=faction_addrep("Thief", 50)
+        // mesc .@t$;
+        mes l("This is it - Henry's files!");
+        mes l("I need to decide swiftly what I'll do with them before I'm caught.");
+        next;
+        select
+            l("Hide the file below the pots"),
+            l("[Legion+] [Thieves-] Highlight the file"),
+            l("[Legion-] [Thieves+] Destroy the file");
+        mes "";
+        switch (@menu) {
+            case 2:
+                .@t$=faction_addrep("Legion", 50);
+                mesc .@t$;
+                .@t$=faction_addrep("Thief", -50);
+                mesc .@t$;
+                next;
+                break;
+            case 3:
+                .@t$=faction_addrep("Legion", -50);
+                mesc .@t$;
+                .@t$=faction_addrep("Thief", 50);
+                mesc .@t$;
+                next;
+                break;
+        }
+        dispbottom l("You notice by chance that the file does not have any picture on it.");
+        setq ThiefQuests_Artis, 2, 0, 0;
+        closeclientdialog;
+    } else {
+        dispbottom l("Not here, lets look elsewhere!");
+    }
+    end;
+
+OnInit:
+    .distance=1;
+    end;
+}
+
+// Duplicate the town files
+001-2-43,24,28,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_2	NPC_NO_SPRITE
+001-2-43,25,32,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_4	NPC_NO_SPRITE
+001-2-43,29,28,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_8	NPC_NO_SPRITE
+001-2-43,34,32,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_16	NPC_NO_SPRITE
+001-2-43,38,32,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_32	NPC_NO_SPRITE
+001-2-43,44,32,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_64	NPC_NO_SPRITE
+001-2-43,48,32,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_128	NPC_NO_SPRITE
+001-2-43,48,28,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_256	NPC_NO_SPRITE
+001-2-43,43,28,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_512	NPC_NO_SPRITE
+001-2-43,38,28,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_1024	NPC_NO_SPRITE
+001-2-43,33,28,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_2048	NPC_NO_SPRITE
+001-2-43,53,24,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_4096	NPC_NO_SPRITE
+001-2-43,44,24,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_8192	NPC_NO_SPRITE
+001-2-43,29,24,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_16384	NPC_NO_SPRITE
+001-2-43,39,24,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_32768	NPC_NO_SPRITE
+001-2-43,49,24,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_65536	NPC_NO_SPRITE
+// Fail-safe; Henry's record should not be here
+001-2-43,34,24,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_131072	NPC_NO_SPRITE
+//001-2-43,29,31,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_131072	NPC_NO_SPRITE
+//001-2-43,24,26,0	duplicate(#ArtisThiefBook_1)	#ArtisThiefBook_262144	NPC_NO_SPRITE
+
+
+// Logical Handler
+001-2-43,0,0,0	script	#ArtisThiefBook_0	NPC_HIDDEN,{
+    end;
+OnBust1:
+    if (getmap() != .map$)
+        end;
+    dispbottom col(l("90 seconds remaining."), 1);
+    addtimer 30000, "#ArtisThiefBook_0::OnBust2";
+    end;
+
+OnBust2:
+    if (getmap() != .map$)
+        end;
+    dispbottom col(l("60 seconds remaining."), 1);
+    addtimer 30000, "#ArtisThiefBook_0::OnBust3";
+    end;
+
+OnBust3:
+    if (getmap() != .map$)
+        end;
+    dispbottom col(l("30 seconds remaining."), 1);
+    addtimer 30000, "#ArtisThiefBook_0::OnBust4";
+    end;
+
+OnBust4:
+    if (getmap() == .map$) {
+        // Warp you elsewhere before actually arresting
+        // Otherwise, you would return at Archives without this timer =/
+        warp "001-1", 90, 55;
+        sleep2(10);
+
+        // Check if you'll be caught
+        if (ArrestedChances()) {
+            mesc l("Arrested!");
+            mesc l("You'll now spend a few minutes on the jail to reflect on your actions.");
+            ArrestPlayer(5);
+        } else {
+            mesc l("You're almost found out, but manage to make a quick escape!");
+            warp "001-1", 90, 55;
+        }
+    }
+    close;
+}
+

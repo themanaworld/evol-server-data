@@ -1,0 +1,66 @@
+// Evol scripts.
+// Author:
+//    Micksha, Jesusalva
+// Description:
+//    The Sewer Gates, and Wheels.
+
+// Brotherhood hideout, the door opens by itself if player
+// can now talk to Sopiahalla.
+001-3-1,30,19,0	script	#001-3-1_30_19	NPC_HIDDEN,0,0,{
+    end;
+
+OnTouch:
+    .@q=getq(General_Brotherhood);
+    updateSpotlight(true);
+    if (.@q)
+        warp "001-3-2", 30, 116;
+    end;
+}
+
+// The gate itself
+001-3-1,30,20,0	script	#Gate3	NPC_SEWER_GATE,2,2,{
+    .@q=getq(General_Brotherhood);
+    if (.@q)
+        mes l("This gate opens on its own for you... Should we go inside?");
+    else
+        mes l("This gate is closed.");
+    close;
+
+OnTouch:
+    .@q=getq(General_Brotherhood);
+    updateSpotlight(true);
+    // Opening
+    if (!.busy && .@q) {
+        .dir=2;
+        .busy=true;
+        initnpctimer;
+    }
+    end;
+
+// Open
+OnTimer2200:
+    .dir=4;
+    end;
+
+// Closing
+OnTimer8000:
+    .dir=6;
+    end;
+
+// Closed
+OnTimer10400:
+    .dir=0;
+    end;
+
+// Don't reopen immediately, wait a tiny bit
+OnTimer11000:
+    .busy=false;
+    stopnpctimer;
+
+// Initial configuration
+OnInit:
+    .busy=false;
+    .distance = 2;
+    end;
+}
+

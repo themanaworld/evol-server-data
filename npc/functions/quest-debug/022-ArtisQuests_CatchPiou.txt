@@ -1,4 +1,4 @@
-// Eugene quest debug
+// Piou quest debug
 // Author:
 //    gumi
 
@@ -7,15 +7,15 @@ function	script	QuestDebug22	{
     {
         clear;
         setnpcdialogtitle l("Quest debug");
-        mes "ArtisQuests_Fishman";
+        mes "ArtisQuests_CatchPiou";
         mes "---";
-        mes l("Quest state: @@", getq(ArtisQuests_Fishman));
+        mes l("Quest state: @@", getq(ArtisQuests_CatchPiou));
         next;
 
-        GenericQuestDebug ArtisQuests_Fishman,
+        GenericQuestDebug ArtisQuests_CatchPiou,
             l("Does not have the quest"), 0,
-            l("Eugene needs tentacles"), 1,
-            l("Gave tentacles, got reward"), 2;
+            l("Salem asks to catch piou"), 1,
+            l("Returned piou to Salem"), 2;
 
         if (@menuret < 0)
         {
