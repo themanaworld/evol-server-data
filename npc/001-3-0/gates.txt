@@ -1,0 +1,201 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    The Sewer Gates, and Wheels.
+
+001-3-0,90,62,0	script	#ArtisThiefGate_1	NPC_SEWER_GATE,0,0,{
+    // Extract the quest ID from name (or fail trying)
+    explode(.@ni$, .name$, "_");
+    .@id=atoi(.@ni$[1]);
+
+    .@q=getq(ThiefQuests_Artis);
+    .@q2=getq2(ThiefQuests_Artis);
+
+    // Check what you can do with the gate
+    if (.@q != .@id) {
+        mes l("This gate is closed.");
+        mesc l("No need to go through here, so lets not bother with it now.");
+    } else if (.@q2 != 2) {
+        mes l("This gate is closed.");
+        mesc l("It seems that it can be open using the mechanism on the side.");
+    } else {
+        mes l("This gate is open.");
+        mesc l("I should still be careful to don't get caught.");
+    }
+    close;
+
+OnTouch:
+    updateSpotlight(true);
+    end;
+
+OnOpenSesame:
+    // Opening
+    if (!.busy) {
+        .dir=2;
+        .busy=true;
+        initnpctimer;
+    }
+    end;
+
+// Open
+OnTimer2200:
+    .dir=4;
+    end;
+
+// Closing
+OnTimer8000:
+    .dir=6;
+    end;
+
+// Closed
+OnTimer10400:
+    .dir=0;
+    end;
+
+// Don't reply immediately, wait a tiny bit
+OnTimer11000:
+    .busy = false;
+    stopnpctimer;
+
+OnInit:
+    .busy = false;
+    .distance = 1;
+    end;
+}
+
+
+
+001-3-0,92,61,0	script	#ArtisThiefWheel_1	NPC_SEWER_WHEEL,{
+    // Extract the quest ID from name (or fail trying)
+    explode(.@ni$, .name$, "_");
+    .@id=atoi(.@ni$[1]);
+
+    .@q=getq(ThiefQuests_Artis);
+    .@q2=getq2(ThiefQuests_Artis);
+
+    if (.@q != .@id) {
+        speech
+            l("This wheel seems to be connected to the locked gate on the side."),
+            l("Having to reason to tinker with it, you don't.");
+        close;
+    }
+    speech
+        l("You try to move this wheel, but it is stuck. Something seems to be missing."),
+        l("Maybe some monster ate it, but what would be big enough to do that?!");
+
+    // Switch gearwheel status: 1(looted) 2(unlooted)
+    switch (.@q2) {
+    case 1:
+        // Looted but lost? D:
+        if (!countitem(Gearwheel)) {
+            mesc l("If we only had a %s.", getitemlink(Gearwheel));
+            close;
+        }
+
+        // Prompt player
+        mesc l("Should we install the %s and move it?", getitemlink(Gearwheel)), 1;
+        if (askyesno() == ASK_NO)
+            break;
+
+        delitem Gearwheel, 1;
+        setq2 ThiefQuests_Artis, 2;
+        // FALLTHROUGH
+    case 2:
+        mesc l("With the %s in place, it only takes a bit more effort to make it budge.", getitemlink(Gearwheel));
+        next;
+        closeclientdialog;
+        // Spin the wheel
+        if (!.busy) {
+            .dir = 4;
+            .busy = true;
+            initnpctimer;
+        }
+        // Open the gate
+        addtimer 500, "#ArtisThiefGate_"+.@id+"::OnOpenSesame";
+        break;
+    default:
+    }
+    close;
+
+// Done spinning?
+OnTimer4000:
+    .dir = 0;
+    .busy = false;
+    stopnpctimer;
+
+OnInit:
+    .busy = false;
+    .distance = 2;
+    end;
+}
+
+
+
+// We're missing a gate!
+001-3-0,56,44,0	duplicate(#ArtisThiefGate_1)	#ArtisThiefGate_4	NPC_SEWER_GATE,2,2
+001-3-0,58,43,0	duplicate(#ArtisThiefWheel_1)	#ArtisThiefWheel_4	NPC_SEWER_WHEEL
+
+
+///////////////////////////
+// The controlled warps
+001-3-0,90,61,0	script	#001-3-0_90_61	NPC_HIDDEN,0,0,{
+    end;
+
+OnTouch:
+    // No enter except when q1 and q2 matches
+    .@q=getq(ThiefQuests_Artis);
+    .@q2=getq2(ThiefQuests_Artis);
+    if (.@q != 1 || .@q2 != 2)
+        end;
+
+    // Delete previous timers. Makes easier to cheat but more reliable (FIXME)
+    deltimer("#ArtisThiefBook_0::OnBust1");
+    deltimer("#ArtisThiefBook_0::OnBust2");
+    deltimer("#ArtisThiefBook_0::OnBust3");
+    deltimer("#ArtisThiefBook_0::OnBust4");
+
+    // Archives: Begin
+    addtimer 30000, "#ArtisThiefBook_0::OnBust1";
+    warp "001-2-43", 51, 34;
+    end;
+}
+
+001-3-0,56,43,0	script	#001-3-0_56_43	NPC_HIDDEN,0,0,{
+    end;
+
+OnTouch:
+    // No enter except when quest state allows you to
+    // I thought in letting you use this passage and get busted anytime...
+    // ...........Better not. Animation will not like it, anyway.
+    .@q=getq(ThiefQuests_Artis);
+    .@q2=getq2(ThiefQuests_Artis);
+    if (.@q != 4 || .@q2 != 2)
+        end;
+
+    warp "001-2-40", 56, 40;
+    addtimer2(rand2(3000, 7000), .name$+"::OnBusted");
+    end;
+
+// Henry said to you don't use the gate, because you are not discrete enough.
+// Poor player, this is what happens for not paying attention to Henry's advise.
+OnBusted:
+    if (getmap() != "001-2-40")
+        end;
+
+    mesn l("Legion Officer");
+    mes l("HEY! How you got here!?");
+    next;
+    // Check if you'll be caught
+    if (ArrestedChances()) {
+        mesc l("Arrested!");
+        mesc l("You'll now spend a few minutes on the jail to reflect on your actions.");
+        ArrestPlayer(5);
+    } else {
+        mesc l("You're almost found out, but manage to make a quick escape!");
+        warp "001-1", 41, 36;
+    }
+    close;
+}
+
+

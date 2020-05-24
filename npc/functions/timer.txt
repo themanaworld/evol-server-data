@@ -1,3 +1,10 @@
+// addtimer2(<tick>, "<npc>::<event>")
+function	script	addtimer2	{
+    deltimer(getarg(1));
+    addtimer(getarg(0), getarg(1));
+    return;
+}
+
 // areatimer("<map>", <x1>, <y1>, <x2>, <y2>, <tick>, "<npc>::<event>")
 function	script	areatimer	{
     .@c = getunits(BL_PC, .@players, false, getarg(0), getarg(1), getarg(2), getarg(3), getarg(4));

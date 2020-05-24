@@ -1,0 +1,38 @@
+// Artis Thieves quest debug
+// Author:
+//    Jesusalva
+// Field 2: Internal use (gearwheels - odd: collected; even: used)
+// Field 3: Internal use (Archive where the file is)
+
+function	script	QuestDebug35	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "ThiefQuests_Artis";
+        mes "---";
+        mes l("Quest state: @@", getq(ThiefQuests_Artis));
+        .@q2=getq2(ThiefQuests_Artis);
+        mesf ("Gearwheels: %d (%s)", .@q2/2, (.@q2 % 2 ? "found" : "not found"));
+        mesf ("Henry's file: %d", getq3(ThiefQuests_Artis));
+        next;
+
+        GenericQuestDebug ThiefQuests_Artis,
+            ("Does not have the quest"), 0,
+            ("Accepted Townhall Quest"), 1,
+            ("Townhall arc complete"), 2,
+            ("Reward taken"), 3,
+            ("Accepted Legion Quest"), 4,
+            ("Legion arc comlete"), 5,
+            ("Reward taken (2)"), 6,
+            ("Nunia Quest Accepted"), 7,
+            ("Nunia arc comlete"), 8,
+            ("Reward taken (3)"), 9;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

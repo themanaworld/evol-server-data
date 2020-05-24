@@ -1,0 +1,59 @@
+// Evol scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    The Door for Town Archives
+
+001-2-8,38,30,0	script	#ArtisArchiveGate	NPC_NO_SPRITE,0,0,{
+    function breakIn;
+    function notToday;
+
+    .@q=getq(ThiefQuests_Artis);
+    mes l("The door is locked and you don't have the key.");
+    next;
+    mes l("This is probably where the town files are kept.");
+    if (.@q > 1) notToday();
+    if (.@q == 1) breakIn();
+    close;
+
+function notToday {
+    mesc l("I have nothing else to do down there.");
+    return;
+}
+
+function breakIn {
+    mesc l("Should we break in? We'll be in a bad situation if we're found out.");
+    next;
+    // Better to not use only a pine!
+    if (LockPicking(2, 3, false)) {
+        // Delete previous timers.
+        deltimer("#ArtisThiefBook_0::OnBust1");
+        deltimer("#ArtisThiefBook_0::OnBust2");
+        deltimer("#ArtisThiefBook_0::OnBust3");
+        deltimer("#ArtisThiefBook_0::OnBust4");
+        // Begin the catch timer (addtimer)
+        addtimer 30000, "#ArtisThiefBook_0::OnBust1";
+        warp "001-2-43", 27, 34;
+    } else {
+        if (ArrestedChances()) {
+            mesc l("Arrested!");
+            mesc l("You'll now spend a few minutes on the jail to reflect on your actions.");
+            ArrestPlayer(5);
+        } else {
+            mesc l("You're almost found out, but manage to make a quick escape!");
+            warp "001-1", 90, 55;
+        }
+
+    }
+    return;
+}
+
+OnTouch:
+    npctalkonce l("Dang! It is locked.");
+    end;
+
+OnInit:
+    .distance=1;
+    end;
+}
+

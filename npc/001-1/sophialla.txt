@@ -25,6 +25,7 @@
     mes "";
     if (@menu == 2)
     {
+        // TODO: Tell to look for Henry TODO: Change curious eye conditional
         speech
             l("If you visit the sewers again... You'll find secret passages..."),
             l("Look for the hideout, but tell no one about this. Then, say the password again.");

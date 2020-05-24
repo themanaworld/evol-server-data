@@ -1,0 +1,104 @@
+// The Mana World: rEvolt functions.
+// Authors:
+//    Jesusalva
+// Description:
+//    Faction utils
+// Factions:
+//    THIEF / MAGE / LEGION / BROTHERHOOD
+// Variables:
+//      FACTION_REP
+//          Your reputation with the faction (ally, friendly, cordial, enemy, ...)
+//      FACTION_EXP
+//          Your personal experience (=skill with the faction dealings)
+//      FACTION_RANK
+//          Your "level" in the faction, a mix of both above.
+
+
+// Returns, based on a 1-5 range, the title for ranking systems (system guilds)
+// legionrank() / brotherrank() / thiefrank() / magerank()
+function	script	legionrank	{
+    switch (LEGION_RANK) {
+        case 5: return l("Constable");
+        case 4: return l("Tengu");
+        case 3: return l("Terranite");
+        case 2: return l("Fluffy");
+        case 1: return l("Maggot");
+        case 0: return l("Citizen");
+        default: return l("Error");
+    }
+}
+function	script	brotherrank	{
+    switch (BROTHERHOOD_RANK) {
+        case 5: return l("Administrator");
+        case 4: return l("Senior Developer");
+        case 3: return l("Game Master");
+        case 2: return l("Developer");
+        case 1: return l("Contributor");
+        case 0: return l("Citizen");
+        default: return l("Error");
+    }
+}
+function	script	thiefrank	{
+    switch (THIEF_RANK) {
+        case 5: return l("Bandit Lord");
+        case 4: return l("Assassin");
+        case 3: return l("Rogue");
+        case 2: return l("Bandit");
+        case 1: return l("Thief");
+        case 0: return l("Citizen");
+        default: return l("Error");
+    }
+}
+function	script	magerank	{
+    switch (MAGE_RANK) {
+        case 5: return l("Elder Mage");
+        case 4: return l("Great Mage");
+        case 3: return l("Arch Mage");
+        case 2: return l("Mage");
+        case 1: return l("Initiate");
+        case 0: return l("Citizen");
+        default: return l("Error");
+    }
+}
+
+// faction_addrep( faction, amount )
+// Returns a dialog which can be used with mesc() or dispbottom()
+function	script	faction_addrep	{
+    .@fac$=strtoupper(getarg(0));
+    .@old=getd(.@fac$+"_REP");
+    setd(.@fac$+"_REP", .@old+getarg(1));
+    if (getarg(1) > 0)
+        return l("Reputation with %s Faction UP (+%d)!", getarg(0), getarg(1));
+    else
+        return l("Reputation with %s Faction DOWN (%d)!", getarg(0), getarg(1));
+
+    return;
+}
+
+// Returns standing with faction (THIEF/MAGE/LEGION/BROTHERHOOD)
+// An integer from 3 (ally) to -3 (enemy). Standings based on Hands of War;
+// faction_standing( faction{, integer=True} )
+function	script	faction_standing	{
+    .@fac$=strtoupper(getarg(0));
+    .@ret=getarg(1, true);
+    .@rep=getd(.@fac$+"_REP");
+    if (.@rep > 1000) {
+        return (.@ret ? 3 : "Ally"); // 1001 ~ inf.
+    } else if (.@rep > 500) {
+        return (.@ret ? 2 : "Friendly"); // 501 ~ 1000
+    } else if (.@rep > 100) {
+        return (.@ret ? 1 : "Cordial"); // 101 ~ 500
+    } else if (.@rep >= -100) {
+        return (.@ret ? 0 : "Neutral"); // -100 ~ +100
+    } else if (.@rep > -500) {
+        return (.@ret ? -1 : "Unfriendly"); // -101 ~ -500
+    } else if (.@rep > -1000) {
+        return (.@ret ? -2 : "Enemy"); // -501 ~ -1000
+    } else {
+        return (.@ret ? -3 : "Nemesis"); // -1001 ~ inf
+    }
+
+}
+// TODO: faction_checklvup()
+
+

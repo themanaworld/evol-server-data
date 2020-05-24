@@ -213,6 +213,7 @@ OnInit:
 
     // Partial maps
     AddDigRect("001-1",   172,  26, 200,  48);
+    AddDigRect("001-1",   198,  60, 201,  63);
     AddDigRect("008-1-1",  32,  42,  46,  88);
     AddDigRect("008-1-2",  40,  52, 114, 146);
     AddDigRect("012-1",    44,  21, 139,  47);
@@ -270,7 +271,7 @@ function	script	shovel_getcity	{
 
     // else is not required (return prevails)
     if (.@a$ == "001-1")
-        return l("Artis Hills");
+        return l("Artis East Beach");
     if (.@a$ == "008-1")
         return l("East Woodlands");
     if (.@a$ == "008-1-1")

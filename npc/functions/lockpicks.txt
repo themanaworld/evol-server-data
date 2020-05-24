@@ -1,0 +1,193 @@
+// TMW2/LoF Script
+// Author:
+//  Jesusalva
+// Description:
+//  Lockpicking core
+
+// Important variables:
+//  THIEF_EXP
+//      Experience on Thief Tree
+//  THIEF_RANK
+//      Position on the Thief Tree
+
+// LockPicking(num_pins, max_pins, min_rank=num_pins)
+// Returns 0 upon failure, 1 upon success
+// Closes script if an error happen or if you give up / cannot try.
+//
+// The 'next' is upon script responsability
+// Maximum pin number is infinite. Maximum Pin Positiors range from 2~5.
+// If you fail, you can end up having to start again. If you fail too much,
+// you'll be caught!
+function	script	LockPicking	{
+    // If you don't have a LockPick, you can't do this (useless)
+    if (!countitem(Lockpicks)) {
+        mesc l("You need a @@ to try this.", getitemlink(Lockpicks)), 1;
+        close;
+    }
+
+    .@d=getarg(0,1);
+    .@m=getarg(1,3);
+    .@minrank=getarg(2, .@d);
+
+    // Invalid Argument (kill script)
+    if (.@d < 1 || .@m < 2 || .@m > 5)
+        end;
+
+    // You must be rank (number of locks - 1) to try
+    if (THIEF_RANK+1 < .@minrank) {
+        mesc l("This lock is beyond your current capacity."), 1;
+        close;
+    }
+
+    // Create @pins array (the answer)
+    for (.@i=0; .@i < .@d;.@i++)
+        @pins[.@i] = rand2(1,.@m);
+
+    // Check if you'll try to open it.
+    mesc l("This lock is simple, maybe with your thief skills you can manage to pry it open. But beware, you can end up in jail!");
+    mesc l("Will you try to unlock it?");
+    if (askyesno() == ASK_NO)
+        close;
+
+    // Setup your attempt
+    delitem Lockpicks, 1;
+    @pos=0;
+    @chance=min(.@d*.@m-1, THIEF_RANK+.@d);
+    mesc l("You insert the hook pick inside the lock, and, without applying any tension, you discover there are only @@ pins to set.", .@d);
+
+    // You have as many attempts as pins and appliable strenghts.
+    // Each thief rank grants you an extra attempt.
+    // Each pin takes one attempt.
+    // It's not multiplied, so 3 pins with 3 positions: 6 chances, 9 possibilities.
+    // There's no penalty, but the attempt is counted working or not!
+    // Remember if you fail, all previous pins will be cleared (@pos)
+    do {
+        mesc l("You are trying to open the @@th pin. What will to do?", @pos+1);
+
+        menuint
+            rif(.@m >= 4, l("Apply no pressure")), 4,
+            rif(.@m >= 2, l("Apply soft pressure")), 2,
+            rif(.@m >= 1, l("Apply normal pressure")), 1,
+            rif(.@m >= 3, l("Apply strong pressure")), 3,
+            rif(.@m >= 5, l("Apply very strong pressure")), 5,
+            l("Give up!"), 0;
+
+        if (!@menuret) {
+            // 50% chance to save the lockpick
+            if (rand2(2) == 1)
+                getitem Lockpicks, 1;
+            else
+                dispbottom l("The lockpick broke.");
+            close;
+        }
+
+        // Is your guess correct?
+        if (@pins[@pos] == @menuret) {
+            mesc l("*click*");
+            @pos+=1;
+        } else {
+            mesc l("This didn't work. All pins are now unset!");
+            @pos=0;
+            @chance-=1;
+            // We don't need to clear console, each successful attempt IS counted.
+            // Therefore, unsetting 3 pins means you must do 3 new attempts!!
+            // The biggie is that you're running against time, here!!!
+            if (@chance < .@d && rand2(0, THIEF_RANK))
+                mesc l("Your thief instincts suggest you to hurry."), 1;
+        }
+
+        if (@chance <= 0)
+            break;
+
+        if (@pos >= .@d) {
+            // 33% chance to save the lockpick
+            if (rand2(3) == 1)
+                getitem Lockpicks, 1;
+            else
+                dispbottom l("The lockpick broke.");
+
+            // Get EXP and inform the success
+            if (THIEF_RANK)
+                THIEF_EXP += max(0, .@d*.@m-THIEF_RANK);
+            return 1;
+        }
+    } while (true);
+
+    // Failed
+    if (THIEF_RANK)
+        THIEF_EXP += 1;
+    return 0;
+}
+
+// Script helper to say if you were arrested or not
+function	script	ArrestedChances	{
+    .@runaway=cap_value(readbattleparam(getcharid(3), UDT_LUK)+readbattleparam(getcharid(3), UDT_AGI), 0, 200); // 20%
+    .@runaway+=125; // 12.5% base chance
+    .@runaway+=cap_value(THIEF_RANK*15, 0, 100); // real max 7.5%
+    // Max runaway chance: 40%
+    if (rand2(1000) < .@runaway)
+        return false;
+    return true;
+}
+
+// Script helper to actually arrest you. TODO: Arrest anyone
+// ArrestPlayer ( time-in-minutes )
+function	script	ArrestPlayer	{
+    .@t=getarg(0);
+
+    // We can't do anything without a player o.o
+    if (!playerattached())
+        return;
+
+    // You're already jailed so we do nothing and fail silently
+    if (getstatus(SC_JAILED)) {
+        return;
+    }
+
+    // Okay, we can arrest you
+    // TODO: Arrest player, preferably without GM commands D:
+    // (would then take an extra argument: map)
+    atcommand("@jailfor "+.@t+"mn "+strcharinfo(0));
+
+    // Notification
+    dispbottom l("You were arrested; Use %s for information about how long you will spend here.", b("@jailtime"));
+    return;
+}
+
+/*
+// Main script from Moubootaur Legends Vaults
+// LootableVault(tier, level, variable)
+function	script	LootableVault	{
+    .@tier=getarg(0)+1;
+    .@level=getarg(1);
+    .@var$=getarg(2);
+    mesn;
+    mesq l("There's a shiny safe here. How much money is inside? Nobody is looking at you, great!");
+    // 2*3 = 6 possibilities, 5 attempts
+    if (LockPicking(.@tier, .@level)) {
+        Zeny=Zeny+getd("$VAULT_"+.@var$);
+        setd("$VAULT_"+.@var$, 40);
+        mesn;
+        mesq l("Booty!");
+    } else {
+        mesn;
+        .@inch=(Zeny/100);
+        Zeny-=.@inch;
+        setd("$VAULT_"+.@var$, getd("$VAULT_"+.@var$)+.@inch);
+        if (ArrestedChances()) {
+            mesc l("Arrested!");
+            atcommand("@jailfor 5mn "+strcharinfo(0));
+        } else {
+            if (is_night())
+                .@p$=l("The darkness of night gives you cover.");
+            else
+                .@p$=l("Your agile legs and sheer luck allows you to outrun the cops.");
+            mesc l("You run as far as you could. %s", .@p$);
+            warp "000-1", 22, 22;
+        }
+    }
+    return;
+}
+*/
+
+
