@@ -449,6 +449,7 @@ OnInit:
     .currentWaveLevel = 1;
     .fightingActive = 0;
 
+    // TODO FIXME translation
     // here input some sentences "hello noob" like, the npc pick randomly a sentence
     setarray .mockingGreeting$[0], "Hey noob!", "Hey somethingwholooklikeawarrior...", "Sup' chibi.";
     setarray .mobID[0],0, Dummy, FireDummy, Dummy; // an array of dummies, one for each training

@@ -243,12 +243,16 @@
 
 OnShelfUse:
     if (openbookshelf())
-        read_book;
+        read_book();
     close;
 
 OnUse:
     if (openbook())
-        read_book;
+        read_book();
+    close;
+
+OnRemoteHelp:
+    read_book();
     close;
 
 OnInit:

@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Doors NPCs.
+
+001-2-35,23,29,0	script	#001-2-35_23_29	NPC_HIDDEN,0,0,{
+    end;
+
+OnTouch:
+    if (getq(Artis_Legion_Progress) < 4) {
+        dispbottom l("I am not a coward. I shall not give up!");
+        end;
+    }
+    ATLFightEnd();
+    warp "001-2-32", 32, 29;
+    end;
+}
+

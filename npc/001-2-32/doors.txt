@@ -1,23 +1,38 @@
 // Evol scripts.
 // Author:
 //    Reid
+//    Jesusalva
 // Description:
 //    Doors NPCs.
 
 001-2-32,33,29,0	script	ToFightRoom#001-2-32	NPC_HIDDEN,0,0,{
 
 OnTouch:
-    if (mobcount("001-2-35","all") > 0)
+    if (getq(Artis_Legion_Progress) < 3)
     {
         narrator
         l("You hear some sound behind the door."),
-        l("Somebody is probably training, better wait for him to finish.");
+        l("Somebody is probably training, better wait for them to finish.");
     }
     else
     {
-        warp "001-2-35", 24, 29;
+        .@q2=getq2(Artis_Legion_Progress);
+        .@mapn$="atl2@"+getcharid(0);
+        // FIXME This code is extremely unreliable
+        if (isinstance(.@q2) && .@q2 >= 0)
+        {
+		    instance_set_timeout(3600, 3600, .@q2);
+            warp .@mapn$, 24, 29;
+        } else {
+		    .@inst = instance_create("ATL "+getcharid(0), getcharid(3), IOT_CHAR);
+	        instance_attachmap("001-2-35", .@inst, false, .@mapn$);
+	        // Instance lasts one hour
+		    instance_set_timeout(3600, 3600, .@inst);
+		    instance_init(.@inst);
+	        setq2 Artis_Legion_Progress, .@inst;
+        }
+
     }
 
-    closeclientdialog;
     close;
 }

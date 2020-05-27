@@ -3,11 +3,49 @@
 //    Reid
 // Description:
 //    Artis's Legion of Aemil officier of the training room.
+//    Twin sister of Serena.
 
 001-2-34,29,27,0	script	Samantha	NPC_SAMANTHA,{
     mesn;
     mesq lg("Look who we have here, did you come for a training session?");
     close;
+
+    // <scratch>
+    // [ PC]: I was just looking around.
+    // [NPC]: Did not someone offer guidance?
+    // [NPC]: Enora was supposed to be helping you...
+    // [NPC]: ...but, she is young, and often absent-minded; did you ask?
+    // [NPC]: (Alt.) It seems you rushed ahead of her. Go back and talk to Enora.
+    //    ([Enora]: Beyond here is the fighting room o_o;)
+    //    ([Enora]: I... uh... well, you will need alies in there.)
+    //    ([Enora]: And... you see... this is my good outfit and...)
+    //    ([Enora]: ...I've only just cleaned up in there >.>)
+    //   But if you keep getting stronger; that will be the day.
+
+    // Alt-Ready:
+    // [NPC]: Beyond here is the Fight Room.
+    // [NPC]: [conditions]*
+    // [NPC]: Good-luck | Bonne-chance.
+
+    // (Alt.) [NPC]: I used to be an adventurer, like you.
+    // [NPC]: But there was no one to join for quests.
+    // [NPC]: So I enlisted for a post at this chapter.
+    // [NPC]: But my "friends" joined the Brotherhood!
+
+    // [NPC]: The Brotherhood knows a lot more about monsters.
+    // [NPC]: But they could not "break the Legion's power" without burning all cities to the ground.
+    // [NPC]: The cities grow fast, ruining farmers and peasants.
+    // [NPC]: Our differences lead to friction.
+
+    // Alt-What
+    // The secret is out: We really did create a mutant.
+    // None of the members were informed until it went out-of-control.
+    // [...]
+    // Muahaha-ha! My beautiful mutant. The city of Artis is mine.
+    // </scratch>
+
+    // Alt-Siege
+    // The city is being attacked. Go help the warriors and town-guard.
 
 OnInit:
     .sex = G_FEMALE;

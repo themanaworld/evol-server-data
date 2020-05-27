@@ -18,6 +18,7 @@
         l("Hello."),
         l("Can't you see I am reading? If you need something, tell me the secret password.");
     // TODO: Use a token to know password or whatever
+    // PS. "Sagratha" is not a typo.
     select
         l("Sorry to disturb you."),
         rif(getq(ArtisQuests_MonaDad) == 3, l("Sagratha is great.")),
@@ -30,6 +31,19 @@
             l("If you visit the sewers again... You'll find secret passages..."),
             l("Look for the hideout, but tell no one about this. Then, say the password again.");
         compareandsetq General_Brotherhood, 1, 2;
+    }
+    else if (@menu == 3)
+    {
+        mesn;
+        mesq l("If I just told you, it would not be a password anymore, right?");
+        next;
+        mesn;
+        mesq l("I'm afraid you'll need to figure that out on your own.");
+        next;
+        mesn;
+        mesq l("This password is very secret. I don't think you would learn it even if you rescued someone missing for weeks."); // FIXME: Provide a decent hint.
+        next;
+        mesc l("%s sighs.", .name$);
     }
 
     speech

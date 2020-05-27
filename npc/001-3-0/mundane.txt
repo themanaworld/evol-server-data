@@ -183,13 +183,13 @@ OnInstanceInit:
 }
 
 function	script	MundaneLogout	{
-    if (getq(ArtisQuests_MonaDad) != 2) end;
+    if (getq(ArtisQuests_MonaDad) != 2) return;
     setq ArtisQuests_MonaDad, 1;
     return;
 }
 
 function	script	MundaneDeath	{
-    if (getq(ArtisQuests_MonaDad) != 2) end;
+    if (getq(ArtisQuests_MonaDad) != 2) return;
     setq ArtisQuests_MonaDad, 1;
     dispbottom l("What a pity! You've died.");
 
