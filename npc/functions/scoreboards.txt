@@ -101,6 +101,22 @@ function	script	HallOfAcorns	{
     return;
 }
 
+function	script	HallOfATL	{
+    mes "";
+	mes l("##BHall Of Artis Legion Training Arena: TOP10##b");
+	mesf("1. %s (%d)", $@atl_name$[0], $@atl_value[0]);
+	mesf("2. %s (%d)", $@atl_name$[1], $@atl_value[1]);
+	mesf("3. %s (%d)", $@atl_name$[2], $@atl_value[2]);
+	mesf("4. %s (%d)", $@atl_name$[3], $@atl_value[3]);
+	mesf("5. %s (%d)", $@atl_name$[4], $@atl_value[4]);
+	mesf("6. %s (%d)", $@atl_name$[5], $@atl_value[5]);
+	mesf("7. %s (%d)", $@atl_name$[6], $@atl_value[6]);
+	mesf("8. %s (%d)", $@atl_name$[7], $@atl_value[7]);
+	mesf("9. %s (%d)", $@atl_name$[8], $@atl_value[8]);
+	mesf("10. %s (%d)", $@atl_name$[9], $@atl_value[9]);
+    return;
+}
+
 // HallOfGame()
 function	script	HallOfGame	{
     if ($MOST_HEROIC$)
@@ -159,6 +175,7 @@ OnInit:
 	.@nb = query_sql("select name, job_level from `char` ORDER BY job_level DESC LIMIT 15", $@hojlvl_name$, $@hojlvl_value);
 	.@nb = query_sql("select name, guild_lv from `guild` ORDER BY guild_lv DESC LIMIT 5", $@hoguild_name$, $@hoguild_value);
 	.@nb = query_sql("SELECT c.name, i.amount FROM `storage` AS i, `char` AS c WHERE i.nameid="+Acorn+" AND i.account_id=c.account_id ORDER BY i.amount DESC LIMIT 15", $@hoa_name$, $@hoa_value);
+	.@nb = query_sql("SELECT c.name, i.value FROM `char_reg_num_db` AS i, `char` AS c WHERE i.key='ATLRANK' AND i.char_id=c.char_id ORDER BY i.value DESC LIMIT 10", $@atl_name$, $@atl_value);
     consolemes(CONSOLEMES_DEBUG, "Scoreboards reloaded");
     if (!$@SCOREBOARD_BIND) {
         bindatcmd "scoreboard", "@scoreboard::OnCall", 0, 100, 0;
@@ -180,6 +197,7 @@ OnCall:
             l("Hall Of Job Level"),
             l("Hall Of Guilds"),
             l("Hall Of Acorns"),
+            l("Hall Of Artis Legion Training Arena"),
             l("Game Statistics"),
             l("Quit");
         mes "";
@@ -205,6 +223,10 @@ OnCall:
             next;
             break;
         case 6:
+            HallOfATL();
+            next;
+            break;
+        case 7:
             HallOfGame();
             next;
             break;

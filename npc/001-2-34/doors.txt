@@ -10,7 +10,7 @@
 001-2-34,23,29,0	script	ToTrainingRoom#001-2-34	NPC_HIDDEN,0,0,{
 OnTouch:
 
-        .@q2=getq2(ArtisQuests_TrainingLegion);
+    .@q2=getq2(ArtisQuests_TrainingLegion);
     // Map name limit: 4 chars (atl1)
     .@mapn$="atl1@"+getcharid(0);
     if (isinstance(.@q2) && .@q2 > 0) {

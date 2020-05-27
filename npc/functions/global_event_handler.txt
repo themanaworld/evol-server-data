@@ -30,6 +30,7 @@ OnPCLogoutEvent:
     callfunc("UnequipCookie");
     callfunc("MundaneLogout");
     callfunc("fishing_cleanup", @fishing_spot$);
+    callfunc("ATLFightEnd");
 
     // Variable cleanup
     @fishing_spot$ = "";
@@ -38,6 +39,7 @@ OnPCLogoutEvent:
 OnPCDieEvent:
     callfunc("ForcedUnmount");
     callfunc("MundaneDeath");
+    callfunc("ATLFightEnd");
     end;
 
 OnPCBaseLvUpEvent:
