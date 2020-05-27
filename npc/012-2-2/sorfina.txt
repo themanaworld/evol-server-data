@@ -7,12 +7,29 @@
 
 012-2-2,26,30,0	script	Sorfina	NPC_SORFINA,{
     speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        lg("Welcome, adventurer."),
+        l("I will never know why people barge in others' houses and get away with it."),
+        l("Ah, no, I'm not telling you to go away. Visits are always welcome, it gets lonely over time. But I don't have anything to offer you otherwise.");
+    if (LEGACY && countitem(ClothesPack)) goto L_Legacy;
+    close;
+
+L_Legacy:
+    next;
+    mesn;
+    mesq l("Actually, I see you have some really torn %s.", getitemlink(ClothesPack));
+    next;
+    mesn;
+    mesq l("I see things from several kinds on it - from iron, to steel, to bone, rock, leather, cotton, cashmere, and many others.");
+    next;
+    mesn;
+    mesq l("I wonder what sort of sea disaster could have destroyed them so badly. But, I believe they can be repaired with magic.");
+    next;
+    mesn;
+    mesq l("If only the developers - my next door neighbor - weren't so lazy, maybe I would be able to repair them or know someone able to do that. Sorry.");
     close;
 
 OnInit:
     .sex = G_FEMALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

@@ -7,12 +7,15 @@
 
 012-1,53,114,0	script	Ishi	NPC_ISHI,{
     speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        l("Welcome. I am Ishi, from the Monster Hunting Association."),
+        l("I only follow Aidan around, so make your questions to him instead.");
+    next;
+    mesn;
+    mesc l("Ishi seems to be very pensative of something, it is better if we don't disturb her.");
     close;
 
 OnInit:
     .sex = G_FEMALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

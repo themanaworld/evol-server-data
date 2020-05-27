@@ -3,16 +3,16 @@
 //    Micksha
 // Description:
 //    Aahna, a low quality NPC ;)
-// THIS IS A PLACEHOLDER!
+// TODO: Ask for random drops from Mana Bugs (daily quest)
 
 012-1,99,64,0	script	Aahna	NPC_AAHNA,{
     speech
         l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        l("I am looking at Mana Bugs. They always drop a bug leg, it is weird.");
     close;
 
 OnInit:
     .sex = G_FEMALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

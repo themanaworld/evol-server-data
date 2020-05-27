@@ -8,11 +8,24 @@
 012-2-1,38,30,0	script	Jessie	NPC_JESSIE,{
     speech
         l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        l("I am \"uncle\" Jessie and I teach the kids in Candor.");
+    next;
+    mesn;
+    mesq l("Actually... Do you know why the Piou crossed the road?");
+    next;
+    if (askyesno() == ASK_NO) {
+        mesn;
+        mesq l("Dang! I don't know either, but I'm too shy to ask.");
+    } else {
+        mesc l("Why the Piou crossed the road?");
+        input .@jessanswer$;
+        mesn;
+        mesq l("Pfft, you obviously don't know either!");
+    }
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

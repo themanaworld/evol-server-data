@@ -7,12 +7,13 @@
 
 012-1,121,126,0	script	Vincent	NPC_VINCENT,{
     speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        l("Scorpions everywhere!"),
+        l("Why do they show up, anyway? I thought Scorpions prefered deserts, not beaches."),
+        l("I need to study more... But... I want to play! And I want to make figurines!");
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

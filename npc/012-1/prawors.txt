@@ -7,12 +7,13 @@
 
 012-1,53,122,0	script	Prawors	NPC_PRAWORS,{
     speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        l("Arrhoy!"),
+        l("Micksha still haven't added a ship here, so you're stranded here FOREVER!"),
+        l("I hope you enjoy this town! Meanwhile, I wonder where I put my %s...", getitemlink(TreasureMap));
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

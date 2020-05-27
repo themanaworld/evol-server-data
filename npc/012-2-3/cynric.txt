@@ -6,13 +6,41 @@
 // THIS IS A PLACEHOLDER!
 
 012-2-3,27,28,0	script	Cynric	NPC_CYNRIC,{
-    speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+    mesn;
+    mesq l("Welcome to Candor's Bank!");
+    next;
+
+    do
+    {
+        select
+            l("I would like to store some items."),
+            l("I would like to perform money transactions."),
+            menuaction(l("Quit"));
+
+        mes "";
+
+        switch (@menu) {
+            case 1:
+                mesn;
+                mesq l("Sure thing! I'll have your items transported here from Artis before you realize!");
+                next;
+                closeclientdialog();
+                openstorage();
+                close;
+            case 2:
+                MerchantGuild_Bank();
+                break;
+            default:
+                closeclientdialog;
+                goodbye;
+                close;
+        }
+
+    } while (true);
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

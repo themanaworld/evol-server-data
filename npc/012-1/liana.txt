@@ -6,13 +6,21 @@
 // THIS IS A PLACEHOLDER!
 
 012-1,65,117,0	script	Liana	NPC_LIANA,{
-    speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+    mesn;
+    mesc l("*sighs*");
+    next;
+    mesn;
+    mesq l("Ayasha went to explore the caves in Candor. They said there was a pretty tree there.");
+    next;
+    mesn;
+    mesq l("...But then she saw the spiders and got scared.");
+    next;
+    mesn;
+    mesq l("Now she is crying looking for me. The poor kid.");
     close;
 
 OnInit:
     .sex = G_FEMALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

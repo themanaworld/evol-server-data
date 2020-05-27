@@ -6,13 +6,63 @@
 // THIS IS A PLACEHOLDER!
 
 012-2-3,42,30,0	script	Nyle	NPC_NYLE,{
-    speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+    mesn;
+    mesq l("Welcome to my fine shop.");
+    next;
+    closeclientdialog;
+    shop .name$;
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 4;
+    tradertype(NST_MARKET);
+
+    // Equips
+    sellitem BrimmedHat, -1, 35;
+    sellitem Armbands, -1, 20;
+    sellitem IronArmbands, -1, 20;
+    sellitem BrownTrousers, -1, 30;
+    sellitem LousyMoccasins, -1, 20;
+    sellitem WoodenSword, -1, 50;
+    sellitem PiouSlayer, -1, 15;
+    sellitem LeatherShield, -1, 30;
+    sellitem TrainingArrow, -1, 20000;
+
+    // Edible
+    sellitem Bread, -1, 15;
+    sellitem CommonCarp, -1, 8;
+    sellitem GrassCarp, -1, 7;
+    sellitem PiberriesInfusion, -1, 200;
+    sellitem FatesPotion, -1, 100;
+    sellitem ClothoLiquor, -1, 50;
+    sellitem LachesisBrew, -1, 30;
+    sellitem AtroposMixture, -1, 10;
+    sellitem ElixirOfLife, -1, 2;
+
+    // Misc
+    sellitem PiouEgg, -1, 25;
+    end;
+
+OnClock0001:
+    restoreshopitem BrimmedHat, 35;
+    restoreshopitem Armbands, 20;
+    restoreshopitem IronArmbands, 20;
+    restoreshopitem BrownTrousers, 30;
+    restoreshopitem LousyMoccasins, 20;
+    restoreshopitem WoodenSword, 50;
+    restoreshopitem PiouSlayer, 15;
+    restoreshopitem LeatherShield, 30;
+    restoreshopitem TrainingArrow, 20000;
+    restoreshopitem Bread, 15;
+    restoreshopitem CommonCarp, 8;
+    restoreshopitem GrassCarp, 7;
+    restoreshopitem PiberriesInfusion, 200;
+    restoreshopitem FatesPotion, 100;
+    restoreshopitem ClothoLiquor, 50;
+    restoreshopitem LachesisBrew, 30;
+    restoreshopitem AtroposMixture, 10;
+    restoreshopitem ElixirOfLife, 2;
+    restoreshopitem PiouEgg, 25;
     end;
 }
