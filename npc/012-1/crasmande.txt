@@ -7,12 +7,13 @@
 
 012-1,41,44,0	script	Crasmande	NPC_CRASMANDE,{
     speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        l("I'm scared!"),
+        l("Hasan is bullying me!"),
+        l("%%i");
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

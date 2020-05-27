@@ -7,12 +7,12 @@
 
 012-1,65,111,0	script	Ayasha	NPC_AYASHA,{
     speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        l("Hey adventurer!"),
+        l("I lost Liana, she was taking care of me; Have you seen her around? %%i");
     close;
 
 OnInit:
     .sex = G_FEMALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

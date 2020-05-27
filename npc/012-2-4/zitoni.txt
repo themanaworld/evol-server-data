@@ -67,11 +67,11 @@ L_mick:
     next;
     mesq l("Can you do a last task for me and try to find Micksha? He sure can help me to look a bit less ugly.");
     next;
-   mesq("That would be so helpful! Please return soon to tell me about your progress.");
+    mesq("That would be so helpful! Please return soon to tell me about your progress.");
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 3;
     end;
 }

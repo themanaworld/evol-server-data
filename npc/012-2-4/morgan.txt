@@ -8,14 +8,14 @@
 012-2-4,26,37,0	script	Morgan	NPC_MORGAN,{
     speech
         l("Hello Wanderer."),
-        l("I am Morgan, the alchimist."),
+        l("I am Morgan, the alchemist."),
         l("(People do not like to hear the word 'witch' so much, as we live close to Hurnscald)."),
-        l("Unfortunately my apprentice Zitoni does not bring fresh potions, so if you need something you should come back later.");
+        l("Unfortunately my apprentice Zitoni does not bring me fresh potions, so if you need something you should come back later.");
 
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

@@ -7,12 +7,14 @@
 
 012-1,53,110,0	script	Kaan	NPC_KAAN,{
     speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        l("Welcome to Candor!"),
+        l("Such a bright shine day! I would love to tell you stories about this town."),
+        l("But not now, I'm in the mood to stay under the sun for a while longer."),
+        l("I hope Tanisha is not slacking off. I would hate having to go check on her.");
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

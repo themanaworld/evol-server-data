@@ -8,11 +8,12 @@
 012-2-1,48,34,0	script	Tanisha	NPC_TANISHA,{
     speech
         l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        l("Kaan asked me to kill maggots, which I hate! But I'm not seeing any..."),
+        l("I wonder if things were supposed to be this way?");
     close;
 
 OnInit:
     .sex = G_FEMALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

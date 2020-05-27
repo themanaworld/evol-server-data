@@ -7,12 +7,14 @@
 
 012-1,52,114,0	script	Aidan	NPC_AIDAN,{
     speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+        l("Welcome. I am Aidan, from the Monster Hunting Association."),
+        l("We host daily and weekly monster hunting objectives to adventurers based on their level."),
+        l("We aren't open yet because Ishi still can't decide how she will hand out the rewards."),
+        l("But once we open, remember to come to me to sign in our tasks and also to claim rewards with Ishi before they expire!");
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }

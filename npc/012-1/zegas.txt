@@ -6,13 +6,32 @@
 // THIS IS A PLACEHOLDER!
 
 012-1,48,105,0	script	Zegas	NPC_ZEGAS,{
-    speech
-        l("Welcome."),
-        l("Someone was too lazy to even write a placeholder text, so please come back later");
+    mesn;
+    mesc l("*sighs*");
+    next;
+    mesn;
+    mesq l("I need someone to clean the storage room...");
+    next;
+    mesn;
+    mesq l("Hey, you! Don't you want to clean the storage room for me?");
+    next;
+    select
+        l("Yes, of course!"),
+        l("'course not!");
+    mes "";
+    mesn;
+    if (@menu == 2) {
+        mesq l("Nobody ever does...");
+    } else {
+        mesc l("Zegas hands you a broom.");
+        mesq l("Good, now start cleaning it!");
+        // TODO: Maybe we actually could have you cleaning the room boxes.
+        // Then you find a peculiar dusty utensil inside. Then, some quest begins.
+    }
     close;
 
 OnInit:
     .sex = G_MALE;
-    .distance = 2;
+    .distance = 4;
     end;
 }
