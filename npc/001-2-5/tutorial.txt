@@ -14,7 +14,7 @@
         setnpcdialogtitle l(.book_name$);
 
             narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                l("This book contains the knowledge collected by ukars about how the world works.");
+                l("This book contains the knowledge collected by Ukar scholars about how the world works.");
 
             @menu = 0; // reset for the rif
 
@@ -46,8 +46,8 @@
                 switch (@menu) {
                     case 1:
                         narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                            l("Merchants like to buy body parts of killed monsters and animals because they can make items and equipment."),
-                            l("Some others also like to buy them to keep as trophies. Either way, you can make some money with that."),
+                            l("Merchants like to buy body parts of killed monsters and animals because they can use them to make items and equipment."),
+                            l("Some also like to buy them to keep as trophies. Either way, you can make some money with that."),
                             l("You must find someone willing to buy, they usually will buy almost anything you have, even items which cannot be replaced, so be careful."),
                             l("You must \"add\" the items you plan on selling, and then press \"sell\" to confirm. You'll have this time to review."),
                             l("Some, but not all, from the rare or non-replaceable items will have a warning when you try to sell them."),
@@ -56,18 +56,18 @@
                     case 2:
                         narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
                             l("Monsters are everywhere. They're a plague we're trying to get rid of."),
-                            l("There are three types of monsters: the aggressive, the neutral, and the collaborative."),
-                            l("Aggressors always know when they are in danger! Therefore, they are always on standby, attacking anyone who appears ahead."),
+                            l("There are three types of monsters: aggressive, neutral, and collaborative."),
+                            l("Aggressors always know when they are in danger! Therefore, they are always on standby, attacking anyone who gets too close."),
                             l("Neutral monsters do not have such a sense of danger."),
                             l("They will not attack anyone unless they are attacked first."),
-                            l("Normally, collaborative monsters behave like neutral monsters. Unless someone of the same species is in danger, at which point they all take an aggressive stance against the aggressor."),
+                            l("Normally, collaborative monsters behave like neutral monsters. Unless someone of the same species is in danger, at which point they all become aggressive towards their attacker."),
                             l("It's always good to see if you have a lot of them around before you think about attacking one!"),
                             l("Also, most monsters get enraged and will attack whoever is closest to them, regardless of anything else."),
                             l("Not all monsters will do this, but most will. So if you see a monster running after a player and you stand in the way..."),
                             l("...It'll most likely attack you, instead."),
                             l("One last thing to keep in mind... If you are surrounded, you'll suffer an agility and defense penalty."),
-                            l("But if you and other players surrounds the monster instead, they'll suffer the same penalties!"),
-                            l("Any boss which was previously unhittable, can be hit with appropriate number of attackers.");
+                            l("But if you and other players surround the monster instead, they'll suffer the same penalties!"),
+                            l("Any boss which may have previously been impossible to hit, can be hit with a greater number of attackers working together.");
                         break;
                     case 3:
                         narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
@@ -78,32 +78,32 @@
                         break;
                     case 4:
                         narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                            l("People vary greatly in the amount of strength, agility, dexterity, intelligence, vitality and luck."),
-                            l("%s helps you carry more items and also gives you a more forceful blow, but ends up not being very interesting if you focus on weapons that use projectiles, such as the bow.", b(l("Strength"))),
-                            l("Greater %s allows you to attack faster and has a greater chance of evading attacks.", b(l("agility"))),
-                            l("Your %s determines your ability to hit monsters and is valuable to players who prefer weapons that use projectiles.", b(l("dexterity"))),
+                            l("People vary greatly in their amounts of strength, agility, dexterity, intelligence, vitality and luck."),
+                            l("%s helps you carry more items and also gives you a more forceful blow, but ends up not being very useful if you focus on weapons that use projectiles, such as a bow.", b(l("Strength"))),
+                            l("Greater %s allows you to attack faster and has a better chance of evading attacks.", b(l("agility"))),
+                            l("Your %s determines your ability to hit targets and is vital to players who prefer weapons that use projectiles.", b(l("dexterity"))),
                             l("%s determines how many blows you can take before you die. It also affects status effects, like poison.", b(l("Vitality"))),
-                            l("%s is very useful for alchemy and magic, but nowadays there are few opportunities to use it.", b(l("Intelligence"))),
+                            l("%s is very useful for alchemy and magic, spell casters need to use their brains above all, so they will find this necessary.", b(l("Intelligence"))),
                             l("Your %s determines several small things, including critical attacks, but DOES NOT affect drop rates.", b(l("luck"))),
-                            l("A critical hit deals added damage and disregards defense. A critical always hit, although it can be blocked just fine."),
-                            l("On a side note, more defense is always good, but the damage won't decrease on the same rate that defense raises."),
-                            l("Also note that if you are in overweight, your natural regen will halt. 90% in weight, and you won't be able to attack."),
-                            l("I recommend that you train your agility a great deal, since most monsters out there aren't really amazing at hitting you."),
-                            l("For now do not take too much time to work on your intelligence, after all, magic use is very restricted nowadays."),
+                            l("A critical hit deals extra damage and disregards defense. A critical always hits, although it can be blocked as normal."),
+                            l("On a side note, more defense is always good, but the damage won't decrease at the same rate as defense rises."),
+                            l("Also note that if you are over your carrying capacity, your natural health regeneration will stop. 90% over the weight limit, and you won't be able to attack."),
+                            l("I recommend that you train your agility a great deal, since most monsters out there aren't really as good at hitting you."),
+                            l("For now do not take too much time to work on your intelligence, after all, magic use is very restricted nowadays."), // TO REMOVE WHEN APPROPRIATE
                             l("You can allocate point on those attributes every time you level up."),l("There's also a job level, which produces green sparkles when you level it."),
                             l("Job Level and certain equips can affect your status. You'll see the modifiers with a + sign."),
                             l("Do note that Job Level gives you skill points, and the status bonuses are really minor.");
                         break;
                     case 5:
                         narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                            l("NPC's or non-playable characters are characters that are always in the game, offering a wide variety of reactions, from a simple friendly conversation to a desperate request for help."),
+                            l("NPCs or non-playable characters are characters that are always in the game, offering a wide variety of reactions, from a simple friendly conversation to a desperate request for help."),
                             l("%s People usually doesn't shout, they talk. Because this, if you are too far, an NPC won't hear you.",b(l("IMPORTANT:"))),
-                            l("When this is the case, you should get closer to the NPC, until they hear you."), l("If you are above the NPC and they still doesn't hear you, this mean they are deaf - you should report this!");
+                            l("When this is the case, you should get closer to the NPC, until they hear you."), l("If you are above the NPC and they still don't hear you, this mean there is a problem with them - you should report this!");
                         break;
                     case 6:
                         narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                            l("Magic was banned for lore reasons? Seriously, after the mana war, only small tricks are allowed."),
-                            l("It was heard about some adventurers whom obtained and use advanced magic, but that is still seen with bad eyes.");
+                            l("Magic has been restricted for a long time. Seriously, after the Mana War, only small tricks are possible. Something about impaired flow of Mana..."),
+                            l("It's not impossible to wield more powerful magic, but it takes some special individuals with the right training and skills. Regardless, the Legion still doesn't appreciate magic use.");
                         break;
                     case 7:
                         mes "";
@@ -113,40 +113,40 @@
                         narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
                             /*
                             // TODO: Implement Day/Night Cycle
-                            mes l("First of, there's a day/night cycle on the game.");
+                            mes l("Firstly, there's a day/night cycle in the world of Gasaron.");
                             if (is_night())
                                 mes l("It's currently night, that's why Candor is dark.");
                             else
                                 mes l("It's currently day, but when night falls, Candor will become darker.");
                             next;
-                            mes l("During night, the monsters usually respawn faster. That can be a problem with aggressive monsters.");
-                            mes l("I also hear fisherman likes to fish at night. They say the catch is bigger, if you understand me.");
+                            mes l("During night, monsters usually respawn faster. That can be a problem with aggressive monsters.");
+                            mes l("I also hear fishermen like to fish at night. They say the catch is bigger, if you understand me.");
                             next;
                             */
                             /*
                             // TODO: Implement Weather Cycle
-                            mes l("There's also weather, meaning it can rain, snow, or even happen a sandstorm. They are usually cosmetic, but...");
-                            mes l("...who knows if there isn't a secret in that?");
+                            mes l("There's also weather, meaning it can rain, snow, or there could even be a sandstorm. It usually doesn't affect us much apart from looking pretty, but...");
+                            mes l("...who knows, there could even be secrets behind the weather...");
                             next;
                             */
                             /*
                             // TODO: Implement Season Cycle
-                            mes l("Besides this, there is Seasons. You know, summer, autumn, winter and spring.");
-                            mes l("Each season unlocks a set of quests and drops which can only be obtained on the season.");
+                            mes l("Besides this, there is seasons. You know, Summer, Autumn, Winter and Spring.");
+                            mes l("Each season unlocks a set of quests and drops which can only be obtained in that season.");
                             next;
-                            mes l("Think on Season Quests as a yearly quest which you have three months to do.");
+                            mes l("Think of Season Quests as yearly quests which you have three months to do.");
                             mes l("We follow north hemisphere seasons in case you're wondering.");
                             next;
                             */
                             // We commented everything so we need something here
-                            l("There is no day/night, weather, or season cycle in TMW yet.");
+                            l("There is no day/night, weather, or season cycle in this world yet, but who knows... maybe one day, eh?");
                         break;
                     case 9:
                         narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
                             l("Experience can be gained by completing quests and killing monsters. When you accumulate enough experience, you'll level up!"),
                             l("Each level up will buff your base stats, and give you stats points to allocate."),
                             l("There's also a job level, which produces green sparkles when you level it."),
-                            l("Job Level and certain equips can affect your status. You'll see the modifiers with a + sign.");
+                            l("Job Level and certain equipment can affect your status. You'll see the modifiers with a + sign.");
                             /*
                             // TODO: Evol doesn't have experience per mob level adjustment yet, nor have @monsterinfo for all players
                             mes l("Also, you'll get more experience by killing monsters stronger than you, and less experience by killing monsters weaker than you.");
@@ -158,10 +158,10 @@
                         narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
                             l("You can see all your equipment by pressing the F3 key."),
                             l("To equip or unequip an item, select it and press the 'Equip' or 'Unequip' button. You can not 'Equip' or 'Unequip' when talking to someone."),
-                            l("Dress up! Do not walk without clothes! Always wear your items! They leave you less vulnerable to attacks and stronger to defeat your opponents."),
+                            l("Dress up! Do not walk without clothes! Always wear your items! They leave you less vulnerable to attacks and make you stronger."),
                             /*
                             // TODO: Evol doesn't have equipment set bonuses yet
-                            mes b(l("Remember that some equipment sets will give you hidden stat bonuses! So dress yourself in a fashion way, if possible!"));
+                            mes b(l("Remember that some equipment sets will give you hidden stat bonuses! So dress yourself in a fashionable way, if possible!"));
                             next;
                             */
                             l("To discard an item you no longer want, select it and press the 'Discard' button. Generic items can be discarded or sold."),
@@ -186,8 +186,8 @@
                         break;
                     case 12:
                         narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                            l("Note down. To hunt a target you must click the primary mouse button on it. Avoid fighting monsters or citizens much stronger than you. %s", b(l("You will lose experience if you are defeated."))),
-                            l("Within the cities is a place safe enough not to be attacked by another person (except during wars). But outside of them there are some places where the citizen can be attacked by enemies from other realms, or even by someone from the same realm."),
+                            l("Note down. To hunt a target you must click the primary mouse button on it. Avoid fighting monsters or people much stronger than you. %s", b(l("You will lose experience if you are defeated."))),
+                            l("Within the cities it is safe enough not to be attacked by another person (except during wars). But outside of them there are some places where a citizen can be attacked by enemies from other realms, or even by someone from the same realm."),
                             l("There are some stones scattered around the world that mark your point of return in case of defeats. Some ship chests may also serve as a return point. You can also select some beds in case of defeats."),
                             l("Almost all creatures drop useful items when defeated. To get the dropped item press the '###keyPickup;' key next to the item or click the primary button on the item."),
                             l("To focus on a creature, press the '###keyTargetMonster;' key. To focus on another citizen, press the '###keyTargetPlayer;' key. To attack the focused target press the '###keyAttack;' key or click the primary button on the creature."),

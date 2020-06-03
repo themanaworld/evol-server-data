@@ -31,7 +31,7 @@
     // Main Menu
     select
         rif(.@q == 5, l("Lozerk told me to talk to you and join the legion.")),
-        l("Thanks, sir Q'Anon.");
+        l("Thanks, General Q'Anon.");
     mes "";
     switch (@menu)
     {
@@ -47,7 +47,7 @@
 
 function notaMember {
     mesn;
-    mesq col(l("*ahem*"), 9) + " " + l("Heh, did you saw me at the port? No?");
+    mesq col(l("*ahem*"), 9) + " " + l("Heh, did you see me at the port? No?");
     next;
     mesn;
     mesq l("This is how good we Legion Members are. I was informed of your arrival way before you left Drasil Island.");
@@ -63,10 +63,10 @@ function notaMember {
 
 function legionState {
     mesn;
-    mesq l("Oh? And do you think you have what it takes to be a proud Legion Member?");
+    mesq l("Oh? And do you think you have what it takes to be a proud Legion member?");
     next;
     mesn;
-    mesq lg("Listen, kid. Being a legion member is not a joke.");
+    mesq lg("Listen, kid. Being a Legion member is not a joke.");
     next;
     mesn;
     mesq l("Hmm, why don't you go train a little more? We have several training rooms here.");

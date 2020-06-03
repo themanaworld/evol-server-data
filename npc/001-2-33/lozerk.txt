@@ -58,8 +58,8 @@
     function send_training {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             lg("Oh, you were sent by Enora!"),
-            l("If Enora thinks this is the right place for you, then she's probably be right. Did you know she's a lieutenant of the Legion?"),
-            l("The rank of lieutenant is granted only to people with proper control of their skill and good judgment, like Enora. Or me, of course."),
+            l("If Enora thinks this is the right place for you, then she's probably be right. Did you know she's a Lieutenant of the Legion?"),
+            l("The rank of Lieutenant is granted only to people with proper knowledge, skills and good judgment, like Enora. Or me, of course."),
             l("By the way, I'm Lozerk. Lieutenant Lozerk.");
 
         select(l("Pleasure to meet you. I am @@.", strcharinfo(PC_NAME)));
@@ -98,7 +98,7 @@
             l("Or almost like me, at the very least."),
             l("But if you really want to accomplish something, you should consider joining us."),
             l("You have talent and the best place to utilize it is in the Legion! You can either pursue your goals with us or without us, but trust me, with us it's much better."),
-            l("I should know, I've not been a member for a while, too. But then I joined the Legion and look what a shining example of a great fighter I became!"),
+            l("I should know, I wasn't a member for a long time, too. But then I joined the Legion and look what a shining example of a great fighter I became!"),
             l("You should definitely go talk to Q'Anon, our boss. You'll find him upstairs.");
 
         setq Artis_Legion_Progress, 5;
@@ -120,8 +120,8 @@
 
     function tell_about_legion {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("The Legion of Aemil is the greatest organization on all continent! A town cannot be safer than when it's under our protection."),
-            l("This is where the bravest of warriors come together to put their skills to a good use, for a good cause."),
+            l("The Legion of Aemil is the greatest organization on the whole continent! A town cannot be safer than when it's under our protection."),
+            l("This is where the bravest of warriors come together to put their skills to good use... and for a good cause."),
             l("Our building here is also the finest place in the town. Just go and see for yourself!");
 
         return;

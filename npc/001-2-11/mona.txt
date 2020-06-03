@@ -37,7 +37,7 @@
         }
 
         speech S_LAST_NEXT | S_NO_NPC_NAME,
-            l("Daddy never came back home... He said that he would be back for lunch but it has already been two days!"),
+            l("My daddy never came home... He said that he would be back for lunch but it has already been two days!"),
             l("You have to find him, or else I will tell him that you did not help me.");
 
         switch (select(l("You do not give me a lot of options."), l("Your dad ran away from you!")))
@@ -119,7 +119,8 @@
         // Sagratha is Great B-)
         npctalkonce any(
             l("Thanks for finding daddy... I wish he spent more time with me..."),
-            l("Sagratha is great. Why does the strange woman near the Legion building always say that to daddy...?")); // TODO: Polish
+            l("Sagratha is great. That strange old woman dressed in white always wants daddy to say that before she even talks to him."),
+            l("She comes around once a week and won't say a word until he says that... every single time!"));
     }
     else if (getq(ArtisQuests_MonaDad) == 2)
     {
@@ -133,7 +134,7 @@
                     lg("He did say that I should give you this @@ as a gift. He says you are very skilled and will make good use of his old weapon.",
                        "He did say that I should give you this @@ as a gift. He says you are very skilled and will make good use of his old weapon.",
                         getitemlink(WoodenSword)),
-                    l("He has never been the same since mommy went away...");
+                    l("He has never been the same since mommy went away... The Legion said they needed her in the East.");
                 getitem WoodenSword, 1;
             }
             else if (MONA_REPEAT == 10)
