@@ -8,6 +8,6 @@ function	script	stringToGender	{
 function	script	genderToString	{
     .@gender = getarg(0, Gender);
 
-    return .@gender == GENDER_FEMALE ? l("female") :
-        .@gender == GENDER_MALE ? l("male") : l("non-binary");
+    return .@gender == GENDER_FEMALE ? l("boobed") :
+        .@gender == GENDER_MALE ? l("tanky") : l("neutral");
 }
