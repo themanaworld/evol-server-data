@@ -1,0 +1,31 @@
+// Kfahr quest debug
+// Author:
+//    Toams
+
+function	script	QuestDebug57	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "HurnscaldQuests_Kfahr";
+        mes "---";
+        mes l("Quest state: @@", getq(HurnscaldQuests_Kfahr));
+        //mes "---";
+        //mes l("Related quests:");
+        //mes "HurnscaldQuests_Setzer: " + getq(HurnscaldQuests_Setzer);
+        next;
+
+        GenericQuestDebug HurnscaldQuests_Kfahr,
+            menuimage("actions/manage", l("Debug Kfahr")), -1,
+            l("Didn't speak with Kfahr yet"), 0,
+            l("Already met Kfahr, No quests started"), 1,
+            l("Bone knife quest started"), 2,
+            l("Bone knife quest finished"), 3;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}
