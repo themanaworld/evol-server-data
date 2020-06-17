@@ -1,19 +1,782 @@
 // Evol scripts.
 // Author:
-//    Micksha
+//    Addapted for TMW rEvolt by Toams
+//    Author(s) of original script: Jaxad0127 (02/11/2008)
+//    Additional contributors: o11c, wushin, Jessica Beller (jtoelke), Ablu, Turmfalke
 // Description:
-//    Kfahr the hero.
-// THIS IS A PLACEHOLDER!
+//    Kfahr the hero. Bone knife quest and Golden Stinger quest (Needed for Setzer Quest)
+// Variables:
+//    HurnscaldQuests_Kfahr
+// Values:
+//    0    Didn't speak with Kfahr yet.
+//    1    Already met Kfahr, No quests started
+//    2    Bone knife quest started.
+//    3    Bone knife quest finished
 
-008-2-2,44,36,0	script	Kfahr#008-2-2	NPC_YOUNG_MAN_KFAHR,{
-    speech
-        l("Oh hey *hicks*"),
-        l("This waitress *hicks* is great, she never stops to bring beer *hicks.");
-        lg("When I am less busy *hicks*, I can tell you stories of my heroism.");
 
-    close;
+008-2-2,44,36,0	script	Kfahr	NPC_YOUNG_MAN_KFAHR,{
+    @beer_count = 0;
+    @current_story = 0;
+    @last_story = 0;
+    @has_beer = 0;
+
+    function kfahr_first_met;
+    function kfahr_default_greeting;
+    function kfahr_main_dialog;
+    function tale_check;
+    function gain_power;
+    function give_beer;
+    function pc_no_beer;
+    function kfahr_has_beer;
+    function kfahr_drunk;
+    function tale_desert_worm;
+    function desert_worm_see_bones;
+    function tale_desert_worm_final;
+    function tale_desert_temple;
+    function tale_hero_tulimshar;
+    function tale_desert;
+    function bone_quest;
+    function bone_quest_tooweak;
+    function bone_quest_items;
+    function bone_quest_check_items;
+    function bone_quest_final_check;
+    function bone_quest_finished;
+
+switch (getq(HurnscaldQuests_Kfahr)) {
+    case 0:
+        narrator S_LAST_NEXT,
+            l("You stand before a battle-scarred, darkly tanned warrior, brimming with muscles."),
+            l("Just looking at him you smell danger, adventure, excitement..."),
+            l("..."),
+            l("On second thought, he really could use a bath."),
+            l("..."),
+            l("The warrior turns towards you, grinning broadly.");
+
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("Why, hello there!  Come to visit Kfahr the Warrior to hear of my exploits, have you?");
+
+        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("He laughs heartily and gives you a slap on the back.");
+
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("Can't blame you, can't blame you at all!  Here, take a seat!");
+        select
+            l("Who are you?"),
+            l("Goodbye.");
+        switch (@menu) {
+            case 1:
+                kfahr_first_met;
+                break;
+            case 2:
+                close;
+        }
+        break;
+    case 1:
+        kfahr_default_greeting;
+        kfahr_main_dialog;
+        break;
+    case 2:
+        bone_quest_check_items;
+        kfahr_main_dialog;
+        break;
+    default:
+        kfahr_default_greeting;
+        kfahr_main_dialog;
+        break;
+}
+
+close;
+
+function kfahr_first_met {
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr laughs again.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Surely you jest!  You must have heard of Kfahr, Slayer of Toby Rick the Desert Worm, Raider of the Lost Temple, Hero of Tulimshar?");
+
+    select
+        l("Uhm..."),
+        l("Well..."),
+        l("To be quite honest..."),
+        l("Excuse me, someone is, er, whispering me...");
+    switch (@menu) {
+        case 4:
+            close;
+        default:
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("ah, I knew it!  So you have come to hear some tales about the dangers of the desert?  You've come to the right man!");
+            setq HurnscaldQuests_Kfahr, 1;
+            kfahr_main_dialog;
+    }
+
+    return;
+}
+
+function kfahr_default_greeting {
+    narrator S_LAST_NEXT,
+        l("Kfahr nods and grins as you greet him.");
+    speech S_LAST_NEXT,
+        l("Came back for more stories about Desert Worms, Desert Temples and the Hero of Tulimshar? Have a seat!");
+
+    return;
+}
+
+function kfahr_main_dialog {
+    do {
+        select
+            l("What's a Desert Worm?"),
+            l("Desert Temple?"),
+            l("Hero of Tulimshar?"),
+            l("Tell me about the desert!"),
+            l("I want to become as powerful as you!"),
+            l("Here, have a beer!"),
+            l("Goodbye!");
+        switch (@menu) {
+            case 1:
+                tale_desert_worm;
+                break;
+            case 2:
+                tale_desert_temple;
+                break;
+            case 3:
+                tale_hero_tulimshar;
+                break;
+            case 4:
+                tale_desert;
+                break;
+            case 5:
+                gain_power;
+                break;
+            case 6:
+                give_beer;
+                break;
+            case 7:
+                close;
+        }
+    } while (1);
+
+    return;
+}
+
+function tale_check {
+    //don't to tell the same story again
+    if (@current_story == @last_story) {
+        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("Kfahr frowns.");
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("I only just told you that story. Trust me, the others are worth hearing, too!");
+        return true;
+    }
+
+    //don't to tell a story if out of beer
+    if (@has_beer == 0) {
+        if (@beer_count > 4) {
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("I think I've talked 'nuff for now... but thanks for lis'ning!");
+        }
+        if (@beer_count <= 4) {
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("Now that's one of my favorite tales, but my throat is just a little too dry to talk about something like that... could you help me out a little here?");
+        }
+        return true;
+    }
+    @has_beer = 0;
+    @last_story = @current_story;
+
+    return false;
+}
+
+function gain_power {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Yeees, yes... doesn't everyone?");
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He laughs briefly.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Don't worry – you can't become as powerful as I, of course, but if you keep practicing, you can get pretty damn close!  Just make sure to pick your opponents carefully, and know when to run to live another day!");
+
+    return;
+}
+
+function give_beer {
+
+    if (countitem(Beer) < 1) {
+        pc_no_beer();
+        return;
+    }
+
+    if (@has_beer) {
+        kfahr_has_beer();
+        return;
+    }
+    else {
+        @has_beer = 1;
+        delitem Beer, 1;
+    }
+
+    if (@beer_count > 4) {
+        kfahr_drunk();
+        return;
+    }
+
+    ++@beer_count;
+
+    setarray .beermessages$[1],
+            l("Ah yes... a warrior's drink!"),
+            l("Generous, generous!  I like that!"),
+            l("Hahah!  That's just what I needed!"),
+            l("I love this town!  Hurnscaldian hospitality!  Mrahahahah!"),
+            l("A'ight, one more can't hurt, eh?");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr is visibly delighted.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        .beermessages$[@beer_count];
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He takes a deep sip.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Aaah, magnificent!");
+    if (@beer_count > 4)
+        narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("Kfahr seems quite relaxed now.");
+
+    return;
+}
+
+function pc_no_beer {
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr stares at you, then begins to laugh.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Mrahahahahaha!  Here's the beer!  Right, right!  Naah, I get it!  Save your gold for whatever you need it for!  But if you have some spare and want to share a beer, you know where to find me!");
+
+    return;
+}
+
+function kfahr_has_beer {
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr leans back and sighs heavily.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Generous, generous!  But I still have plenty in here!");
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He laughs and takes a sip from the beer you gave him earlier.");
+
+    return;
+}
+
+function kfahr_drunk {
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr leans back and sighs heavily.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Very, very generous... bu' I think I'm fine for now.");
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He suppresses a burp.");
+
+    return;
+}
+
+function tale_desert_worm {
+    @current_story = 1;
+    if (tale_check())
+        return;
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr smiles and leans back.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("A desert worm is probably the largest creature you will ever see, larger even than most dragons. It spans a good twenty chains (or six box tosses if you're used to the Imperial system) in length, has a thick, rubbery skin, and teeth as long as my legs."),
+        l("Most are a darkish gray, except for the young ones; those are more purplish, I've been told. Well, anyway, you hardly ever see one of them in their entirety, you only see the head, if they decide to come out and fight – they tend to burrow under the ground.");
+        l("They are terrifying beasts, but lack any intelligent thought whatsoever. They just eat whatever gets in their way. There's nothing out there that can kill one, I think, and they can grow hundreds of years old."),
+        l("Fortunately, they're kind of rare these days, and mostly roam in the empty deserts far, far south of Tulimshar. They don't like the area too close to the mountains, I think; probably too rocky underground.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr takes a sip from his beer.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Anyway. Desert worms are dangerous, as I said, but there was one particularly terrifying one, called Toby Rick. You must've heard of it – the greatest and most dangerous worm, scourge of the trade routes. It could smell humans from miles away."),
+        l("Most desert worms don't smell or see or feel much, you see. They just notice when something's walking nearby, then jump up and swallow it. But Toby Rick was different. He was a terrifying beast, three times as long as a regular worm."),
+        l("So to feed itself, it had learned to smell. That's right, the beast had grown nostrils and learned how to use 'em!"),
+        l("One day I was hired to protect a caravan going north to Tulimshar, with a friend of mine, old Arvek. He only came along for the fun, of course; it's not as if I really need much help defending a caravan... or at least normally it isn't."),
+        l("Arvek's fun to have about. His manners are as bad as his breath, but he knows how to make a laugh out of everything. One thing you musnt't ever do with him, though, and that is to try his `homebrew' -- some kind of ale he makes out of maggot slime...");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr takes another sip of beer, momentarily irritated as if surprised by the taste.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Anyway, This time was different. We were barely three days out in the desert, when we spotted him – `the Black Worm!', the Caravan Master cried, `Over there; it will kill us all!'"),
+        l("I had barely enough time to draw out my sword, and the beast was upon us!  The caravan people were fleeing for their lives, so it was up to me and Arvek to stop it."),
+        l("That was madness, of course; no-one takes on a desert worm, if they have a choice. But we didn't; you see, with most desert worms you can just stand still and it won't notice you and pass by. But not with this one!");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr leans forward.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("So this humongous beast came roaring towards us, a big back hole where the mouth is, spikey fins sticking out to the side, all ready to swallow us all!  My sword felt like a toothpick against that monster!");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He pauses, then leans back a little to take another long sip from his beer.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("So it seemed that our last hour was at hand, that we'd be swallowed and never heard from again!"),
+        l("Aha, but Kfahr doesn't die quite so easily. What happened was this:  Me and Arvek charged towards that thing, slashing and stabbing, but our blows would just glance off. The beast roared and just slid by us, slapping us to the side with its fins like maggots, knocking us to the ground."),
+        l("It bolted up into the air, and tore down on the caravan, swallowing each and everyone in there in a single big gulp!"),
+        l("Then it turned around towards us. Those fins had hit us pretty badly; I had lost my shield and Arvek his backpack. Better for him, I suppose, but I had been rather fond of that shield – not that it would have helped me much here...");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr leans forward, nearly knocking over his beer.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("So the beast charges at the two of us again and we dodge – Arvek left, me right. The beast is smarter than the average desert worm, though, and had expected that – so it bends to the side and swallows poor Arvek, hair and hide and all.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr's eyes sparkle with excitement.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("It turns around, trying to get me too. I dodge it – left, then the same again, I dodge it right. But it can't go on like that, the beast isn't tiring, but I am..."),
+        l("So for one instant I think that this might be it, that I might die out there!  A worthy death, I suppose, against the king of desert worms!  And just as I think that, I bump against something.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr slaps on the table.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Arvek's backpack!  Doesn't sound terribly exciting, of course – what am I going to do, toss it at the beast and hope that it chokes on it?");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He grins.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("But I remember something better. That beast had grown nostrils, right?  So it can smell and taste!  So I tear open his backpack and pull out that big snakeskin of that disgusting maggot ale of his. It's still filled to the brim."),
+        l("I quickly put on my gloves again, because I don't want to touch that stuff with my bare skin. The beast is almost upon me, but I have only that one chance – so I squeeze the skin while sticking my thumb into the opening, until I can see the black of its nostrils..."),
+        l("...and when I think it's almost too late already, I shoot out that revolting brew at the beast's smelling holes, and I hit! Two at once, and up and sideways it rolls, away from me, and roaring and bellowing in pain!"),
+        l("It roared for a good five minutes, then convulsed... and first it spat out old Arvek, who was a bit irritated at all that because, as he told me, he had 'almost pierced the pancreas', whatever that means..."),
+        l("Next it spat out the caravan, and then some other caravan it had plucked off from elswehere. Somehow, everyone from there was still alive, too."),
+        l("Then it slid away from us, away to the north, but we could see it getting slower and slower."),
+        l("Two days later we caught up with it, but it was already dead then and had started to smell. We looked around and inside of it, found treasures and remnants of some less fortunate caravans and split them up appropriately."),
+        l("I never told Arvek that it was his brew that killed it; he'd never have forgiven me."),
+        l("One of the nomads that had been travelling with the other caravan then told me that you could make special kinds of knives and swords and armor out of desert worm bones.");
+
+    select
+        l("Hang on... bones in a... worm?"),
+        l("That's neat!  Do you have any that I could see?"),
+        l("And then?"),
+        l("Zzzzzzzz.......");
+    switch (@menu) {
+        case 1:
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("Weren't you listening?  A desert worm is not a regular worm; a worm couldn't survive in the desert.");
+            select
+                l("Do you have any bones that I could see?"),
+                l("Never mind that, what happened then?"),
+                l("Zzzzzzzz.......");
+            switch (@menu) {
+                case 1: desert_worm_see_bones;
+                        return;
+                case 2: tale_desert_worm_final;
+                        return;
+                case 3: close;
+            }
+        case 2: desert_worm_see_bones;
+                return;
+        case 3: tale_desert_worm_final;
+                return;
+        case 4: close;
+    }
+
+    return;
+}
+
+function desert_worm_see_bones {
+    if (BaseLevel >= 40) {
+        bone_quest;
+        return;
+    }
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Of course!");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He pulls out a strangely curved knife with a yellow-whiteish blade that is almost transparent at the edge.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("When hardened properly, this bone knife can last a lifetime!  One of the best knives you will find, too.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He puts the knife back into his pocket.");
+
+    mes l(" > \"That knife looks sharp!\"");
+    mes "";
+    mes l(" > \"But, what happened next?\"");
+    tale_desert_worm_final;
+
+    return;
+}
+
+function tale_desert_worm_final {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Nothing much else happened on that trip. When we arrived in Tulimshar, people at first didn't believe the story, of course, until we showed them the treasures and the bones. Ah, those were wonderful days...");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+       "He sighs and leans back, a nostalgic look on his face.";
+
+    return;
+}
+
+function tale_desert_temple {
+    @current_story = 2;
+    if (tale_check())
+        return;
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Ah, that..."),
+        l("Kfahr leans back and takes a sip from his beer."),
+        l("That was many years ago, when George and I were just kids. George later became a pirate, you see; he always loved hunting for treasure. But back in those days it was all on level ground."),
+        l("George had found a treasure map somewhere... and when I say `found', I mean that in a fairly liberal sense; he always loved those maps, almost as much as the excitement of hunting for treasure."),
+        l("Anyway, that map pointed to a spot in the desert a good day's walk south of Tulimshar. So we grabbed our satchels and coats and packed food and water, and headed there in the evening."),
+        l("We walked all night. As you know, it's best not to travel during the day if you can avoid it, and we were young and energetic in those days, so that was easily avoided."),
+        l("Anyway, when the sun rose in the morning, we still hadn't found the place. So we climbed up on the nearest dune and looked all around to find it."),
+        l("But there was nothing, nothing at all. We looked and looked – and suddenly George screamed:  While we weren't paying attention to nearby things, scorpions had crept up on us!"),
+        l("The scorpions had smelled the food we had brought and cut open our satchels, tearing our waterskins and making a mess of our food – and now that they were done with that, they were coming for us!"),
+        l("We didn't have any suitable weapons, and not much of a choice either, so we made a break for it. We ran into the desert, fast as our legs would carry us, and the scorpions after us."),
+        l("We very nearly didn't make it. There was nothing around but sand, and we had no water, no food – at least we'd had our breakfast already – and the sun kept burning, and burning, and trying to cook us alive."),
+        l("We had long lost the scorpions, but we were dry like parchment, and exhausted from all the sun and running. So we sat down in the shades of a dune and contemplated our options."),
+        l("Without water we couldn't last during the day. So our only hope was to find shelter somewhere – except that the only thing around was sand, and the mid-day sun would rob that of all shelter."),
+        l("So we resigned to continuing to search for something, anything – it was either that, or die of thirst for sure. The only problem was that we were already so thirsty and it was so bright that we couldn't see nor walk straight anymore."),
+        l("So we had barely made it to the top of the next dune when George slipped and rolled down the other side. I wanted to catch him, but I was too dizzy myself, and so I rolled after him."),
+        l("We seemed to roll down for hours, and I kept feeling dizzier and dizzier; I didn't have the strength to stop. When we arrived at the bottom, I just wanted to lie down and let the sun dry me up."),
+        l("I was being foolish, of course. You should never give up, no matter how hopeless the situation may seem. Anyway, I finally did decide to get up on my knees and look around again..."),
+        l("...and what I saw right before me, believe it or not, was a giant face of a man, carved into rock – there, in the middle of the desert, half-sunk, a shattered visage!"),
+        l("I pulled George up – I didn't have the strength to speak, but walking seemed to work – and we slowly made our way over to it. We weren't thinking much, just trying to find some shade, so we climbed into that thing's ear."),
+        l("Inside it felt moist, as if it was a real ear – not that I've climbed inside a real ear, mind you!  But that feeling of cool and dampness and water was like a magical healing potion; we suddenly felt strength in our legs again."),
+        l("When we looked around, we noticed that there was a passage leading further underground, and long-spent torches on the wall. Fortunately I still had my tinderbox, so I wrapped my shirt around a torch and lighted it."),
+        l("We climbed down, and soon we heard the dripping of water – we had found an underground water-hole!  More than that, we had found a gigantic underground cave, and, at the end of it, a huge portal."),
+        l("We first drenched ourselves in water – somehow managing not to douse the torch – and drank until we were ready to burst. When we had rested, we went to the portal to have a closer look."),
+        l("The portal was made out of bronze, or some similar metal, with images of snakes engraved all over. Curious as we were, we pulled the door open – it wasn't locked or barred in any way – and had a look inside."),
+        l("The passages in there were cool and dark, with a ceiling high enough to swallow the light of my torch. There were snakes, quite a few of them, but we were both quick-footed and managed to avoid them."),
+        l("There were chambers and inscriptions and more torches, but not a living being besides us and the snakes. Hmm. Though I could have sworn that some of the statues there were following us with their eyes..."),
+        l("All went well, until George stepped into a trap. A piece of ground just caved in, and if I hadn't grabbed his hand at the last second, he would have ended up on some rusty and probably poisoned spikes on the bottom..."),
+        l("But I moved too fast, and slipped, and let go of the torch to catch myself with the other hand – and the torch ended up in the bottom of the pit!  Well, better the torch than George, I suppose..."),
+        l("Still, we no longer had any light. Being careless, I had gotten my tinderbox wet while we were at the water-hole, so we couldn't make another torch either."),
+        l("We had the choice between staying by our torch and watching it die, and then follow suit at the hands, or, well, fangs of the snakes, or wandering off in the dark, to be eaten by snakes someplace else.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr empties his beer, looking a bit disappointed.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Anyway, we took the latter option. We wandered through the dark, somehow barely avoiding the snakes and the traps, running into walls and hitting our heads on archways, until, suddenly, we saw something shining up ahead."),
+        l("That thing was on some kind of pedestal, and it looked like a golden tablet of sorts. We clambered towards it – the only source of light in here, the only thing that could save us – and hesitated."),
+        l("Should we just take it?  This was clearly some kind of temple, so it might be something sacred. George and I argued about it for a while, until I decided to end the discussion – so I simply grabbed it: we needed light."),
+        l("At that point, a terrible grinding noise started all around us, as the pedestal began to sink into the ground. We had triggered some ancient trap!"),
+        l("Holes on the walls were opening up, and snakes began to gush out – only now did we realise that we were in a huge, opulent chamber, with gold and gems and images all around!  But now it was too late for any looting; we had to run for our lives!"),
+        l("So we ran from that slithering mass, faster than we ever had!  We had no idea where we were going of course, but at least we had light again..."),
+        l("Somehow we got lucky, somehow we escaped. It was evening again when we climbed out of that ear into the desert again, with only our lives and that golden tablet. We only barely made it back to Tulimshar in the morning."),
+        l("But we did have the tablet as a proof of what happened.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He grins.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("That was my first real adventure, I think. Ah, those were exciting days.");
+
+    select
+        l("Wow."),
+        l("What happened to the tablet?"),
+        l("Did you go there again?"),
+        l("Zzzzzzz.....");
+    switch (@menu) {
+        case 1:
+            break;
+        case 2:
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("Well, we couldn't read it. We later sold it for a good price, to a young travelling archeologist; Doctor Nohlidge or something like that. She said that the engravings described sacrifical practices of an ancient snake cult...");
+            narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("He shrugs.");
+            break;
+        case 3:
+            narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("Kfahr laughs.");
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("Of course we tried to go there again. After seeing all that treasure, George wouldn't give up on it. We tried many times – as did others, from what I've heard – but we never found it again.");
+            break;
+        case 4:
+            close;
+    }
+
+    return;
+}
+
+function tale_hero_tulimshar {
+    @current_story = 3;
+    if (tale_check())
+        return;
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        ("Yes, Hero of Tulimshar. That was many years ago, but I did save the city of Tulimshar from a deadly drought.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He grins broadly.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("And quite a feat that was, let me tell you!"),
+        l("Back in those days, there wasn't much trade with Hurnscald, and Tulimshar was dependent on its own water supply – critically dependent, even."),
+        l("Now, one day the water people drew from the wells started smelling. The smell was nauseating, and people who drank from it became violently sick."),
+        l("So the entire town was without water, except for the water reserves in the cistern. Someone had to act quickly – and of course that someone was me."),
+        l("With nothing more than a torch, some light armor and a sword, I climbed down one of the wells. It was a long climb; the wells go down fairly deep."),
+        l("I noticed that there were some holes in the walls of the wells, with hollow spaces on the sides... Hmm, that reminds me that I still have to check whether the rumors of a labyrinth underneath Tulimshar are true."),
+        l("Anyway, it took me a long time to get down, and every minute the stench was getting worse – something really bad was down there. I had to stop and tie a wet piece of cloth over my mouth so that I wouldn't inhale all of that nasty stuff."),
+        l("My torch was in an even poorer shape – whatever was making that smell had killed the flame, so I soon had to rely on the light from above to see anything."),
+        l("Finally I arrived at the water level. All Tulimshar wells dip into the same underground lake, which is on the side of a huge underground cavern. And in the midst of that cavern lay – hardly visible through the greenish mist coming from it – a Stinkewyrm!"),
+        l("Stinkewyrms are smaller cousins of dragons, but just as dangerous. They have a green, sticky skin, and, well, they stink. A lot. This one was particularly bad – it had filled up the entire cave with stinkiness!"),
+        l("I climbed down and swam to the shore. The stench was terrible; I had to hold my breath to get closer to the monster. There it was, lying on the ground, snoring, poisoning all our water!  So I tried to wake it up to scare it away."),
+        l("I kicked it. I yelled at it. (Bad mistake, I got some of that stinky stuff in my lungs.)  I poked at it with my sword. I even tried to poke it in the eyes, but I couldn't get that close to its mouth – that was where most of the smell was coming from."),
+        l("After a few attempts I couldn't take it anymore, so I had myself be pulled up again. It took me a while to recover and to tell the tale. We talked about what could be done, but no-one had an idea.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr takes a deep sip from his beer.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Finally, I came up with something. Stinkewyrms love that terrible stench of theirs, so what should be their natural enemy?  Why, soap, of course!"),
+        l("We couldn't just dump all the soap into the underground lake, of course; the water would be undrinkable again. So we collected some of the soap, and I climbed down again with it."),
+        l("Having arrived at the bottom, I cut off the biggest of the water buckets and filled it with water – and that was a really big one, I could hardly carry it when it was full. Then I dissolved most the soap, and poured that onto the Stinkewyrm's head."),
+        l("Ah, that caught its attention!  You should have seen that dragon roar, as it jumped to its feet and tried to find out who had soaped it!  I rushed back to the water and made another bucket of soap water."),
+        l("But it had noticed me!  And as soon as it had realized where I was, it came after me. Then it stopped, towering right before me, its stench nearly killing me, and grinned that broad, crooked-teeth dragon smile of its kind."),
+        l("Then it took a deep breath – and I realised that that was probably 'it' for me;  Stinkewyrms can breathe fire like real dragons, and I didn't have the time to run back to the water."),
+        l("But when it breathed out, only a tiny little flame came out – and a lot of terrible smell that nearly knocked me off my feet."),
+        l("For you see, it had generated so much of the deadly smell around itself that even its own fire breath couldn't survive!"),
+        l("So it stared at me, mouth wide agape – the perfect opening!"),
+        l("I stormed at it and before it could even blink, it had a huge load of bubbly soap water down its throat."),
+        l("You should have heard the coughing and shaking!  I swear, I thought the roof would collapse as it was jumping and choking..."),
+        l("Bubbles were coming out of its mouth, its nostrils, even its ears!  The poor wyrm must have never felt so clean in its life!"),
+        l("I was out of soap, but the beast didn't know that – so I quickly grabbed another bucket and charged it again."),
+        l("And it worked!  Seeing me like this again, it ran, squealing, back into the underground caves from where it must have come.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr roars with laughter and slaps his hands on the table.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("So we defeated it with hygiene!  Ah, that was wonderful. After a day, the stench had worn off enough that we could drink the water again, and a week later it was almost completely gone. And of course I was the hero of the day.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr downs the rest of his beer.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("And from that day on they called me the `Hero of Tulimshar'");
+
+    return;
+}
+
+function tale_desert {
+    @current_story = 4;
+    if (tale_check())
+        return;
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr leans back, trying to find the right words to describe the desert.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("The desert... a cold and lonely place at night, and a hot and lonely place during the day.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("For someone who apparently spent most of his life in the desert, his insights sometimes seem less than profound.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("The desert is a living hell during some times of the year. Filled with black scorpions and snakes, except for the shadier areas, and mountain snakes if you go further east."),
+        l("South of Tulimshar is a fairly protected region; the nomads keep the snakes out of there and you'll find only relatively harmless monsters. But go west from there, to the beach, and it's scorpions and snakes..."),
+        l("...and east of there you find the old Hatmaker cave, now filled to the brim with snakes!  Rumors have it that this was once an oasis, in centuries long gone by, but as far as I'm concerned that pit is just a dump that you best avoid."),
+        l("Go further to the east and you'll find ol' Pachua up on the mountain. He seems to have some kind of power over the mountain snakes there; they never attack him. I think he's a bit creepy, personally..."),
+        l("...but if he offers you some of his tobacco, then by all means give it a try!  That stuff is amazing.");
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He laughs, then begins to cough.");
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Not terribly healthy, though, I s'pose...");
+
+    return;
+}
+
+function bone_quest {
+    if (getq(HurnscaldQuests_Kfahr) == 2) {
+        bone_quest_items;
+        return;
+    }
+
+    if (getq(HurnscaldQuests_Kfahr) > 2) {
+        bone_quest_finished;
+        return;
+    }
+
+    if (BaseLevel < 40) {
+        bone_quest_tooweak;
+        return;
+    }
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr stares at you for a moment, then nods.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("You seem reasonably skilled. I think I may have something that I no longer need, but I don't want to give it to just anyone...");
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He hesitates, obviously trying to make up his mind about something, then continues.");
+
+    setq HurnscaldQuests_Kfahr, 2;
+    bone_quest_items;
+
+    return;
+}
+
+function bone_quest_tooweak {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("You know, little one, if you keep practicing a little and come back once you're a bit stronger, I might have something for you...");
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He winks.");
+
+    return;
+}
+
+function bone_quest_items {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Bring me %d %s and %d %s to prove that you are a competent warrior, and I'll see if I have something for you.", .BLACK_STINGERS_NR, getitemlink(BlackScorpionStinger), .MUSHROOMS_NR, getitemlink(SmallMushroom));
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He grins.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l(  "But while you are here... perhaps you would like to listen to another story?");
+
+    return;
+}
+
+function bone_quest_check_items {
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr eyes you with unconcealed amusement.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Welcome back!  Did you bring me the things I asked for?");
+
+    select
+        l("Yes, here they are!"),
+        l("Er, what were those things again?"),
+        l("No, sorry, I didn't have the time. I'm more interested in hearing your stories."),
+        l("I forgot!  Let me get them right now.");
+    switch (@menu) {
+        case 1:
+            bone_quest_final_check;
+            return;
+        case 2:
+            bone_quest_items;
+            return;
+        case 3:
+            return;
+        case 4:
+            close;
+    }
+
+    return;
+}
+
+function bone_quest_final_check {
+    if (countitem(BlackScorpionStinger) < .BLACK_STINGERS_NR) {
+
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("No, no... I said %d %s.", .BLACK_STINGERS_NR, getitemlink(BlackScorpionStinger));
+        if (countitem(BlackScorpionStinger) > 0)
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("You will need %d more of those.", (.BLACK_STINGERS_NR - (countitem (BlackScorpionStinger))));
+        else
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("You didn't bring even a single one!");
+        close;
+    }
+
+    if (countitem(SmallMushroom) < .MUSHROOMS_NR) {
+
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("No, no... I said %d %s.", .MUSHROOMS_NR, getitemlink(SmallMushroom));
+        if (countitem(SmallMushroom) > 0)
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("You will need %d more of those.", (.MUSHROOMS_NR - (countitem (SmallMushroom))));
+        else
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("You didn't bring me even a single little mushroom!");
+        close;
+    }
+
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Kfahr is delighted.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+         l("Well done, well done! Now that's what I call warrior spirit!");
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He laughs, then suddenly stops, turning to you with suspicion in his eyes.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+         l("You DID get those yourself, didn't you? Not buy them or somesuch...?");
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Before you can answer, he laughs and slaps you on the back again.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Ah, what am I thinking! Too many years in the desert make you a little suspicious of everyone and everything! Naah, I believe you.");
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He pulls a strangely curved knife out of a side pocket and holds it up to the light. The blade is partly transparent, and looks quite sharp.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("It's a bone knife, carved out of the umplex bone of a desert worm... you can probably guess which one.");
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He grins broadly again, weighing the weapon.");
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("It's a little heavy, but one of the best knives you can get. Certainly beats a short sword any time of day."),
+        l("I had the nomads make me a few of them, and I hardly use them nowadays, so I think I can part with this one.");
+
+    if (countitem(BlackScorpionStinger) < .BLACK_STINGERS_NR) {
+
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("You just had %d %s. What happened to them?",  .BLACK_STINGERS_NR, getitemlink(BlackScorpionStinger));
+        if (countitem(BlackScorpionStinger) > 0)
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("You will need %d more of those.",(.BLACK_STINGERS_NR - (countitem (BlackScorpionStinger))));
+        else
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("You didn't bring even a single one!");
+        close;
+    }
+
+    if (countitem(SmallMushroom) < .MUSHROOMS_NR) {
+
+        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+            l("You just had %d %s. What happened to them?", .MUSHROOMS_NR, getitemlink(SmallMushroom));
+        if (countitem(SmallMushroom) > 0)
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("You will need %d more of those.", (.MUSHROOMS_NR - (countitem (SmallMushroom))));
+        else
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("You didn't bring me even a single little mushroom!");
+        close;
+    }
+
+    inventoryplace BoneKnife, 1;
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He hands you the knife."),
+        l("Oh, and I think I'll keep those in return; I know someone who will trade them for antidote potions.");
+    narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("He pockets the stingers and mushrooms.");
+
+    setq HurnscaldQuests_Kfahr, 3;
+    delitem BlackScorpionStinger, .BLACK_STINGERS_NR;
+    delitem SmallMushroom, .MUSHROOMS_NR;
+    getexp .KNIFE_QUEST_XP, 0;
+    getitem BoneKnife, 1;
+    next;
+
+    return;
+}
+
+function bone_quest_finished {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("I really don't have anything else I'd want to give away to make you stronger. Look around a bit yourself!  You won't become a hero if you keep begging for help!");
+
+    return;
+}
 
 OnInit:
+
+    .BLACK_STINGERS_NR = 10;
+    .MUSHROOMS_NR = 10;
+    .SNAKE_SKINS_NR = 10;
+    .KNIFE_QUEST_XP = 50000;
+    .STINGER_QUEST_XP = 80000;
+
     .sex = G_MALE;
     .distance = 2;
     end;

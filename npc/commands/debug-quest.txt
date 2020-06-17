@@ -107,7 +107,8 @@ function	script	GlobalQuestDebug	{
                 l("Maggot soup"), HurnscaldQuests_Soup,
                 l("Inspector"), HurnscaldQuests_Inspector,
                 l("Forest bow"), HurnscaldQuests_ForestBow,
-                l("Wooden shield"), HurnscaldQuests_WoodenShield;
+                l("Wooden shield"), HurnscaldQuests_WoodenShield,
+                "Kfahr",HurnscaldQuests_Kfahr;
 
             switch (@menuret)
             {
