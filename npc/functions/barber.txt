@@ -3,6 +3,7 @@
 //    omatt
 //    Reid
 //    Travolta
+//    Jesusalva
 // Description:
 //    Function for supporting barber NPC.
 
@@ -111,15 +112,46 @@ function	script	BarberChangeColor	{
 
 function	script	BarberChangeGender	{
     mesn("Warning");
-    mes(b(l("Changing your gender will send you back to the character selection screen.")));
+    mes(b(l("Changing your body type will send you back to the character selection screen.")));
     next();
 
-    mes(l("Please select the desired gender:"));
+    mes(l("Please select the desired body type:"));
     menuint(
-        l("Female"), GENDER_FEMALE,
-        l("Male"), GENDER_MALE,
-        l("Non-binary"), GENDER_HIDDEN);
+        l("Boobed"), GENDER_FEMALE,
+        l("Tanky"), GENDER_MALE,
+        l("Neutral"), GENDER_HIDDEN);
 
     Gender = @menuret;
+    return;
+}
+
+// THIS FUNCTION SHOULD BE USED ONLY AT REBIRTH
+// Unless current game development design changes!
+function	script	BarberChangeRace	{
+
+    mes l("What's your race?");
+    menuint
+        get_race(GETRACE_FULL, KaizeiViro), KaizeiViro,
+        get_race(GETRACE_FULL, ArgaesViro), ArgaesViro,
+        get_race(GETRACE_FULL, TonoriViro), TonoriViro,
+        get_race(GETRACE_FULL, CaveUkar), CaveUkar,
+        get_race(GETRACE_FULL, MountainUkar), MountainUkar,
+        get_race(GETRACE_FULL, SeaTritan), SeaTritan,
+        get_race(GETRACE_FULL, LakeTritan), LakeTritan,
+        rif(REBIRTH, get_race(GETRACE_FULL, LightRaijin)), LightRaijin,
+        rif(REBIRTH, get_race(GETRACE_FULL, DarkRaijin)), DarkRaijin,
+        rif(REBIRTH, get_race(GETRACE_FULL, FireKralog)), FireKralog,
+        rif(REBIRTH, get_race(GETRACE_FULL, FrostKralog)), FrostKralog;
+
+    mes "";
+    // Something went *terribly* wrong
+    if (@menuret >= LightRaijin && !REBIRTH) {
+        channelmes("#irc", "Illegal operation at BarberChangeRace, sysadmin help required.");
+        consolemes(CONSOLEMES_ERROR, "Account %d tried to change race to %d but rebirth is not set. Race not changed.", getcharid(3), @menuret);
+        return;
+    }
+
+    // Change race and we're done
+    Class = @menuret;
     return;
 }

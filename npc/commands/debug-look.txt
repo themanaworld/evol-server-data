@@ -2,15 +2,15 @@ function	script	BarberDebug	{
 
     function setGender {
         clear();
-        setnpcdialogtitle(l("Appearance Debug - Gender Change"));
-        mes(l("Warning: changing your gender will send you back to the character selection screen."));
+        setnpcdialogtitle(l("Appearance Debug - Body Type Change"));
+        mes(l("Warning: changing your body type will send you back to the character selection screen."));
         mes("");
-        mes(l("Please choose the desired gender:"));
+        mes(l("Please choose the desired body type:"));
         next();
         menuint(
-            l("Male"), GENDER_MALE,
-            l("Female"), GENDER_FEMALE,
-            l("Non-binary"), GENDER_HIDDEN);
+            l("Tanky"), GENDER_MALE,
+            l("Boobed"), GENDER_FEMALE,
+            l("Neutral"), GENDER_HIDDEN);
 
         Gender = @menuret;
         return;
@@ -54,7 +54,7 @@ function	script	BarberDebug	{
         mes "";
 
         mes "---";
-        mes l("Gender") + ": " + genderToString(Gender);
+        mes l("Body Type") + ": " + genderToString(Gender);
         mes l("Hair style") + ": " + getlook(LOOK_HAIR);
         mes l("Hair color") + ": " + getlook(LOOK_HAIR_COLOR);
         mes l("Race") + ": " + Class + " (" + get_race() + ")";;
@@ -63,7 +63,7 @@ function	script	BarberDebug	{
         next;
         mes l("What do you want to change?");
         select
-            menuimage("actions/edit", l("Gender") + " [" + l("Requires logout") + "]"),
+            menuimage("actions/edit", l("Body Type") + " [" + l("Requires logout") + "]"),
             menuimage("actions/edit", l("Hair style")),
             menuimage("actions/edit", l("Hair color")),
             menuimage("actions/edit", l("Race")),

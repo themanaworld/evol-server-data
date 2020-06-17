@@ -6,17 +6,17 @@
 
 OnCall:
     if (.@atcmd_parameters$[0] == "") {
-        dispbottom("Your current gender is " + genderToString());
+        dispbottom("Your current body type is " + genderToString());
         end;
     }
 
     .@desired = stringToGender(.@atcmd_parameters$[0]);
 
     if (.@desired == Gender) {
-        dispbottom("Your gender is already " + genderToString());
+        dispbottom("Your body type is already " + genderToString());
     } else {
         Gender = .@desired;
-        dispbottom("Gender changed to " + genderToString());
+        dispbottom("Body Type changed to " + genderToString());
     }
     end;
 

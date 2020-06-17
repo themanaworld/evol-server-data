@@ -222,3 +222,50 @@ function	script	getmercenarylink	{
 function	script	gethomunculuslink	{
     return "[@@h" + getarg(0) + "|@@]";
 }
+
+// Returns the player race in plain text
+// GETRACE_RACE - returns player race (default)
+// GETRACE_SKIN - returns player skin
+// GETRACE_FULL - returns player skin + race
+// Can take an optional 2nd param with the class
+// get_race( {Flag, {Class}} )
+function	script	get_race	{
+    .@m=getarg(0, GETRACE_RACE);
+    .@g=getarg(1, Class);
+
+    // We also allow this to run without player attached for... science.
+    if (playerattached())
+    {
+        setarray .@allraces$, l("Viro"), l("Viro"), l("Viro"),
+                              l("Ukar"), l("Ukar"),
+                              l("Tritan"), l("Tritan"),
+                              l("Raijin"), l("Raijin"),
+                              l("Kralog"), l("Kralog");
+        setarray .@allskins$, l("Kaizei"), l("Argaes"), l("Tonori"),
+                              l("Cave"), l("Mountain"),
+                              l("Sea"), l("Lake"),
+                              l("Light"), l("Dark"),
+                              l("Fire"), l("Frost");
+    }
+    else
+    {
+        setarray .@allraces$, ("Viro"), ("Viro"), ("Viro"),
+                              ("Ukar"), ("Ukar"),
+                              ("Tritan"), ("Tritan"),
+                              ("Raijin"), ("Raijin"),
+                              ("Kralog"), ("Kralog");
+        setarray .@allskins$, ("Kaizei"), ("Argaes"), ("Tonori"),
+                              ("Cave"), ("Mountain"),
+                              ("Sea"), ("Lake"),
+                              ("Light"), ("Dark"),
+                              ("Fire"), ("Frost");
+    }
+
+    if (.@m == GETRACE_RACE)
+        return .@allraces$[.@g];
+    else if  (.@m == GETRACE_SKIN)
+        return .@allskins$[.@g];
+    else
+        return .@allskins$[.@g] + " " + .@allraces$[.@g];
+}
+

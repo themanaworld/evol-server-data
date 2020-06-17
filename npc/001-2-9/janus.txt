@@ -71,6 +71,7 @@
     }
 
     function explain_service {
+        // NOTE: "human" refers to all races in Gasaron, so usage is correct.
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("You are on the human resource wing of the Town Hall."),
             l("We offer party and guild certifications and we can also teach you how to use some basic communication skills."),

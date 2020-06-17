@@ -70,42 +70,6 @@ function	script	getmap	{
     return getmapname();
 }
 
-// Returns the player race in plain text
-// GETRACE_RACE - returns player race (default)
-// GETRACE_SKIN - returns player skin
-// GETRACE_FULL - returns player skin + race
-// Can take an optional 2nd param with the class
-// get_race( {Flag, {Class}} )
-function	script	get_race	{
-    .@m=getarg(0, GETRACE_RACE);
-    .@g=getarg(1, Class);
-
-    // We also allow this to run without player attached for... science.
-    if (playerattached())
-    {
-        setarray .@allraces$, l("Human"), l("Ukar"), l("Kralog"),
-         l("Raijin"), l("Kralog"), l("Raijin"), l("Tritan"),
-         l("Human"), l("Human"), l("Tritan"), l("Ukar");
-        setarray .@allskins$, l("Kaizei"), l("Cave"), l("Fire"),
-         l("Light"), l("Frost"), l("Dark"), l("Sea"), l("Argaes"),
-         l("Tonori"), l("Lake"), l("Mountain");
-    }
-    else
-    {
-        setarray .@allraces$, "Human", "Ukar", "Kralog", "Raijin",
-        "Kralog", "Raijin", "Tritan", "Human", "Human", "Tritan", "Ukar";
-        setarray .@allskins$, "Kaizei", "Cave", "Fire", "Light",
-        "Frost", "Dark", "Sea", "Argaes", "Tonori", "Lake", "Mountain";
-    }
-
-    if (.@m == GETRACE_RACE)
-        return .@allraces$[.@g];
-    else if  (.@m == GETRACE_SKIN)
-        return .@allskins$[.@g];
-    else
-        return .@allskins$[.@g] + " " + .@allraces$[.@g];
-}
-
 // gettimeparam(GETTIME_X)
 //   Returns the number of seconds/minutes/hours/days/months/years since 01/01/1970
 //   This is for truly daily quests, which doesn't imposes a timed wait in hours
