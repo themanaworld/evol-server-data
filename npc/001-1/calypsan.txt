@@ -19,7 +19,7 @@
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("Look at your equipment, can you guess what material it is made from?"),
             l("Seek a colorant for that material:"),
-            l("Cotton, cashmere, leather, ..."),
+            l("Cotton, Silk, leather, ..."),
             l("Zinc-Titanium Oxide, Phthalocyanides, Cadmiums, Lazulite..."),
             l("Colorant is not the yeying color. Some wear out from light, others look great but inflict itai-itai, and others become spotty or wash-away."),
             l("What yoiis should know:"),
@@ -34,7 +34,7 @@
 
     function sell_dye {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT, l("For what kind of tissue?");
-        .@tissue_type = select(l("Cotton"), l("Cashmere"));
+        .@tissue_type = select(l("Cotton"), l("Silk"));
 
         closeclientdialog;
         switch (.@tissue_type)
@@ -43,7 +43,7 @@
                 shop "Cotton#Dye001-1";
                 break;
             case 2:
-                shop "Cashmere#Dye001-1";
+                shop "Silk#Dye001-1";
                 break;
             default:
                 consolemes(CONSOLEMES_ERROR, "Calypsan script error, tissue_type is incorrect");

@@ -83,23 +83,43 @@ OnClock0000:
     restoreshopitem YellowCottonDye, 10;
 }
 
-001-1,48,125,0	trader	Cashmere#Dye001-1	NPC_NO_SPRITE,{
+001-1,48,125,0	trader	Silk#Dye001-1	NPC_NO_SPRITE,{
 
 OnInit:
     tradertype(NST_MARKET);
 
-    sellitem CrimsonCashmereDye, -1, 7;
-    sellitem ChocolateCashmereDye, -1, 7;
-    sellitem MintCashmereDye, -1, 7;
+    sellitem PitchBlackSilkDye, -1, 7;
+    sellitem ChocolateSilkDye, -1, 7;
+    sellitem CrimsonSilkDye, -1, 7;
+    sellitem TomatoSilkDye, -1, 7;
+    sellitem GoldenrodSilkDye, -1, 7;
+    sellitem SunflowerSilkDye, -1, 7;
+    sellitem OliveSilkDye, -1, 7;
+    sellitem SeaGreenSilkDye, -1, 7;
+    sellitem MintSilkDye, -1, 7;
+    sellitem MidnightBlueSilkDye, -1, 7;
+    sellitem SlatBlueSilkDye, -1, 7;
+    sellitem OrchidSilkDye, -1, 7;
+    sellitem PinkiePinkSilkDye, -1, 7;
 
     .sex = G_OTHER;
     .distance = 4;
     end;
 
 OnClock0000:
-    restoreshopitem CrimsonCashmereDye, 7;
-    restoreshopitem ChocolateCashmereDye, 7;
-    restoreshopitem MintCashmereDye, 7;
+    restoreshopitem PitchBlackSilkDye, -1, 7;
+    restoreshopitem ChocolateSilkDye, -1, 7;
+    restoreshopitem CrimsonSilkDye, -1, 7;
+    restoreshopitem TomatoSilkDye, -1, 7;
+    restoreshopitem GoldenrodSilkDye, -1, 7;
+    restoreshopitem SunflowerSilkDye, -1, 7;
+    restoreshopitem OliveSilkDye, -1, 7;
+    restoreshopitem SeaGreenSilkDye, -1, 7;
+    restoreshopitem MintSilkDye, -1, 7;
+    restoreshopitem MidnightBlueSilkDye, -1, 7;
+    restoreshopitem SlatBlueSilkDye, -1, 7;
+    restoreshopitem OrchidSilkDye, -1, 7;
+    restoreshopitem PinkiePinkSilkDye, -1, 7;
 }
 
 001-1,64,114,0	trader	Store#Aquada001-1	NPC_NO_SPRITE,{
