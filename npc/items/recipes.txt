@@ -5,50 +5,114 @@
 // Description:
 //    Contains recipe books for Evol Online
 
--	script	#RecipeBook	NPC_HIDDEN,{
+// showRecipe( Craft, Bonus, {amount 1, item 1}, {amount 2, item 2}... )
+function	script	showRecipe	{
+    if (getargcount() < 3 || getargcount() % 2 != 0)
+        return false;//Exception("Faulty recipe skill command invoked - error");
 
-    function read_book {
+    if (RECIPES[getarg(0)]) {
+        if (getarg(1)) {
+            mes l(".:: %s Recipe ::.", getitemlink(getarg(1)));
 
-        setnpcdialogtitle l(.book_name$);
-
-        mesc l("Eating is a necessity, but cooking is an art.");
-        mesc l("(All items must be placed exactly in this order for cooking work.)");
-        next;
-        mesc l("List of known cooking recipes:");
-        mes "";
-        mes ".:: " + l("Sandwiches") + " ::.";
-        mes "";
-        if (COOKING_RECIPES[CraftCarpSandwich]) {
-            mes l("@@", getitemlink(CarpSandwich));
-            mesc l("* @@ @@", 1, getitemlink(Bread));
-            mesc l("* @@ @@", 3, getitemlink(LettuceLeaf));
-            mesc l("* @@ @@", 2, getitemlink(Cheese));
-            mesc l("* @@ @@", 1, getitemlink(CommonCarp));
+            for (.@i=2;.@i < getargcount(); .@i++) {
+                mesc l("%d/%d %s", countitem(getarg(.@i+1)), getarg(.@i), getitemlink(getarg(.@i+1)));
+                .@i++;
+            }
             mes "";
         }
-        if (COOKING_RECIPES[CraftPioulegSandwich]) {
-            mes l("@@", getitemlink(PioulegSandwich));
-            mesc l("* @@ @@", 1, getitemlink(Bread));
-            mesc l("* @@ @@", 3, getitemlink(LettuceLeaf));
-            mesc l("* @@ @@", 2, getitemlink(Cheese));
-            mesc l("* @@ @@", 1, getitemlink(PiouLegs));
-            mes "";
-        }
-        if (COOKING_RECIPES[CraftMananaSandwich]) {
-            mes l("@@", getitemlink(MananaSandwich));
-            mesc l("* @@ @@", 1, getitemlink(Bread));
-            mesc l("* @@ @@", 3, getitemlink(LettuceLeaf));
-            mesc l("* @@ @@", 2, getitemlink(Cheese));
-            mesc l("* @@ @@", 1, getitemlink(Manana));
-            mes "";
-        }
-
-        close;
+        return true;
     }
+    return false;
+}
+
+-	script	#RecipeBook	NPC_HIDDEN,{
+	function read_book;
+	function read_cooking;
+	function read_smithery;
+    end;
+
+function read_book {
+    setnpcdialogtitle l(.book_name$);
+    mesc l("This book has several bookmarks. Which one will you open?");
+    next;
+    menuint
+        l("Cooking"), CRAFT_COOKING,
+        l("Alchemy"), CRAFT_ALCHEMY,
+        l("Smithery"), CRAFT_SMITHERY,
+        l("Tailoring"), CRAFT_TAILORING,
+        l("Jewelery"), CRAFT_JEWELERY;
+    mes "";
+    switch (@menuret) {
+    case CRAFT_COOKING:
+        read_cooking(); break;
+    case CRAFT_SMITHERY:
+        read_smithery(); break;
+    default:
+        mesc l("Unfortunately, there is nothing on this bookmark.");
+        mesc l("Perhaps, in future, someone adds it to this world.");
+        break;
+    }
+    next;
+    return;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+function read_cooking {
+
+    setnpcdialogtitle l("Cooking Recipes");
+
+    mesc l("Eating is a necessity, but cooking is an art.");
+    mesc l("(All items must be placed exactly in this order for cooking work.)");
+    next;
+    mesc l("List of known cooking recipes:");
+    mes "";
+    mes ".:: " + l("Sandwiches") + " ::.";
+    mes "";
+    showRecipe(CraftCarpSandwich, CarpSandwich,
+                1, Bread,
+                3, LettuceLeaf,
+                2, Cheese,
+                1, CommonCarp);
+    showRecipe(CraftPioulegSandwich, PioulegSandwich,
+                1, Bread,
+                3, LettuceLeaf,
+                2, Cheese,
+                1, PiouLegs);
+    showRecipe(CraftMananaSandwich, MananaSandwich,
+                1, Bread,
+                3, LettuceLeaf,
+                2, Cheese,
+                1, Manana);
+
+    return;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+function read_smithery {
+
+    setnpcdialogtitle l("Smithery Recipes");
+
+    mesc l("You will trust your life to this, so you better do a good job!");
+    mesc l("(All items must be placed exactly in this order.)");
+    next;
+    mesc l("List of known smithery recipes:");
+
+    mes "";
+    mes ".:: " + l("Helmets") + " ::.";
+    mes "";
+    showRecipe(CraftInfantryHelmet, InfantryHelmet,
+               12, IronOre,
+                3, Coal,
+                2, Moss,
+                1, Dagger);
+
+    return;
+}
+
 
 OnUse:
     if (openbook())
-        read_book;
+        read_book();
     closeclientdialog();
     close;
 
@@ -58,3 +122,75 @@ OnInit:
     .distance = 1;
     end;
 }
+
+//////////////////////////////////////////////////////
+// Below this line are utils for Gacha. We use callfunc() on itemDB.
+// Types: see constants.db - everything is a bitwise here
+// Rarity: 1 - basic, 2 - intermediary, 4 - advanced, 8 - expert, 16 - master
+// Rarity: 1 - training, 2 - basic, 4 - advanced, 8 - expert, 16 - legendary
+// Keep in mind! Expert and Master blueprints must be restricted!
+// MakeBlueprint(type, rarity)
+function	script	MakeBlueprint	{
+    .@type=getarg(0, -1);
+    .@rarity=getarg(1, 1);
+
+    if (.@type & CRAFT_COOKING) {
+
+        // ----------------------------------
+        if (.@rarity & CRAFT_BASIC) {
+        }
+        if (.@rarity & CRAFT_INTERMEDIARY) {
+        }
+        if (.@rarity & CRAFT_ADVANCED) {
+        }
+        if (.@rarity & CRAFT_EXPERT) {
+        }
+        if (.@rarity & CRAFT_MASTER) {
+        }
+        // ----------------------------------
+
+    }
+    else if (.@type & CRAFT_SMITHERY)
+	{
+
+        // ----------------------------------
+        if (.@rarity & CRAFT_BASIC) {
+        }
+        if (.@rarity & CRAFT_INTERMEDIARY) {
+                array_push(.@recipes, CraftInfantryHelmet);
+        }
+        if (.@rarity & CRAFT_ADVANCED) {
+        }
+        if (.@rarity & CRAFT_EXPERT) {
+        }
+        if (.@rarity & CRAFT_MASTER) {
+        }
+        // ----------------------------------
+
+    }
+
+	// We don't have a .@recipes array D:
+	if (array_entries(.@recipes) <= 0) {
+        dispbottom l("This blueprint was blank.");
+		return;
+	}
+
+	// Select a recipe randomly
+    .@rcp=any_of(.@recipes);
+
+	// Double precision failsafe
+    if (RECIPES[.@rcp])
+        .@rcp=any_of(.@recipes);
+
+	// Learn the recipe or lose the item (and gain some EXP)
+    if (RECIPES_[.@rcp]) {
+        dispbottom l("It was a recipe you already knew...");
+        getexp (BaseLevel+JobLevel)*rand2(1,.@rarity), JobLevel+rand2(1,.@rarity);
+    } else {
+        dispbottom l("Learned a new recipe!");
+        RECIPES[.@rcp]=true;
+    }
+    return;
+}
+
+

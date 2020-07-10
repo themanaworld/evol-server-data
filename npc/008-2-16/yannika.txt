@@ -10,7 +10,7 @@
 //  0: Doesn't knows the quest
 //  1: Received the quest for the Cookbook
 //  2: Completed the quest for the Cookbook
-//    COOKING_RECIPES
+//    RECIPES
 //  Controls which recipes you know and doesn't.
 //  It is an array with Craft Constants.
 
@@ -101,7 +101,7 @@
             }
             delitem .@item1, .@ammo1;
             delitem .@item2, .@ammo2;
-            COOKING_RECIPES[.@craft]=true;
+            RECIPES[.@craft]=true;
             speech
                 l("This is how you do it! HAAH!");
             next;
@@ -112,6 +112,7 @@
     }
 
     // Yannika can make sandwiches for players
+    // FIXME: Actually, Yannika will cook anything for players >__>
     function sudo_make_sandwich
     {
         speech
@@ -128,7 +129,7 @@
                 setskin "craft4";
                 .@var$ = requestcraft(4); // Limit: 4 items
                 .@craft = initcraft(.@var$);
-                .@entry = findcraftentry(.@craft, CRAFT_SANDWICH);
+                .@entry = findcraftentry(.@craft, CRAFT_COOKING);
                 setskin "";
 
                 // Does the recipe exist and is a sandwich?
@@ -211,7 +212,7 @@
             {
                 case CommonCarp:
                 case GrassCarp:
-                    if (COOKING_RECIPES[CraftCarpSandwich])
+                    if (RECIPES[CraftCarpSandwich])
                     {
                         speech
                             lg("Haha, silly you! You already know the recipe! Read the @@ if you forgot!", getitemlink(RecipeBook));
@@ -223,7 +224,7 @@
                     break;
 
                 case Manana:
-                    if (COOKING_RECIPES[CraftMananaSandwich])
+                    if (RECIPES[CraftMananaSandwich])
                     {
                         speech
                             lg("Haha, silly you! You already know the recipe! Read the @@ if you forgot!", getitemlink(RecipeBook));
@@ -235,7 +236,7 @@
                     break;
 
                 case PiouLegs:
-                    if (COOKING_RECIPES[CraftPioulegSandwich])
+                    if (RECIPES[CraftPioulegSandwich])
                     {
                         speech
                             lg("Haha, silly you! You already know the recipe! Read the @@ if you forgot!", getitemlink(RecipeBook));

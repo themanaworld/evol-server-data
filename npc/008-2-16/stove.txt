@@ -25,14 +25,14 @@
         setskin "craft4";
         .@var$ = requestcraft(4); // Limit: 4 items
         .@craft = initcraft(.@var$);
-        .@entry = findcraftentry(.@craft, CRAFT_SANDWICH);
+        .@entry = findcraftentry(.@craft, CRAFT_COOKING);
         setskin "";
 
         // Does the recipe exist and is a sandwich?
         if (.@entry < 0)
         {
                 narrator
-                    l("You don't know how to make a sandwich with that."),
+                    l("You don't know how any recipe with that."),
                     l("Do you want to try again?");
                 if (askyesno() == ASK_YES)
                     .@tryAgain=true;
@@ -52,7 +52,7 @@
             {
                 // Even if the recipe is right, if you don't have it on your
                 // recipe book, it should be deemed invalid.
-                if (COOKING_RECIPES[.@entry])
+                if (RECIPES[.@entry])
                 {
                     usecraft .@craft;
                     narrator
@@ -62,7 +62,7 @@
                else
                 {
                     narrator
-                        l("You don't know how to make a sandwich with that."),
+                        l("You don't know how any recipe with that."),
                         l("Do you want to try again?");
                 }
 
