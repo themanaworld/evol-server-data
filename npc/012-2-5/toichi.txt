@@ -6,17 +6,69 @@
 // THIS IS A PLACEHOLDER!
 
 012-2-5,40,35,0	script	Toichi	NPC_TOICHI,{
+    function askCrafting;
     speech
         l("Hi there."),
         l("My name is Toichi, and it seems I am the only one working on this lazy island.");
-        next;
-        mesq l("So I kindly request you not to listen to that stupid Rosen, saying 'Toichi is lazy'.");
-        next;
-        mesq l("At least I am doing something!");
+    next;
+    mesq l("So I kindly request you not to listen to that stupid Rosen, saying 'Toichi is lazy'.");
+    next;
+    mesq l("At least I am doing something!");
+    // TODO: Add here a check for crafting skills
+    askCrafting();
     close;
+
+function askCrafting {
+    next;
+    select
+        l("Okay..."),
+        l("Hey, do you mind if I use your equipment?"),
+        rif(is_dev(), "[Debug]");
+    mes "";
+    if (@menu == 1)
+        return;
+
+    // Debug
+    if (debug && @menu == 3)
+        RECIPES[CraftInfantryHelmet]=!RECIPES[CraftInfantryHelmet];
+    if (debug || @menu == 3)
+        mesf("[DEBUG] Knows the infantry helmet recipe? %s",
+            (RECIPES[CraftInfantryHelmet] ? "YES" : "NO"));
+
+    mesn;
+    mesq l("Sure, go ahead. But I'll charge you %d E per craft as commission!", .price);
+    next;
+    do {
+        mesc l("What will you craft today?");
+        mesc l("It costs %d E to use.", .price), 1;
+        if (Zeny < .price)
+            close;
+
+        if (SmithSystem()) {
+            // This should NEVER, EVER happen.
+            if (Zeny < .price) {
+                mesc l("WARNING, you have been detected cheating and thus, violating Gasaron Anti-Theft Policy."), 1;
+                mesc l("You were jailed and now need a GM to get you out of there."), 1;
+                // At this point I just c/p the code
+                logmes "WARNING, "+strcharinfo(0)+" found out cheating, only had "+Zeny+" Esperins for craft table. Jailed.", LOGMES_ATCOMMAND;
+                atcommand("@jail "+strcharinfo(0));
+                Zeny=0;
+                close;
+            }
+            Zeny-=.price;
+            mesc l("Success!"), 3;
+        } else {
+            mesc l("That didn't work!"), 1;
+        }
+        next;
+        mesc l("Try again?");
+    } while (askyesno() == ASK_YES);
+    return;
+}
 
 OnInit:
     .sex = G_MALE;
     .distance = 4;
+    .price = 6000;
     end;
 }

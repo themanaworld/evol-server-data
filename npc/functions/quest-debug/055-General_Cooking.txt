@@ -10,7 +10,7 @@ function	script	QuestDebug55	{
         mes "General_Cooking";
         mes "---";
         mes l("Quest state: @@", getq(General_Cooking));
-        mes l("Known Recipes: @@", array_entries(COOKING_RECIPES));
+        mes l("Known Recipes: @@", array_entries(RECIPES));
         next;
 
         select
@@ -33,14 +33,14 @@ function	script	QuestDebug55	{
                 getitem RecipeBook, 1;
                 break;
             case 5:
-                COOKING_RECIPES[CraftCarpSandwich]=true;
-                COOKING_RECIPES[CraftMananaSandwich]=true;
-                COOKING_RECIPES[CraftPioulegSandwich]=true;
+                RECIPES[CraftCarpSandwich]=true;
+                RECIPES[CraftMananaSandwich]=true;
+                RECIPES[CraftPioulegSandwich]=true;
                 break;
             case 6:
-                COOKING_RECIPES[CraftCarpSandwich]=false;
-                COOKING_RECIPES[CraftMananaSandwich]=false;
-                COOKING_RECIPES[CraftPioulegSandwich]=false;
+                RECIPES[CraftCarpSandwich]=false;
+                RECIPES[CraftMananaSandwich]=false;
+                RECIPES[CraftPioulegSandwich]=false;
                 break;
 
         }

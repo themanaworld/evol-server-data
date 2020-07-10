@@ -1,0 +1,94 @@
+// Moubootaur Legends Script
+// Author:
+//  Jesusalva
+// Description:
+//  Smith System (Unified)
+// Notes:
+//  Modified for The Mana World: rEvolt
+//
+// This one is more crazy. Cannot be equipping target craft.
+// After successful craft, we use CraftDB return code to equip() the
+// new item and apply a random option bonus based on crafter skills
+// eg. setequipoption(EQI_HAND_R, 1, VAR_STRAMOUNT, 5)
+
+// Usage: SmithSystem ({scope=CRAFT_SMITHERY, checks=True})
+// Returns true on success, false on failure
+function	script	SmithSystem	{
+    .@scope=getarg(0, CRAFT_SMITHERY);
+    mesc l("WARNING: Strange bugs may happen if you attempt to craft an item you already have on inventory!"), 1;
+    setskin "craft4";
+    .@var$ = requestcraft(4);
+    .@craft = initcraft(.@var$);
+    .@entry = findcraftentry(.@craft, .@scope);
+    if (debug || $@GM_OVERRIDE) mes "found craft entry: " + .@entry;
+    if (debug || $@GM_OVERRIDE) mes "knowledge value: " + .knowledge[.@entry];
+    if (.@entry < 0) {
+            .success=false;
+    } else {
+        if (!getarg(1, true) || RECIPES[.@entry]) {
+            // Player craft item and setup base variables
+            usecraft .@craft;
+            .@it=getcraftcode(.@entry);
+            .@lv=getiteminfo(.@it, ITEMINFO_ELV);
+            .@skill=getskilllv(EVOL_CRAFTING);
+
+            // Update your CRAFTING_SCORE
+            CRAFTING_SCORE+=.@lv;
+
+            // Obtain the item. No bounds or restrictions applied.
+            getitem(.@it, 1);
+
+            // This is where we add options - this is oversimplified
+            // delinventorylist() is needed, because we'll rely on rfind()
+            delinventorylist();
+            getinventorylist();
+            .@index=array_rfind(@inventorylist_id, .@it);
+
+            // Prepare the options
+            .@isweapon=(getiteminfo(.@it, ITEMINFO_TYPE) == IT_WEAPON);
+            .@bonus=(.@isweapon ? VAR_ATTPOWER : VAR_ITEMDEFPOWER);
+            .@magic=(.@isweapon ? VAR_ATTMPOWER : VAR_MDEFPOWER);
+            .@buffs=(.@isweapon ? VAR_HITSUCCESSVALUE : VAR_AVOIDSUCCESSVALUE);
+            .@heals=(.@isweapon ? VAR_MAXSPAMOUNT : VAR_MAXHPAMOUNT);
+
+            // Now we need to randomly decide what will be .@opt1 and .@opt2
+            // Would be better to not rely on rand here, though.
+            .@opt1=any(.@bonus, .@magic);
+            .@opt2=any(.@buffs, .@heals);
+
+            // Apply the bonuses. They're capped by equip level and based on:
+            // Equip level, crafting experience and crafting skill
+            .@val=min(.@lv, (.@skill*CRAFTING_SCORE)/100+.@skill);
+
+            // MDEF rule range is 99 while DEF rule range is 399
+            // This is a really hackish way, for the record
+            if (.@opt1 == VAR_MDEFPOWER)
+                .@val=.@val/4;
+
+            // First option will always succeed
+            .@val1=rand2(.@val);
+            setitemoptionbyindex(.@index, 0, .@opt1, .@val1);
+
+            // Lucky roll (5% per skill level, capped at 50%)
+            // The lucky roll will add the extra attributes
+            if (rand2(20) < .@skill) {
+                .@val2=rand2(.@val);
+                setitemoptionbyindex(.@index, 1, .@opt2, .@val2);
+            }
+
+            // Get experience for the craft
+            // I'm using the same EXP formula from Moubootaur Legends
+            // Which is based on the item sell price
+            .@xp=getiteminfo(.@it, ITEMINFO_SELLPRICE);
+            getexp .@xp+BaseLevel, (.@xp/3)+BaseLevel+JobLevel;
+            .success=true;
+        } else {
+            .success=false;
+        }
+    }
+    deletecraft .@craft;
+    setskin "";
+    return .success;
+}
+
+

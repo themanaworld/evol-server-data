@@ -269,3 +269,22 @@ function	script	get_race	{
         return .@allskins$[.@g] + " " + .@allraces$[.@g];
 }
 
+// Clear output of getinventorylist()
+// delinventorylist()
+function	script	delinventorylist	{
+    deletearray @inventorylist_id;
+    deletearray @inventorylist_amount;
+    deletearray @inventorylist_equip;
+    deletearray @inventorylist_refine;
+    deletearray @inventorylist_identify;
+    deletearray @inventorylist_attribute;
+    deletearray @inventorylist_card1;
+    deletearray @inventorylist_card2;
+    deletearray @inventorylist_card3;
+    deletearray @inventorylist_card4;
+    deletearray @inventorylist_expire;
+    deletearray @inventorylist_bound;
+    @inventorylist_count=0;
+    return;
+}
+
