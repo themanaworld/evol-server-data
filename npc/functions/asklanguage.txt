@@ -13,30 +13,14 @@ function	script	asklanguage	{
         case LANG_ON_SEA:
             setarray .@messages$[0], "I hear you... (English)", // English
                                      "Je vous entends... (Français)", // French
-                                     "Да я вас слышу... (Русский)", // Russian
                                      "Te oigo... (Español)", // Spanish
-                                     "Eu te ouço... (Português)", // Portuguese
-                                     "Ich höre euch... (Deutsch)", // German
-                                     "'k hoar ui wel... (Vlaams)", // Flemish
-                                     "Słyszę cię... (Polski)", // Polish
-                                     "Vi sento... (Italiano)", // Italian
-                                     "Ik kan je horen... (Nederlands)", // Dutch
-                                     "Et escolto (Català)", // Catalan
-                                     "Mi aŭdas vin... (Angle)"; // Esperanto
+                                     "Ich höre euch... (Deutsch)"; // German
             break;
         case LANG_IN_SHIP:
             setarray .@messages$[0], "I speak English.", // English
                                      "Je parle français.", // French
-                                     "Я говорю на русском.", // Russian
                                      "Hablo Español.", // Spanish
-                                     "Eu falo Português.", // Portuguese
-                                     "Ich spreche Deutsch.", // German
-                                     "'k klappe Vloams", // Flemish
-                                     "Mówię po polsku.", // Polish
-                                     "Parlo Italiano.", // Italian
-                                     "Ik spreek Nederlands.", // Dutch
-                                     "Parlo català.", // Catalan
-                                     "Mi parolas Esperanton."; // Esperanto
+                                     "Ich spreche Deutsch."; // German
             break;
         default:
             return;
@@ -44,16 +28,8 @@ function	script	asklanguage	{
 
     setarray .@flags$[0],    "flags/en",
                              "flags/fr",
-                             "flags/ru",
                              "flags/es",
-                             "flags/pt_BR",
-                             "flags/de",
-                             "flags/vls",
-                             "flags/pl",
-                             "flags/it",
-                             "flags/nl_BE",
-                             "flags/ca",
-                             "flags/eo";
+                             "flags/de";
 
     .@menustr$ = "";
     .@separator$ = ":";

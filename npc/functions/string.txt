@@ -101,7 +101,8 @@ function	script	format_number	{
     if (getargcount() < 2 && playerattached()) {
         // get from user language
         switch (Lang) {
-        case 1: .@separator$ = " "; break; // French
+        case LANG_FR: .@separator$ = " "; break; // French
+        //case LANG_BR: .@separator$ = "."; break; // Portuguese
         default: .@separator$ = ","; // English (default)
         }
     }
