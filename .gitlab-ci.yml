@@ -37,6 +37,7 @@ mariadb_run_latest_gcc10:
   script:
   - export CC=gcc-10
   - export HERCCPPFLAGS=" -Wno-format-overflow"
+  - export ASAN_OPTIONS=detect_stack_use_after_return=true:strict_init_order=true:detect_odr_violation=0
   - ./.tools/jobs/install.sh "mysql-client
     gcc-10
     git-core
