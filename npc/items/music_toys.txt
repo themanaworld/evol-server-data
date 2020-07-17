@@ -1,0 +1,18 @@
+// Evol scripts.
+// Authors:
+//    Quillia
+//    mekolat (legacy delay logic)
+// Description:
+//    Allows the RubberBat to be squeezed.
+//
+
+-	script	RubberBat	NPC_HIDDEN,{
+    close;
+
+OnUse:
+    if (gettimetick(2) - @lastbat < 2) close;
+    specialeffect(70, AREA, playerattached()); // effect 70 defined in client-data/effects.xml
+    @lastbat = gettimetick(2);
+
+    close;
+}
