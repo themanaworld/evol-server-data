@@ -746,8 +746,9 @@ function bone_quest_final_check {
 
     inventoryplace BoneKnife, 1;
 
+    mesc l("He hands you the knife.");
+    next;
     speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-        l("He hands you the knife."),
         l("Oh, and I think I'll keep those in return; I know someone who will trade them for antidote potions.");
     narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
         l("He pockets the stingers and mushrooms.");
