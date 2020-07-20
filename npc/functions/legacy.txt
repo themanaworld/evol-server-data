@@ -160,3 +160,79 @@ function	script	setfakelegacyaccount	{
     bitwise_set(getvariableofpc(LEGACY[1], .@acc), 0x7FFFFF00, 8, getarg(2, 5000));
     return true;
 }
+
+/**
+ * gets the inventory the attached or provided char had on the Legacy server at
+ * snapshot time
+ *
+ * Example:
+ *     .@size = getlegacyinventory(.@item, .@amount);
+ *
+ * @param 0 - a reference to an array variable to hold the item ids
+ * @param 1 - a reference to an array variable to hold the item qty
+ * @param 2? - char name / account id (defaults to attached player)
+ * @return number of entries added to the arrays
+ */
+function	script	getlegacyinventory	{
+    .@char = getlegacycharid(getarg(2, ""));
+
+    if (.@char < 1) {
+        consolemes(CONSOLEMES_ERROR, "getlegacyinventory: target legacy character not found");
+        return 0;
+    }
+
+    if ((getdatatype(getarg(0)) & (DATATYPE_VAR | DATATYPE_INT)) == 0) {
+        consolemes(CONSOLEMES_ERROR, "getlegacyinventory: first argument should be an integer array");
+        return 0;
+    }
+
+    if ((getdatatype(getarg(1)) & (DATATYPE_VAR | DATATYPE_INT)) == 0) {
+        consolemes(CONSOLEMES_ERROR, "getlegacyinventory: second argument should be an integer array");
+        return 0;
+    }
+
+    freeloop(true);
+    .@rows = query_sql(sprintf("SELECT nameid, amount FROM legacy.inventory WHERE char_id = '%d';", .@char),
+        getarg(0), getarg(1));
+    freeloop(false);
+
+    return .@rows;
+}
+
+/**
+ * gets the storage the attached or provided account had on the Legacy server at
+ * snapshot time
+ *
+ * Example:
+ *     .@size = getlegacystorage(.@item, .@amount);
+ *
+ * @param 0 - a reference to an array variable to hold the item ids
+ * @param 1 - a reference to an array variable to hold the item qty
+ * @param 2? - char name / account id (defaults to attached player)
+ * @return number of entries added to the arrays
+ */
+function	script	getlegacystorage	{
+    .@acc = getlegacyaccountid(getarg(2, ""));
+
+    if (.@acc < 1) {
+        consolemes(CONSOLEMES_ERROR, "getlegacystorage: target legacy account not found");
+        return 0;
+    }
+
+    if ((getdatatype(getarg(0)) & (DATATYPE_VAR | DATATYPE_INT)) == 0) {
+        consolemes(CONSOLEMES_ERROR, "getlegacystorage: first argument should be an integer array");
+        return 0;
+    }
+
+    if ((getdatatype(getarg(1)) & (DATATYPE_VAR | DATATYPE_INT)) == 0) {
+        consolemes(CONSOLEMES_ERROR, "getlegacystorage: second argument should be an integer array");
+        return 0;
+    }
+
+    freeloop(true);
+    .@rows = query_sql(sprintf("SELECT nameid, amount FROM legacy.storage WHERE account_id = '%d';", .@acc),
+        getarg(0), getarg(1));
+    freeloop(false);
+
+    return .@rows;
+}
