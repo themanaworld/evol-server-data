@@ -1,0 +1,74 @@
+// TODO: create a Vault hercules plugin for native support
+
+// NOTE: no script other than the functions in this file should EVER access
+//       ##VAULT[] or the vault-bound variables
+
+/**
+ * Gets the Vault account ID of the provided or attached player.
+ * If the server does not use Vault, it returns a virtual Vault ID.
+ *
+ * Example:
+ *     getvaultid("player name");
+ *
+ * @param 0? - char name / account id (defaults to attached player)
+ * @return the Vault ID
+ */
+function	script	getvaultid	{
+    if (SERVER_USES_VAULT) {
+        // we dereference the variable to avoid accidental assignment
+        return 0+ getvariableofpc(##VAULT[0], nameid2id(getarg(0, "")));
+    } else {
+        return nameid2id(getarg(0, ""));
+    }
+}
+
+/**
+ * gets a (fake) vault account-bound variable.
+ * right now these are map-server global variables so they should be used
+ * sparingly
+ *
+ * Example:
+ *     set(getvaultvar(VAR$), "foo bar");
+ *
+ * @param 0 - a variable name without prefix
+ * @param 1? - char name / account id (defaults to attached player)
+ * @return a reference to the variable
+ */
+function	script	getvaultvar	{
+    if ((getdatatype(getarg(0)) & DATATYPE_VAR) == 0) {
+        consolemes(CONSOLEMES_ERROR, "getvaultvar: first argument should be a variable");
+        end;
+    }
+
+    .@var$ = data_to_string(getarg(0));
+
+    if (charat(.@var$, 0) == "." || charat(.@var$, 0) == "@" ||
+        charat(.@var$, 0) == "$" || charat(.@var$, 0) == "#") {
+        consolemes(CONSOLEMES_ERROR, "getvaultvar: the variable must be unprefixed");
+        end;
+    }
+
+    if (SERVER_USES_VAULT) {
+        .@vault = getvaultid(getarg(1, ""));
+        return getd(sprintf("$VAULT_%s[%i]", .@var$, .@vault));
+    } else {
+        return getvariableofpc(getd(sprintf("##%s", .@var$)), nameid2id(getarg(1, "")));
+    }
+}
+
+/**
+ * sets a (fake) vault account-bound variable.
+ * right now these are map-server global variables so they should be used
+ * sparingly
+ *
+ * Example:
+ *     setvaultvar(FOO$, "bar");
+ *
+ * @param 0 - a variable name without prefix
+ * @param 1 - the value to set
+ * @param 2? - char name / account id (defaults to attached player)
+ * @return a reference to the variable
+ */
+function	script	setvaultvar	{
+    return set(getvaultvar(getarg(0), getarg(2, "")), getarg(1));
+}
