@@ -216,8 +216,7 @@
      * @param 0 - the public local function
      */
     public function addNameHandler {
-        htput(.name_handlers, "" + getnpcid(), getarg(0));
-        return;
+        return addEventListener(.name_handlers, getarg(0));
     }
 
     /**
@@ -229,8 +228,7 @@
      * @param 0 - the public local function
      */
     public function addVaultHandler {
-        htput(.vault_handlers, "" + getnpcid(), getarg(0));
-        return;
+        return addEventListener(.vault_handlers, getarg(0));
     }
 
 
@@ -253,16 +251,7 @@
 
         if (.@old$ != "" && .@old$ != .account_to_name$[playerattached()]) {
             // fire event handlers
-            .@it = htiterator(.name_handlers);
-            for (.@npc$ = htinextkey(.@it); hticheck(.@it); .@npc$ = htinextkey(.@it)) {
-                if (.@npc$ == "") {
-                    continue;
-                }
-
-                .@func$ = htget(.name_handlers, .@npc$, "");
-                callfunctionofnpc(atoi(.@npc$), .@func$, .@old$);
-            }
-            htidelete(.@it);
+            dispatchEvent(.name_handlers, .@old$);
             return true;
         }
 
@@ -285,16 +274,7 @@
 
         if (.@old > 0 && .@old != .vault_to_account[getvaultid()]) {
             // fire event handlers
-            .@it = htiterator(.vault_handlers);
-            for (.@npc$ = htinextkey(.@it); hticheck(.@it); .@npc$ = htinextkey(.@it)) {
-                if (.@npc$ == "") {
-                    continue;
-                }
-
-                .@func$ = htget(.vault_handlers, .@npc$, "");
-                callfunctionofnpc(atoi(.@npc$), .@func$, .@old, .@old$);
-            }
-            htidelete(.@it);
+            dispatchEvent(.vault_handlers, .@old, .@old$);
             return true;
         }
 

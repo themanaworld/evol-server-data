@@ -1,0 +1,169 @@
+// Event listeners work similar to the JavaScript event dispatching system,
+// except that the event object is a hash table.
+//
+// Javascript reference:
+// https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events
+//
+// Example usage:
+/*
+// Create a handler function:
+public function myHandler {
+    // ... do something with getarg(0)
+}
+
+// Create a new event:
+$@event = htnew();
+
+// Listen for the event:
+addEventListener($@event, "myHandler");
+
+// Dispatch the event:
+dispatchEvent($@event, "misc data");
+*/
+
+
+/**
+ * getEventHt(<hash table expression>) => ht id
+ *
+ * Parses a hash table "event" expression and creates one when necessary.
+ * The following are all valid:
+ *
+ * getEventHt(.@ht); // variable
+ * getEventHt(72); // arbitrary integer (global namespace)
+ * getEventHt("some event"); // arbitrary string (global namespace)
+ *
+ * NOTE: This is only called internally; you don't have to use this function
+ *
+ * @param 0 - a variable / string / integer
+ * @return the hash table id
+ */
+function	script	getEventHt	{
+    .@ht = ((getdatatype(getarg(0)) & (DATATYPE_VAR | DATATYPE_INT)) != 0) ? getarg(0) : 0;
+
+    if (htexists(.@ht)) {
+        // this is already a valid hash table
+        return getarg(0);
+    } else if ((getdatatype(getarg(0)) & DATATYPE_VAR) != 0) {
+        // the hash table doesn't exist yet: create one and store it in the
+        // provided variable
+
+        if ((getdatatype(getarg(0)) & DATATYPE_STR) != 0) {
+            consolemes(CONSOLEMES_ERROR, "getEventHt: variable must be an integer variable (cannot use %s)", data_to_string(getarg(0)));
+            end;
+        }
+
+        if (getarg(0) > 0) {
+            consolemes(CONSOLEMES_WARNING, "getEventHt: variable is already assigned (overwriting %s)", data_to_string(getarg(0)));
+        }
+
+        return set(getarg(0), htnew());
+    } else {
+        // global event listener namespace
+        if ($@GLOBAL_EVTL_HT < 1) {
+            $@GLOBAL_EVTL_HT = htnew();
+
+            // the global scope is new: create a new one
+            .@ht = htnew();
+            htput($@GLOBAL_EVTL_HT, data_to_string(getarg(0)), "" + .@ht);
+            return .@ht;
+        } else if ((.@ht$ = htget($@GLOBAL_EVTL_HT, data_to_string(getarg(0)), "")) != "") {
+            // found in the global scope
+            return atoi(.@ht$);
+        } else {
+            // not found in the global scope: create new
+            .@ht = htnew();
+            htput($@GLOBAL_EVTL_HT, data_to_string(getarg(0)), "" + .@ht);
+            return .@ht;
+        }
+    }
+}
+
+/**
+ * addEventListener(<ht: event>, "<handler: public local function>") => void
+ *
+ * Register a public local function in the current NPC as an event handler for
+ * the given hash table. Can also register for another NPC using the syntax
+ * `npcName::function`
+ *
+ * NOTE: only one handler may be assigned per NPC per Event
+ *
+ * @param 0 - the event to listen to (string, variable, or hash table)
+ * @param 1 - the event handler (must be a public local function)
+ */
+function	script	addEventListener	{
+    .@ht = getEventHt(getarg(0));
+    .@pos = strpos(getarg(1), "::");
+
+    if (.@pos > -1) {
+        .@id = getnpcid(substr(getarg(1), 0, .@pos - 1));
+        .@function$ = substr(getarg(1), .@pos + 2, getstrlen(getarg(1)) - 1);
+    } else {
+        .@id = getnpcid();
+        .@function$ = getarg(1);
+    }
+
+    if (.@id == 0) {
+        consolemes(CONSOLEMES_WARNING, "addEventListener: the target NPC doesn't exist");
+        return;
+    }
+
+    // TODO: check that the target function exists
+    return htput(.@ht, "" + .@id, .@function$);
+}
+
+/**
+ * dispatchEvent(<ht: event>{, ...<arg>}) => bool
+ *
+ * Calls every event handler for the given hash table and passes the given
+ * arguments (if any)
+ *
+ * @param 0 - the event to dispatch (string, variable, or hash table)
+ * @return true when handlers were called, else false
+ */
+function	script	dispatchEvent	{
+    .@ht = getEventHt(getarg(0));
+
+    if (htsize(.@ht) < 1) {
+        // no handler to call
+        return false;
+    }
+
+    .@it = htiterator(.@ht);
+
+    freeloop(true);
+    for (.@npc$ = htinextkey(.@it); hticheck(.@it); .@npc$ = htinextkey(.@it)) {
+        if (.@npc$ == "") {
+            continue;
+        }
+
+        .@func$ = htget(.@ht, .@npc$, "");
+
+        // this is ugly but we don't have rest parameters (...args) to apply args to function calls
+        switch (getargcount()) {
+        case 1:
+            callfunctionofnpc(atoi(.@npc$), .@func$);
+            break;
+        case 2:
+            callfunctionofnpc(atoi(.@npc$), .@func$, getarg(1));
+            break;
+        case 3:
+            callfunctionofnpc(atoi(.@npc$), .@func$, getarg(1), getarg(2));
+            break;
+        case 4:
+            callfunctionofnpc(atoi(.@npc$), .@func$, getarg(1), getarg(2), getarg(3));
+            break;
+        case 5:
+            callfunctionofnpc(atoi(.@npc$), .@func$, getarg(1), getarg(2), getarg(3), getarg(4));
+            break;
+        default:
+            consolemes(CONSOLEMES_WARNING, "dispatchEvent: truncating to 5 arguments (%d given)", getargcount() - 1);
+        case 6:
+            callfunctionofnpc(atoi(.@npc$), .@func$, getarg(1), getarg(2), getarg(3), getarg(4), getarg(5));
+            break;
+        }
+    }
+    freeloop(false);
+
+    htidelete(.@it);
+    return true;
+}
