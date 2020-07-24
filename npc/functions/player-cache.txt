@@ -1,0 +1,353 @@
+// Player cache system
+//
+// Holds a cache of online players in-memory even after logout. This greatly
+// reduces the need to query the SQL database for data that is frequently
+// accessed.
+//
+// NOTE: This NPC uses the new public/private function call system to avoid
+//       polluting the global function namespace
+//
+// Example usage:
+//    .@account_id = "playerCache"::name2account("Reid");
+//
+
+-	script	playerCache	FAKE_NPC,{
+    /**
+     * "playerCache"::name2account("char name") => account id
+     *
+     * Searches through the player cache to convert a char name to a account ID.
+     * If the player is not found, checks the SQL table. If the player doesn't
+     * exist, returns false.
+     *
+     * @param 0 - the char name to search
+     * @return the account id of the char
+     */
+    public function name2account {
+        if (.@acc = getcharid(CHAR_ID_ACCOUNT, getarg(0))) {
+            // player is currently online
+            return .@acc;
+        }
+
+        if (.@acc = htget(.name_to_account, getarg(0), 0)) {
+            // player found in the hash table
+            return .@acc;
+        }
+
+        // player still not found: now we try SQL
+        .@name$ = escape_sql(getarg(0));
+        query_sql(sprintf("SELECT account_id, char_id FROM `char` WHERE `name`='%s' LIMIT 1;", .@name$), .@acc, .@char);
+
+        if (.@acc > 0) {
+            // player found: add to our cache
+            htput(.name_to_account, getarg(0), .@acc);
+            .account_to_name$[.@acc] = getarg(0);
+            htput(.name_to_char, getarg(0), .@char);
+            .char_to_name$[.@char] = getarg(0);
+
+            return .@acc;
+        }
+
+        // player doesn't exist
+        return false;
+    }
+
+    /**
+     * "playerCache"::name2char("char name") => char id
+     *
+     * Searches through the player cache to convert a char name to a char ID.
+     * If the player is not found, checks the SQL table. If the player doesn't
+     * exist, returns false.
+     *
+     * @param 0 - the char name to search
+     * @return the char id of the char
+     */
+    public function name2char {
+        if (.@char = getcharid(CHAR_ID_CHAR, getarg(0))) {
+            // player is currently online
+            return .@char;
+        }
+
+        if (.@char = htget(.name_to_char, getarg(0), 0)) {
+            // player found in the hash table
+            return .@char;
+        }
+
+        // player still not found: now we try SQL
+        .@name$ = escape_sql(getarg(0));
+        query_sql(sprintf("SELECT account_id, char_id FROM `char` WHERE `name`='%s' LIMIT 1;", .@name$), .@acc, .@char);
+
+        if (.@acc > 0) {
+            // player found: add to our cache
+            htput(.name_to_account, getarg(0), .@acc);
+            .account_to_name$[.@acc] = getarg(0);
+            htput(.name_to_char, getarg(0), .@char);
+            .char_to_name$[.@char] = getarg(0);
+
+            return .@char;
+        }
+
+        // player doesn't exist
+        return false;
+    }
+
+    /**
+     * "playerCache"::char2account(char id) => account id
+     *
+     * Searches through the player cache to convert a char ID to an account ID.
+     * If the player is not found, checks the SQL table. If the player doesn't
+     * exist, returns false.
+     *
+     * @param 0 - the char ID to search
+     * @return the account id of the char
+     */
+    public function char2account {
+        .@name$ = .char_to_name$[getarg(0)];
+
+        if (.@name$ != "") {
+            if (.@acc = getcharid(CHAR_ID_ACCOUNT, .@name$)) {
+                // player is currently online
+                return .@acc;
+            }
+
+            if (.@acc = htget(.name_to_account, .@name$, 0)) {
+                // player found in the hash table
+                return .@acc;
+            }
+        }
+
+        // player still not found: now we try SQL
+        query_sql(sprintf("SELECT account_id, name FROM `char` WHERE `char_id`='%d' LIMIT 1;", getarg(0)), .@acc, .@name$);
+
+        if (.@acc > 0) {
+            // player found: add to our cache
+            htput(.name_to_account, .@name$, .@acc);
+            .account_to_name$[.@acc] = .@name$;
+            htput(.name_to_char, .@name$, getarg(0));
+            .char_to_name$[getarg(0)] = .@name$;
+
+            return .@acc;
+        }
+
+        // player doesn't exist
+        return false;
+    }
+
+    /**
+     * "playerCache"::account2char(account id) => char id
+     *
+     * Searches through the player cache to convert an account ID into a
+     * char ID
+     *
+     * NOTE: this is a weak reference; an account ID does not uniquely identify
+     *       a character
+     *
+     * @param 0 - the account ID to search for
+     * @return the char ID of the char
+     */
+    public function account2char {
+        if ((.@name$ = strcharinfo(PC_NAME, "", getarg(0))) != "") {
+            // player is online
+            return getcharid(CHAR_ID_CHAR, .@name$);
+        } else if ((.@name$ = .account_to_name$[getarg(0)]) != "") {
+            // found in our cache
+            return htget(.name_to_char, .@name$, false);
+        }
+
+        // not found
+        return false;
+    }
+
+    // TODO: char2name
+
+    /**
+     * "playerCache"::vault2account(vault id) => account id
+     *
+     * Searches through the player cache to convert a Vault account ID into a
+     * game account ID
+     *
+     * NOTE: this is a weak reference; a Vault ID does not uniquely identify
+     *       a game account
+     *
+     * @param 0 - the Vault ID to search for
+     * @return the account id of the char
+     */
+    public function vault2account {
+        if (!SERVER_USES_VAULT) {
+            return false;
+        } else if (.@acc = .vault_to_account[getarg(0)]) {
+            // found in the cache
+            return .@acc;
+        }
+        return false;
+    }
+
+    // TODO: vault2char (weak reference)
+    // TODO: vault2name (weak reference)
+
+    /**
+     * "playerCache"::account2vault(account id) => vault id
+     *
+     * Searches through the player cache to convert a game account ID into a
+     * Vault account ID
+     *
+     * @param 0 - the account ID to search for
+     * @return the Vault ID associated with the account
+     */
+    public function account2vault {
+        if (!SERVER_USES_VAULT) {
+            return false;
+        } else if (.@vault = .account_to_vault[getarg(0)]) {
+            return .@vault;
+        } else {
+            // TODO: find in SQL
+            return false;
+        }
+        return false;
+    }
+
+    // TODO: char2vault
+    // TODO: name2vault
+
+    /**
+     * Registers a public local function that will be called when the char name
+     * associated with an account changes. The previous account ID will be
+     * passed as first argument to the provided function.
+     *
+     * @param 0 - the public local function
+     */
+    public function addNameHandler {
+        htput(.name_handlers, "" + getnpcid(), getarg(0));
+        return;
+    }
+
+    /**
+     * Registers a public local function that will be called when the account
+     * associated with a Vault account changes. The previous account id will be
+     * passed as first argument to the provided function and the previous
+     * char name will be passed as second argument.
+     *
+     * @param 0 - the public local function
+     */
+    public function addVaultHandler {
+        htput(.vault_handlers, "" + getnpcid(), getarg(0));
+        return;
+    }
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * updates the char name cache and fires event handlers when the name
+     * associated with an account changes (such as when switching char)
+     */
+    private function updateName {
+        // get the cached name:
+        .@old$ = .account_to_name$[playerattached()];
+
+        // now update the cache:
+        htput(.name_to_account, strcharinfo(PC_NAME), playerattached());
+        .account_to_name$[playerattached()] = strcharinfo(PC_NAME);
+        htput(.name_to_char, strcharinfo(PC_NAME), getcharid(CHAR_ID_CHAR));
+        .char_to_name$[getcharid(CHAR_ID_CHAR)] = strcharinfo(PC_NAME);
+
+        if (.@old$ != "" && .@old$ != .account_to_name$[playerattached()]) {
+            // fire event handlers
+            .@it = htiterator(.name_handlers);
+            for (.@npc$ = htinextkey(.@it); hticheck(.@it); .@npc$ = htinextkey(.@it)) {
+                if (.@npc$ == "") {
+                    continue;
+                }
+
+                .@func$ = htget(.name_handlers, .@npc$, "");
+                callfunctionofnpc(atoi(.@npc$), .@func$, .@old$);
+            }
+            htidelete(.@it);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * updates the Vault account cache and fires event handlers when the account
+     * associated with a Vault account changes (different game account on same
+     * Vault account)
+     */
+    private function updateVault {
+        // get the cached id:
+        .@old = .vault_to_account[getvaultid()];
+        .@old$ = .account_to_name$[.@old];
+
+        // now update the cache:
+        .vault_to_account[getvaultid()] = playerattached();
+        .account_to_vault[playerattached()] = getvaultid();
+
+        if (.@old > 0 && .@old != .vault_to_account[getvaultid()]) {
+            // fire event handlers
+            .@it = htiterator(.vault_handlers);
+            for (.@npc$ = htinextkey(.@it); hticheck(.@it); .@npc$ = htinextkey(.@it)) {
+                if (.@npc$ == "") {
+                    continue;
+                }
+
+                .@func$ = htget(.vault_handlers, .@npc$, "");
+                callfunctionofnpc(atoi(.@npc$), .@func$, .@old, .@old$);
+            }
+            htidelete(.@it);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * adds/updates the player to the player cache
+     */
+    private function updateCache {
+        updateName();
+
+        if (SERVER_USES_VAULT) {
+            updateVault();
+        }
+
+        return;
+    }
+
+    /**
+     * force-add all online players to the cache (used on init and reload)
+     */
+    private function forceCache {
+        .@count = getunits(BL_PC, .@units, false);
+
+        for (.@i = 0; .@i < .@count; ++.@i) {
+            attachrid(.@units[.@i]);
+            updateCache();
+            detachrid();
+        }
+
+        return;
+    }
+
+OnPCLoginEvent:
+    updateCache();
+    end;
+
+OnInit:
+    .name_to_account = htnew(); // Map<char name, account id>
+    .account_to_name$[0] = ""; // sparse Array<char name> indexed by account id
+    .name_to_char = htnew(); // Map<char name, char id>
+    .char_to_name$[0] = ""; // sparse Array<char name> indexed by char id
+
+    if (SERVER_USES_VAULT) {
+        .vault_to_account[0] = 0; // sparse Array<vault id> indexed by account id
+        .account_to_vault[0] = 0; // sparse Array<account id> indexed by vault id
+    }
+
+    // event handlers:
+    .vault_handlers = htnew();
+    .name_handlers = htnew();
+
+    // reloadscript handler:
+    forceCache();
+}

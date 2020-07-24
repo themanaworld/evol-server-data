@@ -72,3 +72,25 @@ function	script	getvaultvar	{
 function	script	setvaultvar	{
     return set(getvaultvar(getarg(0), getarg(2, "")), getarg(1));
 }
+
+/**
+ * handles Vault hooks on player login
+ */
+-	script	VaultHandler	NPC_HIDDEN,{
+    public function OnDualLogin {
+        .@toKick$ = strcharinfo(PC_NAME, "", getarg(0, 0));
+
+        if (.@toKick$ != "") {
+            .@msg$ = sprintf("Kicking player %s (Vault dual-login)", .@toKick$);
+            consolemes(CONSOLEMES_INFO, .@msg$); // log this
+            dispbottom(.@msg$); // tell the player
+
+            return kick(.@toKick$, 2); // reason 2 is dual-login
+        }
+
+        return false;
+    }
+
+OnInit:
+    "playerCache"::addVaultHandler("OnDualLogin");
+}
