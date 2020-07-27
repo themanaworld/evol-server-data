@@ -92,5 +92,7 @@ function	script	setvaultvar	{
     }
 
 OnInit:
-    "playerCache"::addVaultHandler("OnDualLogin");
+    if (SERVER_USES_VAULT) {
+        "playerCache"::addVaultHandler("OnDualLogin");
+    }
 }

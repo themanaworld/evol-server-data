@@ -23,6 +23,10 @@
      * @return the account id of the char
      */
     public function name2account {
+        if (getarg(0) == "") {
+            return false;
+        }
+
         if (.@acc = getcharid(CHAR_ID_ACCOUNT, getarg(0))) {
             // player is currently online
             return .@acc;
@@ -35,7 +39,22 @@
 
         // player still not found: now we try SQL
         .@name$ = escape_sql(getarg(0));
-        query_sql(sprintf("SELECT account_id, char_id FROM `char` WHERE `name`='%s' LIMIT 1;", .@name$), .@acc, .@char);
+
+        if (SERVER_USES_VAULT) {
+            query_sql(sprintf("SELECT c.account_id, c.char_id, r.value "
+                "FROM `char` c "
+                "JOIN `global_acc_reg_num_db` r ON r.account_id = c.account_id "
+                "WHERE r.key = '##VAULT' AND r.index = 0 AND c.name = '%s' "
+                "LIMIT 1;", .@name$),
+                .@acc, .@char, .@vault);
+
+            if (.@vault > 0) {
+                .vault_to_account[.@vault] = .@acc;
+                .account_to_vault[.@acc] = .@vault;
+            }
+        } else {
+            query_sql(sprintf("SELECT account_id, char_id FROM `char` WHERE `name`='%s' LIMIT 1;", .@name$), .@acc, .@char);
+        }
 
         if (.@acc > 0) {
             // player found: add to our cache
@@ -62,31 +81,10 @@
      * @return the char id of the char
      */
     public function name2char {
-        if (.@char = getcharid(CHAR_ID_CHAR, getarg(0))) {
-            // player is currently online
-            return .@char;
+        if ((.@acc = name2account(getarg(0))) != 0) {
+            return htget(.name_to_char, getarg(0), false);
         }
 
-        if (.@char = htget(.name_to_char, getarg(0), 0)) {
-            // player found in the hash table
-            return .@char;
-        }
-
-        // player still not found: now we try SQL
-        .@name$ = escape_sql(getarg(0));
-        query_sql(sprintf("SELECT account_id, char_id FROM `char` WHERE `name`='%s' LIMIT 1;", .@name$), .@acc, .@char);
-
-        if (.@acc > 0) {
-            // player found: add to our cache
-            htput(.name_to_account, getarg(0), .@acc);
-            .account_to_name$[.@acc] = getarg(0);
-            htput(.name_to_char, getarg(0), .@char);
-            .char_to_name$[.@char] = getarg(0);
-
-            return .@char;
-        }
-
-        // player doesn't exist
         return false;
     }
 
@@ -101,6 +99,10 @@
      * @return the account id of the char
      */
     public function char2account {
+        if (getarg(0) == 0) {
+            return false;
+        }
+
         .@name$ = .char_to_name$[getarg(0)];
 
         if (.@name$ != "") {
@@ -116,7 +118,21 @@
         }
 
         // player still not found: now we try SQL
-        query_sql(sprintf("SELECT account_id, name FROM `char` WHERE `char_id`='%d' LIMIT 1;", getarg(0)), .@acc, .@name$);
+        if (SERVER_USES_VAULT) {
+            query_sql(sprintf("SELECT c.account_id, c.name, r.value "
+                "FROM `char` c "
+                "JOIN `global_acc_reg_num_db` r ON r.account_id = c.account_id "
+                "WHERE r.key = '##VAULT' AND r.index = 0 AND c.char_id = '%d' "
+                "LIMIT 1;", getarg(0)),
+                .@acc, .@name$, .@vault);
+
+            if (.@vault > 0) {
+                .vault_to_account[.@vault] = .@acc;
+                .account_to_vault[.@acc] = .@vault;
+            }
+        } else {
+            query_sql(sprintf("SELECT account_id, name FROM `char` WHERE `char_id`='%d' LIMIT 1;", getarg(0)), .@acc, .@name$);
+        }
 
         if (.@acc > 0) {
             // player found: add to our cache
@@ -136,7 +152,7 @@
      * "playerCache"::account2char(account id) => char id
      *
      * Searches through the player cache to convert an account ID into a
-     * char ID
+     * char ID. If the player is not found, returns false.
      *
      * NOTE: this is a weak reference; an account ID does not uniquely identify
      *       a character
@@ -145,6 +161,10 @@
      * @return the char ID of the char
      */
     public function account2char {
+        if (getarg(0) == 0) {
+            return false;
+        }
+
         if ((.@name$ = strcharinfo(PC_NAME, "", getarg(0))) != "") {
             // player is online
             return getcharid(CHAR_ID_CHAR, .@name$);
@@ -153,17 +173,81 @@
             return htget(.name_to_char, .@name$, false);
         }
 
+        // player still not found: now we try SQL
+        if (SERVER_USES_VAULT) {
+            query_sql(sprintf("SELECT c.char_id, c.name, r.value "
+                "FROM `char` c "
+                "JOIN `global_acc_reg_num_db` r ON r.account_id = c.account_id "
+                "WHERE r.key = '##VAULT' AND r.index = 0 AND c.account_id = '%d' "
+                "ORDER BY c.last_login DESC LIMIT 1;", getarg(0)),
+                .@char, .@name$, .@vault);
+
+            if (.@vault > 0) {
+                .vault_to_account[.@vault] = getarg(0);
+                .account_to_vault[getarg(0)] = .@vault;
+            }
+        } else {
+            query_sql(sprintf("SELECT char_id, name FROM `char` WHERE account_id='%d' ORDER BY last_login DESC LIMIT 1;", getarg(0)), .@char, .@name$);
+        }
+
+        if (.@char > 0) {
+            // player found: add to our cache
+            htput(.name_to_account, .@name$, getarg(0));
+            .account_to_name$[getarg(0)] = .@name$;
+            htput(.name_to_char, .@name$, .@char);
+            .char_to_name$[.@char] = .@name$;
+
+            return .@char;
+        }
+
         // not found
         return false;
     }
 
-    // TODO: char2name
+    /**
+     * "playerCache"::account2name(account id) => char name
+     *
+     * Searches through the player cache to convert an account ID into a
+     * char name. If the account is not found, returns an empty string.
+     *
+     * NOTE: this is a weak reference; an account ID does not uniquely identify
+     *       a character
+     *
+     * @param 0 - the account ID to search for
+     * @return the name of the char
+     */
+    public function account2name {
+        if ((.@char = account2char(getarg(0))) != false) {
+            return .char_to_name$[.@char];
+        }
+
+        return "";
+    }
+
+    /**
+     * "playerCache"::char2name(char id) => char name
+     *
+     * Searches through the player cache to convert a char ID to a char name.
+     * If the player is not found, checks the SQL table. If the player doesn't
+     * exist, returns an empty string.
+     *
+     * @param 0 - the char ID to search
+     * @return the name of the char
+     */
+    public function char2name {
+        if ((.@acc = char2account(getarg(0))) != 0) {
+            return .account_to_name$[.@acc];
+        }
+
+        // player not found
+        return "";
+    }
 
     /**
      * "playerCache"::vault2account(vault id) => account id
      *
      * Searches through the player cache to convert a Vault account ID into a
-     * game account ID
+     * game account ID. If the account is not found, returns false
      *
      * NOTE: this is a weak reference; a Vault ID does not uniquely identify
      *       a game account
@@ -172,41 +256,125 @@
      * @return the account id of the char
      */
     public function vault2account {
-        if (!SERVER_USES_VAULT) {
+        if (getarg(0) == 0) {
             return false;
+        }
+
+        if (!SERVER_USES_VAULT) {
+            return getarg(0);
         } else if (.@acc = .vault_to_account[getarg(0)]) {
             // found in the cache
             return .@acc;
         }
+
+        // player still not found: now we try SQL
+        query_sql(sprintf("SELECT c.account_id, c.char_id, c.name "
+            "FROM `char` c "
+            "JOIN `global_acc_reg_num_db` r ON r.account_id = c.account_id "
+            "WHERE r.key = '##VAULT' AND r.index = 0 AND r.value = %d "
+            "ORDER BY c.`last_login` DESC LIMIT 1;", getarg(0)),
+            .@acc, .@char, .@name$);
+
+        if (.@char > 0) {
+            // player found: add to our cache
+            htput(.name_to_account, .@name$, .@acc);
+            .account_to_name$[.@acc] = .@name$;
+            htput(.name_to_char, .@name$, .@char);
+            .char_to_name$[.@char] = .@name$;
+            .vault_to_account[getarg(0)] = .@acc;
+            .account_to_vault[.@acc] = getarg(0);
+
+            return .@acc;
+        }
+
         return false;
     }
 
-    // TODO: vault2char (weak reference)
-    // TODO: vault2name (weak reference)
+    /**
+     * "playerCache"::vault2char(vault id) => char id
+     *
+     * Searches through the player cache to convert a Vault account ID into a
+     * char id. If the player is not found, returns false
+     *
+     * NOTE: this is a weak reference; a Vault ID does not uniquely identify
+     *       a character
+     *
+     * @param 0 - the Vault ID to search for
+     * @return the char id
+     */
+    public function vault2char {
+        if ((.@acc = vault2account(getarg(0))) != 0) {
+            return account2char(.@acc);
+        }
+
+        // player not found
+        return false;
+    }
+
+    /**
+     * "playerCache"::vault2name(vault id) => account id
+     *
+     * Searches through the player cache to convert a Vault account ID into a
+     * char name. If the player is not found, returns an empty string
+     *
+     * NOTE: this is a weak reference; a Vault ID does not uniquely identify
+     *       a character
+     *
+     * @param 0 - the Vault ID to search for
+     * @return the name of the char
+     */
+    public function vault2name {
+        if ((.@acc = vault2account(getarg(0))) != 0) {
+            return account2name(.@acc);
+        }
+
+        // player not found
+        return "";
+    }
 
     /**
      * "playerCache"::account2vault(account id) => vault id
      *
      * Searches through the player cache to convert a game account ID into a
-     * Vault account ID
+     * Vault account ID. If the account is not found, returns false
      *
      * @param 0 - the account ID to search for
      * @return the Vault ID associated with the account
      */
     public function account2vault {
         if (!SERVER_USES_VAULT) {
-            return false;
-        } else if (.@vault = .account_to_vault[getarg(0)]) {
-            return .@vault;
-        } else {
-            // TODO: find in SQL
-            return false;
+            return getarg(0);
         }
-        return false;
+
+        account2char(getarg(0)); // will fetch vault id
+        return .account_to_vault[getarg(0)];
     }
 
-    // TODO: char2vault
-    // TODO: name2vault
+    /**
+     * "playerCache"::name2vault(char name) => vault id
+     *
+     * Searches through the player cache to convert a character name into a
+     * Vault account ID. If the account is not found, returns false
+     *
+     * @param 0 - the char name to search for
+     * @return the Vault ID associated with the account
+     */
+    public function name2vault {
+        return account2vault(name2account(getarg(0)));
+    }
+
+    /**
+     * "playerCache"::char2vault(char id) => vault id
+     *
+     * Searches through the player cache to convert a char id into a
+     * Vault account ID. If the account is not found, returns false
+     *
+     * @param 0 - the char id to search for
+     * @return the Vault ID associated with the account
+     */
+    public function char2vault {
+        return account2vault(char2account(getarg(0)));
+    }
 
     /**
      * Registers a public local function that will be called when the char name
