@@ -1,4 +1,4 @@
-.PHONY: new server-update server-updatebuild maps build buildasan config updateconfig initdb updatedb givegm updates
+.PHONY: new server-update server-updatebuild maps build buildasan config updateconfig initdb updatedb givegm updates constdb
 
 new: build config initdb
 
@@ -32,3 +32,6 @@ givegm:
 
 updates:
 	cd ../tools/update/ ; ./createnew.sh ; ./create_music.sh
+
+constdb:
+	mkdir -p doc && ./map-server --run-once --load-plugin constdb2doc --constdb2doc && cp -f doc/constants.md ../docs/server/scripts/constants.md; rm -r doc
