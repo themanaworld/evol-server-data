@@ -9,7 +9,7 @@
     close;
 OnInit:
     .distance = 2;
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     end;
 }
 
@@ -19,7 +19,7 @@ OnInit:
 
 OnInit:
     .distance = 2;
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     end;
 }
 
@@ -29,6 +29,6 @@ OnInit:
 
 OnInit:
     .distance = 2;
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     end;
 }

@@ -16,7 +16,7 @@ OnTalk:
     end;
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 3;
 
 ////////// UNFINISHED //////////
@@ -40,7 +40,7 @@ OnTalk:
     end;
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 3;
 
 ////////// UNFINISHED //////////

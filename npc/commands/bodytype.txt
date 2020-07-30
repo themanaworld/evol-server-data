@@ -1,31 +1,31 @@
-// @gender atcommand
-// changes or returns the gender
+// @bodytype atcommand
+// changes or returns the body type
 
--	script	@gender	32767,{
+-	script	@bodytype	32767,{
     end;
 
 OnCall:
     if (.@atcmd_parameters$[0] == "") {
-        dispbottom("Your current body type is " + genderToString());
+        dispbottom("Your current body type is " + bodytypeToString());
         end;
     }
 
-    .@desired = stringToGender(.@atcmd_parameters$[0]);
+    .@desired = stringToBodytype(.@atcmd_parameters$[0]);
 
-    if (.@desired == Gender) {
-        dispbottom("Your body type is already " + genderToString());
+    if (.@desired == BodyType) {
+        dispbottom("Your body type is already " + bodytypeToString());
     } else {
-        Gender = .@desired;
-        dispbottom("Body type changed to " + genderToString());
+        BodyType = .@desired;
+        dispbottom("Body type changed to " + bodytypeToString());
     }
     end;
 
 OnInit:
-    bindatcmd("gender", "@gender::OnCall", 99, 99, false);
-    bindatcmd("bodytype", "@gender::OnCall", 99, 99, false);
-    bindatcmd("body", "@gender::OnCall", 99, 99, false);
-    bindatcmd("type", "@gender::OnCall", 99, 99, false);
-    bindatcmd("changesex", "@gender::OnCall", 99, 99, false);
+    bindatcmd("gender", "@bodytype::OnCall", 99, 99, false);
+    bindatcmd("bodytype", "@bodytype::OnCall", 99, 99, false);
+    bindatcmd("body", "@bodytype::OnCall", 99, 99, false);
+    bindatcmd("type", "@bodytype::OnCall", 99, 99, false);
+    bindatcmd("changesex", "@bodytype::OnCall", 99, 99, false);
 
     add_group_command("gender", 40, true, false);
     add_group_command("bodytype", 40, true, false);

@@ -101,7 +101,7 @@
     }
 
 OnInit:
-    .sex = G_FEMALE;
+    .bodytype = BODYTYPE_2;
     .distance = 2;
     .inn=RUSTYPICK_INN;
     end;

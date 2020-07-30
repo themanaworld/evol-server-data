@@ -1,20 +1,4 @@
 function	script	BarberDebug	{
-
-    function setGender {
-        clear();
-        setnpcdialogtitle(l("Appearance Debug - Body Type Change"));
-        mes(l("Warning: changing your body type will send you back to the character selection screen."));
-        mes("");
-        mes(l("Please choose the desired body type:"));
-        next();
-        menuint(
-            l("Body type %i", 1), GENDER_HIDDEN,
-            l("Body type %i", 2), GENDER_FEMALE,
-            l("Body type %i", 3), GENDER_MALE);
-
-        Gender = @menuret;
-        return;
-    }
     function setStyle {
         clear;
         setnpcdialogtitle l("Appearance Debug - Barber");
@@ -54,7 +38,7 @@ function	script	BarberDebug	{
         mes "";
 
         mes "---";
-        mes l("Body type") + ": " + genderToString(Gender);
+        mes l("Body type") + ": " + bodytypeToString(BodyType);
         mes l("Hair style") + ": " + getlook(LOOK_HAIR);
         mes l("Hair color") + ": " + getlook(LOOK_HAIR_COLOR);
         mes l("Race") + ": " + Class + " (" + get_race() + ")";;
@@ -71,7 +55,7 @@ function	script	BarberDebug	{
 
         switch (@menu)
         {
-            case 1: setGender; break;
+            case 1: BarberChangeBodyType(); break;
             case 2: setStyle; break;
             case 3: setColor; break;
             case 4: setRace; break;

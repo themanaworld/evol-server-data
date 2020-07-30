@@ -778,7 +778,7 @@ OnInit:
     .KNIFE_QUEST_XP = 50000;
     .STINGER_QUEST_XP = 80000;
 
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 2;
     end;
 }

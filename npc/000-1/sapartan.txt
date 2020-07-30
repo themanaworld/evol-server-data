@@ -93,7 +93,7 @@
     goodbye;
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 2;
     end;
 

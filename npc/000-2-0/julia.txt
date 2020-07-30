@@ -296,7 +296,7 @@ OnTouch:
     end;
 
 OnInit:
-    .sex = G_FEMALE;
+    .bodytype = BODYTYPE_2;
     .distance = 10;
     .quest_debug = ShipQuests_Julia;
 }

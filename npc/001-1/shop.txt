@@ -18,7 +18,7 @@ OnInit:
     sellitem LousyMoccasins, -1, 20;
     sellitem PiouSlayer, -1, 15;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 3;
     end;
 
@@ -57,7 +57,7 @@ OnInit:
     sellitem KhakiCottonDye, -1, 10;
     sellitem YellowCottonDye, -1, 10;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 
@@ -102,7 +102,7 @@ OnInit:
     sellitem OrchidSilkDye, -1, 7;
     sellitem PinkiePinkSilkDye, -1, 7;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 
@@ -129,7 +129,7 @@ OnInit:
 
     sellitem Aquada, -1, 50;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 
@@ -151,7 +151,7 @@ OnInit:
     sellitem SmallTentacles, -1, 30;
     sellitem Tentacles, -1, 15;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 
@@ -178,7 +178,7 @@ OnInit:
     sellitem CommonCarp, -1, 8;
     sellitem GrassCarp, -1, 7;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 
@@ -200,7 +200,7 @@ OnInit:
 
     sellitem Manana, -1, 60;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 
@@ -220,7 +220,7 @@ OnInit:
     sellitem Manana, -1, 30;
 // Add soft drinks.
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 
@@ -244,7 +244,7 @@ OnInit:
     sellitem AtroposMixture, -1, 10;
     sellitem ElixirOfLife, -1, 2;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 
@@ -277,7 +277,7 @@ OnInit:
     sellitem PiouEgg, -1, 25;
 // Add soft drinks.
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 

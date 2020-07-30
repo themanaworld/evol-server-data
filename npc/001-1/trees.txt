@@ -103,7 +103,7 @@ L_FoundHim:
     LazyBrotherTreeFunc(1);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -112,7 +112,7 @@ OnInit:
     LazyBrotherTreeFunc(2);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -121,7 +121,7 @@ OnInit:
     LazyBrotherTreeFunc(3);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -130,7 +130,7 @@ OnInit:
     LazyBrotherTreeFunc(4);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -139,7 +139,7 @@ OnInit:
     LazyBrotherTreeFunc(5);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -148,7 +148,7 @@ OnInit:
     LazyBrotherTreeFunc(6);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -157,7 +157,7 @@ OnInit:
     LazyBrotherTreeFunc(7);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -166,7 +166,7 @@ OnInit:
     LazyBrotherTreeFunc(8);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -175,7 +175,7 @@ OnInit:
     LazyBrotherTreeFunc(9);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -184,7 +184,7 @@ OnInit:
     LazyBrotherTreeFunc(10);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -193,7 +193,7 @@ OnInit:
     LazyBrotherTreeFunc(11);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -202,7 +202,7 @@ OnInit:
     LazyBrotherTreeFunc(12);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -211,7 +211,7 @@ OnInit:
     LazyBrotherTreeFunc(13);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -220,7 +220,7 @@ OnInit:
     LazyBrotherTreeFunc(14);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -229,7 +229,7 @@ OnInit:
     LazyBrotherTreeFunc(15);
     end;
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }

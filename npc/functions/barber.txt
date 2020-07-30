@@ -110,25 +110,25 @@ function	script	BarberChangeColor	{
     return;
 }
 
-function	script	BarberChangeGender	{
+function	script	BarberChangeBodyType	{
     mesn("Note");
     mes(b(l("Changing your body type will send you back to the character selection screen.")));
     next();
 
     mes(l("Please select the desired body type:"));
     menuint(
-        rif(Gender == GENDER_HIDDEN, "► ") + l("Body type %i", 1), GENDER_HIDDEN,
-        rif(Gender == GENDER_FEMALE, "► ") + l("Body type %i", 2), GENDER_FEMALE,
-        rif(Gender == GENDER_MALE, "► ") + l("Body type %i", 3), GENDER_MALE);
+        rif(BodyType == BODYTYPE_1, "► ") + l("Body type %i", 1), BODYTYPE_1,
+        rif(BodyType == BODYTYPE_2, "► ") + l("Body type %i", 2), BODYTYPE_2,
+        rif(BodyType == BODYTYPE_3, "► ") + l("Body type %i", 3), BODYTYPE_3);
 
-    if (@menuret == Gender) {
+    if (BodyType == @menuret) {
         return; // don't kick to char selection when not needed
     }
 
     // FIXME: when manaplus supports seamless changing for evol2, use a simple return;
     closedialog();
     close2();
-    Gender = @menuret;
+    BodyType = @menuret;
     close;
 }
 

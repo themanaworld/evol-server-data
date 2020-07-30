@@ -18,7 +18,7 @@ OnInit:
     sellitem BrownTrousers, -1, 30;
     sellitem BrimmedHat, -1, 35;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 2;
     end;
 

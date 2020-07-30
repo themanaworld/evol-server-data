@@ -311,7 +311,7 @@ L_Quit:
     close;
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 2;
 
     // Array of foods (remember to update in 001-2-22 as well)

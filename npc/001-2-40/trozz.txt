@@ -61,7 +61,7 @@ function Dueling {
 }
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 4;
     end;
 }

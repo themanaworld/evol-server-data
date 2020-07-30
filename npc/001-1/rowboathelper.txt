@@ -65,7 +65,7 @@ OnTouch:
     end;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
 }
 
@@ -89,7 +89,7 @@ OnTouch:
     end;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
 }
 
@@ -113,7 +113,7 @@ OnTouch:
     end;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
 }
 

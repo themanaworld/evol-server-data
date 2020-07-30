@@ -17,7 +17,7 @@ OnTimer1000:
     dographmovestep;
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 5;
     initmovegraph   "mid",          54,  43,  60,  46,
                     "left",         47,  50,  52,  55,

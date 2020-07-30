@@ -215,7 +215,7 @@ OnInit:
 
     .quest = HurnscaldQuests_Soup;
     .quest_debug = .quest;
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 3;
 
 ////////// UNFINISHED //////////

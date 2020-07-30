@@ -145,7 +145,9 @@ function	script	DoRoutine	{
                 .@base = readparam(bAgi);
                 statusup2 bAgi, parsev(.@base, .@args$[0], 1, 99) - .@base;
                 break;
-            /* (b) */
+            case 98: /* b => body type */
+                .@desired_bt = max(1, min(3, .@a));
+                break;
             case 99: /* c => job */
                 jobchange max(0, min(6, .@a));
                 break;
@@ -157,7 +159,7 @@ function	script	DoRoutine	{
                 equip max(1, min(32767, .@a));
                 break;
             /* (f) */
-            /* (g) => gender (reserved) */
+            /* (g) */
             /* (h) */
             case 105: /* i => Int */
                 .@base = readparam(bInt);
@@ -221,6 +223,11 @@ function	script	DoRoutine	{
                 break;
             }
         }
+    }
+
+    if (.@desired_bt && BodyType != .@desired_bt) {
+        sleep2(500);
+        BodyType = .@desired_bt; // this forces a logout so we must be it last
     }
 
     return;

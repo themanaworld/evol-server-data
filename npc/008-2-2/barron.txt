@@ -27,7 +27,7 @@ speech S_LAST_NEXT,
 
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 3;
     end;
 }

@@ -143,7 +143,7 @@ L_Quit:
     close;
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 14;
     end;
 }

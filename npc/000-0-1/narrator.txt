@@ -32,6 +32,6 @@
     close;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     end;
 }

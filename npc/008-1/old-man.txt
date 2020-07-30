@@ -73,7 +73,7 @@
 OnInit:
     .quest_inspector = HurnscaldQuests_Inspector;
     .quest_debug = .quest_inspector;
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 1; // this npc has bad hearing
     .speed = 2000; // this npc is very old
     // TODO: move graph (after the Hurnscald map is finalized)

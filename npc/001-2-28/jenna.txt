@@ -42,7 +42,7 @@ OnHour00:
     end;
 
 OnInit:
-    .sex = G_FEMALE;
+    .bodytype = BODYTYPE_2;
     .distance = 5;
     initmovegraph "m_table_1",    52, 32,
                   "m_table_2",    56, 32,

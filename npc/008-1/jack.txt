@@ -299,7 +299,7 @@ OnInit:
     .quest_shield = HurnscaldQuests_WoodenShield;
     .quest_inspector = HurnscaldQuests_Inspector;
     .quest_debug = .quest_bow;
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 3;
 
 ////////// UNFINISHED //////////

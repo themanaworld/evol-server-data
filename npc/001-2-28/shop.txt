@@ -12,7 +12,7 @@ OnInit:
 
     sellitem RedPlushWine, -1, 50;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 10;
     end;
 

@@ -135,7 +135,7 @@ L_Island:
     goto L_YNMenu;
 
 OnInit:
-    .sex = G_FEMALE;
+    .bodytype = BODYTYPE_2;
     .distance = 10;
     end;
 }

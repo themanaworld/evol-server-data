@@ -1,0 +1,19 @@
+function	script	stringToBodytype	{
+    switch (ord(strtolower(charat(getarg(0, "n"), 0)))) {
+    case 50: // 2
+    case 102: // f
+        return BODYTYPE_2;
+    case 51: // 3
+    case 109: // m
+        return BODYTYPE_3;
+    default:
+        return BODYTYPE_1;
+    }
+}
+
+function	script	bodytypeToString	{
+    .@bodytype = getarg(0, BodyType);
+
+    return .@bodytype == BODYTYPE_2 ? l("type %i", 2) :
+        .@bodytype == BODYTYPE_3 ? l("type %i", 3) : l("type %i", 1);
+}

@@ -201,7 +201,7 @@ OnHour00:
     end;
 
 OnInit:
-    .sex = G_FEMALE;
+    .bodytype = BODYTYPE_2;
     .distance = 3;
     initpath "move", 41, 30,
              "dir", DOWN, 0,

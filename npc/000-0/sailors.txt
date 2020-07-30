@@ -90,6 +90,6 @@ OnTouch:
     close;
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     end;
 }

@@ -261,7 +261,7 @@ OnInit:
     bindatcmd "info", "#EvolTutorial::OnUse", 0, 0, 0;
     bindatcmd "tutorial", "#EvolTutorial::OnUse", 0, 0, 0;
 
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }

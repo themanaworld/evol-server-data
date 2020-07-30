@@ -30,7 +30,7 @@ function	script	EdouardCheckChair	{
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -40,7 +40,7 @@ OnInit:
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -50,7 +50,7 @@ OnInit:
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -60,7 +60,7 @@ OnInit:
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -70,7 +70,7 @@ OnInit:
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -80,7 +80,7 @@ OnInit:
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
@@ -153,7 +153,7 @@ OnChair:
                     l("Anything else?");
                 break;
             case 4:
-                BarberChangeGender();
+                BarberChangeBodyType();
                 speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("You look fantastic."),
                     l("Anything else?");
@@ -170,7 +170,7 @@ OnChair:
     } while (1);
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 2;
     end;
 }

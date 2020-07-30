@@ -39,7 +39,7 @@ OnTimer1000:
     dographmovestep;
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 4;
     // .debug = 1;
     initmovegraph

@@ -221,6 +221,6 @@ OnTimer1800:
     end;
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     end;
 }

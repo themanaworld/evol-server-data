@@ -928,7 +928,7 @@ OnInit:
     // config below
     .hotwords$ = "tree"; // what hot words the npc should listen to, besides its own name (regex)
     .distance = 14; // the npc will only listen to player within X tiles
-    .sex = G_OTHER; // gender of the npc
+    .bodytype = BODYTYPE_1; // BodyType of the npc
     .dir = season_direction(); // sprite direction according to the season
     .talk_rate = 1; // min number of seconds to wait between replies
     .repeat_rate = 1; // min number of seconds to wait before sending the same message twice in a row

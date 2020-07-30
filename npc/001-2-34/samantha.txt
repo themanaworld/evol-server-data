@@ -48,7 +48,7 @@
     // The city is being attacked. Go help the warriors and town-guard.
 
 OnInit:
-    .sex = G_FEMALE;
+    .bodytype = BODYTYPE_2;
     .distance = 3;
     end;
 }

@@ -14,7 +14,7 @@ OnTimer2000:
 
 OnInit:
     .distance = 2;
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .speed = 600;
     mouboograph;
 }
@@ -29,7 +29,7 @@ OnTimer2000:
 
 OnInit:
     .distance = 2;
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .speed = 600;
     mouboograph;
 }
@@ -44,7 +44,7 @@ OnTimer2000:
 
 OnInit:
     .distance = 2;
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .speed = 600;
     mouboograph;
 }
@@ -59,7 +59,7 @@ OnTimer2000:
 
 OnInit:
     .distance = 2;
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .speed = 600;
     mouboograph;
 }

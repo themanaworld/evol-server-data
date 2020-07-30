@@ -230,7 +230,7 @@
 
 OnInit:
     .quest_debug = ArtisQuests_Lloyd;
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 4;
     end;
 }

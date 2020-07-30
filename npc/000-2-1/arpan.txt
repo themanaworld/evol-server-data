@@ -299,7 +299,7 @@ OnSlow:
     close;
 
 OnInit:
-    .sex = G_MALE;
+    .bodytype = BODYTYPE_3;
     .distance = 5;
     end;
 }

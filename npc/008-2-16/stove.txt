@@ -82,7 +82,7 @@
     close;
 
 OnInit:
-    .sex = G_OTHER;
+    .bodytype = BODYTYPE_1;
     .distance = 2;
     end;
 }
