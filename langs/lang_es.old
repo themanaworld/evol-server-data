@@ -1,5 +1,11 @@
+ -> (card(s): 
+ -> (tarjeta(s): 
+
  ago
 hace años
+
+ | equipped: 
+ | equipado: 
 
 %d: Left Accessory
 %d: Accesorio Izquierdo
@@ -22,6 +28,9 @@ hace años
 %d: Top Headgear
 %d: Equipo para parte Superior de la Cabeza
 
+'%s' channel color updated to '%s' 
+El color del canal '%s' actualizado a '%s' 
+
 '%s' got %s's %s (chance: %0.02f%%)
 '%s' obtuvo algo de %s: %s (probabilidad: %0.02f%%)
 
@@ -33,6 +42,12 @@ hace años
 
 'That', as you call it, is a @@. There're plenty on this island!
 'Eso', como tú le llamas, es un @@. ¡Hay abundancia de esos en esta isla!
+
+(%s) 
+(%s) 
+
+(CID:%d/AID:%d) 
+(CID:%d/AID:%d) 
 
 *Uff*... And another box of @@s for our starving colleagues is ready.
 *Uff*... Y otra caja de @@s para nuestro colega que muere de hambre está lista.
@@ -88,11 +103,23 @@ hace años
 6. Follow the social convention listed on the RFC1855 article.
 6. Sigue las convenciones sociales listadas en el articulo RFC1855.
 
+@@ and @@ just got married!
+¡@@ y @@ acaban de casarse!
+
+@@ divorced!
+¡@@ se ha divorciado!
+
 @@ from now
 @@ desde ahora
 
 @@ is helping me.
 @@ está ayudándome.
+
+@@ registered for marriage and accepted partner @@!
+¡@@ se inscribió para casarse y aceptó a la pareja @@!
+
+@@ registered for marriage. Waiting for partner...
+@@ se registró para casarse. Esperando a la pareja...
 
 @@? Welcome my dear!#0
 ¿@@? ¡Bienvenida, mi estimada!
@@ -160,6 +187,9 @@ Todo lo que puedo hacer es decirte que...
 All that I had to eat were these berries... Berries... Berries...
 Todo lo que tenía para comer eran estas bayas... Bayas... Bayas...
 
+AllowKS | 
+AllowKS | 
+
 Alright, I'm going to her room, keep an eye on her, we still don't know if she's a friend or a foe...#0
 Muy bien, voy a su dormitorio. Mantén un ojo sobre ella; aún no sabemos si es amiga o enemiga...
 
@@ -202,6 +232,9 @@ And what kind of help do you need?
 Anyway, if you ever feel interested, just click on my bag.
 De todos modos, si alguna vez te interesa, solo has click en mi bolsa.
 
+Appearance Debug - Sex Change
+Limpieza de apariencia - Cambio de sexo
+
 Aquada
 Aquada
 
@@ -210,6 +243,12 @@ Caja de Aquada
 
 Are you sure that they are my potions?
 ¿Estás seguro de que son mis pociones?
+
+Are you sure?#0
+¿Está seguro?#0
+
+Are you sure?#1
+¿Está seguro?#1
 
 AreaBottom
 AreaBottom
@@ -349,6 +388,12 @@ Cap'tain is waiting for you! Hurry up.
 Carrot
 Zanahoria
 
+Cashmere
+Lana de cachemira
+
+Cashmere#Dye001-1
+Lana de cachemira#Dye001-1
+
 Certain items perform different effects. Some will heal you, some you may use as weapons or armor, and some can be sold for gold.#0
 Algunos items tiene diferentes efectos. Unos te curarán, otros pueden ser usados como armas o armaduras y otros pueden ser vendidos por oro.
 
@@ -373,8 +418,20 @@ Cofre
 Chest#Artis
 Chest#Artis
 
+Chocolate Cashmere Dye
+Tinte de lana de cachemira chocolate
+
 Click on the NPCs around you to continue the introduction.
 Haz clic en los NPCs a tu alrededor para continuar la introducción.
+
+Clouds | 
+Nubes | 
+
+Clouds2 | 
+Nubes2 | 
+
+Come after a little while.
+Venga en un breve momento.
 
 Come back soon! And bring a plushroom with you!
 ¡Vuelve pronto! ¡Y trae un plushroom!
@@ -394,6 +451,15 @@ Felicidades!
 Cookie Master
 El Amo de las Galletas
 
+Cotton, cashmere, leather, ...
+Algodón, lana de cachemira, cuero...
+
+Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.#0
+¿Puedo preguntarte cuál es tu lengua materna? Un marinero me dijo que eres ruso, pero otro me dijo que eres francés... Estoy un poco perdido. Te rejistraré en la lista de pasajeros del barco justo después de eso.#0
+
+Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.#1
+¿Puedo preguntarte cuál es tu lengua materna? Un marinero me dijo que eres rusa, pero otro me dijo que eres francesa... Estoy un poco perdido. Te rejistraré en la lista de pasajeros del barco justo después de eso.#1
+
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#0
 ¿Puedo preguntarte cuál es tu lengua materna? Un marinero me dijo que eras rusa, pero otro me dijo que eras francesa... Estoy un poco confundida. Te registraré en la lista de embarque del buque sólo después de eso.
 
@@ -408,6 +474,9 @@ Could you please bring me something which isn't a vegetable? And I beg you, no b
 
 Couwan
 Couwan
+
+Crimson Cashmere Dye
+Tinte de lana de cachemira carmesí
 
 Croc Claw
 Garra de Croc
@@ -457,6 +526,12 @@ Devis
 Did you say reward? I want it!
 ¿Has dicho recompensa? ¡La quiero!
 
+Displays Night | 
+Mostrar la Noche | 
+
+Divorce error!
+¡Error de divorcio!
+
 Do you feel too weak even if trying to hit the surrounding wildlife?
 ¿Te sientes demasiado débil aún si intentas golpear a la vida silvestre circundante?
 
@@ -465,6 +540,9 @@ Do you have an other question for me?
 
 Do you want to cut this @@?
 ¿Quieres cortar este @@?
+
+Do you want to marry @@?
+¿Quiere casarse con @@?
 
 Does somebody know a good place to hang out in Esperia? - M. Arpan
 ¿Alguien conoce un buen lugar donde pasar el rato en Esperia? - M. Arpan
@@ -525,6 +603,57 @@ Duelo: La invitación de duelo ha sido rechazada.
 
 Duel: The limit of players has been reached.
 Duelo: Se alcanzó el límite de jugadores.
+
+Duel| Can't use %s in duel.
+Duelo| No puede utilizar %s en duelo.
+
+Duel| Can't use this item in duel.
+Duelo| No puede utilizar este artículo en duelo.
+
+Duel| Invalid value.
+Duelo| Valor inválido.
+
+Duel| Invitation has been sent.
+Duelo| La invitación se ha enviado.
+
+Duel| Player name not found.
+Duelo| Nombre de jugador no encontrado.
+
+Duel| The Player is in the duel already.
+Duelo| El jugador ya está en el duelo.
+
+Duel| The duel invitation has been accepted.
+Duelo| La invitación de duelo se ha enviado.
+
+Duel| The duel invitation has been rejected.
+Duelo| La invitación de duelo se ha rechazado.
+
+Duel| The limit of players has been reached.
+Duelo| Se ha alcanzado el límite de jugadores.
+
+Duel| You can take part in duel once per %d minutes.
+Duelo| Puede participar en duelo una vez cada %d minutos.
+
+Duel| You can't invite %s because he/she isn't in the same map.
+Duelo| No puede invitar a %s porque él/ella no está en el mismo mapa.
+
+Duel| You can't use @accept without a duel invitation.
+Duelo| No puede utilizar @accept sin una invitación de duelo.
+
+Duel| You can't use @duel without @reject.
+Duelo| No puede utilizar @duel sin @reject.
+
+Duel| You can't use @invite. You aren't a duelist.
+Duelo| No puede utilizar @invite. Usted no es un duelista.
+
+Duel| You can't use @leave. You aren't a duelist.
+Duelo| No puede utilizar @leave. Usted no es un duelista.
+
+Duel| You can't use @reject without a duel invitation.
+Duelo| No puede utilizar @reject sin una invitación de duelo.
+
+Duel| You've left the duel.
+Duelo| Ha abandonado el duelo.
 
 During the next few days, we will finally reach Artis.
 Durante los próximos días, alcanzaremos finalmente Artis.
@@ -595,14 +724,29 @@ Aun cuando ellos no escucharon nada sobre los otros grupos, decidieron inicial u
 FINE, BYE!
 MUY BIEN, ¡ADIÓS!
 
+Female
+Hembra
+
 Fexil
 Fexil
+
+FightNPCName
+NombreNPCLucha
+
+File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
+Archivo descargado. Sepa que las banderas de mapa y los monstruos engendrados directamente no se eliminan.
 
 Fine, tell me, who are these mysterious aliens?
 Bien, dime, ¿quiénes son estos misteriosos extraterrestres?
 
 Fine, what do you want to do with your money?
 Genial, ¿qué quiere hacer con su dinero?
+
+Fireworks | 
+Fuegos artificiales | 
+
+Fog | 
+Niebla | 
 
 From what I hear, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
 Según he oído, Gugli, mi hermano, necesita la ayuda de tanta gente como sea posible; para recolectar un montón de cosas interesantes, que pueden ser encontradas en la isla.
@@ -630,6 +774,9 @@ Ve afuera y habla con Gugli, el te dirá que necesitamos.
 
 Go outside and talk with Gugli, he'll tell you what we need.
 Ve afuera y habla con Gugli, el te dirá qué necesitamos.
+
+Good look.
+Buena suerte.
 
 Good luck! And don't forget to visit Peter and our little friends when you will be back onboard!
 ¡Buena suerte! Y no olvides visitar a Peter
@@ -661,8 +808,29 @@ Gugli me envío aquí abajo para ayudarte.
 GugliBarrierCheck
 GugliBarrierCheck
 
+GuildLock | 
+Bloqueo de Gremio| 
+
 Gulukan
 Gulukan
+
+GvG Castle | 
+Castillo GvG | 
+
+GvG Dungeon | 
+Mazmorra GvG | 
+
+GvG Flags: 
+Banderas GvG: 
+
+GvG ON | 
+GvG ON | 
+
+GvG Off.
+GvG Off.
+
+GvG On.
+GvG On.
 
 GvG: Off.
 GvG: Apagado.
@@ -825,6 +993,9 @@ How was the cookie? Tasty, wasn't it?
 
 However, drought came with summers while winters became colder than ever.
 Sin embargo, la sequía vino con el verano mientras los inviernos se tornaban más fríos que nunca.
+
+Human Voice
+Voz Humana
 
 Hurry, hurry! We need to check his teeth!
 ¡Deprisa, deprisa! ¡Tenemos que revisar sus dientes!
@@ -1047,6 +1218,12 @@ I think that my wine is very good quality! I'm on my second bottle and I already
 
 I think that yeye's soon be done. Yeye'll soon have a full box of @@s!
 Yo pienso que yeye's pronto estará listo. ¡Yeye pronto tendrá una caja llena de @@s!
+
+I want to divorce.
+Quiero divorciarme.
+
+I want to register for marriage.
+Quiero registrarme para casarme.
 
 I will give her everything she needs, don't worry.
 Yo le daré todo lo que ella necesite. No te preocupes.
@@ -1282,6 +1459,9 @@ La última vez que te vi, estabas perdido en el mar sobre tu balsa.
 Lean
 Lean
 
+Leaves | 
+Dejados | 
+
 LeftBarrierCheck
 LeftBarrierCheck
 
@@ -1314,6 +1494,12 @@ La Isla Perdida.
 
 Magic Arpan#sailors
 Magic Arpan#sailors
+
+Male
+Varón
+
+Marriage failed.
+El matrimonio falló.
 
 Max
 Max
@@ -1348,11 +1534,23 @@ Maybe she was one of those who got lost last month? The yoiis from Esperia that 
 Maybe she was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior guild!
 ¿Tal vez ella fue una de los que se perdieron el mes pasado? ¡El yoiis de Esperia que tenía una misión secreta del gremio Guerreros!
 
+Maybe you meant: 
+Quizá quiso decir: 
+
 Maybe... But I prefer having well-trained people around me when it comes to fight against dangerous creatures. Do you already feel expert on how you fight enemies?#0
 Tal vez... Pero yo prefiero tener a gente bien entrenada a mi alrededor cuando venga a pelear contra criaturas peligrosas. ¿Ya te sientes experta como para combatir contra enemigos?
 
 Maybe... But I prefer having well-trained people around me when it comes to fight against dangerous creatures. Do you already feel expert on how you fight enemies?#1
 Tal vez... Pero yo prefiero tener a gente bien entrenada a mi alrededor cuando vengan a pelear contra criaturas peligrosas. ¿Ya te sientes experto como para combatir contra enemigos?
+
+Mint Cashmere Dye
+Tinte de cachemira de menta
+
+Mobs#001-1
+Multitudes#001-1
+
+Monster NoTeleport | 
+Monstruo NoTelepuerto | 
 
 My beauty, I was not always a sailor, you know, I was once an important individual!
 Mi bella, no siempre fui un marinero, sabes. ¡Yo fui una vez una persona importante!
@@ -1384,6 +1582,15 @@ NO and *hick* NO, you and you and your... *burp* stupi*hick* guild!#0
 NO and *hick* NO, you and you and your... *burp* stupi*hick* guild!#1
 ¡NO, y *hic* NO, tú y tú y tu... *eructo* estúpi*hic* gremio!
 
+NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d 
+NPC %d: %s::%s | Dirección: %s | Duendecillo: %d | Ubicación: %d %d 
+
+NPC Buy:%dz, Sell:%dz | Weight: %.1f 
+NPC Comprar:%dz, Vender:%dz | Peso: %.1f 
+
+Name: %s 
+Nombre: %s 
+
 Nard#Artis
 Nard#Artis
 
@@ -1392,6 +1599,9 @@ Las nuevas tecnologías promovieron la matanza en vez de establecer la paz. En a
 
 New technologies helped the slaughter instead of establishing peace. At some point, two different rivals were formed.
 Las nuevas tecnologías contribuyeron a la matanza en vez de establecer la paz. En algún punto, dos diferentes rivales fueron formados.
+
+NightmareDrop | 
+NightmareDrop | 
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#0
 ¡No y *hic*... No, tú y tú y tu... *eructo* estúpi *hic* gremio!
@@ -1432,8 +1642,71 @@ No, lo siento.
 No, thanks.
 No, gracias.
 
+NoBaseEXP | 
+NoBaseEXP | 
+
+NoBranch | 
+NoBifurcación | 
+
+NoCalcRank | 
+NoNivelCálculo | 
+
+NoCommand | 
+NoOrden | 
+
+NoDrop | 
+NoSoltar | 
+
+NoGuild | 
+NoGremio | 
+
+NoIcewall | 
+NoMurodeHielo | 
+
+NoJobEXP | 
+NoTrabajoEXP | 
+
+NoMVPLoot | 
+NoSaqueoMVP | 
+
+NoMemo | 
+NoNota | 
+
+NoMobLoot | 
+NoSaqueoMultitud | 
+
+NoParty | 
+NoGrupo | 
+
+NoReturn | 
+NoRetorno | 
+
+NoSkill | 
+NoHabilidad | 
+
+NoTeleport | 
+NoTeleportar | 
+
+NoTrade | 
+NoComerciar | 
+
+NoVending | 
+NoVenta | 
+
+NoViewID | 
+NoVerID | 
+
+NoWarp | 
+NoTorcer | 
+
+NoWarpTo | 
+NoTorcerA | 
+
 Nobody will know about the existence of the Mercurians
 Nadie sabrá acerca de la existencia de los Mercurianos
+
+Non-binary
+Non-binary
 
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Noobs are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
 No conformes con permanecer enterrados en sus madrigueras en la arena, los Crocs pueden ser bastante molestos, infestando toda esta isla. Se le informa a aquellos con los pies sensibles y a los novatos: Eviten tocar a estos rastreros demonios rojos. ¡Tienen enormes y letales pinzas que pueden hacerte picadillo! Pueden reconocerlos fácilmente por sus personalidades malhumoradas. Sean cuidadosos jovencillos.
@@ -1452,6 +1725,12 @@ Nada
 
 Now go outside and talk with Gugli, he'll tell you what we need.
 Ahora ve afuera y habla con Gugli. Él te dirá qué necesitamos.
+
+Now wait for your partner, then talk to me again.#0
+Ahora espere a su socia, después vuelva a hablar conmgo.#0
+
+Now wait for your partner, then talk to me again.#1
+Ahora espere a su socio, después vuelva a hablar conmgo.#1
 
 OH, OK!
 OH, ¡ESTA BIEN!
@@ -1564,6 +1843,9 @@ Oh, she's still alive!
 Oh... um... actually... all is I wanted was to get to Artis. Err... but I didn't, ah, have enough money to pay for the ferry!
 Oh... um... de hecho... todo lo que quería era llegar a Artis. Err... ¡pero no, ah, tengo suficiente dinero para paga el transbordador!
 
+Ok I add your name... @@...
+De acuerdo, añado su nombre... @@...
+
 Ok, Done.
 Ok, hecho.
 
@@ -1627,8 +1909,17 @@ O si no, si realmente deseas uno, y si te sientes capaz, puedes intentar matar t
 Orc Voice
 Voz de Orc
 
+Other Flags: 
+Otras Marcas: 
+
 Otherwise, if you really want one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
 De lo contrario, si realmente quieres uno, y te sientes capaz, puedes intentar matar tortugas o crocs si eres lo suficientemente fuerte. Estoy seguro de que podrían dejar caer una o dos @@s.
+
+Partner not ready.
+El compañero no está listo.
+
+PartyLock | 
+Bloqueo de grupo| 
 
 People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose.
 La gente empezó a robar a los demás para sobrevivir. Como las ciudades crecen, las nececidades también lo hicieron. Entonces las guerras por tierras fértiles se elevaron.
@@ -1654,6 +1945,9 @@ Peter le dio la recompensa
 Peter#001-2-22
 Peter#001-2-22
 
+Pets are not allowed in Guild Wars.
+Las mascotas no se permiten en los Gremios de Guerra.
+
 Piberries
 Pibayas
 
@@ -1669,11 +1963,17 @@ Piou Asesino
 Pious legs
 Piernas de Pious
 
+Please choose the desired gender:
+Por favor elija el género deseado:
+
 Please don't tell people that you've seen me. I don't want to be thrown in the sea as food for sharks or decapitated. At least not again!
 Por favor no le digas a la gente que me has visto, No quiero que me arrojen al mar como comida de tiburones o que me decapiten. ¡Al menos no otra vez!
 
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, at least not again!
 Por favor, no le digas a la gente que me viste. No quiero ser decapitado o lanzado al mar como comida de tiburones, ¡al menos no de nuevo!
+
+Please enter a NPC name (usage: @npcoff <NPC_name>).
+Por favor introduzca un nombre de NPC (uso: @npcoff <NPC_name>).
 
 Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
 Por favor introduzca una posición y una cantidad (uso: @refine <equip position> <+/- amount>).
@@ -1699,8 +1999,20 @@ Zumo de calabaza
 Purple Blobime
 Purple Blobime
 
+PvP Flags: 
+Marcas PvP: 
+
+PvP Off.
+PvP apagado.
+
+PvP On.
+PvP encendido.
+
 PvP: Off.
 PvP: Off.
+
+Pvp ON | 
+Pvp ON | 
 
 Q'Muller
 Q'Muller
@@ -1725,6 +2037,9 @@ El registro está abierto para todos, pero los recién llegados deben pagar una 
 
 Resa
 Resa
+
+Reset | 
+Reiniciar | 
 
 Right! Sailors are pretty quick with their job. They just take too much time bringing all the food back to the ship. Maybe you can help them.
 ¡Correcto! Los marineros son bastante diligentes en sus trabajos. Sólo que les toma mucho tiempo traer toda la comida al barco. Tal vez puedas ayudarlos.
@@ -1753,6 +2068,9 @@ DISCULPA, PERO... ¿QUÉ DIJISTE? ¡HABLA MÁS FUERTE!
 Sailors
 Marineros
 
+Sakura | 
+Sakura | 
+
 Sapartan
 Sapartan
 
@@ -1764,6 +2082,9 @@ Gotas de Mar
 
 Secondly, choose wisely which weapon is suited for you. Some people like to face their enemies closely with a heavy axe, some others prefer to attack from a distance with a bow for example.
 En segundo lugar, elige sabiamente qué arma es apropiada para ti. A algunas personas les gusta encarar a sus enemigos de cerca con un hacha pesada; y hay otros que prefieren atacar a distancia con un arco, por ejemplo.
+
+She is a good friend of mine... We wanted to marry a few weeks before her accident but...
+Ella es una buena amiga mía... Queríamos casarnos unas semanas antes de su accidente, pero...
 
 She is on the upper level, yeye can't miss her. She is the only girl in this crew, oh well, except for you now yeyeye!
 Ella está en el nivel superior, yeye no podemos perderla. Es la única chica en esta tripulación, ¡excepto por ti ahora yeyeye!
@@ -1797,6 +2118,9 @@ Silvio comienza a hablar con su botella; tú dejas la conversación.
 
 Simply contact them, help them and be kind. They might surely add you to my cookie list!
 Simplemente contacta con ellos, ayúdales y sé amable. Seguramente te agregaran a mi lista de galletas.
+
+Snow | 
+Nieve | 
 
 So that's why we wanted to warn you, maybe he comes from that guild, as that sign was on his raft.
 Así que por eso hemos querido avisarle. Tal vez él viene de ese gremio, debido al símbolo que estaba en su balsa.
@@ -1840,11 +2164,17 @@ Algunos marineros están buscando mercancías que puedan comerciar en nuestro pr
 Some sailors are trying to talk to you..
 Algunos marineros están tratando de hablarte...
 
+Somebody is probably training, better wait for him to finish.
+Alguien está probablemente entrenando, mejor esperarle para terminar.
+
 Sometimes, I wish somebody is sent here to help us.
 Algunas veces deseo que alguien sea enviado aquí para ayudarnos.
 
 Sorry but I can't tell you anything about that.
 Lo siento, pero no puedo decirte nada sobre eso.
+
+Sorry i can't help you. Go away!
+Lo siento, no puedo ayudarle. ¡Váyase!
 
 Sorry, I am not in the mood for another fight with these rattos.
 Lo siento, no estoy de humor para otra pelea con estos rattos.
@@ -1854,6 +2184,9 @@ Lo siento, no estoy de humor como para tener otra pelea con esos rattos
 
 Sorry, I don't need any help right now. Come back later.
 Lo siento, no necesito ayuda ahora mismo. Vuelve después.
+
+Sorry, I'm busy with other registrations.
+Lo siento, estoy ocupado con otros registros.
 
 Sorry, but I'm busy right now.#0
 Lo siento, pero estoy ocupada ahora mismo.
@@ -1902,6 +2235,9 @@ Habla con Lloyd el banquero en el Gremio Mercantil, este es un gran edificio en 
 
 Tarlan
 Tarlan
+
+Teleport Flags: 
+Señales de telepuerto: 
 
 Tell him that everything went fine and that we're almost done with the food.
 Dile que todo fue muy bien y que casi hemos terminado con la comida.
@@ -2107,6 +2443,9 @@ La caja tiene seguro.
 This box is locked.
 Esta caja está bloqueada.
 
+This character has been banned until 
+Este personaje ha sido prohibido hasta que
+
 This door seems locked
 Esta puerta parece cerrada
 
@@ -2188,6 +2527,9 @@ Intenta preguntar a Max. Él es un madrugador.
 UAHAHAHAAH! I am the cook of that bunch of donkeys and I can be rude with everyone from this bossy captain to that harpy-lady!
 ¡UAJAJAJAJA! ¡Yo soy el cocinero de ese montón de monos y puedo ser rudo con todos, empezando con ese capitán dictador y terminando con esa mujer-arpía!
 
+Usage: @unloadnpcfile <file name>
+Uso: @unloadnpcfile <file name>
+
 WHAT DID YOU SAY?
 ¿QUÉ DIJISTE?
 
@@ -2199,6 +2541,9 @@ Espera... ¿Por qué aún tienes el platillo contigo?
 
 Wait... That's not the place for a chef, what are you doing here?
 Espera... Este no es lugar para un Chef, ¿qué estás haciendo aquí?
+
+Waiting for @@...
+Esperando a @@...
 
 Walk a bit, it'll be easy for you to catch one. Impale one of them for me please.
 Camina un poco, será fácil para ti atrapar uno. Empala uno de ellos para mí, por favor.
@@ -2253,6 +2598,9 @@ Nosotros estaremos yaying allá en unos días, donde te dejaremos. Verás civile
 
 We will be yaying there in a few days, so we will drop you off there. You will see, citizens are polite and you can still ask for help in the warrior guild. They can help find a job for you or maybe help you find out what happened to you out at sea!#1
 Nosotros estaremos yaying allá en unos días, donde te dejaremos. Verás civiles y políticos y puedes pedir ayuda al gremio guerrero. Ellos pueden ayudarte a encontrar un trabajo o tal vez te puedan ayudar a averiguar lo que te pasó en el mar.
+
+Weather Flags: 
+Señales de clima:
 
 Welcome to RedPlush.
 Se te da la bienvenida a RedPlush.
@@ -2335,6 +2683,12 @@ Who is this Julia?
 Who of them two has the 'good' on his side?
 ¿Quién de los dos tiene el 'bien' de su lado?
 
+Why Frenchy? It's a Russian!#0
+¿Por qué gabacha? ¡Es una rusa!#0
+
+Why Frenchy? It's a Russian!#1
+¿Por qué gabacho? ¡Es un ruso!#1
+
 Why don't you go outside?
 ¿Por qué no sales afuera?
 
@@ -2404,6 +2758,9 @@ Yeye, ¡aún no has obtenido tus ropas!
 Yeye, you still did not get your clothes!#1
 Yeye, ¡aún no has obtenido tus ropas!
 
+You already registered. Waiting for your partner...
+Ya se ha registrado. Esperando a su pareja...
+
 You already took a Bandana, please put this one back in the box.
 Ya tomaste una Bandana, vuelve a poner esa en la caja, por favor.
 
@@ -2418,6 +2775,9 @@ Tú estás, en realidad, en una nave. Nosotros estamos de camino a la capital co
 
 You are full of wine my friend...
 Usted está lleno de vino, mi amigo...
+
+You are now divorced!
+¡Ahora se ha divorciado!
 
 You are now part of the crew! Thanks again for your help.
 Ya eres parte del crew! Gracias de nuevo por tu ayuda.
@@ -2466,6 +2826,9 @@ Usted no me da muchas pociones.
 
 You don't remember anything before this.
 Tú no recuerdas nada antes de esto.
+
+You got married to @@!
+¡Se ha casado con @@!
 
 You have an awful amnesia.
 Tienes una amnesia terrible.
@@ -2581,6 +2944,9 @@ No deberías creer todas las historias que te cuenten marineros borrachos.
 You still haven't completed your task.
 Todavía no has completado la tarea.
 
+You stupid, he's English, look at the shape of his head.#1
+Estúpido, él es inglés, mira la forma de su cabeza.#1
+
 You stupid, he's english, look at the shape of his head.
 Estúpido, él es inglés, mira la forma de su cabeza.
 
@@ -2595,6 +2961,9 @@ Estúpidos, es una inglesa. Miren la forma de su cabeza.
 
 You stupid, it's an english, look at his head form.
 Estúpidos, es un inglés. Miren la forma de su cabeza.
+
+You stupid, she's English, look at the shape of her head.#0
+Estúpido, ella es inglesa, mira la forma de su cabeza.#0
 
 You stupid, she's english, look at the shape of her head.
 Estúpido, ella es inglesa, mira la forma de su cabeza.
@@ -2662,6 +3031,9 @@ You're talking too fast!
 You?? Here??
 ¿¡Tú!? ¿¡Aquí!?
 
+Your account has been banished until 
+Su cuenta ha sido deportada hasta
+
 Your body aches, even your hair hurts, and the daylight is painful; but still you open your eyes and see a large ship before you!
 Te duele el cuerpo, aun tu cabello; y la luz del día es dolorosa. ¡Pero aún así, abres tus ojos y ves un gran barco delante de ti!
 
@@ -2692,11 +3064,23 @@ Zzzzzzzzzz
 and 
 y
 
+body/armor, 
+cuerpo/armadura, 
+
+both hands, 
+ambas manos, 
+
 day
 día
 
 days
 días
+
+feet, 
+pies,
+
+garment, 
+prenda,
 
 hour
 hora
@@ -2710,6 +3094,30 @@ en @@
 is helping me.
 está ayudándome.
 
+left accessory, 
+accesorio izquierdo,
+
+left hand, 
+mano izquierda,
+
+lower head, 
+cabeza inferior, 
+
+lower/mid head, 
+cabeza inferior/media, 
+
+lower/mid/top head, 
+cabeza inferior/media/superior, 
+
+lower/top head, 
+cabeza inferior/superior, 
+
+marriage1
+matrimonio1
+
+mid head, 
+cabeza media, 
+
 minute
 minuto
 
@@ -2719,11 +3127,20 @@ minutos
 npc1#door
 npc1#door
 
+right accessory, 
+accesorio derecho,
+
+right hand, 
+mano derecha,
+
 second
 segundo
 
 seconds
 segundos
+
+top head, 
+cabeza superior, 
 
 value '%d' for option '%s' is out of range (limit is 0-10)
 el valor  '%d' para la opción '%s' está fuera del rango (el límite es 0-10)
@@ -2733,4 +3150,7 @@ año
 
 years
 años
+
+| Party: '%s' 
+| Grupo: '%s' 
 

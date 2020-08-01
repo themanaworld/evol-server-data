@@ -1,11 +1,20 @@
+ -> (card(s): 
+ -> (card(s): 
+
  ago
  ago
+
+ | equipped: 
+ | equipped: 
 
 !
 !
 
 "Mister Piou, good day to you.
 "Mister Piou, good day to you.
+
+%d items are dropped!
+%d items are dropped!
 
 %d: Left Accessory
 %d: Left Accessory
@@ -28,6 +37,9 @@
 %d: Top Headgear
 %d: Top Headgear
 
+'%s' channel color updated to '%s' 
+'%s' channel color updated to '%s' 
+
 '%s' got %s's %s (chance: %0.02f%%)
 '%s' got %s's %s (chance: %0.02f%%)
 
@@ -45,6 +57,15 @@
 
 'k hoar ui wel... (Vlaams)
 'k hoar ui wel... (Vlaams)
+
+(%s) 
+(%s) 
+
+(CID:%d/AID:%d) 
+(CID:%d/AID:%d) 
+
+* @@ @@
+* @@ @@
 
 *Uff*... And another box of @@s for our starving colleagues is ready.
 *Uff*... And another box of @@s for our starving colleagues is ready.
@@ -148,14 +169,26 @@
 6. Follow the social convention listed on the RFC1855 article.
 6. Follow the social convention listed on the RFC1855 article.
 
+@@ and @@ just got married!
+@@ and @@ just got married!
+
 @@ and @@ just married!
 @@ and @@ just married!
+
+@@ divorced!
+@@ divorced!
 
 @@ from now
 @@ from now
 
 @@ is helping me.
 @@ is helping me.
+
+@@ registered for marriage and accepted partner @@!
+@@ registered for marriage and accepted partner @@!
+
+@@ registered for marriage. Waiting for partner...
+@@ registered for marriage. Waiting for partner...
 
 @@? Welcome my dear!#0
 @@? Welcome my dear!
@@ -174,6 +207,9 @@ A Quiet place,
 
 A Sunny and hot day,
 A Sunny and hot day,
+
+A band of adventurers formed in Argaes from those who had lost their homes and families. They visited the three permanent human settlements: Tulimshar, Hurnscald and Nivalis.
+A band of adventurers formed in Argaes from those who had lost their homes and families. They visited the three permanent human settlements: Tulimshar, Hurnscald and Nivalis.
 
 A few moments ago, I heard your conversation with Darlin.
 A few moments ago, I heard your conversation with Darlin.
@@ -238,6 +274,9 @@ Actually, I came here to work on my task.
 Aemil is a magnificent world unknown to us all.
 Aemil is a magnificent world unknown to us all.
 
+After this war, the Raijin race was born. A race born of Magic. Humans encapsulated in a Mana storm and altered forever.
+After this war, the Raijin race was born. A race born of Magic. Humans encapsulated in a Mana storm and altered forever.
+
 Ah, I didn't have much sleep; it's possible.
 Ah, I didn't have much sleep; it's possible.
 
@@ -280,6 +319,9 @@ AligeTrigger#Artis
 All I can do is tell you that...
 All I can do is tell you that...
 
+All races were in peace until the Humans set forth to discover the Source of Magic, based on Ukar scholars studies.
+All races were in peace until the Humans set forth to discover the Source of Magic, based on Ukar scholars studies.
+
 All that I had to eat were these berries... Berries... Berries...
 All that I had to eat were these berries... Berries... Berries...
 
@@ -291,6 +333,9 @@ All your... fresh ingredients are ready to be cooked.
 
 All your...fresh ingredients are ready to be cooked.
 All your...fresh ingredients are ready to be cooked.
+
+AllowKS | 
+AllowKS | 
 
 Alright! Yeye one more box and it'll be good.
 Alright! Yeye one more box and it'll be good.
@@ -415,6 +460,9 @@ Anyway, maybe when you are looking for food with Gugli you'll have the time to l
 Anyway, the guild creation is perfect for both case! You can keep your current party as is while having a guild to talk and share different items with all of your friends!
 Anyway, the guild creation is perfect for both case! You can keep your current party as is while having a guild to talk and share different items with all of your friends!
 
+Appearance Debug - Sex Change
+Appearance Debug - Sex Change
+
 Aquada
 Aquada
 
@@ -431,6 +479,12 @@ Are you sure that they are my potions?
 Are you sure that they are my potions?
 
 Are you sure?
+Are you sure?
+
+Are you sure?#0
+Are you sure?
+
+Are you sure?#1
 Are you sure?
 
 Are you yaying here to explore the island?
@@ -621,6 +675,9 @@ But I swear that one day..ooh my tasty revenge. Hhmm, actually I wonder if...may
 
 But if he is amnesic as said Julia, we won't need to worry about him.
 But if he is amnesic as said Julia, we won't need to worry about him.
+
+But if you need to deal with more burocratic stuff, go talk to Q'Anon. He is the boss here.
+But if you need to deal with more burocratic stuff, go talk to Q'Anon. He is the boss here.
 
 But if you tell my sister, that you didn't find me, I can stay here all day, eating apples and enjoying the view
 But if you tell my sister, that you didn't find me, I can stay here all day, eating apples and enjoying the view
@@ -730,6 +787,12 @@ Captain wants: ???
 Carrot
 Carrot
 
+Cashmere
+Cashmere
+
+Cashmere#Dye001-1
+Cashmere#Dye001-1
+
 Center parting
 Center parting
 
@@ -781,6 +844,9 @@ Childeren play there; and can be badly hurt if they play near a Fluffy's nest.
 Children play there; and can be badly hurt if they play near a Fluffy's nest.
 Children play there; and can be badly hurt if they play near a Fluffy's nest.
 
+Chocolate Cashmere Dye
+Chocolate Cashmere Dye
+
 Choppy
 Choppy
 
@@ -790,8 +856,17 @@ Chorus of the Woods
 Click on the NPCs around you to continue the introduction.
 Click on the NPCs around you to continue the introduction.
 
+Clouds | 
+Clouds | 
+
+Clouds2 | 
+Clouds2 | 
+
 Combed back
 Combed back
+
+Come after a little while.
+Come after a little while.
 
 Come after some time.
 Come after some time.
@@ -826,6 +901,15 @@ Copper blonde
 CottageDoor
 CottageDoor
 
+Cotton, cashmere, leather, ...
+Cotton, cashmere, leather, ...
+
+Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.#0
+Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.
+
+Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.#1
+Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.
+
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.
 
@@ -858,6 +942,9 @@ Couwan hands you a box full of fish.
 
 Couwan hands you a box full of fish.#1
 Couwan hands you a box full of fish.
+
+Crimson Cashmere Dye
+Crimson Cashmere Dye
 
 Croc Claw
 Croc Claw
@@ -940,6 +1027,12 @@ Did you say reward? I want it!
 Did you see Don the blacksmith? He might knows more about it if you want to improve your metal equipment.
 Did you see Don the blacksmith? He might knows more about it if you want to improve your metal equipment.
 
+Displays Night | 
+Displays Night | 
+
+Divorce error!
+Divorce error!
+
 Do you feel better??
 Do you feel better??
 
@@ -966,6 +1059,9 @@ Do you want to cut this
 
 Do you want to cut this @@?
 Do you want to cut this @@?
+
+Do you want to marry @@?
+Do you want to marry @@?
 
 Do you, like, remember nothing at all? Or do you have SOME memories of your past?
 Do you, like, remember nothing at all? Or do you have SOME memories of your past?
@@ -1114,6 +1210,57 @@ Duel: You can't use @reject without a duel invitation.
 Duel: You've left the duel.
 Duel: You've left the duel.
 
+Duel| Can't use %s in duel.
+Duel| Can't use %s in duel.
+
+Duel| Can't use this item in duel.
+Duel| Can't use this item in duel.
+
+Duel| Invalid value.
+Duel| Invalid value.
+
+Duel| Invitation has been sent.
+Duel| Invitation has been sent.
+
+Duel| Player name not found.
+Duel| Player name not found.
+
+Duel| The Player is in the duel already.
+Duel| The Player is in the duel already.
+
+Duel| The duel invitation has been accepted.
+Duel| The duel invitation has been accepted.
+
+Duel| The duel invitation has been rejected.
+Duel| The duel invitation has been rejected.
+
+Duel| The limit of players has been reached.
+Duel| The limit of players has been reached.
+
+Duel| You can take part in duel once per %d minutes.
+Duel| You can take part in duel once per %d minutes.
+
+Duel| You can't invite %s because he/she isn't in the same map.
+Duel| You can't invite %s because he/she isn't in the same map.
+
+Duel| You can't use @accept without a duel invitation.
+Duel| You can't use @accept without a duel invitation.
+
+Duel| You can't use @duel without @reject.
+Duel| You can't use @duel without @reject.
+
+Duel| You can't use @invite. You aren't a duelist.
+Duel| You can't use @invite. You aren't a duelist.
+
+Duel| You can't use @leave. You aren't a duelist.
+Duel| You can't use @leave. You aren't a duelist.
+
+Duel| You can't use @reject without a duel invitation.
+Duel| You can't use @reject without a duel invitation.
+
+Duel| You've left the duel.
+Duel| You've left the duel.
+
 During the next few days, we will finally reach Artis.
 During the next few days, we will finally reach Artis.
 
@@ -1261,8 +1408,17 @@ FINE, BYE!
 Feel free to visit me another time
 Feel free to visit me another time
 
+Female
+Female
+
 Fexil
 Fexil
+
+FightNPCName
+FightNPCName
+
+File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
+File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
 
 Find an order with them
 Find an order with them
@@ -1285,11 +1441,17 @@ Fine, what do you want to do with your money?
 Fire red
 Fire red
 
+Fireworks | 
+Fireworks | 
+
 Flat ponytail
 Flat ponytail
 
 Flufy Fur
 Flufy Fur
+
+Fog | 
+Fog | 
 
 Follow the river to the east-north and you will find it.
 Follow the river to the east-north and you will find it.
@@ -1380,6 +1542,9 @@ Good day, lady.
 
 Good day, sir.
 Good day, sir.
+
+Good look.
+Good look.
 
 Good luck! And don't forget to visit Peter and our little friends when you will be back onboard!
 Good luck! And don't forget to visit Peter and our little friends when you will be back onboard!
@@ -1438,8 +1603,29 @@ Gugli? Oh I see. Yes, he is pretty used to shout orders to everybody down here.
 GugliBarrierCheck
 GugliBarrierCheck
 
+GuildLock | 
+GuildLock | 
+
 Gulukan
 Gulukan
+
+GvG Castle | 
+GvG Castle | 
+
+GvG Dungeon | 
+GvG Dungeon | 
+
+GvG Flags: 
+GvG Flags: 
+
+GvG ON | 
+GvG ON | 
+
+GvG Off.
+GvG Off.
+
+GvG On.
+GvG On.
 
 GvG: Off.
 GvG: Off.
@@ -1812,6 +1998,12 @@ How was the cookie? Tasty, wasn't it?
 
 However, drought came with summers while winters became colder than ever.
 However, drought came with summers while winters became colder than ever.
+
+Human
+Human
+
+Human Voice
+Human Voice
 
 Hurry hurry! Need to verify his teeth!
 Hurry hurry! Need to verify his teeth!
@@ -2271,6 +2463,12 @@ I want register for marriage
 
 I want to be the first merchant of this square to sell @@'s clothes!
 I want to be the first merchant of this square to sell @@'s clothes!
+
+I want to divorce.
+I want to divorce.
+
+I want to register for marriage.
+I want to register for marriage.
 
 I was afraid to be busted, so I decided to get rid of the evidence.
 I was afraid to be busted, so I decided to get rid of the evidence.
@@ -2902,6 +3100,9 @@ Just look out at that water! There's plenty more fish there.
 Just say something sparkling
 Just say something sparkling
 
+Kfahr#008-2-2
+Kfahr#008-2-2
+
 Killed rattos
 Killed rattos
 
@@ -2929,6 +3130,9 @@ Lean
 Leave it
 Leave it
 
+Leaves | 
+Leaves | 
+
 LeftBarrierCheck
 LeftBarrierCheck
 
@@ -3025,11 +3229,17 @@ MAYBE YOU CAN LOOK AT THIS?!
 Magic Arpan#sailors
 Magic Arpan#sailors
 
+Male
+Male
+
 Manana tree
 Manana tree
 
 Mane
 Mane
+
+Marriage failed.
+Marriage failed.
 
 Master Fluffy was attracted by the odour,
 Master Fluffy was attracted by the odour,
@@ -3088,6 +3298,9 @@ Maybe she was one of those who got lost last month? The yoiis from Esperia that 
 Maybe you can look at this??
 Maybe you can look at this??
 
+Maybe you meant: 
+Maybe you meant: 
+
 Maybe... But I prefer having well-trained people around me when it comes to fight against dangerous creatures. Do you already feel expert on how you fight enemies?
 Maybe... But I prefer having well-trained people around me when it comes to fight against dangerous creatures. Do you already feel expert on how you fight enemies?
 
@@ -3106,11 +3319,20 @@ Mi aŭdas vin... (Angle)
 Mickael
 Mickael
 
+Mint Cashmere Dye
+Mint Cashmere Dye
+
+Mobs#001-1
+Mobs#001-1
+
 Mohawk
 Mohawk
 
 Mona Father's is right behind you. You have five minutes to bring him out of sewers!
 Mona Father's is right behind you. You have five minutes to bring him out of sewers!
+
+Monster NoTeleport | 
+Monster NoTeleport | 
 
 Move kid.
 Move kid.
@@ -3172,6 +3394,15 @@ NO and *hick* NO, you and you and your... *burp* stupi*hick* guild!
 NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT.
 NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT.
 
+NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d 
+NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d 
+
+NPC Buy:%dz, Sell:%dz | Weight: %.1f 
+NPC Buy:%dz, Sell:%dz | Weight: %.1f 
+
+Name: %s 
+Name: %s 
+
 Nard and crew are taking us to the city of Artis.
 Nard and crew are taking us to the city of Artis.
 
@@ -3189,6 +3420,9 @@ New technologies assisted the slaughter instead of establishing peace. At some p
 
 New technologies helped the slaughter instead of establishing peace. At some point, two different rivals were formed.
 New technologies helped the slaughter instead of establishing peace. At some point, two different rivals were formed.
+
+NightmareDrop | 
+NightmareDrop | 
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#0
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!
@@ -3244,8 +3478,74 @@ No, sorry.
 No, thanks.
 No, thanks.
 
+NoAutoloot | 
+NoAutoloot | 
+
+NoBaseEXP | 
+NoBaseEXP | 
+
+NoBranch | 
+NoBranch | 
+
+NoCalcRank | 
+NoCalcRank | 
+
+NoCommand | 
+NoCommand | 
+
+NoDrop | 
+NoDrop | 
+
+NoGuild | 
+NoGuild | 
+
+NoIcewall | 
+NoIcewall | 
+
+NoJobEXP | 
+NoJobEXP | 
+
+NoMVPLoot | 
+NoMVPLoot | 
+
+NoMemo | 
+NoMemo | 
+
+NoMobLoot | 
+NoMobLoot | 
+
+NoParty | 
+NoParty | 
+
+NoReturn | 
+NoReturn | 
+
+NoSkill | 
+NoSkill | 
+
+NoTeleport | 
+NoTeleport | 
+
+NoTrade | 
+NoTrade | 
+
+NoVending | 
+NoVending | 
+
+NoViewID | 
+NoViewID | 
+
+NoWarp | 
+NoWarp | 
+
+NoWarpTo | 
+NoWarpTo | 
+
 Nobody will know about the existence of the Mercurians
 Nobody will know about the existence of the Mercurians
+
+Non-binary
+Non-binary
 
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Noobs are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Noobs are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
@@ -3291,6 +3591,12 @@ Now that I think about it, I have another task for you. I asked Resa from the li
 
 Now that you bring up that topic, that remind me of something...
 Now that you bring up that topic, that remind me of something...
+
+Now wait for your partner, then talk to me again.#0
+Now wait for your partner, then talk to me again.
+
+Now wait for your partner, then talk to me again.#1
+Now wait for your partner, then talk to me again.
 
 Now wait your partner, and talk with me again
 Now wait your partner, and talk with me again
@@ -3348,6 +3654,9 @@ Oh darling, what brought you here?
 
 Oh good! Did he gaves you back your money too?
 Oh good! Did he gaves you back your money too?
+
+Oh hey *hicks*
+Oh hey *hicks*
 
 Oh it is you. I think it is better we do not talk for a while. They suspect something.
 Oh it is you. I think it is better we do not talk for a while. They suspect something.
@@ -3553,6 +3862,9 @@ Oh... um... actually... all I wanted was to get to Artis. Err... but I didn't, a
 Oh... um... actually... all is I wanted was to get to Artis. Err... but I didn't, ah, have enough money to pay for the ferry!
 Oh... um... actually... all is I wanted was to get to Artis. Err... but I didn't, ah, have enough money to pay for the ferry!
 
+Ok I add your name... @@...
+Ok I add your name... @@...
+
 Ok, Done.
 Ok, Done.
 
@@ -3694,6 +4006,9 @@ Orelse, if you feel capable, you can try killing Tortugas or Crocs if you're str
 Orelse, if you really wish one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
 Orelse, if you really wish one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
 
+Other Flags: 
+Other Flags: 
+
 Other things are written down but are not legible.
 Other things are written down but are not legible.
 
@@ -3711,6 +4026,12 @@ Over lovers under a starry night
 
 Parted
 Parted
+
+Partner not ready.
+Partner not ready.
+
+PartyLock | 
+PartyLock | 
 
 People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose.
 People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose.
@@ -3748,6 +4069,9 @@ Peter#001-2-22
 PeterBarrierCheck
 PeterBarrierCheck
 
+Pets are not allowed in Guild Wars.
+Pets are not allowed in Guild Wars.
+
 Pibberies Infusion
 Pibberies Infusion
 
@@ -3778,11 +4102,17 @@ Planting not implemented.
 Please bring me some @@ so I can pull out these spikes from my foot.
 Please bring me some @@ so I can pull out these spikes from my foot.
 
+Please choose the desired gender:
+Please choose the desired gender:
+
 Please don't tell people that you've seen me. I don't want to be thrown in the sea as food for sharks or decapitated. At least not again!
 Please don't tell people that you've seen me. I don't want to be thrown in the sea as food for sharks or decapitated. At least not again!
 
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, at least not again!
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, at least not again!
+
+Please enter a NPC name (usage: @npcoff <NPC_name>).
+Please enter a NPC name (usage: @npcoff <NPC_name>).
 
 Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
 Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
@@ -3826,6 +4156,12 @@ Pompadour
 Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe
 Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe
 
+PrivateAirshipEndable | 
+PrivateAirshipEndable | 
+
+PrivateAirshipStartable | 
+PrivateAirshipStartable | 
+
 Pull!
 Pull!
 
@@ -3850,11 +4186,23 @@ Purple Blobime
 Purple plum
 Purple plum
 
+PvP Flags: 
+PvP Flags: 
+
+PvP Off.
+PvP Off.
+
+PvP On.
+PvP On.
+
 PvP: Off.
 PvP: Off.
 
 PvP: On.
 PvP: On.
+
+Pvp ON | 
+Pvp ON | 
 
 Q'Muller
 Q'Muller
@@ -3891,6 +4239,9 @@ Remember, you have to find my brother on the hill to the east from here
 
 Resa
 Resa
+
+Reset | 
+Reset | 
 
 Right! Sailors are pretty quick with their job. They just take too much time bringing all the food back to the ship. Maybe you can help them.
 Right! Sailors are pretty quick with their job. They just take too much time bringing all the food back to the ship. Maybe you can help them.
@@ -3934,6 +4285,9 @@ SORRY, BUT WHAT DID YOU SAY? SPEAK LOUDER!
 Sailors
 Sailors
 
+Sakura | 
+Sakura | 
+
 Sapartan
 Sapartan
 
@@ -3966,6 +4320,9 @@ Server is jammed due to over populated.
 
 Share your mind is your mission
 Share your mind is your mission
+
+She is a good friend of mine... We wanted to marry a few weeks before her accident but...
+She is a good friend of mine... We wanted to marry a few weeks before her accident but...
 
 She is on the upper level, yeye can't miss her. She is the only girl in this crew, oh well, except for you now yeyeye!
 She is on the upper level, yeye can't miss her. She is the only girl in this crew, oh well, except for you now yeyeye!
@@ -4032,6 +4389,9 @@ Sincerely yours, Dan
 
 Sleep well my angel but don't follow along
 Sleep well my angel but don't follow along
+
+Snow | 
+Snow | 
 
 So I was going to ask if maybe you would be interested in giving me a hand with a few errands.
 So I was going to ask if maybe you would be interested in giving me a hand with a few errands.
@@ -4141,6 +4501,9 @@ Some sailors are looking for goods we could trade in our next destination.
 Some sailors are trying to talk to you..
 Some sailors are trying to talk to you..
 
+Somebody is probably training, better wait for him to finish.
+Somebody is probably training, better wait for him to finish.
+
 Somebody tried to stroke the word \
 Somebody tried to stroke the word \
 
@@ -4165,6 +4528,9 @@ Sorry but I can't tell you anything about it.
 Sorry but I can't tell you anything about that.
 Sorry but I can't tell you anything about that.
 
+Sorry i can't help you. Go away!
+Sorry i can't help you. Go away!
+
 Sorry, I am not in the mood for another fight with these rattos.
 Sorry, I am not in the mood for another fight with these rattos.
 
@@ -4179,6 +4545,9 @@ Sorry, I don't need any help right now. Come back later.
 
 Sorry, I'm busy right now.
 Sorry, I'm busy right now.
+
+Sorry, I'm busy with other registrations.
+Sorry, I'm busy with other registrations.
 
 Sorry, but I'm busy right now.
 Sorry, but I'm busy right now.
@@ -4324,6 +4693,9 @@ Tarlan
 Te oigo... (Español)
 Te oigo... (Español)
 
+Teleport Flags: 
+Teleport Flags: 
+
 Tell him that everything went fine and that we're almost done with the food.
 Tell him that everything went fine and that we're almost done with the food.
 
@@ -4443,6 +4815,9 @@ The Piou and The Fluffy
 
 The Piou, embarrassed and confused,
 The Piou, embarrassed and confused,
+
+The Platinum Kingdom grew and prospered, and drew most of the human population to the safety of the walls of Keshlam, Tulimshar, Hurnscald and Nivalis.
+The Platinum Kingdom grew and prospered, and drew most of the human population to the safety of the walls of Keshlam, Tulimshar, Hurnscald and Nivalis.
 
 The adventure begins!
 The adventure begins!
@@ -4506,6 +4881,9 @@ The end of the story got erased, probably because of the sea water. Some pages a
 
 The fee is of @@E. So, do you want to register?
 The fee is of @@E. So, do you want to register?
+
+The first human settlement to develop an advanced political structure and to become a city-state was Keshlam.
+The first human settlement to develop an advanced political structure and to become a city-state was Keshlam.
 
 The fish ate all your bait.
 The fish ate all your bait.
@@ -4753,6 +5131,9 @@ This box is locked
 This box is locked.
 This box is locked.
 
+This character has been banned until 
+This character has been banned until 
+
 This door seems locked
 This door seems locked
 
@@ -4855,6 +5236,9 @@ This makes sense. Do you think we should inform the capt'n about it?
 This new continent, in fact an archipelago, was called Andorra.
 This new continent, in fact an archipelago, was called Andorra.
 
+This waitress *hicks* is great, she never stops to bring beer *hicks.
+This waitress *hicks* is great, she never stops to bring beer *hicks.
+
 Tibbo
 Tibbo
 
@@ -4903,17 +5287,26 @@ Try to ask Max. He's an early riser.
 Twisted teal
 Twisted teal
 
+Type List: (default) all = -1, healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5, card = 6, petegg = 7, petarmor = 8, ammo = 10, delayed-consumable = 11, cash = 18 
+Type List: (default) all = -1, healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5, card = 6, petegg = 7, petarmor = 8, ammo = 10, delayed-consumable = 11, cash = 18 
+
 UAHAHAHAAH! I am the cook of that bunch of donkeys and I can be rude with everyone from this bossy captain to that harpy-lady!
 UAHAHAHAAH! I am the cook of that bunch of donkeys and I can be rude with everyone from this bossy captain to that harpy-lady!
 
 UAHAHAHAAH! I am the cook of that bunch of donkeys, I can be rude with everyone from the bossy captain to that harpy-lady!
 UAHAHAHAAH! I am the cook of that bunch of donkeys, I can be rude with everyone from the bossy captain to that harpy-lady!
 
+Unable to win, the tritans attacked Hurnscald. While human troops moved in attempts to avoid its fall, the Kralog and Ukar joined the tritans and they took the city.
+Unable to win, the tritans attacked Hurnscald. While human troops moved in attempts to avoid its fall, the Kralog and Ukar joined the tritans and they took the city.
+
 Unfortunately we still need help from you. This time it will be a delicate task, here onboard.
 Unfortunately we still need help from you. This time it will be a delicate task, here onboard.
 
 Unlike other respawn points, an INN can fully restore your HP.
 Unlike other respawn points, an INN can fully restore your HP.
+
+Usage: @unloadnpcfile <file name>
+Usage: @unloadnpcfile <file name>
 
 Vi sento... (Italiano)
 Vi sento... (Italiano)
@@ -4947,6 +5340,9 @@ Wait? Why do you still have the dish with you?
 
 Wait? Why do you still have this dish with you?
 Wait? Why do you still have this dish with you?
+
+Waiting for @@...
+Waiting for @@...
 
 Walk a bit, it'll be easy for you to catch one. Impale one of them for me please.
 Walk a bit, it'll be easy for you to catch one. Impale one of them for me please.
@@ -5085,6 +5481,9 @@ We will talk about it later.
 
 We will talk about it later.#1
 We will talk about it later.
+
+Weather Flags: 
+Weather Flags: 
 
 Welcome to RedPlush.
 Welcome to RedPlush.
@@ -5266,6 +5665,12 @@ Whatever inside can be
 Whatever your idea
 Whatever your idea
 
+When I am less busy *hicks*, I can tell you stories of my heroism.#0
+When I am less busy *hicks*, I can tell you stories of my heroism.
+
+When I am less busy *hicks*, I can tell you stories of my heroism.#1
+When I am less busy *hicks*, I can tell you stories of my heroism.
+
 When you go near a villager, you can see a speech bubble ahead of him, you can then talk to him by pressing the [T] key.
 When you go near a villager, you can see a speech bubble ahead of him, you can then talk to him by pressing the [T] key.
 
@@ -5329,6 +5734,12 @@ Whose eyes glisten under Moonlight
 Why Frenchy? It's a Russian!
 Why Frenchy? It's a Russian!
 
+Why Frenchy? It's a Russian!#0
+Why Frenchy? It's a Russian!
+
+Why Frenchy? It's a Russian!#1
+Why Frenchy? It's a Russian!
+
 Why are you asking? And who are you too? I've never seen you around before...
 Why are you asking? And who are you too? I've never seen you around before...
 
@@ -5361,6 +5772,9 @@ With my old fishing rod you can catch something every day.
 
 With no choir master nor voice to be sung
 With no choir master nor voice to be sung
+
+With the growth of the Kingdom halted, slow maintenance, and two great famines which killed over half the human population, the council decided to seize power and depose Platyna the Red.
+With the growth of the Kingdom halted, slow maintenance, and two great famines which killed over half the human population, the council decided to seize power and depose Platyna the Red.
 
 With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their buisness.
 With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their buisness.
@@ -5524,6 +5938,9 @@ You already looked here
 You already registered. Wait for your partner.
 You already registered. Wait for your partner.
 
+You already registered. Waiting for your partner...
+You already registered. Waiting for your partner...
+
 You already took a Bandana, please put this one back in the box.
 You already took a Bandana, please put this one back in the box.
 
@@ -5556,6 +5973,9 @@ You are honnest, I like it.
 
 You are new around here, right?
 You are new around here, right?
+
+You are now divorced!
+You are now divorced!
 
 You are now part of the crew! Thanks again for your help.
 You are now part of the crew! Thanks again for your help.
@@ -5718,6 +6138,9 @@ You don't remember anything before this.
 
 You fell asleep.
 You fell asleep.
+
+You got married to @@!
+You got married to @@!
 
 You have an awful amnesia.
 You have an awful amnesia.
@@ -5995,6 +6418,9 @@ You still have a 90% discount on one piou
 You still haven't completed your task.
 You still haven't completed your task.
 
+You stupid, he's English, look at the shape of his head.#1
+You stupid, he's English, look at the shape of his head.
+
 You stupid, he's english, look at the shape of his head.
 You stupid, he's english, look at the shape of his head.
 
@@ -6015,6 +6441,9 @@ You stupid, it's an english, look her head form.
 
 You stupid, it's an english, look his head form.
 You stupid, it's an english, look his head form.
+
+You stupid, she's English, look at the shape of her head.#0
+You stupid, she's English, look at the shape of her head.
 
 You stupid, she's english, look at the shape of her head.
 You stupid, she's english, look at the shape of her head.
@@ -6154,6 +6583,9 @@ You?? Here??
 Your account has 'Unregistered'.
 Your account has 'Unregistered'.
 
+Your account has been banished until 
+Your account has been banished until 
+
 Your account has not more authorized.
 Your account has not more authorized.
 
@@ -6223,11 +6655,20 @@ Zzzzzzzzzz
 and 
 and 
 
+body/armor, 
+body/armor, 
+
+both hands, 
+both hands, 
+
 day
 day
 
 days
 days
+
+feet, 
+feet, 
 
 flags/ca
 flags/ca
@@ -6265,6 +6706,9 @@ flags/ru
 flags/vls
 flags/vls
 
+garment, 
+garment, 
+
 hour
 hour
 
@@ -6276,6 +6720,30 @@ in @@
 
 is helping me.
 is helping me.
+
+left accessory, 
+left accessory, 
+
+left hand, 
+left hand, 
+
+lower head, 
+lower head, 
+
+lower/mid head, 
+lower/mid head, 
+
+lower/mid/top head, 
+lower/mid/top head, 
+
+lower/top head, 
+lower/top head, 
+
+marriage1
+marriage1
+
+mid head, 
+mid head, 
 
 minute
 minute
@@ -6292,11 +6760,20 @@ npc1#door
 npc4
 npc4
 
+right accessory, 
+right accessory, 
+
+right hand, 
+right hand, 
+
 second
 second
 
 seconds
 seconds
+
+top head, 
+top head, 
 
 tricked thus again.
 tricked thus again.
@@ -6309,6 +6786,9 @@ year
 
 years
 years
+
+| Party: '%s' 
+| Party: '%s' 
 
 Да я вас слышу... (Русский)
 Да я вас слышу... (Русский)

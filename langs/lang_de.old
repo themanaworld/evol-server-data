@@ -1,5 +1,11 @@
+ -> (card(s): 
+ -> (Karte(n): 
+
  ago
 her
+
+ | equipped: 
+ | angelegt: 
 
 %d: Left Accessory
 %d: Linkes Accessoire
@@ -22,6 +28,9 @@ her
 %d: Top Headgear
 %d: Kopfbedeckung
 
+'%s' channel color updated to '%s' 
+'%s' Channelfarbe aktualisiert zu '%s' 
+
 '%s' got %s's %s (chance: %0.02f%%)
 '%s' hat %s's %s (Chance: %0.02f%%)
 
@@ -30,6 +39,12 @@ her
 
 'That', as you call it, is a @@. There're plenty on this island!
 'Das Ding', wie du es nennst, ist ein @@. Es gibt davon Unmengen auf der Insel!
+
+(%s) 
+(%s) 
+
+(CID:%d/AID:%d) 
+(CID:%d/AID:%d) 
 
 *hick*
 *hicks*
@@ -82,14 +97,26 @@ her
 6, Follow the social convention listed on the RFC1855.
 6. Folgen Sie der sozialen Konvention, die in RFC1855 aufgeführt sind.
 
+@@ and @@ just got married!
+@@ und @@ sind frisch verheiratet!
+
 @@ and @@ just married!
 @@ und @@ sind frisch verheiratet!
+
+@@ divorced!
+@@ geschieden!
 
 @@ from now
 @@ von jetzt an
 
 @@ is helping me.
 @@ hilft mir.
+
+@@ registered for marriage and accepted partner @@!
+@@ hat sich zur Hochzeit registriert, und akzeptiert den Partner @@!
+
+@@ registered for marriage. Waiting for partner...
+@@ Registriert zur Hochzeit. Warte auf den Partner...
 
 A Ground!
 Ein Land!
@@ -151,6 +178,9 @@ Alles was ich tun kann, ist dir zu sagen, dass...
 All that I had to eat were these berries... Berries... Berries...
 Und alles, was ich zum Essen hatte waren Beeren... Beeren... Beeren...
 
+AllowKS | 
+AllowKS | 
+
 Alright, I'm going to her room, keep an eye on her, we still don't know if she's a friend or a foe...#0
 Also gut, ich gehen in ihren Raum, wirf eine Auge auf sie. Wir wissen immernoch nicht, ob sie ein Freund oder ein Feind ist...
 
@@ -187,6 +217,9 @@ Wie auch immer, vielleicht, wenn Sie nach Essen mit Gugli suchen haben Sie die Z
 Anyway, the guild creation is perfect for both case! You can keep your current party as is while having a guild to talk and share different items with all of your friends!
 Die Bildung einer Gilde ist in beiden Fällen perfekt! Du kannst deine aktuelle Gruppe behalten, wie sie ist. Gleichzeitig hast du eine Gilde, über die du mit Freunden sprechen und verschiedene Gegenstände teilen kannst!
 
+Appearance Debug - Sex Change
+Aussehen Debug - Geschlecht ändern
+
 Aquada
 Aquada
 
@@ -194,6 +227,12 @@ Are you sure that they are my potions?
 Bist du sicher, daß das meine Tränke sind?
 
 Are you sure?
+Bist du sicher?
+
+Are you sure?#0
+Bist du sicher?
+
+Are you sure?#1
 Bist du sicher?
 
 AreaBottom
@@ -358,6 +397,12 @@ Der Cap'tain wartet auf Dich! Beeil dich.
 Carrot
 Möre
 
+Cashmere
+Kashmir
+
+Cashmere#Dye001-1
+Cashmere#Dye001-1
+
 Center parting
 Mittelscheitel
 
@@ -388,14 +433,26 @@ Truhe
 Children play there; and can be badly hurt if they play near a Fluffy's nest.
 Dort spielen Kinder; und es kann böse enden, wenn sie in der Nähe eines Fluffynestes spielen.
 
+Chocolate Cashmere Dye
+Schokobraune Kashmir Farbe
+
 Choppy
 Choppy
 
 Click on the NPCs around you to continue the introduction.
 Klicke auf die NPCs um dich herum um die Einleitung weiter zu führen.
 
+Clouds | 
+Clouds | 
+
+Clouds2 | 
+Clouds2 | 
+
 Combed back
 zurückgekämmt
+
+Come after a little while.
+Komm ein bisschen später wieder.
 
 Come after some time.
 Komm später wieder.
@@ -412,6 +469,15 @@ Keksmeister
 Copper blonde
 Kupferblond
 
+Cotton, cashmere, leather, ...
+Baumwolle, Kashmir, Leder...
+
+Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.#0
+Darf ich dich fragen was deine Muttersprache ist? Ein Matrose meinte Russisch, ein anderer Französisch... Ich bin ein wenig verwirrt. Ich werde dich danach sofort auf die Passagierliste setzen.
+
+Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.#1
+Darf ich dich fragen was deine Muttersprache ist? Ein Matrose meinte Russisch, ein anderer Französisch... Ich bin ein wenig verwirrt. Ich werde dich danach sofort auf die Passagierliste setzen.
+
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#0
 Darf ich dich fragen was deine Muttersprache ist? Ein Matrose meinte Russisch, ein anderer Französisch... Ich bin ein wenig verwirrt. Ich werde dich danach sofort auf die Bordliste setzen.
 
@@ -426,6 +492,9 @@ Kannst du mir bitte helfen?
 
 Couwan
 Couwan
+
+Crimson Cashmere Dye
+Karminrote Kashmir Farbe
 
 Croc Claw
 Krokodilsklaue
@@ -481,6 +550,12 @@ Sagtest du Belohnung? Ich will sie!
 Did you see Don the blacksmith? He might knows more about it if you want to improve your metal equipment.
 Hast du schon mit Don dem Schmied gesprochen? Er könnte mehr darüber wissen, wie du deine Metallausrüstung verbessern kannst.
 
+Displays Night | 
+Schaltet auf Nacht | 
+
+Divorce error!
+Problem bei der Scheidung!
+
 Do you feel better??
 Fühlst du dich besser?
 
@@ -495,6 +570,9 @@ Willst du mich begleiten, um Sie zu sehen an Ihrem Ort?
 
 Do you want to cut this @@?
 Willst Du dies zerschneiden @@?
+
+Do you want to marry @@?
+Möchtest du @@ heiraten?
 
 Do you, like, remember nothing at all? Or do you have SOME memories of your past?
 Erinnerst du dich an überhaupt gar nichts mehr? Oder hast du noch irgendwelche Erinnerungsfetzen?
@@ -543,6 +621,57 @@ DoorUpwards
 
 DoorUpwards#001-2-23
 DoorUpwards#001-2-23
+
+Duel| Can't use %s in duel.
+Duell: Kann %s nicht im Duell benutzen.
+
+Duel| Can't use this item in duel.
+Duell: Kann diesen Gegenstand im Duell nicht benutzen.
+
+Duel| Invalid value.
+Duell: Ungültiger Wert.
+
+Duel| Invitation has been sent.
+Duell: Einladung wurde verschickt.
+
+Duel| Player name not found.
+Duell: Spielername nicht gefunden.
+
+Duel| The Player is in the duel already.
+Duell: Der Spieler ist bereits im Duell.
+
+Duel| The duel invitation has been accepted.
+Duell: Die Einladung wurde angenommen.
+
+Duel| The duel invitation has been rejected.
+Duell: Die Einladung wurde abgewiesen.
+
+Duel| The limit of players has been reached.
+Duell: Die Obergrenze an Spielern wurde erreicht.
+
+Duel| You can take part in duel once per %d minutes.
+Duell: Du kannst an diesem Duell einmal alle %d Minuten teilnehmen.
+
+Duel| You can't invite %s because he/she isn't in the same map.
+Duell: Du kannst %s nicht einladen, weil der Spieler sich nicht auf derselben Karte befindet.
+
+Duel| You can't use @accept without a duel invitation.
+Duell: Du kannst @accept nicht ohne eine Einladung zum Duell nutzen.
+
+Duel| You can't use @duel without @reject.
+Duell: Du kannst @duel nicht ohne @reject benutzen.
+
+Duel| You can't use @invite. You aren't a duelist.
+Duell: Du kannst @invite nicht nutzen. Du bist kein Duellant.
+
+Duel| You can't use @leave. You aren't a duelist.
+Duell: Du kanst @leave nicht nutzen. Du bist kein Duellant.
+
+Duel| You can't use @reject without a duel invitation.
+Duell: Du kannst @reject nicht ohne Duelleinladung nutzen.
+
+Duel| You've left the duel.
+Duell: Du hast das Duell verlassen.
 
 During the next few days, we will finally reach Artis.
 In den nächsten Tagen werden wir endlich Artis erreichen.
@@ -628,8 +757,17 @@ NA GUT, TSCHÜSS!
 Feel free to visit me another time
 Du kannst mich jederzeit besuchen.
 
+Female
+Weiblich
+
 Fexil
 Fexil
+
+FightNPCName
+FightNPCName
+
+File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
+Datei gelöscht. Achtung: Mapflags und Monster, die direkt erschaffen wurden, wurden nicht entfernt.
 
 Fine!
 Fein!
@@ -643,8 +781,14 @@ Schön, was möchsest du mit deinem Geld machen?
 Fire red
 Feuerrot
 
+Fireworks | 
+Feuerwerk | 
+
 Flat ponytail
 Flacher Pferdeschwanz
+
+Fog | 
+Nebel | 
 
 Follow the river to the north-east and you will find it.
 Folge dem Fluß in Richtung nordost, und du wirst es finden.
@@ -691,6 +835,9 @@ Geh zu ihm und bring mir das Paket zurück. Das ist eine einfache Aufgabe.
 Golden blonde
 Goldenblond
 
+Good look.
+Gutes Auge.
+
 Good to know. From what Darlin reported to me, we'll soon come accross a little island, before we arrive in Artis.
 Gut zu wissen. Wie Darlin mir erzählt hat, kommen wir bald an einer kleinen Insel vorbei bevor wir in Artis ankommen.
 
@@ -712,8 +859,29 @@ Knurr, fauch, grrr! Erzähl besser niemand, dass du mich gesehen hast!
 Growl, sniff, grr!! You'd better not tell anyone you saw me!#1
 Knurr, fauch, grrr! Erzähl besser niemand, dass du mich gesehen hast!
 
+GuildLock | 
+GuildLock | 
+
 Gulukan
 Gulukan
+
+GvG Castle | 
+GvG Schloss |
+
+GvG Dungeon | 
+GvG Dungeon | 
+
+GvG Flags: 
+GvG Flaggen: 
+
+GvG ON | 
+GvG AN | 
+
+GvG Off.
+GvG aus.
+
+GvG On.
+GvG an.
 
 Have you some @@s for me?
 Hast du ein paar @@s für mich?
@@ -858,6 +1026,9 @@ Wie war der Keks? Lecker, oder nicht?
 
 However, drought came with summers while winters became colder than ever.
 Wie auch immer, Dürre kommt mit Sommern, während Winter immer kälter werden.
+
+Human Voice
+Menschliche Stimme
 
 Hurry, hurry! We need to check his teeth!
 Beeilung, schnell! Wir müssen seine Zähne überprüfen!
@@ -1092,6 +1263,12 @@ Ich möchte mich zur Heirat registrieren.
 
 I want to be the first merchant of this square to sell @@'s clothes!
 Ich will der erste Händler auf diesem Platz sein, der @@'s Kleidung verkauft!
+
+I want to divorce.
+Ich will mich scheiden lassen.
+
+I want to register for marriage.
+Ich möchte mich zur Hochzeit registrieren.
 
 I was here when they rescued you!!
 Ich war hier,als sie dich gerettet haben!°!
@@ -1393,6 +1570,9 @@ Lean
 Leave it
 Geh bitte
 
+Leaves | 
+Blätter
+
 LeftBarrierCheck
 LeftBarrierCheck
 
@@ -1441,8 +1621,14 @@ Da schau her, wen haben wir denn da. Kommst du von einer Trainingseinheit zurüc
 MAYBE YOU CAN LOOK AT THIS?
 VIELLEICHT KANNST DU DIR DAS HIER ANGUCKEN?
 
+Male
+Männlich
+
 Mane
 Mähne
+
+Marriage failed.
+Hochzeit fehlgeschlagen.
 
 Max
 Max
@@ -1468,14 +1654,26 @@ Vielleicht ist sie eine von denen, die letzten Monat verloren gegangen sind? Die
 Maybe you can look at this??
 Vielleicht kannst du so aussehen?
 
+Maybe you meant: 
+Hast du vielleicht das gemeint:
+
 Messy
 Messy
 
 Mickael
 Mickael
+
+Mint Cashmere Dye
+Mintgrüne Kashmir Farbe
+
+Mobs#001-1
+Mobs#001-1
 
 Mohawk
 Irokesenschnitt
+
+Monster NoTeleport | 
+Monster NoTeleport | 
 
 Move kid.
 Geh weiter, kleiner.
@@ -1519,6 +1717,15 @@ NEIN und *hicks* NEIN, du und du und deine ... *hicks* dämliche *burp* Gilde!
 NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT.
 NICHTS AUSSER HAIEN UND EINEM KOMISCHEN LEUCHTEN.
 
+NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d 
+NPC %d: %s::%s | Richtung: %s | Sprite: %d | Ort: %d %d 
+
+NPC Buy:%dz, Sell:%dz | Weight: %.1f 
+NPC Kaufe:%dz, Verkaufe:%dz | Gewicht: %.1f 
+
+Name: %s 
+Name: %s
+
 Nard and crew are taking us to the city of Artis.
 Nard und seine Mannschaft bringen uns nach Artis.
 
@@ -1530,6 +1737,9 @@ Trotzdem kannst du mit einem anderen Abenteurer sprechen, indem du [Enter] drüc
 
 New technologies assisted the slaughter instead of establishing peace. At some point, two different rivals were formed.
 Die neuen Technologien wurden für Zerstörung und Tod eingesetzt, anstatt Frieden zu bringen. Irgendwann standen sich hauptsächlich zwei Kontrahenten gegenüber.
+
+NightmareDrop | 
+AlptraumBeute |
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#0
 NEIN und *hicks* NEIN, du und deine... *burp* dähmliche *hicks* Gilde!
@@ -1558,8 +1768,71 @@ Nein, tut mir leid.
 No, thanks.
 Nein. Danke.
 
+NoBaseEXP | 
+NoBaseEXP | 
+
+NoBranch | 
+NoBranch | 
+
+NoCalcRank | 
+NoCalcRank | 
+
+NoCommand | 
+NoCommand | 
+
+NoDrop | 
+NoDrop | 
+
+NoGuild | 
+NoGuild | 
+
+NoIcewall | 
+NoIcewall | 
+
+NoJobEXP | 
+NoJobEXP | 
+
+NoMVPLoot | 
+NoMVPLoot | 
+
+NoMemo | 
+NoMemo | 
+
+NoMobLoot | 
+NoMobLoot | 
+
+NoParty | 
+NoParty | 
+
+NoReturn | 
+NoReturn | 
+
+NoSkill | 
+NoSkill | 
+
+NoTeleport | 
+NoTeleport | 
+
+NoTrade | 
+NoTrade | 
+
+NoVending | 
+NoVending | 
+
+NoViewID | 
+NoViewID | 
+
+NoWarp | 
+NoWarp | 
+
+NoWarpTo | 
+NoWarpTo | 
+
 Nobody will know about the existence of the Mercurians
 Niemand weiß etwas über die Existenz der Merkurianer
+
+Non-binary
+Nicht-binär
 
 Not to kill your dream, but... Julia is mine!
 Möchte deinen Traum nicht zerstören, aber... Julia gehört mir!
@@ -1581,6 +1854,12 @@ Nichts, ich muss gehen!
 
 Now go outside and talk with Gugli, he'll tell you what we need.
 Jetzt gehe nach draußen und rede mit Gugli, er wird dir sagen, was wir brauchen.
+
+Now wait for your partner, then talk to me again.#0
+Warte auf deinen Partner und sprich mich dann nochmal an.#0
+
+Now wait for your partner, then talk to me again.#1
+Warte auf deinen Partner und sprich mich dann nochmal an.#1
 
 Now you divorced!
 Jetzt bist du geschieden!
@@ -1705,6 +1984,9 @@ Oh... ehm... eigenzlich... war alles was ich wollte nach Artis zu kommen. Err...
 Oh... um... actually... all is I wanted was to get to Artis. Err... but I didn't, ah, have enough money to pay for the ferry!
 Oh... ehm... eigentlich... war alles was ich wollte, nach Artis zu kommen. Err... aber ich, ah, hatte nicht genug Geld um die Fähre zu bezahlen!
 
+Ok I add your name... @@...
+Ok, ich füge deinen Namen hinzu... @@...
+
 Ok, Done.
 Ok, fertig.
 
@@ -1780,11 +2062,20 @@ Open your inventory (F3 key), select the clothes one by one and equip them.#1
 Orc Voice
 Ork-Stimme
 
+Other Flags: 
+Andere Flaggen:
+
 Out of my way.
 Geh mir aus dem Weg!
 
 Parted
 Getrennt
+
+Partner not ready.
+Partner nicht bereit.
+
+PartyLock | 
+PartyLock |
 
 People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose.
 Die Menschen fingen an, sich gegenseitig zu bestehlen. Als die Städte wuchsen, wuchsen auch die Nöte. Kriege um Länder fingen dann an.
@@ -1813,6 +2104,9 @@ Peter hat die Belohnung gegeben
 Peter#001-2-22
 Peter#001-2-22
 
+Pets are not allowed in Guild Wars.
+Haustiere sind in Gildenkriegen nicht erlaubt.
+
 Piberries
 Pibeeren
 
@@ -1834,8 +2128,14 @@ Piou Mörder
 Pious legs
 Piousbeinchen
 
+Please choose the desired gender:
+Bitte wähle das gewünschte Geschlecht:
+
 Please don't tell people that you've seen me. I don't want to be thrown in the sea as food for sharks or decapitated. At least not again!
 Bitte erzähl ihnen nicht, dass du mich gesehen hast. Ich möchte nicht den Haien zum Fraß vorgeworfen oder geköpft werden. Nicht schon wieder!
+
+Please enter a NPC name (usage: @npcoff <NPC_name>).
+Bitte gib einen NPC Namen ein (Benutzung: @npcoff <NPC_name>).
 
 Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
 Bitte eine Position und eine Anzahl eingeben (usage: @refine <equip position> <+/- amount>).
@@ -1876,6 +2176,18 @@ Reines Platin
 Purple plum
 Lila Pflaume
 
+PvP Flags: 
+PvP Flaggen:
+
+PvP Off.
+PvP aus.
+
+PvP On.
+PvP an.
+
+Pvp ON | 
+PvP AN |
+
 RattosControl
 RattosController
 
@@ -1893,6 +2205,9 @@ Nicht vergessen, dass du meinen kleinen Bruder auf dem Hügel östlich von hier 
 
 Resa
 Resa
+
+Reset | 
+Zurücksetzen |
 
 RightBarrierCheck
 RightBarrierCheck
@@ -1915,6 +2230,9 @@ WAS HAST DU GESAGT? SPRICH LAUTER!
 Sailors
 Matrosen
 
+Sakura | 
+Sakura |
+
 Sapartan
 Sapartan
 
@@ -1923,6 +2241,9 @@ Meerestropfen
 
 Server is jammed due to over populated.
 Server ist wegen Überfüllung hängengeblieben.
+
+She is a good friend of mine... We wanted to marry a few weeks before her accident but...
+Sie ist ein gute Freundin von mir ... Wir wollten ein paar Wochen vor ihrem Unfall heiraten, aber ...
 
 She is on the upper level, yeye can't miss her. She is the only girl in this crew, oh well, except for you now yeyeye!
 Sie ist auf dem oberen Deck. Du kannst sie nicht verfehlen. Sie ist die einzige Frau in der Crew. Oh. Neben dir nun, hehe!
@@ -1965,6 +2286,9 @@ Als Silvio beginnt, mit seiner Flasche zu sprechen, verlässt du das Gespräch.
 
 Sincerely yours, Dan
 Hochachtungsvoll, Dan
+
+Snow | 
+Schnee | 
 
 So I was going to ask if maybe you would be interested in giving me a hand with a few errands.
 Darum habe ich mich gefragt, ob du mir mit ein paar Botengängen zu Hand gehen willst.
@@ -2011,6 +2335,9 @@ Einige andere Zeichenfolgen werden zu dieser Seite hinzugefügt.
 Some sailors are trying to talk to you..
 Ein paar Matrosen versuchen dich anzusprechen...
 
+Somebody is probably training, better wait for him to finish.
+Jemand anderes trainiert momentan. Warte lieber, bis er fertig ist.
+
 Somehow you don't feel good about your deed
 Deine Taten nagen an deiner Seele
 
@@ -2020,11 +2347,17 @@ Tut mir leid, aber ich bin momentan mit anderen Registrierungen beschäftigt.
 Sorry but I can't tell you anything about that.
 Tut mir Leid, aber darüber kann ich dir nichts sagen.
 
+Sorry i can't help you. Go away!
+Tut mir leid, aber ich kann dir nicht helfen. Verzieh dich!
+
 Sorry, I am not in the mood for another fight with these rattos.
 Nein, ich bin momentan nicht in der Stimmung, mit den Ratten zu kämpfen.
 
 Sorry, I am not in the mood for another fight with those rattos.
 Sorry, aber ich will nicht nochmal gegen diese Rattos kämpfen.
+
+Sorry, I'm busy with other registrations.
+Tut mir leid, aber ich bin momentan mit anderen Registrierungen beschäftigt.
 
 Sorry, but I'm busy right now.#0
 Tut mir Leid aber ich habe grade zu tun.
@@ -2088,6 +2421,9 @@ Sprich mit Lloyd dem Bänker in der Handelsgilde. Es ist ein großes Gebäude au
 
 Tarlan
 Tarlan
+
+Teleport Flags: 
+Teleport Flaggen:
 
 Thank you sir for you nice words. I am feeling better now.
 Danke, Sir, für eure netten Worte. Ich fühle mich schon besser.
@@ -2293,6 +2629,9 @@ Diese Kiste ist verschlossen.
 This box is locked.
 Diese Kiste ist verschlossen.
 
+This character has been banned until 
+Dieser Charakter wurde bis              gebannt.
+
 This door seems locked
 Diese Tür scheint abgeschlossen zu sein
 
@@ -2356,6 +2695,9 @@ Versuche Max zu fragen. Er ist ein Frühaufsteher.
 Twisted teal
 Verschmiertes Blaugrün
 
+Usage: @unloadnpcfile <file name>
+Benutzung: @unloadnpcfile <file name>
+
 WHAT DID YOU SAY?
 WAS HAST DU GESAGT?
 
@@ -2367,6 +2709,9 @@ Warte, bist du einer von denen der Legion von Aemil? Ich hab nichts falsch gemac
 
 Wait...
 Warte...
+
+Waiting for @@...
+Warten auf @@...
 
 Walk a bit, it'll be easy for you to catch one. Impale one of them for me please.
 Lauf ein wenig umher, es wird dir leicht fallen, einen zu fangen. Spieße einen für mich auf, bitte.
@@ -2430,6 +2775,9 @@ Wir sprechen später darüber.#0
 
 We will talk about it later.#1
 Wir sprechen später darüber.#1
+
+Weather Flags: 
+Wetter Flaggen:
 
 Welcome to the RedPlush INN!
 Willkommen im Redplush Gasthaus!
@@ -2505,6 +2853,12 @@ Wie auf dem Schiff auch arbeiten Jalad und Ale gerne zusammen. Ich habe sie zule
 
 Who is this Julia?
 Wer ist diese Julia?
+
+Why Frenchy? It's a Russian!#0
+Warum Franzose? Er ist ein Russe!
+
+Why Frenchy? It's a Russian!#1
+Warum Franzose? Er ist ein Russe!
 
 Why are you asking? And who are you too? I've never seen you around before...
 Was willst du wissen? Und wer bist du überhaupt? Ich hab dich hier noch nie gesehen...
@@ -2587,6 +2941,9 @@ Yeye, du hast die Sachen immer noch nicht angezogen!
 You already registered. Wait for your partner.
 Du bist schon registriert. Warte auf den Partner.
 
+You already registered. Waiting for your partner...
+Du bist schon registriert. Warte bitte auf deinen Partner...
+
 You already took a Bandana, please put this one back in the box.
 Du hast bereits ein Kopftuch, lege diese bitte zurück in die Kiste.
 
@@ -2607,6 +2964,9 @@ Du bist total betrunken mein Freund...
 
 You are new around here, right?
 Du bist jetzt in der Gegend, nicht wahr?
+
+You are now divorced!
+Du bist jetzt geschieden!
 
 You are now part of the crew! Thanks again for your help.
 Du bist nun Teil der Crew! Nochmals vielen Dank für Deine Hilfe.
@@ -2673,6 +3033,9 @@ Du erinnerst dich an nichts, was zuvor geschehen ist.
 
 You fell asleep.
 Dir fielen die Augenlieder zu.
+
+You got married to @@!
+Du wurdest mit @@ verheiratet!
 
 You have an awful amnesia.
 Du hast eine schlimme Gedächtnislücke.
@@ -2755,6 +3118,9 @@ Du solltest versuchen, wenn du stark genug bist, einige Tortugas oder Crocs zu t
 You still haven't completed your task.
 Sie haben Ihre Aufgabe noch nicht abgeschlossen.
 
+You stupid, he's English, look at the shape of his head.#1
+Du Dummkopf, er ist Engländer! Schau dir mal seine Kopfform an.
+
 You stupid, he's english, look at the shape of his head.
 Du Dummkopf, er ist Engländer. Schau dir seine Kopfform an.
 
@@ -2769,6 +3135,9 @@ Quatsch. Es ist eine Engländering. Schau ihre Kopfform.
 
 You stupid, it's an english, look at his head form.
 Ach was. Es ist ein Engländer. Schau! Seine Kopfform.
+
+You stupid, she's English, look at the shape of her head.#0
+Du Dummerchen, er ist Engländer! Schau dir mal seine Kopfform an.
 
 You stupid, she's english, look at the shape of her head.
 Du Dummkopf, sie ist Engländerin. Schau dir ihre Kopfform an.
@@ -2842,6 +3211,9 @@ Du?? Hier??
 Your account has 'Unregistered'.
 Dein Account wurde unregistriert
 
+Your account has been banished until 
+Dein Account wurde gebannt bis
+
 Your body aches, even your hair hurts, and the daylight is painful; but still you open your eyes and see a large ship before you!
 Dein Körper schmerzt, sogar deine Haare tun dir weh, und das Tageslicht ist schmerzhaft; dennoch öffnest du deine Augen und du siehst ein großes Schiff vor dir!
 
@@ -2869,11 +3241,23 @@ Zzzzzzzzzz
 and 
 und
 
+body/armor, 
+Körper/Rüstung, 
+
+both hands, 
+beide Hände, 
+
 day
 Tag
 
 days
 Tage
+
+feet, 
+Füße,
+
+garment, 
+Gewand, 
 
 hour
 Stunde
@@ -2884,17 +3268,50 @@ Stunden
 in @@
 in @@
 
+left accessory, 
+linkes Accessoire, 
+
+left hand, 
+linke Hand,
+
+lower head, 
+Gesicht, 
+
+lower/mid head, 
+Gesicht/Stirn, 
+
+lower/mid/top head, 
+Gesicht/Stirn/Kopf, 
+
+lower/top head, 
+Gesicht/Kopf, 
+
+marriage1
+Hochzeit1
+
+mid head, 
+Stirn, 
+
 minute
 Minute
 
 minutes
 Minuten
 
+right accessory, 
+rechtes Accessoire,
+
+right hand, 
+rechte Hand,
+
 second
 Sekunde
 
 seconds
 Sekunden
+
+top head, 
+Kopfbedeckung,
 
 value '%d' for option '%s' is out of range (limit is 0-10)
 Wert '%d' für Option '%s' ist außerhalb der Grenzen (Limit ist 0-10)
@@ -2904,4 +3321,7 @@ Jahr
 
 years
 Jahre
+
+| Party: '%s' 
+| Gruppe: '%s' 
 
