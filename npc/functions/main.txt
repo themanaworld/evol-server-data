@@ -89,38 +89,46 @@ function	script	addremovemapmask	{
 // Function to show narrator text. Accepts string args.
 // If first arg is a number N, then it represents bit flags.
 // Bit flags :
-//   0x1 -- blank line at beginning
-//   0x2 -- blank line at the end
-//   0x4 -- use last "next;"
-//   0x8 -- don't use first "mesn;"
+//   S_FIRST_BLANK_LINE -- blank line at beginning
+//   S_LAST_BLANK_LINE  -- blank line at the end
+//   S_LAST_NEXT        -- use last "next();"
+//   S_NO_NPC_NAME      -- don't use first "mesn();"
+//   S_LAST_CLOSE       -- use last "close2();
 function	script	narrator	{
     .@start = 0;
     .@argc = getargcount();
     .@flags = 0;
 
-    if (.@argc > 1 && !isstr(getarg(0)))
-    {
+    if (.@argc > 1 && (getdatatype(getarg(0)) & DATATYPE_INT) != 0) {
         .@start = 1;
         .@flags = getarg(0);
     }
 
-    if (.@flags & 0x1)
-        mes "";
-
-    if (!(.@flags & 0x8))
-        mesn l("Narrator");
-
-    for (.@i = .@start; .@i < .@argc; .@i++)
-    {
-        mes col(getarg(.@i), 9);
-        if (.@i < .@argc - 1)
-            next;
+    if ((.@flags & S_FIRST_BLANK_LINE) != 0) {
+        mes("");
     }
 
-    if (.@flags & 0x4)
-        next;
-    else if (.@flags & 0x2)
-        mes "";
+    if ((.@flags & S_NO_NPC_NAME) == 0) {
+        mesn(l("Narrator"));
+    }
+
+    for (.@i = .@start; .@i < .@argc; .@i++) {
+        mes(col(getarg(.@i), 9));
+
+        if (.@i < .@argc - 1) {
+            next();
+        }
+    }
+
+    if ((.@flags & S_LAST_BLANK_LINE) != 0) {
+        mes("");
+    }
+
+    if ((.@flags & S_LAST_NEXT) != 0) {
+        next();
+    } else if ((.@flags & S_LAST_CLOSE) != 0) {
+        close2();
+    }
 
     return;
 }
