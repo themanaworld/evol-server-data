@@ -53,17 +53,14 @@ OnTouch:
 
     asklanguage(LANG_ON_SEA);
 
-    // TODO: This is gumi's code, I have no idea if it works or not
-    // Besides, is it lv 90, 95, 99, 100, or...?
-    // I believe Micksha said level 90 was plenty, but.
-    /*** FIXME ***
-    if ((LEGACY[1] & 0x7FFFFF00) >> 8) > 90)
-        REBIRTH=1;
-    *** FIXME ***/
-
     // Players coming from TMW Legacy didn't got a chance to do this yet.
     // So allow them now.
-    if (LEGACY) {
+    if (islegacyaccount()) {
+        // Rebirth system
+        if (getlegacylevel() > 90)
+            REBIRTH=1;
+
+        // Race selection
         BarberChangeRace();
     }
 

@@ -1,37 +1,181 @@
 // Evol scripts.
+// Moubootaur Legends scripts.
 // Author:
 //    Reid
+//    Jesusalva
 // Description:
 //    Narrator explain to the player that he is dreaming.
 // Variable:
-//    0    General_Narrator
+//    Q    General_Narrator
 // Values:
 //    0    PC is in the game introduction.
 //    1    PC arrived Artis.
+//    2    PC arrived in Argaes.
 
 000-0-1,25,28,0	script	Narrator#000-0-1	NPC_NARRATOR,{
+    function referralSystem;
+    function travelToArtis;
+    function travelToArgaes;
 
-    narrator S_LAST_NEXT,
-        l("Look, we finally meet."),
-        l("I think that you already understood, you are asleep."),
-        l("The ship, La Johanne, has left Drasil Island, finally."),
-        l("Nard and his crew are taking us to the city of Artis."),
-        l("There are a lot of things you must be wondering about."),
-        l("So, search for answers."),
-        l("..."),
-        l("Ah, seagulls. We are arriving."),
-        l("..."),
-        l("Wake-up!");
-
-    if (countitem(JohanneKey) == 1) delitem JohanneKey, 1;
-    setq General_Narrator, 1;
-    setq ShipQuests_Nard, 6;
-    savepoint "001-2-22", 50, 38;
-    warp "001-2-22", 50, 38;
-    closeclientdialog;
+    switch (getq(General_Narrator)) {
+    case 0:
+        travelToArtis();
+        break;
+    case 1:
+        travelToArgaes();
+        break;
+    default:
+        mesc(l("ERROR - Corrupted quest state %d", getq(General_Narrator)), 1);
+        mesc(l("Please contact the staff for technical support."), 1);
+        mes("");
+        mesc(l("Error message: Narrator#000-0-1 Invalid Quest State"));
+        break;
+    }
+    closeclientdialog();
     close;
 
 OnInit:
     .bodytype = BODYTYPE_1;
+
+    if (debug > 0) {
+        // debug commands to skip the tutorial
+        bindatcmd("force-referral", sprintf("%s::referralSystem", .name$));
+        bindatcmd("force-artis", sprintf("%s::travelToArtis", .name$));
+    }
     end;
+
+    ///////////////////////////////////////////////////////////////////////
+    // Quest state: 0
+    public function travelToArtis {
+        narrator(S_LAST_NEXT,
+            l("Look, we finally meet."),
+            l("I think that you already understood, you are asleep."),
+            l("The ship, La Johanne, has left Drasil Island, finally."),
+            l("Nard and his crew are taking us to the city of Artis."));
+
+        // Legacy accounts are excluded
+        // Only one referral per vault account
+        .@refVault = bitwise_get(getvaultvar(REFERRAL_PROG), 0x00FFFFFF, 0);
+
+        if (!islegacyaccount() && .@refVault < 1) {
+            referralSystem();
+        }
+
+        narrator(S_LAST_CLOSE,
+            l("There are a lot of things you must be wondering about."),
+            l("So, search for answers."),
+            l("..."),
+            l("Ah, seagulls. We are arriving."),
+            l("..."),
+            l("Wake-up!"));
+
+        if (.@cnt = countitem(JohanneKey)) {
+            delitem(JohanneKey, .@cnt);
+        }
+
+        setq(General_Narrator, 1);
+        setq(ShipQuests_Nard, 6);
+        savepoint("001-2-22", 50, 38);
+        warp("SavePoint", 0, 0);
+        return;
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+    // Quest state: 1
+    function travelToArgaes {
+        narrator(S_LAST_NEXT,
+            l("Oh, hello again!"),
+            l("I hope you still remember me."),
+            l("Now, this ship is not the most comfortable, don't you agree?"),
+            l("Well, hopefully it won't be too long until you reach your destination."),
+            l("Argaes, in the ancient continent of Ancea..."),
+            l("What could be waiting for you there?"));
+
+        // Special dialog for Legacy accounts
+        // To relate to Doomsday event
+        if (islegacyaccount()) {
+            narrator(S_LAST_NEXT,
+                l("Maybe you already have been on that continent before."),
+                l("Also, don't you think this ship vaguely... familiar?"),
+                l("Well, not like you would be able to remember. Even if you wanted."),
+                l("Ah, sorry. I make too many rhetorical questions, don't I?"),
+                l("I probably should let you rest, it must have been tiring!"),
+                l("But before that, one last question..."));
+        }
+
+        narrator(S_LAST_CLOSE,
+            l("Actually... Wouldn't now be a good time to wake up?"));
+
+        setq(General_Narrator, 2);
+        savepoint("008-1-1", 33, 63);
+        warp("SavePoint", 0, 0);
+        dispbottom(l("After a tiring, yet fast, travel by Koga, you arrive at %s.", l("Woodlands")));
+        close;
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+    // Script Utils
+    // referralSystem() is a Moubootaur Legends function
+    public function referralSystem {
+        mesc(l("But before we get there, I've been itching to know..."));
+        next();
+        mesc(l("Do we know someone on this world?"), 1); // FIXME: awkward wording: suddenly changes from singular first person (I) to plural second person (we)
+
+        // Opt-out
+        if (askyesno() == ASK_NO) {
+            mesc(l("Yes. We truly don't remember anyone.")); // FIXME: juxtaposition of Yes and No (probably should be "No, we truly don't...")
+            next();
+            return;
+        }
+
+        // Opt-in
+        mesc(l("Yes... We remember a fellow adventurer... What was their name again?"));
+        next();
+
+        do {
+            mesc(l("(Which player invited you to this world?)"), 1); // FIXME: suddenly changes to the third person (invited "you" vs invited "us" or invited "me")
+            input(.@refName$ = "");
+            mes("");
+
+            .@refName$ = strip(.@refName$); // clean it up
+
+            if (.@refName$ == "") {
+                mesc(l("Actually, nevermind. My memory is still too foggy to remember this.")); // FIXME: suddenly changes from plural second person to singular first person ("My" memory)
+                next();
+                break;
+            }
+
+            .@refVault = "playerCache"::name2vault(.@refName$);
+
+            if (.@refVault == 0) {
+                mesc(l("Oops, there is nobody known as %s on this word.", .@refName$)); // FIXME: this is too informal
+                mesc(l("Maybe I don't remember their name, after all."));
+                next();
+                sleep2(400); // Anti-spam Forced cooldowns
+                // FIXME: show a message to the player (use a variable to throttle instead of sleep2)
+                continue;
+            }
+
+
+            if (.@refVault == getvaultid()) {
+                mesc(l("Hahah, silly, that's ourselves!"));
+                mesc(l("Try again!"));
+                next();
+                sleep2(200); // Anti-spam Forced cooldowns
+                // FIXME: show a message to the player (use a variable to throttle instead of sleep2)
+                continue;
+            }
+
+            bitwise_set(getvaultvar(REFERRAL_PROG), 0x00FFFFFF, 0, .@refVault);
+            //getitembound(FriendGift, 1, 1);
+            mesc(l("Ah yes, our trusty friend, %s.", .@refName$));
+            mesc(l("They probably miss me. I mean, I probably have been away for a long time..."));
+            next();
+            mesc(l("Maybe they sent me a letter, or a gift? I'll see once I get in Artis."));
+            next();
+            break;
+        } while (true);
+
+        return;
+    }
 }

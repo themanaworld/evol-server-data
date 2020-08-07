@@ -158,7 +158,7 @@ L_Menu:
         l("Who are you?"), L_Who,
         rif(getq(ShipQuests_ArpanMoney) == 1, lg("Do you know what happened to the gold I had when you guys saved me?")), L_WhereMoney,
         rif(getq(ShipQuests_ArpanMoney) < 2, l("Where are my old clothes?")), L_WhereOldClothes,
-        rif(getq(ShipQuests_ArpanMoney) == 2 && LEGACY, l("About my my old clothes...")), L_LegacyClothes,
+        rif(getq(ShipQuests_ArpanMoney) == 2 && islegacyaccount(), l("About my my old clothes...")), L_LegacyClothes,
         rif(!.@equipped, lg("What should I do after taking these clothes?")), L_WhatCloth,
         rif(!.@equipped, l("Thank you, I'll take them and put them on.")), -,
         l("Nothing, sorry."), -;
@@ -211,13 +211,13 @@ L_WhereOldClothes:
     Zeny += 10;
     message strcharinfo(0), l("You receive @@ E!", 10);
 
-    if (LEGACY)
+    if (islegacyaccount())
         goto L_LegacyClothes;
 
     goto L_BeforeMenu;
 
 L_LegacyClothes:
-    if (LEGACY) {
+    if (islegacyaccount()) {
         mesn strcharinfo(0);
         select
             lg("But... I remember that my clothes were very dear to me..."),

@@ -10,7 +10,7 @@
         lg("Welcome, adventurer."),
         l("I will never know why people barge in others' houses and get away with it."),
         l("Ah, no, I'm not telling you to go away. Visits are always welcome, it gets lonely over time. But I don't have anything to offer you otherwise.");
-    if (LEGACY && countitem(ClothesPack)) goto L_Legacy;
+    if (islegacyaccount() && countitem(ClothesPack)) goto L_Legacy;
     close;
 
 L_Legacy:
