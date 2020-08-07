@@ -103,6 +103,7 @@ function	script	GlobalDebugMenu	{
             menuimage("actions/add", l("Create items")),
             menuimage("actions/add", l("Get money")),
             menuimage("actions/edit", l("Change my quests")),
+            rif(debug, menuimage("actions/reset", l("Set Legacy Account"))),
             menuimage("actions/reset", l("Reset")),
             rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu")));
 
@@ -117,8 +118,9 @@ function	script	GlobalDebugMenu	{
             case 5: closeclientdialog; clientcommand "createitems"; end;
             case 6: Zeny = 0x7FFFFFFE; break;
             case 7: GlobalQuestDebug .@c; break;
-            case 8: resetAll; break;
-            case 9: return;
+            case 8: setfakelegacyaccount(); break;
+            case 9: resetAll; break;
+            case 10: return;
         }
     } while(1);
 }
