@@ -1,0 +1,43 @@
+// The Mana World scripts.
+// Author:
+//	Moubootaur Legends Team
+//	Jesusalva
+//  gumi
+// Description:
+//	Referral System - rewards
+//	Note: Does not support multi-levelup
+
+function	script	ReferralSendLvReward	{
+    .@refVault = bitwise_get(getvaultvar(REFERRAL_PROG), 0x00FFFFFF, 0); // the unique identifier of the referrer (Vault/account ID) [24-bit integer]
+    .@status   = bitwise_get(getvaultvar(REFERRAL_PROG), 0x7F000000, 24); // the last reward obtained [8-bit integer]
+
+    if (.@refVault < 1) {
+        // the player has not been referred
+        return;
+    }
+
+    .@refChar = "playerCache"::vault2char(.@refVault);
+
+    if (.@refChar < 1) {
+        // the referrer no longer exists: unassign it
+        setvaultvar(REFERRAL_PROG, false);
+        return;
+    }
+
+    setarray(.@rewardTiers[0], 25, 50, 75, 100);
+    .@tier = array_find(.@rewardTiers[0], BaseLevel);
+
+    if (.@tier < 0 || .@status > .@tier) {
+        // not a reward tier, or already claimed
+        return;
+    }
+
+    rodex_sendmail(.@refChar, "TMW Team",
+        sprintf("Referred player reached Lv %i!", BaseLevel),
+        sprintf("%s just reached level %i!\n"
+        "As they get stronger, more rewards will be sent to you!", strcharinfo(PC_NAME), BaseLevel),
+        0, Acorn, 1);
+
+    bitwise_set(getvaultvar(REFERRAL_PROG), 0x7F000000, 24, .@tier);
+    return;
+}

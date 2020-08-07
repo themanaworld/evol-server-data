@@ -44,6 +44,7 @@ OnPCDieEvent:
 
 OnPCBaseLvUpEvent:
     //callfunc("newquestwarning");
+    callfunc("ReferralSendLvReward");
     end;
 
 OnNPCKillEvent:

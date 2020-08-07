@@ -1,0 +1,35 @@
+// Referral Gifts
+// Rebased from Moubootaur Legends
+// Author:
+//    Jesusalva
+
+function	script	OpenFriendGift	{
+	if (BaseLevel < 5) {
+		dispbottom(l("You must reach level 5 to open this gift."));
+		getitembound(FriendGift, 1, 1);
+        return;
+    }
+
+    getitem(Acorn, 1); // FIXME: placeholder
+    //getitem(EventCoin, rand(1,3));
+
+    .@refVault = bitwise_get(getvaultvar(REFERRAL_PROG), 0x00FFFFFF, 0);
+    .@refChar = "playerCache"::vault2char(.@refVault);
+    .@refName$ = "playerCache"::char2name(.@refChar);
+
+    //$REFERRAL_IDS[.@refVault] += 1;
+    // ^ this doesn't seem to serve any purpose...
+    // if we want to keep track of how many accounts someone referred it
+    // should be something like:
+    // .@count = getvaultvar(REFERRAL_COUNT, .@refVault);
+    // setvaultvar(REFERRAL_COUNT, .@count + 1, .@refVault);
+
+    dispbottom(l("Oooh, a gift from %s!", .@refName$));
+    rodex_sendmail(.@refChar, "TMW Team",
+        "Invite Accepted",
+        sprintf("%s accepted your invitation and reached level 5!\n"
+        "As they get stronger, more rewards will be sent to you!",
+            strcharinfo(PC_NAME)),
+        rand(50, 150));
+    return;
+}
