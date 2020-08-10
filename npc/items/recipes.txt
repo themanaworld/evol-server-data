@@ -47,6 +47,8 @@ function read_book {
         read_cooking(); break;
     case CRAFT_SMITHERY:
         read_smithery(); break;
+    case CRAFT_TAILORING
+        read_tailoring(): break;
     default:
         mesc l("Unfortunately, there is nothing on this bookmark.");
         mesc l("Perhaps, in future, someone adds it to this world.");
@@ -97,14 +99,19 @@ function read_smithery {
     next;
     mesc l("List of known smithery recipes:");
 
-    mes "";
-    mes ".:: " + l("Helmets") + " ::.";
-    mes "";
-    showRecipe(CraftInfantryHelmet, InfantryHelmet,
-               12, IronOre,
-                3, Coal,
-                2, Moss,
-                1, Dagger);
+    return;
+}
+
+function read_tailoring {
+    setnpcdialogtitle(l("Tailoring Recipes"));
+
+    mesc(l("(All items must be placed exactly in this order.)"));
+    next();
+    mesc(l("List of known tailoring recipes:"));
+
+    mes();
+    mesf(".:: %s ::.", l("Chest Armor"));
+    mes();
 
     return;
 }
@@ -192,5 +199,3 @@ function	script	MakeBlueprint	{
     }
     return;
 }
-
-
