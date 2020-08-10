@@ -40,25 +40,34 @@ function	script	GlobalSkillDebug	{
         mes "";
 
         mes "---";
-        // FIXME: maybe get skills from an array or `getskilllist;` <= would need a `getskillinfo()` buildin though
-        mes "NV_BASIC: " + getskilllv(NV_BASIC);
+
+        .@size = getarraysize(getvariableofnpc(.debug_skills$, "@sdebug"));
+
+        for (.@s = 0; .@s < .@size; ++.@s) {
+            .@skill$ = getvariableofnpc(.debug_skills$[.@s], "@sdebug");
+            mesf("%s: %d", .@skill$, getskilllv(string_to_data(.@skill$)));
+        }
+
         mes "---";
 
         mes "";
         mes l("Which skill do you wish to change?");
         next;
 
-        menuint
-            "NV_BASIC", NV_BASIC,
-            rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu"))), -1;
+        .@select$ = implode(getvariableofnpc(.debug_skills$, "@sdebug"), ":");
 
-        switch (@menuret)
-        {
-            case -1: return;
+        if (getarg(0, 0)) {
+            .@select$ += ":" + menuimage("actions/back", l("Return to Debug menu"));
         }
 
-        modifySkill @menuret;
+        select(.@select$);
 
+        if (--@menu == .@size) {
+            return;
+        } else {
+            .@skill$ = getvariableofnpc(.debug_skills$[@menu], "@sdebug");
+            modifySkill(string_to_data(.@skill$));
+        }
     } while (1);
 }
 
@@ -77,5 +86,9 @@ OnCall:
     end;
 
 OnInit:
+    setarray(.debug_skills$,
+        "NV_BASIC",
+        "EVOL_CRAFTING");
+
     bindatcmd "sdebug", "@sdebug::OnCall", 0, 99, 0;
 }
