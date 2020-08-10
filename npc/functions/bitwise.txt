@@ -1,12 +1,24 @@
 /**
- * gets a bitmasked value in a variable
+ * Gets a bitmasked value in from an integer. If the shift is omitted, it will
+ * be deduced from the mask.
  *
  * @arg 0 - the variable
  * @arg 1 - mask
  * @arg 2 - shift
  */
 function	script	bitwise_get	{
-    return (getarg(0) & getarg(1)) >> getarg(2, 0);
+    .@shift = getarg(2, 0);
+
+    if (getargcount() < 3) {
+        // guess the shift from the mask:
+        for (.@shift = 0; .@shift < 32; ++.@shift) {
+            if ((getarg(1) & (1 << .@shift)) != 0) {
+                break;
+            }
+        }
+    }
+
+    return (getarg(0) & getarg(1)) >> .@shift;
 }
 
 /**
@@ -19,5 +31,16 @@ function	script	bitwise_get	{
  * @return a reference to the variable
  */
 function	script	bitwise_set	{
+    if (getargcount() < 4) {
+        // guess the shift from the mask:
+        for (.@shift = 0; .@shift < 32; ++.@shift) {
+            if ((getarg(1) & (1 << .@shift)) != 0) {
+                break;
+            }
+        }
+
+        return set(getarg(0), (getarg(0) & ~(getarg(1))) | (getarg(2, 0) << .@shift));
+    }
+
     return set(getarg(0), (getarg(0) & ~(getarg(1))) | (getarg(3, 0) << getarg(2, 0)));
 }
