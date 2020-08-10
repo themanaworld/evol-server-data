@@ -29,6 +29,7 @@ function	script	showRecipe	{
 	function read_book;
 	function read_cooking;
 	function read_smithery;
+    function read_tailoring;
     end;
 
 function read_book {
@@ -47,8 +48,8 @@ function read_book {
         read_cooking(); break;
     case CRAFT_SMITHERY:
         read_smithery(); break;
-    case CRAFT_TAILORING
-        read_tailoring(): break;
+    case CRAFT_TAILORING:
+        read_tailoring(); break;
     default:
         mesc l("Unfortunately, there is nothing on this bookmark.");
         mesc l("Perhaps, in future, someone adds it to this world.");
@@ -112,6 +113,12 @@ function read_tailoring {
     mes();
     mesf(".:: %s ::.", l("Chest Armor"));
     mes();
+
+    showRecipe(CraftCreasedShirt, CreasedShirt,
+               1, CottonCloth,
+              15, PiouFeathers,
+               5, RattoTail,
+               1, Knife);
 
     return;
 }
