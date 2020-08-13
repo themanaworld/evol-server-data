@@ -14,6 +14,8 @@ function	script	showRecipe	{
         if (getarg(1)) {
             mes l(".:: %s Recipe ::.", getitemlink(getarg(1)));
 
+            // TODO: add a script buildin to fetch recipe requirements
+
             for (.@i=2;.@i < getargcount(); .@i++) {
                 mesc l("%d/%d %s", countitem(getarg(.@i+1)), getarg(.@i), getitemlink(getarg(.@i+1)));
                 .@i++;
@@ -118,6 +120,11 @@ function read_tailoring {
                1, CottonCloth,
               15, PiouFeathers,
                5, RattoTail,
+               1, Knife);
+    showRecipe(CraftArtisTankTop, ArtisTankTop,
+              10, CottonCloth,
+               5, PiouFeathers,
+               5, Moss,
                1, Knife);
 
     return;
