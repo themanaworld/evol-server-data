@@ -196,6 +196,11 @@ function read_tailoring {
               10, LeatherPatch,
               15, Moss,
                1, SharpKnife);
+    showRecipe(CraftSorcererRobe, SorcererRobe,
+              60, CottonCloth,
+              40, FluffyFur,
+              20, SilkCocoon,
+               1, Dagger);
 
     return;
 }
