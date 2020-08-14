@@ -161,7 +161,8 @@ function read_smithery {
     mesf(".:: %s ::.", l("Gloves"));
     mes();
 
-    showRecipe(CopperArmbands);
+    showRecipe(CopperArmbands,
+               BromenalGloves);
 
     return;
 }
