@@ -116,6 +116,11 @@ function read_smithery {
                3, IronIngot,
               10, Coal,
                1, SharpKnife);
+    showRecipe(CraftChainmail, Chainmail,
+              18, IronIngot,
+               3, SilverIngot,
+              20, Coal,
+               1, SharpKnife);
 
     return;
 }
