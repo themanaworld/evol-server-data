@@ -235,6 +235,11 @@ function read_tailoring {
               40, FluffyFur,
               20, SilkCocoon,
                1, Dagger);
+    showRecipe(WizardRobe,
+              30, SquirrelPelt,
+              60, SilkCocoon,
+               5, LeatherPatch,
+               1, Dagger);
 
     return;
 }
