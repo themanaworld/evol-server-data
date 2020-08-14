@@ -126,6 +126,11 @@ function read_tailoring {
                5, PiouFeathers,
                5, Moss,
                1, Knife);
+    showRecipe(CraftVneckJumper, VneckJumper,
+              15, CottonCloth,
+               5, PiouFeathers,
+               7, Moss,
+               1, Knife);
 
     return;
 }
