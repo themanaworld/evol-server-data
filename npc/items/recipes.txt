@@ -14,7 +14,7 @@ function	script	showRecipe	{
         if (startswith(.@const$, "Craft")) {
             // infer the item constant from the craft constant
             .@recipe = getarg(0);
-            .@item = string_to_data(substr(5, getstrlen(.@const$) - 5));
+            .@item = string_to_data(substr(.@const$, 5, getstrlen(.@const$) - 5));
         } else {
             // infer the craft constant from the item constant
             .@recipe = string_to_data(sprintf("Craft%s", .@const$));
@@ -160,6 +160,16 @@ function read_smithery {
               40, CottonCloth,
               20, Coal,
                1, SharpKnife);
+    showRecipe(CraftLegionIronArmor, LegionIronArmor,
+              30, IronIngot,
+               6, RotoniumIngot,
+              40, Coal,
+               1, Dagger);
+    showRecipe(WarlordArmor,
+              11, RotoniumIngot,
+              20, SilverIngot,
+              50, Coal,
+               1, Dagger);
 
     return;
 }
@@ -224,11 +234,6 @@ function read_tailoring {
               60, CottonCloth,
               40, FluffyFur,
               20, SilkCocoon,
-               1, Dagger);
-    showRecipe(CraftLegionIronArmor, LegionIronArmor,
-              30, IronIngot,
-               6, RotoniumIngot,
-              40, Coal,
                1, Dagger);
 
     return;
