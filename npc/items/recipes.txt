@@ -166,6 +166,11 @@ function read_tailoring {
               20, Moss,
                3, TortugaShellFragment,
                1, Knife);
+    showRecipe(CraftApprenticeRobe, ApprenticeRobe,
+              10, CottonCloth,
+              70, SilkCocoon,
+              10, FluffyFur,
+               1, SharpKnife);
 
     return;
 }
