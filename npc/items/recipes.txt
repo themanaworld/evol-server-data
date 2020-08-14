@@ -141,6 +141,11 @@ function read_tailoring {
                5, FluffyFur,
               10, SilkCocoon,
                1, Knife);
+    showRecipe(CraftSilkRobe, SilkRobe,
+              40, SilkCocoon,
+              10, CottonCloth,
+               3, FluffyFur,
+               1, Knife);
 
     return;
 }
