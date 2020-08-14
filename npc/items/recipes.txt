@@ -156,6 +156,13 @@ function read_smithery {
                TerranitePants,
                AssassinPants);
 
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Gloves"));
+    mes();
+
+    showRecipe(CopperArmbands);
+
     return;
 }
 
