@@ -5,50 +5,65 @@
 // Description:
 //    Contains recipe books for Evol Online
 
-// showRecipe( Craft, Bonus, {amount 1, item 1}, {amount 2, item 2}... )
+// showRecipe( recipe{, recipe...} )
 function	script	showRecipe	{
-    if ((getdatatype(getarg(1)) & DATATYPE_CONST) == 0) {
-        // if the second argument is not a constant
-        .@const$ = data_to_string(getarg(0));
+    freeloop(true);
+    for (.@a = 0; .@a < getargcount(); ++.@a) {
+        .@const$ = data_to_string(getarg(.@a));
 
         if (startswith(.@const$, "Craft")) {
             // infer the item constant from the craft constant
-            .@recipe = getarg(0);
-            .@item = string_to_data(substr(.@const$, 5, getstrlen(.@const$) - 5));
+            .@recipe = getarg(.@a);
+
+            .@item = string_to_data(substr(.@const$, 5, getstrlen(.@const$) - 1));
         } else {
             // infer the craft constant from the item constant
             .@recipe = string_to_data(sprintf("Craft%s", .@const$));
-            .@item = getarg(0);
+            .@item = getarg(.@a);
         }
 
-        .@start = 1;
-
-        if (getargcount() < 3 || (getargcount() + 1) % 2 != 0) {
-            return false; // invalid syntax
+        if (.@item <= 0) {
+            // target item not found
+            continue;
         }
-    } else if (getargcount() < 4 || getargcount() % 2 != 0) {
-        return false; // invalid syntax
-    } else {
-        .@recipe = getarg(0);
-        .@item = getarg(1);
-        .@start = 2;
-    }
 
-    if (RECIPES[.@recipe]) {
-        if (.@item) {
+        if (!RECIPES[.@recipe] && !debug) {
+            // does not have the recipe
+            continue;
+        }
+
+        for (.@inv = 0; .@inv < 9; ++.@inv) {
+            .@size = getcraftrecipe(.@recipe, .@inv, .@qty[0], .@item_id[0]);
+
+            if (.@size < 0) {
+                if (.@size == -1) {
+                    // recipe does not exist
+                    break;
+                }
+                // inventory does not exist
+                break;
+            }
+
             mes(l(".:: %s Recipe ::.", getitemlink(.@item)));
 
-            // TODO: add a script buildin to fetch recipe requirements
+            for (.@it = 0; .@it < .@size; ++.@it) {
+                .@recipe_item = .@item_id[.@it];
+                .@recipe_qty = .@qty[.@it];
 
-            for (.@i = .@start; .@i < getargcount(); .@i += 2) {
-                mesc(l("%d/%d %s", countitem(getarg(.@i + 1)), getarg(.@i), getitemlink(getarg(.@i + 1))));
+                if (.@recipe_item <= 0) {
+                    break;
+                }
+
+                mesc(sprintf("%d/%d %s", countitem(.@recipe_item), .@recipe_qty, getitemlink(.@recipe_item)));
             }
 
             mes("");
+            .@count++;
         }
-        return true;
     }
-    return false;
+    freeloop(false);
+
+    return .@count > 0;
 }
 
 -	script	#RecipeBook	NPC_HIDDEN,{
@@ -81,7 +96,7 @@ function read_book {
         mesc l("Perhaps, in future, someone adds it to this world.");
         break;
     }
-    next;
+    close2();
     return;
 }
 
@@ -97,21 +112,10 @@ function read_cooking {
     mes "";
     mes ".:: " + l("Sandwiches") + " ::.";
     mes "";
-    showRecipe(CraftCarpSandwich, CarpSandwich,
-                1, Bread,
-                3, LettuceLeaf,
-                2, Cheese,
-                1, CommonCarp);
-    showRecipe(CraftPioulegSandwich, PioulegSandwich,
-                1, Bread,
-                3, LettuceLeaf,
-                2, Cheese,
-                1, PiouLegs);
-    showRecipe(CraftMananaSandwich, MananaSandwich,
-                1, Bread,
-                3, LettuceLeaf,
-                2, Cheese,
-                1, Manana);
+
+    showRecipe(CarpSandwich,
+               PioulegSandwich,
+               MananaSandwich);
 
     return;
 }
@@ -130,46 +134,14 @@ function read_smithery {
     mesf(".:: %s ::.", l("Chest Armor"));
     mes();
 
-    showRecipe(CraftLegionTrainingShirt, LegionTrainingShirt,
-               5, IronIngot,
-               1, CopperIngot,
-               5, Coal,
-               1, Knife);
-    showRecipe(CraftLegionCopperArmor, LegionCopperArmor,
-              10, CopperIngot,
-               3, IronIngot,
-              10, Coal,
-               1, SharpKnife);
-    showRecipe(CraftChainmail, Chainmail,
-              18, IronIngot,
-               3, SilverIngot,
-              20, Coal,
-               1, SharpKnife);
-    showRecipe(CraftSnakeplate, Snakeplate,
-              55, SnakeScale,
-               3, IronIngot,
-              15, Moss,
-               1, SharpKnife);
-    showRecipe(CraftLightPlatemail, LightPlatemail,
-              25, IronIngot,
-               5, SilverIngot,
-              25, Coal,
-               1, SharpKnife);
-    showRecipe(CraftJustifierChest, JustifierChest,
-               3, RotoniumIngot,
-              40, CottonCloth,
-              20, Coal,
-               1, SharpKnife);
-    showRecipe(CraftLegionIronArmor, LegionIronArmor,
-              30, IronIngot,
-               6, RotoniumIngot,
-              40, Coal,
-               1, Dagger);
-    showRecipe(WarlordArmor,
-              11, RotoniumIngot,
-              20, SilverIngot,
-              50, Coal,
-               1, Dagger);
+    showRecipe(LegionTrainingShirt,
+               LegionCopperArmor,
+               Chainmail,
+               Snakeplate,
+               LightPlatemail,
+               JustifierChest,
+               LegionIronArmor,
+               WarlordArmor);
 
     return;
 }
@@ -185,61 +157,17 @@ function read_tailoring {
     mesf(".:: %s ::.", l("Chest Armor"));
     mes();
 
-    showRecipe(CraftCreasedShirt, CreasedShirt,
-               1, CottonCloth,
-              15, PiouFeathers,
-               5, RattoTail,
-               1, Knife);
-    showRecipe(CraftArtisTankTop, ArtisTankTop,
-              10, CottonCloth,
-               5, PiouFeathers,
-               5, Moss,
-               1, Knife);
-    showRecipe(CraftVneckJumper, VneckJumper,
-              15, CottonCloth,
-               5, PiouFeathers,
-               7, Moss,
-               1, Knife);
-    showRecipe(CraftSailorShirt, SailorShirt,
-              15, CottonCloth,
-               5, LeatherPatch,
-               5, Coal,
-               1, Knife);
-    showRecipe(CraftFineDress, FineDress,
-              23, CottonCloth,
-               5, FluffyFur,
-              10, SilkCocoon,
-               1, Knife);
-    showRecipe(CraftSilkRobe, SilkRobe,
-              40, SilkCocoon,
-              10, CottonCloth,
-               3, FluffyFur,
-               1, Knife);
-    showRecipe(CraftForestArmor, ForestArmor,
-              10, LeatherPatch,
-              20, Moss,
-               3, TortugaShellFragment,
-               1, Knife);
-    showRecipe(CraftApprenticeRobe, ApprenticeRobe,
-              10, CottonCloth,
-              70, SilkCocoon,
-              10, FluffyFur,
-               1, SharpKnife);
-    showRecipe(CraftPeltJacket, PeltJacket,
-              25, SquirrelPelt,
-              10, LeatherPatch,
-              15, Moss,
-               1, SharpKnife);
-    showRecipe(CraftSorcererRobe, SorcererRobe,
-              60, CottonCloth,
-              40, FluffyFur,
-              20, SilkCocoon,
-               1, Dagger);
-    showRecipe(WizardRobe,
-              30, SquirrelPelt,
-              60, SilkCocoon,
-               5, LeatherPatch,
-               1, Dagger);
+    showRecipe(CreasedShirt,
+               ArtisTankTop,
+               VneckJumper,
+               SailorShirt,
+               FineDress,
+               SilkRobe,
+               ForestArmor,
+               ApprenticeRobe,
+               PeltJacket,
+               SorcererRobe,
+               WizardRobe);
 
     return;
 }
