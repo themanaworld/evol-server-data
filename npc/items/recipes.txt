@@ -197,6 +197,13 @@ function read_tailoring {
                JeansChaps,
                LeatherTrousers);
 
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Gloves"));
+    mes();
+
+    showRecipe(ShortGloves);
+
     return;
 }
 
