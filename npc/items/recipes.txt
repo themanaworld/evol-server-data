@@ -216,7 +216,15 @@ function read_tailoring {
                CottonGloves,
                BanditGloves,
                SilkGloves,
-               LeatherGloves);
+               LeatherGloves,
+               AssassinGloves);
+
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Boots"));
+    mes();
+
+    showRecipe(LousyMoccasins);
 
     return;
 }
