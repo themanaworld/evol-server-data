@@ -165,6 +165,13 @@ function read_smithery {
                BromenalGloves,
                IronArmbands);
 
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Boots"));
+    mes();
+
+    showRecipe(BromenalBoots);
+
     return;
 }
 
