@@ -225,7 +225,8 @@ function read_tailoring {
     mes();
 
     showRecipe(LousyMoccasins,
-               Slippers);
+               Slippers,
+               CottonBoots);
 
     return;
 }
