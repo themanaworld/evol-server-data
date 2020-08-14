@@ -170,7 +170,8 @@ function read_smithery {
     mesf(".:: %s ::.", l("Boots"));
     mes();
 
-    showRecipe(BromenalBoots);
+    showRecipe(BromenalBoots,
+               WarlordBoots);
 
     return;
 }
