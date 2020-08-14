@@ -102,6 +102,16 @@ function read_smithery {
     next;
     mesc l("List of known smithery recipes:");
 
+    mes();
+    mesf(".:: %s ::.", l("Chest Armor"));
+    mes();
+
+    showRecipe(CraftLegionTrainingShirt, LegionTrainingShirt,
+               5, IronIngot,
+               1, CopperIngot,
+               5, Coal,
+               1, Knife);
+
     return;
 }
 
