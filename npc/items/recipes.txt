@@ -136,6 +136,11 @@ function read_tailoring {
                5, LeatherPatch,
                5, Coal,
                1, Knife);
+    showRecipe(CraftFineDress, FineDress,
+              23, CottonCloth,
+               5, FluffyFur,
+              10, SilkCocoon,
+               1, Knife);
 
     return;
 }
