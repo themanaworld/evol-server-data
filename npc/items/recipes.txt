@@ -202,7 +202,8 @@ function read_tailoring {
     mesf(".:: %s ::.", l("Gloves"));
     mes();
 
-    showRecipe(ShortGloves);
+    showRecipe(ShortGloves,
+               Armbands);
 
     return;
 }
