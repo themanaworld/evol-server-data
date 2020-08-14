@@ -224,7 +224,8 @@ function read_tailoring {
     mesf(".:: %s ::.", l("Boots"));
     mes();
 
-    showRecipe(LousyMoccasins);
+    showRecipe(LousyMoccasins,
+               Slippers);
 
     return;
 }
