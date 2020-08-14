@@ -147,6 +147,13 @@ function read_smithery {
                BlackArmor,
                GoldenWarlordPlate);
 
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Leg Armor"));
+    mes();
+
+    showRecipe(ChainmailSkirt);
+
     return;
 }
 
