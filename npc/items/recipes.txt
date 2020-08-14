@@ -180,7 +180,8 @@ function read_tailoring {
     mes();
 
     showRecipe(CreasedShorts,
-               CottonSkirt);
+               CottonSkirt,
+               PirateShorts);
 
     return;
 }
