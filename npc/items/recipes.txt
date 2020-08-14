@@ -201,6 +201,11 @@ function read_tailoring {
               40, FluffyFur,
               20, SilkCocoon,
                1, Dagger);
+    showRecipe(CraftLegionIronArmor, LegionIronArmor,
+              30, IronIngot,
+               6, RotoniumIngot,
+              40, Coal,
+               1, Dagger);
 
     return;
 }
