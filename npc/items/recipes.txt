@@ -131,6 +131,11 @@ function read_smithery {
                5, SilverIngot,
               25, Coal,
                1, SharpKnife);
+    showRecipe(CraftJustifierChest, JustifierChest,
+               3, RotoniumIngot,
+              40, CottonCloth,
+              20, Coal,
+               1, SharpKnife);
 
     return;
 }
