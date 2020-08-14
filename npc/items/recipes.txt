@@ -131,6 +131,11 @@ function read_tailoring {
                5, PiouFeathers,
                7, Moss,
                1, Knife);
+    showRecipe(CraftSailorShirt, SailorShirt,
+              15, CottonCloth,
+               5, LeatherPatch,
+               5, Coal,
+               1, Knife);
 
     return;
 }
