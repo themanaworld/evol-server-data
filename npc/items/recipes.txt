@@ -7,20 +7,44 @@
 
 // showRecipe( Craft, Bonus, {amount 1, item 1}, {amount 2, item 2}... )
 function	script	showRecipe	{
-    if (getargcount() < 3 || getargcount() % 2 != 0)
-        return false;//Exception("Faulty recipe skill command invoked - error");
+    if ((getdatatype(getarg(1)) & DATATYPE_CONST) == 0) {
+        // if the second argument is not a constant
+        .@const$ = data_to_string(getarg(0));
 
-    if (RECIPES[getarg(0)]) {
-        if (getarg(1)) {
-            mes l(".:: %s Recipe ::.", getitemlink(getarg(1)));
+        if (startswith(.@const$, "Craft")) {
+            // infer the item constant from the craft constant
+            .@recipe = getarg(0);
+            .@item = string_to_data(substr(5, getstrlen(.@const$) - 5));
+        } else {
+            // infer the craft constant from the item constant
+            .@recipe = string_to_data(sprintf("Craft%s", .@const$));
+            .@item = getarg(0);
+        }
+
+        .@start = 1;
+
+        if (getargcount() < 3 || (getargcount() + 1) % 2 != 0) {
+            return false; // invalid syntax
+        }
+    } else if (getargcount() < 4 || getargcount() % 2 != 0) {
+        return false; // invalid syntax
+    } else {
+        .@recipe = getarg(0);
+        .@item = getarg(1);
+        .@start = 2;
+    }
+
+    if (RECIPES[.@recipe]) {
+        if (.@item) {
+            mes(l(".:: %s Recipe ::.", getitemlink(.@item)));
 
             // TODO: add a script buildin to fetch recipe requirements
 
-            for (.@i=2;.@i < getargcount(); .@i++) {
-                mesc l("%d/%d %s", countitem(getarg(.@i+1)), getarg(.@i), getitemlink(getarg(.@i+1)));
-                .@i++;
+            for (.@i = .@start; .@i < getargcount(); .@i += 2) {
+                mesc(l("%d/%d %s", countitem(getarg(.@i + 1)), getarg(.@i), getitemlink(getarg(.@i + 1))));
             }
-            mes "";
+
+            mes("");
         }
         return true;
     }
