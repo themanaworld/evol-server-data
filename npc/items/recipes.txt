@@ -205,7 +205,8 @@ function read_tailoring {
     showRecipe(ShortGloves,
                Armbands,
                CottonGloves,
-               BanditGloves);
+               BanditGloves,
+               SilkGloves);
 
     return;
 }
