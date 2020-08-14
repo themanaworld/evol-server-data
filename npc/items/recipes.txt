@@ -171,6 +171,11 @@ function read_tailoring {
               70, SilkCocoon,
               10, FluffyFur,
                1, SharpKnife);
+    showRecipe(CraftPeltJacket, PeltJacket,
+              25, SquirrelPelt,
+              10, LeatherPatch,
+              15, Moss,
+               1, SharpKnife);
 
     return;
 }
