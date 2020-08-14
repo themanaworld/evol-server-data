@@ -121,6 +121,11 @@ function read_smithery {
                3, SilverIngot,
               20, Coal,
                1, SharpKnife);
+    showRecipe(CraftSnakeplate, Snakeplate,
+              55, SnakeScale,
+               3, IronIngot,
+              15, Moss,
+               1, SharpKnife);
 
     return;
 }
