@@ -227,7 +227,8 @@ function read_tailoring {
     showRecipe(LousyMoccasins,
                Slippers,
                CottonBoots,
-               BanditBoots);
+               BanditBoots,
+               ManaSlippers);
 
     return;
 }
