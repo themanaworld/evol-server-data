@@ -111,6 +111,11 @@ function read_smithery {
                1, CopperIngot,
                5, Coal,
                1, Knife);
+    showRecipe(CraftLegionCopperArmor, LegionCopperArmor,
+              10, CopperIngot,
+               3, IronIngot,
+              10, Coal,
+               1, SharpKnife);
 
     return;
 }
