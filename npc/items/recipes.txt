@@ -152,7 +152,8 @@ function read_smithery {
     mesf(".:: %s ::.", l("Leg Armor"));
     mes();
 
-    showRecipe(ChainmailSkirt);
+    showRecipe(ChainmailSkirt,
+               TerranitePants);
 
     return;
 }
