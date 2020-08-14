@@ -162,7 +162,8 @@ function read_smithery {
     mes();
 
     showRecipe(CopperArmbands,
-               BromenalGloves);
+               BromenalGloves,
+               IronArmbands);
 
     return;
 }
