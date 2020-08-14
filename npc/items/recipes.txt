@@ -203,7 +203,8 @@ function read_tailoring {
     mes();
 
     showRecipe(ShortGloves,
-               Armbands);
+               Armbands,
+               CottonGloves);
 
     return;
 }
