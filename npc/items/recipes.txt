@@ -156,6 +156,11 @@ function read_tailoring {
               10, CottonCloth,
                3, FluffyFur,
                1, Knife);
+    showRecipe(CraftForestArmor, ForestArmor,
+              10, LeatherPatch,
+              20, Moss,
+               3, TortugaShellFragment,
+               1, Knife);
 
     return;
 }
