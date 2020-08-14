@@ -179,7 +179,8 @@ function read_tailoring {
     mesf(".:: %s ::.", l("Leg Armor"));
     mes();
 
-    showRecipe(CreasedShorts);
+    showRecipe(CreasedShorts,
+               CottonSkirt);
 
     return;
 }
