@@ -5,30 +5,72 @@
 // Description:
 //    Contains recipe books for Evol Online
 
-// showRecipe( Craft, Bonus, {amount 1, item 1}, {amount 2, item 2}... )
+// showRecipe( recipe{, recipe...} )
 function	script	showRecipe	{
-    if (getargcount() < 3 || getargcount() % 2 != 0)
-        return false;//Exception("Faulty recipe skill command invoked - error");
+    freeloop(true);
+    for (.@a = 0; .@a < getargcount(); ++.@a) {
+        .@const$ = data_to_string(getarg(.@a));
 
-    if (RECIPES[getarg(0)]) {
-        if (getarg(1)) {
-            mes l(".:: %s Recipe ::.", getitemlink(getarg(1)));
+        if (startswith(.@const$, "Craft")) {
+            // infer the item constant from the craft constant
+            .@recipe = getarg(.@a);
 
-            for (.@i=2;.@i < getargcount(); .@i++) {
-                mesc l("%d/%d %s", countitem(getarg(.@i+1)), getarg(.@i), getitemlink(getarg(.@i+1)));
-                .@i++;
-            }
-            mes "";
+            .@item = string_to_data(substr(.@const$, 5, getstrlen(.@const$) - 1));
+        } else {
+            // infer the craft constant from the item constant
+            .@recipe = string_to_data(sprintf("Craft%s", .@const$));
+            .@item = getarg(.@a);
         }
-        return true;
+
+        if (.@item <= 0) {
+            // target item not found
+            continue;
+        }
+
+        if (!RECIPES[.@recipe] && !debug) {
+            // does not have the recipe
+            continue;
+        }
+
+        for (.@inv = 0; .@inv < 9; ++.@inv) {
+            .@size = getcraftrecipe(.@recipe, .@inv, .@qty[0], .@item_id[0]);
+
+            if (.@size < 0) {
+                if (.@size == -1) {
+                    // recipe does not exist
+                    break;
+                }
+                // inventory does not exist
+                break;
+            }
+
+            mes(l(".:: %s Recipe ::.", getitemlink(.@item)));
+
+            for (.@it = 0; .@it < .@size; ++.@it) {
+                .@recipe_item = .@item_id[.@it];
+                .@recipe_qty = .@qty[.@it];
+
+                if (.@recipe_item <= 0) {
+                    break;
+                }
+
+                mesc(sprintf("%d/%d %s", countitem(.@recipe_item), .@recipe_qty, getitemlink(.@recipe_item)));
+            }
+
+            mes("");
+            .@count++;
+        }
     }
-    return false;
+    freeloop(false);
+
+    return .@count > 0;
 }
 
 -	script	#RecipeBook	NPC_HIDDEN,{
 	function read_book;
 	function read_cooking;
 	function read_smithery;
+    function read_tailoring;
     end;
 
 function read_book {
@@ -47,12 +89,14 @@ function read_book {
         read_cooking(); break;
     case CRAFT_SMITHERY:
         read_smithery(); break;
+    case CRAFT_TAILORING:
+        read_tailoring(); break;
     default:
         mesc l("Unfortunately, there is nothing on this bookmark.");
         mesc l("Perhaps, in future, someone adds it to this world.");
         break;
     }
-    next;
+    close2();
     return;
 }
 
@@ -68,21 +112,10 @@ function read_cooking {
     mes "";
     mes ".:: " + l("Sandwiches") + " ::.";
     mes "";
-    showRecipe(CraftCarpSandwich, CarpSandwich,
-                1, Bread,
-                3, LettuceLeaf,
-                2, Cheese,
-                1, CommonCarp);
-    showRecipe(CraftPioulegSandwich, PioulegSandwich,
-                1, Bread,
-                3, LettuceLeaf,
-                2, Cheese,
-                1, PiouLegs);
-    showRecipe(CraftMananaSandwich, MananaSandwich,
-                1, Bread,
-                3, LettuceLeaf,
-                2, Cheese,
-                1, Manana);
+
+    showRecipe(CarpSandwich,
+               PioulegSandwich,
+               MananaSandwich);
 
     return;
 }
@@ -97,14 +130,117 @@ function read_smithery {
     next;
     mesc l("List of known smithery recipes:");
 
-    mes "";
-    mes ".:: " + l("Helmets") + " ::.";
-    mes "";
-    showRecipe(CraftInfantryHelmet, InfantryHelmet,
-               12, IronOre,
-                3, Coal,
-                2, Moss,
-                1, Dagger);
+    mes();
+    mesf(".:: %s ::.", l("Chest Armor"));
+    mes();
+
+    showRecipe(LegionTrainingShirt,
+               LegionCopperArmor,
+               Chainmail,
+               Snakeplate,
+               LightPlatemail,
+               JustifierChest,
+               LegionIronArmor,
+               WarlordPlate,
+               TerraniteArmor,
+               AssassinChest,
+               BlackArmor,
+               GoldenWarlordPlate);
+
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Leg Armor"));
+    mes();
+
+    showRecipe(ChainmailSkirt,
+               TerranitePants,
+               AssassinPants);
+
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Gloves"));
+    mes();
+
+    showRecipe(CopperArmbands,
+               BromenalGloves,
+               IronArmbands);
+
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Boots"));
+    mes();
+
+    showRecipe(BromenalBoots,
+               WarlordBoots);
+
+    return;
+}
+
+function read_tailoring {
+    setnpcdialogtitle(l("Tailoring Recipes"));
+
+    mesc(l("(All items must be placed exactly in this order.)"));
+    next();
+    mesc(l("List of known tailoring recipes:"));
+
+    mes();
+    mesf(".:: %s ::.", l("Chest Armor"));
+    mes();
+
+    showRecipe(CreasedShirt,
+               ArtisTankTop,
+               VneckJumper,
+               SailorShirt,
+               FineDress,
+               SilkRobe,
+               ForestArmor,
+               ApprenticeRobe,
+               PeltJacket,
+               SorcererRobe,
+               WizardRobe,
+               EvocatorRobe);
+
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Leg Armor"));
+    mes();
+
+    showRecipe(CreasedShorts,
+               CottonSkirt,
+               PirateShorts,
+               SilkPants,
+               BrownTrousers,
+               BanditTrousers,
+               JeansChaps,
+               LeatherTrousers);
+
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Gloves"));
+    mes();
+
+    showRecipe(ShortGloves,
+               Armbands,
+               CottonGloves,
+               BanditGloves,
+               SilkGloves,
+               LeatherGloves,
+               AssassinGloves);
+
+    next();
+    mes();
+    mesf(".:: %s ::.", l("Boots"));
+    mes();
+
+    showRecipe(LousyMoccasins,
+               Slippers,
+               CottonBoots,
+               BanditBoots,
+               ManaSlippers,
+               SquirrelBoots,
+               LeatherBoots,
+               RidingBoots,
+               AssassinBoots);
 
     return;
 }
@@ -192,5 +328,3 @@ function	script	MakeBlueprint	{
     }
     return;
 }
-
-
