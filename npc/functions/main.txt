@@ -73,6 +73,27 @@ function	script	mesc	{
     return mes(col(getarg(0, ""), getarg(1, 9)));
 }
 
+// *showimage("<file>");
+// Displays an image in the NPC window. If no file extension is provided, it is
+// assumed to be a PNG file. The image path is relative to client-data/graphics.
+// example:
+//     showimage("guiicons/flags/fr");
+function	script	showimage	{
+    .@file$ = getarg(0);
+
+    if (!endswith(getarg(0), ".jpg") && !endswith(getarg(0), ".png")) {
+        .@file$ += ".png";
+    }
+
+    if (charat(getarg(0), 0) == "/") {
+        .@file$ = delchar(.@file$, 0); // absolute path from root of client-data
+    } else if (!startswith(getarg(0), "help/") && !startswith(getarg(0), "graphics/") ) {
+        .@file$ = "graphics/" + .@file$; // assume relative to graphics/
+    }
+
+    return mesf("~~~%s~", .@file$);
+}
+
 function	script	adddefaultskills	{
     if (getskilllv(NV_BASIC) < 6)
     {
