@@ -91,27 +91,4 @@ function	script	SmithSystem	{
     return .success;
 }
 
--	script	@craft	FAKE_NPC,{
-    public function DoTailoring {
-        SmithSystem(CRAFT_TAILORING);
-        end;
-    }
 
-    public function DoSmithery {
-        SmithSystem(CRAFT_SMITHERY);
-        end;
-    }
-
-    public function OnInit {
-        if (debug < 1) {
-            end;
-        }
-
-        bindatcmd("@tailoring", sprintf("%s::%s", .name$, "DoTailoring"));
-        bindatcmd("@tailor", sprintf("%s::%s", .name$, "DoTailoring"));
-        bindatcmd("@smithery", sprintf("%s::%s", .name$, "DoSmithery"));
-        bindatcmd("@smith", sprintf("%s::%s", .name$, "DoSmithery"));
-        bindatcmd("@blacksmithery", sprintf("%s::%s", .name$, "DoSmithery"));
-        end;
-    }
-}
