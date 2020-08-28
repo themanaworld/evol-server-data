@@ -6,7 +6,7 @@
 
 OnInit:
     .distance = 2;
-    .bodytype = BODYTYPE_1;
+    .sex = G_OTHER;
     end;
 
 OnTouch:
@@ -19,7 +19,7 @@ OnTouch:
 
 OnInit:
     .distance = 2;
-    .bodytype = BODYTYPE_1;
+    .sex = G_OTHER;
     end;
 
 OnTouch:

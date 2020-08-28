@@ -6,9 +6,11 @@ OnInit:
     htput(.ht, "^ALCH", "001-2-26 32 40");
     htput(.ht, "^ALIG|^HID", "000-2-4 36 30");
     htput(.ht, "^ART", "001-1 89 86");
+    htput(.ht, "^ASPH|MOOR", "009-1 53 171");
     htput(.ht, "^BLACK|SMITH", "001-2-27 35 32");
     htput(.ht, "^CAMP|FIRE", "008-1 55 46");
     htput(.ht, "^CANDOR", "012-1 49 114");
+    htput(.ht, "^CHAP", "009-1 212 151");
     htput(.ht, "^CITY|^HALL", "001-2-7 36 41");
     htput(.ht, "^DIMOND|COVE", "008-1 106 222");
     htput(.ht, "^DRA|ISLAND", "000-1 62 111");
@@ -25,6 +27,7 @@ OnInit:
     htput(.ht, "^LUVIA", "008-1 256 206");
     htput(.ht, "^MAGIC|ACAD", "020-1 51 119");
     htput(.ht, "^MERCH|^BANK", "001-2-19 28 30");
+    htput(.ht, "^MIGGLE|SOREN", "009-1 174 95");
     htput(.ht, "^MINE", "020-1 76 237");
     htput(.ht, "^MOON", "001-2-2 40 34");
     htput(.ht, "^NARD", "000-2-3 21 28");
