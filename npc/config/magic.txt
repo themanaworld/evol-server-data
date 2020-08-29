@@ -1,0 +1,293 @@
+// The Mana World Script
+//
+// Author: Jesusalva <jesusalva@tmw2.org>
+//
+// Magic Script Core Functions
+//
+// Imported from Moubootaur Legends
+//
+// Important Variables:
+//  MAGIC_EXP
+//      Current mana magic experience
+//  LAST_SKILL
+//      Last Skill used (array)
+//  MAGIC_LVL
+//      Maximum tier of usable magic, capped by something
+//  MAGIC_PTS
+//      Amount of used Magic Skill Points (bad logic)
+//  MAGIC_CLU
+//      Array of (skill ID, Level) for sk_canlevelup
+
+
+// PLACEHOLDER
+function	script	getskillname	{
+    return getarg(0);
+}
+
+// This function will add MAGIC_EXP
+// And manage last skills used memory
+// GetManaExp(SkillID, EXP Points)
+function	script	GetManaExp	{
+    .@sk=getarg(0);
+    .@pt=getarg(1);
+    if (LAST_SKILL == .@sk) {
+        .@pt=cap_value(.@pt/3, 0, 1);
+        .@bonus=0;
+    } else {
+        // Update skill memory
+        LAST_SKILL[4]=LAST_SKILL[3];
+        LAST_SKILL[3]=LAST_SKILL[2];
+        LAST_SKILL[2]=LAST_SKILL[1];
+        LAST_SKILL[1]=LAST_SKILL[0];
+        LAST_SKILL[0]=.@sk;
+    }
+
+    // Update Magic EXP
+    MAGIC_EXP=MAGIC_EXP+.@pt;
+    return;
+}
+
+
+
+// sk_maxpoints() → Max Magic Skill Points you may use
+// Returns how many points you can use
+// Could be tweaked to read a variable instead
+function	script	sk_maxpoints	{
+    // 2 points per magic level
+    .@val=(MAGIC_LVL)*2;
+    // 1 point every twice magic level
+    .@val+=(MAGIC_LVL/2);
+    // Excluding first 15, 1 point every 12 job levels (Up to JL 75)
+    .@val+=min(5, ((JobLevel-15)/12));
+    // 1 point per being a player
+    .@val+=1;
+    // 2 points per Rebirth
+    .@val+=(REBIRTH*2);
+    return .@val;
+}
+
+// Returns how many points you can allocate
+// Could be tweaked to NOT use MAGIC_PTS this way
+function	script	sk_points	{
+    return sk_maxpoints()-MAGIC_PTS;
+}
+
+// Returns true if a skill can be leveled up.
+// It checks the MSP
+// sk_canlvup( {cost=1} )
+function	script	sk_canlvup	{
+    return ((MAGIC_PTS+getarg(0,1)) <= sk_maxpoints());
+}
+
+// Level up a skill in 1 level (internal function)
+// TODO: Return the point if leveling about Max Level
+// sk_lvup( sk{, cost=0} )
+function	script	sk_lvup	{
+    .@lvl=MAGIC_CLU[getarg(0)];
+    getexp 0, 50*(.@lvl+1);
+    skill(getarg(0), .@lvl+1, 0);
+    if (getarg(1,0)) {
+        MAGIC_PTS+=getarg(1, 0);
+    }
+    MAGIC_CLU[getarg(0)]=.@lvl+1;
+    return;
+}
+
+// Internal Magic School Learning Interface
+// mlearn( skill, MAX_LV, MSP cost, item, amount{, GP cost} )
+// returns false if cheater; DO NOT USE IN SCRIPTS
+function	script	mlearn	{
+    .@sk=getarg(0);
+    .@ff=getarg(1);
+    .@msp=getarg(2);
+    .@it=getarg(3);
+    .@am=getarg(4);
+    .@gp=getarg(5, 0);
+    // Max level reached
+    if (getskilllv(.@sk) >= .@ff) {
+        return true;
+    }
+    // Not enough items
+    if (countitem(.@it) < .@am)
+        return false;
+    // Not enough MSP
+    if (!sk_canlvup(.@msp))
+        return false;
+    // Not enough GP
+    if (Zeny < .@gp) {
+        return false;
+    }
+
+    // Payment
+    delitem .@it, .@am;
+    Zeny-=.@gp;
+
+    // Level up
+    sk_lvup(.@sk, .@msp);
+    return true;
+}
+
+// NEW Magic School Learning Interface
+// learn_magic(Skill)
+function	script	learn_magic	{
+    .@ski=getarg(0);
+    .@learn$=l("Learning");
+
+    // Check if skill is valid
+    .@mlv=$@MSK_MAXLV[.@ski];
+    if (.@mlv < 1) {
+        return false;//Exception("ERROR: The skill "+.@ski+" is not valid!");
+    }
+
+    // Load a few temporary variables
+    .@pre=$@MSK_PREREQ[.@ski];
+    .@it=$@MSK_ITEM[.@ski];
+    .@am=$@MSK_AMOUNT[.@ski];
+    .@msp=$@MSK_MSPCOST[.@ski];
+    .@gp=$@MSK_COST[.@ski];
+
+    // Pre-requisite check
+    if (.@pre) {
+        if (getskilllv(.@pre) < 1) {
+            mesc l("Pre-requisites not met!"), 1;
+            mesc l("The following skill is needed: %s%s (Lv. %d)",
+                   "##9", getskillname(.@pre), 1), 1;
+            return false;
+        }
+    }
+
+    // Max level reached
+    if (getskilllv(.@ski) >= .@mlv) {
+        mesc l("You've reached the maximum level for this skill."), 1;
+        return true;
+    }
+
+    // Skill level check
+    if (getskilllv(.@sk)) {
+        .@msp=1;
+        .@learn$=l("Upgrading");
+    }
+
+    mesc l("%s %s will require:", .@learn$, getskillname(.@ski));
+    mes l("* %d/%d MSP (Magic Skill Points)", .@msp, sk_points());
+    mes l("* %d/%d E (Esperins)", .@gp, Zeny);
+    mes l("* %d/%d %s", .@am, countitem(.@it), getitemlink(.@it));
+    mes "";
+    mesc l("Really learn this skill?");
+    if (askyesno() == ASK_NO)
+        return false;
+
+    return mlearn(.@ski, .@mlv, .@msp, .@it, .@am, .@gp);
+}
+
+// transcheck( {item 1, amount 1}, {item 2, amount 2}... )
+// returns true upon success
+function	script	transcheck	{
+    if (getargcount() < 2 || getargcount() % 2 != 0)
+        return false;//Exception("Faulty learning skill command invoked - error");
+
+    // Count items
+    for (.@i=0;.@i < getargcount(); .@i++) {
+        if (countitem(getarg(.@i)) < getarg(.@i+1))
+            return false;
+        .@i++;
+    }
+
+    // Delete Items
+    for (.@i=0;.@i < getargcount(); .@i++) {
+        delitem getarg(.@i), getarg(.@i+1);
+        .@i++;
+    }
+    return true;
+}
+
+// Returns a value defining your current magic control (affects success ratio, higher is better)
+// A value of '5' means perfect control, and a value of '0' means overwhelm.
+// abizit()
+function	script	abizit	{
+    .@lv=MAGIC_LVL+1;
+    if (.@lv < 1) return 0;
+    .@base=((.@lv*2)**3);
+    return min(MAGIC_EXP/.@base, 5);
+}
+
+
+// Reimplementation of abizit()
+// Internal helper
+// mescordialog(text, color, {dialog=1})
+function	script	mescordialog	{
+    if (getarg(2, true))
+        mesc getarg(0), getarg(1);
+    else
+        dispbottom col(getarg(0), getarg(1));
+    return;
+}
+
+// Reimplementation of abizit()
+// It will show abizit in dialog box or in a floating message
+// ShowAbizit({dialog=1})
+function	script	ShowAbizit	{
+    .@dial=getarg(0, true);
+    if (.@dial)
+        mesn l("Current Magic Control");
+
+    .@lv=MAGIC_LVL+1;
+    .@val=MAGIC_EXP+rand(-.@lv*5, .@lv*5);
+    .@base=((.@lv*2)**3);
+    if (.@val > .@base*5)
+        mescordialog l("You are perfectly in control of your magic."), 3, .@dial;
+    else if (.@val > .@base*4)
+        mescordialog l("You are mostly in control of your magic."), 2, .@dial;
+    else if (.@val > .@base*3)
+        mescordialog l("You are somewhat in control of your magic."), 4, .@dial;
+    else if (.@val > .@base*2)
+        mescordialog l("Your magic is more powerful than you, but you can control."), 7, .@dial;
+    else if (.@val > .@base)
+        mescordialog l("You still are overwhelmed by your magic."), 6, .@dial;
+    else
+        mescordialog l("You are completly overwhelmed by your magic."), 1, .@dial;
+    return;
+}
+
+
+/////////////////////////////////////////
+// RegisterMagic(MSP, Skill, MaxLv, Item, Amount, Class, Cost, {PreReq, PostReq})
+function	script	RegisterMagic	{
+    .@msp=getarg(0);
+    .@ski=getarg(1);
+    .@max=getarg(2);
+    .@ite=getarg(3);
+    .@amo=getarg(4);
+    .@cla=getarg(5);
+    .@cos=getarg(6);
+    .@pre=getarg(7, false);
+    .@pos=getarg(8, false);
+
+    $@MSK_MSPCOST[.@ski]=.@msp;
+    $@MSK_MAXLV[.@ski]=.@max;
+
+    $@MSK_ITEM[.@ski]=.@ite;
+    $@MSK_AMOUNT[.@ski]=.@amo;
+    $@MSK_COST[.@ski]=.@cos;
+
+    $@MSK_PREREQ[.@ski]=.@pre;
+    $@MSK_POSTREQ[.@ski]=.@pos;
+
+    //array_push($@MSK_CLASS[.@cla], .@ski); // 3D Arrays are not supported
+    array_push($@MSK_MAGIC, .@ski);
+    return;
+}
+
+-	script	Magic Load	NPC_HIDDEN,{
+OnInit:
+    /* RegisterMagic(MSP, Skill, MaxLv, Item, Amount,
+                            Class, Cost, {PreReq, PostReq}) */
+
+    //////////////////////// Other: Misc
+    // Monster Identify
+    RegisterMagic(0, EVOL_MONSTER_IDENTIFY, 1, Beer, 1,
+                        CLASS_OTHER, 5000);
+
+    end;
+}
+

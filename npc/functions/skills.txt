@@ -8,6 +8,13 @@ function	script	SkillInvoked	{
     // Record to database that you used the skill
     skillInvoke[@skillId] = skillInvoke[@skillId] + 1;
 
+    // Switch though skills for additional effects
+    switch (@skillId) {
+    default:
+        // PS. I hate scripts.conf load order
+        callfunc("GetManaExp", @skillId, 1);
+        break;
+    }
     return;
 }
 
