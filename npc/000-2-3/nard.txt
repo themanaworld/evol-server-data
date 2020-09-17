@@ -62,6 +62,7 @@ L_Checker:
 L_Menu:
     menu
         lg("I feel ok."), L_Ok,
+        rif(islegacyaccount(), l("I only want to reach Artis, can we skip this?")), L_Skip,
         l("Who's this Julia?"), L_Julia,
         lg("I'm a bit sick..."), -;
 
@@ -218,6 +219,70 @@ L_ChefQuestComplete:
 
 //  Need to add a skill for the crew at this line.
     mes "";
+
+L_Skip:
+    mesn;
+    mesq l("Oh noes! I can't believe it!");
+    next;
+    mesn;
+    mesq l("Well, I can bring you straight to Artis, but...");
+    next;
+    mesn;
+    mesc l("\"You will forsake items, quests and experience from the tuto-- %s from my whole crew and whatnot.\"", "##9"+l("*cough cough*")+"##1"), 1;
+    next;
+    mesn;
+    mesq l("Oh, and it is not only that.");
+    next;
+    mesn;
+    mesc l("\"This decision cannot be reverted. Which means you may have extreme difficulty and end up losing this char!\""), 1;
+    next;
+    mesn;
+    mesq l("And if that still wasn't enough to make you change your mind...");
+    next;
+    mesn;
+    mesc l("\"Deleting this char may (read: will) destroy the Legacy data associated to it!!\""), 1;
+    mesc l("i.e. Deleting the rEvolt char will delete the Legacy char associated to it. This includes levels and items."); // -- TRANSLATORS: i.e. = id est
+    next;
+    mesn;
+    mesq l("Are you absolutely, totally, certainly, completely sure, that you want a free, effortless ride to Artis, as weak and poorly equipped as you currently are?");
+    next;
+    mesc l("This decision cannot be reverted. Think with attention!"), 1;
+    select
+        l("Actually, lets do the tutorial."),
+        l("Lemme do Drasil Island!"),
+        l("YES, BRING ME TO ARTIS."),
+        l("I changed my mind.");
+    mes "";
+    if (@menu == 3) {
+        // Skip Drasil
+        setq ShipQuests_Julia, 2;
+        setq ShipQuests_Arpan, 3;
+        setq ShipQuests_Alige, 3;
+        setq ShipQuests_Peter, 15;
+        setq ShipQuests_Nard, 5; // NOTE: Completes the Beta
+        setq ShipQuests_Knife, 1;
+        setq ShipQuests_ArpanMoney, 3;
+        setq ShipQuests_Door, 1;
+        setq ShipQuests_Couwan, 2;
+        setq ShipQuests_TreasureChest, 1;
+        setq ShipQuests_Ale, 1;
+        setq ShipQuests_Astapolos, 1;
+        setq ShipQuests_Gulukan, 1;
+        setq ShipQuests_Jalad, 1;
+        setq ShipQuests_QMuller, 1;
+        setq ShipQuests_Tibbo, 1;
+        setq ShipQuests_Gugli, 2;
+        // Give Gado and Julia equal chances of winnning
+        setq ShipQuests_ChefGado, any(4,4,5,6);
+        // Automatically advance
+        mesc l("All Ship and Drasil Island Quests were auto-completed."), 1;
+        next;
+        goto L_Already;
+    }
+    mesn;
+    mesq l("Good! I was going to ask you if you wanted to help the crew search for some food and explore the island out there.");
+    next;
+    goto L_MenuQuest;
 
 L_Already:
     speech
