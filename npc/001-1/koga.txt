@@ -9,7 +9,7 @@
     .@q=getq(General_Narrator);
     speech
         l("Ah, whom did you bring here?"),
-        l("Isnt that the one Nard found on a float in the sea, with the sign of the Legion on his chest?");
+        l("Isn't that the one Nard found on a raft in the sea, with the sign of the Legion on it?");
     next;
     mesc l("Travel to woodlands?");
     if (askyesno() == ASK_YES)
@@ -18,6 +18,7 @@
             l("I hope they know what they are doing. So, come on board. I am looking forward to go back to Woodland, haven't been there for a while.");
         next;
         closeclientdialog;
+        setpcblock(PCBLOCK_MOVE, false);
         setmount 0;
         if (.@q == 1) {
             warp "000-0-1", 26, 28;
@@ -26,12 +27,19 @@
         warp "008-1-1", 33, 63;
         dispbottom l("After a tiring, yet fast, travel by Koga, you arrive at @@.", l("Woodlands"));
     }
+    else
+    {
+        // Return you to beach
+        setpcblock(PCBLOCK_MOVE, false);
+        setmount 0;
+        slide 200, 62;
+    }
 
     close;
 
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 4;
-    .alwaysVisible = true;
+    .distance = 6;
+    //.alwaysVisible = true;
     end;
 }

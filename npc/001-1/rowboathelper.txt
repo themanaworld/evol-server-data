@@ -3,21 +3,24 @@
 //    Toams
 // Description:
 //    helper scripts for rowboat usage
-// TODO:
-// make the script dialog different if there is no rowboat present at the cave
+// Notes:
+// Curious Hole bypass the cutscenes
 
 // calling the Rowboat
 001-1,200,60,0	script	Curious Hole	NPC_NO_SPRITE,{
 
-    .@monadad = getq(ArtisQuests_MonaDad);
+    .@q = getq(General_Narrator);
 
-    narrator(S_LAST_BLANK_LINE | S_LAST_NEXT,
-        l("You see a curious hole behind some rocks"),
-        l("'Hey anyone there?'"),
-        l("..."),
-        l("Altough you can't get rid of the feeling someone is listening on the other side, you don't get any replies"));
-    if  (.@monadad < 3)
+    mesc l("You see a curious hole behind some rocks.");
+    next;
+    mesn strcharinfo(0);
+    mesq l("Hey, anyone there?");
+    next;
+    mesc l("...");
+    next;
+    if  (.@q < 2)
     {
+        mesc l("Altough you can't get rid of the feeling someone is listening on the other side, you don't get any replies.");
         close;
     }
     else
@@ -31,9 +34,26 @@
             mesc l("Sagratha is great.");
             next;
 
+            if (getvariableofnpc(.caller, "#Rowboat")) {
+                // Can you use it, or is it in grace time?
+                if (getvariableofnpc(.clocks, "#Rowboat") > gettimetick(2)) {
+                    mesn;
+                    mesq l("Please be patient. Someone else is using the rowboat right now.");
+                    close;
+                }
+                // Rowboat already there, so change owner
+                mesn;
+                mesq l("Hello, a rowboat is already on the beach. You can use it.");
+                set(getvariableofnpc(.caller, "#Rowboat"), getcharid(3));
+                set(getvariableofnpc(.clocks, "#Rowboat"), gettimetick(2)+15);
+                close;
+            }
+            // Rowboat is at hideout, send it to you
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Hello, a rowboat is on his way to the beach. Please wait for a while for it to arrive.");
 
+            set(getvariableofnpc(.caller, "#Rowboat"), getcharid(3));
+            set(getvariableofnpc(.clocks, "#Rowboat"), gettimetick(2)+30);
             doevent("#Rowboat::OnMoveToBeach");
             close;
         }
@@ -45,7 +65,7 @@ OnInit:
     .distance = 1;
 }
 
-
+// UNUSED
 //unmounting the rowboat at eastern beach
 001-1,202,62,0	script	unmountrowboateast	NPC_HIDDEN,1,1,{
 

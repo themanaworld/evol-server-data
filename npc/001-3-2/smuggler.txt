@@ -1,0 +1,78 @@
+// Evol scripts.
+// Author:
+//    Micksha, Toams, Jesusalva
+// Description:
+//    The rowboat, picking up the player on the fake pier and bringing them to
+//    Argaes Westport.
+
+001-3-2,71,85,6	script	Smuggler	NPC_ROWBOAT_STAND_WE,{
+    function smugglerNotAuthorized;
+    function smugglerBoarding;
+    mesn;
+    mesq l("Hey dude, we actually have a pretty cool ship near Artis.");
+    next;
+    mesn;
+    mesq l("This lake may look natural, but it is not quite so. We're at sea level.");
+    next;
+    .@q=getq(ThiefQuests_Artis);
+    if (.@q < 3)
+        smugglerNotAuthorized();
+    mesn;
+    mesq l("Cool, right?");
+    next;
+    select
+        l("Yes."),
+        l("So? Will you bring me to Argaes?");
+    mes "";
+    if (@menu == 2)
+        smugglerBoarding();
+    close;
+
+function smugglerNotAuthorized {
+    mesn;
+    mesq l("We smuggle not only goods, but people too. If Henry gives me the word...");
+    next;
+    mesn;
+    mesq l("Hehehe... I've heard Hurnscald is wonderful at this time of the year!");
+    close;
+    return;
+}
+
+function smugglerBoarding {
+    mesn;
+    mesq l("Sure! Hold tight.");
+    next;
+    while (.lock)
+    {
+        mesn;
+        mesq l("Just let me finish this first...");
+        next;
+    }
+    setcam (76*32), (85*32);
+    closeclientdialog;
+    .lock=true;
+    setpcblock(PCBLOCK_MOVE, true);
+    npcwalkto(76, 85);
+    sleep2(1000);
+    setmount 1;
+    warp "001-1", 227, 62;
+    detachrid();
+    .dir = 2;
+    npcwalkto(71, 85);
+    sleep(1000);
+    .dir = 6;
+    .lock=false;
+    end;
+    return;
+}
+
+OnInit:
+    .bodytype = BODYTYPE_3;
+    .distance = 4;
+    .speed = 175;
+    .alwaysVisible = true;
+    .lock = false;
+    end;
+
+}
+

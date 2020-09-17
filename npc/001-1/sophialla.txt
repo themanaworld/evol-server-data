@@ -12,6 +12,7 @@
         speech
             l("Hello."),
             l("Can't you see I am reading? Please go, please.");
+            // Please go, please? What?
         close;
     }
     speech
@@ -26,7 +27,6 @@
     mes "";
     if (@menu == 2)
     {
-        // TODO: Tell to look for Henry TODO: Change curious eye conditional
         speech
             l("If you visit the sewers again... You'll find secret passages..."),
             l("Look for the hideout, but tell no one about this. Then, say the password again.");
@@ -41,7 +41,17 @@
         mesq l("I'm afraid you'll need to figure that out on your own.");
         next;
         mesn;
-        mesq l("This password is very secret. I don't think you would learn it even if you rescued someone missing for weeks."); // FIXME: Provide a decent hint.
+        mesq l("This password is very secret. I don't think you would learn it even if you rescued someone missing for weeks.");
+        // Extra hint (TODO: Logic is crappy)
+        if (@sophiahalla_needhelp) {
+            next;
+            mesn;
+            mesq l("Actually, there is an ex-legion member whose daughter used to play nearby... How was she called? Mona I think?");
+            next;
+            mesn;
+            mesq l("...Ah! Nevermind, I was talking to myself.");
+        }
+        @sophiahalla_needhelp=true;
         next;
         mesc l("%s sighs.", .name$);
     }
