@@ -3,10 +3,16 @@
 //    Micksha, Toams
 // Description:
 //    The rowboat, picking up the player on small beach in order to bring it to Koga.
-// TODO:
-// Check if the player who wants to enter the boat is the same as the one who called for the boat.
 
 001-1,192,25,0	script	#Rowboat	NPC_ROWBOAT_STAND_WE,{
+    if (.caller != getcharid(3)) {
+        mesn;
+        mesq l("Oh, hello. I am just observing the whales.");
+        next;
+        mesn;
+        mesq l("Nobody told me anything about you, unfortunately.");
+        close;
+    }
 
     speech S_LAST_BLANK_LINE | S_LAST_NEXT,
         l("Oh, hi."),
@@ -14,10 +20,13 @@
         l("Perhaps, and only perhaps, if you bring me the latter, I can bring you to a ship that will perhaps, and only perhaps, be able to bring you to Woodland."),
         l("Do you have this commendatory letter?");
         closeclientdialog();
-    if (askyesno() == 1) {
+    if (askyesno() == ASK_YES) {
         if (getq(General_Brotherhood) >= 2)
         {
-            slide 204, 62;
+            slide 227, 62;
+            //slide 204, 62;
+            .caller=0;
+            .clocks=gettimetick(2);
             movenpc("#Rowboat", 192, 25);
             setmount 1;
         }
@@ -42,6 +51,8 @@ OnInit:
     .bodytype = BODYTYPE_3;
     .distance = 3;
     .speed = 175;
+    .caller = 0;
+    .clocks = 0;
 
     initpath "move", 202, 27,
              "move", 213, 58,
