@@ -19,11 +19,6 @@
 //      Array of (skill ID, Level) for sk_canlevelup
 
 
-// PLACEHOLDER
-function	script	getskillname	{
-    return getarg(0);
-}
-
 // This function will add MAGIC_EXP
 // And manage last skills used memory
 // GetManaExp(SkillID, EXP Points)
@@ -282,11 +277,174 @@ function	script	RegisterMagic	{
 OnInit:
     /* RegisterMagic(MSP, Skill, MaxLv, Item, Amount,
                             Class, Cost, {PreReq, PostReq}) */
+    // (B) - Brawling
+    // (A) - Active
+    // (R) - Ranged (bows only)
+    // (M) - Magic
+    // (S) - Support
+    // (T) - Terrain
+    // (G) - GP on usage
+    // (P) - Passive
+    // (X) - Area Of Effect
 
     //////////////////////// Other: Misc
     // Monster Identify
     RegisterMagic(0, EVOL_MONSTER_IDENTIFY, 1, Beer, 1,
                         CLASS_OTHER, 5000);
+    // Bash (B)
+    RegisterMagic(0, SM_BASH, 1, MagicFeather, 1,
+                        CLASS_OTHER, 0);
+    // Free Cast (P)
+    RegisterMagic(0, SA_FREECAST, 1, MagicFeather, 1,
+                        CLASS_OTHER, 0);
+    // Full Throttle (A)
+    RegisterMagic(0, ALL_FULL_THROTTLE, 1, MagicFeather, 1,
+                        CLASS_OTHER, 0);
+
+
+    //////////////////////// Master Skill Book: Skills
+    // These skills are handled by the Master Skill Book
+    // So the definition here is duplicate.
+    // Dragon Slayer (P)
+    RegisterMagic(0, SA_DRAGONOLOGY, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+    // HP/DEF Boosting (P)
+    RegisterMagic(0, CR_TRUST, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+    // HP Recovery (P)
+    RegisterMagic(0, SM_RECOVERY, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+    // MP Recovery (P)
+    RegisterMagic(0, MG_SRECOVERY, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+    // Mammonite (G)
+    RegisterMagic(0, MC_MAMMONITE, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+    // Anti-Poison (A)
+    RegisterMagic(0, TF_DETOXIFY, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+    // Trick Dead (A)
+    RegisterMagic(0, NV_TRICKDEAD, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+    // Sudden Attack (A)
+    RegisterMagic(0, GC_DARKILLUSION, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+
+    //////////////////////// Master Skill Book: Spells
+    // MATK Charge (A)
+    RegisterMagic(0, HW_MAGICPOWER, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+    // Poison (?)
+    RegisterMagic(0, TF_POISON, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+    // Backslide (A)
+    RegisterMagic(0, TF_BACKSLIDING, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+    // Discount (P)
+    RegisterMagic(0, MC_DISCOUNT, 1, MagicFeather, 1,
+                        CLASS_MASTER, 0);
+
+
+    //////////////////////// War Magic: Skills
+    // Charged Shot (R)
+    RegisterMagic(1, AC_CHARGEARROW, 1, MagicFeather, 1,
+                        CLASS_WAR, 0);
+    // Arrow Shower (RX)
+    RegisterMagic(1, AC_SHOWER, 1, MagicFeather, 1,
+                        CLASS_WAR, 0);
+    // Ground Strike (AX)
+    RegisterMagic(1, ASC_METEORASSAULT, 1, MagicFeather, 1,
+                        CLASS_WAR, 0);
+    // Sharp Shooter (R)
+    RegisterMagic(1, SN_SHARPSHOOTING, 1, MagicFeather, 1,
+                        CLASS_WAR, 0);
+    // Critical Counter Attack (A)
+    RegisterMagic(1, KN_AUTOCOUNTER, 1, MagicFeather, 1,
+                        CLASS_WAR, 0);
+    // Mallard's Eye (PR)
+    RegisterMagic(1, AC_VULTURE, 1, MagicFeather, 1,
+                        CLASS_WAR, 0);
+
+    //////////////////////// War Magic: Spells
+    // Soul Strike (M)
+    RegisterMagic(1, MG_SOULSTRIKE, 1, MagicFeather, 1,
+                        CLASS_WAR, 0);
+    // Napalm Beat (MX)
+    RegisterMagic(1, MG_NAPALMBEAT, 1, MagicFeather, 1,
+                        CLASS_WAR, 0);
+
+
+    //////////////////////// Nature Magic: Skills
+    // Nature Weapon (S)
+    RegisterMagic(1, SA_SEISMICWEAPON, 1, MagicFeather, 1,
+                        CLASS_NATURE, 0);
+    // Wind Walker (A)
+    RegisterMagic(1, SN_WINDWALK, 1, MagicFeather, 1,
+                        CLASS_NATURE, 0);
+    //////////////////////// Nature Magic: Spells
+    // Lightning Arrow (M)
+    RegisterMagic(1, MG_LIGHTNINGBOLT, 1, MagicFeather, 1,
+                        CLASS_NATURE, 0);
+    // Nature Wall (T)
+    RegisterMagic(1, MG_FIREWALL, 1, MagicFeather, 1,
+                        CLASS_NATURE, 0);
+
+
+    //////////////////////// Fire Magic: Skills
+    // Fire Weapon (S)
+    RegisterMagic(1, SA_FLAMELAUNCHER, 1, MagicFeather, 1,
+                        CLASS_FIRE, 0);
+    //////////////////////// Fire Magic: Spells
+    // Fire Arrow (M)
+    RegisterMagic(1, MG_FIREBOLT, 1, MagicFeather, 1,
+                        CLASS_FIRE, 0);
+    // Fire Ball (MX)
+    RegisterMagic(1, MG_FIREBALL, 1, MagicFeather, 1,
+                        CLASS_FIRE, 0);
+    // Fire Walk (MX)
+    RegisterMagic(2, SO_FIREWALK, 1, MagicFeather, 1,
+                        CLASS_FIRE, 0);
+
+
+    //////////////////////// Water Magic: Skills
+    // Frost Weapon (S)
+    RegisterMagic(1, SA_FROSTWEAPON, 1, MagicFeather, 1,
+                        CLASS_WATER, 0);
+    //////////////////////// Water Magic: Spells
+    // Frost Diver (M)
+    RegisterMagic(1, MG_FROSTDIVER, 1, MagicFeather, 1,
+                        CLASS_WATER, 0);
+    // Frost Nova (MX)
+    RegisterMagic(2, WZ_FROSTNOVA, 1, MagicFeather, 1,
+                        CLASS_WATER, 0);
+
+
+    //////////////////////// Harmony Magic: Skills
+    // Provoke (A)
+    RegisterMagic(1, SM_PROVOKE, 1, MagicFeather, 1,
+                        CLASS_HARMONY, 0);
+    // Mass Provoke (A)
+    RegisterMagic(1, EVOL_MASS_PROVOKE, 1, MagicFeather, 1,
+                        CLASS_HARMONY, 0);
+    // Stealing (A)
+    RegisterMagic(1, TF_STEAL, 1, MagicFeather, 1,
+                        CLASS_HARMONY, 0);
+    // Barter (P)
+    RegisterMagic(1, MC_OVERCHARGE, 1, MagicFeather, 1,
+                        CLASS_HARMONY, 0);
+    // Backpack Floating (P)
+    RegisterMagic(1, ALL_INCCARRY, 1, MagicFeather, 1,
+                        CLASS_HARMONY, 0);
+    //////////////////////// Harmony Magic: Spells
+    // Holy Light (M)
+    RegisterMagic(1, AL_HOLYLIGHT, 1, MagicFeather, 1,
+                        CLASS_HARMONY, 0);
+    // Healing (MS)
+    RegisterMagic(1, AL_HEAL, 1, MagicFeather, 1,
+                        CLASS_HARMONY, 0);
+    // High Healing (MS)
+    RegisterMagic(2, AB_HIGHNESSHEAL, 1, MagicFeather, 1,
+                        CLASS_HARMONY, 0);
 
     end;
 }
