@@ -22,18 +22,28 @@
     }
     speech
         l("Hello."),
-        l("Oh, you look more interested in magic.. the brotherhood did forbid most of the interesting paths of magic, but boring baby spells are still allowed."),
-        lg("If you come back later, I may teach you something. But psst, practising magic is quite dangerous these days.");
-
-    // Placeholder please remove
-    if (debug) {
+        l("Oh, you look more interested in magic.. the brotherhood did forbid most of the interesting paths of magic, but boring baby spells are still allowed.");
+    // Give poor Auldsbel some weak magic D:
+    if (!MAGIC_CLU[EVOL_MONSTER_IDENTIFY]) {
         mesn;
         mesq l("May I interest you in an useless skill?");
+        ShowAbizit(true);
         next;
+        mesc l("Identify Monsters - Unlocks the %s chat command.", "##B/mi##b");
+        mesc l("It will analyse and inform about the monster stats and drops.");
+        mesc l("If multiple monsters have same name, all of them will be listed.");
+        mesc l("Alias: %s", "##B@monsterinfo##b");
+        next;
+        mesn;
+        mesq l("May I interest you in an useless skill?");
+        mesc l("Skill: %s", getskillname(EVOL_MONSTER_IDENTIFY));
+        // FIXME You know that learn_magic has its own prompt, right?
         if (askyesno() == ASK_YES) {
             learn_magic(EVOL_MONSTER_IDENTIFY);
         }
-        ShowAbizit(true);
+    } else {
+        mesn;
+        mesq lg("If you come back later, I may teach you something. But psst, practising magic is quite dangerous these days.");
     }
     close;
 

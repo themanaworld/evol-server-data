@@ -4,7 +4,7 @@
 //    Elvano
 // Description:
 //    Contains master skills which can only be learnt after killing boss
-//    See also: <link to tmw forum topic>
+//    See also: https://forums.themanaworld.org/viewtopic.php?f=2&t=19918
 // Notes:
 //    Not exactly as Elvano proposal. I actually care for restrictions you know...
 // Variables:
@@ -27,6 +27,8 @@
 //    TODO: Reset @mb_* when register_skill() finish
 //    TODO: You cannot get Magic Feather anywhere in the game (yet)
 //    TODO: See if the time (15s) is enough.
+//    TODO: Skill level up
+//    TODO: Use the data supplied by magic.txt
 
 -	script	#MasterBook	NPC_HIDDEN,{
 
