@@ -15,7 +15,8 @@ function	script	QuestDebug100	{
         GenericQuestDebug General_Narrator,
             l("Game introduction"), 0,
             l("Arrived in Artis"), 1,
-            l("Arrived in Argaes"), 2;
+            l("Arrived in Argaes"), 2,
+            l("Sent to Airlia"), 3;
 
         if (@menuret < 0)
         {

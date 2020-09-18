@@ -1,0 +1,180 @@
+// TMW Script
+// Author:
+//    Jesusalva
+// Description:
+//    Cutscenes for Main Story
+
+008-1-1,42,63,0	script	#MQ2Cutscene	NPC_HIDDEN,0,1,{
+    end;
+
+OnTouch:
+    .@q=getq(General_Narrator);
+    if (.@q != 2)
+        end;
+    if (getmap() != "008-1-1")
+        end;
+    // Cutscene time!
+    // m (from main quest) 02 map 1
+    .@mapn$="m021@"+getcharid(0);
+    .@mapx$="m022@"+getcharid(0);
+    // Build instance if it doesn't exists or has been reallocated
+    // (This only happens if you escape the map - edge case scenarios)
+    if (instanceowner(@mainquestinst) != getcharid(3)) {
+        @mainquestinst = instance_create("m102@a"+getcharid(0), getcharid(3), IOT_CHAR);
+        instance_attachmap("008-1-1", @mainquestinst, false, .@mapn$);
+        instance_attachmap("008-2-32", @mainquestinst, false, .@mapx$);
+        // Instance lasts 60 minutes
+        instance_set_timeout(3600, 3600, @mainquestinst);
+        instance_init(@mainquestinst);
+    } else {
+        // Restart instance timer if it already exists
+        instance_set_timeout(3600, 3600, @mainquestinst);
+    }
+    getmapxy(.@m$, .@x, .@y, 0);
+    warp(.@mapn$, .@x, .@y);
+    addtimer(500, instance_npcname(.name$, @mainquestinst)+"::OnBegin");
+    end;
+
+OnBegin:
+    .@n$=instance_npcname(.name$);
+    .@mc$=instance_npcname("Morcant");
+
+    // Freeze player
+    // (M+ may render this incorrectly but it is not my job to care with that)
+    setpcblock(PCBLOCK_ATTACK|PCBLOCK_SKILL|PCBLOCK_USEITEM|PCBLOCK_MOVE, true);
+    sc_start(SC_STUN, 360000, 1, 10000, SCFLAG_NOAVOID|SCFLAG_FIXEDTICK);
+
+    // Begin moving Morcant
+    npcwalkto(58, 64, .@mc$);
+    sleep2(3000);
+    getmapxy(.@m$, .@x, .@y, 0);
+    npcwalkto(.@x + 1, .@y, .@mc$);
+    sleep2(1000);
+    unitwarp(getnpcid(.@mc$), .@m$, .@x + 1, .@y); // FIXME PLACEHOLDER
+    npctalk l("Hoho!"), .@mc$;
+    sleep2(2500);
+    npctalk l("Look what the shore brought me!"), .@mc$;
+    sleep2(3000);
+    npctalk l("Rarely anyone uses this port."), .@mc$;
+    sleep2(3000);
+    npctalk l("...Well, anyone adhering to the law, at least! Hahahah!"), .@mc$;
+    sleep2(3000);
+    npctalk l("Anyway, come in! You must be hungry."), .@mc$;
+    sleep2(3000);
+    npcwalkto(51, 57, .@mc$);
+    sleep2(1000);
+    sc_end(SC_STUN);
+    setpcblock(PCBLOCK_ATTACK|PCBLOCK_SKILL|PCBLOCK_USEITEM|PCBLOCK_MOVE, false);
+    dispbottom col(l("1-1. Follow Morcant into his house."), 1);
+    sleep2(500);
+    .@mapx$="m022@"+getcharid(0);
+    unitwarp(getnpcid(.@mc$), .@mapx$, 40, 24);
+    end;
+}
+
+// Series 2
+008-1-1,51,58,0	script	#MQ2Cutscene2	NPC_HIDDEN,0,1,{
+    end;
+OnTouch:
+    if (getmap() == "008-1-1") end;
+    .@n$=instance_npcname(.name$);
+    .@mapx$="m022@"+getcharid(0);
+    warp(.@mapx$, 40, 36);
+    addtimer(3000, .@n$+"::OnStunlock");
+    end;
+
+OnStunlock:
+    .@n$=instance_npcname(.name$);
+    addtimer(300, .@n$+"::OnBegin");
+    // Freeze player
+    // (M+ may render this incorrectly but it is not my job to care with that)
+    setpcblock(PCBLOCK_ATTACK|PCBLOCK_SKILL|PCBLOCK_USEITEM|PCBLOCK_MOVE, true);
+    sc_start(SC_STUN, 360000, 1, 10000, SCFLAG_NOAVOID|SCFLAG_FIXEDTICK);
+    end;
+
+OnBegin:
+    .@n$=instance_npcname(.name$);
+    .@mc$=instance_npcname("Morcant");
+    .@tm$=instance_npcname("Thamas");
+    npctalk l("Welcome to my humble abode."), .@mc$;
+    sleep2(500);
+    npctalk lg("Who is that fellow?"), .@tm$;
+    sleep2(2500);
+    npctalk l("Thamas, this is a stowaway who reached here from Artis."), .@mc$;
+    sleep2(2500);
+    npctalk lg("Yes, I remember her.", "Yes, I remember him."), .@tm$;
+    sleep2(3000);
+    npctalk l("Anyway, I assume you're trying to get into Hurnscald?"), .@mc$;
+    sleep2(2100);
+    npctalk l("Really? You should be careful, then."), .@tm$;
+    sleep2(2500);
+    npctalk l("Hurnscald is under the domain of the Brotherhood."), .@tm$;
+    sleep2(3000);
+    npctalk l("Shaddy fellas, I do not trust them the sightliest."), .@tm$;
+    sleep2(3500);
+    npctalk l("*ahem*!"), .@mc$;
+    sleep2(2000);
+    npctalk l("Hurnscald is just east of here."), .@mc$;
+    sleep2(2000);
+    npctalk l("Keep following the road, you can't miss it."), .@mc$;
+    sleep2(3000);
+    npctalk l("Do not venture into south, though."), .@mc$;
+    sleep2(2000);
+    npctalk l("It is haunted."), .@mc$;
+    sleep2(2500);
+    //atcommand("@refresh"); // FIXME -> Hercules upstream broke @refresh
+    // TODO FIXME: Check if x-1 is a collision, move to x+1 if it is
+    getmapxy(.@m$, .@x, .@y, 0);
+    npcwalkto(.@x - 1, .@y, .@mc$);
+    sleep2(1000);
+    unitwarp(getnpcid(.@mc$), .@m$, .@x - 1, .@y); // FIXME PLACEHOLDER
+    npctalk col(l("*Hey, psst.*"), 9), .@mc$;
+    sleep2(1000);
+    npctalk col(l("*I assume you're here for the Brotherhood, right?*"), 9), .@mc$;
+    sleep2(2500);
+    npctalk col(l("*Reaching Hurnscald, look for a girl called Airlia.*"), 9), .@mc$;
+    sleep2(2500);
+    npctalk col(l("*Whisper her the... password, and she'll lead you to Jonatas.*"), 9), .@mc$;
+    sleep2(3100);
+    npctalk col(l("*I don't know why Sophiahalla sent you here...*"), 9), .@mc$;
+    sleep2(2200);
+    npctalk col(l("*But I am just a retired merchant, hohoho!*"), 9), .@mc$;
+    sleep2(2200);
+    npctalk l("Anyway, that's it. Here, have a bowl of stew, Morcant special!"), .@mc$;
+    sleep2(2500);
+    npctalk l("I'll be back to the port, so see you later!"), .@mc$;
+    npcwalkto(40, 38, .@mc$);
+    sleep2(2000);
+    .@mapx$="m021@"+getcharid(0);
+    unitwarp(getnpcid(.@mc$), .@mapx$, 51, 58);
+    sc_end(SC_STUN);
+    setpcblock(PCBLOCK_ATTACK|PCBLOCK_SKILL|PCBLOCK_USEITEM|PCBLOCK_MOVE, false);
+    sleep2(1000);
+    getmapxy(.@m$, .@x, .@y, 0);
+    warp "008-2-32", .@x, .@y;
+    getitembound SailorStew, 1, IBT_ACCOUNT;
+    setq General_Narrator, 3;
+    end;
+}
+
+// WHAT ARE YOU DOING
+008-1-1,83,65,0	script	#MQ2CutsceneWAYD	NPC_HIDDEN,0,10,{
+    end;
+
+OnTouch:
+    if (getmap() == "008-1-1") end;
+    // What are you doing?!
+    slide 51, 63;
+    mesc l("I really should follow Morcant into his house.");
+    close;
+}
+
+008-2-32,40,37,0	script	#MQ2Cutscene2WAYD	NPC_HIDDEN,1,0,{
+    end;
+OnTouch:
+    if (getmap() == "008-2-32") end;
+    slide 40, 36;
+    dispbottom l("But you just arrived! Seriously. Stop.");
+    end;
+}
+

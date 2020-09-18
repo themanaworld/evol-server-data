@@ -9,8 +9,20 @@
     speech
         l("Hello."),
         l("Do you know where the graveyard is?"),
-        lg("No? Better is that. Its so dangerous there.");
+        lg("No? Better that way. It's so dangerous there.");
 
+    next;
+    select
+        l("Okay, thanks."),
+        l("*whisper* Sagratha is great.");
+    mes "";
+    if (@menu == 2) {
+        mesn;
+        mesq l("Ah, uhm, erm. The Governor is busy arguing with the rest of the team.");
+        next;
+        mesn;
+        mesq l("I'm afraid you'll need to wait them to reach a consensus first, before he can met with you.");
+    }
     close;
 
 OnInit:

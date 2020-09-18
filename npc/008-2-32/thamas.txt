@@ -11,10 +11,66 @@
         l("I am a legion soldier who never talks much, until Jesusalva or WildX puts words in my mouth."),
         l("Until then, let me be quiet. Talk to you later.");
 
+    next;
+    select
+        l("Okay, sorry for disturbing."),
+        l("But you said you remember me!"),
+        l("What do you think about this stew?"),
+        l("Where are you from, though? You have an odd... behavior."),
+        l("What is a legion soldier even doing here?"),
+        l("Who are Jesusalva and WildX?");
+    mes "";
+    switch (@menu)
+    {
+    case 2:
+        mesn;
+        mesq l("And I do. We were on the same ship a few times.");
+        next;
+        mesn;
+        mesq l("You stood out and I stayed on my corner. That's all.");
+        next;
+        mesn;
+        mesq l("Stop making questions which make no sense...");
+        break;
+    case 3:
+        mesn;
+        mesq l("Eh? It is okay, I guess.");
+        next;
+        mesn;
+        mesq l("I hear if you get a recipe book, you could cook things yourself.");
+        next;
+        mesn;
+        mesq l("Maybe someone in Hurnscald makes these books. I don't really care.");
+        next;
+        mesn;
+        mesq l("Stop making questions which make no sense...");
+        break;
+    case 4:
+        mesn;
+        mesq l("I'm from Esperia.");
+        next;
+        mesn;
+        mesq l("It would be tiring to describe the wonders of my hometown.");
+        next;
+        mesn;
+        mesq l("Why don't you look an article about it on this [%s|tour guide%s], instead?", "@@https://wiki.themanaworld.org/index.php/Esperia", "@@");
+        next;
+        mesn;
+        mesq l("Stop making questions which make no sense...");
+        break;
+    case 5:
+    case 6:
+        mesn;
+        mesq l("Honestly? I don't know.");
+        next;
+        mesn;
+        mesq l("Stop making questions which make no sense...");
+        break;
+    }
     close;
 
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
     end;
 }

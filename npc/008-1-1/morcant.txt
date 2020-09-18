@@ -11,10 +11,44 @@
         l("My name is Morcant. I am a Captain, a bit bored since this harbor is not frequented much."),
         l("I would like to offer you food and tell you stories, but.. have you ever heard of WildX? I won't need to say more, do I?");
 
+    next;
+    select
+        l("Not really but okay...?"),
+        l("Actually, I am after your Stew recipe!"),
+        l("Anything to do around these parts?"),
+        l("Can you tell me the directions again?");
+    mes "";
+    switch (@menu)
+    {
+    case 2:
+        mesn;
+        mesq l("Hohoho! That is a family's trade secret!");
+        break;
+    case 3:
+        mesn;
+        mesq l("Hmm, you might want to ask Galimatia, my neighbor.");
+        next;
+        mesn;
+        mesq l("She is always taking care of her bees, though.");
+        break;
+    case 4:
+        mesn;
+        mesq l("There should be a fair number of signposts around. Anyway.");
+        next;
+        mesn;
+        mesq l("Go east to reach Hurnscald. Just follow the road, really.");
+        next;
+        mesn;
+        mesq l("And do not go south. It is haunted.");
+        break;
+    }
     close;
 
 OnInit:
+OnInstanceInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
+    .speed=120;
+    //.alwaysVisible=true;
     end;
 }
