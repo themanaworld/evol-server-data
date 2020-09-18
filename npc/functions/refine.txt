@@ -1,0 +1,66 @@
+// The Mana World Script
+// Author:
+//      Jesusalva
+// Inspiration:
+//      Pyndragon (LoF)
+//      Scall (TMW-BR)
+//      Saulc (ML)
+// Description:
+//      Handles refinement
+
+// refineupdate( {killedrid} )
+function	script	refineupdate	{
+    // Not armed? We do nothing
+    if (!getequipisequiped(EQI_HAND_R))
+        return;
+
+    // Set temporary variables
+    .@k=getarg(0, killedrid);
+    .@w=getequipid(EQI_HAND_R);
+    .@r=getequiprefinerycnt(EQI_HAND_R);
+
+
+    // Weapon cannot be refined
+    if (!getequipisenableref(EQI_HAND_R))
+        return;
+
+    // Register the weapon experience
+    weaponExp[.@w] = weaponExp[.@w] + getmonsterinfo(.@k, MOB_LV);
+
+    // Get exp needed to level up from global array
+    .@exp=$@REFEXP[.@r];
+
+    // Cannot level up
+    if (.@exp < 1)
+        return;
+
+    // Leveled up!
+    if (weaponExp[.@w] >= .@exp) {
+        weaponExp[.@w]-=.@exp;
+        weaponLvl[.@w] = weaponLvl[.@w] + 1;
+        successrefitem(EQI_HAND_R);
+        dispbottom l("Weapon level up!");
+    }
+    return;
+}
+
+// Resyncs weapon level
+function	script	refinesync	{
+    // Not armed? We do nothing
+    if (!getequipisequiped(EQI_HAND_R))
+        return;
+
+    .@w=getequipid(EQI_HAND_R);
+    .@r=getequiprefinerycnt(EQI_HAND_R);
+    .@lv=weaponLvl[.@w];
+
+    if (.@r > .@lv) {
+        // Refine level overestimated
+        downrefitem(EQI_HAND_R, max(0, .@r - .@lv));
+    } else if (.@lv > .@r) {
+        // Refine level understimated
+        successrefitem(EQI_HAND_R, max(0, .@lv - .@r));
+    }
+    return;
+}
+

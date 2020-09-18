@@ -51,6 +51,7 @@ OnNPCKillEvent:
     $MONSTERS_KILLED+=1;
     MONSTERS_KILLED+=1;
     callfunc("EnoraKills");
+    callfunc("refineupdate");
     if ($MONSTERS_KILLED % 1000000 == 0)
         callfunc("GetBeanieCopter");
     end;
