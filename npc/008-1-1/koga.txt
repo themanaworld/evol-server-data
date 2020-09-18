@@ -6,6 +6,10 @@
 // THIS IS A PLACEHOLDER!
 
 008-1-1,30,60,0	script	Koga#008-1-1	NPC_KOGA,{
+    function kogaWrongMap;
+    if (getmap() != "008-1-1")
+        kogaWrongMap();
+
     speech
         l("So, finally, we are here."),
         l("Do you want to go back to Artis? You really should be afraid of the Legion there, now that you have been here in Woodland. They somehow smell the odor of the Brotherhood.");
@@ -19,6 +23,11 @@
         dispbottom l("After a tiring, yet fast, travel by Koga, you arrive at @@.", l("Artis"));
     }
     close;
+
+function kogaWrongMap {
+    mesc l("I've just arrived here. I should enter in Morcant's house I guess.");
+    close;
+}
 
 OnInit:
     .bodytype = BODYTYPE_3;
