@@ -20,5 +20,7 @@ OnInit:
        "Fire red", "Light violet", "Purple plum", "Navy blue",
        "Lagoon blue", "Twisted teal", "Spring Green", "Forest Green",
        "Silver Grey", "Esperia Blue";
+
+    setarray $@REFEXP[0], 400, 900, 2250, 6500, 15000;
     end;
 }
