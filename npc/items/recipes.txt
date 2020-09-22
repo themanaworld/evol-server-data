@@ -117,6 +117,29 @@ function read_cooking {
                PioulegSandwich,
                MananaSandwich);
 
+    mes "";
+    mes ".:: " + l("Stew") + " ::.";
+    mes "";
+
+    showRecipe(SailorStew,
+               SquirrelStew,
+               MoubooStew);
+
+    mes "";
+    mes ".:: " + l("Plates") + " ::.";
+    mes "";
+
+    showRecipe(SeafoodPlate,
+               BarbecuePlate,
+               VeggiePlate);
+
+    mes "";
+    mes ".:: " + l("Desserts") + " ::.";
+    mes "";
+
+    showRecipe(Donut,
+               BlueberryCake,
+               CarrotCake);
     return;
 }
 
