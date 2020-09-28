@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Manoli, a Legion Guard inside the Legion storage building.
+// THIS IS A PLACEHOLDER!
+
+020-2-7,35,23,0	script	Manoli	NPC_HUMAN_FEMALE_LEGION_ARTIS,{
+    speech
+        l("Hi there."),
+        l("Looks like someone ran out of ideas for placeholder NPCs."),
+        l("So if you want, you can hunt something, or cook something, or craft somethig."),
+		l("Whatever.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

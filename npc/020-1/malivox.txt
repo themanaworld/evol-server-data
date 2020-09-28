@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Malivox, a salesman in Tulimshar Market.
+// THIS IS A PLACEHOLDER!
+
+020-1,241,170,0	script	Malivox	NPC_KPG_MANAGER,{
+    speech
+        l("Hi there."),
+        l("You wonder why here are so many idle market stalls, right?"),
+        l("This is due to lazyness of Micksha to prepare placeholders."),
+		l("Don't steal stuff from them, though. Or you will be imprisoned.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

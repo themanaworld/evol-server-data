@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Harper, a Sailor helping Joelin.
+// THIS IS A PLACEHOLDER!
+
+020-1,191,150,0	script	Harper	NPC_ADRIAN,{
+    speech
+        l("Hello!"),
+        l("Ever saw a Captain without a ship?"),
+        l("<--- I am with stupid.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

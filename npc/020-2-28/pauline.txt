@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Pauline, the War Mage.
+// THIS IS A PLACEHOLDER!
+
+020-2-28,36,20,0	script	Pauline	NPC_PAULINE,{
+    speech
+        l("Hi!"),
+        l("Should I tell you the secret of a good fight?"),
+        l("CONFRONT AND DESTROY!! (Don't tell your parents I said that.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
+
+

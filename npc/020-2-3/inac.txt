@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Inac, a Brotherhood member inside their hut.
+// THIS IS A PLACEHOLDER!
+
+020-2-3,41,26,0	script	Inac	NPC_RAIJIN_MALE_BROTHERHOOD,{
+    speech
+        l("Hi!"),
+        l("Can you help me? It is so dark, and smelly, in here."),
+        l("I urgently need a bottle of fresh air.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

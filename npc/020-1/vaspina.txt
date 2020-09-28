@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Vaspina the Harmony Mage.
+// THIS IS A PLACEHOLDER!
+
+020-1,91,112,0	script	Vaspina	NPC_MORGAN,{
+    speech
+        l("Hi!"),
+        l("Pst, not so loud. You frighten the animals here."),
+        l("You were told to not harm peaceful beings in the Academy, right? Please strictly follow that rule.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
+
+

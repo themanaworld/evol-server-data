@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Eomie, the real Nature Mage. Whatever Hocus is saying.
+// THIS IS A PLACEHOLDER!
+
+020-1,76,96,0	script	Eomie	NPC_EOMIE,{
+    speech
+        l("Hi!"),
+        l("Did you talk to Hocus already? He will tell you about salad, again."),
+        l("Sometimes I think he is more a chef but a mage, but oh well, everybody should do what suits him best.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
+
+

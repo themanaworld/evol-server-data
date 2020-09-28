@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Filipa, a Legion Guard inside Legion HQ in Tulim.
+// THIS IS A PLACEHOLDER!
+
+020-2-5,47,28,0	script	Filipa	NPC_RAIJIN_FEMALE_LEGION_ARTIS,{
+    speech
+        l("Hi there."),
+        l("Looks like someone ran out of ideas for placeholder NPCs."),
+        l("So if you want, you can hunt something, or cook something, or craft somethig."),
+		l("Whatever.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

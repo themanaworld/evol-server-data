@@ -1,0 +1,18 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Drabur, the baker's salesman.
+// THIS IS A PLACEHOLDER!
+
+020-2-20,49,30,0	script	Drabur	NPC_GENERAL_STORE,{
+    speech
+        l("Hi there."),
+        l("Goodbye.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Inya, the jewelery lady in Tulimshar.
+// THIS IS A PLACEHOLDER!
+
+020-2-18,35,25,0	script	Inya	NPC_INYA,{
+    speech
+        l("Hi there."),
+        l("Gold, Silver, Copper, Platinum. Got anything of that with you?"),
+        l("Just throw it on the ground in here, and bring more."),
+		l("Perhaps one day I will reward you with a few buglegs or such, don't worry.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

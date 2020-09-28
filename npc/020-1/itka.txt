@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Itka, the spammy spammy little girl in Tulimshar.
+// THIS IS A PLACEHOLDER!
+
+020-1,194,175,0	script	Itka	NPC_GIRL_MILLY,{
+    speech
+        l("Hi there."),
+        l("Come to the bakery! Come to the Market! Come to Prison!"),
+        l("I will improve, promised. Come to the Academy! Come to Oasis!");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

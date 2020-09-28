@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Ekinu, a Brotherhood Guard protecting the bridge.
+// THIS IS A PLACEHOLDER!
+
+020-1,170,118,0	script	Ekinu	NPC_RAIJIN_MALE_BROTHERHOOD,{
+    speech
+        l("Hi!"),
+        l("You come from Hurnscald? Oh, did you meet my Grandma there? Is she fine?"),
+        l("Tell her greetings, and give her some flowers from me when you return there.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

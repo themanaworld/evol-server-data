@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Receptionist in Magic Academy.
+// THIS IS A PLACEHOLDER!
+
+020-2-26,59,32,0	script	Receptionist	NPC_REBECCA,{
+    speech
+        l("Hi!"),
+        l("This is the magic academy. If all those mages were not so absentminded, they could make some furniture."),
+        l("But oh well, people have different priorities it seems. Ask Micksha.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
+
+

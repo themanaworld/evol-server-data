@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Pusco, the Fire Mage. Still outside, to be moved to the cave (with some lava) later (TM).
+// THIS IS A PLACEHOLDER!
+
+020-1,87,122,0	script	Pusco	NPC_MAGE_RED,{
+    speech
+        l("Hi!"),
+        l("Fire, I love fire! Its so powerful! It even comes with particle effects most of the time!"),
+        l("Can you bug Jesusalva? I really would like to teach you something.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
+
+

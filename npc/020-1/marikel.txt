@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Marikel, another Brotherhood Guard protecting the bridge.
+// THIS IS A PLACEHOLDER!
+
+020-1,163,118,0	script	Marikel	NPC_HUMAN_MALE_BROTHERHOOD,{
+    speech
+        l("Hi!"),
+        l("You come from Hurnscald? Oh, did you meet my Grandpa there? Is she fine?"),
+        l("Tell him greetings, and give him a few beers from me once you return there.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

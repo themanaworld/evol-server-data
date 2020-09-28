@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Jossy, another Brotherhood Member in Tulimshar.
+// THIS IS A PLACEHOLDER!
+
+020-1,180,87,0	script	Jossy	NPC_HUMAN_MALE_BROTHERHOOD,{
+    speech
+        l("Hi!"),
+        l("I do't want to talk to you."),
+        l("Here, talk to my hand.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

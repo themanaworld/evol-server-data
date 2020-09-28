@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Budifis the Water Mage.
+// THIS IS A PLACEHOLDER!
+
+020-1,70,47,0	script	Budifis	NPC_MAGE_BLUE,{
+    speech
+        l("Hi!"),
+        l("I just love watching the ocean from up there."),
+        l("Did you meet Pusco already? He and his crappy Fire Elements. One day I will extinguish him properly, be assured.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
+
+
