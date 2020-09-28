@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Kaizer, the guy in the Rat Hut.
+// THIS IS A PLACEHOLDER!
+
+020-2-0,34,33,0	script	Kaizer	NPC_OLD_MAN_HURNS,{
+    speech
+        l("Welcome to my palace!"),
+        l("Not a palace? What? Are you blind?!?"),
+        l("You better should leave, ofc after helping me kill those annoying rats. That is an order.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

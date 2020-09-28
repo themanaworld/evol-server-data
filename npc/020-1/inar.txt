@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Inar, a saleswoman in Tulimshar Market.
+// THIS IS A PLACEHOLDER!
+
+020-1,212,171,0	script	Inar	NPC_SABINE,{
+    speech
+        l("Hi there."),
+        l("You wonder why here are so many idle market stalls, right?"),
+        l("This is due to lazyness of Micksha to prepare placeholders."),
+		l("So, see you later when we have something to sell here.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

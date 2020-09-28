@@ -1,0 +1,21 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Hocus, the Nature Mage. More interested in food than in nature magic, sometimes.
+// THIS IS A PLACEHOLDER!
+
+020-1,73,91,0	script	Hocus	NPC_MAGE_BROWN,{
+    speech
+        l("Hi!"),
+        l("You should eat more salad. I see in your face that your nutrition is not good."),
+        l("Can you bug Jesusalva? I really would like to teach you something.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
+
+

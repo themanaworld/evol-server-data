@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Anwar, the farmer in Tulimshar.
+// THIS IS A PLACEHOLDER!
+
+020-1,178,196,0	script	Anwar	NPC_ANWAR,{
+    speech
+        l("Hi there."),
+        l("Nothing grows in this stupid desert."),
+        l("I could try to water it, but where to get water.. also a fertility potion could help."),
+		l("But I have no water, no potion, no script. *cries* ");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

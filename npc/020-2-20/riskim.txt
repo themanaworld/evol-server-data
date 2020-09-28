@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Riskim, the baker in Tulimshar.
+// THIS IS A PLACEHOLDER!
+
+020-2-20,49,30,0	script	Riskim	NPC_CHEF_LEGACY,{
+    speech
+        l("Hi there."),
+        l("Need a Donut?"),
+        l("Well, tell me the recipe and I will bake for you whatever you need, for a small fee."),
+		l("But: No recipe, no deserts.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Aisha, the young lady at Tulim Docks, Legion area.
+// THIS IS A PLACEHOLDER!
+
+020-1,271,93,0	script	Aisha	NPC_AIRLIA,{
+    speech
+        l("Good day to you, Sir."),
+        l("I totally forgot why I am standing besides that stiky fish, doing nothing."),
+        l("If you have an idea, please tell me what I could do.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

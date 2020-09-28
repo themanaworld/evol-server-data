@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Martha, sort of Brotherhood Leader in Tulimshar.
+// THIS IS A PLACEHOLDER!
+
+020-1,164,81,0	script	Martha	NPC_UKAR_FEMALE_BROTHERHOOD,{
+    speech
+        l("Hi!"),
+        l("Have you ever been to Artis? Did you meet my mom there? Her name is Sophialla."),
+        l("I hope she is fine. It is so dangerous out there.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

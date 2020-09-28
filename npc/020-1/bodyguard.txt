@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Bodyguard protecting Micksha's chilling place in oasis.
+// THIS IS A PLACEHOLDER!
+
+020-1,292,245,0	script	Bodyguard	NPC_RAIJIN_FEMALE_LEGION_ARTIS,{
+    speech
+        l("Hey, you!"),
+        l("Do not dare sitting on this bench. This is Micksha's place to relax. You better are gone when he arrives."),
+        l("He has to listen to much drama, so he wants to rest here, alone, in silence. Got it?");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

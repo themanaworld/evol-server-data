@@ -1,0 +1,30 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Brotherhood Guards serving Hal.
+// THIS IS A PLACEHOLDER!
+
+008-1-1,62,28,0	script	Soldier#1	NPC_RAIJIN_MALE_BROTHERHOOD,{
+    speech
+        l("Hi!"),
+        l("I am not allowed to talk to strangers.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
+
+008-1-1,54,30,0	script	Soldier#2	NPC_HUMAN_MALE_BROTHERHOOD,{
+    speech
+        l("Hi!"),
+        l("I am not allowed to talk to strangers.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

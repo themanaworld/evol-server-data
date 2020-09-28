@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Joelin, the broken, shipless Captain in Tulimshar.
+// THIS IS A PLACEHOLDER!
+
+020-1,189,150,0	script	Joelin	NPC_JOELIN,{
+    speech
+        l("Hello!"),
+        l("Do you know the story of the Fleet of Aemil? I also want to discover new Lands."),
+        l("But I do not have a ship. Ah, right, and no script.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Ryan, a Legion Soldier near the Docks.
+// THIS IS A PLACEHOLDER!
+
+020-1,275,97,0	script	Ryan	NPC_DEMON_MALE_LEGION_ARTIS,{
+    speech
+        l("hmmm..."),
+        l("You were in Hurnscald lately, right? That smell, that Brotherhood smell."),
+        l("Better get out of here, before I become wild.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

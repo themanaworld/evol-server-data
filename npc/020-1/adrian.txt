@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Adrian, a Sailor near the Legion's Docks.
+// THIS IS A PLACEHOLDER!
+
+020-1,272,138,0	script	Adrian	NPC_ADRIAN,{
+    speech
+        l("Hi there."),
+        l("Looks like someone ran out of ideas for placeholder NPCs."),
+        l("So if you want, you can go to bed again."),
+		l("Whatever.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

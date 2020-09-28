@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    O'Donell, a member of Thieves Guild protecting their Cave's entrance.
+// THIS IS A PLACEHOLDER!
+
+020-1,157,157,0	script	O'Donell	NPC_HENRY,{
+    speech
+        l("Psst!"),
+        l("Did you already meet Nunia, in Woodland? If you bring me a stolen good, I will let you inside our Thieves Guild Headquarters."),
+        l("If you don't - well, go play hide'n'seek with Itka. Her spam annoys me anyways.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

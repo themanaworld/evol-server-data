@@ -1,0 +1,32 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Tindris, a mage apprentice on the way to magic academy. Twice. It is magic.
+// THIS IS A PLACEHOLDER!
+
+020-1,44,196,0	script	Tindris#1	NPC_SIMON,{
+    speech
+        l("Hi!"),
+        l("Past here, the neutral area of the Magic Academy of Tulimshar starts."),
+        l("Don't dare to use any violence against peaceful beings, or you will be punished.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
+
+020-1,46,133,0	script	Tindris#2	NPC_SIMON,{
+    speech
+        l("Hi!"),
+        l("Past here, the neutral area of the Magic Academy of Tulimshar starts."),
+        l("Don't dare to use any violence against peaceful beings, or you will be punished.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

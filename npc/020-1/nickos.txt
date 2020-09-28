@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Nickos, a free soldier working with Nickos on protecting the town from mine mobs.
+// THIS IS A PLACEHOLDER!
+
+020-1,78,237,0	script	Nickos	NPC_NICKOS,{
+    speech
+        l("Hi there."),
+        l("Sorry, for now you cannot enter. We sealed the entrance to avoid a monster flood."),
+        l("Come back later, perhaps you can help keeping things under control.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}

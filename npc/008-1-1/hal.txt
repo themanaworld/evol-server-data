@@ -1,0 +1,20 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Hal, a Captain of the Brotherhood.
+// THIS IS A PLACEHOLDER!
+
+008-1-1,58,27,0	script	Hal	NPC_HAL,{
+    speech
+        l("Hello!"),
+        l("I was just having a nap, now WildX summons me to stand here! What a crap."),
+        l("Please, ask elanore to !slap him for me when you see them.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
+

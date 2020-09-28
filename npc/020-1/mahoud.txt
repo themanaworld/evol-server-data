@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Mahoud, a scammer and a troll besides the Tulimshar Graveyard.
+// THIS IS A PLACEHOLDER!
+
+020-1,180,169,0	script	Mahoud	NPC_YOUNG_MAN_KFAHR,{
+    speech
+        l("Hey, you!"),
+        l("Got something to bury? I need some job, and I need some money."),
+        l("Ah, wait, we cannot trade anything without some developer. Go find one!");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 2;
+    end;
+}
