@@ -4,8 +4,9 @@
 //    Qwerty Dragon
 //    Reid
 //    WildX
+//    Jesusalva
 // Description:
-//    A small note presenting the 7 main rules of Evol Online.
+//    A small note presenting the main rules of Evol Online.
 
 001-2-28,36,28,0	script	Note#001-2-28	NPC_PAPER_NOTE,{
     narrator S_LAST_NEXT,
@@ -15,7 +16,8 @@
 
     narrator S_NO_NPC_NAME,
         l("Following these lines are some other writings on this paper."),
-        l("Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Jenna");
+        l("Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Jenna"),
+        l("You'll gain experience if you hang around here with friends. Ask Jenna for drinks and pay a round for them! - Management");
 
     close;
 
@@ -23,3 +25,19 @@ OnInit:
     .distance = 2;
     end;
 }
+
+// This is part of AFKing Experience
+001-2-28,60,30,0	script	#AFKArtis	NPC_HIDDEN,0,1,{
+    end;
+
+OnTouch:
+    addtimer2(3000, "#AFKArtis::OnSpeeching");
+    end;
+
+OnSpeeching:
+    AFKLoop("#AFKArtis::OnSpeeching", "001-2-28", 36, 27, 60, 42);
+    end;
+}
+
+001-2-28,36,31,0	duplicate(#AFKArtis)	#AFKArtis2	NPC_HIDDEN,0,1
+

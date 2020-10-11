@@ -338,3 +338,28 @@ function	script	delinventorylist	{
     @inventorylist_count=0;
     return;
 }
+
+// isin( map, x1, y1, {[x2, y2][radius]} )
+function	script	isin	{
+    if (getmapxy(.@mapName$, .@xpos, .@ypos, 0) != 0)
+        return false;
+    if (.@mapName$ != getarg(0))
+        return false;
+
+    if (getarg(4,-1) < 0) {
+        // Radius Based
+        if (.@xpos >= getarg(1)-getarg(3) && .@xpos <= getarg(1)+getarg(3) && .@ypos >= getarg(2)-getarg(3) && .@ypos <= getarg(2)+getarg(3))
+            return true;
+    } else {
+        // Coordinate based
+        if (.@xpos >= getarg(1) && .@xpos <= getarg(3) && .@ypos >= getarg(2) && .@ypos <= getarg(4))
+            return true;
+    }
+    return false;
+}
+
+// Shortcut for getmapname()
+function	script	getmap	{
+    return getmapname();
+}
+

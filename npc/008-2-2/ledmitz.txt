@@ -18,15 +18,6 @@ OnTalk:
 OnInit:
     .bodytype = BODYTYPE_3;
     .distance = 3;
-
-////////// UNFINISHED //////////
-////////////////////////////////
-// REMOVE THIS CODE WHEN THIS //
-// NPC IS NO LONGER A WIP //////
-////////////////////////////////
-//if (!debug) disablenpc(.name$);
-///////// UNFINISHED ///////////
-
     end;
 }
 
@@ -42,14 +33,6 @@ OnTalk:
 OnInit:
     .bodytype = BODYTYPE_3;
     .distance = 3;
-
-////////// UNFINISHED //////////
-////////////////////////////////
-// REMOVE THIS CODE WHEN THIS //
-// NPC IS NO LONGER A WIP //////
-////////////////////////////////
-//if (!debug) disablenpc(.name$);
-///////// UNFINISHED ///////////
-
     end;
 }
+

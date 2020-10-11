@@ -117,6 +117,23 @@ function	script	HallOfATL	{
     return;
 }
 
+// Hall of AFK
+function	script	HallOfAFK	{
+    mes "";
+	mes l("##BHall Of AFK: TOP 10##b");
+	mesf("1. %s (%dh%02dm)", $@afk_name$[0], $@afk_value[0]/1200, $@afk_value[0]%1200/60*3);
+	mesf("2. %s (%dh%02dm)", $@afk_name$[1], $@afk_value[1]/1200, $@afk_value[1]%1200/60*3);
+	mesf("3. %s (%dh%02dm)", $@afk_name$[2], $@afk_value[2]/1200, $@afk_value[2]%1200/60*3);
+	mesf("4. %s (%dh%02dm)", $@afk_name$[3], $@afk_value[3]/1200, $@afk_value[3]%1200/60*3);
+	mesf("5. %s (%dh%02dm)", $@afk_name$[4], $@afk_value[4]/1200, $@afk_value[4]%1200/60*3);
+	mesf("6. %s (%dh%02dm)", $@afk_name$[5], $@afk_value[5]/1200, $@afk_value[5]%1200/60*3);
+	mesf("7. %s (%dh%02dm)", $@afk_name$[6], $@afk_value[6]/1200, $@afk_value[6]%1200/60*3);
+	mesf("8. %s (%dh%02dm)", $@afk_name$[7], $@afk_value[7]/1200, $@afk_value[7]%1200/60*3);
+	mesf("9. %s (%dh%02dm)", $@afk_name$[8], $@afk_value[8]/1200, $@afk_value[8]%1200/60*3);
+	mesf("10. %s (%dh%02dm)", $@afk_name$[9], $@afk_value[9]/1200, $@afk_value[9]%1200/60*3);
+    return;
+}
+
 // HallOfGame()
 function	script	HallOfGame	{
     if ($MOST_HEROIC$)
@@ -176,6 +193,7 @@ OnInit:
 	.@nb = query_sql("select name, guild_lv from `guild` ORDER BY guild_lv DESC LIMIT 5", $@hoguild_name$, $@hoguild_value);
 	.@nb = query_sql("SELECT c.name, i.amount FROM `storage` AS i, `char` AS c WHERE i.nameid="+Acorn+" AND i.account_id=c.account_id ORDER BY i.amount DESC LIMIT 15", $@hoa_name$, $@hoa_value);
 	.@nb = query_sql("SELECT c.name, i.value FROM `char_reg_num_db` AS i, `char` AS c WHERE i.key='ATLRANK' AND i.char_id=c.char_id ORDER BY i.value DESC LIMIT 10", $@atl_name$, $@atl_value);
+	.@nb = query_sql("SELECT c.name, i.value FROM `char_reg_num_db` AS i, `char` AS c WHERE i.key='AFKING' AND i.char_id=c.char_id ORDER BY i.value DESC LIMIT 10", $@afk_name$, $@afk_value);
     consolemes(CONSOLEMES_DEBUG, "Scoreboards reloaded");
     if (!$@SCOREBOARD_BIND) {
         bindatcmd "scoreboard", "@scoreboard::OnCall", 0, 100, 0;
@@ -198,6 +216,7 @@ OnCall:
             l("Hall Of Guilds"),
             l("Hall Of Acorns"),
             l("Hall Of Artis Legion Training Arena"),
+            l("Hall Of AFK King"),
             l("Game Statistics"),
             l("Quit");
         mes "";
@@ -227,6 +246,10 @@ OnCall:
             next;
             break;
         case 7:
+            HallOfAFK();
+            next;
+            break;
+        case 8:
             HallOfGame();
             next;
             break;
