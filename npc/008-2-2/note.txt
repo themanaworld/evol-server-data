@@ -1,6 +1,7 @@
 // Evol scripts.
 // Author:
 //    gumi
+//    Jesusalva
 
 008-2-2,32,28,0	script	Note#Hurnscald:pub	NPC_PAPER_NOTE,{
     narrator(8,
@@ -10,19 +11,25 @@
         "• " + l("Can't walk without stopping after every step"));
 
     // In case you don't get the joke, know that it's a parody on Illutia.
-
+    mesc l("PS. You'll gain experience if you hang around here with friends. Ask Melinda for drinks and pay a round for them! - Management");
     close;
 
 OnInit:
     .distance = 3;
-
-////////// UNFINISHED //////////
-////////////////////////////////
-// REMOVE THIS CODE WHEN THIS //
-// NPC IS NO LONGER A WIP //////
-////////////////////////////////
-//if (!debug) disablenpc(.name$);
-///////// UNFINISHED ///////////
-
     end;
 }
+
+// This is part of AFKing Experience
+008-2-2,28,33,0	script	#AFKHurns	NPC_HIDDEN,0,0,{
+    end;
+
+OnTouch:
+    addtimer2(3000, "#AFKHurns::OnSpeeching");
+    end;
+
+OnSpeeching:
+    AFKLoop("#AFKHurns::OnSpeeching", "008-2-2", 33, 27, 48, 38);
+    end;
+}
+
+008-2-2,50,30,0	duplicate(#AFKHurns)	#AFKHurns2	NPC_HIDDEN,1,0

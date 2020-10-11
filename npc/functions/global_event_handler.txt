@@ -24,6 +24,7 @@ OnPCLoginEvent:
     callfunc("ReceiveScheduledBroadcast");
     callfunc("FixBankVault");
     callfunc("GrantSuperSkill");
+    callfunc("AFKLogin");
     end;
 
 OnPCLogoutEvent:

@@ -1,0 +1,69 @@
+// Moubootaur Legends Script
+// Author:
+//  Jesusalva
+//  Hocus Pocus Fidibus
+//  Micksha
+// Description:
+//  Professor - allows you to gain EXP for idling (Speech skill)
+//  Modified for The Mana World. Please update the bottom of this file always.
+
+// AFKLoop(label, map, x1, y1, x2, y2)
+function	script	AFKLoop	{
+    deltimer(getarg(0)); // safeguard
+    .@m$=getarg(1);
+    .@x1=getarg(2);
+    .@y1=getarg(3);
+    .@x2=getarg(4);
+    .@y2=getarg(5);
+
+    // Limit maximum AFK TIme using the same rule as Moubootaur Legends
+    // Max AFK time is determined as 30 minutes + 1 second every 10 minutes AFKed
+    // Capped at 2 hours (you've AFK'ed 37 days and 12 hours - 900 hours)
+    .@maxafk=min(7200, 1800+(AFKING/600));
+
+    // Check if this timer is still relevant
+    if (getmap() != .@m$)
+        return false;
+
+    addtimer2(3000, getarg(0));
+
+    // To receive AFK experience, you must be sitting at the table...
+    if (!isin(.@m$, .@x1, .@y1, .@x2, .@y2))
+        return false;
+
+    // ...And be idle for less than .@maxafk
+    if (checkidle() > .@maxafk)
+        return false;
+
+    // Calculate amount of EXP based on players in the square
+    // Every 2 players grant you 1 XP, capped at 10 xp
+    // For job experience, it is twice as difficult.
+    .@ppl=getareausers(.@m$, .@x1, .@y1, .@x2, .@y2);
+    .@bxp=cap_value(1+.@ppl/2 , 1, 10);
+    .@jxp=cap_value(1+.@ppl/4 , 1, 5);
+
+    // Beer and Red Plush Wine modifiers
+    if (getstatus(SC_CONFUSION)) {
+        .@bxp+=1;
+        //.@jxp+=1;
+    } else {
+        .@bxp=1;
+        .@jxp=1;
+    }
+
+    // Increase time AFK'ed timers and grant experience
+    AFKING+=1;
+    getexp .@bxp, .@jxp;
+    return true;
+}
+
+// Record memory for player login, re-firing timers when player is in a bar.
+function	script	AFKLogin	{
+    .@m$=getmap();
+    if (.@m$ == "008-2-2")
+        addtimer2(3000, "#AFKHurns::OnSpeeching");
+    else if (.@m$ == "001-2-28")
+        addtimer2(3000, "#AFKArtis::OnSpeeching");
+    return;
+}
+
