@@ -1,0 +1,32 @@
+// Galimatia quest debug
+// Author:
+//    Livio
+//    Someone else I've forgot the name
+
+function	script	QuestDebug58	{
+	do
+	{
+		clear;
+		setnpcdialogtitle l("Quest debug");
+		mes "ArgaesQuest_Galimatia";
+		mes "---";
+		mes l("Quest state: @@", getq(ArgaesQuest_Galimatia));
+		next;
+
+		GenericQuestDebug ArgaesQuest_Galimatia,
+			l("[RESET QUEST] Does not have the quest"), 0,
+			l("PC have to pour chemicals on dirt"), 1,
+			l("Galimatia needs Fertility Potion ingredients"), 2,
+			l("PC have to pour Fertility Potion on the same spot"), 3,
+			l("Something grows or it should be"), 4,
+			l("Galimatia offers a reward"), 5,
+			l("Galimatia offers to exchange flower things"), 6;
+
+		if (@menuret < 0)
+		{
+			return;
+		}
+
+	} while (1);
+	return;
+}

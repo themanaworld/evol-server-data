@@ -108,7 +108,8 @@ function	script	GlobalQuestDebug	{
                 l("Inspector"), HurnscaldQuests_Inspector,
                 l("Forest bow"), HurnscaldQuests_ForestBow,
                 l("Wooden shield"), HurnscaldQuests_WoodenShield,
-                "Kfahr",HurnscaldQuests_Kfahr;
+                "Kfahr",HurnscaldQuests_Kfahr,
+                "Galimatia",ArgaesQuest_Galimatia;
 
             switch (@menuret)
             {

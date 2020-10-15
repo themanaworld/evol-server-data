@@ -1,20 +1,457 @@
 // Evol scripts.
 // Author:
-//    Micksha
+//	Micksha
+//	The other player I've forgot the name
+//	Livio
+//  Jesusalva
 // Description:
-//    Galmatia the beekeeper.
+//	Galimatia the beekeeper.
 // THIS IS A PLACEHOLDER!
 
-008-1-1,113,59,0	script	Galimatia	NPC_GALIMATIA,{
-    speech
-        l("Hello."),
-        l("If only someone could help me to make my flowers bloom again."),
-        l("I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.");
+// KEEP item_db.conf updated as well
 
-    close;
+function	script	usePurificationPotion	{
+	// Check quest status, if not in a quest provide default item behaviour
+    if (getq(ArgaesQuest_Galimatia) == 1) {
+		// Do as requested by quest
+		if (isin("008-1-1", 95, 45, 99, 48)) {
+			setq(ArgaesQuest_Galimatia, 2);
+			message strcharinfo(0), l("Done. Maybe it's time to ask Galimatia what to do now.");
+			delitem PurificationPotion, 1;
+		} else {
+			message strcharinfo(0), l("Hmm... I'm sure that is not the right place to put it.");
+			return true;
+		}
+	} else return false;
+}
+
+function	script	useFertilityPotion	{
+	// Check quest status, if not in a quest provide default item behaviour
+    if (getq(ArgaesQuest_Galimatia) == 3) {
+		// Do as requested by quest
+		if (isin("008-1-1", 95, 45, 99, 48)) {
+			setq(ArgaesQuest_Galimatia, 4);
+			message strcharinfo(0), l("All right! I've poured even this one..");
+			delitem FertilityPotion, 1;
+		} else {
+			message strcharinfo(0), l("Hmm... This one is supposed to be poured where the other one were.");
+			return true;
+		}
+	} else return false;
+}
+
+// ------------------------------------
+008-1-1,113,59,0	script	Galimatia	NPC_GALIMATIA,{
+    function advanceQuest;
+    function printIngredients;
+
+    function QuestPart0;
+    function QuestPart1;
+    function QuestPart2;
+    function QuestPart3;
+    function QuestPart4;
+    function QuestPart5;
+    function QuestPart6;
+
+    // TODO FIXME remove this once ready
+    if (!debug) {
+        speech
+            l("Hello."),
+            l("If only someone could help me to make my flowers bloom again."),
+            l("I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.");
+        close;
+    }
+
+	switch(getq(ArgaesQuest_Galimatia)) {
+		case 0: QuestPart0(); break;
+		case 1: QuestPart1(); break;
+		case 2: QuestPart2(); break;
+		case 3: QuestPart3(); break;
+		case 4: QuestPart4(); break;
+		case 5: QuestPart5(); break;
+		case 6: QuestPart6(); break;
+		default:
+			mesq l("[Invalid quest status: %d, check script]", getq(ArgaesQuest_Galimatia));
+	}
+	close;
+
+// ----------------
+/*
+	@brief Prints the list of quest ingredients on the NPC window
+	@param Array with items IDs
+	@param Array with relative amount required
+	@returns nothing
+*/
+function printIngredients {
+	for (.@i = 0; .@i < getarraysize(getarg(0)); .@i++) {
+		mesf(" - %d %s", getelementofarray(getarg(1), .@i), getitemlink(getelementofarray(getarg(0), .@i)));
+	}
+	return;
+}
+
+/*
+	@brief Checks if player has items required
+	@param Array with required items IDs
+	@param Array with relative amount required
+	@returns false if player doesn't have required items
+*/
+function checkForItems {
+	for (.@i = 0; .@i < getarraysize(getarg(0)); .@i++) {
+		// If even a single thing is missing abort immediately
+		if(getelementofarray(getarg(1), .@i) > countitem(getelementofarray(getarg(0), .@i))) {
+			return false;
+		}
+	}
+	return true;
+}
+
+/*
+	@brief Craft an item from some other items. All input items got deleted.
+	@param Array with required items IDs
+	@param Array with relative amount required
+	@param output item IDs
+	@param output amount
+	@returns 0 if successful, 1 if player lack ingredients, 2 if overburdened, 255 code error
+*/
+function craftFromPlayer {
+	// Check input parameter amount
+	if (getargcount() != 4) return 255;
+
+	// Check item amounts
+	if (!checkForItems(getarg(0), getarg(1))) return 1;
+
+	// Check if player is able to carry output from crafting
+	if (!checkweight(getarg(2), getarg(3))) return 2;
+	else getitem(getarg(2), getarg(3));
+
+	// Delete Items from player inventory
+	for (.@i = getarrayindex(getarg(0)); .@i < getarraysize(getarg(0)); .@i++) {
+		delitem(getelementofarray(getarg(0), .@i), getelementofarray(getarg(1), .@i));
+	}
+
+	return 0;
+}
+
+/*
+	@brief Craft an item from some other items. All input items will be deleted in case of success.
+	@param Array with required items IDs
+	@param Array with relative amount required
+	@param output item IDs
+	@param output amount
+	@param NPC question about ingredients
+	@param NPC answer if successful
+	@param NPC answer if player lacks ingredients
+	@param NPC answer if player is overburdened
+	@returns true if successful
+*/
+function NPCcrafting {
+	speech
+		getarg(4);
+	if (askyesno() == ASK_NO) {
+		mesq l("Come on, move!");
+		close();
+	} else {
+		switch(craftFromPlayer(getarg(0), getarg(1), getarg(2), getarg(3))) {
+			case 0:
+				mesq getarg(5);
+				return true;
+				break;
+
+			case 1:
+				mesq getarg(6);
+				printIngredients(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT);
+				break;
+
+			case 2:
+				mesq getarg(7);
+				break;
+
+			case 255:
+				mesq l("[BUG ENCOUNTERED] Dammit...");
+				break;
+
+			default:
+		}
+	}
+	return false;
+}
+
+// FIXME comment better
+// Makes NPC to ask for ingredients
+function NPCdemandsIngredients {
+	mesq l("Fine. The land is healthy now but nothing will grow yet. This time I need you to get:");
+	printIngredients(.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT);
+	mesq l("So making a %s will make things easier.", getitemlink(.REQ1_OUTPUT));
+	if (NPCcrafting(
+			.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
+			.REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT,
+			l("Okay. Give me a second..."),
+			l("Nope. You don't have enough ingredients for that."),
+			l("I can't give you nothing if you don't leave some room for it!")
+			)
+		) {
+		advanceQuest();
+		mesq l("You must now pour it over the land again in the same spot.");
+	}
+	close;
+	return;
+}
+
+
+//-----------------
+
+function advanceQuest {
+	setq(ArgaesQuest_Galimatia, getq(ArgaesQuest_Galimatia) + 1);
+	return;
+}
+
+/*
+You arrive and get off the boat and walk down a path to a farm where there is a Bee farmer named Galimatia.
+Her Bees have moved to somewhere else, because his field of flowers has died from a blight. He needs some way to still gather honey to earn his living.
+Galimatia needs to tend to other work and can’t get away, so she asks player for some help. She sends player after 5 Pink Petals and 1 Bottle of Water.
+*/
+
+function QuestPart0 {
+	speech
+		l("Hello."),
+		l("If only someone could help me to make my flowers bloom again."),
+		l("I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.");
+
+	select(
+		l("What about making some fertilizing-something?"),
+		l("I don't have time to spend on flowers.")
+	);
+
+	switch(@menu) {
+		case 1:
+			mesq l("All right! I need you to get:");
+			printIngredients(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT);
+			mesq l("So I can make a %s out of it.", getitemlink(.REQ0_OUTPUT));
+			if (NPCcrafting(
+				.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
+				.REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT,
+				l("Have you got those things with you?"),
+				l("Okay. Give me a second..."),
+				l("Nope. You don't have enough ingredients for that."),
+				l("I can't give you nothing if you don't leave some room for it!")
+				)
+			) {
+				advanceQuest();
+				mesq l("You must now pour it over the land.");
+			}
+			close;
+			break;
+		default:
+			// FIXME This got to be improved in other script parts as well
+			mesq
+				any(
+					l("Gave up already?"),
+					l("Okay..."),
+					l("Go stay afk in TMW Legacy if you don't want to make yourself useful."),
+					l("Hehe, hehe. Well, come back if you change your mind."
+				)
+			);
+			close;
+	}
+	return;
+}
+
+/*
+She made a Purification Potion out of ingredients to heal the land and gives it to the player and says it must be poured over the land (marked in some way. Like in the Orum and Waric follow-up quest).
+*/
+function QuestPart1 {
+	if(checkForItems(.REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT)) {
+		speech
+			l("What's up? You want me to show how to open a bottle and pour its content on the ground?");
+	} else {
+		speech
+			l("Why you don't have a %s with you? You need me to make another one?", getitemlink(.REQ0_OUTPUT));
+		if (askyesno() == ASK_NO) {
+			mesq l("Come on, stop wasting my time!");
+			close();
+		} else{
+			if (NPCcrafting(
+				.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
+				.REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT,
+				l("Again, do you have what I need to make that?"),
+				l("Here we go again..."),
+				l("No! Have you already forgot what I need for it?"),
+				l("You don't even have the space in your inventory to carry it!!! Oh, man you are a disaster...")
+				)
+			) {
+				// FIXME Put some messages about making again the potion so the NPC can look different and react like it was somewhat disturbed by player failure
+				mesq l("Remember: you must pour it over the land.");
+			}
+		}
+	}
+	close;
+	return;
+}
+
+/*
+If you weren't able to trash the potion, the land is now healed, but nothing grows. Galimatia is happy the land is well and wants to help. She sends player to get 1 Bottle of Water, 10 Maggot Slime and 5 Mauve Herb. From this she makes a Fertility Potion. Again she gives it to the player and says it must be poured in the same place. Player uses it and the effect comes again.
+*/
+
+
+function QuestPart2 {
+	mesq l("Fine. The land is healthy now but nothing will grow yet. This time I need you to get:");
+	printIngredients(.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT);
+	mesq l("So making a %s will make things easier.", getitemlink(.REQ1_OUTPUT));
+	if (NPCcrafting(
+			.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT,
+			.REQ1_OUTPUT, .REQ1_OUTPUT_AMOUNT,
+			l("Have you got what we need?"),
+			l("Here it is!"),
+			l("No! You haven't!"),
+			l("I can't give you nothing if you don't leave some room for it!")
+			)
+	) {
+		advanceQuest();
+		mesq l("You must now pour it over the land again in the same spot.");
+	}
+	close;
+	return;
+}
+
+
+function QuestPart3 {
+	if(checkForItems(.REQ1_OUTPUT, .REQ1_OUTPUT_AMOUNT)) {
+		speech
+			l("Come on pal, what's the matter?");
+	} else {
+		speech
+			l("Got drunk with the %s? You need me to make another one?", getitemlink(.REQ1_OUTPUT));
+		if (askyesno() == ASK_NO) {
+			mesq l("Come on, stop wasting my time!");
+			close();
+		} else{
+			if (NPCcrafting(
+				.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT,
+				.REQ1_OUTPUT, .REQ1_OUTPUT_AMOUNT,
+				l("Again, do you have what I need to make that?"),
+				l("Here we go again..."),
+				l("No! Have you already forgot what I need for it?"),
+				l("I can't give you nothing if you don't leave some room for it!")
+				)
+			) {
+				// FIXME Put some messages about making again the potion so the NPC can look different and react like it was somewhat disturbed by player failure
+				mesq l("Remember: you must now pour it over the land.");
+			}
+		}
+	}
+	close;
+	return;
+}
+
+/*
+Part 3
+Flowers now can be planted. Therefore Galimatia needs help of Blossom. She sends the player to her to get 5 packages of flower seeds.
+NOTE: Flower seeds are dropped directly from Clover Patches, however grass seeds are more common.
+*/
+
+function QuestPart4 {
+	speech
+			l("Now I need %d %s.", .REQ2_INGREDIENTS_AMOUNT, getitemlink(.REQ2_INGREDIENTS));
+	// We take player items without asking
+	if(checkForItems(.REQ2_INGREDIENTS, .REQ2_INGREDIENTS_AMOUNT)) {
+		speech
+			l("Nice, gimme that!");
+		advanceQuest();
+	} else {
+		speech
+			l("Go get some!");
+	}
+	close;
+	return;
+}
+
+/*
+The fields are in bloom and the Bees hard at work bringing stuff to the Beehives.
+Galimatia is thankful for your help and offers to pay you a larger reward if you help her collect honey as well.
+Honey is dropped by Beehives. To gather honey from Beehives you must defeat the bees protecting it, which will attack you when you attack their hive. When you kill a hive, 2 - 3 aggro bees spawn. The player must kill them (which is not so easy). (Some hives don't have Honey and some do - 50% drop rate should do the trick). The hive is a mob just like the pink flowers. Four honey jars complete the quest.
+Galimatia reassures you that these are giant bees and they will rebuild their hives quickly so it's not all as cruel as it may seem.
+
+Galimatia gives the player their reward: Player must select a simple Magic Wand (provides Healing Spell) or a Mana Torch (provides Fire Attack Spell), both can be used as a torch to keep angry bees away and a Jar of Honey.
+*/
+
+function QuestPart5 {
+	speech
+		l("Nice job."),
+		l("What do you want?"),
+		l("A %s or a %s?", getitemlink(.QUESTPRIZES[0]) , getitemlink(.QUESTPRIZES[1]));
+	select(
+		l("I want the %s!",     getitemname(.QUESTPRIZES[0])),
+		l("A %s?!? Cool!!!",    getitemname(.QUESTPRIZES[1]))
+	);
+	if (!checkweight(.QUESTPRIZES[@menu-1], .QUESTPRIZES_AMOUNT[@menu-1])) {
+		mesq l("I can't give you a prize if you are overburdened. Make room in your inventory!");
+	}
+	else{
+		getitem(.QUESTPRIZES[@menu-1], .QUESTPRIZES_AMOUNT[@menu-1]);
+		advanceQuest();
+		mesq l("Use those wisely and use safety glasses.");
+	}
+	close;
+	return;
+}
+
+/*
+Part 6 (Extra Quest)
+This enables the player to receive a Rose Hat. Fighting the flowers that were just planted, the player will receive roses and / or tulips as a drop. in Part 3 Blossom may mention that she always is happy about receiving the rare Blue Rose. She trades the Rose Hat for 10 Blue Roses and a preparation fee of 1.000 GP. She offer this only after everything before is finished.
+*/
+
+function QuestPart6 {
+	mesq l("Hello again! Do you want me to exchange %d %s and %d GP for a %s?",
+			.REQ3_INGREDIENTS_AMOUNT[0], getitemlink(.REQ3_INGREDIENTS[0]),
+			.REQ3_COST, getitemlink(.REQ3_OUTPUT)
+	);
+	if (askyesno() == ASK_NO) {
+		mesq l("As you wish.");
+		close();
+	} else {
+		if(Zeny>=.REQ3_COST) {
+			if(NPCcrafting(
+				.REQ3_INGREDIENTS, .REQ3_INGREDIENTS_AMOUNT,
+				.REQ3_OUTPUT, .REQ3_OUTPUT_AMOUNT,
+				l("Do you have what I need?"),
+				l("Have fun!"),
+				l("Nope. I wont exchange for such less."),
+				l("I can't give you nothing if you don't leave some room for it!")
+			)) Zeny-=(.REQ3_COST);
+		} else {
+			mesq l("Ain't working for free, pal!");
+		}
+	}
+	close;
+	return;
+}
 
 OnInit:
-    .bodytype = BODYTYPE_2;
-    .distance = 2;
-    end;
+	// NPC ITEM REQUESTS
+	setarray(.REQ0_INGREDIENTS          , BottleOfWater , PinkPetal );
+	setarray(.REQ0_INGREDIENTS_AMOUNT   , 1             , 5         );
+	.REQ0_OUTPUT            = PurificationPotion;
+	.REQ0_OUTPUT_AMOUNT     = 1 ;
+
+	// FIXME ingredients are wrong (because I'm tired of use /createitems everytime)
+	setarray(.REQ1_INGREDIENTS          , BottleOfWater, MaggotSlime, MauveHerb);
+	setarray(.REQ1_INGREDIENTS_AMOUNT   , 1            , 10         , 5);
+	.REQ1_OUTPUT            = FertilityPotion;
+	.REQ1_OUTPUT_AMOUNT     = 1;
+
+	setarray(.REQ2_INGREDIENTS          , FlowerSeeds);
+	setarray(.REQ2_INGREDIENTS_AMOUNT   , 5);
+
+	setarray(.QUESTPRIZES               , TrainingWand  , RubberBat );
+	setarray(.QUESTPRIZES_AMOUNT        , 1             , 1         );
+
+	setarray(.REQ3_INGREDIENTS          , ABlueRose);
+	setarray(.REQ3_INGREDIENTS_AMOUNT   , 10       );
+	.REQ3_COST              = 1000;
+	.REQ3_OUTPUT            = RoseHat;
+	.REQ3_OUTPUT_AMOUNT     = 1;
+
+	.bodytype = BODYTYPE_2;
+	.distance = 4;
+	end;
 }
