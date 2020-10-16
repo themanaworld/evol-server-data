@@ -21,9 +21,9 @@ OnCall:
     }
 
     // TODO: tmw-like argv splitter
-    getmapxy .@map$, .@void, .@void, UNITTYPE_PC; // get map
+    .@map$ = getmap();
 
-    .@key$ = .@atcmd_parameters$[0];
+    .@key$ = strtolower(.@atcmd_parameters$[0]);
     .@m$ = htget(.hash, .@key$, "Not found");
 
     if (.@m$ == "Not found")
@@ -34,8 +34,21 @@ OnCall:
     changemusic .@map$, .@m$ + ".ogg";
     end;
 
+OnMyself:
+    .@key$ = strtolower(.@atcmd_parameters$[0]);
+    .@m$ = htget(.hash, .@key$, "Not found");
+
+    if (.@m$ == "Not found")
+    {
+        .@m$ = implode(.@atcmd_parameters$[0], " ");
+    }
+
+    changeplayermusic .@m$ + ".ogg";
+    end;
+
 OnInit:
     bindatcmd "music", "@music::OnCall", 0, 99, 1;
+    bindatcmd "jukebox", "@music::OnMyself", 0, 50, 0;
 
     .hash = htnew; // create hashtable
     htput(.hash, "forest",     "bartk - in the forest of the birches");
