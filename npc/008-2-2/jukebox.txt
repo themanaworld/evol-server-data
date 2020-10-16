@@ -1,0 +1,29 @@
+// The Mana World Script
+// Author:
+//  Jesusalva
+//  Hocus Pocus Fidibus
+// Description:
+//  Music box for a classy AFKing experience
+//  GMs can play on whole map but default to player only
+
+008-2-2,39,27,0	script	#JukeboxHurns	NPC_JUKEBOX,{
+    mesc l("Select a music");
+    .@track="jukebox"::HurnscaldPrompt();
+    .@global=ASK_NO;
+    if (is_evtc()) {
+        mes "Play music globally?";
+        mes "* Selecting \"No\" will play only to yourself (default behavior)";
+        .@global=askyesno();
+    }
+    if (.@global == ASK_YES)
+        "jukebox"::BroadcastMusic(getmap(), .@track);
+    else
+        "jukebox"::JukeboxMusic(.@track);
+    close;
+
+OnInit:
+    .distance = 3;
+    end;
+}
+
+

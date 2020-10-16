@@ -1,0 +1,57 @@
+// The Mana World Script
+// Author:
+//  Jesusalva
+//  Gumi
+// Description:
+//  Music functions
+//
+// NOTE: This NPC uses the new public/private function call system to avoid
+//       the use of doevent.
+// Syntax:
+//      "jukebox"::HurnscaldPrompt(); → Makes a menuint for selecting hurns tracks
+//      "jukebox"::JukeboxMusic(ID); → Changes music based on prompted ID
+//      "jukebox"::BroadcastMusic(MAP, ID); → Changes music based on prompted ID
+
+-	script	jukebox	32767,{
+    end;
+
+// Helpers
+public function JukeboxMusic {
+    changeplayermusic .MUSIC_ARRAY[getarg(0)];
+    return;
+}
+
+public function BroadcastMusic {
+    changemusic getarg(0), .MUSIC_ARRAY[getarg(1)];
+    return;
+}
+
+// public function listing
+//  * Hurnscald
+
+public function HurnscaldPrompt {
+    menuint
+        "Cancel", -1,
+        "Forest of Birches", 0,
+        "Adventure Begins", 1,
+        "Magick Real", 5;
+    mes "";
+    if (@menuret == -1)
+        close;
+    return @menuret;
+}
+
+// Initialize stuff which will be needed
+OnInit:
+    .MUSIC_ARRAY[0] = "bartk - in the forest of the birches.ogg";
+    .MUSIC_ARRAY[1] = "bartk - the adventure begins.ogg";
+    .MUSIC_ARRAY[2] = "eric matyas - ghoulish fun.ogg";
+    .MUSIC_ARRAY[3] = "eric matyas - surreal place.ogg";
+    .MUSIC_ARRAY[4] = "ezili - ocean sounds.ogg";
+    .MUSIC_ARRAY[5] = "magick - real.ogg";
+    end;
+}
+
+
+
+
