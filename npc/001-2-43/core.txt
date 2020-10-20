@@ -42,6 +42,7 @@ OnRead:
         // mesc .@t$;
         mes l("This is it - Henry's files!");
         mes l("I need to decide swiftly what I'll do with them before I'm caught.");
+        mesc l("This decision will be remembered."), 1;
         next;
         select
             l("Hide the file below the pots"),

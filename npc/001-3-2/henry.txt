@@ -3,8 +3,8 @@
 //    Micksha
 //    Jesusalva
 // Description:
-//    Henry, a Brotherhood member managing the Hideout in Artis.
-// TODO: Koga-related functions (possibly in another NPC)
+//    Henry, a Thief Faction member managing the Hideout in Artis.
+//    Pretends to be a nice pirate.
 
 001-3-2,24,51,0	script	Henry#001-3-2	NPC_HENRY,{
     function proposeFirstQuest;
@@ -51,7 +51,7 @@ function proposeFirstQuest {
         l("Ah, its you. Sophialla already informed me. I can help you to go to Woodland, but you also could do me a favor."),
         l("The Legion has been on my tail for a while. They're a bit annoying, you know."),
         l("I mean, what's wrong with smuggling goods?! The town markets would have way less stuff otherwise. You can understand me, right? Don't answer."),
-        l("Anyway, you want to get on my smuggling ship, right? So you better help me out!"),
+        l("Anyway, you want to get on our pirate ship, right? So you better help me out!"),
         b(l("In Artis Townhall Archives,"))+" "+l("there is an entry about me."),
         l("If they somehow catch me again, they'll use this entry as evidence to get me on a harsher punishment..."),
         l("So please find my file on the archives and, I don't know, deal with it?"),
@@ -121,10 +121,10 @@ function reportFirstQuest {
             mesq l("Heh... I hope you disposed of the file.");
             next;
             mesn;
-            mesq l("I'll keep my end on the bargain. The Thieves Association will bring you to the Argaes region.");
+            mesq l("I'll keep my end of the bargain. The Hand- I mean, we pirates will bring you to the Argaes region.");
             next;
             mesn;
-            mesq l("Can't bring you directly to the town, but don't worry.");
+            mesq l("Can't bring you directly to the town because some... misunderstandings, but don't worry.");
             next;
             mesn;
             mesq l("Anyway, here's some gold. I might have another task for you if you want.");
@@ -144,18 +144,32 @@ function reportFirstQuest {
 function proposeSecondQuest {
     speech
         l("Ah, its you again. Welcome back."),
-        l("So, if you want to go to Hurnscald, just whistle on the beach."), // FIXME Not Koga? Talk to another NPC, though.
+        l("So, if you want to go to Hurnscald, just talk to the pirate down there."),
         l("Anyway, I still could use your help! You see, I would like to play tricks on the legion members during the night."),
         l("For this, I would like you to to repair the secret passage to the Legion Building."),
         l("Don't use the passage, you're not skilled enough and will be busted! Just repair it, it'll be enough.");
     mesc l("You suspect that he is withholding information. Do he really only wants to do pranks? But then, do you care with what he wants to do inside?");
     next;
     mesc l("Accept this quest?"), 3;
-    if (askyesno() == ASK_YES) {
+    select
+        l("Actually, I wanted to ask you something."),
+        l("Yes"),
+        l("No");
+    mes "";
+    if (@menu == 2) {
         mesn;
         mesq l("Great! Then I'll be counting on you!");
         setq1 ThiefQuests_Artis, 4;
         close;
+    } else if (@menu == 1) {
+        mesn;
+        mesq l("Shush - No questions.");
+        next;
+        mesn;
+        mesq l("Thie-- *ahem* pirates do not reply to questions.");
+        next;
+        mesn;
+        mesq l("...What? I'm totally a pirate. Arr harr! See? Pirate.");
     }
     return;
 }
@@ -234,10 +248,10 @@ function proposeThirdQuest {
     speech
         l("Thanks for the help the other day."),
         l("I have a beloved friend called Nunia, who handles the Thieves' Guild branch in Hurnscald."),
-        l("What, you thought we wouldn't have an organization and structure? Please. We can even smuggle in a major ship route!"),
+        l("Bet you thought we were simple pirates, right? No smart remarks, please."),
         l("Anyway, I haven't heard about her from quite a while, which is concerning."),
         l("Could you please go there see if she is well?"),
-        l("I'll give you something... useful... If you want to pursue in being a thief. I'll even put a good word about you.");
+        l("I'll give you something... useful... If you want to pursue in being a thief. I'll even put a good word about you... If you manage to find our headquarters somewhere in the world, that is!");
     next;
     mesc l("Accept this quest?"), 3;
     if (askyesno() == ASK_YES) {
@@ -297,7 +311,7 @@ function reportThirdQuest {
         mesq l("Of course. I'm glad she is safe. You know, we don't really care with this Legion versus Brotherhood stifle.");
         next;
         mesn;
-        mesq l("The brotherhood members here are friendly, but mostly because our interests coincide. In Hurnscald, where their main base is, we're enemies.");
+        mesq l("The brotherhood spies here are... friendly, but mostly because our interests coincide. But in Hurnscald, where their main base is, we're enemies.");
         next;
         inventoryplace Lockpicks, 5;
         mesn;
