@@ -8,13 +8,13 @@
 020-2-5,47,28,0	script	Filipa	NPC_RAIJIN_FEMALE_LEGION_ARTIS,{
     speech
         l("Hi there."),
-        l("Looks like someone ran out of ideas for placeholder NPCs."),
-        l("So if you want, you can hunt something, or cook something, or craft somethig."),
-		l("Whatever.");
+        l("This is no place for you, get moving!"),
+        l("If you want, you can hunt something, or cook something, or craft something."),
+		l("Whatever, just get out of here already!");
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

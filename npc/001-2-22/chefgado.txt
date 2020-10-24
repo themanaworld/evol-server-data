@@ -7,16 +7,107 @@
 //    La Johanne Chef.
 
 001-2-22,27,28,0	script	Chef Gado#Artis	NPC_CHEF_GADO,{
+    function foodQuest;
 
     .@r = rand(3);
     if (.@r == 0) npctalk3 l("What are you doing in my kitchen?! Get out, it's not a place for kids!");
     if (.@r == 1) npctalk3 l("Where is the damn salt?! Give me the salt, I know you have it!");
     if (.@r == 2) npctalk3 l("Are you going to stand here all day long? Do the dishes or go away.");
 
+    if (getq(General_SmearedHands) < 3)
+        foodQuest();
     close;
+
+function foodQuest {
+    .@q=getq(General_SmearedHands);
+    mesc l("%s seems busy as usual.", l("Chef Gado"));
+    select
+        l("I'll get moving, sorry!"),
+        //rif(.@r == 1 && countitem(Salt), l("Offer him the salt")),
+        l("Can you teach me cooking?");
+    mes "";
+    if (@menu == 1)
+        return;
+    // FOOD QUEST: BEGIN
+    .@ally=(getq(ShipQuests_ChefGado) == 4); // TRUE if you helped Gado
+    mesn;
+    mesq (.@ally ? l("I suppose I could. You helped me, after all.") : lg("Why should I help you, traitor?"));
+    next;
+    // Empty Bowl needed
+    if (!countitem(EmptyBowl)) {
+        mesn;
+        mesq l("Anyway: First, you'll need an %s. %s", getitemlink(EmptyBowl),
+            (.@ally ? l("Cannot get one here in Artis, though. Well, if you travel far enough...") : l("Stop wasting my time!")));
+        return;
+    }
+    // Recipe Book needed
+    if (!countitem(RecipeBook)) {
+        mesn;
+        mesq l("Anyway: First, you'll need a %s. You cannot cook without that. So go find one!", getitemlink(RecipeBook));
+        next;
+        mesn;
+        mesq l("These books are annoyingly expensive, but maybe you have luck elsewhere. I'm sure some housewife could give you one for helping her husband...");
+        next;
+        mesn;
+        mesq l("That's how I got mine, anyway.");
+        next;
+        mesn;
+        mesq l("Some nice lady called Ya... Micksha? No, it was not Yamicksha... For the life of me, I can't remember...");
+        // FIXME: I'm ignoring that unpractical plot in favor of clarity
+        return;
+    }
+
+    // Quest Loop
+    if (.@q == 0) {
+        mesn;
+        mesq l("You got a bowl, I see. You won't be finding another one, so be careful with that.");
+        next;
+        // Will only learn Sailor Stew Recipe if helped Gado instead Julia
+        if (.@ally) {
+            mesn;
+            mesq l("Now, watch and learn: The Sailor Stew Recipe!");
+            mesc l("Learned %s recipe!", getitemlink(SailorStew)), 2;
+            RECIPES[CraftSailorStew]=true;
+            next;
+        } else if (!RECIPES[CraftSailorStew]) {
+            // They requested for a neutral approach because Julia
+            mesn;
+            mesq l("I will teach you %s... But for you, it will be %s E.",
+                    getitemlink(SailorStew), format_number(5000));
+            if (Zeny < 5000)
+                return;
+            next;
+            mesc l("Pay Chef Gado the gold?");
+            if (askyesno() == ASK_NO || Zeny < 5000)
+                return;
+            mesn;
+            mesq l("Now, watch and learn: The Sailor Stew Recipe!");
+            mesc l("Learned %s recipe!", getitemlink(SailorStew)), 2;
+            RECIPES[CraftSailorStew]=true;
+            Zeny-=5000;
+            next;
+        }
+        setq General_SmearedHands, 1;
+        .@q = 1;
+        mesn;
+        mesq l("Anyway, for the recipe, just add a few carps, carrots, manana, and roasted acorn in this order.");
+        next;
+    }
+    if (.@q == 1 || .@q == 2) {
+        mesn;
+        mesq l("Now, your next task is: I've heard rumors... About some delicious food, like %s...", getitemlink(any(BarbecuePlate, VeggiePlate)));
+        next;
+        mesn;
+        mesq l("They're related to Mouboos, but Artis cuisine is the worst. Go find the recipes!!");
+        next;
+    }
+    mesn;
+    mesq l("Get moving!");
+    return;
+}
 
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
     end;
 }

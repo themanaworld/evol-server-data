@@ -342,8 +342,8 @@
             }
         }
 
-        // only start if player talked with Lozerk
-        if (getq(Artis_Legion_Progress) < 1 )
+        // only start if player talked with Lozerk and is not an enemy
+        if (getq(Artis_Legion_Progress) < 1 || faction_standing("LEGION", true) < 1)
         {
             speech(S_FIRST_BLANK_LINE | S_LAST_NEXT,
                         l("This is the training ground. And I ain't training nobody unless Lieutenant Lozerk tells me to!"),

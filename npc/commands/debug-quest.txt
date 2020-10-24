@@ -109,7 +109,8 @@ function	script	GlobalQuestDebug	{
                 l("Forest bow"), HurnscaldQuests_ForestBow,
                 l("Wooden shield"), HurnscaldQuests_WoodenShield,
                 "Kfahr",HurnscaldQuests_Kfahr,
-                "Galimatia",ArgaesQuest_Galimatia;
+                "Galimatia",ArgaesQuest_Galimatia,
+                "Rossy",HurnscaldQuests_Rossy;
 
             switch (@menuret)
             {
@@ -185,6 +186,31 @@ OnCall:
     closeclientdialog;
     end;
 
+OnSetq:
+    if (.@atcmd_numparameters < 2) {
+        dispbottom "setq called with invalid arguments (min. 2)";
+        dispbottom "GM Command syntax: @setq <quest_id> <val1> <val2> <val3>";
+        end;
+    }
+    .@q=atoi(.@atcmd_parameters$[0]);
+    switch (.@atcmd_numparameters) {
+        case 4:
+            setq3 .@q, atoi(.@atcmd_parameters$[3]);
+        case 3:
+            setq2 .@q, atoi(.@atcmd_parameters$[2]);
+        case 2:
+            setq1 .@q, atoi(.@atcmd_parameters$[1]);
+            dispbottom l("Quest %s modified by GM", getquestlink(.@q));
+            specialeffect 54, SELF, playerattached();
+            break;
+        default:
+            dispbottom "setq called with invalid arguments (max. 4)";
+            dispbottom "GM Command syntax: @setq <quest_id> <val1> <val2> <val3>";
+            break;
+    }
+    end;
+
 OnInit:
     bindatcmd "qdebug", "@qdebug::OnCall", 0, 99, 0;
+    bindatcmd "setq", "@qdebug::OnSetq", 99, 99, 1;
 }

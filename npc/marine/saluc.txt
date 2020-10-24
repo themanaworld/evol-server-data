@@ -1,0 +1,138 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Saluc Golden Beard, one of the greediest ship captains in Argaes.
+// THIS IS A PLACEHOLDER!
+
+// If you logout on instance, ensure TravelFix() can fix your position
+marine	mapflag	nosave	marine-2,40,32
+
+// Ship captain
+marine,25,24,0	script	Saluc Golden Beard	NPC_HAL,{
+    function confirmTravel;
+    function artisTravel;
+    if (.artis)
+        artisTravel();
+    mesn;
+    mesq l("Hello, adventurer! I am Saluc the Golden Beard!");
+    next;
+    mesn;
+    mesq l("No, I'm not a scammer! You'll get a ship travel with me, I just... charge a bit more for profit.");
+    next;
+    mesn;
+    mesq l("So, to where you want to go?");
+    mesc l("You are currently at %s.", LOCATION$);
+    menuint
+        rif(LOCATION$ != "Tulim", l("To Tulimshar")), TP_TULIM,
+        rif(LOCATION$ != "Hurns", l("To Hurnscald")), TP_HURNS,
+        rif(LOCATION$ != "Candor", l("To Candor")), TP_CANDOR,
+        l("No, I'll save my money."), TP_NONE;
+    mes "";
+    if (@menuret == TP_NONE)
+        close;
+    mesn;
+    mesq l("Excellent! Hehehe... That'll be %d E!", .price);
+    if (.artis)
+        mesc l("This travel option is NOT advised for new players."), 1;
+    if (Zeny < .price)
+        close;
+    next;
+    mesc l("Travel?");
+    if (askyesno() == ASK_NO || Zeny < .price)
+        close;
+
+    mesn;
+    mesq l("Hehehe... All aboard!");
+    next;
+    confirmTravel(.price);
+    close;
+
+/* Special Artis dialog */
+function artisTravel {
+    mesn;
+    mesq l("Hello, adventurer! I am William D. and I am the captain of this frigate!");
+    next;
+    mesn;
+    mesq l("Gema IV is a good trading ship, but the Legion has requisitioned it...");
+    next;
+    .@price=.price;
+    // NOT a typo; You can self-smuggle yourself w/o the commendation leter.
+    // ...For now.
+    if (getq(Artis_Legion_Progress) >= 6) {
+        mesn;
+        mesq l("Did Q'Anon sent you? Are you enrolled in the Argaes expedition? We're leaving soon so hurry up!");
+        .@price=0;
+    } else {
+        mesn;
+        mesq l("I'm providing transport to the Argaes expedition.");
+        mesc l("William looks around to make sure no one else is listening and continues.");
+        next;
+        mesn;
+        mesq l("Heh, are you curious with the new world? I can make room for an extra \"Crew\" member, if ya catch my drift...");
+        mesc l("NEW PLAYERS: This route is for veterans only."), 1;
+    }
+    next;
+    mesn;
+    mesq l("So, will you board?");
+    next;
+    menuint
+        l("To Argaes!"), TP_ARGAES,
+        l("No, I'll save my money."), TP_NONE;
+    mes "";
+    if (@menuret == TP_NONE)
+        close;
+    if (Zeny < .@price)
+        close;
+    next;
+    mesc l("Travel?");
+    if (.@price)
+        mesc l("This option is not advised."), 1;
+    if (askyesno() == ASK_NO || Zeny < .@price)
+        close;
+
+    mesn;
+    mesq l("Hehehe... All aboard!");
+    next;
+    confirmTravel(.@price);
+    close;
+    return;
+}
+
+/* Warp players to their travel */
+function confirmTravel {
+    closeclientdialog;
+
+    Zeny-=getarg(0);
+    .@i=array_find($@LOCMASTER_TP, @menuret);
+    PC_DEST$=$@LOCMASTER_LOC$[.@i];
+    @timer_navio_running = 1;
+    addtimer (.artis ? 140000 : 50000), "#MarineShip::OnEvent"; // One minute
+    warp "marine-2", 40, 32;
+    return;
+}
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    .price = 100; // Current a constant, but maybe... In future...
+    .artis = false;
+    end;
+
+OnInstanceInit:
+    // Smart Replacement for Artis' version
+    if (instance_mapname("marine") == "marine@Arti") {
+        setnpcdisplay(instance_npcname(.name$), "William D.");
+        .price = 10000;
+        .artis = true;
+    }
+    end;
+}
+
+// Exit door
+marine,42,25,0	script	Exit#Marine	NPC_HIDDEN,0,0,{
+OnTouch:
+    ReturnLastTown();
+    end;
+}
+

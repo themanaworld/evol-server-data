@@ -1,0 +1,654 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Core for rescuing Juliet.
+//    Named as "Juliet" so `pluma npc/*/juliet.txt` resolves to something tangible.
+008-3-0	mapflag	nosave	008-1-1,49,158
+
+008-3-0,92,89,0	script	Summoning Altar#Rossy	NPC_NO_SPRITE,{
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    // Not ready
+    if (.@q2 < ROSSY_READY) {
+        mesn;
+        mesq l("Better not touch this.");
+        close;
+    }
+    // Complete
+    if (.@q2 & ROSSY_BOSSCAVE) {
+        dispbottom l("You find someone hiding behind the altar.");
+        enablenpc instance_npcname("Juliet");
+        disablenpc instance_npcname("Summoning Altar#Rossy");
+        end;
+    }
+    // Battle
+    mesc l("This is the boss room! Be prepared for the worst!!"), 1;
+    callfunc("RossyCave", ROSSY_BOSSCAVE);
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_3;
+    .distance = 4;
+    end;
+
+// Time to configure the map
+OnInstanceInit:
+    .@m$=instance_mapname("008-3-0");
+    // Rebuild spawns
+    // WARNING: Originals were generated automatically!
+    // print('\tareamonster(.@m$, %d, %d, %d, %d, strmobinfo(1, %s), %s, %d);' % (obj.x, obj.y, obj.x+obj.w, obj.y+obj.h, obj.name.replace(' ', ''), obj.name.replace(' ', ''), obj.max_beings))
+    areamonster(.@m$, 30, 113, 37, 127, strmobinfo(1, CaveMaggot), CaveMaggot, 5);
+	areamonster(.@m$, 102, 116, 116, 124, strmobinfo(1, CaveMaggot), CaveMaggot, 5);
+	areamonster(.@m$, 79, 144, 89, 150, strmobinfo(1, CaveMaggot), CaveMaggot, 7);
+	areamonster(.@m$, 158, 87, 168, 99, strmobinfo(1, CaveMaggot), CaveMaggot, 7);
+	areamonster(.@m$, 34, 28, 37, 32, strmobinfo(1, PoisonSkull), PoisonSkull, 1);
+	areamonster(.@m$, 160, 124, 165, 127, strmobinfo(1, Ratto), Ratto, 4);
+	areamonster(.@m$, 155, 163, 156, 170, strmobinfo(1, Ratto), Ratto, 4);
+	areamonster(.@m$, 128, 146, 133, 149, strmobinfo(1, Ratto), Ratto, 4);
+	areamonster(.@m$, 120, 61, 125, 64, strmobinfo(1, Ratto), Ratto, 4);
+	areamonster(.@m$, 138, 64, 148, 71, strmobinfo(1, Crafty), Crafty, 10);
+	areamonster(.@m$, 129, 102, 140, 108, strmobinfo(1, Crafty), Crafty, 6);
+	areamonster(.@m$, 67, 114, 77, 116, strmobinfo(1, Spider), Spider, 3);
+	areamonster(.@m$, 109, 145, 113, 155, strmobinfo(1, Spider), Spider, 5);
+	areamonster(.@m$, 68, 84, 71, 91, strmobinfo(1, Spider), Spider, 4);
+	areamonster(.@m$, 80, 169, 80, 169, strmobinfo(1, DiamondVein), DiamondVein, 1);
+	areamonster(.@m$, 118, 96, 118, 96, strmobinfo(1, GemVeinbloc), GemVeinbloc, 1);
+	areamonster(.@m$, 131, 93, 131, 93, strmobinfo(1, CoalVeinbloc), CoalVeinbloc, 1);
+	areamonster(.@m$, 119, 101, 119, 101, strmobinfo(1, GoldVeinbloc), GoldVeinbloc, 1);
+	areamonster(.@m$, 113, 60, 136, 68, strmobinfo(1, CaveMaggot), CaveMaggot, 7);
+	areamonster(.@m$, 199, 68, 207, 77, strmobinfo(1, Crafty), Crafty, 5);
+	areamonster(.@m$, 160, 47, 177, 52, strmobinfo(1, Crafty), Crafty, 5);
+	areamonster(.@m$, 119, 200, 139, 204, strmobinfo(1, Spider), Spider, 5);
+	areamonster(.@m$, 34, 193, 45, 202, strmobinfo(1, Spider), Spider, 5);
+	areamonster(.@m$, 26, 115, 31, 132, strmobinfo(1, Spider), Spider, 5);
+	areamonster(.@m$, 82, 60, 103, 67, strmobinfo(1, CaveMaggot), CaveMaggot, 5);
+	areamonster(.@m$, 38, 193, 54, 197, strmobinfo(1, CaveMaggot), CaveMaggot, 5);
+	areamonster(.@m$, 114, 199, 126, 202, strmobinfo(1, Ratto), Ratto, 4);
+	areamonster(.@m$, 106, 30, 116, 37, strmobinfo(1, Crafty), Crafty, 5);
+	areamonster(.@m$, 78, 128, 89, 149, strmobinfo(1, Ratto), Ratto, 4);
+	areamonster(.@m$, 117, 141, 152, 152, strmobinfo(1, Crafty), Crafty, 10);
+	areamonster(.@m$, 117, 101, 135, 112, strmobinfo(1, Ratto), Ratto, 7);
+	areamonster(.@m$, 130, 88, 130, 88, strmobinfo(1, RubyVein), RubyVein, 1);
+	areamonster(.@m$, 122, 94, 122, 94, strmobinfo(1, RubyVein), RubyVein, 1);
+	areamonster(.@m$, 31, 181, 31, 181, strmobinfo(1, SapphireVein), SapphireVein, 1);
+	areamonster(.@m$, 31, 198, 31, 198, strmobinfo(1, SapphireVein), SapphireVein, 1);
+	areamonster(.@m$, 135, 127, 135, 127, strmobinfo(1, TopazVein), TopazVein, 1);
+	areamonster(.@m$, 120, 125, 120, 125, strmobinfo(1, TopazVein), TopazVein, 1);
+	areamonster(.@m$, 31, 112, 31, 112, strmobinfo(1, AmethystVein), AmethystVein, 1);
+	areamonster(.@m$, 24, 123, 24, 123, strmobinfo(1, AmethystVein), AmethystVein, 1);
+	areamonster(.@m$, 193, 123, 193, 123, strmobinfo(1, EmeraldVein), EmeraldVein, 1);
+	areamonster(.@m$, 204, 116, 204, 116, strmobinfo(1, EmeraldVein), EmeraldVein, 1);
+	areamonster(.@m$, 89, 168, 89, 168, strmobinfo(1, DiamondVein), DiamondVein, 1);
+	areamonster(.@m$, 132, 192, 132, 192, strmobinfo(1, SapphireVein), SapphireVein, 1);
+	areamonster(.@m$, 39, 174, 39, 174, strmobinfo(1, AmethystVein), AmethystVein, 1);
+	areamonster(.@m$, 44, 174, 44, 174, strmobinfo(1, TopazVein), TopazVein, 1);
+	areamonster(.@m$, 118, 196, 118, 196, strmobinfo(1, EmeraldVein), EmeraldVein, 1);
+	areamonster(.@m$, 65, 105, 65, 105, strmobinfo(1, DiamondVein), DiamondVein, 1);
+	areamonster(.@m$, 143, 139, 143, 139, strmobinfo(1, GemVeinbloc), GemVeinbloc, 1);
+	areamonster(.@m$, 156, 121, 156, 121, strmobinfo(1, GemVeinbloc), GemVeinbloc, 1);
+	areamonster(.@m$, 155, 166, 155, 166, strmobinfo(1, GemVeinbloc), GemVeinbloc, 1);
+	areamonster(.@m$, 125, 162, 125, 162, strmobinfo(1, GemVeinbloc), GemVeinbloc, 1);
+	areamonster(.@m$, 107, 141, 107, 141, strmobinfo(1, GemVeinbloc), GemVeinbloc, 1);
+	areamonster(.@m$, 77, 148, 77, 148, strmobinfo(1, GemVeinbloc), GemVeinbloc, 1);
+	areamonster(.@m$, 62, 119, 62, 119, strmobinfo(1, GemVeinbloc), GemVeinbloc, 1);
+	areamonster(.@m$, 162, 95, 162, 95, strmobinfo(1, CoalVeinbloc), CoalVeinbloc, 1);
+	areamonster(.@m$, 157, 66, 157, 66, strmobinfo(1, CoalVeinbloc), CoalVeinbloc, 1);
+	areamonster(.@m$, 112, 60, 112, 60, strmobinfo(1, CoalVeinbloc), CoalVeinbloc, 1);
+	areamonster(.@m$, 66, 54, 66, 54, strmobinfo(1, CoalVeinbloc), CoalVeinbloc, 1);
+	areamonster(.@m$, 63, 91, 63, 91, strmobinfo(1, GoldVeinbloc), GoldVeinbloc, 1);
+	areamonster(.@m$, 76, 127, 76, 127, strmobinfo(1, GoldVeinbloc), GoldVeinbloc, 1);
+	areamonster(.@m$, 111, 148, 111, 148, strmobinfo(1, GoldVeinbloc), GoldVeinbloc, 1);
+    /*
+	areamonster(.@m$, 101, 27, 104, 31, strmobinfo(1, PoisonSkull), PoisonSkull, 1);
+	areamonster(.@m$, 165, 28, 168, 32, strmobinfo(1, PoisonSkull), PoisonSkull, 1);
+	areamonster(.@m$, 199, 67, 202, 71, strmobinfo(1, PoisonSkull), PoisonSkull, 1);
+	areamonster(.@m$, 199, 109, 202, 113, strmobinfo(1, PoisonSkull), PoisonSkull, 1);
+	areamonster(.@m$, 197, 194, 200, 198, strmobinfo(1, PoisonSkull), PoisonSkull, 1);
+	areamonster(.@m$, 133, 199, 136, 203, strmobinfo(1, PoisonSkull), PoisonSkull, 1);
+	areamonster(.@m$, 34, 194, 37, 198, strmobinfo(1, PoisonSkull), PoisonSkull, 1);
+	areamonster(.@m$, 26, 111, 29, 115, strmobinfo(1, PoisonSkull), PoisonSkull, 1);
+    */
+	areamonster(.@m$, 88, 48, 88, 48, strmobinfo(1, CoalVein), CoalVein, 1);
+	areamonster(.@m$, 100, 49, 100, 49, strmobinfo(1, CoalVein), CoalVein, 1);
+	areamonster(.@m$, 130, 44, 130, 44, strmobinfo(1, CoalVein), CoalVein, 1);
+	areamonster(.@m$, 67, 47, 67, 47, strmobinfo(1, CoalVein), CoalVein, 1);
+	areamonster(.@m$, 124, 94, 124, 94, strmobinfo(1, CoalVein), CoalVein, 1);
+	areamonster(.@m$, 158, 60, 158, 60, strmobinfo(1, CoalVein), CoalVein, 1);
+	areamonster(.@m$, 56, 53, 56, 53, strmobinfo(1, IronVein), IronVein, 1);
+	areamonster(.@m$, 55, 98, 55, 98, strmobinfo(1, IronVein), IronVein, 1);
+	areamonster(.@m$, 62, 103, 62, 103, strmobinfo(1, IronVein), IronVein, 1);
+	areamonster(.@m$, 69, 125, 69, 125, strmobinfo(1, IronVein), IronVein, 1);
+	areamonster(.@m$, 62, 153, 62, 153, strmobinfo(1, IronVein), IronVein, 1);
+	areamonster(.@m$, 96, 145, 96, 145, strmobinfo(1, IronVein), IronVein, 1);
+
+    // Yay yay yay
+    end;
+}
+
+/////////////////////////////////////////////////////////
+// Main script controller for Rossy Quest
+-	script	#RossyQuest	NPC_HIDDEN,{
+    end;
+
+OnStage2:
+    if (!playerattached()) end; // ERROR
+    if (!@rossylock) end; // Invalid
+    if (mobcount(getmap(), "#RossyQuest::OnStage2")) end; // Still working
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_CAVE1;
+    goto OnBeat;
+
+OnStage4:
+    if (!playerattached()) end; // ERROR
+    if (!@rossylock) end; // Invalid
+    if (mobcount(getmap(), "#RossyQuest::OnStage4")) end; // Still working
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_CAVE2;
+    goto OnBeat;
+
+OnStage8:
+    if (!playerattached()) end; // ERROR
+    if (!@rossylock) end; // Invalid
+    if (mobcount(getmap(), "#RossyQuest::OnStage8")) end; // Still working
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_CAVE3;
+    goto OnBeat;
+
+OnStage16:
+    if (!playerattached()) end; // ERROR
+    if (!@rossylock) end; // Invalid
+    if (mobcount(getmap(), "#RossyQuest::OnStage16")) end; // Still working
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_CAVE4;
+    goto OnBeat;
+
+OnStage32:
+    if (!playerattached()) end; // ERROR
+    if (!@rossylock) end; // Invalid
+    if (mobcount(getmap(), "#RossyQuest::OnStage32")) end; // Still working
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_CAVE5;
+    goto OnBeat;
+
+OnStage64:
+    if (!playerattached()) end; // ERROR
+    if (!@rossylock) end; // Invalid
+    if (mobcount(getmap(), "#RossyQuest::OnStage64")) end; // Still working
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_CAVE6;
+    goto OnBeat;
+
+OnStage128:
+    if (!playerattached()) end; // ERROR
+    if (!@rossylock) end; // Invalid
+    if (mobcount(getmap(), "#RossyQuest::OnStage128")) end; // Still working
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_CAVE7;
+    goto OnBeat;
+
+OnStage256:
+    if (!playerattached()) end; // ERROR
+    if (!@rossylock) end; // Invalid
+    if (mobcount(getmap(), "#RossyQuest::OnStage256")) end; // Still working
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_CAVE8;
+    goto OnBeat;
+
+OnStage512:
+    if (!playerattached()) end; // ERROR
+    if (!@rossylock) end; // Invalid
+    if (mobcount(getmap(), "#RossyQuest::OnStage512")) end; // Still working
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_CAVE9;
+    goto OnBeat;
+
+OnStage1024:
+    if (!playerattached()) end; // ERROR
+    if (!@rossylock) end; // Invalid
+    if (mobcount(getmap(), "#RossyQuest::OnStage1024")) end; // Still working
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_BOSSCAVE;
+    goto OnBeat;
+
+OnBeat:
+    @rossylock = false;
+    dispbottom l("*** Cave Cleared ***");
+    delcells "Rossy"+getcharid(0)+"Wall";
+    .@inst = getq3(HurnscaldQuests_Rossy);
+    instance_set_timeout(ROSSY_INSTIME, ROSSY_INSTIME, .@inst);
+    if (.@q2 < ROSSY_BOSSCAVE)
+        addtimer2(300000, "#RossyQuest::OnTick1");
+    else
+        deltimer("#RossyQuest::OnTick1");
+    deltimer("#RossyQuest::OnTick2");
+    deltimer("#RossyQuest::OnTick3");
+    deltimer("#RossyQuest::OnTick4");
+    deltimer("#RossyQuest::OnTick5");
+    end;
+
+/* ****************************************** */
+OnTick1:
+    dispbottom l("Time remaining: %d minutes", 15);
+    addtimer2(300000, "#RossyQuest::OnTick2");
+    end;
+
+OnTick2:
+    dispbottom l("Time remaining: %d minutes", 10);
+    addtimer2(300000, "#RossyQuest::OnTick3");
+    end;
+
+OnTick3:
+    dispbottom l("Time remaining: %d minutes", 5);
+    addtimer2(240000, "#RossyQuest::OnTick4");
+    end;
+
+OnTick4:
+    dispbottom l("Time remaining: 1 minute");
+    addtimer2(45000, "#RossyQuest::OnTick5");
+    end;
+
+OnTick5:
+    dispbottom l("Time remaining: %d seconds!", 15);
+    end;
+
+}
+
+/////////////////////////////////////////////////////////
+// RossyCave(Cave ID)
+function	script	RossyCave	{
+    // Fight ongoing - cannot trigger
+    if (@rossylock)
+        return false;
+
+    // Check quest consistency
+    // HurnscaldQuests_Rossy
+    // (MAIN QUEST, CAVE CONTROL, INSTANCE CONTROL)
+    .@q=getq(HurnscaldQuests_Rossy);
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    .@inst=getq3(HurnscaldQuests_Rossy);
+
+    if (instance_id() != .@inst)
+        return false;
+    if (.@q != 16)
+        return false;
+    if (!.@q2) {
+        dispbottom l("This looks DANGEROUS! Maybe someone around here can tell me what I'm supposed to do.");
+        return false;
+    }
+    if (.@q2 & .caveid)
+        return false;
+
+    // ---------------
+    // Main node setup
+    .@c=getarg(0);
+    .@m$=getmap();
+    .@n$="#RossyQuest::OnStage"+.@c;
+
+    // Obtain and Write Configuration
+    switch (.@c) {
+    case ROSSY_CAVE1:
+        .@boss=PoisonSkull;
+        .@mobc=rand2(3,5);
+        .@x1=85;.@y1=21;.@x2=108;.@y2=39;
+        .@x3=109;.@y3=33; .@x4=109; .@y4=36;
+        break;
+    case ROSSY_CAVE2:
+        .@boss=Troll;
+        .@mobc=rand2(3,5);
+        .@x1=191;.@y1=103;.@x2=205;.@y2=122;
+        .@x3=201;.@y3=123; .@x4=201; .@y4=123;
+        break;
+    case ROSSY_CAVE3:
+        .@boss=FireWisp;
+        .@mobc=rand2(2,4);
+        .@x1=26;.@y1=23;.@x2=43;.@y2=36;
+        .@x3=38;.@y3=37; .@x4=38; .@y4=37;
+        break;
+    case ROSSY_CAVE4:
+        .@boss=WaterWisp;
+        .@mobc=rand2(6,12);
+        .@x1=180;.@y1=176;.@x2=206;.@y2=207;
+        .@x3=179;.@y3=200; .@x4=179; .@y4=200;
+        break;
+    case ROSSY_CAVE5:
+        .@boss=Serqet;
+        .@mobc=rand2(6,8);
+        .@x1=98;.@y1=188;.@x2=141;.@y2=207;
+        .@x3=97;.@y3=190; .@x4=97; .@y4=197;
+        break;
+    case ROSSY_CAVE6:
+        .@boss=SnakeGhost;
+        .@mobc=rand2(5,7);
+        .@x1=19;.@y1=98;.@x2=36;.@y2=136;
+        .@x3=37;.@y3=125; .@x4=37; .@y4=125;
+        break;
+    case ROSSY_CAVE7:
+        .@boss=ScorpionGhost;
+        .@mobc=rand2(5,7);
+        .@x1=22;.@y1=181;.@x2=50;.@y2=205;
+        .@x3=51;.@y3=192; .@x4=51; .@y4=197;
+        break;
+    case ROSSY_CAVE8:
+        .@boss=JackO;
+        .@mobc=rand2(3,5);
+        .@x1=158;.@y1=20;.@x2=176;.@y2=35;
+        .@x3=175;.@y3=36; .@x4=177; .@y4=36;
+        break;
+    case ROSSY_CAVE9:
+        .@boss=GreenSlimeProgenitor;
+        .@mobc=rand2(5,7);
+        .@x1=187;.@y1=58;.@x2=208;.@y2=85;
+        .@x3=186;.@y3=82; .@x4=186; .@y4=85;
+        break;
+    case ROSSY_BOSSCAVE:
+        .@boss=Golem;
+        .@mobc=rand2(3,5);
+        .@x1=84;.@y1=85;.@x2=101;.@y2=101;
+        .@x3=92;.@y3=102; .@x4=93; .@y4=102;
+        break;
+    default:
+        consolemes(CONSOLEMES_ERROR, "INVALID ROSSY CAVE ID - "+.@c+" - SCRIPT ABORTED");
+        return false;
+    }
+
+    // This is cast from a dialog so prompt comes before any advanced calculation
+    mesc l("Drop a %s here to summon monsters.", getitemlink(PileOfAsh));
+    if (.@c == ROSSY_BOSSCAVE)
+        mesc l("This is the master's room seal, be careful!"), 1;
+    else
+        mesc l("Weaken all nine seals to be able to undo the final one.");
+    select
+        rif(countitem(PileOfAsh), l("Place pile of ashes")),
+        l("Run away in fear");
+    mes "";
+    closeclientdialog;
+    if (@menu == 2)
+        return false;
+
+    // Delete the item and lock for the quest
+    delitem PileOfAsh, 1;
+    @rossylock = true;
+
+    // Spawn underlings
+    for (.@i=0; .@i < .@mobc; .@i++) {
+        // FIXME: Penguin? Mister Prickel? Ice Goblin? Wolvern?
+        // I think all those four could be removed.
+        .@mobId=any(Bandit, RobinBandit, Skeleton, MisterPrickel, ManaGhost, Penguin, CraftyGhost, Zombie, Wolvern, SpiderGhost, IceGoblin); // Mobs lv 26~47
+        .@mob=areamonster(.@m$, .@x1, .@y1, .@x2, .@y2, strmobinfo(1, .@mobId), .@mobId, 1, .@n$);
+        // Make it aggresive
+        .@bmod=getunitdata(.@mob, UDT_MODE);
+        setunitdata(.@mob, UDT_MODE, .@bmod|4); // 4 = MD_AGGRESSIVE
+    }
+
+    // Spawn boss
+    .@mob=areamonster(.@m$, .@x1, .@y1, .@x2, .@y2, strmobinfo(1, .@boss), .@boss, 1, .@n$);
+
+    // Obain boss basic status...
+    .@bhp= getunitdata(.@mob, UDT_MAXHP);
+    .@bat1=getunitdata(.@mob, UDT_ATKMIN);
+    .@bat2=getunitdata(.@mob, UDT_ATKMAX);
+    .@bhit=getunitdata(.@mob, UDT_HIT);
+    .@bmod=getunitdata(.@mob, UDT_MODE);
+    .@bmod=.@bmod|4; // 4 = MD_AGGRESSIVE
+
+    // ...And Tweak Battle Status
+    setunitdata(.@mob, UDT_MAXHP,    .@bhp*15/10);
+    setunitdata(.@mob, UDT_HP,       .@bhp*15/10);
+    setunitdata(.@mob, UDT_ATKMIN,   .@bat1*7/10);
+    setunitdata(.@mob, UDT_ATKMAX,   .@bat2*7/10);
+    setunitdata(.@mob, UDT_HIT,      .@bhit*2);
+    setunitdata(.@mob, UDT_MODE,     .@bmod|32); // 32 = MD_BOSS
+
+    // Build the wall so you cannot leave :>
+    setcells getmap(), .@x3, .@y3, .@x4, .@y4, 3, "Rossy"+getcharid(0)+"Wall";
+    return true;
+}
+
+///////////////////////////////////////////////
+// Reset quest when you die
+function	script	RossyDeath	{
+    if (getq(HurnscaldQuests_Rossy) != 16)
+        return;
+    if (@rossylock)
+        delcells("Rossy"+getcharid(0)+"Wall");
+    @rossylock=false;
+    setq2 HurnscaldQuests_Rossy, 0;
+    deltimer("#RossyQuest::OnTick1");
+    deltimer("#RossyQuest::OnTick2");
+    deltimer("#RossyQuest::OnTick3");
+    deltimer("#RossyQuest::OnTick4");
+    deltimer("#RossyQuest::OnTick5");
+    return;
+}
+
+// May reset quest when you logout
+function	script	RossyLogout	{
+    if (getq(HurnscaldQuests_Rossy) != 16)
+        return;
+    if (@rossylock) {
+        delcells("Rossy"+getcharid(0)+"Wall");
+        @rossylock=false;
+        setq2 HurnscaldQuests_Rossy, 0;
+    }
+    // FIXME: Set timers again when you login back? =/
+    return;
+}
+
+/////////////////////////////////////////////////////////
+// Position the triggers
+
+// Begin Cave Code
+008-3-0,98,27,0	script	#RossyCave01	NPC_SUMMONING_CIRC,{
+    if (RossyCave(.caveid))
+        disablenpc instance_npcname(.name$);
+    close;
+
+OnInit:
+    disablenpc "#RossyCave01";
+OnInstanceInit:
+    .distance=1;
+    .caveid=ROSSY_CAVE1;
+    end;
+}
+
+// Begin Cave Code
+008-3-0,199,109,0	script	#RossyCave02	NPC_SUMMONING_CIRC,{
+    if (RossyCave(.caveid))
+        disablenpc instance_npcname(.name$);
+    close;
+
+OnInit:
+    disablenpc "#RossyCave02";
+OnInstanceInit:
+    .distance=1;
+    .caveid=ROSSY_CAVE2;
+    end;
+}
+
+// Begin Cave Code
+008-3-0,35,26,0	script	#RossyCave03	NPC_SUMMONING_CIRC,{
+    if (RossyCave(.caveid))
+        disablenpc instance_npcname(.name$);
+    close;
+
+OnInit:
+    disablenpc "#RossyCave03";
+OnInstanceInit:
+    .distance=1;
+    .caveid=ROSSY_CAVE3;
+    end;
+}
+
+// Begin Cave Code
+008-3-0,198,193,0	script	#RossyCave04	NPC_SUMMONING_CIRC,{
+    if (RossyCave(.caveid))
+        disablenpc instance_npcname(.name$);
+    close;
+
+OnInit:
+    disablenpc "#RossyCave04";
+OnInstanceInit:
+    .distance=1;
+    .caveid=ROSSY_CAVE4;
+    end;
+}
+
+// Begin Cave Code
+008-3-0,133,200,0	script	#RossyCave05	NPC_SUMMONING_CIRC,{
+    if (RossyCave(.caveid))
+        disablenpc instance_npcname(.name$);
+    close;
+
+OnInit:
+    disablenpc "#RossyCave05";
+OnInstanceInit:
+    .distance=1;
+    .caveid=ROSSY_CAVE5;
+    end;
+}
+
+// Begin Cave Code
+008-3-0,27,104,0	script	#RossyCave06	NPC_SUMMONING_CIRC,{
+    if (RossyCave(.caveid))
+        disablenpc instance_npcname(.name$);
+    close;
+
+OnInit:
+    disablenpc "#RossyCave06";
+OnInstanceInit:
+    .distance=1;
+    .caveid=ROSSY_CAVE6;
+    end;
+}
+
+// Begin Cave Code
+008-3-0,31,192,0	script	#RossyCave07	NPC_SUMMONING_CIRC,{
+    if (RossyCave(.caveid))
+        disablenpc instance_npcname(.name$);
+    close;
+
+OnInit:
+    disablenpc "#RossyCave07";
+OnInstanceInit:
+    .distance=1;
+    .caveid=ROSSY_CAVE7;
+    end;
+}
+
+// Begin Cave Code
+008-3-0,165,26,0	script	#RossyCave08	NPC_SUMMONING_CIRC,{
+    if (RossyCave(.caveid))
+        disablenpc instance_npcname(.name$);
+    close;
+
+OnInit:
+    disablenpc "#RossyCave08";
+OnInstanceInit:
+    .distance=1;
+    .caveid=ROSSY_CAVE8;
+    end;
+}
+
+// Begin Cave Code
+008-3-0,201,69,0	script	#RossyCave09	NPC_SUMMONING_CIRC,{
+    if (RossyCave(.caveid))
+        disablenpc instance_npcname(.name$);
+    close;
+
+OnInit:
+    disablenpc "#RossyCave09";
+OnInstanceInit:
+    .distance=1;
+    .caveid=ROSSY_CAVE9;
+    end;
+}
+
+// --------------------------------------------------------------------
+008-3-0,92,90,0	script	Juliet	NPC_TANISHA,{
+    // Check quest consistency
+    // HurnscaldQuests_Rossy
+    // (MAIN QUEST, CAVE CONTROL, INSTANCE CONTROL)
+    .@q=getq(HurnscaldQuests_Rossy);
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    .@inst=getq3(HurnscaldQuests_Rossy);
+
+    if (instance_id() != .@inst)
+        end;
+    if (!.@q2)
+        end;
+
+    // A bug!
+    if (.@q != 16) {
+        disablenpc instance_npcname("Juliet", .@inst);
+        end;
+    }
+
+    // Another bug!!
+    if (!(.@q2 & ROSSY_BOSSCAVE)) {
+        disablenpc instance_npcname("Juliet", .@inst);
+        end;
+    }
+
+    // Prepare rewards
+    .@rune=any(RunestoneUruz, RunestoneRaido, RunestoneThurisaz, RunestoneKaunaz, RunestoneDagaz, RunestonePeorth);
+    .@gems=any(CrudeDiamond, CrudeRuby, CrudeEmerald, CrudeSapphire, CrudeTopaz, CrudeAmethyst);
+    inventoryplace .@rune, 1, .@gems, 1;
+
+    // Run epilogue
+    mesn;
+    mesq l("I heard some battle noises a few minutes ago. Are you here to save me?");
+    next;
+    select
+        l("Of course I'm here to save you, Rossy sent me here!");
+    mes "";
+    mesn;
+    mesc l("Juliet starts scavenging the fallen Golem.");
+    mesq l("Mommy teached me about precious gemstones. This Golem has quite a few of them.");
+    next;
+    mesn;
+    mesq lg("Here you go, miss!", "Here you go, mister!");
+    getitem .@rune, 1;
+    getitem .@gems, 1;
+    getexp 100000, 10000;
+    setq HurnscaldQuests_Rossy, 17, 0, .@inst;
+    next;
+    mesn;
+    mesq l("Thanks for helping me... I'll be on my way now.");
+    next;
+    select
+        l("Go safely!"),
+        l("Do you need an escort?"),
+        l("What was following you, anyway?");
+    mes "";
+    if (@menu == 2) {
+        mesn;
+        mesq l("I'll be fine, but thanks for the concern.");
+    } else if (@menu == 3) {
+        // This opens path for additional questline
+        mesn;
+        mesq l("Actually... I don't remember. I'm not sure why.");
+        next;
+        mesn;
+        mesq l("But it was big and scary! I haven't seen it since I entered this cave, though...");
+        next;
+        mesn;
+        mesq lg("It probably went away after seeing your bravure, tee-hee!");
+        next;
+        mesn;
+        mesq l("I must go now. I've already spent too much time here already.");
+    }
+    disablenpc instance_npcname("Juliet", .@inst);
+    close;
+
+OnInit:
+    disablenpc "Juliet";
+    .distance=4;
+    end;
+
+OnInstanceInit:
+    disablenpc instance_npcname("Juliet");
+    .distance=4;
+    end;
+}
+
+

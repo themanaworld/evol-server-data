@@ -1,39 +1,78 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Blossom the flower-seller girl.
 // THIS IS A PLACEHOLDER!
 
-008-1,198,138,0	script	Blossom#008-1	NPC_BLOSSOM,{
+008-1,198,138,0	script	Blossom	NPC_BLOSSOM,{
     speech
         l("Hi, my name is Blossom."),
         l("Strange, it seems I became younger lately."),
         l("Are you in need of some flowers?");
 
-    switch (select(l("I love flowers! What do you have for sale?"),
-                   l("Not now, thank you."),
-                   l("Dont you know something about fertility? I heard rumors.")))
+    do
     {
-    case 1:
-        closeclientdialog;
-        shop "#Invisible008-1";
-        close;
-    case 2:
-        speech S_FIRST_BLANK_LINE,
-        l("Oh, ok. Come back later if you need something.");
-        close;
-    case 3:
-        speech S_FIRST_BLANK_LINE,
-        l("I heard something too. A girl named Galimatia seems to need help. If only those lazy developers could tell her what she needs.");
-        close;
-    }
+        select
+            l("I love flowers! What do you have for sale?"),
+            l("Not now, thank you."),
+            l("Dont you know something about fertility? I heard rumors."),
+            l("Do you sell Flower Seeds?");
 
+        mes "";
+        switch (@menu)
+        {
+        case 1:
+            closeclientdialog;
+            shop "#Invisible008-1";
+            close;
+        case 2:
+            speech S_FIRST_BLANK_LINE,
+            l("Oh, ok. Come back later if you need something.");
+            close;
+        case 3:
+            /*
+            speech S_FIRST_BLANK_LINE,
+            l("I heard something too. A girl named Galimatia seems to need help. If only those lazy developers could tell her what she needs.");
+            */
+            mesn;
+            mesq l("I heard something too. A girl named Galimatia seems to need help.");
+            next;
+            mesn;
+            mesq l("But I believe Oscar gave her a fertility recipe...?");
+            next;
+            mesn;
+            mesq l("...Oops, I'm not supposed to say that. Oscar is... Well... Either a genius or a madman, I can't say.");
+            break;
+        case 4:
+            mesn;
+            mesq l("No I don't, but I can exchange them. 3 %s for a %s.", getitemlink(GrassSeeds), getitemlink(FlowerSeeds));
+            next;
+            /*
+            // TODO: Add Andra
+            mesn;
+            mesq l("If you need the opposite, look for Andra.");
+            */
+            if (countitem(GrassSeeds) < 3)
+                break;
+
+            mesc l("Trade with %s?", .name$);
+            if (askyesno() == ASK_YES) {
+                inventoryplace FlowerSeeds, 1;
+                delitem GrassSeeds, 3;
+                getitem FlowerSeeds, 1;
+                mesn;
+                mesq l("Thanks for the trade.");
+                next;
+            }
+            break;
+        }
+    } while (true);
 
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

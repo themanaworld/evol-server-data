@@ -109,7 +109,7 @@ OnInit:
         setq(General_Narrator, 2);
         savepoint("008-1-1", 33, 63);
         warp("SavePoint", 0, 0);
-        dispbottom(l("After a tiring, yet fast, travel by Koga, you arrive at %s.", l("Woodlands")));
+        dispbottom(l("After a tiring, yet fast travel by ship, you arrive at %s.", l("Woodlands")));
         close;
     }
 

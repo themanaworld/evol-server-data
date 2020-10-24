@@ -159,6 +159,7 @@ function	script	BarberChangeRace	{
     }
 
     // Change race and we're done
-    Class = @menuret;
+    //Class = @menuret;
+    jobchange(@menuret); // STUPID idea, but imposed by Hercules
     return;
 }

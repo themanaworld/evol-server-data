@@ -1,11 +1,11 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Angus the Smith.
 // THIS IS A PLACEHOLDER!
 
-008-2-17,34,47,0	script	Angus#008-2-17	NPC_ANGUS_THE_SMITH,{
+008-2-17,34,47,0	script	Angus	NPC_ANGUS_THE_SMITH,{
     speech
         l("Hello."),
         l("Do you need your pickaxe or your shovel fixed? Then I am your man."),
@@ -15,6 +15,6 @@
 
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
     end;
 }

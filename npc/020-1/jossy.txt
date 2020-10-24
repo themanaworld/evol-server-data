@@ -8,12 +8,13 @@
 020-1,180,87,0	script	Jossy	NPC_HUMAN_MALE_BROTHERHOOD,{
     speech
         l("Hi!"),
-        l("I do't want to talk to you."),
+        l("I don't want to talk to you."),
         l("Here, talk to my hand.");
+    heal -100, 0;
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

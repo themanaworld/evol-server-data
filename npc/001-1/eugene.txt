@@ -65,7 +65,7 @@ L_CheckItems:
         l("Have a good time fishing!");
 
     delitem .BaitID, .BaitCount;
-    getitem FishingRod, 1;
+    getitembound FishingRod, 1, IBT_ACCOUNT;
     getitem FishingGuideVolI, 1;
     setq ArtisQuests_Fishman, 2;
     close;

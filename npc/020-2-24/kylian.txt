@@ -1,0 +1,63 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Rich merchant
+
+020-2-24,35,24,0	script	Kylian	NPC_KPG_MANAGER,{
+    function kylianLuggage;
+    .@q=getq(TonoriQuest_Kylian);
+    switch (.@q) {
+    case 0:
+        kylianLuggage();
+        break;
+    case 1:
+        mesn;
+        mesq l("Please show Adrian the luggage ticket I gave you.");
+        break;
+    default:
+        mesn;
+        mesq l("My name is Kylian. I have some purpose in this world but I don't know what it is yet because devs are too scared to write it.");
+        next;
+        mesn;
+        mesq l("I just dont know what to do. I wish I could take a nap, instead.");
+        break;
+    }
+    close;
+
+function kylianLuggage {
+    // Insert lore babbling here
+    mesn;
+    mesq l("Ah! Are you the room service? I have some requests.");
+    next;
+    select
+        l("Sure... What can I do for you?"),
+        l("No, I'm not!");
+    mes "";
+    if (@menu == 2) {
+        mesn;
+        mesq l("Too bad. Would you be interested in earning some quick money with some errands regardless?");
+        next;
+        select
+            l("I'm a great adventurer! I don't do petty errands."),
+            l("No. I'm busy."),
+            l("Well... OK.");
+        mes "";
+        if (@menu != 3)
+            return;
+    }
+    mesn;
+    mesq l("I need you to get my luggage from the docks. Just show this paper to the sailor who's watching the luggage.");
+    mesc l("%s gives you his ticket, which you promptly store in a safe pocket outside of your inventory.", .name$);
+    setq TonoriQuest_Kylian, 1;
+    next;
+    mesn;
+    mesq l("I'll be waiting your return.");
+    return;
+}
+
+OnInit:
+    .bodytype = BODYTYPE_3;
+    .distance = 4;
+    end;
+}

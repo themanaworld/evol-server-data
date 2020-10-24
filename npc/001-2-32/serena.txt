@@ -41,6 +41,13 @@ OnInit:
         end;
     }
 
+    // Enemies of the Legion of Aemil cannot train, obviously
+    if (faction_standing("LEGION", true) < 1) {
+        mesn;
+        mesq l("Sorry, but I can only train you if Lieutenant Lozerk authorizes.");
+        close;
+    }
+
     // Otherwise, begin it
     mesn;
     mesq l("Are you ready for your training?");

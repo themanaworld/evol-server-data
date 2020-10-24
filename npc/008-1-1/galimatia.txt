@@ -6,8 +6,6 @@
 //  Jesusalva
 // Description:
 //	Galimatia the beekeeper.
-// THIS IS A PLACEHOLDER!
-
 // KEEP item_db.conf updated as well
 
 function	script	usePurificationPotion	{
@@ -52,15 +50,7 @@ function	script	useFertilityPotion	{
     function QuestPart4;
     function QuestPart5;
     function QuestPart6;
-
-    // TODO FIXME remove this once ready
-    if (!debug) {
-        speech
-            l("Hello."),
-            l("If only someone could help me to make my flowers bloom again."),
-            l("I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.");
-        close;
-    }
+    function galimatiaQuestDaily;
 
 	switch(getq(ArgaesQuest_Galimatia)) {
 		case 0: QuestPart0(); break;
@@ -70,6 +60,7 @@ function	script	useFertilityPotion	{
 		case 4: QuestPart4(); break;
 		case 5: QuestPart5(); break;
 		case 6: QuestPart6(); break;
+        case 7: galimatiaQuestDaily(); break;
 		default:
 			mesq l("[Invalid quest status: %d, check script]", getq(ArgaesQuest_Galimatia));
 	}
@@ -149,7 +140,7 @@ function NPCcrafting {
 		getarg(4);
 	if (askyesno() == ASK_NO) {
 		mesq l("Come on, move!");
-		close();
+		close;
 	} else {
 		switch(craftFromPlayer(getarg(0), getarg(1), getarg(2), getarg(3))) {
 			case 0:
@@ -159,7 +150,8 @@ function NPCcrafting {
 
 			case 1:
 				mesq getarg(6);
-				printIngredients(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT);
+                // FIXME - Gather proper variables
+				printIngredients(getarg(0), getarg(1));
 				break;
 
 			case 2:
@@ -216,11 +208,14 @@ function QuestPart0 {
 		l("Hello."),
 		l("If only someone could help me to make my flowers bloom again."),
 		l("I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.");
+    next;
 
 	select(
 		l("What about making some fertilizing-something?"),
 		l("I don't have time to spend on flowers.")
 	);
+    mes "";
+    mesn;
 
 	switch(@menu) {
 		case 1:
@@ -268,7 +263,7 @@ function QuestPart1 {
 			l("Why you don't have a %s with you? You need me to make another one?", getitemlink(.REQ0_OUTPUT));
 		if (askyesno() == ASK_NO) {
 			mesq l("Come on, stop wasting my time!");
-			close();
+			close;
 		} else{
 			if (NPCcrafting(
 				.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
@@ -294,6 +289,7 @@ If you weren't able to trash the potion, the land is now healed, but nothing gro
 
 
 function QuestPart2 {
+    mesn;
 	mesq l("Fine. The land is healthy now but nothing will grow yet. This time I need you to get:");
 	printIngredients(.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT);
 	mesq l("So making a %s will make things easier.", getitemlink(.REQ1_OUTPUT));
@@ -322,8 +318,9 @@ function QuestPart3 {
 		speech
 			l("Got drunk with the %s? You need me to make another one?", getitemlink(.REQ1_OUTPUT));
 		if (askyesno() == ASK_NO) {
+            mesn;
 			mesq l("Come on, stop wasting my time!");
-			close();
+			close;
 		} else{
 			if (NPCcrafting(
 				.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT,
@@ -350,13 +347,19 @@ NOTE: Flower seeds are dropped directly from Clover Patches, however grass seeds
 */
 
 function QuestPart4 {
-	speech
-			l("Now I need %d %s.", .REQ2_INGREDIENTS_AMOUNT, getitemlink(.REQ2_INGREDIENTS));
-	// We take player items without asking
+    speech
+        l("Thanks for the help earlier. The soil is now fertile thanks to your efforts."),
+        l("Do you know Blossom? She is the flower girl. Bees won't come without flowers."),
+		l("So, now I need %d %s.", .REQ2_INGREDIENTS_AMOUNT, getitemlink(.REQ2_INGREDIENTS));
+    next;
+	// We don't take player items without asking
+    mesc l("Deliver items to Blossom?");
+    if (askyesno() == ASK_NO) close;
 	if(checkForItems(.REQ2_INGREDIENTS, .REQ2_INGREDIENTS_AMOUNT)) {
-		speech
-			l("Nice, gimme that!");
 		advanceQuest();
+		speech
+			l("Nice, gimme that!"),
+            l("I'll go plant them. Now go, maybe I need your help again later.");
 	} else {
 		speech
 			l("Go get some!");
@@ -377,7 +380,8 @@ Galimatia gives the player their reward: Player must select a simple Magic Wand 
 function QuestPart5 {
 	speech
 		l("Nice job."),
-		l("What do you want?"),
+        l("I've heard bees are scared of fire, you know."),
+		l("So, what do you want?"),
 		l("A %s or a %s?", getitemlink(.QUESTPRIZES[0]) , getitemlink(.QUESTPRIZES[1]));
 	select(
 		l("I want the %s!",     getitemname(.QUESTPRIZES[0])),
@@ -401,13 +405,14 @@ This enables the player to receive a Rose Hat. Fighting the flowers that were ju
 */
 
 function QuestPart6 {
+    mesn;
 	mesq l("Hello again! Do you want me to exchange %d %s and %d GP for a %s?",
 			.REQ3_INGREDIENTS_AMOUNT[0], getitemlink(.REQ3_INGREDIENTS[0]),
 			.REQ3_COST, getitemlink(.REQ3_OUTPUT)
 	);
 	if (askyesno() == ASK_NO) {
 		mesq l("As you wish.");
-		close();
+		close;
 	} else {
 		if(Zeny>=.REQ3_COST) {
 			if(NPCcrafting(
@@ -417,13 +422,26 @@ function QuestPart6 {
 				l("Have fun!"),
 				l("Nope. I wont exchange for such less."),
 				l("I can't give you nothing if you don't leave some room for it!")
-			)) Zeny-=(.REQ3_COST);
+			)) {
+                    Zeny-=(.REQ3_COST);
+            		advanceQuest();
+                }
 		} else {
 			mesq l("Ain't working for free, pal!");
 		}
 	}
 	close;
 	return;
+}
+
+/*
+Daily Part
+Allows players to sell Honey for Galimatia
+*/
+function galimatiaQuestDaily {
+    // DailyQuest(lvl, cost, count, item)
+    DailyQuest(10, 3, 1, Honey);
+    return;
 }
 
 OnInit:
@@ -433,7 +451,6 @@ OnInit:
 	.REQ0_OUTPUT            = PurificationPotion;
 	.REQ0_OUTPUT_AMOUNT     = 1 ;
 
-	// FIXME ingredients are wrong (because I'm tired of use /createitems everytime)
 	setarray(.REQ1_INGREDIENTS          , BottleOfWater, MaggotSlime, MauveHerb);
 	setarray(.REQ1_INGREDIENTS_AMOUNT   , 1            , 10         , 5);
 	.REQ1_OUTPUT            = FertilityPotion;
@@ -442,7 +459,7 @@ OnInit:
 	setarray(.REQ2_INGREDIENTS          , FlowerSeeds);
 	setarray(.REQ2_INGREDIENTS_AMOUNT   , 5);
 
-	setarray(.QUESTPRIZES               , TrainingWand  , RubberBat );
+	setarray(.QUESTPRIZES               , TrainingWand  , ManaTorch );
 	setarray(.QUESTPRIZES_AMOUNT        , 1             , 1         );
 
 	setarray(.REQ3_INGREDIENTS          , ABlueRose);
@@ -455,3 +472,43 @@ OnInit:
 	.distance = 4;
 	end;
 }
+
+// ------------------------------------
+// Bees Hotspot
+008-1-1,93,46,0	script	#GalimatiaInst	NPC_HIDDEN,0,1,{
+    end;
+
+// Transport
+OnTouch:
+    if (getq(ArgaesQuest_Galimatia) >= 5) {
+        if (getmap() == "008-1-1")
+            warp "gali@matia", 94, 46;
+        else
+            warp "008-1-1", 92, 46;
+    }
+    end;
+
+// Populate
+OnInstanceInit:
+    areamonster("gali@matia", 95, 45, 97, 46, strmobinfo(1, RedRose), RedRose, 1, "#GalimatiaInst::OnRed");
+    areamonster("gali@matia", 95, 47, 99, 48, strmobinfo(1, YellowRose), YellowRose, 1, "#GalimatiaInst::OnYellow");
+    monster("gali@matia", 99, 45, strmobinfo(1, BlueRose), BlueRose, 1, "#GalimatiaInst::OnBlue");
+    end;
+
+// Respawn
+OnRed:
+    sleep(60000);
+    areamonster("gali@matia", 95, 45, 97, 46, strmobinfo(1, RedRose), RedRose, 1, "#GalimatiaInst::OnRed");
+    end;
+
+OnBlue:
+    sleep(120000);
+    monster("gali@matia", 99, 45, strmobinfo(1, BlueRose), BlueRose, 1, "#GalimatiaInst::OnBlue");
+    end;
+
+OnYellow:
+    sleep(25000);
+    areamonster("gali@matia", 95, 47, 99, 48, strmobinfo(1, YellowRose), YellowRose, 1, "#GalimatiaInst::OnYellow");
+    end;
+}
+

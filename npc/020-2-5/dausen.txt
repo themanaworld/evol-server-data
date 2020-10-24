@@ -7,14 +7,14 @@
 
 020-2-5,40,23,0	script	Dausen	NPC_HUMAN_MALE_CHIEF_ARTIS_LEGION,{
     speech
-        l("Hi there."),
-        l("Looks like someone ran out of ideas for placeholder NPCs."),
-        l("So if you want, you can hunt something, or cook something, or craft somethig."),
-		l("Whatever.");
+        l("Hi there. I am lieutenant Dausen."),
+        l("Red Sands desert is dangerous at the moment, so we sealed it off."),
+        l("The mines are also on the risk of collapsing, so the workers had to be evacuated as well."),
+		l("I fear for the future of this town...");
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

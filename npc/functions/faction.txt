@@ -18,11 +18,11 @@
 // legionrank() / brotherrank() / thiefrank() / magerank()
 function	script	legionrank	{
     switch (LEGION_RANK) {
-        case 5: return l("Constable");
-        case 4: return l("Tengu");
-        case 3: return l("Terranite");
-        case 2: return l("Fluffy");
-        case 1: return l("Maggot");
+        case 5: return l("Admiral");
+        case 4: return l("Constable");
+        case 3: return l("Lieutenant");
+        case 2: return l("Sergeant");
+        case 1: return l("Private");
         case 0: return l("Citizen");
         default: return l("Error");
     }

@@ -8,7 +8,7 @@
 012-1,53,122,0	script	Prawors	NPC_PRAWORS,{
     speech
         l("Arrhoy!"),
-        l("Micksha still haven't added a ship here, so you're stranded here FOREVER!"),
+        l("Saluc Golden Beard, the greediest of all ship captains, charges money for trips. so if you don't have money to pay him, you're stranded here FOREVER!"),
         l("I hope you enjoy this town! Meanwhile, I wonder where I put my %s...", getitemlink(TreasureMap));
     close;
 

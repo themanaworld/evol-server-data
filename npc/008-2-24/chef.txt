@@ -1,0 +1,270 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    The nameless chef of Dimond's Cove, lover of pickled beets.
+
+008-2-24,30,25,0	script	Chef#Dimond	NPC_CHEF_LEGACY,{
+    function deliverFish;
+    function useYourHead;
+    function reminderReid;
+    function recipeBad;
+    function reminderBakery;
+    function heyDiabetes;
+    function reminderSalad;
+    function deliverSalad;
+    mesn;
+    mesq l("I'm too busy right now to talk.");
+    // TODO: Kadiya Quest
+    // TODO: Pickled Beets Quest
+    // (Probably can be mashed together in deliverFish?)
+    switch (getq(General_Cooking)) {
+    case 3:
+        deliverFish();
+        break;
+    case 4:
+        useYourHead();
+        break;
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+        reminderReid();
+        break;
+    case 10:
+        recipeBad();
+        break;
+    case 11:
+    case 12:
+    case 13:
+        reminderBakery();
+        break;
+    case 14:
+        heyDiabetes();
+        break;
+    case 15:
+    case 16:
+        reminderSalad();
+        break;
+    case 17:
+        deliverSalad();
+        break;
+    }
+    close;
+
+function deliverFish {
+    next;
+    mesn;
+    mesq l("If you have any business with me, get it over already.");
+    mes "";
+    mes "##B" + l("Drag and drop an item from your inventory.") + "##b";
+
+    .@id = requestitem();
+
+    // If ID is invalid
+    if (.@id < 1)
+        return;
+
+    // If there's not enough items, it is bound, it cannot be traded/dropped/sold, etc.
+    if (countitem(.@id) < 2 || checkbound(.@id)) {
+        mesc l("You need at least two units of this item for the Chef.");
+        close;
+    }
+
+    // Now now now, what have you given to the Chef...?
+    switch (.@id) {
+    case CommonCarp:
+    case GrassCarp:
+    case Codfish:
+    case Tuna:
+    case Trout:
+    case Salmon:
+        mesn;
+        mesq l("...I hate you.");
+        break;
+    // Other Quests
+    //case OrangeCupcake:
+    //case ChocolateCake:
+    // Fun items and Easter Eggs
+    //case PickledBeets:
+    case Beer:
+        mesn;
+        mesq l("Wha - I am not a drunkard, and anyone who says that is lying!");
+        break;
+    case EasterBasket:
+        mesn;
+        mesq l("Easter event is over, no pickled beets for you!");
+        break;
+    // Default
+    default:
+        mesn;
+        mesq l("What do you expect me to do with this? GO AWAY!");
+        return;
+    }
+    delitem .@id, 2;
+    getexp 1000, 0;
+    setq1 General_Cooking, 4;
+    next;
+    mesn;
+    mesq l("I'm tired of cooking fish all the time. I used to bake Orange Cupcakes and pickled beets!");
+    next;
+    mesn;
+    mesq l("But since that damned Oscar stopped supplying me fruits, I'm trapped in fish-cooking.");
+    useYourHead();
+    return;
+}
+
+function useYourHead {
+    next;
+    mesn;
+    mesq l("I'm too busy to cook the %s but I won't teach you the recipe. I still need to make a living after all.", getitemlink(SeafoodPlate));
+    next;
+    select
+        l("There is no solution for your dilemma."),
+        l("Maybe if you had a recipe which doesn't needs fruits?"),
+        l("Maybe if I convinced Oscar to supply you fruits again?");
+    mes "";
+    if (@menu == 1) {
+        return;
+    } else if (@menu == 2) {
+        mesn;
+        mesq l("Hmpf! It would need to be worth of Dimond's name! I won't accept a lame %s.", getitemlink(SailorStew));
+        setq1 General_Cooking, 5;
+        reminderReid();
+    } else {
+        mesn;
+        mesq l("Hah! In case you didn't noticed, Oscar is a mage. A rather good one.");
+        next;
+        mesn;
+        mesq l("He, however, used magic to improve his crops, and the Brotherhood got wind of that. Some stuff about \"transgenic\" or whatever.");
+        next;
+        mesn;
+        mesq l("I mean, this is a magical world, isn't it?! That makes no sense. He probably angered some corrupt officer or whatever.");
+        next;
+        mesn;
+        mesq l("Maybe you can help him get back his job and stuff, I think the whole town would thank you for that. But I need some more immediate solution, not empty idealist promises.");
+        // TODO: Finish this path so players doesn't have to learn Squirrel Stew
+    }
+    return;
+}
+
+function reminderReid {
+    next;
+    mesn;
+    mesq l("You know what, I've heard the chef from Reid's Inn used to be a great chef when they were alive.");
+    next;
+    mesn;
+    mesq l("Maybe they know some great recipe from the parallel dimensions which doesn't need fruits.");
+    next;
+    mesn;
+    mesq l("Learn and share that with me, and only then, I'll teach you the %s recipe for Yannika.", getitemlink(SeafoodPlate));
+    return;
+}
+
+/* TODO: “The Cook starts too cook the recipe from Reid's Inn the player gave him but the squirrel he uses is still alive and bites him. He does not want to cook anymore wildlife. Fish stinks, Squirrels bite etc. ... and he does not give away his fish recipe.” */
+function recipeBad {
+    .@recipe=(getq2(General_Cooking) == CARNIVOROUS ? MoubooStew : SquirrelStew);
+    mesn;
+    mesq l("You know what, I've heard the chef from Reid's Inn used to be a great chef when they were alive.");
+    next;
+    mesn;
+    mesq l("Maybe they know some great recipe from the parallel dimensions which doesn't need fruits.");
+    next;
+    mesn;
+    mesq l("Learn and share that with me, and only then, I'll teach you the %s recipe for Yannika.", getitemlink(SeafoodPlate));
+    next;
+    select
+        l("He teached me the %s recipe.", getitemname(.@recipe)),
+        l("Alright, I'll be right back.");
+    mes "";
+    if (@menu == 2)
+        return;
+    mesn;
+    mesq l("%s? What is even a %s? Are you trying to poison my customers?!", getitemlink(.@recipe), getitemlink(.@recipe));
+    next;
+    mesn;
+    mesq l("Bah! I should have known better. Of course you would only find weird people in Golbenez's fantasy inn.");
+    next;
+    mesn;
+    mesc l("%s sighs.", .name$);
+    mesq l("You know what? Maybe I should make some dessert instead. It is perfect, who doesn't likes desserts, anyway?");
+    // Well, Ms. Dimond in Moubootaur Legends, who got overweight maybe...?
+    next;
+    mesn;
+    mesq l("Tulimshar has a great bakery - learn their secrets and share with me something sweet and nice. Go already!");
+    setq1 General_Cooking, 11;
+    return;
+}
+
+function reminderBakery {
+    next;
+    mesn;
+    mesc l("%s sighs.", .name$);
+    mesq l("You know what? Maybe I should make some dessert instead. It is perfect, who doesn't likes desserts, anyway?");
+    next;
+    mesn;
+    mesq l("Tulimshar has a great bakery - learn their secrets and share with me something sweet and nice. Go already!");
+    return;
+}
+
+function heyDiabetes {
+    mesn;
+    mesq l("%s, where have you been?! I looked for you everywhere in Hurnscald and couldn't find you!", strcharinfo(0));
+    next;
+    mesn;
+    mesq l("I remembered I have diabetes, so I wouldn't be able to taste the food! So sweets might be a bad idea!");
+    next;
+    mesn;
+    mesq l("Also, the doctor told Dimond to lose weight, so salads might be a better choice.");
+    next;
+    select
+        l("WHAT?! I even got a Donut recipe!!"),
+        l("Okay... Where can I find salad recipe?"),
+        l("Can't you do it yourself?!");
+    mes "";
+    if (@menu == 3) {
+        mesn;
+        mesq l("Sure I could, but who wants the %s recipe is you, not me. So get to work!", getitemlink(SeafoodPlate));
+        next;
+    }
+    mesn;
+    mesq l("Well, you can bake sweets for yourself, they don't require a Plate anyway. As for salad...");
+    next;
+    mesn;
+    mesq l("I honestly don't know. I mean, we usually export healthy food to Tulimshar; People here aren't so healthy in general.");
+    next;
+    mesn;
+    mesq l("Not sure who in Tulimshar would have money to import that much lettuce and such, but good luck figuring it out!");
+    setq1 General_Cooking, 15;
+    return;
+}
+
+function reminderSalad {
+    mesn;
+    mesq l("Not sure who in Tulimshar would have money to import that much lettuce and such, but good luck figuring it out!");
+    next;
+    mesn;
+    mesq l("Bring me Salad, the healthiest of all foods!");
+    return;
+}
+
+function deliverSalad {
+    mesn;
+    mesq l("What is that...? Salad! You did it!! Give me the recipe!");
+    next;
+    mesn strcharinfo(0);
+    mesc l("You give the recipe to the Chef.");
+    next;
+    mesn;
+    mesq l("Here, I'll now teach you the %s recipe. Don't share it with anyone, and good luck cooking one for Yannika! Yoo-hoo!", getitemlink(SeafoodPlate));
+    RECIPES[CraftSeafoodPlate]=true;
+    setq1 General_Cooking, 18;
+    return;
+}
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    end;
+}

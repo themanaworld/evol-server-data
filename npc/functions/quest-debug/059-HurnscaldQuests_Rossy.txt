@@ -1,0 +1,43 @@
+// Rossy quest debug
+// Authors:
+//    jesusalva
+
+function	script	QuestDebug59	{
+    do
+    {
+        clear;
+        setnpcdialogtitle l("Quest debug");
+        mes "HurnscaldQuests_Rossy";
+        mes "---";
+        mes l("Quest state: @@", getq(HurnscaldQuests_Rossy));
+        if (getq(HurnscaldQuests_Rossy) == 16)
+            mes l("Clauquer's Cave Mask: %d", getq2(HurnscaldQuests_Rossy));
+        next;
+
+        GenericQuestDebug HurnscaldQuests_Rossy,
+            l("Does not have the quest"), 0,
+            l("Requested to find Rossy"), 1,
+            l("Found Rossy"), 2,
+            l("Informed Olana about Rossy"), 3,
+            l("Requested to deliver the berries"), 4,
+            l("Berries delivered"), 5,
+            l("Requested to tell Rossy about exam"), 6,
+            l("Accepted to help Rossy"), 7,
+            l("Requested to deliver potion to David"), 8,
+            l("Delivered potion to David"), 9,
+            l("Inform Olana about success"), 10,
+            l("Bring roses to Rossy"), 11,
+            l("Talk to Olana about allergy"), 12,
+            l("Bring tulips to Rossy"), 13,
+            l("Say Olana is a good mother"), 14,
+            l("Get status on Juliet with Rossy"), 15,
+            l("Dispatched to Clauquer Cave"), 16,
+            l("Juliet has been rescued"), 17;
+
+        if (@menuret < 0)
+        {
+            return;
+        }
+
+    } while (1);
+}

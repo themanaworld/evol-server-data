@@ -1,0 +1,17 @@
+// Moubootaur Legends scripts.
+// Authors:
+//    Jesusalva
+// Description:
+//    This script controls access to Ships, fixing variables.
+
+// Use NPC_LA_MARINE if needed
+001-1,204,85,0	script	Gema IV#A	NPC_HIDDEN,0,0,{
+    end;
+
+OnTouch:
+    EnterTown("Artis");
+
+    warp "marine@"+LOCATION$, 42, 26;
+    closedialog;
+    close;
+}

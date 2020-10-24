@@ -1,0 +1,92 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    The nameless chef of Reid's Inn
+
+009-2-3,27,41,0	script	Chef#Reid	NPC_CHEF_LEGACY,{
+    function cookingIntro;
+    function cookingDeal;
+    .@q=getq(General_Cooking);
+    mesn;
+    mesq l("You're in the way. Get moving!");
+    // TODO: Shop option
+    if (.@q == 5)
+        cookingIntro();
+    if (.@q == 9)
+        cookingDeal();
+    close;
+
+function cookingIntro {
+    .@q2=getq2(General_Cooking);
+    next;
+    select
+        l("Okay, okay..."),
+        l("I've heard you were a great chef and wanted to learn a recipe.");
+    mes "";
+    if (@menu == 1)
+        return;
+    mesn;
+    mesq l("Do I look like charity to you? I'm undead, you know?");
+    next;
+    mesn;
+    mesq l("Actually, the food quality here is horrible. I'm glad I'm undead or I would not eat here.");
+    next;
+    mesn;
+    mesq l("It is all \"fancy\" stuff, I don't even know if that could be of any nourishment for the living, and tastes like rotten. Well, figures. Undead town.");
+    next;
+    mesn;
+    mesq l("What about the following deal: You bring me some tasty food, and I give you some tasty recipe from before I became undead?");
+    next;
+    select
+        l("Deal"),
+        l("No Deal");
+    mes "";
+    if (@menu == 2) {
+        mesn;
+        mesq l("Smart choice, still-living person.");
+        return;
+    }
+    setq1 General_Cooking, 6;
+    mesn;
+    mesq l("Hah, you'll regret it. Bring me %d %s, before Golbenez finds out about our silly agreement.", .amount, getitemlink(.@q2 == VEGAN ? MananaSandwich : PioulegSandwich));
+    return;
+}
+
+function cookingDeal {
+    .@q2=getq2(General_Cooking);
+    .@item=(.@q2 == VEGAN ? MananaSandwich : PioulegSandwich);
+    .@recp=(.@q2 == CARNIVOROUS ? CraftMoubooStew : CraftSquirrelStew);
+    .@reit=(.@q2 == CARNIVOROUS ? MoubooStew : SquirrelStew);
+    next;
+    select
+        l("Okay, okay..."),
+        l("I wanted to give you the %d sandwiches you asked.", .amount);
+    mes "";
+    if (countitem(.@item) < .amount) {
+        mesn;
+        mesq l("Wha- Do you think I'm stupid?");
+        next;
+        mesn;
+        mesq l("You better get out of here, before I turn you into stew!");
+        return;
+    }
+    delitem .@item, .amount;
+    setq1 General_Cooking, 10;
+    RECIPES[.@recp]=true;
+    mesn;
+    mesq l("Eh, not bad. So, here is the %s recipe, from when I was living. It was a blast.", getitemlink(.@reit));
+    next;
+    mesn;
+    mesq l("Now begone and stop disrupting my work!");
+    return;
+}
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    .amount = 10;
+    end;
+
+}
+

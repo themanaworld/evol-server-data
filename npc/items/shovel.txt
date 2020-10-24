@@ -291,6 +291,8 @@ function	script	shovel_getcity	{
 function	script	shovel_randomtreasure	{
     .@id=any(TreasureKey,CoinBag,CoinBag,CoinBag,Coal,
                     Diamond,Ruby,Emerald,Sapphire,Topaz,Amethyst,
+                    CrudeDiamond,CrudeRuby,CrudeEmerald,
+                    CrudeSapphire,CrudeTopaz,CrudeAmethyst,
                     MaggotSlimePotion, LargeMana, LargeHealing);
     delitem TreasureMap, 1;
     .@amount=any(1,1,2);

@@ -2,6 +2,7 @@
 // Authors:
 //    gumi
 //    Reid
+//    Jesusalva
 
 function	script	MerchantGuild_Bank	{
     do
@@ -132,3 +133,165 @@ function	script	MerchantGuild_Bank	{
         }
     } while (true);
 }
+
+// MerchantGuild_Quests(.bankid)
+function	script	MerchantGuild_Quests	{
+    mes "";
+    // Quest Type, Quest Data, Quest Timer
+    .@q=getq(General_MerchantRequest);
+    .@q2=getq2(General_MerchantRequest);
+    .@q3=getq3(General_MerchantRequest);
+    .@id=getarg(0);
+
+    // Cooldown
+    if (.@q3 > gettimetick(2)) {
+        mesn $@BANK_NAME$[.@id];
+        mesq l("There are no tasks for you right now.");
+        mesc l("Please come back later, in %s.", FuzzyTime(.@q3));
+        next;
+        return;
+    }
+
+    // TODO: Submit/Abort current request
+    switch (.@q) {
+    case MERCQ_LETTER:
+        if (.@id == .@q2) {
+            mesn $@BANK_NAME$[.@id];
+            mesq l("Thanks for the letter! Your efforts are greatly appreciated.");
+            Zeny+=rand2(100, 500);
+            getexp rand2(1000, 5000), rand2(150, 300);
+            setq General_MerchantRequest, MERCQ_NONE, 0, gettimetick(2)+1800;
+            return;
+        }
+        else
+        {
+            mesn $@BANK_NAME$[.@id];
+            mesq l("Current task: Deliver a letter to %s", $@BANK_TOWN$[.@q2]);
+            next;
+            select
+                l("Continue"),
+                l("Abort") + " ["+l("Change task")+"]";
+            mes "";
+            if (@menu == 1)
+                return;
+            setq General_MerchantRequest, MERCQ_NONE, 0, gettimetick(2);
+        }
+        break;
+    /* ***************************************** */
+    case MERCQ_GOODS:
+        .@cont=ASK_NO;
+        if (countitem(.@q2)) {
+            mesc l("Deliver %s?", getitemlink(.@q2));
+            .@cont=askyesno();
+        }
+        if (.@cont == ASK_YES) {
+            mesn $@BANK_NAME$[.@id];
+            mesq l("Thanks for the %s! Your efforts are greatly appreciated.", getitemlink(.@q2));
+            delitem .@q2, 1;
+            Zeny+=rand2(500, 2500);
+            getexp rand2(5000, 15000), rand2(250, 400);
+            setq General_MerchantRequest, MERCQ_NONE, 0, gettimetick(2)+7200;
+            return;
+        }
+        else
+        {
+            mesn $@BANK_NAME$[.@id];
+            mesq l("Current task: Purchase a(n) %s", getitemlink(.@q2));
+            next;
+            select
+                l("Continue"),
+                l("Abort") + " ["+l("Change task")+"]";
+            mes "";
+            if (@menu == 1)
+                return;
+            setq General_MerchantRequest, MERCQ_NONE, 0, gettimetick(2);
+        }
+        break;
+    /* ***************************************** */
+    case MERCQ_SCOUT:
+        if (.@id == .@q2) {
+            mesn $@BANK_NAME$[.@id];
+            mesq l("Thanks for scorting our caravan! Your efforts are greatly appreciated.");
+            Zeny+=rand2(2500, 5000);
+            getexp rand2(21000, 35000), rand2(500, 800);
+            setq General_MerchantRequest, MERCQ_NONE, 0, gettimetick(2)+43200;
+            return;
+        }
+        else
+        {
+            mesn $@BANK_NAME$[.@id];
+            mesq l("Current task: Scout guild member to %s", $@BANK_TOWN$[.@q2]);
+            next;
+            select
+                l("Continue"),
+                l("Abort");
+            mes "";
+            if (@menu == 1)
+                return;
+            setq General_MerchantRequest, MERCQ_NONE, 0, gettimetick(2);
+        }
+        break;
+    }
+
+    do
+    {
+        mesc l("The %s Merchant Guild has a few requests for you:", $@BANK_TOWN$[.@id]);
+        .@town = .@id;
+        while (.@town == .@id) {
+            .@town=rand2(getarraysize($@BANK_TOWN$));
+        }
+        select
+            l("How does this works?"),
+            rif(.@town != .@id, l("★ Deliver a letter")),
+            l("★★ Purchase goods"),
+            //rif(.@town != .@id, l("★★★ Scout a caravan")),
+            l("Sorry, I won't accept any.");
+        mes "";
+        switch (@menu) {
+        case 1:
+            mesc l("The Merchant Guild spawns multiple continents, and we can offer you a few tasks for them. Be careful as you might not be able to finish them and you'll have to abort!");
+            mesc l("The more stars, the harder it is.");
+            next;
+            mesc l("After completing a request, there'll be a cooldown, proportional to the difficulty.");
+            mesc l("You can only have one Merchant Guild request active at same time.");
+            next;
+            break;
+        // Deliver a letter
+        case 2:
+            mesc l("We need you to deliver this important letter to %s! Avoid the roads and bandits!", $@BANK_NAME$[.@town]);
+            next;
+            mesc l("Accept request?");
+            if (askyesno() == ASK_YES) {
+                mesc l("I'm counting on you!");
+                setq General_MerchantRequest, MERCQ_LETTER, .@town, gettimetick(2);
+                return;
+            }
+            break;
+        // Purchase goods
+        case 3:
+            .@item=any(ElixirOfLife,
+            CarpSandwich, PioulegSandwich, MananaSandwich,
+            MaggotSlimePotion, BlueberryCake, CarrotCake, Donut,
+            DeathPotion, TreasureMap, IronIngot, SilverIngot, GoldIngot,
+            Diamond, Ruby, Emerald, Sapphire, Topaz, Amethyst,
+            CrudeDiamond, CrudeRuby, CrudeEmerald,
+            CrudeSapphire, CrudeTopaz, CrudeAmethyst,
+            RunestoneUruz, RunestoneRaido, RunestoneThurisaz,
+            RunestoneKaunaz, RunestoneDagaz, RunestonePeorth);
+            // TODO: equips, as crafting/tailoring is added
+            mesc l("The merchant guild needs %s! Purchase it and deliver at the nearest merchant guild member!", getitemlink(.@item));
+            next;
+            mesc l("Accept request?");
+            if (askyesno() == ASK_YES) {
+                mesc l("I'm counting on you!");
+                setq General_MerchantRequest, MERCQ_GOODS, .@item, gettimetick(2);
+                return;
+            }
+            break;
+        default:
+            return;
+        }
+    } while (true);
+    return;
+}
+

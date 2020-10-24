@@ -1,0 +1,151 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Tiki is the sandwich maker of Candor
+
+012-1,116,118,0	script	Tiki	NPC_TIKI,{
+    function tikiSubmit;
+    function tikiMenu;
+    function tikiShop;
+    mesn;
+    mesq l("Hey there, shady fella. Whaddaya want in Candor shores?");
+    next;
+    if (getq(General_Cooking) == 7)
+        tikiMenu();
+    if (getq(General_Cooking) == 8)
+        tikiSubmit();
+    tikiShop();
+    end;
+
+function tikiShop {
+    closeclientdialog;
+    shop .name$;
+    return;
+}
+
+function tikiMenu {
+    .@q2=getq2(General_Cooking);
+    select
+        l("Just wanted to purchase ingredients for cooking."),
+        l("Actually, I would like to learn some recipes."),
+        l("Actually I'm lost. Sorry.");
+    mes "";
+    // Explode script as requested
+    if (@menu == 3)
+        close;
+    // Return so shop can take over
+    if (@menu == 1)
+        return;
+    // @menu == 2, "I would like to learn some recipes"
+    mesn strcharinfo(0);
+    mesc l("You quickly explain the situation and request the %s sandwich.", getitemlink(.@q2 == VEGAN ? MananaSandwich : PioulegSandwich));
+    next;
+    mesn;
+    mesq l("Ahh, I see! Very shady indeed, almost as shady as you are!");
+    next;
+    mesn;
+    mesq l("I would like to help, but I can't. I'm busy, you see! Candor's Sandwich Making Contest is coming up, and I never lost a single instance of it!");
+    next;
+    select
+        l("Ah, too bad, I'll ask Yannika for more ideas, bye."),
+        l("How come you never lost before?"),
+        l("Perhaps I can help?");
+    mes "";
+    if (@menu == 1)
+        close;
+    if (@menu == 2) {
+        mesn;
+        mesq l("Because I'm so great! I am so good, that the other challengers doesn't even show up in fear of losing to me!");
+        next;
+        mesn;
+        mesq l("Anyway, perhaps you could help me, and I'll help you in exchange. Whaddaya think?");
+        next;
+    }
+    mesn;
+    mesq l("It is really easy - I need an idea. Bring me something NEW, revolutionary, to make a sandwich out of it. And I'll teach you the recipe!");
+    next;
+    setq1 General_Cooking, 8;
+    return;
+}
+
+function tikiSubmit {
+    mesc "[" + .name$ + "]";
+    mesc l("\"Bring me something NEW, revolutionary, to make a sandwich out of it.\"");
+    mes "##B" + l("Drag and drop an item from your inventory.") + "##b";
+
+    .@id = requestitem();
+
+    // If ID is invalid
+    if (.@id < 1)
+        close;
+
+    // If there's not enough items, it is bound, it cannot be traded/dropped/sold, etc.
+    // TODO: Prevent plates/bowls from being destroyed this way!!
+    if (countitem(.@id) < 1 || checkbound(.@id) || getiteminfo(.@id, ITEMINFO_TYPE) != IT_HEALING) {
+        mesc l("This item cannot be given.");
+        close;
+    }
+
+    mesc l("Are you sure you want to give %s to %s? Item will be lost!",
+           getitemlink(.@id), .name$), 1;
+    if (askyesno() == ASK_NO)
+        close;
+
+    mesn;
+    mesq l("%s puts %s on between two bread slices and try it.", .name$, getitemname(.@id));
+    next;
+    delitem .@id, 1;
+    if (.@id != MoubooSteak) {
+        mesn;
+        mesc l("%s starts shouting insults at you!", .name$);
+        next;
+        mesn;
+        mesq l("This is the worst. sandwich. ever! How do you dare to give me such thing?!");
+        next;
+        mesn;
+        mesq l("Go get me something else, go do it NOW!!");
+        mesc l("...Maybe if he put the cheese and lettuce as you usually do, it would have tasted great... *sigh*");
+        close;
+    }
+    setq1 General_Cooking, 9;
+    setq1 General_SmearedHands, 3;
+    RECIPES[(.@q2 == VEGAN ? CraftMananaSandwich : CraftPioulegSandwich)]=true;
+    mesn;
+    mesq l("Uh - Oh. This is... Actually good!");
+    next;
+    mesn;
+    mesq l("I'm sure I'll win this year's contest as well! Hah, just wait and see!");
+    next;
+    mesn;
+    mesq l("What? Still want that shady recipe? Meh, just cut a bread, throw in  three lettuce leaves, two cheese, and put the special ingredient - A %s!", getitemname(.@q2 == VEGAN ? Manana : PiouLegs));
+    next;
+    mesq l("And vói-la, you have your sandwich done. Now go, I have a contest to win! Hahaha!");
+    close;
+}
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    tradertype(NST_MARKET);
+
+    sellitem Bread, -1, 35;
+    sellitem PiouLegs, -1, 25;
+    sellitem Manana, -1, 20;
+    sellitem Cheese, -1, 12;
+    sellitem LettuceLeaf, -1, 10;
+    sellitem CommonCarp, -1, 8;
+    sellitem GrassCarp, -1, 7;
+    end;
+
+OnClock0001:
+    restoreshopitem Bread, 35;
+    restoreshopitem PiouLegs, 25;
+    restoreshopitem Manana, 20;
+    restoreshopitem Cheese, 12;
+    restoreshopitem LettuceLeaf, 10;
+    restoreshopitem CommonCarp, 8;
+    restoreshopitem GrassCarp, 7;
+    end;
+}
+

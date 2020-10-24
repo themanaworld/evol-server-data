@@ -1,4 +1,4 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
@@ -6,15 +6,148 @@
 // THIS IS A PLACEHOLDER!
 
 020-2-20,49,30,0	script	Riskim	NPC_CHEF_LEGACY,{
+    function foodQuestline;
+    .@q=getq(General_Cooking);
     speech
         l("Hi there."),
         l("Need a Donut?"),
         l("Well, tell me the recipe and I will bake for you whatever you need, for a small fee."),
-		l("But: No recipe, no deserts.");
+		l("But: No recipe, no desserts.");
+    if (.@q > 10)
+        foodQuestline;
     close;
 
+function foodQuestline {
+    .@q=getq(General_Cooking);
+    .@q2=getq2(General_Cooking);
+    mes "";
+    select
+        rif(.@q == 11, l("Aww, but I was hoping to learn a recipe!")),
+        rif(.@q >= 14, l("I needed Acorn Flour.")),
+        rif(.@q >= 14, l("Do you need acorn flour yourself?")),
+        rif(.@q >= 14, l("I want to cook!")),
+        l("=(");
+    mes "";
+    switch (@menu) {
+    case 1:
+        mesn;
+        mesq l("What? Get out of here you noob. The recipes are the pride of this inn-bakery and I'm not going to give them away just because you asked.");
+        next;
+        mesn;
+        mesq l("Besides, I already have an apprentice - He should be cleaning the basement at this moment, including.");
+        next;
+        mesn;
+        mesq l("Get out of my face and don't say that again.");
+        setq1 General_Cooking, 12;
+        break;
+    case 2:
+        mesn;
+        mesq l("Only the best %s can make fine recipes.", getitemlink(AcornFlour));
+        next;
+        mesn;
+        mesq l("I'm willing to make you one flour for each %d %s you bring me. Three for you, and two as commission.", 5, getitemlink(Acorn));
+        next;
+        mesn;
+        mesq l("So, how many do you want?");
+        menuint
+            rif(countitem(Acorn) >= 5, l("I want %d", 1)), 1,
+            rif(countitem(Acorn) >= 25, l("I want %d", 5)), 5,
+            rif(countitem(Acorn) >= 50, l("I want %d", 10)), 10,
+            rif(countitem(Acorn) >= 125, l("I want %d", 25)), 25,
+            rif(countitem(Acorn) >= 250, l("I want %d", 50)), 50,
+            rif(countitem(Acorn) >= 500, l("I want %d", 100)), 100,
+            rif(countitem(Acorn) >= 5, l("As many as you can.")), countitem(Acorn)/5,
+            l("Ehrm, none, thanks."), 0;
+        mes "";
+        if (!@menuret)
+            break;
+        inventoryplace AcornFlour, @menuret;
+        delitem Acorn, @menuret*5;
+        getitem AcornFlour, @menuret;
+        mesn;
+        mesq l("Here you go. A pleasure doing business with you.");
+        break;
+    case 3:
+        // DailyQuest(lvl, cost, count, item)
+        DailyQuest(20, 3, 1, AcornFlour);
+        break;
+    case 4:
+        mesn;
+        mesq l("My charge is %d E per batch.", .price);
+        if (Zeny < .price)
+            break;
+        next;
+        do
+        {
+            mes "##B" + l("Drag and drop the items from your inventory in the frames.") + "##b";
+
+            // Crafting skin with 4 columns
+            setskin "craft4";
+            .@var$ = requestcraft(4); // Limit: 4 items
+            .@craft = initcraft(.@var$);
+            .@entry = findcraftentry(.@craft, CRAFT_COOKING);
+            setskin "";
+
+            // Does the recipe exist and is a sandwich?
+            if (.@entry < 0)
+            {
+                    narrator
+                        l("You don't know how any recipe with that."),
+                        l("Do you want to try again?");
+                    if (askyesno() == ASK_YES)
+                        .@tryAgain=true;
+                    else
+                        .@tryAgain=false;
+            }
+            else
+            {
+                // Did player cheat? If not, proceed with the craft
+                if (!validatecraft(.@craft))
+                {
+                    narrator
+                        l("Where are the ingredients?");
+                    .@tryAgain=true;
+                }
+                else
+                {
+                    // Even if the recipe is right, if you don't have it on your
+                    // recipe book, it should be deemed invalid.
+                    if (RECIPES[.@entry])
+                    {
+                        usecraft .@craft;
+                        narrator
+                            l("Done!"),
+                            l("Do you want to try again?");
+                    }
+                   else
+                    {
+                        narrator
+                            l("You don't know how any recipe with that."),
+                            l("Do you want to try again?");
+                    }
+
+                    if (askyesno() == ASK_YES)
+                        .@tryAgain=true;
+                    else
+                        .@tryAgain=false;
+                }
+            }
+
+            // Clear unused variables and clear the screen.
+            deletecraft .@craft;
+            Zeny-=.price;
+            if (Zeny < .price)
+                .@tryAgain = false;
+            clear;
+        } while (.@tryAgain);
+        break;
+    }
+    return;
+}
+
 OnInit:
-    .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .bodytype = BODYTYPE_1;
+    .distance = 4;
+    .price = 120;
     end;
 }

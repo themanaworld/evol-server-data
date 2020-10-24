@@ -8,12 +8,12 @@
 020-1,200,203,0	script	Sander	NPC_SANDER,{
     speech
         l("Hi there."),
-        l("I will send you to the mines! Later, when we have mines, that is."),
+        l("I will send you to the mines! Later, when we have clearance for the mines, that is."),
         l("Tell Micksha to get up his ass for mapping desert caves, maybe this will speed it up.");
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

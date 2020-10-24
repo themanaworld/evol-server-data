@@ -1,11 +1,11 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Lena the Bowwoman.
 // THIS IS A PLACEHOLDER!
 
-008-2-13,27,27,0	script	Lena#008-2-13	NPC_LENA,{
+008-2-13,27,27,0	script	Lena	NPC_LENA,{
     speech
         l("Hey."),
         l("Did you hear about the Bandit's attacks? They must have a hideout somewhere outside Hurnscald."),
@@ -15,6 +15,6 @@
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

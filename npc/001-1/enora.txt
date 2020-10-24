@@ -128,6 +128,8 @@
         narrator S_LAST_NEXT,
             l("You received @@ EXP and @@ E.", .@exp_reward, .@zeny_reward);
 
+        // This is silent (can be caught as a string variable)
+        faction_addrep("Legion", 10);
         return;
     }
 

@@ -1,16 +1,18 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Airlia, the major's daughter.
 // THIS IS A PLACEHOLDER!
 
-008-2-10,42,29,0	script	Airlia#008-2-8	NPC_AIRLIA,{
+008-2-10,42,29,0	script	Airlia	NPC_AIRLIA,{
     speech
         l("Hello."),
         l("Do you know where the graveyard is?"),
         lg("No? Better that way. It's so dangerous there.");
 
+    if (getq(General_Brotherhood) < 2)
+        close;
     next;
     select
         l("Okay, thanks."),
@@ -27,6 +29,6 @@
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

@@ -44,3 +44,23 @@ function	script	bitwise_set	{
 
     return set(getarg(0), (getarg(0) & ~(getarg(1))) | (getarg(3, 0) << getarg(2, 0)));
 }
+
+
+// bitmask_count(<int>)
+//    returns the number of bits set in <int> (up to 4096?)
+function	script	bitmask_count	{
+    .@n = getarg(0); // Number evaluated
+    .@p=0; // Bits set/unset
+    .@s=0; // Stack and Check
+    .@m=0; // Memory
+
+    // Loop only as needed
+    while (.@s < .@n) {
+        .@s=2**.@m;
+        if (.@n & .@s)
+            .@p++;
+        .@m++;
+    }
+    return .@p;
+}
+

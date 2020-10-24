@@ -2,7 +2,8 @@
 // Author:
 //    Micksha
 // Description:
-//    Hocus, the Nature Mage. More interested in food than in nature magic, sometimes.
+//    Hocus, the Nature Mage and Academy Grandmaster. More interested in food than in nature magic, sometimes.
+//    "Hocus: the mages here? They just think they work for me, they never understod that i am just one of them.. no idea why they follow me"
 // THIS IS A PLACEHOLDER!
 
 020-1,73,91,0	script	Hocus	NPC_MAGE_BROWN,{
@@ -10,11 +11,65 @@
         l("Hi!"),
         l("You should eat more salad. I see in your face that your nutrition is not good."),
         l("Can you bug Jesusalva? I really would like to teach you something.");
+    if (getq(HurnscaldQuests_Rossy) == 8) {
+        next;
+        mesn;
+        mesq l("I see you are helping the little girl, Rossy I believe? Her profesor, Mr. David, is on the west wing of the magic academy building.");
+    }
+    next;
+    select
+        rif(getq(General_Cooking) == 15, l("Please enlighten me, O Grandmaster, where can I find Salad to improve my eating habits?")),
+        rif(getq(General_Cooking) == 16, l("I've brought you the promised.")),
+        l("Thanks for your wise words.");
+    mes "";
+    switch (@menu) {
+    /* Food Questline */
+    case 1:
+        mesn;
+        mesq l("Here. But you probably won't be coming here to eat all the time, so I will teach you a salad recipe.");
+        next;
+        select
+            l("Do you need some monster killed?"),
+            l("Do you need some sort of item?"),
+            l("Do you need money?");
+        mes "";
+        mesn;
+        mesq l("Hm, not really...");
+        next;
+        mesn strcharinfo(0);
+        // FIXME: Carrot Cake? Really??
+        mesq l("I'll bring you 6 %s, 6 %s, and a %s just wait here. I'll also clean up all monsters on the proximity and pay you 1000 E. Wait for my return, Grandmaster!", getitemlink(RoastedAcorn), getitemlink(Carrot), getitemlink(CarrotCake));
+        setq1 General_Cooking, 16;
+        break;
+    case 2:
+        if (countitem(RoastedAcorn) < 6 ||
+            countitem(Carrot) < 6 ||
+            countitem(CarrotCake) < 1 ||
+            Zeny < 1000) {
+            mesn strcharinfo(0);
+            mesc l("I promised to bring him 6 %s, 6 %s, and a %s. I also promised clean up all monsters on the proximity and pay him 1000 E. I'll make the Grandmaster proud!", getitemlink(RoastedAcorn), getitemlink(Carrot), getitemlink(CarrotCake));
+            close;
+        }
+        mesn;
+        mesq lg("Child, I do not need your money nor items. I told you I would teach you the recipe. It is free.");
+        next;
+        mesn;
+        mesq l("I am already happy enough that you want to improve your own eating habits. You don't need to give me anything.");
+        next;
+        mesn;
+        mesq l("Besides, helping each other, even without a compensation is a good thing and accepting help is nothing to be ashamed of. Here. Go in peace, child.");
+        // FIXME: Probably wrong recipe
+        RECIPES[CraftBlueberryCake]=true;
+        RECIPES[CraftCarrotCake]=true;
+        getitem BlueberryCake, 1;
+        setq1 General_Cooking, 17;
+        break;
+    }
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }
 

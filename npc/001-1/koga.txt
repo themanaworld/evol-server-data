@@ -5,7 +5,7 @@
 //    The Koga in Artis, only accessable via Rowboat.
 // THIS IS A PLACEHOLDER!
 
-001-1,225,59,0	script	Koga#001-1	NPC_KOGA,{
+/*001-1,225,59,0	script	Koga#001-1	NPC_LA_MARINE,{
     .@q=getq(General_Narrator);
     speech
         l("Ah, whom did you bring here?"),
@@ -42,4 +42,5 @@ OnInit:
     .distance = 6;
     //.alwaysVisible = true;
     end;
-}
+}*/
+

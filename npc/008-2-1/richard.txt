@@ -1,20 +1,63 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Richard the Hurns storage guy.
 // THIS IS A PLACEHOLDER!
 
-008-2-1,26,35,0	script	Richard#008-1	NPC_RICHARD_LEGACY,{
-    speech
-        l("Oh hey!"),
-        l("I was supposed to act as storagekeeper, but I forgot my key.");
-        lg("Come back later, perhaps I can find it.");
+008-2-1,26,35,0	script	Richard	NPC_RICHARD_LEGACY,{
+    // Storage/Banking function not unlocked in Artis
+    if (!getq(ArtisQuests_Lloyd)) {
+        speech
+            l("Oh hey!"),
+            l("I was supposed to act as storagekeeper, but I forgot my key."),
+            l("Come back later, perhaps I can find it.");
+        close;
+    }
+    mesn;
+    mesq l("Welcome to %s's Bank!", l($@BANK_TOWN$[.bankid]));
+    next;
 
+    do
+    {
+        select
+            l("I would like to store some items."),
+            l("I would like to perform money transactions."),
+            l("Is there any request for me?"),
+            menuaction(l("Quit"));
+
+        mes "";
+
+        switch (@menu) {
+            case 1:
+                mesn;
+                mesq l("Sure thing! I'll have your items transported here from Artis before you realize!");
+                next;
+                closeclientdialog();
+                openstorage();
+                close;
+            case 2:
+                MerchantGuild_Bank();
+                break;
+            case 3:
+                MerchantGuild_Quests(.bankid);
+                break;
+            default:
+                closeclientdialog;
+                goodbye;
+                close;
+        }
+
+    } while (true);
     close;
 
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
+
+    // Bank configuration
+    array_push($@BANK_NAME$, .name$);
+    array_push($@BANK_TOWN$, "Hurnscald");
+    .bankid = getarraysize($@BANK_NAME$)-1;
     end;
 }

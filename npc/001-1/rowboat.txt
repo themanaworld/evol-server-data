@@ -23,12 +23,17 @@
     if (askyesno() == ASK_YES) {
         if (getq(General_Brotherhood) >= 2)
         {
-            slide 227, 62;
+            //slide 227, 62;
             //slide 204, 62;
+            PC_DEST$="Argaes";
+            @timer_navio_running = 1;
+            addtimer 210000, "#MarineShip::OnEvent"; // This route is 30s slower
+            warp "marine-2", 40, 32;
+            dispbottom l("You're smuggled aboard the Legion expedition. ACT NATURALLY!");
             .caller=0;
             .clocks=gettimetick(2);
             movenpc("#Rowboat", 192, 25);
-            setmount 1;
+            //setmount 1;
         }
         else
         {

@@ -2,6 +2,7 @@
 // Authors:
 //    Alige
 //    Reid
+//    Jesusalva
 // Description:
 //    Artis's Legion of Aemil leader.
 // Variables:
@@ -15,6 +16,7 @@
 
 001-2-39,34,41,0	script	Q'Anon	NPC_Q_ANON,{
     function legionState;
+    function legionState2;
     function notaMember;
     .@q=getq(Artis_Legion_Progress);
     mesn;
@@ -31,6 +33,7 @@
     // Main Menu
     select
         rif(.@q == 5, l("Lozerk told me to talk to you and join the legion.")),
+        rif(.@q == 6, l("Have I grown enough reputation to join?")),
         l("Thanks, sir Q'Anon.");
     mes "";
     switch (@menu)
@@ -39,6 +42,9 @@
             legionState();
             break;
         case 2:
+            legionState2();
+            break;
+        case 3:
             mesn;
             mesq lg("Make me proud, girl.", "Make me proud, boy.");
             break;
@@ -87,6 +93,34 @@ function legionState {
     // It would be the commands below:
     // join_clan(FACTION_LEGION);
     // clan_leave();
+    return;
+}
+
+function legionState2 {
+    if (faction_standing("LEGION", true) >= 1) {
+        mesn;
+        mesq l("Actually. I am thinking in sending you in a... special mission.");
+        next;
+        mesn;
+        mesq l("You probably noticed a frigate docked near La Johanne when you arrived?");
+        next;
+        mesn;
+        mesq l("We've found... the old continent, from where our race came from long ago.");
+        next;
+        mesn;
+        mesq l("It seems to have fallen in barbarian hands since the Fleet of Ancea, and that, is not something we can allow.");
+        next;
+        mesn;
+        mesc l("%s gives you a piece of paper, which you put on a different pocket.");
+        mesq lg("Go to the ship, show the captain this letter if asked. After reaching, look for Captain Hal. He'll give you further instructions.");
+        next;
+        mesn;
+        mesq lg("Make me proud, girl.", "Make me proud, boy.");
+        setq Artis_Legion_Progress, 7;
+    } else {
+        mesn;
+        mesq l("Hmm... No, not yet. Try helping other legion members around.");
+    }
     return;
 }
 

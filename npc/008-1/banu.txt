@@ -1,11 +1,11 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Banu, the old lady.
 // THIS IS A PLACEHOLDER!
 
-008-1,244,88,0	script	Banu#008-1	NPC_OLD_LADY,{
+008-1,244,88,0	script	Banu	NPC_OLD_LADY,{
     speech
         l("Hello."),
         l("You don't have a scythe, by chance? I am too old to mew this field all alone."),
@@ -16,6 +16,6 @@
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

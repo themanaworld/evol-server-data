@@ -7,7 +7,7 @@
 
 012-2-3,27,28,0	script	Cynric	NPC_CYNRIC,{
     mesn;
-    mesq l("Welcome to Candor's Bank!");
+    mesq l("Welcome to %s's Bank!", l($@BANK_TOWN$[.bankid]));
     next;
 
     do
@@ -15,6 +15,7 @@
         select
             l("I would like to store some items."),
             l("I would like to perform money transactions."),
+            l("Is there any request for me?"),
             menuaction(l("Quit"));
 
         mes "";
@@ -30,6 +31,9 @@
             case 2:
                 MerchantGuild_Bank();
                 break;
+            case 3:
+                MerchantGuild_Quests(.bankid);
+                break;
             default:
                 closeclientdialog;
                 goodbye;
@@ -42,5 +46,10 @@
 OnInit:
     .bodytype = BODYTYPE_3;
     .distance = 4;
+
+    // Bank configuration
+    array_push($@BANK_NAME$, .name$);
+    array_push($@BANK_TOWN$, "Candor");
+    .bankid = getarraysize($@BANK_NAME$)-1;
     end;
 }

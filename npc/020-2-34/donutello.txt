@@ -1,0 +1,167 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Donutello is the Donut Apprentice
+
+020-2-34,33,48,0	script	Donutello	NPC_CHEF_LEGACY,{
+    function foodQuestline;
+
+    // Instance behavior
+    if (instance_id() > 0) {
+        npctalk3 l("Time remaining: %s" , FuzzyTime(@tinner));
+        end;
+    }
+
+    mesn;
+    mesq l("Why are you here? Only staff and VIP are supposed to go down here.");
+
+    .@q=getq(General_Cooking);
+    if (.@q > 11)
+        foodQuestline();
+
+    close;
+
+function foodQuestline {
+    .@q=getq(General_Cooking);
+    .@q2=getq2(General_Cooking);
+    mes "";
+    select
+        rif(.@q == 12, l("Can you teach me how to cook sweets?")),
+        rif(.@q == 13, l("Rattos killed. So, my recipe...")),
+        l("What is the area, anyway?"),
+        l("Erm, wrong door, sorry.");
+    mes "";
+    switch (@menu) {
+    case 1:
+        mesn;
+        mesq l("What? But the recipes are the pride of Tulimshar Inn, and-- Oohhhh.... Maybe...");
+        next;
+        mesn;
+        mesq l("Hey, I can teach the %s recipe. However...", getitemlink(Donut));
+        next;
+        select
+            l("Oh no - I'm not your personal delivery guy! Bye bye!"),
+            l("Here we go again...");
+        mes "";
+        if (@menu == 1)
+            break;
+        mesn;
+        mesq l("I am scared of the rattos! And Riskim says that we cannot have rattos here, so he also wants me to kill them!! %%i");
+        next;
+        mesn strcharinfo(0);
+        select
+            l("Sounds cliché, but okay, I'll help."),
+            l("They're just rattos?");
+        mes "";
+        mesn;
+        mesq l("Oh, but they aren't only fast - they're more vicious than common rattos, from all the sugar they eat. And if you take too long killing them, Riskim will hear and - things will turn out badly!");
+        next;
+        mesc l("Accept quest?"), 1;
+        mesc l("Time limit: %s", l("2 minutes"));
+        .@mapn$="Tinn@"+getcharid(0);
+        if (askyesno() == ASK_NO)
+            break;
+
+        if (instanceowner(@tinnst) != getcharid(3)) {
+            @tinnst = instance_create("T.INN "+getcharid(0), getcharid(3), IOT_CHAR);
+	        instance_attachmap("020-2-34", @tinnst, false, .@mapn$);
+		    instance_set_timeout(120, 120, @tinnst);
+		    instance_init(@tinnst);
+        } else {
+		    instance_set_timeout(120, 120, @tinnst);
+        }
+        @tinner = gettimetick(2) + 120;
+        killmonsterall(.@mapn$);
+        for (.@i = 0; .@i < 4; .@i++) {
+            .@mob=areamonster(.@mapn$, 32, 50, 52, 57, strmobinfo(1, Ratto), Ratto, 1, "Donutello::OnRattoKill");
+            // Make them vicious
+            .@bhp= getunitdata(.@mob, UDT_MAXHP);
+            .@bat1=getunitdata(.@mob, UDT_ATKMIN);
+            .@bat2=getunitdata(.@mob, UDT_ATKMAX);
+            .@bhit=getunitdata(.@mob, UDT_HIT);
+            setunitdata(.@mob, UDT_MAXHP,    .@bhp*22/10);
+            setunitdata(.@mob, UDT_HP,       .@bhp*22/10);
+            setunitdata(.@mob, UDT_ATKMIN,   .@bat1*27/10);
+            setunitdata(.@mob, UDT_ATKMAX,   .@bat2*27/10);
+            setunitdata(.@mob, UDT_HIT,      .@bhit*20);
+        }
+        warp .@mapn$, 37, 50;
+        dispbottom l("Time remaining: %s", FuzzyTime(@tinner));
+        closeclientdialog;
+        close;
+        break;
+    case 2:
+        mesn;
+        mesq l("Phew, thanks %s. These rattos were going to be the ruin of me!", strcharinfo(0));
+        next;
+        mesn;
+        mesq l("However, you must bring me %d %s, %d %s and %d %s. Because the ingredients are you!",
+        6, getitemlink(AcornFlour),
+        2, getitemlink(MoubooMilk),
+        2, getitemlink(ChocolateBar));
+        next;
+        mesn;
+        mesq l("Erm, Acorn Flour is made of mashed up acorns. %d Acorns make one flour. So, I'll accept the acorns instead of the flour as you helped me a lot.", 3);
+        next;
+        mesc l("Deliver the ingredients?"), 1;
+        mesf("- %d %s", 18, getitemlink(Acorn));
+        mesf("- %d %s", 2, getitemlink(MoubooMilk));
+        mesf("- %d %s", 2, getitemlink(ChocolateBar));
+        mes "";
+        if (askyesno() == ASK_NO)
+            break;
+        if (countitem(ChocolateBar) < 2 ||
+            countitem(MoubooMilk) < 2 ||
+            countitem(Acorn) < 18)
+            break;
+        inventoryplace Donut, 1;
+        delitem Acorn, 18;
+        delitem MoubooMilk, 2;
+        delitem ChocolateBar, 2;
+        setq1 General_Cooking, 14;
+        RECIPES[CraftDonut]=true;
+        getitem Donut, 1;
+        mesn;
+        mesq l("Great, thanks! If you need more flour you can ask Riskim. He also buys flour for a good price.");
+        next;
+        mesn;
+        mesq l("First divide the ingredients on two halves. Take the first half, mix them, bring the oven, and blablablablah....");
+        next;
+        mesn;
+        mesq l("And after a while, you have %s! I made two with the ingredients you gave me, one for you and one for me. This is my thankyou for helping me out on the storeroom. Enjoy!", getitemlink(Donut));
+        break;
+    case 3:
+        mesn;
+        mesq l("Up there is the Casino. Erm, it is totally legal, I swear.");
+        next;
+        mesn;
+        mesq l("Here is the storeroom, and... Hey! I don't need to answer you questions!!");
+        break;
+    }
+    return;
+
+OnRattoKill:
+    if (!playerattached()) end;
+    // FIXME - Make sure this is an instanced map
+    //if (instance_id() < 1) end;
+
+    if (mobcount(getmap(), "Donutello::OnRattoKill") <= 0) {
+        dispbottom l("I'm done with this.");
+        getmapxy(.@m$, .@x, .@y, 0);
+        setq1 General_Cooking, 13;
+        sleep2(1000); // Give you some time to loot
+        warp "020-2-34", .@x, .@y;
+        sleep2(500); // Give M+ some time to re-render everything
+        npctalk3 l("Thanks %s... I feel much safer now!", strcharinfo(0));
+    } else {
+        dispbottom l("Rattos remaining: %d", mobcount(getmap(), "Donutello::OnRattoKill"));
+    }
+    end;
+}
+
+OnInit:
+    .bodytype = BODYTYPE_1;
+    .distance = 4;
+    end;
+}

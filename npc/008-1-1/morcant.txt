@@ -23,6 +23,14 @@
     case 2:
         mesn;
         mesq l("Hohoho! That is a family's trade secret!");
+        if (!getq(General_SmearedHands)) {
+            next;
+            mesn;
+            mesq l("You don't even know how to cook. %s.. Ah, good old times.", any(
+                l("I've learned cooking with Yannika."),
+                l("I had tasty barbecue with Crane.")
+                 ));
+        }
         break;
     case 3:
         mesn;
