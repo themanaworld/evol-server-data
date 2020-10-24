@@ -29,16 +29,16 @@ function	script	time_from_days	{
 //
 //     <options> is bitmasked:
 //     1  do not show "ago" when in past
-//     2  do not show "in" when in the future
+//     2  do not show "in" when in the future (default)
 //     4  show "from now" instead of "in" when in the future
 //
 //     <precision> is the number of units to show,
-//     by default uses max precision
+//     do not exceed 99 (default is 2)
 
 function	script	FuzzyTime	{
     .@future = getarg(0, now());
-    .@options = getarg(1, 0);
-    .@precision = getarg(2, 99);
+    .@options = getarg(1, 2);
+    .@precision = getarg(2, 2);
     .@diff = (.@future - now());
 
     // check if in the past, or in the future

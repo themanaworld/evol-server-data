@@ -8,13 +8,13 @@
 020-1,171,80,0	script	Noke	NPC_DESERT_HAT_MAN,{
     speech
         l("Hi there."),
-        l("Looks like someone ran out of ideas for placeholder NPCs."),
-        l("So if you want, you can hunt something, or cook something, or craft somethig."),
+        l("Everyone wants a slice of Tulimshar."),
+        l("So it is hard to know my role on this world."),
 		l("Whatever.");
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

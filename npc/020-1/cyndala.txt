@@ -8,13 +8,13 @@
 020-1,285,156,0	script	Cyndala	NPC_INYA,{
     speech
         l("Hi there."),
-        l("Looks like someone ran out of ideas for placeholder NPCs."),
-        l("So if you want, you can bring Heathin a hammer."),
+        l("There used to be more pirates around here, but, you know."),
+        l("People are going mad rewriting history and I'm clueless."),
 		l("Whatever.");
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

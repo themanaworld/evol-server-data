@@ -343,7 +343,7 @@
             delayed_reply(sprintf("I haven't seen player `%s` today.", .@player$));
 
         else
-            delayed_reply(sprintf("Player `%s` was last seen %s.", .@player$, FuzzyTime(.@time)));
+            delayed_reply(sprintf("Player `%s` was last seen %s.", .@player$, FuzzyTime(.@time, 0, 99)));
 
         end;
     }
@@ -656,7 +656,7 @@
             reply(relative_array_random(.bad$));
 
         else if (.@m$ ~= "(?:^| )(?:how old are you|uptime)(?:$|[^a-z])")
-            reply("%%B Server uptime: " + FuzzyTime(.uptime, 1) + ".");
+            reply("%%B Server uptime: " + FuzzyTime(.uptime, 1, 99) + ".");
 
         else if (.@m$ ~= "(?:^| )how chatty are you(?:$|[^a-z])")
             reply("%%B Answered " + .answered_times + " times, ignored " + .ignored_times + " times.");

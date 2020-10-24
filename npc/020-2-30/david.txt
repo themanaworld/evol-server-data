@@ -1,0 +1,43 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    David is the head of Alchemy class in the Magic Academy
+
+020-2-30,36,24,0	script	David	NPC_MAGE_BLUE,{
+    function rossyPotion;
+    mesn;
+    mesq l("Hello there. I am David, head of alchemy in the magic academy.");
+    next;
+    mesn;
+    mesq l("If you are not a student, please leave the premises at once.");
+    if (getq(HurnscaldQuests_Rossy) == 8)
+        rossyPotion();
+    close;
+
+function rossyPotion {
+    next;
+    select
+        l("Alright, I'll be going."),
+        l("Actually, Rossy told me to deliver a potion to you.");
+    mes "";
+    if (@menu == 1)
+        return;
+    mesn;
+    mesq l("Ah, just in time. I asked Hocus' to send a letter; the deadline was coming up soon.");
+    next;
+    mesn;
+    mesq l("It seems okay-ish, I guess? Okay-ish is enough. Anyway, I'll analyze it and grade fairly. You can tell her that.");
+    next;
+    mesn;
+    mesq l("And unless you are a student, I'll have to ask you to leave the premises.");
+    setq HurnscaldQuests_Rossy, 9;
+    return;
+}
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    end;
+}
+

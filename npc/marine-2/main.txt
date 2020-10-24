@@ -1,0 +1,60 @@
+// Moubootaur Legends script
+// Originals from TMW-BR
+// Imported by Jesusalva
+
+marine-2,0,0,0	script	#MarineShip	NPC_HIDDEN,{
+    end;
+
+OnEvent:
+    // Handle travel
+    if (@timer_navio_running == 0) end;
+    if      (PC_DEST$ == "Tulim") goto L_Tulim;
+    else if (PC_DEST$ == "Hurns") goto L_Hurns;
+    else if (PC_DEST$ == "Candor") goto L_Candor;
+    else if (PC_DEST$ == "Artis") goto L_Artis;
+    else if (PC_DEST$ == "Argaes") goto L_Argaes;
+    else goto L_Error;
+    end;
+
+L_Tulim:
+    EnterTown("Tulim", true);
+    dispbottom l("%s disembarks at Tulimshar.", strcharinfo(0));
+    end;
+
+L_Hurns:
+    EnterTown("Hurns", true);
+    dispbottom l("%s disembarks at Hurnscald.", strcharinfo(0));
+    end;
+
+L_Candor:
+    EnterTown("Candor", true);
+    dispbottom l("%s disembarks at Candor.", strcharinfo(0));
+    end;
+
+L_Artis:
+    EnterTown("Artis", true);
+    dispbottom l("%s disembarks at Artis.", strcharinfo(0));
+    end;
+
+L_Argaes:
+    if (getq(General_Narrator) == 1) {
+        warp "000-0-1", 26, 28;
+    } else {
+        EnterTown("Argaes", true);
+        dispbottom l("%s disembarks at Argaes.", strcharinfo(0));
+    }
+    end;
+
+L_Error:
+    consolemes(CONSOLEMES_ERROR, "PLAYER INVALID PC_DEST ON #MarineShip: " + PC_DEST$);
+    ReturnLastTown();
+    dispbottom l("An error on your travel happened. Please report.");
+    end;
+}
+
+function	script	TravelFix	{
+    if (getmap() == "marine-2")
+        ReturnLastTown();
+    return;
+}
+

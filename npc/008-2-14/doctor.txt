@@ -1,6 +1,7 @@
 // Evol scripts.
 // Author:
 //    gumi
+//    The Mana World Project
 // Quest states:
 //    [1] 0  - cannot do the quest
 //    [1] 1  - can do the quest
@@ -26,12 +27,16 @@
 //    The crazy Hurnscald Doctor.
 
 008-2-14,27,27,0	script	Doctor	NPC_DOCTOR_LEGACY,{
+    function doctorAxeHat;
+    function doctorEyePatch;
+
+    if (getequipid(EQI_HEAD_TOP) == AxeHat)
+        doctorAxeHat();
+    if (getequipid(EQI_ACC_R) == Eyepatch)
+        doctorEyePatch();
 
     speech(4,
         l("Hello, can I help you?"));
-
-    // TODO: check for AxeHat when we get it
-    // TODO: check for EyePatch when we get it
 
     selectd(
         l("I think I am sick!"),
@@ -58,23 +63,53 @@
             l("No, I haven't seen anything."));
         close;
     }
-
-
     end;
+
+function doctorAxeHat {
+    mesn;
+    mesq l("Oh my, what happened to you?");
+    next;
+    mesn;
+    mesq l("Wait. Thats just a fake. Shame on you!");
+    next;
+    mesn;
+    mesq l("Anyway...");
+    next;
+    return;
+}
+
+function doctorEyePatch {
+    mesn;
+    mesq l("Would you like a glass eye to replace that eye patch you have? We just got a whole load of them in today. I'll even let you keep the patch as a souvenir.");
+    next;
+    select
+        l("No, thank you."),
+        l("Yes, please.");
+    mes "";
+    if (@menu == 1) {
+        mesn;
+        mesq l("If you change your mind, just say the word. Anyway...");
+        next;
+        return;
+    }
+    mesn;
+    mesq l("Now, where did I put that box of eyes...");
+    next;
+    mesn;
+    mesc l("He goes off to look for them and comes back empty handed.");
+    mesq l("I can't seem to find where I put that box. You should come back later, I may have found them by then.");
+    next;
+    mesn;
+    mesq l("Anyway...");
+    next;
+    return;
+}
+
 
 OnInit:
     .quest_inspector = HurnscaldQuests_Inspector;
     .quest_debug = .quest_inspector;
     .bodytype = BODYTYPE_3;
     .distance = 3;
-
-////////// UNFINISHED //////////
-////////////////////////////////
-// REMOVE THIS CODE WHEN THIS //
-// NPC IS NO LONGER A WIP //////
-////////////////////////////////
-//if (!debug) disablenpc(.name$);
-///////// UNFINISHED ///////////
-
     end;
 }

@@ -1,4 +1,4 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
@@ -9,12 +9,12 @@
     speech
         l("Hi!"),
         lg("You may remember me, I am Valia.");
-        l("Better stay away from my basement, you may end up like the poor guys down there.");
+        l("Better stay away from my basement, you may end up like the poor guy down there.");
 
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

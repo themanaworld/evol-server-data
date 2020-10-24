@@ -1,0 +1,17 @@
+// Moubootaur Legends scripts.
+// Authors:
+//    Jesusalva
+// Description:
+//    This script controls access to Ships, fixing variables.
+
+// Use NPC_LA_MARINE if needed
+012-1,64,133,0	script	La Marine#C	NPC_HIDDEN,0,0,{
+    end;
+
+OnTouch:
+    EnterTown("Candor");
+
+    warp "marine@"+LOCATION$, 42, 26;
+    closedialog;
+    close;
+}

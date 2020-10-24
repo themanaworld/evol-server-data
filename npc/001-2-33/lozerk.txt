@@ -139,6 +139,14 @@
     speech S_LAST_NEXT,
         l("Welcome to the Legion of Aemil's building in Artis!");
 
+    // You're an enemy of the Legion - No dialog for you
+    if (faction_standing("LEGION", true) < 1) {
+        mesn;
+        mesq l("Please don't loiter around unless you have business with the Legion.");
+        close;
+    }
+
+
     do
     {
         .@legion_progress = getq(Artis_Legion_Progress);

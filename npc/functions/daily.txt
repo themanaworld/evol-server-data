@@ -1,0 +1,154 @@
+// The Mana World scripts.
+// Author:
+//    TMW Team
+//    Jesusalva
+// Description:
+//    Daily Quest framework
+// Variables returned:
+// .@dq_return - Code of what happend
+//    DAILY_LOWLEVEL = Low level
+//    DAILY_IGNORED = Ignored NPC
+//    DAILY_NOPTS = Not enough points
+//    DAILY_NOITEMS = Not enough items
+//    DAILY_OK = Success
+
+// Variables to set:
+// .@dq_level - Minimal level needed to use the quest
+// .@dq_cost - The number of points this quest uses
+// .@dq_count - The number of given item needed
+// .@dq_name - Item Aegis
+// .@dq_money - The money reward for doing the quest
+// .@dq_exp - Experince gained by doing the quest
+
+// Optional:
+// .@dq_handle_return - When set to anything other then 0 the function will not print exiting text
+
+// Variables used inside:
+// DailyQuestPoints - The number of points the player currently has
+// DailyQuestTime - Time since DailyQuestPoints was lasted renewed
+// DailyQuestBonus - Additional points added in addition to player BaseLevel
+
+// (DailyQuestBonus makes a good reward from non-daily quests)
+
+function	script	DailyQuestPointsFunc	{
+    .@dq_earliest = gettimetick(2) - 86400;
+    if (DailyQuestTime < .@dq_earliest)
+        DailyQuestTime = .@dq_earliest;
+
+    // how many whole daily quest points the player has earned
+    // we increment DailyQuestTime by the number of seconds in that many increments
+    .@dq_increments = (gettimetick(2) - DailyQuestTime)*BaseLevel / 86400;
+    DailyQuestTime = DailyQuestTime + .@dq_increments*86400/BaseLevel;
+
+    // player can't regenerate any quest points, but might have a bonus
+    if (DailyQuestPoints < BaseLevel) {
+        // normal recharging case - increment, but don't let it recharge more than a day's worth
+        DailyQuestPoints = DailyQuestPoints + .@dq_increments;
+        if (DailyQuestPoints > BaseLevel)
+            DailyQuestPoints = BaseLevel;
+    }
+
+    // fallthrough to bonus, which *is* allowed to push DailyQuestPoints above BaseLevel
+    DailyQuestPoints = DailyQuestPoints + DailyQuestBonus;
+    DailyQuestBonus = 0;
+    return;
+
+}
+
+// DailyQuest(lvl, cost, count, item, {exp, money})
+function	script	DailyQuest	{
+    // Sanitize
+    DailyQuestPointsFunc();
+
+    // Load variables
+    .@dq_level=getarg(0);
+    .@dq_cost=getarg(1);
+    .@dq_count=getarg(2);
+    .@dq_name=getarg(3);
+    // Money defaults to 200% sell value, experience to 300% sell value
+    .@dq_exp=getarg(4, getiteminfo(.@dq_name, ITEMINFO_SELLPRICE)*.@dq_count*3);
+    .@dq_money=getarg(5, getiteminfo(.@dq_name, ITEMINFO_SELLPRICE)*.@dq_count*2);
+
+    // Insufficient level
+    if (BaseLevel < .@dq_level) {
+        mesq l("Hey, you should go kill some things to get stronger first.");
+        return DAILY_LOWLEVEL;
+    }
+
+    // Insufficient points
+    if (DailyQuestPoints < .@dq_cost) {
+        mesq l("You look exhausted, maybe you should rest a bit.");
+        return DAILY_NOPTS;
+    }
+
+    mesq l("If you bring me %d %s, I will give you a reward.", .@dq_count, getitemlink(.@dq_name));
+    select
+        l("I have what you want."),
+        l("Take all you need."),
+        l("Ok, I'll get to work."),
+        l("Nah, I'm not going to help you.");
+    mes "";
+
+    if (@menu >= 3)
+        return DAILY_IGNORED;
+
+    if (countitem(.@dq_name) < .@dq_count) {
+        mesq l("I said %d %s; you should learn to count.", .@dq_count, getitemlink(.@dq_name));
+        return DAILY_NOITEMS;
+    }
+
+    // Default multiplier
+    .@multiplier = 1;
+
+    if (@menu == 1) {
+        delitem .@dq_name, .@dq_count;
+
+        Zeny = Zeny + .@dq_money;
+        getexp .@dq_exp, 0;
+
+        DailyQuestPoints = DailyQuestPoints - .@dq_cost;
+
+    }
+    else
+    {
+
+        .@item_multiple = (countitem(.@dq_name) / .@dq_count);
+        .@dp_multiple = (DailyQuestPoints / .@dq_cost);
+
+        if (.@dp_multiple > .@item_multiple)
+            .@multiplier = .@item_multiple;
+        if (.@item_multiple >= .@dp_multiple)
+            .@multiplier = .@dp_multiple;
+
+        DailyQuestPoints = DailyQuestPoints - (.@dq_cost * .@multiplier);
+
+        delitem .@dq_name, (.@dq_count * .@multiplier);
+
+        Zeny = Zeny + (.@dq_money * .@multiplier);
+        getexp (.@dq_exp * .@multiplier), 0;
+
+        if (.@dq_handle_return)
+            goto L_Exit_Good;
+    }
+
+    mesq l("Thank you!");
+
+    if (DailyQuestPoints < .@dq_cost)
+        mesq l("You look exhausted, maybe you should rest a bit.");
+    else if (DailyQuestPoints > BaseLevel)
+        mesq l("Woah, you're bursting with power.");
+    else if (DailyQuestPoints > (BaseLevel*9)/10)
+        mesq l("You're in a very good shape.");
+    else if (DailyQuestPoints > (BaseLevel*7)/10)
+        mesq l("You don't seem very exhausted by my tasks.");
+    else if (DailyQuestPoints > (BaseLevel*5)/10)
+        mesq l("Aren't you getting weary yet?");
+    else
+        mesq l("You look a little tired.");
+
+    mes "";
+    mesc l("+%d money", (.@dq_money * .@multiplier));
+    mesc l("+%d experience points", (.@dq_exp * .@multiplier));
+    return DAILY_OK;
+}
+

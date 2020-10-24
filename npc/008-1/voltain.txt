@@ -1,11 +1,11 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Voltain the dark druid.
 // THIS IS A PLACEHOLDER!
 
-008-1,182,155,0	script	Voltain#008-1	NPC_DARK_DRUID,{
+008-1,182,155,0	script	Voltain	NPC_DARK_DRUID,{
     speech
         l("Go away, I have to think about new evil doings."),
         lg("GO AWAY, I SAID!");
@@ -14,6 +14,6 @@
 
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
     end;
 }

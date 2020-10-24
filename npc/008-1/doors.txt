@@ -1,0 +1,43 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Rossy Quest
+
+008-1,49,157,0	script	#RossyCaveInit	NPC_HIDDEN,0,0,{
+    end;
+
+OnTouch:
+    if (getq(HurnscaldQuests_Rossy) != 16)
+    {
+        // Normal warping
+        warp "008-3-0", 129, 112;
+    }
+    else
+    {
+        // HurnscaldQuests_Rossy
+        // (MAIN QUEST, CAVE CONTROL, INSTANCE CONTROL)
+        .@inst=getq3(HurnscaldQuests_Rossy);
+        .@mapn$="ross@"+getcharid(0);
+        // NOTE: .@inst >= 0 skipped now that inst=0 refers to La Marine
+        if (isinstance(.@inst) && instanceowner(.@inst) == getcharid(3))
+        {
+            // Renew instance for 15 minutes
+		    //instance_set_timeout(900, 900, .@inst);
+            // FIXME: Clean unkilled monsters
+        } else {
+		    .@inst = instance_create("ROSSY "+getcharid(0), getcharid(3), IOT_CHAR);
+	        instance_attachmap("008-3-0", .@inst, false, .@mapn$);
+	        // Instance lasts 20 minutes
+		    instance_set_timeout(ROSSY_INSTIME, ROSSY_INSTIME, .@inst);
+		    instance_init(.@inst);
+	        setq3 HurnscaldQuests_Rossy, .@inst;
+            // Reset quest progress
+	        setq2 HurnscaldQuests_Rossy, 0;
+            @rossylock=false;
+        }
+        // Warp to instanced map
+        warp .@mapn$, 129, 112;
+    }
+    end;
+}

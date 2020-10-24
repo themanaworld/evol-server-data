@@ -1,21 +1,320 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
+//    Jesusalva
+//    Alastrim
+//    Ali-g
+//    Dark Mage
 // Description:
-//    Olana, the old woman who is looking for her daughter Rossy.
-// THIS IS A PLACEHOLDER!
+//    Olana, the old woman who is looking for her daughter Rossy and Juliet.
+// HurnscaldQuests_Rossy
+//      0 - Quest Not Assigned
+//      1 - Asked to look for Rossy
 
-008-2-4,30,28,0	script	Olana#008-2-4	NPC_OLANA,{
-    speech
-        l("Oh, a traveller. Welcome."),
-        l("Did you see my daughter Rossy, by chance?"),
+
+008-2-4,30,28,0	script	Olana	NPC_OLANA,{
+    function olanaIntro;
+    function olanaIntroDone;
+    function olanaRossyLie;
+    function olanaDeliverBerries;
+    function olanaGetLetter;
+    function olanaRossyGoodGirl;
+    function olanaRossyBadMom;
+    function olanaRossyHappy;
+    .@q=getq(HurnscaldQuests_Rossy);
+    if (BaseLevel < .minLevel)
+        .@q = -1; // Hard Reset
+    mesn;
+    mesq l("Oh, a traveler. Welcome.");
+    next;
+    switch (.@q) {
+    case 0:
+        olanaIntro();
+        break;
+    case 1:
+        olanaIntroDone();
+        break;
+    case 2:
+        olanaRossyLie();
+        break;
+    case 3:
+        mesc l("%s smiles at you, but she still seems preoccupied.", .name$);
+        next;
+        mesc l("Rossy was collecting fruits, right? Maybe she has some idea on how to cheer her mother up?");
+        break;
+    case 4:
+        olanaDeliverBerries();
+        break;
+    case 5:
+        olanaGetLetter();
+        break;
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+        mesn;
+        mesq l("Please bring Hocus' letter to my daughter as fast as you can.");
+        break;
+    case 10:
+        olanaRossyGoodGirl();
+        break;
+    case 11:
+        mesn;
+        mesc l("%s says absently-minded, while staring at a portrait of her daughters, Rossy and Juliet:");
+        mesq l("Could you do me a favor? Could you bring her %d %s? I am sure she will love them!", 15, getitemlink(ARedRose));
+        break;
+    case 12:
+        olanaRossyBadMom();
+        break;
+    case 13:
+        mesn;
+        mesq l("Please, tell Rossy I am really sorry and buy her Red Tulips instead, the same amount - %d, her age.", 15);
+        break;
+    case 14:
+        olanaRossyHappy();
+        break;
+    case 15:
+    case 16:
+        mesn;
+        mesq l("Where is Juliet? I want to know where she is! Please find her, %s!", strcharinfo(0));
+        break;
+    case 17:
+        mesn;
+        mesq l("Juliet got home sound and safe thanks to you, %s. I'll be eternally grateful.", strcharinfo(0));
+        next;
+        mesn;
+        mesq l("Rossy and Juliet are out there, playing again. Please, feel free to play with them or to come here for a cup of water.");
+        break;
+    default:
+        speech
+        l("Did you see my daughters Rossy and Juliet, by chance?"),
         l("She wasn't at home for two days now. I worry about her!"),
         lg("If you see her, please tell her to come home.");
-
+    }
     close;
+
+function olanaIntro {
+    mesn;
+    mesq l("This is a private room from the Rusty Pick. You see, my father owns this inn.");
+    next;
+    mesn;
+    mesq l("I moved to Tulimshar so my daughters – Rossy and Juliet – could learn magic, but we come back to Hurnscald on occasion.");
+    next;
+    mesn;
+    mesc l("Olana suddenly looks very pale and starts to shiver.");
+    mesq l("Which reminds me - I let my two lovely girls play in the woods nearby but they haven't come back yet!");
+    next;
+    mesn;
+    mesq l("These forests are not safe; I am afraid they might have wandered in the swamps by accident.");
+    next;
+    mesn;
+    mesq l("Could you pretty please see if they're fine? I can book you this inn for a night after that.");
+    next;
+    if (askyesno() == ASK_NO) {
+        mesn;
+        mesq l("Well, you *do* look weak, I guess I would get worried if you went after them and ended up lost and on the swamps.");
+        next;
+        mesn;
+        mesq l("But if you change your mind, please, call me again.");
+        return;
+    }
+    mesn;
+    mesq l("Excellent! I am counting on you!");
+    setq HurnscaldQuests_Rossy, 1;
+    return;
+}
+
+function olanaIntroDone {
+    mesn;
+    mesq l("My daughters – Rossy and Juliet – went to play in the woods but haven't come back yet.");
+    next;
+    mesn;
+    mesq l("Could you pretty please see if they're fine? I can book you this inn for a night after that.");
+    return;
+}
+
+function olanaRossyLie {
+    mesn;
+    mesq l("Have you found my daughters yet? %%i");
+    next;
+    select
+        l("No, sorry, I'll keep looking."),
+        l("I saw Rossy, she is fine."),
+        l("Yes, a snail attacked them.");
+    mes "";
+    if (@menu == 1) {
+        mesn;
+        mesq l("Please do, I'm worried about them....");
+        return;
+    }
+    if (@menu == 3) {
+        mesn;
+        mesq l("Oh noes!!!!");
+        next;
+        mesc l("%s faints.", .name$);
+        mesc l("Maybe we could have told her that in a better way.");
+        return;
+    }
+    mesn;
+    mesq l("Oh you did? That's good. I'm relieved. But what about Juliet?");
+    next;
+    select
+        l("I haven't found Juliet yet, sorry."),
+        l("Well, Rossy told both of them were fine...");
+    mes "";
+    mesn;
+    mesq l("Ok. They must be playing hide and seek. Thanks again... I can't express how grateful I am.");
+    next;
+    setq HurnscaldQuests_Rossy, 3;
+    mesn;
+    mesq l("I'll now book you a room on the Inn.");
+    select
+        l("Thanks."),
+        lg("Actually, please don't. I do this out of the goodness of my heart.");
+    mes "";
+    // Do not register the inn
+    if (@menu == 2) {
+        mesn;
+        mesq l("Oh... Okay, then!");
+        return;
+    }
+    // Register the inn
+    INN_REGISTER = RUSTYPICK_INN;
+    PC_IS_DEAD = false;
+    savepoint "008-2-4", 26, 27;
+    return;
+}
+
+function olanaDeliverBerries {
+    mesn;
+    mesq l("Hello there.");
+    next;
+    select
+        l("Erm, hi."),
+        l("Hi, Rossy asked me to give you this. She says it is a gift from both her and Juliet.");
+    mes "";
+    if (@menu == 1)
+        return;
+    mesn;
+    mesq l("Ohhh... How sweet... Sometimes Rossy impresses me with her kindness. Here... You are spending so much time helping us, and we give nothing back. Take this as a small reward.");
+    getexp 2000, 200;
+    Zeny+=10000;
+    setq HurnscaldQuests_Rossy, 5;
+    next;
+    mesn;
+    mesq lg("Could you do me a small favor, though? I know I barely know you, and you must be very busy, but...");
+    next;
+    olanaGetLetter();
+    return;
+}
+
+function olanaGetLetter {
+    mesn;
+    mesq l("Would you mind giving this letter to my little Rossy? You see, Rossy and Juliet are enrolled at Tulimshar Magic School...");
+    next;
+    mesn;
+    mesq l("Rossy is doing alchemy, and I received a letter signed by Hocus, the Grandmaster. She did not submit her exam before we travelled, and now she is running out of time...");
+    next;
+    mesn;
+    mesq l("Pretty please?");
+    next;
+    if (askyesno() == ASK_NO)
+        return;
+    mesn;
+    mesq l("Thank you again. Please, bring it to her as fast as you can.");
+    setq HurnscaldQuests_Rossy, 6;
+    return;
+}
+
+function olanaRossyGoodGirl {
+    mesn strcharinfo(0);
+    select
+        l("Rossy passed her exam.");
+    mes "";
+    mesn;
+    mesq l("That's a relief to hear! I'm so proud of her.");
+    next;
+    mesn;
+    mesq l("Could you do me a favor? Could you bring her %d %s? I am sure she will love them!", 15, getitemlink(ARedRose));
+    next;
+    select
+        l("Okay, I'll get the roses and give them to her."),
+        l("What? No way!");
+    mes "";
+    if (@menu == 2)
+        return;
+    mesn;
+    mesq l("I know this won't be enough, but here is %d E to help you.", 50);
+    next;
+    mesn;
+    mesq l("After you get them, please deliver them to my brilliant daughter, Rossy.");
+    Zeny+=50;
+    setq HurnscaldQuests_Rossy, 11;
+    return;
+}
+
+function olanaRossyBadMom {
+    mesn;
+    mesq l("Did she like my present?");
+    next;
+    select
+        l("Sure she did..."),
+        l("Well, you should have known that your daughter is allergic to roses.");
+    mes "";
+    if (@menu == 1) {
+        mesn;
+        mes "%%H";
+        return;
+    }
+    mesn;
+    mesq l("Oh, how stupid I am! Here, take some of my money and buy Red Tulips instead, the same amount. Keep the flowers.");
+    next;
+    mesn;
+    mesq l("Please, tell Rossy I am really sorry. My mind was on Juliet when I asked you to bring the red roses — they are her favorite.");
+    next;
+    mesn strcharinfo(0);
+    select
+        l("I will give her the tulips when I see her.");
+    mes "";
+    mesn;
+    mesq l("Thank you. And don't forget to tell her that I'm really sorry.");
+    Zeny+=450;
+    setq HurnscaldQuests_Rossy, 13;
+    return;
+}
+
+function olanaRossyHappy {
+    mesn;
+    mesq l("So?");
+    next;
+    select
+        l("Rossy was happy with your gift, and asked me to say you are the nicest mother in the world.");
+    mes "";
+    mesn;
+    mesq l("I'm so glad to hear that! But, have you seen Juliet too, by any chance?");
+    next;
+    select
+        l("Erm, no, sorry."),
+        l("I'm sure she is fine.");
+    mes "";
+    mesn;
+    mesq l("For some reason, I can't get off my mind she is in danger... Motherly instincts.");
+    next;
+    mesn;
+    mesq l("For now, I should reward you for all your effort thus far.");
+    .@item=any(Diamond, Ruby, Emerald, Sapphire, Topaz, Amethyst);
+    inventoryplace .@item, 1;
+    setq HurnscaldQuests_Rossy, 15;
+    getitem .@item, 1;
+    next;
+    mesn;
+    mesq l("But please, could you look for Juliet as well? I'm starting to get deeply worried, here.");
+    return;
+}
 
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
+    .minLevel = 40;
     end;
 }

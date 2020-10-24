@@ -8,13 +8,12 @@
 020-1,285,123,0	script	Philip	NPC_UKAR_MALE_LEGION_ARTIS,{
     speech
         l("Hi there."),
-        l("Looks like someone ran out of ideas for placeholder NPCs."),
-        l("So if you want, you can hunt something, or cook something, or craft somethig."),
+        l("I am just a random soldier, so stop bothering me."),
 		l("Whatever.");
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

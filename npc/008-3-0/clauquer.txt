@@ -1,0 +1,139 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Shaddy man
+
+008-3-0,129,94,0	script	Clauquer	NPC_CAUL,{
+    function clauquerPrologue;
+
+    // HurnscaldQuests_Rossy
+    // (MAIN QUEST, CAVE CONTROL, INSTANCE CONTROL)
+    .@q=getq(HurnscaldQuests_Rossy);
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    .@inst=getq3(HurnscaldQuests_Rossy);
+
+    // Instance zero is reserved for La Marine
+    if (instance_id() <= 0 || .@q != 16) {
+        mesn;
+        mesq l("Huh? Why are you here? Get out.");
+        close;
+    }
+    mesn;
+    mesq l("Hello stranger, are you lost?");
+    if (.@q < 16)
+        close;
+    if (!.@q2) {
+        clauquerPrologue();
+        close;
+    }
+    next;
+    .@caves=bitmask_count(.@q2)-1;
+    mesn;
+    if (.@q2 > ROSSY_BOSSCAVE || .@q > 16)
+        .@msg$=l("Good job rescuing the little girl!");
+    else if (.@q2 == ROSSY_READY)
+        .@msg$=l("I am amazed... You eliminated all the 9 energy sources. Now is the difficult part. To save the girl, you need to eliminate the last and most powerful barrier. Good Luck!");
+    else if (.@q2 <= ROSSY_PROLOGUE)
+        .@msg$=l("Well... You didn't eliminate any of the barriers, so that means there are still 9 caves and the tenth one, the strongest...");
+    else
+        .@msg$=l("You are doing good... If I am right, you already eliminated %d of the 9 energy sources of the barrier that protects the cave in which the girl is being kept captive.", .@caves);
+
+    mesq .@msg$;
+    if (.@q == 16 && .@caves < ROSSY_BOSSCAVE) {
+        next;
+        select
+            l("Thanks."),
+            l("But please, I really need your help!");
+        mes "";
+        if (@menu == 2) {
+            mesn;
+            mesq l("Well, I already told you what I knew, but repeating never hurts, I guess. So, to nullify the barrier.");
+            next;
+            clauquerPrologue();
+        }
+    }
+    close;
+
+function clauquerPrologue {
+    // HurnscaldQuests_Rossy
+    // (MAIN QUEST, CAVE CONTROL, INSTANCE CONTROL)
+    .@q=getq(HurnscaldQuests_Rossy);
+    .@q2=getq2(HurnscaldQuests_Rossy);
+    .@inst=getq3(HurnscaldQuests_Rossy);
+
+    // Prologue
+    if (!(.@q2 & ROSSY_PROLOGUE)) {
+        next;
+        mesn;
+        mesq l("Don't answer— I know you are looking for someone... A little girl, is that right?");
+        next;
+        select
+            l("I must admit you're right, but how come you..."),
+            l("I'm not lost and I don't need help, bye.");
+        mes "";
+        if (@menu == 2)
+            return;
+        mesn;
+        mesq l("How do I know you're looking for her? Well, because I am a very good observer. I know you were helping her family. Besides, I saw the little girl. I also heard her. She screamed, and probably still screams like hell. Moreover, I don't think you would enter these caves just for fun!");
+        next;
+        select l("Of course not.");
+        mes "";
+        mesn;
+        mesq l("I can see that you really want to save the little girl. She is trapped in a place inside one of these caves, protected by a magic barrier created by a fey spirit. To save her, you have to annulate the energy sources of this barrier. They are located in 10 different spots, each one in a different cave.");
+        next;
+        select l("But how can I annulate this barrier?");
+        mes "";
+    }
+    // Common
+    mesn;
+    mesq l("It is simple, you just have to place a %s on the exact center of the energy source. Once you do this, its entire power will transmute into some terrible earth monsters. If you defeat them, this source of energy will be close to nothing and the barrier will be weaker.", getitemlink(PileOfAsh));
+    next;
+    mesn;
+    mesq l("If my observations are correct, the girl is trapped in a cave protected by a barrier fed by 9 different power sources. And inside this cave there is another barrier, fed by a single, but very strong, power source. The girl is inside that cave, protected by that strong barrier.");
+    next;
+    mesn;
+    mesq l("Be prepared before you enter one of these caves, because once you put the root in the power source, you won't be able to get out. Also, remember that you can't stay in these caves for a long time, because of the foul air.");
+    mesc l("If you take more than %d minutes between a boss fight and other, you'll faint and the quest will reset!!", 20), 1;
+    next;
+    // Prologue (FIXME)
+    if (!(.@q2 & ROSSY_PROLOGUE)) {
+        mesn;
+        mesq l("Now I should tell you more about how that little girl got into that cave and warn you about what you are going to face there...");
+        next;
+        select l("Please go on.");
+        mes "";
+        mesn;
+        mesq l("I advise you to be mentally prepared for this rescue operation. You'll be fighting a selection of monsters in these caves with mixed elements.");
+        next;
+        mesn;
+        mesq l("Also, the old tales of Hurnscald say that a Golem inhabits these caves and smashes anyone who enters here ill prepared; but it can be tamed and made into subservience by a sacrifice. And I saw the girl heading to said room...");
+        next;
+        mesn;
+        mesq l("However, hope is not yet lost. If you were to, say, defeat the Golem before it is fully awakened, the girl would be saved... Time, however, is not on your favor and is of essence. And I am no fighter, so I cannot help you.");
+        next;
+    }
+    mesn;
+    mesq l("Oh, and if you really plan to rescue the girl, I advise you to use potions for every single battle. I'm thinking of Concentration and Iron Potions. You might want to take some food with you too. I would personally take some water, I'm always thirsty. Don't be afraid to bring too much with you, these battles take time to end.");
+    next;
+    mesn;
+    mesq l("I think you're now ready to explore these caves and fight. Good luck rescuing the girl!");
+
+    // Renew the timer the first time you see the prologue
+    if (!.@q2) {
+        instance_set_timeout(ROSSY_INSTIME, ROSSY_INSTIME, .@inst);
+        addtimer2(300000, "#RossyQuest::OnTick1");
+        deltimer("#RossyQuest::OnTick2");
+        deltimer("#RossyQuest::OnTick3");
+        deltimer("#RossyQuest::OnTick4");
+        deltimer("#RossyQuest::OnTick5");
+    }
+    setq2 HurnscaldQuests_Rossy, .@q2 | ROSSY_PROLOGUE;
+    return;
+}
+
+OnInit:
+    .bodytype = BODYTYPE_3;
+    .distance = 4;
+    end;
+}

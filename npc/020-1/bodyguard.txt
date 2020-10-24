@@ -3,17 +3,52 @@
 //    Micksha
 // Description:
 //    Bodyguard protecting Micksha's chilling place in oasis.
-// THIS IS A PLACEHOLDER!
 
 020-1,292,245,0	script	Bodyguard	NPC_RAIJIN_FEMALE_LEGION_ARTIS,{
     speech
         l("Hey, you!"),
         l("Do not dare sitting on this bench. This is Micksha's place to relax. You better are gone when he arrives."),
         l("He has to listen to much drama, so he wants to rest here, alone, in silence. Got it?");
+    next;
+    select
+        l("Got it."),
+        l("And what if I sit?"),
+        l("Who's Micksha?"),
+        l("What's the story of this place, anyway?");
+    mes "";
+    mesn;
+    switch (@menu) {
+    case 2:
+        mesq l("Well, if he sees you, a giant foot will descend from the heavens upon you... Or so I've heard.");
+        next;
+        mesn;
+        mesc l("*shivers*");
+        mesq l("I would be afraid if I were you!");
+        next;
+        mesn;
+        break;
+    case 3:
+        mesq l("A popular designer and inventor. A lot of buildings follow their architectonic drawings.");
+        next;
+        mesn;
+        mesq l("You would be amazed at how much engineers and politicians oppose to his architecture, though!");
+        next;
+        mesn;
+        break;
+    case 4:
+        mesq l("Once upon a long time, a local nobleman crushed a gold ingot in this lake. Instead of dust, it became water and then, this pond came to be.");
+        next;
+        mesn;
+        mesq l("It is only a myth, don't expect it to make a lot of sense.");
+        next;
+        mesn;
+        break;
+    }
+    mesq l("Now, get moving.");
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

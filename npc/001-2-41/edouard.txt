@@ -86,24 +86,30 @@ OnInit:
 }
 
 001-2-41,30,29,0	script	Edouard#001-2-41	NPC_EDOUARD,{
+    function tellStory;
+    //EdouardCheckChair();
+    if (!issit())
+        goto OnWrongPlace;
+    // Disregard if you're in the chair or not, for sake of gameplay
+    goto OnChair;
 
-    function tellStory {
-        if (Edouard_StoryTold != 0)
-        {
-            mes "";
-            mesn;
-        }
-        speech S_LAST_NEXT | S_NO_NPC_NAME,
-            l("I am new in this town, just like you."),
-            l("I came here, looking for a better life."),
-            l("And so far, the Merchant Guild helped me find this appartment so I can't complain!"),
-            l("Anyway."),
-            l("I'm a barber, you see. I can change your hairstyle or hair color to your current taste.");
-
-        Edouard_StoryTold = 1;
-
-        return;
+function tellStory {
+    if (Edouard_StoryTold != 0)
+    {
+        mes "";
+        mesn;
     }
+    speech S_LAST_NEXT | S_NO_NPC_NAME,
+        l("I am new in this town, just like you."),
+        l("I came here, looking for a better life."),
+        l("And so far, the Merchant Guild helped me find this appartment so I can't complain!"),
+        l("Anyway."),
+        l("I'm a barber, you see. I can change your hairstyle or hair color to your current taste.");
+
+    Edouard_StoryTold = 1;
+
+    return;
+}
 
 OnWrongPlace:
     npctalkonce("Sit on the chair, I will come in a second!");

@@ -7,14 +7,14 @@
 
 020-2-10,45,27,0	script	Hetchel	NPC_HETCHEL,{
     speech
-        l("Hi there."),
-        l("Looks like someone ran out of ideas for placeholder NPCs."),
-        l("So if you want, you can bring Heathin a hammer."),
-		l("Whatever.");
+        l("Hi there. I am Hetchel, I weave fine textiles."),
+        l("My best client is Lora Tay, at Dimond's."),
+        l("So if you want, you can talk to her instead."),
+		l("Tailoring is in decline and I have nothing to sell nor teach.");
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

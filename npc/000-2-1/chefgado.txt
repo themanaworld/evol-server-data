@@ -33,6 +33,21 @@
     if (.@r == 1) mesq l("Where is the damn salt?! Give me the salt, I know you have it!");
     if (.@r == 2) mesq l("Are you going to stand here all day long? Do the dishes or go away.");
 
+    if (getq(General_SmearedHands) < 3) {
+        next;
+        select
+            l("I'll get moving, sorry!"),
+            //rif(.@r == 1 && countitem(Salt), l("Offer him the salt")),
+            l("Can you teach me cooking?");
+        mes "";
+        if (@menu == 2) {
+            mesn;
+            mesq l("NO! I am busy, can't you see?!");
+            next;
+            mesn;
+            mesq l("When we reach Artis, maybe, but not now!");
+        }
+    }
     close;
 
 L_QuestStart:

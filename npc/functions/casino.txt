@@ -1,0 +1,254 @@
+// TMW2 Scripts
+// Author:
+//    Jesusalva
+// Description:
+//    Slot Machines, Blackjack, other crap for npc duplication
+// Contents:
+//    "Slot Machine"
+//    "High Lower"
+
+// SLOT MACHINE - You'll get PRIZE if you roll a 777!
+// PRIZE must be numeric INT, AegisName won't get parsed.
+// Slot Machine#map_prize
+// Slot Machine#map
+// Slot Machine#_prize
+-	script	Slot Machine	NPC_HIDDEN,{
+    function symbol {
+        switch (getarg(0)) {
+        case 1:
+            mesn "%%A";
+            break;
+        case 2:
+            mesn "%%B";
+            break;
+        case 3:
+            mesn "%%C";
+            break;
+        case 4:
+            mesn "%%D";
+            break;
+        case 5:
+            mesn "%%E";
+            break;
+        case 6:
+            mesn "%%F";
+            break;
+        case 7:
+            mesn "7";
+            break;
+        default:
+            mesn "%%@";
+            break;
+        }
+    }
+
+L_Menu:
+    mesn;
+    mesc l("Spin three symbols, and jackpot great rewards!");
+    mesc l("Just one coin for spin.");
+    next;
+    menu
+        rif(countitem(.coinid) >= 1, l("Spin!")), L_Spin,
+        l("Prizes"), L_Info,
+        l("Leave"), -;
+    close;
+
+L_Info:
+    mes "";
+    mesc l("Prizes:");
+    mes l("##9 777: @@.", getitemlink(.itemid));
+    mesc l("Three equal: @@.", "18 casino coins");
+    mesc l("Two equal: 1 casino coin.");
+    next;
+    goto L_Menu;
+
+
+L_Spin:
+    mesc l("Spinning...");
+    next;
+    delitem .coinid, 1;
+    .@a=rand2(1,7);
+    .@b=rand2(1,7);
+    .@c=rand2(1,7);
+    symbol(.@a);
+    symbol(.@b);
+    symbol(.@c);
+    next;
+    mesn;
+    if (.@a == .@b && .@a == .@c && .@a == 7) {
+        getitem .itemid, 1;
+        mesc l("Jackpot! You got a(n) %s!", getitemlink(.itemid)), 3;
+    } else if (.@a == .@b && .@a == .@c) {
+        getitem .coinid, 18;
+        mesc l("Congrats! A pity it was not 777..."), 3;
+    } else if (.@a == .@b || .@a == .@c || .@b == .@c) {
+        getitem .coinid, 1;
+        mesc l("Lucky! You got the coin back!"), 3;
+    } else {
+        mesc l("It wasn't this time..."), 3;
+    }
+    next;
+    goto L_Menu;
+
+OnInit:
+    // "Next-Generation" parsing system
+    // To replace default item, name NPC like this:
+    // Slot Machine#_1212
+    // Where "1212" is the item ID
+    .@n$=strnpcinfo(0, "_0");
+    explode(.@ni$, .@n$, "_");
+    if (getarraysize(.@n$) > 0)
+        .itemid=atoi(.@ni$[1]);
+    else
+        .itemid=0;
+
+    // If item ID was not provided
+    if (.itemid < 1) {
+        //.itemid=Monocle;
+        .itemid=BrownBowlerHat;
+    }
+
+    // Coin ID
+    //.coinid=CasinoCoins;
+    .coinid=CoinBag;
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+}
+
+
+// HIGH LOWER - Guess if the next card will be HIGHER or LOWER!
+// (No arguments)
+-	script	High Lower	NPC_HIDDEN,{
+    function cardname {
+        switch (getarg(0)) {
+        case 0:
+            return "A"; break;
+        case 10:
+            return "J"; break;
+        case 11:
+            return "Q"; break;
+        case 12:
+            return "K"; break;
+        case 13:
+            return l("Joker"); break;
+        default:
+            return getarg(0)+1;
+        }
+    }
+
+    goto L_Menu;
+
+L_Menu:
+    showavatar;
+    mesn;
+    mesc l("Hey, I am flopped. Do you want to gamble?");
+    mesc l("You need a %s. I'll flip one card, and you'll need to decide if next draw will be HIGHER or LOWER.", getitemlink(.coinid));
+    mesc l("If a tie happens, I'll give your coin back.");
+    next;
+    menu
+        rif(countitem(.coinid) >= 1, l("Let's play!")), L_Spin,
+        l("Information"), L_Info,
+        l("Leave"), L_Quit;
+
+L_Info:
+    mes "";
+    mesc l("Rules:");
+    mesc l("A card will be flipped, you'll need to decide if next flip will be HIGHER or LOWER.");
+    mesc l("Cards are ranked on this priority: A - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - J - Q - K - Joker");
+    next;
+    mesc l("Prizes:");
+    mesc l("If you're right, you'll get at least %d GP!", .minprize);
+    mesc l("If a tie happens, you'll get your coin back.");
+    mesc l("If you're wrong, your winning streak is reset.");
+    mesc l("Winning Streak is also reset on logout or when you leave the room.");
+    next;
+    mesc l("Winning Strike Prizes:");
+    mesc l("Every seven successive right guesses, you'll get a %s!", getitemlink(Acorn)); // 7.14%
+    //mesc l("Every fifteen successive right guesses, you'll get a %s!", getitemlink(SilverGift)); // 3.33%
+    //mesc l("Every fifty successive right guesses, you'll get a %s!", getitemlink(GoldenGift)); // 1.00%
+    //mesc l("Every 101 successive right guesses, you'll get a %s!", getitemlink(PrismGift)); // 0.50%
+    next;
+    goto L_Menu;
+
+
+L_Spin:
+    showavatar AVATAR_CARD_COVER;
+    mesc l("I'll draw a card now!");
+    next;
+    delitem .coinid, 1;
+    // First card will never be an edge card (Ace or Joker), so you can ALWAYS guess wrong.
+    .@card1=rand2(1, 12);
+    showavatar 1000+.@card1;
+    mesn;
+    mesc l("It's a @@!", cardname(.@card1));
+    mesc l("Will next draw be HIGHER or LOWER?!");
+    next;
+    mesc l("Cards are ranked on this priority: A - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - J - Q - K - Joker");
+    select
+        l("HIGHER!"),
+        l("LOWER!");
+    mes "";
+
+    // Flip Flop!
+    .@card2=rand2(0, 13);
+    showavatar 1000+.@card2;
+    mesn;
+    mesc l("It's a @@!", cardname(.@card2));
+
+    if (.@card1 == .@card2) {
+        mesc l("It's a tie!");
+        getitem .coinid, 1;
+        .@bypass=1;
+    } else if (.@card2 < .@card1 && @menu == 2) {
+        mesc l("It's lower! That's right!");
+        Zeny=Zeny+.minprize;
+        @gambler_winstreak+=1;
+    } else if (.@card2 > .@card1 && @menu == 1) {
+        mesc l("It's higher! That's right!");
+        Zeny=Zeny+.minprize;
+        @gambler_winstreak+=1;
+    } else {
+        mesc l("You were wrong!");
+        @gambler_winstreak=0;
+    }
+
+    // Winning Streak
+    if (!.@bypass && @gambler_winstreak) {
+        if (@gambler_winstreak % 7 == 0)
+            getitem Acorn, 1;
+        /*
+        if (@gambler_winstreak % 15 == 0)
+            getitem SilverGift, 1;
+        if (@gambler_winstreak % 50 == 0)
+            getitem GoldenGift, 1;
+        if (@gambler_winstreak % 101 == 0)
+            getitem PrismGift, 1;
+        */
+        mesc l("Your current win streak is @@!", @gambler_winstreak);
+        Zeny+=min(((@gambler_winstreak-1)*.gpbonus), .minprize); // Never 2x
+    } else {
+        .@bypass=0;
+    }
+    next;
+    goto L_Menu;
+
+L_Quit:
+    close;
+
+OnInit:
+    // Gambling configuration
+    .minprize=180;
+    .gpbonus=10;
+
+    // Coin ID
+    //.coinid=CasinoCoins;
+    .coinid=CoinBag;
+
+    .sex = G_OTHER;
+    .distance = 4;
+    end;
+
+}
+

@@ -10,11 +10,12 @@
         l("Hi!"),
         l("This is the magic academy. If all those mages were not so absentminded, they could make some furniture."),
         l("But oh well, people have different priorities it seems. Ask Micksha.");
+    // if (something) ask about enrolling - Hocus Quest
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }
 

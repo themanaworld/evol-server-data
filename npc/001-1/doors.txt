@@ -10,7 +10,7 @@
 OnTouch:
     .@enora = getq(ArtisQuests_Enora);
 
-    if (.@enora < 11)
+    if (.@enora < 4)
     {
         narrator S_LAST_NEXT,
             l("The door to the legion building is temporarily closed.");
@@ -34,7 +34,7 @@ OnTouch:
     .@enora = getq(ArtisQuests_Enora);
     .@legion = getq(Artis_Legion_Progress);
     .@brotherhood = getq(General_Brotherhood);
-    if (.@enora < 11)
+    if (.@enora < 4)
     {
         setfakecells 57, 41, 1;
         end;
@@ -46,7 +46,7 @@ OnTouch:
 
 OnUnTouch:
     .@enora = getq(ArtisQuests_Enora);
-    if (.@enora < 11)
+    if (.@enora < 4)
     {
         end;
     }

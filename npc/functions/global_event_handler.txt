@@ -25,6 +25,7 @@ OnPCLoginEvent:
     callfunc("FixBankVault");
     callfunc("GrantSuperSkill");
     callfunc("AFKLogin");
+    callfunc("TravelFix");
     end;
 
 OnPCLogoutEvent:
@@ -32,6 +33,7 @@ OnPCLogoutEvent:
     callfunc("MundaneLogout");
     callfunc("fishing_cleanup", @fishing_spot$);
     callfunc("ATLFightEnd");
+    callfunc("RossyLogout");
 
     // Variable cleanup
     @fishing_spot$ = "";
@@ -41,6 +43,7 @@ OnPCDieEvent:
     callfunc("ForcedUnmount");
     callfunc("MundaneDeath");
     callfunc("ATLFightEnd");
+    callfunc("RossyDeath");
     end;
 
 OnPCBaseLvUpEvent:

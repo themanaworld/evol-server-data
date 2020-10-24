@@ -95,6 +95,8 @@
         @MUNDANE_OLDX=.x;
         @MUNDANE_OLDY=.y;
         warp(.@MAP_NAME$, .x, .y);
+        // Move NPC as well
+        unitwarp(getnpcid(instance_npcname(.name$, @MUNDANE_INSTID)), .@MAP_NAME$, .x, .y);
 
         setq ArtisQuests_MonaDad, 2;
         addtimer(150, instance_npcname(.name$, @MUNDANE_INSTID)+"::OnMove");

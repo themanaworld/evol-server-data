@@ -1,19 +1,20 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Selim the Dyer.
 // THIS IS A PLACEHOLDER!
 
-008-1,38,40,0	script	Selim#008-1	NPC_GUMI_THE_DYER,{
+008-1,38,40,0	script	Selim	NPC_GUMI_THE_DYER,{
     speech
         l("Oh hey!"),
-        lg("Good you are here, you could be handy for me right now.");
+        l("Good you are here, you could be handy for me right now."),
+        l("Or maybe later. Hmm, we'll see.");
 
     close;
 
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
     end;
 }

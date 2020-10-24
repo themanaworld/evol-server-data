@@ -1,20 +1,98 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Snarfles the mouboo farmer.
 // THIS IS A PLACEHOLDER!
 
-008-1,79,118,0	script	Snarfles#008-1	NPC_SNARFLES,{
+008-1,79,118,0	script	Snarfles	NPC_SNARFLES,{
+    function foodQuest;
     speech
         l("My Mouboos, my beloved Mouboos!"),
         l("Oh, hi, isn't it cool to live among all those Mouboos? I don't understand how some people can eat Mouboo steak."),
         lg("Murderers!");
-
+    if (getq(General_SmearedHands) <= 3 && getq2(General_SmearedHands) != 2)
+        foodQuest();
     close;
+
+function foodQuest {
+    .@q=getq(General_SmearedHands);
+    next;
+    mesn;
+    mesq l("Ah... I could use some Asparagus with Hollondaise now...");
+    switch (.@q) {
+    case 1:
+        next;
+        mesn strcharinfo(0);
+        select
+            l("\"Asparagus with Hollondaise\"? What's that?"),
+            menuaction(l("Leave"));
+        mes "";
+        if (@menu == 2)
+            break;
+        mesn;
+        mesq l("Some call it %s, but it is so tasty...", getitemlink(VeggiePlate));
+        next;
+        mesn;
+        mesq l("I could even make one for you and give the recipe, but...");
+        next;
+        mesn;
+        mesq l("I always get smeared hands eating it and cannot play cards anymore with Crane.");
+        next;
+        mesn;
+        mesq l("Well, if you find me a solution for that problem, I can give you the recipe. What do you say?");
+        next;
+        mesc l("WARNING: If you accept this quest, you'll be struck at the %s route!", b(l("Vegetarian"))), 1;
+        mesc l("This will also make %s's Quest unavailable.", b("Crane")), 1;
+        mesc l("This decision cannot be changed later."), 1;
+        next;
+        mesc l("Accept this request?"), 1;
+        if (askyesno() == ASK_YES) {
+            setq General_SmearedHands, 2, VEGAN; // 1 = Vegan
+            mesn;
+            mesq l("Great! I'll be eager for your return!");
+        }
+        break;
+    case 2:
+        mesn;
+        mesq l("Have you found a solution for my smeared hands problem?");
+        next;
+        select
+            l("No, not yet.");
+        mes "";
+        mesn;
+        mesq l("I've heard they're related to the earl of sandwich, so maybe a sandwich maker could help... *sigh* I want to play cards...");
+        break;
+    case 3:
+        mesn strcharinfo(0);
+        select
+            l("Have you tried putting it in a bread already?"),
+            l("I'll keep looking for solutions for your problem.");
+        mes "";
+        if (@menu == 2)
+            return;
+        mesn;
+        mesq l("Actually... No. Have been too afraid of it tasting foul.");
+        next;
+        mesn strcharinfo(0);
+        mesq l("Really? Tiki, Candor's chef, liked it very much.");
+        next;
+        mesn;
+        mesq l("Wha - Really?! Tiki said it tasted good??! I'm saved! You're truly my savior!!");
+        next;
+        mesn;
+        mesq l("I'll put the %s recipe on your %s. Thanks, you saved my day!", getitemlink(VeggiePlate), getitemlink(RecipeBook));
+        RECIPES[CraftVeggiePlate]=true;
+        getitembound VeggiePlate, 1, IBT_ACCOUNT;
+        setq1 General_SmearedHands, 4; // Finished
+    default:
+        return;
+    }
+    return;
+}
 
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
     end;
 }

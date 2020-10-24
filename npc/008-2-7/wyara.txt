@@ -6,7 +6,7 @@
 // TODO: Buy or make plushroom potions
 // TODO: Should she ask for a money comission when resetting status?
 
-008-2-7,27,28,0	script	Wyara#008-2-7	NPC_DARK_DRUID,{
+008-2-7,27,28,0	script	Wyara	NPC_DARK_DRUID,{
     function confirmStatusReset;
     function doStatusReset;
     speech
@@ -78,6 +78,6 @@ function doStatusReset {
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

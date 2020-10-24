@@ -1,0 +1,389 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Daughter of Olana and sister of Juliet. PLACEHOLDER SPRITE
+
+008-1,62,220,0	script	Rossy	NPC_TANISHA,{
+    function rossyFirstmet;
+    function rossyBasket;
+    function rossyLetter;
+    function rossyPotionList;
+    function rossyPotionDone;
+    function rossyDeliverRoses;
+    function rossyDeliverTulip;
+    function rossyJulietIntro;
+    .@q=getq(HurnscaldQuests_Rossy);
+    mesn;
+    mesq l("Hello, wanderer.");
+    switch (.@q) {
+    case 1:
+        rossyFirstmet();
+        break;
+    case 3:
+        rossyBasket();
+        break;
+    case 6:
+        rossyLetter();
+        break;
+    case 7:
+        rossyPotionList();
+        break;
+    case 8:
+        mesn;
+        mesq l("What, you still have my potion with you??");
+        next;
+        mesn;
+        mesq l("Could you please deliver it to %s in the magic academy? He is the head of alchemy.", b("David"));
+        break;
+    case 9:
+    case 10:
+        rossyPotionDone();
+        break;
+    case 11:
+        rossyDeliverRoses();
+        break;
+    case 13:
+        rossyDeliverTulip();
+        break;
+    case 14:
+        mesn;
+        mesq l("Go and tell my mother that she is the nicest mother in the world.");
+        next;
+        select
+            l("Right on it."),
+            l("Did you find your sister? I am starting to get worried too.");
+        mes "";
+        if (@menu == 2) {
+            mesn;
+            if (BaseLevel < .minLevel_rescue)
+                mesq l("I think I have an idea where Juliet might be. Come back in a few levels, and I will tell you if she is ok.");
+            else
+                mesq l("I think I have an idea where she might be. Come back in a few minutes, I will tell you if she is ok.");
+        }
+        break;
+    case 15:
+        rossyJulietIntro();
+        break;
+    case 16:
+        mesn;
+        mesq l("Oh no! Juliet ... why would you go to that scary place? ... Please help her, %s!", strcharinfo(0));
+        mesc l("The cave is %s", b(l("Northwest of here.")));
+        break;
+    case 17:
+        mesn;
+        mesq l("Hey %s!", strcharinfo(0));
+        next;
+        mesn;
+        mesq l("Thanks for finding Juliet again. I'm so relieved!");
+        next;
+        mesn;
+        mesq l("...I still wonder what was that thing Juliet was running from... Hm? Nothing! Just thinking out loud.");
+        break;
+    // Default messages
+    case 12:
+        mesc l("Achooo!");
+        // FALLTHROUGH
+    default:
+        mesn;
+        mesq l("I'm being lazy right now, so please %s", any(
+            l("don't tell devs I'm slacking off again."),
+            l("tell my mother there is no reason to worry."),
+            l("don't worry with me.")
+        ));
+    }
+    close;
+
+function rossyFirstmet {
+    mesc l("A young girl looks at you in tears.");
+    next;
+    select
+        l("Hey there... Why are you crying? Are you hurt?"),
+        l("Sorry kid, I don't have time to play with children.");
+    mes "";
+    if (@menu == 2)
+        return;
+    mesn l("Young Girl");
+    mesq l("No. I'm crying because I lost all my fruits. My sister and I were collecting some near Dimond's Cove, but then I stumbled on a giant snail and it attacked us!");
+    next;
+    mesn l("Young Girl");
+    mesq l("But we were lucky, because the snail is really slow and we ran away from it. Juliet ran to the left and I ran to the right. The snail got pretty confused, because we are identical twins. The problem is that I dropped the basket full of fruits on the ground and that evil snail ate them all! And now I can't find Juliet to help me collect more fruits.");
+    next;
+    mesn strcharinfo(0);
+    select
+        l("Did you say \"Juliet\"? I talked to your mother Olana, She's very worried about you!");
+    mes "";
+    // You know she is Rossy, so mesn; won't need args anymore
+    mesn;
+    mesq l("Really? But she let us play in the woods. There's no reason to be worried – unless....");
+    next;
+    mesn;
+    mesc l("Rossy suddenly gets a strange look on her face, mumbling something about Juliet.");
+    mesq l("Could you do me a favor? Please, tell my mother that we're alright. There's ... well ... there's no reason to worry about us.");
+    next;
+    select
+        l("Very well, if you say so...."),
+        l("Sorry, but I really don't have time for this.");
+    mes "";
+    if (@menu == 2) {
+        mesn;
+        mesq lg("Then why bother? Weird person...");
+        return;
+    }
+    setq HurnscaldQuests_Rossy, 2;
+    mesn;
+    mesq l("Thank you very much!");
+    return;
+}
+
+function rossyBasket {
+    mesn;
+    mesq l("Hey, that is nice of you to come back. I was thinking about giving a basket full of %s to my mother, to make her happy, you know.", getitemlink(Blueberries));
+    next;
+    mesn;
+    mesq l("But I would need at least %d berries, and it would take ages to get so many by myself!", .blueberries_amount);
+    next;
+    select
+        l("That is no problem for me. Just wait and I will come back with the cherries."),
+        l("Ask Juliet, not me."),
+        rif(countitem(Blueberries), l("Hey, I have some in my backpack!")),
+        l("You should get them yourself.");
+    mes "";
+    if (@menu == 2) {
+        mesn;
+        mesq l("Juliet ran to the left, and I'm pretty sure she is doing the same.");
+    }
+    if (@menu != 3)
+        return;
+    if (countitem(Blueberries) < .blueberries_amount) {
+        mesn;
+        mesq l("You do, but that's not enough. I need %d %s.", .blueberries_amount, getitemlink(Blueberries));
+    }
+    delitem Blueberries, .blueberries_amount;
+    getexp 2000, 500;
+    setq HurnscaldQuests_Rossy, 4;
+    // FIXME: Perhaps give player a [Berries Bag] item? Hmm.
+    mesn;
+    mesq l("I can't believe it! You got all the berries needed! Lemme just wrap them and... done! Please give them to my mother. Tell her that it is a gift from me and Juliet, and that there's no reason to worry about us."); // Lemme = Let me
+    next;
+    mesn;
+    mesc l("%s mumbles to herself.", .name$);
+    mesq l("I hope...");
+    next;
+    mesn;
+    mesq l("Oh, and after you give the berries to my mother, please come back here. Err, if you have some free time, of course.");
+    return;
+}
+
+function rossyLetter {
+    mesn;
+    mesq l("I'm being lazy right now, so please %s", any(
+        l("don't tell devs I'm slacking off again."),
+        l("tell my mother there is no reason to worry."),
+        l("don't worry with me.")
+    ));
+    next;
+    select
+        l("Hocus sent a letter to you."),
+        l("Erm, okay.");
+    mes "";
+    if (@menu == 2)
+        return;
+    mesn;
+    mesq l("The Grandmaster? %%U Lemme read...");
+    next;
+    mesn;
+    mesc l("%s's face suddenly turns pale.", .name$);
+    mesq l("Oh no! I completely forgot. The exam! Dang, I knew I should not have picked Alchemy for study...");
+    next;
+    mesn;
+    mesc l("%s looks at you with beady eyes.", .name$);
+    mesq l("I haven't found Juliet yet, and I don't even have any of the ingredients required. Could you get them for me? Pretty please? %%J");
+    next;
+    select
+        l("Alright, tell me what I must get."),
+        l("Your cute face will not convince me - Your test, your responsibility.");
+    mes "";
+    if (@menu == 2) {
+        mesn;
+        mesq l("Yes, I know. I really should have started it earlier... But I can't look for Juliet AND get the ingredients at the same time. Some of them are only found in Tulimshar.");
+        next;
+        mesn;
+        mesq l("You don't even know how Juliet looks. Please come back if you reconsider. Please. Juliet could be being eaten by a creature, as we speak. %%i");
+        return;
+    }
+    setq HurnscaldQuests_Rossy, 7, 0;
+    mesn;
+    mesq l("Excellent! So, as for the materials I need to brew the potion...");
+    next;
+    rossyPotionList();
+    return;
+}
+
+function rossyPotionList {
+    .@t=getq2(HurnscaldQuests_Rossy);
+    // Potion submitted
+    if (.@t) {
+        // Finished!
+        if (.@t < gettimetick(2)) {
+            // Yay
+            mesn;
+            mesq l("I'm done! Thanks for the help. It is just the shade of blue I wanted.");
+            next;
+            mesn;
+            mesq l("Could you please deliver it to %s in the magic academy? He is the head of alchemy.", b("David"));
+            setq HurnscaldQuests_Rossy, 8, 0;
+        } else {
+            // Brewing
+            mesn;
+            mesq l("Please be patient... I'll be done in %s.", FuzzyTime(.@t));
+        }
+        return;
+    }
+
+    // Potion not yet finished
+    //mesf("- %d/%d %s", countitem(CactusDrink), 24, getitemlink(CactusDrink));
+    mesf("- %d/%d %s", countitem(MaggotSlime), 32, getitemlink(MaggotSlime));
+    mesf("- %d/%d %s", countitem(GambogeHerb), 50, getitemlink(GambogeHerb));
+    mesf("- %d/%d %s", countitem(AlizarinHerb), 43, getitemlink(AlizarinHerb));
+    mesf("- %d/%d %s", countitem(BugLeg), 30, getitemlink(BugLeg));
+    mesf("- %d/%d %s", countitem(Pearl), 1, getitemlink(Pearl));
+    next;
+    mesn;
+    mesq l("Do you have these materials with you?");
+    next;
+    select
+        l("Not yet."),
+        l("Yes, here they are!"),
+        l("No, but I'll be right back.");
+    mes "";
+    if (@menu != 2)
+        return;
+    if (countitem(MaggotSlime) < 32 ||
+        countitem(GambogeHerb) < 50 ||
+        countitem(AlizarinHerb) < 43 ||
+        countitem(BugLeg) < 30 ||
+        //countitem(CactusDrink) < 24 ||
+        countitem(Pearl) < 1) {
+        mesn;
+        mesq l("You would lie to a poor, small, frail girl like me? %%S");
+        next;
+        mesn;
+        mesq l("Don't you think that to be very coward on your part?");
+        return;
+    }
+    //delitem CactusDrink, 24;
+    delitem MaggotSlime, 32;
+    delitem GambogeHerb, 50;
+    delitem AlizarinHerb, 43;
+    delitem BugLeg, 30;
+    delitem Pearl, 1;
+    setq2 HurnscaldQuests_Rossy, gettimetick(2)+900;
+    mesn;
+    mesq l("Perfect! Please allow me some time to brew this potion. It should be ready in 15 minutes or so.");
+    return;
+}
+
+function rossyPotionDone {
+    mesn;
+    mesq l("So... How did it go?");
+    next;
+    select
+        l("David said it was \"okay-ish\"."),
+        l("David said he would grade it later, but you had nothing to worry about.");
+    mes "";
+    if (@menu == 1) {
+        mesn;
+        mesq l("That's a relief. Okay-ish is actually a pretty good grade in the Academy.");
+        next;
+    }
+    mesn;
+    mesq l("Could you please tell my mother about that? She is already worried with Juliet and me, no need to have her worried about the exam as well.");
+    compareandsetq HurnscaldQuests_Rossy, 9, 10;
+    return;
+}
+
+function rossyDeliverRoses {
+    if (countitem(ARedRose) < 15) {
+        mesn;
+        mesq l("Hello %s.", strcharinfo(0));
+        return;
+    }
+    select
+        l("Your mother was so happy that she asked me to bring you these flowers.");
+    mes "";
+    delitem ARedRose, 15;
+    setq HurnscaldQuests_Rossy, 12;
+    mesn;
+    mesq l("How nice!");
+    next;
+    mesn;
+    mesc l("Rossy takes the flowers from your hands and suddenly throws them on the ground. She begins sneezing.");
+    next;
+    select
+        l("I presume you don't like roses, right?"),
+        l("Are you feeling well?");
+    mes "";
+    mesn;
+    mesq l("I am allergic to roses; my mother should already know that!");
+    next;
+    mesn strcharinfo(0);
+    mesc l("Maybe we should talk to Olana about this.");
+    return;
+}
+
+function rossyDeliverTulip {
+    if (countitem(ARedTulip) < 15) {
+        mesc l("Achooo!");
+        mesn;
+        mesq l("I'm being lazy right now, so please %s", any(
+            l("don't tell devs I'm slacking off again."),
+            l("tell my mother there is no reason to worry."),
+            l("don't worry with me.")
+        ));
+        return;
+    }
+    select
+        l("Your mother is sorry about the roses. Here are some beautiful red tulips instead.");
+    mes "";
+    delitem ARedTulip, 15;
+    setq HurnscaldQuests_Rossy, 14;
+    getexp 2500, 250;
+    mesn;
+    mesq l("That's better! Go and tell my mother that she is the nicest mother in the world.");
+    next;
+    mesn;
+    mesq l("However... Now I should really find my sister. Come back later.");
+    return;
+}
+
+function rossyJulietIntro {
+    if (BaseLevel < .minLevel_rescue) {
+        mesn;
+        mesq l("I think I have an idea where Juliet might be. Come back in a few levels, and I will tell you if she is ok.");
+        return;
+    }
+    mesn;
+    mesq l("%s, you have to help me! I saw Juliet, but something was wrong!!", strcharinfo(0));
+    next;
+    select
+        l("Calm down and tell me what happened.");
+    mes "";
+    mesn;
+    mesq l("No time for that! She was running away from something and entered a cave not far from here. I heard her scream. Please, can you enter the cave and save her? I'm so scared!");
+    next;
+    mesc l("%s is too distressed to be of any help. It might be a better idea to go inside the cave and look for Juliet.", .name$);
+    mesc l("The cave is %s", b(l("Northwest of here.")));
+    setq HurnscaldQuests_Rossy, 16;
+    return;
+}
+
+OnInit:
+    .bodytype = BODYTYPE_3;
+    .distance = 4;
+
+    // Quest conf
+    .blueberries_amount=30;
+    .minLevel_rescue = 60;
+    end;
+}

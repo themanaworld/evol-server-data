@@ -10,11 +10,30 @@
         l("Hi!"),
         l("Should I tell you the secret of a good fight?"),
         l("CONFRONT AND DESTROY!! (Don't tell your parents I said that.");
+    select
+        l("You're weird, I have to go sorry."),
+        l("I can't do that, I keep getting killed.");
+    mes "";
+    if (@menu == 1)
+        close;
+    mesn;
+    mesq l("Oh no! Well, I never said to confront alone. Did you try going with friends?");
+    next;
+    if (askyesno() == ASK_NO) {
+        mesn;
+        mesq l("Then you should do that. It is always more fun with friends.");
+        close;
+    }
+    mesn;
+    mesq l("Ah... Then maybe you should summon a monster to your aid, or hire a mercenary.");
+    next;
+    mesn;
+    mesq l("Hold tight. Hire a mercenary? That was not in the script. Please call Jesusalva ASAP.");
     close;
 
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }
 

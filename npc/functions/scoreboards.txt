@@ -101,6 +101,28 @@ function	script	HallOfAcorns	{
     return;
 }
 
+function	script	HallOfLethality	{
+    mes "";
+	mes l("##BHall Of Lethality: TOP15##b");
+	mesc l("Special monsters are not counted.");
+	mesf("1. %s (%d)", $@hol_name$[0], $@hol_value[0]);
+	mesf("2. %s (%d)", $@hol_name$[1], $@hol_value[1]);
+	mesf("3. %s (%d)", $@hol_name$[2], $@hol_value[2]);
+	mesf("4. %s (%d)", $@hol_name$[3], $@hol_value[3]);
+	mesf("5. %s (%d)", $@hol_name$[4], $@hol_value[4]);
+	mesf("6. %s (%d)", $@hol_name$[5], $@hol_value[5]);
+	mesf("7. %s (%d)", $@hol_name$[6], $@hol_value[6]);
+	mesf("8. %s (%d)", $@hol_name$[7], $@hol_value[7]);
+	mesf("9. %s (%d)", $@hol_name$[8], $@hol_value[8]);
+	mesf("10. %s (%d)", $@hol_name$[9], $@hol_value[9]);
+	mesf("11. %s (%d)", $@hol_name$[10], $@hol_value[10]);
+	mesf("12. %s (%d)", $@hol_name$[11], $@hol_value[11]);
+	mesf("13. %s (%d)", $@hol_name$[12], $@hol_value[12]);
+	mesf("14. %s (%d)", $@hol_name$[13], $@hol_value[13]);
+	mesf("15. %s (%d)", $@hol_name$[14], $@hol_value[14]);
+    return;
+}
+
 function	script	HallOfATL	{
     mes "";
 	mes l("##BHall Of Artis Legion Training Arena: TOP10##b");
@@ -194,6 +216,7 @@ OnInit:
 	.@nb = query_sql("SELECT c.name, i.amount FROM `storage` AS i, `char` AS c WHERE i.nameid="+Acorn+" AND i.account_id=c.account_id ORDER BY i.amount DESC LIMIT 15", $@hoa_name$, $@hoa_value);
 	.@nb = query_sql("SELECT c.name, i.value FROM `char_reg_num_db` AS i, `char` AS c WHERE i.key='ATLRANK' AND i.char_id=c.char_id ORDER BY i.value DESC LIMIT 10", $@atl_name$, $@atl_value);
 	.@nb = query_sql("SELECT c.name, i.value FROM `char_reg_num_db` AS i, `char` AS c WHERE i.key='AFKING' AND i.char_id=c.char_id ORDER BY i.value DESC LIMIT 10", $@afk_name$, $@afk_value);
+	.@nb = query_sql("SELECT c.name, i.value FROM `char_reg_num_db` AS i, `char` AS c WHERE i.key='MONSTERS_KILLED' AND i.char_id=c.char_id ORDER BY i.value DESC LIMIT 15", $@hol_name$, $@hol_value);
     consolemes(CONSOLEMES_DEBUG, "Scoreboards reloaded");
     if (!$@SCOREBOARD_BIND) {
         bindatcmd "scoreboard", "@scoreboard::OnCall", 0, 100, 0;
@@ -214,6 +237,7 @@ OnCall:
             l("Hall Of Base Level"),
             l("Hall Of Job Level"),
             l("Hall Of Guilds"),
+            l("Hall Of Lethality"),
             l("Hall Of Acorns"),
             l("Hall Of Artis Legion Training Arena"),
             l("Hall Of AFK King"),
@@ -238,18 +262,22 @@ OnCall:
             next;
             break;
         case 5:
-            HallOfAcorns();
+            HallOfLethality();
             next;
             break;
         case 6:
-            HallOfATL();
+            HallOfAcorns();
             next;
             break;
         case 7:
-            HallOfAFK();
+            HallOfATL();
             next;
             break;
         case 8:
+            HallOfAFK();
+            next;
+            break;
+        case 9:
             HallOfGame();
             next;
             break;

@@ -8,6 +8,7 @@ OnInit:
     htput(.ht, "^ART", "001-1 89 86");
     htput(.ht, "^ASPH|MOOR", "009-1 53 171");
     htput(.ht, "^BLACK|SMITH", "001-2-27 35 32");
+    htput(.ht, "^BOT|CHECK", "botcheck 30 30");
     htput(.ht, "^CAMP|FIRE", "008-1 55 46");
     htput(.ht, "^CANDOR", "012-1 49 114");
     htput(.ht, "^CHAP", "009-1 212 151");
@@ -15,6 +16,7 @@ OnInit:
     htput(.ht, "^DIMOND|COVE", "008-1 106 222");
     htput(.ht, "^DRA|ISLAND", "000-1 62 111");
     htput(.ht, "^FARM|MOUB", "008-1 71 129");
+    htput(.ht, "^FERMI|VOTE", "fermi 29 20");
     htput(.ht, "^FIRST|^DECK1?$", "000-2-0 23 28");
     htput(.ht, "^GARDEN", "020-1 76 99");
     htput(.ht, "^HARB|^MASTER", "001-2-16 28 32");
@@ -38,7 +40,7 @@ OnInit:
     htput(.ht, "^NOBLE5$", "001-2-15 34 38");
     htput(.ht, "^OASIS", "020-1 287 246");
     htput(.ht, "^RED|PLUSH|^INN", "001-2-28 30 35");
-    htput(.ht, "^ROSSY", "008-3-0 130 108");
+    htput(.ht, "^ROSSY", "008-1 49 158");
     htput(.ht, "^SECOND|^DECK2$", "000-2-1 67 32");
     htput(.ht, "^SHIP2$", "001-2-21 23 28");
     htput(.ht, "^START2$", "000-0-0 26 28");

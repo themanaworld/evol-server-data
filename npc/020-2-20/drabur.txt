@@ -1,18 +1,55 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Drabur, the baker's salesman.
 // THIS IS A PLACEHOLDER!
 
-020-2-20,49,30,0	script	Drabur	NPC_GENERAL_STORE,{
-    speech
+020-2-20,47,30,0	script	Drabur	NPC_GENERAL_STORE,{
+    mesn;
+    mesq l("Please don't interrupt my work, I am busy.");
+    next;
+    select
         l("Hi there."),
+        l("Do you sell anything here?"),
+        l("Could I lodge here?"),
         l("Goodbye.");
+    mes "";
+    switch (@menu) {
+    case 1:
+        mesn;
+        mesq l("...");
+        break;
+    case 2:
+        mesn;
+        mesq l("Sure - take a look.");
+        next;
+        closeclientdialog;
+        shop .name$;
+        break;
+    case 3:
+        mesn;
+        mesq l("Sorry, we've booked our only room to a foreigner called Kylian.");
+        next;
+        mesn;
+        mesq l("And we got rid of the extra beds as no one was using them, so we are full at the moment. Come again later.");
+        break;
+    }
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .bodytype = BODYTYPE_1;
+    .distance = 4;
+    tradertype(NST_MARKET);
+
+    sellitem BlueberryCake, -1, 1+rand2(10);
+    sellitem CarrotCake, -1, 1+rand2(10);
+    sellitem Donut, -1, 1+rand2(10);
+    end;
+
+OnClock0002:
+    restoreshopitem BlueberryCake, rand2(11);
+    restoreshopitem CarrotCake, rand2(11);
+    restoreshopitem Donut, rand2(11);
     end;
 }

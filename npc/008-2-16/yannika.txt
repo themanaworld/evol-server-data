@@ -1,4 +1,4 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 //    Jesusalva
@@ -15,7 +15,59 @@
 //  It is an array with Craft Constants.
 
 008-2-16,28,29,0	script	Yannika	NPC_YANNIKA,{
+    function yannika_intro;
+    function yannika_knives;
+    function yannika_recipe;
+    function sudo_make_sandwich;
+    function teach_cooking;
 
+    // If player haven't finished Hinnak quest yet, Yannika says so
+    .@q=getq(HurnscaldQuests_Hinnak);
+    if (.@q < 3)
+    {
+        speech
+            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Isn't my husband Hinnak so hardworking?"),
+            lg("Come back later.");
+        close;
+    }
+
+    // Player completed Hinnak quest, we can continue in making Sandwiches
+    switch (getq(.quest))
+    {
+        case 0:
+            yannika_intro();
+            break;
+        case 1:
+            yannika_knives();
+            break;
+        default:
+        speech
+            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Thanks for helping my husband Hinnak."),
+            l("He likes to eat sandwiches. A good thing they are so easy to make!");
+
+        select
+            l("Easy to make? Could you make one for me?"),
+            l("Easy to make? Could you teach me how to make them?"),
+            l("Good to know, thanks.");
+        mes "";
+
+        if (@menu == 1)
+            sudo_make_sandwich();
+        else if (@menu == 2)
+            teach_cooking();
+
+        next;
+        break;
+    }
+    closeclientdialog;
+    goodbye;
+    close;
+
+
+
+    ////////////////////////////////////////////////////
     // Quest state 0
     function yannika_intro
     {
@@ -58,7 +110,7 @@
             // delitem halts the script if it cannot delete all items.
             inventoryplace RecipeBook, 1;
             delitem Knife, 2;
-            getitem RecipeBook, 1;
+            getitembound RecipeBook, 1, IBT_ACCOUNT;
             setq .quest, 2;
 
             speech
@@ -73,27 +125,36 @@
     }
 
     // Learn a new Sandwich Recipe
-    // yannika_recipe ( Craft ID, Ammo 1, Item 1, Ammo 2, Item 2, Sandwich ID )
+    // yannika_recipe ( Craft ID, Sandwich ID, Ammo 1, Item 1, Ammo 2, Item 2,  Ammo 3, Item 3, {alt1, alt2} )
     function yannika_recipe
     {
         .@craft=getarg(0);
-        .@ammo1=getarg(1);
-        .@item1=getarg(2);
-        .@ammo2=getarg(3);
-        .@item2=getarg(4);
-        .@sanid=getarg(5);
-        speech
-            l("I do know a recipe with this!"),
-            l("You'll need to bring me @@ @@ and @@ @@ for the recipe.", .@ammo1, getitemlink(.@item1), .@ammo2, getitemlink(.@item2));
+        .@sanid=getarg(1);
+        .@ammo1=getarg(2);
+        .@item1=getarg(3);
+        .@ammo2=getarg(4);
+        .@item2=getarg(5);
+        .@ammo3=getarg(6);
+        .@item3=getarg(7);
+        .@alt1=getarg(8);
+        .@alt2=getarg(9);
+        mesn;
+        mes l("For this recipe, you'll need to bring me:");
+        mesf("%d/%d %s", countitem(.@item1), .@ammo1, getitemlink(.@item1));
+        mesf("%d/%d %s", countitem(.@item2), .@ammo2, getitemlink(.@item2));
+        mesf("%d/%d %s", countitem(.@item3), .@ammo3, getitemlink(.@item3));
+        mesf("%s or %s", getitemlink(.@alt1), getitemlink(.@alt2));
 
         select
-            l("Yes, in fact, you can take them now."),
+            rif(countitem(.@alt1), l("(%s) Yes, in fact, you can take them now.", getitemname(.@alt1))),
+            rif(countitem(.@alt2), l("(%s) Yes, in fact, you can take them now.", getitemname(.@alt2))),
             l("Maybe later.");
 
-        if (@menu == 1)
+        if (@menu < 3)
         {
             if (countitem(.@item1) < .@ammo1 ||
-                countitem(.@item2) < .@ammo2)
+                countitem(.@item2) < .@ammo2 ||
+                countitem(.@item3) < .@ammo3)
             {
                 speech
                     l("You don't have everything I have asked for.");
@@ -101,12 +162,24 @@
             }
             delitem .@item1, .@ammo1;
             delitem .@item2, .@ammo2;
+            delitem .@item3, .@ammo3;
+            if (@menu == 1)
+                delitem .@alt1, 1;
+            if (@menu == 2)
+                delitem .@alt2, 1;
+
+            // Learn recipe
             RECIPES[.@craft]=true;
-            speech
-                l("This is how you do it! HAAH!");
+            mesn;
+            mesq l("Look and learn.");
+            next;
+            mesn;
+            mesq l("This is how you do it! HAAH!");
             next;
             mesc l("You learned how to cook @@.", getitemlink(.@sanid));
             next;
+            mesn;
+            mesq l("Please come back later and I may have something else to show you.");
         }
         return;
     }
@@ -186,125 +259,209 @@
             close;
         }
 
-        speech
-            l("Well, of course, I can show you how to cook sandwiches. But you'll need to bring ingredients for practice."),
-            l("Why don't you show me a main ingredient, and I'll tell you what can be done?");
-
-        do
-        {
-            mes "##B" + l("Drag and drop an item from your inventory.") + "##b";
-            .@id = requestitem();
-
-            // If ID is invalid
-            if (.@id < 1) {
-                speech
-                    l("Out of creativity already? Don't worry, I don't judge! Hehe.");
-                close;
+        // First part: Carp Sandwich
+        if (!RECIPES[CraftCarpSandwich]) {
+            mesn;
+            mesq l("Well, of course, I can show you how to cook sandwiches. But you'll need to bring ingredients for practice.");
+            next;
+            mesn;
+            mesq l("Should we start with something simple? Hmmm... Do you have a %s? It is hard to find one around these parts, but you don't seem to be from here.", getitemlink(FishingRod));
+            next;
+            // pre-req
+            if (!countitem(FishingRod)) {
+                mesn;
+                mesq l("Please try getting one. You'll need some carps for the recipe I'm going to teach you.");
+                if (countitem(CommonCarp) || countitem(GrassCarp))
+                    mesq l("Cooking begins with collecting your own ingredients. That is what makes it so tasty. So, bring me a fishing rod!");
+                return;
             }
-            // If you are cheating ManaPlus interface
-            if (countitem(.@id) < 1) {
-                mesc l("You do not have the item!");
-                close;
+            // warn about main req
+            if (!countitem(CommonCarp) && !countitem(GrassCarp)) {
+                mesn;
+                mesq l("Ah, good, you've brought one!");
+                next;
+                mesn;
+                mesq l("Now you'll need to fish a carp. It can be a %s or a single %s, for the sandwhich.", getitemlink(CommonCarp), getitemlink(GrassCarp));
+                next;
             }
+            mesn;
+            mesq l("I'll also be needing the usual sandwich stuff: Bread, Lettuce and Cheese.");
+            next;
+            yannika_recipe(CraftCarpSandwich, CarpSandwich, 1, Bread, 3, LettuceLeaf, 2, Cheese, CommonCarp, GrassCarp);
+            return;
+        }
 
-            // Now we will switch your result and check recipe on the meanwhile
-            switch (.@id)
-            {
-                case CommonCarp:
-                case GrassCarp:
-                    if (RECIPES[CraftCarpSandwich])
-                    {
-                        speech
-                            lg("Haha, silly you! You already know the recipe! Read the @@ if you forgot!", getitemlink(RecipeBook));
-                    }
-                    else
-                    {
-                        yannika_recipe(CraftCarpSandwich, 2, GrassCarp, 10, CommonCarp, CarpSandwich);
-                    }
-                    break;
+        // Main quest (TODO)
+        .@q=getq(.quest);
+        .@q2=getq2(.quest);
+        .@s=getq(General_SmearedHands);
 
-                case Manana:
-                    if (RECIPES[CraftMananaSandwich])
-                    {
-                        speech
-                            lg("Haha, silly you! You already know the recipe! Read the @@ if you forgot!", getitemlink(RecipeBook));
-                    }
-                    else
-                    {
-                        yannika_recipe(CraftMananaSandwich, 3, Carrot, 30, Manana, MananaSandwich);
-                    }
-                    break;
+        // Snarfles/Crane dependency
+        if (!.@s) {
+            mesn;
+            mesq l("No, not at the moment.");
+            next;
+            return;
+        }
 
-                case PiouLegs:
-                    if (RECIPES[CraftPioulegSandwich])
-                    {
-                        speech
-                            lg("Haha, silly you! You already know the recipe! Read the @@ if you forgot!", getitemlink(RecipeBook));
-                    }
-                    else
-                    {
-                        yannika_recipe(CraftPioulegSandwich, 10, Croconut, 20, PiouLegs, PioulegSandwich);
-                    }
-                    break;
+        // Backup SmearedHands to cooking for ease of access
+        setq2 General_Cooking, getq2(General_SmearedHands);
 
-                default:
-                    speech
-                        l("Sorry, I don't know any recipe with this."),
-                        l("Maybe you have more luck with something else?");
-                    next;
-                    break;
+        // Switch General_Cooking quest
+        switch (.@q) {
+        case 2:
+            setq1 General_Cooking, 3;
+            // FALLTHROUGH
+        case 3:
+        case 4:
+        case 5:
+        case 9:
+        case 10:
+        case 12:
+        case 13:
+        case 14:
+        case 17:
+            mesn;
+            mesq l("Could you do a favor for me, first?");
+            next;
+            mesn;
+            mesq l("Could you bring a couple fresh fish to %s? Carps should do.", b(l("the Chef in Dimond's Cove")));
+            next;
+            mesn;
+            mesq l("He promised to make me some %s if I could provide him the fish.", getitemlink(SeafoodPlate));
+            next;
+            mesn;
+            mesq l("Sandwiches are handy, but they won't beat a full meal, which we hadn't in a while.");
+            next;
+            mesn;
+            mesq l("I'll be waiting your return!");
+            next;
+            break;
+        case 6:
+            select
+                l("What did you want, again?"),
+                l("I need some %s.", getitemname(.@q2 == VEGAN ? MananaSandwich : PioulegSandwich));
+            mes "";
+            if (@menu == 1) {
+                mesn;
+                mesq l("A %s pretty please.", getitemlink(SeafoodPlate));
+                break;
             }
-        } while (true);
+            mesn;
+            mesq l("Ehh, I usually only make %s... You know cooking is not just throwing ingredients and vói-la, right?", getitemlink(CarpSandwich));
+            next;
+            mesn;
+            mesq l("But actually... Perhaps the chef in Candor?");
+            next;
+            mesn;
+            mesq l("I forgot their name, but they are not very normal. Err.");
+            next;
+            mesn;
+            mesq l("You probably can find them by the shorelines.");
+            setq1 General_Cooking, 7;
+            break;
+        case 7:
+            mesn;
+            mesq l("Candor's Chef is not very normal, so be careful when asking him about the sandwiches you want to make.");
+            break;
+        case 8:
+            mesn;
+            mesq l("How things went with Candor's Chef?");
+            next;
+            select
+                l("Great!"),
+                l("Not so great!");
+            mes "";
+            if (@menu == 1) {
+                mesn;
+                mesq l("That's good to hear!");
+            } else {
+                mesn;
+                mesq l("Oh no... Did he asked you to help you with something crazy? I feared he would do that...");
+                next;
+                mesn;
+                mesq l("But that's how I learned the carp sandwich recipe, you know?");
+                next;
+                mesn;
+                mesq l("Was trying to eat fried carp, but it always smeared my hands. Never thought he would come up with a sandwich recipe when I gave him that!");
+                next;
+                mesn;
+                mesq l("But he is still crazy, in my opinion...");
+            }
+            break;
+        case 11:
+            select
+                l("What did you want, again?"),
+                l("Do you know where Tulimshar bakery is?");
+            mes "";
+            if (@menu == 1) {
+                mesn;
+                mesq l("A %s pretty please.", getitemlink(SeafoodPlate));
+                break;
+            }
+            mesn;
+            mesq l("What, don't tell me you never have been at Tulimshar! Nearly everyone of your age already has been there at least once.");
+            next;
+            mesn;
+            mesq l("Tulimshar used to have a great Inn, but after the war, their business started to decline.");
+            next;
+            mesn;
+            mesq l("However, they had a bakery which has since flourished!");
+            next;
+            mesn;
+            mesq l("So if you fail finding the bakery, look for the Inn - it is on the same building.");
+            break;
+        case 15:
+        case 16:
+            select
+                l("What did you want, again?"),
+                l("Where can I find salad?");
+            mes "";
+            if (@menu == 1) {
+                mesn;
+                mesq l("A %s pretty please.", getitemlink(SeafoodPlate));
+                break;
+            }
+            mesn;
+            mesq l("This is a strange question. But I might be able to answer.");
+            next;
+            mesn;
+            mesq l("Hubby exports a lot of crops to Tulimshar. The purchaser is the Magic Academy of Tulimshar.");
+            next;
+            mesn;
+            mesq l("I'm not sure if this is of any help to you, though? I forgot who is the responsible for the Academy, so good luck!");
+            break;
+        case 18:
+            mesn;
+            mesq l("So? Did you got me a %s? I'm hungry...", getitemlink(SeafoodPlate));
+            next;
+            if (countitem(SeafoodPlate) < 1)
+                break;
+            if (askyesno() == ASK_NO)
+                break;
+            delitem SeafoodPlate, 1;
+            getitem EmptyPlate, 1;
+            getexp 10000, 1000;
+            setq1 General_Cooking, 19;
+            mesn;
+            mesq l("Ah - Many thanks. Here, I'll return you a plate.");
+            next;
+            mesc l("Food Questline Complete!");
+            mesc l("Stay tuned for more updates!");
+            mes "";
+            mesc l("- The Mana World Development Team");
+            break;
+        default:
+            mesn;
+            mesq l("No, not at the moment.");
+        }
 
         return;
     }
 
-    // If player haven't finished Hinnak quest yet, Yannika says so
-    .@q=getq(HurnscaldQuests_Hinnak);
-    if (.@q < 3)
-    {
-        speech
-            lg(l("Hello madam."), l("Hi Sir.")),
-            l("Isn't my husband Hinnak so hardworking?"),
-            lg("Come back later.");
-        close;
-    }
-
-    // Player completed Hinnak quest, we can continue in making Sandwiches
-    switch (getq(.quest))
-    {
-        case 0:
-            yannika_intro();
-            break;
-        case 1:
-            yannika_knives();
-            break;
-        case 2:
-        speech
-            lg(l("Hello madam."), l("Hi Sir.")),
-            l("Thanks for helping my husband Hinnak."),
-            l("He likes to eat sandwiches. A good thing they are so easy to make!");
-
-        select
-            l("Easy to make? Could you make one for me?"),
-            l("Easy to make? Could you teach me how to make them?"),
-            l("Good to know, thanks.");
-
-        if (@menu == 1)
-            sudo_make_sandwich();
-        else if (@menu == 2)
-            teach_cooking();
-
-        next;
-        break;
-    }
-    closeclientdialog;
-    goodbye;
-    close;
-
 OnInit:
     .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     .quest=General_Cooking;
 
     end;

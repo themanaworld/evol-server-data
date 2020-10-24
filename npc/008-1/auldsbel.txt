@@ -1,11 +1,11 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
 //    Auldsbel the Magician.
 // THIS IS A PLACEHOLDER!
 
-008-1,119,114,0	script	Auldsbel#008-1	NPC_WIZARD,{
+008-1,119,114,0	script	Auldsbel	NPC_WIZARD,{
     // Placeholder please remove
     if (!MASTERBOOK_PAGES)
     {
@@ -49,6 +49,6 @@
 
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
     end;
 }

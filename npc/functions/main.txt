@@ -202,8 +202,10 @@ function	script	npcdebug	{
 }
 
 function	script	askyesno	{
-    return select(menuaction(l("Yes")),
+    .@sel = select(menuaction(l("Yes")),
         menuaction(l("No")));
+    mes "";
+    return .@sel;
 }
 
 // Argument:

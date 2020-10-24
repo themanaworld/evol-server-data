@@ -1,20 +1,43 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
+//    Jesusalva
 // Description:
 //    Adrian, a Sailor near the Legion's Docks.
 // THIS IS A PLACEHOLDER!
 
 020-1,272,138,0	script	Adrian	NPC_ADRIAN,{
+    .@q=getq(TonoriQuest_Kylian);
+
     speech
         l("Hi there."),
-        l("Looks like someone ran out of ideas for placeholder NPCs."),
-        l("So if you want, you can go to bed again."),
-		l("Whatever.");
+        l("I was just having a nap, now the port authority summons me to stand here! I hate this job."),
+        l("Are you here to pick up luggage? I'd like to go get a beer, but I have to wait here until all the luggage is picked up.");
+    if (.@q != 1)
+        close;
+    select
+        l("I've came to fetch Kylian's luggage."),
+        l("Leave");
+    mes "";
+    if (@menu == 2)
+        close;
+    mesn;
+    mesc l("%s examines the ticket.", .name$);
+    mesq l("...");
+    next;
+    mesn;
+    mesq l("Mr. Kylian you say? Of course he would send someone to pick up his luggage. Figures.");
+    next;
+    inventoryplace Suitcase, 1;
+    mesn;
+    mesc l("%s hands you a very heavy suitcase.", .name$);
+    mesq l("Here it is. Good luck carrying that thing.");
+    setq TonoriQuest_Kylian, 2;
+    getitembound Suitcase, 1, IBT_CHARACTER;
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .bodytype = BODYTYPE_1;
+    .distance = 4;
     end;
 }

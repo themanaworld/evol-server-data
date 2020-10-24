@@ -199,7 +199,7 @@
                 close;
                 break;
             case 3:
-                MerchantGuild_Bank;
+                MerchantGuild_Bank();
                 break;
             case 4:
                 mes "";
@@ -208,12 +208,11 @@
             case 5:
                 if (getq(ArtisQuests_Fexil) >= 1)
                 {
-                    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                        l("There are no tasks for you right now.");
+                    MerchantGuild_Quests(.bankid);
                     continue;
                 }
 
-                paper_to_deliver;
+                paper_to_deliver();
 
                 continue;
         }
@@ -232,6 +231,11 @@ OnInit:
     .quest_debug = ArtisQuests_Lloyd;
     .bodytype = BODYTYPE_3;
     .distance = 4;
+
+    // Bank configuration
+    array_push($@BANK_NAME$, .name$);
+    array_push($@BANK_TOWN$, "Artis");
+    .bankid = getarraysize($@BANK_NAME$)-1;
     end;
 }
 

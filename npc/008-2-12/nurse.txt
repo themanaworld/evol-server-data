@@ -1,6 +1,7 @@
 // Evol scripts.
 // Author:
 //    gumi
+//    The Moubootaur Legends Development Team
 // Quest states:
 //    [1] 0  - cannot do the quest
 //    [1] 1  - can do the quest
@@ -26,16 +27,18 @@
 //    Hurnscald Nurse. Robberies in Hurnscald.
 
 008-2-12,28,30,0	script	Nurse	NPC_NURSE_LEGACY,{
+    function bloodDonor;
+    .@q2=getq2(HurnscaldQuests_BloodDonor);
 
     speech(4,
         l("How can I help you?"));
 
-    // TODO: check for AxeHat when we get it
     // XXX: this npc used to teach the resist poison skill, do we still want that?
 
     selectd(
         l("Oooh, these wounds! They hurt so much!"),
         l("I don't feel so well, I might be sick."),
+        rif(.@q2 < gettimetick(2), l("I would like to donate blood.")),
         l("No, I'm fine."),
         rif(getq(.quest_inspector) == 2, l("Have you seen anything out of the ordinary?")));
 
@@ -45,7 +48,7 @@
         if (BaseLevel > .heal_max_level)
         {
             speech(
-                l("I'm sorry but I'm here only to help young people."), // XXX: this sounds cruel towards elderly people
+                l("I'm sorry but I'm here only to help young adventurers and the town residents."),
                 l("Your level is already higher than %d.", .heal_max_level),
                 l("You can get some rest at the inn near here."));
             close;
@@ -53,29 +56,110 @@
         speech(4,
             l("Here, let me heal you."));
 
+        // Jesusalva: I don't trust npcskill()
         npcskill(AL_HEAL, .heal_skill_level, .heal_npc_stats, .heal_npc_level);
 
         speech(
             l("There you go, like new."));
-        close;
+        break;
     case 2:
         speech(
             l("Then you should better see the doctor."),
             l("He is usually in his office on the 3rd floor."));
-        close;
+        break;
     case 3:
+        bloodDonor();
+        break;
+    case 4:
         speech(
             l("Then I would ask you to leave."),
             l("There are people who really need our help."));
-        close;
-    case 4:
+        break;
+    case 5:
         speech(
             l("I'm too busy here to observe the town."));
-        close;
+        break;
     }
+    close;
 
+function bloodDonor {
+    .@q2=getq2(HurnscaldQuests_BloodDonor);
+    .@q3=getq3(HurnscaldQuests_BloodDonor);
+    // Cheating??!
+    if (.@q2 > gettimetick(2))
+        kick(getcharid(3));
+    // Anyway, ML code comes here, adapted for TMW
+    mesc l("Donating blood will BLOCK YOUR MOVEMENT for three minutes.");
+    mesc l("Do not disconnect while waiting. You need 100% HP to donate.");
+    next;
+    // Always show Info if it is your first time donating blood
+    @menu = 1;
+    if (.@q3) {
+        select
+            l("Info"),
+            rif(readparam(Hp) == readparam(MaxHp), l("Yes, please use my blood to save lifes.")),
+            l("I changed my mind");
+        mes "";
+    }
+    if (@menu == 3)
+        return;
+    if (@menu == 1) {
+        mesn;
+        mesq l("Donating blood is a noble act, which allows to save lifes.");
+        next;
+        mesn;
+        mesq l("When people loses too much blood, they die, unless we can lend them somebody's else blood.");
+        next;
+        mesn;
+        mesq l("Not everyone can be a blood donor. For example, you must be healthy.");
+        mesq l("You can find more info about this on these links:");
+        mes "";
+        mes "[@@https://www.blood.co.uk/|https://www.blood.co.uk/@@]";
+        mes "[@@https://www.nhsbt.nhs.uk/what-we-do/blood-services/blood-donation/|https://www.nhsbt.nhs.uk/what-we-do/blood-services/blood-donation/@@]";
+        mes l("France: [@@https://dondesang.efs.sante.fr/|https://dondesang.efs.sante.fr/@@]");
+        mes l("Brazil: [@@http://www.prosangue.sp.gov.br/home/Default.html|http://www.prosangue.sp.gov.br/home/Default.html@@]");
+        if (readparam(Hp) < readparam(MaxHp))
+            return;
+        next;
+        mesc l("Donate blood?", 1);
+        if (askyesno() == ASK_NO)
+            return;
+    }
+    // Donate blood
+    mesn;
+    mesq l("This will take only a short while.");
+    next;
+    setq1 HurnscaldQuests_BloodDonor, 2;
+    percentheal -90, 0;
+    addtimer(180000, "Nurse::OnDonationComplete");
+    warp "008-2-14", 31, 27;
+    setpcblock(PCBLOCK_ATTACK|PCBLOCK_SKILL|PCBLOCK_USEITEM|PCBLOCK_MOVE, true);
+    dispbottom l("Any movement/skill/item will be without effect until time is up.");
+    closedialog;
+    return;
+}
 
-    end;
+OnDonationComplete:
+    if (checkpcblock() & PCBLOCK_ATTACK)
+        setpcblock(PCBLOCK_ATTACK|PCBLOCK_SKILL|PCBLOCK_USEITEM|PCBLOCK_MOVE, false);
+    warp "008-2-12", 30, 30;
+    percentheal 100, 0;
+    // Experience gain is based on HP
+    getexp readparam(Hp)*2, readparam(Hp)/100;
+    .@q3=getq3(HurnscaldQuests_BloodDonor)+1;
+    // Cooldown: 60*60*24*30: 30 days
+    setq HurnscaldQuests_BloodDonor, 1, gettimetick(2)+(2592000), .@q3;
+    if (BaseLevel >= 30)
+        getitem Bread, 1;
+    if (BaseLevel >= 50)
+        getitem ChocolateBar, 1;
+    if (BaseLevel >= 70)
+        getitem BottleOfWater, 1;
+    mesn;
+    mesq l("Thanks for donating blood. You can donate again in 30 days.");
+    mesq l("You should eat and drink water after donating blood. Thanks for saving lifes!");
+    close;
+
 
 OnInit:
     .heal_max_level = 20; // she will only heal low level players
@@ -88,14 +172,5 @@ OnInit:
     .quest_debug = .quest_inspector;
     .bodytype = BODYTYPE_2;
     .distance = 3;
-
-////////// UNFINISHED //////////
-////////////////////////////////
-// REMOVE THIS CODE WHEN THIS //
-// NPC IS NO LONGER A WIP //////
-////////////////////////////////
-if (!debug) disablenpc(.name$);
-///////// UNFINISHED ///////////
-
     end;
 }

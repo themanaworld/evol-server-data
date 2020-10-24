@@ -1,0 +1,83 @@
+// Moubootaur Legends Script
+// Author: Jesusalva
+// Location Config
+
+-	script	loc_config	32767,{
+    end;
+
+OnInit:
+    // TODO: Migglemire, Westport... As this is only used for ship right now, meh
+    setarray $@LOCMASTER_TP,  TP_ARTIS, TP_TULIM, TP_HURNS, TP_CANDOR, TP_ARGAES;
+    setarray $@LOCMASTER_LOC$, "Artis", "Tulim" , "Hurns" , "Candor" , "Argaes" ;
+    setarray $@LOCMASTER_MAP$, "001-1", "020-1" , "008-1" , "012-1"  , "008-1-1";
+    setarray $@LOCMASTER_X,        203,      209,      326,        63,        33;
+    setarray $@LOCMASTER_Y,         85,      143,      104,       133,        63;
+    end;
+
+OnInterIfInit:
+    // Create ship instances
+    /* La Marine's Ship */
+    // Tulim Instance
+    .TULIM_INSTID = instance_create("marine@TulimInst", 0, IOT_NONE);
+    instance_attachmap("marine", .TULIM_INSTID, 0, "marine@Tulim");
+    instance_set_timeout(0, 0, .TULIM_INSTID);
+    instance_init(.TULIM_INSTID);
+
+    // Hurns Instance
+    .HURNS_INSTID = instance_create("marine@HurnsInst", 0, IOT_NONE);
+    instance_attachmap("marine", .HURNS_INSTID, 0, "marine@Hurns");
+    instance_set_timeout(0, 0, .HURNS_INSTID);
+    instance_init(.HURNS_INSTID);
+
+    // Candor Instance
+    .CANDOR_INSTID = instance_create("marine@CandorInst", 0, IOT_NONE);
+    instance_attachmap("marine", .CANDOR_INSTID, 0, "marine@Candor");
+    instance_set_timeout(0, 0, .CANDOR_INSTID);
+    instance_init(.CANDOR_INSTID);
+
+    // Artis Instance (Frigate Gema IV)
+    .ARTIS_INSTID = instance_create("marine@ArtisInst", 0, IOT_NONE);
+    instance_attachmap("marine", .ARTIS_INSTID, 0, "marine@Artis");
+    instance_set_timeout(0, 0, .ARTIS_INSTID);
+    instance_init(.ARTIS_INSTID);
+
+    /* Other instances */
+    .GALI_INSTID = instance_create("008-1-1@galimatia", 0, IOT_NONE);
+    instance_attachmap("008-1-1", .GALI_INSTID, 0, "gali@matia");
+    instance_set_timeout(0, 0, .GALI_INSTID);
+    instance_init(.GALI_INSTID);
+    end;
+}
+
+// Warps you to last visited town
+function	script	ReturnLastTown	{
+    PC_DEST$ = "";
+    @timer_navio_running = 0;
+    .@i=array_find($@LOCMASTER_LOC$, LOCATION$);
+    warp $@LOCMASTER_MAP$[.@i], $@LOCMASTER_X[.@i], $@LOCMASTER_Y[.@i];
+    return;
+}
+
+// Upon entering a town, save it to LOCATION$
+// EnterTown( LocName{, warp=False} )
+function	script	EnterTown	{
+    // Fill variable
+    .@v$=getarg(0);
+
+    // Validade variable
+    if (array_find($@LOCMASTER_LOC$, .@v$) < 0) {
+        consolemes(CONSOLEMES_ERROR, "Invalid location passed to EnterTown: "+.@v$);
+        if (getarg(1, false))
+            ReturnLastTown();
+        return;
+    }
+
+    // Save location
+    LOCATION$=.@v$;
+
+    // If "warp" is true
+    if (getarg(1, false))
+        ReturnLastTown();
+    return;
+}
+
