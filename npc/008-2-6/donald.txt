@@ -3,18 +3,38 @@
 //    Micksha
 // Description:
 //    Alan's Apprentice.
-// THIS IS A PLACEHOLDER!
 
 008-2-6,29,27,0	script	Donald	NPC_YOUNG_MAN_APPRENTICE,{
-    speech
-        l("Hi Sir."),
-        l("Sorry, we are sold out for today."),
-        lg("Come back later.");
+    if (shopcount(TrainingArrow) <= 0 && shopcount(IronArrow) <= 0) {
+        speech
+            l("Good day."),
+            l("Sorry, we are sold out for today."),
+            lg("Come back later.");
+
+    } else {
+        speech
+            l("Good day."),
+            l("We got new supplies of arrows!");
+
+        next;
+
+        closeclientdialog;
+        shop .name$;
+    }
 
     close;
 
 OnInit:
     .bodytype = BODYTYPE_3;
     .distance = 4;
+    tradertype(NST_MARKET);
+
+    sellitem TrainingArrow, -1, 20000+rand2(5000);
+    sellitem IronArrow, -1, 20000+rand2(5000);
+    end;
+
+OnClock0002:
+    restoreshopitem TrainingArrow, 20000+rand2(5000);
+    restoreshopitem IronArrow, 20000+rand2(5000);
     end;
 }
