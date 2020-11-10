@@ -105,7 +105,7 @@ function	script	GetBeanieCopter	{
 OnInit:
     .quest_inspector = HurnscaldQuests_Inspector;
     .quest_debug = .quest_inspector; // TODO: change this to the milly quest debug when it exists
-    .bodytype = BODYTYPE_2;
+    .sex = GENDER_MALE;
     .distance = 3;
 
 ////////// UNFINISHED //////////

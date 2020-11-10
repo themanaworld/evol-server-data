@@ -43,7 +43,7 @@ function	script	doorTimer	{
 function	script	doorInit	{
     .distance = 5;
     .alwaysVisible = true;
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     end;
 }
 

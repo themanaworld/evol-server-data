@@ -44,7 +44,7 @@
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     .distance = 4;
 
     // Bank configuration

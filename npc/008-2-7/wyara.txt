@@ -77,7 +77,7 @@ function doStatusReset {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_2;
+    .sex = GENDER_MALE;
     .distance = 4;
     end;
 }

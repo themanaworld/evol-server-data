@@ -18,7 +18,7 @@ OnInit:
     sellitem LousyMoccasins, -1, 20;
     sellitem PiouSlayer, -1, 15;
 
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 3;
     end;
 

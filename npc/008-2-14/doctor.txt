@@ -109,7 +109,7 @@ function doctorEyePatch {
 OnInit:
     .quest_inspector = HurnscaldQuests_Inspector;
     .quest_debug = .quest_inspector;
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     .distance = 3;
     end;
 }

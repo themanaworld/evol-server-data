@@ -346,7 +346,7 @@ function completedHenry {
 
 ///////////////////////////////////////////////////////
 OnInit:
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     .distance = 3;
     end;
 

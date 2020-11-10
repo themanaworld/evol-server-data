@@ -229,7 +229,7 @@
 
 OnInit:
     .quest_debug = ArtisQuests_Lloyd;
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     .distance = 4;
 
     // Bank configuration

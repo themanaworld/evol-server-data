@@ -113,7 +113,7 @@ function confirmTravel {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_2;
+    .sex = GENDER_MALE;
     .distance = 4;
     .price = 100; // Current a constant, but maybe... In future...
     .artis = false;

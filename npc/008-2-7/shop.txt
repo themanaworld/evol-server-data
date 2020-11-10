@@ -19,7 +19,7 @@ OnInit:
     sellitem ConcPotion, -1, 3;
     sellitem IronPotion, -1, 3;
 
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 4;
     end;
 

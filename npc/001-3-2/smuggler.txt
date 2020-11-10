@@ -74,7 +74,7 @@ function smugglerBoarding {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     .distance = 4;
     .speed = 175;
     .alwaysVisible = true;

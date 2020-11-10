@@ -277,7 +277,7 @@ OnUse:
 
 OnInit:
     .book_name$ = getitemname(RecipeBook);
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }

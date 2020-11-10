@@ -97,7 +97,7 @@ L_QuestDone:
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     .distance = 2;
     .debug = 1;
     end;

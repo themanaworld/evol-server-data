@@ -175,7 +175,7 @@ OnInit:
 
     .quest = HurnscaldQuests_Inspector;
     .quest_debug = .quest;
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     .distance = 3;
 
 ////////// UNFINISHED //////////

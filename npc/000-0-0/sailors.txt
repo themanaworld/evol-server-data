@@ -74,7 +74,7 @@ OnTalk:
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     end;
 
 OnSlow:
@@ -89,6 +89,6 @@ OnSlow:
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     end;
 }

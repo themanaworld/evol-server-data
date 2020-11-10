@@ -105,7 +105,7 @@ OnTimer1000:
     dographmovestep;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 5;
     .walkmask = WALK_WATER;
     // .debug = 1;

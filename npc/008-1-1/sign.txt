@@ -10,7 +10,7 @@
 
 OnInit:
     .distance = 1;
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     end;
 }
 008-1-1,157,87,0	script	Sign#008-1-1-central	NPC_NO_SPRITE,{
@@ -19,6 +19,6 @@ OnInit:
 
 OnInit:
     .distance = 2;
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     end;
 }

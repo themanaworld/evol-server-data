@@ -123,7 +123,7 @@ OnUse:
 
 OnInit:
     .book_name$ = getitemname(MasterBook);
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }

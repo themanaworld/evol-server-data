@@ -54,8 +54,7 @@ function	script	mesq	{
 }
 
 function	script	g	{
-    // TODO: remove gendered lines from NPCs, or use any(getarg(0), getarg(1)) to make it random
-    return BodyType == 0 ? getarg(0) : getarg(1);
+    return Gender == 0 ? getarg(0) : getarg(1);
 }
 
 function	script	b	{

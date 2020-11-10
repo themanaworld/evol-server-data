@@ -123,7 +123,7 @@ OnTouch:
     end;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
+    .sex = GENDER_MALE;
     .distance = 5;
     .speed = 300;
     initmovegraph "startspot",  40, 29,

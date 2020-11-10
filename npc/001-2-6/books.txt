@@ -52,7 +52,7 @@ OnUse:
 
 OnInit:
     .book_name$ = "The Piou and The Fluffy";
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -107,7 +107,7 @@ OnUse:
 
 OnInit:
     .book_name$ = "Poem about Poems";
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -140,7 +140,7 @@ OnUse:
 
 OnInit:
     .book_name$ = "Chorus of the Woods";
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -169,7 +169,7 @@ OnUse:
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -204,7 +204,7 @@ OnUse:
 
 OnInit:
     .book_name$ = "Fluffy Animals who Love Their Owners";
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -238,7 +238,7 @@ OnUse:
 
 OnInit:
     .book_name$ = "World Story For Dummies, Vol I";
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -274,7 +274,7 @@ OnUse:
 
 OnInit:
     .book_name$ = "World Story For Dummies, Vol II";
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -312,7 +312,7 @@ OnUse:
 
 OnInit:
     .book_name$ = "World Story For Dummies, Vol III";
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -347,7 +347,7 @@ OnUse:
 
 OnInit:
     .book_name$ = "World Story For Dummies, Vol IV";
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }

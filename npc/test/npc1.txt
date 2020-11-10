@@ -688,7 +688,7 @@ OnTimer340:
     doorTimer;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     .distance = 5;
     .alwaysVisible = true;
     waitingroom "test room", 2, "npc1::OnReadyCheck", 1;

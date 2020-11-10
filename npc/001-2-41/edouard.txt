@@ -30,7 +30,7 @@ function	script	EdouardCheckChair	{
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -40,7 +40,7 @@ OnInit:
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -50,7 +50,7 @@ OnInit:
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -60,7 +60,7 @@ OnInit:
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -70,7 +70,7 @@ OnInit:
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -80,7 +80,7 @@ OnInit:
     EdouardCheckChair .map$, .x, .y;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 1;
     end;
 }
@@ -137,7 +137,7 @@ OnChair:
             l("What is my current hairstyle and hair color?"),
             l("I'd like to get a different style."),
             l("Can you do something with my color?"),
-            l("How about changing my body type?"),
+            l("How about changing my gender?"),
             l("What's your story again?"),
             l("I'm fine for now, thank you.");
 
@@ -159,7 +159,7 @@ OnChair:
                     l("Anything else?");
                 break;
             case 4:
-                BarberChangeBodyType();
+                BarberChangeGender();
                 speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                     l("You look fantastic."),
                     l("Anything else?");
@@ -176,7 +176,7 @@ OnChair:
     } while (1);
 
 OnInit:
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     .distance = 2;
     end;
 }

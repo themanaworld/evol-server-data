@@ -38,7 +38,7 @@
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 4;
     tradertype(NST_MARKET);
 

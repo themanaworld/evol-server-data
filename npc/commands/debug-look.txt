@@ -38,7 +38,7 @@ function	script	BarberDebug	{
         mes "";
 
         mes "---";
-        mes l("Body type") + ": " + bodytypeToString(BodyType);
+        mes l("Gender") + ": " + genderToString(Gender);
         mes l("Hair style") + ": " + getlook(LOOK_HAIR);
         mes l("Hair color") + ": " + getlook(LOOK_HAIR_COLOR);
         mes l("Race") + ": " + Class + " (" + get_race() + ")";;
@@ -47,7 +47,7 @@ function	script	BarberDebug	{
         next;
         mes l("What do you want to change?");
         select
-            menuimage("actions/edit", l("Body type") + " [" + l("Requires logout") + "]"),
+            menuimage("actions/edit", l("Gender") + " [" + l("Requires logout") + "]"),
             menuimage("actions/edit", l("Hair style")),
             menuimage("actions/edit", l("Hair color")),
             menuimage("actions/edit", l("Race")),
@@ -55,7 +55,7 @@ function	script	BarberDebug	{
 
         switch (@menu)
         {
-            case 1: BarberChangeBodyType(); break;
+            case 1: BarberChangeGender(); break;
             case 2: setStyle; break;
             case 3: setColor; break;
             case 4: setRace; break;

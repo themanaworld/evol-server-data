@@ -84,7 +84,7 @@ OnInit:
     setunitdata(.@npcId, UDT_HAIRCOLOR, rand(1,20));
     npcsit;
 
-    .bodytype = BODYTYPE_3;
+    .sex = GENDER_HIDDEN;
     .distance = 4;
     end;
 }

@@ -161,7 +161,7 @@ OnRattoKill:
 }
 
 OnInit:
-    .bodytype = BODYTYPE_1;
+    .sex = GENDER_FEMALE;
     .distance = 4;
     end;
 }

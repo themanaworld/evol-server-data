@@ -165,7 +165,7 @@
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
+    .sex = GENDER_MALE;
     .distance = 3;
     end;
 }

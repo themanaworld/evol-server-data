@@ -1,52 +1,47 @@
-// @bodytype atcommand
-// changes or returns the body type
+// @gender atcommand
+// changes or returns the gender
 
--	script	@bodytype	32767,{
+-	script	@gender	32767,{
     end;
 
 OnCall:
     if (.@atcmd_parameters$[0] == "") {
-        dispbottom("Your current body type is " + bodytypeToString());
+        dispbottom("Your current gender is " + genderToString());
         end;
     }
 
-    .@desired = stringToBodytype(.@atcmd_parameters$[0]);
+    .@desired = stringToGender(.@atcmd_parameters$[0]);
 
-    if (.@desired == BodyType) {
-        dispbottom("Your body type is already " + bodytypeToString());
+    if (.@desired == Gender) {
+        dispbottom("Your gender is already " + genderToString());
     } else {
-        BodyType = .@desired;
-        dispbottom("Body type changed to " + bodytypeToString());
+        Gender = .@desired;
+        dispbottom("Gender changed to " + genderToString());
     }
     end;
 
 OnInit:
-    bindatcmd("gender", "@bodytype::OnCall", 99, 99, false);
-    bindatcmd("bodytype", "@bodytype::OnCall", 99, 99, false);
-    bindatcmd("body", "@bodytype::OnCall", 99, 99, false);
-    bindatcmd("type", "@bodytype::OnCall", 99, 99, false);
-    bindatcmd("changesex", "@bodytype::OnCall", 99, 99, false);
+    bindatcmd("gender", "@gender::OnCall", 99, 99, false);
+    bindatcmd("body", "@gender::OnCall", 99, 99, false);
+    bindatcmd("type", "@gender::OnCall", 99, 99, false);
+    bindatcmd("changesex", "@gender::OnCall", 99, 99, false);
 
     add_group_command("gender", 40, true, false);
-    add_group_command("bodytype", 40, true, false);
     add_group_command("body", 40, true, false);
     add_group_command("type", 40, true, false);
     add_group_command("changesex", 40, true, false);
 
     add_group_command("gender", 50, true, false);
-    add_group_command("bodytype", 50, true, false);
     add_group_command("body", 50, true, false);
     add_group_command("type", 50, true, false);
     add_group_command("changesex", 50, true, false);
 
     add_group_command("gender", 60, true, false);
-    add_group_command("bodytype", 60, true, false);
     add_group_command("body", 60, true, false);
     add_group_command("type", 60, true, false);
     add_group_command("changesex", 60, true, false);
 
     add_group_command("gender", 80, true, false);
-    add_group_command("bodytype", 80, true, false);
     add_group_command("body", 80, true, false);
     add_group_command("type", 80, true, false);
     add_group_command("changesex", 80, true, false);

@@ -252,7 +252,7 @@ L_Bye:
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
+    .sex = GENDER_MALE;
     .distance = 2;
     end;
 }
