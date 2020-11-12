@@ -1,0 +1,30 @@
+// Hal quest debug
+// Author:
+//    Livio
+
+function	script	QuestDebug61	{
+	do
+	{
+		clear;
+		setnpcdialogtitle l("Quest debug");
+		mes "General_CptHal";
+		mes "---";
+		mes l("Quest state: @@", getq(General_CptHal));
+		next;
+
+		GenericQuestDebug General_CptHal,
+			l("[RESET QUEST] Does not have the quest"), 0,
+			l("Bothered to talk to Thamas"), 1,
+			l("Accepted to resupply Hal's Legion troop"), 2,
+			l("Looking for Sergeant Ryan"), 3,
+			l("Found Sergeant Ryan, looking for items"), 4,
+			l("Healed Sergeant Ryan"), 5;
+
+		if (@menuret < 0)
+		{
+			return;
+		}
+
+	} while (1);
+	return;
+}

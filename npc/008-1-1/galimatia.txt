@@ -9,40 +9,39 @@
 // KEEP item_db.conf updated as well
 
 function	script	usePurificationPotion	{
-	// Check quest status, if not in a quest provide default item behaviour
+    // Check quest status, if not in a quest provide default item behaviour
     if (getq(ArgaesQuest_Galimatia) == 1) {
-		// Do as requested by quest
-		if (isin("008-1-1", 95, 45, 99, 48)) {
-			setq(ArgaesQuest_Galimatia, 2);
-			message strcharinfo(0), l("Done. Maybe it's time to ask Galimatia what to do now.");
-			delitem PurificationPotion, 1;
-		} else {
-			message strcharinfo(0), l("Hmm... I'm sure that is not the right place to put it.");
-			return true;
-		}
-	} else return false;
+        // Do as requested by quest
+        if (isin("008-1-1", 95, 45, 99, 48)) {
+            setq(ArgaesQuest_Galimatia, 2);
+            message strcharinfo(0), l("Done. Maybe it's time to ask Galimatia what to do now.");
+            delitem PurificationPotion, 1;
+        } else {
+            message strcharinfo(0), l("Hmm... I'm sure that is not the right place to put it.");
+            return true;
+        }
+    } else return false;
 }
 
 function	script	useFertilityPotion	{
-	// Check quest status, if not in a quest provide default item behaviour
+    // Check quest status, if not in a quest provide default item behaviour
     if (getq(ArgaesQuest_Galimatia) == 3) {
-		// Do as requested by quest
-		if (isin("008-1-1", 95, 45, 99, 48)) {
-			setq(ArgaesQuest_Galimatia, 4);
-			message strcharinfo(0), l("All right! I've poured even this one..");
-			delitem FertilityPotion, 1;
-		} else {
-			message strcharinfo(0), l("Hmm... This one is supposed to be poured where the other one were.");
-			return true;
-		}
-	} else return false;
+        // Do as requested by quest
+        if (isin("008-1-1", 95, 45, 99, 48)) {
+            setq(ArgaesQuest_Galimatia, 4);
+            message strcharinfo(0), l("All right! I've poured even this one..");
+            delitem FertilityPotion, 1;
+        } else {
+            message strcharinfo(0), l("Hmm... This one is supposed to be poured where the other one were.");
+            return true;
+        }
+    } else return false;
 }
 
 // ------------------------------------
 008-1-1,113,59,0	script	Galimatia	NPC_GALIMATIA,{
     function advanceQuest;
-    function printIngredients;
-
+    function NPCdemandsIngredients;
     function QuestPart0;
     function QuestPart1;
     function QuestPart2;
@@ -52,149 +51,48 @@ function	script	useFertilityPotion	{
     function QuestPart6;
     function galimatiaQuestDaily;
 
-	switch(getq(ArgaesQuest_Galimatia)) {
-		case 0: QuestPart0(); break;
-		case 1: QuestPart1(); break;
-		case 2: QuestPart2(); break;
-		case 3: QuestPart3(); break;
-		case 4: QuestPart4(); break;
-		case 5: QuestPart5(); break;
-		case 6: QuestPart6(); break;
+    switch(getq(ArgaesQuest_Galimatia)) {
+        case 0: QuestPart0(); break;
+        case 1: QuestPart1(); break;
+        case 2: QuestPart2(); break;
+        case 3: QuestPart3(); break;
+        case 4: QuestPart4(); break;
+        case 5: QuestPart5(); break;
+        case 6: QuestPart6(); break;
         case 7: galimatiaQuestDaily(); break;
-		default:
-			mesq l("[Invalid quest status: %d, check script]", getq(ArgaesQuest_Galimatia));
-	}
-	close;
+        default:
+            mesq l("[Invalid quest status! %d, check script]", getq(ArgaesQuest_Galimatia));
+    }
+    close;
 
-// ----------------
-/*
-	@brief Prints the list of quest ingredients on the NPC window
-	@param Array with items IDs
-	@param Array with relative amount required
-	@returns nothing
-*/
-function printIngredients {
-	for (.@i = 0; .@i < getarraysize(getarg(0)); .@i++) {
-		mesf(" - %d %s", getelementofarray(getarg(1), .@i), getitemlink(getelementofarray(getarg(0), .@i)));
-	}
-	return;
-}
-
-/*
-	@brief Checks if player has items required
-	@param Array with required items IDs
-	@param Array with relative amount required
-	@returns false if player doesn't have required items
-*/
-function checkForItems {
-	for (.@i = 0; .@i < getarraysize(getarg(0)); .@i++) {
-		// If even a single thing is missing abort immediately
-		if(getelementofarray(getarg(1), .@i) > countitem(getelementofarray(getarg(0), .@i))) {
-			return false;
-		}
-	}
-	return true;
-}
-
-/*
-	@brief Craft an item from some other items. All input items got deleted.
-	@param Array with required items IDs
-	@param Array with relative amount required
-	@param output item IDs
-	@param output amount
-	@returns 0 if successful, 1 if player lack ingredients, 2 if overburdened, 255 code error
-*/
-function craftFromPlayer {
-	// Check input parameter amount
-	if (getargcount() != 4) return 255;
-
-	// Check item amounts
-	if (!checkForItems(getarg(0), getarg(1))) return 1;
-
-	// Check if player is able to carry output from crafting
-	if (!checkweight(getarg(2), getarg(3))) return 2;
-	else getitem(getarg(2), getarg(3));
-
-	// Delete Items from player inventory
-	for (.@i = getarrayindex(getarg(0)); .@i < getarraysize(getarg(0)); .@i++) {
-		delitem(getelementofarray(getarg(0), .@i), getelementofarray(getarg(1), .@i));
-	}
-
-	return 0;
-}
-
-/*
-	@brief Craft an item from some other items. All input items will be deleted in case of success.
-	@param Array with required items IDs
-	@param Array with relative amount required
-	@param output item IDs
-	@param output amount
-	@param NPC question about ingredients
-	@param NPC answer if successful
-	@param NPC answer if player lacks ingredients
-	@param NPC answer if player is overburdened
-	@returns true if successful
-*/
-function NPCcrafting {
-	speech
-		getarg(4);
-	if (askyesno() == ASK_NO) {
-		mesq l("Come on, move!");
-		close;
-	} else {
-		switch(craftFromPlayer(getarg(0), getarg(1), getarg(2), getarg(3))) {
-			case 0:
-				mesq getarg(5);
-				return true;
-				break;
-
-			case 1:
-				mesq getarg(6);
-                // FIXME - Gather proper variables
-				printIngredients(getarg(0), getarg(1));
-				break;
-
-			case 2:
-				mesq getarg(7);
-				break;
-
-			case 255:
-				mesq l("[BUG ENCOUNTERED] Dammit...");
-				break;
-
-			default:
-		}
-	}
-	return false;
-}
 
 // FIXME comment better
 // Makes NPC to ask for ingredients
 function NPCdemandsIngredients {
-	mesq l("Fine. The land is healthy now but nothing will grow yet. This time I need you to get:");
-	printIngredients(.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT);
-	mesq l("So making a %s will make things easier.", getitemlink(.REQ1_OUTPUT));
-	if (NPCcrafting(
-			.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
-			.REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT,
-			l("Okay. Give me a second..."),
-			l("Nope. You don't have enough ingredients for that."),
-			l("I can't give you nothing if you don't leave some room for it!")
-			)
-		) {
-		advanceQuest();
-		mesq l("You must now pour it over the land again in the same spot.");
-	}
-	close;
-	return;
+    mesq l("Fine. The land is healthy now but nothing will grow yet. This time I need you to get:");
+    printIngredients(.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT);
+    mesq l("So making a %s will make things easier.", getitemlink(.REQ1_OUTPUT));
+    if (NPCcrafting(
+            .REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
+            .REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT,
+            l("Okay. Give me a second..."),
+            l("Nope. You don't have enough ingredients for that."),
+            l("I can't give you nothing if you don't leave some room for it!")
+            )
+        ) {
+        advanceQuest();
+        mesq l("You must now pour it over the land again in the same spot.");
+    }
+    close;
+    return;
 }
 
 
 //-----------------
 
 function advanceQuest {
-	setq(ArgaesQuest_Galimatia, getq(ArgaesQuest_Galimatia) + 1);
-	return;
+    setq(ArgaesQuest_Galimatia, getq(ArgaesQuest_Galimatia) + 1);
+    return;
 }
 
 /*
@@ -204,83 +102,83 @@ Galimatia needs to tend to other work and can’t get away, so she asks player f
 */
 
 function QuestPart0 {
-	speech
-		l("Hello."),
-		l("If only someone could help me to make my flowers bloom again."),
-		l("I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.");
+    speech
+        l("Hello."),
+        l("If only someone could help me to make my flowers bloom again."),
+        l("I just dont know what to do. Perhaps all gets better when I stay here, whining and waiting. Please, leave me alone.");
     next;
 
-	select(
-		l("What about making some fertilizing-something?"),
-		l("I don't have time to spend on flowers.")
-	);
+    select(
+        l("What about making some fertilizing-something?"),
+        l("I don't have time to spend on flowers.")
+    );
     mes "";
     mesn;
 
-	switch(@menu) {
-		case 1:
-			mesq l("All right! I need you to get:");
-			printIngredients(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT);
-			mesq l("So I can make a %s out of it.", getitemlink(.REQ0_OUTPUT));
-			if (NPCcrafting(
-				.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
-				.REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT,
-				l("Have you got those things with you?"),
-				l("Okay. Give me a second..."),
-				l("Nope. You don't have enough ingredients for that."),
-				l("I can't give you nothing if you don't leave some room for it!")
-				)
-			) {
-				advanceQuest();
-				mesq l("You must now pour it over the land.");
-			}
-			close;
-			break;
-		default:
-			// FIXME This got to be improved in other script parts as well
-			mesq
-				any(
-					l("Gave up already?"),
-					l("Okay..."),
-					l("Go stay afk in TMW Legacy if you don't want to make yourself useful."),
-					l("Hehe, hehe. Well, come back if you change your mind."
-				)
-			);
-			close;
-	}
-	return;
+    switch(@menu) {
+        case 1:
+            mesq l("All right! I need you to get:");
+            printIngredients(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT);
+            mesq l("So I can make a %s out of it.", getitemlink(.REQ0_OUTPUT));
+            if (NPCcrafting(
+                .REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
+                .REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT,
+                l("Have you got those things with you?"),
+                l("Okay. Give me a second..."),
+                l("Nope. You don't have enough ingredients for that."),
+                l("I can't give you nothing if you don't leave some room for it!")
+                )
+            ) {
+                advanceQuest();
+                mesq l("You must now pour it over the land.");
+            }
+            close;
+            break;
+        default:
+            // FIXME This got to be improved in other script parts as well
+            mesq
+                any(
+                    l("Gave up already?"),
+                    l("Okay..."),
+                    l("Go stay afk in TMW Legacy if you don't want to make yourself useful."),
+                    l("Hehe, hehe. Well, come back if you change your mind."
+                )
+            );
+            close;
+    }
+    return;
 }
 
 /*
 She made a Purification Potion out of ingredients to heal the land and gives it to the player and says it must be poured over the land (marked in some way. Like in the Orum and Waric follow-up quest).
 */
 function QuestPart1 {
-	if(checkForItems(.REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT)) {
-		speech
-			l("What's up? You want me to show how to open a bottle and pour its content on the ground?");
-	} else {
-		speech
-			l("Why you don't have a %s with you? You need me to make another one?", getitemlink(.REQ0_OUTPUT));
-		if (askyesno() == ASK_NO) {
-			mesq l("Come on, stop wasting my time!");
-			close;
-		} else{
-			if (NPCcrafting(
-				.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
-				.REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT,
-				l("Again, do you have what I need to make that?"),
-				l("Here we go again..."),
-				l("No! Have you already forgot what I need for it?"),
-				l("You don't even have the space in your inventory to carry it!!! Oh, man you are a disaster...")
-				)
-			) {
-				// FIXME Put some messages about making again the potion so the NPC can look different and react like it was somewhat disturbed by player failure
-				mesq l("Remember: you must pour it over the land.");
-			}
-		}
-	}
-	close;
-	return;
+    if(checkForItems(.REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT)) {
+        speech
+            l("What's up? You want me to show how to open a bottle and pour its content on the ground?");
+    } else {
+        speech
+            l("Why you don't have a %s with you? You need me to make another one?", getitemlink(.REQ0_OUTPUT));
+        if (askyesno() == ASK_NO) {
+            mesq l("Come on, stop wasting my time!");
+            close;
+        } else{
+            if (NPCcrafting(
+                .REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
+                .REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT,
+                l("Again, do you have what I need to make that?"),
+                l("Here we go again..."),
+                l("No! Have you already forgot what I need for it?"),
+                l("You don't even have the space in your inventory to carry it!!! Oh, man you are a disaster...")
+                )
+            ) {
+                // FIXME Put some messages about making again the potion so the NPC can look different and react like it was somewhat disturbed by player failure
+                mesq l("Remember: you must pour it over the land.");
+            }
+        }
+    }
+    close;
+    return;
 }
 
 /*
@@ -290,54 +188,54 @@ If you weren't able to trash the potion, the land is now healed, but nothing gro
 
 function QuestPart2 {
     mesn;
-	mesq l("Fine. The land is healthy now but nothing will grow yet. This time I need you to get:");
-	printIngredients(.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT);
-	mesq l("So making a %s will make things easier.", getitemlink(.REQ1_OUTPUT));
-	if (NPCcrafting(
-			.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT,
-			.REQ1_OUTPUT, .REQ1_OUTPUT_AMOUNT,
-			l("Have you got what we need?"),
-			l("Here it is!"),
-			l("No! You haven't!"),
-			l("I can't give you nothing if you don't leave some room for it!")
-			)
-	) {
-		advanceQuest();
-		mesq l("You must now pour it over the land again in the same spot.");
-	}
-	close;
-	return;
+    mesq l("Fine. The land is healthy now but nothing will grow yet. This time I need you to get:");
+    printIngredients(.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT);
+    mesq l("So making a %s will make things easier.", getitemlink(.REQ1_OUTPUT));
+    if (NPCcrafting(
+            .REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT,
+            .REQ1_OUTPUT, .REQ1_OUTPUT_AMOUNT,
+            l("Have you got what we need?"),
+            l("Here it is!"),
+            l("No! You haven't!"),
+            l("I can't give you nothing if you don't leave some room for it!")
+            )
+    ) {
+        advanceQuest();
+        mesq l("You must now pour it over the land again in the same spot.");
+    }
+    close;
+    return;
 }
 
 
 function QuestPart3 {
-	if(checkForItems(.REQ1_OUTPUT, .REQ1_OUTPUT_AMOUNT)) {
-		speech
-			l("Come on pal, what's the matter?");
-	} else {
-		speech
-			l("Got drunk with the %s? You need me to make another one?", getitemlink(.REQ1_OUTPUT));
-		if (askyesno() == ASK_NO) {
+    if(checkForItems(.REQ1_OUTPUT, .REQ1_OUTPUT_AMOUNT)) {
+        speech
+            l("Come on pal, what's the matter?");
+    } else {
+        speech
+            l("Got drunk with the %s? You need me to make another one?", getitemlink(.REQ1_OUTPUT));
+        if (askyesno() == ASK_NO) {
             mesn;
-			mesq l("Come on, stop wasting my time!");
-			close;
-		} else{
-			if (NPCcrafting(
-				.REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT,
-				.REQ1_OUTPUT, .REQ1_OUTPUT_AMOUNT,
-				l("Again, do you have what I need to make that?"),
-				l("Here we go again..."),
-				l("No! Have you already forgot what I need for it?"),
-				l("I can't give you nothing if you don't leave some room for it!")
-				)
-			) {
-				// FIXME Put some messages about making again the potion so the NPC can look different and react like it was somewhat disturbed by player failure
-				mesq l("Remember: you must now pour it over the land.");
-			}
-		}
-	}
-	close;
-	return;
+            mesq l("Come on, stop wasting my time!");
+            close;
+        } else{
+            if (NPCcrafting(
+                .REQ1_INGREDIENTS, .REQ1_INGREDIENTS_AMOUNT,
+                .REQ1_OUTPUT, .REQ1_OUTPUT_AMOUNT,
+                l("Again, do you have what I need to make that?"),
+                l("Here we go again..."),
+                l("No! Have you already forgot what I need for it?"),
+                l("I can't give you nothing if you don't leave some room for it!")
+                )
+            ) {
+                // FIXME Put some messages about making again the potion so the NPC can look different and react like it was somewhat disturbed by player failure
+                mesq l("Remember: you must now pour it over the land.");
+            }
+        }
+    }
+    close;
+    return;
 }
 
 /*
@@ -350,22 +248,22 @@ function QuestPart4 {
     speech
         l("Thanks for the help earlier. The soil is now fertile thanks to your efforts."),
         l("Do you know Blossom? She is the flower girl. Bees won't come without flowers."),
-		l("So, now I need %d %s.", .REQ2_INGREDIENTS_AMOUNT, getitemlink(.REQ2_INGREDIENTS));
+        l("So, now I need %d %s.", .REQ2_INGREDIENTS_AMOUNT, getitemlink(.REQ2_INGREDIENTS));
     next;
-	// We don't take player items without asking
+    // We don't take player items without asking
     mesc l("Deliver items to Blossom?");
     if (askyesno() == ASK_NO) close;
-	if(checkForItems(.REQ2_INGREDIENTS, .REQ2_INGREDIENTS_AMOUNT)) {
-		advanceQuest();
-		speech
-			l("Nice, gimme that!"),
+    if(checkForItems(.REQ2_INGREDIENTS, .REQ2_INGREDIENTS_AMOUNT)) {
+        advanceQuest();
+        speech
+            l("Nice, gimme that!"),
             l("I'll go plant them. Now go, maybe I need your help again later.");
-	} else {
-		speech
-			l("Go get some!");
-	}
-	close;
-	return;
+    } else {
+        speech
+            l("Go get some!");
+    }
+    close;
+    return;
 }
 
 /*
@@ -378,25 +276,25 @@ Galimatia gives the player their reward: Player must select a simple Magic Wand 
 */
 
 function QuestPart5 {
-	speech
-		l("Nice job."),
+    speech
+        l("Nice job."),
         l("I've heard bees are scared of fire, you know."),
-		l("So, what do you want?"),
-		l("A %s or a %s?", getitemlink(.QUESTPRIZES[0]) , getitemlink(.QUESTPRIZES[1]));
-	select(
-		l("I want the %s!",     getitemname(.QUESTPRIZES[0])),
-		l("A %s?!? Cool!!!",    getitemname(.QUESTPRIZES[1]))
-	);
-	if (!checkweight(.QUESTPRIZES[@menu-1], .QUESTPRIZES_AMOUNT[@menu-1])) {
-		mesq l("I can't give you a prize if you are overburdened. Make room in your inventory!");
-	}
-	else{
-		getitem(.QUESTPRIZES[@menu-1], .QUESTPRIZES_AMOUNT[@menu-1]);
-		advanceQuest();
-		mesq l("Use those wisely and use safety glasses.");
-	}
-	close;
-	return;
+        l("So, what do you want?"),
+        l("A %s or a %s?", getitemlink(.QUESTPRIZES[0]) , getitemlink(.QUESTPRIZES[1]));
+    select(
+        l("I want the %s!",	 getitemname(.QUESTPRIZES[0])),
+        l("A %s?!? Cool!!!",	getitemname(.QUESTPRIZES[1]))
+    );
+    if (!checkweight(.QUESTPRIZES[@menu-1], .QUESTPRIZES_AMOUNT[@menu-1])) {
+        mesq l("I can't give you a prize if you are overburdened. Make room in your inventory!");
+    }
+    else{
+        getitem(.QUESTPRIZES[@menu-1], .QUESTPRIZES_AMOUNT[@menu-1]);
+        advanceQuest();
+        mesq l("Use those wisely and use safety glasses.");
+    }
+    close;
+    return;
 }
 
 /*
@@ -406,32 +304,32 @@ This enables the player to receive a Rose Hat. Fighting the flowers that were ju
 
 function QuestPart6 {
     mesn;
-	mesq l("Hello again! Do you want me to exchange %d %s and %d GP for a %s?",
-			.REQ3_INGREDIENTS_AMOUNT[0], getitemlink(.REQ3_INGREDIENTS[0]),
-			.REQ3_COST, getitemlink(.REQ3_OUTPUT)
-	);
-	if (askyesno() == ASK_NO) {
-		mesq l("As you wish.");
-		close;
-	} else {
-		if(Zeny>=.REQ3_COST) {
-			if(NPCcrafting(
-				.REQ3_INGREDIENTS, .REQ3_INGREDIENTS_AMOUNT,
-				.REQ3_OUTPUT, .REQ3_OUTPUT_AMOUNT,
-				l("Do you have what I need?"),
-				l("Have fun!"),
-				l("Nope. I wont exchange for such less."),
-				l("I can't give you nothing if you don't leave some room for it!")
-			)) {
+    mesq l("Hello again! Do you want me to exchange %d %s and %d GP for a %s?",
+            .REQ3_INGREDIENTS_AMOUNT[0], getitemlink(.REQ3_INGREDIENTS[0]),
+            .REQ3_COST, getitemlink(.REQ3_OUTPUT)
+    );
+    if (askyesno() == ASK_NO) {
+        mesq l("As you wish.");
+        close;
+    } else {
+        if(Zeny>=.REQ3_COST) {
+            if(NPCcrafting(
+                .REQ3_INGREDIENTS, .REQ3_INGREDIENTS_AMOUNT,
+                .REQ3_OUTPUT, .REQ3_OUTPUT_AMOUNT,
+                l("Do you have what I need?"),
+                l("Have fun!"),
+                l("Nope. I wont exchange for such less."),
+                l("I can't give you nothing if you don't leave some room for it!")
+            )) {
                     Zeny-=(.REQ3_COST);
-            		advanceQuest();
-                }
-		} else {
-			mesq l("Ain't working for free, pal!");
-		}
-	}
-	close;
-	return;
+                    advanceQuest();
+            }
+        } else {
+            mesq l("Ain't working for free, pal!");
+        }
+    }
+    close;
+    return;
 }
 
 /*
@@ -445,32 +343,52 @@ function galimatiaQuestDaily {
 }
 
 OnInit:
-	// NPC ITEM REQUESTS
-	setarray(.REQ0_INGREDIENTS          , BottleOfWater , PinkPetal );
-	setarray(.REQ0_INGREDIENTS_AMOUNT   , 1             , 5         );
-	.REQ0_OUTPUT            = PurificationPotion;
-	.REQ0_OUTPUT_AMOUNT     = 1 ;
+    // NPC ITEM REQUESTS
+    setarray(.REQ0_INGREDIENTS,
+        BottleOfWater,
+        PinkPetal
+    );
+    setarray(.REQ0_INGREDIENTS_AMOUNT,
+        1,
+        5
+    );
+    .REQ0_OUTPUT = PurificationPotion;
+    .REQ0_OUTPUT_AMOUNT = 1 ;
 
-	setarray(.REQ1_INGREDIENTS          , BottleOfWater, MaggotSlime, MauveHerb);
-	setarray(.REQ1_INGREDIENTS_AMOUNT   , 1            , 10         , 5);
-	.REQ1_OUTPUT            = FertilityPotion;
-	.REQ1_OUTPUT_AMOUNT     = 1;
+    setarray(.REQ1_INGREDIENTS,
+        BottleOfWater,
+        MaggotSlime,
+        MauveHerb
+    );
+    setarray(.REQ1_INGREDIENTS_AMOUNT,
+        1,
+        10,
+        5
+    );
+    .REQ1_OUTPUT = FertilityPotion;
+    .REQ1_OUTPUT_AMOUNT = 1;
 
-	setarray(.REQ2_INGREDIENTS          , FlowerSeeds);
-	setarray(.REQ2_INGREDIENTS_AMOUNT   , 5);
+    setarray(.REQ2_INGREDIENTS, FlowerSeeds);
+    setarray(.REQ2_INGREDIENTS_AMOUNT, 5);
 
-	setarray(.QUESTPRIZES               , TrainingWand  , ManaTorch );
-	setarray(.QUESTPRIZES_AMOUNT        , 1             , 1         );
+    setarray(.QUESTPRIZES,
+        TrainingWand,
+        ManaTorch
+    );
+    setarray(.QUESTPRIZES_AMOUNT,
+        1,
+        1
+    );
 
-	setarray(.REQ3_INGREDIENTS          , ABlueRose);
-	setarray(.REQ3_INGREDIENTS_AMOUNT   , 10       );
-	.REQ3_COST              = 1000;
-	.REQ3_OUTPUT            = RoseHat;
-	.REQ3_OUTPUT_AMOUNT     = 1;
+    setarray(.REQ3_INGREDIENTS, ABlueRose);
+    setarray(.REQ3_INGREDIENTS_AMOUNT, 10);
+    .REQ3_COST = 1000;
+    .REQ3_OUTPUT = RoseHat;
+    .REQ3_OUTPUT_AMOUNT = 1;
 
-	.bodytype = BODYTYPE_2;
-	.distance = 4;
-	end;
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    end;
 }
 
 // ------------------------------------

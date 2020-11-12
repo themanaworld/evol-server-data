@@ -108,9 +108,9 @@ function	script	GlobalQuestDebug	{
                 l("Inspector"), HurnscaldQuests_Inspector,
                 l("Forest bow"), HurnscaldQuests_ForestBow,
                 l("Wooden shield"), HurnscaldQuests_WoodenShield,
-                "Kfahr",HurnscaldQuests_Kfahr,
-                "Galimatia",ArgaesQuest_Galimatia,
-                "Rossy",HurnscaldQuests_Rossy;
+                "Kfahr", HurnscaldQuests_Kfahr,
+                "Galimatia", ArgaesQuest_Galimatia,
+                "Rossy", HurnscaldQuests_Rossy;
 
             switch (@menuret)
             {
@@ -131,6 +131,7 @@ function	script	GlobalQuestDebug	{
 
             menuint
                 menuimage("actions/back", l("Go back")), -1,
+                "Hal", General_CptHal,
                 l("Cookies"), General_Cookies,
                 "Rumly", General_Rumly,
                 l("Narrator"), General_Narrator,

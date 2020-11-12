@@ -1,0 +1,104 @@
+// Evol scripts for simplified quest development.
+// Author:
+//    Livio
+
+/*
+	@brief Prints the list of quest ingredients on the NPC window
+	@param Array with items IDs
+	@param Array with relative amount required
+	@returns nothing
+*/
+function	script	printIngredients	{
+	for (.@i = 0; .@i < getarraysize(getarg(0)); .@i++) {
+		mesf(" - %d %s", getelementofarray(getarg(1), .@i), getitemlink(getelementofarray(getarg(0), .@i)));
+	}
+	return;
+}
+
+/*
+	@brief Checks if player has items required
+	@param Array with required items IDs
+	@param Array with relative amount required
+	@returns false if player doesn't have required items
+*/
+function	script	checkForItems	{
+	for (.@i = 0; .@i < getarraysize(getarg(0)); .@i++) {
+		// If even a single thing is missing abort immediately
+		if(getelementofarray(getarg(1), .@i) > countitem(getelementofarray(getarg(0), .@i))) {
+			return false;
+		}
+	}
+	return true;
+}
+
+/*
+	@brief Craft an item from some other items. All input items got deleted.
+	@param Array with required items IDs
+	@param Array with relative amount required
+	@param output item IDs
+	@param output amount
+	@returns 0 if successful, 1 if player lack ingredients, 2 if overburdened, 255 code error
+*/
+function	script	craftFromPlayer	{
+	// Check input parameter amount
+	if (getargcount() != 4) return 255;
+
+	// Check item amounts
+	if (!checkForItems(getarg(0), getarg(1))) return 1;
+
+	// Check if player is able to carry output from crafting
+	if (!checkweight(getarg(2), getarg(3))) return 2;
+	else getitem(getarg(2), getarg(3));
+
+	// Delete Items from player inventory
+	for (.@i = getarrayindex(getarg(0)); .@i < getarraysize(getarg(0)); .@i++) {
+		delitem(getelementofarray(getarg(0), .@i), getelementofarray(getarg(1), .@i));
+	}
+
+	return 0;
+}
+
+/*
+	@brief Craft an item from some other items. All input items will be deleted in case of success.
+	@param Array with required items IDs
+	@param Array with relative amount required
+	@param output item IDs
+	@param output amount
+	@param NPC question about ingredients
+	@param NPC answer if successful
+	@param NPC answer if player lacks ingredients
+	@param NPC answer if player is overburdened
+	@returns true if successful
+*/
+function	script	NPCcrafting	{
+	speech
+		getarg(4);
+	if (askyesno() == ASK_NO) {
+		mesq l("Come on, move!");
+		close;
+	} else {
+		switch(craftFromPlayer(getarg(0), getarg(1), getarg(2), getarg(3))) {
+			case 0:
+				mesq getarg(5);
+				return true;
+				break;
+
+			case 1:
+				mesq getarg(6);
+                // FIXME - Gather proper variables
+				printIngredients(getarg(0), getarg(1));
+				break;
+
+			case 2:
+				mesq getarg(7);
+				break;
+
+			case 255:
+				mesq l("[BUG ENCOUNTERED] Dammit...");
+				break;
+
+			default:
+		}
+	}
+	return false;
+}

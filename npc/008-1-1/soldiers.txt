@@ -2,10 +2,13 @@
 // Author:
 //    Micksha
 // Description:
-//    Brotherhood Guards serving Hal.
+//    Legion Guards serving Hal.
 // THIS IS A PLACEHOLDER!
 
-008-1-1,62,28,0	script	Soldier#1	NPC_RAIJIN_MALE_BROTHERHOOD,{
+
+// FIXME We better put some more random answers
+
+008-1-1,62,28,0	script	Soldier#1	NPC_RAIJIN_FEMALE_LEGION_ARTIS,{
     speech
         l("Hi!"),
         l("I am not allowed to talk to strangers.");
@@ -17,14 +20,14 @@ OnInit:
     end;
 }
 
-008-1-1,54,30,0	script	Soldier#2	NPC_HUMAN_MALE_BROTHERHOOD,{
+008-1-1,54,30,0	script	Soldier#2	NPC_HUMAN_MALE_LEGION_ARTIS,{
     speech
         l("Hi!"),
         l("I am not allowed to talk to strangers.");
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 }

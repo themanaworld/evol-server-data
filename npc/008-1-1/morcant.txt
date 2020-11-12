@@ -9,8 +9,10 @@
     speech
         l("Hello."),
         l("My name is Morcant. I am a Captain, a bit bored since this harbor is not frequented much."),
-        l("I would like to offer you food and tell you stories, but.. have you ever heard of WildX? I won't need to say more, do I?");
-
+//        l("I would like to offer you food and tell you stories, but.. have you ever heard of WildX? I won't need to say more, do I?");
+        l("The only floating ship I've seen so far was the one with Legion soldiers sent to scout around."),
+        l("It was my first time that I've met someone from Aemil."),
+        l("I don't like to see armed people lurking around but feel free to stay as long as you wish but don't cause trouble."),
     next;
     select
         l("Not really but okay...?"),
@@ -22,7 +24,7 @@
     {
     case 2:
         mesn;
-        mesq l("Hohoho! That is a family's trade secret!");
+        mesq l("Hohoho! That is a family's trade secret!"); // Merry Christmas?
         if (!getq(General_SmearedHands)) {
             next;
             mesn;

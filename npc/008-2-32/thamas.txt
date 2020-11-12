@@ -9,15 +9,17 @@
     speech
         l("Hi there."),
         l("I am a legion soldier who never talks much, until Jesusalva or WildX puts words in my mouth."),
+        l("However, I can't wait to see animals, er, uncivilized people of these woodlands."),
+        l("Meh, I'm still with stomach ache due to that stew Morcant is used to cook. Like as I'm not enough nervous about the special mission I've been assigned to."),
+        //l("I bet he uses squirrels to make that damn stew. Bleah."),
         l("Until then, let me be quiet. Talk to you later.");
-
     next;
     select
         l("Okay, sorry for disturbing."),
         l("But you said you remember me!"),
         l("What do you think about this stew?"),
         l("Where are you from, though? You have an odd... behavior."),
-        l("What is a legion soldier even doing here?"),
+        l("What is a legion soldier even doing here? A special mission?"),
         l("Who are Jesusalva and WildX?");
     mes "";
     switch (@menu)
@@ -59,6 +61,12 @@
         mesq l("Stop making questions which make no sense...");
         break;
     case 5:
+      mesn;
+        mesq l("I can't tell you. Captain Hal is in charge so ask him if you really care.");
+        next;
+        mesq l("You can find him to the clifftop behind Morcant's house.");
+        if(!getq(General_CptHal)) setq(General_CptHal,1); // Start Captain Hal quest
+        break;
     case 6:
         mesn;
         mesq l("Honestly? I don't know.");
