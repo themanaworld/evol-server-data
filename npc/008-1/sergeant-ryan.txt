@@ -1,0 +1,72 @@
+// Evol scripts.
+// Author:
+//	Livio
+// Description:
+//	Save Sergeant Ryan
+
+008-1,55,47,0	script	Sergeant Ryan	NPC_RAIJIN_MALE_BROTHERHOOD,{
+function advanceQuest;
+function advanceQuest {
+    setq(General_CptHal, getq(General_CptHal) + 1);
+    return;
+}
+
+    if (getq(General_CptHal)<=3) {
+    speech
+        l("Aaah!!! Dammit!!!"),
+        l("It hurts like hell, #@%!!!!"),
+        l("Go away, my comrades will be here soon!");
+    }
+    if (getq(General_CptHal)==3) {
+        select l("No. They won't because Hal sent me to look after you, Tom Hanks.");
+        speech l("Aaah!!! What?");
+        select l("You are hurt! Looks like I have to save private Ryan...");
+        speech l("I'm a Sergeant. I could teach you a lesson or two if it wasn't for my leg.");
+        select l("Does it hurts if I touch here?");
+        speech l("@#@%&#@*!!!");
+        select l("This leg is badly hurt! Let me look out for something to heal it.");
+        speech l("Grr... I'm so nuts that I want to get even first with damn wolverns.");
+        speech l("Bring me:");
+        printIngredients(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT);
+        next;
+        advanceQuest();
+        close;
+    }
+    if (getq(General_CptHal)==4) {
+        if (checkForItems(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT)) {
+            speech l("Yeah, finally!!!");
+            next;
+            BaseExp += 15 * BaseLevel;
+            Zeny += 50;
+            advanceQuest();
+            delitem(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT);
+            speech l("Go tell Hal that I'm fine and I will go on with the mission as soon as possible.");
+        } else {
+            speech l("What are you doing here?!? I need:");
+            printIngredients(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT);
+            speech l("Come on, kill those bastards!!! Wolverns must pay the price of tasting my damn leg!!!");
+            select l("Fine. But PETA is not going to be happy about it...");
+            speech l("@#@%&#@*!!!");
+        }
+        close;
+    }
+    if (getq(General_CptHal)>=5) {
+        speech l("Thanks! Now move, I have a mission to accomplish.");
+    }
+    close;
+
+OnInit:
+    // NPC ITEM REQUESTS
+    setarray(.REQ0_INGREDIENTS,
+        WolvernPelt,
+        BottleOfWater
+    );
+    setarray(.REQ0_INGREDIENTS_AMOUNT,
+        1,
+        1
+    );
+
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    end;
+}

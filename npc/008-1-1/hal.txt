@@ -1,20 +1,132 @@
 // Evol scripts.
 // Author:
-//    Micksha
+//	Livio
+//	Micksha
 // Description:
-//    Hal, a Captain of the Brotherhood.
+//	Hal, former Captain of the Legion.
+// Following: https://gitlab.com/evol/evol-narrative/-/raw/e819b2a213802f6ded9f9b7efd18b09b0bc27570/Storylines/4.West%20Argaes.txt
 // THIS IS A PLACEHOLDER!
 
 008-1-1,58,27,0	script	Hal	NPC_HAL,{
-    speech
-        l("Hello!"),
-        l("I was just having a nap, now WildX summons me to stand here! What a crap."),
-        l("Please, ask elanore to !slap him for me when you see them.");
+// Private function declarations
+function advanceQuest;
+function advanceQuest {
+    setq(General_CptHal, getq(General_CptHal) + 1);
+    return;
+}
+
+function QuestPart0;
+function QuestPart1;
+function QuestPart2;
+function QuestPart3;
+function QuestPart4;
+function QuestPart5;
+
+    switch(getq(General_CptHal)) {
+        case 0: QuestPart0(); break;
+        case 1: QuestPart1(); break;
+        case 2: QuestPart2(); break;
+        case 3: QuestPart3(); break;
+        case 4: QuestPart4(); break;
+        case 5: QuestPart5(); break;
+        default:
+            mesq l("[Invalid quest status: %d, check script]", getq(General_CptHal));
+    }
     close;
 
+// Haven't met Thamas? MOVE ALONG CITIZEN!!!
+function QuestPart0 {
+    speech l("MOVE ALONG CITIZEN!!!");
+//        l("I was just having a nap, now WildX summons me to stand here! What a crap."),
+//        l("Please, ask elanore to !slap him for me when you see them.");
+    close;
+}
+
+function QuestPart1 {
+    speech  l("MOVE ALONG C...");
+    select  l("Hey, hey... I've been talking with one of your comrades, Thamas.");
+    speech  l("So what?");
+    select  l("What's so special about a mission assigned to a picky soldier?");
+    mesq    l("You see the soldiers staring each other and then at you.");
+    speech  l("You think that I'm going to disclose that to you???");
+    select
+            l("I just want to earn something to make a living."),
+            l("Ah, so special mission is secret mission too? Sorry if I've bothered you.");
+
+    if (@menu==1) {
+        speech  l("You look like anything but military personnel... Okay since the Brotherhood will discharge their quivers on us at the very first encounter I guess that we can make a good use of you.");
+        speech  l("We cannot get close to Hurnscald in Legion uniforms so we may need you to get some supplies. However, stay away from Hurnscald if you can.");
+        speech  l("Bring us some food supplies to help us feed the troops. We need:");
+        printIngredients(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT);
+        next;
+        advanceQuest();
+    }
+    speech  l("Now, get out of my face.");
+    close;
+}
+
+function QuestPart2 {
+    if (checkForItems(.REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT)){
+        if (NPCcrafting(
+                .REQ0_INGREDIENTS, .REQ0_INGREDIENTS_AMOUNT,
+                .REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT,
+                l("Have you got those things with you?"),
+                l("Fine. Here is your reward."),
+                l("Go find those supplies! Don't waste my time!"),
+                l("Your inventory is full, make room if you want your reward!")
+                )
+            )
+        {
+            BaseExp += 15 * BaseLevel;
+            Zeny += 150;
+            getitem(.REQ0_OUTPUT, .REQ0_OUTPUT_AMOUNT);
+            advanceQuest();
+            speech  l("Now I need you to explore the area looking for Sergeant Ryan. I'm not having any report from him since a lot of time.");
+            speech  l("I want you to go find him. He should not be that far from here.");
+        }
+    }
+}
+
+function QuestPart3 {
+    speech  l("Any luck finding Ryan?");
+    select  l("Negative.");
+    speech  l("Scout the zone better! He must be somewhere nearby.");
+    close;
+}
+
+function QuestPart4 {
+    speech  l("So?");
+    select  l("Found priv... Ehm, I've found Sergeant Ryan. He is hurt and cannot walk right now.");
+    speech  l("I don't have enough men to send after Sergeant Ryan. Provide him some sort of support until he recovers.");
+    select  l("Roger that. Private %s, over!", strcharinfo(PC_NAME));
+    close;
+}
+
+
+function QuestPart5 {
+    select  l("Good news! Sgt.Ryan is fine now and is going to go on with his mission.");
+    speech  l("Well done.");
+    next;
+    speech  l("MOVE ALONG!!! I don't need you anymore.");
+    close;
+}
+
 OnInit:
+    // NPC ITEM REQUESTS
+    setarray(.REQ0_INGREDIENTS,
+        MoubooSteak,
+        MoubooMilk,
+        Honey
+    );
+    setarray(.REQ0_INGREDIENTS_AMOUNT,
+        5,
+        5,
+        1
+    );
+    .REQ0_OUTPUT = BottleOfWater;
+    .REQ0_OUTPUT_AMOUNT = 1 ;
+
     .bodytype = BODYTYPE_2;
     .distance = 4;
     end;
 }
-
