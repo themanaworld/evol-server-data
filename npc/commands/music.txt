@@ -29,9 +29,11 @@ OnCall:
     if (.@m$ == "Not found")
     {
         .@m$ = implode(.@atcmd_parameters$[0], " ");
+        message(getcharid(CHAR_ID_ACCOUNT), sprintf("Can't broadcast: %s", .@m$));
+    } else {
+        message(getcharid(CHAR_ID_ACCOUNT), sprintf("Now broadcasting: %s", .@m$));
+        changemusic .@map$, .@m$ + ".ogg";
     }
-
-    changemusic .@map$, .@m$ + ".ogg";
     end;
 
 OnMyself:
@@ -41,9 +43,11 @@ OnMyself:
     if (.@m$ == "Not found")
     {
         .@m$ = implode(.@atcmd_parameters$[0], " ");
+        message(getcharid(CHAR_ID_ACCOUNT), sprintf("Can't play: %s", .@m$));
+    } else {
+        message(getcharid(CHAR_ID_ACCOUNT), sprintf("Now playing: %s", .@m$));
+        changeplayermusic .@m$ + ".ogg";
     }
-
-    changeplayermusic .@m$ + ".ogg";
     end;
 
 OnInit:
