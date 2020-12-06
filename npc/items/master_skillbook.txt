@@ -1,4 +1,4 @@
-// Evol script.
+// The Mana World script.
 // Author:
 //    Jesusalva
 //    Elvano
@@ -82,6 +82,7 @@
         // Allow you to check which skills are here to learn
         mes "";
         mesc l("You have: @@/@@ @@", countitem(@mb_ItemId), @mb_ItemAm, getitemlink(@mb_ItemId));
+        mesc l("Skill Available: %s", getskillname(@mb_SkillId));
         select
             rif(!getskilllv(@mb_SkillId), l("Learn Skill")),
             l("Do not learn");
@@ -126,4 +127,39 @@ OnInit:
     .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
+
+OnUnset:
+    @mb_BossId=0;
+    @mb_SkillId=0;
+    @mb_ItemId=0;
+    @mb_ItemAm=0;
+    end;
 }
+
+// Script Helper
+// BossSlain(npcname, "variable")
+function	script	BossSlain	{
+    .@n$=getarg(0);
+    // Error
+    if (!playerattached())
+        return;
+    // Only the party which defeated the boss can learn the skill
+    getmapxy(.@m$, .@x, .@y, 0);
+    .@party=getcharid(1);
+    if (.@party > 0)
+    {
+        setd(getarg(1), .@party);
+        areatimer(.@m$, .@x-15, .@y-15, .@x+15, .@y+15, 10, .@n$+"::OnBossCheck");
+        mapannounce .@m$, "Boss deafeated by Party: " + getpartyname(.@party), bc_all;
+    }
+    else
+    {
+        setd(getarg(1), -2);
+        areatimer(.@m$, .@x-15, .@y-15, .@x+15, .@y+15, 10, .@n$+"::OnBossCheck");
+        addtimer(20, .@n$+"::OnBegin");
+        mapannounce .@m$, "Boss deafeated by: " + strcharinfo(0), bc_all;
+    }
+    return;
+}
+
+

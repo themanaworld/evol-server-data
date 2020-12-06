@@ -1,0 +1,43 @@
+// The Mana World Script
+// Author:
+//  Jesusalva
+// Description:
+//  Controls the boss on 020-1 and the Master Book Learning
+// see npc/items/master_skillbook.txt for explanation about variables
+
+020-1,0,0,0	script	#BossCtrl_020-1	NPC_HIDDEN,{
+    end;
+
+// Test server: 5 minutes only
+OnTimer300000:
+    if (!debug)
+        end;
+
+// Otherwise, respawn every 15 minutes
+OnTimer900000:
+    stopnpctimer;
+OnInit:
+    $@MB_0201=0;
+    monster "020-1", 160, 254, strmobinfo(1, GoldenScorpion), GoldenScorpion, 1, "#BossCtrl_020-1::OnBossDeath";
+    end;
+
+OnBossDeath:
+    initnpctimer;
+    BossSlain(.name$, "$@MB_0201");
+    end;
+
+OnBossCheck:
+    @mb_BossId=-1;
+    // TODO: Check if you really fought or was just lurking
+    // Check if party is correct
+    if (getcharid(1) != $@MB_0201)
+        end;
+OnBegin:
+    @mb_BossId=GoldenScorpion;
+    @mb_SkillId=GC_DARKILLUSION;
+    @mb_ItemId=MagicFeather; // Placeholder
+    @mb_ItemAm=1;
+    addtimer(15000, "#MasterBook::OnUnset");
+    end;
+
+}

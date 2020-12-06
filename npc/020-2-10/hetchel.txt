@@ -6,11 +6,25 @@
 // THIS IS A PLACEHOLDER!
 
 020-2-10,45,27,0	script	Hetchel	NPC_HETCHEL,{
+    setq2 TonoriQuest_Kylian, getq2(TonoriQuest_Kylian) | KYLIAN_HETCHEL;
     speech
         l("Hi there. I am Hetchel, I weave fine textiles."),
         l("My best client is Lora Tay, at Dimond's."),
         l("So if you want, you can talk to her instead."),
-		l("Tailoring is in decline and I have nothing to sell nor teach.");
+		l("Tailoring is in decline and I have nothing to sell nor teach."),
+        l("Unless you want to try doing it yourself?");
+    next;
+    do
+    {
+        mes "";
+        .@s = SmithSystem(CRAFT_TAILORING);
+        if (.@s)
+            mesc l("Success!"), 3;
+        else
+            mesc l("That didn't work!"), 1;
+        next;
+        mesc l("Do you want to continue?");
+    } while (askyesno() != ASK_YES);
     close;
 
 OnInit:

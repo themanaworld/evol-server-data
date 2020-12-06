@@ -73,7 +73,7 @@
         }
 
         setq(.quest_inspector, 15);
-        getexp(.reward_exp, 0);
+        quest_xp(.maxLevel, .reward_exp);
         getitem(.reward_item, 1);
 
         speech(
@@ -99,8 +99,9 @@
     close;
 
 OnInit:
-    .reward_item = NohMask; // FIXME: change this when we get NohMask
+    .reward_item = NohMask;
     .reward_exp = 1500;
+    .maxLevel = 60;
 
     .quest_inspector = HurnscaldQuests_Inspector;
     .quest_debug = .quest_inspector;

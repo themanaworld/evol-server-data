@@ -4,7 +4,7 @@
 // Description:
 //    Kaylo is the Shield seller in Don's Blacksmith house on Artis.
 
-001-2-27,27,28,0	script	Kaylo#001-2-27	NPC_KAYLO,{
+001-2-27,27,28,0	script	Kaylo	NPC_KAYLO,{
     speech S_LAST_NEXT,
         lg("Hi customer! What do you want today?");
 

@@ -1,0 +1,18 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Yanis, town bureaucrat
+// THIS IS A PLACEHOLDER!
+
+020-2-9,44,27,0	script	Yanis	NPC_ELVEN_MAN_STANDING,{
+    setq2 TonoriQuest_Kylian, getq2(TonoriQuest_Kylian) | KYLIAN_YANIS;
+    mesn;
+    mesq l("Welcome. I'm handling issues with trading licenses for the shop owners in Tulimshar. Can I help you?");
+    // TODO: Livio and mifristcher are working here so I'll not write this script.
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}

@@ -122,8 +122,8 @@
         .@exp_reward = getarg(0);
         .@zeny_reward = getarg(1);
 
-        getexp .@exp_reward, 0;
-        Zeny += .@zeny_reward;
+        quest_xp(.maxLevel, .@exp_reward);
+        quest_gp(.maxLevel, .@zeny_reward);
 
         narrator S_LAST_NEXT,
             l("You received @@ EXP and @@ E.", .@exp_reward, .@zeny_reward);
@@ -445,6 +445,7 @@
 OnInit:
     .bodytype = BODYTYPE_2;
     .distance = 5;
+    .maxLevel = 20;
     end;
 }
 

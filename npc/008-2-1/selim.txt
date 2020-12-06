@@ -5,11 +5,14 @@
 //    Selim the Dyer.
 // THIS IS A PLACEHOLDER!
 
-008-1,38,40,0	script	Selim	NPC_GUMI_THE_DYER,{
+008-2-1,38,40,0	script	Selim	NPC_GUMI_THE_DYER,{
     speech
         l("Oh hey!"),
         l("Good you are here, you could be handy for me right now."),
-        l("Or maybe later. Hmm, we'll see.");
+        l("Or maybe later. Hmm, we'll see."),
+        l("On the meanwhile...");
+
+    Barber(false);
 
     close;
 

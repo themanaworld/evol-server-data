@@ -11,15 +11,15 @@ function	script	EdouardCheckChair	{
 
     if ((.@map$ != getarg(0)) || (.@x != getarg(1)) || (.@y != getarg(2)))
     {
-        doevent "Edouard#001-2-41::OnWrongPlace";
+        doevent "Edouard::OnWrongPlace";
     }
     else if (!issit())
     {
-        doevent "Edouard#001-2-41::OnNotSit";
+        doevent "Edouard::OnNotSit";
     }
     else
     {
-        doevent "Edouard#001-2-41::OnChair";
+        doevent "Edouard::OnChair";
     }
 
     close;
@@ -85,7 +85,7 @@ OnInit:
     end;
 }
 
-001-2-41,30,29,0	script	Edouard#001-2-41	NPC_EDOUARD,{
+001-2-41,30,29,0	script	Edouard	NPC_EDOUARD,{
     function tellStory;
     //EdouardCheckChair();
     if (!issit())
@@ -144,7 +144,7 @@ OnChair:
         switch (@menu)
         {
             case 1:
-                BarberSayStyle 3;
+                BarberSayStyle();
                 break;
             case 2:
                 BarberChangeStyle;

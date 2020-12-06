@@ -151,37 +151,10 @@
         mesn;
         mesq l("Ok, done.");
 
-        if (getq(ShipQuests_Julia) == 2)
-        {
-            next;
-            mesq l("Do you have any other questions for me?");
-            next;
-            ynMenu;
-            return;
-        }
-
         next;
-        mesq l("I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.");
-
-        mesq l("Here they are.");
+        mesq l("Do you have any other questions for me?");
         next;
-
-        narrator S_LAST_NEXT,
-            l("There is a paper with some rules written on it.");
-
-        GameRules 8 | 4;
-
-        mesn;
-        mesq l("Oh, and I almost forgot! Do not give the password of your room to anybody! I am the only one who has the other key and I won't ask for yours so keep it secret and try not to use the same password for any other room in the future.");
-        next;
-        mesq l("If you want to read this page again, there is a copy up on the left wall.");
-        next;
-        mesq l("You can also read The Book of Laws at any time to see the rules.");
-        next;
-        mesq l("I think I'm done with that now. Do you have any questions?");
-        next;
-
-        setq ShipQuests_Julia, 2;
+        ynMenu;
         return;
     }
 
@@ -289,9 +262,24 @@ OnTouch:
     next;
     mesq lg("I'm glad to see you're okay.");
     next;
-    mesq lg("Could I ask you what your native language is? A sailor told me you're from Ancea, but another one told me you're from Aemil because of the logo that... never mind. I'm a bit lost, if you could tell me what language you speak I will register you on the ship passenger list just after that.");
+
+    mesq l("I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.");
+
+    narrator S_LAST_NEXT,
+        l("There is a paper with some rules written on it.");
+
+    GameRules 8 | 4;
+
+    mesn;
+    mesq l("Oh, and I almost forgot! Do not give the password of your room to anybody! I am the only one who has the other key and I won't ask for yours so keep it secret and try not to use the same password for any other room in the future.");
     next;
-    chooseLang;
+    mesq l("If you want to read this page again, there is a copy up on the left wall.");
+    next;
+    mesq l("You can also read The Book of Laws at any time to see the rules.");
+    setq ShipQuests_Julia, 2;
+    next;
+    mesq l("I think I'm done with that now. Do you have any questions?");
+    next;
     mainMenu;
     end;
 

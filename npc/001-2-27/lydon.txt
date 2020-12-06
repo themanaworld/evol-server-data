@@ -4,7 +4,7 @@
 // Description:
 //    Lydon is the Weapon seller in Don's Blacksmith house on Artis.
 
-001-2-27,43,28,0	script	Lydon#001-2-27	NPC_LYDON,{
+001-2-27,43,28,0	script	Lydon	NPC_LYDON,{
     speech S_LAST_NEXT,
         lg("Hi customer! What do you want today?");
 

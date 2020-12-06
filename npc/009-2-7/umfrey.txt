@@ -1,0 +1,25 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Umfrey is the general shopkeeper of Asphodel Moors
+// THIS IS A PLACEHOLDER!
+
+009-2-7,44,30,0	script	Umfrey	NPC_UMFREY,{
+    closeclientdialog;
+    shop .name$;
+    close;
+
+OnInit:
+    .distance = 4;
+    tradertype(NST_MARKET);
+
+    sellitem TrainingArrow, -1, 20000;
+    sellitem DeathPotion, -1, 1;
+    end;
+
+OnClock0009:
+    restoreshopitem TrainingArrow, 20000;
+    restoreshopitem DeathPotion, 1;
+    end;
+}

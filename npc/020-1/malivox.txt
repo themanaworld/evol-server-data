@@ -10,7 +10,11 @@
         l("Hi there."),
         l("You wonder why here are so many idle market stalls, right?"),
         l("This is due to lazyness of Micksha to prepare placeholders."),
-		l("Don't steal stuff from them, though. Or you will be imprisoned.");
+		l("Don't steal stuff from them, though. Or you will be imprisoned."),
+        l("What I sell? Well, you can see Mananas... Aquadas... Croc claws..."),
+        l("But they are not for sale! I use them for my custom brew of status reset potions. Are you interested?");
+
+    ConfirmStatusReset();
     close;
 
 OnInit:

@@ -1,0 +1,19 @@
+// The Mana World Script
+// Author:
+//  Jesusalva
+// Description:
+//  Irene Memorial
+
+020-2-15,41,25,0	script	Memoriam	NPC_PAPER_NOTE,{
+    mes ".:: In Memoriam ::.";
+    mes "";
+    mes "~ Irene Christina ~";
+    mes l("The song in this clinic is dedicated to Irene.");
+    next;
+    mes l("She had seen only twenty hours of this world when she died in her father's arms.");
+    close;
+
+OnInit:
+    .distance = 3;
+    end;
+}

@@ -4,7 +4,7 @@
 // Description:
 //    The nameless chef of Reid's Inn
 
-009-2-3,27,41,0	script	Chef#Reid	NPC_CHEF_LEGACY,{
+009-2-3,27,41,0	script	Chef#Reid	NPC_REIDCHEF,{
     function cookingIntro;
     function cookingDeal;
     .@q=getq(General_Cooking);

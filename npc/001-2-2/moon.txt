@@ -54,7 +54,8 @@
                     next;
                     mesq l("Here is your reward.");
                     setq ArtisQuests_Urchin, 2;
-                    getexp 1500, 100;
+                    quest_xp(.maxLevel, 1500);
+                    quest_jxp(.maxLevel, 100);
                     close2;
                     return 1;
                 }
@@ -203,6 +204,7 @@ OnHour00:
 OnInit:
     .bodytype = BODYTYPE_2;
     .distance = 3;
+    .maxLevel = getmonsterinfo(Croc, MOB_LV) + 10;
     initpath "move", 41, 30,
              "dir", DOWN, 0,
              "wait", 2, 0,

@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Hamond, Reid's Husband
+// THIS IS A PLACEHOLDER!
+
+009-1,37,170,0	script	Hamond	NPC_HAMOND,{
+    speech
+        l("Hello, my name is Hamond."),
+        l("I run the inn together with my beautiful wife Reid."),
+        l("If there is anything I can do for you, please let me know.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    end;
+}

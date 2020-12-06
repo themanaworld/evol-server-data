@@ -7,6 +7,11 @@
 // THIS IS A PLACEHOLDER!
 
 020-1,73,91,0	script	Hocus	NPC_MAGE_BROWN,{
+    function anwarNotMe;
+    function anwarFirstAid;
+    function anwarGift;
+
+    setq2 TonoriQuest_Kylian, getq2(TonoriQuest_Kylian) | KYLIAN_HOCUS;
     speech
         l("Hi!"),
         l("You should eat more salad. I see in your face that your nutrition is not good."),
@@ -20,6 +25,9 @@
     select
         rif(getq(General_Cooking) == 15, l("Please enlighten me, O Grandmaster, where can I find Salad to improve my eating habits?")),
         rif(getq(General_Cooking) == 16, l("I've brought you the promised.")),
+        rif(getq(TulimsharQuest_AnwarField) == 1, l("Hello, do you make Fertility Potions?")),
+        rif(getq(TulimsharQuest_AnwarField) == 7, l("HELP! Anwar field is under worm attack!!")),
+        rif(getq(TulimsharQuest_AnwarField) == 10, l("Anwar sent you a gift.")),
         l("Thanks for your wise words.");
     mes "";
     switch (@menu) {
@@ -64,8 +72,91 @@
         getitem BlueberryCake, 1;
         setq1 General_Cooking, 17;
         break;
+    // Anwar Quest
+    case 3:
+        anwarNotMe();
+        break;
+    case 4:
+        anwarFirstAid();
+        break;
+    case 5:
+        anwarGift();
+        break;
     }
     close;
+
+function anwarNotMe {
+    mesn strcharinfo(0);
+    mesq l("Hello Mr. Hocus, kind sir Anwar sent me to fetch some fertilizers to save Tulimshar from famine, if you may?");
+    next;
+    mesn;
+    mesq lg("Sorry kind lady @@, but no.", "Sorry kind sir @@, but no.", strcharinfo(0));
+    next;
+    mesn;
+    mesq l("Or rather, I can't. I would love to help you, just like everybody else, but I don't know how to make fertilizers, only Salad.");
+    next;
+    mesn;
+    mesq l("Eomie probably could do that, she is young but very talented. If you help her, she'll likely help you back.");
+    setq TulimsharQuest_AnwarField, 2;
+    return;
+}
+
+function anwarFirstAid {
+    mesn;
+    mesq l("The crops are under attack? That's terrible!");
+    next;
+    mesn;
+    mesq l("I can do a Certified Purification Potion right away, the warranty covers it. But I still need a few things for it!");
+    next;
+    mesn;
+    mesq l("Do you, perchance, have 2 @@, 2 @@ and 3 @@?", getitemlink(LeftScorpionClaw), getitemlink(RightScorpionClaw), getitemlink(Moss));
+    if (askyesno() != ASK_YES)
+        close;
+    mes "";
+
+    if (countitem(LeftScorpionClaw) < 2 ||
+        countitem(RightScorpionClaw) < 2 ||
+        countitem(Moss) < 3) {
+        mesn;
+        mesq l("Why are you lying? We must cooperate with each other if we want to strive. Otherwise, just like the plants, we will wither and die out. Go fetch the items!");
+        close;
+    }
+
+    inventoryplace PurificationPotion, 1;
+    delitem LeftScorpionClaw, 2;
+    delitem RightScorpionClaw, 2;
+    delitem Moss, 3;
+    getitembound(PurificationPotion, 1, IBT_CHARACTER);
+    setq TulimsharQuest_AnwarField, 8;
+
+    mesn;
+    mesq l("Quick, deliver this to Anwar!");
+    return;
+}
+
+function anwarGift {
+    .@q2=getq2(TulimsharQuest_AnwarField);
+    if (.@q2 & 2) {
+        mesn;
+        mesq l("Thanks for the nice gift!");
+        close;
+    }
+    // Tip. WHAT DID YOU DID WITH THE BOUND ITEM? IT SHOULD BE HARD TO GET RID OF IT...
+    if (countitem(SilverBell) < 1) {
+        mesn;
+        mesq l("Ah, I wish I got something for helping people out...");
+        close;
+    }
+    mesn strcharinfo(0);
+    mesq l("Anwar sent you this, erm, hum... @@.", getitemlink(SilverBell));
+    next;
+    setq2 TulimsharQuest_AnwarField, .@q2+2;
+    delitem SilverBell, 1;
+    getexp 75, 10;
+    mesn;
+    mesq l("WOW, THIS IS AWESOME! Many, many thanks!!");
+    return;
+}
 
 OnInit:
     .bodytype = BODYTYPE_2;

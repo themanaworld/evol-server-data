@@ -4,6 +4,7 @@
 //    Qwerty Dragon
 //    Reid
 //    Vasily_Makarov
+//    Jesusalva
 // Description:
 //    Starting script of Evol Online.
 
@@ -14,7 +15,7 @@ OnTouch:
     .@lang = requestlang();
     if (.@lang >= 0 && .@lang <= MAX_LANG) Lang = .@lang;
 
-    mesn "Narrator";
+    mesn l("Narrator");
     mesc(l("You are on a raft, adrift in the sea."), 9);
     next;
     mesc(l("With hunger, thirst, and sleep as your only companions, you have the disturbing realization that you can't remember anything of your former life or identity."), 9);
@@ -29,22 +30,22 @@ OnTouch:
     next;
 
     setcamnpc "Sailors", -64, -32;
-    mesn "Kralog Voice";
+    mesn l("Kralog Voice");
     mesq lg("Hey Frenchy!");
     next;
 
     setcamnpc "Sailors", 0, -32;
-    mesn "Viro Voice";
+    mesn l("Human Voice");
     mesq lg("I think he's from the East...");
     next;
 
     setcamnpc "Sailors", 144, -80;
-    mesn "Tritan Voice";
+    mesn l("Tritan Voice");
     mesq lg("What are you guys saying ? It's a Yoiis!");
     next;
 
     setcamnpc;
-    mesn "Raijin Voice";
+    mesn l("Raijin Voice");
     mesq lg("You think she's from the East? As in... Ancea?", "You think he's from the East? As in... Ancea?");
     next;
     mesq l("Hey you! Can you hear us? Are you okay?");
@@ -74,7 +75,7 @@ OnTouch:
     next;
     restorecam;
 
-    mesn "Narrator";
+    mesn l("Narrator");
     mesc(l("The sailors take you aboard their ship."), 9);
     next;
     mesc(l("Click on the NPCs (Non-Player Characters) around you to continue the introduction."), 9);

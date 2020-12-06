@@ -1,0 +1,18 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Leofwin is now the status reset NPC
+// THIS IS A PLACEHOLDER!
+
+009-2-7,36,30,0	script	Leofwin	NPC_LEOFWIN,{
+    speech
+        l("Do you want a Status Reset?");
+
+    ConfirmStatusReset();
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}

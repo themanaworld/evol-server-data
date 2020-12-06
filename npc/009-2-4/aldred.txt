@@ -1,0 +1,18 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Aldred is Hamond's and Reid's son.
+// THIS IS A PLACEHOLDER!
+
+009-2-4,50,35,0	script	Aldred	NPC_UNDEAD_WEPPER,{
+    mesn;
+    mesq l("Waaahhhhh!");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    end;
+}
+

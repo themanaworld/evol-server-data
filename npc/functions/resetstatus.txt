@@ -1,0 +1,117 @@
+// Moubootaur Legends Script.
+// Authors:
+//    Vasily_Makarov (original from Evol)
+//    Jesusalva
+// Description:
+//    Status Reset NPC utils
+
+// Reset status and return permanent bonuses
+// StatusResetReinvest( {script=True} )
+function	script	StatusResetReinvest	{
+    /* XXX: Uncommment this for ML Permanent Boost Status Fruit System :XXX
+    // Compulsory check
+    if (getarg(0, true)) {
+        inventoryplace NPCEyes, 6;
+    } else if (!checkweight(NPCEyes, 6)) {
+        getitembound StatusResetPotion, 1, 4;
+        dispbottom l("You cannot carry the fruits.");
+        end; // Die
+    }
+
+    // Permanent boosts were now lost, return the fruits
+    if (STATUSUP_STR) {
+        getitembound StrengthFruit, STATUSUP_STR, 4;
+        STATUSUP_STR=0;
+    }
+    if (STATUSUP_AGI) {
+        getitembound AgilityFruit, STATUSUP_AGI, 4;
+        STATUSUP_AGI=0;
+    }
+    if (STATUSUP_VIT) {
+        getitembound VitalityFruit, STATUSUP_VIT, 4;
+        STATUSUP_VIT=0;
+    }
+    if (STATUSUP_INT) {
+        getitembound IntelligenceFruit, STATUSUP_INT, 4;
+        STATUSUP_INT=0;
+    }
+    if (STATUSUP_DEX) {
+        getitembound DexterityFruit, STATUSUP_DEX, 4;
+        STATUSUP_DEX=0;
+    }
+    if (STATUSUP_LUK) {
+        getitembound LuckFruit, STATUSUP_LUK, 4;
+        STATUSUP_LUK=0;
+    }
+    */
+    resetstatus();
+    return true;
+}
+
+// Return wasSP on success, 0 on failure
+// ConfirmReset( {price} )
+function	script	ConfirmStatusReset	{
+    if (BaseLevel >= 15)
+        .@raw_price=(1000-BaseLevel*10+(BaseLevel*18));
+    else if (BaseLevel >= 10)
+        .@raw_price=(BaseLevel*210-(10*210))/(BaseLevel/10);
+    else
+        .@raw_price=1;
+
+    if (getarg(0,-1) >= 0)
+        .@raw_price=getarg(0,-1);
+
+    //mesc l("WARNING: Permanent boosts will return to their fruit form."), 1;
+    mesc l("WARNING: Status resets cannot be reverted!"), 1;
+
+    switch (select(lg("Yes, I am sure. Please reset my status!"),
+                   lg("I need to think about it..."),
+                   lg("I won't need it, thank you.")))
+    {
+        case 1:
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("Let me just have a quick look at you. Hm... I will need %d GP to reset your stats.", .@raw_price);
+
+            select
+                rif(Zeny >= .@raw_price, l("Here, take as much as you need, I have plenty!")),
+                rif(Zeny > 0 && Zeny < .@raw_price, l("I don't have enough money...")),
+                rif(Zeny == 0, l("Oh no, I don't have any money on me right now.")),
+                l("I have to go, sorry.");
+
+            if (@menu > 1) {
+                return 0;
+            }
+
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("Thank you."),
+                l("Now stand still... It should not take much time...");
+
+            // Reset status have an inventorycheck, so we charge later.
+            .@wasSP = StatusPoint;
+            StatusResetReinvest();
+
+            // Nothing to do: Do not charge (eg. you just got the fruits back)
+            if (StatusPoint == .@wasSP) {
+                speech S_LAST_NEXT,
+                    l("It seems that you have no status points to reset!"),
+                    l("Come back when you will really need me.");
+            } else {
+                Zeny-=.@raw_price;
+                speech S_LAST_NEXT,
+                    l("Let's see... @@ of your status points have just been reset!", StatusPoint - .@wasSP),
+                    l("Spend it wisely this time."),
+                    l("But you are welcome to reset your stats again! I need the money.");
+            }
+            return .@wasSP;
+
+        case 2:
+            return 0;
+        case 3:
+            return 0;
+    }
+    //Exception("Unknown Error: ConfirmStatusReset() failed");
+    consolemes(CONSOLEMES_ERROR, "Unknown Error: ConfirmStatusReset() failed");
+    return 0;
+
+}
+

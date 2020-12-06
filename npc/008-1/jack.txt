@@ -224,7 +224,7 @@
         delitem(.logs_item, .logs_amount);
         getitem(.shield_item, 1);
         Zeny -= .shield_cost;
-        getexp(.shield_exp, 0);
+        quest_xp(.maxLevel, .shield_exp);
 
         speech(
             l("Enjoy your new shield!"));
@@ -294,6 +294,7 @@ OnInit:
     .shield_cost = 5000; // XXX: maybe nlogn?
     .shield_exp = 2500;
     .shield_item = WoodenShield;
+    .maxLevel = getiteminfo(WoodenShield, ITEMINFO_ELV) + 20;
 
     .quest_bow = HurnscaldQuests_ForestBow;
     .quest_shield = HurnscaldQuests_WoodenShield;

@@ -1,0 +1,17 @@
+// The Mana World scripts.
+// Author:
+//    Micksha
+// Description:
+//    ???
+// THIS IS A PLACEHOLDER!
+
+009-2-3,41,30,0	script	Barbara Grey	NPC_UNDEAD_RECPTION,{
+    speech
+        lg("Don't be shy, darling."),
+        l("Come on in and have a nice long... long slumber...");
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}

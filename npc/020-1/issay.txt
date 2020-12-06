@@ -1,0 +1,16 @@
+// The Mana World scripts.
+// Author:
+//    Micksha
+// Description:
+//    Issay the Barber.
+// THIS IS A PLACEHOLDER!
+
+020-1,227,179,0	script	Issay the Barber	NPC_GUMI_THE_DYER,{
+    Barber();
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_3;
+    .distance = 4;
+    end;
+}

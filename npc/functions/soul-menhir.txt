@@ -1,0 +1,75 @@
+// Evol scripts.
+// Author:
+//    gumi
+//    Jesusalva
+// Description:
+//    place of power, mana refills faster when sitting nearby
+
+-	script	Soul Menhir	NPC_HIDDEN,{
+    if (!@menhir_meditation_message)
+    {
+        dispbottom(l("You feel a strong magic aura. You want to sit near it and meditate."));
+        @menhir_meditation_message=1;
+    }
+    end;
+
+OnRefill:
+    @menhir_lock = false;
+    getmapxy(.@map$, .@x, .@y, UNITTYPE_PC);
+
+    if (.@map$ != .map$ || distance(.x, .y, .@x, .@y) > .refill_distance ||
+        !(issit()))
+        end;
+
+    heal(0, .refill_rate);
+    end;
+
+
+OnTimer500:
+    .@count = getunits(BL_PC, .@units[0], false, .map$, (.x - .refill_distance),
+        (.y - .refill_distance), (.x + .refill_distance), (.y + .refill_distance));
+
+    for (.@i = 0; .@i < .@count; ++.@i)
+    {
+        if (.@units[.@i] < 0) continue; // pre-check, just in case
+        deltimer(.name$ + "::OnRefill", .@units[.@i]);
+        if (gettimer(TIMER_COUNT, .@units[.@i], .name$ + "::OnRefill") > 0 ||
+            getvariableofpc(@menhir_lock, .@units[.@i])) {
+            continue;
+        }
+        set(getvariableofpc(@menhir_lock, .@units[.@i]), true);
+        addtimer(rand(.refill_timer), .name$ + "::OnRefill", .@units[.@i]);
+    }
+
+    initnpctimer();
+    end;
+
+OnInit:
+    // Placeholder menhir doesn't have to run
+    if (.name$ == "Soul Menhir")
+        end;
+
+    // "Next-Generation" parsing system
+    // Syntax: RATE_DISTANCE_TIMER
+    // Soul Menhir#town_rate_dist_timer
+    // example
+    // Soul Menhir#hurns_1_7_200
+    .@n$=strnpcinfo(0, "_0_0_0");
+    explode(.@ni$, .@n$, "_");
+    .refill_rate=atoi(.@ni$[1]);
+    .refill_distance=atoi(.@ni$[2]);
+    .refill_timer=atoi(.@ni$[3]);
+
+    // number of SP to give every refill
+    if (!.refill_rate)
+        .refill_rate = 1;
+    // max distance
+    if (.refill_distance < 0)
+        .refill_distance = 7;
+    // wait rand(X) ms before refill
+    if (.refill_timer < 1)
+        .refill_timer = 200;
+
+    initnpctimer();
+    end;
+}

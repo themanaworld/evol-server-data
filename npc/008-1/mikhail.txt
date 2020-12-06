@@ -75,7 +75,7 @@
 
         delitem .third_item, .third_item_qty;
         setq .quest, 7;
-        getexp .third_reward_exp, 0;
+        quest_xp(.maxLevel, .third_reward_exp);
         close;
     }
 
@@ -112,20 +112,13 @@ OnInit:
     .third_item_qty = 5;
     .third_item_mob = Maggot;
 
+    .maxLevel = 30;
     .third_reward_exp = 100;
 
     .quest = HurnscaldQuests_Soup;
     .quest_debug = .quest;
     .bodytype = BODYTYPE_3;
     .distance = 3;
-
-////////// UNFINISHED //////////
-////////////////////////////////
-// REMOVE THIS CODE WHEN THIS //
-// NPC IS NO LONGER A WIP //////
-////////////////////////////////
-//if (!debug) disablenpc(.name$);
-///////// UNFINISHED ///////////
 
     end;
 }

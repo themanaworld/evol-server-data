@@ -1,0 +1,22 @@
+// The Mana World scripts.
+// Author:
+//    Micksha
+// Description:
+//    Reid is Hamond's wife. She secretly had an affair with Savaric.
+// THIS IS A PLACEHOLDER!
+
+009-2-3,42,30,0	script	Reid	NPC_REID,{
+    mesc l("You see a dead woman lying on the floor and something that appears to be her ghost floating above her dead body.");
+    next;
+    mesn l("Ghost");
+    mesq l("He- I - What - Oh -");
+    mesc l("The womans ghost seems to be confused.");
+    next;
+    mesn;
+    mesq l("Oh, I'm sorry. Welcome to Reid's Inn. My name is Reid, I am the innkeeper of this wonderful place of leisure. Please enjoy your visit here!");
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}

@@ -2,6 +2,7 @@
 // Author:
 //  Jesusalva
 //  Gumi
+//  Ledmitz
 // Description:
 //  Music functions
 //
@@ -11,18 +12,19 @@
 //      "jukebox"::HurnscaldPrompt(); → Makes a menuint for selecting hurns tracks
 //      "jukebox"::JukeboxMusic(ID); → Changes music based on prompted ID
 //      "jukebox"::BroadcastMusic(MAP, ID); → Changes music based on prompted ID
+// TODO: Check if you have the music unlocked? Bitmask? Array?
 
 -	script	jukebox	32767,{
     end;
 
 // Helpers
 public function JukeboxMusic {
-    changeplayermusic .MUSIC_ARRAY[getarg(0)];
+    changeplayermusic $MUSIC_ARRAY$[getarg(0)] + ".ogg";
     return;
 }
 
 public function BroadcastMusic {
-    changemusic getarg(0), .MUSIC_ARRAY[getarg(1)];
+    changemusic getarg(0), $MUSIC_ARRAY$[getarg(1)] + ".ogg";
     return;
 }
 
@@ -32,9 +34,10 @@ public function BroadcastMusic {
 public function HurnscaldPrompt {
     menuint
         "Cancel", -1,
-        "Forest of Birches", 0,
-        "Adventure Begins", 1,
-        "Magick Real", 5;
+        "Johanne - Forest of Birches", 0,
+        "Artis - Adventure Begins", 1,
+        "Argaes - Dariunas' Forest", 20,
+        "Hurnscald - Magick Real", 5;
     mes "";
     if (@menuret == -1)
         close;
@@ -43,15 +46,42 @@ public function HurnscaldPrompt {
 
 // Initialize stuff which will be needed
 OnInit:
-    .MUSIC_ARRAY[0] = "bartk - in the forest of the birches.ogg";
-    .MUSIC_ARRAY[1] = "bartk - the adventure begins.ogg";
-    .MUSIC_ARRAY[2] = "eric matyas - ghoulish fun.ogg";
-    .MUSIC_ARRAY[3] = "eric matyas - surreal place.ogg";
-    .MUSIC_ARRAY[4] = "ezili - ocean sounds.ogg";
-    .MUSIC_ARRAY[5] = "magick - real.ogg";
+    $MUSIC_ARRAY$[0] = "johanne";
+    $MUSIC_ARRAY$[1] = "artis";
+    $MUSIC_ARRAY$[2] = "ghoulish";
+    $MUSIC_ARRAY$[3] = "surreal";
+    $MUSIC_ARRAY$[4] = "ocean";
+    $MUSIC_ARRAY$[5] = "real";
+    $MUSIC_ARRAY$[6] = "academy";
+    $MUSIC_ARRAY$[7] = "bandit";
+    $MUSIC_ARRAY$[8] = "barbarians";
+    $MUSIC_ARRAY$[9] = "botcheck";
+    $MUSIC_ARRAY$[10] = "candor";
+    $MUSIC_ARRAY$[11] = "cavesong";
+    $MUSIC_ARRAY$[12] = "chilling";
+    $MUSIC_ARRAY$[13] = "cloudcall";
+    $MUSIC_ARRAY$[14] = "crypt";
+    $MUSIC_ARRAY$[15] = "despair";
+    $MUSIC_ARRAY$[16] = "dimond";
+    $MUSIC_ARRAY$[17] = "explorer";
+    $MUSIC_ARRAY$[18] = "faith";
+    $MUSIC_ARRAY$[19] = "fire";
+    $MUSIC_ARRAY$[20] = "forest";
+    $MUSIC_ARRAY$[21] = "graveyard";
+    $MUSIC_ARRAY$[22] = "hurns";
+    $MUSIC_ARRAY$[23] = "marine";
+    $MUSIC_ARRAY$[24] = "mystique";
+    $MUSIC_ARRAY$[25] = "nightcall";
+    $MUSIC_ARRAY$[26] = "nivalis";
+    $MUSIC_ARRAY$[27] = "ocean";
+    $MUSIC_ARRAY$[28] = "peace";
+    $MUSIC_ARRAY$[29] = "reid";
+    $MUSIC_ARRAY$[30] = "sewer";
+    $MUSIC_ARRAY$[31] = "store";
+    $MUSIC_ARRAY$[32] = "swamp";
+    $MUSIC_ARRAY$[33] = "thunderstorm";
+    $MUSIC_ARRAY$[34] = "waterlude";
+    $MUSIC_ARRAY$[35] = "xmas";
     end;
 }
-
-
-
 

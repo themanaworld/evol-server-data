@@ -1,0 +1,55 @@
+// TMW2 Script
+// Author: Jesusalva
+//  Description:
+//    Joaquim's wife.
+//    TODO sprite on the bed
+
+020-2-15,33,26,0	script	Yumi	NPC_EOMIE,{
+    .@q=getq(TonoriQuest_Joaquim);
+    if (.@q > 3) goto L_PostAid;
+    if (.@q == 3) goto L_DoIt;
+    if (BaseLevel > 36) goto L_PreAid;
+
+    mesn;
+    mesq l("Hello. Take care with the Snakes, they're highly poisonous!");
+    close;
+
+L_PreAid:
+    mesn;
+    mesq l("Please... Speak low... I am dying........");
+    next;
+    mesn;
+    mesq l("The nurse... Eleanore is... Doing all she can... To help me, though.");
+    close;
+
+L_PostAid:
+    mesn;
+    mesq l("Ah, I am lively again. I wish I could just raise from this bed and do some exercise, but Eleanore refuses to let me go.");
+    // There could be another quest stage her
+    close;
+
+L_DoIt:
+    if (countitem(ElixirOfLife) < 1)
+            goto L_PreAid;
+
+    inventoryplace ElixirOfLife, 1;
+    delitem ElixirOfLife, 1;
+    quest_xp(.maxLevel, 1000);
+    setq TonoriQuest_Joaquim, 4;
+    mesc l("*gulp* *gulp* *gulp*");
+    next;
+    mesn;
+    mesq l("AAAAAAAHHHHH, Thanks, I am lively again!");
+    next;
+    mesn;
+    mesq l("In fact, I am cured! Hooray!!");
+    close;
+
+OnInit:
+    .minLevel = 36;
+    .maxLevel = 66;
+
+    .bodytype = BODYTYPE_2;
+    .distance = 5;
+    end;
+}

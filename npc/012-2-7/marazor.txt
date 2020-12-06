@@ -1,0 +1,17 @@
+// The Mana World scripts.
+// Author:
+//    Livio
+// Description:
+//    Marazor the barber
+// THIS IS A PLACEHOLDER!
+
+012-2-7,33,29,0	script	Marazor	NPC_GUMI_THE_DYER,{
+    Barber(true);
+
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_3;
+    .distance = 4;
+    end;
+}
