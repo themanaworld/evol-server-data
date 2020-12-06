@@ -441,7 +441,8 @@
                 break;
             delitem SeafoodPlate, 1;
             getitem EmptyPlate, 1;
-            getexp 10000, 1000;
+            quest_xp(.maxLevel, 10000);
+            quest_jxp(.maxLevel, 1000);
             setq1 General_Cooking, 19;
             mesn;
             mesq l("Ah - Many thanks. Here, I'll return you a plate.");
@@ -460,6 +461,7 @@
     }
 
 OnInit:
+    .maxLevel = 40;
     .bodytype = BODYTYPE_2;
     .distance = 4;
     .quest=General_Cooking;

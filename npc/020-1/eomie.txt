@@ -1,15 +1,189 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
+//    Jesusalva
 // Description:
 //    Eomie, the real Nature Mage. Whatever Hocus is saying.
-// THIS IS A PLACEHOLDER!
+// ANWAR QUEST PART IS COPY-PASTA FROM MOUBOOTAUR LEGENDS
+// THIS IS A PLACEHOLDER!! The Nature Magic questline is missing.
 
 020-1,76,96,0	script	Eomie	NPC_EOMIE,{
+    .@q=getq(TulimsharQuest_AnwarField);
+
+    // Results: 6 - nothing. 7- bug feast.
+    // On status 7, you need to talk to Hocus.
+    // Then Hocus will finish stuff for you, and it's reward time.
+    if (.@q == 10) goto L_Gift;
+    if (.@q == 7) goto L_Success;
+    if (.@q == 6) goto L_Fail;
+    if (.@q == 4) goto L_Craft;
+    if (.@q == 3) goto L_Back;
+    if (.@q == 2) goto L_Start;
+    if (.@q == 1) goto L_Refuse;
+
+    // Placeholder dialog
+    if (.@q == 5)
+        mesc l("I still have Anwar's fertilizer with me.");
     speech
         l("Hi!"),
         l("Did you talk to Hocus already? He will tell you about salad, again."),
-        l("Sometimes I think he is more a chef but a mage, but oh well, everybody should do what suits him best.");
+        l("Sometimes I think he is more a chef than a mage, but oh well, everybody should do what suits them best.");
+    close;
+
+// READ THE HOLY DIALOGS!!
+L_Refuse:
+    mesn strcharinfo(0);
+    mesq l("Hello! Anwar sent me to get fertilizer to save Tulimshar from famine, could you help me?");
+    next;
+    mesn;
+    mesq l("Not now, I'm busy tending the garden.");
+    close;
+
+L_Start:
+    mesn strcharinfo(0);
+    mesq l("Hello, could I help you in exchange for fertilizer?");
+    next;
+    mesn;
+    mesq l("Actually, yes. The birthday of me and my boyfriend is coming up. He always give me chocolate cake, so I want to surprise him for once. Bring me 12 @@ and I'll make the fertilizer for you.", getitemlink(CherryCake));
+    setq TulimsharQuest_AnwarField, 3;
+    close;
+
+L_Back:
+    mesn;
+    mesq l("So, did you brought me the twelve cherry cakes?");
+    mes "";
+    mesn strcharinfo(0);
+    if (askyesno() != ASK_YES) {
+        close;
+    }
+    mes "";
+    if (countitem("CherryCake") < 12)
+        goto L_Lying;
+
+    delitem CherryCake, 12;
+    getexp 200, 5;
+    setq TulimsharQuest_AnwarField, 4;
+    mesn;
+    mesq l("Okay, that is very useful. However, I do need a few reagents to make it.");
+    next;
+    mesn;
+    mesq l("Please, come back later. I'll see whatever I can fetch for that.");
+    close;
+
+L_Craft:
+    mesn;
+    mesq l("So, for the fertilizer. The thing is, all that thing is unstable.");
+    next;
+    mesn;
+    mesq l("This fertilizer is projected to protect the plants from plagues, bugs, scorpions and maggots, trying to not be a plague itself.");
+    next;
+    mesn;
+    mesq l("I have no way to know how much fertilizer you'll be needing. I need @@ @@ and @@ @@ to make a Certified Fertility Potion for you.", 3, getitemlink(Plushroom), 9,  getitemlink(MaggotSlime));
+    next;
+    mesn;
+    mesq l("Give that to whoever needs them, and see if it works. Then come tell me the result. Do you have the reagents?");
+    if (askyesno() != ASK_YES)
+        close;
+    mes "";
+
+    if (countitem(Plushroom) < 3||
+        countitem(MaggotSlime) < 9)
+    goto L_Lying;
+
+    inventoryplace FertilityPotion, 1;
+    delitem Plushroom, 3;
+    delitem MaggotSlime, 9;
+    getitembound(FertilityPotion, 1, IBT_CHARACTER);
+    setq1 TulimsharQuest_AnwarField, 5;
+
+    mesn;
+    mesq l("Here it is. Come back to report the results.");
+    close;
+
+L_Fail:
+    setq1 TulimsharQuest_AnwarField, 4;
+    .@q2=getq2(TulimsharQuest_AnwarField);
+    if (.@q2 < 10)
+        getexp 180-(.@q2*10), 0;
+    else
+        getexp 90, 0;
+    mesn;
+    switch (.@q2) {
+    case 1:
+        mesq l("Well, that could not be enough, I said. Here is some experience.");
+        break;
+    case 2:
+        mesq l("Don't worry, third time is the charm. Here is some experience. Let's try again.");
+        break;
+    case 3:
+        mesq l("Okay, here is some experience, and forgot what I've said before. We can try again.");
+        break;
+    case 4:
+        mesq l("Don't worry, I've tweaked my formula this time. Here is some experience and let's try again!");
+        break;
+    case 5:
+        mesq l("I'm sorry, I just... Maybe if...? Aha! Here's the EXP, ready for a next go?");
+        break;
+    case 6:
+        mesq l("Uhm, maybe I mashed the Plushroom too hard this time. Here's EXP as usual, let's try again?");
+        break;
+    case 7:
+        mesq l("I shall not fail any further, I think my new formula is perfect! Here's the EXP, but I need material to use it!");
+        break;
+    case 8:
+        mesq l("I never knew you could fail THAT hard. I've took Saulc's Fertilizer's recipe, success chance is of 100% if you want to try again.");
+        break;
+    default:
+        mesq l("Well, that could fail, I said. Here is some experience.");
+        break;
+    }
+    next;
+    if (countitem(Plushroom) >= 3 &&
+        countitem(MaggotSlime) >= 9)
+            goto L_Craft;
+    mesn;
+    mesq l("Now go, and fetch the materials again. I'll make another fertilizer for you.");
+    close;
+
+L_Success:
+    mesn;
+    mesq l("WHAT? The farm is plagued with insects?!");
+    next;
+    mesn;
+    mesq l("Quick, tell that to Hocus. No one is better at Nature Magic than Hocus, I'm sure he can help.");
+    close;
+
+L_Gift:
+    .@q2=getq2(TulimsharQuest_AnwarField);
+    if (.@q2 & 1) {
+        mesn;
+        mesq l("Thanks for the nice gift!");
+        close;
+    }
+    // Tip. WHAT DID YOU DID WITH THE BOUND ITEM? IT SHOULD BE HARD TO GET RID OF IT...
+    if (countitem(SilverBell) < 1) {
+        mesn;
+        mesq l("Ah, I wish I got something for helping people out...");
+        close;
+    }
+    mesn strcharinfo(0);
+    mesq l("Anwar sent you this, erm, hum... @@.", getitemlink(SilverBell));
+    next;
+    setq2 TulimsharQuest_AnwarField, .@q2+1;
+    delitem SilverBell, 1;
+    getexp 95, 1;
+    mesn;
+    mesq l("WOW, THIS IS AWESOME! Many, many thanks!!");
+    close;
+
+L_Lying:
+    mesn;
+    mesq l("Ah, so you think you can fool me?");
+    next;
+    percentheal -5, -5;
+    warp "Save", 0, 0;
+    dispbottom l("Ah... Was I warped?");
+    closedialog;
     close;
 
 OnInit:
@@ -17,5 +191,3 @@ OnInit:
     .distance = 4;
     end;
 }
-
-

@@ -1,20 +1,149 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
+//    Jesusalva
 // Description:
 //    Anwar, the farmer in Tulimshar.
-// THIS IS A PLACEHOLDER!
 
 020-1,178,196,0	script	Anwar	NPC_ANWAR,{
+    // This code is from Moubootaur Legends and needs cleaning up
+    .@q=getq(TulimsharQuest_AnwarField);
+    if (BaseLevel < 18) {
+        hello;
+        end;
+    }
+
+    if (.@q > 10) goto L_Complete;
+    if (.@q == 10) goto L_SecondReward;
+    if (.@q == 9) goto L_FirstReward;
+    if (.@q == 8) goto L_SecondTry;
+    if (.@q == 7) goto L_AnwarField;
+    if (.@q == 6) goto L_FirstTry;
+    if (.@q == 5) goto L_TryIt;
+    if (.@q >= 1) goto L_FirstTry;
+    // TODO: "What is this contraband fake potion you have there?! I do not accept potions without the seal of the Magic Academy. They might not work and I won't have warranty."
+
     speech
         l("Hi there."),
         l("Nothing grows in this stupid desert."),
         l("I could try to water it, but where to get water.. also a fertility potion could help."),
-		l("But I have no water, no potion, no script. *cries* ");
+        l("Maybe you can do a small errand for me?");
+		//l("But I have no water, no potion, no script. *cries* ");
+    select
+        l("Sure!"),
+        l("I'm busy, sorry.");
+    mes "";
+    if (@menu == 1)
+        goto L_Sure;
+    close;
+
+L_Complete:
+    mesn;
+    mesq l("Thanks for saving Tulimshar from a famine. I'll be forever grateful.");
+    next;
+    mesn;
+    mesq l("Dealing with raijin is too bothersome to me.");
+    close;
+
+L_AnwarField:
+    mesn;
+    mesq l("My crops! Hurry up, and talk to Hocus!!");
+    close;
+
+L_Sure:
+    mes "";
+    mesn;
+    mesq l("Great! Hocus, the magic academy grandmaster, is a real Nature mage. He probably makes fertilizers.");
+    next;
+    mesn;
+    mesq l("Please, talk to him. I am too busy tending the crops to go myself.");
+    setq TulimsharQuest_AnwarField, 1;
+    close;
+
+L_FirstTry:
+    mesn;
+    mesq l("Good luck getting the fertilizer from Hocus!");
+    if (countitem(FertilityPotion))
+        mesc l("Anwar will only accept fertility potions certified by the Magic Academy.");
+    close;
+
+L_TryIt:
+    .@q2=getq2(TulimsharQuest_AnwarField);
+    if (!countitem(FertilityPotion)) {
+        mesn;
+        mesq l("Bring me the fertilizer!");
+        close;
+    }
+    mesn;
+    mesq l("You've brought me fertilizer! Let me see if it works...");
+    next;
+    delitem FertilityPotion, 1;
+    setq2 TulimsharQuest_AnwarField, .@q2+1;
+
+    // Fail chances are 100% - 13% per attempt
+    if (rand2(0,100) < 100-(.@q2*13)) {
+        setq1 TulimsharQuest_AnwarField, 6;
+        mesc l("Nothing happens.");
+        next;
+        mesn;
+        mesq l("Uhm, it was not enough. Please bring me another one.");
+    } else {
+        setq1 TulimsharQuest_AnwarField, 7;
+        mesc l("Evil worms crawl from earth and starts devouring the plants!");
+        // Okay, maybe Galimatia's potion was a better idea.
+        next;
+        mesn;
+        mesq l("Uh... That should not happen, right? RIGHT?");
+        next;
+        mesn;
+        mesq l("Don't just stand here! Go fetch help, NOW!!");
+    }
+
+    close;
+
+L_SecondTry:
+    if (!countitem(PurificationPotion)) {
+        mesn;
+        mesq l("Bring me the bug bomb or whatever!");
+        close;
+    }
+    mesn strcharinfo(0);
+    mesq l("Here is a certified(R) purification potion! Hocus just gave me. Hurry up!");
+    next;
+    delitem PurificationPotion, 1;
+    getexp 20, 0;
+    specialeffect(51);
+    setq TulimsharQuest_AnwarField, 9;
+    mesn;
+    mesq l("Thanks God... The crops are safe. Not only that, but the fertilizer works!");
+    next;
+    mesn;
+    mesq l("Ah, that was tiresome... I'll go make a reward for them, talk to me again later.");
+    close;
+
+L_FirstReward:
+    mesn;
+    mesq l("Here are two %s. Please deliver it to them. I hope they'll like it.", getitemlink(SilverBell));
+    setq TulimsharQuest_AnwarField, 10, 0;
+    getitembound(SilverBell, 2, 4); // Prevent accidental item loss
+    close;
+
+L_SecondReward:
+    .@q2=getq2(TulimsharQuest_AnwarField);
+    if (.@q2 < 3){
+        mesn;
+        mesq l("Please deliver the two %s to Eomie and Hocus, and then I'll give you something for your help.", getitemlink(SilverBell));
+        close;
+    }
+    setq TulimsharQuest_AnwarField, 11, 0;
+    getitem SilkPants, 1;
+    getexp 750, 0;
+    mesn;
+    mesq l("Many thanks for your help! Here, take this. I'm sure it can be very useful later. It always is.");
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
+    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 }

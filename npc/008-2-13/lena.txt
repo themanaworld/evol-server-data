@@ -1,20 +1,271 @@
 // The Mana World scripts.
 // Author:
 //    Micksha
+//    Jesusalva
 // Description:
 //    Lena the Bowwoman.
-// THIS IS A PLACEHOLDER!
 
 008-2-13,27,27,0	script	Lena	NPC_LENA,{
+    .@q=getq(HurnscaldQuest_Bandits);
+    // Declare all functions
+    // Stage 1
+    function lenaTooWeak;
+    function lenaStart;
+    function lenaReturn;
+    // Stage 2
+    function lenaQuest;
+    function lenaCoinBag;
+    // Stage 3
+    function lenaBusy;
+    function lenaBusy2;
+    function lenaBanditLord;
+    function lenaFinish;
+    // Post stage
+    function lenaDaily;
+
+    switch (.@q) {
+    // Stage 1
+    case 0:
+        if (BaseLevel < .minLevel_1)
+            lenaTooWeak();
+        lenaStart();
+        break;
+    case 1:
+        lenaReturn();
+        break;
+    // Stage 2
+    case 2:
+        if (BaseLevel < .minLevel_2)
+            lenaTooWeak();
+        lenaQuest();
+        break;
+    case 3:
+        lenaCoinBag();
+        break;
+    // Stage 3
+    case 4:
+        if (BaseLevel < .minLevel_1)
+            lenaBusy();
+        lenaBanditLord();
+        break;
+    case 5:
+    case 6:
+        lenaBusy2();
+        break;
+    case 7:
+        lenaFinish();
+        break;
+    }
+    close;
+
+function lenaDaily {
+    // DailyQuest(lvl, cost, count, item)
+    DailyQuest(40, 4, 10, CoinBag);
+    return;
+}
+
+// ------------------------------------
+function lenaTooWeak {
     speech
         l("Hey."),
         l("Did you hear about the Bandit's attacks? They must have a hideout somewhere outside Hurnscald."),
-        lg("I will inform you when I have more information about all this.");
-
+        lg("However, you are too weak to help me, so come back later.");
     close;
+}
+
+function lenaBusy {
+    speech
+        l("Hey."),
+        l("Ah, I wish my dear friend Nickos could be here. He's one of the guards in Tulimshar and he'd know how to deal with those outlaws!"),
+        l("I will inform you when I have more information about the bandits.");
+    close;
+}
+
+function lenaBusy2 {
+    mesn;
+    mesq l("%s, we are counting on you! We, the whole Hurnscald town!", strcharinfo(0));
+    close;
+}
+
+// ------------------------------------ Stage 1
+function lenaStart {
+    mesn;
+    mesq l("Ah, hello.");
+    next;
+    mesn;
+    mesq l("We actually have a problem. Bandits ransacked Hurnscald, and took a huge loot.");
+    next;
+    mesn;
+    mesq l("We pursued them until the mines, slayed them, and took the chests where they locked our stuff into.");
+    next;
+    mesn;
+    mesq l("The problem is... The slimes ate the keys for the chests. This is not the first time such thing happens.");
+    next;
+    mesn;
+    mesq l("If you bring us %d %s, we'll be forever grateful.", .numKeys, getitemlink(TreasureKey));
+    select
+        l("Don't worry ma'm, I'll recover the Treasure Keys at once."),
+        l("Ah... Slimes... Sorry, not my cup of tea...");
+    mes "";
+    if (@menu == 2)
+        close;
+    setq HurnscaldQuest_Bandits, 1;
+    mesn;
+    mesq l("Wonderful! I'll be expecting you back.");
+    return;
+}
+
+function lenaReturn {
+    mesn;
+    mesq lg("Adventurer, did you brought me what I asked? I see you have %d/%d %s.","Adventurer, did you brought me what I asked? I see you have %d/%d %s.", countitem(TreasureKey), .numKeys, getitemlink(TreasureKey));
+    mes "";
+    select
+        rif(countitem(TreasureKey) >= .numKeys, l("Yes, take it.")),
+        rif(countitem(TreasureKey) < .numKeys, l("No, I'll be back with them.")),
+        l("Hm, can we talk again later?");
+    mes "";
+    if (@menu != 1)
+        close;
+    delitem TreasureKey, .numKeys;
+    quest_gp(.maxLevel_1, 1000);
+    quest_xp(.maxLevel_1, 1599); // 20% from needed exp
+    setq HurnscaldQuest_Bandits, 2;
+    mesn;
+    mesq l("Hey hey... Good job! We can now use again the stuff we recovered from the bandits.");
+    next;
+    mesn;
+    mesq l("Here is some GP for your efforts. Thanks for making Hurnscald a better place to live.");
+    next;
+    mesn;
+    mesq l("This happens quite often, too. My friends and I are always collecting keys to reduce beer price on Hurnscald. %%2");
+    return;
+}
+
+// ------------------------------------ Stage 2
+function lenaQuest {
+    mesn;
+    mesq l("Ah, %s, good thing you are here.", strcharinfo(0));
+    next;
+    mesn;
+    mesq l("Bandits are a huge threat to Hurnscald. We're just a small farming town, and they're countless.");
+    next;
+    mesn;
+    mesq l("Unlike the thieves guild, they are ruthless, and break everything. We lose more repairing damage than actually stolen.");
+    next;
+    mesn;
+    mesq l("Last time I went to fight the Bandit Lord, I was severely wounded.");
+    next;
+    mesn;
+    mesq l("I will reward whoever kills the current bandit leader, of course.");
+    select
+        l("I would gladly aid you to get rid of that scourge."),
+        l("Sorry, I forgot my courage on my other set of pants.");
+    mes "";
+    if (@menu == 2)
+        close;
+    setq HurnscaldQuest_Bandits, 3;
+    mesn;
+    mesq l("Wonderful! So, how about a warm up?");
+    next;
+    mesn;
+    mesq l("Bring me %d %s. This should help us amending the damage they caused and is a good warm-up exercise.", .numCoins, getitemlink(CoinBag));
+    return;
+}
+
+function lenaCoinBag {
+    mesn;
+    mesq lg("Adventurer, did you brought me what I asked? I see you have %d/%d %s.","Adventurer, did you brought me what I asked? I see you have %d/%d %s.", countitem(CoinBag), .numCoins, getitemlink(CoinBag));
+    mes "";
+    select
+        rif(countitem(CoinBag) >= .numCoins, l("Yes, take it.")),
+        rif(countitem(CoinBag) < .numCoins, l("No, I'll be back with them.")),
+        l("Hm, can we talk again later?");
+    mes "";
+    if (@menu != 1)
+        close;
+    inventoryplace FairyHat, 1;
+    delitem CoinBag, .numCoins;
+    .@gp=getiteminfo(CoinBag, ITEMINFO_SELLPRICE) * .numCoins * 15 / 10;
+    quest_gp(.maxLevel_2, .@gp); // +50% of base sell price
+    quest_xp(.maxLevel_2, 6842); // 20% from needed exp
+    getitem FairyHat, 1;
+    setq HurnscaldQuest_Bandits, 4;
+    mesn;
+    mesq l("Hey hey... Good job! This help us more than you think. Here is a hat like mine.");
+    next;
+    mesn;
+    mesq l("Unfortunately, I feel this bandit threat may have grown. Come back later, I'll talk with the Brotherhood for a while and probably will need your help again.");
+    return;
+}
+// ------------------------------------ Stage 3
+function lenaBanditLord {
+    mesn;
+    mesq l("So... I won't say you can't do it, %s. I will just say killing the Bandit Lord is no easy task.", strcharinfo(0));
+    next;
+    mesn;
+    mesq l("The %s is not only a fearsome and ruthless leader. He is strong, and he have tricks on his sleeve.", getmonsterlink(BanditLord));
+    next;
+    mesn;
+    mesq l("He will summon allies if he think you have the upper hand. So take care if you are going ranged.");
+    next;
+    mesn;
+    mesq l("I know another Bandit Lord will take up his place, but the loss of their leader will make bandits scatter long enough.");
+    next;
+    mesn;
+    mesq l("Will you help me- no, I mean, will you help us, the whole town of Hurnscald?");
+    next;
+    select
+        l("Sorry, I need to better prepare myself."),
+        l("I would gladly give my life for such noble goal.");
+    mes "";
+    if (@menu == 1)
+        close;
+    setq HurnscaldQuest_Bandits, 5;
+    mesn;
+    mesq l("...You have courage. Many people tried and failed.");
+    next;
+    mesn;
+    mesq l("I know where the Bandit Lord room is, and I have a guard stationed not far from there. Ask him for the key.");
+    next;
+    mesn;
+    mesq l("One last thing... Good luck. This bandit threat needs to be pushed back.");
+    return;
+}
+
+function lenaFinish {
+    mesn;
+    mesq l("Ah... You did it!");
+    next;
+    mesn;
+    mesq l("That's easy to know, because the bandits are less coordinated. Perhaps we will be able to sleep in peace this night!");
+    next;
+    inventoryplace ForestArmor, 1;
+    getitem ForestArmor, 1;
+    quest_xp(.maxLevel_3, 5842); // 10% from needed exp
+    quest_jxp(.maxLevel_3, 93); //  + JExp level 6
+    setq HurnscaldQuest_Bandits, 8;
+    mesn;
+    mesq l("Here is the %s, like my armor, and one of the best for rangers.", getitemlink(ForestArmor));
+    next;
+    mesn;
+    mesq l("Any friend of Hurnscald is my friend too. Come to me again, if you want to do daily quests!");
+    return;
+}
 
 OnInit:
     .bodytype = BODYTYPE_2;
     .distance = 4;
+
+    // Quest configuration
+    .minLevel_1=15;
+    .maxLevel_1=35;
+    .numKeys = 15;
+
+    .minLevel_2=30;
+    .maxLevel_2=50;
+    .numCoins = 20;
+
+    .minLevel_3=35;
+    .maxLevel_3=55;
     end;
 }

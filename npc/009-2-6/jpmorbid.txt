@@ -3,9 +3,8 @@
 //    Jesusalva
 // Description:
 //    J.P.Morbid the Asphodel Moors storage guy.
-// THIS IS A PLACEHOLDER!
 
-009-2-7,44,30,0	script	J.P. Morbid	NPC_LLOYD,{
+009-2-6,27,30,0	script	J.P. Morbid	NPC_JPMORBID,{
     // Storage/Banking function not unlocked in Artis
     if (!getq(ArtisQuests_Lloyd)) {
         speech

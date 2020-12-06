@@ -1,9 +1,21 @@
-// Evol scripts.
-// Author:
-//    gumi
-//    Reid
+// The Mana World scripts.
 // Description:
 //    Water animations, splash, fishes, etc...
 
-008-1,311,97,0	duplicate(#water_animation0)	#water_animation16	NPC_WATER_SPLASH
-008-1,314,139,0	duplicate(#water_animation0)	#water_animation17	NPC_WATER_SPLASH
+008-1,90,223,0	duplicate(#fish_river)	#hurns_fish01	NPC_WATER_SPLASH
+008-1,86,177,0	duplicate(#fish_river)	#hurns_fish02	NPC_WATER_SPLASH
+008-1,85,186,0	duplicate(#fish_river)	#hurns_fish03	NPC_WATER_SPLASH
+008-1,89,208,0	duplicate(#fish_river)	#hurns_fish04	NPC_WATER_SPLASH
+008-1,139,91,0	duplicate(#fish_river)	#hurns_fish05	NPC_WATER_SPLASH
+008-1,64,36,0	duplicate(#fish_river)	#hurns_fish06	NPC_WATER_SPLASH
+008-1,55,30,0	duplicate(#fish_river)	#hurns_fish07	NPC_WATER_SPLASH
+008-1,46,35,0	duplicate(#fish_river)	#hurns_fish08	NPC_WATER_SPLASH
+008-1,105,55,0	duplicate(#fish_river)	#hurns_fish09	NPC_WATER_SPLASH
+008-1,214,155,0	duplicate(#fish_river)	#hurns_fish10	NPC_WATER_SPLASH
+008-1,216,153,0	duplicate(#fish_river)	#hurns_fish11	NPC_WATER_SPLASH
+008-1,225,26,0	duplicate(#fish_river)	#hurns_fish12	NPC_WATER_SPLASH
+008-1,220,49,0	duplicate(#fish_river)	#hurns_fish13	NPC_WATER_SPLASH
+008-1,220,57,0	duplicate(#fish_river)	#hurns_fish14	NPC_WATER_SPLASH
+008-1,233,56,0	duplicate(#fish_river)	#hurns_fish15	NPC_WATER_SPLASH
+008-1,230,51,0	duplicate(#fish_river)	#hurns_fish16	NPC_WATER_SPLASH
+

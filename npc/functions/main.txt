@@ -289,7 +289,7 @@ function	script	get_race	{
     // We also allow this to run without player attached for... science.
     if (playerattached())
     {
-        setarray .@allraces$, l("Viro"), l("Viro"), l("Viro"),
+        setarray .@allraces$, l("Human"), l("Human"), l("Human"),
                               l("Ukar"), l("Ukar"),
                               l("Tritan"), l("Tritan"),
                               l("Raijin"), l("Raijin"),
@@ -302,7 +302,7 @@ function	script	get_race	{
     }
     else
     {
-        setarray .@allraces$, ("Viro"), ("Viro"), ("Viro"),
+        setarray .@allraces$, ("Human"), ("Human"), ("Human"),
                               ("Ukar"), ("Ukar"),
                               ("Tritan"), ("Tritan"),
                               ("Raijin"), ("Raijin"),
@@ -364,4 +364,82 @@ function	script	isin	{
 function	script	getmap	{
     return getmapname();
 }
+
+// Quest Rewards
+// quest_xp(maxLevel, reward, {multiplier=1})
+function	script	quest_xp	{
+    //.@minLevel=getarg(0);
+    .@maxLevel=getarg(0);
+    .@reward=getarg(1);
+    .@mult=getarg(2, 1);
+    if (BaseLevel <= .@maxLevel) {
+        getexp .@reward*.@mult, 0;
+        return;
+    }
+    // You'll forsake 2% every over level
+    .@mult*=100;
+    .@mult-=((BaseLevel - .@maxLevel) * 2);
+    .@mult=max(10, .@mult);
+    getexp .@reward*.@mult/100, 0;
+    return;
+}
+
+// quest_jxp(maxLevel, reward, {multiplier=1})
+function	script	quest_jxp	{
+    //.@minLevel=getarg(0);
+    .@maxLevel=getarg(0);
+    .@reward=getarg(1);
+    .@mult=getarg(2, 1);
+    if (BaseLevel < .@maxLevel) {
+        getexp 0, .@reward*.@mult;
+        return;
+    }
+    // You'll forsake 2% every over level
+    .@mult*=100;
+    .@mult-=((BaseLevel - .@maxLevel) * 2);
+    .@mult=max(10, .@mult);
+    getexp 0, .@reward*.@mult/100;
+    return;
+}
+
+// quest_gp(maxLevel, reward, {multiplier=1})
+function	script	quest_gp	{
+    //.@minLevel=getarg(0);
+    .@maxLevel=getarg(0);
+    .@reward=getarg(1);
+    .@mult=getarg(2, 1);
+    if (BaseLevel <= .@maxLevel) {
+        Zeny+=.@reward*.@mult;
+        return;
+    }
+    // You'll forsake 2% every over level
+    .@mult*=100;
+    .@mult-=((BaseLevel - .@maxLevel) * 2);
+    .@mult=max(10, .@mult);
+    Zeny+=.@reward*.@mult/100;
+    return;
+}
+
+// quest_item(maxLevel, item, {amount=1}, {bound=0})
+function	script	quest_item	{
+    //.@minLevel=getarg(0);
+    .@maxLevel=getarg(0);
+    .@reward=getarg(1);
+    .@mult=getarg(2, 1);
+    .@bind=getarg(3, 0);
+    // Item will not be obtained if you are overlevel
+    if (BaseLevel > .@maxLevel && .@mult <= 1)
+        return;
+    // If it comes in pairs, you'll only get 1
+    if (BaseLevel > .@maxLevel)
+        .@mult=1;
+    // Obtain item bound if needed
+    if (.@bind)
+        getitembound .@reward, .@mult, .@bind;
+    else
+        getitem .@reward, .@mult;
+    return;
+}
+
+
 

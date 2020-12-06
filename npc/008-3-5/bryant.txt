@@ -1,0 +1,80 @@
+// TMW2 Script.
+// Author:
+//    Jesusalva
+// Description:
+//    Part of Helena's quest
+//    Gives spoilers about what Jesusalva plans in doing with Bryant
+
+008-3-5,101,85,0	script	Bryant	NPC_CRASMANDE,{
+    function bryantBanditLord;
+    function bryantSilverKey;
+    function bryantComplete;
+    .@q=getq(HurnscaldQuest_Bandits);
+    if (.@q == 5) bryantSilverKey();
+    if (.@q == 6) bryantBanditLord();
+    if (.@q >= 7) bryantComplete();
+    mesn;
+    mesq lg("Welcome.");
+    next;
+    mesn;
+    mesq l("I'm looking everywhere for the bandit leader. I can't seem to find him. So I stopped here to rest a bit.");
+    close;
+
+function bryantSilverKey {
+    mesn;
+    mesq l("Don't say anything, I can smell the scent of Lena's hair on you.");
+    next;
+    inventoryplace PiberriesInfusion, 3;
+    getitem PiberriesInfusion, 3;
+    setq HurnscaldQuest_Bandits, 6;
+    mesn;
+    mesq l("I guess she sent you to kill the Bandit Lord, right? I'll lure him for you.");
+    next;
+    mesn;
+    mesq l("It is pretty close to here. I advise you to use a good sword, and heal yourself often.");
+    next;
+    mesn;
+    mesq l("I will give you 3 @@. Use them on this fight, or you're doomed to fail.", getitemlink(PiberriesInfusion));
+    close;
+}
+
+function bryantBanditLord {
+    mesn;
+    mesq l("What are you waiting for? Go kill the bandit lord.");
+    next;
+    mesn strcharinfo(0);
+    select
+        l("I'm going, don't worry."),
+        l("There was nobody on the Bandit Lord's room.");
+    if (@menu == 1)
+        close;
+    mes "";
+    mesn;
+    mesq l("...Have you ever gone there yet?");
+    next;
+    mesn;
+    mesq l("Go kill the Bandit Lord!");
+    close;
+}
+
+function bryantComplete {
+    mesn;
+    mesq l("Good job defeating the Bandit Lord.");
+    close;
+}
+
+OnInit:
+    /*
+    .@npcId = getnpcid(.name$);
+    setunitdata(.@npcId, UDT_HEADTOP, FairyHat);
+    setunitdata(.@npcId, UDT_HEADMIDDLE, ForestArmor);
+    setunitdata(.@npcId, UDT_HEADBOTTOM, JeansChaps);
+    setunitdata(.@npcId, UDT_WEAPON, DeepBlackBoots);
+    setunitdata(.@npcId, UDT_HAIRSTYLE, 24);
+    setunitdata(.@npcId, UDT_HAIRCOLOR, 1);
+    */
+
+    .bodytype = BODYTYPE_1;
+    .distance = 5;
+    end;
+}

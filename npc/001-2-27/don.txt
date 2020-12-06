@@ -1,63 +1,15 @@
 // Evol scripts.
 // Author:
 //    Reid
+//    Jesusalva
 // Description:
 //    Don the blacksmith of Artis
 
 001-2-27,35,29,0	script	Don#001-2-27	NPC_HUMAN_MALE_OLD,{
-
-    function improve_equipment {
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("Different ways, each part of your equipment can be generally upgraded."),
-            l("You have a level for each of your gear, by default when you buy or craft a piece, the level is set to 1."),
-            l("You can also improve your equipment in a totally different way with the use of cards.");
-        return;
-    }
-
-    function card_explanation {
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("There are two different kinds of cards, the first changes the style of your clothes, the second changes their stats."),
-            l("I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment."),
-            l("A stat card works on different pieces of equipment."),
-            l("Each piece of equipment has a predefined slot number."),
-            l("Each card improves your gear by a ratio or a fixed number on a predefined stat."),
-            l("Like, a defensive mythril card can be used on any mythril equipment, and it will improve the defense by 5% of the latter."),
-            l("You just have to select the card, then you choose which piece of equipment you want to use it on, and you are done.");
-        return;
-    }
-
-    function take_apprentice {
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("I do not.");
-        emotion E_UPSET;
-
-        select(l("What about Chelios?"));
-
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("Chelios was stubborn in his youth, he never stopped annoying me with his questions while I was working at the forge."),
-            l("He did not change while growing up, I repeatedly asked him to leave the forge but in the end he installed himself in front of it..."),
-            l("He is mature and he rarely ask questions so I am fine. I can not stand the sight of a whiner anyway.");
-        return;
-    }
-
-    function good_blacksmith {
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("I do not like to brag about it but you won't find a better blacksmith on the whole island."),
-            l("If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.");
-
-        switch (select(l("Can I craft them myself?"),
-                        l("Ok.")))
-        {
-            case 1:
-                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                    l("You can try, but your chance of success is lesser than a well trained smith and master craftsman.");
-                break;
-            case 2:
-                break;
-        }
-
-        return;
-    }
+    function improve_equipment;
+    function card_explanation;
+    function take_apprentice;
+    function good_blacksmith;
 
     speech S_LAST_NEXT,
         lg("Hi, what do you want kiddo?");
@@ -71,16 +23,16 @@
                               l("Nothing.")))
         {
             case 1:
-                improve_equipment;
+                improve_equipment();
                 break;
             case 2:
-                card_explanation;
+                card_explanation();
                 break;
             case 3:
-                good_blacksmith;
+                good_blacksmith();
                 break;
             case 4:
-                take_apprentice;
+                take_apprentice();
                 break;
             case 5:
                 break;
@@ -90,9 +42,72 @@
     goodbye;
     close;
 
+function improve_equipment {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Different ways, each part of your equipment can be generally upgraded."),
+        l("You rarely use the full potential of your equipment. As they say, a master weapon in a noob's hands is a noob weapon with wasted potential. But the more you use them, the better you can harness this power."),
+        l("Power obtained from proficiency will be noted down near the equipment name. There may be illegal ways to raise proficiency without hard work. But things obtained without hard work are not worth it."),
+        l("You can also improve your equipment in a totally different way with the use of cards."),
+        l("By last, a master craftsman can make equipment much better than a less skilled one. Equipment made by measure are much better than those bought at shops as well.");
+    return;
+}
+
+function card_explanation {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("There are two different kinds of cards, the first changes the style of your clothes, the second changes their stats."),
+        l("I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment."),
+        l("A stat card works on different pieces of equipment."),
+        l("Each piece of equipment has a predefined slot number."),
+        l("Each card improves your gear by a ratio or a fixed number on a predefined stat."),
+        l("Like, a defensive mythril card can be used on any mythril equipment, and it will improve the defense by 5% of the latter."),
+        l("You just have to select the card, then you choose which piece of equipment you want to use it on, and you are done."),
+        l("I am also aware that you can slot runestones and even gemstones to equipment as well. Some of them have magic properties.");
+    return;
+}
+
+function take_apprentice {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("I do not.");
+
+    emotion E_UPSET;
+
+    select(l("What about Chelios?"));
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Chelios was stubborn in his youth, he never stopped annoying me with his questions while I was working at the forge."),
+        l("He did not change while growing up, I repeatedly asked him to leave the forge but in the end he installed himself in front of it..."),
+        l("He is mature and he rarely ask questions so I am fine. I can not stand the sight of a whiner anyway.");
+    return;
+}
+
+function good_blacksmith {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("I do not like to brag about it but you won't find a better blacksmith on the whole island."),
+        l("If you need somebody to craft a weapon or a plate from diagrams I am the one that you need.");
+
+    switch (select(l("Can I craft them myself?"),
+                    l("Ok.")))
+    {
+        case 1:
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("You can try if you know the recipe, but your chance of success is lesser than a well trained smith and master craftsman.");
+            .@s = SmithSystem(CRAFT_SMITHERY);
+            if (.@s)
+                mesc l("Success!"), 3;
+            else
+                mesc l("That didn't work!"), 1;
+            next;
+            break;
+        case 2:
+            break;
+    }
+
+    return;
+}
+
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 2;
+    .distance = 4;
     end;
 }
 

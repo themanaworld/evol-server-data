@@ -1,0 +1,29 @@
+// The Mana World scripts.
+// Author:
+//    Micksha
+// Description:
+//    Useless NPC. Possibly it is a memory fragment of Savaric and Reid?
+// THIS IS A PLACEHOLDER!
+
+009-2-5,27,27,0	script	Lovers	NPC_LOVERS,{
+    mesc l("You see a man and a woman holding each other very tight.");
+    next;
+    mesc l("They are kissing and whispering things to each other you can't hear.");
+    next;
+    mesc l("Now the woman giggles. They don't notice you.");
+    next;
+    select
+        l("Maybe it's better not to bother them."),
+        l("*ahem* Hello...?");
+    mes "";
+    if (@menu == 1)
+        close;
+    mesc l("They do not hear you. It is as if they were not real.");
+    next;
+    mesc l("This is certainly a strange place.");
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}

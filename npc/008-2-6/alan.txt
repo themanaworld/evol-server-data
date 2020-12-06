@@ -158,7 +158,7 @@
         setq(.quest_bow, 6);
         Zeny -= .req_esp;
         getitem(.reward_item, 1);
-        getexp(.reward_exp, 0);
+        quest_xp(.maxLevel, .reward_exp);
 
         speech(
             l("Here you go - have fun with it."));
@@ -291,6 +291,7 @@ OnPCBaseLvUpEvent:
 
 OnInit:
     .min_level = 25; // min level to do the quest
+    .maxLevel = 50; // max level to obtain full rewards
 
     .req_item = RawLog; // item required to make the bow
     .req_esp = 10000; // amount of Esperin required to make the bow
@@ -307,14 +308,5 @@ OnInit:
     .quest_debug = .quest_bow;
     .bodytype = BODYTYPE_3;
     .distance = 3;
-
-////////// UNFINISHED //////////
-////////////////////////////////
-// REMOVE THIS CODE WHEN THIS //
-// NPC IS NO LONGER A WIP //////
-////////////////////////////////
-//if (!debug) disablenpc(.name$);
-///////// UNFINISHED ///////////
-
     end;
 }

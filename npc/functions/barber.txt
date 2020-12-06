@@ -7,6 +7,8 @@
 // Description:
 //    Function for supporting barber NPC.
 
+// BarberSayStyle({what})
+// what: 1 = Style; 2 = Color; 3 = Style + Color in dialog
 function	script	BarberSayStyle	{
 
     .@get_color = getlook(LOOK_HAIR_COLOR);
@@ -14,7 +16,7 @@ function	script	BarberSayStyle	{
     .@style_name$ = $@hairstyle$[.@get_look];
     .@color_name$ = $@haircolor$[.@get_color];
 
-    switch (getarg(0))
+    switch (getarg(0, 3))
     {
         case 1:
             message strcharinfo(0), l("@@", .@style_name$);
@@ -59,7 +61,7 @@ function	script	BarberChangeStyle	{
                 } while (.@rand_hair == getlook(LOOK_HAIR));
                 setlook LOOK_HAIR, .@rand_hair;
                 setlook LOOK_HAIR_COLOR, getlook(LOOK_HAIR_COLOR);
-                BarberSayStyle 1;
+                BarberSayStyle(1);
                 break;
             default:
                 // and here "- 1" because the first choice is taken by the random
@@ -98,7 +100,7 @@ function	script	BarberChangeColor	{
                     .@rand_color = rand(0, .@hairsizearray);
                 } while (.@rand_color == getlook(LOOK_HAIR_COLOR));
                 setlook LOOK_HAIR_COLOR, .@rand_color;
-                BarberSayStyle 2;
+                BarberSayStyle(2);
                 break;
             default:
                 setlook LOOK_HAIR_COLOR, (@menu - 2);
@@ -138,9 +140,9 @@ function	script	BarberChangeRace	{
 
     mes l("What's your race?");
     menuint
-        get_race(GETRACE_FULL, KaizeiViro), KaizeiViro,
-        get_race(GETRACE_FULL, ArgaesViro), ArgaesViro,
-        get_race(GETRACE_FULL, TonoriViro), TonoriViro,
+        get_race(GETRACE_FULL, KaizeiTalpan), KaizeiTalpan,
+        get_race(GETRACE_FULL, ArgaesTalpan), ArgaesTalpan,
+        get_race(GETRACE_FULL, TonoriTalpan), TonoriTalpan,
         get_race(GETRACE_FULL, CaveUkar), CaveUkar,
         get_race(GETRACE_FULL, MountainUkar), MountainUkar,
         get_race(GETRACE_FULL, SeaTritan), SeaTritan,
@@ -163,3 +165,56 @@ function	script	BarberChangeRace	{
     jobchange(@menuret); // STUPID idea, but imposed by Hercules
     return;
 }
+
+// Jack of all trades
+// Barber({intro=True})
+function	script	Barber	{
+    if (getarg(0, true)) {
+        mesn;
+        mesq lg("Hello, young lady.", "Hello, young man.");
+        next;
+    }
+    mesq l("What would you like me to do?");
+    next;
+    do
+    {
+        select
+            l("What is my current hairstyle and hair color?"),
+            l("I'd like to get a different style."),
+            l("Can you do something with my color?"),
+            l("How about changing my body type?"),
+            l("I'm fine for now, thank you.");
+
+        switch (@menu)
+        {
+        case 1:
+            BarberSayStyle();
+            break;
+        case 2:
+            BarberChangeStyle;
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("Enjoy your new style."),
+                l("Anything else?");
+            break;
+        case 3:
+            BarberChangeColor;
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("I hope you like this color."),
+                l("Anything else?");
+            break;
+        case 4:
+            BarberChangeBodyType();
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("You look fantastic."),
+                l("Anything else?");
+            break;
+        case 5:
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                l("Feel free to come visit me another time.");
+
+            goodbye;
+        }
+    } while (true);
+    return;
+}
+

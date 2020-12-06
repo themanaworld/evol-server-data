@@ -1,20 +1,19 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    Micksha
 // Description:
-//    Heathin, Tulimshar's smith.
+//    Jhedia, Apprentice of Tulimshar's smith Heathin.
 // THIS IS A PLACEHOLDER!
 
-020-2-9,36,23,0	script	Heathin	NPC_ANGUS_THE_SMITH,{
+020-2-8,42,24,0	script	Jhedia	NPC_YOUNG_MAN_IN_PINK,{
     speech
         l("Hi there."),
         l("Looks like someone ran out of ideas for placeholder NPCs."),
-        l("So if you want, you can bring me a hammer."),
+        l("So if you want, you can bring Heathin a hammer."),
 		l("Whatever.");
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
-    .distance = 2;
+    .distance = 4;
     end;
 }

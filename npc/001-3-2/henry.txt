@@ -129,7 +129,8 @@ function reportFirstQuest {
             mesn;
             mesq l("Anyway, here's some gold. I might have another task for you if you want.");
             // Reward Reference: Lv 10
-            getexp 30*BaseLevel, 30;
+            quest_xp(.maxLevel_1, 30, BaseLevel);
+            quest_jxp(.maxLevel_1, 30);
             Zeny+=300;
             setq ThiefQuests_Artis, 3;
             // Previous state already wiped this:
@@ -214,6 +215,7 @@ function reportSecondQuest {
         // Obtain the map, quest is done
         inventoryplace TreasureMap, 1;
         getitem TreasureMap, 1;
+        quest_jxp(.maxLevel_2, 100);
         setq1 ThiefQuests_Artis, 6;
 
         // Override the treasure location, if already existing
@@ -329,7 +331,7 @@ function reportThirdQuest {
         next;
         mesn;
         mesq l("I have other matters to attend do, so you'll have to excuse me.");
-        getitem Lockpicks, 5;
+        quest_item(.maxLevel_3, Lockpicks, 5);
         setq1 ThiefQuests_Artis, 9;
         break;
     }
@@ -348,6 +350,9 @@ function completedHenry {
 OnInit:
     .bodytype = BODYTYPE_3;
     .distance = 3;
+    .maxLevel_1 = 15;
+    .maxLevel_2 = 25;
+    .maxLevel_3 = 35;
     end;
 
 OnGiantMaggot:

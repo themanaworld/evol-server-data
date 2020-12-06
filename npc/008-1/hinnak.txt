@@ -125,7 +125,7 @@
         {
             delitem .monster_drop, .drop_count;
             getitem .reward_item, 1;
-            Zeny += .reward_money;
+            quest_gp(.maxLevel, .reward_money);
             //getexp .reward_exp, 0;
             setq .quest, 3;
         }
@@ -325,6 +325,7 @@ OnPCBaseLvUpEvent:
 
 OnInit:
     .min_level = 15; // min level to do the quest
+    .maxLevel = getiteminfo(Scythe, ITEMINFO_ELV) + 20;
     .monster_id = Pinkie; // monster to kill
     .monster_drop = PinkAntennae; // monster drop to collect
     .drop_count = 10; // amount of that drop needed

@@ -756,7 +756,7 @@ function bone_quest_final_check {
     setq HurnscaldQuests_Kfahr, 3;
     delitem BlackScorpionStinger, .BLACK_STINGERS_NR;
     delitem SmallMushroom, .MUSHROOMS_NR;
-    getexp .KNIFE_QUEST_XP, 0;
+    quest_xp(.KNIFE_MAXLV, .KNIFE_QUEST_XP);
     getitem BoneKnife, 1;
     next;
 
@@ -777,6 +777,8 @@ OnInit:
     .SNAKE_SKINS_NR = 10;
     .KNIFE_QUEST_XP = 50000;
     .STINGER_QUEST_XP = 80000;
+    .KNIFE_MAXLV = getiteminfo(BoneKnife, ITEMINFO_ELV) + 20;
+    //.STINGER_MAXLV = 100;
 
     .bodytype = BODYTYPE_3;
     .distance = 4;

@@ -1,0 +1,23 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Thurstan, a headless man (because Golbenez, for sure)
+// THIS IS A PLACEHOLDER!
+
+009-1,84,169,0	script	Thurstan	NPC_THURSTAN,{
+    mesc l("You see a man, propped up against the foot of the tree.");
+    mesc l("In his hand, he is holding what you assume to be his own head.");
+    next;
+    mesc l("You jump back a bit, startled, as the head starts talking to you!");
+    mesc l("It's a little strange watching him talk, but it's better than looking at what's left of his neck.");
+    next;
+    mesn;
+    mesq l("Greetings! Do you have any duck tape?"); // Perhaps duct tape?
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    end;
+}

@@ -1,0 +1,20 @@
+// The Mana World scripts.
+// Author:
+//    Micksha
+// Description:
+//    Savaric had an affair with Reid and ultimately brought death to the whole Inn.
+// THIS IS A PLACEHOLDER!
+
+009-2-5,31,41,0	script	Savaric	NPC_SAVARIC,{
+    mesc l("You see a dead man hanging. This place is creepy!");
+    next;
+    mesc l("Suddenly the man opens his eyes and looks at you.");
+    next;
+    mesn l("Hanged Man");
+    mesq l("Oh, hello. Nice to see you - I seem to be dead, but I don't know why and why I'm still consciousness. This is very interesting.");
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}

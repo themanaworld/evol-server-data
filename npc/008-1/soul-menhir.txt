@@ -1,62 +1,9 @@
-// Evol scripts.
+// The Mana World scripts.
 // Author:
 //    gumi
+//    Jesusalva
 // Description:
 //    place of power, mana refills faster when sitting nearby
 
-008-1,252,111,0	script	Soul Menhir#hurnscald	NPC_NO_SPRITE,{
-    if (!@menhir_meditation_message)
-    {
-        dispbottom(l("You feel a strong magic aura. You want to sit near it and meditate."));
-        @menhir_meditation_message=1;
-    }
-    end;
+008-1,252,111,0	duplicate(Soul Menhir)	Soul Menhir#hurn_1_7_200	NPC_NO_SPRITE
 
-OnRefill:
-    @menhir_lock = false;
-    getmapxy(.@map$, .@x, .@y, UNITTYPE_PC);
-
-    if (.@map$ != .map$ || distance(.x, .y, .@x, .@y) > .refill_distance ||
-        !(issit()))
-        end;
-
-    heal(0, .refill_rate);
-    end;
-
-
-OnTimer500:
-    .@count = getunits(BL_PC, .@units[0], false, .map$, (.x - .refill_distance),
-        (.y - .refill_distance), (.x + .refill_distance), (.y + .refill_distance));
-
-    for (.@i = 0; .@i < .@count; ++.@i)
-    {
-        if (.@units[.@i] < 0) continue; // pre-check, just in case
-        deltimer(.name$ + "::OnRefill", .@units[.@i]);
-        if (gettimer(TIMER_COUNT, .@units[.@i], .name$ + "::OnRefill") > 0 ||
-            getvariableofpc(@menhir_lock, .@units[.@i])) {
-            continue;
-        }
-        set(getvariableofpc(@menhir_lock, .@units[.@i]), true);
-        addtimer(rand(.refill_timer), .name$ + "::OnRefill", .@units[.@i]);
-    }
-
-    initnpctimer();
-    end;
-
-OnInit:
-
-    .refill_rate = 1; // number of SP to give every refill
-    .refill_distance = 7; // max distance
-    .refill_timer = 200; // wait rand(X) ms before refill
-    initnpctimer();
-
-////////// UNFINISHED //////////
-////////////////////////////////
-// REMOVE THIS CODE WHEN THIS //
-// NPC IS NO LONGER A WIP //////
-////////////////////////////////
-//if (!debug) disablenpc(.name$);
-///////// UNFINISHED ///////////
-
-    end;
-}

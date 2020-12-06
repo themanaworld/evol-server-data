@@ -23,13 +23,29 @@ OnCall:
     // TODO: tmw-like argv splitter
     .@map$ = getmap();
 
-    .@key$ = strtolower(.@atcmd_parameters$[0]);
-    .@m$ = htget(.hash, .@key$, "Not found");
+    .@m$ = strtolower(.@atcmd_parameters$[0]);
 
-    if (.@m$ == "Not found")
+    // GMs might not know and want a list of musics
+    if (.@m$ == "" || .@m$ == "list") {
+        .@r$="list";
+
+        freeloop(true);
+        .@size=getarraysize($MUSIC_ARRAY$);
+        for (.@i = 0; .@i < .@size; ++.@i) {
+            .@r$+=", "+$MUSIC_ARRAY$[.@i];
+        }
+        freeloop(false);
+
+        dispbottom("Music list: "+.@r$);
+        end;
+    }
+
+    .@key = array_exists($MUSIC_ARRAY$, .@m$);
+
+    if (!.@key)
     {
-        .@m$ = implode(.@atcmd_parameters$[0], " ");
-        message(getcharid(CHAR_ID_ACCOUNT), sprintf("Can't broadcast: %s", .@m$));
+        //.@m$ = implode(.@atcmd_parameters$[0], " ");
+        message(getcharid(CHAR_ID_ACCOUNT), sprintf("Can't broadcast: %s.ogg", .@m$));
     } else {
         message(getcharid(CHAR_ID_ACCOUNT), sprintf("Now broadcasting: %s", .@m$));
         changemusic .@map$, .@m$ + ".ogg";
@@ -37,13 +53,15 @@ OnCall:
     end;
 
 OnMyself:
-    .@key$ = strtolower(.@atcmd_parameters$[0]);
-    .@m$ = htget(.hash, .@key$, "Not found");
+    .@m$ = strtolower(.@atcmd_parameters$[0]);
+    .@key = array_exists($MUSIC_ARRAY$, .@m$);
 
-    if (.@m$ == "Not found")
+    // TODO: Check if you have the music unlocked? Bitmask? Array?
+
+    if (!.@key)
     {
-        .@m$ = implode(.@atcmd_parameters$[0], " ");
-        message(getcharid(CHAR_ID_ACCOUNT), sprintf("Can't play: %s", .@m$));
+        //.@m$ = implode(.@atcmd_parameters$[0], " ");
+        message(getcharid(CHAR_ID_ACCOUNT), sprintf("Can't play: %s.ogg", .@m$));
     } else {
         message(getcharid(CHAR_ID_ACCOUNT), sprintf("Now playing: %s", .@m$));
         changeplayermusic .@m$ + ".ogg";
@@ -53,11 +71,5 @@ OnMyself:
 OnInit:
     bindatcmd "music", "@music::OnCall", 0, 99, 1;
     bindatcmd "jukebox", "@music::OnMyself", 0, 50, 0;
-
-    .hash = htnew; // create hashtable
-    htput(.hash, "forest",     "bartk - in the forest of the birches");
-    htput(.hash, "adventure",  "bartk - the adventure begins");
-    htput(.hash, "fun",        "eric matyas - ghoulish fun");
-    htput(.hash, "surreal",    "eric matyas - surreal place");
-    htput(.hash, "ocean",      "ezili - ocean sounds");
+    end;
 }

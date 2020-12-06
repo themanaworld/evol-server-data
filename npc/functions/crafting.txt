@@ -1,6 +1,7 @@
 // Moubootaur Legends Script
 // Author:
 //  Jesusalva
+//  Gumi
 // Description:
 //  Smith System (Unified)
 // Notes:
@@ -80,7 +81,8 @@ function	script	SmithSystem	{
             // I'm using the same EXP formula from Moubootaur Legends
             // Which is based on the item sell price
             .@xp=getiteminfo(.@it, ITEMINFO_SELLPRICE);
-            getexp .@xp+BaseLevel, (.@xp/3)+BaseLevel+JobLevel;
+            quest_xp(.@lv+10, .@xp+BaseLevel);
+            quest_jxp(.@lv+10, (.@xp/3)+BaseLevel+JobLevel);
             .success=true;
         } else {
             .success=false;

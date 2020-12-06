@@ -1,0 +1,16 @@
+// The Mana World Script
+// Author:
+//  Jesusalva
+// Description:
+//  Elenaore the Healer (aka. Elanore)
+// THIS IS A PLACEHOLDER!
+
+020-2-15,43,27,0	script	Eleanore	NPC_REBECCA,{
+    mesn;
+    mesq l("Please do not disturb the patients.");
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}

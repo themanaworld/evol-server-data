@@ -1,0 +1,201 @@
+// The Mana World Script, ported from Moubootaur Legends
+// TMW2 Script, ported from TMW-BR
+// TMW2 Author: Jesusalva
+//
+//  Creator: Cardinalli
+//  Review: Lunovox <rui.gravata@gmail.com>
+//
+//  Description:
+//    A rather easy quest to give players what to kill.
+//  Reward:
+// Mouboo pendant + 20% exp of level 55
+
+020-1,95,133,4	script	Joaquim	NPC_MAGE_BLUE,{
+    function joaquimTooWeak;
+    function joaquimWeak;
+    function joaquimComplete;
+    function joaquimFinish;
+    function joaquimDoIt;
+    function joaquimReturn;
+    function joaquimRecipe;
+    function joaquimFound;
+    function joaquimMissing;
+    function joaquimStart;
+
+    .@q=getq(TonoriQuest_Joaquim);
+    if (BaseLevel < 36) joaquimTooWeak();
+    if (BaseLevel < 55) joaquimWeak();
+    switch (.@q) {
+    case 0: joaquimStart(); break;
+    case 1: joaquimFound(); break;
+    case 2: joaquimReturn(); break;
+    case 3: joaquimDoIt(); break;
+    case 4: joaquimFinish(); break;
+    default: joaquimComplete(); break;
+    }
+    close;
+
+function joaquimTooWeak {
+    mesn;
+    mesq l("Hmm, why can't I find swamp yellowherb here in the desert...?");
+    close;
+}
+
+function joaquimWeak {
+    mesn;
+    .@r=rand2(1,5);
+    switch (.@r) {
+    case 1:
+        mesq l("Watch out! My wife was gravely wounded the other day. Tonori monsters are no child play!");
+        break;
+    case 2:
+        mesq l("Ah, I hate mushrooms. Perhaps in future, I could use their spikes and mushies.");
+        break;
+    case 3:
+        mesq l("Ah, I hate snakes. Perhaps in future, I could use their tongues.");
+        break;
+    case 4:
+        mesq l("Ah, I love mouboos. But their steaks, hmm. Ah, no, I shouldn't eat that...");
+        break;
+    case 5:
+        mesq l("You should never sell your Cactus Drinks. They have many uses.");
+        break;
+    }
+    close;
+}
+
+function joaquimComplete {
+    mesn;
+    mesq l("Thanks for helping my wife, I'll be forever grateful.");
+    return;
+}
+
+function joaquimFinish {
+    inventoryplace ElixirOfLife, 1, MoubooPendant, 1;
+    getitem ElixirOfLife, 1;
+    getitem MoubooPendant, 1;
+    quest_xp(.maxLevel, 39260);
+    quest_jxp(.maxLevel, 75);
+    setq TonoriQuest_Joaquim, 5;
+    mesn;
+    mesq l("Take this spare @@ I did. It heals fully and instantly, so don't hesit to use it if you're about to die.", getitemlink(ElixirOfLife));
+    next;
+    mesn;
+    mesq l("Thanks for helping my wife! Here is, an %s. May the Mouboo watch over you! o.o", getitemlink(MoubooPendant));
+    return;
+}
+
+function joaquimDoIt {
+    mesn;
+    mesq l("Please help my wife Yumi, on the Clinic!");
+    return;
+}
+
+// Quest Core
+function joaquimStart {
+    mesn;
+    mesq l("Ohhhhh..... Please, help me!!! My wife is gravely wounded!!");
+    next;
+    mesn strcharinfo(0);
+    mesq l("Calm down! How can I help you?");
+    next;
+    mesn;
+    mesq l("My grandmother gave me a recipe of the %s, it can cure anything but death.", getitemlink(ElixirOfLife));
+    next;
+    mesn;
+    mesq l("I don't remember what I need now, but if you give me a moment, I'll get the list.");
+    setq TonoriQuest_Joaquim, 1;
+    return;
+}
+
+function joaquimFound {
+    mesn;
+    mesq l("I can make an %s, I still have a bottle of fairy blood, a few mana pearls, and some other rare ingredients.", getitemlink(ElixirOfLife));
+    mesq l("It is the non-rare ingredients I actually need help with!");
+    next;
+    joaquimRecipe();
+    next;
+    select
+        l("I will do it, don't worry."),
+        rif(countitem(ElixirOfLife), l("I have one here...")),
+        l("Ahh, too many items. Sorry.");
+    mes "";
+    mesn;
+    if (@menu == 1) {
+        mes lg("Thanks! Thanks! Savior! Hurry up!");
+        setq TonoriQuest_Joaquim, 2;
+    } else if (@menu == 2) {
+        mes l("Uhm, sorry, I don't trust stuff you get at market. You know.");
+        mes l("Full of agrotoxins, transgenics and whatever. Not safe.");
+    } else {
+        mes l("Oh noes, who nows can help my wife? Please reconsider!");
+    }
+    return;
+}
+
+function joaquimReturn {
+    joaquimRecipe();
+    next;
+    select
+        l("I'll be back later with all ingredients."),
+        l("They're with me.");
+    mes "";
+    if (@menu == 1)
+        close;
+
+    if (countitem(CactusDrink) < 100 ||
+        countitem(HardSpike) < 60 ||
+        countitem(SmallMushroom) < 45 ||
+        countitem(SnakeTongue) < 40 ||
+        countitem(BottleOfWater) < 30 ||
+        countitem(BugLeg) < 20 ||
+        countitem(MoubooSteak) < 15)
+            joaquimMissing();
+
+    inventoryplace ElixirOfLife, 1;
+
+    delitem CactusDrink, 100;
+    delitem HardSpike, 60;
+    delitem SmallMushroom, 45;
+    delitem SnakeTongue, 40;
+    delitem BottleOfWater, 30;
+    delitem BugLeg, 20;
+    delitem MoubooSteak, 15;
+    getitem ElixirOfLife, 1;
+    setq TonoriQuest_Joaquim, 3;
+    mesn;
+    mesq l("Thanks, I'll just bake the Elixir right away...!");
+    next;
+    mesc l("%s goes away for a while and returns briefly.", .name$);
+    next;
+    mesn;
+    mesq l("Here, take the Elixir. Please, bring it to my wife! I am counting on you!!");
+    return;
+}
+
+function joaquimMissing {
+    mesn strcharinfo(0);
+    mesq l("Except they're not. I'll be back later.");
+    next;
+    mesn;
+    mesq l("Please, %s! Hurry up!", strcharinfo(0));
+    close;
+}
+
+function joaquimRecipe {
+    mesn l("%s Recipe", getitemlink(ElixirOfLife));
+    mesc l("%d/%d %s", countitem(CactusDrink), 100, getitemlink(CactusDrink));
+    mesc l("%d/%d %s", countitem(HardSpike), 60, getitemlink(HardSpike));
+    mesc l("%d/%d %s", countitem(SmallMushroom), 45, getitemlink(SmallMushroom));
+    mesc l("%d/%d %s", countitem(SnakeTongue), 40, getitemlink(SnakeTongue));
+    mesc l("%d/%d %s", countitem(BottleOfWater), 30, getitemlink(BottleOfWater));
+    mesc l("%d/%d %s", countitem(BugLeg), 20, getitemlink(BugLeg));
+    mesc l("%d/%d %s", countitem(MoubooSteak), 15, getitemlink(MoubooSteak));
+    return;
+}
+
+OnInit:
+    .maxLevel = 75;
+    .distance = 5;
+    end;
+}

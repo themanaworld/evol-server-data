@@ -1,4 +1,4 @@
-// Evol Script
+// The Mana World Script
 // Author:
 //  Jesusalva
 // Description:
@@ -23,22 +23,7 @@ OnInit:
 
 OnBossDeath:
     initnpctimer;
-    // Only the party which defeated the boss can learn the skill
-    getmapxy(.@m$, .@x, .@y, 0);
-    .@party=getcharid(1);
-    if (.@party > 0)
-    {
-        $@MB_00832=.@party;
-        areatimer("008-3-2", .@x-15, .@y-15, .@x+15, .@y+15, 10, "#BossCtrl_008-3-2::OnBossCheck");
-        mapannounce "008-3-2", "Boss deafeated by Party: " + getpartyname(.@party), bc_all;
-    }
-    else
-    {
-        $@MB_00832=-2;
-        areatimer("008-3-2", .@x-15, .@y-15, .@x+15, .@y+15, 10, "#BossCtrl_008-3-2::OnBossCheck");
-        addtimer(20, "#BossCtrl_008-3-2::OnBegin");
-        mapannounce "008-3-2", "Boss deafeated by: " + strcharinfo(0), bc_all;
-    }
+    BossSlain(.name$, "$@MB_00832");
     end;
 
 OnBossCheck:
@@ -52,14 +37,7 @@ OnBegin:
     @mb_SkillId=TF_POISON;
     @mb_ItemId=MagicFeather; // Placeholder
     @mb_ItemAm=1;
-    addtimer(15000, "#BossCtrl_008-3-2::OnFinish");
-    end;
-
-OnFinish:
-    @mb_BossId=0;
-    @mb_SkillId=0;
-    @mb_ItemId=0;
-    @mb_ItemAm=0;
+    addtimer(15000, "#MasterBook::OnUnset");
     end;
 
 }

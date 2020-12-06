@@ -1,0 +1,101 @@
+// TMW2 Script
+// Author:
+//    Jesusalva
+// FIXME:
+//    Create a party instance for this
+
+008-3-5,83,49,0	script	#BanditLordDen	NPC_HIDDEN,0,5,{
+    function lordCleanup;
+    end;
+
+function lordCleanup {
+    // Bug
+    if (!.lock) {
+        consolemes(CONSOLEMES_ERROR, "No lock passed to Lord Cave during cleanup");
+        end;
+    }
+
+    // Cleanup
+    .lock = false;
+    delcells "BanditLordDenWall";
+    killmonster("008-3-5", "#BanditLordDen::OnLordDeath");
+    stopnpctimer;
+    return;
+}
+
+OnInit:
+    .maxLevel = 55;
+    .lock=false;
+    end;
+
+OnTouch:
+    .@q=getq(HurnscaldQuest_Bandits);
+    if (.@q != 6) end;
+
+    // Oooh, we got a challenger!
+
+    // But the Lord is busy? Oh well, try again later
+    if (.lock) {
+        dispbottom l("%s came here first, you should wait for them.", strcharinfo(0, "Someone", .lock));
+        slide 92, 52;
+        end;
+    }
+
+    // Block the NPC
+    .lock=getcharid(3);
+    slide 80, 49;
+
+    // Block the passage
+    mapannounce "008-3-5", "A minor earthquake happens.", bc_map;
+    setcells "008-3-5", 82, 48, 83, 51, 2, "BanditLordDenWall";
+    initnpctimer;
+
+    // Summon
+    if (mobcount("008-3-5", "#BanditLordDen::OnLordDeath") == 0)
+        monster "008-3-5", 48, 35, "Bandit Lord", BanditLord, 1, "#BanditLordDen::OnLordDeath";
+    end;
+
+OnLordDeath:
+    // Unlock
+    lordCleanup();
+
+    // If killed by a monster, GM, whatever, abort
+    if (!playerattached())
+        end;
+
+    // Complete quest (if PC is attached and doing quest)
+    .@q=getq(HurnscaldQuest_Bandits);
+    if (.@q == 6 && !ispcdead()) {
+        setq HurnscaldQuest_Bandits, 7;
+        quest_xp(.maxLevel, 2500);
+        dispbottom l("Phew! The Bandit Lord was killed.");
+    } else {
+        dispbottom l("I killed the Bandit Lord! ...Why I did that, again?");
+    }
+    end;
+
+OnTimer5000:
+    .@pc=attachrid(.lock);
+
+    // Player logged out
+    if (!.@pc) {
+        lordCleanup();
+        end;
+    }
+
+    // Player killed in combat
+    if (ispcdead()) {
+        lordCleanup();
+        end;
+    }
+
+    // Player changed map
+    if (getmap() != "008-3-5") {
+        lordCleanup();
+        end;
+    }
+
+    // Battle ongoing, restart timer
+    initnpctimer;
+    end;
+}

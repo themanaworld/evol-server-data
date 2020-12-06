@@ -96,8 +96,8 @@
             close;
 
         delitem .first_item, 1;
-        getitem .first_reward_item, .first_reward_amount;
-        getexp .first_reward_exp, 0;
+        quest_item(.maxLevel, .first_reward_item, .first_reward_amount);
+        quest_xp(.maxLevel, .first_reward_exp);
         setq .quest, 3;
 
         speech 8,
@@ -140,8 +140,8 @@
             close;
 
         delitem .second_item, .second_item_qty;
-        getitem .second_reward_item, .second_reward_amount;
-        getexp .second_reward_exp, 0;
+        quest_item(.maxLevel, .second_reward_item, .second_reward_amount);
+        quest_xp(.maxLevel, .second_reward_exp);
         setq .quest, 5;
 
         close;
@@ -201,6 +201,7 @@ OnPCBaseLvUpEvent:
 
 OnInit:
     .min_level = 10; // min level to do the quest
+    .maxLevel = 30;
 
     .first_item = RoastedMaggot;
     .first_reward_item = CherryCake;
@@ -217,14 +218,6 @@ OnInit:
     .quest_debug = .quest;
     .bodytype = BODYTYPE_3;
     .distance = 3;
-
-////////// UNFINISHED //////////
-////////////////////////////////
-// REMOVE THIS CODE WHEN THIS //
-// NPC IS NO LONGER A WIP //////
-////////////////////////////////
-//if (!debug) disablenpc(.name$);
-///////// UNFINISHED ///////////
 
     end;
 }

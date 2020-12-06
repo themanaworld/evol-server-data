@@ -6,3 +6,12 @@
 
 020-2-34,45,22,0	duplicate(High Lower)	Gambler#T1	NPC_HUMAN_MALE_BROTHERHOOD
 
+// Hot point for Kylian's Quest
+020-2-34,37,34,0	script	#HeyCasino	NPC_HIDDEN,0,0,{
+    end;
+OnTouch:
+    // TODO: "Donutello : Hey stop there! You are underlevel, you cannot enter!"
+    setq2 TonoriQuest_Kylian, getq2(TonoriQuest_Kylian) | KYLIAN_CASINO;
+    end;
+}
+

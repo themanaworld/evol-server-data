@@ -1,0 +1,52 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description (SPOILERS):
+//    Golbenez, a very dangerous, evil AND cruel woman from a parallel dimension.
+//    After being summoned by Savaric, she betrayed him and made the Inn in her
+//    leisure place. Later, she invaded The Mana World, kidnapped Santa to obtain
+//    enough spiritual energy, and brought the whole Inn to The Mana World.
+//
+//    At time of writing, it is unknown how Asphodel Moors came to be.
+//    It is possible that Golbenez cannot return to her original dimension,
+//    And it is also possible that her attempt resulted in she ending up in TMW.
+//
+//    (It is also possible that due the summoning ritual, Golbenez is somehow
+//    bound to Savaric and like monster summons, cannot remain in existence if
+//    the summoner is dead. If proven, this could change completely the reason
+//    why Golbenez kept the whole Inn alive and brought it with her.)
+//
+//    At time of writing, It is unknown if she is alive, undead, or neither and
+//    is a spirit.
+//    Other NPCs cannot comprehend and will always treat her as a "him".
+//    Most other NPCs cannot say Golbenez' name properly, and will say "Golbanez",
+//    "Galvanes", "Gilbenos", "Golbinos" and/or "Galvanis".
+//    This is part of lore, please do not try to "fix" it in other NPCs as well.
+// THIS IS A PLACEHOLDER!
+
+009-2-4,30,32,0	script	Golbenez	NPC_GOLBENEZ,{
+    mesn;
+    mesq l("How do you like my place of leisure, mortal?");
+    select
+        l("What is this place? Why is it full of dead people?"),
+        l("You look different here. Nice horns."),
+        l("I'm enjoying myself, thanks for asking.");
+    mes "";
+    switch (@menu) {
+    case 1:
+        mesn;
+        mesq l("Mortal, this is beyond your comprehension. Do not worry about it and enjoy your time.");
+        break;
+    case 2:
+        mesn;
+        mesc l("%s bursts out with laughter.", .name$);
+        mesq l("Mortals! They never stop surprising me.");
+        break;
+    }
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    end;
+}

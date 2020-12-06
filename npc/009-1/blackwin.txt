@@ -1,0 +1,30 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Blackwin, guardian of Asphodel Moors, disciple of Golbenez. Twice. It is magic.
+// THIS IS A PLACEHOLDER!
+
+009-1,75,144,0	script	Blackwin#1	NPC_UNDEAD_GUARD,{
+    speech
+        l("..."),
+        l("Heed my warning, young %s. My master will suffer no fools here.", get_race(GETRACE_RACE)),
+        l("He created this as a place of leisure, and we are here to ensure that it remains undisturbed.");
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}
+
+009-1,105,173,0	script	Blackwin#2	NPC_UNDEAD_GUARD,{
+    speech
+        l("..."),
+        l("Heed my warning, young %s. My master will suffer no fools here.", get_race(GETRACE_RACE)),
+        l("He created this as a place of leisure, and we are here to ensure that it remains undisturbed.");
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}

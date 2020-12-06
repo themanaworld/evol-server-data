@@ -1,0 +1,57 @@
+// The Mana World scripts.
+// Author:
+//  Jesusalva
+// Description:
+//	Arkim the mad hermit and Mirak's brother
+
+008-3-1,41,34,0	script	Arkim	NPC_TERRY,{
+    function arkimDaily;
+    mesn;
+    mesq l("Do you want help me with bats?");
+    next;
+    select
+        l("Yes, please!"),
+        l("Bats? Actually... Why do you live here?"); // Who said they live here?
+    mes "";
+    if (@menu == 1)
+        arkimDaily();
+    mesn;
+    mesq l("Oh my, never really thought about it!");
+    next;
+    mesn;
+    mesq l("I guess mostly I enjoy experimenting with the bats here.");
+    next;
+    select
+        l("I see... Ehm... I have to go..."),
+        l("What type of experimenting?");
+    mes "";
+    if (@menu == 1)
+        close;
+    mesn;
+    mesq l("Never really thought about it either...");
+    next;
+    mesn;
+    mesc l("You watch as the hermit's old, lazy eyes open wide, and the old man comes alive with energy.");
+    mesq l("I GUESS I REALLY LIKE CUTTING THEM UP TO SEE HOW THEY WORK!!  HAHAHA!");
+    next;
+    select
+        l("YOU'RE CRAZY!"),
+        l("Right... me too! Can I help?");
+    mes "";
+    if (@menu == 2)
+        arkimDaily();
+    close;
+
+function arkimDaily {
+    // DailyQuest(lvl, cost, count, item)
+    DailyQuest(20, 4, 3, BatWing);
+    close;
+}
+
+OnInit:
+	.bodytype = BODYTYPE_1;
+	.distance = 4;
+	end;
+
+}
+

@@ -607,9 +607,10 @@ OnInstanceInit:
     next;
     mesn;
     mesq lg("Here you go, miss!", "Here you go, mister!");
-    getitem .@rune, 1;
     getitem .@gems, 1;
-    getexp 100000, 10000;
+    quest_item(.@rune, 1);
+    quest_xp(.maxLevel, 100000);
+    quest_jxp(.maxLevel, 10000);
     setq HurnscaldQuests_Rossy, 17, 0, .@inst;
     next;
     mesn;
@@ -643,11 +644,13 @@ OnInstanceInit:
 OnInit:
     disablenpc "Juliet";
     .distance=4;
+    .maxLevel=80;
     end;
 
 OnInstanceInit:
     disablenpc instance_npcname("Juliet");
     .distance=4;
+    .maxLevel=90;
     end;
 }
 

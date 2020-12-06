@@ -1,0 +1,25 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Martha, sort of Brotherhood Leader in Tulimshar.
+// THIS IS A PLACEHOLDER!
+
+009-1,48,171,0	script	Forwin	NPC_UNDEAD_GUARD,{
+    mesn;
+    mesq l("%s...", strcharinfo(0));
+    next;
+    mesn;
+    mesq l("I am your father...");
+    next;
+    mesc l("There is an awkward pause, and then the guard bursts out laughing.");
+    mes "";
+    mesn;
+    mesq l("Just kidding! Can you imagine Golbenez's reaction if we had such puny offspring?");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    end;
+}

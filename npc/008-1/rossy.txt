@@ -160,7 +160,8 @@ function rossyBasket {
         mesq l("You do, but that's not enough. I need %d %s.", .blueberries_amount, getitemlink(Blueberries));
     }
     delitem Blueberries, .blueberries_amount;
-    getexp 2000, 500;
+    quest_xp(.maxLevel, 2000);
+    quest_jxp(.maxLevel, 500);
     setq HurnscaldQuests_Rossy, 4;
     // FIXME: Perhaps give player a [Berries Bag] item? Hmm.
     mesn;
@@ -348,7 +349,8 @@ function rossyDeliverTulip {
     mes "";
     delitem ARedTulip, 15;
     setq HurnscaldQuests_Rossy, 14;
-    getexp 2500, 250;
+    quest_xp(.maxLevel, 2500);
+    quest_jxp(.maxLevel, 250);
     mesn;
     mesq l("That's better! Go and tell my mother that she is the nicest mother in the world.");
     next;
@@ -385,5 +387,6 @@ OnInit:
     // Quest conf
     .blueberries_amount=30;
     .minLevel_rescue = 60;
+    .maxLevel = 90;
     end;
 }

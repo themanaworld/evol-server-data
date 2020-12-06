@@ -197,8 +197,9 @@ function olanaDeliverBerries {
         return;
     mesn;
     mesq l("Ohhh... How sweet... Sometimes Rossy impresses me with her kindness. Here... You are spending so much time helping us, and we give nothing back. Take this as a small reward.");
-    getexp 2000, 200;
-    Zeny+=10000;
+    quest_xp(.maxLevel, 2000);
+    quest_jxp(.maxLevel, 200);
+    quest_gp(.maxLevel, 10000);
     setq HurnscaldQuests_Rossy, 5;
     next;
     mesn;
@@ -316,5 +317,6 @@ OnInit:
     .bodytype = BODYTYPE_3;
     .distance = 4;
     .minLevel = 40;
+    .maxLevel = 80; // Differs from Juliet/Rossy
     end;
 }

@@ -3,9 +3,16 @@
 //    Jesusalva
 // Description:
 //    Rich merchant
+// Variables:
+//  TonoriQuest_Kylian
+//      q1 - State of the Quest
+//      q2 - "Know" mask
+//      q3 - Timer to return
 
 020-2-24,35,24,0	script	Kylian	NPC_KPG_MANAGER,{
     function kylianLuggage;
+    function kylianGiveLuggage;
+    function kylianLicense;
     .@q=getq(TonoriQuest_Kylian);
     switch (.@q) {
     case 0:
@@ -15,12 +22,15 @@
         mesn;
         mesq l("Please show Adrian the luggage ticket I gave you.");
         break;
+    case 2:
+        kylianGiveLuggage();
+        break;
+    case 3:
+        kylianLicense();
+        break;
     default:
         mesn;
-        mesq l("My name is Kylian. I have some purpose in this world but I don't know what it is yet because devs are too scared to write it.");
-        next;
-        mesn;
-        mesq l("I just dont know what to do. I wish I could take a nap, instead.");
+        mesq l("I wish to take a nap now, so please do not disturb me.");
         break;
     }
     close;
@@ -49,14 +59,72 @@ function kylianLuggage {
     mesn;
     mesq l("I need you to get my luggage from the docks. Just show this paper to the sailor who's watching the luggage.");
     mesc l("%s gives you his ticket, which you promptly store in a safe pocket outside of your inventory.", .name$);
-    setq TonoriQuest_Kylian, 1;
+    setq1 TonoriQuest_Kylian, 1;
     next;
     mesn;
     mesq l("I'll be waiting your return.");
     return;
 }
 
+function kylianGiveLuggage {
+    if (!countitem(Suitcase)) {
+        mesn;
+        mesq l("Please come back with my %s.", getitemlink(Suitcase));
+        return;
+    }
+    mesn;
+    mesq l("Did you get my luggage from the docks?");
+    select
+        l("Here it is."),
+        l("Don't worry; I'm on my way.");
+    mes "";
+    if (@menu == 2)
+        return;
+    delitem Suitcase, 1;
+    quest_gp(.maxLevel, 100);
+    quest_item(.maxLevel, Acorn, 12);
+    setq1 TonoriQuest_Kylian, 3;
+    mesn;
+    mesq l("Ah! Very good. I have some urgent paperwork that I've been needing to attend to.");
+    next;
+    mesn;
+    mesq l("Before you go, I also happen to have some acorns left over from my trip. You can have them if you wish; they're rather tasty.");
+    mesc l("He gives you some money and acorns.");
+    next;
+    mesn;
+    mesq l("If, however, you don't like them, you could take them to the %s. I heard they use them to make a special kind of flour.", b(l("Tulimshar bakery")));
+    next;
+    kylianLicense();
+    return;
+}
+
+function kylianLicense {
+    mesn;
+    mesq l("I'm a merchant and came to Tulimshar because I'm thinking about establishing a shop here.");
+    next;
+    mesn;
+    mesq l("While I'm going through my papers, could you find out whom I have to talk to about opening up a shop in this city?");
+    if (!(getq2(TonoriQuest_Kylian) & KYLIAN_YANIS))
+        return;
+    next;
+    select
+        l("You need to go and talk to Yanis in the government building."),
+        l("I'll see what I can do.");
+    mes "";
+    if (@menu == 2)
+        return;
+    mesc l("You explain Kylian how to reach the Townhall.");
+    next;
+    quest_gp(.maxLevel, 50);
+    setq1 TonoriQuest_Kylian, 4;
+    setq3 TonoriQuest_Kylian, gettimetick(2)+900; // 15 minutes
+    mesn;
+    mesq l("Ah... excellent! That's very helpful. I need to prepare my papers now. I might have some more questions later on though.");
+    return;
+}
+
 OnInit:
+    .maxLevel = 35;
     .bodytype = BODYTYPE_3;
     .distance = 4;
     end;

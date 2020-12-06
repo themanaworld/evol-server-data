@@ -1,0 +1,22 @@
+// The Mana World Script
+// Author:
+//  Jesusalva
+// Description:
+//  Kadiya, Omar's sick daughter
+// THIS IS A PLACEHOLDER!
+
+020-2-15,39,26,0	script	Kadiya	NPC_TANISHA,{
+    mesn;
+    mesc l("*cough cough*");
+    mesq l("Hello there.");
+    next;
+    mesn;
+    mesc l("*cough cough*");
+    mesq l("Have you seen my father Omar? I bet Micksha took him to drink.");
+    close;
+
+OnInit:
+    .bodytype = BODYTYPE_2;
+    .distance = 4;
+    end;
+}

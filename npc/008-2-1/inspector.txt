@@ -147,7 +147,7 @@
 
         close2;
         setq(.quest, 16);
-        getexp(.reward_exp, 0);
+        quest_xp(.maxLevel, .reward_exp);
         end;
 
     case 16:
@@ -169,7 +169,8 @@ OnPCBaseLvUpEvent:
     end;
 
 OnInit:
-    .min_level = 20; // min level to do the quest
+    .min_level = 30; // min level to do the quest
+    .maxLevel = 60;
 
     .reward_exp = 2500;
 

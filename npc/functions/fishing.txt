@@ -3,6 +3,8 @@
 //    gumi
 //    omatt
 //    Travolta
+//    Reid
+//    Jesusalva
 // Description:
 //    Fishing functions.
 // Variable
@@ -287,3 +289,113 @@ function	script	fishing	{
 
     return 0;
 }
+
+
+////////////////////
+// Fishing Templates
+
+// #fish_basic - has only carps (freshwater)
+-	script	#fish_basic	NPC_WATER_SPLASH,{
+
+    fishing(); // begin or continue fishing
+    close;
+
+OnInit:
+    .distance = 5;
+    setarray .fish_ids, 0,
+        CommonCarp, 25,
+        GrassCarp, 1;
+    .fishing_rod = FishingRod; // Equipment to fish here
+    .catch_time = 5000; // must catch the fish within X ms after the line sinks
+    .wait_time_min = 4000; // min amount of time to wait for the line to sink
+    .wait_time_max = 18000; // max amount of time to wait for the line to sink
+    end;
+}
+
+
+// #fish_seawater - has only tuna
+-	script	#fish_seawater	NPC_WATER_SPLASH,{
+
+    fishing(); // begin or continue fishing
+    close;
+
+OnInit:
+    .distance = 5;
+    setarray .fish_ids, 0,
+        Tuna, 15,
+        Salmon, 1;
+    .fishing_rod = FishingRod; // Equipment to fish here
+    .catch_time = 4000; // must catch the fish within X ms after the line sinks
+    .wait_time_min = 8000; // min amount of time to wait for the line to sink
+    .wait_time_max = 18000; // max amount of time to wait for the line to sink
+    end;
+}
+
+
+
+// #fish_river - A balanced fishing spot for Woodlands (Trout)
+-	script	#fish_river	NPC_WATER_SPLASH,{
+
+    fishing(); // begin or continue fishing
+    close;
+
+OnInit:
+    .distance = 5;
+    setarray .fish_ids, 0,
+        CommonCarp, 25,
+        Trout, 20,
+        GrassCarp, 5,
+        Salmon, 1;
+    .fishing_rod = FishingRod; // Equipment to fish here
+    .catch_time = 5500; // must catch the fish within X ms after the line sinks
+    .wait_time_min = 5000; // min amount of time to wait for the line to sink
+    .wait_time_max = 16000; // max amount of time to wait for the line to sink
+    end;
+}
+
+
+
+
+// #fish_river2 - A balanced fishing spot for Candor (Salmon)
+-	script	#fish_river2	NPC_WATER_SPLASH,{
+
+    fishing(); // begin or continue fishing
+    close;
+
+OnInit:
+    .distance = 5;
+    setarray .fish_ids, 0,
+        CommonCarp, 25,
+        Salmon, 20,
+        GrassCarp, 5,
+        Trout, 1;
+    .fishing_rod = FishingRod; // Equipment to fish here
+    .catch_time = 5500; // must catch the fish within X ms after the line sinks
+    .wait_time_min = 5000; // min amount of time to wait for the line to sink
+    .wait_time_max = 16000; // max amount of time to wait for the line to sink
+    end;
+}
+
+
+
+
+// #fish_frozen - A fishing spot with cold waters (for Nivalis)
+-	script	#fish_frozen	NPC_WATER_SPLASH,{
+
+    fishing(); // begin or continue fishing
+    close;
+
+OnInit:
+    .distance = 5;
+    setarray .fish_ids, 0,
+        CommonCarp, 25,
+        Codfish, 20,
+        GrassCarp, 5,
+        Salmon, 1;
+    .fishing_rod = FishingRod; // Equipment to fish here
+    .catch_time = 5500; // must catch the fish within X ms after the line sinks
+    .wait_time_min = 5000; // min amount of time to wait for the line to sink
+    .wait_time_max = 16000; // max amount of time to wait for the line to sink
+    end;
+}
+

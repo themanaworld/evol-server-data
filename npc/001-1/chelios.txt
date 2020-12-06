@@ -1,6 +1,7 @@
 // Evol scripts.
 // Author:
 //    Reid
+//    Jesusalva
 // Description:
 //    Blacksmith's assistant of Artis
 // Variables:
@@ -13,68 +14,11 @@
 //    4    BlackSmith gave the sword.
 
 001-1,95,109,0	script	Chelios	NPC_CHELIOS,{
-
-    function give_small_quest {
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("Her sword... I'm having some trouble finishing it."),
-            l("You see, Enora asked me to do a black iron sword, unfortunately I ran out of the material needed, and..."),
-            l("Only Don and the Merchant Guild have that kind of material in stock. It's called black iron."),
-            l("It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!"),
-            l("If Enora wants her sword now, I need to ask for your help.");
-
-        switch (select(l("Let's not keep her waiting."),
-                        l("Not now.")))
-        {
-            case 1:
-                break;
-            case 2:
-                speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                    lg("I'll be here, come back when you'll be ready.");
-
-                return;
-        }
-
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("Thank you very much!"),
-            l("Talk with Lloyd the Banker in the Merchant Guild, it's a big building in the northern side of Artis, at the top of the small hill.");
-
-        setq ArtisQuests_Enora, 2;
-
-        return;
-    }
-
-    function more_info {
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("It's the big building in northern Artis, at the top of a small hill."),
-            l("Take the east road that goes to the north and follow it until you are on top of the cliff."),
-            l("That part of the town is called the Gilded Hill, it's also where the Merchant Guild has its headquarters."), //rich hill
-            l("Lloyd still owes me, but beware of those money-grabbers, or they might sell your own teeth to you!");
-
-        return;
-    }
-
-    function quest_completed {
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("Oh... Awesome!"),
-            l("You were gone so I thought you let me down."),
-            l("Don gave me some black iron... after I asked him nearly ten times."),
-            l("But thank you anyway! I can refund him now!"),
-            l("Take the sword, and say hi to Enora for me!");
-
-        setq ArtisQuests_Enora, 4;
-
-        return;
-    }
-
-    function blacksmith_house{
-        speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            l("Behind me? It's the Blacksmith House, the most renowned throughout Aemil."),
-            l("There are two shops inside, they are independent from the Merchant Guild of Artis."),
-            l("Now that I think about it, they are the only shops that are independent in Artis..."),
-            l("...it might be because of Don... he is the master blacksmith of this place and a model to me!");
-
-        return;
-    }
+    function give_small_quest;
+    function more_info;
+    function quest_completed;
+    function blacksmith_house;
+    function explain_weapons;
 
     speech S_LAST_NEXT, l("Can I be of any help?");
 
@@ -86,6 +30,7 @@
             rif(.@enora == 3, l("I have your black iron.")),
             rif(.@enora >= 2, l("Where is the Merchant Guild?")),
             l("What is this building?"),
+            l("Why some of my weapons have a plus sign near them?"),
             menuaction(l("Quit"));
 
         switch (@menu)
@@ -109,9 +54,83 @@
     goodbye;
     close;
 
+
+function give_small_quest {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Her sword... I'm having some trouble finishing it."),
+        l("You see, Enora asked me to do a black iron sword, unfortunately I ran out of the material needed, and..."),
+        l("Only Don and the Merchant Guild have that kind of material in stock. It's called black iron."),
+        l("It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!"),
+        l("If Enora wants her sword now, I need to ask for your help.");
+
+    switch (select(l("Let's not keep her waiting."),
+                    l("Not now.")))
+    {
+        case 1:
+            break;
+        case 2:
+            speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+                lg("I'll be here, come back when you'll be ready.");
+
+            return;
+    }
+
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Thank you very much!"),
+        l("Talk with Lloyd the Banker in the Merchant Guild, it's a big building in the northern side of Artis, at the top of the small hill.");
+
+    setq ArtisQuests_Enora, 2;
+
+    return;
+}
+
+function more_info {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("It's the big building in northern Artis, at the top of a small hill."),
+        l("Take the east road that goes to the north and follow it until you are on top of the cliff."),
+        l("That part of the town is called the Gilded Hill, it's also where the Merchant Guild has its headquarters."), //rich hill
+        l("Lloyd still owes me, but beware of those money-grabbers, or they might sell your own teeth to you!");
+
+    return;
+}
+
+function quest_completed {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Oh... Awesome!"),
+        l("You were gone so I thought you let me down."),
+        l("Don gave me some black iron... after I asked him nearly ten times."),
+        l("But thank you anyway! I can refund him now!"),
+        l("Take the sword, and say hi to Enora for me!");
+
+    setq ArtisQuests_Enora, 4;
+
+    return;
+}
+
+function blacksmith_house {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Behind me? It's the Blacksmith House, the most renowned throughout Aemil."),
+        l("There are two shops inside, they are independent from the Merchant Guild of Artis."),
+        l("Now that I think about it, they are the only shops that are independent in Artis..."),
+        l("...it might be because of Don... he is the master blacksmith of this place and a model to me!");
+
+    return;
+}
+
+function explain_weapons {
+    speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
+        l("Weapons do not level up. But the more you use them, the more used to them you become."),
+        l("As you start to wield them better, you will be able to draw better their full potential."),
+        l("Your proeficiency with a certain weapon is noted at the side of it. Naturally, you cannot obtain proeficiency by purchasing someone else's weapon.");
+    mesn;
+    speech S_LAST_NEXT,
+        l("By the way, I'll explain you how crafting works when I become less lazy.");
+    return;
+}
+
 OnInit:
     .bodytype = BODYTYPE_3;
-    .distance = 3;
+    .distance = 4;
     end;
 }
 

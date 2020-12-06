@@ -1,0 +1,19 @@
+// Evol scripts.
+// Author:
+//    Micksha
+// Description:
+//    Cerhan is the armory guy from Asphodel Moors.
+//    Relation with Ms. Golbenez is unknown?
+// THIS IS A PLACEHOLDER!
+
+009-2-8,39,30,0	script	Cerhan	NPC_CHELIOS,{
+    speech
+        l("Ah, hello! It's good to see another normal %s at this strange place!", get_race(GETRACE_RACE)),
+        l("I'm an experienced weapon master and I was thinking about establishing a smithy here. I'll need some more equipment, though."),
+        l("So, I'll talk to you later!");
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}

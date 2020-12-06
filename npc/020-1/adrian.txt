@@ -32,7 +32,7 @@
     mesn;
     mesc l("%s hands you a very heavy suitcase.", .name$);
     mesq l("Here it is. Good luck carrying that thing.");
-    setq TonoriQuest_Kylian, 2;
+    setq1 TonoriQuest_Kylian, 2;
     getitembound Suitcase, 1, IBT_CHARACTER;
     close;
 

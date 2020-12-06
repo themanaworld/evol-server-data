@@ -1,0 +1,22 @@
+// The Mana World scripts.
+// Author:
+//    Jesusalva
+// Description:
+//    Eurni the Surgeon
+
+009-2-6,32,30,0	script	Eurni	NPC_EURNI,{
+    mesn;
+    mesq l("Are you tired of who you are?");
+    next;
+    mesn;
+    mesq l("Would you be interested in changing your... appearance?");
+    next;
+    Barber(false);
+
+    close;
+
+OnInit:
+    .distance = 4;
+    end;
+}
+

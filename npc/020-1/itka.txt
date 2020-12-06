@@ -10,6 +10,36 @@
         l("Hi there."),
         l("Come to the bakery! Come to the Market! Come to Prison!"),
         l("I will improve, promised. Come to the Academy! Come to Oasis!");
+    do
+    {
+        next;
+        select
+            l("Where is the bakery?"),
+            l("Where is the market?"),
+            l("Where is the prison?"),
+            l("Where is the academy?"),
+            l("Where is the oasis?"),
+            l("Why are you doing this?"),
+            l("Okay... Spammy little girl.");
+        mes "";
+        switch (@menu) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            mesn;
+            mesq l("I don't know! %%Q");
+            break;
+        case 6:
+            mesn;
+            mesq l("To pay my studies!");
+            break;
+        default:
+            close;
+            break;
+        }
+    } while (true);
     close;
 
 OnInit:

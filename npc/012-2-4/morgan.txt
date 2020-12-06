@@ -10,8 +10,10 @@
         l("Hello Wanderer."),
         l("I am Morgan, the alchemist."),
         l("(People do not like to hear the word 'witch' so much, as we live close to Hurnscald)."),
-        l("Unfortunately my apprentice Zitoni does not bring me fresh potions, so if you need something you should come back later.");
+        l("Unfortunately my apprentice Zitoni does not bring me fresh potions, so if you need something you should come back later."),
+        l("Unless you want a Status Reset?");
 
+    ConfirmStatusReset();
     close;
 
 OnInit:
