@@ -42,7 +42,7 @@ mariadb_run_latest_gcc10:
     gcc-10
     git-core
     make autoconf automake autopoint
-    libtool libmysqlclient-dev libz-dev libpcre3-dev"
+    libtool libmariadbclient-dev-compat libz-dev libpcre3-dev"
   - ./.tools/jobs/cloneall.sh
   - ./.tools/jobs/initdb.sh mariadb
   - ./.tools/jobs/build.sh "--enable-packetver=${packetver} --enable-epoll --enable-debug --enable-sanitize=full --disable-manager --enable-Werror --enable-buildbot" "--enable-werror --enable-lto --enable-sanitize"
