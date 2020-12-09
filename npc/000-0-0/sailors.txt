@@ -12,7 +12,7 @@ OnTalk:
     deltimer("Elmo#sailors::OnSlow");
     setcamnpc;
     mesn "Elmo";
-    mesq l("Poor thing. At least we found it before the sharks did. I wonder where it comes from. By the way, did you see the logo on that raft?");
+    mesq l("Poor thing. Fortunately we were more attentive than the sharks in these waters. I wonder where this tragic journey started. By the way, did you see the logo on that raft?");
     next;
 
     mesn "Magic Arpan";
@@ -24,7 +24,7 @@ OnTalk:
     next;
 
     mesn "Magic Arpan";
-    mesq l("Did you hear about all those missing people last month? Maybe it is the yoiis from Esperia who got a secret diplomatic mission from the Legion of Aemil!");
+    mesq l("Did you hear about all those missing people last month? Maybe this is the yoiis from Esperia who got a secret diplomatic mission from the Legion of Aemil!");
     next;
 
     mesn "Elmo";
