@@ -32,8 +32,7 @@
             PC_IS_DEAD = false;
 
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                lg("I registered you on the 4th room of the upper level.",
-                   "I registered you on the 2nd room of the upper level."),
+                l("I registered you on one of the rooms of the upper level."),
                 l("You can go upstairs and choose a different room if you want.");
             savepoint "001-2-29", 29, g(49, 35);
         }
@@ -68,13 +67,13 @@
         else if (INN_REGISTER == REDPLUSH_INN)
         {
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                lg("You are already registered here."),
+                l("You are already registered here."),
                 l("Go on the upper level if you want to change your room or to use it.");
         }
         else
         {
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                lg("If you are registered somewhere else you will loose that reservation."),
+                l("If you are registered somewhere else you will loose that reservation."),
                 l("Do you still want to lodge here?");
 
             if (askyesno() == ASK_YES)

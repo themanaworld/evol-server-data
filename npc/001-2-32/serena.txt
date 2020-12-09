@@ -9,7 +9,7 @@
 
 001-2-32,27,27,0	script	Serena	NPC_SERENA,{
     mesn;
-    mesq lg("Oh darling, what brought you here?"); // TRANSLATORS: Darling - Expresses familiarity or elderliness in relation to PC.
+    mesq l("Oh darling, what brought you here?"); // TRANSLATORS: Darling - Expresses familiarity or elderliness in relation to PC.
     next;
     select
         l("I wanna fight."),

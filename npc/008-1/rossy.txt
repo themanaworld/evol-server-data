@@ -127,7 +127,7 @@ function rossyFirstmet {
     mes "";
     if (@menu == 2) {
         mesn;
-        mesq lg("Then why bother? Weird person...");
+        mesq l("Then why bother? Weird person...");
         return;
     }
     setq HurnscaldQuests_Rossy, 2;

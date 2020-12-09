@@ -171,7 +171,7 @@ function	script	BarberChangeRace	{
 function	script	Barber	{
     if (getarg(0, true)) {
         mesn;
-        mesq lg("Hello, young lady.", "Hello, young man.");
+        mesq l("Hello.");
         next;
     }
     mesq l("What would you like me to do?");

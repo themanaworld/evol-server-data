@@ -130,8 +130,7 @@
                 inventoryplace WoodenSword, 1;
                 speech 0x0,
                     l("Daddy finally came back home! He grabbed a snack and said he would be returning to the sewers."),
-                    lg("He did say that I should give you this @@ as a gift. He says you are very skilled and will make good use of his old weapon.",
-                       "He did say that I should give you this @@ as a gift. He says you are very skilled and will make good use of his old weapon.",
+                    l("He did say that I should give you this @@ as a gift. He says you are very skilled and will make good use of his old weapon.",
                         getitemlink(WoodenSword)),
                     l("He has never been the same since mommy went away...");
                 getitem WoodenSword, 1;

@@ -43,11 +43,11 @@ L_Continue:
     mesn;
 
 L_Continue2:
-    mesq lg("Are you yaying here to explore the island?");
+    mesq l("Are you yaying here to explore the island?");
     next;
 
     menu
-        lg("Actually Gugli asked me if I would help you bring him some of your boxes."), -,
+        l("Actually Gugli asked me if I would help you bring him some of your boxes."), -,
         l("Yes, indeed. I prefer to explore places I have never been to, before doing anything else."), L_Quit;
 
     mes "";
@@ -64,7 +64,7 @@ L_Continue2:
 
     mes "";
     mesn;
-    mesq lg("Thank you my friend.");
+    mesq l("Thank you my friend.");
 
     close;
 
@@ -88,7 +88,7 @@ L_RandomA:
 
     mes "";
     mesn;
-    mesq lg("Yeye sure? I'll yaye some more food in the next box then.");
+    mesq l("Yeye sure? I'll yaye some more food in the next box then.");
 
     close;
 
@@ -155,7 +155,7 @@ L_NoTask:
 L_TaskDone:
     mes "";
     mesn;
-    mesq lg("That's perfect, yoiis.");
+    mesq l("That's perfect, yoiis.");
 
     close;
 

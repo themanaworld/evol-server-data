@@ -59,7 +59,7 @@
             close;
         }
         mesn;
-        mesq lg("Child, I do not need your money nor items. I told you I would teach you the recipe. It is free.");
+        mesq l("Child, I do not need your money nor your items. I told you I would teach you the recipe. It is free.");
         next;
         mesn;
         mesq l("I am already happy enough that you want to improve your own eating habits. You don't need to give me anything.");
@@ -90,7 +90,7 @@ function anwarNotMe {
     mesq l("Hello Mr. Hocus, kind sir Anwar sent me to fetch some fertilizers to save Tulimshar from famine, if you may?");
     next;
     mesn;
-    mesq lg("Sorry kind lady @@, but no.", "Sorry kind sir @@, but no.", strcharinfo(0));
+    mesq l("Sorry kind friend @@, but no.", strcharinfo(0));
     next;
     mesn;
     mesq l("Or rather, I can't. I would love to help you, just like everybody else, but I don't know how to make fertilizers, only Salad.");

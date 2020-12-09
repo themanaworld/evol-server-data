@@ -69,7 +69,7 @@ function lenaTooWeak {
     speech
         l("Hey."),
         l("Did you hear about the Bandit's attacks? They must have a hideout somewhere outside Hurnscald."),
-        lg("However, you are too weak to help me, so come back later.");
+        l("However, you are too weak to help me, so come back later.");
     close;
 }
 
@@ -117,7 +117,7 @@ function lenaStart {
 
 function lenaReturn {
     mesn;
-    mesq lg("Adventurer, did you brought me what I asked? I see you have %d/%d %s.","Adventurer, did you brought me what I asked? I see you have %d/%d %s.", countitem(TreasureKey), .numKeys, getitemlink(TreasureKey));
+    mesq l("Adventurer, did you brought me what I asked? I see you have %d/%d %s.", countitem(TreasureKey), .numKeys, getitemlink(TreasureKey));
     mes "";
     select
         rif(countitem(TreasureKey) >= .numKeys, l("Yes, take it.")),
@@ -174,7 +174,7 @@ function lenaQuest {
 
 function lenaCoinBag {
     mesn;
-    mesq lg("Adventurer, did you brought me what I asked? I see you have %d/%d %s.","Adventurer, did you brought me what I asked? I see you have %d/%d %s.", countitem(CoinBag), .numCoins, getitemlink(CoinBag));
+    mesq l("Adventurer, did you brought me what I asked? I see you have %d/%d %s.", countitem(CoinBag), .numCoins, getitemlink(CoinBag));
     mes "";
     select
         rif(countitem(CoinBag) >= .numCoins, l("Yes, take it.")),

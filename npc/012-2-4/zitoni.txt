@@ -13,8 +13,8 @@ OnTalk:
     next;
 
     menu
-        lg("I do not like whiners."), -,
-        lg("What is your problem?"), L_toams;
+        l("I do not like whiners."), -,
+        l("What is your problem?"), L_toams;
 
     close;
 
@@ -28,8 +28,8 @@ L_toams:
     next;
 
     menu
-        lg("Ok, I can try."), -,
-        lg("Ok, but do you have something else?"), L_jez;
+        l("Ok, I can try."), -,
+        l("Ok, but do you have something else?"), L_jez;
 
     close;
 
@@ -44,8 +44,8 @@ L_jez:
     next;
 
     menu
-        lg("Ok, I will do that, but now I must leave."), -,
-        lg("Is that all, or do you have more problems?"), L_wildx;
+        l("Ok, I will do that, but now I must leave."), -,
+        l("Is that all, or do you have more problems?"), L_wildx;
     close;
 
 L_wildx:
@@ -56,8 +56,8 @@ L_wildx:
     mesq l("Please, please find WildX. He will explain to me what my role in this world has been.");
 
     menu
-        lg("Ok, but all that will keep me busy for a while. So, goodbye."), -,
-        lg("You do not have more problems, do you?"), L_mick;
+        l("Ok, but all that will keep me busy for a while. So, goodbye."), -,
+        l("You do not have more problems, do you?"), L_mick;
     close;
 
 L_mick:

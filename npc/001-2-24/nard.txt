@@ -36,10 +36,10 @@
     // If the player saw Enora, the menu shows L_Lost at the bottom
     // Because he shouldn't be lost after having talked to her, so the priority in menu changes
     menu
-        rif(.@q == 0, lg("I'm lost, where should I go?")), L_Lost,
+        rif(.@q == 0, l("I'm lost, where should I go?")), L_Lost,
         rif(.@q > 0, l("Tell me, where are we right now?")), L_Info,
         l("How long will you stay here?"), -,
-        rif(.@q > 0, lg("I'm lost, where should I go?")), L_Lost;
+        rif(.@q > 0, l("I'm lost, where should I go?")), L_Lost;
 
     speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
         l("We just returned from a long journey and Artis is a good city to rest and to conclude our exchange."),

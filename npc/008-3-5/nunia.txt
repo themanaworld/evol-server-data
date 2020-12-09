@@ -32,7 +32,7 @@ function nuniaIntruder {
     speech
         l("Who dares to enter this cave? Who are you?"),
         l("At least, you look peaceful."),
-        lg("Let's do like this: You leave me alone, and I don't mess with you. Deal?");
+        l("Let's do like this: You leave me alone, and I don't mess with you. Deal?");
     select
         l("Deal."),
         l("No deal, I'm going to report you to authorities!");

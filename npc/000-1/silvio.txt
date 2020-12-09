@@ -9,7 +9,7 @@
     mesn;
     mesq l("Hey!");
     next;
-    mesq lg("How are you doing, cutie?", "How are you doing, dude?");
+    mesq lg("How are you doing?");
     next;
 
     menu
@@ -19,19 +19,19 @@
 
     mes "";
     mesn;
-    mesq lg("Hehe, no. But I'm sure a fox like you would love to meet a catch like me!", "Hehe, no. But I'm sure a noob like you would like to meet an idol like me.");
+    mesq l("Hehe, no. But I'm sure somebody like you would love to meet somebody like me! Women want me, men want to be like me!");
     next;
-    mesq lg("So, what good wind brought you here? Were you on your raft to meet me? Or is it because you've heard of my feats in Artis?", "So, what good wind brought you here? Were you on your raft to meet my Julia? Or is it because you wanted to see the beautiful waitresses of Artis?");
+    mesq l("So, what good wind brought you here? Were you on your raft to meet me or Julia? Or is it because you've heard of my feats in Artis?");
     next;
 
     menu
-        lg("You're right, it's about you.", "You're right, it's about Julia."), L_Julia,
+        l("You're right, it's about you."), L_Julia,
         l("What is Artis?"), L_Artis,
         l("None of them?"), -;
 
     mes "";
     mesn;
-    mesq lg("My beauty. I was not always a sailor, you know, I was once an important individual!", "My friend. I was not always a sailor, you know, I was once an important individual!");
+   mesq l("You know that I was not always a sailor, right? I was once a very important Person!");
     next;
     mesq l("Before...");
     next;
@@ -90,14 +90,14 @@ L_VeryImportantNoob:
     restorecam;
 
     mesn;
-    mesq lg("Duty calls me, *hic*, see you later, honey.", "Duty calls me, *hic*, see you later, dude.");
+    mesq l("Duty calls me, *hic*, see you later.");
 
     close;
 
 L_Julia:
     mes "";
     mesn;
-    mesq lg("You honor me, my beauty, but I'm already taken by Julia!", "Not to kill your dream, but... Julia is mine!");
+    mesq l("Not to kill your dreams, but i fear me and Julia are romantically entangled and there is no room for a third person ... on the other hand *smirks frivolous*");
     next;
     mesq l("She said she will accept me when pious will have teeth. It's just a matter of time, you see?");
     next;
@@ -146,7 +146,7 @@ L_Sailors:
     setcamnpc "Gugli";
     mes "";
     mesn "Gugli";
-    mesq lg("Stop heckling her, Silvio, or I'll tell her how you always cry like a little baby during thunderstorms.", "Stop heckling him, Silvio, or I'll tell him how you always cry like a little baby during thunderstorms.");
+    mesq l("Stop heckling, Silvio, or I'll tell about how you always cry like a little baby during thunderstorms.");
     next;
     restorecam;
 

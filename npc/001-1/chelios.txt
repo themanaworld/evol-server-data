@@ -26,7 +26,7 @@
     {
         .@enora = getq(ArtisQuests_Enora);
         select
-            rif(.@enora == 1, lg("I came to retrieve a package for Enora.")),
+            rif(.@enora == 1, l("I came to retrieve a package for Enora.")),
             rif(.@enora == 3, l("I have your black iron.")),
             rif(.@enora >= 2, l("Where is the Merchant Guild?")),
             l("What is this building?"),
@@ -70,7 +70,7 @@ function give_small_quest {
             break;
         case 2:
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                lg("I'll be here, come back when you'll be ready.");
+                l("I'll be here, come back when you'll be ready.");
 
             return;
     }

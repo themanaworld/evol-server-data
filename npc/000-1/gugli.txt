@@ -46,7 +46,7 @@ OnTalk:
     if (.@nard > 1 || .@gugli == 2) goto L_TaskCompleted;
     if (.@gugli == 1) goto L_TaskGiven;
 
-    mesq lg("Hi @@, I heard the captain sent you down here, uh?", "Hi @@, I heard the captain sent you down here, uh?", strcharinfo(0));
+    mesq l("Hi @@, I heard the captain sent you down here, uh?", strcharinfo(0));
     next;
     mesq l("What an unexpected pleasure, your help is always welcome!");
     next;
@@ -58,7 +58,7 @@ OnTalk:
 
     mes "";
     mesn;
-    mesq lg("Well, even though you have been rescued by us, it doesn't make you an expert sailor, am I right?");
+    mesq l("Well, even though you have been rescued by us, it doesn't make you an expert sailor, am I right?");
     next;
     mesq l("But let's talk about this island. We're docking here to find some fine quality goods.");
     next;
@@ -226,7 +226,7 @@ L_TaskCompleted:
 L_AllComplete:
     mesq l("Elmo told me what Nard said, congrats!");
     next;
-    mesq lg("You're one of us now, that's great! I was sure that you were a kind lady when I first saw you!", "You're one of us now, that's great! I was sure that you were a good man when I first saw you!");
+    mesq l("You're one of us now, that's great! I was sure that you were a good person the first time I saw you!");
     next;
 
     goto L_Menu;

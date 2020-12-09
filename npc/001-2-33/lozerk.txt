@@ -57,7 +57,7 @@
 
     function send_training {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            lg("Oh, you were sent by Enora!"),
+            l("Oh, you were sent by Enora!"),
             l("If Enora thinks this is the right place for you, then she's probably be right. Did you know she's a lieutenant of the Legion?"),
             l("The rank of lieutenant is granted only to people with proper control of their skill and good judgment, like Enora. Or me, of course."),
             l("By the way, I'm Lozerk. Lieutenant Lozerk.");
@@ -65,9 +65,9 @@
         select(l("Pleasure to meet you. I am @@.", strcharinfo(PC_NAME)));
 
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            lg("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
+            l("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
             l("But don't you worry! I don't know how to get you back your memories, but we can work on your muscles for now!"),
-            lg("After all, this is the Legion of Aemil! You want to be a great warrior? We'll make you one here!"),
+            l("After all, this is the Legion of Aemil! You want to be a great warrior? We'll make you one here!"),
             l("For starters, you should probably do some stretching and practice on some dummies in our training room."),
             l("That's right, we have our very own training room. The Legion is always well prepared!");
 
@@ -79,9 +79,9 @@
 
     function send_battle {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            lg("So, did you get your blood boiling? Give the dummies a good lesson? Good!"),
+            l("So, did you get your blood boiling? Give the dummies a good lesson? Good!"),
             l("But since it's not dummies that will go after you out there, this training won't be enough."),
-            lg("If you want to make a formidable foe for anyone, you'll need to train with real living opponents!"),
+            l("If you want to make a formidable foe for anyone, you'll need to train with real living opponents!"),
             l("Of course, the Legion of Aemil can easily provide you with such training, even if you're not a member. Just great, isn't it?"),
             l("We have a special room for this purpose, too. You may test your skills against all kinds of dreadful monsters in there.");
 
@@ -93,8 +93,8 @@
 
     function send_qanon {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            lg("And you won! That means you should be able to handle yourself in battle from now on."),
-            lg("If you keep it up, you'll eventually become a fearsome warrior, just like me!"),
+            l("And you won! That means you should be able to handle yourself in battle from now on."),
+            l("If you keep it up, you'll eventually become a fearsome warrior, just like me!"),
             l("Or almost like me, at the very least."),
             l("But if you really want to accomplish something, you should consider joining us."),
             l("You have talent and the best place to utilize it is in the Legion! You can either pursue your goals with us or without us, but trust me, with us it's much better."),
@@ -111,7 +111,7 @@
 
     function forget_direction {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            lg("You are lucky there are no mental faculty requirements to join the Legion!");
+            l("You are lucky there are no mental faculty requirements to join the Legion!");
 
         explain_direction;
 
@@ -153,9 +153,9 @@
         .@enora  = getq(ArtisQuests_Enora);
         consolemes(CONSOLEMES_DEBUG, .@legion_progress + " " + .@enora);
         select
-            rif((.@legion_progress == 0) && (.@enora == 11), lg("Enora sent me here.")),
-            rif(.@legion_progress == 2, lg("I'm done with my training.")),
-            rif(.@legion_progress == 4, lg("I'm back from battle!")),
+            rif((.@legion_progress == 0) && (.@enora == 11), l("Enora sent me here.")),
+            rif(.@legion_progress == 2, l("I'm done with my training.")),
+            rif(.@legion_progress == 4, l("I'm back from battle!")),
             rif(.@legion_progress == 1 || .@legion_progress == 3 || .@legion_progress == 5, l("Where should I go?")),
             l("What can you tell me about the legion?"),
             l("That's a nice sword you have there."),

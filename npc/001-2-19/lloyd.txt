@@ -26,7 +26,7 @@
             l("Let me check in my inventory book..."),
             l("..."),
             l("Yes, I have some! \"5x Black Iron Ingots\""),
-            lg("Is this for you or somebody else? Because you need to be registered to obtain these materials.");
+            l("Is this for you or somebody else? Because you need to be registered to obtain these materials.");
 
         switch (selectd(ArtisQuests_Enora,
                         l("This is for my own use."),
@@ -80,7 +80,7 @@
             l("Lloyd is searching something in his book.");
         speech S_LAST_NEXT,
             l("I see."),
-            lg("You are new around here, right?");
+            l("You are new around here, right?");
 
         if (selectd(l("How do you know?"), l("Yes I am.")) == 1)
         {

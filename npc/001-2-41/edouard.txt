@@ -115,7 +115,7 @@ OnNotSit:
 
 OnChair:
     speech S_LAST_NEXT,
-        lg("Hello, young lady.", "Hello, young man.");
+        l("Welcome to Edouard's Barber Shop.");
 
     if (Edouard_StoryTold == 0)
     {

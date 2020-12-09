@@ -8,7 +8,7 @@
 000-2-3,27,27,0	script	Elmo	NPC_ELMO,{
     function got_money {
         speech S_LAST_NEXT,
-            lg("Be patient a little while longer, in the next few days we will arrive at the port of Artis..."),
+            l("Be patient a little while longer, in the next few days we will arrive at the port of Artis..."),
             l("If you feel bored or like running around in circles, you may want to talk with the other sailors around here to get some tasks to do."),
             l("From what I heard, my brother Gugli needs the help of as many people as possible in order to collect a lot of neat things that can be found on this island."),
             l("Other than that, I don't know much about what else is going on, so directly asking the Cap'tain about it could be a good idea.");

@@ -98,11 +98,11 @@ OnBegin:
     .@tm$=instance_npcname("Thamas");
     npctalk l("Welcome to my humble abode."), .@mc$;
     sleep2(500);
-    npctalk lg("Who is that fellow?"), .@tm$;
+    npctalk l("Who is that fellow?"), .@tm$;
     sleep2(2500);
     npctalk l("Thamas, this is a stowaway who reached here from Artis."), .@mc$;
     sleep2(2500);
-    npctalk lg("Yes, I remember her.", "Yes, I remember him."), .@tm$;
+    npctalk l("Yes, I remember."), .@tm$;
     sleep2(3000);
     npctalk l("Anyway, I assume you're trying to get into Hurnscald?"), .@mc$;
     sleep2(2100);

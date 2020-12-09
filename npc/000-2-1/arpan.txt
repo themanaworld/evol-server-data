@@ -103,16 +103,16 @@ OnTalk:
     setq ShipQuests_Arpan, 1;
     deltimer("Magic Arpan::OnSlow");
 
-    mesq lg("Yeye, you are really lucky to be alive. You are in good enough shape for walking, do you remember what happened?");
+    mesq l("Yeye, you are really lucky to be alive. You are in good enough shape for walking, do you remember what happened?");
     next;
 
     menu
-        lg("I only remember I was rescued by you."), L_Story,
-        lg("I can't remember anything."), L_OhWell;
+        l("I only remember I was rescued by you."), L_Story,
+        l("I can't remember anything."), L_OhWell;
 
 OnClothNotTaken:
     mesn;
-    mesq lg("Yeye, you still did not get your new clothes from the chest next to your bed!");
+    mesq l("Yeye, you still did not get your new clothes from the chest next to your bed!");
 
     close;
 
@@ -128,7 +128,7 @@ OnEquip:
 
 L_OhWell:
     mes "";
-    mesq lg("Oh well, we rescued you when you were yaying adrift in the sea.");
+    mesq l("Oh well, we rescued you when you were yaying adrift in the sea.");
     next;
 
     select
@@ -136,12 +136,12 @@ L_OhWell:
 
 L_Story:
     mes "";
-    mesq lg("You were yaying sleeping for quite some time there. Our shipkeeper, Julia, was here with you, and she did her best to heal your injuries.");
+    mesq l("You were yaying sleeping for quite some time there. Our shipkeeper, Julia, was here with you, and she did her best to heal your injuries.");
     next;
     if (.@q_julia == 0) setq ShipQuests_Julia, 1;
-    mesq lg("Yaya, you should go see her! She'll be happy to see you.");
+    mesq l("Yaya, you should go see her! She'll be happy to see you.");
     next;
-    mesq lg("Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.");
+    mesq l("Also, we took your yayed clothes, as they were... Yeyeye... In a bad shape. Go check the chest near your bed, there are some other ones inside.");
     setcamnpc "Chest";
 
     close;
@@ -153,13 +153,13 @@ L_Menu:
 
     menu
         rif(.@q_nard == 5 && getq(General_Narrator) < 1, l("What can I do now?")), L_GotoSleep,
-        lg("Could you tell me where I am?"), L_Where,
-        lg("Where can I find Julia?"), L_Julia,
+        l("Could you tell me where I am?"), L_Where,
+        l("Where can I find Julia?"), L_Julia,
         l("Who are you?"), L_Who,
-        rif(getq(ShipQuests_ArpanMoney) == 1, lg("Do you know what happened to the gold I had when you guys saved me?")), L_WhereMoney,
+        rif(getq(ShipQuests_ArpanMoney) == 1, l("Do you know what happened to the gold I had when you guys saved me?")), L_WhereMoney,
         rif(getq(ShipQuests_ArpanMoney) < 2, l("Where are my old clothes?")), L_WhereOldClothes,
         rif(getq(ShipQuests_ArpanMoney) == 2 && islegacyaccount(), l("About my my old clothes...")), L_LegacyClothes,
-        rif(!.@equipped, lg("What should I do after taking these clothes?")), L_WhatCloth,
+        rif(!.@equipped, l("What should I do after taking these clothes?")), L_WhatCloth,
         rif(!.@equipped, l("Thank you, I'll take them and put them on.")), -,
         l("Nothing, sorry."), -;
 
@@ -169,7 +169,7 @@ L_Menu:
 L_Where:
     mes "";
     mesn;
-    mesq lg("You're on our ship, we made port to a little island and we're actually yeyending our long merchant traveling adventure at the city of Artis.");
+    mesq l("You're on our ship, we made port to a little island and we're actually yeyending our long merchant traveling adventure at the city of Artis.");
     next;
     mesq l("We will be yaying there in a few days, so we will drop you off there.");
     next;
@@ -181,7 +181,7 @@ L_Where:
 L_Julia:
     mes "";
     mesn;
-    mesq lg("She's on the upper level, yeye can't miss her. She's the only girl in this crew, oh well, except for you now yeyeye!", "She's on the upper level, yeye can't miss her. She's the only girl in this crew.");
+    mesq l("She's on the upper level, yeye can't miss her. She's the only girl in this crew so far.");
     next;
 
     mesn "Narrator";
@@ -201,9 +201,9 @@ L_Who:
 L_WhereOldClothes:
     mes "";
     mesn;
-    mesq lg("We tried to clean them but the sea water mostly destroyed them. It's why we gave you these clothes. They're not very nice, but that's all that we have for you.");
+    mesq l("We tried to clean them but the sea water mostly destroyed them. It's why we gave you these clothes. They're not very nice, but that's all that we have for you.");
     next;
-    mes lg("Oh, now that I remember, we also found some money in your pockets, here it is!");
+    mes l("Oh, now that I remember, we also found some money in your pockets, here it is!");
     next;
 
     setq ShipQuests_ArpanMoney, 2;
@@ -220,7 +220,7 @@ L_LegacyClothes:
     if (islegacyaccount()) {
         mesn strcharinfo(0);
         select
-            lg("But... I remember that my clothes were very dear to me..."),
+            l("But... I remember that my clothes were very dear to me..."),
             l("Oh okay.");
         mes "";
         if (@menu == 1) {
@@ -248,7 +248,7 @@ L_WhereMoney:
 L_WhatCloth:
     mes "";
     mesn;
-    mesq lg("Oh yeyeye... As they are not edible, you can maybe try to equip them?");
+    mesq l("Oh yeyeye... As they are not edible, you can maybe try to equip them?");
     next;
 
     mesn "Narrator";

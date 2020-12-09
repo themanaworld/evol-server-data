@@ -46,10 +46,10 @@ function	script	legiontalk	{
             npctalkonce(l("I can't stay here and talk all day. I have a job to do."));
             break;
         case 10:
-            npctalkonce(lg("Keep moving girl.", "Keep moving boy."));
+            npctalkonce(l("Keep moving!");
             break;
         case 11:
-            npctalkonce(lg("So you think you're tough? A warrior must also be loyal and patient."));
+            npctalkonce(l("So you think you're tough? A warrior must also be loyal and patient."));
             break;
         case 12:
             emotion E_LOOKAWAY;
