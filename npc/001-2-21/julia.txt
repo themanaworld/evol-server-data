@@ -135,7 +135,6 @@ L_Island:
     goto L_YNMenu;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
     .distance = 10;
     end;
 }

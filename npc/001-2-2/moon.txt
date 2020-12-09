@@ -202,7 +202,6 @@ OnHour00:
     end;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
     .distance = 3;
     .maxLevel = getmonsterinfo(Croc, MOB_LV) + 10;
     initpath "move", 41, 30,

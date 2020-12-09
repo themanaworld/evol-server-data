@@ -38,7 +38,6 @@
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
     .distance = 4;
     tradertype(NST_MARKET);
 

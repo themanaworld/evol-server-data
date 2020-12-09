@@ -155,7 +155,6 @@ OnMove:
     end;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 3;
     .speed = 140;
 

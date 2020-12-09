@@ -14,7 +14,6 @@ OnInit:
     sellitem CopperArmbands, -1, 28;
     sellitem IronArmbands, -1, 20;
 
-    .bodytype = BODYTYPE_1;
     .distance = 2;
     end;
 
@@ -43,7 +42,6 @@ OnInit:
     sellitem WoodenSword, -1, 50;
     sellitem TrainingArrow, -1, 20000;
 
-    .bodytype = BODYTYPE_1;
     .distance = 2;
     end;
 

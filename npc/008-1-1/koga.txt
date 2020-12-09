@@ -28,7 +28,6 @@ function kogaWrongMap {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 7;
     .alwaysVisible = true;
     end;

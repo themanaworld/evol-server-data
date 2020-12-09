@@ -125,7 +125,6 @@ function tikiSubmit {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_2;
     .distance = 4;
     tradertype(NST_MARKET);
 

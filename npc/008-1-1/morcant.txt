@@ -56,7 +56,6 @@
 
 OnInit:
 OnInstanceInit:
-    .bodytype = BODYTYPE_3;
     .distance = 4;
     .speed=120;
     //.alwaysVisible=true;

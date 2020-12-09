@@ -146,7 +146,6 @@ function foodQuestline {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_1;
     .distance = 4;
     .price = 120;
     end;

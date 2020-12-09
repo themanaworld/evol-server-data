@@ -15,7 +15,6 @@
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
     .distance = 4;
     end;
 }
@@ -27,7 +26,6 @@ OnInit:
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 }

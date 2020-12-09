@@ -39,7 +39,6 @@ OnTimer1000:
     dographmovestep;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 4;
     // .debug = 1;
     initmovegraph

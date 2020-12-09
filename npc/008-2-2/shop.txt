@@ -20,7 +20,6 @@ OnInit:
     sellitem SmallHealing, -1, 50;
     sellitem MaggotSlimePotion, -1, 50;
 
-    .bodytype = BODYTYPE_1;
     .distance = 10;
     end;
 

@@ -780,7 +780,6 @@ OnInit:
     .KNIFE_MAXLV = getiteminfo(BoneKnife, ITEMINFO_ELV) + 20;
     //.STINGER_MAXLV = 100;
 
-    .bodytype = BODYTYPE_3;
     .distance = 4;
     end;
 }

@@ -84,7 +84,6 @@ OnInit:
     setunitdata(.@npcId, UDT_HAIRCOLOR, rand(1,20));
     npcsit;
 
-    .bodytype = BODYTYPE_3;
     .distance = 4;
     end;
 }

@@ -67,7 +67,6 @@ function askCrafting {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 4;
     .price = 6000;
     end;

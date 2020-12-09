@@ -315,7 +315,6 @@ L_Quit:
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 2;
 
     // Array of foods (remember to update in 000-2-1 as well)

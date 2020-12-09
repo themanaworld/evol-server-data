@@ -125,7 +125,6 @@ L_Close:
     goodbye;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 2;
     end;
 }

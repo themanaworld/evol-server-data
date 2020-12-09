@@ -14,7 +14,6 @@ OnTimer2000:
 
 OnInit:
     .distance = 2;
-    .bodytype = BODYTYPE_1;
     .speed = 600;
     mouboograph;
 }
@@ -29,7 +28,6 @@ OnTimer2000:
 
 OnInit:
     .distance = 2;
-    .bodytype = BODYTYPE_1;
     .speed = 600;
     mouboograph;
 }
@@ -44,7 +42,6 @@ OnTimer2000:
 
 OnInit:
     .distance = 2;
-    .bodytype = BODYTYPE_1;
     .speed = 600;
     mouboograph;
 }
@@ -59,7 +56,6 @@ OnTimer2000:
 
 OnInit:
     .distance = 2;
-    .bodytype = BODYTYPE_1;
     .speed = 600;
     mouboograph;
 }

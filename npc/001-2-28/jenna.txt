@@ -42,7 +42,6 @@ OnHour00:
     end;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
     .distance = 5;
     initmovegraph "m_table_1",    52, 32,
                   "m_table_2",    56, 32,

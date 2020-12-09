@@ -261,7 +261,6 @@ OnInit:
     bindatcmd "info", "#EvolTutorial::OnUse", 0, 0, 0;
     bindatcmd "tutorial", "#EvolTutorial::OnUse", 0, 0, 0;
 
-    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }
