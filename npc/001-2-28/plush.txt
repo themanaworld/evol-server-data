@@ -34,7 +34,7 @@
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("I registered you on one of the rooms of the upper level."),
                 l("You can go upstairs and choose a different room if you want.");
-            savepoint "001-2-29", 29, g(49, 35);
+            savepoint "001-2-29", 29, any(49, 35);
         }
     }
 

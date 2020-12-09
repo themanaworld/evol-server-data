@@ -27,7 +27,7 @@
 
     checkclientversion;
     mesn;
-    mesq g(l("Good day miss."), l("Good day mister."));
+    mesq l("Good day sir or madam.");
     next;
     mesq l("What can I do for you?");
     .@q = getq(ArtisQuests_Enora);

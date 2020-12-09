@@ -72,11 +72,13 @@ test,10,5,0	script	test1	NPC_HAT_BOX,{
         assert(l("data @@ @@ @@ data", "this", "is", "test") == "data this is test data", "\"data @@ @@ @@ data\", \"this\", \"is\", \"test\"");
         next();
 
+        /*
         mesf("##2Testing old translation system as %s gender...##0", g("female", "male"));
         if (Sex == 1)
             assert(lg("test1 @@", "test2 @@", "line") == "test2 line#1", "\"test1 @@\", \"test2 @@\", \"line\"");
         else if (Sex == 0)
             assert(lg("test1 @@", "test2 @@", "line") == "test1 line#0", "\"test1 @@\", \"test2 @@\", \"line\"");
+        */
         next();
     }
 
@@ -95,6 +97,7 @@ test,10,5,0	script	test1	NPC_HAT_BOX,{
         assert(l("data %s %s %s data", "this", "is", "test") == "data this is test data", "\"data %s %s %s data\", \"this\", \"is\", \"test\"");
         next();
 
+        /*
         mesf("##2Testing new translation system as %s gender...##0", g("female", "male"));
         if (Sex == 1) {
             assert(lg("test") == "test#1", "\"test\"");
@@ -105,6 +108,7 @@ test,10,5,0	script	test1	NPC_HAT_BOX,{
             assert(lg("test1", "test2") == "test1#0", "\"test1\", \"test2\"");
             assert(lg("test1 %s", "test2 %s", "line") == "test1 line#0", "\"test1 %s\", \"test2 %s\", \"line\"");
         }
+        */
         next();
 
         mes("##2Testing advanced translation...##0");

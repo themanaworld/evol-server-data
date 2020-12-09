@@ -95,8 +95,7 @@ L_StorySeems:
 
     mes "";
     mesn;
-    mesq g(l("It looks like the sweet lady is curious, am I right?"),
-           l("It seems the gentleman is curious, am I right sweetie?"));
+    mesq l("It looks like you are curious, am I right?");
     next;
     mesq l("Well, if you ever do want to join: 'Ye Merry Club Of Thee Bequeathed With Cookies'...");
     next;
