@@ -1,11 +1,215 @@
+      BLvl: %d | Job: %s (Lvl: %d)
+      Nivel Base: %d | Habilidad: %s (Nivel: %d)
+
+      Party: '%s' | Guild: '%s'
+      Grupo: '%s' | Gremio: '%s'
+
+   Users: %d/%d | Password: %s | Public: %s
+   Usuarios: %d/%d | Contraseña: %s | Público: %s
+
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <bound_type>).
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <bound_type>).
+
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>).
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>).
+
+  @send <packet hex number> {<value>}*
+  @send <packet hex number> {<value>}*
+
+  @send len <packet hex number>
+  @send len <packet hex number>
+
+ - Available in shops only.
+- Solamente disponible en almacenes.
+
+ - Common mobs with highest drop chance (only max %d are listed):
+ - Monstruos comunes con la mayor posibilidad de soltar objetos (sólo se enumeran %d máx.):
+
+ - Item is not dropped by any mobs.
+ - El objeto no es soltado por ninguna monstruo.
+
+ - Maximal monsters drop chance: %02.02f%%
+ - Máxima posibilidad de que los monstruos suelten objetos: %02.02f%%
+
+ - Monsters don't drop this item.
+ - Los monstruos no sueltan ese objeto.
+
+ -- Duel has been created (Use @invite/@leave) --
+ -- Se ha generado el duelo (Utilice @invite/@leave) --
+
+ -- Duels: %d/%d, Members: %d/%d --
+ -- Duelos: %d/%d, Miembros: %d/%d --
+
+ -- Duels: %d/%d, Members: %d/%d, Max players: %d --
+ -- Duelos: %d/%d, Miembros: %d/%d, Jugadores Máx: %d --
+
+ -- Player %s has rejected the duel --
+ -- El jugador %s ha rechazado el duelo --
+
+ -- Player %s invites %s to duel --
+ -- El jugador %s invita a %s a un duelo --
+
+ -> (card(s):
+ -> (carta(s):
+
  -> (card(s): 
  -> (tarjeta(s): 
+
+ -> (crafted item, creator id: %u, star crumbs %d, element %d)
+ -> (objeto elaborado, ID de artífice: %u, fragmentos de aerolito %d, elemento %d)
+
+ -> (pet egg, pet id: %u, named)
+ -> (huevo de mascota, ID de mascota: %u, nombrada)
+
+ -> (pet egg, pet id: %u, unnamed)
+ -> (huevo de mascota, ID de mascota: %u, sin nombre)
+
+ -> (produced item, creator id: %u)
+ -> (objeto elaborado, ID de artífice: %u)
+
+ -> Player %s has accepted the duel --
+ -> El jugador %s ha aceptado el duelo --
+
+ <- Player %s has left the duel --
+ <- El jugador %s ha abandonado el duelo --
+
+ ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
+ ATQ:%d~%d  Alcance:%d~%d~%d  Tamaño:%s  Raza: %s Elemento: %s (Nivel:%d)
+
+ ATK:%d~%d MATK:%d~%d Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
+ ATQ:%d~%d ATQM:%d~%d Alcance:%d~%d~%d  Tamaño:%s  Raza: %s  Elemento: %s (Nivel:%d)
+
+ DEF:%d  MDEF:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d
+ DEF:%d  DEFM:%d  FRZ:%d  AGI:%d  VIT:%d  INT:%d  DES:%d  SUE:%d
+
+ Drops:
+ Objetos soltados:
+
+ Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
+ Nivel:%d  PV:%d  EXP Base:%u  EXP Habilidad:%u  Ataque:%d  Evasión:%d
+
+ MVP Bonus EXP:%u
+ Bonificación de EXP del JMV:%u
+
+ MVP Items:
+Objetos del JMV:
 
  ago
 hace años
 
+ and %d second
+ y %d segundo
+
+ and %d seconds
+ y %d segundos
+
+ | equipped:
+ | equipado:
+
  | equipped: 
  | equipado: 
+
+#%s '%s' joined
+#%s '%s' se unió
+
+#%s '%s' left
+#%s '%s' abandonó
+
+%d - void
+%d - nulo
+
+%d GMs found.
+%d DJ hallados.
+
+%d commands found.
+%d órdenes halladas.
+
+%d day
+%d día
+
+%d days
+%d días
+
+%d hour
+%d hora
+
+%d hours
+%d horas
+
+%d item(s) found in %d %s slots.
+%d objeto(s) hallado(s) en %d %s casillas.
+
+%d item(s) removed by a GM.
+%d objeto(s) eliminado(s) por un DJ.
+
+%d item(s) removed from the player.
+%d objeto(s) eliminado(s) del jugador.
+
+%d item(s) removed. Player had only %d on %d items.
+%d objeto(s) eliminado(s). El jugador sólo tiene %d de %d objetos.
+
+%d items are dropped (%d skipped)!
+%d objetos soltados ¡(%d ignorados)!
+
+%d items have been refined.
+%d objetos han sido refinados.
+
+%d minute
+%d minuto
+
+%d minutes
+%d minutos
+
+%d monster(s) summoned!
+¡%d monstruo(s) invocado(s)!
+
+%d players found in map '%s'.
+%d jugadores hallados en el mapa '%s'.
+
+%d players found.
+%d jugadores hallados.
+
+%d results found.
+%d resultados hallados.
+
+%d: Accessory (Left)
+%d: Aditamento (Izquierdo)
+
+%d: Accessory (Right)
+%d: Aditamento (Derecho)
+
+%d: Body Armor
+%d: Armadura
+
+%d: Costume Garment
+%d: Vestuario de Fantasía
+
+%d: Costume Headgear (Low)
+%d: Tocado (parte inferior)
+
+%d: Costume Headgear (Mid)
+%d: Tocado (parte intermedia)
+
+%d: Costume Headgear (Top)
+%d: Tocado (parte superior)
+
+%d: Garment
+%d: Vestuario
+
+%d: Hand (Left)
+%d: Mano (izquierda)
+
+%d: Hand (Right)
+%d: Mano (derecha)
+
+%d: Headgear (Low)
+%d: Casquete (parte inferior)
+
+%d: Headgear (Mid)
+%d: Casquete (parte intermedia)
+
+%d: Headgear (Top)
+%d: Casquete (parte superior)
 
 %d: Left Accessory
 %d: Accesorio Izquierdo
@@ -19,20 +223,140 @@ hace años
 %d: Mid Headgear
 %d: Equipo para parte Media de la Cabeza
 
+%d: Refine All Equip (Costume)
+%d: Refinar Todo Pertrecho (Fantasía)
+
+%d: Refine All Equip (General)
+%d: Refinar Todo Pertrecho (General)
+
+%d: Refine All Equip (Shadow)
+%d: Refinar Todos los Pertrechos (Sombra)
+
 %d: Right Accessory
 %d: Accesorio Derecho
 
 %d: Right Hand
 %d: Mano Derecha
 
+%d: Shadow Accessory (Left)
+%d: Aditamento de Sombra (Izquierdo)
+
+%d: Shadow Accessory (Right)
+%d: Aditamento de Sombra (Derecho)
+
+%d: Shadow Armor
+%d: Armadura de Sombra
+
+%d: Shadow Shield
+%d: Escudo de Sombra
+
+%d: Shadow Shoes
+%d: Calzado de Sombra
+
+%d: Shadow Weapon
+%d: Arma de Sombra
+
+%d: Shoes
+%d: Calzado
+
 %d: Top Headgear
 %d: Equipo para parte Superior de la Cabeza
+
+%s : %s !!
+¡¡ %s : %s !!
+
+%s :Main: %s
+%s :Principal: %s
+
+%s data type is not supported :%u
+%s clases de datos no compatibles:%u
+
+%s failed
+%s fallido
+
+%s failed.
+%s fallido.
+
+%s failed. Player not found.
+%s fallido. Jugador no hallado.
+
+%s has bought your item(s).
+%s ha comprado sus objeto(s).
+
+%s in jail for %d years, %d months, %d days, %d hours and %d minutes
+%s en la cárcel por %d años, %d meses, %d días, %d horas y %d minutos
+
+%s is Unknown Command.
+%s es una Orden Desconocida.
+
+%s is empty
+%s está vacío.
+
+%s is in autotrade mode and cannot receive whispered messages.
+%s está en modo de intercambio automático y no puede recibir susurros.
+
+%s recalled!
+¡%s convocado!
+
+%s revision '%s' (src) / '%s' (scripts)
+%s revisión '%s' (src) / '%s' (secuencias de comando)
+
+%s spawns in:
+%s se generó en:
+
+%s stole %s.
+%s hurtó %s.
+
+%s stole an Unknown Item (id: %i).
+%s hurtó un Objeto Desconocido (ID: %i).
+
+%s value is now :%d
+El valor %s ahora es :%d
+
+%s value is now :%s
+El valor %s ahora es :%s
+
+%s: %d
+%s: %d
+
+'%s' Channel is password protected (usage: %s <#channel_name> <password>)
+El Canal '%s' está protegido con contraseña (uso: %s <#channel_name> <password>)
+
+'%s' and his/her partner are now divorced.
+'%s' y su pareja ahora están divorciados.
+
+'%s' channel color updated to '%s'
+El color del Canal  '%s' se actualizó a '%s'
 
 '%s' channel color updated to '%s' 
 El color del canal '%s' actualizado a '%s' 
 
 '%s' got %s's %s (chance: %0.02f%%)
 '%s' obtuvo algo de %s: %s (probabilidad: %0.02f%%)
+
+'%s' is not a known channel option
+'%s' no es una opción conocida del canal
+
+'%s' is not a known costume
+'%s' no es un disfraz conocido
+
+'%s' is not a known permission.
+'%s' no es un permiso conocido.
+
+'%s' is not married.
+'%s' no está casado.
+
+'%s' skill and stat points have been reset.
+'%s' puntos de habilidad y de nivel han sido restablecidos.
+
+'%s' skill points reset.
+'%s' puntos de habilidad restablecidos.
+
+'%s' stats points reset.
+ '%s' puntos de atributos restablecidos.
+
+'%s' stats:
+Atributos de '%s':
 
 '%s' stole %s's %s (chance: %0.02f%%)
 '%s' robó algo a %s: %s (probabilidad: %0.02f%%)
@@ -43,11 +367,23 @@ El color del canal '%s' actualizado a '%s'
 'That', as you call it, is a @@. There're plenty on this island!
 'Eso', como tú le llamas, es un @@. ¡Hay abundancia de esos en esta isla!
 
+(%s)
+(%s)
+
 (%s) 
 (%s) 
 
+(@request): %s
+(@request): %s
+
+(CID:%d/AID:%d)
+(CID:%d/AID:%d)
+
 (CID:%d/AID:%d) 
 (CID:%d/AID:%d) 
+
+* :%s %s: *
+* :%s %s: *
 
 *Uff*... And another box of @@s for our starving colleagues is ready.
 *Uff*... Y otra caja de @@s para nuestro colega que muere de hambre está lista.
@@ -61,11 +397,137 @@ El color del canal '%s' actualizado a '%s'
 , and 
 , y
 
+- #%s ( %d users )
+- #%s ( %d usuarios)
+
+- %s
+- %s
+
+- %s (%d)
+- %s (%d)
+
 - 2 @@
 - 2 @@
 
+- Available Costumes
+- Disfraces Disponibles
+
+- adds or removes <option name> with <option value> to <channel name> channel
+- agrega o elimina <option name> con <option value> al canal <channel name>
+
+- bans <character name> from <channel name> channel
+- bloquea a <character name> en el canal <channel name>
+
+- binds your global chat to <channel name>, making anything you type in global be sent to the channel
+- vincula tu chat global al canal <channel name>, haciendo que todo lo que escribas en global sea enviado al canal
+
+- changes <channel name> color to <color name>
+- cambia el color <channel name> a <color name>
+
+- creates a new channel
+- crea un nuevo canal
+
+- leaves <channel name>
+- abandona <channel name>
+
+- lists all banned characters from <channel name> channel
+- enumera todos los personajes bloqueados del canal <channel name>
+
+- lists colors available to select for custom channels
+- enumera los colores disponibles para seleccionar en canales personalizados
+
+- lists public channels
+- enumera los canales públicos
+
+- unbans <character name> from <channel name> channel
+- desbloquea a <character name> del canal <channel name>
+
+- unbans everyone from <channel name>
+- desbloquea a todos del canal <channel name>
+
 - unbinds your global chat from its attached channel (if binded)
 - desenlaza tu chat global del canal al que esté fijado (si está enlazado)
+
+- unbinds your global chat from its attached channel (if bound)
+- desbloquea a tu chat global de su canal vinculado (si lo está)
+
+-- %s
+-- %s
+
+-- %s ban <channel name> <character name>
+-- %s bloquea <channel name> <character name>
+
+-- %s banlist <channel name>
+-- %s lista de bloqueados <channel name>
+
+-- %s bindto <channel name>
+-- %s vinculado a <channel name>
+
+-- %s create <channel name> <channel password>
+-- %s crea <channel name> <channel password>
+
+-- %s leave <channel name>
+-- %s abandona <channel name>
+
+-- %s list
+-- %s listado
+
+-- %s list colors
+-- %s listado de colores
+
+-- %s setcolor <channel name> <color name>
+-- %s asignar color <channel name> <color name>
+
+-- %s setopt <channel name> <option name> <option value>
+-- %s asignar opción <channel name> <option name> <option value>
+
+-- %s unban <channel name> <character name>
+-- %s desbloquear <channel name> <character name>
+
+-- %s unbanall <channel name>
+-- %s desbloquear todos <channel name>
+
+-- %s unbind
+-- %s desvincular
+
+-- '%s' ban list
+-- '%s' lista de bloqueados
+
+-- Available options
+-- Opciones disponibles
+
+-- Displaying first %d partial matches
+-- Mostrando las primeras %d búsquedas parciales
+
+-- Permission List
+-- Lista de Permisos
+
+-- Public Channels
+-- Canales Públicos
+
+-- User '%s' Permissions
+-- Permisos del Usuario '%s'
+
+--- Available options:
+--- Opciones disponibles:
+
+----- Chats in Map -----
+----- Chats en el Mapa -----
+
+----- NPCs in Map -----
+----- PNJ en el Mapa -----
+
+----- Players in Map -----
+----- Jugadores en el Mapa-----
+
+------ %s items list of '%s' ------
+------ %s listado de objetos de '%s' ------
+
+------ Map Flags ------
+------ Banderas del Mapa ------
+
+------ Map Info ------
+------ Información del Mapa ------
 
 .
 .
@@ -78,6 +540,18 @@ El color del canal '%s' actualizado a '%s'
 
 ... and 1 @@.
 ... y 1 @@.
+
+1 GM found.
+1 DJ hallado.
+
+1 item has been refined.
+1 objeto ha sido refinado.
+
+1 player found in map '%s'.
+1 jugador hallado en el mapa '%s'.
+
+1 player found.
+1 jugador hallado.
 
 1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle.
 1. ##BNo utilizar programas automáticos.##b Esto quiere decir que no se permite realizar ninguna actividad AFK (lejos del teclado), aparte de estar en reposo.
@@ -112,6 +586,18 @@ El color del canal '%s' actualizado a '%s'
 7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.
 7. ##BNo hacer multibox.##b No se permite entrar en combate controlando más de un personaje al mismo tiempo.
 
+<MSG>2949</MSG>
+<MSG>2949</MSG>
+
+<MSG>2950</MSG>
+<MSG>2950</MSG>
+
+<MSG>3455</MSG>
+<MSG>3455</MSG>
+
+<MSG>3456,%d</MSG>
+<MSG>3456,%d</MSG>
+
 @@ and @@ just got married!
 ¡@@ y @@ acaban de casarse!
 
@@ -136,6 +622,15 @@ El color del canal '%s' actualizado a '%s'
 @@? Welcome my dear!#1
 ¿@@? ¡Bienvenido, mi estimado!
 
+@request sent.
+@request enviada.
+
+A GM has discharged you from jail.
+Un DJ te ha sacado de la cárcel.
+
+A band of adventurers formed in Argaes from those who had lost their homes and families. They visited the three permanent viro settlements: Tulimshar, Hurnscald and Nivalis.
+En Argaes se formó un grupo de aventureros a partir de los que habían perdido sus casas y familias. Ellos visitaron los tres asentamientos permanentes de viros: Tulimshar, Hurnscald y Nivalis.
+
 A few moments ago, I heard your conversation with Darlin.
 Hace poco escuche tu conversación con Darlin.
 
@@ -144,6 +639,9 @@ Una gran ciudad, ahora la capital de estas islas, llamada Esperia, elevada sobre
 
 ANYWAY, MAYBE WHEN YOU ARE LOOKING FOR FOOD WITH GUGLI YOU WILL HAVE THE TIME TO LOOK AT THIS!
 ¡DE TODOS MODOS, QUIZÁ CUANDO ESTÉS BUSCANDO COMIDA CON GUGLI TENGAS TIEMPO PARA MIRAR ESTO!
+
+ATK: %d - MATK: %d~%d
+ATQ: %d - ATQM: %d~%d
 
 About the Legion of Aemil in Esperia, I'm not sure about them, frankly.
 Sobre la Legión de Aemil en Esperia, francamente, no estoy seguro acerca de ellos.
@@ -157,6 +655,9 @@ Acerca de este gremio de los Esperia, no estoy seguro acerca de ellos, francamen
 About this Esperia's Warrior Guild, I'm not sure about them, frankly.
 Acerca de este Gremio Guerrero de Esperia... Si te soy franco, no estoy muy seguro sobre ellos.
 
+Acolyte
+Acólito
+
 Acorn
 Bellota
 
@@ -166,11 +667,23 @@ En realidad, Gugli me preguntó si podía ayudarte trayéndole algunas de tus ca
 Actually Gugli asked me if I could help you bringing him some of your boxes.#1
 En realidad, Gugli me preguntó si podía ayudarte trayéndole algunas de tus cajas.
 
+Actually... Do you know why the 
+A fin de cuentas... ¿Sabéis por qué 
+
 Aemil is a magnificent world unknown to us all.
 Aemil es un mundo magnífico, desconocido para todos nosotros.
 
+After this war, the Raijin race was born. A race born of Magic. Viros encapsulated in a Mana storm and altered forever.
+Tras esa guerra, nació la raza Raijin. Una raza engendrada por la Magia. Los Viros los sintetizaron durante una tormenta de Maná y los transformaron para siempre.
+
+Agi: %d (%d~%d)
+AGI: %d (%d~%d)
+
 Ah... Gugli Gugli... He's too young to understand our conversation
 Ah... Gugli Gugli... Él es muy joven para entender nuestra conversación.
+
+Alchemist
+Alquimista
 
 Ale
 Ale
@@ -193,11 +706,62 @@ AligeTrigger#Artis
 All I can do is tell you that...
 Todo lo que puedo hacer es decirte que...
 
+All characters recalled!
+¡Todos los personajes fueron convocados!
+
+All dropped items have been cleaned up.
+Todos los objetos soltados han sido vaciados.
+
+All items have been repaired.
+Todos los objetos han sido reparados.
+
+All items stored.
+Todos los objetos han sido almacenados.
+
+All monsters killed!
+¡Todos los monstruos han sido eliminados!
+
+All monsters summoned!
+¡Todos los monstruos han sido invocados!
+
+All of your items have been removed.
+¡Todos tus objetos han sido eliminados!
+
+All online characters of the %s guild have been recalled to your position.
+Todos los personajes en línea del gremio %s han sido convocados a tu posición.
+
+All online characters of the %s party have been recalled to your position.
+Todos los personajes en línea del grupo %s han sido convocados a tu posición.
+
+All players have been kicked!
+¡Todos los jugadores han sido expulsados!
+
+All races were in peace until the Viros set forth to discover the Source of Magic, based on Ukar scholars studies.
+Todas las razas estuvieron en paz hasta que los Viros salieron a buscar la Fuente de la Magia, según los estudios académicos Ukar.
+
+All skills have been added to your skill tree.
+Todas las habilidades han sido agregadas a tu árbol de habilidades.
+
+All stats changed!
+¡Todos los atributos cambiados!
+
 All that I had to eat were these berries... Berries... Berries...
 Todo lo que tenía para comer eran estas bayas... Bayas... Bayas...
 
+Alliances cannot be broken during Guild Wars!
+¡No pueden disolverse alianzas durante una Guerra de Gremios!
+
+Alliances cannot be made during Guild Wars!
+¡No se pueden constituir alianzas durante una Guerra de Gremios!
+
+AllowKS |
+PermitirHurtodeExperiencia |
+
 AllowKS | 
 AllowKS | 
+
+Already using this font.
+Ya está usando ese tipo de letra.
 
 Alright, I'm going to her room, keep an eye on her, we still don't know if she's a friend or a foe...#0
 Muy bien, voy a su dormitorio. Mantén un ojo sobre ella; aún no sabemos si es amiga o enemiga...
@@ -211,8 +775,14 @@ Muy bien, voy a su dormitorio. Mantén un ojo sobre él; aún no sabemos si es a
 Alright, I'm going to his room, keep an eye on him, we still don't know if he's an ally or an enemy...
 Muy bien. Voy a su dormitorio. Mantén un ojo sobre él; aún no sabemos si es un aliado o un enemigo...
 
+Alright, but... You only have @@ @@, and I need @@ to do the status reset for you!
+De acuerdo, pero... ¡Solamente tienes @@ @@, y necesito @@ para restablecer tus puntos de nivel!
+
 Alright, bye!
 Muy bien. ¡Adiós!
+
+Also, status point reset can't be undone. Do you really want this?
+Otra cosa, el restablecimiento de tus puntos de nivel no puede deshacerse ¿Aún quieres hacerlo?
 
 Also, there was this inscription on your raft, one of the warrior guild of Esperia, the largest and biggest guild of the whole new world, does that make you remember something?
 También, había una inscripción en tu balsa, uno del gremio guerrero de Esperia, el gremio más extendido y más grande de todo el nuevo mundo. ¿Te hace recordar algo?
@@ -223,8 +793,20 @@ Así mismo, tomamos tus yayed ropas, como estaban... Yeyeye... En malas condicio
 Also, we took your yayed clothes, as they were... Yeyeye... In bad condition, go check the box around your bed, there is some new ones inside.#1
 Also, we took your yayed clothes, as they were... Yeyeye... In bad condition, go check the box around your bed, there is some new ones inside.
 
+Alternative clouds appeared.
+Aparecieron nubes diferentes.
+
+Alternative clouds have disappeared.
+Desaparecieron las nubes diferentes.
+
+An invalid number was specified.
+Se especificó un número no válido.
+
 An unexpected help is always welcome!
 ¡Una ayuda inesperada siempre es bienvenida!
+
+And Tanveer, our president in Tulimshar, should be able to give you even more training.
+Además Tanveer, nuestro presidente en Tulimshar, debería poder brindarte aún más entrenamiento.
 
 And please, no berries.
 Y por favor, bayas no.
@@ -238,17 +820,38 @@ Y ¿qué me darás a cambio de esta información?
 And what kind of help do you need?
 ¿Y qué tipo de ayuda necesitas?
 
+Angus#008-2-17
+Angus#008-2-17
+
+Any work in progress (NPC dialog, manufacturing ...) quit and try again.
+Termine e intente nuevamente todo trabajo en curso (diálogo con PNJ, elaboración...)
+
 Anyway, if you ever feel interested, just click on my bag.
 De todos modos, si alguna vez te interesa, solo has click en mi bolsa.
 
+Appearance Debug - Body Type Change
+Depurar Aspecto  - Cambio de Biotipo
+
 Appearance Debug - Sex Change
 Limpieza de apariencia - Cambio de sexo
+
+Appearance changed.
+Aspecto cambiado.
 
 Aquada
 Aquada
 
 Aquada Box
 Caja de Aquada
+
+Arch Bishop
+Arzobispo
+
+Arch Bishop T
+Arzobispo T
+
+Archer
+Arquero
 
 Are you sure that they are my potions?
 ¿Estás seguro de que son mis pociones?
@@ -310,6 +913,9 @@ Al abrir tus ojos, y mirar en derredor, ves una enorme embarcación.
 As you open your eyes, you see a large ship before you.
 Al abrir los ojos, ves un gran barco ante ti.
 
+Assassin Cross
+Cruz del Asesino
+
 Astapolos
 Astapolos
 
@@ -319,23 +925,233 @@ Por el momento, nuestra tripulación esta ocupada recolectando @@s, @@s y @@s.
 At this time, we were selling crab food on our old mushroom island.
 En este momento, estábamos vendiendo comida de cangrejo en nuestra vieja isla hongo.
 
+Auction is disabled
+La subasta está desactivada
+
 Authorities began to control in order to have a peaceful society. This did not work well for long.
 Las autoridades comenzaron a ejercer control para tener una sociedad pacífica. Ésto no funcionó muy bien por un tiempo.
+
+Auto loot item are disabled on this map.
+La recolección automática de botín está desactivada en este mapa.
+
+Autoloot is now off.
+La recolección automática de botín está desactivada.
+
+Autolooting item type: '%s'
+Recolección automática de botín según clase: '%s'
+
+Autolooting item: '%s'/'%s' {%d}
+Recolección automática de botín: '%s'/'%s' {%d}
+
+Autolooting items with drop rates of %0.02f%% and below.
+Recolección automática de botín con índices de expulsión de %0.02f%% y menor.
+
+Autorejected alliance request from %s.
+La solicitud de alianza de %s fue rechazada automáticamente.
+
+Autorejected friend request from %s.
+La solicitud de amistad de %s fue rechazada automáticamente.
+
+Autorejected guild invite from %s.
+La invitación de gremio de %s fue rechazada automáticamente.
+
+Autorejected opposition request from %s.
+La solicitud de oposición de %s fue rechazada automáticamente.
+
+Autorejected party invite from %s.
+La invitación de grupo de %s fue rechazada automáticamente.
+
+Autorejected trade request from %s.
+La solicitud de intercambio de %s fue rechazada automáticamente.
+
+Autorejecting is activated.
+Rechazo automático activado.
+
+Autorejecting is deactivated.
+Rechazo automático desactivado.
+
+Autotrade Disabled
+Intercambio automático deshabilitado.
+
+Autotrade Enabled
+Intercambio automático Habilitado
+
+Autotrade is not allowed in this map.
+El intercambio automático no se permite en este mapa.
+
+Available Flags:
+Banderas disponibles:
+
+Available aliases:
+Alias disponibles:
+
+Available commands:
+Órdenes disponibles:
+
+Baby Acolyte
+Acólito Bebé
+
+Baby Alchemist
+Alquimista Bebé
+
+Baby Arch Bishop
+Arzobispo Bebé
+
+Baby Archer
+Arquero Bebé
+
+Baby Assassin
+Asesino Bebé
+
+Baby Bard
+Bardo Bebé
+
+Baby Blacksmith
+Herrero Bebé
+
+Baby Crusader
+Cruzado Bebé
+
+Baby Dancer
+Bailarín Bebé
+
+Baby Genetic
+Genético Bebé
+
+Baby Guillotine Cross
+Cruz de Guillotina Bebé
+
+Baby Hunter
+Cazador Bebé
+
+Baby Knight
+Caballero Bebé
+
+Baby Magician
+Ilusionista Bebé
+
+Baby Mechanic
+Mecánico Bebé
+
+Baby Merchant
+Mercader Bebé
+
+Baby Minstrel
+Trovador Bebé
+
+Baby Monk
+Monje Bebé
+
+Baby Novice
+Novicio Bebé
+
+Baby Priest
+Sacerdote Bebé
+
+Baby Ranger
+Guardabosques Bebé
+
+Baby Rogue
+Rufián Bebé
+
+Baby Royal Guard
+Guardia Real Bebé
+
+Baby Rune Knight
+Caballero Rúnico Bebé
+
+Baby Sage
+Sabio Bebé
+
+Baby Shadow Chaser
+Cazador de Sombras Bebé
+
+Baby Sorcerer
+Hechicero Bebé
+
+Baby Sura
+Sura Bebé
+
+Baby Swordsman
+Espadachín Bebé
+
+Baby Thief
+Bandolero Bebé
+
+Baby Wanderer
+Vagabundo Bebé
+
+Baby Warlock
+Pitón Bebé
+
+Baby Wizard
+Brujo Bebé
 
 Bag
 Bolsa
 
+Ban failed, it is not possible to ban this user.
+Bloqueo fallido. No es posible bloquear a este usuario.
+
+Banking is disabled
+Las actividades bancarias están desactivadas
+
+Bard
+Bardo
+
+Base EXP : %d%% | Base Drop: %d%% | Base Death Penalty: %d%%
+EXP Base: %d%% | Expulsión Base: %d%% | Penalización por Muerte Base: %d%%
+
+Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
+Nivel Base: %d (%.3f%%) | Nivel de Habilidad: %d (%.3f%%)
+
+Base level can't go any higher.
+El nivel base no puede aumentar más.
+
+Base level can't go any lower.
+El nivel base no puede disminuir más.
+
+Base level lowered.
+Nivel base disminuido.
+
+Base level raised.
+Nivel base aumentado.
+
+Battle configuration has been reloaded.
+La configuración de batalla se ha recargado.
+
+Battlegrounds ON
+Campos de Batalla ACTIVADOS
+
 Be patient a little while longer, in the next few days we will arrive at the port of Artis...
 Sé paciente un poco más, en los siguientes dias llegaremos al puerto de Artis...
+
+Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
+Debido a que usted no está autorizado a teleportar desde algunos mapas, %d jugador(es) no han sido convocados.
 
 Before you go, let me tell you how to get @@s, because you don't look very smart.
 Antes de que te vayas, déjame decirte cómo obtener @@s, porque no pareces muy inteligente.
 
+Better stay away from my basement, you may end up like the poor guys down there.
+Será mejor que te alejes de mi sótano, no sea que termines como los fiambres de ahí.
+
 Billy Bons
 Billy Bons
 
 BillyBons
 BillyBons
+
+Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --
+Azul -- El jugador %s te ha invitado a un duelo JcJ (Utiliza @accept/@reject) --
+
+Body Type
+Biotipo
+
+Boobed
+Tetona
+
+Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
+Índices de Expulsión de Jefe: Ordinario %.2fx / Sanador %.2fx / Utilizable %.2fx / Pertrecho %.2fx / Carta %.2fx
 
 Box
 Caja
@@ -388,6 +1204,42 @@ PUEDES OIRME?
 Can you bring me something which isn't a vegetable?
 ¿Puedes traerme algo que no sea un vegetal?
 
+Can't apply: not enough members in your team/guild that have not entered the queue in individual mode, minimum is %d
+No es aplicable: no hay suficientes miembros en tu grupo/gremio que no hayan ingresado de modo individual a la lista de espera, el mínimo es %d
+
+Can't apply: not enough members in your team/guild, minimum is %d
+No es aplicable: no hay suficientes miembros en tu grupo/gremio, el mínimo es %d
+
+Can't apply: not enough members in your team/party that have not entered the queue in individual mode, minimum is %d
+No es aplicable: no hay suficientes miembros en tu grupo/gremio que no hayan ingresado de modo individual a la lista de espera, el mínimo es %d
+
+Can't apply: not enough members in your team/party, minimum is %d
+No es aplicable: no hay suficientes miembros en tu grupo/gremio, el mínimo es %d
+
+Can't create chat rooms in this area.
+No se pueden crear salas de chat en este zona.
+
+Can't open file.
+No se puede abrir el archivo.
+
+Can't show boss mobs!
+¡No se pueden mostrar los monstruos jefes!
+
+Cannot clone a player of higher GM level than yourself.
+No es posible clonar a un jugador DJ de mayor nivel al suyo.
+
+Cannot create bound pet eggs or pet armors.
+No es posible crear huevos mascota o armaduras de mascota vinculados.
+
+Cannot mount while in disguise.
+No se puede montar disfrazado.
+
+Cannot send mails too fast!!
+¡¡No se pueden enviar correos tan rápido!!
+
+Cannot transform into monster while in disguise.
+No se puede transformar en monstruo mientras está disfrazado.
+
 Cap'tain has locked the door, you should go see him.
 El capitan cerro la puerta, deberias ir a verlo.
 
@@ -397,17 +1249,68 @@ Cap'tain is waiting for you! Hurry up.
 Carrot
 Zanahoria
 
+Cart Added.
+Agregado al Carrito.
+
+Cash Shop is disabled in this map
+El Almacén de Objetos está deshabilitado en este mapa
+
 Cashmere
 Lana de cachemira
 
 Cashmere#Dye001-1
 Lana de cachemira#Dye001-1
 
+Caul#008-2-17
+Caul#008-2-17
+
 Certain items perform different effects. Some will heal you, some you may use as weapons or armor, and some can be sold for gold.#0
 Algunos items tiene diferentes efectos. Unos te curarán, otros pueden ser usados como armas o armaduras y otros pueden ser vendidos por oro.
 
 Certain items perform different effects. Some will heal you, some you may use as weapons or armor, and some can be sold for gold.#1
 Algunos items tiene diferentes efectos. Unos te curarán, otros pueden ser usados como armas o armaduras y otros pueden ser vendidos por oro.
+
+Champion
+Campeón
+
+Channel '%s' has no banned players
+El canal '%s' no tiene jugadores bloqueados
+
+Channel '%s' is not available
+El canal '%s' no está disponible
+
+Channel length must be between 3 and %d
+La longitud del canal debe variar entre 3 y %d
+
+Channel name must start with a '#'
+El nombre del canal debe iniciar con '#'
+
+Channel password may not contain spaces
+La contraseña del canal no debe contener espacios
+
+Char-server has been asked to %s the character '%.*s'.
+Se le ha pedido al servidor de personajes que %s al personaje '%.*s'.
+
+Character cannot be disguised while in monster form.
+El personaje no puede disfrazarse mientras está en forma de monstruo.
+
+Character cannot be disguised while mounted.
+El personaje no puede disfrazarse mientras monta.
+
+Character does not have the specified item.
+El personaje no tiene el objeto especificado.
+
+Character killed.
+Personaje eliminado.
+
+Character not found.
+Personaje no hallado.
+
+Charcommand failed (usage: %c<command> <char name> <parameters>).
+La orden del personaje falló (uso: %c<command> <char name> <parameters>).
+
+Chat: %s | Player: %s | Location: %d %d
+Chat: %s | Jugador: %s | Ubicación: %d %d
 
 Check my balance.
 Verificar mi equilibrio.
@@ -421,6 +1324,12 @@ Chef Gado
 Chef Gado#Artis
 Chef Gado#Artis
 
+Cherry tree leaves have begun to fall.
+Las hojas de cerezo han empezado a caer.
+
+Cherry tree leaves no longer fall.
+Las hojas de cerezo dejaron de caer.
+
 Chest
 Cofre
 
@@ -430,14 +1339,35 @@ Chest#Artis
 Chocolate Cashmere Dye
 Tinte de lana de cachemira chocolate
 
+Christmas
+Navidad
+
 Click on the NPCs around you to continue the introduction.
 Haz clic en los NPCs a tu alrededor para continuar la introducción.
+
+Clone spawned.
+Clon generado.
+
+Clouds appeared.
+Aparecieron nubes.
+
+Clouds have disappeared.
+Desaparecieron las nubes.
+
+Clouds |
+Nubes |
 
 Clouds | 
 Nubes | 
 
+Clouds2 |
+Nubes2 |
+
 Clouds2 | 
 Nubes2 | 
+
+Clown
+Payaso
 
 Come after a little while.
 Venga en un breve momento.
@@ -451,14 +1381,23 @@ Come on, Sap! You are scaring our guest with your stories.#0
 Come on, Sap! You are scaring our guest with your stories.#1
 ¡Vamos, Sap! Estás asustando a nuestro invitado con tus historias.
 
+Commands are disabled in this map.
+Las órdenes están deshabilitadas en este mapa.
+
 Common, don't be like that and loosen up! Don't you want to know who's behind all of this?!
 Son similares, ¡no seas así y relájate! ¡¿No quieres saber quién está detrás de todo esto?!
 
 Congrats!
 Felicidades!
 
+Congratulations! You are the MVP! Your reward EXP Points are %u !!
+¡Felicidades! ¡Eres el JMV! ¡¡Tus Puntos de EXP ganados son %u !!
+
 Cookie Master
 El Amo de las Galletas
+
+Costume '%s' removed.
+Disfraz '%s' removido.
 
 Cotton, cashmere, leather, ...
 Algodón, lana de cachemira, cuero...
@@ -468,6 +1407,12 @@ Could I ask you what your native language is? A sailor told me you're Russian, b
 
 Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.#1
 ¿Puedo preguntarte cuál es tu lengua materna? Un marinero me dijo que eres rusa, pero otro me dijo que eres francesa... Estoy un poco perdido. Te rejistraré en la lista de pasajeros del barco justo después de eso.#1
+
+Could I ask you what your native language is? A sailor told me you're from Ancea, but another one told me you're from Aemil because of the logo that... never mind. I'm a bit lost, if you could tell me what language you speak I will register you on the ship passenger list just after that.#0
+¿Podría preguntar cuál es tu idioma nativo? Un marino me dijo que provienes de Ancea, pero otro me dijo que eres de Aemil debido al emblema que... no importa. Ando un poco perdida, Si me dices que idioma hablas entonces podre registrarte en el listado de pasajeros del barco.
+
+Could I ask you what your native language is? A sailor told me you're from Ancea, but another one told me you're from Aemil because of the logo that... never mind. I'm a bit lost, if you could tell me what language you speak I will register you on the ship passenger list just after that.#1
+¿Podría preguntar cuál es tu idioma nativo? Un marino me dijo que provienes de Ancea, pero otro me dijo que eres de Aemil debido al emblema que... no importa. Ando un poco perdida, Si me puedes decir que idioma hablas entonces te registraré en el listado de pasajeros del barco.
 
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#0
 ¿Puedo preguntarte cuál es tu lengua materna? Un marinero me dijo que eras rusa, pero otro me dijo que eras francesa... Estoy un poco confundida. Te registraré en la lista de embarque del buque sólo después de eso.
@@ -484,6 +1429,9 @@ Could you please bring me something which isn't a vegetable? And I beg you, no b
 Couwan
 Couwan
 
+Creator
+Artífice
+
 Crimson Cashmere Dye
 Tinte de lana de cachemira carmesí
 
@@ -492,6 +1440,27 @@ Garra de Croc
 
 Croconut Box
 Caja de Croconut
+
+Crusader
+Cruzado
+
+Current amount of zeny changed.
+La cantidad actual de cení cambió.
+
+CvC ON |
+PvP ACTIVADO |
+
+CvC is already Off.
+PvP ya está desactivado.
+
+CvC is already On.
+PvP ya está activado.
+
+CvC: Off
+PvP: Desactivado
+
+CvC: On
+PvP: Activado
 
 DID YOU FIND OUT WHAT THE LIGHT WAS?
 ¿AVERIGUASTE QUÉ ERA ESA LUZ?
@@ -523,8 +1492,32 @@ Damn you! You'd better not tell anyone you saw me!#1
 Dan
 Dan
 
+Dancer
+Bailarín
+
+Dark Collector
+Coleccionista Oscuro
+
 Darlin
 Darlin
+
+Day Mode Activated.
+Modo Diurno Activado.
+
+Day Mode is activated
+El Modo Diurno está activado
+
+Day mode is already enabled.
+El modo diurno ya está activado.
+
+Dear angel, can you hear my voice?
+Querido ángel, ¿puedes oír mi voz?
+
+Death Knight
+Caballero de la Muerte
+
+Defeated by
+Derrotado por
 
 Delicious Cookie
 Galleta Deliciosa
@@ -532,8 +1525,26 @@ Galleta Deliciosa
 Devis
 Devis
 
+Dex: %d (%d~%d)
+DES: %d (%d~%d)
+
 Did you say reward? I want it!
 ¿Has dicho recompensa? ¡La quiero!
+
+Disconnecting to perform change-sex request...
+Desconectando para ejecutar la solicitud de cambio de género...
+
+Disguise applied.
+Disfraz utilizado.
+
+Disguise removed.
+Disfraz removido.
+
+Displaying first %d out of %d matches
+Mostrando primeras %d de %d correspondencias
+
+Displays Night |
+Visualizar Noche |
 
 Displays Night | 
 Mostrar la Noche | 
@@ -587,19 +1598,19 @@ DoorUpwards#001-2-23
 DoorUpwards#001-2-23
 
 Duel: Can't use %s in duel.
-Duelo: No puedes usar %s en duelo.
+Duelo: No puedes utilizar %s en el duelo.
 
 Duel: Can't use this item in duel.
-Duelo: No puedes usar este artículo en el duelo.
+Duelo: No puedes utilizar ese objeto en el duelo.
 
 Duel: Invalid value.
-Duelo: Valor inválido.
+Duelo: Valor no válido.
 
 Duel: Invitation has been sent.
 Duelo: La invitación ha sido enviada.
 
 Duel: Player name not found.
-Duelo: No se encontró el nombre del jugador.
+Duelo: No se halló el nombre del jugador.
 
 Duel: The Player is in the duel already.
 Duelo: El Jugador ya está en el duelo.
@@ -612,6 +1623,30 @@ Duelo: La invitación de duelo ha sido rechazada.
 
 Duel: The limit of players has been reached.
 Duelo: Se alcanzó el límite de jugadores.
+
+Duel: You can take part in duel again after %d seconds.
+Duelo: Puedes volver a entrar en duelo después de %d segundos.
+
+Duel: You can't invite %s because he/she isn't in the same map.
+Duelo: No puedes invitar a %s debido a que él/ella no está en el mismo mapa.
+
+Duel: You can't use @accept without a duel invitation.
+Duelo: No puedes utilizar @accept sin una invitación a duelo.
+
+Duel: You can't use @duel without @reject.
+Duelo: No puedes utilizar @duel sin @reject.
+
+Duel: You can't use @invite. You aren't a duelist.
+Duelo: No puedes utilizar @invite. No eres un duelista.
+
+Duel: You can't use @leave. You aren't a duelist.
+Duelo: No puedes utilizar @leave. No eres un duelista.
+
+Duel: You can't use @reject without a duel invitation.
+Duelo: No puedes utilizar @reject sin una invitación a duelo.
+
+Duel: You've left the duel.
+Duelo: Has abandonado el duelo.
 
 Duel| Can't use %s in duel.
 Duelo| No puede utilizar %s en duelo.
@@ -688,6 +1723,21 @@ Duty me llama, *hic*, nos vemos luego, cariño.
 Each of the groups was ordered to sail in a different direction to find a new, suitable land where to live.
 Cada uno de los grupos fueron organizados para navegar en diferentes direcciones para encontrar una nueva y adecuada tierra donde vivir.
 
+East
+Oriente
+
+Edouard#001-2-41
+Edouard#001-2-41
+
+Eight Castles
+Ocho Castillos
+
+Eighteen Castles
+Diesiocho Castillos
+
+Eleven Castles
+Once Castillos
+
 Elfen Voice
 Voz de Elfen
 
@@ -705,6 +1755,9 @@ Elmo#sailors
 
 Elven Voice
 Voz de Elven
+
+Enabled Mapflags in this map:
+Banderas de mapa habilitadas en este mapa:
 
 Enora asks to kill fluffys
 Enora pide matar peluches
@@ -727,11 +1780,38 @@ Err, en serio. ¡Yo sólo quería llegar a Artis, y no tengo el dinero para paga
 Err, seriously, I just wanted to get to Artis, but I didn't have enough money to pay for the ferry!
 Err, en serio, yo sólo quería llegar a Artis, ¡pero no tenía suficiente dinero para pagar el ferry!
 
+Error reading atcommand.conf, reload failed.
+Error de lectura atcommand.conf, recarga fallida.
+
+Error reading groups.conf, reload failed.
+Error de lectura groups.conf, recarga fallida.
+
 Even though they did not hear anything about the other groups, they decided to start a new life on this land, full of harmful animals.
 Aun cuando ellos no escucharon nada sobre los otros grupos, decidieron inicial una nueva vida en esta tierra llena de animales dañinos.
 
+Evil clone spawned.
+Clon maligno generado
+
+Expanded Super Baby
+Super Bebé Ampliado
+
+Expanded Super Novice
+Superprincipiante Ampliado
+
+Experience Gained Base:%llu (%.2f%%) Job:%llu (%.2f%%)
+Experiencia Base Ganada:%llu (%.2f%%) Habilidad:%llu (%.2f%%)
+
+Experience rates: Base %.2fx / Job %.2fx
+Índices de experiencia: Base %.2fx / Habilidad %.2fx
+
 FINE, BYE!
 MUY BIEN, ¡ADIÓS!
+
+Fake name enabled.
+Nombre falso habilitado.
+
+Fake name must be at least two characters.
+El nombre falso debe de tener mínimo dos caracteres.
 
 Female
 Hembra
@@ -739,11 +1819,20 @@ Hembra
 Fexil
 Fexil
 
+Fifteen Castles
+Quince Castillos
+
 FightNPCName
 NombreNPCLucha
 
+File not found.
+Archivo no encontrado.
+
 File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
 Archivo descargado. Sepa que las banderas de mapa y los monstruos engendrados directamente no se eliminan.
+
+File unloaded. Be aware that some changes made by NPC are not reverted on unload. See doc/atcommands.txt for details.
+Archivo descargado. Tenga en cuenta que algunos cambios realizados por los PNJ no se revierten en la descarga. Véase doc/atcommands.txt para más información.
 
 Fine, tell me, who are these mysterious aliens?
 Bien, dime, ¿quiénes son estos misteriosos extraterrestres?
@@ -751,11 +1840,53 @@ Bien, dime, ¿quiénes son estos misteriosos extraterrestres?
 Fine, what do you want to do with your money?
 Genial, ¿qué quiere hacer con su dinero?
 
+Fireworks are launched.
+Fuegos artificiales lanzados.
+
+Fireworks have ended.
+Los fuegos artificiales han terminado.
+
+Fireworks |
+Fuegos Artificiales |
+
 Fireworks | 
 Fuegos artificiales | 
 
+Five Castles
+Cinco Castillos
+
+Fog hangs over.
+Se cierne la neblina.
+
+Fog |
+Neblina |
+
 Fog | 
 Niebla | 
+
+Follow mode OFF.
+Modo de seguimiento DESACTIVADO.
+
+Follow mode ON.
+Modo de seguimiento ACTIVADO.
+
+Font changed.
+Tipo de letra cambiado.
+
+For '%s' you need the amount of seconds (from 0 to 10)
+Para '%s' necesita el número de segundos (de 0 a 10)
+
+Four Castles
+Cuatro Castillos
+
+Fourteen Castles
+Catorce Castillos
+
+Friend already exists.
+La amistad ya existe.
+
+Friend removed.
+Amistad eliminada.
 
 From what I hear, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
 Según he oído, Gugli, mi hermano, necesita la ayuda de tanta gente como sea posible; para recolectar un montón de cosas interesantes, que pueden ser encontradas en la isla.
@@ -765,6 +1896,63 @@ Por lo que sé, Gugli, mi hermano, necesita toda la ayuda posible para recolecta
 
 Fungus
 Hongo
+
+GM command configuration has been reloaded.
+La configuración de órdenes del DJ ha sido recargada.
+
+Gained %d Kafra points. Total %d points.
+%d puntos Kafra ganados.  %d puntos totales.
+
+Gained %d cash points. Total %d points.
+ %d puntos de dinero ganados. %d puntos totales.
+
+Gained %dz.
+ %dz ganados.
+
+Gained exp is now shown.
+Ahora se muestra la experiencia ganada.
+
+Gained exp will not be shown.
+No se mostrará la experiencia ganada.
+
+Gained zeny is now shown.
+Ahora se muestran los ceníes ganados.
+
+Gained zeny will not be shown.
+No se mostrarán los ceníes ganados.
+
+Game time: A day cycle has a normal duration of %s.
+Tiempo del juego: Un ciclo de un día tiene una duración normal de %s.
+
+Game time: After, the game will be in daylight for %s.
+Tiempo del juego: Después, el juego estará de día por %s.
+
+Game time: After, the game will be in night for %s.
+Tiempo del juego: Después, el juego estará de noche por %s.
+
+Game time: The game is in daylight for %s.
+Tiempo del juego: El juego continúa de día por %s.
+
+Game time: The game is in night for %s.
+Tiempo del juego: El juego continúa de noche por %s.
+
+Game time: The game is in permanent daylight.
+Tiempo del juego: El juego está en día perpetuo.
+
+Game time: The game is in permanent night.
+Tiempo del juego: El juego está en noche perpetua.
+
+Gangsi
+Gangsi
+
+Gender
+Género
+
+Genetic
+Genético
+
+Genetic T
+Genético T
 
 Ggrmm grmmm...
 Ggrmm grmmm...
@@ -799,11 +1987,17 @@ Good, good!
 Got no reward
 No obtuvo recompensa
 
+Group changed successfully.
+Grupo cambiado satisfactoriamente.
+
 Growl, sniff, grr!! You'd better not tell anyone you saw me!#0
 ¡Gruñido, sniff, grr! ¡Será mejor que no le digas a nadie que me viste!
 
 Growl, sniff, grr!! You'd better not tell anyone you saw me!#1
 ¡Gruñido, sniff, grr! ¡Será mejor que no le digas a nadie que me viste!
+
+Growth: hp:%d sp:%d str(%.2f) agi(%.2f) vit(%.2f) int(%.2f) dex(%.2f) luk(%.2f)
+Progreso: PV:%d PM:%d FRZ(%.2f) AGI(%.2f) VIT(%.2f) INT(%.2f) DES(%.2f) SUE(%.2f)
 
 Gugli asked me to help sailors with their food gatherings. Do you know where could I find them?#0
 Gugli me pidió que ayudara a los marineros con su recolección de comida. ¿Sabes dónde puedo encontrarlos?
@@ -817,21 +2011,57 @@ Gugli me envío aquí abajo para ayudarte.
 GugliBarrierCheck
 GugliBarrierCheck
 
+Guild level change failed.
+Cambio de nivel de gremio fallido.
+
+Guild level changed.
+Nivel de gremio cambiado.
+
+Guild modification is disabled in this map.
+La modificación del gremio está deshabilitada en este mapa.
+
+Guild storage opened.
+Almacenaje del gremio abierto.
+
+GuildLock |
+BloqueodeGremio |
+
 GuildLock | 
 Bloqueo de Gremio| 
 
+Guillotine Cross
+Cruz de Guillotina
+
+Guillotine Cross T
+Cruz de guillotina T
+
 Gulukan
 Gulukan
+
+Gunslinger
+Pistolero
+
+GvG Castle |
+Castillo GcG |
 
 GvG Castle | 
 Castillo GvG | 
 
+GvG Dungeon |
+Calabozo GcG |
+
 GvG Dungeon | 
 Mazmorra GvG | 
+
+GvG Flags:
+Banderas GcG:
 
 GvG Flags: 
 Banderas GvG: 
 
+GvG ON |
+GcG ACTIVADO |
+
 GvG ON | 
 GvG ON | 
 
@@ -840,12 +2070,21 @@ GvG Off.
 
 GvG On.
 GvG On.
+
+GvG is already Off.
+GcG ya está DESACTIVADO.
+
+GvG is already On.
+GcG ya está ACTIVADO.
 
 GvG: Off.
-GvG: Apagado.
+GcG: Desactivado.
 
 GvG: On.
-GvG: Encendido.
+GcG: Activado.
+
+Gypsy
+Gitano
 
 HEY
 OYE
@@ -853,8 +2092,26 @@ OYE
 HEY @@!
 ¡OYE @@!
 
+HP and SP have already been recovered.
+Los PV y PM ya han sido recuperados.
+
+HP or/and SP modified.
+PV o PM modificados.
+
+HP, SP recovered.
+PV, PM recuperados.
+
+HP: %d/%d - SP: %d/%d
+PV: %d/%d - PM: %d/%d
+
+Hack on trade: character '%s' (account: %d) try to trade more items that he has.
+Fraude en comercio: el personaje '%s' (cuenta: %d) intenta intercambiar más artículos de los que posee.
+
 Half Croconut
 Medio Croconut
+
+Has met its demise
+Conoció su fin
 
 He he... OK, I'm going to the upper level and inform the captain.
 Je je... OK, voy a subir al nivel superior e informar al capitán.
@@ -904,8 +2161,20 @@ Hello, girl!
 Hello... Should I know you?
 Hola... ¿Debería conocerte?
 
+Help for command %c%s:
+Asistencia para órdenes %c%s:
+
+Help me out~ Please~ T_T
+Ayúdame ~ Por favor~ T_T
+
 Her shop is on the west part of the city, between the legion building and the library.
 Su tienda está en la parte oeste de la ciudad, entre el edificio de la legión y la biblioteca.
+
+Hercules %d-bit for %s
+Hercules %d-bit para %s
+
+Here they are.
+Aqui están.
 
 Hey
 Hey
@@ -970,8 +2239,50 @@ Persona escondida
 Hidden person doesn't answer
 La persona que está escondida no responde
 
+High Acolyte
+Acólito Crecido
+
+High Archer
+Arquero Crecido
+
+High Magician
+Ilusionista Crecido
+
+High Merchant
+Mercader Crecido
+
+High Novice
+Novicio Crecido
+
+High Priest
+Sacerdote Crecido
+
+High Swordsman
+Espadachín Crecido
+
+High Thief
+Bandolero Crecido
+
+High Wizard
+Brujo Crecido
+
 Hm...
 Hm...
+
+Homunculus Experience Gained Base:%u (%.2f%%)
+Experiencia Base Ganada por el Homúnculo:%u (%.2f%%)
+
+Homunculus growth stats (Lv %d %s):
+Progreso de atributos del homúnculo (Nivel %d %s):
+
+Homunculus reached its maximum level of '%d'
+El homúnculo alcanzó su máximo nivel de '%d'
+
+Homunculus stats altered.
+Atributos del homúnculo modificados.
+
+Homunculus stats:
+Atributos del homúnculo:
 
 How are you doing, cutie?
 ¿Qué haces, queridita?
@@ -1006,6 +2317,12 @@ Sin embargo, la sequía vino con el verano mientras los inviernos se tornaban m�
 Human Voice
 Voz Humana
 
+Hungry: %d - Intimacy: %u
+Hambre: %d - Cariño: %u
+
+Hunter
+Cazador
+
 Hurry, hurry! We need to check his teeth!
 ¡Deprisa, deprisa! ¡Tenemos que revisar sus dientes!
 
@@ -1023,6 +2340,9 @@ Ya tengo algunos plushroom.
 
 I already have some plushrooms on me.#1
 Ya tengo algunos plushroom.
+
+I am %s Super Novice~
+Soy Super Novato %s~
 
 I am not worried about rewards. I just want to help.
 No estoy preocupado por la recompensa. Sólo quiero ayudar.
@@ -1249,6 +2569,12 @@ Te daré @@GP.
 I will give you @@gp.
 Te daré @@gp.
 
+I will inform you when I have more information about all this.#0
+Te mantendré al tanto de todo.
+
+I will inform you when I have more information about all this.#1
+Te mantendré al tanto de todo.
+
 I won't forget it, I swear on my precious plushrooms.
 No lo olvidaré, lo juro por mis preciosos plushrooms.
 
@@ -1269,6 +2595,9 @@ Yo le daré todo lo que necesita, no te preocupes.
 
 I'll look at it.
 Ya lo miraré.
+
+I'll return the plushroom to you, but please, do not waste my time.
+Te devolveré las felpasetas, mas por favor, no me hagas perder el tiempo.
 
 I'll share my berries with you, if you help me.
 Compartiré mis bayas contigo, si me ayudas.
@@ -1375,14 +2704,101 @@ Si quieres abrir tu inventario usa la tecla F3 o usa tu mouse para seleccionarlo
 If you're looking for us there, mostly all of us will be at Pedro's restaurant and in the Inn for Silvio's case...
 Si nos estás buscando allá, la mayoría de nosotros estará en el restaurante de Pedro y, en el caso de Silvio, en la Posada...
 
+Impossible to increase the number/value.
+Imposible aumentar el número/valor.
+
 In this cave, you see, I have a lot of fun.
 Ves, en esta cueva, me divierto mucho.
 
 In this cave, you see, I have lots of fun.
 En esta cueva, como ves, tengo mucha diversión.
 
+Inbox is full (Max %d). Delete some mails.
+La bandeja de entrada está llena (Max. %d). Borre algunos mensajes.
+
+Incorrect name/ID, or no one from the specified guild is online.
+Nombre/ID incorrectos, o nadie del gremio indicado está conectado.
+
+Incorrect name/ID, or no one from the specified party is online.
+Nombre/ID incorrectos, o nadie del grupo indicado está conectado.
+
+Information sent to login-server via char-server.
+Información enviada al servidor de acceso a través del servidor de personajes.
+
+Instance variables may not be used with @set.
+Las variables de instancia no se pueden utilizar con @set.
+
+Int: %d (%d~%d)
+INT: %d (%d~%d)
+
 Interested?
 ¿Interesado?
+
+Invalid Homunculus ID.
+ID de Homúnculo no valida.
+
+Invalid Monster/NPC name/ID specified.
+Nombre/ID del monstruo/PNJ especificado no válido.
+
+Invalid bound type. Valid types are - 1:Account 2:Guild 3:Party 4:Character
+Clase de vínculo no valida. Las clases válidas son - 1:Cuenta 2:Gremio 3:Grupo 4:Personaje
+
+Invalid color.
+Color no válido.
+
+Invalid coordinates, using random target cell.
+Coordenadas no válidas, asignando celda destino al azar.
+
+Invalid e-mail. If your email hasn't been set, use a@a.com.
+Correo electrónico no válido. Si su correo electrónico no ha sido asignado, utilice a@a.com.
+
+Invalid flag name or flag.
+Bandera o nombre de bandera no válidos.
+
+Invalid font. Use a value from 0 to 9.
+Tipo de letra no válido. Utilice un valor de 0 a 9.
+
+Invalid item ID or name.
+ID o nombre de objeto no válidos.
+
+Invalid location number, or name.
+Número o nombre de ubicación no válido.
+
+Invalid mob ID %s!
+¡ID de monstruo %s no válida!
+
+Invalid mob id %s!
+¡ID de monstruo %s no válida!
+
+Invalid mob name %s!
+¡Nombre de monstruo %s no válido!
+
+Invalid monster ID or name.
+ID o nombre de monstruo no válidos.
+
+Invalid name.
+Nombre no válido
+
+Invalid new e-mail. Please enter a real e-mail address.
+Nuevo correo electrónico no válido. Por favor ingrese una dirección de correo electrónico válida.
+
+Invalid packet
+Paquete no válido
+
+Invalid time for ban command.
+Hora no válida para la orden de bloqueo.
+
+Invalid time for jail command.
+Hora no válida para el orden de arresto.
+
+Invisible: Off
+Invisible: Desactivado
+
+Invisible: On
+Invisible: Activado
+
+It has started to snow.
+Ha comenzado a nevar.
 
 It is nice to see that you woke up fine at the same time. Elmo came here to tell me this good news!#0
 ¡Es agradable ver que has despertado y que estás bien! Elmo vino aquí a darme estas buenas noticias.
@@ -1435,14 +2851,62 @@ It's nice to see that you woke up and that you are ok, Elmo came here to tell me
 It's nice to see that you woke up and that you are ok, Elmo came here to tell me this good news!#1
 ¡Es agradable ver que has despertado y que estás bien! Elmo vino aquí a darme estas buenas noticias.
 
+Item cannot be opened when inventory is full
+El objeto no puede abrirse cuando el inventario está lleno
+
+Item created.
+Objeto creado.
+
+Item database has been reloaded.
+La base de datos del objeto ha sido recargada.
+
+Item not found.
+Objeto no encontrado.
+
+Item type not found.
+Clase de objeto no encontrada.
+
+Item types on your autoloottype list:
+Clases de objetos en su listado de recolección automática de botín según clase:
+
+Item: '%s'/'%s'[%d] (%d) Type: %s | Extra Effect: %s
+Objeto: '%s'/'%s'[%d] (%d) Clase: %s | Efecto Adicional: %s
+
+Item: '%s'[%d]
+Objeto: '%s'[%d]
+
+Items on your autolootitem list:
+Objetos en su listado de recolección automática de botín:
+
 Its inhabitants did not know any kind of horror and in peace they lived as the earth gave them everything they needed to live.
 Sus habitantes no conocían ningún tipo de horror y vivían en paz; la tierra les daba todo lo que necesitaban.
 
 Jalad
 Jalad
 
+Job level can't go any higher.
+El nivel de habilidad no puede aumentar más.
+
+Job level can't go any lower.
+El nivel de habilidad no puede disminuir más.
+
+Job level lowered.
+Nivel de habilidad disminuido.
+
+Job level raised.
+Nivel de habilidad aumentado.
+
+Judgement has passed.
+El juicio ha acabado.
+
 Julia#Artis
 Julia#Artis
+
+Jump to %d %d
+Saltar a %d %d
+
+Jump to %s
+Saltar a %s
 
 Just hit the trunk, and it will yeye a @@.
 Sólo dale al baúl y éste te yeye un @@.
@@ -1450,8 +2914,14 @@ Sólo dale al baúl y éste te yeye un @@.
 Just leave me alone.
 Simplemente déjame solo. 
 
+Kagerou
+Kagerou
+
 Killed rattos
 Ratas muertas
+
+Killer state reset.
+Restablecer estado exterminador.
 
 Knife
 Cuchillo
@@ -1459,14 +2929,29 @@ Cuchillo
 Knifes on the table
 Cuchillos sobre la mesa
 
+Knight
+Caballero
+
 Last time I saw you, you were lost in the sea on your raft.#0
 La última vez que te vi, estabas perdida en el mar en tu balsa.
 
 Last time I saw you, you were lost in the sea on your raft.#1
 La última vez que te vi, estabas perdido en el mar sobre tu balsa.
 
+Leadership transferred.
+Liderazgo transferido.
+
 Lean
 Lean
+
+Leaves have stopped falling.
+Las hojas han dejado de caer.
+
+Leaves started falling.
+Las hojas comenzaron a caer.
+
+Leaves |
+Hojas |
 
 Leaves | 
 Dejados | 
@@ -1483,6 +2968,9 @@ LeftDoor#001-2-23
 LeftDoorCheck
 LeftDoorCheck
 
+Lena#008-2-13
+Lena#008-2-13
+
 Let me see your work...
 Déjame ver tu trabajo...
 
@@ -1495,23 +2983,53 @@ Hoja de Lechuga
 Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.
 Como al resto de la tripulación, se te da la bienvenida para que vengas y descanses aquí cuando sea durante tu travesía en Artis.
 
+Login-server has been asked to %s the player '%.*s'.
+Se ha solicitado al servidor de acceso que %s al jugador '%.*s'.
+
+Login-server is offline. Impossible to %s the player '%.*s'.
+El servidor de acceso está desconectado. Imposible %s al jugador '%.*s'.
+
 Look who we have here, did you come for a training session?
 Mire a quién tenemos aquí, ¿ha venido a por una sesión de entrenamiento?
+
+Lord Knight
+Gran Caballero
 
 Lost Island.
 La Isla Perdida.
 
+Luk: %d (%d~%d)
+SUE: %d (%d~%d)
+
+MVP Monster: '%s'/'%s'/'%s' (%d)
+Monstruo JMV: '%s'/'%s'/'%s' (%d)
+
 Magic Arpan#sailors
 Magic Arpan#sailors
 
+Magician
+Ilusionista
+
 Male
 Varón
+
+Map not found.
+Mapa no encontrado.
+
+Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d
+Mapa: %s (Zona:%s) | Jugadores: %d | PNJ: %d | Chats: %d | Ventas: %d
 
 Marriage failed.
 El matrimonio falló.
 
 Max
 Max
+
+Max HP: %d (%d~%d)
+PV máx: %d (%d~%d)
+
+Max SP: %d (%d~%d)
+PV máx: %d (%d~%d)
 
 Max and Sapartan for example?
 ¿Max y Spartan por ejemplo?
@@ -1543,6 +3061,9 @@ Maybe she was one of those who got lost last month? The yoiis from Esperia that 
 Maybe she was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior guild!
 ¿Tal vez ella fue una de los que se perdieron el mes pasado? ¡El yoiis de Esperia que tenía una misión secreta del gremio Guerreros!
 
+Maybe you meant:
+Tal vez te referías a:
+
 Maybe you meant: 
 Quizá quiso decir: 
 
@@ -1552,14 +3073,53 @@ Tal vez... Pero yo prefiero tener a gente bien entrenada a mi alrededor cuando v
 Maybe... But I prefer having well-trained people around me when it comes to fight against dangerous creatures. Do you already feel expert on how you fight enemies?#1
 Tal vez... Pero yo prefiero tener a gente bien entrenada a mi alrededor cuando vengan a pelear contra criaturas peligrosas. ¿Ya te sientes experto como para combatir contra enemigos?
 
+Mechanic
+Mecánico
+
+Mechanic T
+Mecánico T
+
+Merchant
+Mercader
+
+Mercy has been granted.
+Se ha concedido misericordia.
+
+Mercy has been shown.
+Se ha mostrado misericordia.
+
+Micksha still haven't added a ship here, so you're stranded here FOREVER!
+Micksha aún no ha asignado por aquí ningún barco, ¡así que te vas a quedar varado POR SIEMPRE!
+
+Minstrel
+Trovador
+
+Minstrel T
+Trovador T
+
 Mint Cashmere Dye
 Tinte de cachemira de menta
+
+Mob Search... %s %s
+Búsqueda de monstruo... %s %s
 
 Mobs#001-1
 Multitudes#001-1
 
+Monk
+Monje
+
+Monster NoTeleport |
+NoTeleportarMonstruo |
+
 Monster NoTeleport | 
 Monstruo NoTelepuerto | 
+
+Monster database has been reloaded.
+La base de datos de monstruos se ha actualizado.
+
+Monster: '%s'/'%s'/'%s' (%d)
+Monstruo: '%s'/'%s'/'%s' (%d)
 
 My beauty, I was not always a sailor, you know, I was once an important individual!
 Mi bella, no siempre fui un marinero, sabes. ¡Yo fui una vez una persona importante!
@@ -1591,17 +3151,65 @@ NO and *hick* NO, you and you and your... *burp* stupi*hick* guild!#0
 NO and *hick* NO, you and you and your... *burp* stupi*hick* guild!#1
 ¡NO, y *hic* NO, tú y tú y tu... *eructo* estúpi*hic* gremio!
 
+NOTICE: If you crash with mount your LUA is outdated.
+AVISO: Si falla al montar, su LUA está obsoleto.
+
+NPC %d: %s | Direction: %s | Sprite: %d | Location: %d %d
+PNJ %d: %s | Dirección: %s | Objeto móvil: %d | Ubicación: %d %d
+
+NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d
+PNJ %d: %s::%s | Dirección: %s | Objeto móvil: %d | Ubicación: %d %d
+
 NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d 
 NPC %d: %s::%s | Dirección: %s | Duendecillo: %d | Ubicación: %d %d 
+
+NPC Buy:%dz, Sell:%dz | Weight: %.1f
+PNJ Compra:%dz, Venta:%dz | Peso: %.1f
 
 NPC Buy:%dz, Sell:%dz | Weight: %.1f 
 NPC Comprar:%dz, Vender:%dz | Peso: %.1f 
 
+NPC Disabled.
+PNJ Deshabilitado.
+
+NPC Enabled.
+PNJ Habilitado.
+
+NPC is not in this map.
+El PNJ no está en este mapa.
+
+NPC moved.
+PNJ movido.
+
+NPC variables may not be used with @set.
+Las variables del PNJ no pueden utilizarse con @set.
+
+Name not found in list.
+Nombre no encontrado en la lista.
+
+Name: %s
+Nombre: %s
+
 Name: %s 
 Nombre: %s 
 
+Name: %s (GM)
+Nombre: %s (DJ)
+
+Name: %s (GM:%d) | Location: %s %d %d
+Nombre: %s (DJ:%d) | Ubicación: %s %d %d
+
 Nard#Artis
 Nard#Artis
+
+Neutral
+Neutral
+
+New e-mail must be a real e-mail address.
+El nuevo correo electrónico debe de ser una dirección de correo electrónico auténtica.
+
+New e-mail must be different from the current e-mail address.
+El nuevo correo electrónico debe de ser una dirección de correo electrónico distinta de la actual.
 
 New technologies assisted the slaughter instead of establishing peace. At some point, two different rivals were formed.
 Las nuevas tecnologías promovieron la matanza en vez de establecer la paz. En algún punto, se formaron dos diferentes rivales.
@@ -1609,14 +3217,74 @@ Las nuevas tecnologías promovieron la matanza en vez de establecer la paz. En a
 New technologies helped the slaughter instead of establishing peace. At some point, two different rivals were formed.
 Las nuevas tecnologías contribuyeron a la matanza en vez de establecer la paz. En algún punto, dos diferentes rivales fueron formados.
 
+New warp NPC '%s' created.
+Creado nuevo PNJ de teleportación '%s'.
+
+Night Mode Activated.
+Modo Nocturno Activado.
+
+Night Mode is activated
+El Modo Nocturno está activado
+
+Night mode is already enabled.
+El Modo Nocturno ya está habilitado.
+
+NightmareDrop |
+SoltarPesadilla |
+
 NightmareDrop | 
 NightmareDrop | 
+
+Nine Castles
+Nueve Castillos
+
+Nineteen Castles
+Diecinueve Castillos
+
+Ninja
+Ninja
+
+No Exp Penalty: %s | No Zeny Penalty: %s
+Ninguna Penalización de Experiencia: %s | Ninguna Penalización de Ceníes: %s
+
+No GM found.
+Ningún DJ encontrado.
+
+No Save (Return to last Save Point)
+No Guardar (Volver al último Punto de Retorno)
+
+No Save, Save Point: %s,%d,%d
+No Guardar, Punto de Retorno: %s,%d,%d
+
+No Save, Save Point: %s,Random
+No Guardar, Punto de Retorno: %s,Aleatorio
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#0
 ¡No y *hic*... No, tú y tú y tu... *eructo* estúpi *hic* gremio!
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#1
 ¡No y *hic*... No, tú y tú y tu... *eructo* estúpi *hic* gremio!
+
+No item found in this player's %s.
+No se encontró el objeto en el  %s de este jugador.
+
+No item has been refined.
+Ningún objeto ha sido refinado.
+
+No item need to be repaired.
+Ningún objeto necesita ser reparado.
+
+No longer spying on the %s guild.
+No se continuó espiando al gremio %s.
+
+No longer spying on the %s party.
+No se continuó espiando al grupo %s.
+
+No player found in map '%s'.
+Ningún jugador encontrado en el mapa '%s'.
+
+No player found.
+Ningún jugador encontrado.
 
 No problem, I can help you anyway.
 No hay problema, te puedo ayudar de todos modos.
@@ -1651,62 +3319,128 @@ No, lo siento.
 No, thanks.
 No, gracias.
 
+NoAutoloot |
+NingunaRecolecciónAutomáticadeBotín |
+
+NoBaseEXP |
+NingunaEXPBase |
+
 NoBaseEXP | 
 NoBaseEXP | 
+
+NoBranch |
+NingunaRama |
 
 NoBranch | 
 NoBifurcación | 
 
+NoCalcRank |
+NingunaClasificaciónCalculada |
+
 NoCalcRank | 
 NoNivelCálculo | 
+
+NoCommand |
+NingunaOrden |
 
 NoCommand | 
 NoOrden | 
 
+NoDrop |
+NingúnObjetoExpulsado |
+
 NoDrop | 
 NoSoltar | 
+
+NoGuild |
+NingúnGremio |
 
 NoGuild | 
 NoGremio | 
 
+NoIcewall |
+NingúnMurodeHielo |
+
 NoIcewall | 
 NoMurodeHielo | 
+
+NoJobEXP |
+NingunaEXPdeHabilidad |
 
 NoJobEXP | 
 NoTrabajoEXP | 
 
+NoMVPLoot |
+NingúnBotinJMV |
+
 NoMVPLoot | 
 NoSaqueoMVP | 
+
+NoMemo |
+NingúnInforme |
 
 NoMemo | 
 NoNota | 
 
+NoMobLoot |
+NingúnBotíndeMonstruo |
+
 NoMobLoot | 
 NoSaqueoMultitud | 
+
+NoParty |
+NingúnMonstruo |
 
 NoParty | 
 NoGrupo | 
 
+NoPet |
+NingunaMascota |
+
+NoReturn |
+NingúnBeneficio |
+
 NoReturn | 
 NoRetorno | 
+
+NoSkill |
+NingunaHabilidad |
 
 NoSkill | 
 NoHabilidad | 
 
+NoTeleport |
+NoTeleportación |
+
 NoTeleport | 
 NoTeleportar | 
+
+NoTrade |
+NingúnIntercambio |
 
 NoTrade | 
 NoComerciar | 
 
+NoVending |
+NingunaVenta |
+
 NoVending | 
 NoVenta | 
+
+NoViewID |
+NingunaIDVisible |
 
 NoViewID | 
 NoVerID | 
 
+NoWarp |
+NingunaTeleportación |
+
 NoWarp | 
 NoTorcer | 
+
+NoWarpTo |
+NingunaTeleportaciónA |
 
 NoWarpTo | 
 NoTorcerA | 
@@ -1716,6 +3450,33 @@ Nadie sabrá acerca de la existencia de los Mercurianos
 
 Non-binary
 Non-binary
+
+None
+Ninguno
+
+None Taken
+Para Nada
+
+Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
+Índices de Expulsión Corrientes: Ordinario %.2fx / Sanador %.2fx / Utilizable %.2fx / Pertrecho %.2fx / Carta %.2fx
+
+North
+Norte
+
+North East
+Nordeste
+
+North West
+Noroeste
+
+Not a file.
+No es un archivo.
+
+Not a hexadecimal digit:
+No es un dígito hexadecimal:
+
+Not a string:
+No es una cadena:
 
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Noobs are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
 No conformes con permanecer enterrados en sus madrigueras en la arena, los Crocs pueden ser bastante molestos, infestando toda esta isla. Se le informa a aquellos con los pies sensibles y a los novatos: Eviten tocar a estos rastreros demonios rojos. ¡Tienen enormes y letales pinzas que pueden hacerte picadillo! Pueden reconocerlos fácilmente por sus personalidades malhumoradas. Sean cuidadosos jovencillos.
@@ -1732,6 +3493,15 @@ Note#Artis
 Nothing
 Nada
 
+Novice
+Novato
+
+Now I remain poor and unemployed.#0
+Sigo siendo mísera y desempleada.
+
+Now I remain poor and unemployed.#1
+Sigo siendo mísero y desempleado.
+
 Now go outside and talk with Gugli, he'll tell you what we need.
 Ahora ve afuera y habla con Gugli. Él te dirá qué necesitamos.
 
@@ -1740,6 +3510,12 @@ Ahora espere a su socia, después vuelva a hablar conmgo.#0
 
 Now wait for your partner, then talk to me again.#1
 Ahora espere a su socio, después vuelva a hablar conmgo.#1
+
+Number of skill points changed.
+Cifra de puntos de habilidad cambiada.
+
+Number of status points changed.
+Cifra de puntos de nivel cambiada.
 
 OH, OK!
 OH, ¡ESTA BIEN!
@@ -1753,6 +3529,9 @@ OK. Creo que se está despertando; ve a verla.
 ON THE TOP OF THE CLIFF!
 ¡EN LO ALTO DEL ACANTILADO!
 
+Oboro
+Oboro
+
 Of course you do! Just listen carefully to these words my dear.#0
 ¡Por supuesto que sí! Sólo tienes que escuchar con atención estas palabras, querida.
 
@@ -1761,6 +3540,9 @@ Of course you do! Just listen carefully to these words my dear.#1
 
 Of course, they are on the left wall, go get a look at them.
 Por su puesto, estan en la pared izquierda, ve y hechales un vistazo. 
+
+Off
+Desactivado
 
 Oh look, there is a piou behind you.
 ¡Oh, mira! Allí está un piou detrás tuyo.
@@ -1894,6 +3676,9 @@ De acuerdo, pero... ¿Qué me puedes ofrecer?
 OldBook
 OldBook
 
+On
+Activado
+
 On one hand, ranged weapons are generally weaker than melee ones, but it obviously depends on the level of the weapon. On the other hand, you attack from a safer position.
 Por un lado, las armas a distancias son, por lo general, más débiles que las de cuerpo a cuerpo, pero eso obviamente depende del nivel del arma. Por el otro lado, tú atacas desde una posición segura.
 
@@ -1906,11 +3691,17 @@ Una vez dentro de tu inventario, puedes equiparte con un ítem seleccionándolo 
 Once you're inside of your inventory, you may equip the item by selecting it and clicking 'Equip'. Alternately, you can unequip an item by selecting 'unequip' to remove it.#1
 Una vez dentro de tu inventario, puedes equiparte con un ítem seleccionándolo y tocando la opción 'Equipar'. También puedes desequiparlo con la opción 'Quitárselo'.
 
+One Castle
+Un Castillo
+
 Open your inventory (F3 key), select the clothes one by one and equip them.#0
 Abre tu inventario (tecla F3), seleccione la ropa una por una y equípala.
 
 Open your inventory (F3 key), select the clothes one by one and equip them.#1
 Abre tu inventario (tecla F3), seleccione la ropa una por una y equípala.
+
+Options changed.
+Opciones cambiadas.
 
 Or else, if you really wish one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
 O si no, si realmente deseas uno, y si te sientes capaz, puedes intentar matar tortugas o crocs si eres lo suficientemente fuerte. Estoy seguro de que ellos pueden soltar uno o dos @@.
@@ -1918,14 +3709,32 @@ O si no, si realmente deseas uno, y si te sientes capaz, puedes intentar matar t
 Orc Voice
 Voz de Orc
 
+Other Drop Rates: MvP %.2fx / Card-Based %.2fx / Treasure %.2fx
+Otros Índices de Expulsión: JMV %.2fx / Según Carta %.2fx / Tesoro %.2fx
+
+Other Flags:
+Otras Banderas:
+
 Other Flags: 
 Otras Marcas: 
 
 Otherwise, if you really want one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
 De lo contrario, si realmente quieres uno, y te sientes capaz, puedes intentar matar tortugas o crocs si eres lo suficientemente fuerte. Estoy seguro de que podrían dejar caer una o dos @@s.
 
+Packet 0x%x length: %d
+Paquete 0x%x longitud : %d
+
+Paladin
+Paladín
+
 Partner not ready.
 El compañero no está listo.
+
+Party modification is disabled in this map.
+La modificación del grupo está deshabilitada en este mapa.
+
+PartyLock |
+BloqueoGrupo |
 
 PartyLock | 
 Bloqueo de grupo| 
@@ -1938,6 +3747,18 @@ Perfecto. ¿Qué tipo de comida trajiste hoy para mi?
 
 Perfect, which food did you get for me today?#1
 Perfecto. ¿Qué tipo de comida trajiste hoy para mi?
+
+Pet hunger changed.
+El hambre de la mascota ha cambiado.
+
+Pet hunger is already at maximum.
+El hambre de la mascota ya está al máximo.
+
+Pet intimacy changed.
+El cariño de la mascota ha cambiado.
+
+Pet intimacy is already at maximum.
+El cariño de la mascota ya está al máximo.
 
 Peter
 Peter
@@ -1953,6 +3774,9 @@ Peter le dio la recompensa
 
 Peter#001-2-22
 Peter#001-2-22
+
+Pets are disabled in this map.
+Las mascotas están deshabilitadas en este mapa.
 
 Pets are not allowed in Guild Wars.
 Las mascotas no se permiten en los Gremios de Guerra.
@@ -1972,6 +3796,51 @@ Piou Asesino
 Pious legs
 Piernas de Pious
 
+Player '%s' (session #%d) | Location: %d,%d
+Jugador '%s' (sesión #%d) | Ubicación: %d,%d
+
+Player '%s' has now been banned from the '%s' channel
+El jugador '%s' ha quedado bloqueado en el canal '%s'
+
+Player '%s' has now been unbanned from the '%s' channel
+El jugador '%s' ha quedado desbloqueado en el canal '%s'
+
+Player '%s' is already banned from this channel
+El jugador '%s' ya está bloqueado en este canal
+
+Player '%s' is not banned from this channel
+El jugador '%s' no está bloqueado en este canal
+
+Player '%s' was not found
+El jugador '%s' no fue encontrado
+
+Player database has been reloaded.
+La base de datos del jugador ha sido recargada.
+
+Player has been nuked!
+¡El jugador ha sido destruido!
+
+Player is not muted.
+El jugador no está enmudecido.
+
+Player is using %s skill tree (%d basic points).
+El jugador está utilizando el árbol de habilidades %s (%d puntos básicos).
+
+Player requires level %d of skill %s.
+El jugador necesita el nivel %d de la habilidad %s.
+
+Player unjailed.
+Jugador liberado.
+
+Player unmuted.
+Jugador no enmudecido.
+
+Player warped to jail.
+Jugador teleportado a la cárcel.
+
+Please choose the desired body type:
+Por favor elija el biotipo deseado:
+
 Please choose the desired gender:
 Por favor elija el género deseado:
 
@@ -1981,20 +3850,299 @@ Por favor no le digas a la gente que me has visto, No quiero que me arrojen al m
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, at least not again!
 Por favor, no le digas a la gente que me viste. No quiero ser decapitado o lanzado al mar como comida de tiburones, ¡al menos no de nuevo!
 
+Please enter a Monster/NPC name/ID (usage: @disguise <name/ID>).
+Por favor ingrese nombre/ID de Monstruo/PNJ (uso: @disguise <name/ID>).
+
+Please enter a Monster/NPC name/ID (usage: @disguiseall <name/ID>).
+Por favor ingrese nombre/ID de Monstruo/PNJ (uso: @disguiseall <name/ID>).
+
+Please enter a NPC name (Usage: @unloadnpc <NPC_name> {<flag>}).
+Por favor ingrese nombre de PNJ (uso: @unloadnpc <NPC_name> {<flag>}).
+
+Please enter a NPC name (usage: @enablenpc <NPC_name>).
+Por favor ingrese nombre de PNJ (uso: @enablenpc <NPC_name>).
+
+Please enter a NPC name (usage: @hidenpc <NPC_name>).
+Por favor ingrese nombre de PNJ (uso: @hidenpc <NPC_name>).
+
 Please enter a NPC name (usage: @npcoff <NPC_name>).
 Por favor introduzca un nombre de NPC (uso: @npcoff <NPC_name>).
+
+Please enter a NPC name (usage: @tonpc <NPC_name>).
+Por favor ingrese nombre de PNJ (uso: @tonpc <NPC_name>).
+
+Please enter a clothes color (usage: @dye/@ccolor <clothes color: %d-%d>).
+Por favor ingrese color de ropa (uso: @dye/@ccolor <clothes color: %d-%d>).
+
+Please enter a guild name (usage: @guild <guild_name>).
+Por favor ingrese nombre del gremio (uso: @guild <guild_name>).
+
+Please enter a guild name/ID (usage: @guildrecall <guild_name/ID>).
+Por favor ingrese nombre/ID de gremio (uso: @guildrecall <guild_name/ID>).
+
+Please enter a guild name/ID (usage: @guildspy <guild_name/ID>).
+Por favor ingrese nombre/ID de gremio (uso: @guildspy <guild_name/ID>).
+
+Please enter a hair color (usage: @haircolor/@hcolor <hair color: %d-%d>).
+Por favor ingrese color de cabello (uso: @haircolor/@hcolor <hair color: %d-%d>).
+
+Please enter a hair style (usage: @hairstyle/@hstyle <hair ID: %d-%d>).
+Por favor ingrese un corte de cabello (uso: @hairstyle/@hstyle <hair ID: %d-%d>).
+
+Please enter a homunculus ID (usage: @makehomun <homunculus id>).
+Por favor ingrese ID de homúnculo (uso: @makehomun<homunculus id>).
+
+Please enter a hunger value (usage: @homhungry <hunger value [0-100]>).
+Por favor ingrese valor para el hambre (uso: @homhungry <hunger value [0-100]>).
+
+Please enter a level adjustment (usage: @homlevel <number of levels>).
+Por favor ingrese nivel de ajuste (uso: @homlevel <number of levels>).
+
+Please enter a level adjustment (usage: @joblvup/@jlevel/@joblvlup <number of levels>).
+Por favor ingrese nivel de ajuste (uso: @joblvup/@jlevel/@joblvlup <number of levels>).
+
+Please enter a level adjustment (usage: @lvup/@blevel/@baselvlup <number of levels>).
+Por favor ingrese nivel de ajuste (uso: @lvup/@blevel/@baselvlup <number of levels>).
+
+Please enter a map (usage: @warp/@rura/@mapmove <mapname> <x> <y>).
+Por favor ingrese mapa (uso: @warp/@rura/@mapmove <mapname> <x> <y>).
+
+Please enter a message (usage: @broadcast <message>).
+Por favor ingrese mensaje (uso: @broadcast <message>).
+
+Please enter a message (usage: @homtalk <message>).
+Por favor ingrese mensaje (uso: @homtalk <message>).
+
+Please enter a message (usage: @kami <message>).
+Por favor ingrese mensaje (uso: @kami <message>).
+
+Please enter a message (usage: @localbroadcast <message>).
+Por favor ingrese mensaje (uso: @localbroadcast <message>).
+
+Please enter a message (usage: @me <message>).
+Por favor ingrese mensaje (uso: @me <message>).
+
+Please enter a message (usage: @pettalk <message>).
+Por favor ingrese mensaje (uso: @pettalk <message>).
+
+Please enter a mob name/ID and guild name/ID (usage: @disguiseguild <mob name/ID>, <guild name/ID>).
+Por favor ingrese nombre/ID de monstruo y nombre /ID de gremio (uso: @disguiseguild <mob name/ID>, <guild name/ID>).
+
+Please enter a mob name/id (usage: @showmobs <mob name/id>)
+Por favor ingrese nombre/ID de monstruo (uso: @showmobs <mob name/id>)
+
+Please enter a monster name (usage: @mobsearch <monster name>).
+Por favor ingrese nombre de monstruo (uso: @mobsearch <monster name>).
+
+Please enter a monster name (usage: @summon <monster name> {duration}).
+Por favor ingrese nombre de monstruo (uso: @summon <monster name> {duration}).
+
+Please enter a monster name/ID (usage: @mobinfo <monster_name_or_monster_ID>).
+Por favor ingrese nombre/ID de monstruo (uso: @mobinfo <monster_name_or_monster_ID>).
+
+Please enter a monster name/ID (usage: @whereis <monster_name_or_monster_ID>).
+Por favor ingrese nombre/ID de monstruo (uso: @whereis <monster_name_or_monster_ID>).
+
+Please enter a monster/egg name/ID (usage: @makeegg <pet>).
+Por favor ingrese nombre/ID de nomstruo/huevo (uso: @makeegg <pet>).
+
+Please enter a number (usage: @skpoint <number of points>).
+Por favor ingrese número (uso: @skpoint <number of points>).
+
+Please enter a number (usage: @stpoint <number of points>).
+Por favor ingrese número (uso: @stpoint <number of points>).
+
+Please enter a party name (usage: @party <party_name>).
+Por favor ingrese nombre de grupo (uso: @party <party_name>).
+
+Please enter a party name/ID (usage: @partyrecall <party_name/ID>).
+Por favor ingrese nombre/ID de grupo (uso: @partyrecall <party_name/ID>).
+
+Please enter a party name/ID (usage: @partyspy <party_name/ID>).
+Por favor ingrese nombre/ID de grupo (uso: @partyspy <party_name/ID>).
+
+Please enter a player name (usage: @block <char name>).
+Por favor ingrese nombre de jugador (uso: @block <char name>).
+
+Please enter a player name (usage: @jail <char_name>).
+Por favor ingrese nombre de jugador (uso: @jail <char_name>).
+
+Please enter a player name (usage: @jumpto/@warpto/@goto <char name/ID>).
+Por favor ingrese nombre de jugador (uso: @jumpto/@warpto/@goto <char name/ID>).
+
+Please enter a player name (usage: @kick <char name/ID>).
+Por favor ingrese nombre de jugador (uso: @kick <char name/ID>).
+
+Please enter a player name (usage: @nuke <char name>).
+Por favor ingrese nombre de jugador (uso: @nuke <char name>).
+
+Please enter a player name (usage: @recall <char name/ID>).
+Por favor ingrese nombre de jugador (uso: @recall <char name/ID>).
+
+Please enter a player name (usage: @trade <char name>).
+Por favor ingrese nombre de jugador (uso: @trade <char name>).
+
+Please enter a player name (usage: @unban <char name>).
+Por favor ingrese nombre de jugador (uso: @unban <char name>).
+
+Please enter a player name (usage: @unblock <char name>).
+Por favor ingrese nombre de jugador (uso: @unblock <char name>).
+
+Please enter a player name (usage: @unjail/@discharge <char_name>).
+Por favor ingrese nombre de jugador (uso: @unjail/@discharge <char_name>).
+
+Please enter a player name (usage: @unmute <char name>).
+Por favor ingrese nombre de jugador (uso: @unmute <char name>).
+
+Please enter a player name (usage: @where <char name>).
+Por favor ingrese nombre de jugador (uso: @where <char name>).
 
 Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
 Por favor introduzca una posición y una cantidad (uso: @refine <equip position> <+/- amount>).
 
+Please enter a position bitmask and an amount (usage: @refine <equip position> <+/- amount>).
+Por favor ingrese posición de la máscara de bits y una cantidad (uso: @refine <equip position> <+/- amount>).
+
+Please enter a quest skill ID.
+Por favor ingrese ID de la misión de habilidad.
+
+Please enter a script file name (usage: @loadnpc <file name>).
+Por favor ingrese nombre del archivo de secuencia de comandos (uso: @loadnpc <file name>).
+
+Please enter a skill name to look up (usage: @skillid <skill name>).
+Por favor ingrese nombre de habilidad a buscar (uso: @skillid <skill name>).
+
+Please enter a sound filename (usage: @sound <filename>).
+Por favor ingrese nombre de archivo de sonido (uso: @sound <filename>).
+
+Please enter a speed value (usage: @speed <%d-%d>).
+Por favor ingrese valor para la rapidez (uso: @speed <%d-%d>).
+
+Please enter a status type/flag (usage: @displaystatus <status type> <flag> <tick> {<val1> {<val2> {<val3>}}}).
+Por favor ingrese una bandera/clase de atributo (uso: @displaystatus <status type> <flag> <tick> {<val1> {<val2> {<val3>}}}).
+
+Please enter a time in minutes (usage: @mutearea/@stfu <time in minutes>).
+Por favor ingrese tiempo en minutos (uso: @mutearea/@stfu <time in minutes>).
+
+Please enter a valid level (usage: @guildlvup/@guildlvlup <# of levels>).
+Por favor ingrese nivel válido (uso: @guildlvup/@guildlvlup <# of levels>).
+
+Please enter a valid madogear type.
+Por favor ingrese clase de chirimbolo válida.
+
+Please enter a valid number (usage: @pethungry <0-100>).
+Por favor ingrese número válido (uso: @pethungry <0-100>).
+
+Please enter a valid position (usage: @memo <memo_position:%d-%d>).
+Por favor ingrese posición válida (uso: @memo <memo_position:%d-%d>).
+
+Please enter a valid value (usage: @petfriendly <0-1000>).
+Por favor ingrese valor válido (uso: @petfriendly <0-1000>).
+
+Please enter a valid value (usage: @str/@agi/@vit/@int/@dex/@luk <+/-adjustment>).
+Por favor ingrese valor válido (uso: @str/@agi/@vit/@int/@dex/@luk <+/-adjustment>).
+
+Please enter all parameters (usage: @item2 <item name/ID> <quantity>).
+Por favor ingrese todos los parámetros (uso: @item2 <item name/ID> <quantity>).
+
+Please enter all parameters (usage: @itembound2 <item name/ID> <quantity>
+Por favor ingrese todos los parámetros (uso: @itembound2 <item name/ID> <quantity>
+
+Please enter an amount (usage: @spiritball <number: 0-%d>).
+Por favor ingrese cantidad (uso: @spiritball <number: 0-%d>).
+
+Please enter an amount (usage: @zeny <amount>).
+Por favor ingrese cantidad (uso: @zeny <amount>).
+
+Please enter an amount.
+Por favor ingrese cantidad.
+
+Please enter an effect number (usage: @effect <effect number>).
+Por favor ingrese número del efecto (uso: @effect <effect number>).
+
+Please enter an intimacy value (usage: @homfriendly <intimacy value [0-1000]>).
+Por favor ingrese valor para el cariño (uso: @homfriendly <intimacy value [0-1000]>).
+
+Please enter an item name or ID (usage: @item <item name/ID> <quantity>).
+Por favor ingrese nombre/ID del objeto (uso: @item <item name/ID> <quantity>).
+
+Please enter an item name or ID (usage: @itembound <item name/ID> <quantity> <bound_type>).
+Por favor ingrese nombre o ID del objeto (uso: @itembound <item name/ID> <quantity> <bound_type>).
+
+Please enter an item name/ID (usage: @ii/@iteminfo <item name/ID>).
+Por favor ingrese nombre/ID del objeto (uso: @ii/@iteminfo <item name/ID>).
+
+Please enter an item name/ID, a quantity, and a player name (usage: #delitem <player> <item_name_or_ID> <quantity>).
+Por favor ingrese nombre/ID del objeto, cantidad, y nombre del jugador (uso: #delitem <player> <item_name_or_ID> <quantity>).
+
+Please enter at least one item name/ID (usage: @produce <equip name/ID> <element> <# of very's>).
+Por favor ingrese por lo menos un nombre/ID de objeto (uso: @produce <equip name/ID> <element> <# of very's>).
+
+Please enter at least one option.
+Por favor ingrese por lo menos una opción.
+
+Please enter at least one valid list number (usage: @mapinfo <0-3> <map>).
+Por favor ingrese por lo menos un número de lista válido (uso: @mapinfo <0-3> <map>).
+
+Please enter at least one value (usage: @model <hair ID: %d-%d> <hair color: %d-%d> <clothes color: %d-%d>).
+Por favor ingrese por lo menos un valor (uso: @model <hair ID: %d-%d> <hair color: %d-%d> <clothes color: %d-%d>).
+
+Please enter ban time and a player name (usage: @ban <time> <char name>).
+Por favor ingrese duración del bloqueo y nombre del jugador  (uso: @ban <time> <char name>).
+
+Please enter color and message (usage: @kamic <color> <message>).
+Por favor ingrese color y mensaje (uso: @kamic <color> <message>).
+
+Please enter guild name/ID (usage: @sizeguild <size> <guild name/ID>).
+Por favor ingrese nombre/ID del gremio (uso: @sizeguild <size> <guild name/ID>).
+
+Please enter guild name/ID (usage: @undisguiseguild <guild name/ID>).
+Por favor ingrese nombre/ID del gremio (uso: @undisguiseguild <guild name/ID>).
+
+Please enter item name/ID (usage: @whodrops <item name/ID>).
+Por favor ingrese nombre/ID del objeto (uso: @whodrops <item name/ID>).
+
+Please enter part of an item name (usage: @idsearch <part_of_item_name>).
+Por favor ingrese parte del nombre del objeto (uso: @idsearch <part_of_item_name>).
+
+Please enter the correct parameters (usage: @npctalk <npc name>, <message>).
+Por favor ingrese los parámetros correctos (uso: @npctalk <npc name>, <message>).
+
+Please enter the correct parameters (usage: @npctalkc <color> <npc name>, <message>).
+Por favor ingrese los parámetros correctos (uso: @npctalkc <color> <npc name>, <message>).
+
+Please enter two e-mail addresses (usage: @email <current@email> <new@email>).
+Por favor ingrese dos direcciones de correo electrónico (uso: @email <current@email> <new@email>).
+
+Please specify a display name or monster name/id.
+Por favor especifique nombre visible o nombre/ID del monstruo.
+
 Please, don't tell people that you've seen me, I don't want to be thrown to sea as food for sharks or decapitated, not again!
 Por favor, no le digas a la gente que me has visto. No quiero ser lanzado al mar como comida para tiburones, o decapitado, ¡no de nuevo!
+
+Please, leave me alone. I have to pixel potions.
+Por favor déjeme en paz. Tengo que pixelar unas pociones.
 
 Plushroom
 Plushroom
 
 Plushroom Box
 Caja de Plushroom
+
+Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body
+Posición: 1:Superior 2:Intermedia 3:Inferior 4:Arma 5:Escudo 6:Calzado 7:Manto 8:Cuerpo
+
+Priest
+Sacerdote
+
+PrivateAirshipEndable |
+AeronavePersonalTerminable |
+
+PrivateAirshipStartable |
+AeronavePersonalIniciable |
+
+Professor
+Catedrático
 
 Pumpkin Seeds
 Semillas de Calabaza
@@ -2008,6 +4156,9 @@ Zumo de calabaza
 Purple Blobime
 Purple Blobime
 
+PvP Flags:
+Banderas JcJ:
+
 PvP Flags: 
 Marcas PvP: 
 
@@ -2017,8 +4168,20 @@ PvP apagado.
 PvP On.
 PvP encendido.
 
+PvP is already Off.
+JcJ ya está Desactivado.
+
+PvP is already On.
+JcJ ya está Activado.
+
 PvP: Off.
-PvP: Off.
+JcJ: Desactivado.
+
+PvP: On.
+JcJ: Activado.
+
+Pvp ON |
+JcJ ACTIVADO |
 
 Pvp ON | 
 Pvp ON | 
@@ -2035,20 +4198,71 @@ Q'Onan#000-2-1
 QMuller.
 QMuller.
 
+Quest database has been reloaded.
+La base de datos de la misión ha sido recargada.
+
+Ranger
+Guardabosques
+
+Ranger T
+Guardabosques T
+
 RattosControl
 RattosControl
 
 RattosControl#001-2-23
 RattosControl#001-2-23
+
+Rebellion
+Rebelión
+
+Refinery UI is not available
+Refinado de Interfaz de Usuario no disponible
 
 Registration is open for everybody, but newcomers need to pay a fee for all of the paperwork.
 El registro está abierto para todos, pero los recién llegados deben pagar una cuota por todo el papeleo.
 
+Removed %d Kafra points. Total %d points.
+%d puntos Kafra removidos.  %d puntos totales.
+
+Removed %d cash points. Total %d points.
+ %d puntos de dinero. Total %d puntos.
+
+Removed %dz.
+%dz eliminados.
+
+Removed all bans from the '%s' channel
+Eliminados todos los bloqueos del canal '%s'
+
+Removed item type: '%s' from your autoloottype list.
+Clase de objeto eliminada: '%s' de su listado de recolección automática de botín según clase.
+
+Removed item: '%s'/'%s' {%d} from your autolootitem list.
+Objeto eliminado: '%s'/'%s' {%d} de su listado de recolección automática de botín.
+
 Resa
 Resa
 
+Reset 'Feeling' maps.
+Restablecer mapas de 'Sentimientos'.
+
+Reset 'Hatred' targets.
+Restablecer objetivos 'Odiados'.
+
+Reset |
+Restablecer |
+
 Reset | 
 Reiniciar | 
+
+Returned to normal state.
+Volvió al estado normal.
+
+Returned to real name.
+Volvió al nombre real.
+
+Returning to normal font.
+Volver al tipo de letra normal.
 
 Right! Sailors are pretty quick with their job. They just take too much time bringing all the food back to the ship. Maybe you can help them.
 ¡Correcto! Los marineros son bastante diligentes en sus trabajos. Sólo que les toma mucho tiempo traer toda la comida al barco. Tal vez puedas ayudarlos.
@@ -2062,6 +4276,15 @@ RightDoorCheck
 Ronan
 Ronan
 
+Roulette is disabled
+La ruleta está deshabilitada
+
+Royal Guard
+Guardia Real
+
+Royal Guard T
+Guardia Real T
+
 Rrrr pchhhh...
 Rrrr pchhhh...
 
@@ -2071,17 +4294,41 @@ Rrrr...Pchhhh...
 Rules began to rise in order to have a peaceful society. This did not work well for long.
 Las reglas comenzaron a aumentarse para tener una sociedad pacífica. Ésto no funcionó muy bien por un tiempo.
 
+Rune Knight
+Caballero Rúnico
+
+Rune Knight T
+Caballero Rúnico T
+
 SORRY, BUT WHAT DID YOU SAY? SPEAK LOUDER!
 DISCULPA, PERO... ¿QUÉ DIJISTE? ¡HABLA MÁS FUERTE!
+
+Sage
+Sabio
 
 Sailors
 Marineros
 
+Sakura |
+Sakura |
+
 Sakura | 
 Sakura | 
 
 Sapartan
 Sapartan
+
+Script could not be loaded.
+La secuencia de comandos no pudo cargarse.
+
+Script could not be unloaded.
+La secuencia de comandos no pudo descargarse.
+
+Script loaded.
+Secuencia de comandos cargada.
+
+Scripts have been reloaded.
+Secuencia de comandos recargada.
 
 Sea Drop
 Sea Drop
@@ -2089,8 +4336,50 @@ Sea Drop
 Sea Drops
 Gotas de Mar
 
+Search results for '%s' (name: id):
+Resultados de búsqueda de '%s' (name: id):
+
 Secondly, choose wisely which weapon is suited for you. Some people like to face their enemies closely with a heavy axe, some others prefer to attack from a distance with a bow for example.
 En segundo lugar, elige sabiamente qué arma es apropiada para ti. A algunas personas les gusta encarar a sus enemigos de cerca con un hacha pesada; y hay otros que prefieren atacar a distancia con un arco, por ejemplo.
+
+Sending request to login server...
+Enviando consulta al servidor de acceso...
+
+Sent packet 0x%x (%d)
+Enviar paquete 0x%x (%d)
+
+Server : %s has been afk-kicked from the battlefield...
+Servidor : %s ha sido expulsado del campo de batalla debido a LDT...
+
+Server : %s has quit the game...
+Servidor : %s ha salido del juego...
+
+Server : %s is leaving the battlefield...
+Servidor : %s está saliendo del campo de batalla...
+
+Server Uptime: %ld days, %ld hours, %ld minutes, %ld seconds.
+Tiempo de funcionamiento del servidor: %ld días, %ld horas, %ld minutos, %ld segundos.
+
+Server is jammed due to overpopulation.
+El servidor está atascado debido a superpoblación.
+
+Server time (normal time): %A, %B %d %Y %X.
+Hora del servidor (hora normal): %A, %B %d %Y %X.
+
+Set battle_config as requested.
+Establecer battle_config conforme a lo consultado.
+
+Seven Castles
+Siete Castillos
+
+Seventeen Castles
+Diecisiete Castillos
+
+Shadow Chaser
+Cazador de Sombras
+
+Shadow Chaser T
+Cazador de Sombras T
 
 She is a good friend of mine... We wanted to marry a few weeks before her accident but...
 Ella es una buena amiga mía... Queríamos casarnos unas semanas antes de su accidente, pero...
@@ -2113,6 +4402,9 @@ Ella esté en el nivel superior, yeye no puedes equivocarte. Es la única mujer 
 She's on the upper level, yeye can't miss her. She's the only girl in this crew.
 Ella está en el nivel superior, yeye no puedes equivocarte. Es la única mujer en esta tripulación.
 
+Shop is out of stock! Come again later!
+¡El almacén está sin surtido! ¡Vuelva más tarde!
+
 Silver Grey
 Gris Plateado
 
@@ -2127,6 +4419,45 @@ Silvio comienza a hablar con su botella; tú dejas la conversación.
 
 Simply contact them, help them and be kind. They might surely add you to my cookie list!
 Simplemente contacta con ellos, ayúdales y sé amable. Seguramente te agregaran a mi lista de galletas.
+
+Six Castles
+Seis Castillos
+
+Sixteen Castles
+Dieciseis Castillos
+
+Size change applied.
+Cambio de tamaño aplicado.
+
+Skill Failed. [%s] requires %dx %s.
+Habilidad Fallida. [%s] requiere %dx %s.
+
+Skill database has been reloaded.
+La base de datos de habilidades ha sido recargada.
+
+Skill delay failures are now shown.
+ Ahora se muestran los fallos del retardo de habilidad.
+
+Skill delay failures will not be shown.
+No se mostrarán los fallos del retardo de habilidad.
+
+Skills have been disabled in this map.
+Las habilidades se han deshabilitado en este mapa.
+
+Skills have been enabled in this map.
+Las habilidades se han habilitado en este mapa.
+
+Slave clone spawned.
+Clon esclavo generado.
+
+Sniper
+Francotirador
+
+Snow has stopped falling.
+Ha dejado de nevar.
+
+Snow |
+Nieve |
 
 Snow | 
 Nieve | 
@@ -2167,6 +4498,9 @@ Así que, ¿qué buen viento te trae aquí? ¿Estabas en tu balsa para encontrar
 Some more things are written down but it's not legible.
 Hay más cosas escritas abajo pero no se pueden leer.
 
+Some of your items cannot be vended and were removed from the shop.
+Algunos de sus objetos no pueden venderse y fueron retirados del almacén.
+
 Some sailors are looking for goods we could trade in our next destination.
 Algunos marineros están buscando mercancías que puedan comerciar en nuestro próximo destino. 
 
@@ -2176,8 +4510,17 @@ Algunos marineros están tratando de hablarte...
 Somebody is probably training, better wait for him to finish.
 Alguien está probablemente entrenando, mejor esperarle para terminar.
 
+Someone was too lazy to even write a placeholder text, so please come back later
+Alguien estaba demasiado cansado para siquiera escribir texto falso, así que por favor regresa más tarde.
+
 Sometimes, I wish somebody is sent here to help us.
 Algunas veces deseo que alguien sea enviado aquí para ayudarnos.
+
+Sorcerer
+Hechicero
+
+Sorcerer T
+Hechicero T
 
 Sorry but I can't tell you anything about that.
 Lo siento, pero no puedo decirte nada sobre eso.
@@ -2203,11 +4546,86 @@ Lo siento, pero estoy ocupada ahora mismo.
 Sorry, but I'm busy right now.#1
 Lo siento, pero estoy ocupado ahora mismo.
 
+Sorry, but you have no pet.
+Lo siento, pero no tienes mascota.
+
+Soul Linker
+Entrelazador de Almas
+
+Soul Menhir#hurnscald
+Menhir de las Ánimas#hurnscald
+
+South
+Sur
+
+South East
+Sudeste
+
+South West
+Suroeste
+
+Specified group does not exist.
+El grupo especificado no existe.
+
+Speed changed.
+Rapidez cambiada.
+
+Speed returned to normal.
+La rapidez regresó a normal.
+
+Spying on the %s guild.
+Espiando al gremio %s.
+
+Spying on the %s party.
+Espiando al grupo %s.
+
+Stalker
+Merodeador
+
+Star Gladiator
+Gladiador Estrella
+
+Stat changed.
+Atributo cambiado.
+
+Stats: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d
+Atributos: FRZ %d / AGI %d / VIT %d / INT %d / DES %d / SUE %d
+
+Status database has been reloaded.
+La base de datos de los atributos ha sido recargada.
+
+Storage has been not loaded yet.
+Aún no se ha cargado el almacenaje.
+
+Storage opened.
+Almacenaje abierto.
+
+Str: %d (%d~%d)
+FRZ: %d (%d~%d)
+
+Styling Shop
+Almacén de Diseño
+
 Suddenly, you hear a voice from the sky.
 De repente, oyes una voz desde el cielo.
 
 Suddenly, you hear a voice up in the sky.
 De pronto, escuchas una voz arriba en el cielo.
+
+Summoner
+Invocador
+
+Super Baby
+Super Bebé
+
+Super Novice
+Super Novato
+
+Sura
+Sura
+
+Sura T
+Sura T
 
 Sure, Cap'tain.
 Seguro, Capit'án.
@@ -2223,6 +4641,12 @@ Por supuesto, hay una recompensa por tu trabajo.
 
 Surely. Take this box full of @@s.
 Seguro. Toma esta caja llena de @@s.
+
+Swordsman
+Espadachín
+
+Taekwon
+Taekwon
 
 Take a @@ and try opening it using something like a sharp knife! I doubt you'll succeed, you're weak my poor boy.
 ¡Toma un @@ e intenta abrirlo usando algo como un cuchillo afilado! Dudo que tengas éxito, tú eres débil mi pobre chico.
@@ -2242,14 +4666,29 @@ Toma este dinero, por tu sabia elección. Pero ni lo intentes de nuevo. El agua 
 Talk with Lloyd the banker in the Merchant Guild, it's a big building at the Northern part of Artis, atop the little hill.
 Habla con Lloyd el banquero en el Gremio Mercantil, este es un gran edificio en la parte norte de Artis, en la cumbre de la pequeña colina.
 
+Tanky
+Sobrecargo
+
+Target character must be online and be a guild member.
+El personaje objetivo debe estar en línea y ser un miembro del gremio.
+
+Target character must be online and in your current party.
+El personaje objetivo debe estar en línea y en su mismo grupo.
+
 Tarlan
 Tarlan
+
+Teleport Flags:
+Teleportar Banderas:
 
 Teleport Flags: 
 Señales de telepuerto: 
 
 Tell him that everything went fine and that we're almost done with the food.
 Dile que todo fue muy bien y que casi hemos terminado con la comida.
+
+Ten Castles
+Diez Castillos
 
 Thank you my friend.
 Gracias amigo.
@@ -2299,11 +4738,17 @@ Tú también vas hacia allí. ¿Verdad?
 The Legion need some potions.
 La Legión necesita algunas pociones.
 
+The Platinum Kingdom grew and prospered, and drew most of the viro population to the safety of the walls of Keshlam, Tulimshar, Hurnscald and Nivalis.
+El Reino Platino creció y prosperó, y atrajo a la mayor parte de la población Viro a la seguridad de las murallas de Keshlam, Tulimshar, Hurnscald y Nivalis.
+
 The adventure begins!
 ¡La aventura comienza! 
 
 The best, the wonderful, the best cookie between all others, the...
 La mejor, la maravillosa, la mejor galleta entre todas las demás, la...
+
+The brotherhood members here are friendly, but mostly because our interests coincide. In Hurnscald, where their main base is, we're enemies.
+Los miembros de la hermandad de por aquí son buena onda, principalmente porque nuestros intereses coinciden. En Hurnscald, donde está su sede principal, todos somos enemigos.
 
 The door is closed.
 La puerta esta cerrada.
@@ -2329,6 +4774,12 @@ El final de la historia fue borrado, probablemente por el agua de mar. Algúnas 
 The end of the story got erased, probably because of the sea water. Some pages are still missing. Thus much is left obscure, including even the author's name.
 El final de la historia fue borrado, probablemente por el agua de mar. Algunas páginas aún faltan. Así que mucho queda a oscuras, incluyendo el nombre del autor.
 
+The first viro settlement to develop an advanced political structure and to become a city-state was Keshlam.
+El primer asentamiento Viro o que desarrolló una estructura política avanzada y se convirtió en una ciudad-estado fue Keshlam.
+
+The fog has gone.
+La niebla se ha ido.
+
 The giant bogeyman!
 ¡El Coco gigante!
 
@@ -2341,17 +4792,41 @@ El gremio se encarga de regular el comercio a lo largo de Artis y sus alrededore
 The hidden person doesn't answer.
 La persona escondida no responde.
 
+The holy messenger has given judgement.
+El mensajero sagrado ha dictado sentencia.
+
 The item (%d: '%s') is not equipable.
 El artículo (%d: '%s') no puede equiparse.
 
+The item (%d: '%s') is not equippable.
+El objeto (%d: '%s') no se puede equipar.
+
 The item is not equipable.
 El artículo no puede equiparse.
+
+The item is not equippable.
+El objeto no se puede equipar
+
+The mapserver has spy command support disabled.
+El servidor de mapas tiene deshabilitado el permiso para ordenes de vigilancia.
+
+The monster/egg name/ID doesn't exist.
+El nombre/ID del monstruo/huevo no existe.
 
 The name of the book is @@.
 El nombre del libro es @@.
 
 The piou costs @@E.
 El piou cuesta @@E.
+
+The player '%.*s' doesn't exist.
+El jugador '%.*s' no existe.
+
+The player cannot use that skill.
+El jugador no puede utilizar esa habilidad.
+
+The player meets all the requirements for that skill.
+El jugador cumple con todos los requisitos para esa habilidad.
 
 The sailor chugs his beer
 El marinero resopla su cerveza
@@ -2365,6 +4840,12 @@ El marinero te está dando la espalda
 The sailors take you aboard their ship to help you.
 Los marineros te llevan abordo de su nave para ayudarte.
 
+The two cannot wed because one is either a baby or already married.
+Ninguno de los dos puede enmaridarse porque uno es un bebé o ya está desposado
+
+The zone is already set to '%s'.
+La zona ya está establecida en  '%s'.
+
 Then I can give you some tips about fights.
 Entonces yo puedo darte unos consejos sobre peleas.
 
@@ -2376,6 +4857,9 @@ Entonces déjame solo.
 
 There are few groups of these @@s all around this island. Just pick some and have a try.
 Hay unos pocos grupos de estos @@s en todo derredor de esta isla. Sólo escoge algunos y trata.
+
+There are no items to appraise.
+No hay objetos para valorar.
 
 There are rumours going around that they did some monstrous things and that they are hiding quite alot of things from us.
 Están corriendo rumores acerca de que ellos hicieron cosas monstruosas y que nos están escondiendo muchas cosas a nosotros.
@@ -2404,6 +4888,9 @@ Siempre hay algo que puedes hacer aquí, como matar algunas tortugas o ayudar a 
 There is no event available right now.
 Ahora mismo no hay evento disponible.
 
+There is no help for %c%s.
+Ninguna ayuda para %c%s.
+
 There is some flying yellow plush around you, they're called pious. Getting a roasted leg of one of them would be perfect.
 Hay unas especies de peluches amarillos volando a tu alrededor, llamados pious. Conseguir una pierna asada de uno de ellos sería perfecto.
 
@@ -2412,6 +4899,9 @@ Hay algunos cuchillos sobre la mesa, ¿quieres tomar uno?
 
 There're 6 sailors who will need your help. They're all around the island.
 Son 6 marineros que van a necesitar tu ayuda. Ellos están por toda la isla.
+
+There's been no change in the setting.
+No han habido cambios en la configuración.
 
 There's nothing to say, don't worry miss.
 No hay nada que decir, no se preocupe señorita.
@@ -2443,14 +4933,53 @@ Son un problema permanente, por lo que siempre necesitaré su ayuda para extermi
 They are both valid and I need them. In the past, I probably did mistakes I now regret. I was wondering if you could investigate and... Sort out this situation.
 Ambos son útiles y los necesito. En el pasado, probablemente cometí errores de los que ahora me arrepiento. Me estaba preguntando si tú podrías investigar y... arreglar esta situación.
 
+They are married... wish them well.
+Están casados... les deseo lo mejor.
+
 They are so tasty when cooked together with some @@. Don't drop any of them!
 Ellos son tan sabrosos cuando se cocinan junto a algo de @@. ¡No sueltes ninguno!
+
+They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of humans.
+Navegaron de Hurnscald a Tulimshar y luego a Nivalis, los últimos asentamientos permanentes de humanos.
+
+They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of viros.
+Navegaron de Hurnscald a Tulimshar y luego a Nivalis, los últimos asentamientos permanentes de viros.
+
+Thirteen Castles
+Trece Castillos
+
+Thirty Castles
+Treinta Castillos
+
+Thirty-One Castles
+Treinta y Un Castillos
+
+Thirty-Three Castles
+Treinta y Tres Castillos
+
+Thirty-Two Castles
+Treinta y Dos Castillos
+
+This NPC doesn't exist.
+El PNJ no existe.
+
+This action can't be performed at the moment. Please try again later.
+Esta acción no puede realizarse en este momento. Por favor, inténtelo de nuevo más tarde.
+
+This bound item cannot be stored there.
+El objeto vinculado no puede almacenarse aquí.
+
+This bound item cannot be traded to that character.
+El objeto vinculado no puede intercambiarse con ese personaje.
 
 This box is locked
 La caja tiene seguro.
 
 This box is locked.
 Esta caja está bloqueada.
+
+This character has been banned until
+El personaje ha sido bloqueado hasta
 
 This character has been banned until 
 Este personaje ha sido prohibido hasta que
@@ -2497,6 +5026,21 @@ This is it, the end of the Second Beta Release of Evol Online!
 This is the last one. If you use it again out of clumsiness, I will take your flesh as the main ingredient for my cookie recipe.
 Este es la última. Si la usas descuidadamente otra vez, tomaré tu carne como el ingrediente principal para mi receta de galletas.
 
+This item cannot be dropped.
+Este objeto no puede ser arrojado.
+
+This item cannot be stored.
+Este objeto no puede ser almacenado.
+
+This item cannot be traded.
+Este objeto no puede ser intercambiado.
+
+This item cannot be used within this area.
+Este objeto no puede utilizarse en esta zona.
+
+This job has no alternate body styles.
+Este oficio no dispone de biotipos sustitutos.
+
 This kind of talk should be punished, but I agree that I don't specially like them too, so keep an eye on her.
 Éste tipo de habla debería ser castigada, pero concuerdo contigo en que especialmente no me gustan, así que mantén un ojo sobre ella.
 
@@ -2506,14 +5050,59 @@ This kind of talk should be punished, but I agree that I don't specially like th
 This makes sense. Do you think we should inform the capt'n about it?
 Tiene sentido. ¿Crees que deberíamos informarle al cap'tan acerca de esto?
 
+This monster does not spawn normally.
+El monstruo no se genera de forma normal.
+
+This monster has no MVP prizes.
+El monstruo no tiene premios JMV.
+
+This monster has no drops.
+El monstruo no suelta objetos.
+
 This new continent, in fact an archipelago, was called Andorra.
 Este nuevo continente, en realidad un archipiélago, fue llamado Andorra.
+
+This player has %d of a kind of item (id: %d), and tried to trade %d of them.
+El jugador tiene %d de un tipo de objeto (ID: %d), e intentó intercambiar %d de ellos.
+
+This player has been banned for %d minute(s).
+El jugador ha sido bloqueado por %d minuto(s).
+
+This player has been definitively blocked.
+El jugador ha sido bloqueado definitivamente.
+
+This player hasn't been banned (Ban option is disabled).
+El jugador no ha sido bloqueado (la opción de bloqueo está deshabilitada).
+
+This player is not in jail.
+El jugador no está en la cárcel.
+
+This player is now
+El jugador ahora está
+
+This skill cannot be used within this area.
+La habilidad no puede usarse en esta zona.
+
+This skill number doesn't exist or isn't a quest skill.
+La habilidad enumerada no existe o no es una misión de habilidad.
+
+This skill number doesn't exist.
+La habilidad enumerada no existe.
+
+Three Castles
+Tres Castillos
 
 Tibbo
 Tibbo
 
 Tibbo went to the east-south of the island, others are gone to the north, and I think that Gulukan is not so far from here.
 Tibbo se fue hacia el sudeste de la isla, los otros fueron al norte y creo que Gulukan no esta lejos de aquí. 
+
+Time of death : ^EE0000%s^000000
+Hora de fallecimiento: ^EE0000%s^000000
+
+Tomb
+Tumba
 
 Too bad I'm not hungry enough right now for these... cookies. I'll maybe come back later.
 Lástima que no esté lo suficiente hambriento en este momento para esas... galletas. Tal vez vuelva más tarde.
@@ -2524,6 +5113,15 @@ Muy mal que no quieras ayudarme.
 Too bad... Come back when you'll have some fine food for me.
 Es una lástima... Regresa cuando tengas algo de buena comida para mí. 
 
+Total Domination
+Dominación Total
+
+Town Map
+Mapa del Pueblo
+
+Transforming into monster is not allowed in Guild Wars.
+No está permitido transformarse en monstruo durante una Guerra de Gremios.
+
 True but now he seems pretty fine! Am I right?
 Cierto, ¡pero ahora él parece bastante bien! ¿Estoy en lo cierto?
 
@@ -2533,14 +5131,206 @@ Cierto, ¡pero ahora ella parece bastante bien! ¿Estoy en lo cierto?
 Try to ask Max. He's an early riser.
 Intenta preguntar a Max. Él es un madrugador.
 
+Twelve Castles
+Doce Castillos
+
+Twenty Castles
+Veinte Castillos
+
+Twenty-Eight Castles
+Veintiocho Castillos
+
+Twenty-Five Castles
+Veinticinco Castillos
+
+Twenty-Four Castles
+Veinticuatro Castillos
+
+Twenty-Nine Castles
+Veintinueve Castillos
+
+Twenty-One Castles
+Veintiún Castillos
+
+Twenty-Seven Castles
+Veintisiete Castillos
+
+Twenty-Six Castles
+Veintiséis Castillos 
+
+Twenty-Three Castles
+Veintitrés Castillos
+
+Twenty-Two Castles
+Veintidós Castillos
+
+Two Castles
+Dos Castillos
+
+Type List: (default) all = -1, healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5, card = 6, petegg = 7, petarmor = 8, ammo = 10, delayed-consumable = 11, cash = 18
+Lista de Clases: (predeterminado) todos = -1, sanación = 0, utilizable = 2, etc = 3, arma = 4, armadura = 5, carta = 6, huevodemascota = 7, armadurademascota = 8, munición = 10, consumibleconretardo = 11, dinero = 18
+
 UAHAHAHAAH! I am the cook of that bunch of donkeys and I can be rude with everyone from this bossy captain to that harpy-lady!
 ¡UAJAJAJAJA! ¡Yo soy el cocinero de ese montón de monos y puedo ser rudo con todos, empezando con ese capitán dictador y terminando con esa mujer-arpía!
+
+Unable to Teleport in this area
+No es posible teleportarse en esta zona
+
+Unable to decrease the number/value.
+No es posible disminuir el número/valor.
+
+Unable to spawn clone.
+No es posible generar clon.
+
+Unable to spawn evil clone.
+No es posible generar clon maligno.
+
+Unable to spawn slave clone.
+No es posible generar clon esclavo.
+
+Unable to win, the tritans attacked Hurnscald. While viro troops moved in attempts to avoid its fall, the Kralog and Ukar joined the tritans and they took the city.
+Incapaces de ganar, los tritones atacaron Hurnscald. Mientras que las tropas viro se movilizaban en un intento de evitar su caída, los kralog y los ukar se unieron a los tritones y ocuparon la ciudad.
+
+Unfortunately my apprentice Zitoni does not bring fresh potions, so if you need something you should come back later.
+Por desgracia mi aprendiz Zitoni no me trae pociones nuevas, así que si necesitas algo tendrás que volver más tarde.
+
+Unknown
+Desconocido
+
+Unknown Cart (usage: %s <0-%d>).
+Carrito desconocido (uso: %s <0-%d>).
+
+Unknown Channel '%s' (usage: %s <#channel_name>)
+Canal desconocido '%s' (uso: %s <#channel_name>)
+
+Unknown Channel (usage: %s <#channel_name>)
+Canal desconocido (uso: %s <#channel_name>)
+
+Unknown Job
+Oficio Desconocido
+
+Unknown battle_config flag.
+Bandera battle_config desconocida.
+
+Unknown color '%s'
+Color '%s' desconocido
+
+Unknown map '%s'.
+Mapa '%s' desconocido.
+
+Unknown packet: 0x%x
+Paquete desconocido: 0x%x
+
+Unknown type of value in:
+Clase de valor desconocido en:
+
+Usage:
+Uso:
+
+Usage: %s <permission_name>
+Uso: %s <permission_name>
+
+Usage: @accinfo/@accountinfo <account_id/char name>
+Uso: @accinfo/@accountinfo <account_id/char name>
+
+Usage: @addwarp <mapname> <X> <Y> <npc name>
+Uso: @addwarp <mapname> <X> <Y> <npc name>
+
+Usage: @adjgroup <group_id>
+Uso: @adjgroup <group_id>
+
+Usage: @changegm <guild_member_name>
+Uso: @changegm <guild_member_name>
+
+Usage: @changeleader <party_member_name>
+Uso: @changeleader <party_member_name>
+
+Usage: @changelook {<position>} <view id>
+Uso: @changelook {<position>} <view id>
+
+Usage: @displayskill <skill ID> {<skill level>}
+Uso: @displayskill <skill ID> {<skill level>}
+
+Usage: @dropall {<type>}
+Uso: @dropall {<type>}
+
+Usage: @jailfor <time> <character name>
+Uso: @jailfor <time> <character name>
+
+Usage: @marry <char name>
+Uso: @marry <char name>
+
+Usage: @mute <time> <char name>
+Uso: @mute <time> <char name>
+
+Usage: @noks <self|party|guild>
+Uso: @noks <self|party|guild>
+
+Usage: @npcmove <X> <Y> <npc_name>
+Uso: @npcmove <X> <Y> <npc_name>
+
+Usage: @partyoption <pickup share: yes/no> <item distribution: yes/no>
+Uso: @partyoption <pickup share: yes/no> <item distribution: yes/no>
+
+Usage: @reloadnpc <path> {<flag>}
+Uso: @reloadnpc <path> {<flag>}
+
+Usage: @request <petition/message to online GMs>.
+Uso: @request <solicitud/mensaje a DJ en línea>.
+
+Usage: @set <variable name> <value>
+Uso: @set <variable name> <value>
+
+Usage: @setbattleflag <flag> <value>
+Uso: @setbattleflag <flag> <value>
+
+Usage: @setzone <zone name>
+Uso: @setzone <zone name>
+
+Usage: @skilltree <skill ID> <target>
+Uso: @skilltree <skill ID> <target>
 
 Usage: @unloadnpcfile <file name>
 Uso: @unloadnpcfile <file name>
 
+Usage: @unloadnpcfile <path> {<flag>}
+Uso: @unloadnpcfile <path> {<flag>}
+
+Usage: @useskill <skill ID> <skill level> <target>
+Uso: @useskill <skill ID> <skill level> <target>
+
+Use 0 or no parameter to return to normal font.
+Use 0 o ningún parámetro para volver al tipo de letra normal.
+
+Use @font <1-9> to change your message font.
+Utilice @font <1-9> para cambiar el tipo de letra de su mensaje.
+
+Used %d Kafra points and %d cash points. %d Kafra and %d cash points remaining.
+Usados %d puntos Kafra y %d puntos de dinero. Le quedan %d puntos Kafra y %d y puntos de dinero.
+
+User '%s' already possesses the '%s' permission.
+El usuario '%s' ya posee el permiso '%s'.
+
+User '%s' doesn't possess the '%s' permission.
+El usuario '%s' no posee el permiso '%s'.
+
+User '%s' permissions updated successfully. The changes are temporary.
+Los permisos del usuario '%s' se actualizaron satisfactoriamente. Los cambios son temporales.
+
+Viro
+Viro
+
+Viro Voice
+Voz de Viro
+
 Visited Artis at least once
 Visitó Artis al menos una vez
+
+Vit: %d (%d~%d)
+VIT: %d (%d~%d)
+
+Voltain#008-1
+Voltain#008-1
 
 WHAT DID YOU SAY?
 ¿QUÉ DIJISTE?
@@ -2562,6 +5352,54 @@ Camina un poco, será fácil para ti atrapar uno. Empala uno de ellos para mí, 
 
 Walkig around a bit, it'll be easy for you to catch one, I bet. Impale one of them for me please.
 Apuesto que caminando un poco por los alrededores te será fácil atrapar uno. Empala uno de ellos para mí, por favor.
+
+Wanderer
+Vagabundo
+
+Wanderer T
+Vagabundo T
+
+War of Emperium SE has been ended.
+La Guerra del Emperium SE ha concluido.
+
+War of Emperium SE has been initiated.
+La Guerra del Emperium SE ha iniciado.
+
+War of Emperium SE is currently in progress.
+La Guerra del Emperium SE está en curso.
+
+War of Emperium SE is currently not in progress.
+La Guerra del Emperium SE no está en curso.
+
+War of Emperium has been ended.
+La Guerra del Emperium ha concluido.
+
+War of Emperium has been initiated.
+La Guerra del Emperium ha iniciado.
+
+War of Emperium is currently in progress.
+La Guerra del Emperium está en curso.
+
+War of Emperium is currently not in progress.
+La Guerra del Emperium no está en curso.
+
+Warlock
+Pitón
+
+Warlock T
+Pitón T
+
+Warning: changing your body type will send you back to the character selection screen.
+Advertencia: cambiar biotipo te regresará a la pantalla de selección de personaje
+
+Warped.
+Teleportado.
+
+Warping to save point.
+Teleportando al punto de control.
+
+We aren't open yet because Ishi still can't decide how he will hand out the rewards.
+Aún no hemos abierto porque Ishi aún no decide cómo distribuirá las recompensas.
 
 We hope you liked this introduction and to see you again in our future releases!#0
 ¡Esperamos que te haya gustado esta introducción y verte nuevamente en nuestros estrenos futuros!
@@ -2611,8 +5449,17 @@ Nosotros estaremos yaying allá en unos días, donde te dejaremos. Verás civile
 We will be yaying there in a few days, so we will drop you off there. You will see, citizens are polite and you can still ask for help in the warrior guild. They can help find a job for you or maybe help you find out what happened to you out at sea!#1
 Nosotros estaremos yaying allá en unos días, donde te dejaremos. Verás civiles y políticos y puedes pedir ayuda al gremio guerrero. Ellos pueden ayudarte a encontrar un trabajo o tal vez te puedan ayudar a averiguar lo que te pasó en el mar.
 
+Weather Flags:
+Banderas de Clima:
+
 Weather Flags: 
 Señales de clima:
+
+Weather effects will disappear after teleporting or refreshing.
+Los efectos del clima desaparecerán tras teleportarse o recargar.
+
+Wedding
+Casorio
 
 Welcome to RedPlush.
 Se te da la bienvenida a RedPlush.
@@ -2640,6 +5487,9 @@ Bueno... ¡Bienvenida a bordo, linda!
 
 Well... Welcome aboard, cutie!#1
 Bueno... ¡Bienvenido a bordo, guapo!
+
+West
+Oeste
 
 What I sell comes from every corner of this archipelago.
 Lo que vendo viene de todos los rincones de este archipiélago.
@@ -2689,6 +5539,9 @@ Which of your weapons do you want to use in order to cut this @@?
 While Jalad and Ale like to work together, as they use to do on the ship, last time I've seen them, they were near the big lake, north from here.
 Mientras que a Jalad y Ale les gusta trabajar juntos, como solían hacerlo en el barco. La última vez que los vi estaban cerca del gran lago, al norte de aquí.
 
+Whitesmith
+Hojalatero
+
 Who is this Julia?
 ¿Quién es esta Julia?
 
@@ -2713,8 +5566,17 @@ Why not... but, who are you?
 With hunger, thirst, and sleep as your only companions; you have the disturbing realization that you can't remember anything of your former life or identity.
 Con el hambre, la sed y el sueño como tus únicos compañeros, logras darte cuenta de algo inquietante: no puedes recordar nada de tu vida anterior ni tu identidad.
 
+With script
+Con secuencia de comandos
+
+With the growth of the Kingdom halted, slow maintenance, and two great famines which killed over half the viro population, the council decided to seize power and depose Platyna the Red.
+Con un crecimiento interrumpido, un mantenimiento ralentizado y dos grandes hambrunas que mataron a más de la mitad de la población viro en el Reino, el concilio decidió tomar el poder y destronar a la Reina Platino la Roja.
+
 With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their buisness.
 Con la ayuda del ayuntamiento y de la Legión de Aemil, organizamos algunas subastas y ayudamos a los comerciantes locales a poner en marcha sus negocios.
+
+Wizard
+Brujo
 
 YOU NEED TO WALK NORTH!
 ¡TIENES QUE CAMINAR HACIA EL NORTE! 
@@ -2770,6 +5632,18 @@ Yeye, ¡aún no has obtenido tus ropas!
 Yeye, you still did not get your clothes!#1
 Yeye, ¡aún no has obtenido tus ropas!
 
+You already are at your destination!
+¡Ya llegó a su destinación!
+
+You already have a homunculus
+Ya tienes un homúnculo
+
+You already have a pet.
+Ya tiene una mascota.
+
+You already have this quest skill.
+Ya tiene esta misión de habilidad.
+
 You already registered. Waiting for your partner...
 Ya se ha registrado. Esperando a su pareja...
 
@@ -2779,17 +5653,65 @@ Ya tomaste una Bandana, vuelve a poner esa en la caja, por favor.
 You already took a Bandana, put this one back please.
 Ya has tomado una bandana, pon esta de vuelta por favor.
 
+You are a deserter! Wait %u minute(s) before you can apply again
+¡Eres un desertor! Espere %u minuto(s) antes de poder aplicar nuevamente
+
+You are a deserter! Wait %u seconds before you can apply again
+¡Eres un desertor! Espere %u segundos antes de poder aplicar nuevamente
+
 You are actually on a ship, we're on our way to the commercial capital of Artis.
 Tú estás, en realidad, en una nave. Nosotros estamos de camino a la capital comercial de Artis.
 
 You are actually on a ship, we're on our way to the commercial capital of Artis. 
 Tú estás, en realidad, en una nave. Nosotros estamos de camino a la capital comercial de Artis. 
 
+You are already mounting something else
+Ya estás montando algo más
+
 You are full of wine my friend...
 Usted está lleno de vino, mi amigo...
 
+You are no longer killable.
+Ya no eres destruible.
+
+You are no longer the Guild Master.
+Ya no eres el Maestro del Gremio.
+
+You are not allowed to reduce the length of a ban.
+No tiene permiso para disminuir la duración de un bloqueo.
+
+You are not authorized to warp from your current map.
+No tiene permiso para teleportarse desde su mapa actual.
+
+You are not authorized to warp someone to this map.
+No tiene permiso para teleportar a alguien a este mapa.
+
+You are not authorized to warp someone to your current map.
+No tiene permiso para teleportar a alguien a su mapa actual.
+
+You are not authorized to warp this player from their map.
+No tiene permiso para teleportar a este jugador de su mapa.
+
+You are not authorized to warp to this map.
+No tiene permiso para teleportarse a este mapa.
+
+You are not authorized to warp to your save map.
+No tiene permiso para teleportarse a su mapa guardado.
+
+You are not in a guild.
+Usted no está en ningún gremio.
+
+You are not in jail.
+Usted no está encarcelado.
+
+You are now
+Ahora es
+
 You are now divorced!
 ¡Ahora se ha divorciado!
+
+You are now immune to attacks.
+Ahora es inmune a los ataques.
 
 You are now part of the crew! Thanks again for your help.
 Ya eres parte del crew! Gracias de nuevo por tu ayuda.
@@ -2803,6 +5725,18 @@ Estás en nuestra nave. En realidad, estamos yeyending nuestro largo viaje merca
 You are on our ship, we are actually yeyending our long merchant traveling adventure to the city of Artis.#1
 Estás en nuestra nave. En realidad, estamos yeyending nuestro largo viaje mercante de aventura viajando a la ciudad de Artis.
 
+You are too close to a stone or emperium to do this skill
+Está demasiado cerca de una roca o de un emperium para accionar esta habilidad
+
+You are unable to change your job.
+No puede cambiar su oficio.
+
+You broke the target's weapon.
+Rompió el arma del objetivo.
+
+You can already rename your pet.
+Ya puedes renombrar a tu mascota.
+
 You can attack a monster by clicking on it or from your keyboard you can press the 'A' key to select the monster followed by 'Ctrl' to attack it.
 Puedes atacar a un monstruo dándole clic encima o, desde el teclado, puedes presionar la tecla 'A' para seleccionar al monstruo, seguido de 'Ctrl' para atacarlo.
 
@@ -2815,14 +5749,107 @@ Puedes ir a tu derecha para ir al nivel superior.
 You can go to your right to go to the upper level.#1
 Puedes ir a tu derecha para ir al nivel superior.
 
+You can have %d items on your autolootitem list.
+Puede tener %d objetos en su listado de recolección automática de botín.
+
+You can not change to this job by command.
+No puede cambiar a este oficio mediante órdenes.
+
+You can now attack and kill players freely.
+Ahora puede atacar y eliminar a otros jugadores a voluntad.
+
+You can now be attacked and killed by players.
+Ahora puede ser atacado y eliminado por otros jugadores.
+
+You can now rename your pet.
+Ahora puede renombrar a su mascota.
+
 You can spot Q'Muller on a cliff on the west busy collecting @@s.
 Puedes localizar a Q'Muller en un acantilado en el oeste, ocupado recolectando @@s.
+
+You can try, but your chance of success is lesser than a well trained smith and master craftsman.
+Puede probar, pero su posibilidad de éxito es menor que la de un herrero avezado y la de un maestro artesano.
 
 You can yaye some @@s by hitting these crocotrees.
 Puedes yaye algunos @@s golpeando estos árboles de crocos.
 
+You can't add a guild bound item to a character without guild!
+¡No es posible agregar un objeto con vínculo de gremio a un personaje sin gremio!
+
+You can't add a party bound item to a character without party!
+¡No es posible agregar un objeto con vínculo de grupo a un personaje sin grupo!
+
+You can't clean a cart while vending!
+¡No puede limpiar el carrito durante la venta!
+
+You can't create chat rooms in this map
+No puede crear una sala de chat en este mapa
+
+You can't drop items in this map
+No puede soltar objetos en este mapa
+
 You can't go there!
 ¡No puedes ir allí!
+
+You can't join in a clan if you're in a guild.
+No es posible unirse a un clan si está en un gremio.
+
+You can't leave battleground guilds.
+No puede abandonar los gremios de batalla.
+
+You can't open a shop in this map
+No es posible abrir un almacén en este mapa
+
+You can't open a shop on this cell.
+No es posible abrir un almacén en esta celda.
+
+You can't reapply to this arena so fast. Apply to the different arena or wait %u minute(s)
+No es posible volver a aplicar en esta arena de inmediato. Aplique en otra arena o espere %u minuto(s)
+
+You can't reapply to this arena so fast. Apply to the different arena or wait %u seconds
+No es posible volver a aplicar en esta arena de inmediato. Aplique en otra arena o espere %u segundos
+
+You can't return your pet because your inventory is full.
+No puede regresar a su mascota porque su inventario está lleno.
+
+You can't trade in this map
+No puede hacer intercambios en este mapa
+
+You can't use commands while dead.
+No puede utilizar comandos estando muerto.
+
+You can't withdraw that much money
+No puede retirar tanto dinero
+
+You cannot autotrade when dead.
+No puede intercambiar automáticamente cuando es un fiambre.
+
+You cannot change guild leaders in this map.
+No puede cambiar los líderes de gremio en este mapa.
+
+You cannot change party leaders in this map.
+No puede cambiar los líderes de grupo en este mapa.
+
+You cannot decrease that stat anymore.
+No es posible seguir disminuyendo ese atributo.
+
+You cannot increase that stat anymore.
+No es posible seguir aumentando ese atributo.
+
+You cannot join the '%s' channel because you've been banned from it
+No puede unirse al canal '%s' porque ha sido bloqueado.
+
+You cannot send a message to this channel for another %d seconds.
+No puede enviar mensajes a este canal por otros  %d segundos.
+
+You cannot use this command when dead.
+No puede ejecutar esa orden cuando es un fiambre.
+
+You cannot use this item while sitting
+No puede utilizar ese objeto cuando está sentado.
+
+You cannot use this item while your storage is open
+No puede utilizar ese objeto cuando su almacenaje está abierto.
 
 You close your eyes a few seconds...
 Cierra los ojos unos segundos.
@@ -2830,11 +5857,29 @@ Cierra los ojos unos segundos.
 You could start talking to Gugli. He always has tasks for people willing to help
 Podrías iniciar hablando con Gugli. Él siempre tiene tareas para gente que desea ayudar
 
+You currently cannot open your storage.
+Por el momento no puedes abrir tu almacenaje.
+
 You currently have @@ on your bank account.
 Actualmente tiene @@ en su cuenta de banco.
 
 You do not give me much options.
 Usted no me da muchas pociones.
+
+You do not have a cart to be cleaned.
+No tiene carrito que vaciar.
+
+You do not have a homunculus.
+No tienes un homúnculo.
+
+You do not possess a cart to be removed
+No tiene carrito que eliminar
+
+You don't have this quest skill.
+No tienes la misión de habilidad.
+
+You don't know how to make a sandwich with that.
+No sabes cómo hacer un emparedado con eso.
 
 You don't remember anything before this.
 Tú no recuerdas nada antes de esto.
@@ -2842,8 +5887,71 @@ Tú no recuerdas nada antes de esto.
 You got married to @@!
 ¡Se ha casado con @@!
 
+You have %d new emails (%d unread)
+Tiene %d correos electrónicos nuevos (%d sin leer)
+
+You have a level for each of your gear, by default when you buy or craft a piece, the level is set to 1.
+Hay un nivel en cada pertrecho, por defecto cuando compra o elabora una pieza, el nivel se establece en 1.
+
+You have already opened your guild storage. Close it first.
+Tiene abierto su almacenaje del gremio. Ciérrelo primero.
+
+You have already opened your storage. Close it first.
+Tiene abierto su almacenaje. Ciérrelo primero.
+
 You have an awful amnesia.
 Tienes una amnesia terrible.
+
+You have become the Guild Master!
+¡Se ha convertido en el Maestro del Gremio!
+
+You have been jailed by a GM.
+Ha sido encarcelado por un DJ.
+
+You have been jailed for an unknown amount of time.
+Ha sido encarcelado por un tiempo incierto.
+
+You have been jailed indefinitely.
+Ha sido encarcelado indefinidamente.
+
+You have been recovered!
+¡Has sido recuperado!
+
+You have forgotten the skill.
+Has olvidado la habilidad.
+
+You have learned the skill.
+Has aprendido la habilidad.
+
+You have mounted a Peco Peco.
+Ha montado un Peco Peco.
+
+You have mounted your Dragon.
+Ha montado su Dragón.
+
+You have mounted your Mado Gear.
+Ha montado su Chirimbolo.
+
+You have mounted your Warg.
+Ha montado a su Huargo.
+
+You have mounted.
+Ha montado.
+
+You have released your Dragon.
+Ha soltado a su Dragón.
+
+You have released your Mado Gear.
+Ha soltado su Chirimbolo.
+
+You have released your Peco Peco.
+Ha soltado a su Peco Peco.
+
+You have released your Warg.
+Ha soltado a su Wargo.
+
+You have released your mount.
+Ha soltado su montura.
 
 You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of the damn sailor brought here that 'nice' lady.
 Tienes que saber que hubo un tiempo durante el que yo era el teniente sin oposición de esta tripulación. Entonces un día, uno de los malditos marineros trajo a esa 'linda' señorita.
@@ -2868,6 +5976,24 @@ Te gustan, ¿no? Sólo habla con Peter, entonces. Él está en la segunda cubier
 
 You mentioned the quality of your wine
 Habías mencionado la calidad de tu vino.
+
+You must enter a name.
+Debe ingresar un nombre.
+
+You must enter a player name or ID.
+Debe ingresar un nombre o ID de jugador.
+
+You need %s to mount!
+¡Necesita %s para montar!
+
+You need to be a Guild Master to use this command.
+Necesita ser un Maestro de Gremio para poder ejecutar esa orden.
+
+You need to be a party leader to use this command.
+Necesita ser un líder de grupo para poder ejecutar esa orden.
+
+You need to input a option
+Necesita ingresar una opción
 
 You open a book named @@.
 Abre un libro llamado @@.
@@ -2923,6 +6049,9 @@ You receive @@ E!
 You receive a @@!
 ¡Recibes una @@!
 
+You request has been rejected by autoreject option.
+Su consulta ha sido rechazada por la opción de rechazo automático.
+
 You see some items in the box. Take them out?
 Ves algunos artículos en la caja. ¿Los sacarás?
 
@@ -2934,6 +6063,9 @@ Veras, mis galletas son unicamente para cierto tipo de personas...
 
 You should come back when you'll have some free space.
 Deberías volver cuando tengas algo de espacio libre.
+
+You should have a shop open in order to use @autotrade.
+Debes tener un almacén abierto para poder usar @autotrade.
 
 You should inform Nard about the loading progress of the food on to the boat. He will be pleased to hear that good news!
 Deberías informarle a Nard sobre el progreso de carga de la comida en el bote. ¡Él estará complacido de escuchar las buenas noticias!
@@ -3016,6 +6148,9 @@ Estuviste yaying dormir por bastante tiempo allí, nuestra portera, Julia, estuv
 You were yaying sleeping for quite some time there, our shipkeeper, Julia, was here with you, she did her best to heal your injuries.#1
 Estuviste yaying dormir por bastante tiempo allí, nuestra portera, Julia, estuvo aquí contigo, ella hizo lo mejor para curar tus heridas.
 
+You will remain
+Se quedará
+
 You will see, citizens are polite and you can still ask for help in the Warrior Guild. They can help find a job for you or maybe help you find out what happened to you out at sea!
 Ya lo verás, los ciudadanos son educados y puedes pedir ayuda en el Gremio Guerrero. ¡Ellos te ayudarán a encontrar un trabajo o a averiguar que te sucedió en el mar!
 
@@ -3024,6 +6159,54 @@ Ya lo verás, los ciudadanos son educados y puedes pedir ayuda en el gremio guer
 
 You withdrawn a total of @@ E.
 Usted retira un total de @@ E.
+
+You're already autolooting this item type.
+Ya está recolectando automáticamente esta clase de objeto.
+
+You're already autolooting this item.
+Ya está recolectando automáticamente este objeto.
+
+You're already in the '%s' channel
+Ya está en el canal '%s'
+
+You're already with a '%s' costume, type '@costume' to remove it.
+Ya lleva un disfraz '%s'. Escriba '@costume' para quitárselo.
+
+You're currently not autolooting this item type.
+Por el momento no está recolectando automáticamente esta clase de objeto.
+
+You're currently not autolooting this item.
+Por el momento no está recolectando automáticamente este objeto.
+
+You're not allowed to talk on this channel
+No tiene permiso para hablar por este canal
+
+You're not dead.
+No se ha muerto.
+
+You're not disguised.
+No lleva disfraz.
+
+You're not in a guild.
+No lleva ningún gremio.
+
+You're not in that channel, type '@join <#channel_name>'
+No está en ese canal. Escriba '@join <#channel_name>'
+
+You're not part of the '%s' channel
+No hace parte del canal '%s'
+
+You're not the master of your guild.
+No es maestro de su gremio.
+
+You're not the owner of channel '%s'
+No es propietario del canal '%s'
+
+You're now in the '#%s' channel for '%s'
+Ahora está en el canal '#%s' para '%s'
+
+You're now in the '%s' channel
+Ahora está en el canal '%s'
 
 You're one of us now, that's great! I was sure that you were a good man when I first saw you!
 ¡Eres uno de nosotros ahora, eso es genial! ¡Estaba seguro que eras un bueno hombre cuando te vi por primera vez!
@@ -3040,14 +6223,119 @@ Estás en lo correcto, es acerca de ti.
 You're talking too fast!
 ¡Habla demasiado rápido!
 
+You're too close to a NPC, you must be at least %d cells away from any NPC.
+Estás muy cerca al PNJ, debes estar mínimo a %d celdas de distancia de cualquier PNJ.
+
+You've become the party leader.
+Te has vuelto el líder del grupo.
+
+You've been revived!
+¡Ha sido reanimado!
+
+You've died.
+Has muerto.
+
+You've left the '%s' channel
+Has abandonado el canal '%s'
+
+You've reached your slave clones limit.
+Ha alcanzado su límite de clones esclavos.
+
 You?? Here??
 ¿¡Tú!? ¿¡Aquí!?
+
+Your GM level doesn't authorize you to %s the player '%.*s'.
+Su nivel de DJ no le autoriza para %s al jugador '%.*s'.
+
+Your GM level doesn't authorize you to perform this action on the specified player.
+Su nivel de DJ no le autoriza a realizar esa acción al jugador indicado.
+
+Your GM level doesn't authorize you to perform this action.
+Su nivel de DJ no le autoriza a realizar esa acción.
+
+Your Game's EXE file is not the latest version.
+Su archivo EXE del juego no es la última versión.
+
+Your account has an 'Incorrect Password'...
+Su cuenta tiene una 'Contraseña Incorrecta'...
+
+Your account has been banished until
+Su cuenta ha sido separada hasta
 
 Your account has been banished until 
 Su cuenta ha sido deportada hasta
 
+Your account has been blocked by the GM Team.
+Su cuenta ha sido bloqueada por el Equipo DJ.
+
+Your account has been prohibited to log in.
+Se ha bloqueado el acceso a su cuenta.
+
+Your account has been rejected from server.
+Su cuenta ha sido rechazada del servidor.
+
+Your account has been totally erased.
+Su cuenta ha sido eliminada completamente.
+
+Your account has expired.
+Su cuenta ha caducado.
+
+Your account is 'Unregistered'.
+Su cuenta está 'No registrada'.
+
+Your account is no longer authorized.
+Su cuenta ya no está autorizada.
+
+Your account time limit is: %d-%m-%Y %H:%M:%S.
+El límite de tiempo de su cuenta es: %d-%m-%Y %H:%M:%S.
+
+Your autolootitem list has been reset.
+Su listado de recolección automática de botín se ha restablecido.
+
+Your autolootitem list is empty.
+Su listado de recolección automática de botín está vacía.
+
+Your autolootitem list is full. Remove some items first with @autolootid -<item name or ID>.
+Su listado de recolección automática de botín está lleno. Elimine algunos objetos primero con @autolootid -<item name or ID>.
+
+Your autoloottype list has been reset.
+Su listado de recolección automática de botín según clase ha sido restablecido.
+
+Your autoloottype list is empty.
+Su listado de recolección automática de botín según clase está vacío.
+
 Your body aches, even your hair hurts, and the daylight is painful; but still you open your eyes and see a large ship before you!
 Te duele el cuerpo, aun tu cabello; y la luz del día es dolorosa. ¡Pero aún así, abres tus ojos y ves un gran barco delante de ti!
+
+Your cart was cleaned.
+Su carrito fue vaciado.
+
+Your class can't mount!
+¡Su clase no puede montar!
+
+Your current memo positions are:
+Sus posiciones de nota actuales son:
+
+Your effect has changed.
+Su efecto ha cambiado.
+
+Your global chat is no longer bound to the '#%s' channel
+Su chat global ya no está conectado al canal '#%s'
+
+Your global chat is not bound to any channel
+Su chat global no está conectado a ningún canal
+
+Your global chat is now bound to the '%s' channel
+Su chat global está ahora conectado al canal '%s'
+
+Your group has been changed.
+Su grupo ha sido cambiado.
+
+Your guild storage was cleaned.
+Su almacenaje del gremio ha sido vaciado.
+
+Your guild's storage has already been opened by another member, try again later.
+Su almacenaje del gremio ha sido abierto por otro miembro, pruebe más tarde.
 
 Your hands are too weak, you did not succeed in opening this @@.
 Tus manos son muy débiles, no tuviste éxito al abrir este @@.
@@ -3058,29 +6346,119 @@ Tus manos son demasiado débiles, no has abierto el @@.
 Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only.
 Su ayuda es bienvenida. Por desgracia, sólo puedo darle una recompensa por el primer exterminio.
 
+Your homunculus doesn't evolve.
+Su homúnculo no evoluciona.
+
+Your job has been changed.
+Su oficio ha cambiado.
+
 Your position has been saved.
 Tu posición fue guardada.
 
 Your position is saved.
 Tu posicion esta guardada.
 
+Your save point has been changed.
+Su punto de control ha sido cambiado.
+
+Your sex has been changed (disconnection required to complete the process)...
+Su género ha sido cambiado (se requiere desconexión para completar el proceso)...
+
 Your sister sent me to find you. Your mother is worried.
 Tu hermana me envió a buscarte. Tu madre está preocupada.
+
+Your storage was cleaned.
+Su almacenaje fue vaciado.
 
 Yummy bakery aromas have stirred madam's curiosity, am I right?
 El rico aroma de la panadería han despertado la curiosidad de mi señora, ¿estoy en lo cierto?
 
+Zone not found. Keep in mind that the names are CaSe SenSitiVe.
+Zona no encontrada. Tengan en cuenta que los nombres distinguen MaYúsCulAs y MiNúsCulAs.
+
+Zone successfully changed from '%s' to '%s'.
+Zona cambiada satisfactoriamente de '%s' a '%s'.
+
 Zzzzzzzzzz
 Zzzzzzzzzz
+
+[ #%s ] User IRC.%s is now known as IRC.%s
+[ #%s ] Usuario IRC.%s ahora se conoce como IRC.%s
+
+[ #%s ] User IRC.%s joined the channel.
+[ #%s ] Usuario IRC.%s se unió el canal.
+
+[ #%s ] User IRC.%s left the channel. [%s]
+[ #%s ] Usuario IRC.%s abandonó el canal. [%s]
+
+[ #%s ] User IRC.%s left the channel. [Quit: %s]
+[ #%s ] Usuario IRC.%s abandonó el canal. [Salir: %s]
+
+[ K.S Protection Active - Option: Guild ]
+[ Protección contra Hurto de Experiencia Activa - Opción: Gremio ]
+
+[ K.S Protection Active - Option: Party ]
+[ Protección contra Hurto de Experiencia Activa - Opción: Grupo ]
+
+[ K.S Protection Active - Option: Self ]
+[ Protección contra Hurto de Experiencia Activa - Opción: Persona ]
+
+[ K.S Protection Inactive ]
+[ Protección contra Hurto de Experiencia Inactiva ]
+
+[ Kill Steal Protection Disabled. KS is allowed in this map ]
+[ Protección contra Hurto de Experiencia Deshabilitada. Se permite hurtar experiencia en este mapa ]
+
+[ Map K.S Protection Active ]
+[ Mapa con Protección contra Hurto de Experiencia Activa ]
+
+[ Map K.S Protection Inactive ]
+[ Mapa con Protección contra Hurto de Experiencia Inactiva ]
+
+[ ^EE0000%s^000000 ]
+[ ^EE0000%s^000000 ]
+
+[%d] seconds left until you can use
+[%d] segundos restantes para poder usarlo
+
+[KS Warning!! - Owner : %s]
+[¡¡Advertencia!! Hurto de Experiencia - Usuario : %s]
+
+[Watch out! %s is trying to KS you!]
+[¡Pilas! ¡%s intenta hurtarte experiencia!]
+
+[^EE0000%s^000000]
+[^EE0000%s^000000]
 
 and 
 y
 
+ban
+bloquear
+
+block
+bloquear
+
+body/armor,
+cuerpo/armadura,
+
 body/armor, 
 cuerpo/armadura, 
 
+boobs
+tetas
+
+both hands,
+ambas manos,
+
 both hands, 
 ambas manos, 
+
+change the sex of
+cambiar el género de
+
+conf/import/msg_conf.txt
+conf/import/msg_conf.txt
 
 day
 día
@@ -3088,8 +6466,14 @@ día
 days
 días
 
+feet,
+pies,
+
 feet, 
 pies,
+
+garment,
+vestuario,
 
 garment, 
 prenda,
@@ -3106,26 +6490,47 @@ en @@
 is helping me.
 está ayudándome.
 
+left accessory,
+aditamento izquierdo,
+
 left accessory, 
 accesorio izquierdo,
+
+left hand,
+mano izquierda
 
 left hand, 
 mano izquierda,
 
+lower head,
+parte inferior de la cabeza,
+
 lower head, 
 cabeza inferior, 
+
+lower/mid head,
+parte inferior/intermedia de la cabeza,
 
 lower/mid head, 
 cabeza inferior/media, 
 
+lower/mid/top head,
+parte inferior/intermedia/superior de la cabeza,
+
 lower/mid/top head, 
 cabeza inferior/media/superior, 
+
+lower/top head,
+parte inferior/superior de la cabeza,
 
 lower/top head, 
 cabeza inferior/superior, 
 
 marriage1
 matrimonio1
+
+mid head,
+parte intermedia de la cabeza,
 
 mid head, 
 cabeza media, 
@@ -3136,11 +6541,35 @@ minuto
 minutes
 minutos
 
+neutral
+neutral
+
 npc1#door
 npc1#door
 
+option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
+la opción '%s' ya está activada, si quiere desactivarla escriba '@channel opt %s 0'
+
+option '%s' is not enabled on channel '%s'
+la opción '%s' no está activada en el canal '%s'
+
+option '%s' is now disabled for channel '%s'
+la opción '%s' está ahora desactivada en el canal '%s'
+
+option '%s' is now enabled for channel '%s'
+la opción '%s' está ahora activada en el canal '%s'
+
+option '%s' is now enabled for channel '%s' with %d seconds
+la opción '%s' está ahora activada en el canal '%s' con %d segundos
+
+right accessory,
+aditamento derecho,
+
 right accessory, 
 accesorio derecho,
+
+right hand,
+mano derecha,
 
 right hand, 
 mano derecha,
@@ -3151,8 +6580,29 @@ segundo
 seconds
 segundos
 
+skill %d: %s (%s)
+habilidad %d: %s (%s)
+
+tanky
+sobrecargo
+
+top head,
+parte superior de la cabeza,
+
 top head, 
 cabeza superior, 
+
+unban
+desbloquear
+
+unblock
+desbloquear
+
+usage @camerainfo range rotation latitude
+uso @camerainfo range rotation latitude
+
+value '%d' for option '%s' is out of range (limit is 0-%d)
+el valor '%d' para la opción '%s' está fuera del margen (el límite está en 0-%d)
 
 value '%d' for option '%s' is out of range (limit is 0-10)
 el valor  '%d' para la opción '%s' está fuera del rango (el límite es 0-10)
@@ -3162,6 +6612,18 @@ año
 
 years
 años
+
+| Guild: '%s'
+| Gremio: '%s'
+
+| Location: %s %d %d
+| Ubicación: %s %d %d
+
+| Lv:%d/%d | Job: %s
+| Nivel:%d/%d | Habilidad: %s
+
+| Party: '%s'
+| Grupo: '%s'
 
 | Party: '%s' 
 | Grupo: '%s' 

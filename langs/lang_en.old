@@ -1,8 +1,113 @@
+      BLvl: %d | Job: %s (Lvl: %d)
+      BLvl: %d | Job: %s (Lvl: %d)
+
+      Party: '%s' | Guild: '%s'
+      Party: '%s' | Guild: '%s'
+
+   Users: %d/%d | Password: %s | Public: %s
+   Users: %d/%d | Password: %s | Public: %s
+
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <bound_type>).
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <bound_type>).
+
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>).
+  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>).
+
+  @send <packet hex number> {<value>}*
+  @send <packet hex number> {<value>}*
+
+  @send len <packet hex number>
+  @send len <packet hex number>
+
+  Value: <type=B(default),W,L><number> or S<length>"<string>"
+  Value: <type=B(default),W,L><number> or S<length>"<string>"
+
+ - Available in shops only.
+ - Available in shops only.
+
+ - Common mobs with highest drop chance (only max %d are listed):
+ - Common mobs with highest drop chance (only max %d are listed):
+
+ - Item is not dropped by any mobs.
+ - Item is not dropped by any mobs.
+
+ - Maximal monsters drop chance: %02.02f%%
+ - Maximal monsters drop chance: %02.02f%%
+
+ - Monsters don't drop this item.
+ - Monsters don't drop this item.
+
+ -- Duel has been created (Use @invite/@leave) --
+ -- Duel has been created (Use @invite/@leave) --
+
+ -- Duels: %d/%d, Members: %d/%d --
+ -- Duels: %d/%d, Members: %d/%d --
+
+ -- Duels: %d/%d, Members: %d/%d, Max players: %d --
+ -- Duels: %d/%d, Members: %d/%d, Max players: %d --
+
+ -- Player %s has rejected the duel --
+ -- Player %s has rejected the duel --
+
+ -- Player %s invites %s to duel --
+ -- Player %s invites %s to duel --
+
+ -> (card(s):
+ -> (card(s):
+
  -> (card(s): 
  -> (card(s): 
 
+ -> (crafted item, creator id: %u, star crumbs %d, element %d)
+ -> (crafted item, creator id: %u, star crumbs %d, element %d)
+
+ -> (pet egg, pet id: %u, named)
+ -> (pet egg, pet id: %u, named)
+
+ -> (pet egg, pet id: %u, unnamed)
+ -> (pet egg, pet id: %u, unnamed)
+
+ -> (produced item, creator id: %u)
+ -> (produced item, creator id: %u)
+
+ -> Player %s has accepted the duel --
+ -> Player %s has accepted the duel --
+
+ <- Player %s has left the duel --
+ <- Player %s has left the duel --
+
+ ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
+ ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
+
+ ATK:%d~%d MATK:%d~%d Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
+ ATK:%d~%d MATK:%d~%d Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
+
+ DEF:%d  MDEF:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d
+ DEF:%d  MDEF:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d
+
+ Drops:
+ Drops:
+
+ Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
+ Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
+
+ MVP Bonus EXP:%u
+ MVP Bonus EXP:%u
+
+ MVP Items:
+ MVP Items:
+
  ago
  ago
+
+ and %d second
+ and %d second
+
+ and %d seconds
+ and %d seconds
+
+ | equipped:
+ | equipped:
 
  | equipped: 
  | equipped: 
@@ -10,14 +115,119 @@
 !
 !
 
+"@alootid reset" will clear your autolootitem list.
+"@alootid reset" will clear your autolootitem list.
+
 "Mister Piou, good day to you.
 "Mister Piou, good day to you.
+
+#%s '%s' joined
+#%s '%s' joined
+
+#%s '%s' left
+#%s '%s' left
+
+%d - void
+%d - void
+
+%d GMs found.
+%d GMs found.
+
+%d commands found.
+%d commands found.
+
+%d day
+%d day
+
+%d days
+%d days
+
+%d hour
+%d hour
+
+%d hours
+%d hours
+
+%d item(s) found in %d %s slots.
+%d item(s) found in %d %s slots.
+
+%d item(s) removed by a GM.
+%d item(s) removed by a GM.
+
+%d item(s) removed from the player.
+%d item(s) removed from the player.
+
+%d item(s) removed. Player had only %d on %d items.
+%d item(s) removed. Player had only %d on %d items.
+
+%d items are dropped (%d skipped)!
+%d items are dropped (%d skipped)!
 
 %d items are dropped!
 %d items are dropped!
 
+%d items have been refined.
+%d items have been refined.
+
+%d minute
+%d minute
+
+%d minutes
+%d minutes
+
+%d monster(s) summoned!
+%d monster(s) summoned!
+
+%d players found in map '%s'.
+%d players found in map '%s'.
+
+%d players found.
+%d players found.
+
+%d results found.
+%d results found.
+
 %d/%d %s
 %d/%d %s
+
+%d: Accessory (Left)
+%d: Accessory (Left)
+
+%d: Accessory (Right)
+%d: Accessory (Right)
+
+%d: Body Armor
+%d: Body Armor
+
+%d: Costume Garment
+%d: Costume Garment
+
+%d: Costume Headgear (Low)
+%d: Costume Headgear (Low)
+
+%d: Costume Headgear (Mid)
+%d: Costume Headgear (Mid)
+
+%d: Costume Headgear (Top)
+%d: Costume Headgear (Top)
+
+%d: Garment
+%d: Garment
+
+%d: Hand (Left)
+%d: Hand (Left)
+
+%d: Hand (Right)
+%d: Hand (Right)
+
+%d: Headgear (Low)
+%d: Headgear (Low)
+
+%d: Headgear (Mid)
+%d: Headgear (Mid)
+
+%d: Headgear (Top)
+%d: Headgear (Top)
 
 %d: Left Accessory
 %d: Left Accessory
@@ -31,20 +241,143 @@
 %d: Mid Headgear
 %d: Mid Headgear
 
+%d: Refine All Equip (Costume)
+%d: Refine All Equip (Costume)
+
+%d: Refine All Equip (General)
+%d: Refine All Equip (General)
+
+%d: Refine All Equip (Shadow)
+%d: Refine All Equip (Shadow)
+
 %d: Right Accessory
 %d: Right Accessory
 
 %d: Right Hand
 %d: Right Hand
 
+%d: Shadow Accessory (Left)
+%d: Shadow Accessory (Left)
+
+%d: Shadow Accessory (Right)
+%d: Shadow Accessory (Right)
+
+%d: Shadow Armor
+%d: Shadow Armor
+
+%d: Shadow Shield
+%d: Shadow Shield
+
+%d: Shadow Shoes
+%d: Shadow Shoes
+
+%d: Shadow Weapon
+%d: Shadow Weapon
+
+%d: Shoes
+%d: Shoes
+
 %d: Top Headgear
 %d: Top Headgear
+
+%s : %s !!
+%s : %s !!
+
+%s :Main: %s
+%s :Main: %s
+
+%s data type is not supported :%u
+%s data type is not supported :%u
+
+%s failed
+%s failed
+
+%s failed.
+%s failed.
+
+%s failed. Player not found.
+%s failed. Player not found.
+
+%s has bought your item(s).
+%s has bought your item(s).
+
+%s in jail for %d years, %d months, %d days, %d hours and %d minutes
+%s in jail for %d years, %d months, %d days, %d hours and %d minutes
+
+%s is Unknown Command.
+%s is Unknown Command.
+
+%s is empty
+%s is empty
+
+%s is in autotrade mode and cannot receive whispered messages.
+%s is in autotrade mode and cannot receive whispered messages.
+
+%s is too distressed to be of any help. It might be a better idea to go inside the caves and look for Juliet.
+%s is too distressed to be of any help. It might be a better idea to go inside the caves and look for Juliet.
+
+%s recalled!
+%s recalled!
+
+%s revision '%s' (src) / '%s' (scripts)
+%s revision '%s' (src) / '%s' (scripts)
+
+%s spawns in:
+%s spawns in:
+
+%s stole %s.
+%s stole %s.
+
+%s stole an Unknown Item (id: %i).
+%s stole an Unknown Item (id: %i).
+
+%s value is now :%d
+%s value is now :%d
+
+%s value is now :%s
+%s value is now :%s
+
+%s: %d
+%s: %d
+
+'%s' Channel is password protected (usage: %s <#channel_name> <password>)
+'%s' Channel is password protected (usage: %s <#channel_name> <password>)
+
+'%s' and his/her partner are now divorced.
+'%s' and his/her partner are now divorced.
+
+'%s' channel color updated to '%s'
+'%s' channel color updated to '%s'
 
 '%s' channel color updated to '%s' 
 '%s' channel color updated to '%s' 
 
 '%s' got %s's %s (chance: %0.02f%%)
 '%s' got %s's %s (chance: %0.02f%%)
+
+'%s' is not a known channel option
+'%s' is not a known channel option
+
+'%s' is not a known costume
+'%s' is not a known costume
+
+'%s' is not a known permission.
+'%s' is not a known permission.
+
+'%s' is not married.
+'%s' is not married.
+
+'%s' skill and stat points have been reset.
+'%s' skill and stat points have been reset.
+
+'%s' skill points reset.
+'%s' skill points reset.
+
+'%s' stats points reset.
+'%s' stats points reset.
+
+'%s' stats:
+'%s' stats:
 
 '%s' stole %s's %s (chance: %0.02f%%)
 '%s' stole %s's %s (chance: %0.02f%%)
@@ -64,11 +397,23 @@
 'k hoar ui wel... (Vlaams)
 'k hoar ui wel... (Vlaams)
 
+(%s)
+(%s)
+
 (%s) 
 (%s) 
 
+(@request): %s
+(@request): %s
+
+(CID:%d/AID:%d)
+(CID:%d/AID:%d)
+
 (CID:%d/AID:%d) 
 (CID:%d/AID:%d) 
+
+* :%s %s: *
+* :%s %s: *
 
 * @@ @@
 * @@ @@
@@ -88,14 +433,140 @@
 , and 
 , and 
 
+- #%s ( %d users )
+- #%s ( %d users )
+
+- %s
+- %s
+
+- %s (%d)
+- %s (%d)
+
 - 2 @@
 - 2 @@
+
+- Available Costumes
+- Available Costumes
 
 - QMuller
 - QMuller
 
+- adds or removes <option name> with <option value> to <channel name> channel
+- adds or removes <option name> with <option value> to <channel name> channel
+
+- bans <character name> from <channel name> channel
+- bans <character name> from <channel name> channel
+
+- binds your global chat to <channel name>, making anything you type in global be sent to the channel
+- binds your global chat to <channel name>, making anything you type in global be sent to the channel
+
+- changes <channel name> color to <color name>
+- changes <channel name> color to <color name>
+
+- creates a new channel
+- creates a new channel
+
+- leaves <channel name>
+- leaves <channel name>
+
+- lists all banned characters from <channel name> channel
+- lists all banned characters from <channel name> channel
+
+- lists colors available to select for custom channels
+- lists colors available to select for custom channels
+
+- lists public channels
+- lists public channels
+
+- unbans <character name> from <channel name> channel
+- unbans <character name> from <channel name> channel
+
+- unbans everyone from <channel name>
+- unbans everyone from <channel name>
+
 - unbinds your global chat from its attached channel (if binded)
 - unbinds your global chat from its attached channel (if binded)
+
+- unbinds your global chat from its attached channel (if bound)
+- unbinds your global chat from its attached channel (if bound)
+
+-- %s
+-- %s
+
+-- %s ban <channel name> <character name>
+-- %s ban <channel name> <character name>
+
+-- %s banlist <channel name>
+-- %s banlist <channel name>
+
+-- %s bindto <channel name>
+-- %s bindto <channel name>
+
+-- %s create <channel name> <channel password>
+-- %s create <channel name> <channel password>
+
+-- %s leave <channel name>
+-- %s leave <channel name>
+
+-- %s list
+-- %s list
+
+-- %s list colors
+-- %s list colors
+
+-- %s setcolor <channel name> <color name>
+-- %s setcolor <channel name> <color name>
+
+-- %s setopt <channel name> <option name> <option value>
+-- %s setopt <channel name> <option name> <option value>
+
+-- %s unban <channel name> <character name>
+-- %s unban <channel name> <character name>
+
+-- %s unbanall <channel name>
+-- %s unbanall <channel name>
+
+-- %s unbind
+-- %s unbind
+
+-- '%s' ban list
+-- '%s' ban list
+
+-- Available options
+-- Available options
+
+-- Displaying first %d partial matches
+-- Displaying first %d partial matches
+
+-- Permission List
+-- Permission List
+
+-- Public Channels
+-- Public Channels
+
+-- User '%s' Permissions
+-- User '%s' Permissions
+
+--- Available options:
+--- Available options:
+
+----- Chats in Map -----
+----- Chats in Map -----
+
+----- NPCs in Map -----
+----- NPCs in Map -----
+
+----- Players in Map -----
+----- Players in Map -----
+
+------ %s items list of '%s' ------
+------ %s items list of '%s' ------
+
+------ Map Flags ------
+------ Map Flags ------
+
+------ Map Info ------
+------ Map Info ------
 
 .
 .
@@ -120,6 +591,18 @@
 
 ...this might be because of Don, he is the master blacksmith of this place and a model to me!
 ...this might be because of Don, he is the master blacksmith of this place and a model to me!
+
+1 GM found.
+1 GM found.
+
+1 item has been refined.
+1 item has been refined.
+
+1 player found in map '%s'.
+1 player found in map '%s'.
+
+1 player found.
+1 player found.
 
 1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle.
 1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle.
@@ -184,6 +667,18 @@
 7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.
 7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.
 
+<MSG>2949</MSG>
+<MSG>2949</MSG>
+
+<MSG>2950</MSG>
+<MSG>2950</MSG>
+
+<MSG>3455</MSG>
+<MSG>3455</MSG>
+
+<MSG>3456,%d</MSG>
+<MSG>3456,%d</MSG>
+
 @@ and @@ just got married!
 @@ and @@ just got married!
 
@@ -204,6 +699,9 @@
 
 @@ registered for marriage. Waiting for partner...
 @@ registered for marriage. Waiting for partner...
+
+@@!
+@@!
 
 @@? Welcome my dear!#0
 @@? Welcome my dear!
@@ -211,8 +709,14 @@
 @@? Welcome my dear!#1
 @@? Welcome my dear!
 
+@request sent.
+@request sent.
+
 A @@? There're plenty on this island!
 A @@? There're plenty on this island!
+
+A GM has discharged you from jail.
+A GM has discharged you from jail.
 
 A Ground!
 A Ground!
@@ -226,11 +730,17 @@ A Sunny and hot day,
 A band of adventurers formed in Argaes from those who had lost their homes and families. They visited the three permanent human settlements: Tulimshar, Hurnscald and Nivalis.
 A band of adventurers formed in Argaes from those who had lost their homes and families. They visited the three permanent human settlements: Tulimshar, Hurnscald and Nivalis.
 
+A band of adventurers formed in Argaes from those who had lost their homes and families. They visited the three permanent viro settlements: Tulimshar, Hurnscald and Nivalis.
+A band of adventurers formed in Argaes from those who had lost their homes and families. They visited the three permanent viro settlements: Tulimshar, Hurnscald and Nivalis.
+
 A few moments ago, I heard your conversation with Darlin.
 A few moments ago, I heard your conversation with Darlin.
 
 A great city, now the capital of these islands, called Esperia, rose on the single island, Aurora, where everyone lived.
 A great city, now the capital of these islands, called Esperia, rose on the single island, Aurora, where everyone lived.
+
+A minimum of %d players at the time of start is required!
+A minimum of %d players at the time of start is required!
 
 A small lie isn't a lie, and I could really use some cash...
 A small lie isn't a lie, and I could really use some cash...
@@ -243,6 +753,9 @@ A young apprentice called Chelios might be waiting outside, speak to him, and re
 
 ANYWAY, MAYBE WHEN YOU ARE LOOKING FOR FOOD WITH GUGLI YOU WILL HAVE THE TIME TO LOOK AT THIS!
 ANYWAY, MAYBE WHEN YOU ARE LOOKING FOR FOOD WITH GUGLI YOU WILL HAVE THE TIME TO LOOK AT THIS!
+
+ATK: %d - MATK: %d~%d
+ATK: %d - MATK: %d~%d
 
 Able to write a poem
 Able to write a poem
@@ -267,6 +780,9 @@ About this Esperia's Guild, I'm not sure about them, frankly.
 
 About this Esperia's Warrior Guild, I'm not sure about them, frankly.
 About this Esperia's Warrior Guild, I'm not sure about them, frankly.
+
+Acolyte
+Acolyte
 
 Acorn
 Acorn
@@ -286,17 +802,35 @@ Actually I have an in-depth knowledge of this life.
 Actually, I came here to work on my task.
 Actually, I came here to work on my task.
 
+Actually, I could try to repair some of your items. These cannot be traded and have weaker status than normal items =/
+Actually, I could try to repair some of your items. These cannot be traded and have weaker status than normal items =/
+
+Actually... Do you know why the 
+Actually... Do you know why the 
+
 Aemil is a magnificent world unknown to us all.
 Aemil is a magnificent world unknown to us all.
 
+After a tiring, yet fast, travel by Koga, you arrive at %s.
+After a tiring, yet fast, travel by Koga, you arrive at %s.
+
 After this war, the Raijin race was born. A race born of Magic. Humans encapsulated in a Mana storm and altered forever.
 After this war, the Raijin race was born. A race born of Magic. Humans encapsulated in a Mana storm and altered forever.
+
+After this war, the Raijin race was born. A race born of Magic. Viros encapsulated in a Mana storm and altered forever.
+After this war, the Raijin race was born. A race born of Magic. Viros encapsulated in a Mana storm and altered forever.
+
+Agi: %d (%d~%d)
+Agi: %d (%d~%d)
 
 Ah, I didn't have much sleep; it's possible.
 Ah, I didn't have much sleep; it's possible.
 
 Ah, great! Now you get a nice discount on a piou.
 Ah, great! Now you get a nice discount on a piou.
+
+Ah, just in time. I asked Hocus' to send a letter. The deadline was coming up soon.
+Ah, just in time. I asked Hocus' to send a letter. The deadline was coming up soon.
 
 Ah, these... Citizens like buying them as pets.
 Ah, these... Citizens like buying them as pets.
@@ -315,6 +849,9 @@ Airlia#008-2-8
 
 Alchemical studies are prohibited in every cities of the Archipelagos, do not dare to practice in a public zone!
 Alchemical studies are prohibited in every cities of the Archipelagos, do not dare to practice in a public zone!
+
+Alchemist
+Alchemist
 
 Ale
 Ale
@@ -337,8 +874,50 @@ AligeTrigger#Artis
 All I can do is tell you that...
 All I can do is tell you that...
 
+All characters recalled!
+All characters recalled!
+
+All dropped items have been cleaned up.
+All dropped items have been cleaned up.
+
+All items have been repaired.
+All items have been repaired.
+
+All items stored.
+All items stored.
+
+All leaderboards are refreshed hourly.
+All leaderboards are refreshed hourly.
+
+All monsters killed!
+All monsters killed!
+
+All monsters summoned!
+All monsters summoned!
+
+All of your items have been removed.
+All of your items have been removed.
+
+All online characters of the %s guild have been recalled to your position.
+All online characters of the %s guild have been recalled to your position.
+
+All online characters of the %s party have been recalled to your position.
+All online characters of the %s party have been recalled to your position.
+
+All players have been kicked!
+All players have been kicked!
+
 All races were in peace until the Humans set forth to discover the Source of Magic, based on Ukar scholars studies.
 All races were in peace until the Humans set forth to discover the Source of Magic, based on Ukar scholars studies.
+
+All races were in peace until the Viros set forth to discover the Source of Magic, based on Ukar scholars studies.
+All races were in peace until the Viros set forth to discover the Source of Magic, based on Ukar scholars studies.
+
+All skills have been added to your skill tree.
+All skills have been added to your skill tree.
+
+All stats changed!
+All stats changed!
 
 All that I had to eat were these berries... Berries... Berries...
 All that I had to eat were these berries... Berries... Berries...
@@ -352,8 +931,20 @@ All your... fresh ingredients are ready to be cooked.
 All your...fresh ingredients are ready to be cooked.
 All your...fresh ingredients are ready to be cooked.
 
+Alliances cannot be broken during Guild Wars!
+Alliances cannot be broken during Guild Wars!
+
+Alliances cannot be made during Guild Wars!
+Alliances cannot be made during Guild Wars!
+
+AllowKS |
+AllowKS |
+
 AllowKS | 
 AllowKS | 
+
+Already using this font.
+Already using this font.
 
 Alright! Yeye one more box and it'll be good.
 Alright! Yeye one more box and it'll be good.
@@ -385,11 +976,17 @@ Alright, I'm going to his room, keep an eye on him, we still don't know if he's 
 Alright, I'm going to his room, keep an eye on him, we still don't know if he's an ally or an enemy...
 Alright, I'm going to his room, keep an eye on him, we still don't know if he's an ally or an enemy...
 
+Alright, but... You only have @@ @@, and I need @@ to do the status reset for you!
+Alright, but... You only have @@ @@, and I need @@ to do the status reset for you!
+
 Alright, bye!
 Alright, bye!
 
 Alright, see you later then!
 Alright, see you later then!
+
+Also, status point reset can't be undone. Do you really want this?
+Also, status point reset can't be undone. Do you really want this?
 
 Also, there was this inscription on your raft, one of the warrior guild of Esperia, the largest and biggest guild of the whole new world, does that make you remember something?
 Also, there was this inscription on your raft, one of the warrior guild of Esperia, the largest and biggest guild of the whole new world, does that make you remember something?
@@ -406,8 +1003,17 @@ Also, we took your yayed clothes, as they were... Yeyeye... In bad condition, go
 Also, we took your yayed clothes, as they were... Yeyeye... In bad condition, go check the box around your bed, there is some new ones inside.#1
 Also, we took your yayed clothes, as they were... Yeyeye... In bad condition, go check the box around your bed, there is some new ones inside.
 
+Alternative clouds appeared.
+Alternative clouds appeared.
+
+Alternative clouds have disappeared.
+Alternative clouds have disappeared.
+
 Altough you can't get rid of the feeling someone is listening on the other side, you don't get any replies
 Altough you can't get rid of the feeling someone is listening on the other side, you don't get any replies
+
+An invalid number was specified.
+An invalid number was specified.
 
 An unexpected help is always welcome!
 An unexpected help is always welcome!
@@ -423,6 +1029,9 @@ And I have no sign of a so called \
 
 And I have no sign of a so called \"@@\" on it!
 And I have no sign of a so called \"@@\" on it!
+
+And Tanveer, our president in Tulimshar, should be able to give you even more training.
+And Tanveer, our president in Tulimshar, should be able to give you even more training.
 
 And Tezer, our president in Tulimshar, should be able to give you even more training.
 And Tezer, our president in Tulimshar, should be able to give you even more training.
@@ -451,6 +1060,9 @@ And what do you give me in exchange for these informations?
 And what kind of help do you need?
 And what kind of help do you need?
 
+And whatever. If you need more details ask WildX as I'm not supposed to know.
+And whatever. If you need more details ask WildX as I'm not supposed to know.
+
 And when we have enough money to support ourselves and not depend on anybody
 And when we have enough money to support ourselves and not depend on anybody
 
@@ -463,8 +1075,14 @@ And with my piou! That's wonderful, I can't think at how hard that was to catch 
 And you might even gain a fruit if you're lucky!
 And you might even gain a fruit if you're lucky!
 
+Angus#008-2-17
+Angus#008-2-17
+
 Any contribution to the game content (translations, graphics creation/edition, concepts, coding/scripting, etc...) is rewarded!
 Any contribution to the game content (translations, graphics creation/edition, concepts, coding/scripting, etc...) is rewarded!
+
+Any work in progress (NPC dialog, manufacturing ...) quit and try again.
+Any work in progress (NPC dialog, manufacturing ...) quit and try again.
 
 Anyway I am glad I can give you some of these @@s.
 Anyway I am glad I can give you some of these @@s.
@@ -487,8 +1105,14 @@ Anyway, the guild creation is perfect for both case! You can keep your current p
 Anyway, you want to get on my smuggling ship, right? So you better help me out!
 Anyway, you want to get on my smuggling ship, right? So you better help me out!
 
+Appearance Debug - Body Type Change
+Appearance Debug - Body Type Change
+
 Appearance Debug - Sex Change
 Appearance Debug - Sex Change
+
+Appearance changed.
+Appearance changed.
 
 Aquada
 Aquada
@@ -498,6 +1122,15 @@ Aquada Box
 
 Aquada!? I will not help you with your evil plan!
 Aquada!? I will not help you with your evil plan!
+
+Arch Bishop
+Arch Bishop
+
+Arch Bishop T
+Arch Bishop T
+
+Archer
+Archer
 
 Are you here to explore the island?
 Are you here to explore the island?
@@ -595,6 +1228,12 @@ Ash brown
 Ask sailors around here they shouldn't be so far.
 Ask sailors around here they shouldn't be so far.
 
+Asphodel Moors
+Asphodel Moors
+
+Assassin Cross
+Assassin Cross
+
 Astapolos
 Astapolos
 
@@ -610,11 +1249,71 @@ At this time, we were selling crab's food on our old mushroom island.
 Auburn brown
 Auburn brown
 
+Auction is disabled
+Auction is disabled
+
 Auldsbel#008-1
 Auldsbel#008-1
 
 Authorities began to control in order to have a peaceful society. This did not work well for long.
 Authorities began to control in order to have a peaceful society. This did not work well for long.
+
+Auto loot item are disabled on this map.
+Auto loot item are disabled on this map.
+
+Autoloot is now off.
+Autoloot is now off.
+
+Autolooting item type: '%s'
+Autolooting item type: '%s'
+
+Autolooting item: '%s'/'%s' {%d}
+Autolooting item: '%s'/'%s' {%d}
+
+Autolooting items with drop rates of %0.02f%% and below.
+Autolooting items with drop rates of %0.02f%% and below.
+
+Autorejected alliance request from %s.
+Autorejected alliance request from %s.
+
+Autorejected friend request from %s.
+Autorejected friend request from %s.
+
+Autorejected guild invite from %s.
+Autorejected guild invite from %s.
+
+Autorejected opposition request from %s.
+Autorejected opposition request from %s.
+
+Autorejected party invite from %s.
+Autorejected party invite from %s.
+
+Autorejected trade request from %s.
+Autorejected trade request from %s.
+
+Autorejecting is activated.
+Autorejecting is activated.
+
+Autorejecting is deactivated.
+Autorejecting is deactivated.
+
+Autotrade Disabled
+Autotrade Disabled
+
+Autotrade Enabled
+Autotrade Enabled
+
+Autotrade is not allowed in this map.
+Autotrade is not allowed in this map.
+
+Available Flags:
+Available Flags:
+
+Available aliases:
+Available aliases:
+
+Available commands:
+Available commands:
 
 Awwww, what will I do now?
 Awwww, what will I do now?
@@ -622,14 +1321,149 @@ Awwww, what will I do now?
 BUT I CAN'T, I NEED TO KEEP AN EYE ON THE SEA, TO WARN THE CREW IF THERE HAPPEN TO BE SOME PIRATES AROUND!
 BUT I CAN'T, I NEED TO KEEP AN EYE ON THE SEA, TO WARN THE CREW IF THERE HAPPEN TO BE SOME PIRATES AROUND!
 
+Baby Acolyte
+Baby Acolyte
+
+Baby Alchemist
+Baby Alchemist
+
+Baby Arch Bishop
+Baby Arch Bishop
+
+Baby Archer
+Baby Archer
+
+Baby Assassin
+Baby Assassin
+
+Baby Bard
+Baby Bard
+
+Baby Blacksmith
+Baby Blacksmith
+
+Baby Crusader
+Baby Crusader
+
+Baby Dancer
+Baby Dancer
+
+Baby Genetic
+Baby Genetic
+
+Baby Guillotine Cross
+Baby Guillotine Cross
+
+Baby Hunter
+Baby Hunter
+
+Baby Knight
+Baby Knight
+
+Baby Magician
+Baby Magician
+
+Baby Mechanic
+Baby Mechanic
+
+Baby Merchant
+Baby Merchant
+
+Baby Minstrel
+Baby Minstrel
+
+Baby Monk
+Baby Monk
+
+Baby Novice
+Baby Novice
+
+Baby Priest
+Baby Priest
+
+Baby Ranger
+Baby Ranger
+
+Baby Rogue
+Baby Rogue
+
+Baby Royal Guard
+Baby Royal Guard
+
+Baby Rune Knight
+Baby Rune Knight
+
+Baby Sage
+Baby Sage
+
+Baby Shadow Chaser
+Baby Shadow Chaser
+
+Baby Sorcerer
+Baby Sorcerer
+
+Baby Sura
+Baby Sura
+
+Baby Swordsman
+Baby Swordsman
+
+Baby Thief
+Baby Thief
+
+Baby Wanderer
+Baby Wanderer
+
+Baby Warlock
+Baby Warlock
+
+Baby Wizard
+Baby Wizard
+
 Bag
 Bag
 
 Bald
 Bald
 
+Ban failed, it is not possible to ban this user.
+Ban failed, it is not possible to ban this user.
+
+Banking is disabled
+Banking is disabled
+
 Banu#008-1
 Banu#008-1
+
+Bard
+Bard
+
+Base EXP : %d%% | Base Drop: %d%% | Base Death Penalty: %d%%
+Base EXP : %d%% | Base Drop: %d%% | Base Death Penalty: %d%%
+
+Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
+Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
+
+Base level can't go any higher.
+Base level can't go any higher.
+
+Base level can't go any lower.
+Base level can't go any lower.
+
+Base level lowered.
+Base level lowered.
+
+Base level raised.
+Base level raised.
+
+Battle configuration has been reloaded.
+Battle configuration has been reloaded.
+
+Battlegrounds ON
+Battlegrounds ON
+
+Be Patient... You still need to wait @@.
+Be Patient... You still need to wait @@.
 
 Be a friend, and bring me @@ @@s
 Be a friend, and bring me @@ @@s
@@ -649,6 +1483,9 @@ Because of the dense foliage, you need to go up close to the trees so as not to 
 Because the voices of death sing a sweet song
 Because the voices of death sing a sweet song
 
+Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
+Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
+
 Before you go, let me tell you how to get @@s, because you don't look very smart.
 Before you go, let me tell you how to get @@s, because you don't look very smart.
 
@@ -664,6 +1501,9 @@ Bent trees whistling with the beat of the drum
 Besides, I need to be here to watch for thieves while La Johanne is docked.
 Besides, I need to be here to watch for thieves while La Johanne is docked.
 
+Better stay away from my basement, you may end up like the poor guys down there.
+Better stay away from my basement, you may end up like the poor guys down there.
+
 Better you stay here for a while. Come back when you are stronger.
 Better you stay here for a while. Come back when you are stronger.
 
@@ -678,6 +1518,18 @@ Black iron... That is a very specific request that you got me!
 
 Blossom#008-1
 Blossom#008-1
+
+Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --
+Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --
+
+Body Type
+Body Type
+
+Boobed
+Boobed
+
+Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
+Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
 
 Bow 1
 Bow 1
@@ -702,6 +1554,9 @@ Bunches
 
 But I can't, I need to keep an eye on the sea, to warn the crew if there happen to be some pirates around!!
 But I can't, I need to keep an eye on the sea, to warn the crew if there happen to be some pirates around!!
+
+But I have no water, no potion, no script. *cries* 
+But I have no water, no potion, no script. *cries* 
 
 But I need to go, bye!
 But I need to go, bye!
@@ -808,11 +1663,50 @@ Can you bring me something which isn't a vegetable?
 Can you please go there and find him? He is probably hiding on one of those trees, like always.
 Can you please go there and find him? He is probably hiding on one of those trees, like always.
 
+Can't apply: not enough members in your team/guild that have not entered the queue in individual mode, minimum is %d
+Can't apply: not enough members in your team/guild that have not entered the queue in individual mode, minimum is %d
+
+Can't apply: not enough members in your team/guild, minimum is %d
+Can't apply: not enough members in your team/guild, minimum is %d
+
+Can't apply: not enough members in your team/party that have not entered the queue in individual mode, minimum is %d
+Can't apply: not enough members in your team/party that have not entered the queue in individual mode, minimum is %d
+
+Can't apply: not enough members in your team/party, minimum is %d
+Can't apply: not enough members in your team/party, minimum is %d
+
 Can't bring you directly to the town, but don't worry.
 Can't bring you directly to the town, but don't worry.
 
+Can't create chat rooms in this area.
+Can't create chat rooms in this area.
+
+Can't open file.
+Can't open file.
+
+Can't show boss mobs!
+Can't show boss mobs!
+
 Can't talk right now, i'm on patrol duty.
 Can't talk right now, i'm on patrol duty.
+
+Candor
+Candor
+
+Cannot clone a player of higher GM level than yourself.
+Cannot clone a player of higher GM level than yourself.
+
+Cannot create bound pet eggs or pet armors.
+Cannot create bound pet eggs or pet armors.
+
+Cannot mount while in disguise.
+Cannot mount while in disguise.
+
+Cannot send mails too fast!!
+Cannot send mails too fast!!
+
+Cannot transform into monster while in disguise.
+Cannot transform into monster while in disguise.
 
 Cap'tain has locked the door, you should go see him.
 Cap'tain has locked the door, you should go see him.
@@ -826,11 +1720,20 @@ Captain wants: ???
 Carrot
 Carrot
 
+Cart Added.
+Cart Added.
+
+Cash Shop is disabled in this map
+Cash Shop is disabled in this map
+
 Cashmere
 Cashmere
 
 Cashmere#Dye001-1
 Cashmere#Dye001-1
+
+Caul#008-2-17
+Caul#008-2-17
 
 Center parting
 Center parting
@@ -844,6 +1747,48 @@ Certain items perform different effects. Some will heal you, some you may use as
 Certain items perform different effects. Some will heal you, some you may use as weapons or armor, and some can be sold for gold.#1
 Certain items perform different effects. Some will heal you, some you may use as weapons or armor, and some can be sold for gold.
 
+Champion
+Champion
+
+Channel '%s' has no banned players
+Channel '%s' has no banned players
+
+Channel '%s' is not available
+Channel '%s' is not available
+
+Channel length must be between 3 and %d
+Channel length must be between 3 and %d
+
+Channel name must start with a '#'
+Channel name must start with a '#'
+
+Channel password may not contain spaces
+Channel password may not contain spaces
+
+Char-server has been asked to %s the character '%.*s'.
+Char-server has been asked to %s the character '%.*s'.
+
+Character cannot be disguised while in monster form.
+Character cannot be disguised while in monster form.
+
+Character cannot be disguised while mounted.
+Character cannot be disguised while mounted.
+
+Character does not have the specified item.
+Character does not have the specified item.
+
+Character killed.
+Character killed.
+
+Character not found.
+Character not found.
+
+Charcommand failed (usage: %c<command> <char name> <parameters>).
+Charcommand failed (usage: %c<command> <char name> <parameters>).
+
+Chat: %s | Player: %s | Location: %d %d
+Chat: %s | Player: %s | Location: %d %d
+
 Check my balance.
 Check my balance.
 
@@ -871,6 +1816,12 @@ Chelios... He is part of the blacksmith house, is not he?
 Cherry blossom
 Cherry blossom
 
+Cherry tree leaves have begun to fall.
+Cherry tree leaves have begun to fall.
+
+Cherry tree leaves no longer fall.
+Cherry tree leaves no longer fall.
+
 Chest
 Chest
 
@@ -895,14 +1846,35 @@ Chopstick
 Chorus of the Woods
 Chorus of the Woods
 
+Christmas
+Christmas
+
 Click on the NPCs around you to continue the introduction.
 Click on the NPCs around you to continue the introduction.
+
+Clone spawned.
+Clone spawned.
+
+Clouds appeared.
+Clouds appeared.
+
+Clouds have disappeared.
+Clouds have disappeared.
+
+Clouds |
+Clouds |
 
 Clouds | 
 Clouds | 
 
+Clouds2 |
+Clouds2 |
+
 Clouds2 | 
 Clouds2 | 
+
+Clown
+Clown
 
 Combed back
 Combed back
@@ -934,6 +1906,9 @@ Come on, Sap! You are scaring our guest with your stories.
 Come on, Sap! You are scaring our guest with your stories.#1
 Come on, Sap! You are scaring our guest with your stories.
 
+Commands are disabled in this map.
+Commands are disabled in this map.
+
 Common, don't be like that and loosen up! Don't you want to know who's behind all of this?!
 Common, don't be like that and loosen up! Don't you want to know who's behind all of this?!
 
@@ -943,11 +1918,17 @@ Complete Quest
 Congrats!
 Congrats!
 
+Congratulations! You are the MVP! Your reward EXP Points are %u !!
+Congratulations! You are the MVP! Your reward EXP Points are %u !!
+
 Cookie Master
 Cookie Master
 
 Copper blonde
 Copper blonde
+
+Costume '%s' removed.
+Costume '%s' removed.
 
 CottageDoor
 CottageDoor
@@ -960,6 +1941,12 @@ Could I ask you what your native language is? A sailor told me you're Russian, b
 
 Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.#1
 Could I ask you what your native language is? A sailor told me you're Russian, but another one told me you're French... I'm a bit lost. I will register you on the ship passenger list just after that.
+
+Could I ask you what your native language is? A sailor told me you're from Ancea, but another one told me you're from Aemil because of the logo that... never mind. I'm a bit lost, if you could tell me what language you speak I will register you on the ship passenger list just after that.#0
+Could I ask you what your native language is? A sailor told me you're from Ancea, but another one told me you're from Aemil because of the logo that... never mind. I'm a bit lost, if you could tell me what language you speak I will register you on the ship passenger list just after that.
+
+Could I ask you what your native language is? A sailor told me you're from Ancea, but another one told me you're from Aemil because of the logo that... never mind. I'm a bit lost, if you could tell me what language you speak I will register you on the ship passenger list just after that.#1
+Could I ask you what your native language is? A sailor told me you're from Ancea, but another one told me you're from Aemil because of the logo that... never mind. I'm a bit lost, if you could tell me what language you speak I will register you on the ship passenger list just after that.
 
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.
 Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.
@@ -994,6 +1981,12 @@ Couwan hands you a box full of fish.
 Couwan hands you a box full of fish.#1
 Couwan hands you a box full of fish.
 
+Crazyfefe Mode
+Crazyfefe Mode
+
+Creator
+Creator
+
 Crimson Cashmere Dye
 Crimson Cashmere Dye
 
@@ -1005,6 +1998,33 @@ Croc!
 
 Croconut Box
 Croconut Box
+
+Cronqvist Mode
+Cronqvist Mode
+
+Cronqvist mode is only available during Candor Battle.
+Cronqvist mode is only available during Candor Battle.
+
+Crusader
+Crusader
+
+Current amount of zeny changed.
+Current amount of zeny changed.
+
+CvC ON |
+CvC ON |
+
+CvC is already Off.
+CvC is already Off.
+
+CvC is already On.
+CvC is already On.
+
+CvC: Off
+CvC: Off
+
+CvC: On
+CvC: On
 
 DEBUG INFO
 DEBUG INFO
@@ -1045,6 +2065,12 @@ Dan
 Dan closes the conversation and he continues to write his letter.
 Dan closes the conversation and he continues to write his letter.
 
+Dancer
+Dancer
+
+Dark Collector
+Dark Collector
+
 Dark brown
 Dark brown
 
@@ -1057,17 +2083,38 @@ Darlin
 DarlinBarrierCheck
 DarlinBarrierCheck
 
+Day Mode Activated.
+Day Mode Activated.
+
+Day Mode is activated
+Day Mode is activated
+
+Day mode is already enabled.
+Day mode is already enabled.
+
 Deal, I offer you @@E!
 Deal, I offer you @@E!
 
+Dear angel, can you hear my voice?
+Dear angel, can you hear my voice?
+
 Dearly yours, Dan
 Dearly yours, Dan
+
+Death Knight
+Death Knight
+
+Defeated by
+Defeated by
 
 Delicious Cookie
 Delicious Cookie
 
 Devis
 Devis
+
+Dex: %d (%d~%d)
+Dex: %d (%d~%d)
 
 Did you find out what the light is?!
 Did you find out what the light is?!
@@ -1080,6 +2127,21 @@ Did you see Don the blacksmith? He might knows more about it if you want to impr
 
 Did you see my daughter Rossy, by chance?
 Did you see my daughter Rossy, by chance?
+
+Disconnecting to perform change-sex request...
+Disconnecting to perform change-sex request...
+
+Disguise applied.
+Disguise applied.
+
+Disguise removed.
+Disguise removed.
+
+Displaying first %d out of %d matches
+Displaying first %d out of %d matches
+
+Displays Night |
+Displays Night |
 
 Displays Night | 
 Displays Night | 
@@ -1104,6 +2166,9 @@ Do you hear me??
 
 Do you think this is fair? They have sent me down here alone, far away from everyone.
 Do you think this is fair? They have sent me down here alone, far away from everyone.
+
+Do you want me to do it? And do you want to keep duplicates?
+Do you want me to do it? And do you want to keep duplicates?
 
 Do you want me to go see her in your place?
 Do you want me to go see her in your place?
@@ -1243,6 +2308,9 @@ Duel: The duel invitation has been rejected.
 Duel: The limit of players has been reached.
 Duel: The limit of players has been reached.
 
+Duel: You can take part in duel again after %d seconds.
+Duel: You can take part in duel again after %d seconds.
+
 Duel: You can take part in duel once per %d minutes.
 Duel: You can take part in duel once per %d minutes.
 
@@ -1360,8 +2428,17 @@ Each equipment has a predefined slot number.
 Each of the groups was ordered to sail in a different direction to find a new, suitable land where to live.
 Each of the groups was ordered to sail in a different direction to find a new, suitable land where to live.
 
+East
+East
+
+Easy
+Easy
+
 Edouard#001-2-29
 Edouard#001-2-29
+
+Edouard#001-2-41
+Edouard#001-2-41
 
 Eheh!
 Eheh!
@@ -1374,6 +2451,15 @@ Ehm... He was really upset for some past stories.
 
 Ehoo
 Ehoo
+
+Eight Castles
+Eight Castles
+
+Eighteen Castles
+Eighteen Castles
+
+Eleven Castles
+Eleven Castles
 
 Elfen Voice
 Elfen Voice
@@ -1408,6 +2494,9 @@ Elven Voice
 Emo
 Emo
 
+Enabled Mapflags in this map:
+Enabled Mapflags in this map:
+
 Enora asks to kill fluffys
 Enora asks to kill fluffys
 
@@ -1435,6 +2524,12 @@ Err, seriously, I just wanted to get to Artis, and I haven't got the money to pa
 Err, seriously, I just wanted to get to Artis, but I didn't have enough money to pay for the ferry!
 Err, seriously, I just wanted to get to Artis, but I didn't have enough money to pay for the ferry!
 
+Error reading atcommand.conf, reload failed.
+Error reading atcommand.conf, reload failed.
+
+Error reading groups.conf, reload failed.
+Error reading groups.conf, reload failed.
+
 Esperia Blue
 Esperia Blue
 
@@ -1453,14 +2548,35 @@ Even though they did not hear anything about the other groups, they decided to s
 Everything feels numb and looks foggy to you, but you can recall the feeling of the cold hard wood of your raft on a stormy night
 Everything feels numb and looks foggy to you, but you can recall the feeling of the cold hard wood of your raft on a stormy night
 
+Evil clone spawned.
+Evil clone spawned.
+
 Excuse me, but what did you say?? Speak louder!!
 Excuse me, but what did you say?? Speak louder!!
 
 Excuse me? Do you know who I am?
 Excuse me? Do you know who I am?
 
+Expanded Super Baby
+Expanded Super Baby
+
+Expanded Super Novice
+Expanded Super Novice
+
+Experience Gained Base:%llu (%.2f%%) Job:%llu (%.2f%%)
+Experience Gained Base:%llu (%.2f%%) Job:%llu (%.2f%%)
+
+Experience rates: Base %.2fx / Job %.2fx
+Experience rates: Base %.2fx / Job %.2fx
+
 FINE, BYE!
 FINE, BYE!
+
+Fake name enabled.
+Fake name enabled.
+
+Fake name must be at least two characters.
+Fake name must be at least two characters.
 
 Feel free to visit me another time
 Feel free to visit me another time
@@ -1471,11 +2587,20 @@ Female
 Fexil
 Fexil
 
+Fifteen Castles
+Fifteen Castles
+
 FightNPCName
 FightNPCName
 
+File not found.
+File not found.
+
 File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
 File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
+
+File unloaded. Be aware that some changes made by NPC are not reverted on unload. See doc/atcommands.txt for details.
+File unloaded. Be aware that some changes made by NPC are not reverted on unload. See doc/atcommands.txt for details.
 
 Find an order with them
 Find an order with them
@@ -1498,8 +2623,20 @@ Fine, what do you want to do with your money?
 Fire red
 Fire red
 
+Fireworks are launched.
+Fireworks are launched.
+
+Fireworks have ended.
+Fireworks have ended.
+
+Fireworks |
+Fireworks |
+
 Fireworks | 
 Fireworks | 
+
+Five Castles
+Five Castles
 
 Flat ponytail
 Flat ponytail
@@ -1507,8 +2644,20 @@ Flat ponytail
 Flufy Fur
 Flufy Fur
 
+Fog hangs over.
+Fog hangs over.
+
+Fog |
+Fog |
+
 Fog | 
 Fog | 
+
+Follow mode OFF.
+Follow mode OFF.
+
+Follow mode ON.
+Follow mode ON.
 
 Follow the river to the east-north and you will find it.
 Follow the river to the east-north and you will find it.
@@ -1519,17 +2668,35 @@ Follow the river to the north-east and you will find it.
 Follow up-stream, and cross the river twice with the two bridges on the north.
 Follow up-stream, and cross the river twice with the two bridges on the north.
 
+Font changed.
+Font changed.
+
 Fool! Just come here when you have finished our little... secret mission.
 Fool! Just come here when you have finished our little... secret mission.
 
 Fool! Just come here when you have finished our little...secret mission.
 Fool! Just come here when you have finished our little...secret mission.
 
+For '%s' you need the amount of seconds (from 0 to 10)
+For '%s' you need the amount of seconds (from 0 to 10)
+
 Forest Green
 Forest Green
 
 Forest green
 Forest green
+
+Four Castles
+Four Castles
+
+Fourteen Castles
+Fourteen Castles
+
+Friend already exists.
+Friend already exists.
+
+Friend removed.
+Friend removed.
 
 From what I hear, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
 From what I hear, Gugli, my brother, needs the help of as many people as possible; to collect loads of neat things, that can be found on the island.
@@ -1546,17 +2713,77 @@ From your mind, break the ice
 Fungus
 Fungus
 
+GM command configuration has been reloaded.
+GM command configuration has been reloaded.
+
 Gado!! That coward lives in the past, I will ask Nard to punish him again!
 Gado!! That coward lives in the past, I will ask Nard to punish him again!
 
+Gained %d Kafra points. Total %d points.
+Gained %d Kafra points. Total %d points.
+
+Gained %d cash points. Total %d points.
+Gained %d cash points. Total %d points.
+
+Gained %dz.
+Gained %dz.
+
+Gained exp is now shown.
+Gained exp is now shown.
+
+Gained exp will not be shown.
+Gained exp will not be shown.
+
+Gained zeny is now shown.
+Gained zeny is now shown.
+
+Gained zeny will not be shown.
+Gained zeny will not be shown.
+
+Game time: A day cycle has a normal duration of %s.
+Game time: A day cycle has a normal duration of %s.
+
+Game time: After, the game will be in daylight for %s.
+Game time: After, the game will be in daylight for %s.
+
+Game time: After, the game will be in night for %s.
+Game time: After, the game will be in night for %s.
+
+Game time: The game is in daylight for %s.
+Game time: The game is in daylight for %s.
+
+Game time: The game is in night for %s.
+Game time: The game is in night for %s.
+
+Game time: The game is in permanent daylight.
+Game time: The game is in permanent daylight.
+
+Game time: The game is in permanent night.
+Game time: The game is in permanent night.
+
+Gangsi
+Gangsi
+
+Gender
+Gender
+
 Generalstore#008-1
 Generalstore#008-1
+
+Genetic
+Genetic
+
+Genetic T
+Genetic T
 
 Ggrmm grmmm...
 Ggrmm grmmm...
 
 Ggrmm... Grmmmm...
 Ggrmm... Grmmmm...
+
+Gimme a second, this may take a while.
+Gimme a second, this may take a while.
 
 Give me a kiss before you say goodbye!
 Give me a kiss before you say goodbye!
@@ -1593,6 +2820,9 @@ Go outside and talk with Gugli, he'll tell you what we need.
 
 Go to meet him, and return me the package, it's an easy task.
 Go to meet him, and return me the package, it's an easy task.
+
+Go to the ship, show the captain this letter if asked.
+Go to the ship, show the captain this letter if asked.
 
 Golden blonde
 Golden blonde
@@ -1642,11 +2872,17 @@ Great, you get your piece of cake, I give you a 90% discount on the @@ of your c
 Ground,
 Ground,
 
+Group changed successfully.
+Group changed successfully.
+
 Growl, sniff, grr!! You'd better not tell anyone you saw me!#0
 Growl, sniff, grr!! You'd better not tell anyone you saw me!
 
 Growl, sniff, grr!! You'd better not tell anyone you saw me!#1
 Growl, sniff, grr!! You'd better not tell anyone you saw me!
+
+Growth: hp:%d sp:%d str(%.2f) agi(%.2f) vit(%.2f) int(%.2f) dex(%.2f) luk(%.2f)
+Growth: hp:%d sp:%d str(%.2f) agi(%.2f) vit(%.2f) int(%.2f) dex(%.2f) luk(%.2f)
 
 Gugli asked me to help sailors with their food gatherings. Do you know where could I find them?
 Gugli asked me to help sailors with their food gatherings. Do you know where could I find them?
@@ -1669,20 +2905,56 @@ Gugli? Oh I see. Yes, he is pretty used to shout orders to everybody down here.
 GugliBarrierCheck
 GugliBarrierCheck
 
+Guild level change failed.
+Guild level change failed.
+
+Guild level changed.
+Guild level changed.
+
+Guild modification is disabled in this map.
+Guild modification is disabled in this map.
+
+Guild storage opened.
+Guild storage opened.
+
+GuildLock |
+GuildLock |
+
 GuildLock | 
 GuildLock | 
+
+Guillotine Cross
+Guillotine Cross
+
+Guillotine Cross T
+Guillotine Cross T
 
 Gulukan
 Gulukan
 
+Gunslinger
+Gunslinger
+
+GvG Castle |
+GvG Castle |
+
 GvG Castle | 
 GvG Castle | 
+
+GvG Dungeon |
+GvG Dungeon |
 
 GvG Dungeon | 
 GvG Dungeon | 
 
+GvG Flags:
+GvG Flags:
+
 GvG Flags: 
 GvG Flags: 
+
+GvG ON |
+GvG ON |
 
 GvG ON | 
 GvG ON | 
@@ -1693,11 +2965,20 @@ GvG Off.
 GvG On.
 GvG On.
 
+GvG is already Off.
+GvG is already Off.
+
+GvG is already On.
+GvG is already On.
+
 GvG: Off.
 GvG: Off.
 
 GvG: On.
 GvG: On.
+
+Gypsy
+Gypsy
 
 HE IS AT THE FAR BOTTOM OF THE SHIP, YOU CAN'T MISS HIM!!
 HE IS AT THE FAR BOTTOM OF THE SHIP, YOU CAN'T MISS HIM!!
@@ -1708,8 +2989,29 @@ HEY
 HEY @@!
 HEY @@!
 
+HP and SP have already been recovered.
+HP and SP have already been recovered.
+
+HP or/and SP modified.
+HP or/and SP modified.
+
+HP, SP recovered.
+HP, SP recovered.
+
+HP: %d/%d - SP: %d/%d
+HP: %d/%d - SP: %d/%d
+
+Hack on trade: character '%s' (account: %d) try to trade more items that he has.
+Hack on trade: character '%s' (account: %d) try to trade more items that he has.
+
 Half Croconut
 Half Croconut
+
+Hard
+Hard
+
+Has met its demise
+Has met its demise
 
 Have a good fishing!
 Have a good fishing!
@@ -1858,14 +3160,32 @@ Hello... Should I know you?
 Helmets
 Helmets
 
+Help for command %c%s:
+Help for command %c%s:
+
+Help me out~ Please~ T_T
+Help me out~ Please~ T_T
+
 Her shop is in the west side of the city, between the Legion building and the library.
 Her shop is in the west side of the city, between the Legion building and the library.
 
 Her shop is on the west part of the city, between the legion building and the library.
 Her shop is on the west part of the city, between the legion building and the library.
 
+Hercules %d-bit for %s
+Hercules %d-bit for %s
+
 Here is your reward!
 Here is your reward!
+
+Here they are.
+Here they are.
+
+Here you go, darling.#0
+Here you go, darling.
+
+Here you go, darling.#1
+Here you go, darling.
 
 Here you go, take this one.
 Here you go, take this one.
@@ -1896,6 +3216,9 @@ Hey do you have any @@s?
 
 Hey do you have any plushrooms on you?
 Hey do you have any plushrooms on you?
+
+Hey dude, we actually have a pretty cool ship near Artis.
+Hey dude, we actually have a pretty cool ship near Artis.
 
 Hey hey
 Hey hey
@@ -1999,8 +3322,38 @@ Hidden person doesn't answer
 Hidden person doesn't answer.
 Hidden person doesn't answer.
 
+High Acolyte
+High Acolyte
+
+High Archer
+High Archer
+
+High Magician
+High Magician
+
+High Merchant
+High Merchant
+
+High Novice
+High Novice
+
+High Priest
+High Priest
+
+High Swordsman
+High Swordsman
+
+High Thief
+High Thief
+
+High Wizard
+High Wizard
+
 Highest hill in Artis, you say? Sounds dangerous, I might fall off.
 Highest hill in Artis, you say? Sounds dangerous, I might fall off.
+
+Hint: Talk to the chair.
+Hint: Talk to the chair.
 
 Hm...
 Hm...
@@ -2016,6 +3369,21 @@ Hmmm, hm...Cough Cough, Burp, Cough. What is that!?...Cough, Burp...Damn Gado...
 
 Holding a cheese in his beak.
 Holding a cheese in his beak.
+
+Homunculus Experience Gained Base:%u (%.2f%%)
+Homunculus Experience Gained Base:%u (%.2f%%)
+
+Homunculus growth stats (Lv %d %s):
+Homunculus growth stats (Lv %d %s):
+
+Homunculus reached its maximum level of '%d'
+Homunculus reached its maximum level of '%d'
+
+Homunculus stats altered.
+Homunculus stats altered.
+
+Homunculus stats:
+Homunculus stats:
 
 Honey brown
 Honey brown
@@ -2077,6 +3445,15 @@ Human
 Human Voice
 Human Voice
 
+Hungry: %d - Intimacy: %u
+Hungry: %d - Intimacy: %u
+
+Hunter
+Hunter
+
+Hurnscald
+Hurnscald
+
 Hurry hurry! Need to verify his teeth!
 Hurry hurry! Need to verify his teeth!
 
@@ -2116,6 +3493,12 @@ I also hear you have lost all your memories? That's a shame.
 I also watch for dangerous animals...
 I also watch for dangerous animals...
 
+I am %s Super Novice~
+I am %s Super Novice~
+
+I am %s, guardian of Candor Cave. Insert lore here.
+I am %s, guardian of Candor Cave. Insert lore here.
+
 I am new in this town, just like you are.
 I am new in this town, just like you are.
 
@@ -2167,6 +3550,9 @@ I borrowed it from the library, you should try to cultivate yourself more instea
 I came to retrieve a package for Enora.
 I came to retrieve a package for Enora.
 
+I can do it but I'm busy right now, please come back later.
+I can do it but I'm busy right now, please come back later.
+
 I can't help you to be on my list, nor can I give you a cookie for free.
 I can't help you to be on my list, nor can I give you a cookie for free.
 
@@ -2193,6 +3579,9 @@ I do not like to brag about it but you will not find any better blacksmith on th
 
 I do not want to point my finger on someone. I just put my trust in you. I am sure you will be able to judge and solve this annoying problem.
 I do not want to point my finger on someone. I just put my trust in you. I am sure you will be able to judge and solve this annoying problem.
+
+I do. I want to challenge the Candor Cave!
+I do. I want to challenge the Candor Cave!
 
 I don't have any plushroom on me.#0
 I don't have any plushroom on me.
@@ -2271,6 +3660,9 @@ I hope to come back at home when days will be better
 
 I hope to come back home when the days are better
 I hope to come back home when the days are better
+
+I just dont know what to do. I wish I could take a nap, instead.
+I just dont know what to do. I wish I could take a nap, instead.
 
 I just realized I needed delicious ingredients to prepare a... A special recipe.
 I just realized I needed delicious ingredients to prepare a... A special recipe.
@@ -2584,6 +3976,12 @@ I will give you @@gp.
 I will give you my pocket money, if you do so.
 I will give you my pocket money, if you do so.
 
+I will inform you when I have more information about all this.#0
+I will inform you when I have more information about all this.
+
+I will inform you when I have more information about all this.#1
+I will inform you when I have more information about all this.
+
 I will not describe you all the details but after one month she was ruling the ship and I was sent down here cooking for those traitors!
 I will not describe you all the details but after one month she was ruling the ship and I was sent down here cooking for those traitors!
 
@@ -2592,6 +3990,9 @@ I will not lie to a little girl! And your mother needs your help
 
 I will send you this letter directly when I arrive
 I will send you this letter directly when I arrive
+
+I will send you to the mines! Later, when we have mines, that is.
+I will send you to the mines! Later, when we have mines, that is.
 
 I won't forget it, I swear on my precious plushrooms.
 I won't forget it, I swear on my precious plushrooms.
@@ -2641,11 +4042,20 @@ I'll give you something... useful... If you want to pursue in being a thief. I'l
 I'll keep my end on the bargain. The Thieves Association will bring you to the Argaes region.
 I'll keep my end on the bargain. The Thieves Association will bring you to the Argaes region.
 
+I'll keep my end on the bargain. The Thieves Fact---Erm, I mean, we pirates will bring you to the Argaes region.
+I'll keep my end on the bargain. The Thieves Fact---Erm, I mean, we pirates will bring you to the Argaes region.
+
 I'll look at it.
 I'll look at it.
 
+I'll return the plushroom to you, but please, do not waste my time.
+I'll return the plushroom to you, but please, do not waste my time.
+
 I'll share my berries with you, if you help me.
 I'll share my berries with you, if you help me.
+
+I'm GM and got the money. Gimme HALF HOUR to invite everybody!
+I'm GM and got the money. Gimme HALF HOUR to invite everybody!
 
 I'm a barber, you see. I can change your hair style or color to your liking.
 I'm a barber, you see. I can change your hair style or color to your liking.
@@ -2788,6 +4198,9 @@ I'm very happpy to see you're okay now!
 I'm very happy to see you're okay now!
 I'm very happy to see you're okay now!
 
+I'm willing to make you one flour for each %d %s you bring me. Three for you, and two as comission.
+I'm willing to make you one flour for each %d %s you bring me. Three for you, and two as comission.
+
 I've seen him on the bottom of the island, ask Jalad for more info.
 I've seen him on the bottom of the island, ask Jalad for more info.
 
@@ -2889,6 +4302,9 @@ If you need somebody to craft a weapon or a plate from a diagrams I am the one t
 
 If you need something in the future, do not hesitate to pass by here, our stock is full of box collecting dust.
 If you need something in the future, do not hesitate to pass by here, our stock is full of box collecting dust.
+
+If you pay the fee, I'll spawn them, for no longer than 20 minutes. You should not fight alone, instead, you need a group of at least %d, because, you know, the curse. Or something.
+If you pay the fee, I'll spawn them, for no longer than 20 minutes. You should not fight alone, instead, you need a group of at least %d, because, you know, the curse. Or something.
 
 If you search for him you should look to the west of this city, it's the first house just after left bridge, you can't miss it!
 If you search for him you should look to the west of this city, it's the first house just after left bridge, you can't miss it!
@@ -2932,11 +4348,17 @@ Ik kan je horen... (Nederlands)
 Imperial
 Imperial
 
+Impossible to increase the number/value.
+Impossible to increase the number/value.
+
 In Artis they really do mythologise people when they die.
 In Artis they really do mythologise people when they die.
 
 In fact, I came here to work on my task.
 In fact, I came here to work on my task.
+
+In the event the rules listed here and those on [@@https://policies.themanaworld.org/game-rules|the website@@] diverge, the website version will take full priority.
+In the event the rules listed here and those on [@@https://policies.themanaworld.org/game-rules|the website@@] diverge, the website version will take full priority.
 
 In this cave, you see, I have a lot of fun.
 In this cave, you see, I have a lot of fun.
@@ -2947,11 +4369,92 @@ In this cave, you see, I have lots of fun.
 In truth, if your song is as beautiful as your plumage,
 In truth, if your song is as beautiful as your plumage,
 
+Inbox is full (Max %d). Delete some mails.
+Inbox is full (Max %d). Delete some mails.
+
+Incorrect name/ID, or no one from the specified guild is online.
+Incorrect name/ID, or no one from the specified guild is online.
+
+Incorrect name/ID, or no one from the specified party is online.
+Incorrect name/ID, or no one from the specified party is online.
+
 Infinitely long
 Infinitely long
 
+Information sent to login-server via char-server.
+Information sent to login-server via char-server.
+
+Instance variables may not be used with @set.
+Instance variables may not be used with @set.
+
+Int: %d (%d~%d)
+Int: %d (%d~%d)
+
 Interested?
 Interested?
+
+Invalid Homunculus ID.
+Invalid Homunculus ID.
+
+Invalid Monster/NPC name/ID specified.
+Invalid Monster/NPC name/ID specified.
+
+Invalid bound type. Valid types are - 1:Account 2:Guild 3:Party 4:Character
+Invalid bound type. Valid types are - 1:Account 2:Guild 3:Party 4:Character
+
+Invalid color.
+Invalid color.
+
+Invalid coordinates, using random target cell.
+Invalid coordinates, using random target cell.
+
+Invalid e-mail. If your email hasn't been set, use a@a.com.
+Invalid e-mail. If your email hasn't been set, use a@a.com.
+
+Invalid flag name or flag.
+Invalid flag name or flag.
+
+Invalid font. Use a value from 0 to 9.
+Invalid font. Use a value from 0 to 9.
+
+Invalid item ID or name.
+Invalid item ID or name.
+
+Invalid location number, or name.
+Invalid location number, or name.
+
+Invalid mob ID %s!
+Invalid mob ID %s!
+
+Invalid mob id %s!
+Invalid mob id %s!
+
+Invalid mob name %s!
+Invalid mob name %s!
+
+Invalid monster ID or name.
+Invalid monster ID or name.
+
+Invalid name.
+Invalid name.
+
+Invalid new e-mail. Please enter a real e-mail address.
+Invalid new e-mail. Please enter a real e-mail address.
+
+Invalid packet
+Invalid packet
+
+Invalid time for ban command.
+Invalid time for ban command.
+
+Invalid time for jail command.
+Invalid time for jail command.
+
+Invisible: Off
+Invisible: Off
+
+Invisible: On
+Invisible: On
 
 Is it possible to go back to the island?
 Is it possible to go back to the island?
@@ -2970,12 +4473,18 @@ It does some days now that I asked her a box of @@, but she didn't deliver anyth
 
 It has been some days now since I asked her for a box of @@, but she hasn't delivered anything yet.
 It has been some days now since I asked her for a box of @@, but she hasn't delivered anything yet.
+
+It has started to snow.
+It has started to snow.
 
 It is nice to see that you woke up fine at the same time. Elmo came here to tell me this good news!#0
 It is nice to see that you woke up fine at the same time. Elmo came here to tell me this good news!
 
 It is nice to see that you woke up fine at the same time. Elmo came here to tell me this good news!#1
 It is nice to see that you woke up fine at the same time. Elmo came here to tell me this good news!
+
+It is the only word in french I know.
+It is the only word in french I know.
 
 It is them who tell me to whom I can give cookies.
 It is them who tell me to whom I can give cookies.
@@ -3136,6 +4645,30 @@ It's where every merchant ship ends their travelling, and we won't be the except
 It's yours as well, right?
 It's yours as well, right?
 
+Item cannot be opened when inventory is full
+Item cannot be opened when inventory is full
+
+Item created.
+Item created.
+
+Item database has been reloaded.
+Item database has been reloaded.
+
+Item not found.
+Item not found.
+
+Item type not found.
+Item type not found.
+
+Item types on your autoloottype list:
+Item types on your autoloottype list:
+
+Item: '%s'/'%s'[%d] (%d) Type: %s | Extra Effect: %s
+Item: '%s'/'%s'[%d] (%d) Type: %s | Extra Effect: %s
+
+Item: '%s'[%d]
+Item: '%s'[%d]
+
 Items have different effects. Some will heal you, some you may use as weapons or armor, and some can be sold for gold.
 Items have different effects. Some will heal you, some you may use as weapons or armor, and some can be sold for gold.
 
@@ -3144,6 +4677,9 @@ Items have different effects. Some will heal you, some you may use as weapons or
 
 Items have different effects. Some will heal you, some you may use as weapons or armor, and some can be sold for gold.#1
 Items have different effects. Some will heal you, some you may use as weapons or armor, and some can be sold for gold.
+
+Items on your autolootitem list:
+Items on your autolootitem list:
 
 Items perform different effects. Some will heal you, some you may use as weapons or armor and some can be sold for gold.#0
 Items perform different effects. Some will heal you, some you may use as weapons or armor and some can be sold for gold.
@@ -3163,6 +4699,21 @@ Jalad
 Je vous entends... (Français)
 Je vous entends... (Français)
 
+Job level can't go any higher.
+Job level can't go any higher.
+
+Job level can't go any lower.
+Job level can't go any lower.
+
+Job level lowered.
+Job level lowered.
+
+Job level raised.
+Job level raised.
+
+Judgement has passed.
+Judgement has passed.
+
 Julia has told me how they found you at sea, on a raft with a logo of--
 Julia has told me how they found you at sea, on a raft with a logo of--
 
@@ -3174,6 +4725,12 @@ Julia make appeal the Legion of Aemil to search you, exit the ship and you shoul
 
 Julia#Artis
 Julia#Artis
+
+Jump to %d %d
+Jump to %d %d
+
+Jump to %s
+Jump to %s
 
 Just hit the trunk, and it will yeye a @@.
 Just hit the trunk, and it will yeye a @@.
@@ -3190,17 +4747,26 @@ Just look out at that water! There's plenty more fish there.
 Just say something sparkling
 Just say something sparkling
 
+Kagerou
+Kagerou
+
 Kfahr#008-2-2
 Kfahr#008-2-2
 
 Killed rattos
 Killed rattos
 
+Killer state reset.
+Killer state reset.
+
 Knife
 Knife
 
 Knifes on the table
 Knifes on the table
+
+Knight
+Knight
 
 Know that every flatterer,
 Know that every flatterer,
@@ -3220,11 +4786,23 @@ Last time I saw you, you were lost in the sea on your raft.
 Last time I saw you, you were lost in the sea on your raft.#1
 Last time I saw you, you were lost in the sea on your raft.
 
+Leadership transferred.
+Leadership transferred.
+
 Lean
 Lean
 
 Leave it
 Leave it
+
+Leaves have stopped falling.
+Leaves have stopped falling.
+
+Leaves started falling.
+Leaves started falling.
+
+Leaves |
+Leaves |
 
 Leaves | 
 Leaves | 
@@ -3240,6 +4818,9 @@ LeftDoor#001-2-23
 
 LeftDoorCheck
 LeftDoorCheck
+
+Lena#008-2-13
+Lena#008-2-13
 
 Let me check on my inventory book...
 Let me check on my inventory book...
@@ -3286,6 +4867,12 @@ Lloyd the banker
 Locked.
 Locked.
 
+Login-server has been asked to %s the player '%.*s'.
+Login-server has been asked to %s the player '%.*s'.
+
+Login-server is offline. Impossible to %s the player '%.*s'.
+Login-server is offline. Impossible to %s the player '%.*s'.
+
 Long and curly
 Long and curly
 
@@ -3304,11 +4891,17 @@ Look who we have here, did you come for a training session?
 Look, he's there!
 Look, he's there!
 
+Lord Knight
+Lord Knight
+
 Lost Island.
 Lost Island.
 
 Luckily the beach is nearby, and somehow I could come home.
 Luckily the beach is nearby, and somehow I could come home.
+
+Luk: %d (%d~%d)
+Luk: %d (%d~%d)
 
 M...Maybe?
 M...Maybe?
@@ -3322,8 +4915,14 @@ MAYBE YOU CAN LOOK AT THIS?
 MAYBE YOU CAN LOOK AT THIS?!
 MAYBE YOU CAN LOOK AT THIS?!
 
+MVP Monster: '%s'/'%s'/'%s' (%d)
+MVP Monster: '%s'/'%s'/'%s' (%d)
+
 Magic Arpan#sailors
 Magic Arpan#sailors
+
+Magician
+Magician
 
 Male
 Male
@@ -3333,6 +4932,12 @@ Manana tree
 
 Mane
 Mane
+
+Map not found.
+Map not found.
+
+Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d
+Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d
 
 Marriage failed.
 Marriage failed.
@@ -3345,6 +4950,12 @@ Master Piou sat on a tree,
 
 Max
 Max
+
+Max HP: %d (%d~%d)
+Max HP: %d (%d~%d)
+
+Max SP: %d (%d~%d)
+Max SP: %d (%d~%d)
 
 Max and Sapartan for example?
 Max and Sapartan for example?
@@ -3391,11 +5002,17 @@ Maybe she was one of those who got lost last month? The yoiis from Esperia that 
 Maybe she was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior guild!
 Maybe she was one of those who got lost last month? The yoiis from Esperia that got a secret quest from the Warrior guild!
 
+Maybe someone can fix but I would have no idea. But given they cannot be traded, dropped, mailed, or whatever...
+Maybe someone can fix but I would have no idea. But given they cannot be traded, dropped, mailed, or whatever...
+
 Maybe you can look at this??
 Maybe you can look at this??
 
 Maybe you have more luck with something else?
 Maybe you have more luck with something else?
+
+Maybe you meant:
+Maybe you meant:
 
 Maybe you meant: 
 Maybe you meant: 
@@ -3409,6 +5026,21 @@ Maybe... But I prefer having well-trained people around me when it comes to figh
 Maybe... But I prefer having well-trained people around me when it comes to fight against dangerous creatures. Do you already feel expert on how you fight enemies?#1
 Maybe... But I prefer having well-trained people around me when it comes to fight against dangerous creatures. Do you already feel expert on how you fight enemies?
 
+Mechanic
+Mechanic
+
+Mechanic T
+Mechanic T
+
+Merchant
+Merchant
+
+Mercy has been granted.
+Mercy has been granted.
+
+Mercy has been shown.
+Mercy has been shown.
+
 Messy
 Messy
 
@@ -3418,8 +5050,20 @@ Mi aŭdas vin... (Angle)
 Mickael
 Mickael
 
+Micksha still haven't added a ship here, so you're stranded here FOREVER!
+Micksha still haven't added a ship here, so you're stranded here FOREVER!
+
+Minstrel
+Minstrel
+
+Minstrel T
+Minstrel T
+
 Mint Cashmere Dye
 Mint Cashmere Dye
+
+Mob Search... %s %s
+Mob Search... %s %s
 
 Mobs#001-1
 Mobs#001-1
@@ -3430,14 +5074,29 @@ Mohawk
 Mona Father's is right behind you. You have five minutes to bring him out of sewers!
 Mona Father's is right behind you. You have five minutes to bring him out of sewers!
 
+Monk
+Monk
+
+Monster NoTeleport |
+Monster NoTeleport |
+
 Monster NoTeleport | 
 Monster NoTeleport | 
+
+Monster database has been reloaded.
+Monster database has been reloaded.
+
+Monster: '%s'/'%s'/'%s' (%d)
+Monster: '%s'/'%s'/'%s' (%d)
 
 Move kid.
 Move kid.
 
 Muller
 Muller
+
+My apologies if I've offended you. I woke up in bad mood today.
+My apologies if I've offended you. I woke up in bad mood today.
 
 My beauty, I was not always a sailor, you know, I was once an important individual!
 My beauty, I was not always a sailor, you know, I was once an important individual!
@@ -3472,6 +5131,9 @@ My name is Astapolos, Q'Muller and I joined Nard's crew a few years ago when it 
 My name is Julia, it's me who took care of you, when we found you in the sea.
 My name is Julia, it's me who took care of you, when we found you in the sea.
 
+My name is Kylian. I have some purpose in this world but I don't know what it is yet because devs are too scared to write it.
+My name is Kylian. I have some purpose in this world but I don't know what it is yet because devs are too scared to write it.
+
 My name is Lloyd, I am a representant of the Merchant Guild of Artis.
 My name is Lloyd, I am a representant of the Merchant Guild of Artis.
 
@@ -3493,14 +5155,53 @@ NO and *hick* NO, you and you and your... *burp* stupi*hick* guild!
 NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT.
 NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT.
 
+NOTICE: If you crash with mount your LUA is outdated.
+NOTICE: If you crash with mount your LUA is outdated.
+
+NPC %d: %s | Direction: %s | Sprite: %d | Location: %d %d
+NPC %d: %s | Direction: %s | Sprite: %d | Location: %d %d
+
+NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d
+NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d
+
 NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d 
 NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d 
+
+NPC Buy:%dz, Sell:%dz | Weight: %.1f
+NPC Buy:%dz, Sell:%dz | Weight: %.1f
 
 NPC Buy:%dz, Sell:%dz | Weight: %.1f 
 NPC Buy:%dz, Sell:%dz | Weight: %.1f 
 
+NPC Disabled.
+NPC Disabled.
+
+NPC Enabled.
+NPC Enabled.
+
+NPC is not in this map.
+NPC is not in this map.
+
+NPC moved.
+NPC moved.
+
+NPC variables may not be used with @set.
+NPC variables may not be used with @set.
+
+Name not found in list.
+Name not found in list.
+
+Name: %s
+Name: %s
+
 Name: %s 
 Name: %s 
+
+Name: %s (GM)
+Name: %s (GM)
+
+Name: %s (GM:%d) | Location: %s %d %d
+Name: %s (GM:%d) | Location: %s %d %d
 
 Nard and crew are taking us to the city of Artis.
 Nard and crew are taking us to the city of Artis.
@@ -3511,8 +5212,17 @@ Nard#Artis
 Navy blue
 Navy blue
 
+Neutral
+Neutral
+
 Nevertheless, you can talk with another adventurer by pressing the [Enter] key and then type what you want say!
 Nevertheless, you can talk with another adventurer by pressing the [Enter] key and then type what you want say!
+
+New e-mail must be a real e-mail address.
+New e-mail must be a real e-mail address.
+
+New e-mail must be different from the current e-mail address.
+New e-mail must be different from the current e-mail address.
 
 New technologies assisted the slaughter instead of establishing peace. At some point, two different rivals were formed.
 New technologies assisted the slaughter instead of establishing peace. At some point, two different rivals were formed.
@@ -3520,8 +5230,47 @@ New technologies assisted the slaughter instead of establishing peace. At some p
 New technologies helped the slaughter instead of establishing peace. At some point, two different rivals were formed.
 New technologies helped the slaughter instead of establishing peace. At some point, two different rivals were formed.
 
+New warp NPC '%s' created.
+New warp NPC '%s' created.
+
+Night Mode Activated.
+Night Mode Activated.
+
+Night Mode is activated
+Night Mode is activated
+
+Night mode is already enabled.
+Night mode is already enabled.
+
+NightmareDrop |
+NightmareDrop |
+
 NightmareDrop | 
 NightmareDrop | 
+
+Nine Castles
+Nine Castles
+
+Nineteen Castles
+Nineteen Castles
+
+Ninja
+Ninja
+
+No Exp Penalty: %s | No Zeny Penalty: %s
+No Exp Penalty: %s | No Zeny Penalty: %s
+
+No GM found.
+No GM found.
+
+No Save (Return to last Save Point)
+No Save (Return to last Save Point)
+
+No Save, Save Point: %s,%d,%d
+No Save, Save Point: %s,%d,%d
+
+No Save, Save Point: %s,Random
+No Save, Save Point: %s,Random
 
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#0
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!
@@ -3529,11 +5278,32 @@ No and *hic*... No, you and you and your... *burp* stupi*hic* guild!
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!#1
 No and *hic*... No, you and you and your... *burp* stupi*hic* guild!
 
+No item found in this player's %s.
+No item found in this player's %s.
+
+No item has been refined.
+No item has been refined.
+
+No item need to be repaired.
+No item need to be repaired.
+
+No longer spying on the %s guild.
+No longer spying on the %s guild.
+
+No longer spying on the %s party.
+No longer spying on the %s party.
+
 No matter the grammar
 No matter the grammar
 
 No matter the spelling
 No matter the spelling
+
+No player found in map '%s'.
+No player found in map '%s'.
+
+No player found.
+No player found.
 
 No problem, I can help you anyway.
 No problem, I can help you anyway.
@@ -3583,65 +5353,131 @@ No? Better is that. Its so dangerous there.
 No? Better is that. Its so dangerous there.#1
 No? Better is that. Its so dangerous there.
 
+NoAutoloot |
+NoAutoloot |
+
 NoAutoloot | 
 NoAutoloot | 
+
+NoBaseEXP |
+NoBaseEXP |
 
 NoBaseEXP | 
 NoBaseEXP | 
 
+NoBranch |
+NoBranch |
+
 NoBranch | 
 NoBranch | 
+
+NoCalcRank |
+NoCalcRank |
 
 NoCalcRank | 
 NoCalcRank | 
 
+NoCommand |
+NoCommand |
+
 NoCommand | 
 NoCommand | 
+
+NoDrop |
+NoDrop |
 
 NoDrop | 
 NoDrop | 
 
+NoGuild |
+NoGuild |
+
 NoGuild | 
 NoGuild | 
+
+NoIcewall |
+NoIcewall |
 
 NoIcewall | 
 NoIcewall | 
 
+NoJobEXP |
+NoJobEXP |
+
 NoJobEXP | 
 NoJobEXP | 
+
+NoMVPLoot |
+NoMVPLoot |
 
 NoMVPLoot | 
 NoMVPLoot | 
 
+NoMemo |
+NoMemo |
+
 NoMemo | 
 NoMemo | 
+
+NoMobLoot |
+NoMobLoot |
 
 NoMobLoot | 
 NoMobLoot | 
 
+NoParty |
+NoParty |
+
 NoParty | 
 NoParty | 
+
+NoPet |
+NoPet |
+
+NoReturn |
+NoReturn |
 
 NoReturn | 
 NoReturn | 
 
+NoSkill |
+NoSkill |
+
 NoSkill | 
 NoSkill | 
+
+NoTeleport |
+NoTeleport |
 
 NoTeleport | 
 NoTeleport | 
 
+NoTrade |
+NoTrade |
+
 NoTrade | 
 NoTrade | 
+
+NoVending |
+NoVending |
 
 NoVending | 
 NoVending | 
 
+NoViewID |
+NoViewID |
+
 NoViewID | 
 NoViewID | 
 
+NoWarp |
+NoWarp |
+
 NoWarp | 
 NoWarp | 
+
+NoWarpTo |
+NoWarpTo |
 
 NoWarpTo | 
 NoWarpTo | 
@@ -3651,6 +5487,36 @@ Nobody will know about the existence of the Mercurians
 
 Non-binary
 Non-binary
+
+None
+None
+
+None Taken
+None Taken
+
+Normal
+Normal
+
+Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
+Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
+
+North
+North
+
+North East
+North East
+
+North West
+North West
+
+Not a file.
+Not a file.
+
+Not a hexadecimal digit:
+Not a hexadecimal digit:
+
+Not a string:
+Not a string:
 
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Noobs are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
 Not content to stay buried in their burrows in the sand, Crocs can be quite a nuisance, infesting this whole island. Tender Feet and Noobs are advised: Avoid touching these crawling red devils. They have huge, deadly claws that can make mincemeat of you! You can recognize them easily by their crabby personalities. Be careful younglings.
@@ -3687,6 +5553,15 @@ Nothing, I changed my mind.
 
 Nothing, I need to go!
 Nothing, I need to go!
+
+Novice
+Novice
+
+Now I remain poor and unemployed.#0
+Now I remain poor and unemployed.
+
+Now I remain poor and unemployed.#1
+Now I remain poor and unemployed.
 
 Now go outside and talk with Gugli, he'll tell you what we need.
 Now go outside and talk with Gugli, he'll tell you what we need.
@@ -3709,6 +5584,12 @@ Now wait your partner, and talk with me again
 Now you divorced!
 Now you divorced!
 
+Number of skill points changed.
+Number of skill points changed.
+
+Number of status points changed.
+Number of status points changed.
+
 OH, OK!
 OH, OK!
 
@@ -3726,6 +5607,9 @@ OK, I think she's waking up, go see to her.
 
 ON THE TOP OF THE CLIFF!
 ON THE TOP OF THE CLIFF!
+
+Oboro
+Oboro
 
 Of course you do! Just listen carefully to these words my dear.#0
 Of course you do! Just listen carefully to these words my dear.
@@ -3744,6 +5628,9 @@ Of course, they are on the left wall, go get a look at them.
 
 Of course, you can select a bed somewhere else after your reservation, but you won't get your HP recovery until you choose to get some rest on the INN.
 Of course, you can select a bed somewhere else after your reservation, but you won't get your HP recovery until you choose to get some rest on the INN.
+
+Off
+Off
 
 Off black
 Off black
@@ -4042,6 +5929,9 @@ Olana#008-2-4
 OldBook
 OldBook
 
+On
+On
+
 On one hand, ranged weapons are generally weaker than melee ones, but it obviously depends on the level of the weapon. On the other hand, you attack from a safer position.
 On one hand, ranged weapons are generally weaker than melee ones, but it obviously depends on the level of the weapon. On the other hand, you attack from a safer position.
 
@@ -4087,8 +5977,14 @@ Once your inside of your inventory, you may equip the item by selecting it and c
 Once your inside of your inventory, you may equip the item by selecting it and clicking 'Equip'. Alternately, you can unequip an item by selecting 'unequip' to remove it.#1
 Once your inside of your inventory, you may equip the item by selecting it and clicking 'Equip'. Alternately, you can unequip an item by selecting 'unequip' to remove it.
 
+One Castle
+One Castle
+
 One of these little bastards started flying early, and escaped from me.
 One of these little bastards started flying early, and escaped from me.
+
+Only Cronqvist Mode yields more points per wave!
+Only Cronqvist Mode yields more points per wave!
 
 Only Don and the Merchant Guild have that kind of iron in stock.
 Only Don and the Merchant Guild have that kind of iron in stock.
@@ -4102,8 +5998,14 @@ Open your inventory (F3 key), select the clothes one by one and equip them.
 Open your inventory (F3 key), select the clothes one by one and equip them.#1
 Open your inventory (F3 key), select the clothes one by one and equip them.
 
+Options changed.
+Options changed.
+
 Or else, if you really wish one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
 Or else, if you really wish one, and if you feel capable, you can try killing tortugas or crocs if you're strong enough. I'm sure they could drop one or two @@s.
+
+Or maybe later.
+Or maybe later.
 
 Or, do you want to keep your friendship and your adventure in different groups?
 Or, do you want to keep your friendship and your adventure in different groups?
@@ -4120,6 +6022,12 @@ Orelse, if you really wish one, and if you feel capable, you can try killing tor
 Oscar#008-1
 Oscar#008-1
 
+Other Drop Rates: MvP %.2fx / Card-Based %.2fx / Treasure %.2fx
+Other Drop Rates: MvP %.2fx / Card-Based %.2fx / Treasure %.2fx
+
+Other Flags:
+Other Flags:
+
 Other Flags: 
 Other Flags: 
 
@@ -4132,6 +6040,12 @@ Otherwise, if you really want one, and if you feel capable, you can try killing 
 Our main task on this city is to protect the Merchant Guild.
 Our main task on this city is to protect the Merchant Guild.
 
+Out of Mind
+Out of Mind
+
+Out of Mind mode is only available for Top 3.
+Out of Mind mode is only available for Top 3.
+
 Out of creativity already? Don't worry, I don't judge! Hehe.
 Out of creativity already? Don't worry, I don't judge! Hehe.
 
@@ -4141,14 +6055,35 @@ Out of my way.
 Over lovers under a starry night
 Over lovers under a starry night
 
+Packet 0x%x length: %d
+Packet 0x%x length: %d
+
+Paladin
+Paladin
+
 Parted
 Parted
 
 Partner not ready.
 Partner not ready.
 
+Party modification is disabled in this map.
+Party modification is disabled in this map.
+
+PartyLock |
+PartyLock |
+
 PartyLock | 
 PartyLock | 
+
+Parua
+Parua
+
+Parua Cave: New Highscore: %d points
+Parua Cave: New Highscore: %d points
+
+Pay attention to the fight, %s!
+Pay attention to the fight, %s!
 
 People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose.
 People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose.
@@ -4168,6 +6103,18 @@ Perfect, which food did you get for me today?
 Perky ponytail
 Perky ponytail
 
+Pet hunger changed.
+Pet hunger changed.
+
+Pet hunger is already at maximum.
+Pet hunger is already at maximum.
+
+Pet intimacy changed.
+Pet intimacy changed.
+
+Pet intimacy is already at maximum.
+Pet intimacy is already at maximum.
+
 Peter
 Peter
 
@@ -4185,6 +6132,9 @@ Peter#001-2-22
 
 PeterBarrierCheck
 PeterBarrierCheck
+
+Pets are disabled in this map.
+Pets are disabled in this map.
 
 Pets are not allowed in Guild Wars.
 Pets are not allowed in Guild Wars.
@@ -4216,11 +6166,65 @@ Pious legs
 Planting not implemented.
 Planting not implemented.
 
+Player '%s' (session #%d) | Location: %d,%d
+Player '%s' (session #%d) | Location: %d,%d
+
+Player '%s' has now been banned from the '%s' channel
+Player '%s' has now been banned from the '%s' channel
+
+Player '%s' has now been unbanned from the '%s' channel
+Player '%s' has now been unbanned from the '%s' channel
+
+Player '%s' is already banned from this channel
+Player '%s' is already banned from this channel
+
+Player '%s' is not banned from this channel
+Player '%s' is not banned from this channel
+
+Player '%s' was not found
+Player '%s' was not found
+
+Player database has been reloaded.
+Player database has been reloaded.
+
+Player has been nuked!
+Player has been nuked!
+
+Player is not muted.
+Player is not muted.
+
+Player is using %s skill tree (%d basic points).
+Player is using %s skill tree (%d basic points).
+
+Player requires level %d of skill %s.
+Player requires level %d of skill %s.
+
+Player unjailed.
+Player unjailed.
+
+Player unmuted.
+Player unmuted.
+
+Player warped to jail.
+Player warped to jail.
+
 Please bring me some @@ so I can pull out these spikes from my foot.
 Please bring me some @@ so I can pull out these spikes from my foot.
 
+Please choose the desired body type:
+Please choose the desired body type:
+
 Please choose the desired gender:
 Please choose the desired gender:
+
+Please come back later.
+Please come back later.
+
+Please do, and delete duplicates.
+Please do, and delete duplicates.
+
+Please do, and keep duplicates.
+Please do, and keep duplicates.
 
 Please don't tell people that you've seen me. I don't want to be thrown in the sea as food for sharks or decapitated. At least not again!
 Please don't tell people that you've seen me. I don't want to be thrown in the sea as food for sharks or decapitated. At least not again!
@@ -4228,17 +6232,281 @@ Please don't tell people that you've seen me. I don't want to be thrown in the s
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, at least not again!
 Please don't tell people you saw me. I don't want to be decapitated or get thrown into the sea as food for sharks, at least not again!
 
+Please don't.
+Please don't.
+
+Please enter a Monster/NPC name/ID (usage: @disguise <name/ID>).
+Please enter a Monster/NPC name/ID (usage: @disguise <name/ID>).
+
+Please enter a Monster/NPC name/ID (usage: @disguiseall <name/ID>).
+Please enter a Monster/NPC name/ID (usage: @disguiseall <name/ID>).
+
+Please enter a NPC name (Usage: @unloadnpc <NPC_name> {<flag>}).
+Please enter a NPC name (Usage: @unloadnpc <NPC_name> {<flag>}).
+
+Please enter a NPC name (usage: @enablenpc <NPC_name>).
+Please enter a NPC name (usage: @enablenpc <NPC_name>).
+
+Please enter a NPC name (usage: @hidenpc <NPC_name>).
+Please enter a NPC name (usage: @hidenpc <NPC_name>).
+
 Please enter a NPC name (usage: @npcoff <NPC_name>).
 Please enter a NPC name (usage: @npcoff <NPC_name>).
 
+Please enter a NPC name (usage: @tonpc <NPC_name>).
+Please enter a NPC name (usage: @tonpc <NPC_name>).
+
+Please enter a clothes color (usage: @dye/@ccolor <clothes color: %d-%d>).
+Please enter a clothes color (usage: @dye/@ccolor <clothes color: %d-%d>).
+
+Please enter a guild name (usage: @guild <guild_name>).
+Please enter a guild name (usage: @guild <guild_name>).
+
+Please enter a guild name/ID (usage: @guildrecall <guild_name/ID>).
+Please enter a guild name/ID (usage: @guildrecall <guild_name/ID>).
+
+Please enter a guild name/ID (usage: @guildspy <guild_name/ID>).
+Please enter a guild name/ID (usage: @guildspy <guild_name/ID>).
+
+Please enter a hair color (usage: @haircolor/@hcolor <hair color: %d-%d>).
+Please enter a hair color (usage: @haircolor/@hcolor <hair color: %d-%d>).
+
+Please enter a hair style (usage: @hairstyle/@hstyle <hair ID: %d-%d>).
+Please enter a hair style (usage: @hairstyle/@hstyle <hair ID: %d-%d>).
+
+Please enter a homunculus ID (usage: @makehomun <homunculus id>).
+Please enter a homunculus ID (usage: @makehomun <homunculus id>).
+
+Please enter a hunger value (usage: @homhungry <hunger value [0-100]>).
+Please enter a hunger value (usage: @homhungry <hunger value [0-100]>).
+
+Please enter a level adjustment (usage: @homlevel <number of levels>).
+Please enter a level adjustment (usage: @homlevel <number of levels>).
+
+Please enter a level adjustment (usage: @joblvup/@jlevel/@joblvlup <number of levels>).
+Please enter a level adjustment (usage: @joblvup/@jlevel/@joblvlup <number of levels>).
+
+Please enter a level adjustment (usage: @lvup/@blevel/@baselvlup <number of levels>).
+Please enter a level adjustment (usage: @lvup/@blevel/@baselvlup <number of levels>).
+
+Please enter a map (usage: @warp/@rura/@mapmove <mapname> <x> <y>).
+Please enter a map (usage: @warp/@rura/@mapmove <mapname> <x> <y>).
+
+Please enter a message (usage: @broadcast <message>).
+Please enter a message (usage: @broadcast <message>).
+
+Please enter a message (usage: @homtalk <message>).
+Please enter a message (usage: @homtalk <message>).
+
+Please enter a message (usage: @kami <message>).
+Please enter a message (usage: @kami <message>).
+
+Please enter a message (usage: @localbroadcast <message>).
+Please enter a message (usage: @localbroadcast <message>).
+
+Please enter a message (usage: @me <message>).
+Please enter a message (usage: @me <message>).
+
+Please enter a message (usage: @pettalk <message>).
+Please enter a message (usage: @pettalk <message>).
+
+Please enter a mob name/ID and guild name/ID (usage: @disguiseguild <mob name/ID>, <guild name/ID>).
+Please enter a mob name/ID and guild name/ID (usage: @disguiseguild <mob name/ID>, <guild name/ID>).
+
+Please enter a mob name/id (usage: @showmobs <mob name/id>)
+Please enter a mob name/id (usage: @showmobs <mob name/id>)
+
+Please enter a monster name (usage: @mobsearch <monster name>).
+Please enter a monster name (usage: @mobsearch <monster name>).
+
+Please enter a monster name (usage: @summon <monster name> {duration}).
+Please enter a monster name (usage: @summon <monster name> {duration}).
+
+Please enter a monster name/ID (usage: @mobinfo <monster_name_or_monster_ID>).
+Please enter a monster name/ID (usage: @mobinfo <monster_name_or_monster_ID>).
+
+Please enter a monster name/ID (usage: @whereis <monster_name_or_monster_ID>).
+Please enter a monster name/ID (usage: @whereis <monster_name_or_monster_ID>).
+
+Please enter a monster/egg name/ID (usage: @makeegg <pet>).
+Please enter a monster/egg name/ID (usage: @makeegg <pet>).
+
+Please enter a number (usage: @skpoint <number of points>).
+Please enter a number (usage: @skpoint <number of points>).
+
+Please enter a number (usage: @stpoint <number of points>).
+Please enter a number (usage: @stpoint <number of points>).
+
+Please enter a party name (usage: @party <party_name>).
+Please enter a party name (usage: @party <party_name>).
+
+Please enter a party name/ID (usage: @partyrecall <party_name/ID>).
+Please enter a party name/ID (usage: @partyrecall <party_name/ID>).
+
+Please enter a party name/ID (usage: @partyspy <party_name/ID>).
+Please enter a party name/ID (usage: @partyspy <party_name/ID>).
+
+Please enter a player name (usage: @block <char name>).
+Please enter a player name (usage: @block <char name>).
+
+Please enter a player name (usage: @jail <char_name>).
+Please enter a player name (usage: @jail <char_name>).
+
+Please enter a player name (usage: @jumpto/@warpto/@goto <char name/ID>).
+Please enter a player name (usage: @jumpto/@warpto/@goto <char name/ID>).
+
+Please enter a player name (usage: @kick <char name/ID>).
+Please enter a player name (usage: @kick <char name/ID>).
+
+Please enter a player name (usage: @nuke <char name>).
+Please enter a player name (usage: @nuke <char name>).
+
+Please enter a player name (usage: @recall <char name/ID>).
+Please enter a player name (usage: @recall <char name/ID>).
+
+Please enter a player name (usage: @trade <char name>).
+Please enter a player name (usage: @trade <char name>).
+
+Please enter a player name (usage: @unban <char name>).
+Please enter a player name (usage: @unban <char name>).
+
+Please enter a player name (usage: @unblock <char name>).
+Please enter a player name (usage: @unblock <char name>).
+
+Please enter a player name (usage: @unjail/@discharge <char_name>).
+Please enter a player name (usage: @unjail/@discharge <char_name>).
+
+Please enter a player name (usage: @unmute <char name>).
+Please enter a player name (usage: @unmute <char name>).
+
+Please enter a player name (usage: @where <char name>).
+Please enter a player name (usage: @where <char name>).
+
 Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
 Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
+
+Please enter a position bitmask and an amount (usage: @refine <equip position> <+/- amount>).
+Please enter a position bitmask and an amount (usage: @refine <equip position> <+/- amount>).
+
+Please enter a quest skill ID.
+Please enter a quest skill ID.
+
+Please enter a script file name (usage: @loadnpc <file name>).
+Please enter a script file name (usage: @loadnpc <file name>).
+
+Please enter a skill name to look up (usage: @skillid <skill name>).
+Please enter a skill name to look up (usage: @skillid <skill name>).
+
+Please enter a sound filename (usage: @sound <filename>).
+Please enter a sound filename (usage: @sound <filename>).
+
+Please enter a speed value (usage: @speed <%d-%d>).
+Please enter a speed value (usage: @speed <%d-%d>).
+
+Please enter a status type/flag (usage: @displaystatus <status type> <flag> <tick> {<val1> {<val2> {<val3>}}}).
+Please enter a status type/flag (usage: @displaystatus <status type> <flag> <tick> {<val1> {<val2> {<val3>}}}).
+
+Please enter a time in minutes (usage: @mutearea/@stfu <time in minutes>).
+Please enter a time in minutes (usage: @mutearea/@stfu <time in minutes>).
+
+Please enter a valid level (usage: @guildlvup/@guildlvlup <# of levels>).
+Please enter a valid level (usage: @guildlvup/@guildlvlup <# of levels>).
+
+Please enter a valid madogear type.
+Please enter a valid madogear type.
+
+Please enter a valid number (usage: @pethungry <0-100>).
+Please enter a valid number (usage: @pethungry <0-100>).
+
+Please enter a valid position (usage: @memo <memo_position:%d-%d>).
+Please enter a valid position (usage: @memo <memo_position:%d-%d>).
+
+Please enter a valid value (usage: @petfriendly <0-1000>).
+Please enter a valid value (usage: @petfriendly <0-1000>).
+
+Please enter a valid value (usage: @str/@agi/@vit/@int/@dex/@luk <+/-adjustment>).
+Please enter a valid value (usage: @str/@agi/@vit/@int/@dex/@luk <+/-adjustment>).
+
+Please enter all parameters (usage: @item2 <item name/ID> <quantity>).
+Please enter all parameters (usage: @item2 <item name/ID> <quantity>).
+
+Please enter all parameters (usage: @itembound2 <item name/ID> <quantity>
+Please enter all parameters (usage: @itembound2 <item name/ID> <quantity>
+
+Please enter an amount (usage: @spiritball <number: 0-%d>).
+Please enter an amount (usage: @spiritball <number: 0-%d>).
+
+Please enter an amount (usage: @zeny <amount>).
+Please enter an amount (usage: @zeny <amount>).
+
+Please enter an amount.
+Please enter an amount.
+
+Please enter an effect number (usage: @effect <effect number>).
+Please enter an effect number (usage: @effect <effect number>).
+
+Please enter an intimacy value (usage: @homfriendly <intimacy value [0-1000]>).
+Please enter an intimacy value (usage: @homfriendly <intimacy value [0-1000]>).
+
+Please enter an item name or ID (usage: @item <item name/ID> <quantity>).
+Please enter an item name or ID (usage: @item <item name/ID> <quantity>).
+
+Please enter an item name or ID (usage: @itembound <item name/ID> <quantity> <bound_type>).
+Please enter an item name or ID (usage: @itembound <item name/ID> <quantity> <bound_type>).
+
+Please enter an item name/ID (usage: @ii/@iteminfo <item name/ID>).
+Please enter an item name/ID (usage: @ii/@iteminfo <item name/ID>).
+
+Please enter an item name/ID, a quantity, and a player name (usage: #delitem <player> <item_name_or_ID> <quantity>).
+Please enter an item name/ID, a quantity, and a player name (usage: #delitem <player> <item_name_or_ID> <quantity>).
+
+Please enter at least one item name/ID (usage: @produce <equip name/ID> <element> <# of very's>).
+Please enter at least one item name/ID (usage: @produce <equip name/ID> <element> <# of very's>).
+
+Please enter at least one option.
+Please enter at least one option.
+
+Please enter at least one valid list number (usage: @mapinfo <0-3> <map>).
+Please enter at least one valid list number (usage: @mapinfo <0-3> <map>).
+
+Please enter at least one value (usage: @model <hair ID: %d-%d> <hair color: %d-%d> <clothes color: %d-%d>).
+Please enter at least one value (usage: @model <hair ID: %d-%d> <hair color: %d-%d> <clothes color: %d-%d>).
+
+Please enter ban time and a player name (usage: @ban <time> <char name>).
+Please enter ban time and a player name (usage: @ban <time> <char name>).
+
+Please enter color and message (usage: @kamic <color> <message>).
+Please enter color and message (usage: @kamic <color> <message>).
+
+Please enter guild name/ID (usage: @sizeguild <size> <guild name/ID>).
+Please enter guild name/ID (usage: @sizeguild <size> <guild name/ID>).
+
+Please enter guild name/ID (usage: @undisguiseguild <guild name/ID>).
+Please enter guild name/ID (usage: @undisguiseguild <guild name/ID>).
+
+Please enter item name/ID (usage: @whodrops <item name/ID>).
+Please enter item name/ID (usage: @whodrops <item name/ID>).
+
+Please enter part of an item name (usage: @idsearch <part_of_item_name>).
+Please enter part of an item name (usage: @idsearch <part_of_item_name>).
+
+Please enter the correct parameters (usage: @npctalk <npc name>, <message>).
+Please enter the correct parameters (usage: @npctalk <npc name>, <message>).
+
+Please enter the correct parameters (usage: @npctalkc <color> <npc name>, <message>).
+Please enter the correct parameters (usage: @npctalkc <color> <npc name>, <message>).
+
+Please enter two e-mail addresses (usage: @email <current@email> <new@email>).
+Please enter two e-mail addresses (usage: @email <current@email> <new@email>).
 
 Please find the small chest, buried somewhere on Artis Hill.
 Please find the small chest, buried somewhere on Artis Hill.
 
 Please find the small chest, buried somewhere on the Artis Hill.
 Please find the small chest, buried somewhere on the Artis Hill.
+
+Please specify a display name or monster name/id.
+Please specify a display name or monster name/id.
 
 Please take this lollypop for your help. Mum sais they are bad for my teeth anyway (FIXME)
 Please take this lollypop for your help. Mum sais they are bad for my teeth anyway (FIXME)
@@ -4252,8 +6520,14 @@ Please try to figure out what went wrong with this order and bring me these poti
 Please try to figure what went wrong with this order and bring me these potions.
 Please try to figure what went wrong with this order and bring me these potions.
 
+Please wait, the fight will start in @@, as requested.
+Please wait, the fight will start in @@, as requested.
+
 Please, don't tell people that you've seen me, I don't want to be thrown to sea as food for sharks or decapitated, not again!
 Please, don't tell people that you've seen me, I don't want to be thrown to sea as food for sharks or decapitated, not again!
+
+Please, leave me alone. I have to pixel potions.
+Please, leave me alone. I have to pixel potions.
 
 Plushroom
 Plushroom
@@ -4273,11 +6547,26 @@ Pompadour
 Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe
 Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe
 
+Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body
+Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body
+
+Priest
+Priest
+
+PrivateAirshipEndable |
+PrivateAirshipEndable |
+
 PrivateAirshipEndable | 
 PrivateAirshipEndable | 
 
+PrivateAirshipStartable |
+PrivateAirshipStartable |
+
 PrivateAirshipStartable | 
 PrivateAirshipStartable | 
+
+Professor
+Professor
 
 Pull!
 Pull!
@@ -4303,6 +6592,9 @@ Purple Blobime
 Purple plum
 Purple plum
 
+PvP Flags:
+PvP Flags:
+
 PvP Flags: 
 PvP Flags: 
 
@@ -4312,11 +6604,20 @@ PvP Off.
 PvP On.
 PvP On.
 
+PvP is already Off.
+PvP is already Off.
+
+PvP is already On.
+PvP is already On.
+
 PvP: Off.
 PvP: Off.
 
 PvP: On.
 PvP: On.
+
+Pvp ON |
+Pvp ON |
 
 Pvp ON | 
 Pvp ON | 
@@ -4333,8 +6634,23 @@ Q'Onan#000-2-1
 QMuller.
 QMuller.
 
+Quest @@ modified by GM
+Quest @@ modified by GM
+
+Quest database has been reloaded.
+Quest database has been reloaded.
+
 Quiet place,
 Quiet place,
+
+Random Dye
+Random Dye
+
+Ranger
+Ranger
+
+Ranger T
+Ranger T
 
 RattosControl
 RattosControl
@@ -4345,6 +6661,12 @@ RattosControl#001-2-23
 Read it
 Read it
 
+Rebellion
+Rebellion
+
+Refinery UI is not available
+Refinery UI is not available
+
 Registration is open for everybody, but newcomers need to pay a fee for all of the paperwork.
 Registration is open for everybody, but newcomers need to pay a fee for all of the paperwork.
 
@@ -4354,11 +6676,47 @@ Remember, you have to find my brother on the hill east of here
 Remember, you have to find my brother on the hill to the east from here
 Remember, you have to find my brother on the hill to the east from here
 
+Removed %d Kafra points. Total %d points.
+Removed %d Kafra points. Total %d points.
+
+Removed %d cash points. Total %d points.
+Removed %d cash points. Total %d points.
+
+Removed %dz.
+Removed %dz.
+
+Removed all bans from the '%s' channel
+Removed all bans from the '%s' channel
+
+Removed item type: '%s' from your autoloottype list.
+Removed item type: '%s' from your autoloottype list.
+
+Removed item: '%s'/'%s' {%d} from your autolootitem list.
+Removed item: '%s'/'%s' {%d} from your autolootitem list.
+
 Resa
 Resa
 
+Reset 'Feeling' maps.
+Reset 'Feeling' maps.
+
+Reset 'Hatred' targets.
+Reset 'Hatred' targets.
+
+Reset |
+Reset |
+
 Reset | 
 Reset | 
+
+Returned to normal state.
+Returned to normal state.
+
+Returned to real name.
+Returned to real name.
+
+Returning to normal font.
+Returning to normal font.
 
 Richard#008-1
 Richard#008-1
@@ -4378,8 +6736,20 @@ Ronan
 Rosehat
 Rosehat
 
+Roulette is disabled
+Roulette is disabled
+
+Round %d
+Round %d
+
 Rowboat
 Rowboat
+
+Royal Guard
+Royal Guard
+
+Royal Guard T
+Royal Guard T
 
 Rrrr pchhhh...
 Rrrr pchhhh...
@@ -4393,6 +6763,12 @@ Rules began to rise in order to have a peaceful society. This did not work well 
 Rumly is hidding behind the tree.
 Rumly is hidding behind the tree.
 
+Rune Knight
+Rune Knight
+
+Rune Knight T
+Rune Knight T
+
 SO WHAT'S UP? WHAT ARE YOU DOING?
 SO WHAT'S UP? WHAT ARE YOU DOING?
 
@@ -4405,8 +6781,14 @@ SO, WHAT'S YOUR NAME?!
 SORRY, BUT WHAT DID YOU SAY? SPEAK LOUDER!
 SORRY, BUT WHAT DID YOU SAY? SPEAK LOUDER!
 
+Sage
+Sage
+
 Sailors
 Sailors
+
+Sakura |
+Sakura |
 
 Sakura | 
 Sakura | 
@@ -4423,6 +6805,18 @@ Say him that everything went fine, and that we're almost done with the foods.
 Scary... I am afraid of these blubs and rattos... And worse, I am lost...
 Scary... I am afraid of these blubs and rattos... And worse, I am lost...
 
+Script could not be loaded.
+Script could not be loaded.
+
+Script could not be unloaded.
+Script could not be unloaded.
+
+Script loaded.
+Script loaded.
+
+Scripts have been reloaded.
+Scripts have been reloaded.
+
 Sea Drop
 Sea Drop
 
@@ -4432,17 +6826,65 @@ Sea Drops
 Sea Drops!? I will not help you with your evil plan!
 Sea Drops!? I will not help you with your evil plan!
 
+Search results for '%s' (name: id):
+Search results for '%s' (name: id):
+
 Secondly, choose wisely which weapon is suited for you. Some people like to face their enemies closely with a heavy axe, some others prefer to attack from a distance with a bow for example.
 Secondly, choose wisely which weapon is suited for you. Some people like to face their enemies closely with a heavy axe, some others prefer to attack from a distance with a bow for example.
 
 See you.
 See you.
 
+Select difficulty.
+Select difficulty.
+
+Select what is the next track to play
+Select what is the next track to play
+
 Selim#008-1
 Selim#008-1
 
+Sending request to login server...
+Sending request to login server...
+
+Sent packet 0x%x (%d)
+Sent packet 0x%x (%d)
+
+Server : %s has been afk-kicked from the battlefield...
+Server : %s has been afk-kicked from the battlefield...
+
+Server : %s has quit the game...
+Server : %s has quit the game...
+
+Server : %s is leaving the battlefield...
+Server : %s is leaving the battlefield...
+
+Server Uptime: %ld days, %ld hours, %ld minutes, %ld seconds.
+Server Uptime: %ld days, %ld hours, %ld minutes, %ld seconds.
+
 Server is jammed due to over populated.
 Server is jammed due to over populated.
+
+Server is jammed due to overpopulation.
+Server is jammed due to overpopulation.
+
+Server time (normal time): %A, %B %d %Y %X.
+Server time (normal time): %A, %B %d %Y %X.
+
+Set battle_config as requested.
+Set battle_config as requested.
+
+Seven Castles
+Seven Castles
+
+Seventeen Castles
+Seventeen Castles
+
+Shadow Chaser
+Shadow Chaser
+
+Shadow Chaser T
+Shadow Chaser T
 
 Share your mind is your mission
 Share your mind is your mission
@@ -4486,6 +6928,9 @@ She's on the upper level, yeye can't miss her. She's the only girl in this crew,
 She's on the upper level, yeye can't miss her. She's the only girl in this crew.
 She's on the upper level, yeye can't miss her. She's the only girl in this crew.
 
+Shop is out of stock! Come again later!
+Shop is out of stock! Come again later!
+
 Short and curly
 Short and curly
 
@@ -4513,11 +6958,50 @@ Simply contact them, help them and be kind. They might surely add you to my cook
 Sincerely yours, Dan
 Sincerely yours, Dan
 
+Six Castles
+Six Castles
+
+Sixteen Castles
+Sixteen Castles
+
+Size change applied.
+Size change applied.
+
+Skill Failed. [%s] requires %dx %s.
+Skill Failed. [%s] requires %dx %s.
+
+Skill database has been reloaded.
+Skill database has been reloaded.
+
+Skill delay failures are now shown.
+Skill delay failures are now shown.
+
+Skill delay failures will not be shown.
+Skill delay failures will not be shown.
+
+Skills have been disabled in this map.
+Skills have been disabled in this map.
+
+Skills have been enabled in this map.
+Skills have been enabled in this map.
+
+Slave clone spawned.
+Slave clone spawned.
+
 Sleep well my angel but don't follow along
 Sleep well my angel but don't follow along
 
 Snarfles#008-1
 Snarfles#008-1
+
+Sniper
+Sniper
+
+Snow has stopped falling.
+Snow has stopped falling.
+
+Snow |
+Snow |
 
 Snow | 
 Snow | 
@@ -4627,6 +7111,9 @@ So, you finally woke up? We all thought you were in something like... You know, 
 Some more things are written down but it's not legible.
 Some more things are written down but it's not legible.
 
+Some of your items cannot be vended and were removed from the shop.
+Some of your items cannot be vended and were removed from the shop.
+
 Some other strings are added to this page.
 Some other strings are added to this page.
 
@@ -4648,11 +7135,23 @@ Somebody tried to stroke the word \"fish\" and tried to replace it with \"sharke
 Somehow you don't feel good about your deed
 Somehow you don't feel good about your deed
 
+Someone was too lazy to even write a placeholder text, so please come back later
+Someone was too lazy to even write a placeholder text, so please come back later
+
+Sometimes I think he is more a chef but a mage, but oh well, everybody should do what suits him best.
+Sometimes I think he is more a chef but a mage, but oh well, everybody should do what suits him best.
+
 Sometimes a good merchant need to reach out first. It's on the house, give Chelios my regards!
 Sometimes a good merchant need to reach out first. It's on the house, give Chelios my regards!
 
 Sometimes, I wish somebody is sent here to help us.
 Sometimes, I wish somebody is sent here to help us.
+
+Sorcerer
+Sorcerer
+
+Sorcerer T
+Sorcerer T
 
 Sorry I busy with other registrations
 Sorry I busy with other registrations
@@ -4665,6 +7164,9 @@ Sorry but I can't tell you anything about that.
 
 Sorry i can't help you. Go away!
 Sorry i can't help you. Go away!
+
+Sorry, @@ already started the fight.
+Sorry, @@ already started the fight.
 
 Sorry, I am not in the mood for another fight with these rattos.
 Sorry, I am not in the mood for another fight with these rattos.
@@ -4680,6 +7182,9 @@ Sorry, I don't know any recipe with this.
 
 Sorry, I don't need any help right now. Come back later.
 Sorry, I don't need any help right now. Come back later.
+
+Sorry, I misclicked the first button. Have a nice nap, great Parua!
+Sorry, I misclicked the first button. Have a nice nap, great Parua!
 
 Sorry, I'm busy right now.
 Sorry, I'm busy right now.
@@ -4696,11 +7201,26 @@ Sorry, but I'm busy right now.
 Sorry, but I'm busy right now.#1
 Sorry, but I'm busy right now.
 
+Sorry, but you do not have enough space for this.
+Sorry, but you do not have enough space for this.
+
 Sorry, but you don't have what I need for bait.
 Sorry, but you don't have what I need for bait.
 
+Sorry, but you have no pet.
+Sorry, but you have no pet.
+
 Sorry, doing other things at the moment.
 Sorry, doing other things at the moment.
+
+Sorry, sorry! Please rest, great Parua!
+Sorry, sorry! Please rest, great Parua!
+
+Soul Linker
+Soul Linker
+
+Soul Menhir#hurnscald
+Soul Menhir#hurnscald
 
 Sounds good!#0
 Sounds good!
@@ -4717,20 +7237,71 @@ Sounds well!
 Sounds well!#1
 Sounds well!
 
+South
+South
+
+South East
+South East
+
+South West
+South West
+
+Specified group does not exist.
+Specified group does not exist.
+
+Speed changed.
+Speed changed.
+
+Speed returned to normal.
+Speed returned to normal.
+
 Splash!
 Splash!
 
 Spring green
 Spring green
 
+Spying on the %s guild.
+Spying on the %s guild.
+
+Spying on the %s party.
+Spying on the %s party.
+
+Stalker
+Stalker
+
+Star Gladiator
+Star Gladiator
+
+Stat changed.
+Stat changed.
+
+Stats: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d
+Stats: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d
+
+Status database has been reloaded.
+Status database has been reloaded.
+
 Stay here, I'll hurry back as soon as I get some.
 Stay here, I'll hurry back as soon as I get some.
+
+Storage has been not loaded yet.
+Storage has been not loaded yet.
+
+Storage opened.
+Storage opened.
 
 Store#Calypsan001-1
 Store#Calypsan001-1
 
+Str: %d (%d~%d)
+Str: %d (%d~%d)
+
 String Green
 String Green
+
+Styling Shop
+Styling Shop
 
 Suddenly, you hear a voice from the sky.
 Suddenly, you hear a voice from the sky.
@@ -4738,8 +7309,23 @@ Suddenly, you hear a voice from the sky.
 Suddenly, you hear a voice up in the sky.
 Suddenly, you hear a voice up in the sky.
 
+Summoner
+Summoner
+
 Sunny and hot day,
 Sunny and hot day,
+
+Super Baby
+Super Baby
+
+Super Novice
+Super Novice
+
+Sura
+Sura
+
+Sura T
+Sura T
 
 Sure why not?
 Sure why not?
@@ -4765,11 +7351,17 @@ Surely. Take this box full of @@s.
 Surprise me
 Surprise me
 
+Swordsman
+Swordsman
+
 Swore, though somewhat later, that he would never be 
 Swore, though somewhat later, that he would never be 
 
 Słyszę cię... (Polski)
 Słyszę cię... (Polski)
+
+Taekwon
+Taekwon
 
 Take a @@ and a @@, yeye obtains a @@.
 Take a @@ and a @@, yeye obtains a @@.
@@ -4819,11 +7411,20 @@ Talk with Lloyd the Banker in the Merchant Guild, it's a big building at the nor
 Talk with Lloyd the banker in the Merchant Guild, it's a big building at the Northern part of Artis, atop the little hill.
 Talk with Lloyd the banker in the Merchant Guild, it's a big building at the Northern part of Artis, atop the little hill.
 
+Tanky
+Tanky
+
 Tapered Nape
 Tapered Nape
 
 Tapered nape
 Tapered nape
+
+Target character must be online and be a guild member.
+Target character must be online and be a guild member.
+
+Target character must be online and in your current party.
+Target character must be online and in your current party.
 
 Tarlan
 Tarlan
@@ -4831,11 +7432,17 @@ Tarlan
 Te oigo... (Español)
 Te oigo... (Español)
 
+Teleport Flags:
+Teleport Flags:
+
 Teleport Flags: 
 Teleport Flags: 
 
 Tell him that everything went fine and that we're almost done with the food.
 Tell him that everything went fine and that we're almost done with the food.
+
+Ten Castles
+Ten Castles
 
 Terry
 Terry
@@ -4956,6 +7563,12 @@ The Piou, embarrassed and confused,
 
 The Platinum Kingdom grew and prospered, and drew most of the human population to the safety of the walls of Keshlam, Tulimshar, Hurnscald and Nivalis.
 The Platinum Kingdom grew and prospered, and drew most of the human population to the safety of the walls of Keshlam, Tulimshar, Hurnscald and Nivalis.
+
+The Platinum Kingdom grew and prospered, and drew most of the viro population to the safety of the walls of Keshlam, Tulimshar, Hurnscald and Nivalis.
+The Platinum Kingdom grew and prospered, and drew most of the viro population to the safety of the walls of Keshlam, Tulimshar, Hurnscald and Nivalis.
+
+The Vault's [@@https://wiki.themanaworld.org/index.php/The_Mana_World:Terms_and_Conditions|Terms of Use@@] still applies and are unaffected by the rules here stated.
+The Vault's [@@https://wiki.themanaworld.org/index.php/The_Mana_World:Terms_and_Conditions|Terms of Use@@] still applies and are unaffected by the rules here stated.
 
 The adventure begins!
 The adventure begins!
@@ -4972,6 +7585,9 @@ The answer is a single word, without conjugaison.
 The best, the wonderful, the best cookie between all others, the...
 The best, the wonderful, the best cookie between all others, the...
 
+The brotherhood members here are friendly, but mostly because our interests coincide. In Hurnscald, where their main base is, we're enemies.
+The brotherhood members here are friendly, but mostly because our interests coincide. In Hurnscald, where their main base is, we're enemies.
+
 The cost to create a guild is of @@ E, are you interested?
 The cost to create a guild is of @@ E, are you interested?
 
@@ -5023,11 +7639,17 @@ The fee is of @@E. So, do you want to register?
 The first human settlement to develop an advanced political structure and to become a city-state was Keshlam.
 The first human settlement to develop an advanced political structure and to become a city-state was Keshlam.
 
+The first viro settlement to develop an advanced political structure and to become a city-state was Keshlam.
+The first viro settlement to develop an advanced political structure and to become a city-state was Keshlam.
+
 The fish ate all your bait.
 The fish ate all your bait.
 
 The fish ate small part of your bait.
 The fish ate small part of your bait.
+
+The fog has gone.
+The fog has gone.
 
 The giant bogeyman!
 The giant bogeyman!
@@ -5044,11 +7666,23 @@ The guild is in charge of the commerce regularization throughout Artis and its s
 The hidden person doesn't answer.
 The hidden person doesn't answer.
 
+The holy messenger has given judgement.
+The holy messenger has given judgement.
+
 The item (%d: '%s') is not equipable.
 The item (%d: '%s') is not equipable.
 
+The item (%d: '%s') is not equippable.
+The item (%d: '%s') is not equippable.
+
 The item is not equipable.
 The item is not equipable.
+
+The item is not equippable.
+The item is not equippable.
+
+The mapserver has spy command support disabled.
+The mapserver has spy command support disabled.
 
 The market is located at the south-east of Artis, it is known as Merchant Guild's exhibit.
 The market is located at the south-east of Artis, it is known as Merchant Guild's exhibit.
@@ -5062,6 +7696,9 @@ The market is located at the southeast of Artis, that part is known to be the Me
 The miracle is this: the more we share the more we have.
 The miracle is this: the more we share the more we have.
 
+The monster/egg name/ID doesn't exist.
+The monster/egg name/ID doesn't exist.
+
 The music of the trees floats through the breeze
 The music of the trees floats through the breeze
 
@@ -5073,6 +7710,15 @@ The piou costs @@E
 
 The piou costs @@E.
 The piou costs @@E.
+
+The player '%.*s' doesn't exist.
+The player '%.*s' doesn't exist.
+
+The player cannot use that skill.
+The player cannot use that skill.
+
+The player meets all the requirements for that skill.
+The player meets all the requirements for that skill.
 
 The sailor chugs his beer
 The sailor chugs his beer
@@ -5092,8 +7738,14 @@ The ship, La Johanne, has left the island, finally.
 The travel was fine for you? It was terrible for me; I was sea-sick.
 The travel was fine for you? It was terrible for me; I was sea-sick.
 
+The two cannot wed because one is either a baby or already married.
+The two cannot wed because one is either a baby or already married.
+
 The usurper has been punished! This is a great day, take this reward as a prize for your loyalty to the old commander!.
 The usurper has been punished! This is a great day, take this reward as a prize for your loyalty to the old commander!.
+
+The zone is already set to '%s'.
+The zone is already set to '%s'.
 
 Their price is usually high, but you know what? You have a lucky day.
 Their price is usually high, but you know what? You have a lucky day.
@@ -5118,6 +7770,9 @@ There are few groups of these @@'s all around this island. Just pick some and ha
 
 There are few groups of these @@s all around this island. Just pick some and have a try.
 There are few groups of these @@s all around this island. Just pick some and have a try.
+
+There are no items to appraise.
+There are no items to appraise.
 
 There are no open task for you right now.
 There are no open task for you right now.
@@ -5167,6 +7822,9 @@ There is an unknown side effect to these plushrooms, they can free you from your
 There is no event available right now.
 There is no event available right now.
 
+There is no help for %c%s.
+There is no help for %c%s.
+
 There is nothing to say, don't worry miss.
 There is nothing to say, don't worry miss.
 
@@ -5190,6 +7848,9 @@ There're some groups of these @@'s all around this island. Just pick some and ha
 
 There're two different kinds of card, the first changes the style of your clothes, the second changes their stats.
 There're two different kinds of card, the first changes the style of your clothes, the second changes their stats.
+
+There's been no change in the setting.
+There's been no change in the setting.
 
 There's nothing to say, don't worry miss.
 There's nothing to say, don't worry miss.
@@ -5251,11 +7912,41 @@ They are both valid and I need them. In the past, I probably did mistakes I now 
 They are both valid and I need them. Probably in the past I did some mistakes I now regret of. I was wondering if you could investigate and...sort out the situation.
 They are both valid and I need them. Probably in the past I did some mistakes I now regret of. I was wondering if you could investigate and...sort out the situation.
 
+They are married... wish them well.
+They are married... wish them well.
+
 They are so tasty when cooked together with some @@. Don't drop any of them!
 They are so tasty when cooked together with some @@. Don't drop any of them!
 
+They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of humans.
+They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of humans.
+
+They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of viros.
+They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of viros.
+
 They sailed past the Clear Sea and towards the Long Ocean which nobody had explored before..
 They sailed past the Clear Sea and towards the Long Ocean which nobody had explored before..
+
+Thirteen Castles
+Thirteen Castles
+
+Thirty Castles
+Thirty Castles
+
+Thirty-One Castles
+Thirty-One Castles
+
+Thirty-Three Castles
+Thirty-Three Castles
+
+Thirty-Two Castles
+Thirty-Two Castles
+
+This NPC doesn't exist.
+This NPC doesn't exist.
+
+This action can't be performed at the moment. Please try again later.
+This action can't be performed at the moment. Please try again later.
 
 This book outlines the laws of every city and holding in Gasaron
 This book outlines the laws of every city and holding in Gasaron
@@ -5263,11 +7954,20 @@ This book outlines the laws of every city and holding in Gasaron
 This book resumes everything you should know about it, take it!
 This book resumes everything you should know about it, take it!
 
+This bound item cannot be stored there.
+This bound item cannot be stored there.
+
+This bound item cannot be traded to that character.
+This bound item cannot be traded to that character.
+
 This box is locked
 This box is locked
 
 This box is locked.
 This box is locked.
+
+This character has been banned until
+This character has been banned until
 
 This character has been banned until 
 This character has been banned until 
@@ -5347,6 +8047,21 @@ This is it, the end of the Second Beta Release of Evol Online!
 This is the last one. If you use it again out of clumsiness, I will take your flesh as the main ingredient for my cookie recipe.
 This is the last one. If you use it again out of clumsiness, I will take your flesh as the main ingredient for my cookie recipe.
 
+This item cannot be dropped.
+This item cannot be dropped.
+
+This item cannot be stored.
+This item cannot be stored.
+
+This item cannot be traded.
+This item cannot be traded.
+
+This item cannot be used within this area.
+This item cannot be used within this area.
+
+This job has no alternate body styles.
+This job has no alternate body styles.
+
 This kind of talk could be punished, but I agree that I don't specially like them too, keep an eye on her.
 This kind of talk could be punished, but I agree that I don't specially like them too, keep an eye on her.
 
@@ -5371,17 +8086,62 @@ This kind of talk should be taken with a grain of salt, but I agree and admit th
 This makes sense. Do you think we should inform the capt'n about it?
 This makes sense. Do you think we should inform the capt'n about it?
 
+This monster does not spawn normally.
+This monster does not spawn normally.
+
+This monster has no MVP prizes.
+This monster has no MVP prizes.
+
+This monster has no drops.
+This monster has no drops.
+
 This new continent, in fact an archipelago, was called Andorra.
 This new continent, in fact an archipelago, was called Andorra.
 
+This player has %d of a kind of item (id: %d), and tried to trade %d of them.
+This player has %d of a kind of item (id: %d), and tried to trade %d of them.
+
+This player has been banned for %d minute(s).
+This player has been banned for %d minute(s).
+
+This player has been definitively blocked.
+This player has been definitively blocked.
+
+This player hasn't been banned (Ban option is disabled).
+This player hasn't been banned (Ban option is disabled).
+
+This player is not in jail.
+This player is not in jail.
+
+This player is now
+This player is now
+
+This skill cannot be used within this area.
+This skill cannot be used within this area.
+
+This skill number doesn't exist or isn't a quest skill.
+This skill number doesn't exist or isn't a quest skill.
+
+This skill number doesn't exist.
+This skill number doesn't exist.
+
 This waitress *hicks* is great, she never stops to bring beer *hicks.
 This waitress *hicks* is great, she never stops to bring beer *hicks.
+
+Three Castles
+Three Castles
 
 Tibbo
 Tibbo
 
 Tibbo went to the east-south of the island, others are gone to the north, and I think that Gulukan is not so far from here.
 Tibbo went to the east-south of the island, others are gone to the north, and I think that Gulukan is not so far from here.
+
+Time of death : ^EE0000%s^000000
+Time of death : ^EE0000%s^000000
+
+To add an item to the list, use "@alootid +<item name or ID>". To remove an item, use "@alootid -<item name or ID>".
+To add an item to the list, use "@alootid +<item name or ID>". To remove an item, use "@alootid -<item name or ID>".
 
 To open your inventory, use the F3 key or use your mouse in the above menu of your client.#0
 To open your inventory, use the F3 key or use your mouse in the above menu of your client.
@@ -5389,6 +8149,9 @@ To open your inventory, use the F3 key or use your mouse in the above menu of yo
 To open your inventory, use the F3 key or use your mouse in the above menu of your client.#1
 To open your inventory, use the F3 key or use your mouse in the above menu of your client.
 
+Tomb
+Tomb
+
 Too bad I'm not hungry enough right now for these... cookies. I'll maybe come back later.
 Too bad I'm not hungry enough right now for these... cookies. I'll maybe come back later.
 
@@ -5401,8 +8164,17 @@ Too bad... Come back when you have some choice food for me. Growl... grumble... 
 Too bad... Come back when you'll have some fine food for me.
 Too bad... Come back when you'll have some fine food for me.
 
+Total Domination
+Total Domination
+
+Town Map
+Town Map
+
 Traaaansformation-!! %s form!!
 Traaaansformation-!! %s form!!
+
+Transforming into monster is not allowed in Guild Wars.
+Transforming into monster is not allowed in Guild Wars.
 
 Trozz#001-1
 Trozz#001-1
@@ -5422,8 +8194,53 @@ True but now she seems pretty fine! Am I right?
 Try to ask Max. He's an early riser.
 Try to ask Max. He's an early riser.
 
+Tulimshar
+Tulimshar
+
+Twelve Castles
+Twelve Castles
+
+Twenty Castles
+Twenty Castles
+
+Twenty-Eight Castles
+Twenty-Eight Castles
+
+Twenty-Five Castles
+Twenty-Five Castles
+
+Twenty-Four Castles
+Twenty-Four Castles
+
+Twenty-Nine Castles
+Twenty-Nine Castles
+
+Twenty-One Castles
+Twenty-One Castles
+
+Twenty-Seven Castles
+Twenty-Seven Castles
+
+Twenty-Six Castles
+Twenty-Six Castles
+
+Twenty-Three Castles
+Twenty-Three Castles
+
+Twenty-Two Castles
+Twenty-Two Castles
+
 Twisted teal
 Twisted teal
+
+Two Castles
+Two Castles
+
+Type "@mapflag available" to list the available mapflags.
+Type "@mapflag available" to list the available mapflags.
+
+Type List: (default) all = -1, healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5, card = 6, petegg = 7, petarmor = 8, ammo = 10, delayed-consumable = 11, cash = 18
+Type List: (default) all = -1, healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5, card = 6, petegg = 7, petarmor = 8, ammo = 10, delayed-consumable = 11, cash = 18
 
 Type List: (default) all = -1, healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5, card = 6, petegg = 7, petarmor = 8, ammo = 10, delayed-consumable = 11, cash = 18 
 Type List: (default) all = -1, healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5, card = 6, petegg = 7, petarmor = 8, ammo = 10, delayed-consumable = 11, cash = 18 
@@ -5434,23 +8251,200 @@ UAHAHAHAAH! I am the cook of that bunch of donkeys and I can be rude with everyo
 UAHAHAHAAH! I am the cook of that bunch of donkeys, I can be rude with everyone from the bossy captain to that harpy-lady!
 UAHAHAHAAH! I am the cook of that bunch of donkeys, I can be rude with everyone from the bossy captain to that harpy-lady!
 
+Unable to Teleport in this area
+Unable to Teleport in this area
+
+Unable to decrease the number/value.
+Unable to decrease the number/value.
+
+Unable to spawn clone.
+Unable to spawn clone.
+
+Unable to spawn evil clone.
+Unable to spawn evil clone.
+
+Unable to spawn slave clone.
+Unable to spawn slave clone.
+
 Unable to win, the tritans attacked Hurnscald. While human troops moved in attempts to avoid its fall, the Kralog and Ukar joined the tritans and they took the city.
 Unable to win, the tritans attacked Hurnscald. While human troops moved in attempts to avoid its fall, the Kralog and Ukar joined the tritans and they took the city.
+
+Unable to win, the tritans attacked Hurnscald. While viro troops moved in attempts to avoid its fall, the Kralog and Ukar joined the tritans and they took the city.
+Unable to win, the tritans attacked Hurnscald. While viro troops moved in attempts to avoid its fall, the Kralog and Ukar joined the tritans and they took the city.
+
+Unfortunately my apprentice Zitoni does not bring fresh potions, so if you need something you should come back later.
+Unfortunately my apprentice Zitoni does not bring fresh potions, so if you need something you should come back later.
 
 Unfortunately we still need help from you. This time it will be a delicate task, here onboard.
 Unfortunately we still need help from you. This time it will be a delicate task, here onboard.
 
+Unknown
+Unknown
+
+Unknown Cart (usage: %s <0-%d>).
+Unknown Cart (usage: %s <0-%d>).
+
+Unknown Channel '%s' (usage: %s <#channel_name>)
+Unknown Channel '%s' (usage: %s <#channel_name>)
+
+Unknown Channel (usage: %s <#channel_name>)
+Unknown Channel (usage: %s <#channel_name>)
+
+Unknown Job
+Unknown Job
+
+Unknown battle_config flag.
+Unknown battle_config flag.
+
+Unknown color '%s'
+Unknown color '%s'
+
+Unknown map '%s'.
+Unknown map '%s'.
+
+Unknown packet: 0x%x
+Unknown packet: 0x%x
+
+Unknown type of value in:
+Unknown type of value in:
+
 Unlike other respawn points, an INN can fully restore your HP.
 Unlike other respawn points, an INN can fully restore your HP.
+
+Usage:
+Usage:
+
+Usage: "@mapflag monster_noteleport 1" (0=Off | 1=On)
+Usage: "@mapflag monster_noteleport 1" (0=Off | 1=On)
+
+Usage: %s <permission_name>
+Usage: %s <permission_name>
+
+Usage: @accinfo/@accountinfo <account_id/char name>
+Usage: @accinfo/@accountinfo <account_id/char name>
+
+Usage: @addwarp <mapname> <X> <Y> <npc name>
+Usage: @addwarp <mapname> <X> <Y> <npc name>
+
+Usage: @adjgroup <group_id>
+Usage: @adjgroup <group_id>
+
+Usage: @changegm <guild_member_name>
+Usage: @changegm <guild_member_name>
+
+Usage: @changeleader <party_member_name>
+Usage: @changeleader <party_member_name>
+
+Usage: @changelook {<position>} <view id>
+Usage: @changelook {<position>} <view id>
+
+Usage: @displayskill <skill ID> {<skill level>}
+Usage: @displayskill <skill ID> {<skill level>}
+
+Usage: @dropall {<type>}
+Usage: @dropall {<type>}
+
+Usage: @jailfor <time> <character name>
+Usage: @jailfor <time> <character name>
+
+Usage: @marry <char name>
+Usage: @marry <char name>
+
+Usage: @mute <time> <char name>
+Usage: @mute <time> <char name>
+
+Usage: @noks <self|party|guild>
+Usage: @noks <self|party|guild>
+
+Usage: @npcmove <X> <Y> <npc_name>
+Usage: @npcmove <X> <Y> <npc_name>
+
+Usage: @partyoption <pickup share: yes/no> <item distribution: yes/no>
+Usage: @partyoption <pickup share: yes/no> <item distribution: yes/no>
+
+Usage: @reloadnpc <path> {<flag>}
+Usage: @reloadnpc <path> {<flag>}
+
+Usage: @request <petition/message to online GMs>.
+Usage: @request <petition/message to online GMs>.
+
+Usage: @set <variable name> <value>
+Usage: @set <variable name> <value>
+
+Usage: @setbattleflag <flag> <value>
+Usage: @setbattleflag <flag> <value>
+
+Usage: @setzone <zone name>
+Usage: @setzone <zone name>
+
+Usage: @skilltree <skill ID> <target>
+Usage: @skilltree <skill ID> <target>
 
 Usage: @unloadnpcfile <file name>
 Usage: @unloadnpcfile <file name>
 
+Usage: @unloadnpcfile <path> {<flag>}
+Usage: @unloadnpcfile <path> {<flag>}
+
+Usage: @useskill <skill ID> <skill level> <target>
+Usage: @useskill <skill ID> <skill level> <target>
+
+Usage: ex. "@set PoringCharVar 50"
+Usage: ex. "@set PoringCharVar 50"
+
+Usage: ex. "@set PoringCharVarSTR$ Super Duper String"
+Usage: ex. "@set PoringCharVarSTR$ Super Duper String"
+
+Usage: ex. "@set PoringCharVarSTR$" outputs its value, Super Duper String.
+Usage: ex. "@set PoringCharVarSTR$" outputs its value, Super Duper String.
+
+Use 0 or no parameter to return to normal font.
+Use 0 or no parameter to return to normal font.
+
+Use @font <1-9> to change your message font.
+Use @font <1-9> to change your message font.
+
+Used %d Kafra points and %d cash points. %d Kafra and %d cash points remaining.
+Used %d Kafra points and %d cash points. %d Kafra and %d cash points remaining.
+
+User '%s' already possesses the '%s' permission.
+User '%s' already possesses the '%s' permission.
+
+User '%s' doesn't possess the '%s' permission.
+User '%s' doesn't possess the '%s' permission.
+
+User '%s' permissions updated successfully. The changes are temporary.
+User '%s' permissions updated successfully. The changes are temporary.
+
+Very well, but for a fee of @@ GP. There's no free lunch, after all!
+Very well, but for a fee of @@ GP. There's no free lunch, after all!
+
+Very well, let's see what you are made of!
+Very well, let's see what you are made of!
+
 Vi sento... (Italiano)
 Vi sento... (Italiano)
 
+Viro
+Viro
+
+Viro Voice
+Viro Voice
+
 Visited Artis at least once
 Visited Artis at least once
+
+Vit: %d (%d~%d)
+Vit: %d (%d~%d)
+
+Voltain#008-1
+Voltain#008-1
+
+WARNING: Items which were at storage cannot be repaired by Sorfina!!
+WARNING: Items which were at storage cannot be repaired by Sorfina!!
+
+WHAT ARE WE WAITING FOR?! START ALREADY!
+WHAT ARE WE WAITING FOR?! START ALREADY!
 
 WHAT DID YOU SAY?
 WHAT DID YOU SAY?
@@ -5491,6 +8485,51 @@ Walk a bit, it'll be easy for you to catch one. Impale one of them for me please
 Walkig around a bit, it'll be easy for you to catch one, I bet. Impale one of them for me please.
 Walkig around a bit, it'll be easy for you to catch one, I bet. Impale one of them for me please.
 
+Wanderer
+Wanderer
+
+Wanderer T
+Wanderer T
+
+War of Emperium SE has been ended.
+War of Emperium SE has been ended.
+
+War of Emperium SE has been initiated.
+War of Emperium SE has been initiated.
+
+War of Emperium SE is currently in progress.
+War of Emperium SE is currently in progress.
+
+War of Emperium SE is currently not in progress.
+War of Emperium SE is currently not in progress.
+
+War of Emperium has been ended.
+War of Emperium has been ended.
+
+War of Emperium has been initiated.
+War of Emperium has been initiated.
+
+War of Emperium is currently in progress.
+War of Emperium is currently in progress.
+
+War of Emperium is currently not in progress.
+War of Emperium is currently not in progress.
+
+Warlock
+Warlock
+
+Warlock T
+Warlock T
+
+Warning: changing your body type will send you back to the character selection screen.
+Warning: changing your body type will send you back to the character selection screen.
+
+Warped.
+Warped.
+
+Warping to save point.
+Warping to save point.
+
 Wave
 Wave
 
@@ -5514,6 +8553,9 @@ We are looking for some merchandise we could trade in our next destination.
 
 We are very lucky, my friend.
 We are very lucky, my friend.
+
+We aren't open yet because Ishi still can't decide how he will hand out the rewards.
+We aren't open yet because Ishi still can't decide how he will hand out the rewards.
 
 We arrived to Artis today.
 We arrived to Artis today.
@@ -5623,8 +8665,17 @@ We will talk about it later.
 We will talk about it later.#1
 We will talk about it later.
 
+Weather Flags:
+Weather Flags:
+
 Weather Flags: 
 Weather Flags: 
+
+Weather effects will disappear after teleporting or refreshing.
+Weather effects will disappear after teleporting or refreshing.
+
+Wedding
+Wedding
 
 Welcome to Candor's Bank!
 Welcome to Candor's Bank!
@@ -5692,6 +8743,9 @@ Well... Welcome aboard, cutie!
 Well...No wait you shouldn't eat it. Better I bring it back.
 Well...No wait you shouldn't eat it. Better I bring it back.
 
+West
+West
+
 What I sell comes from every corner of this archipelago.
 What I sell comes from every corner of this archipelago.
 
@@ -5700,6 +8754,9 @@ What a can do for you?
 
 What am I suposed to say?
 What am I suposed to say?
+
+What are current leaderboard?
+What are current leaderboard?
 
 What are you guys saying ? He's a Yoiis!#0
 What are you guys saying ? He's a Yoiis!
@@ -5746,6 +8803,9 @@ What if I give you 1000 Esperin for that job, is it ok?
 What if I give you 200 Esperin for that job, is it ok?
 What if I give you 200 Esperin for that job, is it ok?
 
+What is a legion soldier even doing here?
+What is a legion soldier even doing here?
+
 What is exactly your real job?
 What is exactly your real job?
 
@@ -5757,6 +8817,9 @@ What is this \
 
 What is this \"legion\"?
 What is this \"legion\"?
+
+What is this place anyway?
+What is this place anyway?
 
 What kind of  help do you need?
 What kind of  help do you need?
@@ -5833,6 +8896,9 @@ Where are my old cloths?
 Where can I find Julia?
 Where can I find Julia?
 
+Where is Juliet? I want to know where she is! Please, find her, %s!
+Where is Juliet? I want to know where she is! Please, find her, %s!
+
 Where is the damn salt!? Give me the salt. I know you have it!
 Where is the damn salt!? Give me the salt. I know you have it!
 
@@ -5854,6 +8920,9 @@ Which one?
 While Jalad and Ale like to work together, as they use to do on the ship, last time I've seen them, they were near the big lake, north from here.
 While Jalad and Ale like to work together, as they use to do on the ship, last time I've seen them, they were near the big lake, north from here.
 
+Whitesmith
+Whitesmith
+
 Who are yeye searching?
 Who are yeye searching?
 
@@ -5862,6 +8931,9 @@ Who are you searching for?
 
 Who are you searching?
 Who are you searching?
+
+Who dares to disturb my slumber?
+Who dares to disturb my slumber?
 
 Who is this Julia?
 Who is this Julia?
@@ -5896,6 +8968,9 @@ Why are you hiding?
 Why don't you go outside?
 Why don't you go outside?
 
+Why don't you look an article about it on this [@@%s|tour guide@@], instead?
+Why don't you look an article about it on this [@@%s|tour guide@@], instead?
+
 Why don't you show me a main ingredient, and I'll tell you what can be done?
 Why don't you show me a main ingredient, and I'll tell you what can be done?
 
@@ -5923,14 +8998,23 @@ With my old fishing rod you can catch something every day.
 With no choir master nor voice to be sung
 With no choir master nor voice to be sung
 
+With script
+With script
+
 With the growth of the Kingdom halted, slow maintenance, and two great famines which killed over half the human population, the council decided to seize power and depose Platyna the Red.
 With the growth of the Kingdom halted, slow maintenance, and two great famines which killed over half the human population, the council decided to seize power and depose Platyna the Red.
+
+With the growth of the Kingdom halted, slow maintenance, and two great famines which killed over half the viro population, the council decided to seize power and depose Platyna the Red.
+With the growth of the Kingdom halted, slow maintenance, and two great famines which killed over half the viro population, the council decided to seize power and depose Platyna the Red.
 
 With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their buisness.
 With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their buisness.
 
 With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their business.
 With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their business.
+
+Wizard
+Wizard
 
 Words become music and glance
 Words become music and glance
@@ -5940,6 +9024,9 @@ Wyara#008-2-7
 
 YOU NEED TO WALK NORTH!
 YOU NEED TO WALK NORTH!
+
+Yadda yadda yadda, random stuff about war and fallen warriors or whatever.
+Yadda yadda yadda, random stuff about war and fallen warriors or whatever.
 
 Yaya, you should go see her! She will be happy to see you.
 Yaya, you should go see her! She will be happy to see you.
@@ -5964,6 +9051,15 @@ Yayayaya, it's the first time someone is dressed worse then us!
 
 Yeah you're all like *hick* that in Esperia, but you won't get me! *burp*
 Yeah you're all like *hick* that in Esperia, but you won't get me! *burp*
+
+Yeah, I have the money. Give me FIFTEEN minutes, and Bring it on!
+Yeah, I have the money. Give me FIFTEEN minutes, and Bring it on!
+
+Yeah, I have the money. Give me FIVE minutes, and Bring it on!
+Yeah, I have the money. Give me FIVE minutes, and Bring it on!
+
+Yeah, I have the money. Give me TEN minutes, and Bring it on!
+Yeah, I have the money. Give me TEN minutes, and Bring it on!
 
 Yeah, nice indeed!
 Yeah, nice indeed!
@@ -6091,6 +9187,18 @@ Yeye, you still did not get your clothes!
 Yeye, you still did not get your clothes!#1
 Yeye, you still did not get your clothes!
 
+You already are at your destination!
+You already are at your destination!
+
+You already have a homunculus
+You already have a homunculus
+
+You already have a pet.
+You already have a pet.
+
+You already have this quest skill.
+You already have this quest skill.
+
 You already looked here
 You already looked here
 
@@ -6109,6 +9217,15 @@ You already took a Bandana, put this one back please.
 You also earned the right to enter the Legion building.
 You also earned the right to enter the Legion building.
 
+You are NOT allowed to have multiple Vault accounts.
+You are NOT allowed to have multiple Vault accounts.
+
+You are a deserter! Wait %u minute(s) before you can apply again
+You are a deserter! Wait %u minute(s) before you can apply again
+
+You are a deserter! Wait %u seconds before you can apply again
+You are a deserter! Wait %u seconds before you can apply again
+
 You are a handsome and good looking bird!
 You are a handsome and good looking bird!
 
@@ -6117,6 +9234,9 @@ You are actually on a ship, we're on our way to the commercial capital of Artis.
 
 You are actually on a ship, we're on our way to the commercial capital of Artis. 
 You are actually on a ship, we're on our way to the commercial capital of Artis. 
+
+You are already mounting something else
+You are already mounting something else
 
 You are already registered here.
 You are already registered here.
@@ -6133,8 +9253,47 @@ You are honnest, I like it.
 You are new around here, right?
 You are new around here, right?
 
+You are no longer killable.
+You are no longer killable.
+
+You are no longer the Guild Master.
+You are no longer the Guild Master.
+
+You are not allowed to reduce the length of a ban.
+You are not allowed to reduce the length of a ban.
+
+You are not authorized to warp from your current map.
+You are not authorized to warp from your current map.
+
+You are not authorized to warp someone to this map.
+You are not authorized to warp someone to this map.
+
+You are not authorized to warp someone to your current map.
+You are not authorized to warp someone to your current map.
+
+You are not authorized to warp this player from their map.
+You are not authorized to warp this player from their map.
+
+You are not authorized to warp to this map.
+You are not authorized to warp to this map.
+
+You are not authorized to warp to your save map.
+You are not authorized to warp to your save map.
+
+You are not in a guild.
+You are not in a guild.
+
+You are not in jail.
+You are not in jail.
+
+You are now
+You are now
+
 You are now divorced!
 You are now divorced!
+
+You are now immune to attacks.
+You are now immune to attacks.
 
 You are now part of the crew! Thanks again for your help.
 You are now part of the crew! Thanks again for your help.
@@ -6175,8 +9334,20 @@ You are the Phoenix of this forest.\
 You are the Phoenix of this forest.\"
 You are the Phoenix of this forest.\"
 
+You are too close to a stone or emperium to do this skill
+You are too close to a stone or emperium to do this skill
+
 You are too weak, what is a piece of bone like you doing around here?
 You are too weak, what is a piece of bone like you doing around here?
+
+You are unable to change your job.
+You are unable to change your job.
+
+You broke the target's weapon.
+You broke the target's weapon.
+
+You can already rename your pet.
+You can already rename your pet.
 
 You can attack a monster by clicking on it or from your keyboard you can press the 'A' key to select the monster followed by 'Ctrl' to attack it.
 You can attack a monster by clicking on it or from your keyboard you can press the 'A' key to select the monster followed by 'Ctrl' to attack it.
@@ -6211,8 +9382,23 @@ You can go to your right to go to the upper level.
 You can go to your right to go to the upper level.#1
 You can go to your right to go to the upper level.
 
+You can have %d items on your autolootitem list.
+You can have %d items on your autolootitem list.
+
 You can keep your current party as it, while leading or being part of a guild in order to talk and share different items with all of its members!
 You can keep your current party as it, while leading or being part of a guild in order to talk and share different items with all of its members!
+
+You can not change to this job by command.
+You can not change to this job by command.
+
+You can now attack and kill players freely.
+You can now attack and kill players freely.
+
+You can now be attacked and killed by players.
+You can now be attacked and killed by players.
+
+You can now rename your pet.
+You can now rename your pet.
 
 You can spot Q'Muller on a cliff off toward the west, busy collecting @@s.
 You can spot Q'Muller on a cliff off toward the west, busy collecting @@s.
@@ -6223,6 +9409,9 @@ You can spot Q'Muller on a cliff on the west busy collecting @@s.
 You can try to talk with some other sailors to get more information about this.
 You can try to talk with some other sailors to get more information about this.
 
+You can try, but your chance of success is lesser than a well trained smith and master craftsman.
+You can try, but your chance of success is lesser than a well trained smith and master craftsman.
+
 You can yaye some @@ by hitting these palm trees.
 You can yaye some @@ by hitting these palm trees.
 
@@ -6232,20 +9421,98 @@ You can yaye some @@s by hitting these crocotrees.
 You can yaye some @@s by hitting these palm trees.
 You can yaye some @@s by hitting these palm trees.
 
+You can't add a guild bound item to a character without guild!
+You can't add a guild bound item to a character without guild!
+
+You can't add a party bound item to a character without party!
+You can't add a party bound item to a character without party!
+
+You can't clean a cart while vending!
+You can't clean a cart while vending!
+
+You can't create chat rooms in this map
+You can't create chat rooms in this map
+
+You can't drop items in this map
+You can't drop items in this map
+
 You can't go there!
 You can't go there!
+
+You can't join in a clan if you're in a guild.
+You can't join in a clan if you're in a guild.
 
 You can't join the sword training clothed that way.
 You can't join the sword training clothed that way.
 
+You can't leave battleground guilds.
+You can't leave battleground guilds.
+
+You can't open a shop in this map
+You can't open a shop in this map
+
+You can't open a shop on this cell.
+You can't open a shop on this cell.
+
+You can't reapply to this arena so fast. Apply to the different arena or wait %u minute(s)
+You can't reapply to this arena so fast. Apply to the different arena or wait %u minute(s)
+
+You can't reapply to this arena so fast. Apply to the different arena or wait %u seconds
+You can't reapply to this arena so fast. Apply to the different arena or wait %u seconds
+
+You can't return your pet because your inventory is full.
+You can't return your pet because your inventory is full.
+
+You can't trade in this map
+You can't trade in this map
+
+You can't use commands while dead.
+You can't use commands while dead.
+
 You can't use the shovel here.
 You can't use the shovel here.
+
+You can't withdraw that much money
+You can't withdraw that much money
+
+You cannot autotrade when dead.
+You cannot autotrade when dead.
+
+You cannot change guild leaders in this map.
+You cannot change guild leaders in this map.
+
+You cannot change party leaders in this map.
+You cannot change party leaders in this map.
+
+You cannot decrease that stat anymore.
+You cannot decrease that stat anymore.
+
+You cannot increase that stat anymore.
+You cannot increase that stat anymore.
+
+You cannot join the '%s' channel because you've been banned from it
+You cannot join the '%s' channel because you've been banned from it
+
+You cannot send a message to this channel for another %d seconds.
+You cannot send a message to this channel for another %d seconds.
+
+You cannot use this command when dead.
+You cannot use this command when dead.
+
+You cannot use this item while sitting
+You cannot use this item while sitting
+
+You cannot use this item while your storage is open
+You cannot use this item while your storage is open
 
 You close your eyes a few seconds...
 You close your eyes a few seconds...
 
 You could start talking to Gugli. He always has tasks for people willing to help
 You could start talking to Gugli. He always has tasks for people willing to help
+
+You currently cannot open your storage.
+You currently cannot open your storage.
 
 You currently have @@ on your bank account.
 You currently have @@ on your bank account.
@@ -6265,8 +9532,17 @@ You dirty liar. I will add your name on the traitors list.
 You do not give me much options.
 You do not give me much options.
 
+You do not have a cart to be cleaned.
+You do not have a cart to be cleaned.
+
+You do not have a homunculus.
+You do not have a homunculus.
+
 You do not have the item!
 You do not have the item!
+
+You do not possess a cart to be removed
+You do not possess a cart to be removed
 
 You do not seem to have enough money on yourself, come back later!
 You do not seem to have enough money on yourself, come back later!
@@ -6295,6 +9571,12 @@ You don't have enough money, bring @@E.
 You don't have enough room in your backpack for a @@. Get rid of some junk and come back.
 You don't have enough room in your backpack for a @@. Get rid of some junk and come back.
 
+You don't have this quest skill.
+You don't have this quest skill.
+
+You don't know how to make a sandwich with that.
+You don't know how to make a sandwich with that.
+
 You don't remember anything before this.
 You don't remember anything before this.
 
@@ -6304,14 +9586,77 @@ You fell asleep.
 You got married to @@!
 You got married to @@!
 
+You have %d new emails (%d unread)
+You have %d new emails (%d unread)
+
+You have a level for each of your gear, by default when you buy or craft a piece, the level is set to 1.
+You have a level for each of your gear, by default when you buy or craft a piece, the level is set to 1.
+
+You have already opened your guild storage. Close it first.
+You have already opened your guild storage. Close it first.
+
+You have already opened your storage. Close it first.
+You have already opened your storage. Close it first.
+
 You have an awful amnesia.
 You have an awful amnesia.
+
+You have become the Guild Master!
+You have become the Guild Master!
+
+You have been jailed by a GM.
+You have been jailed by a GM.
+
+You have been jailed for an unknown amount of time.
+You have been jailed for an unknown amount of time.
+
+You have been jailed indefinitely.
+You have been jailed indefinitely.
+
+You have been recovered!
+You have been recovered!
 
 You have been so nice with me. So, please, take one.
 You have been so nice with me. So, please, take one.
 
 You have extremely bad amnesia.
 You have extremely bad amnesia.
+
+You have forgotten the skill.
+You have forgotten the skill.
+
+You have learned the skill.
+You have learned the skill.
+
+You have mounted a Peco Peco.
+You have mounted a Peco Peco.
+
+You have mounted your Dragon.
+You have mounted your Dragon.
+
+You have mounted your Mado Gear.
+You have mounted your Mado Gear.
+
+You have mounted your Warg.
+You have mounted your Warg.
+
+You have mounted.
+You have mounted.
+
+You have released your Dragon.
+You have released your Dragon.
+
+You have released your Mado Gear.
+You have released your Mado Gear.
+
+You have released your Peco Peco.
+You have released your Peco Peco.
+
+You have released your Warg.
+You have released your Warg.
+
+You have released your mount.
+You have released your mount.
 
 You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of the damn sailor brought here that 'nice' lady.
 You have to know that there was a time during which I was the unopposed lieutenant of this crew. Then one day one of the damn sailor brought here that 'nice' lady.
@@ -6376,11 +9721,23 @@ You look really amnesic indeed.
 You made a cash deposit of @@E.
 You made a cash deposit of @@E.
 
+You may search partial name by making use of '%' in the search, ex. "@accinfo %Mario%" lists all characters whose name contains "Mario".
+You may search partial name by making use of '%' in the search, ex. "@accinfo %Mario%" lists all characters whose name contains "Mario".
+
 You mentioned the quality of your wine
 You mentioned the quality of your wine
 
 You might even get lucky, and get a @@.
 You might even get lucky, and get a @@.
+
+You must enter a name.
+You must enter a name.
+
+You must enter a player name or ID.
+You must enter a player name or ID.
+
+You need %s to mount!
+You need %s to mount!
 
 You need at least one of these: 
 You need at least one of these: 
@@ -6388,8 +9745,17 @@ You need at least one of these:
 You need one of these: 
 You need one of these: 
 
+You need to be a Guild Master to use this command.
+You need to be a Guild Master to use this command.
+
 You need to be a member of the Merchant Guild to have a stand there.
 You need to be a member of the Merchant Guild to have a stand there.
+
+You need to be a party leader to use this command.
+You need to be a party leader to use this command.
+
+You need to input a option
+You need to input a option
 
 You need to walk north!!
 You need to walk north!!
@@ -6490,6 +9856,9 @@ You receive a @@!
 You received @@ exp and @@E.
 You received @@ exp and @@E.
 
+You request has been rejected by autoreject option.
+You request has been rejected by autoreject option.
+
 You search the tree but don't find anybody
 You search the tree but don't find anybody
 
@@ -6537,6 +9906,9 @@ You should come back when you'll have some free space.
 
 You should discuss with Don and Calypsan if you want to learn more about it, they are master on this area!
 You should discuss with Don and Calypsan if you want to learn more about it, they are master on this area!
+
+You should have a shop open in order to use @autotrade.
+You should have a shop open in order to use @autotrade.
 
 You should inform Nard about the loading progress of the food on to the boat. He will be pleased to hear that good news!
 You should inform Nard about the loading progress of the food on to the boat. He will be pleased to hear that good news!
@@ -6688,6 +10060,9 @@ You will be able to find her in the market on the south-west of Artis.
 You will be able to find her on the market on the south-east of Artis.
 You will be able to find her on the market on the south-east of Artis.
 
+You will remain
+You will remain
+
 You will see, citizens are polite and you can still ask for help in the Warrior Guild. They can help find a job for you or maybe help you find out what happened to you out at sea!
 You will see, citizens are polite and you can still ask for help in the Warrior Guild. They can help find a job for you or maybe help you find out what happened to you out at sea!
 
@@ -6703,8 +10078,26 @@ You withdrawn a total of @@E.
 You'll need to bring me @@ @@ and @@ @@ for the recipe.
 You'll need to bring me @@ @@ and @@ @@ for the recipe.
 
+You're already autolooting this item type.
+You're already autolooting this item type.
+
+You're already autolooting this item.
+You're already autolooting this item.
+
+You're already in the '%s' channel
+You're already in the '%s' channel
+
+You're already with a '%s' costume, type '@costume' to remove it.
+You're already with a '%s' costume, type '@costume' to remove it.
+
 You're confusing me with another.
 You're confusing me with another.
+
+You're currently not autolooting this item type.
+You're currently not autolooting this item type.
+
+You're currently not autolooting this item.
+You're currently not autolooting this item.
 
 You're in my way.
 You're in my way.
@@ -6720,6 +10113,36 @@ You're looking confident, I give you my old gear as reward and acknowledgment of
 
 You're looking confident, I'll give you my old gear as reward and acknowledgment for your time, and take these potions as well!
 You're looking confident, I'll give you my old gear as reward and acknowledgment for your time, and take these potions as well!
+
+You're not allowed to talk on this channel
+You're not allowed to talk on this channel
+
+You're not dead.
+You're not dead.
+
+You're not disguised.
+You're not disguised.
+
+You're not in a guild.
+You're not in a guild.
+
+You're not in that channel, type '@join <#channel_name>'
+You're not in that channel, type '@join <#channel_name>'
+
+You're not part of the '%s' channel
+You're not part of the '%s' channel
+
+You're not the master of your guild.
+You're not the master of your guild.
+
+You're not the owner of channel '%s'
+You're not the owner of channel '%s'
+
+You're now in the '#%s' channel for '%s'
+You're now in the '#%s' channel for '%s'
+
+You're now in the '%s' channel
+You're now in the '%s' channel
 
 You're on my way.
 You're on my way.
@@ -6745,17 +10168,92 @@ You're right, it's about you.
 You're talking too fast!
 You're talking too fast!
 
+You're too close to a NPC, you must be at least %d cells away from any NPC.
+You're too close to a NPC, you must be at least %d cells away from any NPC.
+
+You've become the party leader.
+You've become the party leader.
+
+You've been revived!
+You've been revived!
+
+You've died.
+You've died.
+
+You've left the '%s' channel
+You've left the '%s' channel
+
+You've reached your slave clones limit.
+You've reached your slave clones limit.
+
 You?? Here??
 You?? Here??
+
+Your GM level doesn't authorize you to %s the player '%.*s'.
+Your GM level doesn't authorize you to %s the player '%.*s'.
+
+Your GM level doesn't authorize you to perform this action on the specified player.
+Your GM level doesn't authorize you to perform this action on the specified player.
+
+Your GM level doesn't authorize you to perform this action.
+Your GM level doesn't authorize you to perform this action.
+
+Your Game's EXE file is not the latest version.
+Your Game's EXE file is not the latest version.
 
 Your account has 'Unregistered'.
 Your account has 'Unregistered'.
 
+Your account has an 'Incorrect Password'...
+Your account has an 'Incorrect Password'...
+
+Your account has been banished until
+Your account has been banished until
+
 Your account has been banished until 
 Your account has been banished until 
 
+Your account has been blocked by the GM Team.
+Your account has been blocked by the GM Team.
+
+Your account has been prohibited to log in.
+Your account has been prohibited to log in.
+
+Your account has been rejected from server.
+Your account has been rejected from server.
+
+Your account has been totally erased.
+Your account has been totally erased.
+
+Your account has expired.
+Your account has expired.
+
 Your account has not more authorized.
 Your account has not more authorized.
+
+Your account is 'Unregistered'.
+Your account is 'Unregistered'.
+
+Your account is no longer authorized.
+Your account is no longer authorized.
+
+Your account time limit is: %d-%m-%Y %H:%M:%S.
+Your account time limit is: %d-%m-%Y %H:%M:%S.
+
+Your autolootitem list has been reset.
+Your autolootitem list has been reset.
+
+Your autolootitem list is empty.
+Your autolootitem list is empty.
+
+Your autolootitem list is full. Remove some items first with @autolootid -<item name or ID>.
+Your autolootitem list is full. Remove some items first with @autolootid -<item name or ID>.
+
+Your autoloottype list has been reset.
+Your autoloottype list has been reset.
+
+Your autoloottype list is empty.
+Your autoloottype list is empty.
 
 Your body aches, even your hair hurts, and the daylight is painful; but still you open your eyes and see a large ship before you!
 Your body aches, even your hair hurts, and the daylight is painful; but still you open your eyes and see a large ship before you!
@@ -6765,6 +10263,39 @@ Your brain liquefied to equal the level of a piou! It's the Legion of Aemil.
 
 Your brain liquefied to match the level of a piou! It's the Legion of Aemil.
 Your brain liquefied to match the level of a piou! It's the Legion of Aemil.
+
+Your cart was cleaned.
+Your cart was cleaned.
+
+Your class can't mount!
+Your class can't mount!
+
+Your current memo positions are:
+Your current memo positions are:
+
+Your current score: @@
+Your current score: @@
+
+Your effect has changed.
+Your effect has changed.
+
+Your global chat is no longer bound to the '#%s' channel
+Your global chat is no longer bound to the '#%s' channel
+
+Your global chat is not bound to any channel
+Your global chat is not bound to any channel
+
+Your global chat is now bound to the '%s' channel
+Your global chat is now bound to the '%s' channel
+
+Your group has been changed.
+Your group has been changed.
+
+Your guild storage was cleaned.
+Your guild storage was cleaned.
+
+Your guild's storage has already been opened by another member, try again later.
+Your guild's storage has already been opened by another member, try again later.
 
 Your hands are too weak, you did not succeed in opening this @@.
 Your hands are too weak, you did not succeed in opening this @@.
@@ -6778,14 +10309,29 @@ Your hands are too weak, you didn't open the Croconut.
 Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only.
 Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only.
 
+Your homunculus doesn't evolve.
+Your homunculus doesn't evolve.
+
+Your job has been changed.
+Your job has been changed.
+
 Your position has been saved.
 Your position has been saved.
 
 Your position is saved.
 Your position is saved.
 
+Your save point has been changed.
+Your save point has been changed.
+
+Your sex has been changed (disconnection required to complete the process)...
+Your sex has been changed (disconnection required to complete the process)...
+
 Your sister sent me to find you. Your mother is worried.
 Your sister sent me to find you. Your mother is worried.
+
+Your storage was cleaned.
+Your storage was cleaned.
 
 Yummy bakery aromas have roused monsieur's curiosity, is it not so?
 Yummy bakery aromas have roused monsieur's curiosity, is it not so?
@@ -6793,8 +10339,56 @@ Yummy bakery aromas have roused monsieur's curiosity, is it not so?
 Yummy bakery aromas have stirred madam's curiosity, am I right?
 Yummy bakery aromas have stirred madam's curiosity, am I right?
 
+Zone not found. Keep in mind that the names are CaSe SenSitiVe.
+Zone not found. Keep in mind that the names are CaSe SenSitiVe.
+
+Zone successfully changed from '%s' to '%s'.
+Zone successfully changed from '%s' to '%s'.
+
 Zzzzzzzzzz
 Zzzzzzzzzz
+
+[ #%s ] User IRC.%s is now known as IRC.%s
+[ #%s ] User IRC.%s is now known as IRC.%s
+
+[ #%s ] User IRC.%s joined the channel.
+[ #%s ] User IRC.%s joined the channel.
+
+[ #%s ] User IRC.%s left the channel. [%s]
+[ #%s ] User IRC.%s left the channel. [%s]
+
+[ #%s ] User IRC.%s left the channel. [Quit: %s]
+[ #%s ] User IRC.%s left the channel. [Quit: %s]
+
+[ K.S Protection Active - Option: Guild ]
+[ K.S Protection Active - Option: Guild ]
+
+[ K.S Protection Active - Option: Party ]
+[ K.S Protection Active - Option: Party ]
+
+[ K.S Protection Active - Option: Self ]
+[ K.S Protection Active - Option: Self ]
+
+[ K.S Protection Inactive ]
+[ K.S Protection Inactive ]
+
+[ Kill Steal Protection Disabled. KS is allowed in this map ]
+[ Kill Steal Protection Disabled. KS is allowed in this map ]
+
+[ Map K.S Protection Active ]
+[ Map K.S Protection Active ]
+
+[ Map K.S Protection Inactive ]
+[ Map K.S Protection Inactive ]
+
+[ ^EE0000%s^000000 ]
+[ ^EE0000%s^000000 ]
+
+[%d] seconds left until you can use
+[%d] seconds left until you can use
+
+[KS Warning!! - Owner : %s]
+[KS Warning!! - Owner : %s]
 
 [Narrator]
 [Narrator]
@@ -6808,8 +10402,14 @@ Zzzzzzzzzz
 [Trade]
 [Trade]
 
+[Watch out! %s is trying to KS you!]
+[Watch out! %s is trying to KS you!]
+
 [Yes]
 [Yes]
+
+[^EE0000%s^000000]
+[^EE0000%s^000000]
 
 \
 \
@@ -6823,20 +10423,44 @@ Zzzzzzzzzz
 and 
 and 
 
+ban
+ban
+
+block
+block
+
+body/armor,
+body/armor,
+
 body/armor, 
 body/armor, 
 
 boobed
 boobed
 
+boobs
+boobs
+
+both hands,
+both hands,
+
 both hands, 
 both hands, 
+
+change the sex of
+change the sex of
+
+conf/import/msg_conf.txt
+conf/import/msg_conf.txt
 
 day
 day
 
 days
 days
+
+feet,
+feet,
 
 feet, 
 feet, 
@@ -6877,6 +10501,9 @@ flags/ru
 flags/vls
 flags/vls
 
+garment,
+garment,
+
 garment, 
 garment, 
 
@@ -6886,32 +10513,56 @@ hour
 hours
 hours
 
+i.e. Deleting the rEvolt char will delete the Legacy char associated to it. This includes levels, inventory, etc.
+i.e. Deleting the rEvolt char will delete the Legacy char associated to it. This includes levels, inventory, etc.
+
 in @@
 in @@
 
 is helping me.
 is helping me.
 
+left accessory,
+left accessory,
+
 left accessory, 
 left accessory, 
+
+left hand,
+left hand,
 
 left hand, 
 left hand, 
 
+lower head,
+lower head,
+
 lower head, 
 lower head, 
+
+lower/mid head,
+lower/mid head,
 
 lower/mid head, 
 lower/mid head, 
 
+lower/mid/top head,
+lower/mid/top head,
+
 lower/mid/top head, 
 lower/mid/top head, 
+
+lower/top head,
+lower/top head,
 
 lower/top head, 
 lower/top head, 
 
 marriage1
 marriage1
+
+mid head,
+mid head,
 
 mid head, 
 mid head, 
@@ -6922,6 +10573,9 @@ minute
 minutes
 minutes
 
+neutral
+neutral
+
 npc1
 npc1
 
@@ -6931,8 +10585,29 @@ npc1#door
 npc4
 npc4
 
+option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
+option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
+
+option '%s' is not enabled on channel '%s'
+option '%s' is not enabled on channel '%s'
+
+option '%s' is now disabled for channel '%s'
+option '%s' is now disabled for channel '%s'
+
+option '%s' is now enabled for channel '%s'
+option '%s' is now enabled for channel '%s'
+
+option '%s' is now enabled for channel '%s' with %d seconds
+option '%s' is now enabled for channel '%s' with %d seconds
+
+right accessory,
+right accessory,
+
 right accessory, 
 right accessory, 
+
+right hand,
+right hand,
 
 right hand, 
 right hand, 
@@ -6943,11 +10618,32 @@ second
 seconds
 seconds
 
+skill %d: %s (%s)
+skill %d: %s (%s)
+
+tanky
+tanky
+
+top head,
+top head,
+
 top head, 
 top head, 
 
 tricked thus again.
 tricked thus again.
+
+unban
+unban
+
+unblock
+unblock
+
+usage @camerainfo range rotation latitude
+usage @camerainfo range rotation latitude
+
+value '%d' for option '%s' is out of range (limit is 0-%d)
+value '%d' for option '%s' is out of range (limit is 0-%d)
 
 value '%d' for option '%s' is out of range (limit is 0-10)
 value '%d' for option '%s' is out of range (limit is 0-10)
@@ -6957,6 +10653,18 @@ year
 
 years
 years
+
+| Guild: '%s'
+| Guild: '%s'
+
+| Location: %s %d %d
+| Location: %s %d %d
+
+| Lv:%d/%d | Job: %s
+| Lv:%d/%d | Job: %s
+
+| Party: '%s'
+| Party: '%s'
 
 | Party: '%s' 
 | Party: '%s' 
