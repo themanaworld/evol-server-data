@@ -14,7 +14,7 @@ function	script	checkclientversion	{
     next;
     mes col("Not all features will work.", 9);
     next;
-    mes col("Please install the new client from http://www.evolonline.org/ or http://manaplus.org/", 9);
+    mesc l("Please install the new client from %s.", "[@@https://manaplus.org/|@@]");
     next;
     return;
 }
