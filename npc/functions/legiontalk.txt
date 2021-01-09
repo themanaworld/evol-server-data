@@ -46,7 +46,7 @@ function	script	legiontalk	{
             npctalkonce(l("I can't stay here and talk all day. I have a job to do."));
             break;
         case 10:
-            npctalkonce(l("Keep moving!");
+            npctalkonce(l("Keep moving!"));
             break;
         case 11:
             npctalkonce(l("So you think you're tough? A warrior must also be loyal and patient."));
