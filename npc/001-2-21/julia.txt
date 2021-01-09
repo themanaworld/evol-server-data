@@ -9,7 +9,7 @@
 
 001-2-21,27,24,0	script	Julia#Artis	NPC_JULIA,{
     mesn;
-    mesq lg("Hello dear!");
+    mesq l("Hello dear!");
     next;
     mesq l("What do you want today?");
     next;
@@ -22,7 +22,7 @@ L_Menu:
     menu
         rif(getskilllv(1) < 6, l("Something is wrong with me, I can't smile nor sit.")), L_BasicSkill,
         rif(.@enora == 0, l("Where should I go?")), L_Enora,
-        lg("I made a mistake, I would like to change my language."), L_ChooseLang,
+        l("I made a mistake, I would like to change my language."), L_ChooseLang,
         l("Is it possible to go back to Drasil Island?"), L_Island,
         l("Could you explain to me where I am?"), L_WhereIam,
         l("What happened to me?"), L_What,
@@ -68,7 +68,7 @@ L_WhereIam:
     next;
     mesq l("Somebody is waiting for you outside!");
     next;
-    mesq lg("Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.");
+    mesq l("Like the rest of the crew, you are welcome to come and rest here at anytime during your journey on Artis.");
     next;
     mesq l("Do you have any other questions for me?");
     next;
@@ -78,9 +78,9 @@ L_WhereIam:
 L_What:
     mes "";
     mesn;
-    mesq lg("We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.");
+    mesq l("We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.");
     next;
-    mesq lg("You were in bad shape, you should be happy we found you before the sea killed you.");
+    mesq l("You were in bad shape, you should be happy we found you before the sea killed you.");
     next;
     mesq l("Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?");
     next;

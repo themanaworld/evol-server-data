@@ -7,7 +7,7 @@
 001-1,185,107,0	script	Elmo#001-1	NPC_ELMO_ARTIS,{
     speech
         l("Oh hey!"),
-        lg("If you feel bored or anxious, you can always ask some of the people around Artis if they need your help.");
+        l("If you feel bored or anxious, you can always ask some of the people around Artis if they need your help.");
         l("It's better than running around in circles doing nothing.");
 
     close;

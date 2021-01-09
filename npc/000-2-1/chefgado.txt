@@ -90,7 +90,7 @@ L_Rude:
 
     mes "";
     mesn;
-    mesq lg("Well, eh-heh... Welcome aboard, cutie!", "Well, eh-heh... Welcome aboard, son!");
+    mesq l("Well, eh-heh... Welcome aboard, young fellow!");
     next;
     mesq l("I just realized I am lacking some common things, and one key ingredient, to prepare a... A special recipe.");
     next;
@@ -106,7 +106,7 @@ L_Rude:
     setq ShipQuests_ChefGado, 1;
     mes "";
     mesn;
-    mesq lg("Well done! Collect all the ingredients and then come back here. You will be rewarded once I am satisfied that they understand who rules this ship!");
+    mesq l("Well done! Collect all the ingredients and then come back here. You will be rewarded once I am satisfied that they understand who rules this ship!");
     next;
     mesq l("Before you go, let me tell you how to get @@s, because you don't look very smart.", getitemlink(HalfCroconut));
 
@@ -126,8 +126,7 @@ L_QuestAccepted:
 L_OpenCroconut:
     mes "";
     mesn;
-    mesq lg("Take a @@ and try opening it using something like a sharp knife. I doubt you'll succeed, you're being so weak in everything.",
-            "Take a @@ and try opening it using something like a sharp knife. I doubt you'll succeed, you're being so weak in everything.", getitemlink(Croconut));
+    mesq l("Take a @@ and try opening it using something like a sharp knife. I doubt you'll succeed, you're being so weak in everything.", getitemlink(Croconut));
     next;
     mesq l("Now move!");
 
@@ -202,7 +201,7 @@ L_Aborting:
     mesn;
     mesq l("Are you mad?!");
     next;
-    mesq lg("Give me back this dish, you dirty liar!");
+    mesq l("Give me back this dish, you dirty liar!");
 
     if (countitem(PoisonedDish) > 0) delitem PoisonedDish, 1;
 
@@ -213,7 +212,7 @@ L_Aborting:
 
 L_QuestAborted:
     mesn;
-    mesq lg("You're like the rest of this filthy crew. Your name is now on the traitors list!");
+    mesq l("You're like the rest of this filthy crew. Your name is now on the traitors list!");
 
     close;
 

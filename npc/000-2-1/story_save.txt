@@ -14,7 +14,7 @@ OnClick:
         narrator S_LAST_NEXT,
             l("You lie in the bed."),
             l("Your head is suddently heavy, your eyes are closing..."),
-            lg("You fell asleep.");
+            l("You fell asleep.");
 
         warp "000-0-1", 26, 28;
     }

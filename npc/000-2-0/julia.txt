@@ -178,7 +178,7 @@
         mesn;
         mesq l("We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.");
         next;
-        mesq lg("You were in bad shape, you should be happy we found you before the sea killed you.");
+        mesq l("You were in bad shape, you should be happy we found you before the sea killed you.");
         next;
         mesq l("Oh, and there was this inscription on your raft. It represents the Legion of Aemil, one of the four main guilds of Gasaron. Does that help you remember anything, anything at all?");
         next;
@@ -219,7 +219,7 @@
                 rif(.@q2 == 2 && countitem(PoisonedDish), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")),
                 rif(.@q2 == 2 && countitem(PoisonedDish), l("I have brought you a tasty present for your delicate mouth.")),
                 rif(getskilllv(NV_BASIC) < 6, l("Something is wrong with me, I can't smile nor sit.")),
-                lg("I made a mistake, I would like to change my language."),
+                l("I made a mistake, I would like to change my language."),
                 l("Could you explain to me where I am?"),
                 l("What happened to me?"),
                 l("Can I read these rules again?"),
@@ -242,7 +242,7 @@
     }
 
     mesn;
-    mesq lg("Hello dear!");
+    mesq l("Hello dear!");
     next;
     mesq l("What do you want today?");
     next;
@@ -260,7 +260,7 @@ OnTouch:
     next;
     mesq l("My name is Julia, it is me who took care of you after we found you in the sea.");
     next;
-    mesq lg("I'm glad to see you're okay.");
+    mesq l("I'm glad to see you're okay.");
     next;
 
     mesq l("I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.");

@@ -64,9 +64,9 @@ function	script	ConfirmStatusReset	{
     //mesc l("WARNING: Permanent boosts will return to their fruit form."), 1;
     mesc l("WARNING: Status resets cannot be reverted!"), 1;
 
-    switch (select(lg("Yes, I am sure. Please reset my status!"),
-                   lg("I need to think about it..."),
-                   lg("I won't need it, thank you.")))
+    switch (select(l("Yes, I am sure. Please reset my status!"),
+                   l("I need to think about it..."),
+                   l("I won't need it, thank you.")))
     {
         case 1:
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,

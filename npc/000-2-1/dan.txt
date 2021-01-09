@@ -35,7 +35,7 @@ L_QuestStory:
     mesn;
     mesq l("Oh, it's you.");
     next;
-    mesq lg("So, you finally woke up? We all thought you were in something like... You know, one of these long comas.");
+    mesq l("So, you finally woke up? We all thought you were in something like... You know, one of these long comas.");
     next;
 
     menu
@@ -56,7 +56,7 @@ L_QuestStory:
 
     mes "";
     mesn;
-    mesq lg("There's nothing to say, don't worry miss.", "There's nothing to say, don't worry sir.");
+    mesq l("There's nothing to say, don't worry.");
 
     close;
 

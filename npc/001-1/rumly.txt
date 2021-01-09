@@ -31,7 +31,7 @@ L_Menu:
         l("Plushrooms you say?"),
         l("Who are you?"),
         rif(.@visited >  0, l("Can you reset my stats please?")),
-        lg("You are weird, I have to go sorry.");
+        l("You are weird, I have to go sorry.");
 
     switch (@menu)
     {
@@ -42,8 +42,8 @@ L_Menu:
             goto L_Menu;
         case 2:
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                lg("Why are you asking? And who are you too? I've never seen you around before..."),
-                lg("Wait, are you one of those from the Legion of Gasaron? I didn't do anything wrong, I promise!"),
+                l("Why are you asking? And who are you too? I've never seen you around before..."),
+                l("Wait, are you one of those from the Legion of Gasaron? I didn't do anything wrong, I promise!"),
                 l("I... I just like to eat the purple and delightful... And natural, and...");
 
             switch (select(l("Chill out I won't say anything."),
@@ -65,7 +65,7 @@ L_Menu:
 
             select
                 l("Sounds good!"),
-                rif(countitem(Plushroom) >= .@plush_count, lg("I think I have enough plushrooms on me.")),
+                rif(countitem(Plushroom) >= .@plush_count, l("I think I have enough plushrooms on me.")),
                 l("We will talk about it later."),
                 l("My stats are too good, I won't need it.");
 
@@ -119,31 +119,31 @@ L_ResetStats:
     if (.@visited == 1)
     {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            lg("Changed your mind, uh?"),
+            l("Changed your mind, uh?"),
             l("Very good."),
             l("Status point reset can't be undone. Do you really want this?"),
-            lg("Are you sure about this?");
+            l("Are you sure about this?");
     }
     else
     {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            lg("Are you sure about this?");
+            l("Are you sure about this?");
     }
 
 L_ConfirmReset:
-    switch (select(lg("Yes, I am sure."),
-                   lg("I need to think about it..."),
-                   lg("I won't need it, thank you.")))
+    switch (select(l("Yes, I am sure."),
+                   l("I need to think about it..."),
+                   l("I won't need it, thank you.")))
     {
         case 1:
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Let me just have a quick look at you. Hm... I will need @@ @@s to reset your stats.", .@plush_count, getitemlink(Plushroom));
 
             select
-                rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")),
-                rif(countitem(Plushroom) > 0 && countitem(Plushroom) < .@plush_count, lg("I don't have enough plushrooms...")),
-                rif(countitem(Plushroom) == 0, lg("Oh no, I don't have any plushroom on me right now.")),
-                lg("I have to go, sorry.");
+                rif(countitem(Plushroom) >= .@plush_count, l("Here, take as many as you need, I have plenty!")),
+                rif(countitem(Plushroom) > 0 && countitem(Plushroom) < .@plush_count, l("I don't have enough plushrooms...")),
+                rif(countitem(Plushroom) == 0, l("Oh no, I don't have any plushroom on me right now.")),
+                l("I have to go, sorry.");
 
             if (@menu > 1)
             {
@@ -166,15 +166,15 @@ L_ConfirmReset:
             {
                 speech S_LAST_NEXT,
                     l("It seems that you have no status points to reset!"),
-                    lg("But the plushroom you brought was really awesome you know."),
-                    lg("Come back when you will really need me. And bring more plushrooms with you!");
+                    l("But the plushroom you brought was really awesome you know."),
+                    l("Come back when you will really need me. And bring more plushrooms with you!");
             }
             else
             {
                 speech S_LAST_NEXT,
                     l("Let's see... @@ of your status points have just been reset!", StatusPoint - .@wasSP),
                     l("Spend it wisely this time."),
-                    lg("But you are welcome to reset your stats again if you bring me some more plushrooms!");
+                    l("But you are welcome to reset your stats again if you bring me some more plushrooms!");
             }
             goto L_Quit;
 
@@ -201,7 +201,7 @@ L_Never:
     }
 
     speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-        lg("I am sure that you will change your mind.");
+        l("I am sure that you will change your mind.");
 
     goto L_Quit;
 

@@ -14,12 +14,12 @@ OnTouch:
 
     setcamnpc "Elmo";
     mesn "Elmo";
-    mesq lg("So that's why we wanted to warn you, maybe she comes from that guild, as that sign was on her raft.", "So that's why we wanted to warn you, maybe he comes from that guild, as that sign was on his raft.");
+    mesq l("So that's why we wanted to warn you. This sign on the raft indicates some relation to that guild.");
     next;
 
     setcamnpc "Nard";
     mesn "Captain Nard";
-    mesq lg("I see. Warn the other sailors about this. But if she's part of the Legion of Aemil, then she's also our friend and ally.", "I see. Warn the other sailors about this. But if he's part of the Legion of Aemil, then he's also our friend and ally.");
+    mesq l("I see. Warn the other sailors about this. But any member of the Legion of Aemil would be our friend and ally.");
     next;
 
     setcamnpc "Elmo";
@@ -33,10 +33,10 @@ OnTouch:
 
     setcamnpc "Nard";
     mesn "Captain Nard";
-    mesq lg("This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on her.", "This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on him.");
+    mesq l("This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep your eyes open.");
     next;
 
-    mesq lg("But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet.", "But... If he has amnesia like Julia said... We don't need to worry about him. At least not yet.");
+   mesq l("But... If Julia is right with the amnesia ... We don't need to worry. At least not yet.");
     next;
 
     setcamnpc "Elmo";

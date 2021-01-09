@@ -12,7 +12,7 @@
     function good_blacksmith;
 
     speech S_LAST_NEXT,
-        lg("Hi, what do you want kiddo?");
+        l("Hi, what do you want kiddo?");
 
     do
     {

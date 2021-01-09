@@ -18,7 +18,7 @@
     // Cooking loop
     do
     {
-        mesc lg("It is time to make some sandwiches myself!");
+        mesc l("It is time to make some sandwiches myself!");
         mes "##B" + l("Drag and drop the items from your inventory in the frames.") + "##b";
 
         // Crafting skin with 4 columns

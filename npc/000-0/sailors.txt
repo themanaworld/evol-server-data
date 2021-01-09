@@ -31,22 +31,22 @@ OnTouch:
 
     setcamnpc "Sailors", -64, -32;
     mesn l("Kralog Voice");
-    mesq lg("Hey Frenchy!");
+    mesq l("Hey Frenchy!");
     next;
 
     setcamnpc "Sailors", 0, -32;
     mesn l("Human Voice");
-    mesq lg("I think he's from the East...");
+    mesq l("Nah, clearly from the East...");
     next;
 
     setcamnpc "Sailors", 144, -80;
     mesn l("Tritan Voice");
-    mesq lg("What are you guys saying ? It's a Yoiis!");
+    mesq l("What are you guys saying ? It's a Yoiis!");
     next;
 
     setcamnpc;
     mesn l("Raijin Voice");
-    mesq lg("You think she's from the East? As in... Ancea?", "You think he's from the East? As in... Ancea?");
+    mesq l("From the East? As in... Ancea?");
     next;
     mesq l("Hey you! Can you hear us? Are you okay?");
     next;
@@ -68,10 +68,10 @@ OnTouch:
     setcamnpc;
     mes "";
     mesn;
-    mesq lg("Oh, she's still alive!", "Oh, he's still alive!");
+    mesq l("Oh, still alive? What a relive!");
     next;
     setcamnpc "Sailors", 144, -80;
-    mesq lg("This girl needs help, we need to rescue her!", "This guy needs help, we need to rescue him!");
+    mesq l("This castaway needs help, on to the rescue!");
     next;
     restorecam;
 

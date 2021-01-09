@@ -24,7 +24,7 @@
     next;
 
     select
-        lg("Actually, I came here to work on my task.");
+        l("Actually, I came here to work on my task.");
 
     mes "";
     mesn;
@@ -34,7 +34,7 @@
     next;
 
     menu
-        lg("I'm sorry for your situation. They should alternate shifts with other sailors from time to time."), -,
+        l("I'm sorry for your situation. They should alternate shifts with other sailors from time to time."), -,
         l("Well if you are whining like that all the time, then I think there is a reason behind their choice."), L_Whyning;
 
     mes "";
@@ -50,17 +50,17 @@
     mesn;
     mesq l("You like them, don't you? Just speak with Peter then. He is on the second deck of the ship. He will send you downstairs to the hold, where you will find a furry meal!");
     next;
-    mesq lg("Oh, but you didn't come here to talk about that, am I right?");
+    mesq l("Oh, but you didn't come here to talk about that, am I right?");
     next;
 
     select
-        lg("Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?");
+        l("Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?");
 
     mes "";
     mesn;
     mesq l("Usually I don't allow anyone to touch my boxes but...");
     next;
-    mesq lg("You have been so nice to me. So please, take one.");
+    mesq l("You have been so nice to me. So please, take one.");
     next;
 
     inventoryplace CroconutBox, 1;

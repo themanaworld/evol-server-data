@@ -26,9 +26,9 @@
     if (.@q < 3)
     {
         speech
-            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Hello."),
             l("Isn't my husband Hinnak so hardworking?"),
-            lg("Come back later.");
+            l("Come back later.");
         close;
     }
 
@@ -43,7 +43,7 @@
             break;
         default:
         speech
-            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Hello."),
             l("Thanks for helping my husband Hinnak."),
             l("He likes to eat sandwiches. A good thing they are so easy to make!");
 
@@ -72,14 +72,14 @@
     function yannika_intro
     {
         speech
-            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Hello."),
             l("Thanks for helping my husband Hinnak."),
             l("Could you please bring me 2 new knives?"),
             l("Hinnak wasted all my good kitchen knives trying to get rid of his accursed Pinkies.");
 
         select
             l("Yes, sure thing."),
-            lg("Not my problem.");
+            l("Not my problem.");
 
         if (@menu == 1)
         {
@@ -94,13 +94,13 @@
     function yannika_knives
     {
         speech
-            lg(l("Hello madam."), l("Hi Sir.")),
+            l("Hello."),
             l("Thanks for helping my husband Hinnak."),
             l("Did you brought me 2 new knives?");
 
         select
             rif(countitem(Knife) >= 2, l("Yes, here they are.")),
-            lg("Not yet, I'll be back.");
+            l("Not yet, I'll be back.");
 
         if (@menu == 1)
         {
@@ -118,7 +118,7 @@
                 l("Well, of course. First of all, you need a @@. You can have mine, if you want.", getitemlink(RecipeBook)),
                 l("The recipes, of course, you must collect yourself. Even sandwiches are not so simple as to simply put ingredients and hope for the best."),
                 l("Cooking is an art. You need to know how to cook something. You can use my stove to prepare."),
-                lg("Or, you can just forget all that, and let me prepare sandwiches for you, too! %%H"), // %%H - Smile Emote
+                l("Or, you can just forget all that, and let me prepare sandwiches for you, too! %%H"), // %%H - Smile Emote
                 l("Oh, but I'll still need the book. Even if all pages are white.");
             next;
         }

@@ -6,7 +6,7 @@
 
 001-2-27,43,28,0	script	Lydon	NPC_LYDON,{
     speech S_LAST_NEXT,
-        lg("Hi customer! What do you want today?");
+        l("Hi customer! What do you want today?");
 
     switch (select(
         l("Let's make a trade."),
