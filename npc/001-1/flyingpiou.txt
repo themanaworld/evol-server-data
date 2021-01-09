@@ -105,7 +105,6 @@ OnTimer1000:
     dographmovestep;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
     .distance = 5;
     .walkmask = WALK_WATER;
     // .debug = 1;

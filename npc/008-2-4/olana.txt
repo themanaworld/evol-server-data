@@ -314,7 +314,6 @@ function olanaRossyHappy {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 4;
     .minLevel = 40;
     .maxLevel = 80; // Differs from Juliet/Rossy

@@ -83,7 +83,6 @@ function cookingDeal {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_2;
     .distance = 4;
     .amount = 10;
     end;

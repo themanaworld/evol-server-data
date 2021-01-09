@@ -53,7 +53,6 @@ OnTimer1000:
     else domovestep;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 3;
     .speed = 175;
     .caller = 0;

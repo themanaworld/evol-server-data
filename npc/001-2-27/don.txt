@@ -106,7 +106,6 @@ function good_blacksmith {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 4;
     end;
 }

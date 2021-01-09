@@ -22,7 +22,6 @@ OnTimer10000:
     end;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 2;
     end;
 }

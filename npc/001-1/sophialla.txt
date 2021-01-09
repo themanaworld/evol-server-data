@@ -82,7 +82,6 @@ OnLegionComplete:
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
     .distance = 2;
     .alwaysVisible = true;
     end;

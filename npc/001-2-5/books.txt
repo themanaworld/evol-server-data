@@ -28,7 +28,6 @@ OnUse:
 
 OnInit:
     .book_name$ = "Communication Theory";
-    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 }

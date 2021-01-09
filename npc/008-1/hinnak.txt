@@ -339,7 +339,6 @@ OnInit:
     .quest = HurnscaldQuests_Hinnak;
     .quest_inspector = HurnscaldQuests_Inspector;
     .quest_debug = .quest;
-    .bodytype = BODYTYPE_3;
     .distance = 3;
 
 ////////// UNFINISHED //////////

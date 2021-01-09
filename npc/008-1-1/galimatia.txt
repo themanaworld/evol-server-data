@@ -386,7 +386,6 @@ OnInit:
     .REQ3_OUTPUT = RoseHat;
     .REQ3_OUTPUT_AMOUNT = 1;
 
-    .bodytype = BODYTYPE_2;
     .distance = 4;
     end;
 }

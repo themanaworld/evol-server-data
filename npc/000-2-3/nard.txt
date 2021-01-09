@@ -336,7 +336,6 @@ L_Reward:
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 5;
     end;
 }

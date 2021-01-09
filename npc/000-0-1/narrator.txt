@@ -35,7 +35,6 @@
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_1;
 
     if (debug > 0) {
         // debug commands to skip the tutorial

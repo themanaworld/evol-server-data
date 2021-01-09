@@ -19,7 +19,6 @@ OnInit:
     sellitem ConcPotion, -1, 3;
     sellitem IronPotion, -1, 3;
 
-    .bodytype = BODYTYPE_1;
     .distance = 4;
     end;
 

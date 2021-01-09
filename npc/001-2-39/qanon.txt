@@ -125,7 +125,6 @@ function legionState2 {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 3;
     end;
 }

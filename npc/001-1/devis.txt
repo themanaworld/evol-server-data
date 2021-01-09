@@ -64,7 +64,6 @@ OnTimer1000:
     dographmovestep;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 5;
     initmovegraph   "start_pos",    193, 109,
                     "dock_ent",     194, 109,

@@ -443,7 +443,6 @@
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_2;
     .distance = 5;
     .maxLevel = 20;
     end;

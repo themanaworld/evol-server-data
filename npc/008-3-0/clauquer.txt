@@ -133,7 +133,6 @@ function clauquerPrologue {
 }
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 4;
     end;
 }

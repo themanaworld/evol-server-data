@@ -97,7 +97,6 @@ L_QuestDone:
     close;
 
 OnInit:
-    .bodytype = BODYTYPE_3;
     .distance = 2;
     .debug = 1;
     end;

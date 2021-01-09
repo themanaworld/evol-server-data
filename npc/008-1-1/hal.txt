@@ -126,7 +126,6 @@ OnInit:
     .REQ0_OUTPUT = BottleOfWater;
     .REQ0_OUTPUT_AMOUNT = 1 ;
 
-    .bodytype = BODYTYPE_2;
     .distance = 4;
     end;
 }

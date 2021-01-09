@@ -124,7 +124,6 @@ OnUse:
 
 OnInit:
     .book_name$ = getitemname(MasterBook);
-    .bodytype = BODYTYPE_1;
     .distance = 1;
     end;
 

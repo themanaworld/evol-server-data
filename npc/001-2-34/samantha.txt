@@ -48,7 +48,6 @@
     // The city is being attacked. Go help the warriors and town-guard.
 
 OnInit:
-    .bodytype = BODYTYPE_2;
     .distance = 3;
     end;
 }
