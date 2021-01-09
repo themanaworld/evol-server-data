@@ -9,7 +9,7 @@
     speech
         l("Hello."),
         l("Do you know where the graveyard is?"),
-        lg("No? Better that way. It's so dangerous there.");
+        l("No? Better that way. It's so dangerous there.");
 
     if (getq(General_Brotherhood) < 2)
         close;

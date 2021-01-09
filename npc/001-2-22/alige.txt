@@ -66,8 +66,8 @@ OnFirstEncounter:
     restorecam;
 
     menu
-        lg("I am, who are you?"), -,
-        lg("Indeed, I am not."), L_NeedHelp;
+        l("I am, who are you?"), -,
+        l("Indeed, I am not."), L_NeedHelp;
 
     mes "";
     mesn "Narrator";
@@ -136,7 +136,7 @@ L_Accept:
         l("I think I should report you to the crew members."), -;
 
     setcamnpc;
-    mesq lg("Growl, sniff, grr! You'd better not tell anyone you saw me!");
+    mesq l("Growl, sniff, grr! You'd better not tell anyone you saw me!");
 
     close;
 
@@ -165,7 +165,7 @@ L_Accepted:
     setcamnpc;
     mes "";
     mesn;
-    mesq lg("Great, what food do you have for me today?");
+    mesq l("Great, what food do you have for me today?");
     next;
     restorecam;
 
@@ -284,7 +284,7 @@ L_IntroMenu:
         l("I think I should report you to the crew members."), -;
 
     setcamnpc;
-    mesq lg("Growl, sniff, grr! You'd better not tell anyone you saw me!");
+    mesq l("Growl, sniff, grr! You'd better not tell anyone you saw me!");
 
     close;
 

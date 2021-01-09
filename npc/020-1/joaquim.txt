@@ -122,7 +122,7 @@ function joaquimFound {
     mes "";
     mesn;
     if (@menu == 1) {
-        mes lg("Thanks! Thanks! Savior! Hurry up!");
+        mes l("Thanks! Thanks! Savior! Hurry up!");
         setq TonoriQuest_Joaquim, 2;
     } else if (@menu == 2) {
         mes l("Uhm, sorry, I don't trust stuff you get at market. You know.");

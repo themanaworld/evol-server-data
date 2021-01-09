@@ -10,7 +10,7 @@
     speech
         l("My Mouboos, my beloved Mouboos!"),
         l("Oh, hi, isn't it cool to live among all those Mouboos? I don't understand how some people can eat Mouboo steak."),
-        lg("Murderers!");
+        l("Murderers!");
     if (getq(General_SmearedHands) <= 3 && getq2(General_SmearedHands) != 2)
         foodQuest();
     close;

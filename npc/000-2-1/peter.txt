@@ -66,7 +66,7 @@ L_Task:
     if (!.@q)
         setq ShipQuests_Peter, 1, 0, -1;
     mesn;
-    mesq lg("Hey, girl!", "Hey, man!");
+    mesq l("Hey there!");
     next;
     mesq l("I need somebody who can rid the hold of the ship of these rattos. Can you help me?");
     next;
@@ -85,13 +85,13 @@ L_Task:
 // Friendly reminder that you have about 20 secs to finish
 OnLowTime:
     if ((getmap() ~= "000-2-1") || (getmap() ~= "nard*"))
-        dispbottom lg("I'm starting to feel dizzy... I shouldn't stay here much longer.");
+        dispbottom l("I'm starting to feel dizzy... I shouldn't stay here much longer.");
     end;
 
 // Minimum Quest Level (any difficulty setting) is on L_Main (and currently is 5)
 OnTooWeak:
     mesn;
-    mesq lg("I need someone to help me clean the edge of the ship, but you aren't strong enough for now.");
+    mesq l("I need someone to help me clean the edge of the ship, but you aren't strong enough for now.");
 
     close;
 

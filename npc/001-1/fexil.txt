@@ -37,13 +37,13 @@
     }
 
     mesn;
-    mesq lg("Greetings traveler.");
+    mesq l("Greetings traveler.");
     next;
     mesq l("I have some clothes and other things for you at a fine price!");
     next;
     mesq l("What I sell comes from every corner of Gasaron.");
     next;
-    mesq lg("Interested?");
+    mesq l("Interested?");
     next;
 
     if (getq(ArtisQuests_Fexil) == 1)
@@ -129,7 +129,7 @@
         case 4:
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
                 l("Oh... Well, I just started to trade... Thus my technique may not be the best."),
-                lg("Anyway, if you ever feel interested, just check my bag!");
+                l("Anyway, if you ever feel interested, just check my bag!");
             break;
     }
 

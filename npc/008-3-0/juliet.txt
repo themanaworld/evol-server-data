@@ -605,7 +605,7 @@ OnInstanceInit:
     mesq l("Mommy teached me about precious gemstones. This Golem has quite a few of them.");
     next;
     mesn;
-    mesq lg("Here you go, miss!", "Here you go, mister!");
+    mesq l("Here you go!");
     getitem .@gems, 1;
     quest_item(.@rune, 1);
     quest_xp(.maxLevel, 100000);
@@ -632,7 +632,7 @@ OnInstanceInit:
         mesq l("But it was big and scary! I haven't seen it since I entered this cave, though...");
         next;
         mesn;
-        mesq lg("It probably went away after seeing your bravure, tee-hee!");
+        mesq l("It probably went away after seeing your bravure, tee-hee!");
         next;
         mesn;
         mesq l("I must go now. I've already spent too much time here already.");

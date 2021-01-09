@@ -29,7 +29,7 @@
         l("Hey, check out my brand new fishing rod. I bought it just today."),
         l("I was so excited, I wanted to try it as soon as possible."),
         l("So in a hurry, I forgot to take enough bait for fishing."),
-        lg("Be a friend and bring me @@ @@.", "Be a friend and bring me @@ @@.", .BaitCount, getitemlink(.BaitID));
+        l("Be a friend and bring me @@ @@.", .BaitCount, getitemlink(.BaitID));
 
     switch (select(l("I'll be back in no time."),
                    l("Sorry, I'm doing other things at the moment.")))
@@ -60,8 +60,7 @@ L_CheckItems:
         l("It's not as good as my new one, but still very useful."),
         l("Just look at that water! There's a whole bunch of fish down there."),
         l("Oh, and you will need this book too, it will help you learn the basics of fishing."),
-        lg("You might even get lucky, and get a @@.",
-           "You might even get lucky, and get a @@.", getitemlink(GrassCarp)),
+        l("You might even get lucky, and get a @@.", getitemlink(GrassCarp)),
         l("Have a good time fishing!");
 
     delitem .BaitID, .BaitCount;

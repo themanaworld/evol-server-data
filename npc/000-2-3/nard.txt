@@ -44,7 +44,7 @@ L_Checker:
     next;
     mesq l("Let me introduce myself, I am Nard, captain of this ship.");
     next;
-    mesq lg("I am pleased to see that you have woken up and are active. Elmo came here to tell me this good news!");
+    mesq l("I am pleased to see that you have woken up and are active. Elmo came here to tell me this good news!");
     next;
 
     setcamnpc "Elmo";
@@ -61,10 +61,10 @@ L_Checker:
 
 L_Menu:
     menu
-        lg("I feel ok."), L_Ok,
+        l("I feel ok."), L_Ok,
         rif(islegacyaccount(), l("I only want to reach Artis, can we skip this?")), L_Skip,
         l("Who's this Julia?"), L_Julia,
-        lg("I'm a bit sick..."), -;
+        l("I'm a bit sick..."), -;
 
     mes "";
     mesn;
@@ -81,7 +81,7 @@ L_MenuQuest:
     mesn;
     mesq l("Oh! I like that sort of answer!");
     next;
-    mesq lg("We need manpower on the island... Oh forgive me, women are also welcome, of course.", "We need manpower on the island.");
+    mesq l("We can use a helping hand on the island.");
     next;
 
     goto L_NeedContent;
@@ -132,7 +132,7 @@ L_Julia:
     next;
     mesq l("She is the nurse and shipkeeper of this ship.");
     next;
-    mesq lg("But most important, she is the one who took care of you when you were unconscious.");
+    mesq l("But most important, she is the one who took care of you when you were unconscious.");
     next;
 
 L_SpecialTask:
@@ -175,7 +175,7 @@ L_Done:
 
 L_ChefQuestStart:
     mesn;
-    mesq lg("Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.");
+    mesq l("Elmo told me you are now considered family and are numbered among us in our activities on the island. I do so very much appreciate the efforts you did down there.");
     next;
 
 L_ChefQuestRedir:

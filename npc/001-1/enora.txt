@@ -90,7 +90,7 @@
             l("Try doing that now!");
 
         switch (select(l("Okay, but there won't be any explosions."),
-                        lg("Don't get too excited about it...")))
+                        l("Don't get too excited about it...")))
         {
             case 1:
                 narrator S_FIRST_BLANK_LINE | S_LAST_NEXT,
@@ -136,7 +136,7 @@
     function enora_first_quest {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
             l("You probably don't have much business in this city as you don't remember who you are."),
-            lg("So I was going to ask if maybe you would be interested in giving me a hand with a few errands.");
+            l("So I was going to ask if maybe you would be interested in giving me a hand with a few errands.");
 
         switch (select(l("I guess so. What's in it for me?"),
                         l("Of course! What do you need?")))
@@ -348,7 +348,7 @@
 
     function enora_paid_potions {
         speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-            lg("Are you sure that these are my potions?");
+            l("Are you sure that these are my potions?");
 
         if (askyesno() == ASK_YES)
         {
@@ -363,7 +363,7 @@
     {
         speech S_LAST_NEXT,
             l("Hey! You must be @@.", strcharinfo(0)),
-            lg("Julia told me how they found you in the sea, on a raft with a logo of..."),
+            l("Julia told me how they found you in the sea, on a raft with a logo of..."),
             l("...I mean log! Made of log!"),
             l("I also heard you lost all your memories? That's a shame."),
             l("I'm sure you would have some interesting stories to tell!");

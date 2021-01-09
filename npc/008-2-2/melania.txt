@@ -10,7 +10,7 @@
     function lodge_check;
 
     speech
-        lg("Hello Sir.","Hello Miss."),
+        l("Hello."),
         l("Welcome to the Rusty Pick."),
         l("One advice: Don't take the things those drinkers say too serious. They are sitting here and drinking all day."),
         l("How can we serve you today?");
@@ -39,13 +39,13 @@
         else if (INN_REGISTER == .inn)
         {
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                lg("You are already registered here."),
+                l("You are already registered here."),
                 l("Go on the upper level if you want to change your room or to use it.");
         }
         else
         {
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                lg("If you are registered somewhere else you will loose that reservation."),
+                l("If you are registered somewhere else you will loose that reservation."),
                 l("Do you still want to lodge here?");
 
             if (askyesno() == ASK_YES)
@@ -94,7 +94,7 @@
             PC_IS_DEAD = false;
 
             speech S_FIRST_BLANK_LINE | S_LAST_NEXT,
-                lg("I registered you on a random bed on the upper level."),
+                l("I registered you on a random bed on the upper level."),
                 l("You can go upstairs and choose a different room if you want.");
             savepoint "008-2-3", any(49, 53, 57), any(31, 35);
         }

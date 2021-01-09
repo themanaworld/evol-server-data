@@ -12,11 +12,11 @@ OnTalk:
     deltimer("Elmo#sailors::OnSlow");
     setcamnpc;
     mesn "Elmo";
-    mesq lg("This girl is lucky we found her before a shark did. I have no idea where she comes from. By the way, did you see the logo on her raft?", "This guy is lucky we found him before a shark did. I have no idea where he comes from. By the way, did you see the logo on his raft?");
+    mesq l("Poor thing. Fortunately we were more attentive than the sharks in these waters. I wonder where this tragic journey started. By the way, did you see the logo on that raft?");
     next;
 
     mesn "Magic Arpan";
-    mesq lg("Yeye, it's the logo of the Legion of Aemil in Esperia! I wonder what this yoiis was doing so far away from the coast.");
+    mesq l("Yeye, it's the logo of the Legion of Aemil in Esperia! I wonder what this yoiis was doing so far away from the coast.");
     next;
 
     mesn "Elmo";
@@ -24,7 +24,7 @@ OnTalk:
     next;
 
     mesn "Magic Arpan";
-    mesq lg("Maybe she was one of those who got lost last month. She could be the yoiis from Esperia who got a secret diplomatic mission from the Legion of Aemil!", "Maybe he was one of those who got lost last month? He could be the yoiis from Esperia who got a secret diplomatic mission from the Legion of Aemil!");
+    mesq l("Did you hear about all those missing people last month? Maybe this is the yoiis from Esperia who got a secret diplomatic mission from the Legion of Aemil!");
     next;
 
     mesn "Elmo";
@@ -36,7 +36,7 @@ OnTalk:
     next;
 
     mesn "Elmo";
-    mesq lg("Alright, I'm going to his room, keep an eye on her, we still don't know if she's friend or foe...", "Alright, I'm going to his room, keep an eye on him, we still don't know if he's friend or foe...");
+    mesq l("Alright, I'm going to his room. Keep watch, not that our new friend turns out to be a foe after all...");
     next;
 
     mesn "Magic Arpan";
@@ -44,7 +44,7 @@ OnTalk:
     next;
 
     mesn "Elmo";
-    mesq lg("Oh, and give her some clothes, the poor girl, the ones she had were in an even worse condition than the ones we have.", "Oh, and give him some clothes, the poor guy, the ones he had were in an even worse condition than the ones we have.");
+    mesq l("Oh, and give our friend - or foe - some clothes, that shabby rags are in even worse condition than ours.");
     next;
 
     mesn "Magic Arpan";
@@ -56,11 +56,11 @@ OnTalk:
     next;
 
     mesn "Magic Arpan";
-    mesq lg("I'll give her everything she needs, don't worry.", "I'll give him everything he needs, don't worry.");
+    mesq l("I'll bring everything that is needed, don't worry.");
     next;
 
     mesn "Elmo";
-    mesq lg("Ok, I think she's waking up, go see her.", "Ok, I think he's waking up, go see him.");
+    mesq l("Oh, look who is waking up!");
     next;
 
     restorecam;

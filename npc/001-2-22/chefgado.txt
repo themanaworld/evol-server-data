@@ -31,7 +31,7 @@ function foodQuest {
     // FOOD QUEST: BEGIN
     .@ally=(getq(ShipQuests_ChefGado) == 4); // TRUE if you helped Gado
     mesn;
-    mesq (.@ally ? l("I suppose I could. You helped me, after all.") : lg("Why should I help you, traitor?"));
+    mesq (.@ally ? l("I suppose I could. You helped me, after all.") : l("Why should I help you, traitor?"));
     next;
     // Empty Bowl needed
     if (!countitem(EmptyBowl)) {

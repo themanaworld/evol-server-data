@@ -20,7 +20,7 @@
     function notaMember;
     .@q=getq(Artis_Legion_Progress);
     mesn;
-    mesq lg("It's been a while, girl!", "It's been a while, boy!");
+    mesq l("It's been a while.");
     next;
     if (.@q < 5)
         notaMember();
@@ -46,7 +46,7 @@
             break;
         case 3:
             mesn;
-            mesq lg("Make me proud, girl.", "Make me proud, boy.");
+            mesq l("Make me proud!");
             break;
     }
     close;
@@ -72,7 +72,7 @@ function legionState {
     mesq l("Oh? And do you think you have what it takes to be a proud Legion Member?");
     next;
     mesn;
-    mesq lg("Listen, kid. Being a legion member is not a joke.");
+    mesq l("Listen, kid. Being a legion member is not a joke.");
     next;
     mesn;
     mesq l("Hmm, why don't you go train a little more? We have several training rooms here.");
@@ -112,10 +112,10 @@ function legionState2 {
         next;
         mesn;
         mesc l("%s gives you a piece of paper, which you put on a different pocket.");
-        mesq lg("Go to the ship, show the captain this letter if asked. After reaching, look for Captain Hal. He'll give you further instructions.");
+        mesq l("Go to the ship, show the captain this letter if asked. After reaching, look for Captain Hal. He'll give you further instructions.");
         next;
         mesn;
-        mesq lg("Make me proud, girl.", "Make me proud, boy.");
+        mesq l("Make me proud!");
         setq Artis_Legion_Progress, 7;
     } else {
         mesn;

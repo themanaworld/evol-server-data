@@ -17,7 +17,7 @@
     next;
 
     select
-        lg("Excuse me? Do you know who I am?");
+        l("Excuse me? Do you know who I am?");
 
     mes "";
     mesn;
@@ -30,7 +30,7 @@
 
     mes "";
     mesn;
-    mesq lg("No and *hic*... No, you and you and your... *burp* stup*hic* guild!");
+    mesq l("No and *hic*... No, you and you and your... *burp* stup*hic* guild!");
     next;
     mesq l("You tried to get rid of me, eeh? But surprise! I'm still here... *hic* Or there...");
     next;

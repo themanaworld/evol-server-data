@@ -17,7 +17,7 @@
         goto L_GetCookie;
 
     mesn;
-    mesq lg("Hey! Adventurer! Are you enjoying your life on Aemil?");
+    mesq l("Hey! Adventurer! Are you enjoying your life on Aemil?");
     next;
 
     select
@@ -38,7 +38,7 @@
 
     mes "";
     mesn;
-    mesq lg("Of course you do! Just listen carefully to these words my sweet.");
+    mesq l("Of course you do! Just listen carefully to these words my sweet.");
     next;
     mesq l("Cookies are a source of life.");
     next;
@@ -95,10 +95,9 @@ L_StorySeems:
 
     mes "";
     mesn;
-    mesq g(l("It looks like the sweet lady is curious, am I right?"),
-           l("It seems the gentleman is curious, am I right sweetie?"));
+    mesq l("It looks like you are curious, am I right?");
     next;
-    mesq lg("Well, if you ever do want to join: 'Ye Merry Club Of Thee Bequeathed With Cookies'...");
+    mesq l("Well, if you ever do want to join: 'Ye Merry Club Of Thee Bequeathed With Cookies'...");
     next;
 
 L_BTaskExpanation:
@@ -135,7 +134,7 @@ L_Friends:
     mesn "Narrator";
     mesc(l("This Cookie Master rewards people who contribute and develop this world."), 9);
     next;
-    mes col(lg("If you want to be rewarded, help us in making this world a better place."), 9);
+    mes col(l("If you want to be rewarded, help us in making this world a better place."), 9);
     next;
     mesc(l("When you see something that looks more like a bug than a feature, report it on https://forums.themanaworld.org or try to contact a game contributor."), 9);
     next;
@@ -172,7 +171,7 @@ L_Presentation:
 L_Reward:
     mesq l("Yes! @@ is written on my cookie list.", strcharinfo(0));
     next;
-    mesq lg("That's quite surprising... You don't look very helpful.");
+    mesq l("That's quite surprising... You don't look very helpful.");
     next;
     mesq l("Anyway, here, have a cookie!");
 
@@ -183,7 +182,7 @@ L_Reward:
     npctalk3 l("You receive a @@!", getitemlink(DeliciousCookie));
 
     next;
-    mesq lg("I'm sure you'll appreciate its effect, but be careful, these cookies are rare, and you'll need to help the community again before being able to receive another one.");
+    mesq l("I'm sure you'll appreciate its effect, but be careful, these cookies are rare, and you'll need to help the community again before being able to receive another one.");
     next;
 
     goto L_Bye;

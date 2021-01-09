@@ -46,7 +46,7 @@
     {
         .@enora = getq(ArtisQuests_Enora);
         select
-            rif(.@enora == 5, lg("I came to retrieve a package for Enora.")),
+            rif(.@enora == 5, l("I came to retrieve a package for Enora.")),
             menuaction(l("Trade")),
             l("How can I improve my equipment?"),
             menuaction(l("Quit"));

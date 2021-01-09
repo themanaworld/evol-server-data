@@ -109,7 +109,7 @@
     }
 
     .@hour = gettime(GETTIME_HOUR);
-    speech S_LAST_NEXT, (.@hour > 6 && .@hour < 18) ? l("Good day to you.") : lg("Good night milady.", "Good evening sir.");
+    speech S_LAST_NEXT, (.@hour > 6 && .@hour < 18) ? l("Good day to you.") : l("Good evening.");
 
     do
     {

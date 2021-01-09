@@ -89,7 +89,7 @@
         speech
         l("Did you see my daughters Rossy and Juliet, by chance?"),
         l("She wasn't at home for two days now. I worry about her!"),
-        lg("If you see her, please tell her to come home.");
+        l("If you see her, please tell her to come home.");
     }
     close;
 
@@ -170,7 +170,7 @@ function olanaRossyLie {
     mesq l("I'll now book you a room on the Inn.");
     select
         l("Thanks."),
-        lg("Actually, please don't. I do this out of the goodness of my heart.");
+        l("Actually, please don't. I do this out of the goodness of my heart.");
     mes "";
     // Do not register the inn
     if (@menu == 2) {
@@ -203,7 +203,7 @@ function olanaDeliverBerries {
     setq HurnscaldQuests_Rossy, 5;
     next;
     mesn;
-    mesq lg("Could you do me a small favor, though? I know I barely know you, and you must be very busy, but...");
+    mesq l("Could you do me a small favor, though? I know I barely know you, and you must be very busy, but...");
     next;
     olanaGetLetter();
     return;

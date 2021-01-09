@@ -12,19 +12,19 @@
 
     setcamnpc "Maxe";
     mesn "Maxe";
-    mesq lg("@@? Welcome my dear!", "@@? Welcome my dear!", strcharinfo(0));
+    mesq l("@@? Welcome my dear!", strcharinfo(0));
     next;
-    mesq lg("Last time I saw you, you were lost at sea on your raft.");
+    mesq l("Last time I saw you, you were lost at sea on your raft.");
     next;
     restorecam;
 
     mesn;
-    mesq lg("True but now she seems pretty fine! Am I right?", "True but now he seems pretty fine! Am I right?");
+    mesq l("True but now all seems pretty fine! Am I right?");
     next;
 
     menu
         l("Thank you, sir, for your kind words. I am feeling better now."), -,
-        lg("I'm still a bit weak at the moment. We should probably talk later."), L_Quit;
+        l("I'm still a bit weak at the moment. We should probably talk later."), L_Quit;
 
     mes "";
     mesn;
@@ -39,16 +39,16 @@
     setcamnpc "Maxe";
     mes "";
     mesn "Maxe";
-    mesq lg("Come on, Sap! You are scaring her with your stories.", "Come on, Sap! You are scaring him with your stories.");
+    mesq l("Come on, Sap! Do not always scare others with your horror stories.");
     next;
-    mesq lg("I'm sure she will soon be able to fight all of the creatures living here without any problem.", "I'm sure he will soon be able to fight all of the creatures living here without any problem.");
+    mesq l("I'm sure this brave fellow will soon be able to fight all of the creatures living here without any problem.");
     next;
 
     restorecam;
 
     mes "";
     mesn;
-    mesq lg("Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?");
+    mesq l("Maybe... But I prefer having well-trained people around me when it comes to fighting against dangerous creatures. Do you already feel adept fighting enemies?");
     next;
 
     menu
