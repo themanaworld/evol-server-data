@@ -3,13 +3,13 @@
 //    Jesusalva
 //    WildX
 // Description:
-//    Andrei is not an human, according to studies conducted by TMW Team.
+//    The Green Mage is not an human, according to studies conducted by TMW Team.
 //    He seems to be a highly advanced artificial intelligence.
 //    The fact that he was never seen contributes to this theory.
 //    Other members opinions:
 //    “4144 is a bot which sits on Hurnscald.” ~ Sagratha, 2016
 
-008-1,246,105,0	script	Andrei	NPC_PLAYER,{
+008-1,246,105,0	script	Green Wizard	NPC_PLAYER,{
     function sittingBot;
     function zealiteLore;
     // TODO: Maybe we should use Karma here? For discussion
@@ -75,7 +75,7 @@
 OnInit:
     .@npcId = getnpcid(.name$);
     setunitdata(.@npcId, UDT_HEADTOP, FancyHat); // Wizard Hat
-    setunitdata(.@npcId, UDT_HEADMIDDLE, SilkRobe);
+    setunitdata(.@npcId, UDT_HEADMIDDLE, SilkRobe); // TODO: Must be dye-ed green
     setunitdata(.@npcId, UDT_HEADBOTTOM, CottonGloves);
     setunitdata(.@npcId, UDT_WEAPON, CottonBoots);
 
